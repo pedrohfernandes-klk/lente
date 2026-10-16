@@ -49,6 +49,8 @@ ul.grande li{box-shadow:none}ul.grande a{font:400 1.6rem/1.05 var(--cartaz);lett
 h2.sec-t{font:700 .72rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:var(--d3) 0 var(--d1);padding:0;border:0}
 .mods{display:grid;gap:var(--d1)}
 .mod{padding:0;margin:0}
+/* 16/10/2026: os cartões da raiz e do ano entram um a um (nada com «reduzir movimento») */
+.mod,.ano-c,.p-cartao.ext,.porta-lente{animation:cartaoSurge .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(min(var(--k,0),12)*70ms)}@keyframes cartaoSurge{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.mod,.ano-c,.p-cartao.ext,.porta-lente{animation:none}}
 .mod>a.mod-a{display:grid;grid-template-columns:64px 1fr;gap:4px 14px;align-items:start;padding:16px 16px 14px;color:var(--tinta);text-decoration:none}
 .mod .mod-sim{width:64px;height:64px;border:1.5px solid var(--tinta);border-radius:50%;display:flex;align-items:center;justify-content:center;grid-row:span 4}
 .mod .mod-sim .simbolo{width:40px;height:40px}
