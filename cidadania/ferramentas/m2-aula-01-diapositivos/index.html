@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diapositivos · CD II · Aula 1</title>
+<style>
+/* Terra Firme · identidade visual (a mesma dos materiais de Português EPI 2026/2027)
+   Preto e branco, Arial Black nos títulos, filetes grossos, modo escuro invertido. */
+:root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000;--cor:#2f6f7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}}
+:root[data-theme=dark]{--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fundo);color:var(--tinta)}
+body{font:16px/1.5 Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--tinta)}
+.topo{position:sticky;top:0;z-index:5;background:var(--fundo);border-bottom:3px solid var(--linha);padding:10px 16px 8px}
+.l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px;max-width:760px;margin:auto}
+.marca{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.estado{font:900 13px/1 "Arial Black",Arial,sans-serif;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:18px 16px 48px}
+h1{font:900 32px/1 "Arial Black",Arial,sans-serif;margin:0 0 4px;text-transform:uppercase;letter-spacing:-.4px}
+h2{font:900 13px/1 "Arial Black",Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;background:var(--tinta);color:var(--fundo);padding:7px 8px;margin:28px 0 10px}
+h3{font:900 15px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:18px 0 6px}
+.sub{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px}
+.rot{font:900 12px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;background:var(--tinta);color:var(--fundo);display:inline-block;padding:4px 7px;margin:20px 0 8px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+.caixa{background:var(--papel);border:2px solid var(--linha);padding:12px 14px;margin:10px 0}
+.citacao{border:2px solid var(--linha);border-left:12px solid var(--linha);padding:12px 14px;font-size:18px;margin:10px 0}
+.citacao cite{display:block;font-size:12.5px;font-style:normal;text-transform:uppercase;letter-spacing:.8px;margin-top:6px}
+.ret{margin:12px 0;padding:11px 13px;border:2px solid var(--linha);border-left:12px solid var(--cor)}
+.palavra{font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.nota{font-size:12.5px;border-top:1.5px solid var(--linha);padding-top:6px;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14.5px}
+th,td{border:2px solid var(--linha);padding:7px 9px;text-align:left;vertical-align:top}
+th{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:.8px}
+td.t{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+.corte{border-top:4px dashed var(--linha);margin:18px 0 8px;padding-top:6px;font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.campo{margin:10px 0 14px}
+.campo label{display:block;font-weight:700;margin-bottom:6px}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--linha);background:var(--papel);color:var(--tinta);border-radius:0}
+textarea{min-height:84px;resize:vertical}
+.grelha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.chip{border:2px solid var(--linha);padding:10px 12px;min-height:44px}
+.btn{display:inline-block;min-height:48px;border:2px solid var(--tinta);background:var(--tinta);color:var(--fundo);font:700 14px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px;padding:15px 18px;cursor:pointer;text-decoration:none}
+.btn.sec{background:var(--fundo);color:var(--tinta)}
+details{margin-top:24px;font-size:13px;border-top:2px solid var(--linha);padding-top:8px}
+details summary{font-weight:700;text-transform:uppercase;letter-spacing:.8px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.so-impressao{display:none}
+@media (max-width:560px){h1{font-size:26px}table{font-size:13.5px}th,td{padding:6px}}
+@media print{
+  :root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000}
+  .topo{position:static}.nao-imprimir{display:none!important}.so-impressao{display:block}
+  h2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  textarea{min-height:110px}
+  .quebra{break-before:page}
+}
+</style>
+<style>
+/* Diapositivos Terra Firme: um <section class="d"> por diapositivo. */
+html,body{height:100%;overflow:hidden}
+.deck{position:fixed;inset:0;display:flex;flex-direction:column}
+.deck .topo{position:static}
+.palco{flex:1;position:relative;overflow:hidden}
+.d{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:4vh 7vw;overflow:auto}
+.d.ativo{display:flex}
+.d h1{font-size:clamp(34px,7vw,92px);line-height:.95}
+.d h2{display:inline-block;align-self:flex-start;font-size:clamp(12px,1.4vw,18px);margin:0 0 3vh}
+.d p,.d li{font-size:clamp(18px,2.4vw,34px);line-height:1.3}
+.d li{margin-bottom:.4em}
+.d .grande{font:900 clamp(28px,5vw,68px)/1.05 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:0 0 3vh}
+.d .citacao{font-size:clamp(22px,3.2vw,44px);line-height:1.25;max-width:32ch}
+.d .citacao cite{font-size:clamp(11px,1.1vw,15px)}
+.d .pequeno{font-size:clamp(13px,1.3vw,18px)}
+.d .grelha{grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:1.4vw}
+.d .chip{font-size:clamp(16px,2vw,28px);padding:1.2vw 1.4vw;border-width:3px}
+.d .chip b{display:block;font:900 clamp(11px,1vw,14px)/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3em}
+.d table{font-size:clamp(14px,1.7vw,24px)}
+.d.capa{background:var(--tinta);color:var(--fundo)}
+.d.capa .sub{font-size:clamp(12px,1.4vw,18px)}
+.barra{display:flex;gap:3px;padding:0 16px 10px}
+.barra span{flex:1;height:7px;border:1.5px solid var(--linha)}
+.barra span.f{background:var(--tinta)}
+.nav{position:fixed;right:14px;bottom:14px;display:flex;gap:8px;z-index:6}
+.nav button{min-width:48px;min-height:48px;border:2px solid var(--tinta);background:var(--fundo);color:var(--tinta);font:900 18px/1 "Arial Black",Arial,sans-serif;cursor:pointer}
+.relogio{font:900 clamp(48px,10vw,140px)/1 "Arial Black",Arial,sans-serif;font-variant-numeric:tabular-nums;cursor:pointer;align-self:flex-start;border:4px solid var(--linha);padding:.1em .3em;background:none;color:inherit}
+@media print{
+  html,body{height:auto;overflow:visible}
+  .deck{position:static}.palco{overflow:visible}
+  .d{position:relative;display:flex!important;min-height:100vh;break-after:page;inset:auto}
+  .nav,.barra{display:none}
+}
+</style>
+<style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style></head><body><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/cidadania/">Cidadania</a></li><li><span aria-current="page">Diapositivos</span></li></ol></nav>
+<div class="deck">
+<div class="topo"><div class="l1" style="max-width:none"><span class="marca">Cidadania II · Expressão: os algoritmos · Aula 1</span><span class="estado" id="cont"></span></div></div>
+<div class="barra" id="barra"></div>
+<div class="palco">
+
+<section class="d capa">
+<p class="sub">Cidadania e Desenvolvimento · INTP26 · 2026/2027</p>
+<h1>Quem escolheu o que viste hoje?</h1>
+<p>Módulo 2 · Expressão: os algoritmos, criação e expressão</p>
+</section>
+
+<section class="d">
+<h2>Mesa · sem telemóvel</h2>
+<p class="grande">Qual foi a primeira coisa que viste hoje no telemóvel?</p>
+<p>E quem escolheu que fosse essa?</p>
+<button class="relogio" data-min="2" type="button">2:00</button>
+</section>
+
+<section class="d">
+<h2>Feed de papel</h2>
+<div class="grelha">
+<div class="chip"><b>Utilizador</b>lê os cartões</div>
+<div class="chip"><b>Algoritmo</b>escolhe e mostra os cartões</div>
+<div class="chip"><b>Registo</b>preenche o quadro</div>
+<div class="chip"><b>Observadores</b>preenchem a ficha</div>
+</div>
+<p style="margin-top:3vh">Seis temas: futebol · música · humor · animais · teatro · notícias.</p>
+</section>
+
+<section class="d">
+<h2>Versão 1 · gostos</h2>
+<ol>
+<li><b>Ronda 1:</b> 6 cartões, um de cada tema. O utilizador diz «gosto» aos que quiser.</li>
+<li>Cada gosto vale <b>+1 ponto</b> para o tema do cartão.</li>
+<li><b>Rondas 2 e 3:</b> 6 cartões: <b>3</b> do tema com mais pontos, <b>2</b> do segundo, <b>1</b> de outro tema, ao acaso.</li>
+</ol>
+<p class="pequeno">Empate: ganha o tema com o gosto mais recente. Nenhum cartão se repete. No ecrã: <a href="../m2-aula-01-feed/">feed.html</a>.</p>
+</section>
+
+<section class="d capa">
+<h2 style="background:var(--fundo);color:var(--tinta)">Feed</h2>
+<h1>Lê os cartões com calma.</h1>
+<p>Não precisas de fazer mais nada.</p>
+</section>
+
+<section class="d">
+<h2>Versão 2 · só para quem ficou na sala</h2>
+<p class="grande">Agora o algoritmo não conta gostos.</p>
+<ol>
+<li>O registo cronometra, em segredo, <b>quantos segundos</b> o utilizador fica em cada cartão.</li>
+<li>O tema com mais segundos ganha a ronda seguinte: <b>3 – 2 – 1</b>, como antes.</li>
+<li>Três rondas. Ninguém diz nada ao utilizador.</li>
+</ol>
+<p class="pequeno">Professor: volta ao diapositivo anterior antes de o utilizador entrar.</p>
+</section>
+
+<section class="d">
+<h2>Mural</h2>
+<ol>
+<li>Que temas desapareceram? O utilizador <i>pediu</i> para deixar de os ver?</li>
+<li>Qual das versões prendeu mais? Qual foi mais transparente?</li>
+<li>Os dois utilizadores vivem no mesmo mundo?</li>
+</ol>
+</section>
+
+<section class="d">
+<h2>Dar nome ao que vimos</h2>
+<p class="grande">Entrada → regras → saída</p>
+<div class="grelha">
+<div class="chip"><b>Algoritmo</b>regras finitas que transformam uma entrada numa saída</div>
+<div class="chip"><b>Personalização</b>cada pessoa recebe uma saída diferente, calculada a partir do que fez antes</div>
+<div class="chip"><b>Bolha de filtro</b>ver cada vez mais do mesmo sem dar pelo que ficou de fora</div>
+</div>
+</section>
+
+<section class="d">
+<h2>Objeto</h2>
+<blockquote class="citacao">Todo o indivíduo tem direito à liberdade de opinião e de expressão, o que implica o direito de não ser inquietado pelas suas opiniões e o de procurar, receber e difundir, sem consideração de fronteiras, informações e ideias por qualquer meio de expressão.<cite>Declaração Universal dos Direitos Humanos, artigo 19.º</cite></blockquote>
+</section>
+
+<section class="d">
+<h2>A linha</h2>
+<p class="grande" style="font-size:clamp(22px,3.6vw,50px)">«Se um algoritmo decide quem vê o que eu digo, a minha liberdade de expressão continua intacta.»</p>
+<div class="grelha">
+<div class="chip"><b>Aqui</b>Sim</div>
+<div class="chip"><b>Meio</b>Depende</div>
+<div class="chip"><b>Ali</b>Não</div>
+</div>
+<p class="pequeno" style="margin-top:2vh">Podes mudar de lugar. Se mudares, diz o que te fez mudar.</p>
+</section>
+
+<section class="d">
+<h2>Pares · 8 minutos</h2>
+<p class="grande">Um feed justo para a página da escola.</p>
+<p>Três regras, com entrada e saída claras.</p>
+<p class="pequeno">Exemplo: «Em cada 5 publicações, pelo menos 1 é de uma turma que ainda não apareceu esta semana.» · Quem ganha e quem perde com as vossas regras?</p>
+<button class="relogio" data-min="8" type="button">8:00</button>
+</section>
+
+<section class="d">
+<h2>Este módulo · 30 horas</h2>
+<div class="grelha">
+<div class="chip"><b>Algoritmos</b>recomendação · dados · bolhas · atenção</div>
+<div class="chip"><b>Expressão</b>liberdade e limites · discurso de ódio · criação com IA · autoria</div>
+</div>
+</section>
+
+<section class="d">
+<h2>Projeto</h2>
+<h1 style="font-size:clamp(30px,5.5vw,72px)">«Contra-feed»</h1>
+<ol>
+<li>Em grupo, uma <b>performance</b> ou <b>vídeo-performance</b>.</li>
+<li>Torna visível como um algoritmo molda o que vemos, dizemos ou criamos.</li>
+<li>Mostra pública e <b>manifesto de uso</b> escrito pela turma.</li>
+</ol>
+</section>
+
+<section class="d">
+<h2>Avaliação · sem testes</h2>
+<table>
+<tr><td>Diário de um feed</td><td class="t">20%</td></tr>
+<tr><td>Análise crítica de um caso</td><td class="t">20%</td></tr>
+<tr><td>Projeto «Contra-feed»: processo</td><td class="t">30%</td></tr>
+<tr><td>Mostra pública e manifesto de uso</td><td class="t">30%</td></tr>
+</table>
+</section>
+
+<section class="d">
+<h2>Diário de um feed · 7 dias</h2>
+<p class="grande">Todos os dias, os 5 primeiros temas.</p>
+<ul>
+<li>Uma aplicação à tua escolha, sempre a mesma.</li>
+<li><b>Só temas.</b> Nunca nomes, contas ou capturas de ecrã com pessoas.</li>
+<li>Sem redes sociais? Página inicial de uma plataforma de vídeo sem sessão iniciada, ou em dupla com um colega.</li>
+</ul>
+</section>
+
+<section class="d">
+<h2>Saída</h2>
+<p class="grande">Um algoritmo é ______.<br>Hoje percebi que ______.</p>
+<p class="pequeno">A segunda frase aponta para algo que aconteceu na aula.</p>
+<button class="relogio" data-min="5" type="button">5:00</button>
+</section>
+
+<section class="d capa">
+<p class="sub">Próxima aula</p>
+<h1>O que podemos dizer?</h1>
+<p>Liberdade de expressão e os seus limites. Traz o dia 1 do teu diário de um feed.</p>
+</section>
+
+</div>
+<div class="nav"><button id="ant" type="button" aria-label="Diapositivo anterior">‹</button><button id="seg" type="button" aria-label="Diapositivo seguinte">›</button></div>
+</div>
+<script>
+/* Navegação: setas, espaço, PageUp/PageDown, toque, #n no endereço. «F» = ecrã inteiro. */
+(function(){
+  var ds=[].slice.call(document.querySelectorAll('.d')),i=0,barra=document.getElementById('barra'),cont=document.getElementById('cont');
+  ds.forEach(function(){var s=document.createElement('span');barra&&barra.appendChild(s)});
+  function ir(n){
+    i=Math.max(0,Math.min(ds.length-1,n));
+    ds.forEach(function(d,k){d.classList.toggle('ativo',k===i)});
+    if(barra)[].forEach.call(barra.children,function(s,k){s.classList.toggle('f',k<=i)});
+    if(cont)cont.textContent=(i+1)+' / '+ds.length;
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  document.addEventListener('keydown',function(e){
+    if(/INPUT|TEXTAREA/.test(e.target.tagName))return;
+    if(['ArrowRight','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();ir(i+1)}
+    else if(['ArrowLeft','PageUp'].indexOf(e.key)>-1){e.preventDefault();ir(i-1)}
+    else if(e.key==='Home')ir(0);else if(e.key==='End')ir(ds.length-1);
+    else if(e.key==='f'||e.key==='F'){var el=document.documentElement;if(!document.fullscreenElement&&el.requestFullscreen)el.requestFullscreen();else if(document.exitFullscreen)document.exitFullscreen()}
+  });
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)ir(i+(dx<0?1:-1));x0=null});
+  var ant=document.getElementById('ant'),seg=document.getElementById('seg');
+  ant&&ant.addEventListener('click',function(){ir(i-1)});seg&&seg.addEventListener('click',function(){ir(i+1)});
+  /* Cronómetros: <button class="relogio" data-min="3">3:00</button>; clicar inicia/para. */
+  [].forEach.call(document.querySelectorAll('.relogio'),function(b){
+    var total=+b.dataset.min*60,rest=total,t=null;
+    function mostra(){b.textContent=Math.floor(rest/60)+':'+('0'+rest%60).slice(-2)}
+    b.addEventListener('click',function(){
+      if(t){clearInterval(t);t=null;return}
+      if(rest<=0)rest=total;
+      t=setInterval(function(){rest--;mostra();if(rest<=0){clearInterval(t);t=null}},1000);
+    });mostra();
+  });
+  var h=parseInt((location.hash||'').slice(1),10);ir(isNaN(h)?0:h-1);
+})();
+</script>
+</body></html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha · CD I · Aula 1</title>
+<style>
+/* Terra Firme · identidade visual (a mesma dos materiais de Português EPI 2026/2027)
+   Preto e branco, Arial Black nos títulos, filetes grossos, modo escuro invertido. */
+:root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000;--cor:#2f6f7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}}
+:root[data-theme=dark]{--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fundo);color:var(--tinta)}
+body{font:16px/1.5 Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--tinta)}
+.topo{position:sticky;top:0;z-index:5;background:var(--fundo);border-bottom:3px solid var(--linha);padding:10px 16px 8px}
+.l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px;max-width:760px;margin:auto}
+.marca{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.estado{font:900 13px/1 "Arial Black",Arial,sans-serif;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:18px 16px 48px}
+h1{font:900 32px/1 "Arial Black",Arial,sans-serif;margin:0 0 4px;text-transform:uppercase;letter-spacing:-.4px}
+h2{font:900 13px/1 "Arial Black",Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;background:var(--tinta);color:var(--fundo);padding:7px 8px;margin:28px 0 10px}
+h3{font:900 15px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:18px 0 6px}
+.sub{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px}
+.rot{font:900 12px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;background:var(--tinta);color:var(--fundo);display:inline-block;padding:4px 7px;margin:20px 0 8px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+.caixa{background:var(--papel);border:2px solid var(--linha);padding:12px 14px;margin:10px 0}
+.citacao{border:2px solid var(--linha);border-left:12px solid var(--linha);padding:12px 14px;font-size:18px;margin:10px 0}
+.citacao cite{display:block;font-size:12.5px;font-style:normal;text-transform:uppercase;letter-spacing:.8px;margin-top:6px}
+.ret{margin:12px 0;padding:11px 13px;border:2px solid var(--linha);border-left:12px solid var(--cor)}
+.palavra{font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.nota{font-size:12.5px;border-top:1.5px solid var(--linha);padding-top:6px;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14.5px}
+th,td{border:2px solid var(--linha);padding:7px 9px;text-align:left;vertical-align:top}
+th{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:.8px}
+td.t{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+.corte{border-top:4px dashed var(--linha);margin:18px 0 8px;padding-top:6px;font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.campo{margin:10px 0 14px}
+.campo label{display:block;font-weight:700;margin-bottom:6px}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--linha);background:var(--papel);color:var(--tinta);border-radius:0}
+textarea{min-height:84px;resize:vertical}
+.grelha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.chip{border:2px solid var(--linha);padding:10px 12px;min-height:44px}
+.btn{display:inline-block;min-height:48px;border:2px solid var(--tinta);background:var(--tinta);color:var(--fundo);font:700 14px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px;padding:15px 18px;cursor:pointer;text-decoration:none}
+.btn.sec{background:var(--fundo);color:var(--tinta)}
+details{margin-top:24px;font-size:13px;border-top:2px solid var(--linha);padding-top:8px}
+details summary{font-weight:700;text-transform:uppercase;letter-spacing:.8px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.so-impressao{display:none}
+@media (max-width:560px){h1{font-size:26px}table{font-size:13.5px}th,td{padding:6px}}
+@media print{
+  :root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000}
+  .topo{position:static}.nao-imprimir{display:none!important}.so-impressao{display:block}
+  h2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  textarea{min-height:110px}
+  .quebra{break-before:page}
+}
+</style>
+<style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style></head><body data-ficha="cd1-aula01"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/cidadania/">Cidadania</a></li><li><span aria-current="page">Ficha</span></li></ol></nav>
+<div class="topo"><div class="l1"><span class="marca">Cidadania I · Aula 1 · Ficha</span><span class="estado">INTP26</span></div></div>
+<main>
+<h1>O que nos torna humanos?</h1>
+<p class="sub">Módulo 1 · Ser-se humano: investigação e informação</p>
+
+<div class="campo"><label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name"></div>
+<p class="nota nao-imprimir">As respostas ficam guardadas só neste aparelho. No fim, mostra-as ao professor ou imprime a ficha.</p>
+
+<h2>1 · Mesa</h2>
+<div class="campo"><label for="mesa">Escreve uma coisa que só um ser humano faz.</label><textarea id="mesa" name="mesa" style="min-height:60px"></textarea></div>
+
+<h2>2 · O objeto</h2>
+<blockquote class="citacao">Todos os seres humanos nascem livres e iguais em dignidade e em direitos. Dotados de razão e de consciência, devem agir uns para com os outros em espírito de fraternidade.<cite>Declaração Universal dos Direitos Humanos, artigo 1.º (1948)</cite></blockquote>
+<div class="campo"><label for="palavra">A palavra que pesa mais</label><input type="text" id="palavra" name="palavra"></div>
+<div class="campo"><label for="porque">Porquê? Uma frase.</label><textarea id="porque" name="porque"></textarea></div>
+
+<h2>3 · Sorteio de posição</h2>
+<div class="campo"><label for="posicao">A posição que o teu grupo tirou</label><input type="text" id="posicao" name="posicao" placeholder="bióloga, jurista, artista, máquina, criança, visitante…"></div>
+<div class="campo"><label for="frase">Nessa posição: «Ser humano é…»</label><textarea id="frase" name="frase"></textarea></div>
+<div class="campo"><label for="imagem">Como é a vossa imagem fixa? Descreve-a em poucas palavras.</label><textarea id="imagem" name="imagem" style="min-height:60px"></textarea></div>
+
+<h2>4 · Isto é verdade?</h2>
+<div class="ret"><span class="palavra">Leitura lateral</span>1. Sai da página: quem diz isto? Com que interesse?<br>2. Encontra duas fontes independentes e credíveis.<br>3. Decide e escreve porquê.</div>
+<div class="campo"><label for="afirmacao">A afirmação do teu grupo</label><input type="text" id="afirmacao" name="afirmacao"></div>
+<div class="campo"><label for="fonte1">Fonte 1: quem é, onde está (endereço ou título)</label><textarea id="fonte1" name="fonte1" style="min-height:60px"></textarea></div>
+<div class="campo"><label for="fonte2">Fonte 2: quem é, onde está</label><textarea id="fonte2" name="fonte2" style="min-height:60px"></textarea></div>
+<div class="campo"><label for="independentes">As duas fontes são independentes? Como sabes?</label><textarea id="independentes" name="independentes" style="min-height:60px"></textarea></div>
+<fieldset class="campo" style="border:2px solid var(--linha);padding:10px 12px">
+<legend style="font-weight:700;padding:0 4px">Veredicto</legend>
+<div class="grelha">
+<label class="chip"><input type="radio" name="veredicto" value="verdadeiro"> Verdadeiro</label>
+<label class="chip"><input type="radio" name="veredicto" value="falso"> Falso</label>
+<label class="chip"><input type="radio" name="veredicto" value="depende"> Depende</label>
+<label class="chip"><input type="radio" name="veredicto" value="sem prova"> Sem prova</label>
+</div>
+</fieldset>
+<div class="campo"><label for="justificacao">Porquê? Aponta para o que as fontes dizem.</label><textarea id="justificacao" name="justificacao"></textarea></div>
+
+<h2>5 · Saída</h2>
+<div class="campo"><label for="saida1">Ser humano é…</label><textarea id="saida1" name="saida1" style="min-height:60px"></textarea></div>
+<div class="campo"><label for="saida2">Sei-o porque… (aponta para alguma coisa: o artigo 1.º, uma fonte, a imagem de um grupo)</label><textarea id="saida2" name="saida2" style="min-height:60px"></textarea></div>
+
+<h2>Diário de investigação · entrada 1</h2>
+<div class="campo"><label for="diario">Uma pergunta sobre ser-se humano que gostavas de investigar.</label><textarea id="diario" name="diario"></textarea></div>
+<p class="nota">Exemplos de perguntas que dão investigação: «Porque é que temos medo de quem é diferente?» · «Os animais têm direitos?» · «O que muda numa pessoa quando muda de país?» Uma boa pergunta não se responde com «sim» ou «não» nem com uma pesquisa de cinco minutos.</p>
+
+<div class="nao-imprimir" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+<button class="btn" id="imprimir" type="button">Imprimir ou guardar PDF</button>
+<button class="btn sec" id="limpar" type="button">Apagar respostas</button>
+</div>
+
+<details><summary>Fontes</summary>
+<p>Declaração Universal dos Direitos Humanos, artigo 1.º, versão portuguesa. Assembleia Geral das Nações Unidas, Paris, 10 de dezembro de 1948.</p>
+<p>Materiais de Cidadania e Desenvolvimento · EPI 2026/2027.</p>
+</details>
+</main>
+<script>
+/* Guarda as respostas neste dispositivo enquanto o aluno escreve (se o navegador deixar). */
+(function(){
+  var chave='cd-'+(document.body.dataset.ficha||location.pathname);
+  var dados={};
+  try{dados=JSON.parse(localStorage.getItem(chave)||'{}')||{}}catch(e){dados={}}
+  var campos=[].slice.call(document.querySelectorAll('textarea[name],input[name]'));
+  campos.forEach(function(c){
+    if(dados[c.name]!=null){if(c.type==='radio'||c.type==='checkbox')c.checked=dados[c.name]===c.value||dados[c.name]===true;else c.value=dados[c.name]}
+    c.addEventListener('input',guardar);c.addEventListener('change',guardar);
+  });
+  function guardar(){
+    campos.forEach(function(c){
+      if(c.type==='radio'){if(c.checked)dados[c.name]=c.value}
+      else if(c.type==='checkbox')dados[c.name]=c.checked;
+      else dados[c.name]=c.value;
+    });
+    try{localStorage.setItem(chave,JSON.stringify(dados))}catch(e){}
+  }
+  var imp=document.getElementById('imprimir'),embutida=true;
+  try{embutida=window.self!==window.top}catch(e){}
+  if(imp){if(embutida)imp.hidden=true;else imp.addEventListener('click',function(){window.print()})}
+  var limpar=document.getElementById('limpar');
+  var armado=null,rotulo=limpar&&limpar.textContent;
+  limpar&&limpar.addEventListener('click',function(){
+    /* dois toques: o primeiro pede confirmação no próprio botão */
+    if(!armado){limpar.textContent='Toca outra vez para apagar tudo';armado=setTimeout(function(){armado=null;limpar.textContent=rotulo},4000);return}
+    clearTimeout(armado);armado=null;limpar.textContent=rotulo;
+    try{localStorage.removeItem(chave)}catch(e){}
+    campos.forEach(function(c){if(c.type==='radio'||c.type==='checkbox')c.checked=false;else c.value=''});dados={};
+  });
+})();
+</script>
+<p class="epi-imprimir" style="margin:24px 0;text-align:center"><button type="button" onclick="window.print()" style="min-height:44px;padding:0 16px;font:700 15px Arial,sans-serif;border:1.5px solid #000;border-radius:999px;background:#fff;color:#000;cursor:pointer">Imprimir este guião</button></p><style>@media print{.epi-imprimir{display:none!important}}</style></body></html>

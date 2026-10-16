@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feed · CD II · Aula 1</title>
+<style>
+/* Terra Firme · identidade visual (a mesma dos materiais de Português EPI 2026/2027)
+   Preto e branco, Arial Black nos títulos, filetes grossos, modo escuro invertido. */
+:root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000;--cor:#2f6f7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}}
+:root[data-theme=dark]{--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fundo);color:var(--tinta)}
+body{font:16px/1.5 Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--tinta)}
+.topo{position:sticky;top:0;z-index:5;background:var(--fundo);border-bottom:3px solid var(--linha);padding:10px 16px 8px}
+.l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px;max-width:760px;margin:auto}
+.marca{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.estado{font:900 13px/1 "Arial Black",Arial,sans-serif;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:18px 16px 48px}
+h1{font:900 32px/1 "Arial Black",Arial,sans-serif;margin:0 0 4px;text-transform:uppercase;letter-spacing:-.4px}
+h2{font:900 13px/1 "Arial Black",Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;background:var(--tinta);color:var(--fundo);padding:7px 8px;margin:28px 0 10px}
+h3{font:900 15px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:18px 0 6px}
+.sub{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px}
+.rot{font:900 12px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;background:var(--tinta);color:var(--fundo);display:inline-block;padding:4px 7px;margin:20px 0 8px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+.caixa{background:var(--papel);border:2px solid var(--linha);padding:12px 14px;margin:10px 0}
+.citacao{border:2px solid var(--linha);border-left:12px solid var(--linha);padding:12px 14px;font-size:18px;margin:10px 0}
+.citacao cite{display:block;font-size:12.5px;font-style:normal;text-transform:uppercase;letter-spacing:.8px;margin-top:6px}
+.ret{margin:12px 0;padding:11px 13px;border:2px solid var(--linha);border-left:12px solid var(--cor)}
+.palavra{font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.nota{font-size:12.5px;border-top:1.5px solid var(--linha);padding-top:6px;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14.5px}
+th,td{border:2px solid var(--linha);padding:7px 9px;text-align:left;vertical-align:top}
+th{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:.8px}
+td.t{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+.corte{border-top:4px dashed var(--linha);margin:18px 0 8px;padding-top:6px;font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.campo{margin:10px 0 14px}
+.campo label{display:block;font-weight:700;margin-bottom:6px}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--linha);background:var(--papel);color:var(--tinta);border-radius:0}
+textarea{min-height:84px;resize:vertical}
+.grelha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.chip{border:2px solid var(--linha);padding:10px 12px;min-height:44px}
+.btn{display:inline-block;min-height:48px;border:2px solid var(--tinta);background:var(--tinta);color:var(--fundo);font:700 14px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px;padding:15px 18px;cursor:pointer;text-decoration:none}
+.btn.sec{background:var(--fundo);color:var(--tinta)}
+details{margin-top:24px;font-size:13px;border-top:2px solid var(--linha);padding-top:8px}
+details summary{font-weight:700;text-transform:uppercase;letter-spacing:.8px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.so-impressao{display:none}
+@media (max-width:560px){h1{font-size:26px}table{font-size:13.5px}th,td{padding:6px}}
+@media print{
+  :root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000}
+  .topo{position:static}.nao-imprimir{display:none!important}.so-impressao{display:block}
+  h2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  textarea{min-height:110px}
+  .quebra{break-before:page}
+}
+</style>
+<style>
+main{max-width:980px}
+.cartoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:12px;margin:14px 0}
+.cartao{border:2px solid var(--linha);background:var(--papel);padding:14px;display:flex;flex-direction:column;gap:12px;min-height:150px}
+.cartao .tema{font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.cartao .texto{font-size:20px;line-height:1.3;flex:1}
+.gosto{align-self:flex-start;min-height:48px;min-width:120px;border:2px solid var(--tinta);background:var(--fundo);color:var(--tinta);font:700 15px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px;cursor:pointer}
+.gosto[aria-pressed=true]{background:var(--tinta);color:var(--fundo)}
+.unico{border:4px solid var(--linha);padding:clamp(18px,4vw,48px);min-height:46vh;display:flex;flex-direction:column;justify-content:center;gap:18px;margin:14px 0}
+.unico .tema{font:900 clamp(12px,1.4vw,16px)/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.unico .texto{font-size:clamp(24px,4vw,48px);line-height:1.2}
+.acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.acoes .btn{flex:1;min-width:180px}
+.escolha{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;margin:14px 0}
+.escolha button{text-align:left;border:3px solid var(--linha);background:var(--papel);color:var(--tinta);padding:18px;cursor:pointer;font:inherit;min-height:120px}
+.escolha button b{display:block;font:900 20px/1.1 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin-bottom:8px}
+.grande{font:900 clamp(26px,5vw,60px)/1.05 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:6vh 0 2vh}
+.ronda{font:900 13px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.res td,.res th{text-align:center}.res td:first-child,.res th:first-child{text-align:left}
+.res td.zero{font-weight:900}
+.res td.zero::after{content:" ✕"}
+.discreto{font-size:12.5px;background:none;border:0;color:var(--tinta);text-decoration:underline;cursor:pointer;padding:8px 0;min-height:44px}
+@media (prefers-reduced-motion:no-preference){#palco>*{animation:e .22s ease-out}@keyframes e{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}}
+</style>
+<style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style></head><body><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/cidadania/">Cidadania</a></li><li><span aria-current="page">Feed</span></li></ol></nav>
+<div class="topo"><div class="l1" style="max-width:980px"><span class="marca">Cidadania II · Feed de papel · INTP26</span><span class="estado" id="estado"></span></div></div>
+<main>
+<div id="palco" aria-live="polite"></div>
+<details class="nao-imprimir"><summary>Para o professor</summary>
+<p>Este ecrã substitui os cartões de papel e a contagem no quadro: o algoritmo corre sozinho. Projeta-o ou passa o telemóvel ao utilizador.</p>
+<p><b>Versão 1, gostos:</b> o utilizador toca em «Gosto» nos cartões que quiser e fecha a ronda.<br><b>Versão 2, atenção:</b> os cartões aparecem um de cada vez e o utilizador toca em «Seguinte» quando quiser. O ecrã mede, em segredo, quanto tempo fica em cada um e não mostra nada sobre isso. Escolhe a versão <i>antes</i> de o utilizador entrar.</p>
+<p><b>Regra nas duas versões:</b> na ronda 1 aparece um cartão de cada tema. Nas rondas 2 e 3 aparecem 3 cartões do tema com mais pontos, 2 do segundo e 1 de outro tema, ao acaso. Nenhum cartão se repete (há 8 por tema). Os pontos acumulam-se de ronda para ronda. Em caso de empate, ganha o tema com o gosto (ou a leitura) mais recente.</p>
+<p>No fim, antes de revelar, pergunta ao utilizador: «Quantos temas diferentes achas que viste?»</p>
+<p>Não guarda nada nem envia nada: recarregar a página recomeça tudo.</p>
+</details>
+</main>
+<script>
+(function(){
+var TEMAS=["Futebol","Música","Humor","Animais","Teatro","Notícias"];
+var CARTOES={
+"Futebol":["Golo aos 90+3. Não há coração que aguente.", "As 10 melhores defesas da semana.", "Treinador explica a derrota: «faltou-nos cabeça».", "Miúda de 12 anos faz chapéu à guarda-redes no torneio da escola.", "Equipa feminina sub-17 apura-se para a final do campeonato.", "Guarda-redes defende três penáltis seguidos.", "Adeptos ficam a limpar a bancada depois do jogo.", "Treino aberto ao público no sábado de manhã."],
+"Música":["O álbum novo saiu à meia-noite. Já ouviste?", "Concerto-surpresa numa estação de metro.", "Como se escreve um refrão que não sai da cabeça.", "Avó de 80 anos aprende bateria e toca com o neto.", "Banda de garagem da escola grava o primeiro EP.", "Festival de verão anuncia os primeiros nomes.", "Guitarrista acaba o concerto com uma corda partida.", "Como fazer um beat só com sons da cozinha."],
+"Humor":["Quando o professor diz «é só uma pergunta rápida».", "Tentei seguir a receita. A receita ganhou.", "Coisas que só acontecem no grupo da turma.", "O meu cão a ouvir a palavra «rua».", "Eu a apresentar o trabalho de grupo que fiz sozinho.", "Segunda-feira de manhã, resumida num gato.", "«Façam grupos de três.» Nós: quatro amigos.", "O despertador e eu: uma relação complicada."],
+"Animais":["Cadela espera pela dona à porta da escola todos os dias.", "Os corvos lembram-se de caras humanas durante anos.", "Abrigo procura família para doze gatinhos.", "Polvo abre um frasco por dentro.", "Golfinhos avistados no rio esta manhã.", "Gata adota três patinhos órfãos.", "Cegonha volta ao mesmo ninho pelo décimo ano.", "Ouriço resgatado de uma baliza de futebol."],
+"Teatro":["Bastidores: três horas de maquilhagem para dois minutos de cena.", "Ator esquece o texto e improvisa. A sala vem abaixo.", "Audições abertas para um musical juvenil.", "Cinco exercícios de voz antes de entrar em cena.", "Peça encenada num elevador, para quatro espetadores de cada vez.", "Escola de teatro abre oficina gratuita de máscaras.", "Atriz de 90 anos regressa ao palco.", "O que fazer quando o pano cai a meio da cena."],
+"Notícias":["Orçamento participativo jovem: a votação abre amanhã.", "Onda de calor: conselhos para os próximos dias.", "Estudo: jovens dormem menos de sete horas em dias de aulas.", "Eleições para a associação de estudantes: debate na sexta.", "Biblioteca municipal passa a abrir ao domingo.", "Nova ciclovia liga a escola à estação.", "Consulta pública sobre o novo parque da cidade.", "Greve dos comboios marcada para quinta-feira."]
+};
+var RONDAS=3;
+var palco=document.getElementById('palco'),estado=document.getElementById('estado');
+var S; /* estado da sessão */
+
+function baralhar(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+function novo(versao){
+  var montes={};TEMAS.forEach(function(t){montes[t]=baralhar(CARTOES[t])});
+  S={versao:versao,ronda:0,pontos:{},ultimo:{},montes:montes,historico:[],relogio:0};
+  TEMAS.forEach(function(t){S.pontos[t]=0;S.ultimo[t]=-1});
+}
+/* tira o próximo cartão do monte do tema. Nenhum cartão se repete na mesma sessão:
+   com 8 cartões por tema e no máximo 7 aparições (1 + 3 + 3), o monte nunca acaba;
+   se acabasse, o cartão vinha do tema seguinte no ranking que ainda tivesse cartões. */
+function tirar(t,alternativas){
+  if(!S.montes[t].length){t=(alternativas||ranking()).filter(function(x){return S.montes[x].length})[0];if(!t)return null}
+  return {tema:t,texto:S.montes[t].shift(),gosto:false,seg:0}
+}
+function ranking(){
+  return baralhar(TEMAS).sort(function(a,b){return (S.pontos[b]-S.pontos[a])||(S.ultimo[b]-S.ultimo[a])});
+}
+function montarRonda(){
+  var c=[];
+  if(S.ronda===1){TEMAS.forEach(function(t){c.push(tirar(t))})}
+  else{
+    var r=ranking();
+    for(var i=0;i<3;i++)c.push(tirar(r[0],r));
+    for(i=0;i<2;i++)c.push(tirar(r[1],r));
+    var outros=baralhar(r.slice(2));
+    c.push(tirar(outros[0],outros));
+  }
+  return baralhar(c.filter(Boolean));
+}
+function marcar(txt){estado.textContent=txt||''}
+
+/* ---------- ecrãs ---------- */
+function inicio(){
+  S=null;marcar('');
+  palco.innerHTML='<h1>Feed</h1><p class="sub">Feed de papel, sem papel · 3 rondas · 6 cartões por ronda</p>'+
+  '<p>Professor: escolhe a versão <b>antes</b> de o utilizador estar a ver.</p>'+
+  '<div class="escolha"><button type="button" data-v="1"><b>Versão 1 · Gostos</b>O utilizador vê 6 cartões e toca em «Gosto» nos que quiser.</button>'+
+  '<button type="button" data-v="2"><b>Versão 2 · Atenção</b>Os cartões aparecem um a um. O ecrã mede o tempo de leitura em segredo.</button></div>';
+  [].forEach.call(palco.querySelectorAll('[data-v]'),function(b){b.addEventListener('click',function(){novo(+b.dataset.v);pronto()})});
+}
+function pronto(){
+  marcar('');
+  palco.innerHTML='<p class="grande">O teu feed está pronto.</p>'+
+  (S.versao===1?'<p>Lê os cartões. Toca em «Gosto» nos que quiseres. Quando acabares, toca em «Fechar ronda».</p>'
+               :'<p>Lê os cartões com calma. Toca em «Seguinte» quando quiseres. Não precisas de fazer mais nada.</p>')+
+  '<div class="acoes"><button class="btn" type="button" id="ir">Começar</button></div>'+sair();
+  ligar('ir',proxima);ligarSair();
+}
+function proxima(){
+  S.ronda++;
+  var cartoes=montarRonda();
+  S.historico.push(cartoes);
+  if(S.versao===1)rondaGostos(cartoes);else{S.i=0;rondaAtencao(cartoes)}
+}
+function rondaGostos(cartoes){
+  marcar('Ronda '+S.ronda+' de '+RONDAS);
+  palco.innerHTML='<p class="ronda">Ronda '+S.ronda+' de '+RONDAS+'</p><div class="cartoes">'+
+  cartoes.map(function(c,k){return '<article class="cartao"><span class="tema">'+esc(c.tema)+'</span><p class="texto">'+esc(c.texto)+'</p><button class="gosto" type="button" aria-pressed="false" data-k="'+k+'">♥ Gosto</button></article>'}).join('')+
+  '</div><div class="acoes"><button class="btn" type="button" id="fechar">Fechar ronda</button></div>'+sair();
+  [].forEach.call(palco.querySelectorAll('.gosto'),function(b){
+    b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);cartoes[+b.dataset.k].gosto=on;cartoes[+b.dataset.k].quando=Date.now()});
+  });
+  ligar('fechar',function(){
+    cartoes.forEach(function(c){if(c.gosto){S.pontos[c.tema]++;S.ultimo[c.tema]=Math.max(S.ultimo[c.tema],c.quando)}});
+    entreRondas();
+  });ligarSair();
+}
+function rondaAtencao(cartoes){
+  var c=cartoes[S.i];
+  marcar('Ronda '+S.ronda+' de '+RONDAS);
+  palco.innerHTML='<p class="ronda">Ronda '+S.ronda+' de '+RONDAS+' · cartão '+(S.i+1)+' de '+cartoes.length+'</p>'+
+  '<article class="unico"><span class="tema">'+esc(c.tema)+'</span><p class="texto">'+esc(c.texto)+'</p></article>'+
+  '<div class="acoes"><button class="btn" type="button" id="seg">Seguinte</button></div>'+sair();
+  var t0=performance.now();
+  var b=document.getElementById('seg');b.focus({preventScroll:true});
+  b.addEventListener('click',function(){
+    c.seg=(performance.now()-t0)/1000;
+    S.pontos[c.tema]+=c.seg;S.ultimo[c.tema]=Date.now();
+    S.i++;
+    if(S.i<cartoes.length)rondaAtencao(cartoes);else entreRondas();
+  });ligarSair();
+}
+function entreRondas(){
+  if(S.ronda>=RONDAS)return fim();
+  marcar('');
+  palco.innerHTML='<p class="grande">A preparar o teu feed…</p><p>Ronda '+S.ronda+' de '+RONDAS+' concluída.</p>'+
+  '<div class="acoes"><button class="btn" type="button" id="ir">Ronda '+(S.ronda+1)+'</button></div>'+sair();
+  ligar('ir',proxima);ligarSair();
+}
+function fim(){
+  marcar('Fim');
+  palco.innerHTML='<p class="grande">Feed terminado.</p><p><b>Pergunta ao utilizador:</b> quantos temas diferentes achas que viste? Escolheste alguma coisa?</p>'+
+  '<div class="acoes"><button class="btn" type="button" id="rev">Revelar o algoritmo</button></div>';
+  ligar('rev',revelar);
+}
+function revelar(){
+  marcar('Resultados');
+  var unid=S.versao===1?'gostos':'segundos';
+  var linhas=TEMAS.map(function(t){
+    var cel=S.historico.map(function(r){var n=r.filter(function(c){return c.tema===t}).length;return '<td'+(n===0?' class="zero"':'')+'>'+n+'</td>'}).join('');
+    var p=S.versao===1?S.pontos[t]:S.pontos[t].toFixed(1).replace('.',',');
+    return '<tr><td>'+t+'</td>'+cel+'<td><b>'+p+'</b></td></tr>';
+  }).join('');
+  var ultima=S.historico[S.historico.length-1];
+  var vistos=TEMAS.filter(function(t){return ultima.some(function(c){return c.tema===t})});
+  var sumiram=TEMAS.filter(function(t){return vistos.indexOf(t)<0});
+  var regra=S.versao===1
+    ?'<b>Entrada:</b> os gostos. <b>Regras:</b> cada gosto vale 1 ponto para o tema do cartão; nas rondas 2 e 3, 3 cartões do tema com mais pontos, 2 do segundo e 1 de outro tema, ao acaso. <b>Saída:</b> o feed seguinte.'
+    :'<b>Entrada:</b> os segundos que o utilizador passou em cada cartão, medidos sem ele saber. <b>Regras:</b> cada segundo vale 1 ponto para o tema; nas rondas 2 e 3, 3 cartões do tema com mais pontos, 2 do segundo e 1 de outro tema, ao acaso. <b>Saída:</b> o feed seguinte.';
+  palco.innerHTML='<h1>O algoritmo</h1><p class="sub">Versão '+S.versao+' · '+(S.versao===1?'gostos':'atenção')+'</p>'+
+  '<div class="ret"><span class="palavra">Regra</span>'+regra+'</div>'+
+  '<h2>Cartões de cada tema, ronda a ronda</h2>'+
+  '<table class="res"><tr><th>Tema</th>'+S.historico.map(function(r,k){return '<th>R'+(k+1)+'</th>'}).join('')+'<th>Pontos ('+unid+')</th></tr>'+linhas+'</table>'+
+  '<div class="ret"><span class="palavra">Na ronda 3</span>Temas vistos: <b>'+vistos.length+' de 6</b>.'+(sumiram.length?' Desapareceram: <b>'+sumiram.join(', ')+'</b>.':' Nenhum tema desapareceu desta vez: experimenta outro utilizador.')+'</div>'+
+  '<p class="nota">✕ = tema que não apareceu nessa ronda. Os observadores comparam esta tabela com a que preencheram na ficha.</p>'+
+  '<div class="acoes nao-imprimir"><button class="btn" type="button" id="outra">Correr a versão '+(S.versao===1?2:1)+'</button><button class="btn sec" type="button" id="recomecar">Voltar ao início</button></div>';
+  var v=S.versao===1?2:1;
+  ligar('outra',function(){novo(v);pronto()});ligar('recomecar',inicio);
+}
+function sair(){return '<p class="nao-imprimir" style="text-align:right;margin:8px 0 0"><button class="discreto" type="button" id="sair">sair</button></p>'}
+function ligarSair(){var b=document.getElementById('sair');if(!b)return;b.addEventListener('click',function(){
+  /* dois toques: o primeiro só pede confirmação */
+  if(b.dataset.armado){inicio();return}
+  b.dataset.armado='1';b.textContent='toca outra vez para voltar ao início';
+  setTimeout(function(){if(document.body.contains(b)){delete b.dataset.armado;b.textContent='sair'}},4000);
+})}
+function ligar(id,fn){var e=document.getElementById(id);if(e)e.addEventListener('click',fn)}
+
+document.addEventListener('keydown',function(e){
+  if(!S||S.versao!==2)return;
+  var b=document.getElementById('seg');
+  if(!b||e.repeat)return;
+  /* com o botão focado, Enter e espaço já disparam o clique */
+  if(e.key==='ArrowRight'||(e.target!==b&&(e.key===' '||e.key==='Enter'))){e.preventDefault();b.click()}
+});
+inicio();
+})();
+</script>
+</body></html>

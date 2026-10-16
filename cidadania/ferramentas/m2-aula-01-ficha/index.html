@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ficha · CD II · Aula 1</title>
+<style>
+/* Terra Firme · identidade visual (a mesma dos materiais de Português EPI 2026/2027)
+   Preto e branco, Arial Black nos títulos, filetes grossos, modo escuro invertido. */
+:root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000;--cor:#2f6f7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}}
+:root[data-theme=dark]{--fundo:#000;--papel:#000;--tinta:#fff;--linha:#fff;--cor:#7fc4cf}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fundo);color:var(--tinta)}
+body{font:16px/1.5 Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--tinta)}
+.topo{position:sticky;top:0;z-index:5;background:var(--fundo);border-bottom:3px solid var(--linha);padding:10px 16px 8px}
+.l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px;max-width:760px;margin:auto}
+.marca{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.estado{font:900 13px/1 "Arial Black",Arial,sans-serif;white-space:nowrap}
+main{max-width:760px;margin:auto;padding:18px 16px 48px}
+h1{font:900 32px/1 "Arial Black",Arial,sans-serif;margin:0 0 4px;text-transform:uppercase;letter-spacing:-.4px}
+h2{font:900 13px/1 "Arial Black",Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;background:var(--tinta);color:var(--fundo);padding:7px 8px;margin:28px 0 10px}
+h3{font:900 15px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;margin:18px 0 6px}
+.sub{font-size:12.5px;text-transform:uppercase;letter-spacing:1px;margin:0 0 16px}
+.rot{font:900 12px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;background:var(--tinta);color:var(--fundo);display:inline-block;padding:4px 7px;margin:20px 0 8px}
+p{margin:0 0 10px}
+ul,ol{margin:0 0 10px;padding-left:22px}
+.caixa{background:var(--papel);border:2px solid var(--linha);padding:12px 14px;margin:10px 0}
+.citacao{border:2px solid var(--linha);border-left:12px solid var(--linha);padding:12px 14px;font-size:18px;margin:10px 0}
+.citacao cite{display:block;font-size:12.5px;font-style:normal;text-transform:uppercase;letter-spacing:.8px;margin-top:6px}
+.ret{margin:12px 0;padding:11px 13px;border:2px solid var(--linha);border-left:12px solid var(--cor)}
+.palavra{font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:4px}
+.nota{font-size:12.5px;border-top:1.5px solid var(--linha);padding-top:6px;margin-top:10px}
+table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:14.5px}
+th,td{border:2px solid var(--linha);padding:7px 9px;text-align:left;vertical-align:top}
+th{font:900 11.5px/1.2 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:.8px}
+td.t{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+.corte{border-top:4px dashed var(--linha);margin:18px 0 8px;padding-top:6px;font:900 11.5px/1 "Arial Black",Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}
+.campo{margin:10px 0 14px}
+.campo label{display:block;font-weight:700;margin-bottom:6px}
+textarea,input[type=text]{width:100%;font:inherit;padding:10px 12px;border:2px solid var(--linha);background:var(--papel);color:var(--tinta);border-radius:0}
+textarea{min-height:84px;resize:vertical}
+.grelha{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.chip{border:2px solid var(--linha);padding:10px 12px;min-height:44px}
+.btn{display:inline-block;min-height:48px;border:2px solid var(--tinta);background:var(--tinta);color:var(--fundo);font:700 14px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.6px;padding:15px 18px;cursor:pointer;text-decoration:none}
+.btn.sec{background:var(--fundo);color:var(--tinta)}
+details{margin-top:24px;font-size:13px;border-top:2px solid var(--linha);padding-top:8px}
+details summary{font-weight:700;text-transform:uppercase;letter-spacing:.8px;cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+.so-impressao{display:none}
+@media (max-width:560px){h1{font-size:26px}table{font-size:13.5px}th,td{padding:6px}}
+@media print{
+  :root{--fundo:#fff;--papel:#fff;--tinta:#000;--linha:#000}
+  .topo{position:static}.nao-imprimir{display:none!important}.so-impressao{display:block}
+  h2{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  textarea{min-height:110px}
+  .quebra{break-before:page}
+}
+</style>
+<style>.rondas{table-layout:fixed}.rondas td,.rondas th{padding:4px;text-align:center}.rondas td:first-child,.rondas th:first-child{text-align:left;width:34%}.rondas input{padding:6px 4px;text-align:center}</style>
+<style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style></head><body data-ficha="cd2-aula01"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/cidadania/">Cidadania</a></li><li><span aria-current="page">Ficha</span></li></ol></nav>
+<div class="topo"><div class="l1"><span class="marca">Cidadania II · Aula 1 · Ficha</span><span class="estado">INTP26</span></div></div>
+<main>
+<h1>Quem escolheu o que viste hoje?</h1>
+<p class="sub">Módulo 2 · Expressão: os algoritmos, criação e expressão</p>
+
+<div class="campo"><label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name"></div>
+<p class="nota nao-imprimir">As respostas ficam guardadas só neste aparelho. No fim, mostra-as ao professor ou imprime a ficha.</p>
+
+<h2>1 · Mesa</h2>
+<div class="campo"><label for="mesa">A primeira coisa que viste hoje no telemóvel (só o tema). Quem a escolheu?</label><textarea id="mesa" name="mesa" style="min-height:60px"></textarea></div>
+
+<h2>2 · Feed de papel: observa</h2>
+<p>Em cada uma das 3 rondas (R1, R2, R3), escreve quantos cartões de cada tema apareceram.</p>
+<h3>Versão 1 · gostos</h3>
+<table class="rondas"><tr><th>Tema</th><th>R1</th><th>R2</th><th>R3</th></tr><tr><td>Futebol</td><td><input type="text" inputmode="numeric" name="v1r1fut" aria-label="Versão 1, ronda 1, Futebol"></td><td><input type="text" inputmode="numeric" name="v1r2fut" aria-label="Versão 1, ronda 2, Futebol"></td><td><input type="text" inputmode="numeric" name="v1r3fut" aria-label="Versão 1, ronda 3, Futebol"></td></tr><tr><td>Música</td><td><input type="text" inputmode="numeric" name="v1r1mús" aria-label="Versão 1, ronda 1, Música"></td><td><input type="text" inputmode="numeric" name="v1r2mús" aria-label="Versão 1, ronda 2, Música"></td><td><input type="text" inputmode="numeric" name="v1r3mús" aria-label="Versão 1, ronda 3, Música"></td></tr><tr><td>Humor</td><td><input type="text" inputmode="numeric" name="v1r1hum" aria-label="Versão 1, ronda 1, Humor"></td><td><input type="text" inputmode="numeric" name="v1r2hum" aria-label="Versão 1, ronda 2, Humor"></td><td><input type="text" inputmode="numeric" name="v1r3hum" aria-label="Versão 1, ronda 3, Humor"></td></tr><tr><td>Animais</td><td><input type="text" inputmode="numeric" name="v1r1ani" aria-label="Versão 1, ronda 1, Animais"></td><td><input type="text" inputmode="numeric" name="v1r2ani" aria-label="Versão 1, ronda 2, Animais"></td><td><input type="text" inputmode="numeric" name="v1r3ani" aria-label="Versão 1, ronda 3, Animais"></td></tr><tr><td>Teatro</td><td><input type="text" inputmode="numeric" name="v1r1tea" aria-label="Versão 1, ronda 1, Teatro"></td><td><input type="text" inputmode="numeric" name="v1r2tea" aria-label="Versão 1, ronda 2, Teatro"></td><td><input type="text" inputmode="numeric" name="v1r3tea" aria-label="Versão 1, ronda 3, Teatro"></td></tr><tr><td>Notícias</td><td><input type="text" inputmode="numeric" name="v1r1not" aria-label="Versão 1, ronda 1, Notícias"></td><td><input type="text" inputmode="numeric" name="v1r2not" aria-label="Versão 1, ronda 2, Notícias"></td><td><input type="text" inputmode="numeric" name="v1r3not" aria-label="Versão 1, ronda 3, Notícias"></td></tr></table>
+<h3>Versão 2 · o que o algoritmo mediu</h3>
+<table class="rondas"><tr><th>Tema</th><th>R1</th><th>R2</th><th>R3</th></tr><tr><td>Futebol</td><td><input type="text" inputmode="numeric" name="v2r1fut" aria-label="Versão 2, ronda 1, Futebol"></td><td><input type="text" inputmode="numeric" name="v2r2fut" aria-label="Versão 2, ronda 2, Futebol"></td><td><input type="text" inputmode="numeric" name="v2r3fut" aria-label="Versão 2, ronda 3, Futebol"></td></tr><tr><td>Música</td><td><input type="text" inputmode="numeric" name="v2r1mús" aria-label="Versão 2, ronda 1, Música"></td><td><input type="text" inputmode="numeric" name="v2r2mús" aria-label="Versão 2, ronda 2, Música"></td><td><input type="text" inputmode="numeric" name="v2r3mús" aria-label="Versão 2, ronda 3, Música"></td></tr><tr><td>Humor</td><td><input type="text" inputmode="numeric" name="v2r1hum" aria-label="Versão 2, ronda 1, Humor"></td><td><input type="text" inputmode="numeric" name="v2r2hum" aria-label="Versão 2, ronda 2, Humor"></td><td><input type="text" inputmode="numeric" name="v2r3hum" aria-label="Versão 2, ronda 3, Humor"></td></tr><tr><td>Animais</td><td><input type="text" inputmode="numeric" name="v2r1ani" aria-label="Versão 2, ronda 1, Animais"></td><td><input type="text" inputmode="numeric" name="v2r2ani" aria-label="Versão 2, ronda 2, Animais"></td><td><input type="text" inputmode="numeric" name="v2r3ani" aria-label="Versão 2, ronda 3, Animais"></td></tr><tr><td>Teatro</td><td><input type="text" inputmode="numeric" name="v2r1tea" aria-label="Versão 2, ronda 1, Teatro"></td><td><input type="text" inputmode="numeric" name="v2r2tea" aria-label="Versão 2, ronda 2, Teatro"></td><td><input type="text" inputmode="numeric" name="v2r3tea" aria-label="Versão 2, ronda 3, Teatro"></td></tr><tr><td>Notícias</td><td><input type="text" inputmode="numeric" name="v2r1not" aria-label="Versão 2, ronda 1, Notícias"></td><td><input type="text" inputmode="numeric" name="v2r2not" aria-label="Versão 2, ronda 2, Notícias"></td><td><input type="text" inputmode="numeric" name="v2r3not" aria-label="Versão 2, ronda 3, Notícias"></td></tr></table>
+<div class="campo"><label for="desapareceu">Que temas desapareceram? O utilizador pediu para deixar de os ver?</label><textarea id="desapareceu" name="desapareceu"></textarea></div>
+<div class="campo"><label for="versoes">Qual das versões prendeu mais o utilizador? Qual foi mais transparente? Porquê?</label><textarea id="versoes" name="versoes"></textarea></div>
+
+<h2>3 · Dar nome</h2>
+<div class="ret"><span class="palavra">Algoritmo</span>Regras finitas que transformam uma <b>entrada</b> numa <b>saída</b>.</div>
+<div class="campo"><label for="entrada">No feed de papel, a entrada foi…</label><input type="text" id="entrada" name="entrada"></div>
+<div class="campo"><label for="regras">…as regras foram…</label><input type="text" id="regras" name="regras"></div>
+<div class="campo"><label for="saida">…e a saída foi…</label><input type="text" id="saida" name="saida"></div>
+<div class="campo"><label for="bolha">Explica «bolha de filtro» com o que viste hoje.</label><textarea id="bolha" name="bolha" style="min-height:60px"></textarea></div>
+
+<h2>4 · O objeto</h2>
+<blockquote class="citacao">Todo o indivíduo tem direito à liberdade de opinião e de expressão, o que implica o direito de não ser inquietado pelas suas opiniões e o de procurar, receber e difundir, sem consideração de fronteiras, informações e ideias por qualquer meio de expressão.<cite>Declaração Universal dos Direitos Humanos, artigo 19.º</cite></blockquote>
+<div class="campo"><label for="verbos">Três verbos do artigo. Qual deles o feed de papel mexeu mais?</label><textarea id="verbos" name="verbos" style="min-height:60px"></textarea></div>
+
+<h2>5 · A linha</h2>
+<p><b>«Se um algoritmo decide quem vê o que eu digo, a minha liberdade de expressão continua intacta.»</b></p>
+<fieldset class="campo" style="border:2px solid var(--linha);padding:10px 12px">
+<legend style="font-weight:700;padding:0 4px">Onde ficaste</legend>
+<div class="grelha">
+<label class="chip"><input type="radio" name="linha" value="sim"> Sim</label>
+<label class="chip"><input type="radio" name="linha" value="depende"> Depende</label>
+<label class="chip"><input type="radio" name="linha" value="não"> Não</label>
+</div>
+</fieldset>
+<div class="campo"><label for="linhaporque">Porquê? Se mudaste de lugar, o que te fez mudar?</label><textarea id="linhaporque" name="linhaporque"></textarea></div>
+
+<h2>6 · O vosso algoritmo</h2>
+<p>Um feed justo para a página da escola. Três regras, com entrada e saída claras.</p>
+<div class="campo"><label for="regra1">Regra 1</label><input type="text" id="regra1" name="regra1"></div>
+<div class="campo"><label for="regra2">Regra 2</label><input type="text" id="regra2" name="regra2"></div>
+<div class="campo"><label for="regra3">Regra 3</label><input type="text" id="regra3" name="regra3"></div>
+<div class="campo"><label for="ganha">Quem ganha e quem perde com estas regras?</label><textarea id="ganha" name="ganha" style="min-height:60px"></textarea></div>
+
+<h2>7 · Saída</h2>
+<div class="campo"><label for="saida1">Um algoritmo é…</label><textarea id="saida1" name="saida1" style="min-height:60px"></textarea></div>
+<div class="campo"><label for="saida2">Hoje percebi que… (aponta para algo que aconteceu na aula)</label><textarea id="saida2" name="saida2" style="min-height:60px"></textarea></div>
+
+<h2 class="quebra">Diário de um feed · 7 dias</h2>
+<div class="ret"><span class="palavra">Regras</span>Uma aplicação à tua escolha, sempre a mesma. Todos os dias, os <b>5 primeiros temas</b> que te aparecem. <b>Só temas</b>: nunca nomes, contas ou capturas de ecrã com pessoas.</div>
+<div class="campo"><label for="app">Aplicação ou página observada</label><input type="text" id="app" name="app"></div>
+<div class="campo"><label for="dia1">Dia 1</label><input type="text" id="dia1" name="dia1" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia2">Dia 2</label><input type="text" id="dia2" name="dia2" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia3">Dia 3</label><input type="text" id="dia3" name="dia3" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia4">Dia 4</label><input type="text" id="dia4" name="dia4" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia5">Dia 5</label><input type="text" id="dia5" name="dia5" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia6">Dia 6</label><input type="text" id="dia6" name="dia6" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div><div class="campo"><label for="dia7">Dia 7</label><input type="text" id="dia7" name="dia7" placeholder="tema 1, tema 2, tema 3, tema 4, tema 5"></div>
+<div class="campo"><label for="padrao">Ao fim de 7 dias: que padrão vês? O que nunca apareceu?</label><textarea id="padrao" name="padrao"></textarea></div>
+
+<div class="nao-imprimir" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+<button class="btn" id="imprimir" type="button">Imprimir ou guardar PDF</button>
+<button class="btn sec" id="limpar" type="button">Apagar respostas</button>
+</div>
+
+<details><summary>Fontes</summary>
+<p>Declaração Universal dos Direitos Humanos, artigo 19.º, versão portuguesa.</p>
+<p>Eli Pariser, <i>The Filter Bubble</i>, 2011 (origem da expressão «bolha de filtro»).</p>
+<p>Materiais de Cidadania e Desenvolvimento · EPI 2026/2027.</p>
+</details>
+</main>
+<script>
+/* Guarda as respostas neste dispositivo enquanto o aluno escreve (se o navegador deixar). */
+(function(){
+  var chave='cd-'+(document.body.dataset.ficha||location.pathname);
+  var dados={};
+  try{dados=JSON.parse(localStorage.getItem(chave)||'{}')||{}}catch(e){dados={}}
+  var campos=[].slice.call(document.querySelectorAll('textarea[name],input[name]'));
+  campos.forEach(function(c){
+    if(dados[c.name]!=null){if(c.type==='radio'||c.type==='checkbox')c.checked=dados[c.name]===c.value||dados[c.name]===true;else c.value=dados[c.name]}
+    c.addEventListener('input',guardar);c.addEventListener('change',guardar);
+  });
+  function guardar(){
+    campos.forEach(function(c){
+      if(c.type==='radio'){if(c.checked)dados[c.name]=c.value}
+      else if(c.type==='checkbox')dados[c.name]=c.checked;
+      else dados[c.name]=c.value;
+    });
+    try{localStorage.setItem(chave,JSON.stringify(dados))}catch(e){}
+  }
+  var imp=document.getElementById('imprimir'),embutida=true;
+  try{embutida=window.self!==window.top}catch(e){}
+  if(imp){if(embutida)imp.hidden=true;else imp.addEventListener('click',function(){window.print()})}
+  var limpar=document.getElementById('limpar');
+  var armado=null,rotulo=limpar&&limpar.textContent;
+  limpar&&limpar.addEventListener('click',function(){
+    /* dois toques: o primeiro pede confirmação no próprio botão */
+    if(!armado){limpar.textContent='Toca outra vez para apagar tudo';armado=setTimeout(function(){armado=null;limpar.textContent=rotulo},4000);return}
+    clearTimeout(armado);armado=null;limpar.textContent=rotulo;
+    try{localStorage.removeItem(chave)}catch(e){}
+    campos.forEach(function(c){if(c.type==='radio'||c.type==='checkbox')c.checked=false;else c.value=''});dados={};
+  });
+})();
+</script>
+<p class="epi-imprimir" style="margin:24px 0;text-align:center"><button type="button" onclick="window.print()" style="min-height:44px;padding:0 16px;font:700 15px Arial,sans-serif;border:1.5px solid #000;border-radius:999px;background:#fff;color:#000;cursor:pointer">Imprimir este guião</button></p><style>@media print{.epi-imprimir{display:none!important}}</style></body></html>
