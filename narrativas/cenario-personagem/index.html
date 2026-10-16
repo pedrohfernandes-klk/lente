@@ -71,7 +71,9 @@ html.com-casca body{margin:0}
 @keyframes cartaoEntra{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
 .jogo .rot{display:flex;align-items:center;gap:7px;font:700 .7rem/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d2,20px)}
 .jogo .rot .forma{width:12px;height:12px;flex:none;overflow:visible}.jogo .rot .forma *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.jogo .rot.feito .forma *{fill:currentColor}
-.jogo .tit{font:700 1.15rem/1.25 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)} /* 15/10/2026, acessibilidade: o título do cartão é um h2 (a página tem o h1 da casca), com o mesmo aspeto */
+.jogo .tit{font:700 1.15rem/1.25 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}
+/* 16/10/2026: um traço curto desenha-se debaixo do título de cada cartão de leitura (nada com «reduzir movimento») */
+.jogo .ler .tit{padding-bottom:5px;background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 2px;animation:titTraco .8s cubic-bezier(.2,.7,.2,1) .3s forwards}@keyframes titTraco{to{background-size:2.6em 2px}}@media (prefers-reduced-motion:reduce){.jogo .ler .tit{animation:none;background-size:2.6em 2px}} /* 15/10/2026, acessibilidade: o título do cartão é um h2 (a página tem o h1 da casca), com o mesmo aspeto */
 .jogo .tit.cartaz{font:400 2.2rem/1 var(--cartaz,"Arial Black",Arial);letter-spacing:.02em;margin:0 0 var(--d2,20px);padding-right:56px}
 .jogo .cit{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:1.05em}
 .jogo .ler{font-family:var(--serif,Georgia,serif);font-size:1.1rem;line-height:1.6}.jogo .ler p{margin:0 0 var(--d1,8px)}.jogo .ler .v{white-space:pre-wrap;margin:0 0 var(--d1,8px)}.jogo .ler .v .n{display:inline-block;width:2.1em;color:var(--suave);font:400 .72em Arial;text-align:right;padding-right:.6em}
