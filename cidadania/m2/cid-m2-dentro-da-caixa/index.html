@@ -146,6 +146,7 @@ html.com-casca body{margin:0}
 /* a correção vive na faixa da casca; esta cópia só aparece no modo rever */
 .jogo .f-rev{display:none}.jogo.rev .f-rev{display:block;margin:var(--d2,20px) 0 0;padding:8px 12px;border-left:4px solid var(--tinta);font:1rem/1.5 var(--serif,Georgia,serif)}.jogo.rev .f-rev.ok{border-left-color:var(--certo,#1b7f3b)}.jogo.rev .f-rev.mau{border-left-color:var(--errado,#c8232c)}
 .jogo.rev .cartao{animation:none}
+.fe{display:block;margin:0 0 .6em}.liga{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:.4em;font:600 .92rem/1.3 var(--sans,system-ui,sans-serif)}.liga a{color:inherit;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
 /* o fim: resultado grande, louro a traço que se fecha a mostarda quando a lição fica conquistada */
 .jogo .fim{text-align:center;justify-content:center;align-items:center}.jogo .fim .rot{justify-content:center}.jogo .fim .grande{font:900 2.4rem "Arial Black",Arial;margin:var(--d1,8px) 0;position:relative;display:inline-block;padding:0 .9em}.jogo .fim .xp{font:700 .95rem Arial;color:var(--suave);margin:0 0 var(--d1,8px)}.jogo .fim .frase-fim{font:1.05rem/1.4 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}
 .jogo .fim .louro{position:absolute;left:50%;top:50%;width:5.6em;height:5.6em;transform:translate(-50%,-52%);color:var(--tinta);z-index:-1;pointer-events:none;transition:color 1s ease 1.6s}.jogo .fim .louro.ganho{color:var(--mostarda,#d9a520)}.jogo .fim .louro .simbolo{width:100%;height:100%;display:block}.jogo .fim .louro .simbolo *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;animation:tracar 1.4s ease-out .3s forwards}
@@ -356,7 +357,8 @@ function rotulo(x){return x.rot||ROT[x.t]||(window.EPITipos&&EPITipos[x.t]&&EPIT
 // a forma da fase (11/10/2026, ronda 2): ○ ler, □ fazer, △ levar, junto ao rótulo do cartão (semelhança: a forma agrupa as fases)
 function fase(x){return x.escuro||/Para levar|Resultado/.test(x.rot||"")?"leva":x.t==="ler"?"le":"faz"}
 function forma(f){return '<svg class="forma" viewBox="0 0 12 12" aria-hidden="true">'+(f==="le"?'<circle cx="6" cy="6" r="4.6"/>':f==="faz"?'<rect x="1.4" y="1.4" width="9.2" height="9.2"/>':'<path d="M6 1.2 10.9 10.6H1.1z"/>')+'</svg>'}
-function fb(x){var f=it(x.f||"");var r=(x.t==="escolha"||x.t==="pistas"||x.t==="mapa")?x.o[x.c]:null;if(r){var rr=it(String(r));if(rr&&f.indexOf(rr)>=0&&f.indexOf("<b>")<0)f=f.split(rr).join("<b>"+rr+"</b>")}return f}
+// 16/10/2026 (decisão do docente: «feedback que ensina»): fe = a explicação da opção errada escolhida (lista alinhada com as opções, ou texto no verdadeiro ou falso); liga = destinos noutros blocos, no cartão a que dizem respeito
+function fb(x,j,ok){var f=it(x.f||"");var r=(x.t==="escolha"||x.t==="pistas"||x.t==="mapa")?x.o[x.c]:null;if(r){var rr=it(String(r));if(rr&&f.indexOf(rr)>=0&&f.indexOf("<b>")<0)f=f.split(rr).join("<b>"+rr+"</b>")}var fe=ok||!x.fe?null:typeof x.fe==="string"?x.fe:(j!=null?x.fe[j]:null);if(fe)f='<span class="fe">'+it(fe)+'</span>'+f;if(x.liga&&x.liga.length)f+='<span class="liga">'+x.liga.map(function(l){return '<a href="'+esc(l.href)+'" target="_blank" rel="noopener">'+it(l.t)+'</a>'}).join("")+'</span>';return f}
 function montar(cfg){
  // casca «ecrã de aplicação» (11/10/2026): o cartão vive no corpo da casca; sem casca dada, abre-se uma sobreposição (Desafio, Atlas)
  var C=cfg.casca||null;if(!C&&window.EPICasca)C=EPICasca.abrir({marca:cfg.marca||cfg.titulo||"",aoFechar:cfg.aoFechar});var el=cfg.el;if(C){if(!el||!C.corpo.contains(el)){el=document.createElement("div");C.corpo.appendChild(el)}el.classList.add("jogo-alvo")}var ultimaFolha=null;
@@ -435,12 +437,12 @@ function montar(cfg){
  // o traço verde desenha-se à volta da resposta certa (ronda 6)
  function tracar(b){if(!b||b.querySelector(".tracado"))return;var s=document.createElementNS("http://www.w3.org/2000/svg","svg");s.setAttribute("class","tracado");s.setAttribute("viewBox","0 0 100 100");s.setAttribute("preserveAspectRatio","none");s.setAttribute("aria-hidden","true");s.innerHTML='<rect x="1" y="1" width="98" height="98" rx="1" pathLength="100"/>';b.appendChild(s)}
  // a correção sobe de baixo numa faixa e fica até «Seguinte»; uma cópia fica no cartão para o modo rever
- function fecha(ok,onde,parcial){var c=$(".cartao",el);estado.fechado=true;hist[i]=ok;tocar(ok?"certo":parcial?"certo":"errado");var r=$(".rot",el);if(r){r.classList.remove("atual");r.classList.add("feito")}var ganho=0;if(ok){certas++;seq++;melhorSeq=Math.max(melhorSeq,seq);ganho=(estado.pontos!=null?estado.pontos:10)+(seq>=3?5:0);xp+=ganho;if(IT[i].l)acesas[IT[i].l]=1;var lo=$(".linha-ordem",el);if(lo)lo.classList.add("certa")}else{seq=0;errados.push(IT[i])}
+ function fecha(ok,onde,parcial){var c=$(".cartao",el);var jSel=onde&&onde.dataset&&onde.dataset.j!=null?+onde.dataset.j:null;estado.fechado=true;hist[i]=ok;tocar(ok?"certo":parcial?"certo":"errado");var r=$(".rot",el);if(r){r.classList.remove("atual");r.classList.add("feito")}var ganho=0;if(ok){certas++;seq++;melhorSeq=Math.max(melhorSeq,seq);ganho=(estado.pontos!=null?estado.pontos:10)+(seq>=3?5:0);xp+=ganho;if(IT[i].l)acesas[IT[i].l]=1;var lo=$(".linha-ordem",el);if(lo)lo.classList.add("certa")}else{seq=0;errados.push(IT[i])}
   $$("button.op.bom,.pal.bom,.pedra.bom",el).forEach(tracar);
   if(cfg.evento)try{cfg.evento({t:"resp",ok:ok,i:i,xp:xp,certas:certas,n:nFazer(),x:IT[i]})}catch(x){}
   $$("button.op,select,input,.pal,.pedra",el).forEach(function(b){b.disabled=true});
-  var ver=ok?"Certo.":parcial?"Em parte.":"Não.",f=document.createElement("p");f.className="f-rev "+(ok?"ok":parcial?"meio":"mau");f.innerHTML="<b>"+ver+"</b> "+fb(IT[i]);if(c)c.appendChild(f);
-  ultimaFolha={estado:ok?"ok":parcial?"meio":"mau",titulo:ver,html:fb(IT[i]),pontos:ganho?"+"+ganho+" pontos":"",botao:{t:i+1<IT.length?"Seguinte":"Ver o resultado",attrs:{"data-seguinte":""},onclick:function(){proximo()}}};
+  var ver=ok?"Certo.":parcial?"Em parte.":"Não.",f=document.createElement("p");f.className="f-rev "+(ok?"ok":parcial?"meio":"mau");f.innerHTML="<b>"+ver+"</b> "+fb(IT[i],jSel,ok);if(c)c.appendChild(f);
+  ultimaFolha={estado:ok?"ok":parcial?"meio":"mau",titulo:ver,html:fb(IT[i],jSel,ok),pontos:ganho?"+"+ganho+" pontos":"",botao:{t:i+1<IT.length?"Seguinte":"Ver o resultado",attrs:{"data-seguinte":""},onclick:function(){proximo()}}};
   if(C){C.acoes([voltaBtn()]);C.folha.abrir(ultimaFolha)}
   topo();foto()}
  // revisão (11/10/2026, utilizador de teste: «depois de fazer o quiz não dá para voltar à parte inicial?»): cada cartão feito fica
