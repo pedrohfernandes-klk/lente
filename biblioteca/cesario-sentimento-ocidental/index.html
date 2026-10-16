@@ -1,0 +1,126 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>O Sentimento dum Ocidental · Biblioteca · Lente</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet"><style>:root{--tinta:#000;--papel:#fff;--papel2:#faf8f2;--suave:#444;--fundo:#f3f2ee;--mostarda:#d9a520;--vermelho:#c8232c;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--c-cinza:#d6d4ce;--apagado:#b9b6ae;--linha:#000;--agua:#ebebeb;--d1:8px;--d2:20px;--d3:40px;--col:min(680px,100%);--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--cartaz:"Bebas Neue","Arial Narrow","Arial Black",Arial,sans-serif;--maq:"Special Elite","Courier New",monospace}
+@media (prefers-color-scheme:dark){:root{--tinta:#ecebe5;--papel:#121210;--papel2:#1a1a17;--suave:#b3b1aa;--fundo:#1d1d1a;--mostarda:#e0b23a;--vermelho:#e4555c;--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f;--c-cinza:#3d3c38;--apagado:#5a5853;--linha:#ecebe5;--agua:#222220}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:16px/1.5 var(--sans)}
+a{color:inherit}img,svg{max-width:100%}
+.pg{width:100%;max-width:calc(var(--col) + 32px);margin:0 auto;padding:0 16px 64px}
+.pg-larga{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
+.ler,.pg .ler p,.p-cartao p{font-family:var(--serif);font-size:1.02rem;line-height:1.55}
+.p-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+[hidden]{display:none!important}
+.p-cab{padding:14px 0 4px;margin:0 0 var(--d2)}
+.p-etiqueta{font:700 .72rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:0 0 6px}
+.p-etiqueta a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;margin:-15px 0}.p-etiqueta a:hover{color:var(--tinta);text-decoration:underline}
+.p-cab h1{font:400 2.3rem/.95 var(--cartaz);letter-spacing:.02em;text-transform:none;margin:0;padding:0}.p-cab h1::after{display:none}
+.p-sub{font:italic 1.15rem/1.3 var(--serif);margin:.35rem 0 0}
+.p-lead{font-size:.95rem;line-height:1.45;margin:.6rem 0 0;max-width:36em}
+.p-cartao{position:relative;background:var(--papel);color:var(--tinta);border:0;padding:14px 16px;margin:0 0 var(--d1)}
+.p-rot{font:700 .7rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d1)}
+.p-tit{font:700 1.05rem/1.25 var(--sans);margin:0 0 2px}
+.p-nota{font-size:.88rem;color:var(--suave);margin:4px 0 0}
+.p-cartao a{color:var(--tinta);font-weight:700}
+.p-feito{box-shadow:inset 4px 0 0 var(--mostarda)}
+.p-atual{box-shadow:inset 4px 0 0 var(--vermelho)}
+.c-prim,.c-sec{font:700 1rem/1.2 Arial;min-height:48px;margin:0;cursor:pointer;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;box-sizing:border-box}
+.c-prim{background:var(--tinta,#000);color:var(--papel,#fff);border:0;padding:0 22px}
+.c-prim:disabled{background:var(--c-cinza);color:var(--suave,#444);cursor:default}
+.c-sec{background:none;color:var(--tinta,#000);border:0;padding:0 6px;font-weight:400;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.c-sec.c-seta{text-decoration:none;font-size:1.25rem;min-width:44px;padding:0}
+.c-prim[data-seguinte]::after,.c-prim[data-confirmar]::after,.c-prim.c-vai::after{content:"→"}
+.bib{max-width:680px;margin:0 auto;padding:0 16px 56px}
+.bib-fonte{font:.88rem/1.5 var(--sans,Arial);color:var(--suave);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);padding:10px 0;margin:0 0 24px}.bib-fonte a{color:var(--tinta)}.bib-fonte b{color:var(--tinta)}
+.bib-texto{font:1.12rem/1.65 var(--serif,Georgia)}.bib-texto p{margin:0 0 1em;text-wrap:pretty;hyphens:auto}.bib-texto p.versos{margin:0 0 1.2em;hyphens:none}.bib-texto p.didascalia{font-style:italic;color:var(--suave)}
+.bib-texto h2{font:700 1.05rem/1.3 var(--sans,Arial);letter-spacing:.06em;text-transform:uppercase;margin:1.8em 0 .8em}
+.bib-lido{margin:32px 0 0;padding:16px 0 0;border-top:2px solid var(--tinta);display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.bib-lido button{min-height:48px;padding:0 18px;font:700 .95rem/1 var(--sans,Arial);border:2px solid var(--tinta);background:var(--tinta);color:var(--papel);cursor:pointer}.bib-lido button[aria-pressed="true"]{background:transparent;color:var(--tinta)}
+.bib-lido button:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}.bib-lido small{font:.85rem/1.4 var(--sans,Arial);color:var(--suave)}
+.bib-usos{margin:24px 0 0}.bib-usos h2{font:700 .72rem/1.2 var(--sans,Arial);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:0 0 8px}.bib-usos ul{list-style:none;margin:0;padding:0}.bib-usos li{padding:8px 0;border-top:1px solid var(--c-cinza,#ddd)}.bib-usos a{color:var(--tinta)}
+.marca-sec{display:block;font:700 clamp(2.4rem,8vw,4rem)/.95 var(--sans,Arial);letter-spacing:-.04em;text-transform:lowercase;color:var(--tinta);margin:0 0 12px}.marca-sec i{font-style:normal;color:var(--mostarda,#d9a520)}.p-etiqueta a{color:var(--tinta)}</style><style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style><style id="amp-css">.amp-ov{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;animation:ampEntra .2s ease-out;cursor:zoom-out}
+@keyframes ampEntra{from{opacity:0}to{opacity:1}}
+.amp-ov img{max-width:100%;max-height:calc(100% - 96px);max-height:calc(100dvh - 120px);width:auto;height:auto;object-fit:contain;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.15);cursor:zoom-out}
+.amp-leg{color:#fff;font:.9rem/1.45 Arial,Helvetica,sans-serif;max-width:60rem;margin:10px 0 0;text-align:center;max-height:84px;overflow:auto;cursor:auto}
+.amp-x{position:absolute;top:10px;right:10px;width:48px;height:48px;border:1.5px solid #fff;border-radius:999px;background:rgba(0,0,0,.4);color:#fff;font:700 1.4rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+.amp-x:focus-visible{outline:3px solid #fff;outline-offset:2px}
+figure:not(.ver-fig) img:not(.sem-amp),img[data-ampliar]{cursor:zoom-in}
+.lp-img img,.mf img,.cavalo,a img,button img{cursor:inherit}
+figure img[tabindex]:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.amp-ov{animation:none}}
+@media print{.amp-ov{display:none}}</style></head><body data-texto="cesario-sentimento-ocidental"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Biblioteca</a></li><li><span aria-current="page">O Sentimento dum Ocidental</span></li></ol></nav><main class="bib">
+<header class="p-cab"><p class="p-etiqueta"><a href="https://pedrohfernandes-klk.github.io/lente/">Lente</a> · <a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Biblioteca</a></p><h1>O Sentimento dum Ocidental</h1><p class="p-sub">Cesário Verde · 1887 · português · 7 min de leitura</p></header>
+<p class="bib-fonte"><b>Fonte:</b> O Livro de Cesario Verde, Lisboa, 1887; transcrição do Project Gutenberg n.º 8698 (João Miguel Neves, a partir das imagens da Biblioteca Nacional) (<a href="https://www.gutenberg.org/ebooks/8698" target="_blank" rel="noopener">abrir a fonte</a>). Texto em domínio público. O poema inteiro, nas quatro partes (Ave Marias, Noite Fechada, Ao Gás, Horas Mortas), na grafia de 1887: «soffrer», «gaz», «officinas». Lisboa ao anoitecer, do Cais até às horas mortas, vista por quem anda a pé.</p>
+<article class="bib-texto" lang="pt"><h2>O SENTIMENTO D'UM OCCIDENTAL</h2>
+<p>A Guerra Junqueiro</p>
+<p>I</p>
+<h2>AVE MARIAS</h2>
+<p class="versos">Nas nossas ruas, ao anoitecer,<br>Ha tal soturnidade, ha tal melancholia,<br>Que as sombras, o bulicio, o Tejo, a maresia<br>Despertam-me um desejo absurdo de soffrer.</p>
+<p class="versos">O ceu parece baixo e de neblina,<br>O gaz extravasado enjôa-me, perturba;<br>E os edificios, com as chaminés, e a turba<br>Toldam-se d'uma côr monotona e londrina.</p>
+<p class="versos">Batem os carros de aluguer, ao fundo,<br>Levando á via ferrea os que se vão. Felizes!<br>Occorrem-me em revista exposições, paizes:<br>Madrid, Paris, Berlim, S. Petersburgo, o mundo!</p>
+<p class="versos">Semelham-se a gaiolas, com viveiros,<br>As edificações sómente emmadeiradas:<br>Como morcegos, ao cair das badaladas,<br>Saltam de viga em viga os mestres carpinteiros.</p>
+<p class="versos">Voltam os calafates, aos magotes,<br>De jaquetão ao hombro, enfarruscados, seccos;<br>Embrenho-me, a scismar, por boqueirões, por beccos,<br>Ou érro pelos caes a que se atracam botes.</p>
+<p>E evoco, então, as chronicas navaes: Mouros, baixeis, heroes, tudo resuscitado! Lucta Camões no Sul, salvando um livro a nado! Singram soberbas naus que eu não verei jámais!</p>
+<p>E o fim da tarde inspira-me; e incommoda! De um couraçado inglez vogam os escaleres; E em terra n'um tinir de louças e talheres Flammejam, ao jantar, alguns hoteis da moda.</p>
+<p class="versos">N'um trem de praça arengam dois dentistas;<br>Um tropego arlequim braceja n'umas andas;<br>Os cherubins do lar fluctuam nas varandas;<br>Ás portas, em cabello, enfadam-se os logistas!</p>
+<p class="versos">Vasam-se os arsenaes e as officinas;<br>Reluz, viscoso, o rio, apressam-se as obreiras;<br>E n'um cardume negro, herculeas, galhofeiras,<br>Correndo com firmeza, assomam as varinas.</p>
+<p>Vem sacudindo as ancas opulentas! Seus troncos varonis recordam-me pilastras; E algumas, á cabeça, embalam nas canastras Os filhos que depois naufragam nas tormentas,</p>
+<p class="versos">Descalças! Nas descargas de carvão,<br>Desde manhã á noite, a bórdo das fragatas;<br>E apinham-se n'um bairro aonde miam gatas,<br>E o peixe pôdre géra os focos de infecção!</p>
+<p>II</p>
+<h2>NOITE FECHADA</h2>
+<p class="versos">Toca-se as grades, nas cadeias. Som<br>Que mortifica e deixa umas loucuras mansas!<br>O aljube, em que hoje estão velhinhas e creanças,<br>Bem raramente encerra uma mulher de «dom»!</p>
+<p class="versos">E eu desconfio, até, de um aneurisma<br>Tão morbido me sinto, ao accender das luzes;<br>Á vista das prisões, da velha sé, das cruzes,<br>Chora-me o coração que se enche e que se abysma.</p>
+<p class="versos">A espaços, illuminam-se os andares,<br>E as tascas, os cafés, as tendas, os estancos<br>Alastram em lençol os seus reflexos brancos;<br>E a lua lembra o circo e os jogos malabares.</p>
+<p class="versos">Duas egrejas, n'um saudoso largo,<br>Lançam a nodoa negra e funebre do clero:<br>N'ellas esfumo um ermo inquisidor severo,<br>Assim que pela Historia eu me aventuro e alargo.</p>
+<p class="versos">Na parte que abateu no terremoto,<br>Muram-se as construcções rectas, eguaes, crescidas;<br>Affrontam-me, no resto, as ingremes subidas,<br>E os sinos d'um tanger monastico e devoto.</p>
+<p class="versos">Mas, n'um recinto publico e vulgar,<br>Com bancos de namoro e exiguas pimenteiras,<br>Bronzeo, monumental, de proporções guerreiras,<br>Um épico d'outr'ora ascende, n'um pilar!</p>
+<p class="versos">E eu sonho o Colera, imagina a Febre,<br>N'esta accumulação de corpos enfezados;<br>Sombrios e espectraes recolhem os soldados;<br>Inflamma-se um palacio em face de um casebre.</p>
+<p class="versos">Partem patrulhas de cavallaria<br>Dos arcos dos quarteis que foram já conventos;<br>Edade-média! A pé, outras, a passos lentos,<br>Derramam-se por toda a capital, que esfria.</p>
+<p class="versos">Triste cidade! Eu temo que me avives<br>Uma paixão defunta! Aos lampeões distantes,<br>Enlutam-me, alvejando, as tuas elegantes,<br>Curvadas a sorrir ás montras dos ourives.</p>
+<p class="versos">E mais: as costureiras, as floristas<br>Descem dos magasins, causam-me sobresaltos;<br>Custa-lhes a elevar os seus pescoços altos<br>E muitas d'ellas são comparsas ou coristas.</p>
+<p class="versos">E eu, de luneta de uma lente só,<br>Eu acho sempre assumpto a quadros revoltados:<br>Entro na brasserie; ás mesas de emigrados,<br>Ao riso e á crua luz joga-se o dominó.</p>
+<p>III</p>
+<h2>AO GAZ</h2>
+<p class="versos">E saio. A noite peza, esmaga. Nos<br>Passeios de lagedo arrastam-se as impuras.<br>Ó molles hospitaes! Sae das embocaduras<br>Um sopro que arripia os hombros quasi nús.</p>
+<p class="versos">Cercam-me as lojas, tépidas. Eu penso<br>Ver cirios lateraes, ver filas de capellas,<br>Com santos e fieis, andores, ramos, velas,<br>Em uma cathedral de um comprimento immenso.</p>
+<p class="versos">As burguezinhas do Catholocismo<br>Resvalam pelo chão minado pelos canos;<br>E lembram-me, ao chorar doente dos pianos,<br>As freiras que os jejuns matavam de hysterismo.</p>
+<p class="versos">N'um cutileiro, de avental, ao torno,<br>Um forjador maneja um malho, rubramente;<br>E de uma padaria exhala-se, inda quente,<br>Um cheiro salutar e honesto a pão no forno.</p>
+<p class="versos">E eu que medito um livro que exarcebe,<br>Quizera que o real e a analyse m'o dessem;<br>Casas de confecções e modas resplandecem;<br>Pelas vitrines ólha um ratoneiro imberbe.</p>
+<p class="versos">Longas descidas! Não poder pintar<br>Com versos magistraes, salubres e sinceros,<br>A esguia diffusão dos vossos reverberos,<br>E a vossa pallidez romantica e lunar!</p>
+<p class="versos">Que grande cobra, a lubrica pessoa,<br>Que espartilhada escolhe uns chales com debuxo!<br>Sua excellencia attráe, magnetica, entre luxo,<br>Que ao longo dos balcões de mogno se amontoa.</p>
+<p class="versos">E aquella velha, de bandós! Por vezes,<br>A sua traîne imita um leque antigo, aberto,<br>Nas barras verticaes, a duas tintas. Perto,<br>Escarvam, á victoria, os seus mecklemburguezes.</p>
+<p class="versos">Desdobram-se tecidos estrangeiros;<br>Plantas ornamentaes seccam nos mostradores;<br>Flócos de pós de arroz pairam suffocadores,<br>E em nuvems de setins requebram-se os caixeiros,</p>
+<p class="versos">Mas tudo cança! Apagam-se nas frentes<br>Os candelabros, como estrellas, pouco a pouco;<br>Da solidão regouga um cauteleiro rouco;<br>Tornam-se mausoléos as armações fulgentes.</p>
+<p>«Dó da miseria!... Compaixão de mim!...» E, nas esquinas, calvo, eterno, sem repouso, Pede-me sempre esmola um homemzinho idoso, Meu velho professor nas aulas de latim!</p>
+<p>IV</p>
+<h2>HORAS MORTAS</h2>
+<p class="versos">O tecto fundo de oxygenio, d'ar,<br>Estende-se ao comprido, ao meio das trapeiras;<br>Vem lagrimas de luz dos astros com olheiras,<br>Enleva-me a chimera azul de transmigrar.</p>
+<p>Por baixo, que portões! Que arruamentos! Um parafuso cáe nas lages, ás escuras: Collocam-se taipaes, rangem as fechaduras, E os olhos d'um caleche espantam-me, sangrentos.</p>
+<p class="versos">E eu sigo, como as linhas de uma pauta<br>A dupla correnteza augusta das fachadas;<br>Pois sobem, no silencio, infaustas e trinadas,<br>As notas pastoris de uma longiqua flauta.</p>
+<p class="versos">Se eu não morresse, nunca! E eternamente<br>Buscasse e conseguisse a perfeição das cousas!<br>Esqueço-me a prever castissimas esposas,<br>Que aninhem em mansões de vidro transparente!</p>
+<p class="versos">Ó nossos filhos! Que de sonhos ageis,<br>Pousando, vos trarão a nitidez ás vidas!<br>Eu quero as vossas mães e irmãs estremecidas,<br>N'umas habitações translucidas e frageis.</p>
+<p class="versos">Ah! Como a raça ruiva do porvir,<br>E as frótas dos avós, e os nómadas ardentes,<br>Nós vamos explorar todos os continentes<br>E pelas vastidões aquaticas seguir!</p>
+<p class="versos">Mas se vivemos, os emparedados,<br>Sem arvores, no valle escuro das muralhas!...<br>Julgo avistar, na treva, as folhas das navalhas<br>E os gritos de soccorro ouvir estrangulados.</p>
+<p class="versos">E n'estes nebulosos corredores<br>Nauseam-me, surgindo, os ventres das tabernas;<br>Na volta, com saudade, e aos bordos sobre as pernas,<br>Cantam, de braço dado, uns tristes bebedores.</p>
+<p class="versos">Eu não receio, todavia, os roubos;<br>Afastam-se, a distancia, os dubios caminhantes;<br>E sujos, sem ladrar, osseos, febris, errantes,<br>Amarelladamente, os cães parecem lobos.</p>
+<p class="versos">E os guardas, que revistam as escadas,<br>Caminham de lanterna e servem de chaveiros;<br>Por cima, as immoraes, nos seus roupões ligeiros,<br>Tossem, fumando sobre a pedra das sacadas.</p>
+<p class="versos">E, enorme, n'esta massa irregular<br>De predios sepulchraes, com dimensões de montes,<br>A Dôr humana busca os amplos horisontes,</p></article>
+<div class="bib-lido"><button type="button" data-lido aria-pressed="false">Li este texto</button><small>Fica só no teu aparelho. Conta na Biblioteca como texto lido.</small></div>
+<nav class="bib-usos" aria-label="Onde este texto se usa"><h2>Onde este texto se usa</h2><ul><li><a href="https://pedrohfernandes-klk.github.io/pt/m6/">Português, Módulo 6</a></li></ul></nav>
+<p class="bib-fonte" style="margin-top:24px;border-bottom:0"><a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Voltar à Biblioteca</a></p>
+</main><script>(function(){var K="epi-biblioteca",id=document.body.getAttribute("data-texto"),b=document.querySelector("[data-lido]");if(!b)return;
+function ler(){try{return JSON.parse(localStorage.getItem(K)||"null")||{}}catch(x){return{}}}
+function pinta(){var P=ler();var f=!!(P.feitas&&P.feitas[id]);b.setAttribute("aria-pressed",f?"true":"false");b.textContent=f?"Lido ✓ (tocar para desfazer)":"Li este texto"}
+b.addEventListener("click",function(){var P=ler();P.feitas=P.feitas||{};if(P.feitas[id])delete P.feitas[id];else P.feitas[id]=1;try{localStorage.setItem(K,JSON.stringify(P))}catch(x){}pinta()});pinta()})();</script><script id="amp-js">(function(){if(window.EPIAmpliar)return;var ov=null,ult=null;
+function fecha(){if(!ov)return;var o=ov;ov=null;if(o.parentNode)o.parentNode.removeChild(o);document.documentElement.style.overflow="";if(ult&&ult.focus)try{ult.focus()}catch(x){}ult=null}
+function abre(img,leg){if(ov)fecha();ult=document.activeElement;ov=document.createElement("div");ov.className="amp-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label","Imagem ampliada");
+var i=document.createElement("img");i.src=img.currentSrc||img.src;i.alt=img.alt||"";ov.appendChild(i);
+var p=document.createElement("p");p.className="amp-leg";p.textContent=leg||img.alt||"";ov.appendChild(p);
+var x=document.createElement("button");x.type="button";x.className="amp-x";x.setAttribute("aria-label","Fechar a imagem ampliada");x.textContent="\u00d7";ov.appendChild(x);
+ov.addEventListener("click",function(e){if(e.target!==p)fecha()});document.body.appendChild(ov);document.documentElement.style.overflow="hidden";x.focus()}
+function legendaDe(img){var f=img.closest("figure");if(f){var c=f.querySelector("figcaption");if(c)return c.textContent.replace(/\s+/g," ").trim()}return img.getAttribute("data-legenda")||img.alt||""}
+function elegivel(img){if(!img||img.tagName!=="IMG")return false;if(img.closest("a,button,.amp-ov,.ver-fig,.lp-img,.mf,.cavalo"))return false;if(img.classList.contains("sem-amp"))return false;if(!img.closest("figure")&&!img.hasAttribute("data-ampliar"))return false;return true}
+document.addEventListener("click",function(e){var img=e.target&&e.target.closest?e.target.closest("img"):null;if(!elegivel(img))return;e.preventDefault();abre(img,legendaDe(img))});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov){fecha();return}if((e.key==="Enter"||e.key===" ")&&elegivel(e.target)){e.preventDefault();abre(e.target,legendaDe(e.target))}});
+function marcar(r){var L=(r||document).querySelectorAll?(r||document).querySelectorAll("figure:not(.ver-fig) img,img[data-ampliar]"):[];for(var k=0;k<L.length;k++){var im=L[k];if(!elegivel(im))continue;if(!im.hasAttribute("tabindex"))im.setAttribute("tabindex","0");if(!im.hasAttribute("role"))im.setAttribute("role","button");if(!im.getAttribute("aria-label"))im.setAttribute("aria-label","Ampliar a imagem")}}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){marcar()});else marcar();
+if(window.MutationObserver)new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var j=0;j<ms[i].addedNodes.length;j++){var n=ms[i].addedNodes[j];if(n.nodeType===1)marcar(n)}}).observe(document.documentElement,{childList:true,subtree:true});
+window.EPIAmpliar={abre:abre,fecha:fecha}})();</script></body></html>
