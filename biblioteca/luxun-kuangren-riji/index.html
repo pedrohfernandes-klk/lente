@@ -1,0 +1,163 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>狂人日記 (Diário de um Louco) · Biblioteca · Lente</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet"><style>:root{--tinta:#000;--papel:#fff;--papel2:#faf8f2;--suave:#444;--fundo:#f3f2ee;--mostarda:#d9a520;--vermelho:#c8232c;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--c-cinza:#d6d4ce;--apagado:#b9b6ae;--linha:#000;--agua:#ebebeb;--d1:8px;--d2:20px;--d3:40px;--col:min(680px,100%);--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--cartaz:"Bebas Neue","Arial Narrow","Arial Black",Arial,sans-serif;--maq:"Special Elite","Courier New",monospace}
+@media (prefers-color-scheme:dark){:root{--tinta:#ecebe5;--papel:#121210;--papel2:#1a1a17;--suave:#b3b1aa;--fundo:#1d1d1a;--mostarda:#e0b23a;--vermelho:#e4555c;--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f;--c-cinza:#3d3c38;--apagado:#5a5853;--linha:#ecebe5;--agua:#222220}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:16px/1.5 var(--sans)}
+a{color:inherit}img,svg{max-width:100%}
+.pg{width:100%;max-width:calc(var(--col) + 32px);margin:0 auto;padding:0 16px 64px}
+.pg-larga{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
+.ler,.pg .ler p,.p-cartao p{font-family:var(--serif);font-size:1.02rem;line-height:1.55}
+.p-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+[hidden]{display:none!important}
+.p-cab{padding:14px 0 4px;margin:0 0 var(--d2)}
+.p-etiqueta{font:700 .72rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:0 0 6px}
+.p-etiqueta a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;margin:-15px 0}.p-etiqueta a:hover{color:var(--tinta);text-decoration:underline}
+.p-cab h1{font:400 2.3rem/.95 var(--cartaz);letter-spacing:.02em;text-transform:none;margin:0;padding:0}.p-cab h1::after{display:none}
+.p-sub{font:italic 1.15rem/1.3 var(--serif);margin:.35rem 0 0}
+.p-lead{font-size:.95rem;line-height:1.45;margin:.6rem 0 0;max-width:36em}
+.p-cartao{position:relative;background:var(--papel);color:var(--tinta);border:0;padding:14px 16px;margin:0 0 var(--d1)}
+.p-rot{font:700 .7rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d1)}
+.p-tit{font:700 1.05rem/1.25 var(--sans);margin:0 0 2px}
+.p-nota{font-size:.88rem;color:var(--suave);margin:4px 0 0}
+.p-cartao a{color:var(--tinta);font-weight:700}
+.p-feito{box-shadow:inset 4px 0 0 var(--mostarda)}
+.p-atual{box-shadow:inset 4px 0 0 var(--vermelho)}
+.c-prim,.c-sec{font:700 1rem/1.2 Arial;min-height:48px;margin:0;cursor:pointer;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;box-sizing:border-box}
+.c-prim{background:var(--tinta,#000);color:var(--papel,#fff);border:0;padding:0 22px}
+.c-prim:disabled{background:var(--c-cinza);color:var(--suave,#444);cursor:default}
+.c-sec{background:none;color:var(--tinta,#000);border:0;padding:0 6px;font-weight:400;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.c-sec.c-seta{text-decoration:none;font-size:1.25rem;min-width:44px;padding:0}
+.c-prim[data-seguinte]::after,.c-prim[data-confirmar]::after,.c-prim.c-vai::after{content:"→"}
+.bib{max-width:680px;margin:0 auto;padding:0 16px 56px}
+.bib-fonte{font:.88rem/1.5 var(--sans,Arial);color:var(--suave);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);padding:10px 0;margin:0 0 24px}.bib-fonte a{color:var(--tinta)}.bib-fonte b{color:var(--tinta)}
+.bib-texto{font:1.12rem/1.65 var(--serif,Georgia)}.bib-texto p{margin:0 0 1em;text-wrap:pretty;hyphens:auto}.bib-texto p.versos{margin:0 0 1.2em;hyphens:none}.bib-texto p.didascalia{font-style:italic;color:var(--suave)}
+.bib-texto h2{font:700 1.05rem/1.3 var(--sans,Arial);letter-spacing:.06em;text-transform:uppercase;margin:1.8em 0 .8em}
+.bib-lido{margin:32px 0 0;padding:16px 0 0;border-top:2px solid var(--tinta);display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.bib-lido button{min-height:48px;padding:0 18px;font:700 .95rem/1 var(--sans,Arial);border:2px solid var(--tinta);background:var(--tinta);color:var(--papel);cursor:pointer}.bib-lido button[aria-pressed="true"]{background:transparent;color:var(--tinta)}
+.bib-lido button:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}.bib-lido small{font:.85rem/1.4 var(--sans,Arial);color:var(--suave)}
+.bib-usos{margin:24px 0 0}.bib-usos h2{font:700 .72rem/1.2 var(--sans,Arial);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:0 0 8px}.bib-usos ul{list-style:none;margin:0;padding:0}.bib-usos li{padding:8px 0;border-top:1px solid var(--c-cinza,#ddd)}.bib-usos a{color:var(--tinta)}
+.marca-sec{display:block;font:700 clamp(2.4rem,8vw,4rem)/.95 var(--sans,Arial);letter-spacing:-.04em;text-transform:lowercase;color:var(--tinta);margin:0 0 12px}.marca-sec i{font-style:normal;color:var(--mostarda,#d9a520)}.p-etiqueta a{color:var(--tinta)}</style><style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style><style id="amp-css">.amp-ov{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;animation:ampEntra .2s ease-out;cursor:zoom-out}
+@keyframes ampEntra{from{opacity:0}to{opacity:1}}
+.amp-ov img{max-width:100%;max-height:calc(100% - 96px);max-height:calc(100dvh - 120px);width:auto;height:auto;object-fit:contain;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.15);cursor:zoom-out}
+.amp-leg{color:#fff;font:.9rem/1.45 Arial,Helvetica,sans-serif;max-width:60rem;margin:10px 0 0;text-align:center;max-height:84px;overflow:auto;cursor:auto}
+.amp-x{position:absolute;top:10px;right:10px;width:48px;height:48px;border:1.5px solid #fff;border-radius:999px;background:rgba(0,0,0,.4);color:#fff;font:700 1.4rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+.amp-x:focus-visible{outline:3px solid #fff;outline-offset:2px}
+figure:not(.ver-fig) img:not(.sem-amp),img[data-ampliar]{cursor:zoom-in}
+.lp-img img,.mf img,.cavalo,a img,button img{cursor:inherit}
+figure img[tabindex]:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.amp-ov{animation:none}}
+@media print{.amp-ov{display:none}}</style></head><body data-texto="luxun-kuangren-riji"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Biblioteca</a></li><li><span aria-current="page">狂人日記 (Diário de um Louco)</span></li></ol></nav><main class="bib">
+<header class="p-cab"><p class="p-etiqueta"><a href="https://pedrohfernandes-klk.github.io/lente/">Lente</a> · <a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Biblioteca</a></p><h1>狂人日記 (Diário de um Louco)</h1><p class="p-sub">Lu Xun · 1918 · chinês · 11 min de leitura</p></header>
+<p class="bib-fonte"><b>Fonte:</b> Wikisource em chinês, texto de 1918 (caracteres tradicionais) (<a href="https://zh.wikisource.org/wiki/%E7%8B%82%E4%BA%BA%E6%97%A5%E8%A8%98" target="_blank" rel="noopener">abrir a fonte</a>). Texto em domínio público. O conto inteiro: o prefácio em chinês clássico e os treze trechos do diário, em chinês tradicional, tal como na Wikisource. É o texto de que parte o gigante Lu Xun; o relato em português está na página dele.</p>
+<article class="bib-texto" lang="zh"><p>某君昆仲。今隱其名，皆余昔日在中學校時良友；分隔多年，消息漸闕。日前偶聞其一大病；適歸故鄕，迂道往訪，則僅晤一人，言病者其弟也。勞君遠道來視，然已早愈，赴某地候補矣。因大笑，出示日記二册，謂可見當日病狀，不妨獻諸舊友。持歸閱一過，知所患蓋『迫害狂』之類。語頗錯雜無倫次，又多荒唐之言；亦不著月日，惟墨色字體不一，知非一時所書。間亦有略具聯絡者，今撮錄一篇，以供醫家硏究，記中語誤，一字不易；惟人名雖皆村人，不爲世間所知，無關大體，亦悉易去。至於書名，則本人愈後所題，不復改也。七年四月二日識。 ​</p>
+<h2>一</h2>
+<p>今天晚上，很好的月光。</p>
+<p>我不見他，已是三十多年；今天見了，精神分外爽快。纔知道以前的三十多年，全是發昏；然而須十分小心。不然，那趙家的狗，何以看我兩眼呢？</p>
+<p>我怕得有理。</p>
+<h2>二</h2>
+<p>今天全沒月光，我知道不妙。早上小心出門，趙貴翁的眼色便怪：似乎怕我，似乎想害我。還有七八個人，交頭接耳的議論我。又怕我看見。一路上的人，都是如此。其中最兇的一個人，張着嘴，對我笑了一笑；我便從頭直冷到腳跟，曉得他們布置，都已妥當了。</p>
+<p>我可不怕，仍舊走我的路。前面一夥小孩子，也在那里議論我；眼色也同趙貴翁一樣，臉色也都鐵靑。我想我同小孩子有什麽讎，他也這樣。忍不住大聲說：『你吿訴我！』他們​可就跑了。</p>
+<p>我想：我同趙貴翁有什麽讎，同路上的人又有什麽讎；只有廿年以前，把古久先生的陳年流水簿子，踹了一腳，古久先生很不高興。趙貴翁雖然不認識他，一定也聽到風聲，代抱不平；約定路上的人，同我作寃對。但是小孩子呢？那時候，他們還沒有出世，何以今天也睜着怪眼睛，似乎怕我，似乎想害我。這眞教我怕，教我納罕而且傷心。</p>
+<p>我明白了。這是他們娘老子教的！</p>
+<h2>三</h2>
+<p>晚上總是睡不着。凡事須得硏究，纔會明白。</p>
+<p>他們——也有給知縣打枷過的，也有給紳士掌過嘴的，也有衙役佔了他妻子的，也有老子娘被債主逼死的；他們那時候的臉色，全沒有昨天這麽怕，也沒有這麽兇。</p>
+<p>最奇怪的是昨天街上的那個女人，打他兒子，嘴裏說道，『老子呀！我要咬你幾口纔出氣！』他眼睛卻看着我。我出了一驚，遮掩不住；那靑面獠牙的一夥人，便都哄笑起來。陳​老五趕上前，硬把我拖回家中了。</p>
+<p>拖我回家。家裏的人都裝作不認識我；他們的眼色，也全同別人一樣。進了書房，便反扣上門，宛然是關了一隻雞鴨。這一件事，越教我猜不出底細。</p>
+<p>前幾天，狼子村的佃戶來吿荒，對我大哥說，他們村裏的一個大惡人，給大家打死了；幾個人便挖出他的心肝來，用油煎炒了喫，可以壯壯膽子。我插了一句嘴，佃戶和大哥便都看我幾眼。今天纔曉得他們的眼光，全同外面的那夥人一模一樣。</p>
+<p>想起來，我從頂上直冷到腳跟。</p>
+<p>他們會喫人，就未必不會喫我。</p>
+<p>你看那女人『咬你幾口』的話，和一夥靑面獠牙人的笑，和前天佃戶的話，明明是暗號。我看出他話中全是毒，笑中全是刀，他們的牙齒，全是白厲厲的排着，這就是喫人的家伙。</p>
+<p>照我自己想，雖然不是惡人，自從踹了古家的簿子，可就難說了。他們似乎別有心思，我全猜不出。況且他們一翻臉，便說人是惡人。我還記得大哥教我做論，無論怎樣好人，翻​他幾句，他便打上幾個圈；原諒壞人幾句，他便說『翻天妙手，與衆不同』。我那里猜得到他們的心思，究竟怎樣；況且是要喫的時候。</p>
+<p>凡事總須硏究，纔會明白，古來時常喫人，我也還記得，可是不甚淸楚。我翻開歷史一查，這歷史沒有年代，歪歪斜斜的每葉上都寫着『仁義道德』幾個字。我橫竪睡不着，仔細看了半夜，纔從字縫裏看出字來，滿本都寫着兩個字是『喫人』！</p>
+<p>書上寫着這許多字，佃戶說了這許多話，却都笑吟吟的睜着怪眼睛看我。</p>
+<p>我也是人，他們想要喫我了！</p>
+<h2>四</h2>
+<p>早上，我靜坐了一會。陳老五送進飯來，一碗菜，一碗蒸魚；這魚的眼睛，白而且硬，張着嘴，同那一夥想喫人的人一樣。喫了幾筷，滑溜溜的不知是魚是人，便把他兜肚連腸的吐出。</p>
+<p>我說：『老五，對大哥説，我悶得荒，想到園裏走走。』老五不答應，走了，停一會，可就來​開了門。</p>
+<p>我也不動，硏究他們如何擺佈我；知道他們一定不肯放鬆。果然！我大哥引了一個老頭子，慢慢走來；他滿眼兇光，怕我看出，只是低頭向着地，從眼鏡橫邊暗暗看我。大哥說：『今天你彷佛很好。』我說：『是的。』大哥說：『今天請何先生來，給你診一診。』我說：『可以！』其實我豈不知道這老頭子是劊子手扮的！無非借了看脈這名目，揣一揣肥瘠：因這功勞，也分一片肉喫。我也不怕；雖然不喫人，膽子卻比他們還壯。伸出兩個拳頭，看他如何下手。老頭子坐着，閉了眼睛，摸了好一會，呆了好一會；便張開他鬼眼睛說：『不要亂想。靜靜的養幾天，就好了。』</p>
+<p>不要亂想，靜靜的養！養肥了，他們是自然可以多喫；我有什麽好處，怎麽會『好了』？他們這羣人，又想喫人，又是鬼鬼祟祟，想法子遮掩，不敢直捷下手，眞要令我笑死。我忍不住，便放聲大笑起來，十分快活。自己曉得這笑聲裏面，有的是義勇和正氣；老頭子和大哥，都失了色，被我這勇氣正氣鎭壓住了。</p>
+<p>但是我有勇氣，他們便越想喫我，沾光一點這勇氣。老頭子跨出門，走不多遠，便低聲​對大哥說道，『趕緊喫罷！』大哥點點頭。原來也有你！這一件大發見，雖似意外，也在意中：合夥喫我的人，便是我的哥哥！</p>
+<p>喫人的是我哥哥！</p>
+<p>我是喫人的人的兄弟！</p>
+<p>我自己被人喫了，可仍然是喫人的人的兄弟！</p>
+<h2>五</h2>
+<p>這幾天是退一步想：假使那老頭子不是劊子手扮的，眞是醫生，也仍然是喫人的人。他們的祖師李時珍做的『本草什麽』上，明明寫着人肉可以煎喫；他還能說自己不喫人麽？</p>
+<p>至于我家大哥，也毫不寃枉他。他對我講書的時候，親口說過可以『易子而食』；又一回偶然議論起一個不好的人，他便說不但該殺，還當『食肉寢皮』。我那時年紀還小，心跳了好半天。前天狼子村佃戶來說喫心肝的事，他也毫不奇怪，不住的點頭。可見心思​是同從前一樣狠。既然可以『易子而食』，便什麽都易得，什麽人都喫得。我從前單聽他講道理，也糊塗過去；現在曉得他講道理的時候，不但脣邊還抹着人油，而且心裏滿裝着喫人的意思。</p>
+<h2>六</h2>
+<p>黑漆漆的，不知是日是夜。趙家的狗又叫起來了。</p>
+<p>獅子似的凶心，兔子的怯弱，狐狸的狡猾，……</p>
+<h2>七</h2>
+<p>我曉得他們的方法，直捷殺了，是不肯的，而且也不敢，怕有禍祟。所以他們大家連絡，布滿了羅網，逼我自戕。試看前幾天街上男女的樣子，和這幾天我大哥的作爲，便足可悟出八九分了。最好是解下腰帶，挂在梁上，自己緊緊勒死；他們沒有殺人的罪名，又償了心願，自然都歡天喜地的發出一種嗚嗚咽咽的笑聲。否則驚嚇憂愁死了，雖則略瘦，也還可​以首肯幾下。</p>
+<p>他們是只會喫死肉的！——記得什麽書上說，有一種東西，叫『海乙那』的，眼光和樣子都很難看；時常喫死肉，連極大的骨頭，都細細嚼爛，嚥下肚子去，想起來也教人害怕。『海乙那』是狼的親眷，狼是狗的本家。前天趙家的狗，看我幾眼，可見他也同謀，早已接洽，老頭子眼看着地。豈能瞞得我過。</p>
+<p>最可憐的是我的大哥。他也是人，何以毫不害怕；而且合夥喫我呢？還是歷來慣了，不以爲非呢？還是喪了良心，明知故犯呢？</p>
+<p>我詛呪喫人的人，先從他起頭；要勸轉喫人的人，也先從他下手。</p>
+<h2>八</h2>
+<p>其實這種道理，到了現在，他們也該早已懂得，……</p>
+<p>忽然來了一個人；年紀不過二十左右，相貌是不很看得淸楚，滿面笑容，對了我點頭，他的笑也不像眞笑。我便問他：『喫人的事，對麽？』他仍然笑着說：『不是荒年，怎麽會喫​人。』我立刻就曉得，他也是一夥，喜歡喫人的；便自勇氣百倍，偏要問他。</p>
+<p>『對麽？』</p>
+<p>『這等事問他甚麽。你眞會……說笑話。……今天天氣很好。』</p>
+<p>天氣是好，月色也很亮了。可是我要問你，『對麽？』</p>
+<p>他不以爲然了。含含胡胡的答道，『不……』</p>
+<p>『不對？他們何以竟喫！』</p>
+<p>『沒有的事……』</p>
+<p>『沒有的事？狼子村現喫；還有書上都寫着，通紅斬新！』</p>
+<p>他便變了臉，鐵一般靑。睜着眼說，『也許有的，這是從來如此……』</p>
+<p>『從來如此，便對麽？』</p>
+<p>『我不同你講這些道理；總之你不該說，你說便是你錯！』</p>
+<p>我直跳起來，張開眼，這人便不見了。全身出了一大片汗。他的年紀，比我大哥小得遠，居然也是一夥；這一定是他娘老子先教的。還怕已經教給他兒子了；所以連小孩子，也都​惡狠狠的看我。</p>
+<h2>九</h2>
+<p>自己想喫人，又怕被別人喫了，都用着疑心極深的眼光，面面相覷。……</p>
+<p>去了這心思，放心做事走路喫飯睡覺，何等舒服。這只是一條門檻，一個關頭。他們可是父子、兄弟、夫婦、朋友、師生、仇敵和各不相識的人，都結成一夥，互相勸勉，互相牽掣，死也不肯跨這一步。</p>
+<h2>十</h2>
+<p>大淸早，去尋我大哥；他立在堂門外看天，我便走到他背後，攔住門，格外沈靜，格外和氣的對他說：</p>
+<p>『大哥，我有話吿訴你。』</p>
+<p>『你說就是。』他趕緊回過臉來，點點頭。​</p>
+<p>『我只有幾句話，可是說不出來。大哥，大約當初野蠻的人，都喫過一點人。後來因爲心思不同，有的不喫人了，一味要好，便變了人，變了眞的人。有的卻還喫，——也同蟲子一樣，有的變了魚、鳥、猴子，一直變到人。有的不要好，至今還是蟲子。這喫人的人比不喫人的人，何等慚愧。怕比蟲子的慚愧猴子，還差得很遠很遠。</p>
+<p>『易牙蒸了他兒子，給桀紂喫，還是一直從前的事。誰曉得從盤古開闢天地以後，一直喫到易牙的兒子；從易牙的兒子，一直喫到徐錫林；從徐錫林，又一直喫到狼子村捉住的人。去年城裏殺了犯人，還有個生癆病的人，用饅頭蘸血舐。</p>
+<p>『他們要喫我，你一個人，原也無法可想；然而又何必去入夥。喫人的人，什麽事做不出；他們會喫我，也會喫你，一夥裏面，也會自喫。但只要轉一步，只要立刻改了，也就人人太平。雖然從來如此，我們今天也可以格外要好，說是不能！大哥，我相信你能說，前天佃戶要減租，你說過不能。』</p>
+<p>當初，他還只是冷笑，隨後眼光便凶狠起來，一到說破他們的隱情，那就滿臉都變成靑色了。大門外立着一夥人，趙貴翁和他的狗，也在裏面，都探頭探腦的挨進來。有的是看​不出面貌，似乎用布蒙着；有的是仍舊靑面潦牙，抿着嘴笑。我認識他們是一夥，都是喫人的人。可是也曉得他們心思很不一樣，一種是以爲從來如此，應該喫的；一種是知道不該喫，可是仍然要喫，又怕別人說破他，所以聽了我的話，越發氣憤不過，可是抿着嘴冷笑。</p>
+<p>這時候，大哥也忽然顯出凶相，高聲喝道：</p>
+<p>『都出去！瘋子有什麽好看！』</p>
+<p>這時候，我又懂得一件他們的巧妙了。他們豈但不肯改，而且早已布置；預備下一個瘋子的名目罩上我。將來喫了，不但太平無事，怕還會有人見情。佃戶說的大家喫了一個惡人，正是這方法。這是他們的老譜！</p>
+<p>陳老五也氣憤憤的直走進來。如何按得住我的口，我偏要對這夥人說，</p>
+<p>『你們可以改了，從眞心改起！要曉得將來容不得喫人的人，活在世上。</p>
+<p>『你們要不改，自己也會喫盡。卽使生得多，也會給眞的人除滅了，同獵人打完狼子一樣！——同蟲子一樣！』</p>
+<p>那一夥人，都被陳老五趕走了。大哥也不知那里去了。陳老五勸我回屋子裏去。屋裏​面全是黑沈沈的。橫梁和椽子都在頭上發抖；抖了一會，就大起來，堆在我身上。</p>
+<p>萬分沈重，動彈不得；他的意思是要我死。我曉得他的沈重是假的，便掙扎出來，出了一身汗。可是偏要說，</p>
+<p>『你們立刻改了，從眞心改起！你們要曉得將來是容不得喫人的人，……』</p>
+<h2>十一</h2>
+<p>太陽也不出，門也不開，日日是兩頓飯。</p>
+<p>我揑起筷子，便想起我大哥；曉得妹子死掉的緣故，也全在他。那時我妹子纔五歲，可愛可憐的樣子，還在眼前。母親哭個不住，他卻勸母親不要哭；大約因爲自己喫了，哭起來不免有點過意不去。如果還能過意不去，……</p>
+<p>妹子是被大哥喫了，母親知道沒有，我可不得而知。</p>
+<p>母親想也知道；不過哭的時候，卻並沒有說明，大約也以爲應當的了。記得我四五歲時，坐在堂前乘涼，大哥說爺娘生病，做兒子的須割下一片肉來，煑熟了請他喫，纔算好人；​母親也沒說不行。一片喫得，整個的自然也喫得。但是那天的哭法，現在想起來，實在還教人傷心，這眞是奇極的事！</p>
+<h2>十二</h2>
+<p>不能想了。</p>
+<p>四千年來時時喫人的地方，今天纔明白，我也在其中混了多年；大哥正管着家務，妹子恰恰死了，他未必不和在飯菜裏，暗暗給我們喫。</p>
+<p>我未必無意之中，不喫了我妹子的幾片肉，現在也輪到我自己，……</p>
+<p>有了四千年喫人履歷的我，當初雖然不知道，現在明白，難見眞的人！</p>
+<h2>十三</h2>
+<p>沒有喫過人的孩子，或者還有？</p>
+<p>救救孩子……</p>
+<p>（一九一八年四月。）</p></article>
+<div class="bib-lido"><button type="button" data-lido aria-pressed="false">Li este texto</button><small>Fica só no teu aparelho. Conta na Biblioteca como texto lido.</small></div>
+<nav class="bib-usos" aria-label="Onde este texto se usa"><h2>Onde este texto se usa</h2><ul><li><a href="https://pedrohfernandes-klk.github.io/lente/gigantes/diario-louco/">Aos ombros de gigantes: Lu Xun, ler por entre as linhas</a></li></ul></nav>
+<p class="bib-fonte" style="margin-top:24px;border-bottom:0"><a href="https://pedrohfernandes-klk.github.io/lente/biblioteca/">Voltar à Biblioteca</a></p>
+</main><script>(function(){var K="epi-biblioteca",id=document.body.getAttribute("data-texto"),b=document.querySelector("[data-lido]");if(!b)return;
+function ler(){try{return JSON.parse(localStorage.getItem(K)||"null")||{}}catch(x){return{}}}
+function pinta(){var P=ler();var f=!!(P.feitas&&P.feitas[id]);b.setAttribute("aria-pressed",f?"true":"false");b.textContent=f?"Lido ✓ (tocar para desfazer)":"Li este texto"}
+b.addEventListener("click",function(){var P=ler();P.feitas=P.feitas||{};if(P.feitas[id])delete P.feitas[id];else P.feitas[id]=1;try{localStorage.setItem(K,JSON.stringify(P))}catch(x){}pinta()});pinta()})();</script><script id="amp-js">(function(){if(window.EPIAmpliar)return;var ov=null,ult=null;
+function fecha(){if(!ov)return;var o=ov;ov=null;if(o.parentNode)o.parentNode.removeChild(o);document.documentElement.style.overflow="";if(ult&&ult.focus)try{ult.focus()}catch(x){}ult=null}
+function abre(img,leg){if(ov)fecha();ult=document.activeElement;ov=document.createElement("div");ov.className="amp-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label","Imagem ampliada");
+var i=document.createElement("img");i.src=img.currentSrc||img.src;i.alt=img.alt||"";ov.appendChild(i);
+var p=document.createElement("p");p.className="amp-leg";p.textContent=leg||img.alt||"";ov.appendChild(p);
+var x=document.createElement("button");x.type="button";x.className="amp-x";x.setAttribute("aria-label","Fechar a imagem ampliada");x.textContent="\u00d7";ov.appendChild(x);
+ov.addEventListener("click",function(e){if(e.target!==p)fecha()});document.body.appendChild(ov);document.documentElement.style.overflow="hidden";x.focus()}
+function legendaDe(img){var f=img.closest("figure");if(f){var c=f.querySelector("figcaption");if(c)return c.textContent.replace(/\s+/g," ").trim()}return img.getAttribute("data-legenda")||img.alt||""}
+function elegivel(img){if(!img||img.tagName!=="IMG")return false;if(img.closest("a,button,.amp-ov,.ver-fig,.lp-img,.mf,.cavalo"))return false;if(img.classList.contains("sem-amp"))return false;if(!img.closest("figure")&&!img.hasAttribute("data-ampliar"))return false;return true}
+document.addEventListener("click",function(e){var img=e.target&&e.target.closest?e.target.closest("img"):null;if(!elegivel(img))return;e.preventDefault();abre(img,legendaDe(img))});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov){fecha();return}if((e.key==="Enter"||e.key===" ")&&elegivel(e.target)){e.preventDefault();abre(e.target,legendaDe(e.target))}});
+function marcar(r){var L=(r||document).querySelectorAll?(r||document).querySelectorAll("figure:not(.ver-fig) img,img[data-ampliar]"):[];for(var k=0;k<L.length;k++){var im=L[k];if(!elegivel(im))continue;if(!im.hasAttribute("tabindex"))im.setAttribute("tabindex","0");if(!im.hasAttribute("role"))im.setAttribute("role","button");if(!im.getAttribute("aria-label"))im.setAttribute("aria-label","Ampliar a imagem")}}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){marcar()});else marcar();
+if(window.MutationObserver)new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var j=0;j<ms[i].addedNodes.length;j++){var n=ms[i].addedNodes[j];if(n.nodeType===1)marcar(n)}}).observe(document.documentElement,{childList:true,subtree:true});
+window.EPIAmpliar={abre:abre,fecha:fecha}})();</script></body></html>
