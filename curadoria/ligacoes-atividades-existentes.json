@@ -1,0 +1,115 @@
+{
+  "checked_on": "2026-10-17",
+  "status": "proposta_local_nao_implementada",
+  "connections": [
+    {
+      "key": "design",
+      "title": "O artista e o designer",
+      "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m2/passo-00/",
+      "insertion_point": "Antes da aplicação do método de Munari",
+      "existing_task_support": "Identificar problema, restrição material, decisão formal e destinatário; regressar à atividade publicada.",
+      "resource_ids": [
+        "vid-096",
+        "vid-097",
+        "vid-098",
+        "vid-100",
+        "vid-101",
+        "vid-102",
+        "vid-103"
+      ]
+    },
+    {
+      "key": "estetica",
+      "title": "Estética — Berger e a legenda",
+      "url": "https://pedrohfernandes-klk.github.io/lente/estetica/",
+      "insertion_point": "Na passagem sobre Berger",
+      "existing_task_support": "Descrever primeiro o que é visível; separar descrição, inferência e juízo antes de continuar as cartas.",
+      "resource_ids": [
+        "vid-099",
+        "vid-104",
+        "vid-111",
+        "vid-116"
+      ]
+    },
+    {
+      "key": "texto",
+      "title": "Texto e imagem",
+      "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-texto-imagem/",
+      "insertion_point": "Antes da classificação das relações texto–imagem",
+      "existing_task_support": "Identificar ancoragem/complementaridade e função da linguagem; responder às perguntas já existentes com evidência do vídeo.",
+      "resource_ids": [
+        "vid-106",
+        "vid-107",
+        "vid-112"
+      ]
+    },
+    {
+      "key": "matriz",
+      "title": "A matriz por meio",
+      "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-matriz/",
+      "insertion_point": "Antes de escolher o meio do projeto",
+      "existing_task_support": "Relacionar ação, imagem, som e argumento com as possibilidades do meio; voltar à matriz publicada.",
+      "resource_ids": [
+        "vid-105",
+        "vid-109",
+        "vid-117",
+        "vid-122",
+        "vid-123"
+      ]
+    },
+    {
+      "key": "feed",
+      "title": "Contra-feed — o preço de um minuto",
+      "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m2/cid-m2-preco-minuto/",
+      "insertion_point": "Ao discutir promessa, destinatário e custo da atenção",
+      "existing_task_support": "Usar a peça como exemplo para as decisões já propostas: o que promete, a quem e o que deixa de dizer.",
+      "resource_ids": [
+        "vid-108",
+        "vid-110"
+      ]
+    },
+    {
+      "key": "presenca",
+      "title": "O que somos",
+      "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-2/",
+      "insertion_point": "Na ligação entre Sísifo, escolha e Abramović",
+      "existing_task_support": "Distinguir ação, regra, escolha e efeito no público; discutir as questões da aula sem reproduzir ações de risco.",
+      "resource_ids": [
+        "vid-113",
+        "vid-114",
+        "vid-119"
+      ]
+    },
+    {
+      "key": "pessoa",
+      "title": "Autopsicografia / Isto",
+      "url": "https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f02/",
+      "insertion_point": "Depois da leitura e análise do poema",
+      "existing_task_support": "Comparar uso da metáfora do ator com fingimento poético; justificar uma diferença e regressar à interpretação textual.",
+      "resource_ids": [
+        "vid-115"
+      ]
+    },
+    {
+      "key": "caverna",
+      "title": "A caverna de Platão",
+      "url": "https://pedrohfernandes-klk.github.io/lente/sidequests/caverna/",
+      "insertion_point": "Antes de ordenar os momentos da alegoria",
+      "existing_task_support": "Usar a animação para apoiar a sequência e distinguir aparência, conhecimento e verificação nas questões publicadas.",
+      "resource_ids": [
+        "vid-118"
+      ]
+    },
+    {
+      "key": "visao",
+      "title": "O que vemos",
+      "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-1/",
+      "insertion_point": "Na passagem sobre CHIROPTERA",
+      "existing_task_support": "Comparar formas de orientar a atenção; distinguir espetáculo, registo do espetáculo e documentário.",
+      "resource_ids": [
+        "vid-120",
+        "vid-121"
+      ]
+    }
+  ]
+}
