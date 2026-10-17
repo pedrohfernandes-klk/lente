@@ -1,6 +1,6 @@
 {
   "updated": "2026-10-17",
-  "scope": "Primeira seleção, com revisão textual documentada; não equivale a auditoria audiovisual integral.",
+  "scope": "Seleção com revisão textual documentada; não equivale a auditoria audiovisual integral.",
   "items": [
     {
       "id": "vid-086",
@@ -103,6 +103,74 @@
       ],
       "alternative": "Escreve uma cena curta, faz uma pausa e relê-a como se fosse de outra pessoa. Assinala o que fica pouco claro e experimenta duas revisões. Podes ditar ou trabalhar a pares.",
       "note": "Transcrição portuguesa integral consultada. O menu do YouTube confirma uma faixa original em português, rotulada «Portuguese (BR) original», e uma dobragem automática inglesa. Se ouvires inglês, escolhe Definições → Faixa de áudio → Português (original). Não foi feita revisão audiovisual integral."
+    },
+    {
+      "id": "vid-073",
+      "slug": "siza",
+      "youtube": "r_R1Hvz_CCc",
+      "title": "Projetar a partir do lugar",
+      "original": "Entrevista com o arquiteto Álvaro Siza",
+      "author": "Álvaro Siza",
+      "publisher": "Cosac Naify · produção Fundação Iberê Camargo",
+      "duration": "5:47",
+      "category": "Arquitetura",
+      "lesson": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-espaco/",
+      "lesson_name": "Narrativas · O espaço expandido",
+      "summary": "Siza descreve um terreno com pouco espaço e uma paisagem aberta. Explica como estas condições participam na forma do projeto. Ao falar do museu, defende margem para mudar exposições: o edifício não deve servir apenas uma disposição fixa das obras.",
+      "observe": "Como pode uma dificuldade do lugar ajudar a encontrar uma ideia?",
+      "activities": [
+        [
+          "Observar",
+          "No início da entrevista, identifica uma condição do terreno e explica como pode influenciar uma decisão de projeto.",
+          "10 min"
+        ],
+        [
+          "Desenhar",
+          "Desenha a entrada de um espaço conhecido. Assinala um obstáculo, uma vista e um lugar de pausa. Propõe uma alteração e justifica-a.",
+          "15 min"
+        ],
+        [
+          "Comparar",
+          "Imagina duas utilizações para a mesma sala. O que deve ficar fixo e o que precisa de poder mudar? Liga a resposta à intervenção da oficina.",
+          "15 min"
+        ]
+      ],
+      "alternative": "Observa uma sala acessível ou descreve uma que conheças. Regista uma limitação e duas maneiras de a resolver. Podes desenhar, escrever ou ditar; não é necessário sair da escola.",
+      "note": "Página, descrição, duração e transcrição portuguesa consultadas. A descrição data a entrevista de 2002 e a publicação no YouTube de 2008. A transcrição automática contém erros, incluindo nomes próprios; não é uma edição revista. Não foi concluída revisão audiovisual integral."
+    },
+    {
+      "id": "vid-087",
+      "slug": "prece",
+      "youtube": "aHoS56YiAIs",
+      "title": "A voz de uma prece",
+      "original": "Prece no Mediterrâneo",
+      "author": "Ana Luísa Amaral · leitura atribuída à autora na descrição",
+      "publisher": "Agora Gaia",
+      "duration": "2:00",
+      "category": "Português",
+      "lesson": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f05/",
+      "lesson_name": "M8 · Ana Luísa Amaral: reescrever a tradição",
+      "summary": "Uma prece aproxima a linguagem da oração da experiência de uma travessia. O pedido de paz e acolhimento permite trabalhar a voz coletiva e a relação entre tradição e presente. O registo oferece um ponto de comparação para a leitura do poema na aula.",
+      "observe": "Quem pede, a quem se dirige e que efeito tem ouvir o poema em voz alta?",
+      "activities": [
+        [
+          "Escutar",
+          "Segue o poema na edição da aula. Assinala uma pausa que te ajude a interpretar o pedido e explica porquê.",
+          "5–10 min"
+        ],
+        [
+          "Interpretar",
+          "Identifica quem fala e a quem se dirige. Escolhe dois indícios do texto para sustentar a tua leitura.",
+          "10 min"
+        ],
+        [
+          "Experimentar",
+          "Prepara duas leituras de uma passagem, mudando uma pausa ou a palavra destacada. Lê-as ou escreve as indicações e explica o efeito.",
+          "10–15 min"
+        ]
+      ],
+      "alternative": "Usa o poema disponibilizado na aula. Marca pausas e palavras a destacar, por escrito ou com um colega. A atividade não exige gravação, exposição pessoal nem partilha de experiências de migração.",
+      "note": "Duração observada: 2:00. A transcrição portuguesa foi consultada e contém erros e uma repetição; não deve servir de texto do poema. A descrição atribui a leitura à autora num evento de 14 de maio de 2020, em Matosinhos; publicação no canal Agora Gaia em 17 de maio. A atribuição provém do canal; as condições de republicação não foram confirmadas. Apenas ligação/incorporação do leitor original, sem alojar o vídeo ou reproduzir o poema. Revisão audiovisual integral e colação com a edição da aula por concluir."
     }
   ]
 }
