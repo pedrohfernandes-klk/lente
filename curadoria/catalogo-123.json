@@ -3491,17 +3491,17 @@
       "publisher": "Cosac Naify",
       "resource_type": "entrevista",
       "language": "pt-PT",
-      "language_status": "indicacao_editorial_baseada_em_creditos_rever_audio_original",
+      "language_status": "portugues_evidenciado_pela_transcricao_na_interface_youtube",
       "video_duration": "5:47",
       "duration_status": "observada_no_leitor",
       "lesson_plan_id": "arte-02",
       "editorial_reason": "Entrevista ligada à Fundação Iberê Camargo, no Brasil: ponte concreta entre arquitetura portuguesa e contexto brasileiro.",
       "proposed_activity": "Desenha o percurso de entrada num espaço da escola; regista um ponto de luz, uma mudança de direção e um lugar de espera.",
-      "review_notes": "Segundo a descrição, filmagem de 2002, publicada em 2008. Não confundir as datas. O plano proposto é nosso, não uma tarefa dada pelo arquiteto.",
+      "review_notes": "Página, descrição, duração e transcrição portuguesa consultadas. A descrição data a entrevista de 2002 e a publicação no YouTube de 2008. A transcrição automática contém erros, incluindo nomes próprios; não é uma edição revista. Não foi concluída revisão audiovisual integral.",
       "module": null,
       "proposed_connection": "Lente",
-      "proposed_connection_status": "proposta_nao_integrada",
-      "publication_status": "rascunho_editorial",
+      "proposed_connection_status": "integrada",
+      "publication_status": "selecao_inicial_com_revisao_textual",
       "portuguese_captions_status": "nao_verificadas",
       "access": {
         "watch_page_public_without_login": true,
@@ -3522,13 +3522,22 @@
         "embedding_verified_on_target_site": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=r_R1Hvz_CCc"
-        ]
+        ],
+        "transcript_read_in_youtube_ui": true
       },
       "clip": {
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_do_conteudo_e_texto"
-      }
+      },
+      "public_resource_url": "https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/#siza",
+      "proposed_lesson_links": [
+        {
+          "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-espaco/",
+          "status": "integrada",
+          "rationale": "Como pode uma dificuldade do lugar ajudar a encontrar uma ideia?"
+        }
+      ]
     },
     {
       "id": "vid-074",
@@ -4187,17 +4196,17 @@
       "publisher": "Agora Gaia",
       "resource_type": "leitura_pela_autora_anunciada",
       "language": "pt-PT",
-      "language_status": "indicacao_editorial_baseada_em_creditos_rever_audio_original",
+      "language_status": "portugues_evidenciado_pela_transcricao_na_interface_youtube",
       "video_duration": "2:00",
       "duration_status": "observada_no_leitor",
       "lesson_plan_id": "leitura-04",
       "editorial_reason": "Gravação anunciada como leitura pela autora do poema efetivamente selecionado no M8.",
       "proposed_activity": "Identifica quem fala e a quem se dirige; compara uma escolha de voz com um indício do texto.",
-      "review_notes": "Descrição situa o registo num evento de 2020. A identificação da leitura pela autora provém dessa descrição; origem e condições de republicação por esclarecer. Não confundir canal com Câmara de Gaia.",
+      "review_notes": "Duração observada: 2:00. A transcrição portuguesa foi consultada e contém erros e uma repetição; não deve servir de texto do poema. A descrição atribui a leitura à autora num evento de 14 de maio de 2020, em Matosinhos; publicação no canal Agora Gaia em 17 de maio. A atribuição provém do canal; as condições de republicação não foram confirmadas. Apenas ligação/incorporação do leitor original, sem alojar o vídeo ou reproduzir o poema. Revisão audiovisual integral e colação com a edição da aula por concluir.",
       "module": 8,
       "proposed_connection": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f05/",
-      "proposed_connection_status": "proposta_nao_integrada",
-      "publication_status": "rascunho_editorial",
+      "proposed_connection_status": "integrada",
+      "publication_status": "selecao_inicial_com_revisao_textual",
       "portuguese_captions_status": "nao_verificadas",
       "access": {
         "watch_page_public_without_login": true,
@@ -4218,13 +4227,22 @@
         "embedding_verified_on_target_site": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=aHoS56YiAIs"
-        ]
+        ],
+        "transcript_read_in_youtube_ui": true
       },
       "clip": {
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_do_conteudo_e_texto"
-      }
+      },
+      "public_resource_url": "https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/#prece",
+      "proposed_lesson_links": [
+        {
+          "url": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f05/",
+          "status": "integrada",
+          "rationale": "Quem pede, a quem se dirige e que efeito tem ouvir o poema em voz alta?"
+        }
+      ]
     },
     {
       "id": "vid-088",
