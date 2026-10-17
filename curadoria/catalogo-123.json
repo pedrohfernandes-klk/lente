@@ -2867,31 +2867,26 @@
       "publisher": "TSF Rádio Notícias",
       "category": "Rotina / escrita",
       "language": "pt-PT",
-      "language_status": "indicacao_editorial_requer_confirmacao_audiovisual",
+      "language_status": "portugues_evidenciado_pela_transcricao_na_interface_youtube",
       "video_duration": "2:56",
-      "duration_status": "observada_no_leitor",
+      "duration_status": "observada_no_leitor_sem_publicidade_2026_10_17",
       "editorial_reason": "Fragmento breve sobre método de trabalho; útil para desfazer a ideia de que criar depende apenas de inspiração.",
       "proposed_activity": "Experimenta cinco minutos de escrita sem editar, escolhe uma frase e revê-a duas vezes; regista a diferença.",
       "activity_time_estimate": "20 min",
       "lesson_plan_id": "oficina-08",
-      "review_notes": "Título do YouTube apresentado em inglês pela interface: «Almost all of my creative moments happen in the morning». Conteúdo associado ao programa A Escuta do Mundo. Confirmar modalidade visual e áudio original antes da aula; não presumir que manhã é melhor para todos.",
+      "review_notes": "Transcrição portuguesa integral consultada. O menu do YouTube confirma uma faixa original em português, rotulada «Portuguese (BR) original», e uma dobragem automática inglesa. Se ouvires inglês, escolhe Definições → Faixa de áudio → Português (original). Não foi feita revisão audiovisual integral.",
       "materials": "Papel e caneta; materiais reutilizados; telemóvel opcional",
       "proposed_lesson_links": [
         {
-          "site": "pt",
-          "area": "escrita, oralidade e argumentação",
-          "status": "proposta_sem_integracao"
-        },
-        {
-          "site": "lente",
-          "area": "imagem, narrativa e processo criativo",
-          "status": "proposta_sem_integracao"
+          "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-ficcao-comecar/",
+          "status": "integrada",
+          "rationale": "Que diferença estabelece entre escrever uma primeira versão e decidir mudar uma palavra?"
         }
       ],
       "portuguese_captions_status": "nao_verificadas",
       "caption_quality_status": "nao_auditada_integralmente",
       "source_status": "canal_do_editor_ou_instituicao_identificado",
-      "publication_status": "rascunho_editorial",
+      "publication_status": "selecao_inicial_com_revisao_textual",
       "verification": {
         "checked_on": "2026-10-17",
         "youtube_watch_page_opened": true,
@@ -2903,13 +2898,17 @@
         "school_network_playback_verified": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=JGKytSwhzvQ"
-        ]
+        ],
+        "transcript_read_in_youtube_ui": true,
+        "caption_quality_audited": false
       },
       "clip": {
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_integral"
-      }
+      },
+      "public_resource_url": "https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/#escrita",
+      "proposed_connection_status": "integrada"
     },
     {
       "id": "vid-062",
@@ -2920,31 +2919,26 @@
       "publisher": "MAAT – Museum of Art, Architecture and Technology",
       "category": "Arte / escala / materiais",
       "language": "pt-PT",
-      "language_status": "indicacao_editorial_requer_confirmacao_audiovisual",
-      "video_duration": "1:15",
-      "duration_status": "observada_no_leitor",
+      "language_status": "portugues_evidenciado_pela_transcricao_na_interface_youtube",
+      "video_duration": "7:30",
+      "duration_status": "observada_no_leitor_sem_publicidade_2026_10_17",
       "editorial_reason": "Entrada muito breve para relacionar objeto, tecnologia e espaço expositivo.",
       "proposed_activity": "Escolhe um objeto comum e desenha-o com outra escala ou função; legenda o efeito pretendido.",
       "activity_time_estimate": "25 min",
       "lesson_plan_id": "oficina-06",
-      "review_notes": "Conteúdo de apresentação de exposição: combinar com análise de uma obra e não o tratar como aula técnica completa. Confirmar língua efetiva e apresentação visual na revisão integral.",
+      "review_notes": "Transcrição portuguesa integral consultada; duração corrigida de 1:15 para 7:30 após observação do leitor. As afirmações sobre energia e bem-estar são posições da entrevistada. Legendas automáticas não revistas e visionamento audiovisual integral não concluído.",
       "materials": "Papel e caneta; materiais reutilizados; telemóvel opcional",
       "proposed_lesson_links": [
         {
-          "site": "pt",
-          "area": "escrita, oralidade e argumentação",
-          "status": "proposta_sem_integracao"
-        },
-        {
-          "site": "lente",
-          "area": "imagem, narrativa e processo criativo",
-          "status": "proposta_sem_integracao"
+          "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m2/passo-00/",
+          "status": "integrada",
+          "rationale": "Que decisões dependem da intenção da artista e quais dependem do espaço, dos materiais ou de quem vai ver?"
         }
       ],
       "portuguese_captions_status": "nao_verificadas",
       "caption_quality_status": "nao_auditada_integralmente",
       "source_status": "canal_do_editor_ou_instituicao_identificado",
-      "publication_status": "rascunho_editorial",
+      "publication_status": "selecao_inicial_com_revisao_textual",
       "verification": {
         "checked_on": "2026-10-17",
         "youtube_watch_page_opened": true,
@@ -2956,13 +2950,17 @@
         "school_network_playback_verified": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=FiUCbtv9aFM"
-        ]
+        ],
+        "transcript_read_in_youtube_ui": true,
+        "caption_quality_audited": false
       },
       "clip": {
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_integral"
-      }
+      },
+      "public_resource_url": "https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/#arte",
+      "proposed_connection_status": "integrada"
     },
     {
       "id": "vid-063",
@@ -4130,17 +4128,17 @@
       "publisher": "ACE Escola de Artes / Teatro do Bolhão",
       "resource_type": "leitura_interpretada",
       "language": "pt-PT",
-      "language_status": "indicacao_editorial_baseada_em_creditos_rever_audio_original",
-      "video_duration": null,
-      "duration_status": "nao_reconfirmada_devido_a_publicidade_ou_discrepancia",
+      "language_status": "portugues_evidenciado_pela_transcricao_na_interface_youtube",
+      "video_duration": "1:27",
+      "duration_status": "observada_no_leitor_sem_publicidade_2026_10_17",
       "lesson_plan_id": "leitura-01",
       "editorial_reason": "A interpretação identificada corresponde ao poema explicitamente trabalhado no M8.",
       "proposed_activity": "Ouve primeiro sem escrever; depois segue o poema e justifica uma pausa ou acentuação.",
-      "review_notes": "Créditos na descrição: interpretação Sandra Salomé, direção Margarida Gonçalves, animação Carolina Gaessler. Duração não reconfirmada por anúncio. A animação acrescenta uma interpretação visual.",
+      "review_notes": "A transcrição automática foi consultada e contém erros. Usar a edição da aula para o texto; não copiar a transcrição como versão do poema. Não foi realizada colação audiovisual integral.",
       "module": 8,
       "proposed_connection": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f04/",
-      "proposed_connection_status": "proposta_nao_integrada",
-      "publication_status": "rascunho_editorial",
+      "proposed_connection_status": "integrada",
+      "publication_status": "selecao_inicial_com_revisao_textual",
       "portuguese_captions_status": "nao_verificadas",
       "access": {
         "watch_page_public_without_login": true,
@@ -4161,13 +4159,23 @@
         "embedding_verified_on_target_site": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=IvIPEyfL5G0"
-        ]
+        ],
+        "transcript_read_in_youtube_ui": true,
+        "caption_quality_audited": false
       },
       "clip": {
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_do_conteudo_e_texto"
-      }
+      },
+      "public_resource_url": "https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/#palavras",
+      "proposed_lesson_links": [
+        {
+          "url": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f04/",
+          "status": "integrada",
+          "rationale": "Que contraste do poema fica mais evidente através da voz ou da imagem?"
+        }
+      ]
     },
     {
       "id": "vid-087",
