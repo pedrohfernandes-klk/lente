@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "title": "Videoteca — 123 registos acumulados",
-  "checked_on": "2026-10-17",
+  "title": "Videoteca — 126 registos acumulados",
+  "checked_on": "2026-10-18",
   "scope": "Catálogo de curadoria; inclui reservas e versões; não equivale a aprovação integral",
   "items": [
     {
@@ -5946,6 +5946,100 @@
         "start_seconds": null,
         "end_seconds": null,
         "status": "delimitar_apos_revisao_audiovisual"
+      }
+    },
+    {
+      "id": "vid-124",
+      "youtube_id": "CW3CGuF0aLE",
+      "url": "https://www.youtube.com/watch?v=CW3CGuF0aLE",
+      "title": "A Propósito das Estrelas",
+      "speaker": "Fernando Alvim",
+      "publisher": "WOOK",
+      "category": "Poesia / leitura",
+      "language": "pt",
+      "video_duration": "0:51",
+      "publication_status": "integrado_com_limites_de_verificacao_explicitos",
+      "proposed_activity": "Uma pessoa leva-nos a gostar de uma coisa — ou acontece ao contrário? Escuta a leitura e repara na ordem das associações.",
+      "proposed_lesson_links": [
+        {
+          "site": "pt",
+          "url": "https://pedrohfernandes-klk.github.io/pt/m8/licao-m8-f01/",
+          "status": "integrado"
+        }
+      ],
+      "review_notes": "Canal WOOK, intérprete e duração confirmados. Áudio original português identificado; transcrição portuguesa consultada. A transcrição é automática, não uma edição do poema nem legendagem revista. Se surgir dobragem, escolhe o áudio original português nas definições.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "expected_title_observed": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
+      },
+      "clip": null
+    },
+    {
+      "id": "vid-125",
+      "youtube_id": "0jjE-2FqqpM",
+      "url": "https://www.youtube.com/watch?v=0jjE-2FqqpM",
+      "title": "Tabacaria",
+      "speaker": "Mário Viegas",
+      "publisher": "João Cachulo — republicação de Palavras Vivas",
+      "category": "Poesia / leitura",
+      "language": "pt",
+      "video_duration": "15:35",
+      "publication_status": "integrado_com_limites_de_verificacao_explicitos",
+      "proposed_activity": "Lê a abertura na ficha. Depois, compara-a com a voz de Mário Viegas. Podes parar a leitura quando tiveres um pormenor para observar.",
+      "proposed_lesson_links": [
+        {
+          "site": "pt",
+          "url": "https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f36/",
+          "status": "integrado"
+        }
+      ],
+      "review_notes": "Título, canal e duração confirmados no YouTube. A RTP identifica a leitura de Tabacaria por Mário Viegas no programa Palavras Vivas (2 de fevereiro de 1991). Esta cópia é uma republicação por João Cachulo; não é o canal da RTP. Sem transcrição disponível ou colação audiovisual integral. Usa o texto da ficha, não uma transcrição automática.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "expected_title_observed": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
+      },
+      "clip": null
+    },
+    {
+      "id": "vid-126",
+      "youtube_id": "g_Z_I63vEqA",
+      "url": "https://www.youtube.com/watch?v=g_Z_I63vEqA",
+      "title": "Política, democracia, justiça e bem-viver",
+      "speaker": "Michael Sandel",
+      "publisher": "Fronteiras do Pensamento",
+      "category": "Filosofia / justiça",
+      "language": "en",
+      "video_duration": "4:30",
+      "publication_status": "integrado_com_limites_de_verificacao_explicitos",
+      "proposed_activity": "Sandel retoma Aristóteles para defender a discussão com os outros. Vê o excerto de 1:44 a 2:09 e regressa à distribuição da câmara: quem deveria participar na decisão?",
+      "proposed_lesson_links": [
+        {
+          "site": "lente",
+          "url": "https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/justica/",
+          "status": "integrado"
+        }
+      ],
+      "review_notes": "Fonte oficial Fronteiras do Pensamento. Faixa Portuguese disponível, distinta da tradução automática; tradução creditada a Marina Waquil e Francesco Settineri. O texto do excerto foi comparado com a transcrição inglesa. Vídeo complementar ao percurso inspirado em Justice; não é uma aula do curso de Harvard. Revisão audiovisual integral e acesso na rede da escola por concluir.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "expected_title_observed": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
+      },
+      "clip": {
+        "start_seconds": 104,
+        "end_seconds": 129,
+        "status": "texto_portugues_conferido_com_transcricao_inglesa"
       }
     }
   ]
