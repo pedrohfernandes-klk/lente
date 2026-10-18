@@ -3077,33 +3077,29 @@
       "publisher": "Itaú Cultural",
       "category": "Artes visuais / representação",
       "language": "pt-BR",
-      "language_status": "indicacao_editorial_requer_confirmacao_audiovisual",
+      "language_status": "audio_original_portugues_identificado_no_leitor",
       "video_duration": "9:24",
       "duration_status": "observada_no_leitor",
       "editorial_reason": "O depoimento relaciona materiais, investigação e presença das mulheres negras; aproxima decisão formal e sentido.",
-      "proposed_activity": "Cria um pequeno arquivo de três objetos com etiquetas: o que mostram, o que não explicam e quem falta ouvir.",
-      "activity_time_estimate": "35 min",
-      "lesson_plan_id": "oficina-05",
-      "review_notes": "Título traduzido automaticamente para Absent Dialogues em parte da consulta. O vídeo de 9:24 é um depoimento; não o confundir com toda a palestra/debate de duração diferente. A proposta não pede copiar iconografia nem estetizar violência.",
-      "materials": "Papel e caneta; materiais reutilizados; telemóvel opcional",
+      "proposed_activity": "Comparar duas legendas para uma proposta fictícia e observar como orientam a leitura, sem escrever no ecrã.",
+      "activity_time_estimate": "8 min com a Matriz",
+      "lesson_plan_id": "oficina-matriz-interativa",
+      "review_notes": "Título traduzido automaticamente para Absent Dialogues em parte da consulta. O vídeo de 9:24 é um depoimento; não o confundir com toda a palestra/debate de duração diferente. A proposta não pede copiar iconografia nem estetizar violência. Integração de excerto sobre comunicação e receção; comparação de legendas num exemplo original, sem copiar a iconografia da artista. Áudio original português identificado no menu; podem surgir dobragens automáticas.",
+      "materials": "Navegador; alternativa textual ao vídeo",
       "proposed_lesson_links": [
         {
-          "site": "pt",
-          "area": "escrita, oralidade e argumentação",
-          "status": "proposta_sem_integracao"
-        },
-        {
           "site": "lente",
-          "area": "imagem, narrativa e processo criativo",
-          "status": "proposta_sem_integracao"
+          "area": "Matriz — relação entre obra e público",
+          "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-matriz-imprimir/",
+          "status": "integrado"
         }
       ],
       "portuguese_captions_status": "nao_verificadas",
       "caption_quality_status": "nao_auditada_integralmente",
       "source_status": "canal_do_editor_ou_instituicao_identificado",
-      "publication_status": "rascunho_editorial",
+      "publication_status": "integrado_com_revisao_textual_limitada",
       "verification": {
-        "checked_on": "2026-10-17",
+        "checked_on": "2026-10-18",
         "youtube_watch_page_opened": true,
         "expected_title_observed": true,
         "publisher_observed": true,
@@ -3116,9 +3112,9 @@
         ]
       },
       "clip": {
-        "start_seconds": null,
-        "end_seconds": null,
-        "status": "delimitar_apos_revisao_integral"
+        "start_seconds": 147,
+        "end_seconds": 179,
+        "status": "delimitado_pela_transcricao_revisao_audiovisual_pendente"
       }
     },
     {
