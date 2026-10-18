@@ -36,3 +36,33 @@
 #experimentar-colecao:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:6px}
 @media(max-width:599px){.lab-posters>ul,.lab-start ul{grid-template-columns:minmax(0,1fr)}.lab-posters>ul{gap:24px}.lab-posters .lp-link{display:grid;grid-template-columns:minmax(0,1fr) 82px;gap:0 14px;padding:16px}.lp-label,.lp-note,.lp-action{grid-column:1/-1}.lp-visual{grid-column:2;grid-row:2;margin:14px 0 0;height:108px;width:82px}.lp-question{grid-column:1;grid-row:2;margin-top:14px;font-size:clamp(1.6rem,7vw,2rem)}.lp-note{margin-top:14px}.lp-action{padding-top:18px}.lp-montagem{gap:3px;padding:5px}.lp-montagem span{height:54px;font-size:1.7rem}.lab-start li>a{min-height:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;padding:16px 0}.lab-start li a>span,.lab-start small{grid-column:1}.lab-start b{grid-column:2;grid-row:1/4;margin:0;padding:0;align-self:center}.lab-start li a>span{margin-top:6px}}
 @media(forced-colors:active){.lab-posters .lp-link{border:2px solid LinkText;background:Canvas;color:LinkText}.lp-montagem span,.lp-montagem span:nth-child(2){background:Canvas;color:CanvasText;border-color:CanvasText}.lp-visual img{mix-blend-mode:normal}.lp-action>span{color:LinkText}}
+
+/* Six documentary routes: the original mission identity/progress is retained. */
+.lab-lives{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px;margin-top:24px}
+.lab-lives .lab-life{--life-paper:#eee8da;--life-ink:#171715;--life-accent:#a3472e;display:flex;flex-direction:column;align-items:stretch;gap:0;min-width:0;padding:18px;border:0;border-top:4px solid var(--life-ink);background:var(--life-paper);color:var(--life-ink);text-decoration:none;animation:none;transition:none}
+.lab-lives .lab-life:nth-child(3n+2){--life-paper:#e2ebeb;--life-ink:#172d36;--life-accent:#365f70}
+.lab-lives .lab-life:nth-child(3n){--life-paper:#202420;--life-ink:#f4f1e8;--life-accent:#e0b23a}
+.lab-lives .lab-life:hover{background:var(--life-paper);color:var(--life-ink);transform:none}
+.lab-lives .lab-life:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:5px}
+.lab-lives .lab-life .r{color:var(--life-ink);font:700 .68rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.1em;opacity:1;margin:0 0 12px}
+.life-art{display:block;position:relative;overflow:hidden;flex:none;width:calc(100% + 36px);aspect-ratio:1.9;height:auto;margin:0 -18px 18px;background:var(--life-paper)}
+.life-art img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.life-art-duchamp img{object-position:50% 65%}
+.life-art-anguissola img{object-position:50% 20%}
+.life-art-leonardo img{object-position:50% 50%}
+.life-art-galileu img{object-position:50% 47%}
+.lab-lives .lab-life .t{color:var(--life-ink);font:700 .9rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.02em;margin:0 0 10px}
+.life-question{color:var(--life-ink);font:800 clamp(1.45rem,3vw,1.9rem)/1.06 Arial,Helvetica,sans-serif;letter-spacing:-.035em;overflow-wrap:break-word}
+.lab-lives .lab-life:hover .life-question{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.lab-lives .lab-life .s{display:block;color:var(--life-ink);font:.88rem/1.5 Arial,Helvetica,sans-serif;margin:14px 0 18px;opacity:1}
+.life-action{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-top:auto;padding-top:8px;font:700 .88rem/1.3 Arial,Helvetica,sans-serif}
+.life-action>span{color:var(--life-accent);font:400 1.6rem/1 Arial,Helvetica,sans-serif}
+.lab-lives .lab-life .a{display:block;position:static;color:var(--life-ink);font:700 .7rem/1.4 Arial,Helvetica,sans-serif;margin-top:12px;opacity:1}
+.life-credit{display:block;color:var(--life-ink);border-top:1px solid currentColor;padding-top:8px;margin-top:12px;font:.63rem/1.4 Arial,Helvetica,sans-serif}
+.life-iniciais{display:block;width:fit-content;margin:12px auto 0;padding:0 20px;border-bottom:4px solid var(--life-accent);color:var(--life-accent);font:800 clamp(4rem,11vw,6rem)/1 Arial,Helvetica,sans-serif;letter-spacing:-.09em}
+.life-luas{height:100%;display:flex;align-items:center;justify-content:center;gap:8%;padding:14px}
+.life-luas i{display:block;width:23%;aspect-ratio:1;border-radius:50%;border:1px solid var(--life-ink);background:linear-gradient(90deg,var(--life-ink) 50%,var(--life-paper) 50%)}
+.life-luas i:first-child{background:var(--life-ink)}
+.life-luas i:last-child{background:var(--life-paper)}
+@media(max-width:599px){.lab-lives{grid-template-columns:minmax(0,1fr);gap:24px}.life-art{aspect-ratio:2.4}.life-question{font-size:clamp(1.5rem,6.2vw,1.9rem)}.life-iniciais{font-size:4rem;margin-top:8px}}
+@media(forced-colors:active){.lab-lives .lab-life,.lab-lives .lab-life:hover{background:Canvas;color:LinkText;--life-paper:Canvas;--life-ink:LinkText;--life-accent:LinkText;border:2px solid LinkText}.life-luas i{background:Canvas;border-color:CanvasText}.life-luas i:first-child{background:CanvasText}}
