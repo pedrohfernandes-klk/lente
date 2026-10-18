@@ -1,32 +1,31 @@
-# Narrativas: três conjuntos reais
+# LENTE — três conjuntos e entrada simplificada
 
-Baseline: d58b5b58e44c98965baf4027c673d88f2f6a25b9. Alteração autorizada neste pedido: reorganizar os acessos ao Laboratório e substituir o nome coletivo «Dossiers». Sem merge ou publicação.
+Baseline: d58b5b58e44c98965baf4027c673d88f2f6a25b9. Em 18-10-2026, o utilizador autorizou expressamente integração e publicação, remoção de Transversal do início e correspondência visual de Cidadania. Testes críticos proporcionais aprovados; complementares documentados abaixo.
 
-## Estrutura
+## Estrutura e preservação
 
-- Aulas: quatro percursos existentes.
-- Experimentar: 13 exercícios, oito Corta!, 20 oficinas e 15 aquecimentos. A ligação de apoio «Dar forma às palavras» permanece.
-- Vidas e ideias: os seis percursos documentais, com os mesmos destinos e sem lhes acrescentar questionários.
+- Aulas: quatro percursos; Biblioteca, Como se lê e Direitos e fontes como apoios.
+- Experimentar: 13 exercícios, oito Corta!, 20 oficinas e 15 aquecimentos; Dar forma às palavras, Cidade, Projetos, Sidequests, Apresentar, Caderno e Como se faz como apoios.
+- Vidas e ideias: seis leituras documentais, Gigantes, Investigação, Olhar e decidir, Fachada e Margens.
 
-Os três acessos da página inicial e da navegação do Laboratório levam a secções identificadas do índice existente, não à primeira página de cada coleção. As páginas individuais, identificadores e chaves de progresso são preservados. O nome coletivo muda no acesso e no índice; os textos e títulos internos dos seis percursos não são reescritos neste lote.
+Os 14 destinos do antigo Transversal continuam acessíveis pelos três conjuntos. Dar forma às palavras reutiliza o acesso existente. O bloco e o salto Recursos desaparecem do início; a âncora antiga trans-t mantém uma ponte para Narrativas. Cada destino transferido aparece uma vez no índice.
 
-Só duas páginas HTML e uma folha de estilos própria são alteradas. A folha partilhada continua intacta. Não se cria uma quarta área curricular nem se altera Cidadania ou Português.
+Os 66 cartões mantêm destinos, identificadores, conteúdos, imagens e chaves de progresso. Cidadania mantém três destinos e cálculo de progresso; usa a mesma composição numerada, com fundo escuro e mostarda. Contrastes calculados: texto 15,99:1, descrição 12,09:1, números 9,04:1. Os dois cartões ficam alinhados em computador. CSS próprio; folha partilhada intacta.
 
-## Verificação estática independente
+As marcas dos recursos transferidos passam a aparecer no índice. O sinal de progresso global do início continua a reconhecer as dez chaves transferidas; o contador das quatro aulas não inclui os apoios.
 
-66 cartões identificados preservados; mesmos destinos e atributos de cada cartão. As âncoras antigas, incluindo corta e aquecimentos, mantêm-se. IDs únicos e destinos dos novos fragmentos existentes. Seis scripts inline idênticos e com sintaxe válida; scripts externos e recursos antigos preservados. O único recurso adicional é o CSS deste acesso. Hierarquia H1, três H2, e H3/H4 nos subgrupos.
+## Verificações executadas
 
-## Testes no navegador
-
-- As três ligações da entrada foram ativadas por Enter. Hash e foco chegam às secções certas; contagens observadas: quatro, 56 e seis cartões.
-- As duas páginas foram abertas em janelas de 320×568, 390×844, 768×1024 e 1440×900. Sem transbordo horizontal; os três acessos têm altura superior a 44 px em todos os casos. A largura útil do documento desconta a barra de deslocação vertical.
-- As âncoras antigas corta e aquecimentos continuam a apresentar os títulos corretos.
-- Dados de teste locais controlados, em cópias QA não incluídas no PR: antes/depois mostraram duas de quatro aulas, a mesma próxima aula e seis marcas de conclusão distribuídas por aulas, exercício, Corta!, aquecimento e leitura documental. A entrada mostrou as mesmas quatro peças guardadas nos dois casos. As chaves do site público não foram tocadas.
-- Modo de projeção: os 66 destinos recebem projetar=1 e os três acessos de conjunto mantêm os fragmentos próprios.
-- Nenhum aviso ou erro de consola capturado nesses fluxos.
-
-Capturas antes/depois de computador e telemóvel e registos JSON estão no workspace de revisão. As cópias QA, scripts auxiliares e capturas não são publicados por este PR.
+- Auditoria independente: 66 identidades preservadas; sete scripts com sintaxe válida. Cinco cenários controlados do código de marcação aprovados, incluindo recurso isolado e identidade da Fachada.
+- Ligações: 103 ocorrências, 92 destinos HTML únicos verificados por HEAD, zero falhas. Dez fragmentos confirmados no HTML final ou público. Destinos LENTE também conferidos no inventário GitHub da baseline.
+- Navegador: os três acessos ativados por Enter chegam às secções e foco corretos; apoios aparecem nos conjuntos previstos. Âncoras corta e aquecimentos preservadas.
+- Entrada e índice em 320, 390, 768 e 1440 px: sem transbordo horizontal; acessos com altura mínima superior a 44 px.
+- Cópia QA isolada: Módulo 1 feito, quatro peças na entrada, duas de quatro aulas lidas, seis cartões feitos; Biblioteca e Fachada marcadas no local novo. Chaves do domínio público não alteradas pelos testes.
+- Projeção, no primeiro incremento: os 66 destinos recebem projetar=1; acessos aos conjuntos mantêm os fragmentos. Código de projeção preservado no segundo incremento.
+- Consola sem avisos/erros nos fluxos finais testados. Capturas de computador e telemóvel guardadas no workspace. Fixtures e capturas ficam fora do PR.
 
 ## Limites
 
-Não foram repetidos os exercícios dos 66 conteúdos: as suas páginas não mudam. Leitor de ecrã real, telemóvel físico, falhas de rede e medição de desempenho não certificados neste lote. A preservação do progresso combina identidade do código com um cenário controlado; não equivale a testar todos os estados de armazenamento. Aprovação expressa necessária antes de merge e deployment.
+Leitor de ecrã real, dispositivo físico, falhas de rede e medição representativa de desempenho não executados. Não foram repetidos os exercícios dos 66 conteúdos, cujas páginas não mudam. Cenários de progresso controlados não cobrem todos os estados. Estas verificações complementares não são apresentadas como aprovadas.
+
+Antes de declarar publicação concluída, confirmar o deployment Pages do SHA integrado e os ficheiros servidos no endereço público.

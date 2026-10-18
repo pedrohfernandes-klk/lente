@@ -20,3 +20,10 @@
 @media(prefers-color-scheme:dark){.lab-sets{--lab-accent:#db9b7c}}
 @media(prefers-reduced-motion:reduce){.lab-sets>li>a,.lab-set{animation:none;transition:none;scroll-behavior:auto}}
 @media(forced-colors:active){.lab-sets .lab-set-number,.lab-sets .lab-set-copy small{color:CanvasText}.lab-sets>li>a{color:LinkText}.lab-set:target{border-color:Highlight}}
+/* Citizenship uses the same routes with an inverse editorial palette. */
+.lente-div .ld:nth-child(2){margin-top:0}
+.ld>#trans-t{position:absolute;top:0;left:0}
+#inicio-cidadania{--tinta:#f3f2ee;--papel:#181715;--suave:#d6d4ce;background:#181715;color:#f3f2ee}
+#inicio-cidadania .lab-sets{--lab-accent:#e0b23a}
+#inicio-cidadania .ld-x{border-color:#f3f2ee}
+@media(forced-colors:active){#inicio-cidadania{background:Canvas;color:CanvasText;--tinta:CanvasText;--papel:Canvas;--suave:CanvasText}#inicio-cidadania .lab-sets .lab-set-number{color:CanvasText}#inicio-cidadania .ld-x{border-color:CanvasText}}
