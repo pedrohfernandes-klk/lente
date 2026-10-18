@@ -113,3 +113,20 @@
 @media(forced-colors:active){.lab-bundle{--bundle-paper:Canvas;--bundle-ink:CanvasText;--bundle-accent:LinkText;border:2px solid CanvasText}.bundle-body{background:Canvas;color:CanvasText}.bundle-resources a{color:LinkText}}
 
 @media(max-width:599px){.lab-bundle .bundle-art-narrar i{font-size:1.25rem}.lab-bundle .bundle-art-ler i{font-size:2.8rem}.lab-bundle .bundle-art-decidir i{width:28px;height:28px}.lab-bundle .bundle-art-rua{gap:4px}.lab-bundle .bundle-art-rua i{width:18px;height:45px}.lab-bundle .bundle-art-rua i:nth-child(2){height:60px}.lab-bundle .bundle-art-rua i:last-child{height:34px}.lab-bundle .bundle-art-projeto i,.lab-bundle .bundle-art-referencias i{font-size:4rem}}
+
+/* Direct collection entries share the disclosure posters' hierarchy. */
+.bundle-entry{display:grid;grid-template-columns:minmax(0,1fr) 140px;column-gap:20px;padding:18px;text-decoration:none}
+.bundle-entry:hover .bundle-question{text-decoration:underline;text-underline-offset:4px}
+.bundle-entry:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:5px}
+.bundle-entry.p-feito .bundle-action::before{content:"Já exploraste · ";font-weight:400}
+.bundle-art-sequencia i{display:grid;place-items:center;width:40px;height:52px;border:2px solid currentColor;font:700 1.8rem/1 Arial,Helvetica,sans-serif}
+.bundle-art-sequencia i:nth-child(2){transform:translateY(-10px)}
+.bundle-art-ombros{flex-direction:column;justify-content:center;align-items:start;gap:7px}
+.bundle-art-ombros i{height:14px;width:110px;background:currentColor}
+.bundle-art-ombros i:nth-child(2){width:80px}.bundle-art-ombros i:last-child{width:50px}
+.bundle-art-vidas{display:grid;grid-template-columns:repeat(3,28px);gap:10px;align-content:center}
+.bundle-art-vidas i{width:28px;height:28px;border:2px solid currentColor;border-radius:50%}
+.bundle-art-vidas i:nth-child(2n){background:currentColor}
+.bundle-art-margens i{font:400 6rem/1 Arial,Helvetica,sans-serif}
+@media(max-width:599px){.bundle-entry{grid-template-columns:minmax(0,1fr) 70px;column-gap:12px}.bundle-art-sequencia{gap:3px}.bundle-art-sequencia i{width:21px;height:34px;font-size:1rem}}
+@media(max-width:599px){.bundle-art-ombros i{width:65px}.bundle-art-ombros i:nth-child(2){width:45px}.bundle-art-ombros i:last-child{width:25px}.bundle-art-vidas{grid-template-columns:repeat(3,17px);gap:6px}.bundle-art-vidas i{width:17px;height:17px}.bundle-art-margens i{font-size:4rem}}
