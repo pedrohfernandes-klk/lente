@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "title": "Videoteca — 126 registos acumulados",
+  "title": "Videoteca — 129 registos acumulados",
   "checked_on": "2026-10-18",
   "scope": "Catálogo de curadoria; inclui reservas e versões; não equivale a aprovação integral",
   "items": [
@@ -6040,6 +6040,69 @@
         "start_seconds": 104,
         "end_seconds": 129,
         "status": "texto_portugues_conferido_com_transcricao_inglesa"
+      }
+    },
+    {
+      "id": "vid-127",
+      "youtube_id": "3mD-uPYRPxs",
+      "title": "Poema em linha reta — cena de O Clone",
+      "speaker": "Osmar Prado (atribuição do título)",
+      "publisher": "Wlaumir Souza",
+      "video_duration": "1:26",
+      "proposed_activity": "Comparar uma interpretação dramática com outra leitura do mesmo poema; distinguir voz poética e personagem televisiva.",
+      "url": "https://www.youtube.com/watch?v=3mD-uPYRPxs",
+      "publication_status": "reserva_pedagogica_verificacao_pendente",
+      "language": "pt",
+      "language_status": "a_confirmar_na_revisao_audiovisual",
+      "review_notes": "Sugerido pelo utilizador. Página, título, canal e duração observados em 18 de outubro de 2026. A atribuição do intérprete ainda deve ser confirmada por fonte primária. Não integrado nas fichas; tradução/dobragem automática possível.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
+      }
+    },
+    {
+      "id": "vid-128",
+      "youtube_id": "AqNjbqQwOzE",
+      "title": "Elegia 1938, de Carlos Drummond de Andrade",
+      "speaker": "Caetano Veloso (atribuição do título)",
+      "publisher": "Caio Taveira",
+      "video_duration": "3:55",
+      "proposed_activity": "Escutar o ritmo e escolher uma passagem para comparar com a edição do poema.",
+      "url": "https://www.youtube.com/watch?v=AqNjbqQwOzE",
+      "publication_status": "reserva_pedagogica_verificacao_pendente",
+      "language": "pt",
+      "language_status": "a_confirmar_na_revisao_audiovisual",
+      "review_notes": "Sugerido pelo utilizador. Página, título, canal e duração observados em 18 de outubro de 2026. A atribuição do intérprete ainda deve ser confirmada por fonte primária. Não integrado nas fichas; tradução/dobragem automática possível.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
+      }
+    },
+    {
+      "id": "vid-129",
+      "youtube_id": "o8vt_hJeClI",
+      "title": "Estou farto de semideuses! — excerto de Poema em linha reta",
+      "speaker": "Maria Bethânia (atribuição do título)",
+      "publisher": "Inspiração Literária",
+      "video_duration": "0:15",
+      "proposed_activity": "Comparar um excerto muito curto com o contexto do poema, sem o apresentar como leitura integral.",
+      "url": "https://www.youtube.com/watch?v=o8vt_hJeClI",
+      "publication_status": "reserva_pedagogica_verificacao_pendente",
+      "language": "pt",
+      "language_status": "a_confirmar_na_revisao_audiovisual",
+      "review_notes": "Sugerido pelo utilizador. Página, título, canal e duração observados em 18 de outubro de 2026. A atribuição do intérprete ainda deve ser confirmada por fonte primária. Não integrado nas fichas; tradução/dobragem automática possível.",
+      "verification": {
+        "checked_on": "2026-10-18",
+        "youtube_watch_page_opened": true,
+        "publisher_observed": true,
+        "full_audiovisual_review": false,
+        "school_network_playback_verified": false
       }
     }
   ]
