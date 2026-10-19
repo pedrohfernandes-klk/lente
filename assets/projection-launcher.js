@@ -5,6 +5,30 @@
   if (window.__EPI_PROJECTION_LAUNCHER__) return;
   window.__EPI_PROJECTION_LAUNCHER__ = true;
 
+  var siteHelpers = window.EPILente || {
+    safeStorage: {
+      get: function (key) {
+        try {
+          return window.localStorage ? window.localStorage.getItem(key) : null;
+        } catch (error) {
+          return null;
+        }
+      },
+      set: function (key, value) {
+        try {
+          if (!window.localStorage) return false;
+          window.localStorage.setItem(key, value);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+    },
+    focusFirst: function () {
+      return false;
+    }
+  };
+
   var script = document.currentScript || Array.prototype.slice.call(document.scripts).reverse().find(function (candidate) {
     return /projection-launcher\.js(?:\?|$)/.test(candidate.src || '');
   });
@@ -169,6 +193,9 @@
     requestAnimationFrame(function () {
       scheduled = false;
       mount();
+      try {
+        siteHelpers.focusFirst(document.querySelector('.epi-projection-launcher'));
+      } catch (error) {}
     });
   }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['hidden', 'class', 'style'] });
 }());
