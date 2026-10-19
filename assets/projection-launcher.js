@@ -8,13 +8,11 @@
   var publicRoot = '/' + site + '/';
   var start = location.pathname.indexOf(publicRoot);
   if (start < 0 || /\/projetar\/?$/.test(location.pathname)) return;
-  // Live classroom panels already have a student QR and their own fullscreen
-  // control. Keep their session, handlers and F shortcut intact.
   if (/\/pt\/m[1-9]\/painel-m[1-9]-f\d+\/?$/.test(location.pathname)) return;
 
   var style = document.createElement('style');
   style.id = 'epi-projection-launcher-style';
-  style.textContent = '.epi-projection-launcher{display:inline-flex!important;align-items:center;justify-content:center;gap:0;width:44px;height:44px;min-width:44px;min-height:44px;box-sizing:border-box;padding:0;border-radius:999px;border:1px solid var(--tinta,#000);background:var(--papel,#fff);color:var(--tinta,#000);text-decoration:none;position:relative;cursor:pointer;} .epi-projection-launcher:hover,.epi-projection-launcher:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:2px;} .epi-projection-launcher svg{width:18px;height:18px;flex:0 0 18px;} .epi-projection-launcher .epi-projection-label{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap;} .epi-projection-launcher.epi-projection-compact{width:44px;height:44px;} .epi-projection-launcher.epi-projection-deck{width:44px;height:44px;} .epi-projection-menu-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:inherit;text-decoration:none;} .epi-projection-menu-link svg{width:18px;height:18px;} .epi-projection-deck-nav{display:flex;align-items:center;gap:8px;}' ;
+  style.textContent = '.epi-projection-launcher{display:inline-flex!important;align-items:center;justify-content:center;gap:0;width:44px;height:44px;min-width:44px;min-height:44px;box-sizing:border-box;padding:0;border-radius:999px;border:1px solid var(--tinta,#000);background:var(--papel,#fff);color:var(--tinta,#000);text-decoration:none;position:relative;cursor:pointer;} .epi-projection-launcher:hover,.epi-projection-launcher:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:2px;} .epi-projection-launcher svg{width:18px;height:18px;flex:0 0 18px;} .epi-projection-launcher .epi-projection-label{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap;} .epi-projection-launcher.epi-projection-compact{width:44px;height:44px;} .epi-projection-launcher.epi-projection-deck{width:44px;height:44px;} .epi-projection-menu-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:inherit;text-decoration:none;} .epi-projection-menu-link svg{width:18px;height:18px;} .epi-projection-deck-nav{display:flex;align-items:center;gap:8px;}';
   document.head.appendChild(style);
 
   var link = document.createElement('a');
@@ -46,7 +44,6 @@
     var host = bar || (deck && breadcrumb) || deck || document.querySelector('nav.migalhas,.atelier-breadcrumb') || (main && main.querySelector(':scope > header,:scope > nav')) || document.querySelector('body');
     link.classList.toggle('epi-projection-compact', !!bar);
     link.classList.toggle('epi-projection-deck', !!deck && !bar);
-    link.querySelector('.epi-projection-label').textContent = bar ? 'Projetar' : 'Projetar esta página · QR para a turma';
     if (link.parentNode !== host) {
       var menuButton = bar && bar.querySelector('[data-c-menu]');
       if (menuButton) host.insertBefore(link, menuButton);
@@ -89,8 +86,6 @@
       var entry = event.target.closest && event.target.closest('.epi-projection-launcher,.epi-projection-menu-link,a[data-projetar]');
       if (!entry) return;
       updateLinks();
-      // Slide decks can use a click anywhere to advance. Opening projection
-      // must remain navigation and must not advance the underlying activity.
       if ((name === 'click' && event.button === 0) || (name === 'keydown' && event.key === 'Enter')) {
         event.stopImmediatePropagation();
         if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
@@ -101,8 +96,6 @@
     }, true);
   });
 
-  // A lesson can open its shell after the page loads. Keep the access in its
-  // toolbar, never in the changing activity area, and restore it on close.
   var scheduled = false;
   new MutationObserver(function (changes) {
     var shellChanged = !link.isConnected || changes.some(function (change) {
