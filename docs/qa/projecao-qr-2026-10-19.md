@@ -29,3 +29,7 @@ Leitura física por telemóveis numa sala, projeção a distância, leitor de ec
 2. Navegar numa página; verificar que o QR acompanha o destino e que a ligação do aluno não contém `projetar`.
 3. Alternar QR/ecrã inteiro e testar a 322 px.
 4. Ler o QR com uma câmara e confirmar que abre a página normal.
+
+## Revisão de contraste
+
+Removidas as imposições de fundo branco e tinta preta da moldura: as páginas preservam agora as suas cores e temas, evitando combinar texto do tema escuro com um fundo branco forçado. Mantêm-se letra ampliada, foco e controlos. O foco usa cor clara em tema escuro. Recarregamento da projeção de Cidadania no navegador e letra de 22 px confirmados. Tema escuro num navegador real continua pendente; não se declara essa verificação executada.
