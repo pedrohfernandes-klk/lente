@@ -269,4 +269,4 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&ov){fecha()
 function marcar(r){var L=(r||document).querySelectorAll?(r||document).querySelectorAll("figure:not(.ver-fig) img,img[data-ampliar]"):[];for(var k=0;k<L.length;k++){var im=L[k];if(!elegivel(im))continue;if(!im.hasAttribute("tabindex"))im.setAttribute("tabindex","0");if(!im.hasAttribute("role"))im.setAttribute("role","button");if(!im.getAttribute("aria-label"))im.setAttribute("aria-label","Ampliar a imagem")}}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){marcar()});else marcar();
 if(window.MutationObserver)new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var j=0;j<ms[i].addedNodes.length;j++){var n=ms[i].addedNodes[j];if(n.nodeType===1)marcar(n)}}).observe(document.documentElement,{childList:true,subtree:true});
-window.EPIAmpliar={abre:abre,fecha:fecha}})();</script></body></html>
+window.EPIAmpliar={abre:abre,fecha:fecha}})();</script><script defer src="../../../assets/projection-launcher.js?v=20261019.3" data-site="lente"></script></body></html>
