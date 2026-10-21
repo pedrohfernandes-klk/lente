@@ -1,10 +1,10 @@
 # Agenda de continuidade — Cidadania
 
-## Módulo 2: sugestão para considerar
+## Módulo 2: dez aulas, 30 horas
 
-O docente sugeriu «What Is It Like to Be a Bat?», de Thomas Nagel, para considerar numa futura lição do Módulo 2, evitando sobrecarregar M1.
+Percurso implementado em `cidadania/m2/aulas/`: compreender o feed; analisar a atenção; expressão e moderação; perspetiva; autoria; investigação de um caso; conceito e guião; teste; ensaio e manifesto; mostra e defesa. Calendário por definir. Não substitui os identificadores de progresso nem acrescenta instrumentos de avaliação.
 
-É uma reserva de planeamento, não uma integração já decidida ou uma lição pronta. Antes de desenvolver: confirmar a fonte primária, delimitar o objetivo, preparar leitura/exemplo e ligar a pergunta ao percurso de M2. Não foram alterados materiais de M2 neste bloco.
+«What Is It Like to Be a Bat?», de Thomas Nagel, tem uma primeira introdução na aula 04, com fonte primária, exemplo e aplicação à representação dos outros. A aplicação é identificada como didática; não constitui uma exposição integral da filosofia da consciência. Não foi acrescentado vídeo.
 
 ## Módulo 1: sequência atual
 
