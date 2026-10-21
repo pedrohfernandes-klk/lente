@@ -1,0 +1,210 @@
+{
+  "source_main": "5310c26115705ae22d81a776446b6c1b2e1089a0",
+  "files": {
+    "cidadania/index.html": {
+      "hrefs": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap",
+        "../assets/cidadania-groups.css",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg",
+        "#aulas-e-percursos",
+        "#investigar-e-criar",
+        "#preparar-e-rever",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/aula-2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/guiao-1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/guiao-2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/verificar/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/contra-feed/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/projeto/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/glossario/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/revisao/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/oficina/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/imagens/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/ferramentas/m1-aula-01-ficha/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/ferramentas/m1-aula-01-diapositivos/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/ferramentas/m2-aula-01-ficha/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/ferramentas/m2-aula-01-feed/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/ferramentas/m2-aula-01-diapositivos/"
+      ],
+      "images_sha256": [
+        "4e894662101ffc4aba7ebcba5790a8100a303cb54036105d410408f52d3a4e36"
+      ],
+      "tables": [
+        "<table><tr><th>Trabalho</th><th>Peso</th></tr><tr><td>Diário de investigação: duas ou três linhas no fim de cada aula</td><td class=\"n\">20%</td></tr><tr><td>Laboratório de verificação: verificar afirmações com fontes</td><td class=\"n\">20%</td></tr><tr><td>Dossiê de investigação do projeto (em grupo, com a tua parte identificada)</td><td class=\"n\">30%</td></tr><tr><td>Teatro-documento: apresentação pública e defesa das escolhas</td><td class=\"n\">30%</td></tr></table>"
+      ],
+      "ids": [
+        "mg-css",
+        "amp-css",
+        "aulas-e-percursos",
+        "aulas-e-percursos-titulo",
+        "investigar-e-criar",
+        "investigar-e-criar-titulo",
+        "preparar-e-rever",
+        "preparar-e-rever-titulo",
+        "amp-js"
+      ]
+    },
+    "cidadania/m1/index.html": {
+      "hrefs": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/",
+        "https://pedrohfernandes-klk.github.io/lente/como/",
+        "passo-00/",
+        "passo-01/",
+        "passo-02/",
+        "passo-03/",
+        "passo-04/",
+        "passo-05/",
+        "passo-06/",
+        "passo-07/",
+        "passo-08/",
+        "passo-09/",
+        "passo-10/",
+        "passo-00/",
+        "passo-00/",
+        "passo-01/",
+        "passo-02/",
+        "passo-03/",
+        "passo-04/",
+        "passo-05/",
+        "passo-06/",
+        "passo-07/",
+        "passo-08/",
+        "passo-09/",
+        "passo-10/",
+        "cid-m1-o-juri/",
+        "cid-m1-vida-em-direto-hoje/",
+        "#",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/verificar/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/glossario/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/revisao/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/oficina/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/guiao-1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/ensaio-1/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/guiao-2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/ensaio-2/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/imagens/",
+        "'+esc(x.url)+'"
+      ],
+      "images_sha256": [
+        "5c2885f63ed332347f9d7b31a7a184991f5e624594ceda985c6bae8a65e92f4d",
+        "631292d208d9167ccf2ea64a5a91dd3afbbdd48bf9333df54794f5e6449db090",
+        "1ab7eb9c00e3f0c059abcf9ddf599af7dfa64445b7b23ad132d3b68c282aaa2d",
+        "97fcde2e5dccb4d1c4b79b32ca06385b8594c8e0d944062d472a1c18b3992e58",
+        "06dacb5a94db02658375918c72c4865e14e5c9ae655842dd192e9d79b7d5f288",
+        "60e79b62a53924aef7b31e4559210f8d92de9847236a0cbd4f31980b1d8b171a",
+        "4ecf002e77f00606bbd934b9476314fd4f214972dffa0a5a5eee3250bb5edb2f",
+        "631292d208d9167ccf2ea64a5a91dd3afbbdd48bf9333df54794f5e6449db090",
+        "af9e8cee31ab735c65282db1b7c01f864d5bd10c9761216640656a68b2cd9f3c",
+        "c0309bf194226a572d6d9913d3705c1eb40a2a5296cbdf5aafeedd8053e8df1a",
+        "1ab7eb9c00e3f0c059abcf9ddf599af7dfa64445b7b23ad132d3b68c282aaa2d"
+      ],
+      "tables": [],
+      "ids": [
+        "mg-css",
+        "amp-css",
+        "percurso-horizontal-css",
+        "passo-00",
+        "passo-01",
+        "passo-02",
+        "passo-03",
+        "passo-04",
+        "passo-05",
+        "passo-06",
+        "passo-07",
+        "passo-08",
+        "passo-09",
+        "passo-10",
+        "passo-00",
+        "passo-01",
+        "passo-02",
+        "passo-03",
+        "passo-04",
+        "passo-05",
+        "passo-06",
+        "passo-07",
+        "passo-08",
+        "passo-09",
+        "passo-10",
+        "cid-m1-o-juri",
+        "cid-m1-vida-em-direto-hoje",
+        "amp-js"
+      ]
+    },
+    "cidadania/projeto/index.html": {
+      "hrefs": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com",
+        "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/",
+        "https://pedrohfernandes-klk.github.io/lente/",
+        "https://pedrohfernandes-klk.github.io/lente/cidadania/"
+      ],
+      "images_sha256": [],
+      "tables": [
+        "<table>\n<tr><th>Trabalho</th><th>Peso</th></tr>\n<tr><td>Diário de investigação (individual)</td><td class=\"n\">20%</td></tr>\n<tr><td>Laboratório de verificação</td><td class=\"n\">20%</td></tr>\n<tr><td>Dossiê de investigação (em grupo, com a tua parte identificada)</td><td class=\"n\">30%</td></tr>\n<tr><td>Teatro-documento: apresentação pública e defesa das escolhas</td><td class=\"n\">30%</td></tr>\n</table>"
+      ],
+      "ids": [
+        "mg-css",
+        "amp-css",
+        "amp-js"
+      ]
+    }
+  },
+  "missions": [
+    {
+      "id": "passo-00"
+    },
+    {
+      "id": "passo-01"
+    },
+    {
+      "id": "passo-02"
+    },
+    {
+      "id": "passo-03"
+    },
+    {
+      "id": "passo-04"
+    },
+    {
+      "id": "passo-05"
+    },
+    {
+      "id": "passo-06"
+    },
+    {
+      "id": "passo-07"
+    },
+    {
+      "id": "passo-08"
+    },
+    {
+      "id": "passo-09"
+    },
+    {
+      "id": "passo-10"
+    },
+    {
+      "id": "cid-m1-o-juri"
+    },
+    {
+      "id": "cid-m1-vida-em-direto-hoje"
+    }
+  ]
+}
