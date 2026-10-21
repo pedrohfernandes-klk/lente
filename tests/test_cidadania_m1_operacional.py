@@ -7,7 +7,11 @@ class CidadaniaM1(unittest.TestCase):
  def test_old_destinations_and_images_preserved(self):
   for p in ['cidadania/index.html','cidadania/m1/index.html','cidadania/projeto/index.html']:
    a,b=BASE["files"][p],text(p)
-   for href in a['hrefs']:self.assertIn('href="'+href+'"',b,(p,href))
+   for href in a['hrefs']:
+    # Intermediate category menus were removed; their incoming anchors remain valid.
+    if p=='cidadania/index.html' and href in ['#aulas-e-percursos','#investigar-e-criar','#preparar-e-rever']:
+     self.assertIn('id="'+href[1:]+'"',b)
+    else:self.assertIn('href="'+href+'"',b,(p,href))
    self.assertEqual(a['images_sha256'],[hashlib.sha256(x.encode()).hexdigest() for x in re.findall(r'<img[^>]+src="([^"]+)"',b)])
    for id in a['ids']:self.assertIn('id="'+id+'"',b)
  def test_progress_ids_preserved(self):
