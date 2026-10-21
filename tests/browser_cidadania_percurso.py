@@ -25,14 +25,16 @@ with sync_playwright() as pw:
    assert not p.locator('a[href*="/guia-docente/"]').count()
    if path in ['cidadania/m1/','cidadania/m2/']:
     assert p.locator('.cid-route-step').count() in [4,5]
+    summary=p.locator('.cid-route > summary');summary.focus();p.keyboard.press('Enter');assert p.locator('.cid-route').get_attribute('open') is not None
     p.locator('.cid-route').screenshot(path=str(O/f'rota-{path.split("/")[1]}-{width}.png'))
     for link in p.locator('.cid-route a').all():
      href=link.get_attribute('href');u=urlsplit(href);response=ctx.request.get(host+u.path);assert response.status==200,href
      if u.fragment:assert 'id="'+u.fragment+'"' in response.text(),href
+    summary.focus();p.keyboard.press('Enter');assert p.locator('.cid-route').get_attribute('open') is None;p.evaluate('scrollTo(0,0)');p.screenshot(path=str(O/f'entrada-{path.split("/")[1]}-{width}.png'))
    results.append({'page':path,'width':width,'overflow':False,'errors':errors});p.close()
   ctx.close()
  # Native projection route and largest font.
  p=b.new_page(viewport={'width':1440,'height':1000});ctx=p.context
  ctx.route('https://pedrohfernandes-klk.github.io/lente/**',local)
- p.goto(host+'/lente/projetar/?pagina=/lente/cidadania/m2/');p.locator('[data-projection-size="large"]').click();f=p.frame_locator('#lesson-frame');f.locator('#projeto-filosofico').wait_for();assert f.locator('html').evaluate('(e)=>e.scrollWidth<=e.clientWidth');p.screenshot(path=str(O/'projecao-m2.png'));results.append({'projection':'m2','largest_font':True,'overflow':False});b.close()
+ p.goto(host+'/lente/projetar/?pagina=/lente/cidadania/m2/');p.locator('[data-projection-size="large"]').click();f=p.frame_locator('#lesson-frame');f.locator('#projeto-filosofico').wait_for();f.locator('#projeto-filosofico > summary').click();assert f.locator('html').evaluate('(e)=>e.scrollWidth<=e.clientWidth');p.screenshot(path=str(O/'projecao-m2.png'));results.append({'projection':'m2','largest_font':True,'expanded_route':True,'overflow':False});b.close()
 server.shutdown();(O/'qa-interface.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),'utf-8');print(json.dumps(results,ensure_ascii=False))
