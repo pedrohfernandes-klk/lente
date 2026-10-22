@@ -12,7 +12,14 @@ class CidadaniaM1(unittest.TestCase):
     if p=='cidadania/index.html' and href in ['#aulas-e-percursos','#investigar-e-criar','#preparar-e-rever']:
      self.assertIn('id="'+href[1:]+'"',b)
     else:self.assertIn('href="'+href+'"',b,(p,href))
-   self.assertEqual(a['images_sha256'],[hashlib.sha256(x.encode()).hexdigest() for x in re.findall(r'<img[^>]+src="([^"]+)"',b)])
+   # The new module previews are additions; every original image stays unchanged.
+   original=b
+   if p=='cidadania/index.html':
+    previews=re.findall(r'<span class="cid-module-image">(.*?)</span>',b,re.S)
+    self.assertEqual(len(previews),2)
+    self.assertIn('hals.webp',previews[0]);self.assertIn('turco.webp',previews[1])
+    original=re.sub(r'<span class="cid-module-image">.*?</span>','',b,flags=re.S)
+   self.assertEqual(a['images_sha256'],[hashlib.sha256(x.encode()).hexdigest() for x in re.findall(r'<img[^>]+src="([^"]+)"',original)])
    for id in a['ids']:self.assertIn('id="'+id+'"',b)
  def test_progress_ids_preserved(self):
   p='cidadania/m1/index.html';a,b=BASE["files"][p],text(p)
