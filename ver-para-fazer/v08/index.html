@@ -1,0 +1,103 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>What makes a hero? (Matthew Winkler) · Ver para fazer · Lente</title><meta name="description" content="Usar e questionar um modelo narrativo. Aplica quatro momentos do percurso do herói a uma história; indica depois um aspeto que o modelo não explica."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet"><style>:root{--tinta:#000;--papel:#fff;--papel2:#faf8f2;--suave:#444;--fundo:#f3f2ee;--mostarda:#d9a520;--vermelho:#c8232c;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--c-cinza:#d6d4ce;--apagado:#b9b6ae;--linha:#000;--agua:#ebebeb;--d1:8px;--d2:20px;--d3:40px;--col:min(680px,100%);--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif;--cartaz:"Bebas Neue","Arial Narrow","Arial Black",Arial,sans-serif;--maq:"Special Elite","Courier New",monospace}
+@media (prefers-color-scheme:dark){:root{--tinta:#ecebe5;--papel:#121210;--papel2:#1a1a17;--suave:#b3b1aa;--fundo:#1d1d1a;--mostarda:#e0b23a;--vermelho:#e4555c;--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f;--c-cinza:#3d3c38;--apagado:#5a5853;--linha:#ecebe5;--agua:#222220}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:16px/1.5 var(--sans)}
+a{color:inherit}img,svg{max-width:100%}
+.pg{width:100%;max-width:calc(var(--col) + 32px);margin:0 auto;padding:0 16px 64px}
+.pg-larga{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
+.ler,.pg .ler p,.p-cartao p{font-family:var(--serif);font-size:1.02rem;line-height:1.55}
+.p-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--tinta);outline-offset:2px}
+[hidden]{display:none!important}
+.p-cab{padding:14px 0 4px;margin:0 0 var(--d2)}
+.p-etiqueta{font:700 .72rem/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:0 0 6px}
+.p-etiqueta a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;margin:-15px 0}.p-etiqueta a:hover{color:var(--tinta);text-decoration:underline}
+.p-cab h1{font:400 2.3rem/.95 var(--cartaz);letter-spacing:.02em;text-transform:none;margin:0;padding:0}.p-cab h1::after{display:none}
+.p-sub{font:italic 1.15rem/1.3 var(--serif);margin:.35rem 0 0}
+.p-lead{font-size:.95rem;line-height:1.45;margin:.6rem 0 0;max-width:36em}
+.p-cartao{position:relative;background:var(--papel);color:var(--tinta);border:0;padding:14px 16px;margin:0 0 var(--d1)}
+.p-rot{font:700 .7rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d1)}
+.p-tit{font:700 1.05rem/1.25 var(--sans);margin:0 0 2px}
+.p-nota{font-size:.88rem;color:var(--suave);margin:4px 0 0}
+.p-cartao a{color:var(--tinta);font-weight:700}
+.p-feito{box-shadow:inset 4px 0 0 var(--mostarda)}
+.p-atual{box-shadow:inset 4px 0 0 var(--vermelho)}
+.c-prim,.c-sec{font:700 1rem/1.2 Arial;min-height:48px;margin:0;cursor:pointer;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;box-sizing:border-box}
+.c-prim{background:var(--tinta,#000);color:var(--papel,#fff);border:0;padding:0 22px}
+.c-prim:disabled{background:var(--c-cinza);color:var(--suave,#444);cursor:default}
+.c-sec{background:none;color:var(--tinta,#000);border:0;padding:0 6px;font-weight:400;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.c-sec.c-seta{text-decoration:none;font-size:1.25rem;min-width:44px;padding:0}
+.c-prim[data-seguinte]::after,.c-prim[data-confirmar]::after,.c-prim.c-vai::after{content:"→"}
+.vpf{max-width:680px;margin:0 auto;padding:0 16px 56px}
+.vpf-aviso{font:.88rem/1.5 var(--sans,Arial);color:var(--suave);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);padding:10px 0;margin:0 0 20px}
+.vpf-marcas{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px;padding:0}.vpf-marcas li{font:700 .74rem/1 var(--sans,Arial);letter-spacing:.04em;border:1.5px solid var(--tinta);border-radius:999px;padding:6px 10px}.vpf-marcas li.m-1{background:var(--tinta);color:var(--papel)}
+.vpf-obj{font:italic 1.2rem/1.4 var(--serif,Georgia);margin:0 0 6px}.vpf-porque{font:1rem/1.5 var(--sans,Arial);color:var(--suave);margin:0 0 18px}
+.vpf-video{position:relative;aspect-ratio:16/9;background:var(--tinta);color:var(--papel);display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;margin:0 0 8px;padding:16px;text-align:center}
+.vpf-video p{margin:0;font:.95rem/1.4 var(--sans,Arial);max-width:30rem}
+.vpf-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vpf-video button{min-height:52px;padding:0 22px;font:700 1rem/1 var(--sans,Arial);border:2px solid var(--papel);background:transparent;color:var(--papel);cursor:pointer}
+.vpf-video button:focus-visible{outline:3px solid var(--papel);outline-offset:3px}
+.vpf-nota{font:.8rem/1.4 var(--sans,Arial);color:var(--suave);margin:0 0 24px}.vpf-nota a{color:var(--tinta)}
+.vpf-longa{border-left:4px solid var(--tinta);padding:4px 0 4px 12px;margin:0 0 18px;font:.95rem/1.5 var(--sans,Arial)}
+.vpf-fazer{border:2px solid var(--tinta);padding:14px 16px;margin:0 0 18px}.vpf-fazer h2{font:700 .72rem/1.2 var(--sans,Arial);letter-spacing:.14em;text-transform:uppercase;margin:0 0 8px}
+.vpf-fazer p{font:1.1rem/1.5 var(--serif,Georgia);margin:0 0 10px}.vpf-fazer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font:.92rem/1.4 var(--sans,Arial)}.vpf-fazer dt{font-weight:700}.vpf-fazer dd{margin:0}
+.vpf-fazer ol{margin:0 0 10px;padding-left:1.3em;font:1rem/1.5 var(--sans,Arial)}
+.vpf-feito{margin:8px 0 0;display:flex;flex-wrap:wrap;gap:12px;align-items:center}.vpf-feito button{min-height:48px;padding:0 18px;font:700 .95rem/1 var(--sans,Arial);border:2px solid var(--tinta);background:var(--tinta);color:var(--papel);cursor:pointer}.vpf-feito button[aria-pressed="true"]{background:transparent;color:var(--tinta)}.vpf-feito small{font:.85rem/1.4 var(--sans,Arial);color:var(--suave)}
+.vpf-liga{margin:24px 0 0;font:1rem/1.5 var(--sans,Arial)}.vpf-liga a{color:var(--tinta);font-weight:700}
+.vpf-perg{font:italic 1.35rem/1.35 var(--serif,Georgia);margin:0 0 8px}
+.vpf-filtro{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.vpf-filtro button{min-height:44px;padding:0 14px;font:700 .9rem/1 var(--sans,Arial);border:1.5px solid var(--tinta);border-radius:999px;background:transparent;color:var(--tinta);cursor:pointer}.vpf-filtro button[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+.vpf-lista{list-style:none;margin:0 0 24px;padding:0;border-top:1px solid var(--tinta)}.vpf-lista li{border-bottom:1px solid var(--tinta)}.vpf-lista li[hidden]{display:none}
+.vpf-lista a{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 0;color:var(--tinta);text-decoration:none;min-height:48px}
+.vpf-lista .t{font:700 1.02rem/1.3 var(--sans,Arial)}.vpf-lista .s{grid-column:1;font:.86rem/1.4 var(--sans,Arial);color:var(--suave)}.vpf-lista .st{grid-row:1/3;grid-column:2;align-self:center;font:700 .74rem/1.2 var(--sans,Arial);letter-spacing:.06em;text-transform:uppercase;color:var(--suave)}
+.vpf-lista li.feito .st{color:var(--tinta)}
+.cartaz-svg{margin:0 0 20px}.cartaz-svg svg{display:block;max-height:52vh;width:auto;max-width:100%;margin:0 auto}</style><style id="mg-css">.migalhas{background:#000;color:#fff;font:700 14px/1.25 Arial,Helvetica,sans-serif;margin:0;padding:0 16px;position:relative;z-index:1}.migalhas ol{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 2px;margin:0 auto;padding:0;max-width:680px}.migalhas li{display:flex;align-items:center;margin:0;padding:0}.migalhas li+li::before{content:"›";padding:0 8px 0 6px;opacity:.6;font-weight:400}.migalhas,.migalhas ol,.migalhas li,.migalhas a{border:0;box-shadow:none;background-image:none}.migalhas a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 2px}.migalhas a:hover,.migalhas a:focus-visible{text-decoration:underline;text-underline-offset:3px}.migalhas a:focus-visible{outline:3px solid #fff;outline-offset:2px}.migalhas [aria-current]{font-weight:400;opacity:.85;min-height:44px;display:inline-flex;align-items:center;max-width:62vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mg-casa{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round}@media print{.migalhas{display:none}}</style><style id="amp-css">.amp-ov{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;animation:ampEntra .2s ease-out;cursor:zoom-out}
+@keyframes ampEntra{from{opacity:0}to{opacity:1}}
+.amp-ov img{max-width:100%;max-height:calc(100% - 96px);max-height:calc(100dvh - 120px);width:auto;height:auto;object-fit:contain;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.15);cursor:zoom-out}
+.amp-leg{color:#fff;font:.9rem/1.45 Arial,Helvetica,sans-serif;max-width:60rem;margin:10px 0 0;text-align:center;max-height:84px;overflow:auto;cursor:auto}
+.amp-x{position:absolute;top:10px;right:10px;width:48px;height:48px;border:1.5px solid #fff;border-radius:999px;background:rgba(0,0,0,.4);color:#fff;font:700 1.4rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+.amp-x:focus-visible{outline:3px solid #fff;outline-offset:2px}
+figure:not(.ver-fig) img:not(.sem-amp),img[data-ampliar]{cursor:zoom-in}
+.lp-img img,.mf img,.cavalo,a img,button img{cursor:inherit}
+figure img[tabindex]:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.amp-ov{animation:none}}
+@media print{.amp-ov{display:none}}</style></head><body data-video="v08"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="https://pedrohfernandes-klk.github.io/lente/"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li><li><a href="https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/">Ver para fazer</a></li><li><span aria-current="page">What makes a hero? (Matthew Winkler)</span></li></ol></nav><main class="vpf">
+<header class="p-cab"><p class="p-etiqueta"><a href="https://pedrohfernandes-klk.github.io/lente/">Lente</a> · <a href="https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/">Ver para fazer</a> · <a href="https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/oficina-forma/">A forma das histórias</a></p><h1>What makes a hero? (Matthew Winkler)</h1><p class="p-sub">TED-Ed · duração por confirmar</p></header>
+<ul class="vpf-marcas"><li>Falado em inglês</li><li>Legendas: por confirmar</li><li>Vemos na aula</li></ul>
+<p class="vpf-aviso">Em revisão: estes vídeos ainda não foram vistos de ponta a ponta pela escola e as legendas em português estão por confirmar. Quem os mostrar à turma vê-os antes.</p>
+<p class="vpf-obj">Usar e questionar um modelo narrativo.</p><p class="vpf-porque">Útil como modelo de análise, desde que não seja apresentado como fórmula universal.</p>
+
+
+<div class="vpf-video" data-yt="Hhk4N9A0oCA" data-titulo="What makes a hero? (Matthew Winkler)"><p>Vemos na aula: é falado em inglês e as legendas estão por confirmar. A pergunta e o trabalho estão aqui por baixo.</p><button type="button">Ver mesmo assim</button></div><p class="vpf-nota">Ao tocar, o vídeo carrega a partir do YouTube. Também podes <a href="https://www.youtube.com/watch?v=Hhk4N9A0oCA" target="_blank" rel="noopener">abri-lo no YouTube</a>. Liga as legendas no leitor.</p>
+<section class="vpf-fazer" aria-labelledby="f-v08"><h2 id="f-v08">Fazer a seguir</h2><p>Aplica quatro momentos do percurso do herói a uma história; indica depois um aspeto que o modelo não explica.</p><dl><dt>Tempo</dt><dd>15 a 20 min, sem contar com o vídeo</dd><dt>Precisas de</dt><dd>Papel e caneta.</dd></dl>
+<div class="vpf-feito"><button type="button" data-feito aria-pressed="false">Fiz isto</button><small>Fica só no teu aparelho.</small></div></section>
+<p class="vpf-liga">Liga a: <a href="https://pedrohfernandes-klk.github.io/lente/narrativas/">Laboratório de Narrativas</a></p>
+<p class="vpf-liga">Na mesma oficina: <a href="https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/oficina-forma/">A forma das histórias</a>, e o trabalho final.</p>
+</main><script>(function(){function ler(){try{return JSON.parse(localStorage.getItem("epi-ver")||"null")||{}}catch(x){return{}}}function gravar(P){try{localStorage.setItem("epi-ver",JSON.stringify(P))}catch(x){}}var id=document.body.getAttribute("data-video");
+var P=ler();P.vistos=P.vistos||{};if(!P.vistos[id]){P.vistos[id]=1;gravar(P)}
+var v=document.querySelector(".vpf-video button");if(v)v.addEventListener("click",function(){var c=v.parentNode,f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+c.getAttribute("data-yt")+"?autoplay=1&rel=0&cc_load_policy=1&hl=pt-PT&cc_lang_pref=pt";f.title=c.getAttribute("data-titulo");f.allow="autoplay; encrypted-media; picture-in-picture";f.setAttribute("allowfullscreen","");f.referrerPolicy="strict-origin-when-cross-origin";c.innerHTML="";c.appendChild(f);f.focus()});
+var b=document.querySelector("[data-feito]");function pinta(){var Q=ler();var f=!!(Q.feitas&&Q.feitas[id]);b.setAttribute("aria-pressed",f?"true":"false");b.textContent=f?"Feito ✓ (tocar para desfazer)":"Fiz isto"}
+if(b){b.addEventListener("click",function(){var Q=ler();Q.feitas=Q.feitas||{};if(Q.feitas[id])delete Q.feitas[id];else Q.feitas[id]=1;gravar(Q);pinta()});pinta()}})();</script><script id="amp-js">(function(){if(window.EPIAmpliar)return;var ov=null,ult=null,fundo=[];
+function rotuloAmpliar(img,leg){var t=String(leg||(img&&img.getAttribute("alt"))||"").replace(/\s+/g," ").trim();var d=/^([^:]{1,80}?):\s+(\S.*)$/.exec(t);if(d&&/^(Fotografia|Ilustração|Desenho|Gravura|Pintura|Imagem|Mapa|Planta)\b/i.test(d[1]))t=d[2];var re=/[.:;](?=\s)|\s(?=\()/g,m,f;while((m=re.exec(t))){if(m.index<12)continue;if(t.charAt(m.index)==="."&&/(^|[\s(])([A-ZÁÉÍÓÚÂÊÔ]|Sr|Sra|Dr|Dra|Sto|Sta|séc|p|pp|vol|cap|n\.º|ed|trad)\.$/.test(t.slice(0,m.index+1)))continue;if(t.charAt(m.index)===" "){f=t.indexOf(")",m.index);if(f>0&&f<70){re.lastIndex=f;continue}}t=t.slice(0,m.index);break}if(t.length>70){t=t.slice(0,70);var s=t.lastIndexOf(" ");t=(s>30?t.slice(0,s):t).replace(/[,.;:\s]+$/,"")+"\u2026"}return t?"Ampliar: "+t:"Ampliar: imagem sem legenda"}
+function focaveis(){return ov?[].slice.call(ov.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')).filter(function(e){return !e.disabled&&e.getClientRects().length}):[]}
+function fecha(){if(!ov)return;var o=ov;ov=null;if(o.parentNode)o.parentNode.removeChild(o);fundo.forEach(function(x){x.removeAttribute("inert")});fundo=[];document.documentElement.style.overflow="";var u=ult;ult=null;if(u&&u.isConnected&&u.focus)try{u.focus({preventScroll:true})}catch(x){}}
+function abre(img,leg,de){if(ov)fecha();var a=document.activeElement;ult=de||(img&&img.hasAttribute("tabindex")?img:(a&&a!==document.body?a:null));
+ov=document.createElement("div");ov.className="amp-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-modal","true");ov.setAttribute("aria-label",rotuloAmpliar(img,leg).replace(/^Ampliar: /,"Imagem ampliada: "));
+var i=document.createElement("img");i.src=img.currentSrc||img.src;i.alt=img.alt||"";ov.appendChild(i);
+var p=document.createElement("p");p.className="amp-leg";p.textContent=leg||img.alt||"";ov.appendChild(p);
+var x=document.createElement("button");x.type="button";x.className="amp-x";x.setAttribute("aria-label","Fechar a imagem ampliada");x.textContent="\u00d7";ov.appendChild(x);
+ov.addEventListener("click",function(e){if(e.target!==p)fecha()});document.body.appendChild(ov);
+// o resto da página fica inerte (nem foco nem leitor de ecrã) enquanto a imagem está aberta
+fundo=[];[].forEach.call(document.body.children,function(n){if(n!==ov&&!n.hasAttribute("inert")&&!/^(SCRIPT|STYLE|TEMPLATE|LINK)$/.test(n.nodeName)){n.setAttribute("inert","");fundo.push(n)}});
+document.documentElement.style.overflow="hidden";x.focus()}
+function legendaDe(img){var f=img.closest("figure");if(f){var c=f.querySelector("figcaption");if(c)return c.textContent.replace(/\s+/g," ").trim()}return img.getAttribute("data-legenda")||img.alt||""}
+function elegivel(img){if(!img||img.tagName!=="IMG")return false;if(img.closest("a,button,.amp-ov,.ver-fig,.lp-img,.mf,.cavalo"))return false;if(img.classList.contains("sem-amp"))return false;if(!img.closest("figure")&&!img.hasAttribute("data-ampliar"))return false;return true}
+document.addEventListener("click",function(e){var img=e.target&&e.target.closest?e.target.closest("img"):null;if(!elegivel(img))return;e.preventDefault();abre(img,legendaDe(img),img)});
+// com a imagem aberta: Esc fecha só a imagem; Tab e Shift+Tab andam só dentro do diálogo (fase de captura, antes dos outros)
+window.addEventListener("keydown",function(e){if(!ov)return;if(e.key==="Escape"||e.key==="Esc"){e.preventDefault();e.stopPropagation();fecha();return}
+ if(e.key==="Tab"){var L=focaveis(),at=document.activeElement;e.stopPropagation();if(!L.length){e.preventDefault();return}var a=L[0],z=L[L.length-1];if(!ov.contains(at)){e.preventDefault();(e.shiftKey?z:a).focus();return}if(e.shiftKey&&at===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&at===z){e.preventDefault();a.focus()}}},true);
+document.addEventListener("focusin",function(e){if(ov&&!ov.contains(e.target)){var L=focaveis();if(L[0])L[0].focus()}});
+document.addEventListener("keydown",function(e){if(ov)return;if((e.key==="Enter"||e.key===" ")&&elegivel(e.target)){e.preventDefault();abre(e.target,legendaDe(e.target),e.target)}});
+function marcar(r){var L=(r||document).querySelectorAll?(r||document).querySelectorAll("figure:not(.ver-fig) img,img[data-ampliar]"):[];for(var k=0;k<L.length;k++){var im=L[k];if(!elegivel(im))continue;if(!im.hasAttribute("tabindex"))im.setAttribute("tabindex","0");if(!im.hasAttribute("role"))im.setAttribute("role","button");if(!im.getAttribute("aria-label"))im.setAttribute("aria-label",rotuloAmpliar(im,legendaDe(im)))}}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){marcar()});else marcar();
+if(window.MutationObserver)new MutationObserver(function(ms){for(var i=0;i<ms.length;i++)for(var j=0;j<ms[i].addedNodes.length;j++){var n=ms[i].addedNodes[j];if(n.nodeType===1&&n!==ov)marcar(n)}}).observe(document.documentElement,{childList:true,subtree:true});
+window.EPIAmpliar={abre:abre,fecha:fecha,rotulo:rotuloAmpliar}})();</script></body></html>
