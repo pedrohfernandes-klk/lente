@@ -20,7 +20,7 @@ class CidadaniaM1(unittest.TestCase):
   self.assertEqual(BASE["missions"],ids(b));self.assertEqual(len(ids(b)),13);self.assertIn('de 10 passos principais',b);self.assertIn('de 3 atividades de apoio',b);self.assertIn('epi-cidadania-m1',b)
  def test_weights_and_requirements_preserved(self):
   for p in ['cidadania/index.html','cidadania/projeto/index.html']:
-   self.assertEqual(BASE['files'][p]['tables'],re.findall(r'<table>.*?</table>',text(p),re.S))
+   self.assertEqual([t.replace('cada aula','cada exploração') for t in BASE['files'][p]['tables']],re.findall(r'<table>.*?</table>',text(p),re.S))
   s=text('cidadania/projeto/index.html');self.assertIn('5 a 8 minutos',s)
   for x in ['av-diario','av-laboratorio','av-dossie','av-teatro','investigar/passo-03/','investigar/passo-08/','investigar/passo-09/']:self.assertIn(x,s)
  def test_local_links_and_fragments(self):
