@@ -22,5 +22,5 @@ class AulasM2(unittest.TestCase):
   for n in range(1,11):
    s=(R/f'cidadania/m2/aulas/{n:02d}/index.html').read_text('utf-8');self.assertIn('cidadania/m2/',s);self.assertIn('Antes de avançar',s)
  def test_nagel_has_a_primary_source_and_distinguishes_application(self):
-  s=(R/'cidadania/m2/aulas/04/index.html').read_text('utf-8');self.assertIn('Thomas Nagel',s);self.assertIn('1974',s);self.assertIn('faculty.fiu.edu',s);self.assertIn('aplicação desta aula',s)
+  s=(R/'cidadania/m2/aulas/04/index.html').read_text('utf-8');self.assertIn('Thomas Nagel',s);self.assertIn('1974',s);self.assertIn('faculty.fiu.edu',s);self.assertIn('aplicação desta exploração',s)
 if __name__=='__main__':unittest.main()

@@ -1,11 +1,9 @@
-# Agenda de continuidade — Cidadania
+# Continuidade de Cidadania
 
-## Módulo 2: dez aulas, 30 horas
+M1 organiza a investigação através da ficha «Da pergunta à resposta». Berger é um apoio de leitura das imagens, fora da sequência numerada; o endereço e o progresso anterior mantêm-se. Butler e Singer são apresentados antes da aplicação dos conceitos.
 
-Percurso implementado em `cidadania/m2/aulas/`: compreender o feed; analisar a atenção; expressão e moderação; perspetiva; autoria; investigação de um caso; conceito e guião; teste; ensaio e manifesto; mostra e defesa. Calendário por definir. Não substitui os identificadores de progresso nem acrescenta instrumentos de avaliação.
+M2 organiza um percurso de dez etapas para compreender os algoritmos, discutir ética e estética e desenvolver o Contra-feed. Nagel tem uma primeira introdução sobre experiência e perspetiva, com fonte primária e aplicação didática delimitada.
 
-«What Is It Like to Be a Bat?», de Thomas Nagel, tem uma primeira introdução na aula 04, com fonte primária, exemplo e aplicação à representação dos outros. A aplicação é identificada como didática; não constitui uma exposição integral da filosofia da consciência. Não foi acrescentado vídeo.
+Cada módulo oferece cinco casos de exploração, com fontes identificadas e ligação às necessidades dos projetos. Os novos casos permitem escolher, observar uma consequência simulada, investigar informação nova e comparar a revisão da decisão.
 
-## Módulo 1: sequência atual
-
-Plano de cinco quartas: 28/10, 04/11, 11/11, 18/11 e 25/11 de 2026. Butler e Singer entram numa lição própria em 18/11. Há pelo menos 15 horas de trabalho prévio; recuperar a memória das obras sem tratar o calendário novo como início absoluto do módulo.
+O calendário, os tempos, as intervenções do docente e as propostas de distribuição dos materiais pertencem ao guia privado. No site dos alunos, priorizam-se perguntas, lições, exercícios e materiais. Os endereços antigos são preservados para manter as ligações.

@@ -1,0 +1,63 @@
+[
+  {
+    "module": "m1",
+    "slug": "cid-m1-quem-tem-lugar",
+    "title": "Quem tem lugar?",
+    "question": "Uma proposta é aberta a todos quando nem todos conseguem participar?",
+    "cards": 15,
+    "source_urls": [
+      "https://www.un.org/disabilities/documents/convention/convention_accessible_pdf.pdf"
+    ]
+  },
+  {
+    "module": "m1",
+    "slug": "cid-m1-guardar-ou-partilhar",
+    "title": "Guardar ou partilhar?",
+    "question": "Uma entrevista autorizada pode ser usada de qualquer maneira?",
+    "cards": 15,
+    "source_urls": [
+      "https://oralhistory.org/best-practices/"
+    ]
+  },
+  {
+    "module": "m1",
+    "slug": "cid-m1-duas-legendas",
+    "title": "Duas legendas, o mesmo quadro",
+    "question": "Quanto da nossa interpretação vem da imagem e quanto vem da legenda?",
+    "cards": 15,
+    "source_urls": [
+      "https://www.nationalgallery.org.uk/paintings/thomas-gainsborough-mr-and-mrs-andrews"
+    ]
+  },
+  {
+    "module": "m2",
+    "slug": "cid-m2-a-regra-do-feed",
+    "title": "A regra do feed",
+    "question": "Qual critério deve decidir o que aparece primeiro?",
+    "cards": 15,
+    "source_urls": [
+      "https://support.google.com/youtube/answer/16089387?hl=en"
+    ]
+  },
+  {
+    "module": "m2",
+    "slug": "cid-m2-o-contexto-em-falta",
+    "title": "O contexto em falta",
+    "question": "Como rever uma decisão de moderação sem decidir apenas pelo gosto?",
+    "cards": 15,
+    "source_urls": [
+      "https://digital-strategy.ec.europa.eu/en/factpages/user-rights-under-digital-services-act",
+      "https://eur-lex.europa.eu/eli/reg/2022/2065"
+    ]
+  },
+  {
+    "module": "m2",
+    "slug": "cid-m2-o-rasto-da-afirmacao",
+    "title": "O rasto da afirmação",
+    "question": "Três páginas que repetem a mesma frase são três confirmações?",
+    "cards": 15,
+    "source_urls": [
+      "https://cor.inquirygroup.org/curriculum/collections/teaching-lateral-reading/"
+    ]
+  }
+]
