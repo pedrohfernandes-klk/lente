@@ -99,6 +99,21 @@ class Ginasio(unittest.TestCase):
             frases = ' '.join([esc['p'], esc['f']] + esc['o'] + [t for t in esc['fe'] if t])
             self.assertNotRegex(frases, r'[^\s"]\s·\s[^\s"]', d.name)  # nunca «·» dentro de uma frase
 
+    def test_fase0_sem_etiquetas_nem_pontos(self):
+        # Fase 0 (23/10/2026): o motor escapa o «titulo» e passa «p», «o», «f» e «fe» por it() (só _itálico_ e **negrito**),
+        # por isso uma etiqueta HTML nestes campos fica à vista; e nenhum treino dá pontos (decisão 8 do docente)
+        for d in treinos():
+            s, itens, _ = montar(d / 'index.html')
+            for x in itens:
+                for k in ('titulo', 'p', 'o', 'f', 'fe'):
+                    v = x.get(k)
+                    for y in (v if isinstance(v, list) else [v]):
+                        self.assertFalse(isinstance(y, str) and '<' in y, (d.name, x.get('rot', x['t']), k, y))
+            self.assertIn('semPontos:true', s, d.name)
+            self.assertIn('var soLer=!nFazer()||cfg.semPontos;', s, d.name)
+            self.assertIn('pontos:ganho&&!cfg.semPontos?', s, d.name)
+            self.assertIn(' min de escrita</p>', itens[0]['html'], d.name)
+
     def test_ligacoes_locais_existem(self):
         paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'mapa/index.html', R / 'narrativas/proposta-subtexto/index.html']
         for p in paginas:

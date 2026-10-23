@@ -93,7 +93,7 @@ figure img[tabindex]:focus-visible{outline:3px solid var(--tinta,#000);outline-o
 <div class="topo"><div class="l1" style="max-width:980px"><span class="marca">Cidadania II · Feed de papel · INTP26</span><span class="estado" id="estado"></span></div></div>
 <main>
 <div id="palco" aria-live="polite"></div>
-<details class="nao-imprimir"><summary>Para o professor</summary>
+<details class="nao-imprimir"><summary>Para o docente</summary>
 <p>Este ecrã substitui os cartões de papel e a contagem no quadro: o algoritmo corre sozinho. Projeta-o ou passa o telemóvel ao utilizador.</p>
 <p><b>Versão 1, gostos:</b> o utilizador toca em «Gosto» nos cartões que quiser e fecha a ronda.<br><b>Versão 2, atenção:</b> os cartões aparecem um de cada vez e o utilizador toca em «Seguinte» quando quiser. O ecrã mede, em segredo, quanto tempo fica em cada um e não mostra nada sobre isso. Escolhe a versão <i>antes</i> de o utilizador entrar.</p>
 <p><b>Regra nas duas versões:</b> na ronda 1 aparece um cartão de cada tema. Nas rondas 2 e 3 aparecem 3 cartões do tema com mais pontos, 2 do segundo e 1 de outro tema, ao acaso. Nenhum cartão se repete (há 8 por tema). Os pontos acumulam-se de ronda para ronda. Em caso de empate, ganha o tema com o gosto (ou a leitura) mais recente.</p>
@@ -107,7 +107,7 @@ var TEMAS=["Futebol","Música","Humor","Animais","Teatro","Notícias"];
 var CARTOES={
 "Futebol":["Golo aos 90+3. Não há coração que aguente.", "As 10 melhores defesas da semana.", "Treinador explica a derrota: «faltou-nos cabeça».", "Miúda de 12 anos faz chapéu à guarda-redes no torneio da escola.", "Equipa feminina sub-17 apura-se para a final do campeonato.", "Guarda-redes defende três penáltis seguidos.", "Adeptos ficam a limpar a bancada depois do jogo.", "Treino aberto ao público no sábado de manhã."],
 "Música":["O álbum novo saiu à meia-noite. Já ouviste?", "Concerto-surpresa numa estação de metro.", "Como se escreve um refrão que não sai da cabeça.", "Avó de 80 anos aprende bateria e toca com o neto.", "Banda de garagem da escola grava o primeiro EP.", "Festival de verão anuncia os primeiros nomes.", "Guitarrista acaba o concerto com uma corda partida.", "Como fazer um beat só com sons da cozinha."],
-"Humor":["Quando o professor diz «é só uma pergunta rápida».", "Tentei seguir a receita. A receita ganhou.", "Coisas que só acontecem no grupo da turma.", "O meu cão a ouvir a palavra «rua».", "Eu a apresentar o trabalho de grupo que fiz sozinho.", "Segunda-feira de manhã, resumida num gato.", "«Façam grupos de três.» Nós: quatro amigos.", "O despertador e eu: uma relação complicada."],
+"Humor":["Quando o docente diz «é só uma pergunta rápida».", "Tentei seguir a receita. A receita ganhou.", "Coisas que só acontecem no grupo da turma.", "O meu cão a ouvir a palavra «rua».", "Eu a apresentar o trabalho de grupo que fiz sozinho.", "Segunda-feira de manhã, resumida num gato.", "«Façam grupos de três.» Nós: quatro amigos.", "O despertador e eu: uma relação complicada."],
 "Animais":["Cadela espera pela dona à porta da escola todos os dias.", "Os corvos lembram-se de caras humanas durante anos.", "Abrigo procura família para doze gatinhos.", "Polvo abre um frasco por dentro.", "Golfinhos avistados no rio esta manhã.", "Gata adota três patinhos órfãos.", "Cegonha volta ao mesmo ninho pelo décimo ano.", "Ouriço resgatado de uma baliza de futebol."],
 "Teatro":["Bastidores: três horas de maquilhagem para dois minutos de cena.", "Ator esquece o texto e improvisa. A sala vem abaixo.", "Audições abertas para um musical juvenil.", "Cinco exercícios de voz antes de entrar em cena.", "Peça encenada num elevador, para quatro espetadores de cada vez.", "Escola de teatro abre oficina gratuita de máscaras.", "Atriz de 90 anos regressa ao palco.", "O que fazer quando o pano cai a meio da cena."],
 "Notícias":["Orçamento participativo jovem: a votação abre amanhã.", "Onda de calor: conselhos para os próximos dias.", "Estudo: jovens dormem menos de sete horas em dias de aulas.", "Eleições para a associação de estudantes: debate na sexta.", "Biblioteca municipal passa a abrir ao domingo.", "Nova ciclovia liga a escola à estação.", "Consulta pública sobre o novo parque da cidade.", "Greve dos comboios marcada para quinta-feira."]
@@ -152,7 +152,7 @@ function marcar(txt){estado.textContent=txt||''}
 function inicio(){
   S=null;marcar('');
   palco.innerHTML='<h1>Feed</h1><p class="sub">Feed de papel, sem papel · 3 rondas · 6 cartões por ronda</p>'+
-  '<p>Professor: escolhe a versão <b>antes</b> de o utilizador estar a ver.</p>'+
+  '<p>Docente: escolhe a versão <b>antes</b> de o utilizador estar a ver.</p>'+
   '<div class="escolha"><button type="button" data-v="1"><b>Versão 1 · Gostos</b>O utilizador vê 6 cartões e toca em «Gosto» nos que quiser.</button>'+
   '<button type="button" data-v="2"><b>Versão 2 · Atenção</b>Os cartões aparecem um a um. O ecrã mede o tempo de leitura em segredo.</button></div>';
   [].forEach.call(palco.querySelectorAll('[data-v]'),function(b){b.addEventListener('click',function(){novo(+b.dataset.v);pronto()})});
@@ -231,7 +231,7 @@ function revelar(){
   '<h2>Cartões de cada tema, ronda a ronda</h2>'+
   '<table class="res"><tr><th>Tema</th>'+S.historico.map(function(r,k){return '<th>R'+(k+1)+'</th>'}).join('')+'<th>Pontos ('+unid+')</th></tr>'+linhas+'</table>'+
   '<div class="ret"><span class="palavra">Na ronda 3</span>Temas vistos: <b>'+vistos.length+' de 6</b>.'+(sumiram.length?' Desapareceram: <b>'+sumiram.join(', ')+'</b>.':' Nenhum tema desapareceu desta vez: experimenta outro utilizador.')+'</div>'+
-  '<p class="nota">✕ = tema que não apareceu nessa ronda. Os observadores comparam esta tabela com a que preencheram na ficha.</p>'+
+  '<p class="nota">✕ = tema que não apareceu nessa ronda. Os observadores comparam esta tabela com a que preencheram no guião.</p>'+
   '<div class="acoes nao-imprimir"><button class="btn" type="button" id="outra">Correr a versão '+(S.versao===1?2:1)+'</button><button class="btn sec" type="button" id="recomecar">Voltar ao início</button></div>';
   var v=S.versao===1?2:1;
   ligar('outra',function(){novo(v);pronto()});ligar('recomecar',inicio);
