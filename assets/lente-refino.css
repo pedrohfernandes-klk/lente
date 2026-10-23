@@ -15,3 +15,7 @@
 .lente-idx .migalhas{display:flex;align-items:center;gap:12px;background:transparent;color:var(--tinta,#171715);border-bottom:1px solid var(--c-cinza,#d6d4ce);padding:4px max(16px,calc((100% - 680px)/2))}.lente-idx .migalhas ol{margin:0;flex:1;min-width:0}.lente-idx .migalhas a.epi-projection-launcher{background:transparent;border:0;border-radius:0;color:inherit;flex:0 0 44px}.lente-idx .marca-sec{font-size:clamp(2.8rem,8vw,4.5rem)}
 
 .lente-idx .migalhas a,.lente-idx .migalhas span[aria-current]{color:inherit}.lente-idx .p-cab h1{overflow-wrap:break-word}@media(max-width:400px){.lente-idx .p-cab h1{font-size:2rem}}
+
+/* 23/10/2026: os cartões das vidas e das vozes têm papel próprio (claro, azulado, escuro); a regra geral das listas acima
+   tirava-lhes o fundo e deixava o texto claro do terceiro cartão sobre papel claro (Fontana, Galileu, Camus, Basquiat) */
+.lente-idx .lab-lives .lab-life{padding:18px;background:var(--life-paper);border-bottom:0}
