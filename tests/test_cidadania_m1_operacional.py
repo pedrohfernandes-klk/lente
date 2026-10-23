@@ -16,8 +16,9 @@ class CidadaniaM1(unittest.TestCase):
    original=b
    if p=='cidadania/index.html':
     previews=re.findall(r'<span class="cid-module-image">(.*?)</span>',b,re.S)
-    self.assertEqual(len(previews),2)
-    self.assertIn('hals.webp',previews[0]);self.assertIn('turco.webp',previews[1])
+    # 23/10/2026: terceiro cartão, «Ter juízo» (Justiça, ética e estética), pedido do docente; os dois módulos mantêm-se.
+    self.assertEqual(len(previews),3)
+    self.assertIn('hals.webp',previews[0]);self.assertIn('turco.webp',previews[1]);self.assertIn('daumier.webp',previews[2])
     original=re.sub(r'<span class="cid-module-image">.*?</span>','',b,flags=re.S)
    self.assertEqual(a['images_sha256'],[hashlib.sha256(x.encode()).hexdigest() for x in re.findall(r'<img[^>]+src="([^"]+)"',original)])
    for id in a['ids']:self.assertIn('id="'+id+'"',b)
