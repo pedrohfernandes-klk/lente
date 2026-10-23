@@ -1,0 +1,617 @@
+{
+ "_nota": "Manifesto de preservação do Laboratório (D0 do relatório de 23/10/2026), gerado a partir de main e4eeb82 antes de qualquer mudança: endereços, âncoras e chaves de progresso que não podem desaparecer sem decisão explícita. Uma mudança intencional atualiza este ficheiro no mesmo PR, com a razão no commit.",
+ "base": "e4eeb827de01503ab74bd9bf73478bb7516c296c",
+ "paginas": [
+  "narrativas/anguissola/",
+  "narrativas/aula-forma/",
+  "narrativas/aula-lugar/",
+  "narrativas/aula-nao-dito/",
+  "narrativas/aula-personagem/",
+  "narrativas/cenario-personagem/",
+  "narrativas/cigoli/",
+  "narrativas/comecar-pelo-meio/",
+  "narrativas/corta/bras-cubas/",
+  "narrativas/corta/cesario/",
+  "narrativas/corta/chuva/",
+  "narrativas/corta/frei-luis/",
+  "narrativas/corta/",
+  "narrativas/corta/ines/",
+  "narrativas/corta/maias/",
+  "narrativas/corta/restelo/",
+  "narrativas/corta/torneol/",
+  "narrativas/desenlace/",
+  "narrativas/dialogo/",
+  "narrativas/duchamp/",
+  "narrativas/espingarda/",
+  "narrativas/espinha/",
+  "narrativas/fontana/",
+  "narrativas/fora-da-pagina/escultura/",
+  "narrativas/fora-da-pagina/",
+  "narrativas/fora-da-pagina/intervalo/",
+  "narrativas/fora-da-pagina/tese/",
+  "narrativas/galileu/",
+  "narrativas/historia-enredo/",
+  "narrativas/",
+  "narrativas/leonardo/",
+  "narrativas/linhas-de-enredo/",
+  "narrativas/margens/",
+  "narrativas/margens/passo-01/",
+  "narrativas/margens/passo-02/",
+  "narrativas/oficina-arco/",
+  "narrativas/oficina-arco-imprimir/",
+  "narrativas/oficina-argumento/",
+  "narrativas/oficina-argumento-imprimir/",
+  "narrativas/oficina-atelie/",
+  "narrativas/oficina-atelie-imprimir/",
+  "narrativas/oficina-ator/",
+  "narrativas/oficina-ator-imprimir/",
+  "narrativas/oficina-dilema/",
+  "narrativas/oficina-dilema-imprimir/",
+  "narrativas/oficina-dramaturgista/",
+  "narrativas/oficina-dramaturgista-imprimir/",
+  "narrativas/oficina-epico/",
+  "narrativas/oficina-epico-imprimir/",
+  "narrativas/oficina-espaco/",
+  "narrativas/oficina-espaco-imprimir/",
+  "narrativas/oficina-ficcao-comecar/",
+  "narrativas/oficina-ficcao-comecar-imprimir/",
+  "narrativas/oficina-ficcao-espaco/",
+  "narrativas/oficina-ficcao-espaco-imprimir/",
+  "narrativas/oficina-ficcao-genero/",
+  "narrativas/oficina-ficcao-genero-imprimir/",
+  "narrativas/oficina-ficcao-personagem/",
+  "narrativas/oficina-ficcao-personagem-imprimir/",
+  "narrativas/oficina-manifesto/",
+  "narrativas/oficina-manifesto-imprimir/",
+  "narrativas/oficina-matriz/",
+  "narrativas/oficina-matriz-imprimir/",
+  "narrativas/oficina-pedacos/",
+  "narrativas/oficina-pedacos-imprimir/",
+  "narrativas/oficina-plano/",
+  "narrativas/oficina-plano-imprimir/",
+  "narrativas/oficina-readymade/",
+  "narrativas/oficina-readymade-imprimir/",
+  "narrativas/oficina-restricao/",
+  "narrativas/oficina-restricao-imprimir/",
+  "narrativas/oficina-texto-imagem/",
+  "narrativas/oficina-texto-imagem-imprimir/",
+  "narrativas/oficina-visivel/",
+  "narrativas/oficina-visivel-imprimir/",
+  "narrativas/personagem-faz/",
+  "narrativas/piramide/",
+  "narrativas/quem-conta/",
+  "narrativas/querer-agir/",
+  "narrativas/subtexto/",
+  "narrativas/treinar/a-entrevista/",
+  "narrativas/treinar/a-espingarda/",
+  "narrativas/treinar/a-gaveta/",
+  "narrativas/treinar/acelerar-travar/",
+  "narrativas/treinar/caderno/",
+  "narrativas/treinar/comeca-mais-tarde/",
+  "narrativas/treinar/copia-lenta/",
+  "narrativas/treinar/cortar-um-quinto/",
+  "narrativas/treinar/dicionario/",
+  "narrativas/treinar/docente/",
+  "narrativas/treinar/duas-horas/",
+  "narrativas/treinar/duas-vozes/",
+  "narrativas/treinar/frase-querida/",
+  "narrativas/treinar/",
+  "narrativas/treinar/interromper/",
+  "narrativas/treinar/lista-substantivos/",
+  "narrativas/treinar/o-contrario/",
+  "narrativas/treinar/objeto-banal/",
+  "narrativas/treinar/outro-ponto-de-vista/",
+  "narrativas/treinar/pelo-meio/",
+  "narrativas/treinar/pelo-que-faz/",
+  "narrativas/treinar/pergunta-sem-resposta/",
+  "narrativas/treinar/quarto-que-fala/",
+  "narrativas/treinar/rascunho-mau/",
+  "narrativas/treinar/sem-disse/",
+  "narrativas/treinar/sem-mente/",
+  "narrativas/treinar/sem-olhos/",
+  "narrativas/treinar/so-gestos/",
+  "narrativas/treinar/teste-do-colega/",
+  "narrativas/treinar/tres-em-cinco/",
+  "narrativas/treinar/verbo-forte/",
+  "narrativas/treinar/verdade-dificil/",
+  "narrativas/treinar/voz-alta/",
+  "narrativas/variantes/"
+ ],
+ "ancoras": {
+  "narrativas/": [
+   "a-entrevista",
+   "a-espingarda",
+   "a-gaveta",
+   "acelerar-travar",
+   "amp-css",
+   "amp-js",
+   "aquecimentos",
+   "aula-forma",
+   "aula-lugar",
+   "aula-nao-dito",
+   "aula-personagem",
+   "aulas",
+   "aulas-narrativa",
+   "bras-cubas",
+   "cenario-personagem",
+   "cesario",
+   "chuva",
+   "comeca-mais-tarde",
+   "comecar-pelo-meio",
+   "copia-lenta",
+   "corta",
+   "cortar-um-quinto",
+   "criar",
+   "criar-titulo",
+   "desenlace",
+   "dialogo",
+   "dicionario",
+   "duas-horas",
+   "duas-vozes",
+   "espingarda",
+   "espinha",
+   "experimentar",
+   "experimentar-criar",
+   "experimentar-exercicios",
+   "experimentar-projeto",
+   "fora-da-pagina",
+   "frase-querida",
+   "frei-luis",
+   "historia-enredo",
+   "ines",
+   "interromper",
+   "lab-portas",
+   "ler-como-quem-escreve",
+   "ler-titulo",
+   "linhas-de-enredo",
+   "lista-substantivos",
+   "maias",
+   "mg-css",
+   "o-contrario",
+   "objeto-banal",
+   "oficina-arco",
+   "oficina-argumento",
+   "oficina-atelie",
+   "oficina-ator",
+   "oficina-dilema",
+   "oficina-dramaturgista",
+   "oficina-epico",
+   "oficina-espaco",
+   "oficina-ficcao-comecar",
+   "oficina-ficcao-espaco",
+   "oficina-ficcao-genero",
+   "oficina-ficcao-personagem",
+   "oficina-manifesto",
+   "oficina-matriz",
+   "oficina-pedacos",
+   "oficina-plano",
+   "oficina-readymade",
+   "oficina-restricao",
+   "oficina-texto-imagem",
+   "oficina-visivel",
+   "oficinas-cena",
+   "oficinas-escrever",
+   "oficinas-questionar",
+   "outro-ponto-de-vista",
+   "pelo-meio",
+   "pelo-que-faz",
+   "pergunta-sem-resposta",
+   "personagem-faz",
+   "piramide",
+   "quarto-que-fala",
+   "quem-conta",
+   "querer-agir",
+   "rascunho-mau",
+   "restelo",
+   "sem-disse",
+   "sem-mente",
+   "sem-olhos",
+   "so-gestos",
+   "subtexto",
+   "teste-do-colega",
+   "torneol",
+   "treinar",
+   "treinar-colecao",
+   "treinar-dialogo",
+   "treinar-estrutura",
+   "treinar-frase",
+   "treinar-rever",
+   "treinar-sentidos",
+   "treinar-titulo",
+   "treinar-voz",
+   "tres-em-cinco",
+   "verbo-forte",
+   "verdade-dificil",
+   "vidas-e-ideias",
+   "voz-alta"
+  ],
+  "vozes/": [
+   "amp-css",
+   "amp-js",
+   "anguissola",
+   "cigoli",
+   "duchamp",
+   "fontana",
+   "galileu",
+   "leonardo",
+   "mg-css",
+   "vidas-biografias",
+   "vidas-e-ideias",
+   "vidas-e-ideias-titulo",
+   "vidas-referencias",
+   "vidas-vozes",
+   "vozes-absurdo",
+   "vozes-arte-e-vida",
+   "vozes-nietzsche"
+  ],
+  "": [
+   "ferramentas",
+   "inicio-cidadania",
+   "inicio-narrativas",
+   "inicio-vozes"
+  ]
+ },
+ "chaves": {
+  "narrativas/anguissola/": [
+   "epi-narrativas",
+   "epi-narrativas-anguissola"
+  ],
+  "narrativas/aula-forma/": [
+   "epi-narrativas",
+   "epi-narrativas-aula-forma"
+  ],
+  "narrativas/aula-lugar/": [
+   "epi-narrativas",
+   "epi-narrativas-aula-lugar"
+  ],
+  "narrativas/aula-nao-dito/": [
+   "epi-narrativas",
+   "epi-narrativas-aula-nao-dito"
+  ],
+  "narrativas/aula-personagem/": [
+   "epi-narrativas",
+   "epi-narrativas-aula-personagem"
+  ],
+  "narrativas/cenario-personagem/": [
+   "epi-narrativas",
+   "epi-narrativas-cenario-personagem"
+  ],
+  "narrativas/cigoli/": [
+   "epi-narrativas",
+   "epi-narrativas-cigoli"
+  ],
+  "narrativas/comecar-pelo-meio/": [
+   "epi-narrativas",
+   "epi-narrativas-comecar-pelo-meio"
+  ],
+  "narrativas/corta/bras-cubas/": [
+   "epi-corta",
+   "epi-corta-bras-cubas"
+  ],
+  "narrativas/corta/cesario/": [
+   "epi-corta",
+   "epi-corta-cesario"
+  ],
+  "narrativas/corta/chuva/": [
+   "epi-corta",
+   "epi-corta-chuva"
+  ],
+  "narrativas/corta/frei-luis/": [
+   "epi-corta",
+   "epi-corta-frei-luis"
+  ],
+  "narrativas/corta/": [
+   "g-",
+   "g-atlas",
+   "g-cidade",
+   "l-"
+  ],
+  "narrativas/corta/ines/": [
+   "epi-corta",
+   "epi-corta-ines"
+  ],
+  "narrativas/corta/maias/": [
+   "epi-corta",
+   "epi-corta-maias"
+  ],
+  "narrativas/corta/restelo/": [
+   "epi-corta",
+   "epi-corta-restelo"
+  ],
+  "narrativas/corta/torneol/": [
+   "epi-corta",
+   "epi-corta-torneol"
+  ],
+  "narrativas/desenlace/": [
+   "epi-narrativas",
+   "epi-narrativas-desenlace"
+  ],
+  "narrativas/dialogo/": [
+   "epi-narrativas",
+   "epi-narrativas-dialogo"
+  ],
+  "narrativas/duchamp/": [
+   "epi-narrativas",
+   "epi-narrativas-duchamp"
+  ],
+  "narrativas/espingarda/": [
+   "epi-narrativas",
+   "epi-narrativas-espingarda"
+  ],
+  "narrativas/espinha/": [
+   "epi-narrativas",
+   "epi-narrativas-espinha"
+  ],
+  "narrativas/fontana/": [
+   "epi-narrativas",
+   "epi-narrativas-fontana"
+  ],
+  "narrativas/galileu/": [
+   "epi-narrativas",
+   "epi-narrativas-galileu"
+  ],
+  "narrativas/historia-enredo/": [
+   "epi-narrativas",
+   "epi-narrativas-historia-enredo"
+  ],
+  "narrativas/": [
+   "epi-corta",
+   "epi-treinos",
+   "g-",
+   "g-atlas",
+   "g-cidade",
+   "l-"
+  ],
+  "narrativas/leonardo/": [
+   "epi-narrativas",
+   "epi-narrativas-leonardo"
+  ],
+  "narrativas/linhas-de-enredo/": [
+   "epi-narrativas",
+   "epi-narrativas-linhas-de-enredo"
+  ],
+  "narrativas/margens/": [
+   "g-",
+   "g-atlas",
+   "g-cidade",
+   "l-"
+  ],
+  "narrativas/margens/passo-01/": [
+   "epi-margens",
+   "epi-margens-passo-01"
+  ],
+  "narrativas/margens/passo-02/": [
+   "epi-margens",
+   "epi-margens-passo-02"
+  ],
+  "narrativas/oficina-arco/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-arco"
+  ],
+  "narrativas/oficina-argumento/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-argumento"
+  ],
+  "narrativas/oficina-atelie/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-atelie"
+  ],
+  "narrativas/oficina-ator/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-ator"
+  ],
+  "narrativas/oficina-dilema/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-dilema"
+  ],
+  "narrativas/oficina-dramaturgista/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-dramaturgista"
+  ],
+  "narrativas/oficina-epico/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-epico"
+  ],
+  "narrativas/oficina-espaco/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-espaco"
+  ],
+  "narrativas/oficina-ficcao-comecar/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-ficcao-comecar"
+  ],
+  "narrativas/oficina-ficcao-comecar-imprimir/": [
+   "epi-ficcao-comecar-v2"
+  ],
+  "narrativas/oficina-ficcao-espaco/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-ficcao-espaco"
+  ],
+  "narrativas/oficina-ficcao-genero/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-ficcao-genero"
+  ],
+  "narrativas/oficina-ficcao-personagem/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-ficcao-personagem"
+  ],
+  "narrativas/oficina-ficcao-personagem-imprimir/": [
+   "epi-ficcao-personagem-v2"
+  ],
+  "narrativas/oficina-manifesto/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-manifesto"
+  ],
+  "narrativas/oficina-matriz/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-matriz"
+  ],
+  "narrativas/oficina-matriz-imprimir/": [
+   "epi-guiao-matriz-v3"
+  ],
+  "narrativas/oficina-pedacos/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-pedacos"
+  ],
+  "narrativas/oficina-plano/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-plano"
+  ],
+  "narrativas/oficina-readymade/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-readymade"
+  ],
+  "narrativas/oficina-restricao/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-restricao"
+  ],
+  "narrativas/oficina-texto-imagem/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-texto-imagem"
+  ],
+  "narrativas/oficina-visivel/": [
+   "epi-narrativas",
+   "epi-narrativas-oficina-visivel"
+  ],
+  "narrativas/personagem-faz/": [
+   "epi-narrativas",
+   "epi-narrativas-personagem-faz"
+  ],
+  "narrativas/piramide/": [
+   "epi-narrativas",
+   "epi-narrativas-piramide"
+  ],
+  "narrativas/quem-conta/": [
+   "epi-narrativas",
+   "epi-narrativas-quem-conta"
+  ],
+  "narrativas/querer-agir/": [
+   "epi-narrativas",
+   "epi-narrativas-querer-agir"
+  ],
+  "narrativas/subtexto/": [
+   "epi-narrativas",
+   "epi-narrativas-subtexto"
+  ],
+  "narrativas/treinar/a-entrevista/": [
+   "epi-treinos",
+   "epi-treinos-a-entrevista"
+  ],
+  "narrativas/treinar/a-espingarda/": [
+   "epi-treinos",
+   "epi-treinos-a-espingarda"
+  ],
+  "narrativas/treinar/a-gaveta/": [
+   "epi-treinos",
+   "epi-treinos-a-gaveta"
+  ],
+  "narrativas/treinar/acelerar-travar/": [
+   "epi-treinos",
+   "epi-treinos-acelerar-travar"
+  ],
+  "narrativas/treinar/comeca-mais-tarde/": [
+   "epi-treinos",
+   "epi-treinos-comeca-mais-tarde"
+  ],
+  "narrativas/treinar/copia-lenta/": [
+   "epi-treinos",
+   "epi-treinos-copia-lenta"
+  ],
+  "narrativas/treinar/cortar-um-quinto/": [
+   "epi-treinos",
+   "epi-treinos-cortar-um-quinto"
+  ],
+  "narrativas/treinar/dicionario/": [
+   "epi-treinos",
+   "epi-treinos-dicionario"
+  ],
+  "narrativas/treinar/duas-horas/": [
+   "epi-treinos",
+   "epi-treinos-duas-horas"
+  ],
+  "narrativas/treinar/duas-vozes/": [
+   "epi-treinos",
+   "epi-treinos-duas-vozes"
+  ],
+  "narrativas/treinar/frase-querida/": [
+   "epi-treinos",
+   "epi-treinos-frase-querida"
+  ],
+  "narrativas/treinar/interromper/": [
+   "epi-treinos",
+   "epi-treinos-interromper"
+  ],
+  "narrativas/treinar/lista-substantivos/": [
+   "epi-treinos",
+   "epi-treinos-lista-substantivos"
+  ],
+  "narrativas/treinar/o-contrario/": [
+   "epi-treinos",
+   "epi-treinos-o-contrario"
+  ],
+  "narrativas/treinar/objeto-banal/": [
+   "epi-treinos",
+   "epi-treinos-objeto-banal"
+  ],
+  "narrativas/treinar/outro-ponto-de-vista/": [
+   "epi-treinos",
+   "epi-treinos-outro-ponto-de-vista"
+  ],
+  "narrativas/treinar/pelo-meio/": [
+   "epi-treinos",
+   "epi-treinos-pelo-meio"
+  ],
+  "narrativas/treinar/pelo-que-faz/": [
+   "epi-treinos",
+   "epi-treinos-pelo-que-faz"
+  ],
+  "narrativas/treinar/pergunta-sem-resposta/": [
+   "epi-treinos",
+   "epi-treinos-pergunta-sem-resposta"
+  ],
+  "narrativas/treinar/quarto-que-fala/": [
+   "epi-treinos",
+   "epi-treinos-quarto-que-fala"
+  ],
+  "narrativas/treinar/rascunho-mau/": [
+   "epi-treinos",
+   "epi-treinos-rascunho-mau"
+  ],
+  "narrativas/treinar/sem-disse/": [
+   "epi-treinos",
+   "epi-treinos-sem-disse"
+  ],
+  "narrativas/treinar/sem-mente/": [
+   "epi-treinos",
+   "epi-treinos-sem-mente"
+  ],
+  "narrativas/treinar/sem-olhos/": [
+   "epi-treinos",
+   "epi-treinos-sem-olhos"
+  ],
+  "narrativas/treinar/so-gestos/": [
+   "epi-treinos",
+   "epi-treinos-so-gestos"
+  ],
+  "narrativas/treinar/teste-do-colega/": [
+   "epi-treinos",
+   "epi-treinos-teste-do-colega"
+  ],
+  "narrativas/treinar/tres-em-cinco/": [
+   "epi-treinos",
+   "epi-treinos-tres-em-cinco"
+  ],
+  "narrativas/treinar/verbo-forte/": [
+   "epi-treinos",
+   "epi-treinos-verbo-forte"
+  ],
+  "narrativas/treinar/verdade-dificil/": [
+   "epi-treinos",
+   "epi-treinos-verdade-dificil"
+  ],
+  "narrativas/treinar/voz-alta/": [
+   "epi-treinos",
+   "epi-treinos-voz-alta"
+  ]
+ }
+}
