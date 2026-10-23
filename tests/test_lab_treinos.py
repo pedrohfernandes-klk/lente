@@ -4,6 +4,7 @@ from urllib.parse import urlsplit
 R = Path(__file__).resolve().parents[1]
 G = R / 'narrativas/treinar'
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
+PILOTO = ('o-contrario',)
 PROIBIDAS = re.compile(r'(?<![\wÀ-ÿ])(?:professor(?:a|es|as)?|jog(?:ar|a|as|amos|am|ou|ue|uei|ando|ado)|fichas?|folhas?)(?![\wÀ-ÿ])', re.I)
 
 
@@ -26,25 +27,57 @@ class Ginasio(unittest.TestCase):
         for d in ds:
             s, itens, chave = montar(d / 'index.html')
             self.assertEqual(chave, 'epi-treinos-' + d.name)
-            self.assertEqual([x.get('rot', x['t']) for x in itens], ['A regra', 'O modelo', 'escolha', 'Escreve', 'Verifica', 'Revê', 'Troca'], d.name)
+            # piloto Subtexto (relatório do Lab de 23/10/2026, mudança deliberada): «Uma fala, duas intenções» (o-contrario) tem
+            # mais dois cartões, as duas leituras defensáveis depois da escolha e a transferência no fim; os outros 29 não mudam
+            base = ['A regra', 'O modelo', 'escolha', 'Escreve', 'Verifica', 'Revê', 'Troca']
+            esperado = ['A regra', 'O modelo', 'escolha', 'Duas leituras', 'Escreve', 'Verifica', 'Revê', 'Troca', 'Transfere'] if d.name in PILOTO else base
+            self.assertEqual([x.get('rot', x['t']) for x in itens], esperado, d.name)
+            por = {x.get('rot', x['t']): x for x in itens}
             esc = itens[2]
             self.assertEqual(len(esc['o']), 4)
             self.assertTrue(all((j == esc['c']) == (esc['fe'][j] is None) for j in range(4)), d.name)
             # a certa nunca é a mais longa
             self.assertLess(len(esc['o'][esc['c']]), max(len(o) for j, o in enumerate(esc['o']) if j != esc['c']), d.name)
-            self.assertIn('data-relogio=', itens[3]['html'])
+            self.assertIn('data-relogio=', por['Escreve']['html'])
             # relatório de 23/10: o relógio começa parado, dá mais um minuto, esconde-se e não anuncia cada segundo
             for b in ('data-rl="ir"', 'data-rl="parar"', 'data-rl="mais"', 'data-rl="zero"', 'data-rl="ver"'):
-                self.assertIn(b, itens[3]['html'], d.name)
-            self.assertNotIn('class="tr-tempo" aria-live', itens[3]['html'])
+                self.assertIn(b, por['Escreve']['html'], d.name)
+            self.assertNotIn('class="tr-tempo" aria-live', por['Escreve']['html'])
             # a revisão tem quatro estados por critério (sim, em parte, ainda não, não se aplica), sem bloqueio nem nota;
             # antes eram três caixas de sim/não (mudança deliberada, 23/10/2026)
-            v = itens[4]['html']
+            v = por['Verifica']['html']
             self.assertEqual(v.count('<fieldset>'), 3, d.name)
             self.assertEqual(v.count('type="radio"'), 12, d.name)
             self.assertIn('regra para esta tentativa', itens[0]['html'])
             self.assertIn('tr-relogio-js', s)
             self.assertIn('S.vezes[', s)
+
+    def test_piloto_subtexto(self):
+        # relatório do Lab de 23/10/2026: a mesma competência nas três portas (Academia, Ginásio, Ateliê); ids e chaves não mudam
+        s, itens, chave = montar(G / 'o-contrario/index.html')
+        self.assertEqual(chave, 'epi-treinos-o-contrario')
+        self.assertIn('titulo:"Uma fala, duas intenções"', s)
+        por = {x.get('rot', x['t']): x for x in itens}
+        self.assertEqual(por['Duas leituras']['html'].count('<p class="tr-pista">'), 2)
+        self.assertIn('class="tr-leit"', por['Duas leituras']['html'])
+        self.assertIn('.tr-leit{', s)
+        self.assertIn(LENTE + 'narrativas/proposta-subtexto/', por['Transfere']['html'])
+        s2, _, chave2 = montar(G / 'sem-disse/index.html')
+        self.assertEqual(chave2, 'epi-treinos-sem-disse')
+        self.assertIn('titulo:"Duas vozes, nenhum nome"', s2)
+        self.assertNotIn('.tr-leit{', s2)  # o estilo das leituras só vai para o treino que as tem
+        prop = (R / 'narrativas/proposta-subtexto/index.html').read_text('utf-8')
+        for h in ('narrativas/subtexto/', 'narrativas/treinar/sem-disse/', 'narrativas/treinar/o-contrario/'):
+            self.assertIn(LENTE + h, prop)
+        for passo in ('Versão A', 'A leitura de um colega', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
+            self.assertIn(passo, prop)
+        lab = (R / 'narrativas/index.html').read_text('utf-8')
+        i = lab.index('id="criar"')
+        self.assertIn('href="proposta-subtexto/"', lab[i:lab.index('</section>', i)])
+        for p in list((R / 'narrativas').rglob('index.html')) + [R / 'mapa/index.html']:
+            t = p.read_text('utf-8')
+            self.assertNotIn('Sem «disse»', t, p)
+            self.assertNotIn('Dizer o contrário', t, p)
 
     def test_sem_atribuicoes_por_confirmar(self):
         # relatório de 23/10: nenhuma regra atribuída a um escritor sem a obra confirmada; nada de efeitos psicológicos sem fonte
@@ -67,7 +100,7 @@ class Ginasio(unittest.TestCase):
             self.assertNotRegex(frases, r'[^\s"]\s·\s[^\s"]', d.name)  # nunca «·» dentro de uma frase
 
     def test_ligacoes_locais_existem(self):
-        paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'mapa/index.html']
+        paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'mapa/index.html', R / 'narrativas/proposta-subtexto/index.html']
         for p in paginas:
             s = p.read_text('utf-8')
             for href in set(re.findall(r'href=\\?"(https://pedrohfernandes-klk\.github\.io/lente/[^"\\#?]*)', s)):
