@@ -33,9 +33,25 @@ class Ginasio(unittest.TestCase):
             # a certa nunca é a mais longa
             self.assertLess(len(esc['o'][esc['c']]), max(len(o) for j, o in enumerate(esc['o']) if j != esc['c']), d.name)
             self.assertIn('data-relogio=', itens[3]['html'])
-            self.assertEqual(itens[4]['html'].count('type="checkbox"'), 3)
+            # relatório de 23/10: o relógio começa parado, dá mais um minuto, esconde-se e não anuncia cada segundo
+            for b in ('data-rl="ir"', 'data-rl="parar"', 'data-rl="mais"', 'data-rl="zero"', 'data-rl="ver"'):
+                self.assertIn(b, itens[3]['html'], d.name)
+            self.assertNotIn('class="tr-tempo" aria-live', itens[3]['html'])
+            # a revisão tem quatro estados por critério (sim, em parte, ainda não, não se aplica), sem bloqueio nem nota;
+            # antes eram três caixas de sim/não (mudança deliberada, 23/10/2026)
+            v = itens[4]['html']
+            self.assertEqual(v.count('<fieldset>'), 3, d.name)
+            self.assertEqual(v.count('type="radio"'), 12, d.name)
+            self.assertIn('regra para esta tentativa', itens[0]['html'])
             self.assertIn('tr-relogio-js', s)
             self.assertIn('S.vezes[', s)
+
+    def test_sem_atribuicoes_por_confirmar(self):
+        # relatório de 23/10: nenhuma regra atribuída a um escritor sem a obra confirmada; nada de efeitos psicológicos sem fonte
+        for p in [d / 'index.html' for d in treinos()] + [G / 'docente/index.html']:
+            s = p.read_text('utf-8')
+            for nome in ('Bradbury', 'Lamott', 'Stephen King', 'McPhee', 'juiz interior'):
+                self.assertNotIn(nome, s, (p.relative_to(R), nome))
 
     def test_regras_da_casa(self):
         for d in treinos():
@@ -62,7 +78,12 @@ class Ginasio(unittest.TestCase):
 
     def test_entrada_do_lab_em_tres_portas(self):
         s = (R / 'narrativas/index.html').read_text('utf-8')
-        self.assertEqual(re.findall(r'<section class="lab-set" id="([^"]+)"', s), ['treinar', 'criar', 'ler-como-quem-escreve'])
+        # Academia, Ginásio, Ateliê (decisão de 23/10/2026; antes: Treinar, Criar, Ler como quem escreve); os ids não mudam
+        self.assertEqual(re.findall(r'<section class="lab-set" id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        for nome in ('Academia', 'Ginásio', 'Ateliê'):
+            self.assertIn(f'>{nome}<span class="vh">', s)
+        i = s.index('id="ler-como-quem-escreve"'); j = s.index('</section>', s.index('id="aulas-narrativa"'))
+        self.assertIn('lente/vozes/"><span class="bundle-label">Vidas e vozes</span>', s[i:s.index('id="treinar"')])
         self.assertEqual(len(set(re.findall(r'href="treinar/([a-z-]+)/"', s))), 30)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
             self.assertIn(antiga, s)  # quem chega por um endereço antigo ainda cai no sítio certo
@@ -78,7 +99,7 @@ class Ginasio(unittest.TestCase):
         i = s.index('id="inicio-cidadania"'); j = s.index('</article>', i)
         self.assertEqual(s[i:j].count('<li><a '), 3)
         i = s.index('id="inicio-narrativas"'); j = s.index('</article>', i)
-        self.assertEqual(re.findall(r'href="narrativas/#([a-z-]+)"', s[i:j]), ['treinar', 'criar', 'ler-como-quem-escreve'])
+        self.assertEqual(re.findall(r'href="narrativas/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
         self.assertIn('id="inicio-vozes"', s)
         self.assertIn('id="ferramentas"', s)
 

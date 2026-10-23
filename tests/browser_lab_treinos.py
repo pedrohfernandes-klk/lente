@@ -28,14 +28,19 @@ with sync_playwright() as pw:
      depois=w.locator('.tr-tempo').inner_text();assert depois!=ini,(tid,ini,depois)
      w.locator('[data-rl="parar"]').click();parado=w.locator('.tr-tempo').inner_text();p.wait_for_timeout(1200);assert w.locator('.tr-tempo').inner_text()==parado
      w.locator('[data-rl="zero"]').click();assert w.locator('.tr-tempo').inner_text()==ini
+     # mais um minuto e esconder o tempo (relatório de 23/10); o relógio continua a funcionar escondido
+     m0,s0=map(int,ini.split(':'));w.locator('[data-rl="mais"]').click();assert w.locator('.tr-tempo').inner_text()==f'{m0+1}:{s0:02d}',w.locator('.tr-tempo').inner_text()
+     w.locator('[data-rl="zero"]').click();w.locator('[data-rl="ver"]').click();assert 'escondido' in w.get_attribute('class') and w.locator('[data-rl="ver"]').get_attribute('aria-pressed')=='true'
+     w.locator('[data-rl="ver"]').click();assert 'escondido' not in w.get_attribute('class')
      b2=w.locator('[data-rl="ir"]');assert b2.bounding_box()['height']>=44
      if width==320:p.screenshot(path=str(O/f'{tid}-relogio-{width}.png'))
      viu_relogio=True
-    caixas=p.locator('#baralho .tr-verifica input[type=checkbox]')
-    if not viu_lista and caixas.count() and caixas.first.is_visible():
-     assert caixas.count()==3
-     for i in range(3):caixas.nth(i).click()
+    grupos=p.locator('#baralho .tr-verifica fieldset')
+    if not viu_lista and grupos.count() and grupos.first.is_visible():
+     assert grupos.count()==3
+     for i,r in enumerate(['Sim','Em parte','Ainda não']):grupos.nth(i).get_by_text(r,exact=True).click()
      assert p.locator('#baralho .tr-verifica input:checked').count()==3
+     assert grupos.first.locator('label').first.bounding_box()['height']>=44
      viu_lista=True
     act(p)
    else:raise AssertionError('Treino sem fim: '+tid)
