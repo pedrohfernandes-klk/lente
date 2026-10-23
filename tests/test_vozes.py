@@ -22,6 +22,10 @@ CONJUNTOS = {'vidas-vozes': ['arte-e-vida', 'nietzsche', 'absurdo'], 'vidas-escr
 # linhas de apoio no fim: as vozes em que houve suicídio (o facto numa frase, REGRAS-VOZES) e Camus, que pergunta pelo suicídio em
 # _O Mito de Sísifo_ (decisão já publicada)
 APOIO = ['absurdo', 'sa-carneiro', 'foster-wallace', 'nirvana-cobain']
+# 23/10/2026: as vozes refeitas no padrão da Justiça (vozes-v2 nas fontes, molde aprovado pelo docente) recomeçam o progresso guardado
+# com a chave «epi-vozes-<id>-v2» e trocam as imagens da versão 1 pelas do dossier; para elas, o teste das imagens confere que cada
+# imagem da página existe no disco
+V2 = ['warhol', 'paula-rego', '25-de-abril']
 
 
 def pagina(v):
@@ -48,7 +52,7 @@ class Vozes(unittest.TestCase):
     def test_seguinte_pela_ordem(self):
         for k, v in enumerate(ORDEM):
             c = montar(pagina(v))
-            self.assertIn(f'chave:"epi-vozes-{v}"', c)
+            self.assertIn(f'chave:"epi-vozes-{v}-v2"' if v in V2 else f'chave:"epi-vozes-{v}"', c)
             self.assertIn(f'S.feitas["{v}"]', c)
             seg = f'{U}vozes/{ORDEM[k + 1]}/' if k + 1 < len(ORDEM) else f'{U}vozes/'
             self.assertIn(f'seguinte:"{seg}"', c, v)
@@ -72,6 +76,12 @@ class Vozes(unittest.TestCase):
 
     def test_imagens_existem(self):
         for v, f in NOVAS.items():
+            if v in V2:
+                srcs = re.findall(r'src=\\"\.\./\.\./(img/[^"\\]+)\\"', montar(pagina(v)))
+                self.assertTrue(srcs, v)
+                for src in srcs:
+                    self.assertTrue((R / src).is_file(), (v, src))
+                continue
             self.assertTrue((R / 'img/narrativas' / f).is_file(), f)
             self.assertIn(f'{U}img/narrativas/{f}', montar(pagina(v)))
 
