@@ -66,8 +66,10 @@ class Justica(unittest.TestCase):
                         self.assertRegex(t[m.end():m.end() + 9], r'^(\s*\(\d+:\d\d\)|, \d+:\d\d\))', (n, m.group(1)))
 
     def test_entry_is_linked(self):
-        for f in ('olhar-e-decidir/index.html', 'mapa/index.html'):
-            self.assertIn(LENTE + 'olhar-e-decidir/justica/', (R / f).read_text('utf-8'), f)
+        # 23/10/2026, lote 1 da reestruturação: o mapa passou a página de passagem para a entrada; a Justiça liga-se pelo Ter juízo, que
+        # a entrada liga na porta de Cidadania
+        self.assertIn(LENTE + 'olhar-e-decidir/justica/', (R / 'olhar-e-decidir/index.html').read_text('utf-8'))
+        self.assertIn(f'href="{LENTE}olhar-e-decidir/"', (R / 'index.html').read_text('utf-8'))
         s = (J / 'index.html').read_text('utf-8')
         for h in ('licao-1/', 'licao-2/', 'licao-3/', 'aplicar/', 'guiao/', 'docente/'):
             self.assertIn(f'href="{h}"', s)
