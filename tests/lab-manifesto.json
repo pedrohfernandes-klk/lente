@@ -1,5 +1,5 @@
 {
- "_nota": "Manifesto de preservação do Laboratório (D0 do relatório de 23/10/2026), gerado a partir de main e4eeb82 antes de qualquer mudança: endereços, âncoras e chaves de progresso que não podem desaparecer sem decisão explícita. Uma mudança intencional atualiza este ficheiro no mesmo PR, com a razão no commit.",
+ "_nota": "Manifesto de preservação do Laboratório (D0 do relatório de 23/10/2026), gerado a partir de main e4eeb82 antes de qualquer mudança: endereços, âncoras e chaves de progresso que não podem desaparecer sem decisão explícita. Uma mudança intencional atualiza este ficheiro no mesmo PR, com a razão no commit. 23/10/2026, lote 1 da reestruturação do Lente (REESTRUTURAR-LENTE.md, secção 6): a raiz passa às seis portas; as quatro âncoras de antes ficam (três são agora portas e «ferramentas» é uma âncora vazia na porta do Ver para fazer) e entram as das portas novas (inicio-ver, inicio-metodo, inicio-biblioteca) e a âncora antiga trans-t. A faixa das missões extra sai das entradas do Laboratório, do Corta! e das Margens; com ela saem «g-», «g-atlas», «g-cidade» e «l-», que não são chaves de progresso do Laboratório: são os contadores da faixa, guardados dentro do registo «epi-cartaz». No lugar deles, as entradas do Corta! e das Margens passam a guardar as chaves que de facto contam («epi-corta» e «epi-margens»).",
  "base": "e4eeb827de01503ab74bd9bf73478bb7516c296c",
  "paginas": [
   "narrativas/anguissola/",
@@ -246,9 +246,13 @@
   ],
   "": [
    "ferramentas",
+   "inicio-biblioteca",
    "inicio-cidadania",
+   "inicio-metodo",
    "inicio-narrativas",
-   "inicio-vozes"
+   "inicio-ver",
+   "inicio-vozes",
+   "trans-t"
   ]
  },
  "chaves": {
@@ -301,10 +305,7 @@
    "epi-corta-frei-luis"
   ],
   "narrativas/corta/": [
-   "g-",
-   "g-atlas",
-   "g-cidade",
-   "l-"
+   "epi-corta"
   ],
   "narrativas/corta/ines/": [
    "epi-corta",
@@ -356,11 +357,7 @@
   ],
   "narrativas/": [
    "epi-corta",
-   "epi-treinos",
-   "g-",
-   "g-atlas",
-   "g-cidade",
-   "l-"
+   "epi-treinos"
   ],
   "narrativas/leonardo/": [
    "epi-narrativas",
@@ -371,10 +368,7 @@
    "epi-narrativas-linhas-de-enredo"
   ],
   "narrativas/margens/": [
-   "g-",
-   "g-atlas",
-   "g-cidade",
-   "l-"
+   "epi-margens"
   ],
   "narrativas/margens/passo-01/": [
    "epi-margens",
