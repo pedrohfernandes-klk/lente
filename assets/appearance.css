@@ -108,6 +108,7 @@ body:has(>[data-appearance-floating])::after{content:"";display:block;height:68p
 }
 @media print{
  :root[data-appearance-family="cards"][data-theme]{--linha:#000;--agua:#ebebeb;--c-cinza:#d6d4ce;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3}
+ :root[data-appearance-family="cards"][data-theme] .jogo .cartao.escuro{--tinta:#000;--papel:#fff;background:#fff;color:#000;border-color:#000}
  :root[data-appearance-family="cards"][data-theme] #palco .dil-leitura{--dil-acento:#96503c;--dil-regiao:#f6f4ee}
  :root[data-appearance-family="cards"][data-appearance-site="pt"][data-theme]{--acento:#a84939;--campo:#e8967a}
 }
