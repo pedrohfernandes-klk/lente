@@ -2,12 +2,65 @@
 :root[data-theme="light"]{
   --tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;
   --mostarda:#d9a520;--vermelho:#c8232c;--cinza:#d6d4ce;
+  --papel2:#faf8f2;--linha:#000;--agua:#ebebeb;--c-cinza:#d6d4ce;--apagado:#b9b6ae;
+  --certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;
   --acento:var(--mostarda);--campo:#d9a520;color-scheme:light;
 }
 :root[data-theme="dark"]{
   --tinta:#ecebe5;--papel:#121210;--fundo:#1d1d1a;--suave:#b3b1aa;
   --mostarda:#e0b23a;--vermelho:#e4555c;--cinza:#3d3c38;
+  --papel2:#1a1a17;--linha:#ecebe5;--agua:#222220;--c-cinza:#3d3c38;--apagado:#77756e;
+  --certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f;
   --acento:var(--mostarda);--campo:#9a7a22;color-scheme:dark;
+}
+
+/* Sem moldura de cartões, o mesmo controlo acompanha a leitura durante o scroll. */
+[data-appearance-floating]{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:1000;margin:0;box-shadow:0 2px 8px #0002}
+:root[data-theme] [data-appearance-floating] .epi-appearance-toggle{background:var(--papel)!important;color:var(--tinta)!important}
+:root[data-theme] .projection-toolbar [data-appearance-control]{margin:0}
+:root[data-theme] .projection-toolbar .epi-appearance-toggle{padding:10px;min-height:44px}
+:root[data-theme] .projection-toolbar .epi-appearance-toggle[aria-pressed]{background:var(--papel);color:var(--tinta)}
+body:has(>[data-appearance-floating])::after{content:"";display:block;height:68px}
+@media screen{
+ :root[data-theme="dark"] body{background:var(--fundo);color:var(--tinta)}
+ /* Provas e guiões antigos usam cores literais em vez dos tokens. */
+ :root[data-theme="dark"][data-appearance-family="paper"] main{background:var(--fundo);color:var(--tinta)}
+ :root[data-theme="dark"][data-appearance-family="paper"] :is(header,.q,.exp,.aviso,.estado,.codigo){border-color:var(--suave)}
+ :root[data-theme="dark"][data-appearance-family="paper"] :is(.abrir,button.s,input[type="text"],select,.codigo){background:var(--papel);color:var(--tinta);border-color:var(--suave)}
+ :root[data-theme="dark"][data-appearance-family="paper"] button.p{border-color:var(--suave)}
+ :root[data-theme="dark"][data-appearance-family="paper"] .certo{color:var(--certo)}
+ :root[data-theme="dark"][data-appearance-family="paper"] .errado{color:var(--errado)}
+ :root[data-theme="dark"][data-appearance-family="paper"] .barra{background:var(--cinza)}
+ :root[data-theme="dark"][data-appearance-family="paper"] .barra i{background:var(--mostarda)}
+ :root[data-theme="dark"] .gu,:root[data-theme="dark"] .gu .so-ecra :is(a,button),:root[data-theme="dark"] .so-ecra :is(a,button){color:var(--tinta)}
+ :root[data-theme="dark"] .gu .pq{color:var(--suave)}
+ :root[data-theme="dark"] :is(.gu td,.gu th,.col2,.col2 div+div){border-color:var(--suave)}
+ :root[data-theme="dark"] .col2 b{background:var(--fundo);color:var(--tinta)}
+ :root[data-theme="dark"] .exemplo{background:var(--papel);color:var(--tinta)}
+ :root[data-theme="dark"] .raiz .ano-c{--entry-paper:#26231e;--entry-ink:#ecebe5;--entry-accent:#e0876f;--c-cinza:#77756e}
+ :root[data-theme="dark"] .raiz .ano-c[data-ano="11"]{--entry-paper:#202a2d;--entry-ink:#ecebe5;--entry-accent:#9cc8d5}
+ :root[data-theme="dark"]{--paper:var(--fundo);--ink:var(--tinta);--muted:var(--suave);--line:#77756e;--accent:var(--acento);--soft:#26251f;--hot:var(--mostarda);--green:#7fd9bb;--error:#e4555c;--ochre:#e0b23a}
+ :root[data-theme="dark"] body.atelier-document{--paper:#1d1d1a;--ink:#ecebe5;--line:#77756e;--soft:#26251f;--hot:#e0b23a}
+ :root[data-theme="dark"] .projection-toolbar input{background:var(--papel);color:var(--tinta);border-color:var(--suave)}
+ :root[data-theme="dark"] .projection-toolbar button[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+ :root[data-theme="dark"] .projection-brand::after,:root[data-theme="dark"] .projection-hint{color:var(--suave)}
+ :root[data-theme="dark"] .projection-stage{background:var(--papel)}
+ /* O QR nunca é invertido; fotografias, pinturas, vídeos e diagramas conservam as cores. */
+ :root[data-theme] .projection-qr,:root[data-theme] .projection-qr svg{background:#fff;color:#000}
+ :root[data-theme="dark"] .exam-poster{background:#26251f;color:var(--tinta)!important;border-color:var(--suave)}
+ :root[data-theme="dark"] .exam-dot,:root[data-theme="dark"] .exam-enter span{color:var(--acento)}
+ :root[data-theme="dark"] .atelier-collection.missao{background:#26251f!important;color:var(--tinta)!important}
+ :root[data-theme="dark"] .atelier-collection.missao .s{color:var(--suave)!important}
+ :root[data-theme="dark"] .atelier-collection .atelier-mini b{color:var(--mostarda)}
+ :root[data-theme="dark"] .phase-content textarea,:root[data-theme="dark"] .dossier-entry textarea{background:var(--papel);color:var(--tinta)}
+ :root[data-theme="dark"] .choice:hover{background:#302c25}
+ :root[data-theme="dark"] .primary:hover{background:#c9c7be;color:#121210}
+ :root[data-theme="dark"] .fim-ficha .cz-linha{--cz-f:var(--fundo)}
+}
+@media print{
+ :root[data-theme]{--papel2:#faf8f2;--linha:#000;--agua:#ebebeb;--c-cinza:#d6d4ce;--apagado:#777;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--paper:#fff;--ink:#000;--muted:#444;--line:#aaa;--soft:#eee8da;--hot:#a3472e;--accent:#984632}
+ body:has(>[data-appearance-floating])::after{display:none}
+ :root[data-theme] body.atelier-document{--paper:#fff;--ink:#000;--line:#aaa;--soft:#eee8da;--hot:#a3472e}
 }
 /* A assinatura PT é declarada no body no Cartaz: não basta substituí-la no html. */
 :root[data-theme="light"] body[data-sitio="pt"]{--acento:#a84939;--campo:#e8967a}
