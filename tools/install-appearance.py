@@ -20,7 +20,8 @@ def integrated(path):
     text=re.sub(r'<html\b[^>]*>',html_tag,text,count=1,flags=re.I)
     depth=len(path.relative_to(ROOT).parts)-1
     prefix='../'*depth
-    tags=f'<link rel="stylesheet" href="{prefix}assets/appearance.css?v={VERSION}"><script src="{prefix}assets/appearance.js?v={VERSION}"></script>'
+    css_version=VERSION+'-slides1' if 'class="deck"' in text else VERSION
+    tags=f'<link rel="stylesheet" href="{prefix}assets/appearance.css?v={css_version}"><script src="{prefix}assets/appearance.js?v={VERSION}"></script>'
     text=re.sub(r'</head\s*>',lambda m:tags+m[0],text,count=1,flags=re.I)
     return text.encode('utf-8')
 
