@@ -148,7 +148,8 @@ class Ginasio(unittest.TestCase):
         # ordem; Cidadania mantém os três itens; a linha do Ginásio abre a página dos 30 treinos (narrativas/treinar/), não a âncora
         # 25/10/2026, sistema de desenho «Cartaz»: as portas passam a cartazes (<article class="cartaz">) e as linhas a <a class="linha">
         s = (R / 'index.html').read_text('utf-8')
-        self.assertEqual(re.findall(r'<article class="cartaz" id="([^"]+)"', s), ['inicio-cidadania', 'inicio-narrativas', 'inicio-ver', 'inicio-metodo', 'inicio-biblioteca', 'inicio-vozes'])
+        # 25/10/2026: decisão do utilizador, Vidas e vozes fica em arquivo pelo docente.
+        self.assertEqual(re.findall(r'<article class="cartaz" id="([^"]+)"', s), ['inicio-cidadania', 'inicio-narrativas', 'inicio-ver', 'inicio-metodo', 'inicio-biblioteca'])
         i = s.index('id="inicio-cidadania"'); j = s.index('id="inicio-narrativas"', i)
         self.assertEqual(s[i:j].count('<li><a class="linha'), 3)
         i = j; j = s.index('id="inicio-ver"', i)

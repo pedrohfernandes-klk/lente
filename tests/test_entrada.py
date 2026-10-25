@@ -46,20 +46,23 @@ class Entrada(unittest.TestCase):
         f = self.s.find('<article class="cartaz"', i)
         return self.s[i:f if f > 0 else self.s.index('</main>', i)]
 
-    def test_seis_portas_por_ordem(self):
-        self.assertEqual(re.findall(r'<h3 class="cartaz-nome[^"]*" id="p\d">(?:<a [^>]+>)?([^<]+)', self.s), ['Cidadania', 'Laboratório', 'Ver para fazer', 'Método', 'Biblioteca', 'Vidas e vozes'])
+    def test_cinco_portas_por_ordem(self):
+        self.assertEqual(re.findall(r'<h3 class="cartaz-nome[^"]*" id="p\d">(?:<a [^>]+>)?([^<]+)', self.s), ['Cidadania', 'Laboratório', 'Ver para fazer', 'Método', 'Biblioteca'])
         self.assertIn('<h3 class="cartaz-nome porta-rotulo" id="p4">Método</h3>', self.porta('inicio-metodo'))  # só rótulo, sem página
         for r in ('investigar/', 'direitos/', 'apresentar/', 'caderno/'):
             self.assertIn(f'href="{LENTE}{r}"', self.porta('inicio-metodo'))
         self.assertIn('<p class="cartaz-linha">Os textos inteiros.', self.porta('inicio-biblioteca'))
-        self.assertIn(f'href="{LENTE}vozes/"', self.porta('inicio-vozes'))  # os Retratos chegam no lote 2, com o nome e o endereço novos
+        # 25/10/2026: o utilizador arquiva a porta autónoma sobre o #38.
+        self.assertIn('id="inicio-vozes"', self.s)
+        self.assertIn(f'href="{LENTE}docente/#arquivo"', self.s)
+        self.assertNotIn('data-porta="6"', self.s)
 
     def test_estado_continuar_e_sugestao(self):
-        # cada linha de uma porta com várias linhas tem o lugar do estado (9); cada porta tem o seu (6), escondido até haver alguma coisa
+        # cada linha de uma porta com várias linhas tem o lugar do estado (9); cada porta tem o seu (5), escondido até haver alguma coisa
         # feita; a região «A seguir» mostra o primeiro encontro de Cidadania e a obrigatória (o script troca-a por «Continuar» ou pelo
         # encontro da data de hoje)
         self.assertEqual(len(re.findall(r'<span class="fim" data-e="[a-z0-9-]+"></span>', self.s)), 9)
-        self.assertEqual(len(re.findall(r'<p class="cartaz-estado so-aluno" data-estado-porta="\d" hidden></p>', self.s)), 6)
+        self.assertEqual(len(re.findall(r'<p class="cartaz-estado so-aluno" data-estado-porta="\d" hidden></p>', self.s)), 5)
         self.assertRegex(self.s, r'<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>')
         self.assertIn(f'<a class="botao" href="{LENTE}cidadania/m1/#aula-2026-10-28" data-enc-a>Abrir o encontro</a>', self.s)
         self.assertIn(f'Obrigatória a 18/11</p><a href="{LENTE}olhar-e-decidir/justica/licao-1/">Justiça, lição 1: O elétrico</a>', self.s)
@@ -115,9 +118,9 @@ class Desenho(unittest.TestCase):
 
     def test_cada_porta_e_um_cartaz_com_tabela(self):
         cartazes = re.findall(r'<article class="cartaz" id="[^"]+" data-dobra data-porta="(\d)"', self.s)
-        self.assertEqual(cartazes, ['1', '2', '3', '4', '5', '6'])
-        self.assertEqual(self.s.count('<p class="tabela">'), 7)  # uma por porta e a da fachada
-        self.assertEqual(len(re.findall(r'<button type="button" class="porta-abre" aria-expanded="false"', self.s)), 6)
+        self.assertEqual(cartazes, ['1', '2', '3', '4', '5'])
+        self.assertEqual(self.s.count('<p class="tabela">'), 6)  # uma por porta e a da fachada
+        self.assertEqual(len(re.findall(r'<button type="button" class="porta-abre" aria-expanded="false"', self.s)), 5)
 
     def test_um_so_gesto(self):
         self.assertEqual(len(re.findall(r'data-olhar="', self.s)), 1)
@@ -135,8 +138,8 @@ class Casca(unittest.TestCase):
     def test_pagina_de_erro_com_as_portas(self):
         s = ler('404.html')
         self.assertIn('<meta name="robots" content="noindex">', s)
-        self.assertEqual(len(re.findall(r'<li><span aria-hidden="true">\d</span>', s)), 6)
-        for r in ('cidadania/', 'narrativas/', 'ver-para-fazer/', 'investigar/', 'biblioteca/', 'vozes/'):
+        self.assertEqual(len(re.findall(r'<li><span aria-hidden="true">\d</span>', s)), 5)
+        for r in ('cidadania/', 'narrativas/', 'ver-para-fazer/', 'investigar/', 'biblioteca/'):
             self.assertIn(f'href="{LENTE}{r}"', s)  # endereços inteiros: o GitHub Pages serve-a em qualquer pasta
         self.assertNotRegex(texto(s), PROIBIDO)
 
