@@ -39,52 +39,94 @@ class Entrada(unittest.TestCase):
     def setUpClass(cls):
         cls.s = ler('index.html')
 
+    # 25/10/2026, sistema de desenho «Cartaz» (aprovado pelo docente a 25/10): as portas passam a cartazes (<article class="cartaz">),
+    # o nome a h3, a linha da porta a «cartaz-linha»; a região «A seguir» substitui «Continuar» escondido; o rodapé passa a saídas
     def porta(self, id_):
         i = self.s.index(f'id="{id_}"')
-        f = self.s.find('</li><li class="porta', i)
-        return self.s[i:f if f > 0 else self.s.index('</ol>', i)]
+        f = self.s.find('<article class="cartaz"', i)
+        return self.s[i:f if f > 0 else self.s.index('</main>', i)]
 
     def test_seis_portas_por_ordem(self):
-        self.assertEqual(re.findall(r'<h2 class="porta-n">(?:<a [^>]+>|<span>)([^<]+)', self.s), ['Cidadania', 'Laboratório', 'Ver para fazer', 'Método', 'Biblioteca', 'Vidas e vozes'])
-        self.assertIn('<h2 class="porta-n"><span>Método</span></h2>', self.porta('inicio-metodo'))  # só rótulo, sem página
+        self.assertEqual(re.findall(r'<h3 class="cartaz-nome[^"]*" id="p\d">(?:<a [^>]+>)?([^<]+)', self.s), ['Cidadania', 'Laboratório', 'Ver para fazer', 'Método', 'Biblioteca', 'Vidas e vozes'])
+        self.assertIn('<h3 class="cartaz-nome porta-rotulo" id="p4">Método</h3>', self.porta('inicio-metodo'))  # só rótulo, sem página
         for r in ('investigar/', 'direitos/', 'apresentar/', 'caderno/'):
             self.assertIn(f'href="{LENTE}{r}"', self.porta('inicio-metodo'))
-        self.assertIn('<p class="porta-f">Os textos inteiros', self.porta('inicio-biblioteca'))
+        self.assertIn('<p class="cartaz-linha">Os textos inteiros.', self.porta('inicio-biblioteca'))
         self.assertIn(f'href="{LENTE}vozes/"', self.porta('inicio-vozes'))  # os Retratos chegam no lote 2, com o nome e o endereço novos
 
     def test_estado_continuar_e_sugestao(self):
-        # cada linha que conta peças tem o lugar do estado em palavra; «Continuar» e a sugestão começam escondidos
-        self.assertEqual(len(re.findall(r'<span class="l-e" data-e="[a-z0-9-]+"></span>', self.s)), 12)
-        self.assertRegex(self.s, r'<section class="cont" data-cont hidden aria-label="Continuar">')
-        self.assertIn('<p class="cont-s" hidden>', self.s)
+        # cada linha de uma porta com várias linhas tem o lugar do estado (9); cada porta tem o seu (6), escondido até haver alguma coisa
+        # feita; a região «A seguir» mostra o primeiro encontro de Cidadania e a obrigatória (o script troca-a por «Continuar» ou pelo
+        # encontro da data de hoje)
+        self.assertEqual(len(re.findall(r'<span class="fim" data-e="[a-z0-9-]+"></span>', self.s)), 9)
+        self.assertEqual(len(re.findall(r'<p class="cartaz-estado so-aluno" data-estado-porta="\d" hidden></p>', self.s)), 6)
+        self.assertRegex(self.s, r'<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>')
+        self.assertIn(f'<a class="botao" href="{LENTE}cidadania/m1/#aula-2026-10-28" data-enc-a>Abrir o encontro</a>', self.s)
+        self.assertIn(f'Obrigatória a 18/11</p><a href="{LENTE}olhar-e-decidir/justica/licao-1/">Justiça, lição 1: O elétrico</a>', self.s)
         js = self.s[self.s.rindex('<script>'):]
-        for p in ('"comecado":"Começado"', '"feito":"Feito"', 'É o método do projeto do Módulo 1.', 'Vem a seguir a «{de}».'):
+        for p in ('"comecado":"Começado"', '"feito":"Feito"', 'É o método do projeto do Módulo 1.', 'Vem a seguir a «{de}».', '"2026-11-25"', 'Obrigatória neste encontro'):
             self.assertIn(p, js)
         self.assertNotIn('localStorage.setItem', js)  # a entrada só lê
 
     def test_rodape(self):
         rod = self.s[self.s.index('<footer class="rodape">'):]
-        nomes = re.findall(r'<li><a href="[^"]+">([^<]+)</a></li>', rod[:rod.index('</ul>')])
+        nomes = re.findall(r'<li><a href="[^"]+">([^<]+)<small>', rod[:rod.index('</ul>')])
         self.assertEqual(nomes[:3], ['Para o docente', 'Como se faz', 'Guardar o progresso'])
         self.assertIn(f'href="{LENTE}caderno/#progresso"', rod)
         self.assertIn('id="progresso"', ler('caderno/index.html'))  # «Guardar o progresso» abre o fim da página do caderno
         self.assertIn(f'<a class="pt" href="{PT}"', rod)
-        self.assertRegex(rod, r'<figure class="cartaz"><svg[^>]*role="img"')
-        self.assertRegex(rod, r'<figure class="fachada"><img src="[^"]+fachada-epi-2026\.jpg"')
+        self.assertIn('<div class="fachada" aria-hidden="true"><img src="assets/cartaz/img/fachada.webp"', rod)
+        self.assertIn('Arquivo da EPI', rod)
 
     def test_o_que_saiu(self):
         for sai in ('lente/mapa/', 'Mapa do LENTE', 'data-sugestao', 'Uma experiência', 'mobile-jump', 'lente-ferr', 'site-portal-wrap'):
             self.assertNotIn(sai, self.s)
-        # uma só folha de estilo, dentro da página
+        # uma só folha de estilo dentro da página; fora dela, só as peças comuns (assets/cartaz/cartaz.css) e a Bebas Neue (25/10/2026)
         self.assertEqual(len(re.findall(r'<style[ >]', self.s)), 1)
-        self.assertNotIn('<link rel="stylesheet"', self.s)
+        folhas = re.findall(r'<link (?=[^>]*rel="stylesheet")[^>]*href="([^"]+)"', self.s)
+        self.assertEqual({re.sub(r'\?.*', '', h) for h in folhas}, {'assets/cartaz/cartaz.css', 'https://fonts.googleapis.com/css2'})
         self.assertNotRegex(texto(self.s), PROIBIDO)
 
     def test_cada_ligacao_da_casca_abre_uma_pagina(self):
         for rel in ('index.html', '404.html', 'docente/index.html', 'docente/tudo/index.html', 'como/index.html'):
-            s = ler(rel)
+            s = re.sub(r'<script[\s\S]*?</script>', ' ', ler(rel))  # 25/10/2026: sem as ligações que o script da entrada monta
             for h in re.findall(r'href="([^"]+)"', s):
                 self.assertIsNot(existe(h, rel), False, (rel, h))
+
+
+class Desenho(unittest.TestCase):
+    """O sistema de desenho «Cartaz» na entrada (25/10/2026, SISTEMA-DESENHO.md, aprovado pelo docente com as seis recomendações)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.s = ler('index.html')
+
+    def test_pecas_comuns(self):
+        for f in ('cartaz.css', 'cartaz.js'):
+            self.assertTrue((R / 'assets/cartaz' / f).exists(), f)
+            self.assertRegex(self.s, r'assets/cartaz/' + re.escape(f) + r'\?v=[0-9a-z]+"')
+        for src in re.findall(r'<img src="([^"]+)"', self.s):
+            self.assertTrue((R / src).exists(), src)
+
+    def test_uma_so_regiao_preta_e_um_so_botao(self):
+        self.assertEqual(self.s.count('class="proximo inverso"'), 1)
+        self.assertEqual(len(re.findall(r'class="botao"', re.sub(r'<script[\s\S]*?</script>', ' ', self.s))), 1)
+        self.assertNotIn('class="projetar"', self.s)
+
+    def test_cada_porta_e_um_cartaz_com_tabela(self):
+        cartazes = re.findall(r'<article class="cartaz" id="[^"]+" data-dobra data-porta="(\d)"', self.s)
+        self.assertEqual(cartazes, ['1', '2', '3', '4', '5', '6'])
+        self.assertEqual(self.s.count('<p class="tabela">'), 7)  # uma por porta e a da fachada
+        self.assertEqual(len(re.findall(r'<button type="button" class="porta-abre" aria-expanded="false"', self.s)), 6)
+
+    def test_um_so_gesto(self):
+        self.assertEqual(len(re.findall(r'data-olhar="', self.s)), 1)
+        self.assertIn(f'href="{LENTE}cidadania/m1/passo-00/">Módulo 1: Modos de ver →</a>', self.s)
+
+    def test_sem_pontos_medios_nem_travessoes_no_texto(self):
+        t = texto(self.s[self.s.index('<body'):])  # o título da página separa com «·», como em todo o Lente
+        self.assertNotIn('—', t)
+        self.assertNotRegex(t, r'\w ·|· \w')
 
 
 class Casca(unittest.TestCase):
