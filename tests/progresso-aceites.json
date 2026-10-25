@@ -1,0 +1,36 @@
+{
+ "_nota": "Gerado por progresso-aceites.mjs a partir de _interno/modelo/progresso.mjs (nas fontes). Não editar à mão: muda-se progresso.mjs e corre-se o script.",
+ "formato": "epi-progresso",
+ "versao": 1,
+ "ACEITES": [
+  "^licao-m\\d{1,2}-f\\d{1,3}(-a[12]|-ler)?$",
+  "^percurso-m\\d{1,2}(-festa|-antes-unidades|-u\\d{1,2}(-check|-copiada)?)?$",
+  "^percurso-v2-m\\d{1,2}-u\\d{1,2}(-check|-copiada)?$",
+  "^percurso-sintese-m\\d{1,2}-u\\d{1,2}(-inicializada)?$",
+  "^desafio-(unidade-v2-)?m\\d{1,2}-u\\d{1,2}$",
+  "^(rota|balanco)-m\\d{1,2}$",
+  "^epi-pt-[a-z0-9-]{1,120}$",
+  "^epi-(apresentar|atlas|bairro|biblioteca|cartaz|cd|cid|cidadania(-m\\d)?|conjunto|corta|direitos|ficcao|gigantes|guiao|investigar|justica|lente|ler|literatura|maquina|margens|narrativas|projetos|sidequests|som|treinos|ultima|ver|vozes)(-[a-z0-9-]{1,120})?(:visto|:arco|:dupla)?$",
+  "^lente-(justica|etica|estetica)-licao-\\d$",
+  "^atlas-[a-z]{2}-[a-z0-9-]{1,40}$",
+  "^atlas-j\\d{1,3}$",
+  "^chefe-m\\d{1,2}-u\\d{1,2}$",
+  "^bairro-[a-z0-9-]{1,40}$",
+  "^como-[a-z0-9-]{1,60}$",
+  "^visita-[a-z0-9-]{1,120}$",
+  "^cd\\d?-[a-z0-9-]{1,80}$",
+  "^terra-firme-[a-z0-9-]{1,120}$",
+  "^fabrica-de-jogos$"
+ ],
+ "IGNORADAS": [
+  "^epi-sala(-atlas)?$",
+  "^painel-sala-[a-z0-9-]{1,40}$",
+  "^rel-[a-z0-9-]{1,60}$",
+  "^epi-projection-text-size$",
+  "^epi-sugestao-editorial-02-[a-z0-9-]{1,40}$",
+  "^pt-exame-sessao-[a-z0-9-]{1,40}$"
+ ],
+ "DE_FORA": [
+  "^epi-pt-(prova|teste)-[a-z0-9-]{1,120}$"
+ ]
+}

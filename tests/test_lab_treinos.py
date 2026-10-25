@@ -115,7 +115,8 @@ class Ginasio(unittest.TestCase):
             self.assertIn(' min de escrita</p>', itens[0]['html'], d.name)
 
     def test_ligacoes_locais_existem(self):
-        paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'mapa/index.html', R / 'narrativas/proposta-subtexto/index.html']
+        # 23/10/2026, lote 1 da reestruturação: o mapa passou a página de passagem para a entrada (sai do plano); deixa de se ler aqui
+        paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'narrativas/proposta-subtexto/index.html']
         for p in paginas:
             s = p.read_text('utf-8')
             for href in set(re.findall(r'href=\\?"(https://pedrohfernandes-klk\.github\.io/lente/[^"\\#?]*)', s)):
@@ -143,13 +144,17 @@ class Ginasio(unittest.TestCase):
         self.assertGreaterEqual(n, 33)
 
     def test_entrada_do_lente(self):
+        # 23/10/2026, lote 1 da reestruturação: a entrada passa às seis portas (secção 1 do plano). Os ids da raiz são os das portas, por
+        # ordem; Cidadania mantém os três itens; a linha do Ginásio abre a página dos 30 treinos (narrativas/treinar/), não a âncora
+        # 25/10/2026, sistema de desenho «Cartaz»: as portas passam a cartazes (<article class="cartaz">) e as linhas a <a class="linha">
         s = (R / 'index.html').read_text('utf-8')
-        i = s.index('id="inicio-cidadania"'); j = s.index('</article>', i)
-        self.assertEqual(s[i:j].count('<li><a '), 3)
-        i = s.index('id="inicio-narrativas"'); j = s.index('</article>', i)
-        self.assertEqual(re.findall(r'href="narrativas/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        self.assertEqual(re.findall(r'<article class="cartaz" id="([^"]+)"', s), ['inicio-cidadania', 'inicio-narrativas', 'inicio-ver', 'inicio-metodo', 'inicio-biblioteca', 'inicio-vozes'])
+        i = s.index('id="inicio-cidadania"'); j = s.index('id="inicio-narrativas"', i)
+        self.assertEqual(s[i:j].count('<li><a class="linha'), 3)
+        i = j; j = s.index('id="inicio-ver"', i)
+        self.assertEqual(re.findall(r'<li><a class="linha sem-n" href="' + re.escape(LENTE) + r'(narrativas/[^"]*)"', s[i:j]), ['narrativas/#ler-como-quem-escreve', 'narrativas/treinar/', 'narrativas/#criar'])
         self.assertIn('id="inicio-vozes"', s)
-        self.assertIn('id="ferramentas"', s)
+        self.assertIn('id="ferramentas"', s)  # a âncora antiga da lista «Ferramentas», vazia, na porta do Ver para fazer
 
 
 if __name__ == '__main__':
