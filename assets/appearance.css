@@ -16,12 +16,14 @@
 
 /* Sem moldura de cartões, o mesmo controlo acompanha a leitura durante o scroll. */
 [data-appearance-floating]{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:1000;margin:0;box-shadow:0 2px 8px #0002}
+body:has(.deck)>[data-appearance-floating]{bottom:max(80px,calc(env(safe-area-inset-bottom) + 80px))}
 :root[data-theme] [data-appearance-floating] .epi-appearance-toggle{background:var(--papel)!important;color:var(--tinta)!important}
 :root[data-theme] .projection-toolbar [data-appearance-control]{margin:0}
 :root[data-theme] .projection-toolbar .epi-appearance-toggle{padding:10px;min-height:44px}
 :root[data-theme] .projection-toolbar .epi-appearance-toggle[aria-pressed]{background:var(--papel);color:var(--tinta)}
 body:has(>[data-appearance-floating])::after{content:"";display:block;height:68px}
 @media screen{
+ :root[data-theme="dark"] .deck .d.capa{background:var(--papel);color:var(--tinta)}
  :root[data-theme="dark"] body{background:var(--fundo);color:var(--tinta)}
  /* Provas e guiões antigos usam cores literais em vez dos tokens. */
  :root[data-theme="dark"][data-appearance-family="paper"] main{background:var(--fundo);color:var(--tinta)}
