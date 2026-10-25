@@ -1,0 +1,60 @@
+/* Tokens Cartaz exatos. Carregar após cartaz.css; não modifica esse ficheiro. */
+:root[data-theme="light"]{
+  --tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;
+  --mostarda:#d9a520;--vermelho:#c8232c;--cinza:#d6d4ce;
+  --acento:var(--mostarda);--campo:#d9a520;color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --tinta:#ecebe5;--papel:#121210;--fundo:#1d1d1a;--suave:#b3b1aa;
+  --mostarda:#e0b23a;--vermelho:#e4555c;--cinza:#3d3c38;
+  --acento:var(--mostarda);--campo:#9a7a22;color-scheme:dark;
+}
+/* A assinatura PT é declarada no body no Cartaz: não basta substituí-la no html. */
+:root[data-theme="light"] body[data-sitio="pt"]{--acento:#a84939;--campo:#e8967a}
+:root[data-theme="dark"] body[data-sitio="pt"]{--acento:#e0876f;--campo:#b86a54}
+[data-appearance-control]{display:inline-flex;align-items:center;flex:none;margin-left:12px}
+.epi-appearance-toggle{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:44px;height:44px;min-width:44px;min-height:44px;padding:10px;
+  border:1.5px solid var(--acento);border-radius:0;background:var(--papel);color:var(--tinta);
+  cursor:pointer;position:relative;box-sizing:border-box;
+}
+.epi-appearance-toggle svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
+.epi-appearance-toggle[aria-pressed="true"]::after{content:"";width:4px;height:4px;background:var(--acento);position:absolute;right:5px;bottom:5px}
+.epi-appearance-toggle:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}
+.epi-appearance-toggle:hover{border-color:var(--tinta)}
+@media print{
+  :root[data-theme]{--tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;--mostarda:#d9a520;--vermelho:#c8232c;--cinza:#d6d4ce;--acento:var(--mostarda);--campo:#d9a520;color-scheme:light}
+  :root[data-theme] body[data-sitio="pt"]{--acento:#a84939;--campo:#e8967a}
+  [data-appearance-control]{display:none!important}
+}
+
+/* Adaptador opt-in dos dois pilotos antigos; não altera Cartaz ou outras páginas. */
+:root[data-appearance-family="cards"][data-theme]{--linha:var(--tinta);--c-cinza:var(--cinza)}
+:root[data-appearance-family="cards"][data-theme="light"]{--agua:#ebebeb;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3}
+:root[data-appearance-family="cards"][data-theme="dark"]{--agua:#222220;--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f}
+:root[data-appearance-site="pt"][data-theme="light"]{--acento:#a84939;--campo:#e8967a}
+:root[data-appearance-site="pt"][data-theme="dark"]{--acento:#e0876f;--campo:#b86a54}
+:root[data-appearance-family="cards"][data-theme] .casca{--fundo-c:var(--fundo)}
+:root[data-appearance-family="cards"][data-theme] .fim-ficha .cz-linha{--cz-f:var(--fundo)}
+:root[data-appearance-family="cards"][data-theme="light"] #palco .dil-leitura{--dil-acento:#96503c;--dil-regiao:#f6f4ee}
+:root[data-appearance-family="cards"][data-theme="dark"] #palco .dil-leitura{--dil-acento:#e0a38e;--dil-regiao:#211d19}
+:root[data-appearance-family="cards"] [data-appearance-control]{margin-left:0;flex:0 0 44px;width:44px;height:44px}
+:root[data-appearance-family="cards"][data-theme] .epi-appearance-toggle[aria-pressed]{background:var(--papel)!important;color:var(--tinta)!important}
+:root[data-appearance-family="cards"][data-theme="dark"] .jogo .cartao.escuro{--tinta:#121210;--papel:#ecebe5;background:#121210;color:#ecebe5;border-color:#3d3c38}
+@media(max-width:520px){
+ :root[data-appearance-family="cards"] .casca-topo{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 4px}
+ :root[data-appearance-family="cards"] .casca-topo .c-marca{grid-row:1;grid-column:1/3;justify-self:start}
+ :root[data-appearance-family="cards"] .casca-topo .c-num{grid-row:1;grid-column:3;justify-self:center}
+ :root[data-appearance-family="cards"] .casca-topo .c-barra{grid-row:1;grid-column:4/6;min-width:0;width:100%}
+ :root[data-appearance-family="cards"] .casca-topo [data-c-como]{grid-row:2;grid-column:1;justify-self:center}
+ :root[data-appearance-family="cards"] .casca-topo [data-c-som]{grid-row:2;grid-column:2;justify-self:center}
+ :root[data-appearance-family="cards"] .casca-topo .epi-projection-launcher{grid-row:2;grid-column:3;justify-self:center;display:inline-flex!important}
+ :root[data-appearance-family="cards"] .casca-topo [data-appearance-control]{grid-row:2;grid-column:4;justify-self:center}
+ :root[data-appearance-family="cards"] .casca-topo [data-c-menu]{grid-row:2;grid-column:5;justify-self:center}
+}
+@media print{
+ :root[data-appearance-family="cards"][data-theme]{--linha:#000;--agua:#ebebeb;--c-cinza:#d6d4ce;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3}
+ :root[data-appearance-family="cards"][data-theme] #palco .dil-leitura{--dil-acento:#96503c;--dil-regiao:#f6f4ee}
+ :root[data-appearance-family="cards"][data-appearance-site="pt"][data-theme]{--acento:#a84939;--campo:#e8967a}
+}
