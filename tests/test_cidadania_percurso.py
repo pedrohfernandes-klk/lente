@@ -19,7 +19,10 @@ class Percurso(unittest.TestCase):
    old=subprocess.check_output(['git','show','origin/main:'+path],cwd=R).decode();new=(R/path).read_text('utf-8')
    self.assertEqual(re.findall(r'<table>.*?</table>',old,re.S),re.findall(r'<table>.*?</table>',new,re.S))
    for href in re.findall(r'href="([^"]+)"',old):self.assertIn('href="'+href+'"',new)
-   # All existing scripts, including local progress engines, remain byte-identical.
-   self.assertEqual(re.findall(r'<script\b.*?</script>',old,re.S),re.findall(r'<script\b.*?</script>',new,re.S))
+   # 25/10: o tema universal acrescenta apenas o seu carregamento independente.
+   # Todos os restantes scripts, incluindo progresso, conservam-se byte a byte.
+   def engines(s):
+    return [script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/appearance\.js',script)]
+   self.assertEqual(engines(old),engines(new))
   s=(R/'cidadania/contra-feed/index.html').read_text('utf-8');self.assertIn('Não há uma conclusão filosófica única premiada',s)
 if __name__=='__main__':unittest.main()

@@ -1,4 +1,4 @@
-/* Fundação experimental de aparência. Sem integração automática nas páginas reais. */
+/* Aparência partilhada: preferência local, controlo universal e projeção sincronizada. */
 (function (win, doc) {
   'use strict';
   if (win.EPIAppearance) return;
@@ -8,6 +8,31 @@
   var origin = win.location.origin;
   var canMessage = /^https?:\/\//.test(origin);
   var framed = win.self !== win.top;
+  var mediaSources = new WeakMap();
+
+  /* Reutiliza as variantes escuras existentes, mesmo quando a escolha manual
+     difere do sistema. Conserva as condições de largura, impressão e movimento.
+     Não altera os ficheiros CSS nem acede a folhas de estilos externas. */
+  function syncMedia() {
+    function visit(rules) {
+      Array.prototype.forEach.call(rules || [], function (rule) {
+        if (rule.media) {
+          var original = mediaSources.get(rule) || rule.media.mediaText;
+          if (/prefers-color-scheme\s*:/i.test(original)) {
+            mediaSources.set(rule, original);
+            var next = original.replace(/\(prefers-color-scheme\s*:\s*(dark|light)\s*\)/gi, function (_, scheme) {
+              return scheme.toLowerCase() === current() ? '(min-width: 0px)' : '(min-width: 1000000px)';
+            });
+            if (rule.media.mediaText !== next) rule.media.mediaText = next;
+          }
+        }
+        if (rule.cssRules) visit(rule.cssRules);
+      });
+    }
+    Array.prototype.forEach.call(doc.styleSheets || [], function (sheet) {
+      try { visit(sheet.cssRules); } catch (error) { /* Fontes e folhas externas: sem acesso CSSOM. */ }
+    });
+  }
 
   function valid(value) { return value === 'light' || value === 'dark'; }
   function stored() {
@@ -31,6 +56,7 @@
   function render() {
     var theme = current();
     doc.documentElement.setAttribute('data-theme', theme);
+    syncMedia();
     if (button) {
       button.setAttribute('aria-pressed', String(theme === 'dark'));
       button.title = theme === 'dark' ? 'Desativar modo noturno' : 'Ativar modo noturno';
@@ -49,6 +75,16 @@
     if (framed) return null;
     root = root || doc;
     var slot = root.matches && root.matches('[data-appearance-control]') ? root : root.querySelector('[data-appearance-control]');
+    if (!slot && doc.body) {
+      var header = doc.querySelector('.casca-topo') || doc.querySelector('.projection-toolbar');
+      slot = doc.createElement('span');
+      slot.setAttribute('data-appearance-control', '');
+      if (header) header.appendChild(slot);
+      else {
+        slot.setAttribute('data-appearance-floating', '');
+        doc.body.appendChild(slot);
+      }
+    }
     if (!slot) return null;
     if (!button) {
       button = doc.createElement('button');
@@ -92,7 +128,15 @@
     manual = data.preference;
     apply();
   });
-  function ready() { mount(); apply(); requestParent(); }
+  function ready() {
+    mount(); apply(); requestParent();
+    /* Alguns motores substituem o cabeçalho ao reabrir um baralho. */
+    if (!framed && doc.body && win.MutationObserver) {
+      new win.MutationObserver(function () {
+        if (button && !button.isConnected) mount();
+      }).observe(doc.body, {childList: true, subtree: true});
+    }
+  }
   doc.addEventListener('load', function (event) {
     if (event.target && event.target.tagName === 'IFRAME') send(event.target.contentWindow, payload('state'));
   }, true);

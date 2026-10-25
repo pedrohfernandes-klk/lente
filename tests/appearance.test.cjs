@@ -81,6 +81,42 @@ function connect(parent, child) {
 const state = (theme, preference = theme) => ({type: 'epi-appearance', version: 1, action: 'state', theme, preference});
 const request = () => ({type: 'epi-appearance', version: 1, action: 'request'});
 
+test('manual theme drives existing CSS media while retaining width and print conditions', () => {
+  const r = realm({dark: true, initial: {'epi-theme':'light'}});
+  const nested = {media:{mediaText:'screen and (max-width: 520px) and (prefers-color-scheme: dark)'},cssRules:[]};
+  const rule = {media:{mediaText:'(prefers-color-scheme: dark)'},cssRules:[nested]};
+  const print = {media:{mediaText:'print'},cssRules:[]};
+  r.document.styleSheets=[{cssRules:[rule,print]}]; r.start();
+  assert.equal(rule.media.mediaText,'(min-width: 1000000px)');
+  assert.equal(nested.media.mediaText,'screen and (max-width: 520px) and (min-width: 1000000px)');
+  assert.equal(print.media.mediaText,'print');
+  r.click(); assert.equal(rule.media.mediaText,'(min-width: 0px)');
+  assert.equal(nested.media.mediaText,'screen and (max-width: 520px) and (min-width: 0px)');
+  r.click(); assert.equal(rule.media.mediaText,'(min-width: 1000000px)');
+});
+
+test('an inaccessible external stylesheet does not prevent following local styles from adapting', () => {
+  const r=realm({initial:{'epi-theme':'dark'}});
+  const foreign={get cssRules(){throw Error('SecurityError');}};
+  const light={media:{mediaText:'(prefers-color-scheme: light)'},cssRules:[]};
+  r.document.styleSheets=[foreign,{cssRules:[light]}];r.start();
+  assert.equal(light.media.mediaText,'(min-width: 1000000px)');
+  r.click();assert.equal(light.media.mediaText,'(min-width: 0px)');
+});
+
+test('a page without an explicit slot receives one floating control; an iframe never does', () => {
+  function page(){
+    const r=realm({slot:false}); r.document.body=new Element('BODY');
+    r.document.querySelector=selector=>selector==='[data-appearance-control]' ? r.document.body.querySelector(selector) : null;
+    return r;
+  }
+  const r=page().start();assert.equal(r.document.body.children.length,1);
+  const slot=r.document.body.children[0];assert.equal(slot.getAttribute('data-appearance-floating'),'');
+  r.win.EPIAppearance.mount();assert.equal(r.document.body.children.length,1);
+  assert.equal(slot.children.length,1);assert.equal(slot.children[0].getAttribute('aria-pressed'),'false');
+  const parent=realm();const child=page();connect(parent,child);child.start();assert.equal(child.document.body.children.length,0);
+});
+
 test('system default changes until a manual choice; reset touches only appearance key', () => {
   const r = realm({initial: {'epi-progress': 'preserve'}}).start();
   assert.equal(r.theme(), 'light');
