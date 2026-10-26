@@ -16,6 +16,23 @@ class Links(HTMLParser):
             self.hrefs.append(dict(attrs).get('href', ''))
 
 class ArchiveAndFieldwork(unittest.TestCase):
+    def test_tools_have_distinct_named_groups_and_no_promotional_banner(self):
+        page = (ROOT / 'index.html').read_text('utf-8')
+        groups = re.findall(r'<section class="ferr-grupo".*?</section>', page, re.S)
+        self.assertEqual(len(groups), 3)
+        expected = [
+            ('Ler e investigar', ['biblioteca', 'ler', 'investigar']),
+            ('Criar e apresentar', ['ver-para-fazer', 'apresentar']),
+            ('Citar e guardar', ['direitos', 'caderno']),
+        ]
+        for group, (title, destinations) in zip(groups, expected):
+            self.assertIn(title, group)
+            self.assertEqual([href.rstrip('/').split('/')[-1] for href in Links(group).hrefs], destinations)
+        self.assertNotIn('data-sugestao=', page)
+        self.assertNotIn('data-reabrir', page)
+        self.assertNotIn('editorial-02.js', page)
+        self.assertTrue((ROOT / 'narrativas/variantes/index.html').is_file())
+
     def test_tools_do_not_promote_fieldwork_or_archived_collection(self):
         page = (ROOT / 'index.html').read_text('utf-8')
         tools = re.search(r'<nav class="lente-ferr".*?</nav>', page, re.S).group()
