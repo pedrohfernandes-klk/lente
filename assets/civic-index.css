@@ -1,0 +1,40 @@
+/* Polimento dos quatro índices: sem alterar cartões de exercício ou impressão. */
+@media screen{
+ body.civic-index .p-cab h1{font:750 clamp(2rem,4vw,3.4rem)/1.08 Arial,Helvetica,sans-serif;letter-spacing:-.035em;text-transform:none}
+ body.civic-index .p-cab .p-sub{font:400 clamp(1.1rem,2vw,1.35rem)/1.45 Arial,Helvetica,sans-serif;font-style:normal;max-width:48ch}
+ body.civic-index .p-cab .p-lead{font:400 1rem/1.6 Arial,Helvetica,sans-serif;max-width:64ch}
+ body.civic-index .p-etiqueta,body.civic-index .cid-kicker{font-family:Arial,Helvetica,sans-serif;letter-spacing:.06em}
+ body.civic-index .marca-sec{font-size:clamp(2.2rem,5vw,3.2rem)}
+ body.civic-index .missoes>.missao{padding:18px;background:var(--papel,#fff);border:1px solid var(--cinza,#d6d4ce);align-content:start;gap:8px 16px}
+ body.civic-index .missoes>.missao.p-atual{border-left:3px solid var(--vermelho,#c8232c);padding-left:16px}
+ body.civic-index .missoes .missao .t{font:700 1.12rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:-.015em;text-transform:none}
+ body.civic-index .missoes .missao .s{font:400 .9rem/1.5 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
+ body.civic-index .missoes .missao .r,body.civic-index .missoes .missao .a{font-family:Arial,Helvetica,sans-serif;letter-spacing:.03em}
+ body.civic-index .cid-module-image small{font-family:Arial,Helvetica,sans-serif}
+ body.civic-index .cid-assessment{border-width:1px}
+ body.civic-index .missao:focus-visible,body.civic-index .recurso:focus-visible{outline:3px solid var(--tinta,#171715);outline-offset:4px}
+ body.civic-judgment .comum{max-width:75rem;padding:24px clamp(16px,2.5vw,32px) 64px;font:400 1rem/1.6 Arial,Helvetica,sans-serif}
+ body.civic-judgment .comum h1{font:750 clamp(2.3rem,5vw,4rem)/1.05 Arial,Helvetica,sans-serif;letter-spacing:-.035em}
+ body.civic-judgment .comum>p{max-width:68ch}
+ body.civic-judgment .comum .recursos{grid-template-columns:1fr;gap:20px;margin-top:32px}
+ body.civic-judgment .comum .recurso{min-width:0;padding:24px;border:1px solid var(--cinza,#d6d4ce);background:var(--papel,#fff)}
+ body.civic-judgment .comum .recurso b{font:700 1.3rem/1.25 Arial,Helvetica,sans-serif;letter-spacing:-.02em}
+ body.civic-judgment .comum .recurso span{font:400 1rem/1.6 Arial,Helvetica,sans-serif;margin-top:16px}
+ body.civic-judgment .comum .recurso:hover{border-color:currentColor}
+ body.civic-judgment .tj-sub{gap:8px 20px;margin-top:24px}
+ body.civic-judgment .tj-sub a{display:inline-flex;align-items:center;min-height:44px}
+}
+@media screen and (min-width:700px){body.civic-judgment .comum .recursos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (min-width:1000px){body.civic-judgment .comum .recursos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+@media screen{
+ body.civic-judgment .tj-lessons{display:grid;grid-template-columns:1fr;gap:20px;margin-top:24px}
+ body.civic-judgment .tj-lessons .tj-sub{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:0;max-width:none}
+}
+@media screen and (min-width:700px){body.civic-judgment .tj-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (min-width:1000px){body.civic-judgment .tj-lessons{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+@media screen{
+ body.civic-judgment .comum>nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-height:44px}
+ body.civic-judgment .comum>nav .epi-projection-launcher{margin-left:auto;flex:0 0 44px}
+}
