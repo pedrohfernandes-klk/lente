@@ -1,4 +1,25 @@
 /* Tokens Cartaz exatos. Carregar após cartaz.css; não modifica esse ficheiro. */
+/* Leitura: o texto nunca ocupa a coluna reservada a um ícone ou separador.
+   Estas regras são de composição e aplicam-se nos dois temas. */
+.jogo .ler ol.ess-mini>li{grid-template-columns:36px minmax(0,1fr)}
+.jogo .ler ol.ess-mini>li>:not(.mini){min-width:0}
+.jogo .ler ol.ess-mini>li>:only-child:not(.mini){grid-column:1/-1}
+.jogo .ler ol.ess-mini>li:not(:has(>.mini)){grid-template-columns:minmax(0,1fr)}
+.jogo .ler .paralelo{grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr)}
+.jogo .ler .paralelo>.lado{min-width:0;overflow-wrap:break-word}
+.jogo .ler .paralelo>.lado:first-child{grid-column:1}
+.jogo .ler .paralelo>.lado:last-child{grid-column:3}
+.jogo .ler:has(.paralelo){container-type:inline-size}
+@container(max-width:36rem){
+ .jogo .ler .paralelo{grid-template-columns:minmax(0,1fr);gap:20px}
+ .jogo .ler .paralelo>.lado:first-child,.jogo .ler .paralelo>.lado:last-child{grid-column:1}
+ .jogo .ler .paralelo>.onda{display:none}
+}
+@media(max-width:600px){
+ .jogo .ler .paralelo{grid-template-columns:minmax(0,1fr);gap:20px}
+ .jogo .ler .paralelo>.lado:first-child,.jogo .ler .paralelo>.lado:last-child{grid-column:1}
+ .jogo .ler .paralelo>.onda{display:none}
+}
 :root[data-theme="light"]{
   --tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;
   --mostarda:#d9a520;--vermelho:#c8232c;--cinza:#d6d4ce;

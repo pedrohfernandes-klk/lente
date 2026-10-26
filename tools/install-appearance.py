@@ -7,6 +7,22 @@ import re,sys,json
 ROOT=Path(__file__).resolve().parents[1]
 SITE='pt' if (ROOT/'m9').exists() else 'lente'
 VERSION='20261025-universal-1'
+READING_GRID=re.compile(r'class\s*=\s*\\?["\'][^"\'<>]*\b(?:ess-mini|paralelo)\b')
+SCRIPT_GRIDS={}
+def has_reading_grid(text,path):
+    if READING_GRID.search(text):return True
+    for src in re.findall(r'<script\b[^>]*src=["\']([^"\']+)["\']',text,re.I):
+        src=src.split('?')[0]
+        if '://' in src:
+            prefix=f'https://pedrohfernandes-klk.github.io/{SITE}/'
+            if not src.startswith(prefix):continue
+            target=ROOT/src[len(prefix):]
+        else:target=path.parent/src
+        target=target.resolve()
+        if not target.is_relative_to(ROOT) or not target.is_file():continue
+        if target not in SCRIPT_GRIDS:SCRIPT_GRIDS[target]=bool(READING_GRID.search(target.read_text('utf-8')))
+        if SCRIPT_GRIDS[target]:return True
+    return False
 def integrated(path):
     raw=path.read_bytes(); text=raw.decode('utf-8')
     if not re.search(r'</head\s*>',text,re.I): return raw
@@ -20,7 +36,9 @@ def integrated(path):
     text=re.sub(r'<html\b[^>]*>',html_tag,text,count=1,flags=re.I)
     depth=len(path.relative_to(ROOT).parts)-1
     prefix='../'*depth
-    css_version=VERSION+'-slides1' if 'class="deck"' in text else VERSION
+    # Invalidar a cache só nas páginas que usam estes blocos de leitura.
+    reading_grid=has_reading_grid(text,path)
+    css_version='20261025-reading1' if reading_grid else VERSION+'-slides1' if 'class="deck"' in text else VERSION
     tags=f'<link rel="stylesheet" href="{prefix}assets/appearance.css?v={css_version}"><script src="{prefix}assets/appearance.js?v={VERSION}"></script>'
     text=re.sub(r'</head\s*>',lambda m:tags+m[0],text,count=1,flags=re.I)
     return text.encode('utf-8')
