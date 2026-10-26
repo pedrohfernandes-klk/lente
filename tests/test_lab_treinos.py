@@ -131,7 +131,8 @@ class Ginasio(unittest.TestCase):
         for nome in ('Academia', 'Ginásio', 'Ateliê'):
             self.assertIn(f'>{nome}<span class="vh">', s)
         i = s.index('id="ler-como-quem-escreve"'); j = s.index('</section>', s.index('id="aulas-narrativa"'))
-        self.assertIn('lente/vozes/"><span class="bundle-label">Vidas e vozes</span>', s[i:s.index('id="treinar"')])
+        # 25/10: conjunto arquivado por decisão do docente; deixa de ser porta autónoma do Lab.
+        self.assertNotIn('<span class="bundle-label">Vidas e vozes</span>', s[i:s.index('id="treinar"')])
         self.assertEqual(len(set(re.findall(r'href="treinar/([a-z-]+)/"', s))), 30)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
             self.assertIn(antiga, s)  # quem chega por um endereço antigo ainda cai no sítio certo
