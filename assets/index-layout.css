@@ -1,0 +1,14 @@
+/* Catálogos fluidos; leitura, impressão e motores mantêm as suas medidas. */
+@media screen and (min-width:900px){
+ body.indice-amplo .pg{max-width:75rem;padding-inline:clamp(16px,2.5vw,32px)}
+ body.indice-amplo .pg-cab{padding-bottom:24px}
+ body.indice-amplo .p-cab .p-lead,body.indice-amplo .p-cab .p-sub,
+ body.indice-amplo .pg>p,body.indice-amplo .pg>.ler{max-width:68ch}
+ body.indice-amplo .pg>figure{max-width:44rem}
+ body.pt-module.indice-amplo>main{max-width:75rem;padding-inline:clamp(16px,2.5vw,32px)}
+ body.pt-module.indice-amplo .topo>p,body.pt-module.indice-amplo .unidade-pedagogica>p{max-width:68ch}
+}
+@media screen and (min-width:700px){
+ body.indice-amplo .missoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px 24px;align-items:stretch}
+ body.indice-amplo .missoes>.missao{min-width:0;overflow-wrap:anywhere}
+}
