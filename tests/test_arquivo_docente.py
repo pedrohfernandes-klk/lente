@@ -7,7 +7,8 @@ class ArquivoDocente(unittest.TestCase):
   self.assertNotRegex(s,r'<article\b[^>]*id="inicio-vozes"')
   self.assertNotIn('href="#inicio-vozes"',s)
   self.assertIn('id="inicio-vozes"',s) # endereço antigo não fica sem destino
-  self.assertIn('href="docente/#arquivo"',s)
+  # 26/10: a boia abre a área docente; o arquivo conserva o seu id.
+  self.assertIn('href="docente/"',s)
   self.assertNotIn('treinar a mão',s)
  def test_colecoes_e_guioes_acessiveis_pelo_docente(self):
   s=(R/'docente/index.html').read_text('utf-8')
