@@ -84,8 +84,9 @@ class Justica(unittest.TestCase):
             for o in {1, 2, 3} - {n}:
                 self.assertIn(f'<a href="../licao-{o}/">Lição {o}:', s, (n, o))
         g = (J / 'guiao/index.html').read_text('utf-8')
-        self.assertIn('Lição 3: Quem é dono de mim?', g)
-        self.assertIn('Lição 3: Quem é dono de mim? (episódio 3', (J / 'docente/index.html').read_text('utf-8'))
+        # 26/10: título aprovado pelo docente; conceitos e cadeia conservados.
+        self.assertIn('Lição 3: Até onde vai a minha liberdade?', g)
+        self.assertIn('Lição 3: Até onde vai a minha liberdade? (episódio 3', (J / 'docente/index.html').read_text('utf-8'))
 
     def test_house_rules_and_local_links(self):
         for p in sorted(J.rglob('index.html')):
