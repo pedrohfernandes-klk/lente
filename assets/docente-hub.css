@@ -1,0 +1,14 @@
+/* Área docente: preparação, condução da aula, tarefas e arquivo. */
+@media screen{
+ .teacher-hub-title{font:750 clamp(2rem,5vw,3.6rem)/1.1 Arial,Helvetica,sans-serif;letter-spacing:-.035em}
+ .teacher-hub{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0}
+ .teacher-hub article{min-width:0;border-top:3px solid var(--tinta,#171715);padding:16px 0}
+ .teacher-hub h2{font:700 1.3rem/1.25 Arial,Helvetica,sans-serif;letter-spacing:-.015em;margin:4px 0 12px}
+ .teacher-hub p,.teacher-hub a{font:400 1rem/1.6 Arial,Helvetica,sans-serif}
+ .teacher-hub a{display:flex;align-items:center;min-height:44px;padding:8px 0;color:inherit;text-underline-offset:5px}
+ .teacher-hub a:focus-visible{outline:3px solid var(--tinta,#171715);outline-offset:4px}
+ .teacher-hub ul{padding-left:20px;margin:12px 0}.teacher-hub li{margin:8px 0}
+ .teacher-hub .teacher-number{font:700 .8rem/1.4 Arial,sans-serif;color:var(--vermelho,#a84939)}
+ .teacher-guide-heading{font:700 1.8rem/1.2 Arial,sans-serif;margin-top:40px}
+}
+@media screen and (max-width:700px){.teacher-hub{grid-template-columns:1fr;gap:16px}}
