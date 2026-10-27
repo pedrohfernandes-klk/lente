@@ -18,12 +18,14 @@ with sync_playwright() as pw:
   ctx=b.new_context(viewport={'width':width,'height':1000},reduced_motion='reduce')
   ctx.route('https://pedrohfernandes-klk.github.io/lente/**',local)
   ctx.route('https://fonts.googleapis.com/**',lambda r:r.abort());ctx.route('https://fonts.gstatic.com/**',lambda r:r.abort())
-  for path in ['cidadania/','cidadania/m1/','cidadania/projeto/','cidadania/m2/','cidadania/contra-feed/']:
+  # A versão integral anterior continua a ter o percurso de cinco encontros;
+  # a nova navegação de dez sessões tem cobertura no teste próprio em Node.
+  for path in ['cidadania/','cidadania/m1/percurso-anterior.html','cidadania/projeto/','cidadania/m2/','cidadania/contra-feed/']:
    p=ctx.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)));assert p.goto(host+'/lente/'+path).status==200;p.wait_for_timeout(300)
    assert p.evaluate('document.documentElement.scrollWidth<=innerWidth'),(width,path)
    assert not errors,(path,errors)
    assert not p.locator('a[href*="/guia-docente/"]').count()
-   if path in ['cidadania/m1/','cidadania/m2/']:
+   if path in ['cidadania/m1/percurso-anterior.html','cidadania/m2/']:
     assert p.locator('.cid-route-step').count() in [4,5]
     summary=p.locator('.cid-route > summary');summary.focus();p.keyboard.press('Enter');assert p.locator('.cid-route').get_attribute('open') is not None
     p.locator('.cid-route').screenshot(path=str(O/f'rota-{path.split("/")[1]}-{width}.png'))

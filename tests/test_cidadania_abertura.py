@@ -4,7 +4,7 @@ from urllib.parse import urlsplit
 R=Path(__file__).resolve().parents[1]
 class Abertura(unittest.TestCase):
  def test_berger_is_support_not_first_sequential_step(self):
-  s=(R/'cidadania/m1/index.html').read_text('utf-8');support=re.search(r'<details class="cid-disclosure" id="apoio-imagens">.*?</details>',s,re.S)[0]
+  s=(R/'cidadania/m1/percurso-anterior.html').read_text('utf-8');support=re.search(r'<details class="cid-disclosure" id="apoio-imagens">.*?</details>',s,re.S)[0]
   self.assertIn('href="passo-00/"',support);self.assertIn('Apoio · imagens',support);self.assertNotIn('data-g=',support)
   arc=re.search(r'<nav[^>]*class="arco-faixa".*?</nav>',s,re.S)[0];self.assertNotIn('data-id="passo-00"',arc)
   self.assertIn('d.id!=="passo-00"',s);self.assertIn('id="proxima-aula"',s)

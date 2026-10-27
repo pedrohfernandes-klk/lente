@@ -7,7 +7,8 @@ class Casos(unittest.TestCase):
  def test_five_cases_per_module(self):
   manifest=json.loads((R/'assets/cidadania-casos.json').read_text('utf-8'))
   for mod,old in [('m1',['cid-m1-o-juri','cid-m1-vida-em-direto-hoje']),('m2',['cid-m2-preco-minuto','cid-m2-dentro-da-caixa'])]:
-   s=(R/f'cidadania/{mod}/index.html').read_text('utf-8');slugs=old+[x['slug'] for x in manifest if x['module']==mod];self.assertEqual(len(set(slugs)),5)
+   path='cidadania/m1/biblioteca/index.html' if mod=='m1' else f'cidadania/{mod}/index.html'
+   s=(R/path).read_text('utf-8');slugs=old+[x['slug'] for x in manifest if x['module']==mod];self.assertEqual(len(set(slugs)),5)
    for slug in slugs:self.assertTrue((R/f'cidadania/{mod}/{slug}/index.html').exists());self.assertIn(slug+'/',s)
  def test_new_cases_teach_before_deciding_and_have_sources(self):
   keys=[]
