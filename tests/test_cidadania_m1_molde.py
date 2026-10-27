@@ -92,6 +92,14 @@ class Molde(unittest.TestCase):
    self.assertNotIn('—',t,p)
    for w in ('professor','jogar','joga ','ficha','folha','já estudámos','conhecimentos prévios'):self.assertNotIn(w,baixo,(p,w))
 
+ def test_oficina_de_argumento_e_guiao(self):
+  # o caminho das sessões 04 a 10, o argumento em cinco partes e a mesma cena em três formatos
+  s=(R/'cidadania/m1/oficina-guiao/index.html').read_text('utf-8')
+  self.assertEqual(re.findall(r'href="\.\./sessoes/(\d\d)/"',s),[f'{n:02}' for n in range(4,11)])
+  self.assertEqual(s.count('<dt>'),5);self.assertEqual(s.count('c10-script'),3)
+  for nome in ('Teatro','Cinema','Áudio'):self.assertIn('<b>'+nome+'</b>',s)
+  self.assertIn('Não é preciso encenar, filmar ou gravar.',s)
+
  def test_registo_so_nas_sessoes_que_contam(self):
   for n in range(1,11):
    s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=2 else 1,n)

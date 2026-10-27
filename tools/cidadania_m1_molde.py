@@ -157,3 +157,24 @@ OBRAS = {
  ligacoes=[('Escutar sem inventar', 'cidadania/m1/passo-08/'), ('Ética: como é ser um morcego?', 'olhar-e-decidir/etica/licao-2/')],
  discordante='Há quem veja na fragmentação um risco: se o espectador não consegue reconstruir a situação, a forma afasta em vez de aproximar. Quando é que deixar coisas por explicar serve a cena?'),
 }
+
+# Apoio à escrita (oficina de argumento e guião, sessões 04 a 10). Exemplos originais,
+# escritos para este apoio; não são excertos de obras.
+ARGUMENTO_EXEMPLO = [
+ ('Situação inicial', 'Na véspera da apresentação, Joana guarda a chave da sala de ensaio.'),
+ ('Conflito', 'O grupo quer ensaiar de noite. Marta não pode ficar e seria afastada do ensaio sem ser ouvida.'),
+ ('Escolha', 'Joana decide não abrir a porta enquanto Marta não disser o que pensa.'),
+ ('Viragem', 'Marta propõe gravar a sua parte em áudio. O grupo descobre que a cena funciona com a voz dela fora de cena.'),
+ ('Consequência', 'O ensaio faz-se no dia seguinte, com uma cena mudada. Joana tem de explicar a decisão a quem queria ensaiar logo.'),
+]
+FORMATOS = [
+ ('Teatro', ['Lista de personagens no início.', 'O nome de quem fala antes de cada réplica.', 'Didascálias entre parênteses: ação, pausa, entradas e saídas, luz e som.', 'Uma cena nova quando muda o tempo ou o lugar.'],
+  'CENA 3. Corredor da escola, à noite.\n(JOANA tem a chave na mão. MARTA entra, de casaco vestido.)\nMARTA: Vão ensaiar sem mim?\nJOANA: (Não abre a porta.) Antes de abrir, precisamos de te ouvir.\n(Pausa. MARTA tira o telemóvel do bolso.)',
+  'Percebe-se quem entra, quem sai e onde está cada pessoa?'),
+ ('Cinema', ['Cabeçalho de cena: INT. ou EXT., lugar e momento do dia.', 'Ação no presente, só o que se vê ou se ouve.', 'O nome da personagem em maiúsculas, por cima da fala.', 'Indicações curtas entre parênteses, por baixo do nome.'],
+  'INT. CORREDOR DA ESCOLA - NOITE\nJoana segura a chave junto à fechadura. Marta entra, de casaco vestido.\nMARTA\nVão ensaiar sem mim?\nJOANA\n(sem abrir)\nAntes de abrir, precisamos de te ouvir.\nMarta tira o telemóvel do bolso.',
+  'Cada cena tem cabeçalho? Tudo o que está na ação pode ser filmado?'),
+ ('Áudio', ['Vozes identificadas pelo nome.', 'SOM, MÚSICA e SILÊNCIO em maiúsculas.', 'A ação percebe-se pelo que se ouve: passos, portas, ambiente.', 'Transições feitas com som; narrador só se for mesmo preciso.'],
+  'SOM: CORREDOR VAZIO. UMA CHAVE NA FECHADURA. O MOVIMENTO PARA.\nSOM: PASSOS QUE SE APROXIMAM.\nMARTA: Vão ensaiar sem mim?\nJOANA: (perto, baixo) Antes de abrir, precisamos de te ouvir.\nSILÊNCIO. SOM: O CLIQUE DE UM TELEMÓVEL A DESBLOQUEAR.',
+  'Sem imagem, percebe-se onde estamos, quem fala e o que acabou de acontecer?'),
+]

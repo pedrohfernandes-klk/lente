@@ -167,6 +167,16 @@ body.c10-body:has(.c10-running) [data-appearance-floating]{bottom:max(88px,calc(
 .c10 .c10-formats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .c10 .c10-formats article{padding:16px 18px;background:var(--paper);border:2px solid var(--ink)}
 .c10 .c10-formats b{display:block;font:400 1.8rem/1 var(--display);margin-bottom:6px}
+.c10 .c10-formats ul{margin:0 0 14px;padding-left:18px;font:.95rem/1.45 Arial,Helvetica,sans-serif}.c10 .c10-formats li{margin:0 0 6px}
+.c10 .c10-script{font:.95rem/1.55 'Courier New',Courier,monospace;padding:14px 16px;border-left-width:6px;margin:0 0 10px}
+.c10 .c10-path{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.c10 .c10-path li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 24px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line)}
+.c10 .c10-path a{display:flex;gap:14px;align-items:baseline;text-decoration:none;font-weight:700}.c10 .c10-path a:hover span{text-decoration:underline}
+.c10 .c10-path b{font:400 1.8rem/1 var(--display)}
+.c10 .c10-path small{font:1rem/1.45 var(--serif)}
+.c10 .c10-steps{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:0 24px;margin:0 0 10px;max-width:760px;border-top:2px solid var(--ink)}
+.c10 .c10-steps dt{padding:12px 0;border-bottom:1px solid var(--line);font:700 .75rem/1.6 Arial,Helvetica,sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.c10 .c10-steps dd{margin:0;padding:10px 0;border-bottom:1px solid var(--line);font:1.05rem/1.5 var(--serif)}
 
 /* Ecrãs estreitos */
 @media(max-width:860px){
@@ -181,6 +191,9 @@ body.c10-body:has(.c10-running) [data-appearance-floating]{bottom:max(88px,calc(
  .c10 .c10-step-line{flex-basis:100%;margin:0 0 6px}
  .c10 .c10-session-list{grid-template-columns:1fr}
  .c10 .c10-formats{grid-template-columns:1fr}
+ .c10 .c10-path li{grid-template-columns:1fr}
+ .c10 .c10-steps{grid-template-columns:1fr}
+ .c10 .c10-steps dt{border-bottom:0;padding-bottom:0}
 }
 @media(max-width:640px){
  .c10 .c10-stagebar a{flex:0 0 auto;padding:6px 10px}
