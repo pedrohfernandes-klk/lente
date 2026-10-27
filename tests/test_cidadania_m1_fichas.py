@@ -43,11 +43,17 @@ class FichasM1(unittest.TestCase):
   s=(R/'cidadania/m1/index.html').read_text('utf-8')
   self.assertEqual(len(re.findall(r'data-session-card="\d{2}"',s)),10)
   self.assertIn('href="sessoes/03/" data-continue',s);self.assertNotIn('data-m1-next',s)
+  # 27/10/2026 (molde das sessões): as sessões 01 e 02 já decorreram; ficam sem registo pessoal e sem
+  # avisos sobre o que a turma já estudou, que pertencem ao guia do docente. O plano da sessão 03
+  # (sete grupos, 10, 5, 60, 35 e 70 minutos) confere-se no guia; a página do aluno só diz o que fazer.
   for n in (1,2):
    s=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
-   self.assertIn('Percurso já realizado',s);self.assertNotIn('data-session-done',s)
+   self.assertNotIn('data-session-done',s);self.assertNotIn('Percurso já realizado',s)
   s=(R/'cidadania/m1/sessoes/03/index.html').read_text('utf-8')
-  for text in ['sete grupos','Marina Abramović','The Egg','The Truman Show','60 min','35 min','70 min','5 a 8 minutos']:self.assertIn(text,s)
+  self.assertIn('5 a 8 minutos',s);self.assertIn('href="../../../projeto/"',s)
+  for text in ['Marina Abramović','The Egg','The Truman Show','conhecimentos prévios']:self.assertNotIn(text,s)
+  g=(R/'cidadania/m1/sessoes/index.html').read_text('utf-8')
+  for text in ['Sete grupos','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
  def test_sessions_are_complete_and_timed(self):
   import importlib.util
   spec=importlib.util.spec_from_file_location('sessions_content',R/'tools/cidadania_m1_sessoes.py');m=importlib.util.module_from_spec(spec)
@@ -60,7 +66,9 @@ class FichasM1(unittest.TestCase):
    self.assertEqual(sum(s['times']),180,n)
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    self.assertEqual(page.count(' data-stage data-label='),5)
-   self.assertIn('data-focus-mode',page);self.assertIn('data-feedback',page)
+   # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre
+   # com «Começar» e avança com Anterior e Seguinte.
+   self.assertIn('data-start',page);self.assertIn('data-step-controls',page);self.assertIn('data-feedback',page)
   self.assertEqual([n for n,s in enumerate(m.SESSOES,1) if s.get('capsule')],[4,5,8,9])
  def test_local_links_and_no_duplicate_ids(self):
   paths=list((R/'cidadania/m1/fichas').glob('*/index.html'))+list((R/'cidadania/m1/sessoes').glob('*/index.html'))+[R/p for p in ['cidadania/m1/index.html','cidadania/projeto/index.html','cidadania/m1/biblioteca/index.html','cidadania/m1/sessoes/index.html','cidadania/m1/oficina-guiao/index.html']]

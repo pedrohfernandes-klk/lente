@@ -42,9 +42,9 @@ def nav(path):
 def main(path,body,ident=''):
  return '<main class="m1-v2" data-m1-v2'+(' data-ficha="'+ident+'"' if ident else '')+'><a class="m1-skip" href="#m1-conteudo">Ir para o conteúdo</a>'+nav(path)+'<div id="m1-conteudo">'+body+'</div></main>'
 def assets(path):
- return '<link rel="stylesheet" href="'+rel(path,'assets/cidadania-m1.css')+'"><script defer src="'+rel(path,'assets/cidadania-m1.js')+'"></script>'
+ return '<link rel="stylesheet" href="'+rel(path,'assets/cidadania-m1.css')+'?v=20261027-molde-1"><script defer src="'+rel(path,'assets/cidadania-m1.js')+'"></script>'
 def shell(path,title,body):
- return '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+e(title)+' · Cidadania · Lente</title><link rel="stylesheet" href="'+rel(path,'assets/appearance.css')+'"><script src="'+rel(path,'assets/appearance.js')+'"></script>'+assets(path)+'</head><body class="m1-sheet">'+body+'<script defer src="'+rel(path,'assets/projection-launcher.js')+'" data-site="lente"></script></body></html>\n'
+ return '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+e(title)+' · Cidadania · Lente</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"><link rel="stylesheet" href="'+rel(path,'assets/appearance.css')+'"><script src="'+rel(path,'assets/appearance.js')+'"></script>'+assets(path)+'</head><body class="m1-sheet">'+body+'<script defer src="'+rel(path,'assets/projection-launcher.js')+'" data-site="lente"></script></body></html>\n'
 def wrap(path,body,aliases=()):
  s=old(path);s=s.replace('</head>',assets(path)+'</head>')
  if path=='cidadania/projeto/index.html':s=re.sub(r'<title>.*?</title>','<title>SER-SE HUMANO · Projeto · Cidadania</title>',s,count=1)
@@ -58,20 +58,20 @@ def wrap(path,body,aliases=()):
 
 def ficha(n):
  f=FICHAS[n-1];u=(n-1)//3;ident=f'F{n:02}';path=f'cidadania/m1/fichas/{ident.lower()}/index.html'
- body=f'<p class="m1-kicker">{ident} · {u+1:02} / {UNITS[u][0]} · SER-SE HUMANO</p><h1>{e(f["title"])}</h1><p class="m1-lead">{e(f["question"])}</p><section class="m1-reading" aria-label="Contexto"><p>{e(f["context"])}</p></section>'
+ body=f'<p class="m1-kicker">Apoio {n:02} · {UNITS[u][0]} · Ser-se humano</p><h1>{e(f["title"])}</h1><p class="m1-lead">{e(f["question"])}</p><section class="m1-reading" aria-label="Contexto"><p>{e(f["context"])}</p></section>'
  if 'capsule' in f:
   c=CAPSULES[f['capsule']];links=[]
   for label,url in c['sources']:
    if not url.startswith('http'):url=rel(path,'cidadania/m1/passo-06/')
    links.append('<li><a href="'+e(url,quote=True)+'">'+e(label)+'</a></li>')
   body+='<section class="m1-block" data-capsule="'+f['capsule']+'"><p class="m1-kicker">História do teatro · cápsula integrada</p><h2>'+e(c['title'])+'</h2><p>'+e(c['text'])+'</p><p><strong>Aplicar à escrita.</strong> '+e(c['task'])+'</p><details><summary>Fontes da cápsula</summary><div><ul>'+''.join(links)+'</ul></div></details></section>'
- body+='<section class="m1-block"><h2>Ler e comparar</h2><p class="m1-note">Exemplo didático redigido para esta ficha; casos e obras identificados no contexto. Não é uma citação.</p><div class="m1-sample">'+e(f['sample'])+'</div><ol class="m1-tasks">'+''.join('<li>'+e(t)+'</li>' for t in f['tasks'])+'</ol><details data-feedback><summary>Depois de decidir · comparar razões</summary><div><p>'+e(f['feedback'])+'</p></div></details></section>'
- body+='<section class="m1-block" id="oficina"><p class="m1-kicker">SER-SE HUMANO · oficina de escrita</p><h2>Levar ao guião</h2><p>'+e(f['work'])+'</p><p><strong>Rever.</strong> '+e(f['review'])+'</p><p class="m1-note">Escreve no caderno ou no ficheiro do projeto. Esta ficha não cria uma entrega separada.</p></section>'
+ body+='<section class="m1-block"><h2>Ler e comparar</h2><p class="m1-note">Exemplo didático redigido para este apoio; casos e obras identificados no contexto. Não é uma citação.</p><div class="m1-sample">'+e(f['sample'])+'</div><ol class="m1-tasks">'+''.join('<li>'+e(t)+'</li>' for t in f['tasks'])+'</ol><details data-feedback><summary>Depois de decidir · comparar razões</summary><div><p>'+e(f['feedback'])+'</p></div></details></section>'
+ body+='<section class="m1-block" id="oficina"><p class="m1-kicker">SER-SE HUMANO · oficina de escrita</p><h2>Levar ao guião</h2><p>'+e(f['work'])+'</p><p><strong>Rever.</strong> '+e(f['review'])+'</p><p class="m1-note">Escreve no caderno ou no ficheiro do projeto. Este apoio não cria uma entrega separada.</p></section>'
  body+='<aside class="m1-justice"><h2>Regressar à Justiça</h2><p>'+e(f['justice'])+'</p>'+anchor(path,'cidadania/m1/#unidade-3','Retomar a unidade central')+'</aside>'
  body+='<details><summary>Fontes e recursos completos</summary><div>'+resources(path,f['resources'])+'<p>'+anchor(path,'cidadania/m1/biblioteca/','Biblioteca completa: obras, fontes, créditos e materiais anteriores')+'</p><p class="m1-note">Contextualização e exemplos: síntese didática do LENTE. As fontes originais permitem aprofundar e verificar; uma ligação não implica visionamento integral obrigatório.</p></div></details>'
- body+='<section class="m1-progress" data-m1-storage hidden aria-label="Registo pessoal"><label><input type="checkbox" data-m1-done="'+ident+'">Registei e revi o trabalho desta ficha no meu caderno ou projeto.</label><p class="m1-live" data-m1-live role="status" aria-live="polite">Este registo fica neste aparelho. Não é uma classificação automática.</p></section><noscript><p>As tarefas e os apoios podem ser lidos e impressos sem JavaScript. Conserva o registo no caderno.</p></noscript>'
- body+='<nav class="m1-bottom" aria-label="Sequência das fichas">'+(anchor(path,f'cidadania/m1/fichas/f{n-1:02}/','← Ficha anterior') if n>1 else anchor(path,'cidadania/m1/','← Percurso'))+(anchor(path,f'cidadania/m1/fichas/f{n+1:02}/','Ficha seguinte →') if n<18 else anchor(path,'cidadania/projeto/','Rever a entrega →'))+'</nav>'
- write(path,shell(path,f'{ident} · {f["title"]}',main(path,body,ident)))
+ body+='<section class="m1-progress" data-m1-storage hidden aria-label="Registo pessoal"><label><input type="checkbox" data-m1-done="'+ident+'">Registei e revi este trabalho no meu caderno ou projeto.</label><p class="m1-live" data-m1-live role="status" aria-live="polite">Este registo fica neste aparelho. Não é uma classificação automática.</p></section><noscript><p>As tarefas e os apoios podem ser lidos e impressos sem JavaScript. Conserva o registo no caderno.</p></noscript>'
+ body+='<nav class="m1-bottom" aria-label="Sequência dos apoios">'+(anchor(path,f'cidadania/m1/fichas/f{n-1:02}/','← Apoio anterior') if n>1 else anchor(path,'cidadania/m1/','← Percurso'))+(anchor(path,f'cidadania/m1/fichas/f{n+1:02}/','Apoio seguinte →') if n<18 else anchor(path,'cidadania/projeto/','Rever a entrega →'))+'</nav>'
+ write(path,shell(path,f'Apoio {n:02} · {f["title"]}',main(path,body,ident)))
 
 
 def library():
@@ -84,7 +84,9 @@ def library():
  body+='<section class="m1-block"><h2>História do teatro · quatro cápsulas</h2><ul>'
  for n in [3,6,14,16]:body+='<li>'+anchor(path,f'cidadania/m1/fichas/f{n:02}/',CAPSULES[FICHAS[n-1]['capsule']]['title'])+'</li>'
  body+='</ul></section><section class="m1-block"><h2>Materiais anteriores para imprimir</h2><ul>'
- for p in sorted((M/'materiais').glob('*.pdf')):body+='<li>'+anchor(path,p.relative_to(R).as_posix(),p.stem.replace('_',' '))+' · PDF original, sem alteração</li>'
+ # 27/10/2026: nomes legíveis para os PDF (os nomes dos ficheiros mantêm-se; o texto visível evita «ficha»).
+ pdf={'Doze_Homens_Ficha_Ensaio':'Doze Homens em Fúria: ensaio','Doze_Homens_Guiao_Investigacao':'Doze Homens em Fúria: guião de investigação','EPI_Cidadania_Guiao_Investigacao':'Guião de investigação de Cidadania','Truman_Show_Ficha_Interpretacao':'The Truman Show: interpretação'}
+ for p in sorted((M/'materiais').glob('*.pdf')):body+='<li>'+anchor(path,p.relative_to(R).as_posix(),pdf.get(p.stem,p.stem.replace('_',' ')))+' (PDF original, sem alteração)</li>'
  for p in ['cidadania/ferramentas/m1-aula-01-ficha/','cidadania/ferramentas/m1-aula-01-diapositivos/']:body+='<li>'+anchor(path,p,source_label(p))+'</li>'
  body+='</ul><p>'+anchor(path,'biblioteca/','Biblioteca transversal do LENTE')+'</p></section>'
  write(path,shell(path,'Biblioteca de M1',main(path,body)))

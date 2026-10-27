@@ -116,7 +116,13 @@ SESSOES=[_prior1,_prior2,_task,SESSOES[2],SESSOES[3],SESSOES[4],_seventh,SESSOES
 from cidadania_m1_editorial import EDIT,CAPSULE_SHORT,IMAGE_PROMPTS
 for _n,_s in enumerate(SESSOES,1):_s.update(EDIT[_n])
 SESSOES[2].update(image='wright-experiencia.webp',caption='Joseph Wright of Derby · Uma experiência com uma ave numa bomba de ar, 1768')
-LABELS=['Retomar a pergunta','Ler e observar','Experimentar e discutir','Oficina','Rever e fechar']
+# 27/10/2026: os cinco passos decididos pelo docente (Recupera, Vê, Decide, Faz, Leva);
+# a sessão 03 conserva o plano da tarefa (10, 5, 60, 35 e 70 minutos). Nas sessões 04 a 09,
+# a revisão com outra pessoa passa para Faz, que inclui a pausa: 10, 30, 30, 90 e 20 minutos.
+from cidadania_m1_molde import PASSOS,PASSOS_TAREFA
+for _n,_s in enumerate(SESSOES,1):
+ _s['labels']=PASSOS_TAREFA if _n==3 else PASSOS
+ if 4<=_n<=9:_s['times']=[10,30,30,90,20]
 
 def build(api):
  from cidadania_m1_layout import render
