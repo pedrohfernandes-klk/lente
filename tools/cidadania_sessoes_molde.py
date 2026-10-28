@@ -41,9 +41,13 @@ def obra(o, ligar):
     return out
 
 
-def figura(src, alt, legenda_html, cls=''):
-    """Uma imagem inteira, com a legenda e o crédito por baixo."""
-    return '<figure' + (' class="' + cls + '"' if cls else '') + '><img src="' + src + '" alt="' + e(alt, quote=True) + '" loading="lazy" decoding="async"><figcaption>' + legenda_html + '</figcaption></figure>'
+def figura(src, alt, legenda_html, cls='', srcset='', sizes='', capa=False):
+    """Uma imagem inteira, com a legenda e o crédito por baixo.
+    28/10/2026 (M2): «srcset»/«sizes» opcionais; «capa» carrega já a imagem que está acima da dobra (eager, prioridade
+    alta). Sem estes parâmetros, o HTML é o de sempre (o do M1 não muda)."""
+    extra = (' srcset="' + e(srcset, quote=True) + '" sizes="' + e(sizes, quote=True) + '"' if srcset else '')
+    carga = ' loading="eager" fetchpriority="high"' if capa else ' loading="lazy"'
+    return '<figure' + (' class="' + cls + '"' if cls else '') + '><img src="' + src + '"' + extra + ' alt="' + e(alt, quote=True) + '"' + carga + ' decoding="async"><figcaption>' + legenda_html + '</figcaption></figure>'
 
 
 def topo(itens_html, projecao_href):
@@ -88,10 +92,19 @@ def cartao_sessao(ident, href, tema, titulo, pergunta):
     return '<li class="c10-card" data-session-card="' + ident + '"><a href="' + href + '"><span class="c10-number">' + ident + '</span><span class="c10-card-text"><span class="c10-topic">' + e(tema) + '</span><h3>' + e(titulo) + '</h3><span class="c10-card-q">' + e(pergunta) + '</span><small data-status></small></span></a></li>'
 
 
-def documento(assets, titulo, corpo, topo_html, folhas, scripts, num='', cabeca_extra='', atributos=''):
+FONTE = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'
+
+
+def documento(assets, titulo, corpo, topo_html, folhas, scripts, num='', cabeca_extra='', atributos='', fonte_bloqueante=True):
     """A página inteira. «assets» é o caminho relativo da pasta assets/, já com a barra final;
-    «folhas» e «scripts» são nomes de ficheiro (com versão) dentro dessa pasta."""
-    head = '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + e(titulo) + '</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"><link rel="stylesheet" href="' + assets + 'appearance.css"><script src="' + assets + 'appearance.js"></script>'
+    «folhas» e «scripts» são nomes de ficheiro (com versão) dentro dessa pasta.
+    28/10/2026 (M2): com fonte_bloqueante=False, a folha da fonte carrega sem bloquear a página (media="print" e
+    onload); se fonts.googleapis.com não responder, a página aparece com a letra de reserva. O M1 fica como estava."""
+    if fonte_bloqueante:
+        fonte = '<link href="' + FONTE + '" rel="stylesheet">'
+    else:
+        fonte = '<link href="' + FONTE + '" rel="stylesheet" media="print" onload="this.media=\'all\'"><noscript><link href="' + FONTE + '" rel="stylesheet"></noscript>'
+    head = '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + e(titulo) + '</title><link rel="preconnect" href="https://fonts.googleapis.com">' + fonte + '<link rel="stylesheet" href="' + assets + 'appearance.css"><script src="' + assets + 'appearance.js"></script>'
     head += ''.join('<link rel="stylesheet" href="' + assets + f + '">' for f in folhas) + ''.join('<script defer src="' + assets + s + '"></script>' for s in scripts) + cabeca_extra
     return '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head>' + head + '</head><body class="c10-body"><main class="c10" data-c10' + (' data-session="' + num + '"' if num else '') + atributos + '>' + topo_html + corpo + '</main><script defer src="' + assets + 'projection-launcher.js" data-site="lente"></script></body></html>\n'
 

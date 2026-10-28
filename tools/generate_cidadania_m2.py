@@ -18,6 +18,11 @@ from cidadania_m2_sessoes import build, bloco_indice, FOLHAS, SCRIPTS  # noqa: E
 R = Path(__file__).resolve().parents[1]
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 INICIO, FIM = '<!-- sessoes-m2 -->', '<!-- /sessoes-m2 -->'
+# O cartão do M2 no portal de Cidadania: quantas sessões estão registadas neste aparelho (só lê; nunca grava).
+PORTAL_SESSOES = ('<script>(function(){try{var S=JSON.parse(localStorage.getItem("' + CHAVE + '")||"null"),'
+                  's=S&&S.version===1&&S.sessions&&typeof S.sessions==="object"&&!Array.isArray(S.sessions)?S.sessions:{},n=0;'
+                  'for(var k in s)if(/^(0[1-9]|10)$/.test(k)&&s[k]&&s[k].done===true)n++;'
+                  'var p=document.querySelector(\'[data-prog="m2"]\');if(p&&n)p.textContent=n+" de 10 sessões registadas"}catch(x){}})();</script>')
 
 
 def ler(path):
@@ -50,9 +55,12 @@ def corrigir():
 
 def etapas():
     """Uma linha em cada etapa (cidadania/m2/aulas/NN/) para a sessão com o mesmo número; e uma no índice das etapas."""
+    # 28/10/2026: a linha diz a relação entre a etapa e a sessão, fica afastada do botão de projeção (que a página põe
+    # por baixo do cabeçalho) e tem o aspeto de uma ação secundária (contorno, como os botões do Lente).
     for n in range(1, 11):
         p = f'cidadania/m2/aulas/{n:02}/index.html'
-        linha = '<div class="links sessao-m2"><a href="' + LENTE + f'cidadania/m2/sessoes/{n:02}/">Abrir a sessão {n:02}: Recupera, Vê, Decide, Faz e Leva</a></div>'
+        linha = ('<div class="sessao-m2" style="margin:24px 0 8px"><p style="margin:0 0 8px">Esta etapa faz-se na sessão ' + f'{n:02}' + ', com Recupera, Vê, Decide, Faz e Leva.</p>'
+                 '<p class="links" style="margin:0"><a href="' + LENTE + f'cidadania/m2/sessoes/{n:02}/" style="padding:8px 16px;border:2px solid currentColor;font-weight:700;text-decoration:none">Abrir a sessão {n:02} →</a></p></div>')
         write(p, bloco(ler(p), linha, antes='<section>'))
     p = 'cidadania/m2/aulas/index.html'
     linha = '<div class="links sessao-m2"><a href="' + LENTE + 'cidadania/m2/#dez-sessoes">As dez sessões, com Recupera, Vê, Decide, Faz e Leva</a></div>'
@@ -66,6 +74,11 @@ def indice_m2():
     s = ler(p)
     antigo = '<p class="cid-extra"><a class="cid-action" href="' + LENTE + 'cidadania/m2/aulas/">Começar o percurso · dez etapas</a></p>'
     s = bloco(s, bloco_indice(), antigo=antigo)
+    # 28/10/2026: um só «começa aqui». Sem nenhum passo feito, o cartão do passo 00 não se destaca nem diz «Sugerida:
+    # começa por aqui» (o ponto de partida é a sessão 01, no bloco de cima); depois do primeiro passo, volta «Sugerida: a seguir».
+    sugerida, so_depois = 'p=!!prox&&prox.id===id;', 'p=!!prox&&prox.id===id&&feitas.length>0;'
+    assert s.count(sugerida) + s.count(so_depois) == 1, 'o script dos passos do índice do M2 mudou'
+    s = s.replace(sugerida, so_depois)
     # As folhas e o motor das sessões, só uma vez, no fim do <head>.
     cabeca = ''.join('<link rel="stylesheet" href="../../assets/' + f + '">' for f in FOLHAS) + ''.join('<script defer src="../../assets/' + j + '"></script>' for j in SCRIPTS)
     marca_i, marca_f = '<!-- sessoes-m2-cabeca -->', '<!-- /sessoes-m2-cabeca -->'
@@ -83,8 +96,11 @@ def portal():
     s = ler(p)
     s = s.replace('Analisar regras, atenção e autoria; criar um Contra-feed.', 'Dez sessões: ver as regras, pô-las à prova e criar um Contra-feed.')
     s = s.replace('<span class="pt-p" data-prog="m2">8 passos</span>', '<span class="pt-p" data-prog="m2">10 sessões</span>')
-    s = s.replace('var M=[{"id":"m2","chave":"epi-cidadania-m2","ids":["passo-01","passo-02","passo-03","passo-04","passo-05","passo-06","passo-07","passo-08"]}];', 'var M=[];')
-    assert 'Dez sessões: ver as regras' in s and 'data-prog="m2">10 sessões<' in s and 'var M=[];' in s
+    # 28/10/2026: o contador dos passos sai (como no M1) e entra o das sessões, só em leitura da chave nova.
+    antigo = re.search(r'<script>\(function\(\)\{var M=\[\{"id":"m2","chave":"epi-cidadania-m2".*?</script>', s, re.S)
+    if antigo:
+        s = s.replace(antigo.group(0), PORTAL_SESSOES)
+    assert 'Dez sessões: ver as regras' in s and 'data-prog="m2">10 sessões<' in s and s.count(PORTAL_SESSOES) == 1
     write(p, s)
 
 

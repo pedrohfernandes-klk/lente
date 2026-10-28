@@ -70,6 +70,13 @@ def palavras(t):
     return {w for w in re.findall(r'[a-záàâãéêíóôõúç]{5,}', t.lower())}
 
 
+def ensinado(s):
+    """O Vê, o Decide e o Faz de uma sessão, sem o mapa das dez casas."""
+    p = passos(s)
+    corpo = ''.join(x.split('<div class="c10-step-body">', 1)[1] for x in p[1:4])
+    return re.sub(r'<ol class="c10-mapa".*?</ol>', '', corpo, flags=re.S)
+
+
 SESSOES = [f'cidadania/m2/sessoes/{n:02}/index.html' for n in range(1, 11)]
 GUIA = 'cidadania/m2/sessoes/index.html'
 
@@ -82,8 +89,18 @@ class Molde(unittest.TestCase):
             self.assertEqual(capa.count('<img '), 1, n)
             self.assertIn('class="c10-deck"', capa)
             self.assertIn('data-start>Começar</a>', capa)
-            # uma imagem por página: o Vê repete a imagem da abertura, nunca outra
-            self.assertEqual(len(set(Pagina(s).imgs)), 1, n)
+            # 28/10/2026 (revisão de design): o material que se observa fica à vista, no próprio material, em vez de atrás
+            # de uma ligação. Além da imagem da abertura, só entram as que o Vê declara (o tear na 01, A e B na 05).
+            dados = molde.SESSOES[n - 1]
+            esperadas = {molde.IMAGENS[dados['imagem']]['src']}
+            for m in dados['ve']:
+                if m.get('imagem'):
+                    esperadas.add(molde.IMAGENS[m['imagem']]['src'])
+                if m['tipo'] == 'par':
+                    esperadas |= {molde.LISBOA_1907['a']['src'], molde.LISBOA_1907['b']['src']}
+            self.assertEqual({src.replace('../', '') for src in Pagina(s).imgs}, esperadas, n)
+            # a imagem da abertura carrega já (está acima da dobra); as outras esperam
+            self.assertRegex(capa, r'<img [^>]*loading="eager" fetchpriority="high"', n)
 
     def test_cinco_passos_pela_ordem(self):
         for n in range(1, 11):
@@ -106,8 +123,10 @@ class Molde(unittest.TestCase):
 
     def test_recupera_responde_com_a_sessao_anterior(self):
         # A resposta de «Confirmar» vem da sessão anterior: as palavras de cada resposta estão nessa página.
+        # 28/10/2026 (revisão de engenharia): só conta o que a sessão anterior ensina (Vê, com o cartão da obra, Decide,
+        # com «Comparar razões», e Faz), sem topo, rodapé, barra dos passos nem o mapa das dez casas.
         for n in range(2, 11):
-            anterior = palavras(Pagina(sessao(n - 1)).texto)
+            anterior = palavras(Pagina(ensinado(sessao(n - 1))).texto)
             for q, a in molde.SESSOES[n - 1]['recupera']:
                 if a:
                     p = palavras(a)
@@ -230,16 +249,21 @@ class Molde(unittest.TestCase):
                     self.assertIn('id="' + unquote(u.fragment) + '"', alvo.read_text('utf-8'), (p, ref))
 
     def test_fontes_externas_ja_estao_no_lente(self):
-        # Nenhum endereço externo novo sem conferência: todos já estão em origin/main, menos o registo certo
-        # da Library of Congress, aberto a 28/10/2026 (tools/cidadania_m2_correcoes.py).
-        conferidos = {correcoes.LOC}
+        # Nenhum endereço externo sem conferência.
+        # 28/10/2026 (revisão de engenharia): comparar com origin/main deixava de proteger depois da fusão (a própria
+        # sessão passava a ser a sua fonte). Agora cada endereço tem de estar na lista explícita do molde
+        # (FONTES_EXTERNAS); os marcados «lente» têm de existir no commit BASE (fixo), fora das sessões.
         externos = set()
         for p in SESSOES + [GUIA]:
             for ref in Pagina(ler(p)).refs:
                 if ref.startswith('http') and not ref.startswith(LENTE):
                     externos.add(ref)
-        for url in sorted(externos - conferidos):
-            r = subprocess.run(['git', 'grep', '-q', '-F', '-e', url, '-e', url.replace('&', '&amp;'), 'origin/main', '--', '*.html'], cwd=R)
+        self.assertEqual(sorted(externos - set(molde.FONTES_EXTERNAS)), [])
+        for url, (_, origem) in molde.FONTES_EXTERNAS.items():
+            if origem != 'lente':
+                self.assertRegex(origem, r'\d{2}/\d{2}/\d{4}', url)  # aberto e conferido, com data
+                continue
+            r = subprocess.run(['git', 'grep', '-q', '-F', '-e', url, '-e', url.replace('&', '&amp;'), molde.BASE, '--', '*.html', ':!cidadania/m2/sessoes'], cwd=R)
             self.assertEqual(r.returncode, 0, url)
 
     def test_chave_nova_so_nas_sessoes_do_m2(self):
@@ -258,11 +282,18 @@ class Molde(unittest.TestCase):
         self.assertIn("KEY='lente-cidadania-m1-sessoes-v2'", ler('assets/cidadania-m1-sessoes.js'))
 
     def test_m1_igual_a_origin_main(self):
-        lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', 'origin/main', 'cidadania/m1'], cwd=R).decode().split()
+        # 28/10/2026 (revisão de engenharia): compara-se com a base comum deste ramo (git merge-base HEAD origin/main),
+        # e não com origin/main, que muda com o tempo; sem origin/main local, o teste fica de fora, como em
+        # test_videos_escolhidos.
+        r = subprocess.run(['git', 'merge-base', 'HEAD', 'origin/main'], cwd=R, capture_output=True, text=True)
+        if r.returncode:
+            self.skipTest('sem origin/main local')
+        base = r.stdout.strip()
+        lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', base, 'cidadania/m1'], cwd=R).decode().split()
         locais = sorted(str(p.relative_to(R)) for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
         self.assertEqual(sorted(lista), locais)
         for f in lista + ['assets/cidadania-m1-sessoes.css', 'assets/cidadania-m1-sessoes.js']:
-            self.assertEqual((R / f).read_bytes(), subprocess.check_output(['git', 'show', 'origin/main:' + f], cwd=R), f)
+            self.assertEqual((R / f).read_bytes(), subprocess.check_output(['git', 'show', base + ':' + f], cwd=R), f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):
@@ -319,8 +350,24 @@ class Molde(unittest.TestCase):
             self.assertIn('id="' + a + '"', imagens)
         self.assertIn(correcoes.LOC, imagens)
         self.assertIn('H. C. White Co.', ler('cidadania/m2/passo-04/index.html'))
+        # 28/10/2026 (revisões de texto e de factos): o subtítulo diz que há licenças livres; Haeckel entra; o Turco
+        # mostra o homem escondido; «jogador» sai; a ligação «em revisão» do passo 00 sai; as notas de Lovelace e
+        # Animal Farm deixam de apontar para outros livros; a página das imagens não diz qual das versões foi alterada.
+        self.assertNotIn('<p class="p-sub">Domínio público: a imagem', imagens)
+        self.assertIn('Domínio público e licenças livres', imagens)
+        self.assertIn('id="haeckel"', imagens)
+        self.assertIn('haeckel-chiroptera.webp', imagens)
+        self.assertNotIn('jogador', imagens)
+        self.assertNotIn('versão B, com o pedestal vazio', imagens)
+        self.assertNotIn('portas do armário abertas a mostrar engrenagens', imagens + ler('cidadania/m2/passo-04/index.html') + ler('cidadania/m2/cid-m2-dentro-da-caixa/index.html'))
+        self.assertNotIn('Ver Joana Vasconcelos', ler('cidadania/m2/passo-00/index.html'))
+        self.assertNotIn('ver-para-fazer/v62', ler('cidadania/m2/passo-00/index.html'))
+        for p in SESSOES + ['cidadania/m2/passo-01/index.html', 'cidadania/m2/passo-07/index.html']:
+            self.assertNotIn('gutenberg.org/ebooks/74223', ler(p), p)
+            self.assertNotIn('gutenberg.org/ebooks/70483', ler(p), p)
         glossario = ler('cidadania/m2/glossario/index.html')
-        for termo in ('Sinal', 'Critério', 'Contexto', 'Independência', 'Leitura lateral', 'Viragem'):
+        # 28/10/2026: «Verificação lateral», como o título de Como se investiga, passo 8 (era «Leitura lateral»).
+        for termo in ('Sinal', 'Critério', 'Contexto', 'Independência', 'Verificação lateral', 'Viragem'):
             self.assertEqual(glossario.count('<dt>' + termo + '</dt>'), 1, termo)
         termos = re.findall(r'<dt>([^<]+)</dt>', glossario)
         self.assertEqual(termos, sorted(termos, key=lambda t: t.lower().replace('é', 'e').replace('í', 'i')))
@@ -330,9 +377,68 @@ class Molde(unittest.TestCase):
         tocados += [f'cidadania/m2/aulas/{n:02}/index.html' for n in range(1, 11)] + correcoes.paginas()
         tocados += ['cidadania/m2/imagens/index.html', 'cidadania/m2/glossario/index.html']
         antes = {p: (R / p).read_bytes() for p in tocados}
-        subprocess.run([sys.executable, '-B', 'tools/generate_cidadania_m2.py'], cwd=R, check=True, capture_output=True)
+        # 28/10/2026 (revisão de engenharia): se a geração deixar de ser reprodutível, o teste falha, mas repõe os
+        # ficheiros como estavam, para não deixar a árvore de trabalho suja.
+        try:
+            subprocess.run([sys.executable, '-B', 'tools/generate_cidadania_m2.py'], cwd=R, check=True, capture_output=True)
+            depois = {p: (R / p).read_bytes() for p in tocados}
+        finally:
+            for p, conteudo in antes.items():
+                if (R / p).read_bytes() != conteudo:
+                    (R / p).write_bytes(conteudo)
         for p, conteudo in antes.items():
-            self.assertEqual(conteudo, (R / p).read_bytes(), p)
+            self.assertEqual(conteudo, depois[p], p)
+
+    # Testes acrescentados a 28/10/2026, depois da revisão em quatro lentes (design, texto, factos, engenharia).
+
+    def test_sessao_05_nao_da_a_resposta(self):
+        # O Vê pede para decidir qual das fotografias foi alterada: nada no Vê (nem a legenda, nem o texto
+        # alternativo, nem o nome dos ficheiros) diz qual. A resposta fica em «Comparar razões», no fim do Decide.
+        p = passos(sessao(5))
+        ve = p[1]
+        self.assertNotRegex(ve, r'(?i)vers[ãa]o B (foi )?alterada|alterada\.webp|pedestal vazio')
+        self.assertIn('lisboa-1907-a.webp', ve)
+        self.assertIn('lisboa-1907-b.webp', ve)
+        self.assertIn('Uma das versões foi alterada por nós.', Pagina(ve).texto)
+        comparar = re.search(r'data-feedback><summary>Comparar razões</summary><div><p>(.*?)</p>', p[2]).group(1)
+        self.assertIn('a versão B foi alterada por nós', comparar)
+
+    def test_guia_sem_nomes_tecnicos_e_sem_pontuacao_dupla(self):
+        t = Pagina(ler(GUIA)).texto
+        for w in ('epi-cidadania-m2', 'lente-cidadania', 'cidadania/m2/aulas', 'pergunta pessoal sobre o produto'):
+            self.assertNotIn(w, t)
+        self.assertNotRegex(t, r'[?!]\.')
+
+    def test_portal_so_le_a_chave_das_sessoes(self):
+        portal = ler('cidadania/index.html')
+        self.assertNotIn('var M=[]', portal)  # o script morto saiu
+        script = re.search(r'<script>\(function\(\)\{try\{var S=JSON\.parse\(localStorage\.getItem\("' + CHAVE + r'"\).*?</script>', portal, re.S).group(0)
+        self.assertNotIn('setItem', script)
+        self.assertNotIn('removeItem', script)
+        self.assertIn('de 10 sessões registadas', script)
+        self.assertIn('epi-cidadania-m2', ler('cidadania/m2/index.html'))  # o contador dos passos continua no módulo
+
+    def test_fonte_nao_bloqueia_a_pagina(self):
+        for p in SESSOES + [GUIA]:
+            s = ler(p)
+            self.assertIn('family=Bebas+Neue&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"', s, p)
+            self.assertNotRegex(s.split('<noscript>')[0], r'family=Bebas\+Neue&display=swap" rel="stylesheet">', p)
+
+    def test_mapa_diz_o_estado_por_palavras(self):
+        for n in (1, 6, 10):
+            s = sessao(n)
+            m = re.search(r'<ol class="c10-mapa"[^>]*>(.*?)</ol>', s, re.S).group(1)
+            self.assertEqual(m.count('(casa anterior)'), n - 1)
+            self.assertEqual(m.count('(casa de hoje)'), 1)
+            self.assertEqual(m.count('(casa seguinte)'), 10 - n)
+            self.assertIn('class="c10-small c10-mapa-legenda"', s)
+
+    def test_frases_para_classificar_em_lista(self):
+        # Sessão 06: as quatro frases ficam numa lista (A a D), como na 07, e a pergunta inclui a opinião.
+        d = passos(sessao(6))[2]
+        self.assertIn('<ol class="c10-document c10-frases" type="A">', d)
+        self.assertEqual(re.search(r'type="A">(.*?)</ol>', d).group(1).count('<li>'), 4)
+        self.assertIn('qual é uma opinião?', d)
 
 
 if __name__ == '__main__':

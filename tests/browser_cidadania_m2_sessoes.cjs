@@ -54,7 +54,9 @@ const results = [];
         assert.equal((await p.goto(origin + '/lente/' + route)).status(), 200, route);
         assert(await semTransbordo(p), `${width} ${scheme} ${route}`);
         if (width === 1440 && scheme === 'light' && route === 'cidadania/m2/') await p.screenshot({ path: path.join(OUT, 'modulo-m2.png'), fullPage: true });
-        if (width === 320 && scheme === 'light' && route === 'cidadania/m2/sessoes/') await p.screenshot({ path: path.join(OUT, 'guia-320.png'), fullPage: true });
+        // 28/10/2026: o guia a 320 px passa os 16 384 px de altura que o Chromium consegue capturar; a captura fica
+        // pelos primeiros 16 000 px (a verificação de transbordo acima cobre a página inteira).
+        if (width === 320 && scheme === 'light' && route === 'cidadania/m2/sessoes/') await p.screenshot({ path: path.join(OUT, 'guia-320.png'), fullPage: true, clip: { x: 0, y: 0, width: 320, height: Math.min(16000, await p.evaluate(() => document.documentElement.scrollHeight)) } });
       }
       assert.deepEqual(errors, [], `${width} ${scheme}`);
       results.push({ width, scheme, rotas: 16, passos: 50, transbordo: false, erros: 0 });
@@ -123,6 +125,10 @@ const results = [];
     assert.equal(await p.locator('[data-session-card="03"]').getAttribute('data-current'), 'true');
     assert.equal((await p.locator('[data-count]').textContent()).trim(), '2 registos de trabalho');
     assert.deepEqual(await p.evaluate(k => Object.fromEntries(k.map(x => [x, localStorage.getItem(x)])), Object.keys(antigas)), antigas, 'chaves antigas intactas');
+    // 28/10/2026: o cartão do M2 no portal mostra as sessões registadas (só lê a chave nova).
+    await p.goto(origin + '/lente/cidadania/');
+    assert.equal((await p.locator('[data-prog="m2"]').textContent()).trim(), '2 de 10 sessões registadas');
+    assert.deepEqual(await p.evaluate(k => Object.fromEntries(k.map(x => [x, localStorage.getItem(x)])), Object.keys(antigas)), antigas, 'o portal não toca nas chaves');
     const guardado = JSON.parse(await p.evaluate(k => localStorage.getItem(k), KEY));
     assert.equal(guardado.version, 1); assert.equal(guardado.sessions['01'].done, true);
 
@@ -157,6 +163,68 @@ const results = [];
     results.push({ funcoes: 'teclado; retoma; registo e continuar; impressão; projeção sem registo; chaves antigas intactas', passou: true });
     await ctx.close();
 
+    // 28/10/2026 (revisão de design). 7a. Com Tab e Shift+Tab, o elemento com o foco nunca fica por baixo das barras
+    // fixas; no telemóvel, o botão do tema sai durante a sessão; o índice tem um só «começa aqui».
+    for (const [w, h] of [[390, 844], [1440, 900]]) {
+      const c7 = await browser.newContext({ viewport: { width: w, height: h }, reducedMotion: 'reduce' });
+      await c7.route('https://fonts.googleapis.com/**', r => r.abort()); await c7.route('https://fonts.gstatic.com/**', r => r.abort());
+      const q = await c7.newPage(), tapados = [];
+      let vistos7 = 0;
+      for (const id of IDS) for (const st of [2, 4, 5]) {
+        await q.goto(origin + `/lente/cidadania/m2/sessoes/${id}/#momento-${st}`);
+        await q.locator(`#momento-${st}`).focus();
+        for (const dir of ['Tab', 'Shift+Tab']) {
+          if (dir === 'Shift+Tab') await q.locator('[data-next], [data-next-session]').filter({ visible: true }).first().focus();
+          for (let i = 0; i < 40; i++) {
+            await q.keyboard.press(dir);
+            const r = await q.evaluate(() => {
+              const e = document.activeElement; if (!e || e === document.body || !e.closest('[data-stage]')) return null;
+              const a = e.getBoundingClientRect(), bar = document.querySelector('.c10-stagebar').getBoundingClientRect(), ctl = document.querySelector('.c10-control').getBoundingClientRect();
+              const sob = (a.top < bar.bottom - 2 && a.bottom > bar.top) || (a.bottom > ctl.top + 2 && a.top < ctl.bottom);
+              return { t: (e.textContent || '').trim().slice(0, 40), sob };
+            });
+            if (!r) break;
+            vistos7++;
+            if (r.sob) tapados.push(`${w} ${id} p${st} ${dir} «${r.t}»`);
+          }
+        }
+      }
+      assert.deepEqual(tapados, [], 'foco tapado pelas barras');
+      results.push({ largura: w, focos_vistos: vistos7, focos_tapados: 0 });
+      if (w === 390) {
+        await q.goto(origin + '/lente/cidadania/m2/sessoes/02/');
+        assert(await q.locator('[data-appearance-floating]').isVisible(), 'o tema está na abertura');
+        await q.locator('[data-start]').click();
+        assert(!(await q.locator('[data-appearance-floating]').isVisible()), 'o botão do tema não tapa a sessão');
+      }
+      await c7.close();
+    }
+    {
+      const c8 = await context(), q = await c8.newPage();
+      await q.goto(origin + '/lente/cidadania/m2/');
+      assert.equal(await q.locator('.missao[data-id="passo-00"]').evaluate(e => e.classList.contains('p-atual')), false, 'sem passos feitos, o passo 00 não se destaca');
+      assert(!(await q.locator('.missao[data-id="passo-00"]').textContent()).includes('começa por aqui'));
+      assert.equal((await q.locator('[data-continue]').textContent()).trim(), 'Começar na sessão 01');
+      await q.evaluate(() => localStorage.setItem('epi-cidadania-m2', '{"feitas":{"passo-00":1}}')); await q.reload();
+      assert((await q.locator('.missao[data-id="passo-01"]').textContent()).includes('Sugerida: a seguir'), 'depois do primeiro passo, volta a sugestão');
+      await c8.close();
+    }
+
+    // 7b. A fonte do Google não bloqueia: com o pedido pendurado (sem resposta), a página aparece na mesma.
+    {
+      const c9 = await browser.newContext({ viewport: { width: 390, height: 844 } }), q = await c9.newPage();
+      await c9.route('https://fonts.googleapis.com/**', () => {}); await c9.route('https://fonts.gstatic.com/**', () => {});
+      await c9.route('https://pedrohfernandes-klk.github.io/lente/**', async route => { const f = file(route.request().url()); await route.fulfill({ status: fs.existsSync(f) ? 200 : 404, body: fs.existsSync(f) ? fs.readFileSync(f) : '', contentType: MIME[path.extname(f)] || 'application/octet-stream' }); });
+      for (const route of ['cidadania/m2/sessoes/03/', 'cidadania/m2/sessoes/']) {
+        await q.goto(origin + '/lente/' + route, { waitUntil: 'domcontentloaded', timeout: 8000 });
+        await q.locator('h1').waitFor({ state: 'visible', timeout: 4000 });
+        const fcp = await q.evaluate(() => new Promise(r => { const e = performance.getEntriesByName('first-contentful-paint')[0]; if (e) return r(e.startTime); new PerformanceObserver(l => r(l.getEntries()[0].startTime)).observe({ type: 'paint', buffered: true }); setTimeout(() => r(null), 3000); }));
+        assert(fcp !== null && fcp < 4000, route + ' sem primeira pintura com a fonte pendurada');
+      }
+      results.push({ fonte_pendurada: 'a página aparece', passou: true });
+      await c9.close();
+    }
+
     // 8. Estado inválido e armazenamento bloqueado: a página funciona na mesma.
     for (const seed of ['{invalid', '{"version":1,"sessions":[]}', '{"version":7,"sessions":{}}']) {
       const c = await context(), q = await c.newPage(), e2 = [];
@@ -180,6 +248,8 @@ const results = [];
       assert.equal(await np.locator('[data-stage]:visible').count(), 5);
       assert(await semTransbordo(np));
       await np.locator('[data-feedback]>summary').click(); assert(await np.locator('[data-feedback] p').isVisible());
+      // 28/10/2026: sem JavaScript, a barra de controlo (vazia) não aparece
+      assert(!(await np.locator('.c10-control').isVisible()), 'barra de controlo vazia sem JavaScript');
     }
     await np.goto(origin + '/lente/cidadania/m2/');
     assert.equal(await np.locator('[data-continue]').getAttribute('href'), 'sessoes/01/');
