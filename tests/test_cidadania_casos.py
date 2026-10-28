@@ -13,7 +13,8 @@ class Casos(unittest.TestCase):
  def test_new_cases_teach_before_deciding_and_have_sources(self):
   keys=[]
   for x in json.loads((R/'assets/cidadania-casos.json').read_text('utf-8')):
-   s=(R/f'cidadania/{x["module"]}/{x["slug"]}/index.html').read_text('utf-8');c=bank(s);self.assertEqual(len(c),15);self.assertEqual(sum(i['t']!='ler' and not i.get('reflexao') for i in c),3)
+   # 28/10/2026: os cartões «Para ver» (marca pv, tools/videos_escolhidos.py) são leituras acrescentadas e ficam fora desta contagem.
+   s=(R/f'cidadania/{x["module"]}/{x["slug"]}/index.html').read_text('utf-8');c=[i for i in bank(s) if 'pv' not in i];self.assertEqual(len(c),15);self.assertEqual(sum(i['t']!='ler' and not i.get('reflexao') for i in c),3)
    self.assertEqual([c[i]['t'] for i in [2,5,6,11,12]],['ler','decisao','revelar','decisao','sintese'])
    self.assertEqual([i['g'] for i in c],list(range(len(c))))
    self.assertEqual(len(c[6]['efeitos']),3);self.assertIn('inventad',c[0]['html']);self.assertIn('http',c[-1]['html'])

@@ -1,0 +1,142 @@
+{
+  "_nota": "Vídeos escolhidos pelo docente na ronda 1 da curadoria (28/10/2026). Cada cartão «Para ver» entra no baralho junto do cartão indicado (antes_de ou depois_de, pelo título ou pelo rótulo). tools/videos_escolhidos.py aplica e é idempotente: os cartões com a marca pv saem e voltam a entrar.",
+  "versao": "20261028-2",
+  "paginas": [
+    {
+      "pagina": "etica/index.html",
+      "cartoes": [
+        {
+          "id": "etica-lei-moral",
+          "depois_de": {
+            "titulo": "Três palavras que se confundem"
+          },
+          "titulo": "Lei, moral e ética",
+          "contexto": "O cartão anterior separou três palavras que se misturam na conversa. Ouve agora a mesma distinção explicada pelo The Ethics Centre, um centro de ética de Sydney.",
+          "antes": "Lembras-te de alguma coisa legal que te pareceu errada?",
+          "depois": "Dá um exemplo teu em que a lei, o costume e a tua consciência apontam em sentidos diferentes.",
+          "videos": [
+            {
+              "yt": "Xki2fRA0bY8",
+              "dur": "5 min 14 s",
+              "canal": "The Ethics Centre",
+              "original": "What is the difference between Ethics, Morality and the Law?"
+            }
+          ],
+          "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+        },
+        {
+          "id": "etica-tres-tradicoes",
+          "depois_de": {
+            "titulo": "Três perguntas de bolso"
+          },
+          "titulo": "Uma pergunta, um vídeo",
+          "contexto": "Cada pergunta de bolso vem de uma tradição: as consequências, do consequencialismo; a regra, da ética do dever, ou deontologia; a pessoa, da ética das virtudes. Escolhe a pergunta que te parece mais forte e vê o vídeo dela.",
+          "videos": [
+            {
+              "yt": "xJqO4nhmZWc",
+              "dur": "4 min 03 s",
+              "canal": "The Ethics Centre",
+              "original": "Consequentialism",
+              "opcao": "As consequências",
+              "antes": "Se puderes salvar cinco pessoas sacrificando uma, o número decide?",
+              "depois": "Que caso conheces em que uma boa consequência não chega para justificar o que se fez?"
+            },
+            {
+              "yt": "WoHJhwh4mVQ",
+              "dur": "3 min 10 s",
+              "canal": "The Ethics Centre",
+              "original": "Deontology",
+              "opcao": "A regra",
+              "antes": "Há coisas que nunca farias, mesmo que dessem bom resultado?",
+              "depois": "Diz em voz alta uma regra que aceitarias que toda a gente seguisse, mesmo quando te prejudica."
+            },
+            {
+              "yt": "qs9QiczZvdU",
+              "dur": "3 min 19 s",
+              "canal": "The Ethics Centre",
+              "original": "Virtue Ethics",
+              "opcao": "A pessoa",
+              "antes": "Pensa em alguém que admiras: o que faria no teu lugar?",
+              "depois": "Que hábito, repetido todos os dias, te tornaria a pessoa que queres ser?"
+            }
+          ],
+          "nota": "Os três vídeos estão em inglês. Se as legendas não aparecerem, liga-as no leitor."
+        }
+      ]
+    },
+    {
+      "pagina": "sidequests/heroi/index.html",
+      "cartoes": [
+        {
+          "id": "heroi-campbell",
+          "depois_de": {
+            "titulo": "Três perguntas, sem escrever"
+          },
+          "titulo": "Ouvir a fonte",
+          "contexto": "O círculo do TED-Ed vem de um livro de 1949, <i>O Herói de Mil Faces</i>, de Joseph Campbell. Antes de virares a fórmula ao contrário, vê este excerto, publicado pela fundação que guarda a obra de Campbell.",
+          "antes": "Pensa num filme que viste: o herói sai de casa, é posto à prova e volta mudado?",
+          "depois": "Que personagem fica sempre de fora deste círculo? Conta a história do ponto de vista dela.",
+          "videos": [
+            {
+              "yt": "Byli-Y8KonY",
+              "dur": "3 min 12 s",
+              "canal": "Joseph Campbell Foundation",
+              "original": "The Hero with a Thousand Faces"
+            }
+          ],
+          "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+        }
+      ]
+    },
+    {
+      "pagina": "cidadania/m2/passo-00/index.html",
+      "cartoes": [
+        {
+          "id": "m2-arte-design",
+          "antes_de": {
+            "rot": "Para levar"
+          },
+          "titulo": "Arte ou design?",
+          "contexto": "A chaleira da AEG e o tear de Jacquard puseram-te a pergunta. A Crash Course também pergunta o que distingue a arte do design: vê e compara com as quatro ideias deste passo.",
+          "antes": "Um cartaz que te convence a comprar algo pode ser arte?",
+          "depois": "No teu curso fazes mais arte ou mais design? Dá um exemplo concreto de um trabalho teu.",
+          "videos": [
+            {
+              "yt": "dZmkPmfW0XA",
+              "dur": "11 min 29 s",
+              "canal": "CrashCourse",
+              "original": "What's the Difference Between Art & Design?"
+            }
+          ],
+          "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+        }
+      ]
+    },
+    {
+      "pagina": "investigar/passo-08/index.html",
+      "cartoes": [
+        {
+          "id": "investigar-lateral",
+          "antes_de": {
+            "titulo": "Antes de fechares"
+          },
+          "titulo": "Ler para os lados",
+          "contexto": "A série da Crash Course sobre informação digital tem um episódio sobre a leitura lateral. Vê-o e confere: os gestos são os mesmos deste passo?",
+          "antes": "Quando uma página parece séria, o que fazes para saber se o é mesmo?",
+          "depois": "Escolhe uma publicação que viste esta semana: que dois separadores abririas para a verificar?",
+          "videos": [
+            {
+              "yt": "GoQG6Tin-1E",
+              "dur": "13 min 52 s",
+              "canal": "CrashCourse",
+              "original": "Check Yourself with Lateral Reading: Crash Course Navigating Digital Information #3",
+              "rotulo": "Check Yourself with Lateral Reading",
+              "serie": "CrashCourse, Navigating Digital Information #3"
+            }
+          ],
+          "nota": "Em inglês. A série é de 2019: alguns sítios e redes dos exemplos mudaram, o método mantém-se."
+        }
+      ]
+    }
+  ]
+}

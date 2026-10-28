@@ -6,7 +6,8 @@ def bank(s):
 class Anomalias(unittest.TestCase):
  def test_images_and_card_order_preserved(self):
   for rel in ['m1/passo-00','m2/passo-00','m2/passo-01']:
-   path='cidadania/'+rel+'/index.html';s=(R/path).read_text('utf-8');old=bank(subprocess.check_output(['git','show','origin/main:'+path],cwd=R).decode());new=bank(s)
+   # 28/10/2026: os cartões «Para ver» (marca pv, tools/videos_escolhidos.py) são leituras acrescentadas; a ordem a preservar é a dos outros.
+   path='cidadania/'+rel+'/index.html';s=(R/path).read_text('utf-8');old=[x for x in bank(subprocess.check_output(['git','show','origin/main:'+path],cwd=R).decode()) if 'pv' not in x];new=[x for x in bank(s) if 'pv' not in x]
    self.assertEqual([x['t'] for x in old],[x['t'] for x in new])
    for a,b in zip(old,new):
     if a['t']=='imagens':self.assertEqual(a['imagens'],b['imagens'])
