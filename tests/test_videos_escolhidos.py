@@ -72,7 +72,8 @@ class VideosEscolhidos(unittest.TestCase):
 
     def test_escolhidos_da_ronda_1(self):
         ids = {v['yt'] for p in DADOS['paginas'] for c in p['cartoes'] for v in c['videos']}
-        self.assertEqual(len(ids), 23)
+        # 28/10/2026: os vídeos fora de contexto saíram (regra do docente; docs/pedagogia/videos-escolhidos-20261028.md). Ficam 7.
+        self.assertEqual(len(ids), 7)
         for i in ids:
             self.assertRegex(i, r'^[A-Za-z0-9_-]{11}$')
 
