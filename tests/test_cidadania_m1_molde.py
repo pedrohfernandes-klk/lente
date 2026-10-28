@@ -87,6 +87,8 @@ class Molde(unittest.TestCase):
   # pt-PT AO90: sem travessão, sem «professor», sem «jogar», sem «ficha» nem «folha» no texto visível;
   # sem avisos ao aluno sobre o que já estudou (isso fica no guia do docente).
   paginas=[R/f'cidadania/m1/sessoes/{n:02}/index.html' for n in range(1,11)]+[R/p for p in ('cidadania/m1/index.html','cidadania/m1/biblioteca/index.html','cidadania/m1/oficina-guiao/index.html')]
+  # 28/10/2026: os dezoito apoios (f01 a f18) também são texto para o aluno.
+  paginas+=[R/f'cidadania/m1/fichas/f{n:02}/index.html' for n in range(1,19)]
   for p in paginas:
    t=str(Texto(p.read_text('utf-8')));baixo=t.lower()
    self.assertNotIn('—',t,p)
