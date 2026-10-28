@@ -1,0 +1,37 @@
+name: Lente — formas e montagem
+on:
+  pull_request:
+    paths:
+      - 'assets/formas/**'
+      - 'narrativas/**'
+      - 'curadoria/**'
+      - 'tests/*formas*'
+      - '.github/workflows/formas-qa.yml'
+permissions:
+  contents: read
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sintaxe e contratos do laboratório
+        run: |
+          node --check assets/formas/corta.js
+          node --check assets/formas/obras.js
+          node --check assets/formas/entrada.js
+          python -m unittest discover -s tests -p 'test_formas.py' -v
+          python -m unittest discover -s tests -p 'test_lab*.py' -v
+          python -m unittest discover -s tests -p 'test_appearance_universal.py' -v
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Percursos completos e conservação do existente
+        run: node tests/browser_formas.cjs
