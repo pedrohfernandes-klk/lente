@@ -1,7 +1,11 @@
 from pathlib import Path
 import json,re,hashlib,unittest,datetime
 ROOT=Path(__file__).resolve().parents[1]
-def text(p):return (ROOT/p).read_text('utf-8')
+def text(p):
+ # O percurso anterior integral conserva recursos e estado; a entrada atual
+ # passou a organizar dez sessões. A preservação compara esse documento.
+ if p=='cidadania/m1/index.html':p='cidadania/m1/percurso-anterior.html'
+ return (ROOT/p).read_text('utf-8')
 BASE=json.loads((ROOT/'tests/fixtures/cidadania-m1-baseline.json').read_text('utf-8'))
 class CidadaniaM1(unittest.TestCase):
  def test_old_destinations_and_images_preserved(self):
@@ -28,7 +32,9 @@ class CidadaniaM1(unittest.TestCase):
   self.assertEqual(BASE["missions"],ids(b));self.assertEqual(len(ids(b)),13);self.assertIn('de 10 passos principais',b);self.assertIn('de 3 atividades de apoio',b);self.assertIn('epi-cidadania-m1',b)
  def test_weights_and_requirements_preserved(self):
   for p in ['cidadania/index.html','cidadania/projeto/index.html']:
-   self.assertEqual([t.replace('cada aula','cada exploração') for t in BASE['files'][p]['tables']],re.findall(r'<table>.*?</table>',text(p),re.S))
+   expected=[t.replace('cada aula','cada exploração') for t in BASE['files'][p]['tables']]
+   # A tarefa partilhada Pergunta Humana mantém produto e pesos publicados.
+   self.assertEqual(expected,re.findall(r'<table>.*?</table>',text(p),re.S))
   s=text('cidadania/projeto/index.html');self.assertIn('5 a 8 minutos',s)
   for x in ['av-diario','av-laboratorio','av-dossie','av-teatro','investigar/passo-03/','investigar/passo-08/','investigar/passo-09/']:self.assertIn(x,s)
  def test_local_links_and_fragments(self):

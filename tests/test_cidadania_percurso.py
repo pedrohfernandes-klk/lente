@@ -10,8 +10,8 @@ class Percurso(unittest.TestCase):
      self.assertNotIn('/guia-docente/',p.read_text('utf-8'),str(p))
   names=subprocess.check_output(['git','log','--format=','--name-only','origin/main..HEAD'],cwd=R).decode()
   self.assertNotIn('cidadania/m1/guia-docente/',names)
- def test_five_meetings_and_prequel_direct_links(self):
-  s=(R/'cidadania/m1/index.html').read_text('utf-8')
+ def test_archived_five_meetings_and_prequel_direct_links(self):
+  s=(R/'cidadania/m1/percurso-anterior.html').read_text('utf-8')
   for d in ['2026-10-28','2026-11-04','2026-11-11','2026-11-18','2026-11-25']:self.assertIn('id="aula-'+d+'"',s)
   for x in ['id="prequela"','hora de pesquisa','cidadania/m2/#projeto-filosofico','cidadania/m1/passo-00/','cidadania/m1/cid-m1-butler-singer/']:self.assertIn(x,s)
  def test_m2_assessment_progress_and_original_destinations(self):
