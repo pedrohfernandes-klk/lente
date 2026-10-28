@@ -44,7 +44,8 @@ class VideosCidadaniaM1(unittest.TestCase):
 
     def test_cinco_videos_sem_leitor_antes_do_toque(self):
         ids = {v['yt'] for b in D['sessoes'].values() for c in b for v in c['videos']}
-        self.assertEqual(ids, {'WoHJhwh4mVQ', 'n0uwTBrgqxI', 'pvWDFrpryEQ', 'H0CTHVCkm90', 'NW69KdnmRmY'})
+        # 28/10/2026: saem os vídeos fora de contexto (sessão 07, Vê, e sessão 08), pela regra do docente.
+        self.assertEqual(ids, {'WoHJhwh4mVQ', 'n0uwTBrgqxI', 'H0CTHVCkm90'})
         for n in (6, 7, 8):
             self.assertNotRegex((R / f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8'), r'<iframe[^>]+youtube')
 
