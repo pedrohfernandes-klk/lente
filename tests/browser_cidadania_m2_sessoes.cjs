@@ -56,7 +56,8 @@ const results = [];
         if (width === 1440 && scheme === 'light' && route === 'cidadania/m2/') await p.screenshot({ path: path.join(OUT, 'modulo-m2.png'), fullPage: true });
         // 28/10/2026: o guia a 320 px passa os 16 384 px de altura que o Chromium consegue capturar; a captura fica
         // pelos primeiros 16 000 px (a verificação de transbordo acima cobre a página inteira).
-        if (width === 320 && scheme === 'light' && route === 'cidadania/m2/sessoes/') await p.screenshot({ path: path.join(OUT, 'guia-320.png'), fullPage: true, clip: { x: 0, y: 0, width: 320, height: Math.min(16000, await p.evaluate(() => document.documentElement.scrollHeight)) } });
+        // 28/10/2026: 16 000 px ainda falhava («Unable to capture screenshot») neste ambiente; a captura fica pelos primeiros 6000 px.
+        if (width === 320 && scheme === 'light' && route === 'cidadania/m2/sessoes/') await p.screenshot({ path: path.join(OUT, 'guia-320.png'), fullPage: true, clip: { x: 0, y: 0, width: 320, height: Math.min(6000, await p.evaluate(() => document.documentElement.scrollHeight)) } });
       }
       assert.deepEqual(errors, [], `${width} ${scheme}`);
       results.push({ width, scheme, rotas: 16, passos: 50, transbordo: false, erros: 0 });

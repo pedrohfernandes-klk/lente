@@ -104,6 +104,12 @@ CORRECOES = [
     # 5. Nagel: o registo legal no JSTOR, no lugar de uma cópia de legalidade incerta.
     ('cidadania/m2/aulas/04/index.html', '<a href="https://faculty.fiu.edu/~harveyb/What%20is%20it%20like%20to%20be%20a%20bat.htm">Nagel: texto de 1974, em inglês</a>',
      '<a href="https://www.jstor.org/stable/2183914">Nagel: o ensaio de 1974 no JSTOR, em inglês</a>', 5),
+    # 28/10/2026 (confirmação final): o cartaz do Cabaret Voltaire diz «Allabendlich (mit Ausnahme von Freitag)»;
+    #    a tradução passa a dizer a exceção da sexta-feira.
+    ('cidadania/m2/imagens/index.html', '«todas as noites, música, conferências e recitações»',
+     '«todas as noites (exceto à sexta-feira), música, conferências e recitações»', 1),
+    ('cidadania/m2/passo-08/index.html', '«todas as noites, música, conferências e recitações»',
+     '«todas as noites (exceto à sexta-feira), música, conferências e recitações»', 1),
 ]
 
 
