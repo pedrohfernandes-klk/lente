@@ -22,5 +22,7 @@ class AulasM2(unittest.TestCase):
   for n in range(1,11):
    s=(R/f'cidadania/m2/aulas/{n:02d}/index.html').read_text('utf-8');self.assertIn('cidadania/m2/',s);self.assertIn('Antes de avançar',s)
  def test_nagel_has_a_primary_source_and_distinguishes_application(self):
-  s=(R/'cidadania/m2/aulas/04/index.html').read_text('utf-8');self.assertIn('Thomas Nagel',s);self.assertIn('1974',s);self.assertIn('faculty.fiu.edu',s);self.assertIn('aplicação desta exploração',s)
+  # 28/10/2026: a fonte primária passa a ser o registo no JSTOR (a cópia em faculty.fiu.edu era de legalidade
+  # incerta; plano do M2, risco 5). O teste continua a exigir a fonte de 1974 e a distinção da aplicação.
+  s=(R/'cidadania/m2/aulas/04/index.html').read_text('utf-8');self.assertIn('Thomas Nagel',s);self.assertIn('1974',s);self.assertIn('https://www.jstor.org/stable/2183914',s);self.assertNotIn('faculty.fiu.edu',s);self.assertIn('aplicação desta exploração',s)
 if __name__=='__main__':unittest.main()
