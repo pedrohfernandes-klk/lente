@@ -92,6 +92,10 @@ def library():
  write(path,shell(path,'Biblioteca de M1',main(path,body)))
 
 
+def atual(path):
+ s=(R/path).read_text('utf-8') if (R/path).exists() else ''
+ return s
+
 def extract_legacy_css():
  paths=[f'cidadania/m1/passo-{n:02}/index.html' for n in range(11)]
  blocks=re.findall(r'<style\b[^>]*>(.*?)</style>',old(paths[0]),re.S)
@@ -106,15 +110,24 @@ def extract_legacy_css():
    ident=re.search(r'\bid="([^"]+)"',m[0])
    return '<style id="'+ident[1]+'"></style>' if ident else ''
   s=re.sub(r'<style\b[^>]*>.*?</style>',replace,s,flags=re.S)
+  # 28/10/2026: se a página já foi integrada, fica como está (não se apagam alterações posteriores).
+  if 'cidadania-m1-legado.css' in atual(path):continue
   write(path,s)
 
 def integrations():
- # Acrescentar ligação ao apoio operacional sem alterar o guia transversal.
- p='docente/index.html';s=old(p);marker='<a href="../cidadania/m1/sessoes/">Cidadania M1: guião das dez sessões →</a>'
- s=s.replace('</body>','<div class="m1-teacher-update" style="max-width:68rem;margin:24px auto;padding:20px">'+marker+'</div></body>');write(p,s)
+ # 28/10/2026: cada integração aplica-se sobre o conteúdo atual e só uma vez; as páginas partilhadas não voltam
+ # à base fixa, por isso alterações posteriores de outros trabalhos ficam intactas.
+ # Ligação ao guia das sessões dentro de <main>, no hub do docente.
+ p='docente/index.html';s=atual(p);antigo='<div class="m1-teacher-update" style="max-width:68rem;margin:24px auto;padding:20px"><a href="../cidadania/m1/sessoes/">Cidadania M1: guião das dez sessões →</a></div>'
+ s=s.replace(antigo,'')
+ novo='<p class="m1-teacher-update"><a href="../cidadania/m1/sessoes/">Cidadania M1: guia das dez sessões →</a></p>'
+ if novo not in s:s=s.replace('</main>',novo+'</main>',1)
+ write(p,s)
  # O portal conserva imagens, tabelas e ligações, mas a descrição de M1 passa a ser vigente.
- p='cidadania/index.html';s=old(p)
+ p='cidadania/index.html';s=atual(p)
  s=s.replace('Investigar uma pergunta e dar-lhe forma em teatro-documento.','Dez sessões: investigar, discutir e escrever, a partir da Pergunta Humana.').replace('10 passos','10 sessões',1)
+ # O cartão de M1 deixa de contar os passos antigos: o progresso das sessões vive na própria página do módulo.
+ s=s.replace('M=[{"id":"m1","chave":"epi-cidadania-m1","ids":["passo-01","passo-02","passo-03","passo-04","passo-05","passo-06","passo-07","passo-08","passo-09","passo-10"]},{"id":"m2"','M=[{"id":"m2"',1)
  write(p,s)
  # Extrair a imagem já creditada no passo 01, sem editar o bitmap.
  s=old('cidadania/m1/passo-01/index.html');m=re.search(r'itens:(\[)',s);bank=json.JSONDecoder().raw_decode(s[m.start(1):])[0]
@@ -122,7 +135,8 @@ def integrations():
  assert im
  ext={'jpeg':'jpg'}.get(im[1],im[1]);image_path='img/cidadania/wright-experiencia.'+ext
  (R/image_path).write_bytes(base64.b64decode(im[2]))
- p='index.html';s=old(p)
+ p='index.html';s=atual(p)
+ if 'lente-cidadania-m1-sessoes-v2' in s:return
  s=s.replace('https://pedrohfernandes-klk.github.io/lente/img/cidadania/holbein.webp',image_path)
  # Dimensões verificadas do bitmap incorporado na base fixa acima.
  width,height=1100,824
