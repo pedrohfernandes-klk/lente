@@ -1,0 +1,166 @@
+/* Cidadania M2: o que as sessões acrescentam ao sistema do M1 (assets/cidadania-m1-sessoes.css, carregado antes).
+   28/10/2026. Os mesmos tokens (--ink, --paper, --bg, --line, --acc), as mesmas réguas e a mesma tipografia:
+   materiais numerados no Vê, o vídeo opcional, o mapa do Contra-feed em dez casas, o bloco das sessões no índice
+   do módulo e as tabelas do guia do docente. Nada aqui muda o aspeto do M1 (todas as classes são novas). */
+
+/* Vê: um material de cada vez, numerado, com a instrução junto dele e a fonte por baixo */
+.c10 .c10-mat{padding:20px 0 6px;border-top:2px solid var(--ink)}
+.c10 .c10-mat:first-child{border-top:0;padding-top:0}
+.c10 .c10-mat-n{color:var(--muted)}
+.c10 .c10-mat .c10-instruction{margin-bottom:16px}
+.c10 .c10-mat .c10-credit{margin-bottom:14px}
+.c10 .c10-mat .c10-reading{margin-top:4px}
+.c10 .c10-quote{margin:0 0 8px;border-left-color:var(--acc)}
+.c10 .c10-quote p{margin:0;font:italic 1.15rem/1.6 var(--serif)}
+.c10 .c10-frases{margin:0 0 8px;padding:16px 24px 16px 48px;white-space:normal}
+.c10 .c10-frases li{padding:4px 0}
+.c10 .c10-colunas{margin-bottom:8px}
+.c10 .c10-fonte{margin-top:0;border-top:1px solid var(--line)}
+.c10 .c10-fonte:last-of-type{border-bottom:1px solid var(--line);margin-bottom:12px}
+.c10 .c10-fonte p{font:1.02rem/1.55 var(--serif);margin:0}
+/* 28/10/2026: um resumo que se abre mostra que se abre (o M1 tira o triângulo nativo com display:flex) */
+.c10 :is(.c10-fonte,.c10-sem-video)>summary::after{content:'+';content:'+'/'';margin-left:auto;padding-left:12px;font:400 1.6rem/1 var(--display)}
+.c10 :is(.c10-fonte,.c10-sem-video)[open]>summary::after{content:'−';content:'−'/''}
+/* As duas fotografias de Lisboa: A e B lado a lado a partir de 641 px; empilhadas abaixo disso */
+.c10 .c10-par{margin:0 0 24px}
+.c10 .c10-par-imgs{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.c10 .c10-par-img{position:relative;margin:0}
+.c10 .c10-par-r{position:absolute;top:0;left:0;margin:0;padding:6px 14px 4px;background:var(--ink);color:var(--paper);font:400 1.8rem/1 var(--display)}
+.c10 .c10-par img{display:block;width:100%;height:auto;border:2px solid var(--ink)}
+.c10 .c10-par figcaption{font:.78rem/1.4 Arial,Helvetica,sans-serif;color:var(--muted);margin:10px 0 0;max-width:68ch}
+@media(min-width:641px){.c10 .c10-par-imgs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* O vídeo opcional: antes, o vídeo, depois; e a alternativa escrita, sempre ao alcance */
+.c10 .c10-video{padding:18px 22px;background:var(--paper);border:2px solid var(--ink);margin:0 0 12px}
+.c10 .c10-video>.c10-mark{margin-bottom:12px}
+.c10 .c10-video .c10-instruction{font-size:1.08rem}
+.c10 .c10-video-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
+.c10 .c10-video-links>a:not(.c10-action){display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+.c10 .c10-solo .c10-small{margin:14px 0 0}
+.c10 .c10-sem-video{margin-top:8px}
+
+/* Faz: guardar na casa do mapa. A casa da sessão é a figura; as outras são o fundo */
+.c10 .c10-casa{margin-top:24px}
+.c10 .c10-casa .c10-output{margin-bottom:10px}
+.c10 .c10-casa-c{font:1.05rem/1.55 var(--serif)}
+.c10 .c10-mapa{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:14px 0 0;padding:0}
+.c10 .c10-mapa li{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;min-height:76px;padding:8px 10px 10px;border:2px dashed var(--line);color:var(--muted)}
+.c10 .c10-mapa b{font:400 1.7rem/1 var(--display)}
+.c10 .c10-mapa span:not(.c10-sr){font:700 .8rem/1.3 Arial,Helvetica,sans-serif;overflow-wrap:break-word}
+.c10 .c10-mapa-legenda{margin:8px 0 0}
+.c10 .c10-mapa .c10-mapa-feita{border-style:solid;border-color:var(--ink);color:var(--ink)}
+.c10 .c10-mapa .c10-mapa-atual{border:2px solid var(--ink);background:var(--ink);color:var(--paper)}
+@media(max-width:640px){
+ .c10 .c10-mapa li{min-height:52px;padding:8px}
+ .c10 .c10-mapa span:not(.c10-sr){position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+}
+.c10 .c10-apoio{list-style:none;margin:16px 0 4px;padding:0}
+.c10 .c10-apoio a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+
+/* Leva: as três perguntas do Contra-feed e o que fica para o telemóvel */
+.c10 .c10-vsf{margin:0 0 22px;padding:16px 0;border-top:2px solid var(--ink)}
+.c10 .c10-vsf dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:0 18px;margin:8px 0 0}
+.c10 .c10-vsf dt{padding:10px 0;border-top:1px solid var(--line);font:400 1.6rem/1 var(--display)}
+.c10 .c10-vsf dd{margin:0;padding:10px 0;border-top:1px solid var(--line);font:1.02rem/1.5 var(--serif)}
+.c10 .c10-depois{margin:8px 0 20px;padding:16px 0 4px;border-top:2px solid var(--ink)}
+.c10 .c10-depois ul{margin:0;padding:0;list-style:none}
+.c10 .c10-depois li{border-top:1px solid var(--line)}
+.c10 .c10-depois li:first-child{border-top:0}
+.c10 .c10-depois a{display:flex;align-items:center;min-height:48px;padding:6px 0;font-weight:700}
+.c10 .c10-depois a::after{content:'→';display:inline-block;margin-left:auto;padding-left:12px;text-decoration:none}
+
+/* Índice do módulo: as dez sessões dentro de cidadania/m2/, com o mesmo desenho do índice do M1 */
+.c10.c10-indice{max-width:none;margin:28px 0 12px;padding:0;font-size:17px}
+.c10.c10-indice .c10-sectionhead{margin:0 0 14px}
+.c10.c10-indice .c10-sectionhead h2{margin:0}
+.c10.c10-indice>p{max-width:none}
+.c10.c10-indice .c10-card h3{margin:0}
+.c10 .c10-indice-mais{display:flex;flex-wrap:wrap;gap:0 28px;margin:12px 0 0}
+.c10 .c10-indice-mais a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+
+/* Guia do docente */
+.c10 .c10-tabela{width:100%;border-collapse:collapse;margin:8px 0 20px;font:.95rem/1.45 Arial,Helvetica,sans-serif}
+.c10 .c10-tabela caption{text-align:left;font:700 .75rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:0 0 10px}
+.c10 .c10-tabela th,.c10 .c10-tabela td{text-align:left;vertical-align:top;padding:10px 14px 10px 0;border-bottom:1px solid var(--line)}
+.c10 .c10-tabela thead th{border-bottom:2px solid var(--ink);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.c10 .c10-decisoes{list-style:none;margin:0;padding:0;counter-reset:d}
+.c10 .c10-decisoes li{padding:14px 0 6px 18px;border-top:1px solid var(--line);border-left:6px solid var(--acc);margin:0 0 10px}
+.c10 .c10-decisoes p{margin:0 0 8px}
+.c10 .c10-regras{padding-left:20px}
+.c10 .c10-regras li{margin:0 0 10px;max-width:68ch}
+.c10 .c10-guia-q{font:1.15rem/1.4 var(--serif);max-width:60ch}
+.c10 .c10-guia-tempos{list-style:none;display:flex;flex-wrap:wrap;gap:0;margin:0 0 16px;padding:0;border:2px solid var(--ink);max-width:640px}
+.c10 .c10-guia-tempos li{flex:1 1 0;min-width:96px;padding:8px 10px;border-left:2px solid var(--ink)}
+.c10 .c10-guia-tempos li:first-child{border-left:0}
+.c10 .c10-guia-tempos b{display:block;font:700 .7rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.c10 .c10-guia-tempos span{font:400 1.5rem/1.1 var(--display)}
+.c10 .c10-guia-links{display:flex;flex-wrap:wrap;gap:0 24px}
+.c10 .c10-guia-links a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}
+
+@media(max-width:640px){
+ .c10 .c10-tabela thead{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+ .c10 .c10-tabela,.c10 .c10-tabela tbody,.c10 .c10-tabela tr,.c10 .c10-tabela th,.c10 .c10-tabela td{display:block;width:auto}
+ .c10 .c10-tabela tr{padding:10px 0;border-bottom:1px solid var(--line)}
+ .c10 .c10-tabela th,.c10 .c10-tabela td{border:0;padding:2px 0}
+ .c10 .c10-tabela td[data-rotulo]::before{content:attr(data-rotulo) ': ';font-weight:700}
+ .c10 .c10-tabela caption{display:block;width:auto}
+ .c10 .c10-guia-tempos li{min-width:50%;border-left:0;border-top:2px solid var(--ink)}
+ .c10 .c10-vsf dl{grid-template-columns:1fr}
+ .c10 .c10-vsf dd{border-top:0;padding-top:0}
+ .c10 .c10-video{padding:16px}
+}
+
+/* 28/10/2026: o elemento com o foco nunca fica por baixo das barras fixas (passos em cima, controlo em baixo) */
+html:has(.c10-running){scroll-padding-top:80px;scroll-padding-bottom:96px}
+/* Sem JavaScript, a barra de controlo ficava vazia, colada ao fundo do ecrã */
+.c10 .c10-control:has([data-position]:empty){display:none}
+/* No telemóvel, durante a sessão, o botão flutuante do tema tapava a última linha: sai (fica na abertura e segue o sistema) */
+@media(max-width:640px){body.c10-body:has(.c10-running) [data-appearance-floating]{display:none}}
+
+/* Controlos no telemóvel: o botão final cabe ao lado do contador */
+@media(max-width:400px){
+ .c10 .c10-control [data-position]{white-space:nowrap;font-size:1.2rem}
+ .c10 .c10-control .c10-action{gap:10px;padding:10px 12px;font-size:.92rem}
+}
+
+/* Projeção: letra grande nos materiais */
+html.epi-projection .c10 :is(.c10-quote p,.c10-frases,.c10-casa-c,.c10-vsf dd){font-size:1.2em}
+
+/* Impressão: tudo visível; o mapa fica com as legendas */
+@media print{
+ /* 28/10/2026: o material pode partir entre páginas; a imagem, o rótulo e a instrução ficam juntos */
+ .c10 .c10-mat{break-inside:auto}
+ .c10 .c10-mat :is(figure,.c10-document,blockquote,.c10-evidence){break-inside:avoid}
+ .c10 .c10-mat :is(.c10-mat-n,.c10-instruction){break-after:avoid}
+ .c10 .c10-video,.c10 .c10-casa{break-inside:avoid}
+ .c10 .c10-mapa{grid-template-columns:repeat(5,minmax(0,1fr));gap:4pt}
+ .c10 .c10-mapa li{min-height:0;padding:4pt 6pt;gap:2pt}
+ .c10 .c10-mapa b{font-size:14pt}
+ .c10 .c10-mapa span:not(.c10-sr){position:static;width:auto;height:auto;clip-path:none;white-space:normal;font-size:8pt}
+ .c10 .c10-mapa .c10-mapa-atual{background:#000!important;color:#fff!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .c10 .c10-depois a::after{content:none}
+ .c10 .c10-tabela{font-size:9.5pt}
+ /* 28/10/2026: sem folha em branco no fim e sem páginas quase vazias; o cabeçalho de cada passo fica inteiro e
+    preso ao início do passo; nenhum parágrafo deixa uma linha sozinha no fundo ou no topo da página */
+ .c10 .c10-step-head{break-inside:avoid}
+ .c10 .c10-step-body>:first-child,.c10 .c10-step-body>:first-child>:first-child{break-before:avoid}
+ .c10 :is(.c10-exit,.c10-solo,.c10-review){break-inside:avoid}
+ .c10 p{orphans:3;widows:3}
+ .c10 .c10-instruction{break-inside:avoid}
+ .c10 [data-stage]:last-of-type{padding-bottom:0}
+ .c10 .c10-depois{margin-bottom:0;break-inside:avoid}
+ .c10 .c10-depois>.c10-label{break-after:avoid}
+ .c10 .c10-obra{break-inside:auto}
+ .c10 .c10-obra>:is(.c10-label,h3,.c10-obra-meta,blockquote){break-after:avoid}
+ .c10 .c10-obra-razao,.c10 .c10-obra-pergunta{break-inside:avoid}
+ .c10 :is(.c10-fonte,.c10-sem-video)>summary::after{content:none}
+ .c10 .c10-par-imgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .c10 .c10-par img{max-height:62mm;width:auto;max-width:100%}
+ /* Guia do docente: cada sessão numa página, sem títulos órfãos */
+ .c10 .c10-guia-sessao>:is(.c10-eyebrow,h2,.c10-guia-q,.c10-guia-tempos){break-after:avoid}
+ .c10 .c10-guia-sessao{break-inside:avoid-page}
+ .c10 .c10-decisoes li{break-inside:avoid}
+ .c10 .c10-decisoes .c10-label{break-after:avoid}
+ .c10 .c10-reference>h2,.c10 .c10-tabela caption{break-after:avoid}
+ .c10 .c10-tabela tr{break-inside:avoid}
+}

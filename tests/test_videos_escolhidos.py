@@ -58,9 +58,14 @@ class VideosEscolhidos(unittest.TestCase):
             r = subprocess.run(['git', 'show', 'origin/main:' + p['pagina']], cwd=ROOT, capture_output=True, text=True)
             if r.returncode:
                 self.skipTest('sem origin/main local')
-            a, b = ve.lista(r.stdout)
+            # 28/10/2026: as correções verificadas do plano do M2 (tools/cidadania_m2_correcoes.py: âncora do
+            # passo 00, crédito e texto alternativo da fotografia de Lisboa) aplicam-se também ao lado de origin/main;
+            # qualquer outra diferença continua a falhar.
+            import cidadania_m2_correcoes as correcoes
+            base = correcoes.aplicar(r.stdout, p['pagina'], rigoroso=False)
+            a, b = ve.lista(base)
             # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
-            self.assertEqual(antigos, [x for x in json.loads(r.stdout[a:b]) if 'pv' not in x], p['pagina'])
+            self.assertEqual(antigos, [x for x in json.loads(base[a:b]) if 'pv' not in x], p['pagina'])
 
     def test_leitor_so_ao_toque_e_sem_cookies(self):
         js = (ROOT / 'assets' / 'para-ver.js').read_text('utf-8')
