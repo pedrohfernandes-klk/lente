@@ -1,0 +1,57 @@
+{
+  "_nota": "Vídeos escolhidos pelo docente na ronda 1 da curadoria (28/10/2026) para as sessões novas de Cidadania M1. O gerador das sessões (tools/cidadania_m1_layout.py) põe cada bloco no passo indicado: «ve» abre o passo Vê (aquecimento antes do material); «leva» fica no passo Leva, para ver depois da aula, sem influenciar a decisão em silêncio. O HTML do bloco é o do cartão «Para ver» (tools/videos_escolhidos.py).",
+  "versao": "20261028-1",
+  "sessoes": {
+    "6": [
+      {
+        "id": "sessao-06-depois",
+        "onde": "leva",
+        "titulo": "Para ver depois da aula",
+        "contexto": "Já decidiste e já ouviste as razões da turma. Escolhe um destes vídeos curtos do The Ethics Centre: um sobre a ética do dever, outro sobre como decidir num caso difícil.",
+        "videos": [
+          {"yt": "WoHJhwh4mVQ", "dur": "3 min 10 s", "canal": "The Ethics Centre", "original": "Deontology", "opcao": "A ética do dever",
+           "antes": "Há coisas que nunca farias, mesmo que dessem bom resultado?",
+           "depois": "Escreve uma regra que aceitarias que toda a gente seguisse, mesmo quando te prejudica."},
+          {"yt": "n0uwTBrgqxI", "dur": "3 min 30 s", "canal": "The Ethics Centre", "original": "Ethical Decision Making", "opcao": "Decidir num caso difícil",
+           "antes": "Quando tens de decidir algo difícil, o que fazes primeiro?",
+           "depois": "Compara o que o vídeo propõe com o que fizeste hoje: o que farias de outra maneira?"}
+        ],
+        "nota": "Os dois vídeos estão em inglês. Se as legendas não aparecerem, liga-as no leitor."
+      }
+    ],
+    "7": [
+      {
+        "id": "sessao-07-antes",
+        "onde": "ve",
+        "titulo": "Antes do caso",
+        "contexto": "Um vídeo curto do The Ethics Centre faz uma pergunta: como seria uma sociedade sem ética?",
+        "antes": "Imagina uma semana sem regras na escola: quem ganha e quem perde?",
+        "depois": "Que regra aceitarias mesmo sem saber em que lugar ficarias?",
+        "videos": [{"yt": "pvWDFrpryEQ", "dur": "2 min 43 s", "canal": "The Ethics Centre", "original": "What would a society without ethics look like?"}],
+        "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+      },
+      {
+        "id": "sessao-07-depois",
+        "onde": "leva",
+        "titulo": "Para ver depois da aula",
+        "contexto": "A Crash Course Philosophy pergunta o que é a justiça. Vê o episódio depois da aula e compara-o com a regra que o teu grupo escreveu.",
+        "antes": "Se não soubesses em que família ias nascer, que regras escolherias para repartir a riqueza?",
+        "depois": "Que regra de repartição te pareceu mais justa, e o que perderias com ela?",
+        "videos": [{"yt": "H0CTHVCkm90", "dur": "10 min 15 s", "canal": "CrashCourse", "serie": "CrashCourse, Philosophy #40", "rotulo": "What Is Justice?", "original": "What Is Justice?: Crash Course Philosophy #40"}],
+        "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+      }
+    ],
+    "8": [
+      {
+        "id": "sessao-08-depois",
+        "onde": "leva",
+        "titulo": "Para ver depois da aula",
+        "contexto": "Saber o que está certo não basta: é preciso dizê-lo a quem decide. O The Ethics Centre fala de coragem moral e de imaginação moral.",
+        "antes": "Já ficaste calado quando achavas que algo estava errado? O que te travou?",
+        "depois": "O que distingue a coragem moral da simples teimosia?",
+        "videos": [{"yt": "NW69KdnmRmY", "dur": "3 min 48 s", "canal": "The Ethics Centre", "original": "How to Have Moral Courage & Moral Imagination?"}],
+        "nota": "Em inglês. Se as legendas não aparecerem, liga-as no leitor."
+      }
+    ]
+  }
+}

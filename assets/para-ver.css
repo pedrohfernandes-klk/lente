@@ -1,0 +1,35 @@
+/* «Para ver» (28/10/2026): um vídeo escolhido pelo docente, com uma pergunta antes e outra depois.
+   O leitor só nasce ao toque (youtube-nocookie). Herda as cores da página: --tinta, --papel, --mostarda. */
+.pv{margin:4px 0 0}
+.pv .pv-ctx{margin:0 0 14px}
+.pv .pv-antes,.pv .pv-depois{margin:0 0 12px;padding:2px 0 2px 14px;border-left:4px solid var(--mostarda,#d9a520)}
+.pv .pv-depois{border-left-style:double;border-left-width:6px}
+.pv .pv-antes b,.pv .pv-depois b{display:block;margin:0 0 2px;font:700 .74rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.pv .pv-opcoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:8px;margin:4px 0 12px;padding:0;list-style:none}
+.pv .pv-opcoes li{list-style:none;margin:0;padding:0}
+.pv .pv-opcoes li::before,.pv .pv-opcoes li::marker{content:none}
+.pv-opcoes button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;width:100%;min-height:52px;padding:8px 12px;border:1.5px solid var(--tinta,currentColor);border-radius:0;background:transparent;color:var(--tinta,currentColor);font:700 1rem/1.2 Arial,Helvetica,sans-serif;text-align:left;cursor:pointer}
+.pv-opcoes button small{font:400 .8rem/1.2 Arial,Helvetica,sans-serif;opacity:.8}
+.pv-opcoes button[aria-pressed="true"]{background:var(--tinta,#1a1a1a);color:var(--papel,#fff)}
+.pv-opcoes button:focus-visible{outline:3px solid var(--mostarda,#d9a520);outline-offset:2px}
+/* o ecrã do leitor é sempre escuro, nos dois temas: um vídeo não muda de cor com a página */
+.pv-video{--pv-ecra:#131312;--pv-luz:#f3f0e8;position:relative;aspect-ratio:16/9;width:100%;margin:6px 0 4px;padding:12px 14px;overflow:hidden;display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;text-align:center;background:var(--pv-ecra);color:var(--pv-luz);box-shadow:0 0 0 1px rgba(128,128,128,.4)}
+.pv-video::before{content:"";position:absolute;inset:10px;border:1px solid currentColor;opacity:.25;pointer-events:none}
+.pv-video p{margin:0;color:inherit;max-width:30rem}
+.pv-video .pv-t{font:400 clamp(1.25rem,4.6vw,1.9rem)/1.05 "Bebas Neue",Arial,sans-serif;letter-spacing:.02em;overflow-wrap:anywhere}
+.pv-video .pv-m{font:.82rem/1.35 Arial,Helvetica,sans-serif;opacity:.85}
+.pv-video button{position:relative;display:inline-flex;align-items:center;gap:10px;width:auto;max-width:100%;min-height:44px;margin-top:8px;padding:0 18px 0 12px;border:2px solid var(--pv-luz);border-radius:999px;background:transparent;color:var(--pv-luz);font:700 .95rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+.pv-video button::before{content:"";width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent var(--mostarda,#d9a520)}
+.pv-video button span{font-weight:400;opacity:.85}
+.pv-video button:hover{background:var(--pv-luz);color:var(--pv-ecra)}
+.pv-video button:focus-visible{outline:3px solid var(--mostarda,#d9a520);outline-offset:3px}
+.pv-video.tocado{padding:0;background:#000}
+.pv-video.tocado::before{display:none}
+.pv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pv .pv-yt{margin:2px 0 14px;font:.85rem/1.4 Arial,Helvetica,sans-serif;text-align:right}
+.pv .pv-yt a{color:var(--tinta,currentColor)}
+.pv .pv-nota{margin:10px 0 0;font:.88rem/1.45 Arial,Helvetica,sans-serif;opacity:.85}
+.projected .pv-video .pv-t,.projetar .pv-video .pv-t{font-size:clamp(2rem,4vw,3.2rem)}
+@media (max-width:420px){.pv-video{padding:10px}.pv-video .pv-m{display:none}}
+@media (prefers-reduced-motion:reduce){.pv-video button{transition:none}}
+@media print{.pv-video,.pv-opcoes{display:none!important}.pv .pv-yt{text-align:left}.pv .pv-yt a::after{content:" (" attr(href) ")"}}

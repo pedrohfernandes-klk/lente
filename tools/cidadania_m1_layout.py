@@ -5,6 +5,12 @@ import subprocess,re
 
 def render(api,sessions,capsules,short_caps,image_prompts):
  R,write,old,link,rel=api['R'],api['write'],api['old'],api['anchor'],api['rel']
+ # 28/10/2026: vídeos escolhidos pelo docente (tools/videos-cidadania-m1.json), no componente «Para ver».
+ import json
+ from videos_escolhidos import cartao as pv_cartao
+ VIDEOS=json.loads((R/'tools/videos-cidadania-m1.json').read_text('utf-8'))
+ def para_ver(n,onde):
+  return ''.join('<div class="c10-para-ver">'+label(c['titulo'])+pv_cartao(c)['html']+'</div>' for c in VIDEOS['sessoes'].get(str(n),[]) if c['onde']==onde)
  def top(path):
   brand='<span class="c10-brand">'+link(path,'index.html','Lente')+' / '+link(path,'cidadania/','Cidadania')+'</span>'
   module=link(path,'cidadania/m1/','Módulo 1') if path!='cidadania/m1/index.html' else ''
@@ -13,6 +19,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  def document(path,title,body,num=''):
   assets=rel(path,'assets/').rstrip('/')+'/'
   head='<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+e(title)+' · M1 · Cidadania</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"><link rel="stylesheet" href="'+assets+'appearance.css"><script src="'+assets+'appearance.js"></script><link rel="stylesheet" href="'+assets+'cidadania-m1-sessoes.css?v=20261027-molde-2"><script defer src="'+assets+'cidadania-m1-sessoes.js?v=20261027-molde-2"></script>'
+  if 'data-pv=' in body:head+='<link rel="stylesheet" href="'+assets+'para-ver.css?v='+VIDEOS['versao']+'"><script defer src="'+assets+'para-ver.js?v='+VIDEOS['versao']+'"></script>'
   return '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head>'+head+'</head><body class="c10-body"><main class="c10" data-c10'+(' data-session="'+num+'"' if num else '')+'>'+top(path)+body+'</main><script defer src="'+assets+'projection-launcher.js" data-site="lente"></script></body></html>\n'
  def image(path,s,cls=''):
   return '<figure'+(' class="'+cls+'"' if cls else '')+'><img src="'+rel(path,'img/cidadania/'+s['image'])+'" alt="'+e(s['caption'],quote=True)+'" loading="lazy" decoding="async"><figcaption>'+e(s['caption'])+' · '+link(path,'cidadania/m1/imagens/','Créditos')+'</figcaption></figure>'
@@ -56,7 +63,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
     if tarefa:
      body+=para('c10-instruction',s['reading'])+'<ol class="c10-evidence" aria-label="Da pergunta à resposta"><li><b>Pergunta</b><span>O que queremos saber?</span></li><li><b>Fonte</b><span>Em que nos apoiamos?</span></li><li><b>Resposta</b><span>O que podemos defender?</span></li></ol><p><a class="c10-action c10-action-line" href="'+rel(path,'cidadania/projeto/')+'">Abrir o enunciado</a></p>'
     else:
-     body+=para('c10-instruction',entry(m['ve']))
+     body+=para_ver(n,'ve')+para('c10-instruction',entry(m['ve']))
      if m['material']=='image':body+=image(path,s,'c10-material')
      elif s['numbers']:body+='<div class="c10-document">'+e(api['FICHAS'][s['numbers'][0]-1]['sample'])+'</div><p class="c10-credit">Exemplo escrito para esta sessão.</p>'
      body+=para('c10-reading',s['reading'])
@@ -78,6 +85,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
     if tarefa:body+=para('c10-reading',s['close'])
     else:
      body+='<div class="c10-exit">'+label('Em papel, antes de sair')+'<p class="c10-exit-q">'+e(m['leva'])+'</p></div>'
+     body+=para_ver(n,'leva')
      if m.get('fecho_leva'):body+=para('c10-reading',s['close'])
     body+=label('Confirma')+'<ul class="c10-checks">'+''.join('<li>'+e(t)+'</li>' for t in s['criteria'])+'</ul>'
     if not s.get('prior'):body+='<section class="c10-completion" data-completion hidden aria-label="Registo"><label><input type="checkbox" data-session-done>Registar o trabalho revisto</label><p data-live class="c10-small" role="status" aria-live="polite">O registo fica neste aparelho.</p></section>'
@@ -100,6 +108,8 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   body+='<section class="c10-stage" id="sessao-'+f'{n:02}'+'"><p class="c10-eyebrow">Sessão '+f'{n:02}'+'</p><h2>'+e(s['title'])+'</h2><p>'+e(s['product'])+'</p>'
   if s.get('prior'):body+='<p>Recursos de uma sessão anterior; sem nova tarefa avaliada. Mobilizar observações e notas quando necessário.</p>'
   else:body+='<ol>'+''.join('<li>'+e(l)+' · '+str(t)+' min</li>' for l,t in zip(s['labels'],s['times']))+'</ol><p>'+e(s['teacher'])+'</p>'
+  vs=VIDEOS['sessoes'].get(str(n),[])
+  if vs:body+='<p><b>Para ver:</b> '+'; '.join(e(v['canal']+', «'+v['original']+'» ('+v['dur']+')')+(', no passo Vê, antes do caso' if c['onde']=='ve' else ', depois da aula') for c in vs for v in c['videos'])+'. Vídeos em inglês, escolhidos na curadoria de 28/10; convém vê-los antes de os propor à turma.</p>'
   body+=link(path,f'cidadania/m1/sessoes/{n:02}/','Abrir sessão →')+'</section>'
  write(path,document(path,'Guia das dez sessões',body))
  # Reutilizar todas as ligações da biblioteca, com menos informação simultânea.
