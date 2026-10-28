@@ -110,6 +110,17 @@ CORRECOES = [
      '«todas as noites (exceto à sexta-feira), música, conferências e recitações»', 1),
     ('cidadania/m2/passo-08/index.html', '«todas as noites, música, conferências e recitações»',
      '«todas as noites (exceto à sexta-feira), música, conferências e recitações»', 1),
+    # 28/10/2026 (pendentes do #65): «jogador» sai também do passo 04 e da revisão, como saiu da página das imagens;
+    #    o Turco escondia uma pessoa (a gravura de Racknitz mostra-a em corte).
+    ('cidadania/m2/passo-04/index.html', 'escondia um jogador humano', 'escondia uma pessoa', 1),
+    ('cidadania/m2/passo-04/index.html', 'Dentro da caixa escondia-se um jogador humano.', 'Dentro da caixa escondia-se uma pessoa.', 1),
+    ('cidadania/m2/passo-04/index.html', 'um jogador humano movia as peças', 'uma pessoa movia as peças', 1),
+    ('cidadania/m2/passo-04/index.html', 'para concluir que havia um jogador escondido', 'para concluir que havia alguém escondido', 1),
+    ('cidadania/m2/passo-04/index.html', 'porque um jogador escondido movia as peças', 'porque uma pessoa escondida movia as peças', 1),
+    ('cidadania/m2/passo-04/index.html', 'mas não revelava o jogador escondido', 'mas não revelava a pessoa escondida', 1),
+    ('cidadania/m2/revisao/index.html', 'porque um jogador escondido movia as peças', 'porque uma pessoa escondida movia as peças', 1),
+    # 28/10/2026 (pendentes do #65): na definição de «Suposição», o infinitivo concorda com «tu».
+    ('cidadania/m2/glossario/index.html', 'O que achas que aconteceu sem o poder confirmar.', 'O que achas que aconteceu, sem o poderes confirmar.', 1),
 ]
 
 
