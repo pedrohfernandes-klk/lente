@@ -59,7 +59,8 @@ class VideosEscolhidos(unittest.TestCase):
             if r.returncode:
                 self.skipTest('sem origin/main local')
             a, b = ve.lista(r.stdout)
-            self.assertEqual(antigos, json.loads(r.stdout[a:b]), p['pagina'])
+            # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
+            self.assertEqual(antigos, [x for x in json.loads(r.stdout[a:b]) if 'pv' not in x], p['pagina'])
 
     def test_leitor_so_ao_toque_e_sem_cookies(self):
         js = (ROOT / 'assets' / 'para-ver.js').read_text('utf-8')
