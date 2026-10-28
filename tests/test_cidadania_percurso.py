@@ -22,8 +22,10 @@ class Percurso(unittest.TestCase):
    # 25/10: o tema universal acrescenta apenas o seu carregamento independente.
    # 26/10: arquivo autorizado das Sidequests; sai apenas da ordem das sugestões.
    # Dados, motores, avaliação e progresso conservam-se byte a byte.
+   # 28/10/2026: o índice do M2 carrega também o motor das sessões (assets/cidadania-sessoes-molde.js, chave
+   # lente-cidadania-m2-sessoes-v1), que só lê a sua chave; os motores existentes continuam iguais byte a byte.
    def engines(s):
-    scripts=[script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/appearance\.js',script)]
+    scripts=[script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/(?:appearance|cidadania-sessoes-molde)\.js',script)]
     return [re.sub(r'("ordem":\[[^\]]*),"sidequests"(\])',r'\1\2',script) for script in scripts]
    self.assertEqual(engines(old),engines(new))
   s=(R/'cidadania/contra-feed/index.html').read_text('utf-8');self.assertIn('Não há uma conclusão filosófica única premiada',s)
