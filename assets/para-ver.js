@@ -53,9 +53,17 @@
     var o = t.closest(".pv-opcoes button");
     if (o) escolher(o);
   });
+  // Um vídeo que deixa de estar à vista (um passo escondido, um cartão que muda) para de tocar.
+  function silenciar() {
+    [].forEach.call(document.querySelectorAll(".pv-video.tocado"), function (c) {
+      if (c.closest("[hidden]") || !c.getClientRects().length) botao(c);
+    });
+  }
   function vigiar() {
+    if (!window.MutationObserver) return;
     var alvo = document.getElementById("baralho");
-    if (alvo && window.MutationObserver) new MutationObserver(arrumar).observe(alvo, { childList: true, subtree: true });
+    if (alvo) new MutationObserver(arrumar).observe(alvo, { childList: true, subtree: true });
+    new MutationObserver(silenciar).observe(document.body, { attributes: true, attributeFilter: ["hidden", "class", "style"], subtree: true });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", vigiar); else vigiar();
 })();
