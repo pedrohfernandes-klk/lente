@@ -15,6 +15,8 @@ O pacote contém ficções autorais, motivos populares e um conjunto inspirado n
 
 ## Pedido de desenvolvimento
 
+**Novas propostas:** [Mais perto do quotidiano](novos-estudos/README.md) acrescenta 12 estudos sobre trabalho, amizade, casa, ajuda e tempo. Têm catálogo próprio e permanecem fora da seleção consolidada de 140 até validação.
+
 Criar primeiro um protótipo: **três imagens de universos diferentes, duas ligações possíveis e dois géneros de texto**. Comparar A/B, conservar a primeira tentativa e permitir revisão. Uma ligação pode ser causal; outra, analógica, descoberta durante a escrita. Não há uma sequência correta universal.
 
 Reutilizar os controlos, navegação e caderno atuais das lições. Pistas progressivas, montagem por teclado, alternativa em papel e projeção sem respostas privadas. Nas jornadas de Cidadania, alterar perspetiva, contexto ou ação deve mudar efetivamente informação e consequências; não pontuar virtude ou concordância com o sistema.

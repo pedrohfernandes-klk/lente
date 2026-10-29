@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-29",
+  "status": "12 estudos adicionais; não alteram a seleção de 140 cartas em CURADORIA.json",
+  "sheets": [
+    {
+      "id": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0246f57b6bbdd201fdc0286b132f53e7b43976f66b5b518e750ab0eb54df70f4",
+      "originalFile": "27-cheguei-mas-fiquei-la.png"
+    },
+    {
+      "id": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "6192e313147482312ad9c83c89d8762446a7d9c39bf997ca5fe8045458696444",
+      "originalFile": "28-quase-combinamos.png"
+    }
+  ],
+  "cards": [
+    {
+      "id": "27-01",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Pessoa chega com prato enquanto a sombra trabalha",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "27-02",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Roupa vermelha estende-se entre pessoas",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "27-03",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Faixa de papel entre chávenas",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "27-04",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Pessoa com relógio diante de porta",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "27-05",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Nuvem cortada junto de taça",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "27-06",
+      "sheet": 27,
+      "file": "pranchas/27-cheguei-mas-fiquei-la.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Sapatos e faixa negra saem de caixa",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-01",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Duas pessoas sobrepõem faixas de calendário",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-02",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Duas pessoas ligadas por auscultadores e fio longo",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-03",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Visitante com envelope e sombra sob porta",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-04",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Duas pessoas levantam taça com sombra pesada",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-05",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Pessoa com autocarro e fila de sombras",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "28-06",
+      "sheet": 28,
+      "file": "pranchas/28-quase-combinamos.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Escada sai de caixa numa mudança",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    }
+  ]
+}
