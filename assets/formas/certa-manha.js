@@ -1,0 +1,317 @@
+window.LenteCertaManha={
+"id":"certa-manha",
+"titulo":"Certa manhã",
+"frase":"Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa viu-se transformado num gigantesco inseto.",
+"credito":{
+ "curto":"Franz Kafka, _A Metamorfose_ (1915), frase citada pela RTP Ensina (_Volta ao Mundo em Cem Livros_, RTP, 2023). A página não identifica a tradução.",
+ "completo":"Franz Kafka, _A Metamorfose_ (1915). Frase tal como aparece na página «“A Metamorfose” ou a parábola do homem inseto de Franz Kafka», da RTP Ensina (_Volta ao Mundo em Cem Livros_, de Alexandra Lucas Coelho, episódio 79, RTP, 2023), consultada a 29/10/2026. A página não identifica a tradução.",
+ "rtp":"https://ensina.rtp.pt/artigo/a-metamorfose-ou-a-parabola-do-homem-inseto-de-franz-kafka/",
+ "rtpPlay":"https://www.rtp.pt/play/p9507/e702386/volta-ao-mundo-em-cem-livros",
+ "verRtp":"Ver na RTP Ensina ↗",
+ "verRtpPlay":"Episódio no RTP Play ↗"
+},
+"abre":{
+ "rotulo":"Lê",
+ "meta":"Kafka / três tempos / cerca de 30 min",
+ "texto":"Uma frase só, lida três vezes. A tua primeira leitura não se apaga.",
+ "papel":"Também se faz sem ecrã: imprime o enunciado e usa o caderno."
+},
+"segmentos":[
+ {"id":"t0","t":"Certa manhã,"},
+ {"id":"t1","t":"ao acordar"},
+ {"id":"t2","t":"de sonhos inquietos,"},
+ {"id":"t3","t":"Gregor Samsa viu-se"},
+ {"id":"t4","t":"transformado"},
+ {"id":"t5","t":"num gigantesco inseto."}
+],
+"a1":{
+ "rotulo":"Toca",
+ "tempo":"Tempo 1 de 3",
+ "pergunta":"Toca no pedaço a partir do qual esta frase já não pode contar uma manhã qualquer.",
+ "dica":"Lê a frase inteira primeiro. Depois toca num dos seis pedaços.",
+ "antes":"Até aqui, a frase ainda podia acabar assim:",
+ "nota":"Final inventado pelo Lente.",
+ "toques":{
+  "t0":{"fim":" choveu.","titulo":"Tocaste em «Certa manhã».","corpo":"Antes destas palavras não há frase, e depois delas pode vir qualquer história. Se o estranho te parece começar aqui, talvez seja porque já sabes como a frase acaba. Lida sozinha, «Certa manhã» promete um dia vulgar."},
+  "t1":{"fim":", ouviu a chuva.","titulo":"Tocaste em «ao acordar».","corpo":"Até aqui, a frase deu-te uma manhã e nada mais. Acordar ainda é o gesto mais comum do dia."},
+  "t2":{"fim":" Gregor Samsa abriu a janela.","titulo":"Tocaste em «de sonhos inquietos».","corpo":"«Inquietos» traz uma sombra, mas acordar depois de uma noite agitada ainda é coisa de qualquer manhã: o final do Lente continua possível.","alternativa":"Se leres «inquietos» como um aviso, defendes que a rutura se anuncia antes de acontecer. É uma leitura com apoio numa palavra."},
+  "t3":{"fim":" ao espelho, com olheiras.","titulo":"Tocaste em «Gregor Samsa viu-se».","corpo":"Um nome e um verbo de ver: alguém acorda e olha para si. Ainda cabe aqui uma manhã de espelho e olheiras."},
+  "t4":{"fim":" num homem cansado.","titulo":"Tocaste em «transformado».","corpo":"É um corte com razões: «transformado» anuncia uma mudança. Repara no final do Lente: «transformado num homem cansado» ainda é uma manhã possível. A palavra prepara o impossível; ainda não o diz.","alternativa":"Se já sabes como a frase acaba, «transformado» pesa mais do que pesaria sozinho. Ler pela segunda vez também é ler."},
+  "t5":{"semFim":"Aqui o Lente não encontrou final comum. Encontras tu?","titulo":"Tocaste em «num gigantesco inseto».","corpo":"Só aqui deixa de haver final comum. O impossível chega nas últimas palavras, depois de a frase ter contado uma manhã até ao fim. E repara no verbo que o traz: Gregor não se transforma diante de nós; vê-se já transformado."}
+ }
+},
+"a2":{
+ "rotulo":"Compara",
+ "marca":"Em voz alta",
+ "pergunta":"Lê a frase original e uma variante, em voz alta ou só para ti. Em qual das duas o impossível te parece mais estranho?",
+ "nota":"As três variantes são do Lente, para comparar. Nenhuma é de Kafka.",
+ "linhas":["O que acontece","A frase mostra espanto?"],
+ "colunas":["Certa manhã,","ao acordar de sonhos inquie\u00adtos,","Gregor Samsa viu-se transfor\u00admado…"],
+ "original":{"acontece":["comum","comum","impossível"],"espanto":["não","não","não"]},
+ "respostas":[{"id":"original","t":"Na original"},{"id":"variante","t":"Na variante"},{"id":"igual","t":"Igual"}],
+ "variantes":[
+  {"id":"v1","nome":"Variante 1","partes":[{"t":"Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa viu-se"},{"mais":", horrorizado,"},{"t":" transformado num gigantesco inseto"},{"menos":"."},{"mais":"!"}],
+   "texto":"Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa viu-se, horrorizado, transformado num gigantesco inseto!",
+   "pauta":{"acontece":["comum","comum","impossível"],"espanto":["não","não","sim"]},
+   "explica":{
+    "original":"Na variante, Gregor reage por ti: «horrorizado» e o ponto de exclamação dizem-te o que sentir. Na original ninguém reage, e o impossível fica a teu cargo. A calma não diminui o choque: deixa-o sem amparo.",
+    "variante":"O ponto de exclamação e «horrorizado» fazem a variante soar mais alto: há mais choque à vista. Repara de onde vem: Gregor reage, e a reação chega-te pronta. Na original, ninguém reage.",
+    "igual":"Se as duas te parecem igualmente estranhas, o impossível pesa mais do que o tom. É uma leitura possível. Repara, ainda assim, numa diferença: na variante sabes como Gregor se sente; na original, não."},
+   "fecho":"Compara as duas pautas: na original, a segunda linha nunca sai do «não»; na variante 1, sai no fim."},
+  {"id":"v2","nome":"Variante 2","partes":[{"t":"Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa "},{"menos":"viu-se"},{"mais":"julgou ver-se"},{"t":" transformado num gigantesco inseto."}],
+   "texto":"Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa julgou ver-se transformado num gigantesco inseto.",
+   "pauta":{"acontece":["comum","comum","talvez"],"espanto":["não","não","não"]},
+   "explica":{
+    "original":"«Julgou ver-se» abre uma saída: talvez seja engano, talvez ainda seja sonho. A original fecha essa saída com «viu-se». Quando o texto não duvida, o leitor também não tem onde se esconder.",
+    "variante":"A dúvida também inquieta: não saber se é real é desconfortável. É uma leitura defensável. Mas a variante transforma o acontecimento numa possível ilusão, e a original apresenta-o como facto. São duas estranhezas diferentes.",
+    "igual":"«Viu-se» e «julgou ver-se» diferem numa palavra, mas mudam o estatuto do acontecimento: facto ou impressão. Lê outra vez as duas e procura onde está a diferença."},
+   "fecho":"Compara as duas pautas: a segunda linha é igual nas duas; a diferença está no «talvez» da primeira."},
+  {"id":"v3","nome":"Variante 3","partes":[{"t":"Certa manhã, "},{"mais":"aconteceu uma coisa terrível: "},{"t":"ao acordar de sonhos inquietos, Gregor Samsa viu-se transformado num gigantesco inseto."}],
+   "texto":"Certa manhã, aconteceu uma coisa terrível: ao acordar de sonhos inquietos, Gregor Samsa viu-se transformado num gigantesco inseto.",
+   "pauta":{"acontece":["comum","comum","impossível"],"espanto":["sim","não","não"]},
+   "explica":{
+    "original":"A variante avisa antes de mostrar: «uma coisa terrível». Quando o impossível chega, já estavas à espera dele. A original não avisa: «Certa manhã» promete um dia vulgar, e é essa promessa que torna o fim mais estranho.",
+    "variante":"O aviso cria suspense: ficas à espera de saber que coisa terrível foi. É um efeito real, mas é outro efeito. Na original não há aviso: repara onde começas a desconfiar em cada uma.",
+    "igual":"O aviso muda sobretudo o caminho até ao impossível: na variante esperas por ele, na original tropeças nele. Lê outra vez o início das duas."},
+   "fecho":"Compara as duas pautas: na original, a segunda linha nunca sai do «não»; na variante 3, sai logo no início."}
+ ]
+},
+"a3":{
+ "rotulo":"Escreve",
+ "marca":"Opcional",
+ "pergunta":"Escreve uma frase de abertura com a mesma operação: uma marca de tempo comum, um gesto comum e um impossível dito sem espanto.",
+ "regra":"Sem bichos e sem o verbo «transformar». A operação é de Kafka; a criatura fica com ele.",
+ "modelo":"Numa quarta-feira, ao abrir o armário, Vera encontrou a terça-feira anterior dobrada entre duas camisas.",
+ "modeloFonte":"Exemplo do Lente. Não é de Kafka.",
+ "sementes":["Na terça-feira, ao abrir a caixa do correio,","Depois do jantar, ao lavar a loiça,","No intervalo das dez, ao subir as escadas da escola,"],
+ "legenda":"A tua abertura. Fica só neste separador; para a guardar, usa «Levar o caderno» no menu.",
+ "proibidas":[
+  {"p":"!","regra":"o impossível dito sem espanto"},
+  {"p":"de repente","regra":"o impossível dito sem espanto"},
+  {"p":"subitamente","regra":"o impossível dito sem espanto"},
+  {"raiz":"transform","mostra":"transform…","regra":"que não uses o verbo «transformar»"}
+ ],
+ "ecos":[
+  {"raizes":["horroriz","assust","espant","grit"],"palavras":["pavor","medo"],"mostra":["horroriz…","assust…","espant…","grit…","pavor","medo"],"linha":"é a reação que a variante 1 juntava"},
+  {"raizes":["terrív","terriv"],"palavras":[],"mostra":["terrív…"],"linha":"é o aviso que a variante 3 juntava"}
+ ],
+ "bichos":["inseto","insetos","bicho","bichos","barata","baratas","escaravelho","escaravelhos","aranha","aranhas","mosca","moscas","formiga","formigas","lagarta","lagartas","rato","ratos","verme","vermes","besouro","besouros","mosquito","mosquitos"],
+ "autoverificacao":["Há uma marca de tempo comum?","O gesto é de todos os dias?","O impossível é dito como facto, sem comentário?","Evitaste explicar a causa?"]
+},
+"colunas":[
+ {"id":"mostra","t":"A frase mostra"},
+ {"id":"infiro","t":"Posso inferir"},
+ {"id":"falta","t":"Preciso de mais contexto"}
+],
+"afirmacoes":[
+ {"id":"manha","curto":"manhã","t":"Gregor acordou de manhã.",
+  "b1":{"mostra":{"marca":"●","t":"Está nas palavras: «Certa manhã, ao acordar». Dizer «acordou de manhã» é ler o que lá está."},
+        "infiro":{"marca":"○","t":"Não precisas de inferir: «Certa manhã, ao acordar» já o diz. Inferir é ir além das palavras."},
+        "falta":{"marca":"○","t":"A frase já responde: «Certa manhã, ao acordar». Pedir mais contexto para o que está escrito é prudência a mais."}},
+  "f":{"mostra":{"marca":"●","t":"Continua à vista: «Certa manhã, ao acordar». O que leste depois não o muda."},
+       "infiro":{"marca":"○","t":"Não precisas de inferir: a frase diz «Certa manhã, ao acordar»."},
+       "falta":{"marca":"○","t":"O texto já responde: «Certa manhã, ao acordar»."},
+       "desmente":{"marca":"○","t":"Nada do que leste o desmente: a frase diz «Certa manhã, ao acordar»."}}},
+ {"id":"corpo","curto":"corpo","t":"Gregor tem agora o corpo de um inseto enorme.",
+  "b1":{"mostra":{"marca":"●","t":"Está nas palavras: «transformado num gigantesco inseto». «Enorme» diz o mesmo que «gigantesco» por outras palavras."},
+        "infiro":{"marca":"○","t":"Não precisas de inferir: a frase diz «gigantesco inseto». Inferir é ir além das palavras; aqui basta lê-las."},
+        "falta":{"marca":"○","t":"A frase já o diz: «transformado num gigantesco inseto». Talvez quisesses saber que inseto é: isso, sim, a frase não diz. Se era essa a tua dúvida, guarda-a."}},
+  "f":{"mostra":{"marca":"●","t":"O § 1 descreve o corpo: costas duras como uma carapaça, uma barriga castanha dividida em arcos, muitas patas finas. «Ungeziefer» não diz a espécie; «inseto» é a palavra que a versão portuguesa escolhe para ele."},
+       "infiro":{"marca":"◐","t":"Também se defende, se pensas no nome: «Ungeziefer» não diz a espécie. Mas já não precisas de inferir o corpo: o § 1 descreve a carapaça, a barriga em arcos e as muitas patas."},
+       "falta":{"marca":"◐","t":"Também se defende, se o que te falta é a espécie: «Ungeziefer» não a diz, e o § 1 descreve o corpo sem lhe dar nome. «Inseto» é a palavra que a versão portuguesa escolhe."},
+       "desmente":{"marca":"○","t":"Nada do que leste desmente o corpo de bicho: o § 1 descreve-o, com carapaça, barriga em arcos e muitas patas."}}},
+ {"id":"identidade","curto":"identidade","t":"Gregor continua a ser Gregor.",
+  "b1":{"mostra":{"marca":"◐","t":"Também se defende: é Gregor quem «se viu», e a frase continua a chamar-lhe Gregor Samsa. Mas «continuar a ser» é mais do que ter o mesmo nome: a frase não diz o que ele pensa ou sente."},
+        "infiro":{"marca":"●","t":"Inferes a partir do sujeito da frase: quem «se viu» transformado é Gregor Samsa, com nome e apelido. Quem acorda é o mesmo que adormeceu. É uma inferência com apoio."},
+        "falta":{"marca":"◐","t":"Também se defende: o nome mantém-se, mas não sabemos se a memória, a voz ou o modo de pensar se mantêm. Se puseste aqui por essa razão, ela é a informação que te falta."}},
+  "f":{"mostra":{"marca":"●","t":"Gregor pergunta-se o que lhe aconteceu e pensa no emprego e nos pais. Por dentro, continua Gregor: o texto mostra-o a pensar."},
+       "infiro":{"marca":"●","t":"Agora com mais apoio: Gregor pensa e lembra-se do emprego e dos pais. O que ainda não sabes é se os outros o reconhecem."},
+       "falta":{"marca":"◐","t":"Defensável, se pensas nos outros: o texto mostra que Gregor pensa, mas ninguém o viu ainda."},
+       "desmente":{"marca":"○","t":"Nada do que leste desmente que continua a ser Gregor: pensa, lembra-se, preocupa-se."}}},
+ {"id":"dormiu","curto":"dormiu mal","t":"Gregor dormiu mal.",
+  "b1":{"mostra":{"marca":"◐","t":"Também se defende: «de sonhos inquietos» está na frase. Mas a frase fala dos sonhos, não da noite: «dormiu mal» já é um passo teu."},
+        "infiro":{"marca":"●","t":"Inferes a partir de «sonhos inquietos»: quem acorda de sonhos assim não teve uma noite tranquila. É uma inferência com apoio numa expressão."},
+        "falta":{"marca":"○","t":"«De sonhos inquietos» já te dá apoio para inferir. Não precisas de mais texto para dar este passo; precisas de o dar com cuidado."}},
+  "f":{"mostra":{"marca":"◐","t":"Também se defende: a frase diz «sonhos inquietos», e o que leste depois não fala da noite."},
+       "infiro":{"marca":"●","t":"Continua a ser uma inferência com apoio em «sonhos inquietos». As passagens que leste não a confirmam nem a contrariam."},
+       "falta":{"marca":"○","t":"«De sonhos inquietos» já dava apoio à inferência, e o que leste não lho tirou."},
+       "desmente":{"marca":"○","t":"Nada do que leste desmente uma noite má. Gregor pensa que não era um sonho, mas isso é sobre o que vê, não sobre como dormiu."}}},
+ {"id":"cama","curto":"cama","t":"Gregor está na cama.",
+  "b1":{"mostra":{"marca":"○","t":"A frase não fala de cama. Fala de acordar, e é daí que a cama vem: da tua experiência de acordar. Isso é inferir."},
+        "infiro":{"marca":"●","t":"«Ao acordar» sugere que estava deitado, provavelmente na cama. É uma inferência razoável, apoiada numa expressão."},
+        "falta":{"marca":"◐","t":"Defensável: acordar não garante cama, e a frase não diz onde Gregor está. Para o confirmar, precisas de outra informação."}},
+  "f":{"mostra":{"marca":"●","t":"Está no original: «in seinem Bett», na sua cama. A versão portuguesa citada pela RTP não a traz. Quem traduz, ou cita, também escolhe o que cala."},
+       "infiro":{"marca":"◐","t":"A tua inferência confirma-se no original: «in seinem Bett». Podes passá-la a «o texto mostra», ou deixá-la aqui, se para ti o texto é só a frase portuguesa."},
+       "falta":{"marca":"○","t":"O original já responde: «in seinem Bett», na sua cama."},
+       "desmente":{"marca":"○","t":"O original confirma a cama: «in seinem Bett»."}}},
+ {"id":"emprego","curto":"emprego","t":"Gregor tem um emprego que o obriga a levantar-se cedo.",
+  "b1":{"mostra":{"marca":"○","t":"Nenhuma palavra da frase fala de trabalho. «Certa manhã» não diz a que horas, nem porquê."},
+        "infiro":{"marca":"○","t":"Que palavra te levou até ao emprego? Se foi «manhã», repara: acordar de manhã não implica um horário de trabalho. Pode ser verdade na novela, mas não é esta frase que o diz."},
+        "falta":{"marca":"●","t":"Para saber em que trabalha Gregor, e se trabalha, precisas de ler mais da novela. É uma pergunta legítima; esta frase só não lhe responde."}},
+  "f":{"mostra":{"marca":"●","t":"Está no texto: Samsa era caixeiro-viajante, o comboio dele parte às cinco e ele queixa-se de ter de se levantar tão cedo."},
+       "infiro":{"marca":"◐","t":"Também se defende: o texto dá o emprego e a hora do comboio, e é Gregor quem se queixa de se levantar cedo. Ligar as duas coisas já quase não é inferir."},
+       "falta":{"marca":"○","t":"O texto já responde: era caixeiro-viajante e o comboio parte às cinco. Se ainda te falta alguma coisa, diz o quê no caderno."},
+       "desmente":{"marca":"○","t":"O texto confirma o emprego e a hora do comboio: nada o desmente."}}},
+ {"id":"sozinho","curto":"sozinho","t":"Gregor vive sozinho.",
+  "b1":{"mostra":{"marca":"○","t":"A frase não fala de mais ninguém. Mas não falar de outras pessoas não é mostrar que não existem."},
+        "infiro":{"marca":"○","t":"Inferir a partir de um silêncio é arriscado: a frase não fala de outras pessoas, mas também não diz que não as há. A falta de uma informação não é uma informação."},
+        "falta":{"marca":"●","t":"A frase não diz com quem Gregor vive. Para o saber, precisas de mais texto."}},
+  "f":{"mostra":{"marca":"○","t":"O texto mostra o contrário: a mãe, o pai e a irmã estão do outro lado das portas do quarto."},
+       "infiro":{"marca":"○","t":"O texto já responde, e ao contrário: a mãe, o pai e a irmã estão do outro lado das portas do quarto."},
+       "falta":{"marca":"○","t":"O texto já responde: a mãe, o pai e a irmã estão do outro lado das portas do quarto."},
+       "desmente":{"marca":"●","t":"A mãe, o pai e a irmã batem às portas do quarto; a irmã pergunta-lhe se precisa de alguma coisa. Gregor não vive sozinho. A frase calava a família, mas calar não era dizer que não havia família."}}},
+ {"id":"repulsa","curto":"repulsa","t":"O novo corpo de Gregor causa repulsa.",
+  "b1":{"mostra":{"marca":"○","t":"A frase não usa nenhuma palavra de repulsa. «Gigantesco» fala de tamanho; «inseto» nomeia o bicho. A repulsa, se a sentes, vem de ti."},
+        "infiro":{"marca":"◐","t":"Defensável, com uma condição: um inseto do tamanho de uma pessoa pode causar repulsa, mas essa reação é tua; não está numa palavra da frase."},
+        "falta":{"marca":"●","t":"A frase dá o tamanho e o tipo de bicho, mas nenhuma reação: nem de Gregor, nem de quem conta. Para saber se há repulsa, e de quem, precisas de mais."}},
+  "f":{"mostra":{"marca":"◐","t":"«Ungeziefer» carrega a rejeição, mas não a diz por extenso: está mais perto de inferir do que de mostrar."},
+       "infiro":{"marca":"●","t":"«Ungeziefer» nomeia bichos que se querem longe de casa: a rejeição passa a estar numa palavra, e não só na tua reação. Repara que ainda ninguém o viu: de quem é a repulsa?"},
+       "falta":{"marca":"●","t":"Também se sustenta: nas passagens que leste, ninguém viu Gregor; a família está atrás das portas. Só a palavra «Ungeziefer» carrega rejeição, e de quem é a repulsa continua por saber."},
+       "desmente":{"marca":"○","t":"Nada do que leste desmente a repulsa. A irmã, que pergunta se ele precisa de alguma coisa, ainda não o viu."}}},
+ {"id":"intencao","curto":"intenção","t":"Kafka quis criticar a forma como o trabalho trata as pessoas.",
+  "b1":{"mostra":{"marca":"○","t":"A frase não fala de trabalho nem de Kafka. A intenção de um autor não está à vista numa frase."},
+        "infiro":{"marca":"○","t":"Pode ser uma leitura interessante da novela, mas esta frase não lhe dá apoio: não tem uma palavra sobre trabalho. Uma leitura pode ser estimulante e estar pouco sustentada."},
+        "falta":{"marca":"●","t":"Repara que esta afirmação precisa de mais do que as outras. Para falar de trabalho, precisas de mais texto; para falar do que Kafka quis, precisas de mais do que o texto."}},
+  "f":{"mostra":{"marca":"○","t":"O texto mostra Gregor a pensar no emprego; não mostra o que Kafka quis."},
+       "infiro":{"marca":"◐","t":"Gregor queixa-se do emprego e do chefe e só não se despede por causa dos pais: o texto apoia uma leitura sobre o trabalho. Mas a afirmação é sobre o que Kafka quis, e uma personagem que se queixa não é o autor a explicar-se."},
+       "falta":{"marca":"●","t":"Continua aqui, e com razão: o texto dá agora material a uma leitura sobre o trabalho, mas o que Kafka quis continua fora dele."},
+       "desmente":{"marca":"○","t":"Nada do que leste desmente esta leitura; também nada a prova."}}}
+],
+"marcas":{"●":"Sustenta-se","◐":"Também se defende","○":"Difícil de sustentar"},
+"marcasFonte":{"●":"Caminho direto","◐":"Ajuda, com limites","○":"Não responde a isto"},
+"b1":{
+ "rotulo":"Arruma",
+ "tempo":"Tempo 2 de 3",
+ "pergunta":"Para cada afirmação, decide: a frase mostra, posso inferir ou preciso de mais contexto?",
+ "aviso":"Ao verificar, esta arrumação fica guardada como a tua primeira leitura.",
+ "atalhos":"Atalhos: 1, a frase mostra; 2, posso inferir; 3, preciso de mais contexto.",
+ "titulo":"Primeira leitura guardada. Toca numa etiqueta para ler o que a tua escolha mostra.",
+ "corpo":"Podes mudar uma etiqueta de coluna depois de leres a explicação. A primeira leitura fica como estava."
+},
+"b2":{
+ "rotulo":"Procura",
+ "pergunta":"Imagina que querias sustentar estas três afirmações. Para cada uma, o que te ajudaria mais?",
+ "afirmacoes":["emprego","sozinho","intencao"],
+ "tipos":[{"id":"novela","t":"Ler mais da novela"},{"id":"autor","t":"Saber o que Kafka escreveu sobre a novela"},{"id":"outros","t":"Saber como outras pessoas a leem"}],
+ "explica":{
+  "emprego":{"novela":{"marca":"●","t":"É o caminho direto: se a novela fala do emprego de Gregor, é no texto que o vais encontrar."},"autor":{"marca":"◐","t":"O que Kafka escreveu sobre a obra pode ajudar, mas a pergunta é sobre a personagem. A resposta mais segura está no próprio texto."},"outros":{"marca":"◐","t":"Uma leitura alheia pode apontar-te o sítio certo da novela. Mas só o texto confirma."}},
+  "sozinho":{"novela":{"marca":"●","t":"Com quem Gregor vive, se vive com alguém, é coisa que a narrativa conta: basta ler mais."},"autor":{"marca":"○","t":"Não precisas da opinião do autor para saber com quem vive uma personagem: é coisa que a narrativa conta, ou deixa ver."},"outros":{"marca":"◐","t":"Pode orientar-te, mas uma informação destas confirma-se no texto."}},
+  "intencao":{"novela":{"marca":"◐","t":"Mais texto pode mostrar como a novela trata o trabalho, e assim sustentar uma leitura. Mas mostrar como o texto constrói uma crítica não é o mesmo que provar o que o autor quis."},"autor":{"marca":"●","t":"É o que mais se aproxima de uma intenção: o que o autor disse ou escreveu. Mesmo assim, o que um autor diz sobre a obra é um testemunho, não uma regra de leitura."},"outros":{"marca":"○","t":"Saber que outras pessoas leem assim mostra que a leitura é partilhada; não mostra que era a intenção de Kafka."}}
+ },
+ "linha":"Que informação procurarias primeiro? Escreve-a numa linha (opcional)."
+},
+"b3":{
+ "rotulo":"Escreve",
+ "marca":"Opcional",
+ "pergunta":"A tua primeira leitura já está guardada. Queres pô-la numa frase?",
+ "molde":"Leio… porque a frase diz…",
+ "carimbo":"Primeira leitura guardada às {hora}.",
+ "carimboProjecao":"Leitura da turma: fica nesta página enquanto estiver aberta.",
+ "semLeitura":"Ainda não guardaste uma primeira leitura. Volta ao cartão «Arruma» e carrega em «Verificar»."
+},
+"original":{
+ "rotulo":"Lê",
+ "tempo":"Tempo 3 de 3",
+ "pergunta":"Kafka escreveu em alemão. Não precisas de saber alemão: toca nas três expressões do original.",
+ "antes":"No original, a primeira frase diz que Gregor, ao acordar de sonhos inquietos, se encontrou",
+ "expressoes":[
+  {"id":"bett","t":"in seinem Bett","depois":", transformado num","g":"Quer dizer «na sua cama»."},
+  {"id":"ungeheuer","t":"ungeheueren","depois":"","g":"Quer dizer «enorme», «desmedido»; num sentido antigo, também «inquietante». O substantivo «Ungeheuer» quer dizer «monstro»."},
+  {"id":"ungeziefer","t":"Ungeziefer","depois":".","g":"Nome coletivo para bichos indesejados ou tidos por nocivos, sobretudo insetos, como piolhos, pulgas ou percevejos, e às vezes ratos. Não nomeia uma espécie."}
+ ],
+ "credito":"Relato e glosas do Lente a partir do original: Franz Kafka, _Die Verwandlung_, Kurt Wolff Verlag, Leipzig, 1917, na digitalização do Projeto Gutenberg (livro n.º 22367), em domínio público. As glosas apoiam-se nos dicionários Duden e DWDS, consultados a 29/10/2026.",
+ "gutenberg":"https://www.gutenberg.org/ebooks/22367",
+ "verGutenberg":"O original no Projeto Gutenberg ↗"
+},
+"inicio":{
+ "rotulo":"Lê",
+ "pergunta":"O que contam os primeiros parágrafos, no original? Cinco passagens, contadas pelo Lente.",
+ "passagens":[
+  {"id":"corpo","par":"§ 1","t":"Gregor está deitado de costas, umas costas duras como uma carapaça. Se ergue um pouco a cabeça, vê a barriga castanha e abaulada, dividida em arcos, onde o cobertor mal se aguenta. As muitas patas, finas de dar pena para o tamanho do corpo, agitam-se diante dos olhos dele."},
+  {"id":"pensa","par":"§ 2","t":"Gregor pergunta-se o que lhe aconteceu. Não era um sonho: está no seu quarto, entre as quatro paredes que conhece."},
+  {"id":"emprego","par":"§ 2","t":"Na mesa, há um mostruário de tecidos: Samsa era caixeiro-viajante."},
+  {"id":"pais","par":"§ 5","t":"Gregor queixa-se de ter de se levantar tão cedo: o comboio dele parte às cinco. Pensa que, se não fosse pelos pais, já se teria despedido; quer juntar o dinheiro para pagar ao chefe uma dívida dos pais."},
+  {"id":"familia","par":"§ 7","t":"Batem às portas do quarto: primeiro a mãe; depois o pai, numa porta lateral; na outra, a irmã, que em voz baixa lhe pergunta se não se sente bem e se precisa de alguma coisa. Gregor não abre."}
+ ],
+ "credito":"Relato do Lente a partir dos parágrafos 1, 2, 5 e 7 do original (Kurt Wolff Verlag, 1917, Projeto Gutenberg, livro n.º 22367). Não é uma tradução."
+},
+"f1":{
+ "rotulo":"Revê",
+ "pergunta":"Agora sabes mais do texto. Alguma afirmação muda de coluna? A tua primeira leitura fica à vista, a tracejado.",
+ "nota":"Nas colunas, «o texto» é agora tudo o que leste: a frase e o que contam as passagens do original. Muda o que quiseres e carrega em «Verificar»: só então aparecem as explicações.",
+ "titulo":"Revisão guardada. Toca numa etiqueta para ler o que a tua escolha mostra.",
+ "corpo":"Se mudares uma etiqueta depois de leres a explicação, a mudança fica marcada: no fim, vês de onde veio.",
+ "colunas":[{"id":"mostra","t":"O texto mostra"},{"id":"infiro","t":"Posso inferir"},{"id":"falta","t":"Preciso de mais contexto"},{"id":"desmente","t":"O texto desmente"}],
+ "atalhos":"Atalhos: 1, o texto mostra; 2, posso inferir; 3, preciso de mais contexto; 4, o texto desmente.",
+ "contador":"Mudaste {n} de {N}.",
+ "nenhuma":"Não mudaste nenhuma afirmação. Manter também é rever, quando sabes porquê."
+},
+"f2":{
+ "rotulo":"Responde",
+ "pergunta":"O que manténs? O que corriges? Que informação fez diferença?",
+ "mantens":"O que manténs",
+ "corriges":"O que corriges",
+ "nenhumaCorrigida":"Não corrigiste nenhuma.",
+ "porque":"Porquê? (opcional)",
+ "informacao":"Que informação fez diferença?",
+ "escolhas":[
+  {"id":"cama","t":"A cama","de":"in seinem Bett"},
+  {"id":"corpo","t":"O corpo","de":"§ 1"},
+  {"id":"bicho","t":"O bicho","de":"ungeheueren Ungeziefer"},
+  {"id":"pensa","t":"O que Gregor pensa","de":"§ 2"},
+  {"id":"emprego","t":"O emprego","de":"§ 2 e § 5"},
+  {"id":"familia","t":"A família","de":"§ 7"},
+  {"id":"explicacoes","t":"As explicações do Lente","de":""},
+  {"id":"nenhuma","t":"Nenhuma: não mudei","de":""}
+ ],
+ "explica":[
+  {"escolha":"cama","se":"moveu:cama","t":"A cama passou a estar no texto, mas no original: a versão portuguesa citada pela RTP não a traz. Quem traduz, ou cita, também escolhe o que cala."},
+  {"escolha":"cama","se":"","t":"Escolheste a cama, mas «Gregor está na cama» ficou onde estava. Se a informação fez diferença, onde se vê essa diferença?"},
+  {"escolha":"corpo","se":"moveu:corpo","t":"O § 1 descreve o corpo: carapaça, barriga castanha em arcos, muitas patas finas. A afirmação deixa de depender só da palavra «inseto»."},
+  {"escolha":"corpo","se":"","t":"Escolheste o corpo, mas «Gregor tem agora o corpo de um inseto enorme» ficou onde estava. Ficou mais firme? Diz porquê no caderno."},
+  {"escolha":"bicho","se":"moveu:repulsa","t":"«Ungeziefer» nomeia bichos que se querem longe de casa. A repulsa deixa de vir só de ti: passa a estar numa palavra. Repara ainda: «ungeheueren Ungeziefer» junta o enorme a uma palavra para bichos pequenos."},
+  {"escolha":"bicho","se":"moveu:corpo","t":"«Ungeziefer» não diz a espécie; o § 1 descreve o corpo; «inseto» é a palavra que a versão portuguesa escolhe para ele. O nome da espécie passa a depender de quem traduz; o corpo, não."},
+  {"escolha":"bicho","se":"","t":"Escolheste o bicho, mas não mudaste nenhuma afirmação sobre ele. Talvez a palavra confirme o que já pensavas: diz, no caderno, que afirmação ficou mais firme."},
+  {"escolha":"pensa","se":"moveu:identidade","t":"Gregor pergunta-se o que lhe aconteceu e pensa no emprego e nos pais. A identidade ganhou apoio por dentro; por fora, ainda ninguém o viu."},
+  {"escolha":"pensa","se":"","t":"Escolheste o que Gregor pensa, mas «continua a ser Gregor» ficou onde estava. Ficou mais firme? Diz porquê no caderno."},
+  {"escolha":"emprego","se":"moveu:emprego","t":"Caixeiro-viajante, comboio às cinco: o emprego deixou de ser suposição. Repara que foi o texto, e não a frase, que te deu esta informação."},
+  {"escolha":"emprego","se":"moveu:intencao","t":"O texto dá agora apoio a uma leitura sobre o trabalho: Gregor queixa-se do chefe e só fica por causa dos pais. Mas «Kafka quis criticar» é uma afirmação sobre o autor. Onde a puseste, e porquê?"},
+  {"escolha":"emprego","se":"","t":"Escolheste o emprego sem mudar nenhuma afirmação. Talvez a informação tenha confirmado o que já pensavas: qual ficou mais firme?"},
+  {"escolha":"familia","se":"moveu:sozinho","t":"A mãe, o pai e a irmã batem às portas do quarto. «Vive sozinho» vinha de um silêncio da frase, e o texto desfez esse silêncio."},
+  {"escolha":"familia","se":"","t":"Escolheste a família, mas «vive sozinho» ficou onde estava. O que te fez mantê-la?"},
+  {"escolha":"explicacoes","se":"","t":"Mudaste por causa de uma explicação, não de uma informação nova. Também conta, se a explicação te deu uma razão: qual foi?"},
+  {"escolha":"nenhuma","se":"","t":"Manter também é rever, quando sabes porquê. Diz que afirmação ficou mais firme depois do que leste."}
+ ],
+ "nenhumaMudou":"Mudaste {n} no cartão «Revê»; se nenhuma informação fez diferença, o que te fez mudar?",
+ "nenhumaArruma":"No cartão «Revê» não mudaste nada; o que corrigiste mudou no cartão «Arruma», depois das explicações. Se foi isso, escolhe «As explicações do Lente»."
+},
+"f3":{
+ "rotulo":"Compara",
+ "pergunta":"Aqui estão as tuas duas leituras. Toca na mudança que te parece mais importante.",
+ "perguntaSem":"Não mudaste nenhuma afirmação. Qual ficou mais firme?",
+ "primeira":"A minha primeira leitura",
+ "agora":"A minha leitura agora",
+ "mudou":"mudou",
+ "lado":{
+  "identidade":"Mudaste o estatuto da identidade. «Ungeziefer» nomeia o que se quer longe de casa; Gregor a perguntar-se o que lhe aconteceu mostra quem continua lá dentro. O texto põe as duas coisas na mesma página.",
+  "emprego":"O emprego entrou no texto: caixeiro-viajante, comboio às cinco, queixas de se levantar cedo. A frase, sozinha, não o dizia.",
+  "sozinho":"Esta afirmação não ganhou apoio: perdeu-o. O silêncio da frase sobre a família não queria dizer que não havia família.",
+  "intencao":"O texto dá agora material a uma leitura sobre o trabalho. A intenção de Kafka continua fora dele. Se mudaste aqui, diz que razão te fez mudar.",
+  "depoisExplicacao":"Esta mudança veio da explicação do cartão «Arruma», antes da informação nova.",
+  "depoisRevisao":"Esta mudança veio depois da explicação do cartão «Revê»: primeiro leste o texto, depois a explicação, e só então mudaste.",
+  "firme":"Manténs, e o que leste apoia-te.",
+  "contraria":"Manténs «{curto}» em «{col}», mas o que leste pede outra coluna.",
+  "contrariaFim":"O que te faz mantê-la?"
+ }
+},
+"fim":{
+ "rotulo":"Para levar",
+ "texto":"Uma frase pode juntar um dia comum e um acontecimento impossível sem mudar de tom. O que a frase diz e o que lhe acrescentas são coisas diferentes, e um silêncio da frase não é uma informação. Saber mais pode dar apoio a uma leitura, tirar-lho ou deixá-la onde estava, sem apagar a primeira.",
+ "ligacoes":[
+  {"t":"A cena que falta →","href":"../../corta/cena-que-falta/"},
+  {"t":"Ver o episódio na RTP Ensina ↗","href":"https://ensina.rtp.pt/artigo/a-metamorfose-ou-a-parabola-do-homem-inseto-de-franz-kafka/","fora":true},
+  {"t":"Mia Couto e Cesariny nas obras →","href":"../"},
+  {"t":"Voltar ao laboratório","href":"../../"}
+ ]
+}
+};
