@@ -1,8 +1,10 @@
-# Mais perto do quotidiano — 24 novos estudos
+# Estudos adicionais — quotidiano, arte e jardins
 
 O docente pediu imagens mais interessantes e reconhecíveis no mesmo estilo. Estas duas pranchas acrescentam problemas de trabalho, tempo, amizade, casa e ajuda. São **propostas por validar**, sem mudar as 140 cartas da seleção anterior. As interpretações seguintes são sementes autorais, não respostas certas.
 
 Uma segunda atualização acrescenta as pranchas 29–30: duas micro-histórias com descoberta, conflito e possibilidades de consequência, para desenvolver além da metáfora isolada. O catálogo adicional reúne agora quatro pranchas e 24 cartas.
+
+**Atualização seguinte:** [Museus, galerias e jardins](MUSEUS-E-JARDINS.md) acrescenta seis pranchas de seis imagens (31–36). O catálogo adicional passa a **60 estudos em dez pranchas**, mantendo os 140 cartões consolidados intactos. As secções abaixo documentam as primeiras quatro pranchas; a nova página apresenta as seis seguintes.
 
 ## 27 — Cheguei, mas fiquei lá
 
@@ -28,9 +30,9 @@ Outra combinação: **27-02, 27-05 e 28-04**, uma jornada temática doméstica. 
 
 ## Para o Claude
 
-[CARTAS.json](CARTAS.json) fornece os 24 IDs, descrições e recortes (grelha 3×2, índices de zero). Os caminhos `file` desse JSON são relativos à raiz `curadoria/baralho-improvavel/`. Não acrescentar automaticamente estes cartões a `kept: true` no catálogo consolidado. Validar primeiro abertura, legibilidade e diferença em relação a motivos já existentes. Prompts em [PROMPTS-QUOTIDIANO.md](../prompts/PROMPTS-QUOTIDIANO.md) e [PROMPTS-MICRO-HISTORIAS.md](../prompts/PROMPTS-MICRO-HISTORIAS.md).
+[CARTAS.json](CARTAS.json) fornece os 60 IDs, descrições e recortes (grelha 3×2, índices de zero). Os caminhos `file` desse JSON são relativos à raiz `curadoria/baralho-improvavel/`. Não acrescentar automaticamente estes cartões a `kept: true` no catálogo consolidado. Validar primeiro abertura, legibilidade e diferença em relação a motivos já existentes. Prompts em [PROMPTS-QUOTIDIANO.md](../prompts/PROMPTS-QUOTIDIANO.md), [PROMPTS-MICRO-HISTORIAS.md](../prompts/PROMPTS-MICRO-HISTORIAS.md) e [PROMPTS-MUSEUS-E-JARDINS.md](../prompts/PROMPTS-MUSEUS-E-JARDINS.md).
 
-Os quatro WebP preservam 1536×1024 e usam compressão de distribuição; não houve alteração das cenas. Os originais PNG ficam guardados fora do repositório. Estes materiais não foram integrados em exercícios nem publicados no site.
+Os dez WebP adicionais preservam 1536×1024 e usam compressão de distribuição; não houve alteração das cenas. Os originais PNG ficam guardados fora do repositório. Estes materiais não foram integrados em exercícios nem publicados no site.
 
 ## 29 — A lavandaria devolve o mar
 

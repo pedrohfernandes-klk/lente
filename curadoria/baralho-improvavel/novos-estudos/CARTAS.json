@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "status": "24 estudos adicionais; não alteram a seleção de 140 cartas em CURADORIA.json",
+  "status": "60 estudos adicionais; não alteram a seleção de 140 cartas em CURADORIA.json",
   "sheets": [
     {
       "id": 27,
@@ -33,6 +33,54 @@
       "height": 1024,
       "sha256": "0a0a80d6f78d39429fd2bd37dd281171eb7a8f7c2ed29254f3c16e02a998c390",
       "originalFile": "30-a-encomenda-trazia-outro-jantar.png"
+    },
+    {
+      "id": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e6c0c32ee2a5771bed9e139ec999143756dca1c69ac784eec27eeed64936af36",
+      "originalFile": "31-o-museu-expoe-o-meu-guarda-chuva.png"
+    },
+    {
+      "id": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c76a0436d889f31e1c32ef34f86e6bcfc27aa289615395a92cf37425520f5993",
+      "originalFile": "32-a-figura-do-quadro-pediu-pausa.png"
+    },
+    {
+      "id": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "7e0f4bb59bba1140c08ead0f9da7ef6001d14d5c2d3216cc0dcb350514fe1669",
+      "originalFile": "33-a-sombra-da-arvore-mudou-de-lugar.png"
+    },
+    {
+      "id": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c6e43a352878cb70f63744e395537017d6a276b28296667163e71099fcbb23e2",
+      "originalFile": "34-plantaram-um-botao.png"
+    },
+    {
+      "id": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "3d46587c4a5c504c94fa17f1f98a539e9dfd747a21e9f20d9d7a0edde60c0fb4",
+      "originalFile": "35-a-estatua-foi-sentar-se.png"
+    },
+    {
+      "id": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "96597e2ce3e09935b36594fefd5b145024fccc7859fa5df75a7bf2a0034c14d8",
+      "originalFile": "36-o-passeio-nao-cabia-no-mapa.png"
     }
   ],
   "cards": [
@@ -275,6 +323,366 @@
       "description": "Mesa crescida e pessoas comem no chão",
       "status": "novo estudo por validar",
       "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "31-01",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Guarda-chuva entregue ao balcão",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "31-02",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Guarda-chuva na vitrina",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "31-03",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Chuva dentro da vitrina",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "31-04",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Planta junto da chuva exposta",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "31-05",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Vitrina levantada com guarda-chuva dentro",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "31-06",
+      "sheet": 31,
+      "file": "pranchas/31-o-museu-expoe-o-meu-guarda-chuva.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Pessoas saem sob jornal",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-01",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Visitante diante de figura pintada",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-02",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Figura mostra imagem da visitante",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-03",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Figura fora da moldura com cadeira",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-04",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Visitante e figura partilham chávena",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-05",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Moldura vazia e figura perto de saída",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "32-06",
+      "sheet": 32,
+      "file": "pranchas/32-a-figura-do-quadro-pediu-pausa.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Visitante dentro do quadro",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-01",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Sombra de árvore pendurada",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-02",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Sombra retirada do estendal",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-03",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Sombra colocada no chão",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-04",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Banco sobre sombra junto de planta",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-05",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Sombra enrolada num saco",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "33-06",
+      "sheet": 33,
+      "file": "pranchas/33-a-sombra-da-arvore-mudou-de-lugar.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Sombra sustentada sobre banco",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-01",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Botão colocado em vaso",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-02",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Casaco nos ramos da planta",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-03",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Manga e botão observados",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-04",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Pessoas cosem botão no casaco",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-05",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Casaco levado com raízes ligadas ao vaso",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "34-06",
+      "sheet": 34,
+      "file": "pranchas/34-plantaram-um-botao.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Pessoa veste casaco e outras seguram botões",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-01",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Figura em pedestal e lancheira",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-02",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Estátua desce com banco pequeno",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-03",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Estátua e pessoa sentadas; etiqueta oferecida",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-04",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Banco com estátua levantado sobre pedestal",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-05",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Pedestal vazio observado e estátua na fila",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "35-06",
+      "sheet": 35,
+      "file": "pranchas/35-a-estatua-foi-sentar-se.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Pessoas e estátua comem; regador no pedestal",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-01",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Mapa e fio à saída da galeria",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-02",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Linha do mapa levantada do papel",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-03",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Percurso chega ao regador",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-04",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Mapa alterado e direções diferentes apontadas",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-05",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Mapa como chapéu; fio pousado",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
+    },
+    {
+      "id": "36-06",
+      "sheet": 36,
+      "file": "pranchas/36-o-passeio-nao-cabia-no-mapa.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Mapa exposto e fio levado para fora",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen; sem obra ou museu real identificado"
     }
   ]
 }
