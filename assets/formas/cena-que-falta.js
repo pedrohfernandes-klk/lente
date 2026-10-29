@@ -159,5 +159,5 @@ window.LenteCenaQueFalta={
   {"t":"Voltar ao laboratório","href":"../../"}
  ]
 },
-"creditos":"Desenhos dos planos 01, 02, 03 e 05: os quatro da mesa de montagem do Lente (ilustrações originais assistidas por IA). Planos em falta em intertítulos, como no cinema mudo. Cena, legendas e hipóteses do Lente, 2026."
+"creditos":"Desenhos dos planos 01, 02, 03 e 05: os quatro da mesa de montagem do Lente (ilustrações originais do Lente, feitas com assistência de IA, em licença CC BY-SA 4.0). Planos em falta em intertítulos, como no cinema mudo. Cena, legendas e hipóteses do Lente, 2026."
 };
