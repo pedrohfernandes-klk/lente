@@ -24,6 +24,7 @@ jobs:
       - name: Sintaxe e contratos do laboratório
         run: |
           node --check assets/formas/corta.js
+          node --check assets/formas/leituras.js
           node --check assets/formas/obras.js
           node --check assets/formas/entrada.js
           python -m unittest discover -s tests -p 'test_formas.py' -v
