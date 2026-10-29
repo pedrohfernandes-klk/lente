@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "status": "12 estudos adicionais; não alteram a seleção de 140 cartas em CURADORIA.json",
+  "status": "24 estudos adicionais; não alteram a seleção de 140 cartas em CURADORIA.json",
   "sheets": [
     {
       "id": 27,
@@ -17,6 +17,22 @@
       "height": 1024,
       "sha256": "6192e313147482312ad9c83c89d8762446a7d9c39bf997ca5fe8045458696444",
       "originalFile": "28-quase-combinamos.png"
+    },
+    {
+      "id": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "e9fa4a19d58abef08e52bfa912819c91e65322d0f177f8a16eebe69fe56c1531",
+      "originalFile": "29-a-lavandaria-devolve-o-mar.png"
+    },
+    {
+      "id": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0a0a80d6f78d39429fd2bd37dd281171eb7a8f7c2ed29254f3c16e02a998c390",
+      "originalFile": "30-a-encomenda-trazia-outro-jantar.png"
     }
   ],
   "cards": [
@@ -137,6 +153,126 @@
       "row": 1,
       "column": 2,
       "description": "Escada sai de caixa numa mudança",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-01",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Meia vermelha entra na máquina",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-02",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Mar sai da máquina de lavar",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-03",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Luva grande recolhida da água",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-04",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Pessoas seguram água num lençol",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-05",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Pessoa chega com balde e moeda",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "29-06",
+      "sheet": 29,
+      "file": "pranchas/29-a-lavandaria-devolve-o-mar.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Barco com meia é lançado na máquina",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-01",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 0,
+      "column": 0,
+      "description": "Encomenda entregue à mesa",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-02",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 0,
+      "column": 1,
+      "description": "Três adultos jantam dentro de caixa",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-03",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 0,
+      "column": 2,
+      "description": "Pessoa pequena aponta para quem recebeu a caixa",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-04",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 1,
+      "column": 0,
+      "description": "Mesas ligadas e taça oferecida",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-05",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 1,
+      "column": 1,
+      "description": "Estafeta à mesa e caixa vazia",
+      "status": "novo estudo por validar",
+      "sourceStatus": "ficção autoral gerada com imagegen"
+    },
+    {
+      "id": "30-06",
+      "sheet": 30,
+      "file": "pranchas/30-a-encomenda-trazia-outro-jantar.webp",
+      "row": 1,
+      "column": 2,
+      "description": "Mesa crescida e pessoas comem no chão",
       "status": "novo estudo por validar",
       "sourceStatus": "ficção autoral gerada com imagegen"
     }
