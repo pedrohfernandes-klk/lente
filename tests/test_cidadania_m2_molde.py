@@ -297,7 +297,8 @@ class Molde(unittest.TestCase):
             self.skipTest('sem origin/main local')
         base = r.stdout.strip()
         lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', base, 'cidadania/m1'], cwd=R).decode().split()
-        locais = sorted(str(p.relative_to(R)) for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
+        # 30/10/2026: caminhos com barras normais, para correr também no Windows
+        locais = sorted(p.relative_to(R).as_posix() for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
         self.assertEqual(sorted(lista), locais)
         # 30/10/2026: pedido do docente (perguntas em português europeu, «Qual das perguntas…» e não «Qual pergunta…»): a
         # base passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; depois da fusão a
