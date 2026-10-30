@@ -147,7 +147,12 @@ class Ginasio(unittest.TestCase):
         i = s.index('id="inicio-cidadania"'); j = s.index('</article>', i)
         self.assertEqual(s[i:j].count('<li><a '), 3)
         i = s.index('id="inicio-narrativas"'); j = s.index('</article>', i)
-        self.assertEqual(re.findall(r'href="narrativas/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        # 30/10/2026: cartão do Laboratório refeito (pedido do docente); as três portas são as da entrada nova do
+        # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
+        self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ver como os outros fizeram', 'Treinar uma regra', 'Criar uma peça'])
+        self.assertIn('img/narrativas/muybridge-grelha-1878.webp', s[i:j])
+        self.assertIn('domínio público', s[i:j])
         self.assertIn('id="inicio-vozes"', s)
         self.assertIn('id="ferramentas"', s)
 
