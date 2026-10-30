@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: manual theme drives existing CSS media while retaining width and print conditions
+ok 1 - manual theme drives existing CSS media while retaining width and print conditions
+  ---
+  duration_ms: 3.8436
+  type: 'test'
+  ...
+# Subtest: an inaccessible external stylesheet does not prevent following local styles from adapting
+ok 2 - an inaccessible external stylesheet does not prevent following local styles from adapting
+  ---
+  duration_ms: 2.0169
+  type: 'test'
+  ...
+# Subtest: a page without an explicit slot receives one floating control; an iframe never does
+ok 3 - a page without an explicit slot receives one floating control; an iframe never does
+  ---
+  duration_ms: 1.8734
+  type: 'test'
+  ...
+# Subtest: system default changes until a manual choice; reset touches only appearance key
+ok 4 - system default changes until a manual choice; reset touches only appearance key
+  ---
+  duration_ms: 1.7826
+  type: 'test'
+  ...
+# Subtest: manual choice survives a fresh document and does not follow system changes
+ok 5 - manual choice survives a fresh document and does not follow system changes
+  ---
+  duration_ms: 1.7496
+  type: 'test'
+  ...
+# Subtest: blocked storage degrades to a manual in-memory preference without throwing
+ok 6 - blocked storage degrades to a manual in-memory preference without throwing
+  ---
+  duration_ms: 1.8415
+  type: 'test'
+  ...
+# Subtest: invalid stored preference is ignored without rewriting it
+ok 7 - invalid stored preference is ignored without rewriting it
+  ---
+  duration_ms: 4.1609
+  type: 'test'
+  ...
+# Subtest: storage synchronization accepts only the preference key and local storage area
+ok 8 - storage synchronization accepts only the preference key and local storage area
+  ---
+  duration_ms: 0.9424
+  type: 'test'
+  ...
+# Subtest: explicit slots only; repeated mounting or script loading never duplicates control
+ok 9 - explicit slots only; repeated mounting or script loading never duplicates control
+  ---
+  duration_ms: 2.2373
+  type: 'test'
+  ...
+# Subtest: same-origin child obtains parent preference on initial handshake and on load
+ok 10 - same-origin child obtains parent preference on initial handshake and on load
+  ---
+  duration_ms: 2.2599
+  type: 'test'
+  ...
+# Subtest: messages validate origin, parent emitter, version, state and direct-child requests
+ok 11 - messages validate origin, parent emitter, version, state and direct-child requests
+  ---
+  duration_ms: 1.6257
+  type: 'test'
+  ...
+# Subtest: no messaging on opaque file origin and no fallback control in an iframe
+ok 12 - no messaging on opaque file origin and no fallback control in an iframe
+  ---
+  duration_ms: 1.6463
+  type: 'test'
+  ...
+# Subtest: late parent initialization and iframe insertion synchronize without a timer
+ok 13 - late parent initialization and iframe insertion synchronize without a timer
+  ---
+  duration_ms: 2.4092
+  type: 'test'
+  ...
+# Subtest: a throwing localStorage property and legacy media listener remain usable
+ok 14 - a throwing localStorage property and legacy media listener remain usable
+  ---
+  duration_ms: 1.0328
+  type: 'test'
+  ...
+# Subtest: CSS uses exact Cartaz tokens, body-specific PT overrides and clear print palette
+ok 15 - CSS uses exact Cartaz tokens, body-specific PT overrides and clear print palette
+  ---
+  duration_ms: 0.8597
+  type: 'test'
+  ...
+# Subtest: código: 2 a 12 caracteres de A a Z, 0 a 9 e hífen, em maiúsculas, com um algarismo
+ok 16 - código: 2 a 12 caracteres de A a Z, 0 a 9 e hífen, em maiúsculas, com um algarismo
+  ---
+  duration_ms: 2.6016
+  type: 'test'
+  ...
+# Subtest: código: recusa o que o Excel troca por números ao abrir o CSV (28/10/2026)
+ok 17 - código: recusa o que o Excel troca por números ao abrir o CSV (28/10/2026)
+  ---
+  duration_ms: 1.1842
+  type: 'test'
+  ...
+# Subtest: chaves: aceites, que ficam no aparelho, privadas, provas, proibidas e desconhecidas
+ok 18 - chaves: aceites, que ficam no aparelho, privadas, provas, proibidas e desconhecidas
+  ---
+  duration_ms: 3.3744
+  type: 'test'
+  ...
+# Subtest: entrega: só as chaves aceites, sem nome, sem o código nos registos, e o topo exato
+ok 19 - entrega: só as chaves aceites, sem nome, sem o código nos registos, e o topo exato
+  ---
+  duration_ms: 1.7014
+  type: 'test'
+  ...
+# Subtest: docente: as regras do Repor, estrito nas entregas e tolerante nos progressos antigos
+ok 20 - docente: as regras do Repor, estrito nas entregas e tolerante nos progressos antigos
+  ---
+  duration_ms: 917.6582
+  type: 'test'
+  ...
+# Subtest: resumo por percurso: lições, sessões, apoios, Atlas, Ginásio, questionários e texto livre
+ok 21 - resumo por percurso: lições, sessões, apoios, Atlas, Ginásio, questionários e texto livre
+  ---
+  duration_ms: 22.9491
+  type: 'test'
+  ...
+# Subtest: desafios ganhos antes de 10/10 («vencido») contam como ganhos (28/10/2026)
+ok 22 - desafios ganhos antes de 10/10 («vencido») contam como ganhos (28/10/2026)
+  ---
+  duration_ms: 0.4379
+  type: 'test'
+  ...
+# Subtest: pormenor: rótulos sem dois pontos repetidos, «modo» só das propriedades próprias e itens por módulo (28/10/2026)
+ok 23 - pormenor: rótulos sem dois pontos repetidos, «modo» só das propriedades próprias e itens por módulo (28/10/2026)
+  ---
+  duration_ms: 3.1167
+  type: 'test'
+  ...
+# Subtest: valores estranhos não partem o resumo
+ok 24 - valores estranhos não partem o resumo
+  ---
+  duration_ms: 0.8061
+  type: 'test'
+  ...
+# Subtest: CSV: BOM, «;», CRLF, aspas e proteção contra fórmulas
+ok 25 - CSV: BOM, «;», CRLF, aspas e proteção contra fórmulas
+  ---
+  duration_ms: 1.9176
+  type: 'test'
+  ...
+# Subtest: duplicados e ordem: fica a entrega mais recente; sem código no fim; ordem natural
+ok 26 - duplicados e ordem: fica a entrega mais recente; sem código no fim; ordem natural
+  ---
+  duration_ms: 1.5203
+  type: 'test'
+  ...
+# Subtest: sem DOM nem armazenamento nem rede nos dois ficheiros de regras
+ok 27 - sem DOM nem armazenamento nem rede nos dois ficheiros de regras
+  ---
+  duration_ms: 1.2335
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1098.2697

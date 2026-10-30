@@ -1,0 +1,15 @@
+sombra: 21/22 caracteres; diferença 4.76%
+horizonte: 27/27 caracteres; diferença 0.00%
+rampa: 23/22 caracteres; diferença 4.55%
+ligacao: 28/29 caracteres; diferença 3.57%
+narrador: 30/28 caracteres; diferença 7.14%
+comeco: 32/32 caracteres; diferença 0.00%
+ordem: 20/20/20 caracteres; diferença 0.00%
+titulo: 26/29 caracteres; diferença 11.54%
+lead: 52/57 caracteres; diferença 9.62%
+conector: 8/7 caracteres; diferença 14.29%
+corrigir: 55/50 caracteres; diferença 10.00%
+citacao: 50/51 caracteres; diferença 2.00%
+verbo: 34/30 caracteres; diferença 13.33%
+fim: 39/38 caracteres; diferença 2.63%
+Certa entre as mais longas: 3/9; limite para duas opções: 5.

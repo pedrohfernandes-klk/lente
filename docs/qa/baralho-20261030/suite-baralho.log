@@ -1,0 +1,211 @@
+test_every_html_document_has_one_reachable_theme_pair (test_appearance_universal.AppearanceCoverage.test_every_html_document_has_one_reachable_theme_pair) ... ok
+test_projection_engines_remain_theme_independent (test_appearance_universal.AppearanceCoverage.test_projection_engines_remain_theme_independent) ... ok
+test_arquivo_nao_regressa_como_porta_principal (test_arquivo_docente.ArquivoDocente.test_arquivo_nao_regressa_como_porta_principal) ... ok
+test_colecoes_e_guioes_acessiveis_pelo_docente (test_arquivo_docente.ArquivoDocente.test_colecoes_e_guioes_acessiveis_pelo_docente) ... ok
+test_mapa_e_lab_nao_promovem_o_conjunto_como_percurso (test_arquivo_docente.ArquivoDocente.test_mapa_e_lab_nao_promovem_o_conjunto_como_percurso) ... ok
+test_berger_is_support_not_first_sequential_step (test_cidadania_abertura.Abertura.test_berger_is_support_not_first_sequential_step) ... ok
+test_exercises_repeat_without_progress_or_grade (test_cidadania_abertura.Abertura.test_exercises_repeat_without_progress_or_grade) ... ok
+test_opening_local_links (test_cidadania_abertura.Abertura.test_opening_local_links) ... ok
+test_choices_have_diagnostic_feedback (test_cidadania_anomalias.Anomalias.test_choices_have_diagnostic_feedback) ... ok
+test_images_and_card_order_preserved (test_cidadania_anomalias.Anomalias.test_images_and_card_order_preserved) ... ok
+test_visual_question_is_precise_and_feedback_covers_every_crop (test_cidadania_anomalias.Anomalias.test_visual_question_is_precise_and_feedback_covers_every_crop) ... ok
+test_bank_structure_and_sources (test_cidadania_butler_singer.ButlerSinger.test_bank_structure_and_sources) ... ok
+test_neutral_feedback_and_independent_storage (test_cidadania_butler_singer.ButlerSinger.test_neutral_feedback_and_independent_storage) ... ok
+test_teaching_before_application_and_open_positions (test_cidadania_butler_singer.ButlerSinger.test_teaching_before_application_and_open_positions) ... ok
+test_branch_state_is_transient_and_displayed (test_cidadania_casos.Casos.test_branch_state_is_transient_and_displayed) ... ok
+test_five_cases_per_module (test_cidadania_casos.Casos.test_five_cases_per_module) ... ok
+test_new_cases_teach_before_deciding_and_have_sources (test_cidadania_casos.Casos.test_new_cases_teach_before_deciding_and_have_sources) ... ok
+test_eighteen_unique_pages_and_four_integrated_capsules (test_cidadania_m1_fichas.FichasM1.test_eighteen_unique_pages_and_four_integrated_capsules) ... ok
+test_legacy_banks_and_scripts_survive_css_extraction (test_cidadania_m1_fichas.FichasM1.test_legacy_banks_and_scripts_survive_css_extraction) ... ok
+test_local_links_and_no_duplicate_ids (test_cidadania_m1_fichas.FichasM1.test_local_links_and_no_duplicate_ids) ... ok
+test_only_v2_key_is_written (test_cidadania_m1_fichas.FichasM1.test_only_v2_key_is_written) ... ok
+test_published_task_is_untouched_and_only_session_three_runs_it (test_cidadania_m1_fichas.FichasM1.test_published_task_is_untouched_and_only_session_three_runs_it) ... FAIL
+test_sessions_are_complete_and_timed (test_cidadania_m1_fichas.FichasM1.test_sessions_are_complete_and_timed) ... ok
+test_source_generation_is_reproducible (test_cidadania_m1_fichas.FichasM1.test_source_generation_is_reproducible) ... FAIL
+test_abertura_imagem_pergunta_comecar (test_cidadania_m1_molde.Molde.test_abertura_imagem_pergunta_comecar) ... ok
+test_cartoes_de_obra (test_cidadania_m1_molde.Molde.test_cartoes_de_obra) ... ok
+test_cinco_passos_pela_ordem (test_cidadania_m1_molde.Molde.test_cinco_passos_pela_ordem) ... ok
+test_decide_sem_ecra_e_leva_em_papel (test_cidadania_m1_molde.Molde.test_decide_sem_ecra_e_leva_em_papel) ... ok
+test_escrita (test_cidadania_m1_molde.Molde.test_escrita) ... ok
+test_oficina_de_argumento_e_guiao (test_cidadania_m1_molde.Molde.test_oficina_de_argumento_e_guiao) ... ok
+test_recupera_confirma_so_com_resposta_da_sessao_anterior (test_cidadania_m1_molde.Molde.test_recupera_confirma_so_com_resposta_da_sessao_anterior) ... ok
+test_registo_so_nas_sessoes_que_contam (test_cidadania_m1_molde.Molde.test_registo_so_nas_sessoes_que_contam) ... ok
+test_tempos_somam_180_e_plano_da_tarefa (test_cidadania_m1_molde.Molde.test_tempos_somam_180_e_plano_da_tarefa) ... ok
+test_local_links_and_fragments (test_cidadania_m1_operacional.CidadaniaM1.test_local_links_and_fragments) ... ok
+test_old_destinations_and_images_preserved (test_cidadania_m1_operacional.CidadaniaM1.test_old_destinations_and_images_preserved) ... ok
+test_progress_ids_preserved (test_cidadania_m1_operacional.CidadaniaM1.test_progress_ids_preserved) ... ok
+test_weights_and_requirements_preserved (test_cidadania_m1_operacional.CidadaniaM1.test_weights_and_requirements_preserved) ... ok
+test_local_links_and_anchors (test_cidadania_m2_aulas.AulasM2.test_local_links_and_anchors) ... ok
+test_materials_are_not_a_second_progress_or_assessment_engine (test_cidadania_m2_aulas.AulasM2.test_materials_are_not_a_second_progress_or_assessment_engine) ... ok
+test_nagel_has_a_primary_source_and_distinguishes_application (test_cidadania_m2_aulas.AulasM2.test_nagel_has_a_primary_source_and_distinguishes_application) ... ok
+test_ten_sessions_reachable_from_module (test_cidadania_m2_aulas.AulasM2.test_ten_sessions_reachable_from_module) ... ok
+test_abertura_uma_imagem_pergunta_comecar (test_cidadania_m2_molde.Molde.test_abertura_uma_imagem_pergunta_comecar) ... ok
+test_cartoes_de_obra (test_cidadania_m2_molde.Molde.test_cartoes_de_obra) ... ok
+test_chave_nova_so_nas_sessoes_do_m2 (test_cidadania_m2_molde.Molde.test_chave_nova_so_nas_sessoes_do_m2) ... ok
+test_cinco_passos_pela_ordem (test_cidadania_m2_molde.Molde.test_cinco_passos_pela_ordem) ... ok
+test_dados_sem_regras_proibidas (test_cidadania_m2_molde.Molde.test_dados_sem_regras_proibidas) ... ok
+test_decide_sem_ecra_faz_casa_leva_em_papel (test_cidadania_m2_molde.Molde.test_decide_sem_ecra_faz_casa_leva_em_papel) ... ok
+test_decisoes_provisorias_no_guia (test_cidadania_m2_molde.Molde.test_decisoes_provisorias_no_guia) ... ok
+test_escrita (test_cidadania_m2_molde.Molde.test_escrita) ... ok
+test_etapas_indice_portal_e_docente (test_cidadania_m2_molde.Molde.test_etapas_indice_portal_e_docente) ... ok
+test_fonte_nao_bloqueia_a_pagina (test_cidadania_m2_molde.Molde.test_fonte_nao_bloqueia_a_pagina) ... ok
+test_fontes_externas_ja_estao_no_lente (test_cidadania_m2_molde.Molde.test_fontes_externas_ja_estao_no_lente) ... ok
+test_frases_para_classificar_em_lista (test_cidadania_m2_molde.Molde.test_frases_para_classificar_em_lista) ... ok
+test_geracao_reprodutivel (test_cidadania_m2_molde.Molde.test_geracao_reprodutivel) ... ok
+test_guia_sem_nomes_tecnicos_e_sem_pontuacao_dupla (test_cidadania_m2_molde.Molde.test_guia_sem_nomes_tecnicos_e_sem_pontuacao_dupla) ... ok
+test_ligacoes_locais_e_ids (test_cidadania_m2_molde.Molde.test_ligacoes_locais_e_ids) ... ok
+test_m1_igual_a_origin_main (test_cidadania_m2_molde.Molde.test_m1_igual_a_origin_main) ... FAIL
+test_mapa_diz_o_estado_por_palavras (test_cidadania_m2_molde.Molde.test_mapa_diz_o_estado_por_palavras) ... ok
+test_mapa_do_contra_feed_em_dez_casas (test_cidadania_m2_molde.Molde.test_mapa_do_contra_feed_em_dez_casas) ... ok
+test_pesos_sao_os_do_contra_feed (test_cidadania_m2_molde.Molde.test_pesos_sao_os_do_contra_feed) ... ok
+test_portal_so_le_a_chave_das_sessoes (test_cidadania_m2_molde.Molde.test_portal_so_le_a_chave_das_sessoes) ... ok
+test_recupera_duas_conceptuais_e_uma_pessoal (test_cidadania_m2_molde.Molde.test_recupera_duas_conceptuais_e_uma_pessoal) ... ok
+test_recupera_responde_com_a_sessao_anterior (test_cidadania_m2_molde.Molde.test_recupera_responde_com_a_sessao_anterior) ... ok
+test_riscos_corrigidos (test_cidadania_m2_molde.Molde.test_riscos_corrigidos) ... ok
+test_sessao_05_nao_da_a_resposta (test_cidadania_m2_molde.Molde.test_sessao_05_nao_da_a_resposta) ... ok
+test_tempos (test_cidadania_m2_molde.Molde.test_tempos) ... ok
+test_videos (test_cidadania_m2_molde.Molde.test_videos) ... ok
+test_archived_five_meetings_and_prequel_direct_links (test_cidadania_percurso.Percurso.test_archived_five_meetings_and_prequel_direct_links) ... ok
+test_m2_assessment_progress_and_original_destinations (test_cidadania_percurso.Percurso.test_m2_assessment_progress_and_original_destinations) ... ok
+test_private_guide_absent_from_public_tree_and_ancestry (test_cidadania_percurso.Percurso.test_private_guide_absent_from_public_tree_and_ancestry) ... ok
+test_archive_is_not_automatically_suggested (test_cidade_arquivo.ArchiveAndFieldwork.test_archive_is_not_automatically_suggested) ... ok
+test_archive_keeps_all_fourteen_destinations (test_cidade_arquivo.ArchiveAndFieldwork.test_archive_keeps_all_fourteen_destinations) ... ok
+test_shared_route_and_all_city_missions_remain_reachable (test_cidade_arquivo.ArchiveAndFieldwork.test_shared_route_and_all_city_missions_remain_reachable) ... ok
+test_tools_do_not_promote_fieldwork_or_archived_collection (test_cidade_arquivo.ArchiveAndFieldwork.test_tools_do_not_promote_fieldwork_or_archived_collection) ... ok
+test_tools_have_distinct_named_groups_and_no_promotional_banner (test_cidade_arquivo.ArchiveAndFieldwork.test_tools_have_distinct_named_groups_and_no_promotional_banner) ... ok
+test_guides_and_archive_are_reachable_from_the_same_entry (test_docente_hub.TeacherHub.test_guides_and_archive_are_reachable_from_the_same_entry) ... ok
+test_home_buoy_targets_the_hub (test_docente_hub.TeacherHub.test_home_buoy_targets_the_hub) ... ok
+test_all_new_local_dependencies_exist (test_formas.Formas.test_all_new_local_dependencies_exist) ... ok
+test_corpus_is_honest_and_has_two_uses (test_formas.Formas.test_corpus_is_honest_and_has_two_uses) ... ok
+test_legacy_paths_and_keys_remain (test_formas.Formas.test_legacy_paths_and_keys_remain) ... ok
+test_acessos_e_dependencias_das_paginas_novas (test_formas.Prototipos.test_acessos_e_dependencias_das_paginas_novas) ... ok
+test_cena_que_falta_combinacoes_distintas (test_formas.Prototipos.test_cena_que_falta_combinacoes_distintas) ... ok
+test_certa_manha_contrato (test_formas.Prototipos.test_certa_manha_contrato) ... ok
+test_kafka_expressoes_selecionaveis_na_frase_nova (test_formas.Prototipos.test_kafka_expressoes_selecionaveis_na_frase_nova) ... ok
+test_kafka_fonte_ativa_e_historico (test_formas.Prototipos.test_kafka_fonte_ativa_e_historico) ... ok
+test_progresso_novo_sem_apagar_o_antigo (test_formas.Prototipos.test_progresso_novo_sem_apagar_o_antigo) ... ok
+test_textos_visiveis_cumprem_as_regras (test_formas.Prototipos.test_textos_visiveis_cumprem_as_regras) ... ok
+test_aplicar_keeps_published_dilemma (test_justica.Justica.test_aplicar_keeps_published_dilemma) ... ok
+test_entry_is_linked (test_justica.Justica.test_entry_is_linked) ... ok
+test_house_rules_and_local_links (test_justica.Justica.test_house_rules_and_local_links) ... ok
+test_lesson_3_is_chained (test_justica.Justica.test_lesson_3_is_chained) ... ok
+test_lessons_size_key_and_excerpts (test_justica.Justica.test_lessons_size_key_and_excerpts) ... ok
+test_player_only_on_touch_nocookie (test_justica.Justica.test_player_only_on_touch_nocookie) ... ok
+test_teacher_guide_names_the_transcript_once (test_justica.Justica.test_teacher_guide_names_the_transcript_once) ... ok
+test_ancoras_existem (test_lab_manifesto.Manifesto.test_ancoras_existem) ... ok
+test_chaves_de_progresso_mantem_se (test_lab_manifesto.Manifesto.test_chaves_de_progresso_mantem_se) ... ok
+test_paginas_existem (test_lab_manifesto.Manifesto.test_paginas_existem) ... ok
+test_entrada_do_lab_em_tres_portas (test_lab_treinos.Ginasio.test_entrada_do_lab_em_tres_portas) ... ok
+test_entrada_do_lente (test_lab_treinos.Ginasio.test_entrada_do_lente) ... ok
+test_exercicios_e_oficinas_apontam_para_o_ginasio (test_lab_treinos.Ginasio.test_exercicios_e_oficinas_apontam_para_o_ginasio) ... ok
+test_fase0_sem_etiquetas_nem_pontos (test_lab_treinos.Ginasio.test_fase0_sem_etiquetas_nem_pontos) ... ok
+test_ligacoes_locais_existem (test_lab_treinos.Ginasio.test_ligacoes_locais_existem) ... ok
+test_piloto_subtexto (test_lab_treinos.Ginasio.test_piloto_subtexto) ... ok
+test_regras_da_casa (test_lab_treinos.Ginasio.test_regras_da_casa) ... ok
+test_sem_atribuicoes_por_confirmar (test_lab_treinos.Ginasio.test_sem_atribuicoes_por_confirmar) ... ok
+test_trinta_treinos_com_o_mesmo_molde (test_lab_treinos.Ginasio.test_trinta_treinos_com_o_mesmo_molde) ... ok
+test_contra_feed_com_texto_alternativo_em_portugues (test_pendentes_20261028.Pendentes.test_contra_feed_com_texto_alternativo_em_portugues) ... ok
+test_orwell_liga_ao_livro_certo (test_pendentes_20261028.Pendentes.test_orwell_liga_ao_livro_certo) ... ok
+test_sem_ancora_inexistente_de_siza (test_pendentes_20261028.Pendentes.test_sem_ancora_inexistente_de_siza) ... ok
+test_turco_sem_jogador_e_suposicao_com_tu (test_pendentes_20261028.Pendentes.test_turco_sem_jogador_e_suposicao_com_tu) ... ok
+test_caderno_diz_onde_se_entrega_e_quem_envia (test_resultados_turma.Caderno.test_caderno_diz_onde_se_entrega_e_quem_envia)
+28/10/2026: o caderno em papel abre-se na mesa; o progresso do s�tio entrega-se por �Entregar ao docente�, e � ... ok
+test_codigo_nunca_guardado_no_aparelho (test_resultados_turma.Caderno.test_codigo_nunca_guardado_no_aparelho) ... ok
+test_entregar_ao_docente_a_seguir_ao_progresso (test_resultados_turma.Caderno.test_entregar_ao_docente_a_seguir_ao_progresso) ... ok
+test_guardar_e_repor_ficam_iguais (test_resultados_turma.Caderno.test_guardar_e_repor_ficam_iguais) ... ok
+test_nota_pedagogica (test_resultados_turma.Documento.test_nota_pedagogica) ... ok
+test_ficheiros_novos_sem_travessao_nem_ponto_medio (test_resultados_turma.Escrita.test_ficheiros_novos_sem_travessao_nem_ponto_medio) ... ok
+test_hub_sem_ficha_nem_folha_no_bloco_da_ligacao (test_resultados_turma.Escrita.test_hub_sem_ficha_nem_folha_no_bloco_da_ligacao)
+28/10/2026: o bloco 03 do hub, onde est� a liga��o nova, cumpre a regra �nunca ficha nem folha�. ... ok
+test_regras_de_escrita (test_resultados_turma.Escrita.test_regras_de_escrita) ... ok
+test_ligacao_em_acompanhar (test_resultados_turma.Hub.test_ligacao_em_acompanhar) ... ok
+test_chaves_de_cidadania_e_do_aparelho (test_resultados_turma.Listas.test_chaves_de_cidadania_e_do_aparelho) ... ok
+test_totais_embutidos_conferem_com_as_pastas (test_resultados_turma.Listas.test_totais_embutidos_conferem_com_as_pastas) ... ok
+test_estrutura_e_sistema_visual_da_area_do_docente (test_resultados_turma.PaginaDoDocente.test_estrutura_e_sistema_visual_da_area_do_docente) ... ok
+test_noindex_csp_e_linha_de_privacidade (test_resultados_turma.PaginaDoDocente.test_noindex_csp_e_linha_de_privacidade) ... ok
+test_textos_que_nao_prometem_mais_do_que_ha (test_resultados_turma.PaginaDoDocente.test_textos_que_nao_prometem_mais_do_que_ha)
+28/10/2026: o nome, as provas e a data dizem o que o ficheiro de facto leva. ... ok
+test_zona_de_ficheiros_tabela_csv_limpar_e_estado (test_resultados_turma.PaginaDoDocente.test_zona_de_ficheiros_tabela_csv_limpar_e_estado) ... ok
+test_a_pagina_do_docente_nao_guarda_nada (test_resultados_turma.SemRede.test_a_pagina_do_docente_nao_guarda_nada) ... ok
+test_nenhuma_chamada_de_rede_nem_html_vindo_de_ficheiros (test_resultados_turma.SemRede.test_nenhuma_chamada_de_rede_nem_html_vindo_de_ficheiros) ... ok
+test_cadeia_e_entrada (test_ter_juizo.TerJuizo.test_cadeia_e_entrada) ... ok
+test_imagens_existem_e_tem_credito (test_ter_juizo.TerJuizo.test_imagens_existem_e_tem_credito) ... ok
+test_licoes_chave_e_regras (test_ter_juizo.TerJuizo.test_licoes_chave_e_regras) ... ok
+test_ligacoes_locais_existem (test_ter_juizo.TerJuizo.test_ligacoes_locais_existem) ... ok
+test_cada_bloco_no_passo_certo (test_videos_cidadania_m1.VideosCidadaniaM1.test_cada_bloco_no_passo_certo) ... ok
+test_cinco_videos_sem_leitor_antes_do_toque (test_videos_cidadania_m1.VideosCidadaniaM1.test_cinco_videos_sem_leitor_antes_do_toque) ... ok
+test_escrita (test_videos_cidadania_m1.VideosCidadaniaM1.test_escrita) ... ok
+test_guia_do_docente (test_videos_cidadania_m1.VideosCidadaniaM1.test_guia_do_docente) ... ok
+test_aplicado_e_idempotente (test_videos_escolhidos.VideosEscolhidos.test_aplicado_e_idempotente) ... ok
+test_cada_cartao_esta_no_sitio_certo (test_videos_escolhidos.VideosEscolhidos.test_cada_cartao_esta_no_sitio_certo) ... ok
+test_dados_sem_erros_de_escrita (test_videos_escolhidos.VideosEscolhidos.test_dados_sem_erros_de_escrita) ... ok
+test_escolhidos_da_ronda_1 (test_videos_escolhidos.VideosEscolhidos.test_escolhidos_da_ronda_1) ... ok
+test_leitor_so_ao_toque_e_sem_cookies (test_videos_escolhidos.VideosEscolhidos.test_leitor_so_ao_toque_e_sem_cookies) ... ok
+test_os_outros_cartoes_nao_mudam (test_videos_escolhidos.VideosEscolhidos.test_os_outros_cartoes_nao_mudam) ... Exception in thread Thread-9 (_readerthread):
+Traceback (most recent call last):
+  File "C:\Users\Utilizador\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Utilizador\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Utilizador\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 1599, in _readerthread
+    buffer.append(fh.read())
+                  ^^^^^^^^^
+  File "C:\Users\Utilizador\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x90 in position 65237: character maps to <undefined>
+ERROR
+test_entrada_lista_todas (test_vozes.Vozes.test_entrada_lista_todas) ... ok
+test_imagens_existem (test_vozes.Vozes.test_imagens_existem) ... ok
+test_linhas_de_apoio (test_vozes.Vozes.test_linhas_de_apoio) ... ok
+test_palavras_proibidas_no_texto (test_vozes.Vozes.test_palavras_proibidas_no_texto) ... ok
+test_rotulo_da_seccao (test_vozes.Vozes.test_rotulo_da_seccao) ... ok
+test_seguinte_pela_ordem (test_vozes.Vozes.test_seguinte_pela_ordem) ... ok
+
+======================================================================
+ERROR: test_os_outros_cartoes_nao_mudam (test_videos_escolhidos.VideosEscolhidos.test_os_outros_cartoes_nao_mudam)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\tests\test_videos_escolhidos.py", line 65, in test_os_outros_cartoes_nao_mudam
+    base = correcoes.aplicar(r.stdout, p['pagina'], rigoroso=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\tools\cidadania_m2_correcoes.py", line 132, in aplicar
+    if antes in texto:
+       ^^^^^^^^^^^^^^
+TypeError: argument of type 'NoneType' is not iterable
+
+======================================================================
+FAIL: test_published_task_is_untouched_and_only_session_three_runs_it (test_cidadania_m1_fichas.FichasM1.test_published_task_is_untouched_and_only_session_three_runs_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\tests\test_cidadania_m1_fichas.py", line 42, in test_published_task_is_untouched_and_only_session_three_runs_it
+    self.assertEqual((R/'cidadania/projeto/index.html').read_bytes(),subprocess.check_output(['git','show',BASE+':cidadania/projeto/index.html'],cwd=R))
+AssertionError: b'<!d[975 chars]ace}\r\n@media (prefers-color-scheme:dark){:ro[29061 chars]tml>' != b'<!d[975 chars]ace}\n@media (prefers-color-scheme:dark){:root[28795 chars]tml>'
+
+======================================================================
+FAIL: test_source_generation_is_reproducible (test_cidadania_m1_fichas.FichasM1.test_source_generation_is_reproducible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\tests\test_cidadania_m1_fichas.py", line 94, in test_source_generation_is_reproducible
+    for p,content in before.items():self.assertEqual(content,p.read_bytes(),p)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'<!d[975 chars]ace}\r\n@media (prefers-color-scheme:dark){:ro[29061 chars]tml>' != b'<!d[975 chars]ace}\n@media (prefers-color-scheme:dark){:root[28795 chars]tml>' : C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\cidadania\projeto\index.html
+
+======================================================================
+FAIL: test_m1_igual_a_origin_main (test_cidadania_m2_molde.Molde.test_m1_igual_a_origin_main)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Utilizador\.codex\visualizations\2026\10\30\01a18a66-0919-7ff0-a54b-8cfc434a7094\lente\tests\test_cidadania_m2_molde.py", line 294, in test_m1_igual_a_origin_main
+    self.assertEqual(sorted(lista), locais)
+AssertionError: Lists differ: ['cidadania/m1/abertura/index.html', 'cidadania/m1/b[2476 chars]tml'] != ['cidadania\\m1\\abertura\\index.html', 'cidadania\\[2694 chars]tml']
+
+First differing element 0:
+'cidadania/m1/abertura/index.html'
+'cidadania\\m1\\abertura\\index.html'
+
+Diff is 9718 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 147 tests in 20.177s
+
+FAILED (failures=3, errors=1)
