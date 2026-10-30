@@ -151,7 +151,7 @@ function comparacao(){
  if(K)return '<div class="ls-compara"><p><b>Antes:</b> '+e(primeiraTexto(s.primeira))+'</p><p><b>Agora:</b> '+e((cartoes.find(q=>q.id==='revisao').o[cartoes.find(q=>q.id==='revisao').valores.indexOf(s.agora)])||'Por escolher')+'</p></div>';
  return '<p class="ls-resultado">Antes, supunhas: '+e(cartoes[0].o[cartoes[0].valores.indexOf(S.inicial)]||'')+'</p><div class="ls-par">'+s.planos.slice(-2).map(p=>'<figure>'+foto(p)+'<figcaption>'+e(F.quadros[p].titulo)+'</figcaption></figure>').join('')+'</div><p class="ls-resultado">O fim mantém-se: a carteira volta à dona.</p>';
 }
-function fonteHtml(){return K?'<p>'+it(K.credito.completo)+'</p><p><a href="'+e(K.credito.rtp)+'">RTP Ensina</a></p><p>'+it(K.inicio.credito)+'</p><p><a href="'+e(K.original.gutenberg)+'">Original no Projeto Gutenberg</a></p>':'<p>'+e(F.creditos)+'</p><p>Os três planos em falta são desenhos vetoriais originais do Lente, feitos com assistência de IA, CC BY-SA 4.0.</p>';}
+function fonteHtml(){return K?'<p>'+it(K.credito.completo)+'</p><p><a href="'+e(K.credito.rtp)+'">RTP Ensina</a></p><p>'+it(K.inicio.credito)+'</p><p><a href="'+e(K.original.gutenberg)+'">Original no Projeto Gutenberg</a></p>':'<p>'+e(F.creditos)+'</p>';}
 function fim(){return '<h2 class="lf-q">'+e(atual().p)+'</h2><p>'+(K?'O texto diz uma coisa; a tua leitura pode acrescentar outra. Voltar ao texto permite distinguir as duas.':'Um plano muda o que supões sobre uma cena, sem mudar o fim.')+'</p><div class="ls-opcoes"><button class="lf-op" data-imprimir>Versão em papel</button><a class="lf-op" href="?guia=1">Guia do docente e fontes</a></div><details><summary>Créditos</summary>'+fonteHtml()+'</details>';}
 function corpoHtml(q){
  const n=s.respostas[q.id];
