@@ -86,7 +86,8 @@ class Molde(unittest.TestCase):
         for n in range(1, 11):
             s = sessao(n)
             capa = s[s.index('data-session-intro'):s.index('data-session-flow')]
-            self.assertEqual(capa.count('<img '), 1, n)
+            # 30/10/2026: reciclagem dos gigantes (decisão do docente).
+            self.assertEqual(capa.count('<img '), 0 if n in molde.CASOS_RECICLADOS else 1, n)
             self.assertIn('class="c10-deck"', capa)
             self.assertIn('data-start>Começar</a>', capa)
             # 28/10/2026 (revisão de design): o material que se observa fica à vista, no próprio material, em vez de atrás
@@ -100,7 +101,8 @@ class Molde(unittest.TestCase):
                     esperadas |= {molde.LISBOA_1907['a']['src'], molde.LISBOA_1907['b']['src']}
             self.assertEqual({src.replace('../', '') for src in Pagina(s).imgs}, esperadas, n)
             # a imagem da abertura carrega já (está acima da dobra); as outras esperam
-            self.assertRegex(capa, r'<img [^>]*loading="eager" fetchpriority="high"', n)
+            if n not in molde.CASOS_RECICLADOS:
+                self.assertRegex(capa, r'<img [^>]*loading="eager" fetchpriority="high"', n)
 
     def test_cinco_passos_pela_ordem(self):
         for n in range(1, 11):
@@ -191,7 +193,11 @@ class Molde(unittest.TestCase):
                 caminho = alvo.split('#')[0]
                 self.assertTrue((R / caminho / 'index.html').exists(), (n, alvo))
             s = sessao(n)
-            self.assertEqual(s.count('class="c10-obra"'), 1, n)
+            # 30/10/2026: reciclagem dos gigantes (decisão do docente).
+            self.assertEqual(s.count('class="c10-obra"'), 0 if n in molde.CASOS_RECICLADOS else 1, n)
+            if n in molde.CASOS_RECICLADOS:
+                self.assertIn('id="caso-reciclado"', s)
+                self.assertIn('Ler o relato em português', s)
             self.assertIn('Outra leitura', s)
         self.assertNotIn('class="c10-obra"', sessao(10))
 

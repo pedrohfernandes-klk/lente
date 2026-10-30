@@ -448,7 +448,7 @@ OBRAS = {
  contexto='Olympe de Gouges, pseudónimo de Marie Gouze, era dramaturga e ativista política. Em 1791, dois anos depois da Declaração dos Direitos do Homem e do Cidadão, reescreveu-a artigo a artigo, pondo a mulher onde o texto dizia o homem. Juntou um prefácio dirigido à rainha e um posfácio que começa por «Mulher, acorda». No artigo X tira uma consequência: se a mulher tem o direito de subir ao cadafalso, deve ter igualmente o de subir à tribuna. Foi guilhotinada em Paris em 1793, por causa dos seus escritos.',
  acesso=[('O exemplar de 1791 no Internet Archive, em francês', 'https://archive.org/details/lesdroitsdelafem00goug')],
  pergunta='Quem fica de fora quando uma regra diz «todos»?',
- ligacoes=[('Aos ombros de gigantes: Olympe de Gouges', 'gigantes/gouges/'), ('Passo 02: o que podemos dizer?', 'cidadania/m2/passo-02/')],
+ ligacoes=[('Caso em português: quem partilha o risco pode tomar a palavra?', 'cidadania/m2/sessoes/03/#caso-reciclado'), ('Passo 02: o que podemos dizer?', 'cidadania/m2/passo-02/')],
  discordante='No mesmo artigo X, Gouges aceita um limite: as manifestações não podem perturbar a ordem pública estabelecida pela lei. Quem decide o que perturba a ordem? Um limite à palavra protege quem ouve, ou quem manda?'),
 4: dict(titulo='What Is It Like to Be a Bat?', autor='Thomas Nagel', data='The Philosophical Review, 83(4), 1974, pp. 435-450', protegida=True,
  razao='Nagel separa saber como uma coisa funciona de saber como é vivê-la. O Contra-feed precisa desse limite para não falar pelo público.',
@@ -463,7 +463,7 @@ OBRAS = {
  acesso=[('Transcrição Fourmilab de Sketch of the Analytical Engine, com as notas da tradutora, em inglês', 'https://www.fourmilab.ch/babbage/sketch.html'),
          ('Wikisource, Scientific Memoirs, «Notes by the Translator»', 'https://en.wikisource.org/wiki/Scientific_Memoirs/3/Sketch_of_the_Analytical_Engine_invented_by_Charles_Babbage,_Esq./Notes_by_the_Translator')],
  pergunta='Quando uma máquina gera uma imagem que ninguém desenhou, quem responde por ela?',
- ligacoes=[('Aos ombros de gigantes: Ada Lovelace', 'gigantes/lovelace/'), ('Passo 04: quem está dentro da caixa?', 'cidadania/m2/passo-04/')],
+ ligacoes=[('Investigar: Lovelace e as ferramentas', 'investigar/passo-04/'), ('Passo 04: quem está dentro da caixa?', 'cidadania/m2/passo-04/')],
  discordante='Se a máquina não origina nada, de onde vem o que gera? O passo 04 responde que um sistema de inteligência artificial gera texto, imagem e som a partir de milhões de obras de pessoas, muitas sem autorização. A pergunta já não é só quem manda na máquina: é também de quem é o que ela aprendeu.'),
 6: dict(titulo='Conselhos a um futuro jornalista', autor='Reinaldo Ferreira (Repórter X)', data='Reporter X, n.º 9, 4 de outubro de 1930, p. 3',
  citacao='Faça da sua pena de jornalista uma agulheta para desencardir as maquilhagens da hipocrisia', citacao_nota='na transcrição da Biblioteca do Lente, com a ortografia do original',
@@ -494,8 +494,8 @@ OBRAS = {
  contexto='George Orwell escreveu A Quinta dos Animais entre 1943 e 1944; o livro saiu em agosto de 1945, com o subtítulo «A Fairy Story». Os animais expulsam o dono da quinta. Os porcos, que aprenderam sozinhos a ler e a escrever, reduzem os princípios a sete mandamentos e pintam-nos na parede do celeiro. O último, o mais curto, diz que todos os animais são iguais. Ao longo do livro, mandamento a mandamento, a igualdade vai mudando de sentido.',
  acesso=[('Project Gutenberg Austrália, em inglês; domínio público na União Europeia, porque o autor morreu em 1950', 'https://gutenberg.net.au/ebooks01/0100011.txt')],
  pergunta='Quem pode mudar uma regra afixada, e como se dá por isso?',
- ligacoes=[('Aos ombros de gigantes: a regra reescrita', 'gigantes/triunfo-porcos/'), ('Oficina: o manifesto na fachada', 'narrativas/oficina-manifesto/')],
- discordante='Orwell mostra a regra torcida por quem tem o pincel. Mas também se pode ler ao contrário: é por a regra estar escrita na parede que se pode comparar o antes e o depois. O caso proposto em Aos ombros de gigantes sugere escrever a versão nova por baixo da antiga, com a data, e deixar as duas à vista. Uma regra escrita protege quem não tem o pincel?'),
+ ligacoes=[('Caso em português: quem pode mudar uma regra comum?', 'cidadania/m2/sessoes/09/#caso-reciclado'), ('Oficina: o manifesto na fachada', 'narrativas/oficina-manifesto/')],
+ discordante='Orwell mostra a regra torcida por quem tem o pincel. Mas também se pode ler ao contrário: é por a regra estar escrita na parede que se pode comparar o antes e o depois. O caso desta sessão sugere escrever a versão nova por baixo da antiga, com a data, e deixar as duas à vista. Uma regra escrita protege quem não tem o pincel?'),
 }
 
 # Os endereços externos das sessões e do guia, um a um (28/10/2026). O teste exige que cada endereço das páginas esteja
@@ -530,3 +530,114 @@ FONTES_EXTERNAS = {
     'https://www.youtube.com/watch?v=0O2Rq4HJBxw': ('Justice, episódio 2, Harvard University', 'lente'),
     'https://www.youtube.com/watch?v=0O2Rq4HJBxw&t=389s': ('Justice, episódio 2, excerto do Ford Pinto', 'lente'),
 }
+
+# 30/10/2026: reciclagem dos gigantes (decisão do docente).
+# Casos primeiro; os relatos são paráfrases identificadas, conservadas dos destinos de origem.
+CASOS_RECICLADOS = {3: {'titulo': 'Quem partilha o risco pode tomar a palavra?',
+     'relato': '<p class="etq-m">O texto, contado em português</p><p>A passagem são os dez primeiros artigos, '
+               'curtos e numerados como numa lei. O primeiro dá o tom: a mulher nasce livre, e permanece igual ao '
+               'homem em direitos; as distinções sociais só podem assentar na utilidade comum (contexto nosso: a '
+               'Declaração de 1789 dizia o mesmo dos homens, quase com as mesmas palavras).</p><p>Nos artigos II '
+               'e III a troca continua, sempre com a mulher nomeada primeiro: os direitos naturais a conservar '
+               'são os da mulher e do homem, a liberdade, a propriedade, a segurança e, acima de tudo, a '
+               'resistência à opressão; e a nação, onde reside, no essencial, o princípio de toda a soberania, '
+               'não é mais do que a reunião da mulher e do homem.</p><p>O artigo IV já não se contenta com trocar '
+               'palavras. A liberdade e a justiça consistem em devolver a cada um o que lhe pertence; os direitos '
+               'da mulher só têm um limite, a a tirania perpétua que o homem lhe opõe, e esse limite deve ser '
+               'reformado pelas leis da natureza e da razão. O artigo V explica o que essas leis fazem: proíbem o '
+               'que prejudica a sociedade, e o que não proíbem ninguém pode impedir. O artigo VI chama todas as '
+               'cidadãs e todos os cidadãos a fazer a lei, em pessoa ou por representantes, e abre-lhes todos os '
+               'cargos públicos, segundo as capacidades, sem outra distinção senão a das virtudes e dos '
+               'talentos.</p><p>Nos artigos VII a IX o tom muda: quase já não se reclama, constata-se. Nenhuma '
+               'mulher é exceção; é acusada, presa e detida nos casos que a lei determina, e obedece como os '
+               'homens a essa lei rigorosa. A lei só deve fixar as penas estritamente necessárias, e a mulher só '
+               'pode ser punida por uma lei anterior ao delito; declarada culpada, sofre todo o rigor da lei. Nas '
+               'penas, as mulheres já são iguais aos homens.</p><p>O artigo X tira a consequência. Ninguém deve '
+               'ser incomodado pelas suas opiniões, mesmo as fundamentais; a mulher tem o direito de subir ao '
+               'cadafalso e deve ter igualmente o de subir à tribuna, desde que as suas manifestações não '
+               'perturbem a ordem pública estabelecida pela lei. O mesmo verbo serve aos dois lugares (contexto '
+               'nosso: Olympe de Gouges foi guilhotinada em 1793).</p>',
+     'caso': 'Num grupo de três, duas pessoas costumam apresentar porque falam com mais à-vontade. A pessoa que '
+             'fez o som e a montagem ainda não foi consultada. As três partilham a responsabilidade pelo '
+             'resultado. Como organizarias a próxima apresentação?',
+     'fonte': 'Olympe de Gouges, Les droits de la femme. À la reine (1791), artigos I a X. Relato nosso em '
+              'português, a partir do original francês; não é uma tradução editorial.',
+     'url': 'https://archive.org/details/lesdroitsdelafem00goug',
+     'perguntas': [{'p': 'No artigo X, que relação torna a exclusão da tribuna difícil de justificar?',
+                    'o': ['As mulheres já respondem perante a lei, mas falta-lhes igual voz pública.',
+                          'As mulheres podem falar em público, mas estão dispensadas das penas.',
+                          'As mulheres devem responder perante a lei, mas só depois de discursar.'],
+                    'c': 0,
+                    'f': 'Gouges aproxima o cadafalso e a tribuna: à sujeição às penas deve corresponder o '
+                         'direito à palavra. O argumento denuncia uma desigualdade.',
+                    'fe': ['',
+                           'O relato diz que as mulheres sofrem as penas; não estão dispensadas delas.',
+                           'O artigo não faz do discurso uma condição prévia à aplicação da lei.']},
+                   {'p': 'Que proposta aplica o direito à palavra sem o tornar uma imposição?',
+                    'o': ['Manténs as duas vozes habituais e dás à montagem um crédito final.',
+                          'Perguntas quem quer falar e preparas com essa pessoa a sua parte.',
+                          'Distribuis a fala por sorteio e exiges que cada pessoa aceite a parte.'],
+                    'c': 1,
+                    'f': 'Perguntar e preparar cria uma oportunidade real. O direito de participar não obriga a '
+                         'pessoa a falar contra a sua vontade.',
+                    'fe': ['O crédito reconhece o trabalho, mas não oferece participação na palavra.',
+                           '',
+                           'O sorteio distribui tempo, mas a obrigação não permite recusar.']}],
+     'transferencia': 'Antes de fechar as regras da casa, confere quem foi ouvido, quem pode recusar falar e como '
+                      'pode contestar uma decisão. Não deduzas consentimento do silêncio.',
+     'outra': 'O artigo X também admite o limite da ordem pública estabelecida pela lei. Quem define esse limite '
+              'e como se contesta uma aplicação injusta?'},
+ 9: {'titulo': 'Quem pode mudar uma regra comum?',
+     'relato': '<p class="etq-m">O texto, contado em português</p><p>Orwell abre a cena sem alarde: os porcos '
+               'revelam que, nos últimos três meses, aprenderam sozinhos a ler e a escrever, por uma velha '
+               'cartilha dos filhos de Jones que tinha ido parar ao monte do lixo. Napoleon manda vir tinta preta '
+               'e branca e leva todos ao portão de cinco barras que dá para a estrada. Snowball pega no pincel '
+               'entre as duas juntas do casco, apaga da barra de cima o nome antigo da quinta e pinta o novo, '
+               '<i>Animal Farm</i>, Quinta dos Animais. Orwell explica entre parênteses, como quem não lhe dá '
+               'importância, que era Snowball quem escrevia melhor.</p><p>Depois, Snowball e Napoleon mandam '
+               'encostar uma escada à parede do fundo do celeiro grande e explicam que, com esses três meses de '
+               'estudo, os porcos reduziram os princípios do Animalismo a Sete Mandamentos. Escritos na parede, '
+               'serão uma lei inalterável, pela qual todos os animais da quinta terão de viver para sempre. '
+               'Snowball sobe com alguma dificuldade (outro parêntese: não é fácil a um porco equilibrar-se numa '
+               'escada), com Squealer uns degraus abaixo a segurar a lata. As letras, grandes e brancas na parede '
+               'alcatroada, leem-se a trinta jardas, uns vinte e sete metros.</p><p>Segue-se a lista, tal como '
+               'ficou na parede. O primeiro declara inimigo tudo o que anda sobre duas pernas; o segundo, amigo '
+               'tudo o que anda sobre quatro ou tem asas. Do terceiro ao sexto, proíbe-se a qualquer animal usar '
+               'roupa, dormir numa cama, beber álcool e matar outro animal. O sétimo, o mais curto, diz que todos '
+               'os animais são iguais.</p><p>Está tudo escrito com muito cuidado e sem erros de ortografia, com '
+               'duas exceções: <i>freind</i>, a palavra amigo com duas letras trocadas, e um S virado ao '
+               'contrário. Snowball lê a lista em voz alta, para benefício dos outros. Todos os animais acenam '
+               'com a cabeça, em completo acordo, e os mais espertos começam logo a decorar os mandamentos.</p>',
+     'caso': 'A turma escreveu cinco regras de trabalho e afixou-as. Um mês depois, alguém propõe alterar “Cada '
+             'um fala uma vez antes de alguém falar duas”, porque as reuniões demoram. Como permitir uma revisão '
+             'sem apagar o que foi combinado?',
+     'fonte': 'George Orwell, Animal Farm: A Fairy Story (1945), capítulo II. Relato nosso em português; não é '
+              'uma tradução editorial. O original está em domínio público na União Europeia, porque o autor '
+              'morreu em 1950. A cópia ligada é do Project Gutenberg Austrália; este estatuto não se estende '
+              'automaticamente a todos os países nem às traduções.',
+     'url': 'https://gutenberg.net.au/ebooks01/0100011.txt',
+     'perguntas': [{'p': 'Que relação de poder sugere a leitura em voz alta no celeiro?',
+                    'o': ['Os animais escolhem por votação as palavras que Snowball vai escrever.',
+                          'Os porcos leem a regra aos outros, que dependem dessa leitura em voz alta.',
+                          'Os animais conferem por escrito os erros que Snowball fez na parede.'],
+                    'c': 1,
+                    'f': 'Os porcos aprenderam a ler e escrevem a lei; os restantes recebem-na de ouvido. O '
+                         'relato sugere uma desigualdade na possibilidade de a conferir.',
+                    'fe': ['O relato mostra concordância, mas não descreve uma votação das palavras.',
+                           '',
+                           'A leitura em voz alta não demonstra que os outros possam conferir o texto escrito.']},
+                   {'p': 'Que revisão permite à turma conferir o que mudou e contestar a mudança?',
+                    'o': ['Afixar a nova versão com data e guardar a anterior só com quem a redigiu.',
+                          'Afixar a nova versão após conversa e apagar a anterior para evitar dúvidas.',
+                          'Discutir a proposta e manter as duas versões datadas acessíveis à turma.'],
+                    'c': 2,
+                    'f': 'A discussão permite contestar; as duas versões datadas permitem comparar. Uma revisão '
+                         'legítima não precisa de esconder a história da regra.',
+                    'fe': ['A data ajuda, mas o acesso reservado à versão antiga impede uma comparação autónoma.',
+                           'A conversa ajuda, mas apagar a versão anterior elimina a prova das palavras que '
+                           'mudaram.',
+                           '']}],
+     'transferencia': 'No manifesto, regista a versão, a data e como se propõem alterações. Testa a regra com '
+                      'alguém que não a escreveu: essa pessoa consegue dizer quando foi cumprida ou quebrada?',
+     'outra': 'Uma regra escrita pode servir o poder de quem segura o pincel; também pode permitir que outros '
+              'comparem versões. Que condições tornam possível essa segunda leitura?'}}
