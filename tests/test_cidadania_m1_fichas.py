@@ -12,7 +12,15 @@ class Page(HTMLParser):
   if 'id' in a:self.ids.append(a['id'])
   for k in ('href','src'):
    if a.get(k):self.refs.append(a[k])
-def original(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=R).decode()
+# 30/10/2026: pedido do docente (perguntas em português europeu, «Qual das citações…» e não «Qual citação…»): o
+# original passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; tudo o resto continua
+# a ter de ser igual, byte a byte.
+LINGUA=json.loads((R/'tools/trocas/lingua-perguntas-20261030.json').read_text('utf-8'))
+def com_lingua(path,s):
+ for t in LINGUA:
+  if t['ficheiro']==path:s=s.replace(t['antigo'],t['novo'])
+ return s
+def original(path):return com_lingua(path,subprocess.check_output(['git','show',BASE+':'+path],cwd=R).decode())
 def bank(s):
  m=re.search(r'itens:(\[)',s);return json.JSONDecoder().raw_decode(s[m.start(1):])[0]
 class FichasM1(unittest.TestCase):
