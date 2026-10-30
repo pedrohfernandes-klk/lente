@@ -141,3 +141,66 @@ body:has(>[data-appearance-floating])::after{content:"";display:block;height:68p
  :root[data-appearance-family="cards"][data-theme] #palco .dil-leitura{--dil-acento:#96503c;--dil-regiao:#f6f4ee}
  :root[data-appearance-family="cards"][data-appearance-site="pt"][data-theme]{--acento:#a84939;--campo:#e8967a}
 }
+
+/* 30/10/2026: texto corrido justificado e hifenizado em português europeu (decisão do docente).
+   Justifica-se o texto corrido: textos das obras em prosa, leituras, excertos, explicações, introduções,
+   guias, cartões de leitura e notas longas (listas de fontes em parágrafo, aprendizagens essenciais, rodapés).
+   Ficam alinhados à esquerda títulos, rótulos, botões, opções, perguntas, feedback curto, listas, tabelas,
+   legendas e créditos curtos, formulários, código, caixas estreitas e sempre os versos (p.versos, .poema,
+   .verso-q e qualquer bloco com <br>). A última linha de cada parágrafo fica à esquerda. Não muda a letra,
+   o tamanho, a cor nem a entrelinha. A língua vem do lang da página (pt-PT) ou do lang próprio de cada
+   texto. Um navegador sem :has() ignora a regra e o texto fica como estava. Um parágrafo com <br>
+   (versos, elencos, moradas, listas de linhas) ou com um botão também fica como estava. */
+:is(
+  /* Lições de cartões (motor EPIJogo embutido nas páginas; Fora da página com narrativas-core) */
+  .jogo .ler > p:not(.fonte:not(.ae),.fonte-x,.ap-fonte,.pessoa-fonte,.etq-m,.rot,.quem,.ajuda-v,.ajuda-l,.le-nota,.levar,.versos,.poema,.verso-q,.liga,.fachada-texto,.q,.q-pensa,.vz-perg,.pergunta-c,.frase-fim,.tr-rot,.tr-rot-l,.tr-tempo,.tr-limite,.tr-ab,.tr-fala,.tr-liga-lab,.tr-pista,.porta-m,.ponte,.tempo-ted,.fecho-o,.cc-r,.pv-t,.pv-m,.ju-m,.ju-t,.ju-yt,.ju-video,.entrada-nota,.marca-im,.fic-pista,.ex-antes,.ex-depois),
+  .jogo .ler :is(.ap-texto,.ap-caso,.ap-fecho,.conceito,.mais-c,.lado-c,.cc-passo,.caderno,.pv,.tr-regra,.tr-modelo,.escuta-box,.excerto :is(.trad,.orig):not(.poema,.lista)) > p:not(.fonte,.fonte-x,.escuta-fonte,.versos,.poema,.verso-q,.quem,.etq-m,.rot,.tr-rot,.pv-t,.pv-m,.pv-yt,.cc-r,.cc-termo,.personagens),
+  .jogo .ler :is(.relato,.caderno,.gasta,.cid-cena), .jogo .ler blockquote > p:not([class]),
+  .jogo .ler details > p:not([class]), .jogo .ler .termo > dd, .jogo .ler .pessoa-apresentacao > div > p, .modelo > div > p:not([class]),
+  .casca-folha .c-expl,
+  /* Laboratório de formas */
+  .formas-cartoes .lf-prosa > p, .lf-hero > :is(p.lf-lead,p:not([class])), .lf-level-body > p.lf-note, .lf-legacy > p:not(.lf-actions),
+  /* Ver para fazer */
+  .vpf :is(.vpf-porque,.vpf-aviso,.vpf-longa), .vpf .vpf-fazer > p,
+  /* Biblioteca: prosa das obras e notas de fonte longas (os versos ficam como estão) */
+  .bib-texto > p:not(.versos,.poema,.bib-passagem,.personagens,.elenco), .bib > p.bib-fonte,
+  /* Base «p-»/«pg»: índices, Ginásio, oficinas para imprimir, grelhas, caderno, páginas editoriais de Cidadania */
+  :is(.p-cab,.pg,.entrada-editorial,.lab-set) > p.p-lead, .pg > p.rodape, .lab-saiu > p,
+  .pg > :is(p:not([class]),p.aviso,p.lead,blockquote.citacao), .pg :is(section,article) > p:not([class]),
+  .pg .termo > dd, .ret, .cid-referencias > p:not([class]), .ref-note,
+  /* editorial-02: Ter juízo, dar forma às palavras, oficinas */
+  .comum > p:not([class]), .comum .tj-cid, .comum :is(.resultado,.experiencia) > p:not([class]), .ju > p.lead,
+  /* Justiça (guião, guia do docente) e guiões de Vidas e vozes */
+  .lado > :is(p:not([class]),p.pq,p.aviso), .caso-im > p, .gu > :is(p:not([class]),p.pq),
+  /* Cidadania: sessões (.c10), apoios do M1, aulas do M2, abertura do M1 e ferramentas */
+  .c10 :is(.c10-reading,.c10-instruction,.c10-obra-razao,.c10-document:not(.c10-script)), .c10 :is(.c10-reference,.c10-guia-sessao,.c10-review,.c10-stage) > p:not([class]),
+  main.c10 > p:not([class]), .c10 details:not(.c10-check) > div > p:not([class]), .c10 .c10-document:not(.c10-script) > p, .c10 .c10-steps > dd,
+  .m1-v2 :is(.m1-block,.m1-reading,.m1-justice) > p:not([class]), .m1-v2 .m1-sample,
+  body > main:not([class]):not(:has(> svg:first-child)) > :is(p:not([class]),p.fontes,blockquote.citacao), body > main:not([class]) :is(section,header) > p:not([class]), [data-ficha] main > p.nota,
+  /* Texto corrido dentro de details (apoios do M1, entradas, percursos de Cidadania, oficinas, Laboratório) e notas de percurso;
+     as fontes (lf-source, Fontes das ferramentas) e os créditos com classe ficam como estão, e nos details da base «pg»
+     também os parágrafos que são só uma ligação */
+  .m1-v2 .m1-block > details > div > p:not([class]), main > details.nao-imprimir > p:not([class]), .entrada-fontes > p:not([class]),
+  .pg > details > p:not([class]):not(:has(> a:only-child)), .pg > details > details > p:not([class]), .cid-route-step > p:not([class]), .cid-route-step > div > p:not([class]),
+  .assinatura-partilha details > p:not([class]), body > main:not([class]) section > details > p:not([class]),
+  .lf-case > p:not([class]), .lf-case > details.lf-pt > p:not([class]),
+  /* Área do docente e Ateliê */
+  .atelier-page > :is(p:not([class]),p.atelier-lead), :is(.guide-block,.atelier-notebook,.atelier-task) > p:not([class]),
+  .guide-page > p.guide-lead, .teacher-hub > article > p:not([class]), .rt :is(.rt-antes,.rt-nota,.rt-privacidade)
+):not(:has(br, button, > .c10-action, > .lf-button)){
+  text-align:justify;text-align-last:auto;
+  -webkit-hyphens:auto;hyphens:auto;
+  -webkit-hyphenate-limit-before:3;-webkit-hyphenate-limit-after:3;hyphenate-limit-chars:6 3 3;
+  word-spacing:normal;overflow-wrap:break-word;
+}
+/* Dentro dos blocos justificados (que se justificam inteiros), o que herdaria o alinhamento e tem de ficar à
+   esquerda. :where() não pesa: uma regra da própria página para estes elementos continua a mandar. */
+:where(.jogo .ler :is(.relato,.caderno,.gasta,.cid-cena,.termo > dd),.casca-folha .c-expl,.c10 .c10-document,.c10 .c10-steps > dd,.m1-v2 .m1-sample,.ret,.comum .tj-cid,.vpf :is(.vpf-porque,.vpf-aviso,.vpf-longa),blockquote.citacao,.pg .termo > dd)
+  :where(h1,h2,h3,h4,h5,h6,li,dt,td,figcaption,label,legend,summary,pre,cite,b,.versos,.poema,.verso-q,.fonte,.fonte-x,.quem,.etq-m,.rot,.ae-rot){text-align:start}
+:where(.jogo .ler :is(.relato,.caderno,.gasta,.cid-cena,.termo > dd),.casca-folha .c-expl,.c10 .c10-document,.c10 .c10-steps > dd,.m1-v2 .m1-sample,.ret,.comum .tj-cid,.vpf :is(.vpf-porque,.vpf-aviso,.vpf-longa),blockquote.citacao,.pg .termo > dd)
+  :where(pre,code,.versos,.poema,.verso-q){-webkit-hyphens:manual;hyphens:manual}
+
+/* Títulos e citações em itálico sem lang próprio (muitos são títulos ingleses: «The Picture of Dorian Gray») não se
+   partem com as regras do português. Um texto com lang próprio (en, fr…) continua a partir com as suas regras.
+   A prosa da Biblioteca já hifenizava antes desta regra e fica como estava. */
+:where(i,em,cite):lang(pt):not(.bib-texto *){-webkit-hyphens:manual;hyphens:manual}
