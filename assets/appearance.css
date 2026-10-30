@@ -144,16 +144,16 @@ body:has(>[data-appearance-floating])::after{content:"";display:block;height:68p
 
 /* 30/10/2026: texto corrido justificado e hifenizado em português europeu (decisão do docente).
    Justifica-se o texto corrido: textos das obras em prosa, leituras, excertos, explicações, introduções,
-   guias, cartões de leitura e notas longas (listas de fontes em parágrafo, aprendizagens essenciais, rodapés).
+   guias, cartões de leitura e notas longas (notas de fonte em prosa, aprendizagens essenciais, rodapés).
    Ficam alinhados à esquerda títulos, rótulos, botões, opções, perguntas, feedback curto, listas, tabelas,
-   legendas e créditos curtos, formulários, código, caixas estreitas e sempre os versos (p.versos, .poema,
-   .verso-q e qualquer bloco com <br>). A última linha de cada parágrafo fica à esquerda. Não muda a letra,
+   legendas e créditos curtos, listas de fontes (p.fontes-p), formulários, código, caixas estreitas e sempre
+   os versos (p.versos, .poema, .verso-q e qualquer bloco com <br>). A última linha de cada parágrafo fica à esquerda. Não muda a letra,
    o tamanho, a cor nem a entrelinha. A língua vem do lang da página (pt-PT) ou do lang próprio de cada
    texto. Um navegador sem :has() ignora a regra e o texto fica como estava. Um parágrafo com <br>
    (versos, elencos, moradas, listas de linhas) ou com um botão também fica como estava. */
 :is(
   /* Lições de cartões (motor EPIJogo embutido nas páginas; Fora da página com narrativas-core) */
-  .jogo .ler > p:not(.fonte:not(.ae),.fonte-x,.ap-fonte,.pessoa-fonte,.etq-m,.rot,.quem,.ajuda-v,.ajuda-l,.le-nota,.levar,.versos,.poema,.verso-q,.liga,.fachada-texto,.q,.q-pensa,.vz-perg,.pergunta-c,.frase-fim,.tr-rot,.tr-rot-l,.tr-tempo,.tr-limite,.tr-ab,.tr-fala,.tr-liga-lab,.tr-pista,.porta-m,.ponte,.tempo-ted,.fecho-o,.cc-r,.pv-t,.pv-m,.ju-m,.ju-t,.ju-yt,.ju-video,.entrada-nota,.marca-im,.fic-pista,.ex-antes,.ex-depois),
+  .jogo .ler > p:not(.fonte:not(.ae),.fonte-x,.ap-fonte,.fontes-p,.pessoa-fonte,.etq-m,.rot,.quem,.ajuda-v,.ajuda-l,.le-nota,.levar,.versos,.poema,.verso-q,.liga,.fachada-texto,.q,.q-pensa,.vz-perg,.pergunta-c,.frase-fim,.tr-rot,.tr-rot-l,.tr-tempo,.tr-limite,.tr-ab,.tr-fala,.tr-liga-lab,.tr-pista,.porta-m,.ponte,.tempo-ted,.fecho-o,.cc-r,.pv-t,.pv-m,.ju-m,.ju-t,.ju-yt,.ju-video,.entrada-nota,.marca-im,.fic-pista,.ex-antes,.ex-depois),
   .jogo .ler :is(.ap-texto,.ap-caso,.ap-fecho,.conceito,.mais-c,.lado-c,.cc-passo,.caderno,.pv,.tr-regra,.tr-modelo,.escuta-box,.excerto :is(.trad,.orig):not(.poema,.lista)) > p:not(.fonte,.fonte-x,.escuta-fonte,.versos,.poema,.verso-q,.quem,.etq-m,.rot,.tr-rot,.pv-t,.pv-m,.pv-yt,.cc-r,.cc-termo,.personagens),
   .jogo .ler :is(.relato,.caderno,.gasta,.cid-cena), .jogo .ler blockquote > p:not([class]),
   .jogo .ler details > p:not([class]), .jogo .ler .termo > dd, .jogo .ler .pessoa-apresentacao > div > p, .modelo > div > p:not([class]),

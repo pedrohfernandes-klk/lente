@@ -155,6 +155,10 @@ class FamiliasCarregamARegra(unittest.TestCase):
   # instruções curtas com rótulo, guião em letra de máquina e explicações dentro de itens de lista ficam fora
   for c in ('personagens','elenco','lista','ex-antes','ex-depois','c10-script','c10-check'):
    self.assertIn(c,excluidas,c)
+  # 30/10/2026 (verificação da revisão): as listas de fontes das lições («Fontes:» seguido de 20 a 40 ligações, quase
+  # todas com títulos ingleses sem lang) são créditos em forma de lista e ficam à esquerda, como a caixa de crédito
+  # das Sidequests; justificadas tinham espaços até 7 em a 320 px e partiam os títulos ingleses com regras portuguesas
+  self.assertIn('fontes-p',excluidas)
   # 30/10/2026: biografias de Vidas e vozes (dl em duas colunas, 16 a 22 car. por linha a 320 px), cartões de rotas do
   # docente (grelha de três colunas), caixa de crédito das Sidequests e frase de Kafka com botões ficam à esquerda
   for fora in ('vz-vc','guide-route','div.fonte','lf-evidence-quote'):

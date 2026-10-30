@@ -48,7 +48,7 @@ MEDIR="""(sel)=>{
 # Todos os blocos justificados da página, para as regras gerais
 JUSTIFICADOS="""()=>[...document.querySelectorAll('body *')].filter(e=>{const cs=getComputedStyle(e);return cs.textAlign==='justify'&&!['inline','contents','none'].includes(cs.display)&&(e.innerText||'').trim()})
  .map(e=>e.tagName.toLowerCase()+(typeof e.className==='string'&&e.className?'.'+e.className.trim().split(/\\s+/).join('.'):'')).slice(0,400)"""
-NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6,dt,input,select,textarea,option,pre,code,cite,.versos,.poema p,.verso-q,.rot,.etq-m,p.q,.dica,p.fonte:not(.ae),.fonte-x,p.ap-fonte,p.quem'
+NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6,dt,input,select,textarea,option,pre,code,cite,.versos,.poema p,.verso-q,.rot,.etq-m,p.q,.dica,p.fonte:not(.ae),.fonte-x,p.ap-fonte,p.fontes-p,p.quem'  # 30/10/2026: + p.fontes-p (listas de fontes)
 
 # (família, página, passos). Passos: ('ate',seletor) avança nos cartões; ('J',seletor) justificado;
 # ('E',seletor,mínimo) à esquerda; ('lang',seletor,lang) língua efetiva própria; ('centro',seletor);
@@ -56,6 +56,7 @@ NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6
 # 30/10/2026 (revisão adversarial): passos novos para as biografias de Vidas e vozes, Frei Luís (elenco e personagens),
 # os Sete Mandamentos, as instruções curtas, a caixa de crédito das Sidequests, o guião em letra de máquina, a frase de
 # Kafka com botões, os cartões de rotas do docente, as explicações em itens de lista e o texto corrido dentro de details.
+# 30/10/2026 (verificação da revisão): a lista de fontes de Vidas e vozes (p.fontes-p) fica à esquerda.
 PLANO=[
  ('L1a','narrativas/desenlace/',[('ate','.ler .excerto .trad:not(.poema) > p'),('J','.ler .excerto .trad > p')]),
  ('L1a','narrativas/corta/chuva/',[('ate','.ler .excerto .trad.poema'),('E','.ler .trad.poema > p',4),('ate','#baralho .ops button.op'),('E','#baralho .ops button.op',2),('ate','.casca-folha .c-expl'),('J','.casca-folha .c-expl')]),
@@ -63,7 +64,8 @@ PLANO=[
  ('L1a','narrativas/corta/frei-luis/',[('ate','.ler .ap-texto > p.personagens'),('E','.ler .ap-texto > p.personagens',1),('J','.ler .ap-texto > p.fala')]),
  ('L1b','gigantes/triunfo-porcos/',[('ate','.ler details.orig-toque'),('abrir','.ler details.orig-toque'),('E','.ler .orig.lista > p',8),('J','.ler .relato')]),
  ('L1b','gigantes/diario-louco/',[('J','.jogo .ler > p:not([class])'),('ate','.ler .ap-texto > p:not([class])'),('J','.ler .ap-texto > p:not([class])'),('E','.jogo .ler > p.ap-fonte',1),('ate','.casca-folha .c-expl'),('J','.casca-folha .c-expl')]),
- ('L1c','vozes/prince/',[('ate','.ler dl.vz-vc > dd'),('E','.ler dl.vz-vc > dd',2),('E','.ler dl.vz-vc > dt',2),('ate','.ler .conceito > p:not([class])'),('J','.ler .conceito > p:not([class])'),('ate','.ler ul.vz-lista > li'),('E','.ler ul.vz-lista > li',3)]),
+ ('L1c','vozes/prince/',[('ate','.ler dl.vz-vc > dd'),('E','.ler dl.vz-vc > dd',2),('E','.ler dl.vz-vc > dt',2),('ate','.ler .conceito > p:not([class])'),('J','.ler .conceito > p:not([class])'),
+   ('ate','.ler p.fontes-p'),('E','.ler p.fontes-p',1),('ate','.ler ul.vz-lista > li'),('E','.ler ul.vz-lista > li',3)]),
  ('L1d','cidade/m10/',[('J','.jogo .ler > p:not([class])'),('E','.jogo .ler > p.porta-m',1),('ate','#baralho .palavras button.pal'),('E','#baralho .palavras button.pal',5),('E','#baralho p.q',1)]),
  ('L1e','sidequests/retorica/',[('E','.jogo .ler div.fonte',1),('ate','.ler .ap-texto > p.fala'),('J','.ler .ap-texto > p.fala')]),
  ('L1f','ler/passo-07/',[('ate','.ler .ap-texto > p.fala'),('J','.ler .ap-texto > p.fala'),('E','.ler .ap-texto > p.versos',1)]),
