@@ -1,0 +1,36 @@
+name: Lente — lições em cartões
+on:
+  pull_request:
+    paths:
+      - 'assets/licoes/**'
+      - 'tools/licoes/**'
+      - 'tools/licoes_lente.py'
+      - 'cidadania/piloto/**'
+      - 'tests/*licoes*'
+      - '.github/workflows/licoes-qa.yml'
+permissions:
+  contents: read
+jobs:
+  licoes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fontes, validação e páginas geradas
+        run: |
+          node --check assets/licoes/jogo.js
+          node --check assets/licoes/casca.js
+          python tools/licoes_lente.py --verificar
+          python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Percurso completo de cada lição
+        run: node tests/browser_licoes_lente.cjs
