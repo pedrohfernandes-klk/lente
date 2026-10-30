@@ -22,9 +22,25 @@ NA_AULA = (
  '<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, em grupos de três, o mapa de direitos: na planta da escola, colada na parede, cada grupo põe post-its com uma situação real ou possível e o número do artigo que a protege.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> O teu Ponto de partida e dois post-its do teu grupo, com a situação e o artigo. O mapa fica fotografado para a sessão 10.</p>')
+# 30/10/2026 (pedido do docente: «falta imagem e vídeo»): a fotografia de 1949, com a tabela de museu colada a ela, e
+# o vídeo do TED-Ed, com uma tarefa tirada das três perguntas da descrição oficial do vídeo.
+CARTAZ = (
+ '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/eleanor-roosevelt-dudh-1949.webp" '
+ 'alt="Eleanor Roosevelt segura com as duas mãos um grande cartaz com o título «The Universal Declaration of Human Rights» e o símbolo das Nações Unidas." loading="lazy"></span>'
+ '<figcaption>Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, Nova Iorque, novembro de 1949. Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0.</figcaption></figure>'
+ '<p>Um ano depois de aprovada, a Declaração já circula em cartaz.</p>'
+ '<p class="pergunta-c">Olha primeiro para a fotografia: porque é que se faz um cartaz de um texto que não obriga nenhum Estado?</p>'
+ '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
+VIDEO = (
+ '<p>Um vídeo curto do TED-Ed, numa lição escrita por Benedetta Berti. É em inglês: liga as legendas no leitor.</p>'
+ '<div class="yt" data-yt="nDgIVseTkuE" data-titulo="What are the universal human rights?, TED-Ed">'
+ '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What are the universal human rights?» (4 min 47 s)</button>'
+ '<p class="yt-cred">TED-Ed, lição de Benedetta Berti. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
+ '<p class="pergunta-c">Enquanto vês, procura a resposta do vídeo a três perguntas: o que são os direitos humanos básicos? Quem os escolhe? Quem os faz cumprir?</p>'
+ '<p>Uma linha para cada uma, no caderno.</p>')
 LEVAR = (
  '<p class="levar">Um direito é uma proteção que vale para todos, também para quem não conheces.</p>'
- '<p>Nesta sessão situaste casos da escola em artigos concretos e distinguiste uma declaração, um tratado e a Constituição. Na sessão 10 voltas ao mesmo mapa: o que mudou?</p>'
+ '<p>Nesta sessão situaste casos da escola em artigos concretos e distinguiste uma declaração, um tratado e a Constituição. Volta à pergunta do cartaz de 1949: mudou a tua resposta? Na sessão 10 voltas ao mesmo mapa: o que mudou?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Primeiro descrevo o que aconteceu; só depois procuro o direito.</li>'
  '<li>A Declaração não é uma lei portuguesa, mas a Constituição manda lê-la.</li>'
@@ -43,6 +59,8 @@ cartoes = [
   "f":"Cada artigo protege uma coisa concreta: a vida privada (12.º), a igualdade sem distinções (2.º), a reunião pacífica (20.º) e a liberdade de opinião e expressão (19.º).",
   "fe":"Lê primeiro o que a pessoa perdeu ou quer fazer; o artigo vem depois."},
  {"t":"ler","rot":"Conceito","titulo":"Declaração, tratado, Constituição","html":CONCEITO},
+ {"t":"ler","rot":"Ver","titulo":"Um cartaz de 1949","html":CARTAZ},
+ {"t":"ler","rot":"Ver","titulo":"Quem escolhe os direitos?","html":VIDEO},
  {"t":"vf","g":"forca","p":"A Declaração Universal dos Direitos Humanos é uma lei aprovada pela Assembleia da República.","p2":"A Declaração Universal foi aprovada como lei pelo Parlamento português.","v":False,
   "f":"A Declaração foi aprovada pela Assembleia Geral das Nações Unidas, em 1948. Não é uma lei portuguesa, mas a Constituição manda interpretar os direitos fundamentais de acordo com ela (artigo 16.º, n.º 2).",
   "fe":"Uma declaração das Nações Unidas não passa a lei portuguesa por ser importante. O elo com o direito português é o artigo 16.º da Constituição."},
@@ -80,11 +98,11 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s01","chave":"epi-cid-m1-s01","versao":"2026-10-30",
+ "id":"cidadania-m1-s01","chave":"epi-cid-m1-s01","versao":"2026-10-30-2",
  "marca":"CD","titulo":"Sessão 01: Um mapa de direitos","h1":"Cidadania, módulo 1, sessão 01: Um mapa de direitos",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"},
  "saida":"cidadania/piloto/m1-s01/index.html","piloto":True,
- "fontes":"Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Os casos são inventados.",
+ "fontes":"Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Fotografia: Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, novembro de 1949 (Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0). Vídeo: TED-Ed, «What are the universal human rights?», lição de Benedetta Berti. Os casos são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

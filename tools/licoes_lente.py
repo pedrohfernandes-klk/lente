@@ -152,6 +152,8 @@ def pagina(d):
         f'<a href="{esc(mod["url"])}">As sessões do módulo</a><a href="https://pedrohfernandes-klk.github.io/pt/como/">Como se faz (vídeos)</a></nav>'
         f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
+    # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
+    tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
     return (
         '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         f'<title>{esc(d["titulo"])} · Cidadania · Lente</title>'
@@ -172,7 +174,8 @@ def pagina(d):
         '<footer class="casca-acoes" data-c-acoes></footer><section class="casca-folha" data-c-folha role="status" aria-live="polite" hidden></section>'
         + menu + '</div><div id="aviso" role="status"></div>'
         f'<script src="{base}assets/licoes/casca.js?v={d["versao"]}"></script><script src="{base}assets/licoes/jogo.js?v={d["versao"]}"></script>'
-        f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
+        + (f'<script defer src="{base}assets/licoes/video-youtube.js?v={d["versao"]}"></script>' if tem_video else '')
+        + f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
         '<script>(function(){"use strict";var CARTOES=' + dados + ',CFG=' + json.dumps(cfg, ensure_ascii=False) + ';'
         'var el=document.getElementById("baralho");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;'
         'if(window.EPIJogo)EPIJogo.montar(CFG);})();</script></body></html>\n')
