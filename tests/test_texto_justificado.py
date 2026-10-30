@@ -123,10 +123,17 @@ class FamiliasCarregamARegra(unittest.TestCase):
   # 30/10/2026: quarta regra (revisão adversarial): os itálicos sem lang próprio não se partem com as regras do português
   self.assertEqual(len(regras()),4,'uma regra que justifica, duas que repõem por dentro o alinhamento e a hifenização, e a dos itálicos')
 
+ def test_limiar_de_360px(self):
+  # 30/10/2026: abaixo de 22.5em (360 px) o texto fica à esquerda, como no Português; justificado acima e na impressão
+  antes=sem_comentarios(CSS[:CSS.index(MARCA)])
+  self.assertIn(':root{--epi-texto-corrido:start}',antes)
+  self.assertIn('@media screen and (min-width:22.5em),print{:root{--epi-texto-corrido:justify}}',antes)
+
  def test_so_mexe_no_alinhamento_e_na_hifenizacao(self):
   sel,dec=regras()[0]
   props=dict(re.findall(r'([-\w]+)\s*:\s*([^;]+)',dec))
-  self.assertEqual(props,{'text-align':'justify','text-align-last':'auto','-webkit-hyphens':'auto','hyphens':'auto',
+  # 30/10/2026: o alinhamento vem da variável --epi-texto-corrido (à esquerda abaixo de 22.5em, decisão do docente)
+  self.assertEqual(props,{'text-align':'var(--epi-texto-corrido,justify)','text-align-last':'auto','-webkit-hyphens':'auto','hyphens':'auto',
    '-webkit-hyphenate-limit-before':'3','-webkit-hyphenate-limit-after':'3','hyphenate-limit-chars':'6 3 3',
    'word-spacing':'normal','overflow-wrap':'break-word'})
   sel2,dec2=regras()[1]

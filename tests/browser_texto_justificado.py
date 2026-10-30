@@ -1,7 +1,7 @@
 """30/10/2026: texto corrido justificado e hifenizado em pt-PT (decisão do docente), no navegador.
 
 Abre uma página de cada família a 320, 390 e 1366 px e confere pelo estilo calculado:
-- texto corrido com text-align justify, text-align-last auto, hyphens auto, word-spacing normal e
+- texto corrido com text-align justify (a 320 px, abaixo de 360, à esquerda: 30/10/2026), text-align-last auto, hyphens auto, word-spacing normal e
   overflow-wrap break-word, nunca abaixo de 22 caracteres por linha e sem <br>;
 - versos, opções, botões, listas, tabelas, legendas, créditos curtos e formulários não justificados;
 - nenhum deslocamento horizontal;
@@ -120,10 +120,11 @@ def verifica_justificados(p,width,fam,pag,sel,res,minimo=1):
  m=p.evaluate(MEDIR,sel)
  assert len(m)>=minimo,(width,pag,'sem',sel)
  for x in m:
-  assert x['ta']=='justify' and x['tal']=='auto',(width,pag,sel,x)
+  # 30/10/2026: abaixo de 360 px o texto corrido fica à esquerda, com hifenização (decisão do docente, como no Português)
+  assert x['ta']==('justify' if width>=360 else 'start') and x['tal']=='auto',(width,pag,sel,x)
   assert x['hy']=='auto' and x['ws']=='0px' and x['ow']=='break-word',(width,pag,sel,x)
   assert not x['br'],(width,pag,sel,x)
-  assert x['linhas']<2 or x['cpl']>=22,(width,pag,sel,'caixa estreita',x)
+  assert width<360 or x['linhas']<2 or x['cpl']>=22,(width,pag,sel,'caixa estreita',x)
   # pt-PT (da página ou do próprio texto) ou uma língua estrangeira declarada no texto; nunca «pt» sem variedade nem pt-BR
   assert x['lang']=='pt-PT' or (not x['langDaPagina'] and x['lang'] and not x['lang'].startswith('pt')),(width,pag,sel,x)
  if m:res.append({'familia':fam,'pagina':pag or 'index.html','largura':width,'seletor':sel,'justificados':len(m),'car_linha_min':min(x['cpl'] for x in m),'linguas':sorted({x['lang'] for x in m})})
