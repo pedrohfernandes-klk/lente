@@ -29,7 +29,7 @@ try{for(const width of [320,390,1366]){
    assert.deepEqual(await p.locator('.tc-plano').last().locator('h3').allTextContents(),['O conto','A notícia']);
    assert.match(await p.locator('.tc-plano').last().innerText(),/Para ligar causa e consequência: Por isso/);
    if(id==='plano'){
-    await ctx.grantPermissions(['clipboard-read','clipboard-write']);await p.locator('[data-copiar]').click();assert.equal((await p.evaluate(()=>navigator.clipboard.readText())).replace(/\s+/g,' ').trim(),(await p.locator('.tc-plano').innerText()).replace(/\s+/g,' ').trim());await snap('15-composicao');const before=await p.evaluate(()=>JSON.parse(localStorage.getItem('lente-formas-v1')).itens['tres-cartas']);assert(before.experimentei);assert.equal(before.primeira.arrumacao.ordem,'cba');
+    await snap('15-composicao');await ctx.grantPermissions(['clipboard-read','clipboard-write']);await p.locator('[data-copiar]').click();assert.equal((await p.evaluate(()=>navigator.clipboard.readText())).replace(/\s+/g,' ').trim(),(await p.locator('.tc-plano').innerText()).replace(/\s+/g,' ').trim());await snap('15-composicao-noticia');const before=await p.evaluate(()=>JSON.parse(localStorage.getItem('lente-formas-v1')).itens['tres-cartas']);assert(before.experimentei);assert.equal(before.primeira.arrumacao.ordem,'cba');
     await p.reload();assert.equal(await p.locator('[data-cartao]').getAttribute('data-cartao'),'plano');
    }else{
     for(let j=0;j<18;j++)await p.getByRole('button',{name:'Cartão anterior',exact:true}).click();
