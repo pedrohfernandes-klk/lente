@@ -1,5 +1,5 @@
 from pathlib import Path
-import re, json, unittest
+import re, json, math, unittest
 from html import unescape
 R = Path(__file__).resolve().parents[1]
 O = R / 'olhar-e-decidir'
@@ -23,6 +23,7 @@ class TerJuizo(unittest.TestCase):
             self.assertEqual(k, chave)
             self.assertTrue(18 <= len(itens) <= 26, (pasta, len(itens)))
             self.assertIn('id="casca-pc"', s)
+            curtas, esperado = 0, 0.0
             for x in itens:
                 if x['t'] == 'escolha':
                     self.assertEqual(len(x['o']), len(x['fe']))
@@ -30,6 +31,11 @@ class TerJuizo(unittest.TestCase):
                     # 30/10/2026: opções equilibradas (pedido do docente)
                     n = [len(re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]*>', '', o)).replace('_', '').replace('*', '')).strip()) for o in x['o']]
                     self.assertLessEqual(max(n), 1.2 * min(n), x['p'])
+                    # 30/10/2026: revisão do #72 (opções equilibradas): volta a regra antiga, a certa nunca é mais longa
+                    # do que a maior errada, a par da amplitude de 20 %; e não pode ser a mais curta mais vezes do que ceil(n/k).
+                    self.assertLess(len(x['o'][x['c']]), max(len(o) for j, o in enumerate(x['o']) if j != x['c']), (pasta, x['p']))
+                    curtas += n[x['c']] < min(v for j, v in enumerate(n) if j != x['c'])
+                    esperado += 1 / len(x['o'])
                 if x['t'] == 'vf':
                     self.assertIsInstance(x['v'], bool)
                     self.assertIsInstance(x['fe'], str)
@@ -40,6 +46,7 @@ class TerJuizo(unittest.TestCase):
                 self.assertNotIn('—', txt, pasta)
                 self.assertIsNone(PROIBIDAS.search(txt), (pasta, x.get('rot')))
                 self.assertNotRegex(txt, r'[^\s"]\s·\s[^\s"]', pasta)
+            self.assertLessEqual(curtas, math.ceil(esperado), pasta)
 
     def test_imagens_existem_e_tem_credito(self):
         for pasta in LICOES:
