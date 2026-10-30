@@ -67,7 +67,7 @@ MOLDE = {
  leva='Numa frase: há limites que uma boa consequência não apaga? Dá um exemplo.'),
 7: dict(
  recupera=[('Nos dois casos do elétrico, o que muda se o número de pessoas é semelhante?', 'Muda a ação proposta: desviar o elétrico não é o mesmo que empurrar uma pessoa.'),
-           ('A maioria dos votos decide qual razão é mais forte?', 'Não. A quantidade de votos não resolve a força de uma objeção.'),
+           ('A maioria dos votos decide que razão é mais forte?', 'Não. A quantidade de votos não resolve a força de uma objeção.'),
            ('Que objeção te fez pensar mais na sessão anterior?', None)],
  ve='Lê o caso. Quem ganha e quem perde com cada decisão?', material='document', silencio='entry',
  leva='Numa frase: aceitarias a tua regra se recebesses menos? Porquê?'),
