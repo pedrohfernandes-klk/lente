@@ -12,7 +12,7 @@ try{for(const width of [320,390,1366]){
  for(let i=0;i<24;i++){
   const card=p.locator('[data-cartao]'),id=await card.getAttribute('data-cartao'),type=await card.getAttribute('data-tipo');
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}/${id}`);
-  
+
   if(['sombra','horizonte','rampa'].includes(id)){const im=p.locator('#cartoes img');assert(await im.evaluate(x=>x.complete&&x.naturalWidth===512&&x.naturalHeight===512));assert(await im.getAttribute('alt'));}
   if(['escolher','completar','classificar','autoavaliacao'].includes(type)){
    if(id==='ligacao')await snap('04-escolha');

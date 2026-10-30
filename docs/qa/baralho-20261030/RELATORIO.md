@@ -2,7 +2,7 @@
 
 ## 1. Ramo, commit e pedido de integração
 
-Ramo: `codex/baralho-prototipo-20261030`, criado a partir de `main` em `aea224be2db786a7ddfd814852fc6255ed71952a`. O SHA final e o número do pedido em rascunho acompanham a entrega no chat. Nada fundido ou publicado.
+Ramo: `codex/baralho-prototipo-20261030`, criado a partir de `main` em `aea224be2db786a7ddfd814852fc6255ed71952a`. Pedido de integração em rascunho: [#71](https://github.com/pedrohfernandes-klk/lente/pull/71). O SHA final acompanha a entrega no chat. Nada fundido ou publicado.
 
 ## 2. Ficheiros
 
