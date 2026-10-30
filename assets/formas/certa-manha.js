@@ -343,7 +343,7 @@ window.LenteCertaManha={
     "p": "Que versão apresenta o impossível como um facto?",
     "o": [
       "Gregor Samsa viu-se transformado num gigantesco inseto.",
-      "Gregor Samsa julgou ver-se transformado num grande inseto."
+      "Gregor Samsa julgou ver-se transformado num gigantesco inseto."
     ],
     "c": 0,
     "f": "«Viu-se» apresenta um facto; «julgou ver-se» deixa lugar à dúvida.",
