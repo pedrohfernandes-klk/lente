@@ -1,0 +1,9 @@
+.tc-imagem{display:block;width:min(100%,320px);height:auto;margin:0 auto 12px}
+.tc-opcoes{display:grid;gap:8px}
+.tc-opcoes .lf-op{width:100%}
+.tc-plano{padding-left:1.3em;overflow-wrap:anywhere}
+.tc-plano li{margin-bottom:8px}
+.tc-pistas{margin-top:12px}
+.tc-print .tc-imagem{width:55mm}
+@media(max-width:420px){.tc-imagem{width:min(100%,250px)}.formas-cartoes .jogo .cartao.lf-cartao{padding:12px}}
+@media print{.tc-print section{break-inside:avoid}.tc-print section:nth-last-of-type(2){break-before:page}}
