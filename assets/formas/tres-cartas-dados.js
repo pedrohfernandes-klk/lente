@@ -253,7 +253,7 @@ window.LenteTresCartasDados={
     {
       "id": "corrigir",
       "tipo": "classificar",
-      "pergunta": "Qual frase retira a opinião da notícia fictícia?",
+      "pergunta": "Qual das frases retira a opinião da notícia fictícia?",
       "opcoes": [
         {
           "id": "a",
@@ -275,7 +275,7 @@ window.LenteTresCartasDados={
     {
       "id": "citacao",
       "tipo": "escolher",
-      "pergunta": "Qual citação identifica a testemunha inventada?",
+      "pergunta": "Qual das duas citações identifica a testemunha inventada?",
       "opcoes": [
         {
           "id": "a",

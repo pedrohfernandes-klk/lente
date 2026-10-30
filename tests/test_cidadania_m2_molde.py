@@ -9,6 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import importlib
+import json
 import re
 import subprocess
 import sys
@@ -292,8 +293,16 @@ class Molde(unittest.TestCase):
         lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', base, 'cidadania/m1'], cwd=R).decode().split()
         locais = sorted(str(p.relative_to(R)) for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
         self.assertEqual(sorted(lista), locais)
+        # 30/10/2026: pedido do docente (perguntas em português europeu, «Qual das perguntas…» e não «Qual pergunta…»): a
+        # base passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; depois da fusão a
+        # base já as tem e a troca não muda nada. Tudo o resto continua igual, byte a byte.
+        lingua = json.loads((R / 'tools/trocas/lingua-perguntas-20261030.json').read_text('utf-8'))
         for f in lista + ['assets/cidadania-m1-sessoes.css', 'assets/cidadania-m1-sessoes.js']:
-            self.assertEqual((R / f).read_bytes(), subprocess.check_output(['git', 'show', base + ':' + f], cwd=R), f)
+            antes = subprocess.check_output(['git', 'show', base + ':' + f], cwd=R)
+            for t in lingua:
+                if t['ficheiro'] == f:
+                    antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
+            self.assertEqual((R / f).read_bytes(), antes, f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):
