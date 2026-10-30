@@ -70,7 +70,8 @@ def familia(rel,s):
  if top=='biblioteca' and len(d)>2:return 'P2'
  if rel in ('narrativas/oficina-espaco-imprimir/index.html','dar-forma-as-palavras/index.html'):return 'P3b'
  if re.fullmatch(r'narrativas/oficina-[\w-]+-imprimir/index\.html',rel):return 'P3'
- if rel in ('index.html','narrativas/index.html','vozes/index.html'):return 'E1'
+ # 30/10/2026: Laboratório simples (pedido do docente). O catálogo herda as mesmas regras da antiga entrada.
+ if rel in ('index.html','narrativas/index.html','narrativas/tudo/index.html','vozes/index.html'):return 'E1'
  if len(d)==2 or rel in ('narrativas/corta/index.html','narrativas/margens/index.html'):
   if top not in ('404.html','como','caderno','curadoria','mapa','projetar'):return 'E2'
  if rel.startswith('narrativas/treinar/') or rel=='narrativas/proposta-subtexto/index.html':return 'G1'

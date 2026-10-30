@@ -1,7 +1,7 @@
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 const ROOT=path.resolve(__dirname,'..'),D=require('../assets/formas/corpus.json');
-const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.woff2':'font/woff2'};
+const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2'};
 function fileFor(url){let name=decodeURIComponent(new URL(url,'http://localhost').pathname).replace(/^\/lente\//,'/');let f=path.resolve(ROOT,'.'+name);if(!f.startsWith(ROOT+path.sep))return null;try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');return f;}catch{return null;}}
 const server=http.createServer((req,res)=>{const f=fileFor(req.url);if(!f){res.writeHead(404).end();return;}res.setHeader('Content-Type',mime[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));});
 global.window={};require('../assets/formas/leituras.js');for(const [id,g] of Object.entries(window.LenteLeituras)){const source=D.items.find(x=>x.id===id);assert.equal(source.status,'excerto-consultado');for(const [anchor] of g.anchors)assert(source.quote.includes(anchor));}
@@ -21,230 +21,43 @@ const ls=(page,k)=>page.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),
 // «A cena que falta»: o plano entra; o aluno marca o que ele faz às hipóteses; só «Verificar» mostra a leitura do Lente
 async function montar(pg,p,marcas){await pg.locator('[data-cand="'+p+'"]').click();assert.equal(await pg.locator('.lf-hips .lf-est').count(),0);assert.equal(await pg.locator('.casca-folha:not([hidden])').count(),0);
  for(const [h,s] of Object.entries(marcas))await pg.locator('[data-marcah="'+h+'"][data-s="'+s+'"]').click();await pg.locator('.casca-acoes [data-lf-verificar]').click();}
+// 30/10/2026: Laboratório simples (pedido do docente).
 async function prototipos(b,base){
- const erros=[];const vigiar=page=>page.on('pageerror',e=>erros.push(e.message));
- for(const width of [360,1440]){
-  // Certa manhã, percurso completo com cliques e teclado (sem atalhos de teste)
-  const ctx=await novoCtx(b,{viewport:{width,height:width===360?740:900}}),page=await ctx.newPage();vigiar(page);
-  await page.goto(base+'/narrativas/formas/certa-manha/');
-  await page.evaluate(()=>{localStorage.setItem('lente-formas-corta-v1',JSON.stringify({version:1,done:['curiosidade']}));localStorage.setItem('epi-corta',JSON.stringify({feitas:{maias:123},nota:'preservar'}));});
-  const antigas=await page.evaluate(()=>[localStorage.getItem('lente-formas-corta-v1'),localStorage.getItem('epi-corta')]);
-  await page.reload();assert.equal(await cartao(page),'abre');
-  assert.equal((await page.locator('.lf-prosa p').innerText()).trim(),FRASE);
-  assert.match(await page.locator('.lf-credito').first().innerText(),/RTP Ensina[\s\S]*não identifica a tradução/);
-  assert.equal(await page.locator('.lf-credito a').first().getAttribute('href'),'https://ensina.rtp.pt/artigo/a-metamorfose-ou-a-parabola-do-homem-inseto-de-franz-kafka/');
-  await seguinte(page);assert.equal(await cartao(page),'a1');assert(await page.locator('[data-seguinte]').isDisabled());
-  assert.equal(await page.locator('.lf-final').count(),0);  // a descoberta não aparece antes do toque
-  await page.locator('[data-seg="t4"]').click();const fim4=await page.locator('.lf-final').innerText(),exp4=await painelT(page);
-  assert.match(fim4,/viu-se transformado num homem cansado\./);await page.locator('.casca-folha .c-sec').click();
-  await page.locator('[data-seg="t5"]').focus();await page.keyboard.press('Enter');const fim5=await page.locator('.lf-final').innerText(),exp5=await painelT(page);
-  assert.notEqual(fim4,fim5);assert.notEqual(exp4,exp5);assert.match(fim5,/não encontrou final comum/);assert(!/inseto/.test(fim5));assert.equal(await page.locator('.lf-corte-ant').count(),1);
-  // o rótulo «1.º corte» fica no primeiro corte, não no anterior
-  for(const s of ['t1','t2']){await page.locator('[data-seg="'+s+'"]').click();await page.locator('.casca-folha .c-sec').click();}
-  assert.deepEqual(await page.$$eval('.lf-seg',bs=>bs.filter(b=>b.querySelector('.lf-c1')).map(b=>b.dataset.seg)),['t4']);
-  assert.match(await page.locator('.lf-final').innerText(),/^Certa manhã, ao acordar de sonhos inquietos, Gregor Samsa abriu a janela\.$/);
-  await page.locator('[data-seg="t5"]').click();
-  assert(await semRolar(page));await page.locator('.casca-folha .c-prim').click();
-  // A2: a pauta só aparece depois da resposta; a mesma resposta dá explicações diferentes para variantes diferentes
-  assert.equal(await cartao(page),'a2');assert.equal(await page.locator('.lf-pauta').count(),0);
-  await page.locator('[data-resp="original"]').click();assert.equal(await page.locator('.lf-pauta').count(),1);const v1=await painelT(page);
-  assert.equal(await page.locator('.lf-pauta .lf-difere').count(),1);
-  await page.locator('.casca-folha .c-sec').click();assert.equal(await page.locator('[data-var="1"]').getAttribute('aria-pressed'),'true');
-  await page.locator('[data-resp="original"]').click();const v2=await painelT(page);assert.notEqual(v1,v2);assert.match(v2,/a diferença está no «talvez»/);assert(!/nunca sai do «não»/.test(v2));assert(!/Compara as duas pautas/.test(v1));  // o fecho só depois de duas variantes, e cada uma com o seu
-  await page.locator('.casca-folha .c-prim').click();
-  // A3: restrições formais verificáveis (✗) separadas das dúvidas (◐); a primeira versão fica conservada
-  assert.equal(await cartao(page),'a3');await page.locator('#a3-texto').fill('De repente, ao abrir a porta, vi um inseto!');await page.locator('[data-lf-verificar]').click();
-  assert.equal(await page.locator('.lf-avisos .lf-x').count(),2);assert.equal(await page.locator('.lf-avisos .lf-meio').count(),1);
-  assert.match(await page.locator('.lf-first').innerText(),/De repente, ao abrir a porta/);await page.locator('[data-outra]').click();
-  await page.locator('#a3-texto').fill('Segunda tentativa, já sem bicho.');await page.locator('[data-lf-verificar]').click();await page.locator('[data-outra]').click();
-  assert.match(await page.locator('.lf-first').innerText(),/De repente, ao abrir a porta/);assert(!/Segunda tentativa/.test(await page.locator('.lf-first').innerText()));
-  await page.locator('#a3-texto').fill('Numa terça, ao abrir a porta, a Rita ficou horrorizada com a transformação.');await page.locator('[data-lf-verificar]').click();
-  assert.match(await page.locator('.lf-avisos').innerText(),/«transformação»[\s\S]*não uses o verbo «transformar»[\s\S]*«horrorizada»: é a reação que a variante 1 juntava/);assert.match(await page.locator('.lf-consequencia').innerText(),/procura só: «!»/);
-  await page.locator('#a3-texto').fill('Numa terça-feira, ao abrir a gaveta, a Rita encontrou o domingo passado dobrado em quatro.');await page.locator('[data-lf-verificar]').click();
-  assert.equal(await page.locator('.lf-avisos').count(),0);await seguinte(page);
-  // B1: arrumar com as teclas 1, 2 e 3; a primeira leitura guarda-se no primeiro «Verificar», antes de qualquer marca
-  assert.equal(await cartao(page),'b1');assert(await page.locator('[data-lf-verificar]').isDisabled());
-  for(const k of ['1','1','2','2','2','3','3','3','3'])await page.keyboard.press(k);
-  assert.equal(await page.locator('.lf-quadro .lf-marca-j').count(),0);assert.equal(await ls(page,'lente-formas-v1'),null);
-  await page.locator('[data-lf-verificar]').click();
-  const arr={manha:'mostra',corpo:'mostra',identidade:'infiro',dormiu:'infiro',cama:'infiro',emprego:'falta',sozinho:'falta',repulsa:'falta',intencao:'falta'};
-  let reg=await ls(page,'lente-formas-v1');assert.deepEqual(reg.itens['certa-manha'].primeira.arrumacao,arr);assert(reg.itens['certa-manha'].experimentei>0);
-  for(const t of await page.locator('.lf-quadro .lf-marca-j').allInnerTexts())assert.match(t,/Sustenta-se|Também se defende|Difícil de sustentar/);
-  assert.equal(await page.locator('.lf-quadro .lf-marca-j').count(),9);
-  assert.equal(await page.locator('.casca-folha .c-sec').innerText(),'Ler as explicações');await page.locator('.casca-folha .c-sec').click();await page.locator('[data-tag="repulsa"]').click();const e1=await page.locator('.lf-explica').innerText();
-  await page.locator('[data-mover="infiro"]').click();await page.locator('[data-tag="repulsa"]').click();const e2=await page.locator('.lf-explica').innerText();
-  assert.notEqual(e1,e2);assert.match(e2,/1\.ª escolha: Preciso de mais contexto/);assert.match(await page.locator('[data-tag="repulsa"]').innerText(),/mudou depois da explicação/i);
-  reg=await ls(page,'lente-formas-v1');assert.equal(reg.itens['certa-manha'].primeira.arrumacao.repulsa,'falta');assert.equal(reg.itens['certa-manha'].depoisExplicacao.repulsa,'infiro');
-  await seguinte(page);assert.equal(await cartao(page),'b2');await page.locator('[data-falta="intencao"][data-tipo="autor"]').click();assert.match(await page.locator('.lf-faltava .lf-consequencia').nth(2).innerText(),/testemunho/);
-  await seguinte(page);assert.equal(await cartao(page),'b3');assert.match(await page.locator('.lf-carimbo').innerText(),/Primeira leitura guardada às \d\dh\d\d/);
-  await page.locator('#b3-texto').fill('Leio uma manhã estranha porque a frase diz viu-se.');
-  // recarga no mesmo separador: o trabalho e a primeira leitura continuam
-  await page.reload();assert.equal(await cartao(page),'b3');assert.equal(await page.locator('#b3-texto').inputValue(),'Leio uma manhã estranha porque a frase diz viu-se.');
-  await seguinte(page);assert.equal(await cartao(page),'original');for(const g of ['bett','ungeheuer','ungeziefer'])await page.locator('[data-glosa="'+g+'"]').click();
-  assert.equal(await page.locator('.lf-glosas li').count(),3);assert(!(await page.content()).includes('Als Gregor Samsa'));
-  await seguinte(page);assert.equal(await page.locator('.lf-passagens li').count(),5);assert.match(await page.locator('.lf-passagens li').first().innerText(),/§ 1[\s\S]*carapaça/);await seguinte(page);
-  // F1: rever sem apagar a primeira leitura (a tracejado) e com uma quarta coluna
-  assert.equal(await cartao(page),'f1');assert.equal(await page.locator('.lf-quadro .lf-col').count(),4);assert.equal(await page.locator('.lf-fantasma').count(),1);
-  assert.equal(await page.locator('.lf-quadro .lf-marca-j').count(),0);assert.equal(await page.locator('.casca-acoes [data-seguinte]').count(),0);
-  await page.locator('[data-tag="sozinho"]').click();assert(!/irmã/.test(await page.locator('.lf-explica').innerText()));await page.keyboard.press('4');
-  assert.match(await page.locator('.lf-col[data-col="desmente"]').innerText(),/sozinho/);assert.match(await page.locator('.lf-estado').innerText(),/Mudaste 2 de 9/);
-  await page.locator('.casca-acoes [data-lf-verificar]').click();assert.match(await painelT(page),/Revisão guardada/);await page.locator('.casca-folha .c-sec').click();
-  assert.equal(await page.locator('.lf-quadro .lf-marca-j').count(),9);await page.locator('[data-tag="sozinho"]').click();assert.match(await page.locator('.lf-explica').innerText(),/irmã/);
-  await page.locator('[data-tag="emprego"]').click();await page.keyboard.press('1');assert.match(await page.locator('[data-tag="emprego"]').innerText(),/mudou depois da explicação/i);await seguinte(page);
-  // F2: que informação fez diferença (a explicação depende do que mudou)
-  assert.equal(await cartao(page),'f2');assert.match(await page.locator('.lf-duas').innerText(),/sozinho/);
-  await page.locator('[data-info="familia"]').click();assert.match(await painelT(page),/desfez esse silêncio/);await page.locator('.casca-folha .c-sec').click();
-  await page.locator('[data-info="cama"]').click();assert.match(await painelT(page),/Escolheste a cama, mas/);await page.locator('.casca-folha .c-prim').click();
-  // F3: lado a lado; a mudança vinda da explicação distingue-se da que veio da informação nova
-  assert.equal(await cartao(page),'f3');assert(await page.locator('[data-seguinte]').isDisabled());
-  await page.locator('[data-lado="sozinho"]').click();assert.match(await painelT(page),/perdeu-o/);await page.locator('.casca-folha .c-sec').click();
-  await page.locator('[data-lado="repulsa"]').click();assert.match(await painelT(page),/explicação do cartão «Arruma»/);await page.locator('.casca-folha .c-sec').click();
-  await page.locator('[data-lado="emprego"]').click();assert.match(await painelT(page),/depois da explicação do cartão «Revê»/);
-  assert.match(await page.locator('.lf-lado-col').first().innerText(),/repulsa\s+Preciso de mais contexto/);
-  await page.locator('.casca-folha .c-prim').click();assert.equal(await cartao(page),'fim');assert.match(await page.locator('[data-registo]').innerText(),/experimentei, revi/);
-  reg=await ls(page,'lente-formas-v1');assert(reg.itens['certa-manha'].revi>0);
-  const tudo=await page.evaluate(()=>JSON.stringify(localStorage));assert(!/Leio uma manhã|De repente|Rita encontrou/.test(tudo));
-  assert.deepEqual(await page.evaluate(()=>[localStorage.getItem('lente-formas-corta-v1'),localStorage.getItem('epi-corta')]),antigas);
-  assert(await semRolar(page));await ctx.close();
-  console.log('PASS Certa manhã: frase e crédito RTP, cortes distintos, pauta depois da resposta, restrições formais, primeira leitura antes das marcas, revisão em quatro colunas, recarga e registo experimentei/revi at '+width+'px');
-
-  // A cena que falta: cada plano dá um vetor de estados e um título diferentes; o plano entra no lugar 04
-  const titulos=new Set(),vetores=new Set();
-  for(const p of CQ.candidatos){const c2=await novoCtx(b,{viewport:{width,height:900}}),pg=await c2.newPage();vigiar(pg);
-   await pg.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(pg);assert(await pg.locator('[data-seguinte]').isDisabled());
-   await pg.locator('[data-inicial="H2"]').click();await seguinte(pg);assert(await pg.locator('.casca-acoes [data-lf-verificar]').isDisabled());
-   await pg.locator('[data-cand="'+p+'"]').click();assert(await pg.locator('.casca-acoes [data-lf-verificar]').isDisabled());await pg.locator('[data-marcah="H2"][data-s="ganha"]').click();await pg.locator('.casca-acoes [data-lf-verificar]').click();
-   assert.match(await painelT(pg),CQ.estados[p].H2.estado==='ganha'?/tu e o Lente marcam ▲ ganha apoio/:/tu marcaste ▲ ganha apoio; o Lente lê/);assert(await pg.locator('.casca-folha .lf-apoio-c').isHidden());
-   const v=await pg.$$eval('.lf-hips .lf-h .lf-est',els=>els.map(x=>x.dataset.estado));assert.deepEqual(v,CQ.hipoteses.map(h=>CQ.estados[p][h.id].estado));
-   vetores.add(v.join());titulos.add(await pg.locator('.casca-folha .c-veredito').innerText());
-   assert.match(await pg.locator('[data-mini="3"]').getAttribute('aria-label'),new RegExp(CQ.quadros[p].titulo));assert.equal(await pg.locator('.lf-tira .lf-novo').count(),1);
-   assert(await semRolar(pg));await c2.close();}
-  assert.equal(titulos.size,3);assert.equal(vetores.size,3);
-  // comparação: «A mesma imagem, duas legendas»; «experimentei» só com duas montagens; revisão sem perder a escolha inicial
-  const c3=await novoCtx(b,{viewport:{width,height:900}}),pg=await c3.newPage();vigiar(pg);
-  await pg.goto(base+'/narrativas/corta/cena-que-falta/');const antes=await pg.evaluate(()=>localStorage.getItem('lente-formas-corta-v1'));
-  await seguinte(pg);await pg.locator('[data-inicial="H2"]').click();await seguinte(pg);
-  await montar(pg,'bolso',{H2:'perde'});assert(!/câmara olha para outro lado|sem efeito/.test(await painelT(pg)));await pg.locator('.casca-folha .c-sec').click();assert.equal(await cartao(pg),'compara');
-  assert.match(await pg.locator('.lf-estado').innerText(),/duas montagens diferentes/);assert.equal(await ls(pg,'lente-formas-v1'),null);
-  await pg.locator('[data-voltar-escolhe]').click();assert.match(await pg.locator('.lf-q').innerText(),/O que fará à hipótese «Quem a encontrou foi à procura da dona»\?/);
-  await montar(pg,'cartao',{H2:'ganha'});assert.match(await painelT(pg),/ganha apoio/);await pg.locator('.casca-folha .c-prim').click();
-  assert.equal(await cartao(pg),'compara');assert(await pg.locator('[data-lf-verificar]').isDisabled());
-  await pg.locator('[data-leg="l1"][data-l="afinal"]').click();await pg.locator('[data-leg="l2"][data-l="retrato"]').click();await pg.locator('[data-lf-verificar]').click();
-  assert.match(await pg.locator('.casca-folha .c-veredito').innerText(),/A mesma imagem, duas legendas/);assert.match(await painelT(pg),/Supões, com apoio no plano do meio/);assert(!/Vês:/.test(await painelT(pg)));
-  assert((await ls(pg,'lente-formas-v1')).itens['cena-que-falta'].experimentei>0);
-  await pg.locator('.casca-folha .c-sec').click();await pg.locator('[data-leg="l2"][data-l="afinal"]').click();await pg.locator('[data-lf-verificar]').click();
-  assert.match(await pg.locator('.casca-folha .c-veredito').innerText(),/A mesma legenda nas duas/);assert.match(await painelT(pg),/Supões sem apoio nesta montagem/);
-  await pg.locator('.casca-folha .c-sec').click();await pg.locator('[data-leg="l1"][data-l="neutra"]').click();await pg.locator('[data-leg="l2"][data-l="neutra"]').click();await pg.locator('[data-lf-verificar]').click();
-  assert.match(await pg.locator('.casca-folha .c-veredito').innerText(),/A legenda mais prudente/);assert.match(await painelT(pg),/Sustenta-se «Devolve o que encontrou»/);
-  await pg.locator('.casca-folha .c-sec').click();await pg.locator('[data-hpar="H2"]').click();assert.match(await pg.locator('.lf-par-texto').innerText(),/parada numa montagem/);
-  await pg.locator('[data-hpar="H3"]').click();assert.match(await pg.locator('.lf-par-texto').innerText(),/ficou igual nas duas montagens/);
-  await seguinte(pg);assert.equal(await cartao(pg),'reve');assert.match(await pg.locator('.lf-cartao').innerText(),/Quem a encontrou foi à procura da dona/);
-  await pg.locator('[data-rev="aberto"]').click();await pg.locator('[data-plano="cartao"]').click();
-  assert.match(await painelT(pg),/Deixas «Quem a encontrou foi à procura da dona» em aberto, embora «O cartão» a reforce/);assert((await ls(pg,'lente-formas-v1')).itens['cena-que-falta'].revi>0);
-  await pg.locator('.casca-folha .c-prim').click();assert.equal(await cartao(pg),'escreve');
-  await pg.locator('#f5-texto').fill('Senta-se ao lado de um homem e pousa o vaso no chão.');await pg.locator('[data-lf-verificar]').click();assert.equal(await pg.locator('.lf-avisos').count(),0);
-  assert.equal(await pg.locator('.casca-folha:not([hidden])').count(),0);  // o painel só abre com as três marcas
-  for(const [i,s] of [['0','igual'],['1','ganha'],['2','perde']])await pg.locator('[data-marca5="'+i+'"][data-s="'+s+'"]').click();
-  assert.match(await painelT(pg),/marcaste: «Esqueceu-se do vaso» = não muda; «Deu o vaso a alguém» ▲ ganha apoio; «O vaso nunca foi dela» ▼ perde apoio/);await pg.locator('.casca-folha .c-sec').click();
-  await pg.locator('#f5-texto').fill('Pensou que ninguém via e deixou o vaso porque estava cansada.');await pg.locator('[data-lf-verificar]').click();const avs=await pg.locator('.lf-avisos').innerText();assert.match(avs,/«pensou»: é uma ação que se vê ou um pensamento/);assert.match(avs,/«porque»: explica; uma câmara mostra o que acontece, não porquê/);
-  assert.equal(await pg.evaluate(()=>localStorage.getItem('lente-formas-corta-v1')),antes);assert(!(await pg.evaluate(()=>JSON.stringify(localStorage))).includes('ninguém via'));
-  assert(await semRolar(pg));await c3.close();
-  console.log('PASS A cena que falta: três vetores e três explicações distintas, plano no lugar 04, duas legendas, experimentei só com duas montagens, revisão e transferência at '+width+'px');
+ const os=require('node:os'),dest=path.join(os.tmpdir(),'lente-laboratorio-simples');fs.mkdirSync(dest,{recursive:true});
+ for(const width of [320,390,1366]){
+  const ctx=await novoCtx(b,{viewport:{width,height:844}}),page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const auditar=async()=>{
+   const n=await page.locator('.ls-cartao [data-op],.ls-cartao [data-dono]').count();assert(n<=4,'máximo quatro escolhas');
+   assert(await semRolar(page),'sem deslocamento horizontal');
+   if(width===390){const r=await page.locator('.ls-cartao').evaluate(el=>{const a=el.querySelector('.lf-q').getBoundingClientRect(),bs=[...el.querySelectorAll('[data-op],[data-dono]')].map(b=>b.getBoundingClientRect());return {top:a.top,bottom:Math.max(a.bottom,...bs.map(b=>b.bottom)),lim:document.querySelector('.casca-acoes').getBoundingClientRect().top};});assert(r.top>=0&&r.bottom<=r.lim,'pergunta e escolhas no ecrã: '+JSON.stringify(r));}
+  };
+  await page.goto(base+'/narrativas/');assert.equal(await page.locator('h1').innerText(),'Laboratório');assert.equal(await page.locator('.lab-portas a').count(),3);
+  if(width===390){await page.screenshot({path:path.join(dest,'entrada-390.png'),fullPage:true});console.log('Entrada:',await page.evaluate(()=>({palavras:document.querySelector('main').innerText.trim().split(/\s+/).length,altura:document.documentElement.scrollHeight})));}
+  await page.goto(base+'/narrativas/#treinar');await page.waitForURL('**/narrativas/tudo/#treinar');assert.equal(await page.locator('#treinar').count(),1);
+  await page.goto(base+'/narrativas/formas/certa-manha/');await auditar();assert.equal(await cartao(page),'corte');
+  if(width===390)await page.screenshot({path:path.join(dest,'certa-manha-390.png'),fullPage:true});
+  const inicio=Date.now();await page.locator('[data-op="2"]').focus();await page.keyboard.press('Enter');assert(Date.now()-inicio<10000);assert.match(await page.locator('.ls-feedback').innerText(),/impossível/);
+  for(const [id,i] of [['versao',0],['primeira',1],['contexto',0],['revisao',3],['comparar',0]]){await seguinte(page);assert.equal(await cartao(page),id);await auditar();await page.locator('[data-op="'+i+'"]').click();}
+  assert.match(await page.locator('.ls-compara').innerText(),/É uma inferência[\s\S]*O texto nega-o/);
+  let reg=await ls(page,'lente-formas-v1');assert.equal(reg.itens['certa-manha'].primeira.arrumacao.sozinho,'infiro');assert(reg.itens['certa-manha'].experimentei&&reg.itens['certa-manha'].revi);
+  await seguinte(page);await auditar();await page.locator('textarea').fill('Ao abrir a gaveta, encontrei a terça-feira dobrada.');await seguinte(page);assert.equal(await cartao(page),'fim');await page.locator('.casca-acoes .c-seta').click();await page.locator('textarea').fill('Ao abrir a gaveta, encontrei o domingo dobrado.');await seguinte(page);await page.reload();await page.locator('.casca-acoes .c-seta').click();await page.locator('details summary').click();assert.match(await page.locator('details').innerText(),/terça-feira/);
+  await page.emulateMedia({media:'print'});assert.equal(await page.locator('.lf-print section').count(),7);if(width===390)await page.pdf({path:path.join(dest,'certa-manha-papel.pdf'),format:'A4'});await page.emulateMedia({media:'screen'});
+   await page.goto(base+'/narrativas/formas/certa-manha/?projetar=1');assert.equal(await cartao(page),'corte');assert(!/terça-feira|domingo/.test(await page.locator('body').innerText()));await page.locator('[data-op="0"]').click();assert.deepEqual(await ls(page,'lente-formas-v1'),reg);
+  // O dono confirma antes de a primeira leitura guardada ser mostrada; os outros registos não são tocados.
+  await page.goto(base+'/narrativas/formas/certa-manha/');await page.evaluate(()=>sessionStorage.clear());await page.reload();await page.locator('[data-op="2"]').click();await seguinte(page);await page.locator('[data-op="0"]').click();await seguinte(page);assert.equal(await page.locator('[data-dono]').count(),2);await auditar();await page.locator('[data-dono="sim"]').click();assert.equal(await page.locator('[data-op="1"]').getAttribute('aria-pressed'),'true');
+  await page.goto(base+'/narrativas/corta/cena-que-falta/');await auditar();await page.locator('[data-op="0"]').click();await seguinte(page);await auditar();
+  if(width===390)await page.screenshot({path:path.join(dest,'cena-escolha-390.png'),fullPage:true});
+  for(const i of [0,1,2]){await page.locator('[data-op="'+i+'"]').click();assert.equal(await page.locator('.ls-tira img').count(),5);assert(await page.locator('.ls-tira img').nth(3).getAttribute('src').then(s=>s.endsWith(['bolso','cartao','regresso'][i]+'.svg')));}
+  await seguinte(page);await auditar();assert(await page.locator('[data-op="2"]').isDisabled());await page.locator('[data-op="0"]').click();await seguinte(page);await auditar();await page.locator('[data-op="0"]').click();await seguinte(page);assert.equal(await cartao(page),'fim');
+  reg=await ls(page,'lente-formas-v1');assert(reg.itens['cena-que-falta'].experimentei&&reg.itens['cena-que-falta'].revi);
+  await page.emulateMedia({media:'print'});assert(await page.locator('.lf-print').isVisible());assert.equal(await page.locator('.lf-print section').count(),4);if(width===390)await page.pdf({path:path.join(dest,'cena-papel.pdf'),format:'A4'});await page.emulateMedia({media:'screen'});
+  await page.goto(base+'/narrativas/corta/cena-que-falta/?guia=1');assert(await page.locator('.lf-p-apoios').first().isVisible());assert(await page.locator('.lf-print').isVisible());assert.match(await page.locator('.lf-print').innerText(),/CC BY-SA 4.0/);
+  await page.goto(base+'/narrativas/corta/cena-que-falta/?projetar=1');await page.locator('[data-op="2"]').click();assert.deepEqual(await ls(page,'lente-formas-v1'),reg);
+  assert.deepEqual(errors,[]);await ctx.close();console.log('PASS piloto: escolhas, efeitos, revisão, progresso, privacidade, papel e '+width+' px');
  }
- // a cena que falta com ganho e perda na mesma hipótese («ambos»)
- {const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(pg);await pg.locator('[data-inicial="H2"]').click();await seguinte(pg);
-  await montar(pg,'cartao',{H2:'ganha'});await pg.locator('.casca-folha .c-prim').click();await montar(pg,'regresso',{H2:'igual'});assert.match(await painelT(pg),/◐ Também se defende outra leitura/);await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('[data-leg="l1"][data-l="retrato"]').click();await pg.locator('[data-leg="l2"][data-l="tempo"]').click();await pg.locator('[data-lf-verificar]').click();await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('[data-rev="aberto"]').click();await pg.locator('[data-plano="regresso"]').click();assert.match(await painelT(pg),/viste um plano reforçá-la e outro enfraquecê-la/);await pg.locator('.casca-folha .c-sec').click();
-  await pg.locator('[data-rev="mantenho"]').click();assert.match(await painelT(pg),/«O cartão» deu-lhe apoio e «O regresso» tirou-lho/);await pg.locator('.casca-folha .c-sec').click();
-  await pg.locator('[data-rev="corrijo"]').click();assert.match(await painelT(pg),/«O regresso» tirou-lhe apoio, embora «O cartão» lho tenha dado/);
-  // «Nenhuma me parece mais forte» também é uma posição e permite «revi»
-  await pg.locator('.casca-folha .c-prim').click();await c.close();}
- {const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(pg);await pg.locator('[data-inicial="nenhuma"]').click();await seguinte(pg);
-  await pg.locator('[data-cand="regresso"]').click();assert(await pg.locator('.casca-acoes [data-lf-verificar]').isDisabled());await pg.locator('[data-marcah="H3"][data-s="ganha"]').click();await pg.locator('.casca-acoes [data-lf-verificar]').click();assert.match(await painelT(pg),/«A dona voltou para a procurar»: tu e o Lente marcam ▲ ganha apoio/);await pg.locator('.casca-folha .c-prim').click();
-  await montar(pg,'bolso',{H1:'ganha'});await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('[data-leg="l1"][data-l="tempo"]').click();await pg.locator('[data-leg="l2"][data-l="afinal"]').click();await pg.locator('[data-lf-verificar]').click();await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('[data-rev="continua"]').click();await pg.locator('[data-plano="nenhum"]').click();assert.match(await painelT(pg),/juízo suspenso/);assert((await ls(pg,'lente-formas-v1')).itens['cena-que-falta'].revi>0);await c.close();}
- // sequência: com movimento reduzido não arranca sozinha; sem ele, corre com o relógio e anuncia só o princípio e o fim
- {const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(pg);
-  assert.equal(await pg.locator('[data-seq]').count(),0);await pg.locator('[data-passo="1"]').click();assert.match(await pg.locator('[data-anuncio]').innerText(),/Plano 2 de 5: Uma pessoa de casaco verde/);
-  assert.match(await pg.locator('.lf-visor figcaption').innerText(),/O olhar/);await c.close();}
- {const c=await novoCtx(b,{reducedMotion:'no-preference'}),pg=await c.newPage();vigiar(pg);await pg.clock.install();await pg.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(pg);
-  await pg.locator('[data-seq]').click();assert.equal(await pg.locator('[data-anuncio]').innerText(),'A sequência começou.');await pg.clock.runFor(4100);assert.equal(await pg.locator('[data-anuncio]').innerText(),'A sequência começou.');
-  await pg.clock.runFor(8000);assert.match(await pg.locator('[data-anuncio]').innerText(),/A sequência acabou/);assert.equal(await pg.locator('[data-seq]').innerText(),'Ver outra vez');
-  await pg.locator('[data-seq]').click();await pg.clock.runFor(2100);await pg.locator('[data-inicial="H3"]').click();await pg.clock.runFor(4200);
-  assert.equal(await pg.$$eval('[data-mini]',ms=>ms.findIndex(m=>m.classList.contains('lf-sel'))),0);assert.equal(await pg.locator('[data-seq]').innerText(),'Ver a sequência');
-  await pg.locator('[data-seq]').click();assert.equal(await pg.locator('[data-seq]').innerText(),'Pausa');await c.close();}
- // projeção: nada se grava, o pessoal não aparece, as explicações e as marcas ficam veladas até se pedirem
- {const c=await novoCtx(b,{viewport:{width:1440,height:900}}),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/formas/certa-manha/');
-  await pg.evaluate(()=>localStorage.setItem('lente-formas-v1',JSON.stringify({version:1,itens:{'certa-manha':{primeira:{em:1,arrumacao:{corpo:'falta'}}}}})));const antes=await pg.evaluate(()=>JSON.stringify(localStorage));
-  await pg.goto(base+'/narrativas/formas/certa-manha/?projetar=1');assert(await pg.locator('body.lf-projetar').count());assert.equal(await pg.locator('.lf-aparelho').count(),0);
-  await seguinte(pg);await pg.locator('[data-seg="t5"]').click();assert(await pg.locator('.lf-revelar').isVisible());assert(await pg.locator('.lf-velado').isHidden());assert(await pg.locator('.casca-folha .c-veredito').isHidden());
-  await pg.locator('.lf-revelar').click();assert(await pg.locator('.lf-velado').isVisible());assert.match(await pg.locator('.lf-velado').innerText(),/Tocaste em «num gigantesco inseto»/);await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('[data-resp="igual"]').click();await pg.locator('.casca-folha .c-prim').click();assert(await pg.locator('#a3-texto').isHidden());await seguinte(pg);
-  for(const k of ['1','1','2','2','2','3','3','3','3'])await pg.keyboard.press(k);await pg.locator('[data-lf-verificar]').click();assert.equal(await pg.locator('.lf-quadro .lf-marca-j').count(),0);
-  await pg.locator('.lf-revelar').click();assert.equal(await pg.locator('.lf-quadro .lf-marca-j').count(),9);
-  await pg.locator('.casca-folha .c-prim').click();assert.equal(await cartao(pg),'b2');await seguinte(pg);assert.match(await pg.locator('.lf-carimbo').innerText(),/Leitura da turma/);
-  assert.equal(await pg.evaluate(()=>JSON.stringify(localStorage)),antes);assert.match(await pg.locator('.lf-aviso-proj').innerText(),/nada do que se faz aqui fica guardado/);await c.close();}
- // aparelho partilhado: a primeira leitura guardada não passa a ser de quem chega sem perguntar
- for(const resp of ['sim','nao']){const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/formas/certa-manha/');
-  await pg.evaluate(()=>localStorage.setItem('lente-formas-v1',JSON.stringify({version:1,itens:{'certa-manha':{experimentei:5,primeira:{em:1793260000000,arrumacao:{manha:'mostra',corpo:'mostra',identidade:'infiro',dormiu:'infiro',cama:'infiro',emprego:'falta',sozinho:'falta',repulsa:'falta',intencao:'falta'}}}}})));await pg.reload();
-  assert.match(await pg.locator('.lf-aparelho').innerText(),/Neste aparelho há uma primeira leitura guardada a .*É tua\?/s);await pg.locator('[data-aparelho="'+resp+'"]').click();
-  for(let i=0;i<4;i++){if(await cartao(pg)==='b1')break;if(await cartao(pg)==='a1')await pg.locator('[data-seg="t1"]').click(),await pg.locator('.casca-folha .c-prim').click();else if(await cartao(pg)==='a2')await pg.locator('[data-resp="igual"]').click(),await pg.locator('.casca-folha .c-prim').click();else await seguinte(pg);}
-  assert.equal(await cartao(pg),'b1');assert.equal(await pg.locator('.lf-quadro .lf-marca-j').count(),resp==='sim'?9:0);assert.equal(await pg.locator('[data-seguinte]').count(),resp==='sim'?1:0);
-  // «Recomeçar» limpa o separador e não apaga a primeira leitura guardada no aparelho
-  pg.once('dialog',d=>d.accept());await pg.evaluate(()=>{document.querySelector('[data-c-menu]').click();document.querySelector('[data-lf-menu="recomecar"]').click();});
-  assert((await ls(pg,'lente-formas-v1')).itens['certa-manha'].primeira);assert.equal(await cartao(pg),'abre');assert.equal(await pg.locator('.lf-aparelho').count(),1);await c.close();}
- // uma primeira leitura incompleta (chave antiga) não se oferece
- {const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/formas/certa-manha/');
-  await pg.evaluate(()=>localStorage.setItem('lente-formas-v1',JSON.stringify({version:1,itens:{'certa-manha':{primeira:{em:1,arrumacao:{corpo:'falta',outra:'coisa'}}}}})));await pg.reload();assert.equal(await pg.locator('.lf-aparelho').count(),0);await c.close();}
- // papel: o bloco compõe-se uma vez ao carregar e não leva o que o aluno escreveu; o modo (enunciado ou apoios) muda por classe; os desenhos chegam ao PDF
- {const c=await novoCtx(b),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/formas/certa-manha/');await pg.evaluate(()=>{window.print=()=>{};});
-  await seguinte(pg);await pg.locator('[data-seg="t2"]').click();await pg.locator('.casca-folha .c-prim').click();await pg.locator('[data-resp="variante"]').click();await pg.locator('.casca-folha .c-prim').click();
-  await pg.locator('#a3-texto').fill('Texto privado da abertura');const imprime=async()=>{await pg.emulateMedia({media:'print'});await pg.evaluate(()=>window.dispatchEvent(new Event('beforeprint')));const x=await pg.locator('#lf-print').innerText();await pg.emulateMedia({media:'screen'});return x;};
-  let imp=await imprime();assert(imp.includes(FRASE));assert(!imp.includes('Texto privado'));assert(imp.includes('Enunciado'));assert(!imp.includes('Apoios para depois'));assert.match(imp,/Vira a página só depois de preencheres o 4\./);
-  await pg.evaluate(()=>{document.querySelector('[data-c-menu]').click();document.querySelector('[data-lf-menu="apoios"]').click();});imp=await imprime();assert.match(imp,/Apoios para depois da discussão[\s\S]*Sustenta-se/);assert(!/Vira a página/.test(imp));
-  await pg.evaluate(()=>window.dispatchEvent(new Event('afterprint')));assert(!(await imprime()).includes('Apoios para depois'));
-  const pdfK=(await pg.pdf({format:'A4'})).toString('latin1');assert(pdfK.length>1000);
-  await pg.goto(base+'/narrativas/corta/cena-que-falta/');await pg.waitForLoadState('networkidle');assert.match(await imprime(),/O bolso[\s\S]*O cartão[\s\S]*O regresso/);
-  const imagens=buf=>(buf.toString('latin1').match(/\/Subtype\s*\/Image/g)||[]).length;
-  assert.equal(imagens(await pg.pdf({format:'A4'})),4,'enunciado com os quatro desenhos');
-  await pg.evaluate(()=>{window.print=()=>{};document.querySelector('[data-c-menu]').click();document.querySelector('[data-lf-menu="apoios"]').click();});assert.equal(imagens(await pg.pdf({format:'A4'})),4,'apoios com os quatro desenhos');await c.close();}
- // entrada do laboratório: selos novos e antigos, só lidos
- {const c=await novoCtx(b,{viewport:{width:1440,height:900}}),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/');
-  await pg.evaluate(()=>{localStorage.setItem('lente-formas-v1',JSON.stringify({version:1,itens:{'certa-manha':{experimentei:1,revi:2}}}));localStorage.setItem('lente-formas-corta-v1',JSON.stringify({version:1,done:['curiosidade']}));});const antes=await pg.evaluate(()=>JSON.stringify(localStorage));
-  await pg.reload();assert.deepEqual(await pg.locator('[data-lf-selos="certa-manha"] .lf-selo').allInnerTexts(),['Experimentei','Revi']);assert(await pg.locator('[data-lf-selos="cena-que-falta"]').isHidden());
-  assert.equal(await pg.locator('[data-lf-registo]').innerText(),'Experimentaste 1 de 2.');assert.match(await pg.locator('[data-lf-proxima]').getAttribute('href'),/corta\/cena-que-falta\/$/);
-  assert.match(await pg.locator('.lf-entry [data-formas-progress]').innerText(),/1 de 4/);assert.equal(await pg.evaluate(()=>JSON.stringify(localStorage)),antes);
-  assert.equal(await pg.locator('.lp-1 .lp-credit').innerText(),'Espiar os mestres. Sem lhes copiar os tiques.');
-  await pg.goto(base+'/narrativas/corta/mesa/');await pg.locator('a[href="../cena-que-falta/"]').first().click();assert.equal(await cartao(pg),'abre');
-  await pg.goto(base+'/narrativas/corta/');await pg.locator('.lf-novo-corta a').click();assert.equal(await cartao(pg),'abre');await c.close();}
- // entrada: um registo só com «revi» também conta; a porta das obras abre a mesa com as pontes (Gógol, Vian, Pacheco, Borges, cinema)
- {const c=await novoCtx(b,{viewport:{width:1440,height:900}}),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/');
-  await pg.evaluate(()=>localStorage.setItem('lente-formas-v1',JSON.stringify({version:1,itens:{'certa-manha':{revi:2}}})));await pg.reload();
-  assert.equal(await pg.locator('[data-lf-registo]').innerText(),'Experimentaste 1 de 2.');assert.equal(await pg.locator('.lf-entry-grid a').nth(2).getAttribute('href'),'formas/?mesa=pt');await c.close();}
- // obras: a frase nova com expressões selecionáveis, ligação clara para a RTP, glosas só depois da hipótese e a primeira leitura que já não se apaga
- {const c=await novoCtx(b,{viewport:{width:1440,height:900}}),pg=await c.newPage();vigiar(pg);await pg.goto(base+'/narrativas/formas/');await pg.locator('#kafka').waitFor();const k=pg.locator('#kafka');
-  assert.equal(await k.locator('.lf-route').getAttribute('href'),'certa-manha/');assert.match(await k.locator('.lf-credit-line').innerText(),/RTP Ensina/);assert.match(await k.locator('.lf-credit-line a').innerText(),/Ver na RTP Ensina/);
-  assert.equal(await k.locator('[data-anchor]').count(),3);assert.deepEqual(await k.locator('[data-anchor]').allInnerTexts(),['Certa manhã','viu-se transformado','gigantesco inseto']);
-  await k.locator('summary').first().click();const fonte=await k.locator('.lf-source').innerText();assert.match(fonte,/Tradução não identificada/);assert(!/Helena Topa|Penguin/.test(fonte));
-  await k.locator('[data-anchor="2"]').click();assert(!(await k.locator('.lf-evidence').innerText()).includes('O nome dá um tipo de bicho'));
-  await k.locator('.lf-levels [data-level="1"]').click();await k.locator('.lf-levels [data-level="2"]').click();await k.locator('.lf-levels [data-level="1"]').click();
-  await k.locator('[data-hypothesis="0"]').click();assert.match(await k.locator('.lf-evidence').innerText(),/O nome dá um tipo de bicho/);
-  await k.locator('[data-write="reason"]').fill('Leio X porque Y.');await k.locator('select').selectOption('com apoio');await k.locator('.lf-levels [data-level="3"]').click();
-  await k.locator('details.lf-personal summary').click();const ini=await k.locator('details.lf-personal').innerText();assert.match(ini,/Leio X porque Y\./);assert.match(ini,/com apoio/);assert.match(ini,/«gigantesco inseto»/);
-  // contraste do botão principal ao passar o rato, nos dois temas
-  for(const tema of ['light','dark']){await pg.evaluate(t=>localStorage.setItem('epi-theme',t),tema);await pg.reload();await pg.locator('#kafka .lf-primary').hover();
-   const ratio=await pg.locator('#kafka .lf-primary').evaluate(el=>{const cs=getComputedStyle(el),rgb=s=>s.match(/\d+(\.\d+)?/g).slice(0,3).map(Number),L=([r,g,b])=>{const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);};return .2126*f(r)+.7152*f(g)+.0722*f(b);},a=L(rgb(cs.color)),b2=L(rgb(cs.backgroundColor));return (Math.max(a,b2)+.05)/(Math.min(a,b2)+.05);});
-   assert(ratio>=4.5,tema+' '+ratio);}
-  await c.close();}
- // 320 px: nada sai para o lado
- {const c=await novoCtx(b,{viewport:{width:320,height:640}}),pg=await c.newPage();vigiar(pg);
-  for(const u of ['/narrativas/formas/certa-manha/','/narrativas/corta/cena-que-falta/']){await pg.goto(base+u);for(let i=0;i<3;i++){assert(await semRolar(pg),u+' '+i);const b2=pg.locator('.casca-acoes [data-seguinte]');if(await b2.isDisabled())break;await b2.click();}}
-  await c.close();const c4=await novoCtx(b,{viewport:{width:320,height:640}}),p4=await c4.newPage();vigiar(p4);
-  await p4.goto(base+'/narrativas/corta/cena-que-falta/');await seguinte(p4);await p4.locator('[data-inicial="H1"]').click();await seguinte(p4);await p4.locator('[data-cand="cartao"]').click();assert(await semRolar(p4));await c4.close();}
- assert.deepEqual(erros,[]);console.log('PASS protótipos: combinações «ambos» e «nenhuma», sequência com e sem movimento, projeção velada e sem gravar, aparelho partilhado, recomeçar sem apagar a primeira leitura, papel com os quatro desenhos no PDF, entrada e selos, obras com a frase nova, contraste e 320 px');
+ console.log('Capturas e PDF:',dest);
 }
+
 async function run(){await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;let b;
 try{b=await chromium.launch({headless:true,...(process.env.PT_BROWSER_EXECUTABLE?{executablePath:process.env.PT_BROWSER_EXECUTABLE}:{}),...(process.env.PT_BROWSER_CHANNEL?{channel:process.env.PT_BROWSER_CHANNEL}:{})});
  const ctx=await b.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
@@ -298,7 +111,8 @@ try{b=await chromium.launch({headless:true,...(process.env.PT_BROWSER_EXECUTABLE
  }
  await page.reload();await page.locator('#kafka').waitFor();assert.equal(await page.locator('[data-write="draft"]').count(),0);
  await page.goto(base+'/narrativas/formas/?mesa=pt');await page.locator('#gogol').waitFor();assert.equal(await page.locator('[data-filter="pt"]').getAttribute('aria-pressed'),'true');
- await page.goto(base+'/narrativas/');assert.match(await page.locator('h1').innerText(),/Laboratório de formas/);assert.equal(await page.locator('section.lab-set').count(),3);assert.match(await page.locator('[data-formas-progress]').innerText(),/4 de 4/);
+ // 30/10/2026: Laboratório simples (pedido do docente). O catálogo mudou de página.
+ await page.goto(base+'/narrativas/tudo/');assert.match(await page.locator('h1').innerText(),/Tudo o que há no Laboratório/);assert.equal(await page.locator('section.lab-set').count(),3);assert.match(await page.locator('[data-formas-progress]').innerText(),/4 de 4/);
  await page.goto(base+'/narrativas/corta/');assert.equal(await page.locator('.missoes a[data-id]').count(),8);
  if(process.env.LENTE_SHOTS){fs.mkdirSync(process.env.LENTE_SHOTS,{recursive:true});await page.goto(base+'/narrativas/');await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-entrada.png'),fullPage:true,animations:'disabled'});await page.goto(base+'/narrativas/corta/mesa/');await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-corta.png'),fullPage:true,animations:'disabled'});await page.locator('[data-phase="1"]').click();await page.locator('[data-preset]').click();await page.locator('#compare').click();await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-comparar.png'),fullPage:true,animations:'disabled'});await page.goto(base+'/narrativas/formas/');await page.locator('#kafka').waitFor();await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-obras.png'),fullPage:true,animations:'disabled'});}
  if(process.env.LENTE_PREVIEW_DIR){
