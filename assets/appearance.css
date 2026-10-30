@@ -142,6 +142,10 @@ body:has(>[data-appearance-floating])::after{content:"";display:block;height:68p
  :root[data-appearance-family="cards"][data-appearance-site="pt"][data-theme]{--acento:#a84939;--campo:#e8967a}
 }
 
+/* 30/10/2026 (decisão do docente, igual no Português): abaixo de 22.5em (360 px: telemóveis pequenos ou letra ampliada)
+   o texto corrido fica à esquerda, com hifenização; a partir daí, e na impressão, justificado. */
+:root{--epi-texto-corrido:start}
+@media screen and (min-width:22.5em),print{:root{--epi-texto-corrido:justify}}
 /* 30/10/2026: texto corrido justificado e hifenizado em português europeu (decisão do docente).
    Justifica-se o texto corrido: textos das obras em prosa, leituras, excertos, explicações, introduções,
    guias, cartões de leitura e notas longas (notas de fonte em prosa, aprendizagens essenciais, rodapés).
@@ -188,7 +192,7 @@ body:has(>[data-appearance-floating])::after{content:"";display:block;height:68p
   .atelier-page > :is(p:not([class]),p.atelier-lead), :is(.guide-block,.atelier-notebook,.atelier-task) > p:not([class]),
   .guide-page > p.guide-lead, .teacher-hub > article > p:not([class]), .rt :is(.rt-antes,.rt-nota,.rt-privacidade)
 ):not(:has(br, button, > .c10-action, > .lf-button)){
-  text-align:justify;text-align-last:auto;
+  text-align:var(--epi-texto-corrido,justify);text-align-last:auto;
   -webkit-hyphens:auto;hyphens:auto;
   -webkit-hyphenate-limit-before:3;-webkit-hyphenate-limit-after:3;hyphenate-limit-chars:6 3 3;
   word-spacing:normal;overflow-wrap:break-word;
