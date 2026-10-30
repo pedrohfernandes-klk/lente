@@ -9,6 +9,7 @@ on:
       - 'narrativas/**'
       - 'curadoria/**'
       - 'tests/*formas*'
+      - 'tests/*justificado*'
       - '.github/workflows/formas-qa.yml'
 permissions:
   contents: read
@@ -37,6 +38,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_formas.py' -v
           python -m unittest discover -s tests -p 'test_lab*.py' -v
           python -m unittest discover -s tests -p 'test_appearance_universal.py' -v
+          python -m unittest discover -s tests -p 'test_texto_justificado.py' -v
       - name: Preparar navegador
         run: |
           npm install --no-save --package-lock=false playwright
