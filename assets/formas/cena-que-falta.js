@@ -159,5 +159,88 @@ window.LenteCenaQueFalta={
   {"t":"Voltar ao laboratório","href":"../../"}
  ]
 },
-"creditos":"Desenhos dos planos 01, 02, 03 e 05: os quatro da mesa de montagem do Lente (ilustrações originais do Lente, feitas com assistência de IA, em licença CC BY-SA 4.0). Planos em falta em intertítulos, como no cinema mudo. Cena, legendas e hipóteses do Lente, 2026."
+"creditos":"Desenhos dos planos 01, 02, 03 e 05: os quatro da mesa de montagem do Lente (ilustrações originais do Lente, feitas com assistência de IA, em licença CC BY-SA 4.0). Planos em falta em intertítulos, como no cinema mudo. Cena, legendas e hipóteses do Lente, 2026.",
+"piloto":[
+  {
+    "id": "ver",
+    "tipo": "hipotese",
+    "p": "Entre perder e recuperar a carteira, o que pode ter acontecido?",
+    "o": [
+      "Alguém procurou a dona.",
+      "A dona voltou ao local.",
+      "Alguém guardou o achado."
+    ],
+    "valores": [
+      "H2",
+      "H3",
+      "H1"
+    ],
+    "f": "As imagens mostram a perda e a devolução; o que aconteceu entre elas continua por descobrir.",
+    "fe": []
+  },
+  {
+    "id": "montar",
+    "tipo": "planos",
+    "p": "Que plano pões entre a descoberta e a devolução?",
+    "o": [
+      "Guardar a carteira",
+      "Procurar no cartão",
+      "Voltar pelo caminho"
+    ],
+    "valores": [
+      "bolso",
+      "cartao",
+      "regresso"
+    ],
+    "f": "O plano entra na sequência; a devolução mantém-se.",
+    "fe": [
+      "O bolso permite supor uma demora, mas não revela uma intenção.",
+      "O retrato dá um rosto para procurar, mas não prova que houve procura.",
+      "O regresso mostra a dona a procurar, sem mostrar o que a outra pessoa fez."
+    ]
+  },
+  {
+    "id": "outra",
+    "tipo": "planos",
+    "p": "Experimenta outro plano no mesmo lugar.",
+    "o": [
+      "Guardar a carteira",
+      "Procurar no cartão",
+      "Voltar pelo caminho"
+    ],
+    "valores": [
+      "bolso",
+      "cartao",
+      "regresso"
+    ],
+    "f": "O plano entra na sequência; a devolução mantém-se.",
+    "fe": [
+      "O bolso permite supor uma demora, mas não revela uma intenção.",
+      "O retrato dá um rosto para procurar, mas não prova que houve procura.",
+      "O regresso mostra a dona a procurar, sem mostrar o que a outra pessoa fez."
+    ]
+  },
+  {
+    "id": "comparar",
+    "tipo": "comparar",
+    "p": "Depois das duas montagens, que hipótese te parece mais forte?",
+    "o": [
+      "Alguém procurou a dona.",
+      "A dona voltou ao local.",
+      "Alguém guardou o achado."
+    ],
+    "f": "Compara o que supunhas com o que cada plano te deixa ver.",
+    "fe": [],
+    "valores": [
+      "H2",
+      "H3",
+      "H1"
+    ]
+  },
+  {
+    "id": "fim",
+    "tipo": "fim",
+    "p": "Leva esta experiência contigo."
+  }
+]
 };

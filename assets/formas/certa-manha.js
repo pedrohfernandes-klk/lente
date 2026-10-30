@@ -313,5 +313,131 @@ window.LenteCertaManha={
   {"t":"Mia Couto e Cesariny nas obras →","href":"../"},
   {"t":"Voltar ao laboratório","href":"../../"}
  ]
-}
+},
+"piloto":[
+  {
+    "id": "corte",
+    "tipo": "toque",
+    "p": "Toca na palavra que torna esta manhã impossível.",
+    "o": [
+      "manhã",
+      "Samsa",
+      "inseto"
+    ],
+    "c": 2,
+    "fe": [
+      "Uma manhã ainda pode ser comum.",
+      "Um nome ainda pode pertencer a qualquer pessoa.",
+      null
+    ],
+    "f": "«Inseto» impede o final comum: a frase apresenta o impossível sem espanto.",
+    "efeitos": [
+      "Certa manhã, choveu.",
+      "Certa manhã, Gregor Samsa abriu a janela.",
+      "Certa manhã, Gregor Samsa viu-se transformado num gigantesco inseto."
+    ]
+  },
+  {
+    "id": "versao",
+    "tipo": "escolha",
+    "p": "Que versão apresenta o impossível como um facto?",
+    "o": [
+      "Gregor Samsa viu-se transformado num gigantesco inseto.",
+      "Gregor Samsa julgou ver-se transformado num grande inseto."
+    ],
+    "c": 0,
+    "f": "«Viu-se» apresenta um facto; «julgou ver-se» deixa lugar à dúvida.",
+    "fe": [
+      null,
+      "«Julgou» abre a possibilidade de ser uma impressão."
+    ]
+  },
+  {
+    "id": "primeira",
+    "tipo": "primeira",
+    "p": "A frase permite afirmar que Gregor vive sozinho?",
+    "o": [
+      "Está dito na frase.",
+      "É uma inferência.",
+      "Falta saber mais."
+    ],
+    "valores": [
+      "mostra",
+      "infiro",
+      "falta"
+    ],
+    "c": 2,
+    "f": "A frase não menciona outras pessoas, mas esse silêncio não prova que Gregor viva sozinho.",
+    "fe": [
+      "A frase não diz com quem Gregor vive.",
+      "O silêncio sobre outras pessoas não sustenta essa conclusão.",
+      null
+    ]
+  },
+  {
+    "id": "contexto",
+    "tipo": "contexto",
+    "p": "Que informação muda a leitura de «Gregor vive sozinho»?",
+    "apoio": "Nos primeiros parágrafos, a mãe, o pai e a irmã falam com Gregor através das portas do quarto. Relato do Lente, não uma tradução.",
+    "o": [
+      "A família está junto ao quarto.",
+      "O quarto tem várias entradas."
+    ],
+    "c": 0,
+    "f": "A presença da família contraria a ideia de que Gregor vive sozinho.",
+    "fe": [
+      null,
+      "Ter várias entradas não diz, por si só, com quem vive."
+    ]
+  },
+  {
+    "id": "revisao",
+    "tipo": "escolha",
+    "p": "Depois de saberes da família, onde colocas «Gregor vive sozinho»?",
+    "o": [
+      "O texto mostra.",
+      "Posso inferir.",
+      "Falta contexto.",
+      "O texto nega-o."
+    ],
+    "valores": [
+      "mostra",
+      "infiro",
+      "falta",
+      "desmente"
+    ],
+    "c": 3,
+    "f": "A mãe, o pai e a irmã estão junto ao quarto: a informação nova contraria a afirmação.",
+    "fe": [
+      "O relato mostra a presença da família.",
+      "A inferência entra em conflito com a presença da família.",
+      "Já tens informação sobre as pessoas que vivem com Gregor.",
+      null
+    ]
+  },
+  {
+    "id": "comparar",
+    "tipo": "comparar",
+    "p": "O que fez diferença entre as tuas duas leituras?",
+    "o": [
+      "Saber que a família estava ali.",
+      "Voltar às palavras do começo.",
+      "Manter a dúvida sobre o texto."
+    ],
+    "f": "A leitura inicial fica ao lado da atual: podes ver o que mudou sem apagar o que pensaste.",
+    "fe": []
+  },
+  {
+    "id": "escrever",
+    "tipo": "escrita",
+    "p": "Escreve um começo impossível contado sem espanto.",
+    "apoio": "No caderno ou aqui: começa por um gesto comum e introduz algo impossível, sem explicar a causa. A primeira versão fica conservada."
+  },
+  {
+    "id": "fim",
+    "tipo": "fim",
+    "p": "Leva esta experiência contigo."
+  }
+]
+,"pilotoIdentidade":{"id":"autoria","o":["Sim, quero continuar.","Não, quero começar."]}
 };

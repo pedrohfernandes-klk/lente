@@ -13,13 +13,17 @@ class Manifesto(unittest.TestCase):
 
     def test_ancoras_existem(self):
         for rel, ids in M['ancoras'].items():
-            s = (R / rel / 'index.html').read_text('utf-8')
+            # 30/10/2026: Laboratório simples (pedido do docente). As âncoras e leituras de progresso vivem no catálogo.
+            destino = 'narrativas/tudo' if rel.rstrip('/') == 'narrativas' else rel
+            s = (R / destino / 'index.html').read_text('utf-8')
             tem = set(re.findall(r'\bid="([^"]+)"', s))
             self.assertEqual(sorted(set(ids) - tem), [], rel or 'index.html')
 
     def test_chaves_de_progresso_mantem_se(self):
         for rel, chaves in M['chaves'].items():
-            s = (R / rel / 'index.html').read_text('utf-8')
+            # 30/10/2026: Laboratório simples (pedido do docente). As âncoras e leituras de progresso vivem no catálogo.
+            destino = 'narrativas/tudo' if rel.rstrip('/') == 'narrativas' else rel
+            s = (R / destino / 'index.html').read_text('utf-8')
             for k in chaves:
                 self.assertTrue(f'"{k}"' in s, (rel, k))
 
