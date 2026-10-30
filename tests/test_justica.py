@@ -1,5 +1,6 @@
 from pathlib import Path
 import re, json, unittest
+from html import unescape
 from urllib.parse import urlsplit
 R = Path(__file__).resolve().parents[1]
 J = R / 'olhar-e-decidir/justica'
@@ -31,7 +32,9 @@ class Justica(unittest.TestCase):
                 if x['t'] == 'escolha':
                     self.assertEqual(len(x['o']), 4)
                     self.assertTrue(all((j == x['c']) == (x['fe'][j] is None) for j in range(4)))
-                    self.assertLess(len(x['o'][x['c']]), max(len(o) for j, o in enumerate(x['o']) if j != x['c']))
+                    # 30/10/2026: opções equilibradas (pedido do docente)
+                    n = [len(re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]*>', '', o)).replace('_', '').replace('*', '')).strip()) for o in x['o']]
+                    self.assertLessEqual(max(n), 1.2 * min(n), x['p'])
                 if x['t'] == 'vf':
                     self.assertIsInstance(x['v'], bool)
                     self.assertTrue(x['f'] and x['fe'])
