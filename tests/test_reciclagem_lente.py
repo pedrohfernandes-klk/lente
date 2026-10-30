@@ -51,6 +51,7 @@ class Reciclagem(unittest.TestCase):
   self.assertNotIn('fim:function()',s)
   self.assertNotIn('<figure',novos[0]['html'].split('<details')[0])
   self.assertNotIn('vozes/',s)
+  self.assertNotIn('Vidas e vozes',ler('cidadania/25-de-abril/guiao/index.html'))
  def test_casos_e_fontes(self):
   for n in (3,9):
    s=ler(f'cidadania/m2/sessoes/{n:02}/index.html')
