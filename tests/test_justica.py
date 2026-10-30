@@ -1,5 +1,6 @@
 from pathlib import Path
-import re, json, unittest
+import re, json, math, unittest
+from html import unescape
 from urllib.parse import urlsplit
 R = Path(__file__).resolve().parents[1]
 J = R / 'olhar-e-decidir/justica'
@@ -27,14 +28,23 @@ class Justica(unittest.TestCase):
             for yt, a, b in vids:
                 self.assertEqual(yt, YT[n])
                 self.assertLess(int(a), int(b))
+            curtas, esperado = 0, 0.0
             for x in I:
                 if x['t'] == 'escolha':
                     self.assertEqual(len(x['o']), 4)
                     self.assertTrue(all((j == x['c']) == (x['fe'][j] is None) for j in range(4)))
-                    self.assertLess(len(x['o'][x['c']]), max(len(o) for j, o in enumerate(x['o']) if j != x['c']))
+                    # 30/10/2026: opções equilibradas (pedido do docente)
+                    n = [len(re.sub(r'\s+', ' ', unescape(re.sub(r'<[^>]*>', '', o)).replace('_', '').replace('*', '')).strip()) for o in x['o']]
+                    self.assertLessEqual(max(n), 1.2 * min(n), x['p'])
+                    # 30/10/2026: revisão do #72 (opções equilibradas): volta a regra antiga, a certa nunca é mais longa
+                    # do que a maior errada, a par da amplitude de 20 %; e não pode ser a mais curta mais vezes do que ceil(n/k).
+                    self.assertLess(len(x['o'][x['c']]), max(len(o) for j, o in enumerate(x['o']) if j != x['c']), x['p'])
+                    curtas += n[x['c']] < min(v for j, v in enumerate(n) if j != x['c'])
+                    esperado += 1 / len(x['o'])
                 if x['t'] == 'vf':
                     self.assertIsInstance(x['v'], bool)
                     self.assertTrue(x['f'] and x['fe'])
+            self.assertLessEqual(curtas, math.ceil(esperado), k)
 
     def test_player_only_on_touch_nocookie(self):
         for n in (1, 2, 3):
