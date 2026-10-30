@@ -20,6 +20,14 @@ class TresCartas(unittest.TestCase):
    self.assertEqual(b[:4],b'RIFF');self.assertEqual(b[12:16],b'VP8L')
    n=int.from_bytes(b[21:25],'little');self.assertEqual(((n&0x3fff)+1,((n>>14)&0x3fff)+1),(512,512))
   self.assertEqual(d['credito'],'Baralho improvável, obra do Lente feita com assistência de IA, CC BY-SA 4.0')
+ def test_plano_em_blocos(self):
+  for c in data()['cartoes']:
+   if c['tipo']!='composicao':continue
+   self.assertEqual(list(dict.fromkeys(p['bloco'] for p in c['partes'])),['O conto','A notícia'])
+   for p in c['partes']:
+    self.assertEqual(p['conector'],'')
+    if p['fonte']=='conector':self.assertEqual(p['se'],{'fonte':'ligacao','valor':'a'})
+    if p['fonte']=='ordem':self.assertEqual(p['sequencia'],['Primeiro','depois','por fim'])
  def test_course_and_language(self):
   d=data();cs=d['cartoes'];first=next(i for i,c in enumerate(cs) if c['tipo']=='escrita')
   self.assertGreaterEqual(sum(c['tipo'] in ['escolher','ordenar','completar','classificar'] for c in cs[:first]),10)

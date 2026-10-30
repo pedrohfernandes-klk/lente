@@ -348,57 +348,77 @@ window.LenteTresCartasDados={
         {
           "rotulo": "Ligação",
           "fonte": "ligacao",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Narrador",
           "fonte": "narrador",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Começo",
           "fonte": "comeco",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Acontecimentos",
           "fonte": "ordem",
-          "conector": "Depois, ou antes disso: "
+          "conector": "",
+          "bloco": "O conto",
+          "sequencia": [
+            "Primeiro",
+            "depois",
+            "por fim"
+          ]
         },
         {
-          "rotulo": "Consequência possível",
+          "rotulo": "Para ligar causa e consequência",
           "fonte": "conector",
-          "conector": "Se escolheres uma ligação causal: "
+          "conector": "",
+          "bloco": "O conto",
+          "se": {
+            "fonte": "ligacao",
+            "valor": "a"
+          }
         },
         {
           "rotulo": "Fim",
           "fonte": "fim",
-          "conector": "No fim: "
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Título informativo",
           "fonte": "titulo",
-          "conector": "Na notícia: "
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Abertura informativa",
           "fonte": "lead",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Relato sem opinião",
           "fonte": "corrigir",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Testemunha fictícia",
           "fonte": "citacao",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Pessoa e tempo",
           "fonte": "verbo",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         }
       ]
     },
@@ -499,57 +519,77 @@ window.LenteTresCartasDados={
         {
           "rotulo": "Ligação",
           "fonte": "ligacao",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Narrador",
           "fonte": "narrador",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Começo",
           "fonte": "comeco",
-          "conector": ""
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Acontecimentos",
           "fonte": "ordem",
-          "conector": "Depois, ou antes disso: "
+          "conector": "",
+          "bloco": "O conto",
+          "sequencia": [
+            "Primeiro",
+            "depois",
+            "por fim"
+          ]
         },
         {
-          "rotulo": "Consequência possível",
+          "rotulo": "Para ligar causa e consequência",
           "fonte": "conector",
-          "conector": "Se escolheres uma ligação causal: "
+          "conector": "",
+          "bloco": "O conto",
+          "se": {
+            "fonte": "ligacao",
+            "valor": "a"
+          }
         },
         {
           "rotulo": "Fim",
           "fonte": "fim",
-          "conector": "No fim: "
+          "conector": "",
+          "bloco": "O conto"
         },
         {
           "rotulo": "Título informativo",
           "fonte": "titulo",
-          "conector": "Na notícia: "
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Abertura informativa",
           "fonte": "lead",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Relato sem opinião",
           "fonte": "corrigir",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Testemunha fictícia",
           "fonte": "citacao",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         },
         {
           "rotulo": "Pessoa e tempo",
           "fonte": "verbo",
-          "conector": ""
+          "conector": "",
+          "bloco": "A notícia"
         }
       ],
       "revisao": true

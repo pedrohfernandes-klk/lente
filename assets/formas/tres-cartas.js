@@ -1,5 +1,5 @@
 /* Dados: escolher/completar/classificar/autoavaliacao {id,pergunta,apoio?,opcoes:[{id,texto,feedback}],certa?,pistas?,imagem?};
- ordenar: mesmas opções, ordenadas por toque; composicao {partes:[{rotulo,fonte,conector}],revisao?};
+ ordenar: mesmas opções, ordenadas por toque; composicao {partes:[{bloco,rotulo,fonte,sequencia?,se?:{fonte,valor}}],revisao?};
  escrita {acao,apoio}; exemplo {trechos:[[rotulo,texto]],ultimo?}. Todos têm id, tipo e pergunta.
  A composição resolve fontes e ordem apenas dos dados. IDs de respostas usam letras para LenteProgresso.primeira. */
 (function(){'use strict';
@@ -14,9 +14,16 @@ const porId=id=>D.cartoes.find(c=>c.id===id),atual=()=>D.cartoes[S.atual];
 function guardar(){if(!P.projetado)P.sessao(ID,S);}
 function imagem(id){const im=D.imagens.find(i=>i.id===id);return '<img class="tc-imagem" src="../../../assets/formas/baralho/'+e(id)+'.webp" width="512" height="512" alt="'+e(im.alt)+'">';}
 function titulo(c){return '<h2 class="q lf-q" tabindex="-1">'+e(c.pergunta)+'</h2>'+(c.apoio?'<p class="dica">'+e(c.apoio)+'</p>':'');}
-function plano(c,respostas){return c.partes.map(p=>{const fonte=porId(p.fonte),v=respostas[p.fonte]||'';const texto=[...v].map(k=>fonte.opcoes.find(o=>o.id===k)?.texto||'').filter(Boolean).join(' → ');return {rotulo:p.rotulo,texto:p.conector+(texto||D.ui.t0)};});}
-function planoHtml(c,r){return '<ol class="tc-plano">'+plano(c,r).map(p=>'<li><strong>'+e(p.rotulo)+':</strong> '+e(p.texto)+'</li>').join('')+'</ol>';}
-function planoTexto(c,r){return plano(c,r).map(p=>p.rotulo+': '+p.texto).join('\n');}
+function plano(c,respostas){const blocos=[];for(const p of c.partes){
+ if(p.se&&respostas[p.se.fonte]!==p.se.valor)continue;
+ const fonte=porId(p.fonte),v=respostas[p.fonte]||'';
+ const pecas=[...v].map(k=>fonte.opcoes.find(o=>o.id===k)?.texto||'').filter(Boolean);
+ const texto=p.sequencia?pecas.map((t,i)=>p.sequencia[i]+', '+t.replace(/[.]$/,'').replace(/^./,x=>x.toLowerCase())).join('; ')+'.':pecas.join(' ');
+ let bloco=blocos.find(b=>b.titulo===p.bloco);if(!bloco){bloco={titulo:p.bloco,partes:[]};blocos.push(bloco);}
+ bloco.partes.push({rotulo:p.rotulo,texto:texto||D.ui.t0});
+ }return blocos;}
+function planoHtml(c,r){return '<div class="tc-plano">'+plano(c,r).map(b=>'<section><h3>'+e(b.titulo)+'</h3><ul>'+b.partes.map(p=>'<li><strong>'+e(p.rotulo)+':</strong> '+e(p.texto)+'</li>').join('')+'</ul></section>').join('')+'</div>';}
+function planoTexto(c,r){return plano(c,r).map(b=>b.titulo+'\n'+b.partes.map(p=>p.rotulo+': '+p.texto).join('\n')).join('\n\n');}
 function pronto(c){if(['escolher','completar','classificar','autoavaliacao'].includes(c.tipo))return c.certa?S.respostas[c.id]===c.certa:!!S.respostas[c.id];if(c.tipo==='ordenar')return (S.respostas[c.id]||'').length===c.opcoes.length;if(c.tipo==='escrita')return !!S.feitos[c.id];if(c.revisao)return S.comparou;return true;}
 function feedback(t){C.folha.abrir({titulo:D.ui.t1,html:'<p>'+e(t)+'</p>',focar:false,botao:{t:D.ui.t2,onclick:()=>{C.folha.fechar();alvo.querySelector('.lf-q').focus();}}});}
 function pistas(c){if(!c.pistas)return '';const n=S.pistas[c.id]||0;return '<div class="tc-pistas">'+c.pistas.slice(0,n).map(t=>'<p class="dica">'+e(t)+'</p>').join('')+(n<c.pistas.length?'<button class="lf-apoio" data-pista>'+e(D.ui.pista)+' '+(n+1)+'</button>':'')+'</div>';}
