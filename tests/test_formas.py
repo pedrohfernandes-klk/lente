@@ -261,11 +261,16 @@ class Prototipos(unittest.TestCase):
     clean=asset.split('?')[0].split('#')[0];target=(page.parent/clean).resolve()
     if clean.endswith('/'):target=target/'index.html'
     self.assertTrue(target.exists(),(rel,asset))
-   for x in ('data-casca','data-lf-percurso=','projection-launcher.js','data-site="lente"','assets/formas/cartoes.js','assets/formas/progresso.js','data-lf-menu="enunciado"','data-lf-menu="apoios"','data-lf-menu="caderno"','data-lf-menu="recomecar"','data-lf-menu="fonte"','lang="pt-PT"'):
+   for x in ('data-casca','data-lf-percurso=','projection-launcher.js','data-site="lente"','assets/formas/cartoes.js','assets/formas/progresso.js','data-lf-menu="caderno"','data-lf-menu="recomecar"','lang="pt-PT"'):
     self.assertIn(x,html,(rel,x))
-  entrada=(ROOT/'narrativas/index.html').read_text('utf-8');bloco=entrada[entrada.index('<section class="lf-entry"'):entrada.index('</section>',entrada.index('<section class="lf-entry"'))]
-  for x in ('href="corta/cena-que-falta/"','href="formas/certa-manha/"','href="formas/?mesa=pt"','href="corta/mesa/"','data-formas-progress','data-lf-registo','data-lf-proxima'):self.assertIn(x,bloco)
-  for x in ('Espiar os mestres. Sem lhes copiar os tiques.','Uma regra, várias tentativas. A frase também ganha músculo.','Aqui, a primeira versão tem direito a voltar.'):self.assertIn(x,entrada)
+  # 30/10/2026: Laboratório simples (pedido do docente). Catálogo e fontes passam para destinos próprios.
+  entrada=(ROOT/'narrativas/index.html').read_text('utf-8')
+  for x in ('href="formas/certa-manha/"','href="tudo/"','Ver como os outros fizeram','Treinar uma regra','Criar uma peça'):self.assertIn(x,entrada)
+  tudo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
+  for nome in ('duchamp','anguissola','fontana','leonardo','cigoli','galileu','margens'):self.assertIn('href="../'+nome+'/"',tudo)
+  self.assertIn('data-lab-pesquisa',tudo)
+  js=(ROOT/'assets/formas/cartoes.js').read_text('utf-8')
+  for texto in ('Guia do docente e fontes','Versão em papel','fonteHtml()'):self.assertIn(texto,js)
   mesa=(ROOT/'narrativas/corta/mesa/index.html').read_text('utf-8')
   self.assertIn('href="../cena-que-falta/"',mesa);self.assertIn('href="../../formas/certa-manha/"',mesa)
   self.assertIn('href="cena-que-falta/"',(ROOT/'narrativas/corta/index.html').read_text('utf-8'))
@@ -274,4 +279,27 @@ class Prototipos(unittest.TestCase):
   for x in ('progresso.js','cartoes.js','certa-manha.js','cena-que-falta.js'):self.assertIn('node --check assets/formas/'+x,wf)
   for x in ("'assets/narrativas-core/**'","'assets/appearance*'","'assets/projection-launcher.js'"):self.assertIn(x,wf)
 
+# 30/10/2026: Laboratório simples (pedido do docente).
+class PilotoSimples(unittest.TestCase):
+ def test_cartoes_curto_e_opcoes(self):
+  import sys
+  sys.path.insert(0,str(ROOT/'tools'));import medir_opcoes
+  for nome,n in [('certa-manha',8),('cena-que-falta',5)]:
+   d=dados(nome+'.js');self.assertEqual(len(d['piloto']),n)
+   for q in d['piloto']:
+    self.assertLessEqual(len(q['p'].split()),25,q['id'])
+    self.assertLessEqual(len(q.get('apoio','').split()),40,q['id'])
+    if 'o' in q:self.assertTrue(2<=len(q['o'])<=4,q['id'])
+    for txt in [q.get('f','')]+[t for t in q.get('fe',[]) if t]:self.assertLessEqual(len(re.findall(r'[.!?](?: |$)',txt)),2,(q['id'],txt))
+  for q in medir_opcoes.laboratorio(ROOT):self.assertFalse(q['fora20'] or q['denunciadora'],q)
+ def test_planos_imagens_e_creditos(self):
+  for nome in ('bolso','cartao','regresso'):
+   p=ROOT/'assets/formas/carteira'/f'{nome}.svg';self.assertTrue(p.exists());self.assertIn('CC BY-SA 4.0',p.read_text('utf-8'))
+ def test_catalogo_preserva_destinos(self):
+  from urllib.parse import urljoin
+  # 30/10/2026: Laboratório simples (pedido do docente). Destinos de f7d8b9d, sem depender do histórico no CI.
+  antes=set(['/lente/assets/appearance.css?v=20261025-universal-1', '/lente/assets/atelier-pages.css?v=20261019-2', '/lente/assets/formas/entrada.css?v=20261029', '/lente/assets/index-layout.css?v=20261026.1', '/lente/assets/lab-posters.css?v=20261019-3', '/lente/assets/lente-refino.css?v=20261022-1', '/lente/assets/narrativas-sets.css', '/lente/docente/', "/lente/narrativas/'+esc(x.url)+'", '/lente/narrativas/aula-forma/', '/lente/narrativas/aula-lugar/', '/lente/narrativas/aula-nao-dito/', '/lente/narrativas/aula-personagem/', '/lente/narrativas/cenario-personagem/', '/lente/narrativas/comecar-pelo-meio/', '/lente/narrativas/corta/cena-que-falta/', '/lente/narrativas/corta/mesa/', '/lente/narrativas/desenlace/', '/lente/narrativas/dialogo/', '/lente/narrativas/espingarda/', '/lente/narrativas/espinha/', '/lente/narrativas/fora-da-pagina/', '/lente/narrativas/formas/?mesa=pt', '/lente/narrativas/formas/certa-manha/', '/lente/narrativas/historia-enredo/', '/lente/narrativas/linhas-de-enredo/', '/lente/narrativas/oficina-arco/', '/lente/narrativas/oficina-argumento/', '/lente/narrativas/oficina-atelie/', '/lente/narrativas/oficina-ator/', '/lente/narrativas/oficina-dilema/', '/lente/narrativas/oficina-dramaturgista/', '/lente/narrativas/oficina-epico/', '/lente/narrativas/oficina-espaco/', '/lente/narrativas/oficina-ficcao-comecar/', '/lente/narrativas/oficina-ficcao-espaco/', '/lente/narrativas/oficina-ficcao-genero/', '/lente/narrativas/oficina-ficcao-personagem/', '/lente/narrativas/oficina-manifesto/', '/lente/narrativas/oficina-matriz/', '/lente/narrativas/oficina-pedacos/', '/lente/narrativas/oficina-plano/', '/lente/narrativas/oficina-readymade/', '/lente/narrativas/oficina-restricao/', '/lente/narrativas/oficina-texto-imagem/', '/lente/narrativas/oficina-visivel/', '/lente/narrativas/personagem-faz/', '/lente/narrativas/piramide/', '/lente/narrativas/proposta-subtexto/', '/lente/narrativas/quem-conta/', '/lente/narrativas/querer-agir/', '/lente/narrativas/subtexto/', '/lente/narrativas/treinar/', '/lente/narrativas/treinar/a-entrevista/', '/lente/narrativas/treinar/a-espingarda/', '/lente/narrativas/treinar/a-gaveta/', '/lente/narrativas/treinar/acelerar-travar/', '/lente/narrativas/treinar/comeca-mais-tarde/', '/lente/narrativas/treinar/copia-lenta/', '/lente/narrativas/treinar/cortar-um-quinto/', '/lente/narrativas/treinar/dicionario/', '/lente/narrativas/treinar/duas-horas/', '/lente/narrativas/treinar/duas-vozes/', '/lente/narrativas/treinar/frase-querida/', '/lente/narrativas/treinar/interromper/', '/lente/narrativas/treinar/lista-substantivos/', '/lente/narrativas/treinar/o-contrario/', '/lente/narrativas/treinar/objeto-banal/', '/lente/narrativas/treinar/outro-ponto-de-vista/', '/lente/narrativas/treinar/pelo-meio/', '/lente/narrativas/treinar/pelo-que-faz/', '/lente/narrativas/treinar/pergunta-sem-resposta/', '/lente/narrativas/treinar/quarto-que-fala/', '/lente/narrativas/treinar/rascunho-mau/', '/lente/narrativas/treinar/sem-disse/', '/lente/narrativas/treinar/sem-mente/', '/lente/narrativas/treinar/sem-olhos/', '/lente/narrativas/treinar/so-gestos/', '/lente/narrativas/treinar/teste-do-colega/', '/lente/narrativas/treinar/tres-em-cinco/', '/lente/narrativas/treinar/verbo-forte/', '/lente/narrativas/treinar/verdade-dificil/', '/lente/narrativas/treinar/voz-alta/'])
+  novo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
+  depois={urljoin('/lente/narrativas/tudo/',h) for h in re.findall(r'href="([^"#]+)"',novo) if not h.startswith(('https:','http:'))}
+  self.assertTrue(antes<=depois,antes-depois)
 if __name__=='__main__':unittest.main()

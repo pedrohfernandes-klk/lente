@@ -71,9 +71,10 @@ class Ginasio(unittest.TestCase):
             self.assertIn(LENTE + h, prop)
         for passo in ('Versão A', 'A leitura de um colega', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
             self.assertIn(passo, prop)
-        lab = (R / 'narrativas/index.html').read_text('utf-8')
+        # 30/10/2026: Laboratório simples (pedido do docente). A proposta continua no catálogo.
+        lab = (R / 'narrativas/tudo/index.html').read_text('utf-8')
         i = lab.index('id="criar"')
-        self.assertIn('href="proposta-subtexto/"', lab[i:lab.index('</section>', i)])
+        self.assertIn('href="../proposta-subtexto/"', lab[i:lab.index('</section>', i)])
         for p in list((R / 'narrativas').rglob('index.html')) + [R / 'mapa/index.html']:
             t = p.read_text('utf-8')
             self.assertNotIn('Sem «disse»', t, p)
@@ -125,19 +126,17 @@ class Ginasio(unittest.TestCase):
                 self.assertTrue(alvo.exists(), (p.relative_to(R), href))
 
     def test_entrada_do_lab_em_tres_portas(self):
-        s = (R / 'narrativas/index.html').read_text('utf-8')
-        # Academia, Ginásio, Ateliê (decisão de 23/10/2026; antes: Treinar, Criar, Ler como quem escreve); os ids não mudam
+        # 30/10/2026: Laboratório simples (pedido do docente). Três portas curtas; os conjuntos passam para tudo/.
+        entrada = (R / 'narrativas/index.html').read_text('utf-8')
+        for nome in ('Ver como os outros fizeram', 'Treinar uma regra', 'Criar uma peça'):
+            self.assertIn(nome, entrada)
+        s = (R / 'narrativas/tudo/index.html').read_text('utf-8')
         self.assertEqual(re.findall(r'<section class="lab-set" id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
-        for nome in ('Academia', 'Ginásio', 'Ateliê'):
-            self.assertIn(f'>{nome}<span class="vh">', s)
-        i = s.index('id="ler-como-quem-escreve"'); j = s.index('</section>', s.index('id="aulas-narrativa"'))
-        # 25/10: conjunto arquivado por decisão do docente; deixa de ser porta autónoma do Lab.
-        self.assertNotIn('<span class="bundle-label">Vidas e vozes</span>', s[i:s.index('id="treinar"')])
-        self.assertEqual(len(set(re.findall(r'href="treinar/([a-z-]+)/"', s))), 30)
+        self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s))), 30)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
-            self.assertIn(antiga, s)  # quem chega por um endereço antigo ainda cai no sítio certo
-        for sai in ('Ler e investigar', 'Ética e estética', 'Preparar e comunicar', 'Aquecer o olhar', 'Explorar e observar'):
-            self.assertNotIn(f'<span class="bundle-label">{sai}</span>', s)
+            self.assertIn(antiga, s)
+            self.assertIn(antiga, entrada)
+        self.assertIn("addEventListener('hashchange',encaminhar)", (R / 'assets/formas/entrada.js').read_text('utf-8'))
 
     def test_exercicios_e_oficinas_apontam_para_o_ginasio(self):
         n = sum('tr-liga-lab' in (R / 'narrativas' / d / 'index.html').read_text('utf-8') for d in [p.name for p in (R / 'narrativas').iterdir() if p.is_dir()])

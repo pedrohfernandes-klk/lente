@@ -64,8 +64,20 @@ def resumir(rows,chave):
   r=out.setdefault(q[chave],dict(perguntas=0,denunciadoras=0,fora20=0,certaMaisLonga=0,certaMaisCurta=0,esperadoMaisLonga=0))
   for k,inc in [('perguntas',1),('denunciadoras',q['denunciadora']),('fora20',q['fora20']),('certaMaisLonga',q['certaMaisLonga']),('certaMaisCurta',q['certaMaisCurta']),('esperadoMaisLonga',1/q['k'])]:r[k]+=inc
  return out
+# 30/10/2026: Laboratório simples (pedido do docente). Inclui escolhas sem resposta única.
+def laboratorio(raiz):
+ for nome in ('certa-manha','cena-que-falta'):
+  p=raiz/'assets/formas'/f'{nome}.js'
+  dados=json.loads(p.read_text('utf-8').split('=',1)[1].strip().rstrip(';'))
+  for q in dados['piloto']+([dados['pilotoIdentidade']] if 'pilotoIdentidade' in dados else []):
+   if not q.get('o'):continue
+   n=[len(visivel(x)) for x in q['o']];c=q.get('c');err=max((v for i,v in enumerate(n) if i!=c),default=0)
+   yield {'pagina':nome,'id':q['id'],'comprimentos':n,'amplitude':max(n)/min(n),'denunciadora':c is not None and n[c]>=1.25*err,'fora20':max(n)>1.2*min(n),'certaMaisLonga':c is not None and n[c]>err}
+
 if __name__=='__main__':
- a=argparse.ArgumentParser();a.add_argument('--raiz',type=Path,default=Path(__file__).resolve().parents[1]);a.add_argument('--json',action='store_true');a.add_argument('--verificar',action='store_true');args=a.parse_args()
+ a=argparse.ArgumentParser();a.add_argument('--raiz',type=Path,default=Path(__file__).resolve().parents[1]);a.add_argument('--json',action='store_true');a.add_argument('--verificar',action='store_true');a.add_argument('--laboratorio',action='store_true');args=a.parse_args()
+ if args.laboratorio:
+  rows=list(laboratorio(args.raiz));print(json.dumps(rows,ensure_ascii=False,indent=2));sys.exit(1 if args.verificar and any(q['fora20'] or q['denunciadora'] for q in rows) else 0)
  rows=list(perguntas(args.raiz));res={'pastas':resumir(rows,'pasta'),'paginas':resumir(rows,'pagina'),'perguntas':rows}
  if args.json:print(json.dumps(res,ensure_ascii=False,indent=2))
  else:

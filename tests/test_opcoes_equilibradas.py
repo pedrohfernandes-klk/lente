@@ -108,6 +108,12 @@ class OpcoesEquilibradas(unittest.TestCase):
      fe=obj.get('fe');vistas+=1
      for txt in [obj.get('f') or '']+([fe] if isinstance(fe,str) else [e for e in (fe or []) if isinstance(e,str)]):
       for m in ordinal(obj.get('p','')+' '+obj.get('p2','')).finditer(txt):falhas.append(p.relative_to(ROOT).as_posix()+': '+m.group(0).strip()+' | '+obj.get('p','')[:60])
+  # 30/10/2026: Laboratório simples (pedido do docente). Dados dos dois percursos curtos.
+  for nome in ('certa-manha','cena-que-falta'):
+   s=(ROOT/'assets/formas'/f'{nome}.js').read_text('utf-8')
+   for obj in json.loads(s.split('=',1)[1].strip().rstrip(';'))['piloto']:
+    for txt in [obj.get('f','')]+[f for f in obj.get('fe',[]) if f]:
+     for m in ordinal(obj['p']).finditer(txt):falhas.append(nome+': '+m.group(0))
   self.assertTrue(vistas)
   self.assertEqual(falhas,[],'\n'.join(falhas))
 MUDAVEIS=('o','f','p','lacunas')

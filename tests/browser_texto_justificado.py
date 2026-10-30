@@ -73,7 +73,9 @@ PLANO=[
  ('L1h','olhar-e-decidir/justica/licao-2/',[('ate','.jogo .ler > p.cita-en'),('J','.jogo .ler > p.cita-en'),('lang','.jogo .ler > p.cita-en i[lang]','en')]),
  ('L1h','olhar-e-decidir/estetica/licao-1/',[('ate','.jogo .ler > p.ex-antes'),('E','.jogo .ler > p.ex-antes',1)]),
  ('L2a','narrativas/fora-da-pagina/intervalo/',[('J','.jogo .ler > p:not([class])')]),
- ('L2b','narrativas/formas/certa-manha/',[('J','.formas-cartoes .lf-prosa > p'),('E','.formas-cartoes button',1)]),
+ # 30/10/2026: Laboratório simples (pedido do docente). A frase inicial tem botões; a leitura em prosa está no guia.
+ ('L2b','narrativas/formas/certa-manha/',[('E','.formas-cartoes .lf-prosa > p',1),('E','.formas-cartoes button',1)]),
+ ('L2b','narrativas/formas/certa-manha/?guia=1',[('J','.formas-cartoes .lf-prosa > p')]),
  ('L3','narrativas/formas/',[('J','.lf-hero > p.lf-lead'),('J','.lf-level-body > p.lf-note'),('E','.lf-evidence-quote',1),('abrir','.lf-case details'),
    ('J','.lf-case > details.lf-pt > p:not([class])'),('E','.lf-case > details.lf-source > p',2)]),
  ('P1','ver-para-fazer/v01/',[('J','.vpf .vpf-porque'),('J','.vpf .vpf-fazer > p'),('E','.vpf button',1)]),
@@ -82,7 +84,8 @@ PLANO=[
  ('P2','biblioteca/brascubas-ao-leitor/',[('J','.bib-texto > p:not([class])'),('lang','.bib-texto','pt-PT')]),
  ('P3','narrativas/oficina-arco-imprimir/',[('J','main.pg > p:not([class])'),('E','main.pg li',3)]),
  ('P3b','dar-forma-as-palavras/',[('J','.comum > p:not([class])')]),
- ('E1','narrativas/',[('J','.p-cab > p.p-lead'),('J','.lab-saiu > p')]),
+ # 30/10/2026: Laboratório simples (pedido do docente). A prosa longa passou para o catálogo.
+ ('E1','narrativas/tudo/',[('J','.p-cab > p.p-lead'),('J','.lab-saiu > p')]),
  ('E1','',[('E','a',5)]),
  ('E2','gigantes/',[('J','.p-cab p.p-lead'),('E','a.missao .s',5),('abrir','details.entrada-fontes'),('J','.entrada-fontes > p:not([class])')]),
  ('G1','narrativas/treinar/docente/',[('J','main.pg > p:not([class])')]),
