@@ -63,6 +63,15 @@ class VideosEscolhidos(unittest.TestCase):
             # qualquer outra diferença continua a falhar.
             import cidadania_m2_correcoes as correcoes
             base = correcoes.aplicar(r.stdout, p['pagina'], rigoroso=False)
+            # 30/10/2026: opções equilibradas (pedido do docente)
+            trocas = json.loads((ROOT / 'tools/trocas/opcoes-lente-20261030.json').read_text('utf-8'))
+            for troca in trocas:
+                if troca['ficheiro'] != p['pagina']:
+                    continue
+                if base.count(troca['antigo']) == troca['ocorrencias']:
+                    base = base.replace(troca['antigo'], troca['novo'])
+                else:
+                    self.assertEqual(base.count(troca['novo']), troca['ocorrencias'], p['pagina'])
             a, b = ve.lista(base)
             # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
             self.assertEqual(antigos, [x for x in json.loads(base[a:b]) if 'pv' not in x], p['pagina'])
