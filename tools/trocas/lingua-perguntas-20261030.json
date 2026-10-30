@@ -1,0 +1,134 @@
+[
+ {
+  "ficheiro": "assets/cidadania-casos.json",
+  "antigo": "Qual critério deve decidir o que aparece primeiro?",
+  "novo": "Que critério deve decidir o que aparece primeiro?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m2/cid-m2-a-regra-do-feed/index.html",
+  "antigo": "Qual critério deve decidir o que aparece primeiro?",
+  "novo": "Que critério deve decidir o que aparece primeiro?",
+  "ocorrencias": 2
+ },
+ {
+  "ficheiro": "cidadania/m2/index.html",
+  "antigo": "Qual critério deve decidir o que aparece primeiro?",
+  "novo": "Que critério deve decidir o que aparece primeiro?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "assets/formas/tres-cartas-dados.js",
+  "antigo": "Qual frase retira a opinião da notícia fictícia?",
+  "novo": "Qual das frases retira a opinião da notícia fictícia?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "assets/formas/tres-cartas-dados.js",
+  "antigo": "Qual citação identifica a testemunha inventada?",
+  "novo": "Qual das duas citações identifica a testemunha inventada?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/abertura/index.html",
+  "antigo": "Qual pergunta corresponde melhor a esse plano?",
+  "novo": "Qual das perguntas corresponde melhor a esse plano?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/cid-m1-duas-legendas/index.html",
+  "antigo": "Qual afirmação pode ser verificada diretamente na imagem?",
+  "novo": "Qual das afirmações pode ser verificada diretamente na imagem?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/cid-m1-guardar-ou-partilhar/index.html",
+  "antigo": "Qual utilização está expressamente incluída no acordo descrito?",
+  "novo": "Qual destas utilizações está expressamente incluída no acordo descrito?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/fichas/f12/index.html",
+  "antigo": "Qual versão permite verificar o que foi observado?",
+  "novo": "Que versão permite verificar o que foi observado?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/passo-00/index.html",
+  "antigo": "Qual imagem permite relacionar",
+  "novo": "Qual das imagens permite relacionar",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/passo-00/index.html",
+  "antigo": "Qual recorte permite examinar",
+  "novo": "Qual dos recortes permite examinar",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/passo-00/index.html",
+  "antigo": "Qual afirmação distingue o que vemos",
+  "novo": "Qual das afirmações distingue o que vemos",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m1/sessoes/07/index.html",
+  "antigo": "A maioria dos votos decide qual razão é mais forte?",
+  "novo": "A maioria dos votos decide que razão é mais forte?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m2/cid-m2-o-rasto-da-afirmacao/index.html",
+  "antigo": "Qual conclusão respeita os elementos disponíveis?",
+  "novo": "Qual das conclusões respeita os elementos disponíveis?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "direitos/passo-06/index.html",
+  "antigo": "qual crédito pertence a qual obra",
+  "novo": "que crédito pertence a que obra",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "docente/index.html",
+  "antigo": "Qual detalhe o mostra?",
+  "novo": "Que pormenor o mostra?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "narrativas/fora-da-pagina/tese/lesson.js",
+  "antigo": "Qual formulação conserva",
+  "novo": "Qual das formulações conserva",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "narrativas/fora-da-pagina/tese/lesson.js",
+  "antigo": "Qual proposta deixa um colega",
+  "novo": "Qual das propostas deixa um colega",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m2/aulas/04/index.html",
+  "antigo": "Compare duas apresentações da mesma imagem: primeiro descrevam",
+  "novo": "Comparem duas apresentações da mesma imagem: primeiro descrevam",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "tools/cidadania_m1_conteudos.py",
+  "antigo": "Qual versão permite verificar o que foi observado?",
+  "novo": "Que versão permite verificar o que foi observado?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "tools/cidadania_m1_molde.py",
+  "antigo": "A maioria dos votos decide qual razão é mais forte?",
+  "novo": "A maioria dos votos decide que razão é mais forte?",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "tools/cidadania_m1_sessoes.py",
+  "antigo": "A quantidade de votos não decide qual razão",
+  "novo": "A quantidade de votos não decide que razão",
+  "ocorrencias": 1
+ }
+]

@@ -33,7 +33,7 @@
     "module": "m2",
     "slug": "cid-m2-a-regra-do-feed",
     "title": "A regra do feed",
-    "question": "Qual critério deve decidir o que aparece primeiro?",
+    "question": "Que critério deve decidir o que aparece primeiro?",
     "cards": 15,
     "source_urls": [
       "https://support.google.com/youtube/answer/16089387?hl=en"
