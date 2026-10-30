@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s01",
  "chave": "epi-cid-m1-s01",
- "versao": "2026-10-30",
+ "versao": "2026-10-30-2",
  "marca": "CD",
  "titulo": "Sessão 01: Um mapa de direitos",
  "h1": "Cidadania, módulo 1, sessão 01: Um mapa de direitos",
@@ -12,7 +12,7 @@
  },
  "saida": "cidadania/piloto/m1-s01/index.html",
  "piloto": true,
- "fontes": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Os casos são inventados.",
+ "fontes": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Fotografia: Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, novembro de 1949 (Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0). Vídeo: TED-Ed, «What are the universal human rights?», lição de Benedetta Berti. Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
@@ -75,6 +75,18 @@
    "rot": "Conceito",
    "titulo": "Declaração, tratado, Constituição",
    "html": "<p>Três textos, três forças diferentes:</p><ul><li><b>Declaração Universal dos Direitos Humanos</b> (Nações Unidas, Paris, 10 de dezembro de 1948): uma declaração, não um tratado.</li><li><b>Convenção sobre os Direitos da Criança</b> (1989): um tratado. Portugal ratificou-o em 1990, por isso obriga o Estado.</li><li><b>Constituição da República Portuguesa</b>: a lei mais alta do país. O artigo 16.º manda ler os direitos fundamentais de acordo com a Declaração.</li></ul>"
+  },
+  {
+   "t": "ler",
+   "rot": "Ver",
+   "titulo": "Um cartaz de 1949",
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/eleanor-roosevelt-dudh-1949.webp\" alt=\"Eleanor Roosevelt segura com as duas mãos um grande cartaz com o título «The Universal Declaration of Human Rights» e o símbolo das Nações Unidas.\" loading=\"lazy\"></span><figcaption>Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, Nova Iorque, novembro de 1949. Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0.</figcaption></figure><p>Um ano depois de aprovada, a Declaração já circula em cartaz.</p><p class=\"pergunta-c\">Olha primeiro para a fotografia: porque é que se faz um cartaz de um texto que não obriga nenhum Estado?</p><p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>"
+  },
+  {
+   "t": "ler",
+   "rot": "Ver",
+   "titulo": "Quem escolhe os direitos?",
+   "html": "<p>Um vídeo curto do TED-Ed, numa lição escrita por Benedetta Berti. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"nDgIVseTkuE\" data-titulo=\"What are the universal human rights?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What are the universal human rights?» (4 min 47 s)</button><p class=\"yt-cred\">TED-Ed, lição de Benedetta Berti. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">Enquanto vês, procura a resposta do vídeo a três perguntas: o que são os direitos humanos básicos? Quem os escolhe? Quem os faz cumprir?</p><p>Uma linha para cada uma, no caderno.</p>"
   },
   {
    "t": "vf",
@@ -219,7 +231,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Um direito é uma proteção que vale para todos, também para quem não conheces.</p><p>Nesta sessão situaste casos da escola em artigos concretos e distinguiste uma declaração, um tratado e a Constituição. Na sessão 10 voltas ao mesmo mapa: o que mudou?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro descrevo o que aconteceu; só depois procuro o direito.</li><li>A Declaração não é uma lei portuguesa, mas a Constituição manda lê-la.</li><li>Estar num sítio público não apaga o direito à imagem.</li><li>Quando dois direitos chocam, pesa-se cada um no caso concreto.</li></ul>"
+   "html": "<p class=\"levar\">Um direito é uma proteção que vale para todos, também para quem não conheces.</p><p>Nesta sessão situaste casos da escola em artigos concretos e distinguiste uma declaração, um tratado e a Constituição. Volta à pergunta do cartaz de 1949: mudou a tua resposta? Na sessão 10 voltas ao mesmo mapa: o que mudou?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro descrevo o que aconteceu; só depois procuro o direito.</li><li>A Declaração não é uma lei portuguesa, mas a Constituição manda lê-la.</li><li>Estar num sítio público não apaga o direito à imagem.</li><li>Quando dois direitos chocam, pesa-se cada um no caso concreto.</li></ul>"
   }
  ]
 }
