@@ -1,0 +1,6 @@
+/* 30/10/2026: lições da Cidadania no motor único (assets/licoes/). A casca é a do Português; muda só a cor de destaque
+   (a dourada do cartão da Cidadania na entrada do Lente) e o estilo da pergunta do «Abre» e do «Decide». */
+body.licao-cidadania{--mostarda:#e0b23a}
+.licao-cidadania .ler .pergunta-c{font:700 1.2rem/1.3 Arial,Helvetica,sans-serif;margin:4px 0 12px}
+.licao-cidadania .ler details.lado>summary{font-weight:700}
+.licao-cidadania .ler .aula-linha{font:400 .95rem/1.45 Arial,Helvetica,sans-serif;border-top:1px solid var(--tinta);padding-top:10px;margin-top:16px;text-align:start}

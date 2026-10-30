@@ -1,0 +1,324 @@
+/* Cópia de pt/assets/pt-lessons/lesson.css (main a47c01d8), 30/10/2026: motor único das lições do Lente (Cidadania primeiro). Corrige-se no Português e copia-se de novo. */
+:root{--tinta:#000;--papel:#fff;--papel2:#faf8f2;--suave:#444;--fundo:#f3f2ee;--mostarda:#d9a520;--vermelho:#c8232c}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:17px/1.5 Arial,Helvetica,sans-serif}
+/* o que vem depois do baralho (cartão extra, ponte no Atlas, a tarefa, lição anterior e seguinte), dentro do cartão do fim */
+.depois .c{position:relative;background:var(--fundo);padding:14px 16px;margin:0 0 var(--d1,8px);text-align:left}
+.depois .c .rot{font:700 .7rem Arial;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:7px;align-items:center;color:var(--suave);margin:0 0 var(--d1,8px)}
+.depois .c.feito .rot{color:var(--tinta)}.depois .c.feito .estado{color:var(--tinta)}
+.depois .c .tit{font:700 1.05rem Arial;margin:0 0 2px}.depois .c .sub{font-size:.9rem;color:var(--suave);margin:0 0 6px}
+.depois .c .acoes{margin:8px 0 0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.depois .c button{font:700 1rem Arial;min-height:44px;border:0;background:var(--tinta);color:var(--papel);padding:0 18px;cursor:pointer;margin:0}.depois .c button[data-abrir]::after{content:" →"}
+.depois .c a{color:var(--tinta);font-weight:700;display:inline-flex;align-items:center;min-height:44px}
+.depois .estado{font:700 .75rem Arial;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.depois .prox{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:var(--d2,20px) 0 0}.depois .prox a{font:700 .95rem Arial;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;color:var(--tinta)}
+/* as portas do Atlas e da cidade (bloco D, 11/10/2026): uma só caixa compacta depois de «Lição seguinte», uma linha por porta, sem ícones */
+nav.portas-ext{background:var(--fundo);margin:var(--d2,20px) 0 0;padding:4px 14px 6px;text-align:left}
+nav.portas-ext .pe-rot{font:700 .66rem/1 Arial;letter-spacing:.14em;text-transform:uppercase;color:var(--suave);margin:6px 0 0}
+nav.portas-ext a.pe-l{display:flex;align-items:center;gap:10px;min-height:44px;color:var(--tinta);text-decoration:none;font:700 .98rem/1.25 Arial}
+nav.portas-ext a.pe-l+a.pe-l{box-shadow:0 -1px 0 var(--papel)}
+nav.portas-ext .pe-t{flex:1}nav.portas-ext .pe-s{font-weight:400}
+nav.portas-ext .estado{font:700 .68rem Arial;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+nav.portas-ext a.pe-l.feito .pe-t::before{content:"";display:inline-block;width:8px;height:8px;background:var(--mostarda);margin:0 8px 0 0;vertical-align:.1em}
+nav.portas-ext a.pe-l:hover .pe-t{text-decoration:underline;text-underline-offset:3px}
+/* caixas e blocos herdados das fichas (dentro dos cartões «Para entender») */
+h3{font:700 .8rem Arial;letter-spacing:.1em;margin:14px 0 6px;text-transform:uppercase}
+.gl{font-size:.9rem;border-top:1px solid var(--tinta);margin-top:10px;padding-top:6px}
+.fonte{font-size:.82rem;color:var(--suave);margin:6px 0 0}
+.caixa{margin:0 0 10px}.caixa:last-child{margin-bottom:0}.caixa h3{margin:0 0 4px}.caixa p{margin:0 0 6px}
+details{border:1px solid var(--tinta);margin:8px 0;padding:0}
+summary{cursor:pointer;font:700 .95rem Arial;padding:8px 10px;list-style:none;display:flex;gap:8px;align-items:center;min-height:44px}
+summary::before{content:"+";font:900 1.1rem Arial;width:1.2rem}
+details[open]>summary::before{content:"–"}
+details>div{padding:0 12px 10px;border-top:1px solid var(--tinta)}
+.perg{margin:14px 0 6px;font-weight:700}
+ol.passos{margin:4px 0;padding-left:1.4rem}ol.passos li{margin:0 0 4px;font-size:.95rem}
+table{border-collapse:collapse;width:100%;margin:6px 0;font:.92rem/1.4 Arial;table-layout:fixed}th,td{border:1px solid var(--tinta);padding:5px 7px;vertical-align:top;text-align:left;overflow-wrap:anywhere;word-break:break-word}.rol{overflow-x:auto;max-width:100%}th{background:var(--tinta);color:var(--papel);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+ul.lista{margin:4px 0;padding-left:1.3rem}ul.lista li{margin:0 0 4px}
+/* o menu ☰: Sala e fontes */
+.sala input.maq{max-width:100%}
+.extra-sobre{position:fixed;inset:0;z-index:45;background:var(--fundo)}.extra-sobre iframe{display:block;width:100%;height:100%;border:0;background:var(--fundo)}
+#aviso{position:fixed;left:50%;top:58px;transform:translateX(-50%);max-width:calc(100% - 24px);background:var(--tinta);color:var(--papel);padding:8px 14px;font:700 .85rem Arial;display:none;z-index:60}
+@media (prefers-color-scheme:dark){:root{--tinta:#ecebe5;--papel:#121210;--papel2:#1a1a17;--suave:#b3b1aa;--fundo:#1d1d1a;--mostarda:#e0b23a;--vermelho:#e4555c}}
+[hidden]{display:none!important}.cz-linha{--cz-f:var(--papel,#fff);position:relative;box-sizing:border-box;max-width:680px;background:var(--cz-f);color:var(--tinta,#000);margin:var(--d2,20px) 0 0;padding:4px 4px 9px 14px;font:400 14.5px/1.32 var(--sans,Arial,Helvetica,sans-serif);text-align:left;touch-action:pan-y}
+.casca .cz-linha,.depois .cz-linha,.cz-no-branco .cz-linha{--cz-f:var(--fundo,#f3f2ee)}
+.fim-ficha .cz-linha{--cz-f:#f3f2ee}@media (prefers-color-scheme:dark){.fim-ficha .cz-linha{--cz-f:#1d1d1a}}
+.cz-linha .cz-cab{display:flex;align-items:center;gap:2px;min-height:32px;margin:0}
+.cz-linha .cz-rot{flex:1;margin:0;padding:0;font:700 .66rem/1 var(--sans,Arial,Helvetica,sans-serif);letter-spacing:.14em;text-transform:uppercase;color:var(--suave,#444)}
+.cz-linha .cz-nav{display:flex;align-items:center}
+.cz-linha button.cz-b{-webkit-appearance:none;appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin:-6px 0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:var(--tinta,#000);font:400 1.45rem/1 var(--sans,Arial,Helvetica,sans-serif);cursor:pointer;width:44px}
+.cz-linha button.cz-nao{width:auto;padding:0 8px;font-size:.78rem;color:var(--suave,#444);text-decoration:underline;text-underline-offset:3px}
+.cz-linha .cz-pos{min-width:3em;text-align:center;font-size:.74rem;color:var(--suave,#444);white-space:nowrap}
+.cz-linha .cz-frase{margin:0;padding:0 10px 0 0;font:inherit;transition:opacity 90ms linear}
+.cz-linha .cz-frase.cz-sai{opacity:0}
+.cz-linha a.cz-ver{display:block;color:inherit;text-decoration:none;font-weight:400;min-height:0;padding:0}
+.cz-linha a.cz-ver b{white-space:nowrap;font-weight:700;text-decoration:underline;text-underline-offset:3px;margin-left:2px}
+.cz-linha a:focus-visible,.cz-linha button:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:1px}
+@media (prefers-reduced-motion:reduce){.cz-linha .cz-frase{transition:none}}
+@media print{.cz-linha{display:none}}.dupla{margin:0 0 var(--d2,20px)}
+.dupla-foto{position:relative;width:100%;max-width:560px;aspect-ratio:1200/857;max-height:min(34vh,300px);max-height:min(34dvh,300px);margin:0 auto;background:#000;overflow:hidden;border:1px solid var(--tinta,#000);isolation:isolate}
+.dupla-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s,filter .45s}
+.dupla-foto .pl-pa{filter:grayscale(1) brightness(1.08) contrast(1.1)}.dupla-foto .pl-po{mix-blend-mode:screen;filter:grayscale(1) brightness(.7) contrast(1.15)}
+.dupla:has(input[value=po]:checked) .pl-po{filter:grayscale(1) contrast(1.05)}
+.dupla:has(input[value=pa]:checked) .pl-po,.dupla:has(input[value=po]:checked) .pl-pa{opacity:.14}
+.dupla figcaption{font:1.02rem/1.55 Georgia,"Times New Roman",serif;margin:var(--d1,8px) 0 0}.dupla-v{display:block;line-height:44px;padding-left:1em;text-indent:-1em}.dupla-ac{display:block;margin:6px 0 0;font:700 .8rem Arial;letter-spacing:.06em;text-transform:uppercase}
+.dupla label{cursor:pointer;padding:13px 0;text-decoration-line:underline;text-decoration-style:dotted;text-decoration-thickness:2px;text-underline-offset:5px;-webkit-tap-highlight-color:transparent}.dupla-ac label{display:inline-block;line-height:44px;padding:0}
+.dupla input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.dupla:has(.dp-pa input:checked) .dp-pa,.dupla:has(.dp-po input:checked) .dp-po,.dupla:has(.dp-ambos input:checked) label{text-decoration-style:solid;text-decoration-thickness:3px}
+.dupla label:has(input:focus-visible){outline:3px solid var(--vermelho,#c8232c);outline-offset:2px}
+.dupla small{display:block;font:.78rem/1.3 Arial;color:var(--suave,#444);margin:8px 0 0}
+@media (prefers-reduced-motion:reduce){.dupla-foto img{transition:none}}
+:root{--col:min(680px,100%);--d1:8px;--d2:20px;--d3:40px;--c-cinza:#d6d4ce}
+@media (prefers-color-scheme:dark){:root{--c-cinza:#3d3c38}}
+html.com-casca,html.com-casca body{height:100%;overflow:hidden;overscroll-behavior:none}
+html.com-casca body{margin:0}
+.casca{position:fixed;inset:0;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100vh;height:var(--vh,100dvh);background:var(--fundo,#f3f2ee);color:var(--tinta,#000);z-index:10;font-family:Arial,Helvetica,sans-serif}
+.casca.sobreposta{z-index:40}
+.casca .casca-faixa{position:static;grid-row:1}.casca>.casca-topo{grid-row:2}.casca>.casca-corpo{grid-row:3}.casca>.casca-acoes{grid-row:4}
+.casca-topo{display:flex;align-items:center;gap:4px;width:100%;max-width:var(--col);margin:0 auto;box-sizing:border-box;min-height:48px;padding:max(2px,env(safe-area-inset-top)) max(6px,env(safe-area-inset-right)) 2px max(10px,env(safe-area-inset-left))}
+.c-marca{font:700 .74rem/1 Arial;letter-spacing:.12em;text-transform:uppercase;color:var(--suave,#444);white-space:nowrap;flex:none;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 4px;margin:0 -4px}.c-casa{width:15px;height:15px;margin-right:5px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linejoin:round;stroke-linecap:round}.c-marca:hover{color:var(--tinta,#000);text-decoration:underline}
+.c-num{font:700 .85rem/1 Arial;white-space:nowrap;flex:none;margin:0 4px 0 6px;font-variant-numeric:tabular-nums}.c-num small{font-weight:400;color:var(--suave,#444)}
+.c-modo{font:700 .72rem/1 Arial;letter-spacing:.1em;text-transform:uppercase;color:var(--vermelho,#c8232c);white-space:nowrap;flex:none}
+.c-barra{flex:1 1 auto;min-width:48px;height:44px;border:0;background:none;padding:0 6px;margin:0;cursor:pointer;display:flex;align-items:center}
+.c-barra svg{display:block;width:100%;height:10px;overflow:visible}
+.c-barra rect{fill:var(--c-cinza);transition:fill .3s ease}
+.c-barra rect.ler{fill:var(--tinta,#000)}.c-barra rect.ok{fill:var(--tinta,#000)}.c-barra rect.mau{fill:var(--vermelho,#c8232c)}.c-barra rect.atual{fill:var(--vermelho,#c8232c)}
+.c-barra.ganho rect.ok{fill:var(--mostarda,#d9a520);transition-delay:calc(var(--k,0)*40ms)}
+.c-barra:disabled{cursor:default}
+.c-ic{flex:none;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:0;background:none;color:var(--tinta,#000);padding:0;margin:0;cursor:pointer;font:700 1rem/1 Arial}
+.c-ic .c-roda{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1.5px solid currentColor;border-radius:50%;font:700 .95rem/1 Arial}
+.c-ic[aria-pressed="true"] .c-roda{background:var(--tinta,#000);color:var(--papel,#fff)}
+.c-ic .c-tres{display:block;width:20px;height:14px;border-top:2px solid currentColor;border-bottom:2px solid currentColor;position:relative;box-sizing:border-box}.c-ic .c-tres::after{content:"";position:absolute;left:0;right:0;top:4px;border-top:2px solid currentColor}
+.c-ic[hidden]{display:none}
+.casca-corpo{overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;padding:0 max(10px,env(safe-area-inset-right)) calc(var(--folha-h,0px) + var(--d1)) max(10px,env(safe-area-inset-left));outline:0}
+.casca-corpo>*{width:100%;max-width:var(--col);margin-left:auto;margin-right:auto;box-sizing:border-box}
+.casca-corpo>.jogo-alvo,.casca-corpo>.c-enche{flex:1 0 auto;display:flex;flex-direction:column}
+.casca-acoes{display:flex;align-items:center;gap:10px;width:100%;max-width:var(--col);margin:0 auto;box-sizing:border-box;min-height:64px;padding:8px max(10px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));position:relative}
+.casca-acoes::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--tinta,#000);opacity:0;transition:opacity .2s}.casca-acoes.sombra::before{opacity:.18}
+.casca-acoes .c-esp{flex:1}
+.c-prim,.c-sec{font:700 1rem/1.2 Arial;min-height:48px;margin:0;cursor:pointer;border-radius:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;box-sizing:border-box}
+.c-prim{background:var(--tinta,#000);color:var(--papel,#fff);border:0;padding:0 22px}
+.c-prim:disabled{background:var(--c-cinza);color:var(--suave,#444);cursor:default}
+.c-sec{background:none;color:var(--tinta,#000);border:0;padding:0 6px;font-weight:400;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.c-sec.c-seta{text-decoration:none;font-size:1.25rem;min-width:44px;padding:0}
+.c-prim[data-seguinte]::after,.c-prim[data-confirmar]::after,.c-prim.c-vai::after{content:"→"}
+.casca-folha{position:absolute;left:0;right:0;bottom:0;z-index:20;transform:translateY(105%);transition:transform .22s cubic-bezier(.2,.7,.2,1);background:var(--papel,#fff);color:var(--tinta,#000);box-shadow:0 -1px 0 rgba(0,0,0,.18),0 -12px 30px rgba(0,0,0,.08)}
+.casca-folha.aberta{transform:none}
+.casca-folha .c-folha-in{max-width:var(--col);margin:0 auto;box-sizing:border-box;padding:14px max(14px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));border-left:4px solid var(--tinta,#000);display:flex;flex-direction:column;gap:var(--d1)}
+.casca-folha.ok .c-folha-in{border-left-color:var(--certo,#1b7f3b)}.casca-folha.mau .c-folha-in{border-left-color:var(--errado,#c8232c)}
+.casca-folha .c-veredito{font:700 1.05rem/1.2 Arial;display:flex;align-items:baseline;gap:8px;margin:0}
+.casca-folha .c-veredito .c-s{font-weight:900}.casca-folha.ok .c-s{color:var(--certo,#1b7f3b)}.casca-folha.mau .c-s{color:var(--errado,#c8232c)}.casca-folha.meio .c-s{color:var(--suave,#444)}
+.casca-folha .c-veredito .c-pts{margin-left:auto;font:700 .9rem Arial;color:var(--mostarda,#d9a520)}
+.casca-folha .c-expl{font:1.02rem/1.5 Georgia,"Times New Roman",serif;max-height:min(38dvh,320px);overflow-y:auto;overscroll-behavior:contain;margin:0}
+.casca-folha .c-expl b{font-weight:700}
+.casca-folha .c-prim{width:100%;margin-top:4px}
+.casca-menu{position:absolute;inset:0;z-index:30;background:rgba(0,0,0,.45);display:flex;justify-content:flex-end}
+.casca-menu[hidden]{display:none}
+.casca-menu .c-menu-in{width:min(340px,88vw);height:100%;background:var(--papel,#fff);color:var(--tinta,#000);overflow-y:auto;box-sizing:border-box;padding:max(10px,env(safe-area-inset-top)) 18px 18px;animation:cMenu .2s ease-out}
+@keyframes cMenu{from{transform:translateX(24px);opacity:.4}to{transform:none;opacity:1}}
+.casca-menu .c-menu-cab{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px}.casca-menu .c-menu-cab p{font:700 .74rem/1.35 Arial;letter-spacing:.1em;text-transform:uppercase;color:var(--suave,#444);margin:0}
+.casca-menu nav a,.casca-menu nav button{display:flex;align-items:center;width:100%;min-height:52px;font:700 1rem Arial;color:var(--tinta,#000);text-decoration:none;border:0;border-top:1px solid var(--c-cinza);background:none;padding:0;margin:0;cursor:pointer;text-align:left}
+.casca-menu nav a::after{content:"→";margin-left:auto;font-weight:400}
+.casca-menu .c-menu-extra{font-size:.85rem;color:var(--suave,#444);margin:14px 0 0}
+.casca-menu .sala{margin:0;padding:10px 0 0;background:none}
+.c-grelha{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px;margin:8px 0 0}.c-grelha button{min-height:52px;font:700 1rem Arial;border:1px solid var(--tinta,#000);background:var(--papel,#fff);color:var(--tinta,#000);cursor:pointer;margin:0}.c-grelha button.ok{background:var(--tinta,#000);color:var(--papel,#fff)}.c-grelha button.mau{box-shadow:inset 0 -4px 0 var(--errado,#c8232c)}.c-grelha button:disabled{opacity:.35;cursor:default}
+.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.casca a:focus-visible,.casca button:focus-visible,.casca select:focus-visible,.casca [tabindex]:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:2px}
+.casca-video{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:100;display:flex;align-items:center;justify-content:center;padding:12px}.casca-video .cx{background:#111;color:#f2f0ea;width:100%;max-width:420px;max-height:96vh;max-height:96dvh;display:flex;flex-direction:column;gap:8px;padding:12px;box-sizing:border-box}.casca-video .tt{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 .8rem Arial;letter-spacing:.1em;text-transform:uppercase;color:#d9a520}.casca-video video{width:100%;max-height:72vh;max-height:72dvh;background:#000;display:block}.casca-video .rodape-como{display:flex;justify-content:space-between;align-items:center;gap:10px}.casca-video button,.casca-video a{display:inline-flex;align-items:center;font:700 1rem Arial;color:#f2f0ea;background:none;border:0;min-height:44px;padding:0 4px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.c-iframe{flex:1;width:100%;max-width:none!important;border:0;background:var(--papel,#fff)}
+@media (min-width:900px){.casca-topo{min-height:56px}.c-marca{font-size:.8rem}}
+@media (prefers-reduced-motion:reduce){.casca-folha,.c-barra rect{transition:none}.casca-menu .c-menu-in{animation:none}}
+@media print{.casca{position:static;display:block;height:auto}.casca-topo,.casca-acoes,.casca-folha,.casca-menu{display:none!important}html.com-casca,html.com-casca body{overflow:visible;height:auto}}
+
+/* casca «ecrã de aplicação» e Gestalt (11/10/2026, quatro perguntas e sete rondas de widget): um só cartão branco sobre papel,
+   que enche o espaço entre o topo e a barra de ações e rola por dentro só quando é comprido; rótulo pequeno com a forma da fase
+   (○ ler, □ responder, △ levar); três distâncias (8, 20, 40 px); Georgia para ler (textos, perguntas, correções), Arial para
+   tocar e para os rótulos; a pergunta é o maior texto; opções de linha fina, a escolhida engrossa; acerto com um traço verde
+   que se desenha, erro riscado a vermelho, nada abana; cores só preto, branco, mostarda (o conquistado), vermelho e verde */
+.jogo{display:flex;flex-direction:column;flex:1 0 auto;margin:var(--d1,8px) 0 var(--d1,8px);min-height:0}
+.jogo .cartao{background:var(--papel);padding:var(--d2,20px);flex:0 0 auto;display:flex;flex-direction:column;position:relative;isolation:isolate;animation:cartaoEntra .2s ease-out both}
+@keyframes cartaoEntra{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.jogo .rot{display:flex;align-items:center;gap:7px;font:700 .7rem/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d2,20px)}
+.jogo .rot .forma{width:12px;height:12px;flex:none;overflow:visible}.jogo .rot .forma *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.jogo .rot.feito .forma *{fill:currentColor}
+.jogo .tit{font:700 1.15rem/1.25 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}
+/* 16/10/2026: um traço curto desenha-se debaixo do título de cada cartão de leitura (nada com «reduzir movimento») */
+.jogo .ler .tit{padding-bottom:5px;background:linear-gradient(currentColor,currentColor) no-repeat 0 100%/0 2px;animation:titTraco .8s cubic-bezier(.2,.7,.2,1) .3s forwards}@keyframes titTraco{to{background-size:2.6em 2px}}@media (prefers-reduced-motion:reduce){.jogo .ler .tit{animation:none;background-size:2.6em 2px}} /* 15/10/2026, acessibilidade: o título do cartão é um h2 (a página tem o h1 da casca), com o mesmo aspeto */
+.jogo .tit.cartaz{font:400 2.2rem/1 var(--cartaz,"Arial Black",Arial);letter-spacing:.02em;margin:0 0 var(--d2,20px);padding-right:56px}
+.jogo .cit{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:1.05em}
+.jogo .ler{font-family:var(--serif,Georgia,serif);font-size:1.1rem;line-height:1.6}.jogo .ler p{margin:0 0 var(--d1,8px)}.jogo .ler .v{white-space:pre-wrap;margin:0 0 var(--d1,8px)}.jogo .ler .v .n{display:inline-block;width:2.1em;color:var(--suave);font:400 .72em Arial;text-align:right;padding-right:.6em}
+.jogo .ler ol{margin:0;padding-left:1.3rem}.jogo .ler ul{margin:0 0 var(--d1,8px);padding-left:1.3rem;list-style:disc outside}.jogo .ler ul li{margin:0 0 4px}.jogo .ler li{margin:0 0 var(--d1,8px)}.jogo .ler .gl{font:400 .9rem/1.45 Arial;border-top:1px solid var(--tinta);margin-top:var(--d2,20px);padding-top:var(--d1,8px)}.jogo .ler .fonte{font:400 .82rem Arial;color:var(--suave);margin:var(--d1,8px) 0 0}
+.jogo .ler .abre{font-size:1.25rem;line-height:1.45}.jogo .ler .levar{font-size:1.45rem;line-height:1.3;font-style:italic;margin:6px 0 10px}.jogo .ler .pergU{font-style:italic;color:var(--suave)}
+.jogo .ver-fig{margin:0 0 12px;cursor:zoom-in}.jogo .ver-fig img{display:block;width:100%;height:auto;max-height:min(26vh,210px);max-height:min(26dvh,210px);object-fit:cover;object-position:50% 45%;border:1px solid var(--tinta);filter:grayscale(1)}.jogo .ver-fig.grande{cursor:zoom-out}.jogo .ver-fig.grande img{max-height:none;object-fit:contain}.jogo .ver-fig:focus-visible{outline:3px solid var(--vermelho,#c1272d);outline-offset:2px}.jogo .ler .fig{margin:0 0 var(--d2,20px)}.jogo .ler .fig img{display:block;max-width:100%;max-height:min(40vh,360px);max-height:min(40dvh,360px);width:auto;border:0;cursor:zoom-in}.jogo .ler .fig figcaption{font:400 .78rem/1.35 Arial;color:var(--suave);margin-top:6px}
+.jogo .ler h3{font:700 .8rem Arial;letter-spacing:.1em;margin:var(--d2,20px) 0 var(--d1,8px);text-transform:uppercase}
+/* 11/10/2026 (docente: «falta de cuidados de design»): o cartão acaba onde acaba o texto (o papel aparece por baixo) e o título da
+   primeira caixa fica a 8 px do rótulo (proximidade), em vez de 20 + 20 */
+.jogo .ler>.caixa:first-child>h3:first-child,.jogo .ler>h3:first-child{margin-top:0}.jogo .cartao>.rot:has(+.ler>.caixa:first-child>h3:first-child),.jogo .cartao>.rot:has(+.ler>h3:first-child){margin-bottom:var(--d1,8px)}
+/* «A calçada do verso»: uma pedra por sílaba, brancas e pretas; «Quem sou eu?»: pistas que se abrem */
+.jogo .verso-q{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:1.2rem;line-height:1.35;margin:0 0 var(--d2,20px)}.jogo .verso-q small{font:400 .78rem Arial;color:var(--suave);font-style:normal;display:block}
+.jogo .calcada-v{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 var(--d1,8px)}.jogo .pedra{position:relative;min-width:44px;height:54px;padding:4px 8px;border:1px solid var(--tinta);background:var(--papel);color:var(--tinta);font:700 .95rem Arial;margin:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:5px 7px 4px 8px;animation:pedraCai .35s ease-out both;animation-delay:calc(var(--k,0)*50ms);cursor:pointer}.jogo .pedra.preta{background:var(--tinta);color:var(--papel)}.jogo .pedra.elisao{min-width:64px}.jogo .pedra .num{position:absolute;right:4px;top:1px;font:700 .62rem Arial;opacity:.85}.jogo .pedra[aria-pressed="true"]{border-width:3px;padding:2px 6px;box-shadow:0 0 0 2px var(--papel),0 0 0 4px var(--tinta)}.jogo .pedra.conta{box-shadow:inset 0 -5px 0 var(--mostarda,#d9a520)}.jogo .pedra.bom{box-shadow:0 0 0 3px var(--certo,#1b7f3b)}.jogo .pedra.mau{box-shadow:0 0 0 3px var(--errado,#c8232c)}.jogo .pedra.falta{box-shadow:0 0 0 3px var(--certo,#1b7f3b);border-style:dashed}.jogo .pedra.fora{opacity:.3}.jogo .pedra:disabled{cursor:default}@keyframes pedraCai{from{transform:translateY(-10px);opacity:0}to{transform:none;opacity:1}}
+.jogo .pistas{margin:0 0 var(--d2,20px);padding-left:1.3rem;font-family:var(--serif,Georgia,serif);font-style:italic;font-size:1.1rem}.jogo .pistas li{margin:0 0 6px;animation:entrar .3s ease-out both}.jogo .atrib{display:flex;gap:6px;margin:0 0 var(--d1,8px)}.jogo .atrib .simbolo{width:44px;height:44px}.jogo .atrib .simbolo *{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.jogo .ler .fig .moldura{display:block;overflow:hidden;width:fit-content;max-width:100%}.jogo .ler .fig .moldura img{border:0;display:block;animation:kenburns 16s ease-out forwards;transform-origin:50% 40%}@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.04)}}
+.jogo .cartao.escuro{background:var(--tinta);color:var(--papel)}.jogo .cartao.escuro .rot{color:var(--papel);opacity:.75}
+/* «Para levar» à máquina de escrever: a frase escreve-se letra a letra (a máquina só aqui) */
+.jogo .cartao.escuro .levar{font:1.7rem/1.3 var(--maq,"Special Elite","Courier New",monospace);margin:14px 0 10px}.jogo .levar .ch{opacity:0;animation:tecla .01s steps(1) forwards;animation-delay:calc(var(--i,0)*45ms)}@keyframes tecla{to{opacity:1}}.jogo .levar .cursor{display:inline-block;width:.5em;border-bottom:3px solid currentColor;margin-left:3px;vertical-align:baseline;animation:pisca 1s steps(1) infinite}@keyframes pisca{50%{opacity:0}}
+.jogo .cartao.escuro .simbolo.tracar{color:var(--papel)}
+.jogo .cita{font-family:var(--serif,Georgia,serif);font-style:italic;font-size:1.02rem;line-height:1.45;margin:0 0 var(--d2,20px);padding:0 0 var(--d1,8px);border-bottom:1px solid var(--tinta);animation:entrar .3s ease-out both}
+/* imagens a preto e branco; a cor volta quando a lição fica feita */
+.jogo .ler .fig img{filter:grayscale(1);transition:filter 2s ease}.jogo.feita .ler .fig img,.jogo .ler .fig.cor img{filter:none}
+.jogo .fim .fim-img{display:block;max-width:100%;max-height:min(26vh,220px);max-height:min(26dvh,220px);width:auto;margin:4px auto var(--d1,8px);filter:grayscale(1);animation:corVolta 2.4s ease-out .5s forwards}.jogo .fim .fim-img.cor{filter:none;animation:none}@keyframes corVolta{to{filter:grayscale(0)}}
+.jogo .emblema{display:inline-block;width:64px;height:64px;border-radius:50%;border:2px solid var(--tinta);object-fit:cover;margin:6px;animation:carimbo .6s cubic-bezier(.2,1.4,.4,1) .9s both}@keyframes carimbo{0%{transform:scale(1.6);opacity:0}60%{transform:scale(.96);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes pulsa{0%,100%{opacity:1}50%{opacity:.4}}
+.jogo .ler .gt{cursor:pointer;border-bottom:2px dotted var(--tinta)}.jogo .ler .gl-pop{display:inline-block;font:400 .82rem/1.3 Arial;background:var(--papel);color:var(--tinta);border:1px solid var(--tinta);padding:3px 7px;margin:0 4px;vertical-align:baseline;animation:entrar .2s ease-out}
+.jogo .simbolo{display:inline-block;vertical-align:middle;overflow:visible}.jogo .simbolo *{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* linha de vida, miniaturas do essencial e «Em paralelo» */
+.jogo .ler .vida{margin:var(--d1,8px) 0 0;font-family:Arial}.jogo .ler .vida .vida-t{font:700 1.05rem/1.2 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}.jogo .ler .vida ol{list-style:none;margin:0;padding:0 0 0 22px;position:relative}.jogo .ler .vida ol::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;border-left:2px solid var(--tinta)}.jogo .ler .vida li{position:relative;display:grid;grid-template-columns:30px 1fr;gap:2px 10px;align-items:center;padding:6px 0;cursor:pointer;animation:entrar .3s ease-out both;animation-delay:calc(var(--i,0)*140ms)}.jogo .ler .vida li::before{content:"";position:absolute;left:-20px;top:50%;width:8px;height:8px;border-radius:50%;background:var(--tinta);transform:translateY(-50%)}.jogo .ler .vida .ic,.jogo .ler .vida .ic .simbolo{width:30px;height:30px;display:block}.jogo .ler .vida b{font:700 1.05rem/1 Arial}.jogo .ler .vida .tx{grid-column:2;font-size:.95rem;line-height:1.4;display:none}.jogo .ler .vida li.aberta .tx{display:block;animation:entrar .25s ease-out}.jogo .ler .vida .vida-dica{font:400 .8rem Arial;color:var(--suave);margin:var(--d1,8px) 0 0}
+.jogo .ler ol.ess-mini{list-style:none;padding:0;margin:0}.jogo .ler ol.ess-mini li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;margin:0 0 var(--d2,20px)}.jogo .ler .ess-mini .mini,.jogo .ler .ess-mini .mini .simbolo{width:36px;height:36px;display:block;color:var(--tinta)}.jogo .ler .ess-mini .mini .simbolo *{stroke-dasharray:200;stroke-dashoffset:200;animation:tracar 1.4s ease-out forwards}.jogo .ler ol.ess-mini li:nth-child(2) .simbolo *{animation-delay:.35s}.jogo .ler ol.ess-mini li:nth-child(3) .simbolo *{animation-delay:.7s}
+.jogo .ler .paralelo{display:grid;grid-template-columns:1fr 14px 1fr;gap:8px;font-family:Arial}.jogo .ler .paralelo .lado h3{font:700 1rem/1.2 var(--serif,Georgia,serif);margin:6px 0;text-transform:none;letter-spacing:0}.jogo .ler .paralelo .ic,.jogo .ler .paralelo .ic .simbolo{display:block;width:40px;height:40px}.jogo .ler .paralelo ul{margin:0;padding:0;list-style:none}.jogo .ler .paralelo li{font-size:.92rem;line-height:1.35;padding:6px 0;border-top:1px solid var(--fundo)}.jogo .ler .paralelo .onda{width:14px;height:100%;min-height:180px}.jogo .ler .paralelo .onda path{fill:none;stroke:var(--tinta);stroke-width:1.4;stroke-dasharray:700;stroke-dashoffset:700;animation:tracar 1.8s ease-out forwards}.jogo .ler .liga{font-family:var(--serif,Georgia,serif);font-style:italic;margin:var(--d2,20px) 0 0;border-top:1px solid var(--tinta);padding-top:var(--d1,8px)}
+.jogo .ler .frase-toda{font-size:1.15rem;margin:0 0 var(--d2,20px)}.jogo .ler .arvore .no{border:1px solid var(--tinta);padding:8px 10px;margin:0 0 var(--d1,8px) calc(var(--nivel,0)*22px);position:relative;font-family:Arial;font-size:.98rem;background:var(--papel)}.jogo .ler .arvore .no.filho::before{content:"";position:absolute;left:-14px;top:-12px;width:12px;height:calc(50% + 12px);border-left:1px solid var(--tinta);border-bottom:1px solid var(--tinta)}.jogo .ler .arvore .papel{display:block;font:700 .66rem Arial;letter-spacing:.1em;text-transform:uppercase;margin:0 0 3px;color:var(--suave)}
+.jogo .cartao.escuro .azulejo.canto{position:absolute;right:10px;bottom:10px;width:64px;height:64px;color:var(--papel);opacity:.55;z-index:-1}.jogo .azulejo *{fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+/* 23/10/2026 (plano de melhoria, fase 0): o cartão escuro com a marca do canto (azulejo de 64 px) reserva-lhe o espaço por baixo
+   do texto, para a marca não tapar o fim do «Para levar» */
+.jogo .cartao.escuro:has(.azulejo.canto){padding-bottom:84px}
+/* 23/10/2026 (plano de melhoria, fase 0): as ligações dos cartões (créditos, fontes, «Ver no YouTube», legendas) na cor do texto,
+   com sublinhado fino, e não no azul do navegador; as ligações com classe (botões como .yt-abrir) ficam como estão, e no cartão
+   escuro a ligação fica clara como o texto */
+.jogo .ler a:not([class]){color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.jogo .ler a:not([class]):hover{text-decoration-thickness:2px}
+/* 23/10/2026 (plano de melhoria, fase 0, verificação): no ecrã final, as ligações sem classe do «depois» das lições que ligam
+   este CSS («Voltar ao percurso», «Guião para a aula», «Notas para a aula») também na cor do texto; não se mexe
+   no sublinhado de cada uma (as de .prox continuam sem sublinhado) */
+.jogo .depois a:not([class]){color:inherit;text-decoration-thickness:1px;text-underline-offset:.18em}
+/* o símbolo da unidade, pequeno, no canto superior direito do cartão de abertura, fora da imagem e do texto */
+.jogo .simbolo.tracar{position:absolute;right:var(--d2,20px);top:calc(var(--d2,20px) - 6px);display:block;width:40px;height:40px;margin:0;color:var(--tinta)}
+.jogo .simbolo.tracar *{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300;animation:tracar 2s ease-out forwards}@keyframes tracar{to{stroke-dashoffset:0}}
+/* a pergunta é o maior texto do cartão (ponto focal), colada às opções (proximidade) */
+.jogo .q{font:400 1.32rem/1.35 var(--serif,Georgia,serif);margin:0 0 var(--d2,20px);animation:entrar .25s ease-out both}
+.jogo .dica{font:400 .85rem/1.35 Arial;color:var(--suave);margin:calc(-1 * var(--d1,8px)) 0 var(--d2,20px)}
+.jogo .pista{font:1rem/1.45 var(--serif,Georgia,serif);border-left:3px solid var(--tinta);padding:4px 10px;margin:calc(-1 * var(--d1,8px)) 0 var(--d2,20px);animation:entrar .25s ease-out both}
+.jogo .ops{display:flex;flex-direction:column;gap:var(--d1,8px)}
+.jogo button.op{position:relative;font:600 1rem/1.3 Arial,sans-serif;text-align:left;min-height:52px;display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--tinta);border-radius:0;background:var(--papel);color:var(--tinta);margin:0;cursor:pointer;width:100%;animation:entrar .22s ease-out both}
+.jogo .ops .op:nth-child(1){animation-delay:.12s}.jogo .ops .op:nth-child(2){animation-delay:.18s}.jogo .ops .op:nth-child(3){animation-delay:.24s}.jogo .ops .op:nth-child(4){animation-delay:.3s}.jogo .ops .op:nth-child(n+5){animation-delay:.36s}
+.jogo button.op::before{content:"";display:inline-block;width:1rem;flex:none;font-weight:900;text-align:center}
+.jogo button.op.escolhida,.jogo button.op[aria-pressed="true"]{border-width:3px;padding:10px 12px}.jogo button.op.escolhida::before{content:"▸"}
+.jogo button.op.bom{border-color:var(--certo,#1b7f3b)}.jogo button.op.bom::before{content:"✓";color:var(--certo,#1b7f3b)}
+.jogo button.op.mau{border-color:var(--errado,#c8232c);text-decoration:line-through;text-decoration-color:var(--errado,#c8232c);text-decoration-thickness:2px}.jogo button.op.mau::before{content:"✗";color:var(--errado,#c8232c)}
+.jogo button.op:disabled{cursor:default}
+.jogo .tracado{position:absolute;left:-4px;top:-4px;width:calc(100% + 8px);height:calc(100% + 8px);pointer-events:none;overflow:visible;z-index:1}.jogo .tracado rect{fill:none;stroke:var(--certo,#1b7f3b);stroke-width:3;vector-effect:non-scaling-stroke;stroke-dasharray:100;stroke-dashoffset:100;animation:tracar .55s ease-out .05s forwards}
+.jogo .inline .nb{display:inline-block;max-width:100%;white-space:nowrap}.jogo .inline select{max-width:calc(100vw - 80px);text-overflow:ellipsis}.jogo .inline{line-height:2.3;font:1.15rem/2.3 var(--serif,Georgia,serif);animation:entrar .3s ease-out .15s both}.jogo .nb{white-space:nowrap}.jogo select{font:700 .95rem Arial;padding:6px 8px;border:1px solid var(--tinta);border-radius:0;background:var(--papel);color:var(--tinta);display:inline-block;width:auto;max-width:100%;margin:2px 1px;min-height:44px;vertical-align:baseline}.jogo select.ok{border:3px solid var(--certo,#1b7f3b)}.jogo select.mau{border:3px solid var(--errado,#c8232c);text-decoration:line-through;text-decoration-color:var(--errado,#c8232c)}
+/* tocar nas palavras: a escolhida engrossa; a certa traça-se a verde; a errada fica riscada */
+.jogo .palavras{display:flex;flex-wrap:wrap;gap:6px}.jogo .pal{position:relative;font:700 1rem Arial;padding:7px 10px;min-height:44px;border:1px solid var(--tinta);background:var(--papel);color:var(--tinta);margin:0;cursor:pointer;animation:entrar .22s ease-out both;animation-delay:calc(.15s + var(--k,0)*35ms)}.jogo .pal[aria-pressed=true]{border-width:3px;padding:5px 8px}.jogo .pal.bom{border-color:var(--certo,#1b7f3b)}.jogo .pal.bom::before{content:"✓ ";color:var(--certo,#1b7f3b)}.jogo .pal.mau{border-color:var(--errado,#c8232c);text-decoration:line-through;text-decoration-color:var(--errado,#c8232c);text-decoration-thickness:2px}.jogo .pal.falta{outline:2px dashed var(--certo,#1b7f3b);outline-offset:2px}
+/* ligar pares: uma linha entre os dois e a mesma forma nas duas pontas; cor só ao conferir */
+.jogo .pares{display:grid;grid-template-columns:1fr 1fr;column-gap:34px;position:relative}.jogo .pares .col{display:flex;flex-direction:column;gap:var(--d1,8px);position:relative;z-index:1}.jogo .pares .op{padding-left:10px;padding-right:10px;gap:8px}.jogo .pares .op::before{display:none}.jogo .pares .esq .op{justify-content:space-between}.jogo .pares .op .tx{flex:1}
+.jogo .marca-par{width:16px;height:16px;flex:none;display:inline-flex}.jogo .marca-par svg{width:16px;height:16px;overflow:visible}.jogo .marca-par svg *{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.jogo .pares .op.ligado{border-width:2px;padding:11px 9px}
+.jogo .pares .fios{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}.jogo .pares .fios line{stroke:var(--tinta);stroke-width:1.6;stroke-linecap:round}.jogo .pares .fios line.ok{stroke:var(--certo,#1b7f3b);stroke-width:2.6}.jogo .pares .fios line.mau{stroke:var(--errado,#c8232c);stroke-dasharray:5 4}
+/* classificar: as classes são regiões; o cartão muda-se para dentro da coluna */
+.jogo .classes{display:grid;grid-template-columns:repeat(var(--n,2),minmax(0,1fr));gap:var(--d1,8px);margin:0 0 var(--d2,20px)}
+@media (max-width:560px){.jogo .classes{grid-template-columns:1fr}.jogo .regiao{min-height:64px}}
+.jogo .regiao{border:1px solid var(--tinta);display:flex;flex-direction:column;min-height:96px;background:var(--papel)}.jogo .regiao .cab{border:0;border-bottom:1px solid var(--tinta);min-height:44px;font:700 .78rem/1.2 Arial;letter-spacing:.08em;text-transform:uppercase;justify-content:center;text-align:center;padding:8px;animation:none}.jogo .regiao .cab::before{display:none}.jogo .regiao.alvo .cab{background:var(--tinta);color:var(--papel)}.jogo .regiao .dentro{display:flex;flex-direction:column;gap:6px;padding:6px;flex:1;cursor:pointer}.jogo .regiao .dentro .op{min-height:44px;font-size:.92rem;padding:8px 10px;animation:none}
+.jogo .soltos-t{font:700 .7rem Arial;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d1,8px)}
+.jogo .regiao .op,.jogo .classes~.soltos .op{flex-wrap:wrap}.jogo .regiao .op .tx,.jogo .classes~.soltos .op .tx{flex:1 1 60%}.jogo .classes~.soltos .op .lig,.jogo .regiao .op .lig{flex:1 0 100%;font:700 .7rem/1.3 Arial;letter-spacing:.06em;text-transform:uppercase;color:var(--errado,#c8232c);text-decoration:none;padding-left:1.6rem}.jogo .regiao .op .lig::before{content:"→ "}.jogo .op .lig:empty{display:none}
+/* o que está errado num ligar, classificar ou ordenar é o lugar, não o texto: aí não se risca */
+.jogo .classes .op.mau,.jogo .pares .op.mau,.jogo .ordem .op.mau,.jogo .soltos .op.mau{text-decoration:none}
+/* ordenar: uma linha vertical com nós numerados (continuidade); certa no fim, a linha passa a mostarda */
+.jogo .ordem .linha-ordem{list-style:none;margin:0 0 var(--d2,20px);padding:0 0 0 36px;position:relative}.jogo .ordem .linha-ordem:empty{display:none}.jogo .ordem .linha-ordem::before{content:"";position:absolute;left:13px;top:10px;bottom:10px;border-left:2px solid var(--tinta)}.jogo .ordem .linha-ordem li{position:relative;margin:0 0 var(--d1,8px)}.jogo .ordem .linha-ordem li::before{content:attr(data-n);position:absolute;left:-36px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--tinta);color:var(--papel);font:700 .82rem/28px Arial;text-align:center;z-index:1}.jogo .ordem .linha-ordem.certa::before{border-color:var(--mostarda,#d9a520)}.jogo .ordem .linha-ordem.certa li::before{background:var(--mostarda,#d9a520);color:#000}
+.jogo .ordem .op .certo-n{margin-left:auto;font:700 .75rem Arial;color:var(--certo,#1b7f3b);text-decoration:none}
+.jogo .ordem.frase .linha-ordem{display:flex;flex-wrap:wrap;gap:6px;padding:0 0 var(--d1,8px);border-bottom:2px solid var(--tinta);min-height:52px}.jogo .ordem.frase .linha-ordem:empty{display:flex}.jogo .ordem.frase .linha-ordem::before,.jogo .ordem.frase .linha-ordem li::before{display:none}.jogo .ordem.frase .linha-ordem li{margin:0}.jogo .ordem.frase .op{width:auto;min-height:44px;padding:6px 12px}.jogo .ordem.frase .op::before{display:none}.jogo .ordem.frase .soltos{flex-direction:row;flex-wrap:wrap}.jogo .ordem.frase .linha-ordem.certa{border-bottom-color:var(--mostarda,#d9a520)}
+/* a correção vive na faixa da casca; esta cópia só aparece no modo rever */
+.jogo .f-rev{display:none}.jogo.rev .f-rev{display:block;margin:var(--d2,20px) 0 0;padding:8px 12px;border-left:4px solid var(--tinta);font:1rem/1.5 var(--serif,Georgia,serif)}.jogo.rev .f-rev.ok{border-left-color:var(--certo,#1b7f3b)}.jogo.rev .f-rev.mau{border-left-color:var(--errado,#c8232c)}
+.jogo.rev .cartao{animation:none}
+.fe{display:block;margin:0 0 .6em}.liga{display:flex;flex-wrap:wrap;gap:0 18px;margin-top:.4em;font:600 .92rem/1.3 var(--sans,system-ui,sans-serif)}.liga a{color:inherit;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
+/* o fim: resultado grande, louro a traço que se fecha a mostarda quando a lição fica conquistada */
+.jogo .fim{text-align:center;justify-content:center;align-items:center}.jogo .fim .rot{justify-content:center}.jogo .fim .grande{font:900 2.4rem "Arial Black",Arial;margin:var(--d1,8px) 0;position:relative;display:inline-block;padding:0 .9em}.jogo .fim .xp{font:700 .95rem Arial;color:var(--suave);margin:0 0 var(--d1,8px)}.jogo .fim .frase-fim{font:1.05rem/1.4 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}
+.jogo .fim .louro{position:absolute;left:50%;top:50%;width:5.6em;height:5.6em;transform:translate(-50%,-52%);color:var(--tinta);z-index:-1;pointer-events:none;transition:color 1s ease 1.6s}.jogo .fim .louro.ganho{color:var(--mostarda,#d9a520)}.jogo .fim .louro .simbolo{width:100%;height:100%;display:block}.jogo .fim .louro .simbolo *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;animation:tracar 1.4s ease-out .3s forwards}
+.jogo .fim .acoes-fim{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 20px;margin:var(--d2,20px) 0 0}.jogo .fim .acoes-fim button{font:400 1rem Arial;min-height:44px;border:0;background:none;color:var(--tinta);text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:0 4px;margin:0}.jogo .fim .acoes-fim:empty{display:none}
+.jogo .fim .depois{width:100%;text-align:left;margin:var(--d3,40px) 0 0}
+@media (max-width:560px){.jogo .ler table.empilha,.jogo .ler table.empilha tbody,.jogo .ler table.empilha tr,.jogo .ler table.empilha td{display:block;width:auto!important}.jogo .ler table.empilha tr:first-child{display:none}.jogo .ler table.empilha tr{border-top:2px solid var(--tinta,#000);padding:8px 0}.jogo .ler table.empilha td{border:0!important;padding:2px 0!important}.jogo .ler table.empilha td[data-th]:not(:first-child)::before{content:attr(data-th) ": ";font:700 .72rem Arial;letter-spacing:.06em;text-transform:uppercase;color:var(--suave,#444)}}
+.jogo .mapa-q svg{display:block;width:100%;height:auto;max-height:min(46vh,360px);max-height:min(46dvh,360px);cursor:pointer;touch-action:manipulation}
+.jogo .mapa-q .terra{fill:none;stroke:var(--c-cinza,#d8d6cf);stroke-width:4.4;stroke-linecap:round}.jogo .mapa-q .op-m circle{fill:var(--tinta,#000);transition:fill .2s}.jogo .mapa-q .op-m .anel{fill:none;stroke:var(--tinta,#000);stroke-width:2;stroke-dasharray:3 3}
+.jogo .mapa-q .op-m.sel circle{fill:var(--vermelho,#c8232c)}.jogo .mapa-q .op-m.sel .anel{stroke:var(--vermelho,#c8232c);stroke-dasharray:none;fill:none}
+.jogo .mapa-q .op-m.bom circle{fill:var(--certo,#1b7f3b)}.jogo .mapa-q .op-m.bom .anel{stroke:var(--certo,#1b7f3b);fill:none}.jogo .mapa-q .op-m.mau circle{fill:var(--errado,#c8232c);opacity:.5}
+.jogo .mapa-q .op-m:focus-visible{outline:none}.jogo .mapa-q .op-m:focus-visible .anel{stroke:var(--vermelho,#c8232c);stroke-width:4;stroke-dasharray:none}.jogo .mapa-q .op-m:focus-visible circle:not(.anel){fill:var(--vermelho,#c8232c)}
+.jogo .mapa-esc{font:700 1rem Arial;text-align:center;margin:var(--d1,8px) 0 0;min-height:1.4em}
+/* o texto que se acende: as linhas que leste de perto, marcadas a mostarda (o conquistado), e o texto inteiro no fim */
+.jogo .ler .acesa,.jogo .leste .acesa{background:linear-gradient(transparent 55%,rgba(217,165,32,.45) 55%)}
+.jogo .leste{width:100%;text-align:left;margin:var(--d1,8px) 0 0}.jogo .leste>button{font:700 .95rem Arial;border:0;background:none;color:var(--tinta);padding:8px 0;min-height:44px;cursor:pointer}.jogo .leste>button::after{content:" ↓"}.jogo .leste .ler{font-family:var(--serif,Georgia,serif);font-size:1rem;line-height:1.55;padding:8px 0 0}.jogo .leste .ler .v{white-space:pre-wrap;margin:0 0 10px}.jogo .leste .ler .v .n{display:inline-block;width:2.1em;color:var(--suave);font:400 .72em Arial;text-align:right;padding-right:.6em}.jogo .leste .ler p{margin:0 0 8px}.jogo .leste .ler .gl,.jogo .leste .ler .fonte{display:none}
+.jogo .aprendeste{text-align:left;margin:var(--d1,8px) 0 0;padding:0;list-style:none;width:100%}.jogo .aprendeste li{border-top:1px solid var(--tinta);padding:8px 0;font:1rem/1.45 var(--serif,Georgia,serif)}.jogo .aprendeste li b{display:block;margin:0 0 2px;font-family:Arial;font-size:.92rem}
+@keyframes entrar{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (max-width:480px){.jogo .cartao{padding:16px 14px}.jogo .q{font-size:1.18rem}.jogo .tit.cartaz{font-size:1.9rem}.jogo button.op{min-height:48px;padding:10px 12px;font-size:.96rem}.jogo button.op.escolhida,.jogo button.op[aria-pressed="true"]{padding:8px 10px}.jogo .pares{column-gap:26px}.jogo .ler{font-size:1.05rem}.jogo .ler .abre{font-size:1.15rem}}
+@media (min-width:900px){.jogo .q{font-size:1.45rem}.jogo .ler{font-size:1.15rem}}
+@media (prefers-reduced-motion:reduce){.jogo .cartao,.jogo .q,.jogo button.op,.jogo .inline,.jogo .pal,.jogo .cita,.jogo .pista,.jogo .ler .fig img,.jogo .ler .fig .moldura img,.jogo .emblema,.jogo .fim .fim-img,.jogo .levar .cursor,.jogo .pedra,.jogo .pistas li,.jogo .ler .vida li{animation:none}.jogo .levar .ch{animation:none;opacity:1}.jogo .fim .fim-img{filter:none}.jogo .simbolo.tracar *,.jogo .tracado rect,.jogo .fim .louro .simbolo *,.jogo .ler .ess-mini .mini .simbolo *,.jogo .ler .paralelo .onda path{animation:none;stroke-dashoffset:0}.jogo .fim .louro{transition:none}}
+@media (prefers-color-scheme:dark){:root{--papel2:#1a1a17}}
+
+.sala{background:var(--papel);padding:14px 16px;margin:10px 0 0}.sala .sala-tit{font:400 1.5rem/1 var(--cartaz,"Arial Black",Arial);margin:0 0 8px}
+.sala label{display:block;font:700 .72rem Arial;letter-spacing:.1em;text-transform:uppercase;color:var(--suave);margin:8px 0 2px}
+.sala input.maq{display:block;width:100%;max-width:18rem;font:1.15rem/1.5 "Special Elite","Courier New",monospace;padding:6px 8px;border:0;border-bottom:2px solid var(--tinta);background:transparent;color:var(--tinta);letter-spacing:.08em}
+.sala input[data-cod]{text-transform:uppercase;letter-spacing:.3em;max-width:9rem}
+.sala .sala-nota{font-size:.82rem;color:var(--suave);margin:8px 0 0}.sala .acoes{display:flex;gap:16px;margin:8px 0 0}
+.sala .sala-estado{font:1rem "Special Elite","Courier New",monospace;margin:4px 0 0}
+.faixa-pausa{position:sticky;top:0;z-index:7;background:var(--tinta);color:var(--papel);padding:8px 14px;display:flex;align-items:center;gap:12px;font:700 .85rem Arial;letter-spacing:.04em}.faixa-pausa b{font:400 1.6rem/1 var(--cartaz,"Arial Black",Arial);color:var(--mostarda,#d9a520)}
+.sobre{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;display:flex;align-items:flex-end;justify-content:center;padding:12px;animation:surge .25s ease-out}.sobre .sobre-c{background:var(--fundo,#f3f2ee);color:var(--tinta);width:100%;max-width:46rem;max-height:92vh;overflow:auto;padding:12px 14px 10px;animation:sobe .35s cubic-bezier(.2,.7,.2,1)}
+.sobre .sobre-t{display:flex;justify-content:space-between;align-items:baseline;font:400 1.4rem/1 var(--cartaz,"Arial Black",Arial);margin:0 0 8px}.sobre .sobre-t b{color:var(--vermelho,#c8232c);font-weight:400}
+.sobre .ops{display:flex;flex-direction:column;gap:8px}.sobre .ops button{font:600 1rem/1.3 Arial;text-align:left;min-height:48px;padding:10px 12px;border:0;background:var(--papel);color:var(--tinta);cursor:pointer}.sobre .ops button[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+.sobre .enviado{font:700 .9rem Arial;color:var(--mostarda,#d9a520);margin:8px 0 0}
+@keyframes surge{from{opacity:0}to{opacity:1}}@keyframes sobe{from{transform:translateY(40px);opacity:.3}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.sobre,.sobre .sobre-c{animation:none}}
+.simbolo[data-ico]{transform-origin:50% 60%}.simbolo[data-gesto]{cursor:pointer}.simbolo.gesto-pisca{animation:gPisca 1s ease-in-out 1}.simbolo.gesto-nada{animation:gNada 1s ease-in-out 1}.simbolo.gesto-balanca{animation:gBalanca 1s ease-in-out 1}.simbolo.gesto-ri{animation:gRi .8s ease-in-out 1}.simbolo.gesto-abana{animation:gAbana .7s ease-in-out 1}.simbolo.gesto-voa{animation:gVoa 1s ease-in-out 1}.simbolo.gesto-vibra{animation:gVibra .6s linear 1}.simbolo.gesto-gira{animation:gGira 1s ease-in-out 1}.simbolo.gesto-canta{animation:gCanta .9s ease-in-out 1}.simbolo.gesto-mergulha{animation:gMergulha 1s ease-in-out 1}.simbolo.gesto-brilha{animation:gBrilha 1s ease-in-out 1}.simbolo.gesto-sino{animation:gSino 1s ease-in-out 1}.simbolo.gesto-tecla{animation:gTecla .6s steps(3) 1}.simbolo.gesto-escreve{animation:gEscreve 1s ease-in-out 1}
+@keyframes gPisca{0%,100%{transform:scaleY(1)}45%{transform:scaleY(1)}50%{transform:scaleY(.12)}56%{transform:scaleY(1)}}@keyframes gNada{0%,100%{transform:translateX(0) skewX(0)}30%{transform:translateX(6px) skewX(-6deg)}70%{transform:translateX(-6px) skewX(6deg)}}@keyframes gBalanca{0%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}70%{transform:rotate(7deg)}}@keyframes gRi{0%,100%{transform:scale(1)}50%{transform:scale(1.12) rotate(-4deg)}}@keyframes gAbana{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}75%{transform:rotate(-5deg)}}@keyframes gVoa{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-10px) scale(1.08)}}@keyframes gVibra{0%,100%{transform:translateX(0)}20%{transform:translateX(-2px)}40%{transform:translateX(2px)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}@keyframes gGira{to{transform:rotate(360deg)}}@keyframes gCanta{0%,100%{transform:rotate(0)}40%{transform:rotate(-10deg) translateY(-3px)}}@keyframes gMergulha{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(8px) rotate(12deg)}}@keyframes gBrilha{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.25);opacity:.6}}@keyframes gSino{0%,100%{transform:rotate(0)}20%{transform:rotate(-6deg)}40%{transform:rotate(6deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}}@keyframes gTecla{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}@keyframes gEscreve{0%,100%{transform:rotate(0) translate(0,0)}50%{transform:rotate(-8deg) translate(-4px,4px)}}
+@media (prefers-reduced-motion:reduce){.simbolo[data-ico]{animation:none!important}}
+:root{--vermelho:#c8232c;--mostarda:#d9a520;--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--cartaz:"Bebas Neue","Arial Narrow","Arial Black",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--vermelho:#e4555c;--mostarda:#e0b23a;--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f}}
+/* 11/10/2026 (revisão profunda): cores retro em lugares-chave, o preto e branco domina. Mostarda para o que se conquista (selos,
+   estrela do desafio, lição e atividade feitas, «Onde estás»); vermelho só para erro e para a etapa atual. */
+h1{font-family:var(--cartaz);font-weight:400;letter-spacing:.02em;font-size:2.4rem;position:relative;padding-bottom:.35rem}
+h1::after{content:"";display:block;width:56px;height:5px;background:var(--tinta);margin-top:.3rem}
+h2,.unidade h2{font-family:var(--cartaz);font-weight:400;letter-spacing:.06em;font-size:1.25rem}
+h3{font-family:var(--cartaz);font-weight:400;letter-spacing:.05em;font-size:1.15rem}
+button.sec{background:var(--papel);color:var(--tinta);border-color:var(--tinta)}
+.nivel .n1{font-family:var(--cartaz);font-weight:400;font-size:1.35rem;letter-spacing:.04em}
+.nivel .n1 b{font-family:var(--cartaz);font-weight:400}
+.nivel .barra b{transition:width .6s ease}
+.emblemas img.ganho{animation:ganho .6s ease-out}
+ol.passos .n{font-family:var(--cartaz);font-weight:400;font-size:1.6rem}
+.atividades .ativ .rot{font-family:var(--cartaz);font-weight:400;letter-spacing:.06em;font-size:.95rem}
+.atividades .ativ.feita .rot{background:var(--mostarda,#d9a520);color:#000}
+@keyframes entrar{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes ganho{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.jogo .cartao,.emblemas img.ganho{animation:none}.nivel .barra b{transition:none}}
+/* 10/10/2026: os princípios do Mapa do módulo no percurso e nas lições: a palavra do módulo em marca de água, o número grande ao
+   lado do título de cartaz, a faixa de números, a serifa itálica nas perguntas das unidades */
+:root{--serif:Georgia,"Times New Roman",serif;--agua:#ebebeb}
+@media (prefers-color-scheme:dark){:root{--agua:#222220}}
+.topo{position:relative;overflow:hidden}.topo>*{position:relative;z-index:1}
+.agua{position:absolute;right:-6px;top:0;font:400 6.2rem/.9 var(--cartaz);color:var(--agua);text-transform:uppercase;letter-spacing:.04em;z-index:0;pointer-events:none}
+.cabm{display:flex;align-items:flex-end;gap:10px;margin:.3rem 0 .4rem;position:relative}.cabm .n{font:400 5rem/.78 var(--cartaz);flex:none}
+.cabm>.n,.cabm>h1{position:relative;z-index:1}.cabm{overflow:hidden}.cabm .agua{top:auto;bottom:-4px;right:0;font-size:4.4rem;max-width:100%;white-space:nowrap}.topo>.cabm{z-index:0} /* 15/10/2026 (design geral): a palavra de água mais pequena e recortada pela largura do cabeçalho; nunca sai do ecrã */
+.agua{animation:deriva 50s ease-in-out infinite alternate}@keyframes deriva{from{transform:translateX(0)}to{transform:translateX(-18px)}}
+@media (prefers-reduced-motion:reduce){.agua{animation:none}}
+.cabm h1{font-size:2.3rem;line-height:.95;margin:0;padding:0;text-transform:none;letter-spacing:.02em}.cabm h1::after{display:none}
+.serif{font-family:var(--serif);font-style:italic}
+.numeros{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);margin:10px 0 0}
+.numeros div{padding:8px 8px 8px 0}.numeros b{display:block;font:400 2rem/.9 var(--cartaz)}.numeros small{display:block;font-size:.64rem;line-height:1.2;letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin-top:3px}
+.unidade h2 .un{font-family:var(--cartaz);font-weight:400;font-size:2.1rem;line-height:.8;margin-right:6px;vertical-align:-.1em}
+.unidade .perg{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.3}
+.fim p i{font-family:var(--serif);font-size:1.1rem}
+ol.passos .n{font-size:2rem}
+
+/* 11/10/2026 (guia de Gestalt do docente): as medidas como variáveis partilhadas. Desde a casca «ecrã de aplicação» (casca.mjs,
+   sete rondas de widget) o resto vive em JOGO_CSS: um só cartão branco, sem fólio atrás do texto, Bebas só no título de abertura */
+:root{--prox-titulo:7px;--prox-recurso:24px;--prox-galeria:6px;--prox-texto:10px;--fundo-opaco:.1;--area:20px;--maq:"Special Elite","Courier New",monospace}
+
+.jogo blockquote{border-left:3px solid currentColor;padding-left:1rem;margin-left:0}.jogo .ler li{margin-bottom:.65rem}
+
+/* Comparisons accept two text panels, with or without a decorative separator.
+   The last text panel must never occupy the narrow separator track. */
+.jogo .ler .paralelo{grid-template-columns:minmax(0,1fr) 14px minmax(0,1fr);gap:16px}
+.jogo .ler .paralelo>.lado{min-width:0;overflow-wrap:anywhere}
+.jogo .ler .paralelo>.lado:first-child{grid-column:1}
+.jogo .ler .paralelo>.lado:last-child{grid-column:3}
+@media(max-width:600px){
+ .jogo .ler .paralelo{grid-template-columns:minmax(0,1fr);gap:20px}
+ .jogo .ler .paralelo>.lado:first-child,.jogo .ler .paralelo>.lado:last-child{grid-column:1}
+ .jogo .ler .paralelo>.lado+.lado,.jogo .ler .paralelo>.onda+.lado{border-top:1px solid var(--tinta);padding-top:16px}
+ .jogo .ler .paralelo>.onda{display:none}
+}
