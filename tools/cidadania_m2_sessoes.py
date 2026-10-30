@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import quote
 import cidadania_sessoes_molde as molde
 from cidadania_m2_molde import (PASSOS, LINHA, MARCA, CHAVE, TEMPOS, TEMPOS_MOSTRA, REVISAO_COMUM, CASAS, INSTRUMENTOS,
-                                DECISOES, IMAGENS, LISBOA_1907, SESSOES, OBRAS)
+                                DECISOES, IMAGENS, LISBOA_1907, SESSOES, OBRAS, CASOS_RECICLADOS)
 
 FOLHAS = ['cidadania-m1-sessoes.css?v=20261027-molde-2', 'cidadania-m2-sessoes.css?v=20261028-m2-2']
 SCRIPTS = ['cidadania-sessoes-molde.js?v=20261028-m2-1']
@@ -139,10 +139,33 @@ def material(path, n, s, j, m, total):
     return out + '</section>'
 
 
+def caso_reciclado(n):
+    """30/10/2026: reciclagem dos gigantes (decisão do docente).
+    Escolhe no caderno antes de abrir as razões; controlos nativos, também sem JavaScript.
+    """
+    import json
+    c = CASOS_RECICLADOS[n]
+    out = '<section class="c10-mat" id="caso-reciclado"><h3>' + e(c['titulo']) + '</h3>'
+    out += para('c10-instruction', 'Caso inventado. Lê e guarda uma decisão provisória antes de consultar o relato.')
+    out += para('c10-document', c['caso'])
+    out += '<details class="c10-more"><summary>Ler o relato em português</summary><div class="c10-reading">' + c['relato'] + '</div></details>'
+    out += '<p class="c10-small">' + e(c['fonte']) + ' <a href="' + e(c['url'], quote=True) + '">Consultar o original</a>.</p>'
+    for q in c['perguntas']:
+        out += '<section class="c10-mat"><h4>' + e(q['p']) + '</h4><p>Escolhe e justifica no caderno. Depois, abre a opção para comparar razões.</p>'
+        out += '<script type="application/json" data-opcoes-reciclagem>' + json.dumps(q, ensure_ascii=False).replace('</', '<\\/') + '</script>'
+        for i, opcao in enumerate(q['o']):
+            certo = i == q['c']
+            out += '<details class="c10-feedback"><summary>' + e(opcao) + '</summary><div><p><b>' + ('Correto. ' if certo else 'Revê. ') + '</b>' + e(q['f'] if certo else q['fe'][i]) + '</p></div></details>'
+        out += '</section>'
+    return out + '<h4>Outra leitura</h4>' + para('c10-reading', c['outra']) + '<h4>Para o Contra-feed</h4>' + para('c10-reading', c['transferencia']) + '</section>'
+
+
 def ve(path, n, s):
     out = ''.join(material(path, n, s, j, m, len(s['ve'])) for j, m in enumerate(s['ve'], 1))
     out += para('c10-reading', s.get('leitura', ''))
-    if n in OBRAS:
+    if n in CASOS_RECICLADOS:
+        out += caso_reciclado(n)
+    elif n in OBRAS:
         out += molde.obra(OBRAS[n], lambda u, t: liga(path, u, t))
     lista = [('Etapa ' + f'{n:02}' + ': ' + s['etapa'], f'cidadania/m2/aulas/{n:02}/')]
     vistos = {lista[0][1]}
@@ -196,7 +219,7 @@ PASSO = [recupera, ve, decide, faz, leva]
 def sessao(n, s):
     ident = f'{n:02}'
     path = f'cidadania/m2/sessoes/{ident}/index.html'
-    body = molde.abertura(ident, s['tema'], s['titulo'], s['pergunta'], figura(path, s['imagem'], 'c10-cover-img', capa=True), separador=' / ')
+    body = molde.abertura(ident, s['tema'], s['titulo'], s['pergunta'], ('' if n in CASOS_RECICLADOS else figura(path, s['imagem'], 'c10-cover-img', capa=True)), separador=' / ')
     body += molde.barra_passos(ident, PASSOS)
     for i, lab in enumerate(PASSOS):
         body += molde.cabecalho_passo(i, lab, s.get('linhas', {}).get(lab, LINHA[lab]), s.get('marcas', {}).get(lab, MARCA.get(lab)))
@@ -249,7 +272,7 @@ def guia():
         if n in OBRAS:
             obra = OBRAS[n]['autor'] + ', ' + OBRAS[n]['titulo']
             obra += '' if obra[-1] in '?!.' else '.'  # sem pontuação dupla («Bat?.»)
-        body += '<p><b>Cartão de obra:</b> ' + (e(obra) if n in OBRAS else 'nenhum, como na sessão 10 do Módulo 1.') + '</p>'
+        body += ('<p><b>Caso em português:</b> ' + e(CASOS_RECICLADOS[n]['titulo']) + '</p>' if n in CASOS_RECICLADOS else '<p><b>Cartão de obra:</b> ' + (e(obra) if n in OBRAS else 'nenhum, como na sessão 10 do Módulo 1.') + '</p>')
         body += '<p>' + e(s['docente']) + '</p>'
         body += '<p><b>Inclusão.</b> ' + e(' '.join(s['inclusao'])) + '</p>'
         if s.get('depois'):

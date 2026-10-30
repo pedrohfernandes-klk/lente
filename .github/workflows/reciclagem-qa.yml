@@ -1,0 +1,38 @@
+name: Lente reciclagem parte 1
+on:
+  pull_request:
+    paths:
+      - 'cidadania/**'
+      - 'direitos/**'
+      - 'tools/cidadania_m2*'
+      - 'tests/*reciclagem*'
+      - 'tests/test_cidadania_m2_molde.py'
+      - '.github/workflows/reciclagem-qa.yml'
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Testes do repositório e opções
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          python tools/medir_opcoes.py --verificar
+          python tests/test_reciclagem_lente.py --medir
+      - name: Preparar navegador
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+      - name: Navegador e texto justificado
+        run: |
+          python tests/browser_reciclagem_lente.py
+          python tests/browser_texto_justificado.py
