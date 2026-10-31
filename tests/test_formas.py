@@ -29,8 +29,11 @@ class Formas(unittest.TestCase):
   for name in ('ines','frei-luis','cesario','chuva','torneol','restelo','maias','bras-cubas'):
    self.assertTrue((ROOT/'narrativas/corta'/name/'index.html').exists())
   entry=(ROOT/'narrativas/index.html').read_text('utf-8')
+  # 30/10/2026: as âncoras antigas que já não estão na entrada levam a tudo/, onde ficam no percurso equivalente.
+  tudo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
+  self.assertIn('location.replace("tudo/"',entry)
   for anchor in ('ler-como-quem-escreve','treinar','criar','corta','aulas','experimentar','vidas-e-ideias'):
-   self.assertIn('id="'+anchor+'"',entry)
+   self.assertIn('id="'+anchor+'"',entry if anchor in ('ler-como-quem-escreve','treinar','criar') else tudo)
   script=(ROOT/'assets/formas/corta.js').read_text('utf-8')
   self.assertIn('lente-formas-corta-v1',script)
   self.assertNotIn("setItem('epi-corta'",script)

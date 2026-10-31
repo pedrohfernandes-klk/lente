@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
-import json,re,unittest,subprocess,sys
+import json,re,unittest,subprocess,sys,posixpath
 R=Path(__file__).resolve().parents[1]
 D=json.loads((R/'assets/laboratorio/percursos.json').read_text('utf-8'))
 class Links(HTMLParser):
@@ -47,4 +47,25 @@ class Percursos(unittest.TestCase):
   self.assertEqual(len(ims),3)
   for im in ims:
    self.assertTrue((R/im['file']).is_file());self.assertGreater(len(im['alt']),25);self.assertIn(im['license'],['Domínio público','CC0','CC BY','CC BY-SA']);self.assertTrue(im['source'].startswith('https://commons.wikimedia.org/wiki/File:'))
+ABS='https://pedrohfernandes-klk.github.io/lente/'
+class Continuacao(unittest.TestCase):
+ def test_continuacao_segue_a_ordem_do_percurso(self):
+  # 30/10/2026: o botão «Seguinte», o texto do fim dos treinos, o menu e a nav dizem o mesmo que percursos.json (revisão do editor e técnica).
+  P={p['id']:p for p in D['pieces']};route={id:r for r in D['routes'] for id in r['pieces']}
+  for p in D['pieces']:
+   s=(R/p['url']/'index.html').read_text('utf-8');r=route[p['id']];ids=r['pieces'];i=ids.index(p['id'])
+   nxt=P[ids[i+1]] if i+1<len(ids) else None;rurl=ABS+'narrativas/percursos/'+r['id']+'/'
+   self.assertNotIn('Treino seguinte',s,p['id'])
+   if 'EPIJogo.montar(' in s and 'percurso:"' in s:
+    self.assertIn('percurso:"'+rurl+'"',s,p['id'])
+    self.assertEqual(re.findall(r',seguinte:"([^"]*)"',s),[ABS+nxt['url']] if nxt else [],p['id'])
+   fim=re.findall(r'<p class=\\"sub\\">(?:Seguinte: )?<a href=\\"([^"\\]*)\\">[^<]*</a>\. Ou volta a este noutro dia',s)
+   if p['id'].startswith('treinar/'):self.assertEqual(fim,[ABS+nxt['url'] if nxt else rurl],p['id'])
+   self.assertNotIn('Voltar ao ginásio',s,p['id'])
+   for m in re.findall(r'</ol><a href="([^"]*)">Voltar ao percurso</a>',s):self.assertEqual(m,rurl,p['id'])
+   nav=re.findall(r'<nav class="lab-fim-percurso"[^>]*>(.*?)</nav>',s)
+   if nav:
+    hrefs=[posixpath.normpath(posixpath.join(p['url'],h)) for h in re.findall(r'href="([^"]+)"',nav[0])]
+    want=['narrativas/percursos/'+r['id']]+([nxt['url'].rstrip('/')] if nxt else [])
+    self.assertEqual(hrefs,want,p['id'])
 if __name__=='__main__':unittest.main()

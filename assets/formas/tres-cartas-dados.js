@@ -1,18 +1,18 @@
 window.LenteTresCartasDados={
   "titulo": "Três cartas, dois textos",
-  "credito": "Baralho improvável, situações descritas do Lente, CC BY-SA 4.0",
+  "credito": "Baralho improvável: situações descritas pelo Lente, 2026, CC BY-SA 4.0.",
   "imagens": [
     {
       "id": "11-01",
-      "alt": "Figura escura sentada carimba um documento diante de uma fila de pessoas."
+      "alt": "Uma figura escura, sentada a uma mesa, baixa um objeto vermelho sobre um papel. À frente dela, uma fila de pessoas espera."
     },
     {
       "id": "13-02",
-      "alt": "Duas pessoas seguram uma linha amarela esticada enquanto outra transporta um barco."
+      "alt": "Duas pessoas seguram, cada uma pela sua ponta, uma linha amarela esticada. Uma terceira passa a transportar um barco."
     },
     {
       "id": "20-03",
-      "alt": "Duas pessoas retiram uma rampa amarela de uma mala diante de uma escada."
+      "alt": "Diante de uma escada, duas pessoas tiram de uma mala uma superfície amarela, sem degraus, que se desdobra."
     }
   ],
   "cartoes": [
@@ -24,17 +24,17 @@ window.LenteTresCartasDados={
         {
           "id": "a",
           "texto": "Carimba um documento.",
-          "feedback": "O carimbo vermelho toca no documento."
+          "feedback": "O objeto vermelho desce sobre o papel: é um carimbo."
         },
         {
           "id": "b",
           "texto": "Entrega uma encomenda.",
-          "feedback": "Não vemos uma encomenda a ser entregue."
+          "feedback": "Ninguém recebe nada: a fila espera e o papel fica na mesa."
         }
       ],
       "certa": "a",
       "pistas": [
-        "Observa o objeto vermelho sobre a mesa.",
+        "Relê o que o objeto vermelho faz ao papel.",
         "Distingue carimbar um documento de entregar um volume."
       ],
       "imagem": "11-01"
@@ -57,8 +57,8 @@ window.LenteTresCartasDados={
       ],
       "certa": "a",
       "pistas": [
-        "Segue a linha amarela de uma ponta à outra.",
-        "A interpretação do horizonte é uma invenção apoiada numa linha visível."
+        "Relê o que as duas pessoas seguram.",
+        "A interpretação do horizonte é uma invenção apoiada num pormenor da descrição."
       ],
       "imagem": "13-02"
     },
@@ -70,7 +70,7 @@ window.LenteTresCartasDados={
         {
           "id": "a",
           "texto": "Uma escada desdobrável.",
-          "feedback": "Os degraus estão atrás das pessoas, fora da mala."
+          "feedback": "A escada já lá estava, atrás das pessoas; o que sai da mala não tem degraus."
         },
         {
           "id": "b",
@@ -80,8 +80,8 @@ window.LenteTresCartasDados={
       ],
       "certa": "b",
       "pistas": [
-        "Segue a superfície amarela até à mala.",
-        "Os degraus estão atrás; a superfície da mala não tem degraus."
+        "Relê o que sai da mala e o que já lá estava.",
+        "A escada fica atrás; a superfície da mala não tem degraus."
       ],
       "imagem": "20-03"
     },
@@ -667,7 +667,7 @@ window.LenteTresCartasDados={
     "t11": "Versão para imprimir",
     "t12": "Cartão anterior",
     "t13": "Seguinte",
-    "t14": "Voltar ao laboratório",
+    "t14": "Voltar ao percurso",
     "t15": "Conserva A no caderno. A revisão será escrita como B.",
     "t16": "Plano copiado.",
     "t17": "Seleciona o plano e copia com o comando do teu aparelho.",

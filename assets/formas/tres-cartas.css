@@ -8,5 +8,4 @@
 @media(max-width:420px){.tc-imagem{width:min(100%,250px)}.formas-cartoes .jogo .cartao.lf-cartao{padding:12px}}
 @media print{.tc-print section{break-inside:avoid}.tc-print section:nth-last-of-type(2){break-before:page}}
 
-/* 30/10/2026: situações descritas, sem imagens de IA. */
-.tc-descricao{padding:24px;min-height:120px;background:var(--papel,#fff);color:var(--tinta,#222);font:1.15rem/1.5 Georgia,serif;border:1px solid currentColor}
+/* 30/10/2026: situações descritas, sem imagens de IA. 31/10/2026: o desenho vem de cartoes.css (.tc-descricao). */

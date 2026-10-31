@@ -1,0 +1,7 @@
+/* 31/10/2026: um só desenho para a continuação das peças sem motor (carregado por ligacoes.js). */
+.lab-fim-percurso{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin:40px 0 0;padding:20px 0 0;border-top:2px solid currentColor}
+.lab-fim-percurso a,.lab-fim-percurso button{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;font:700 1rem/1.2 Arial,Helvetica,sans-serif;border-radius:0}
+.lab-fim-percurso a:first-of-type{padding-left:0}
+.lab-fim-percurso a:last-child:not(:first-of-type){background:var(--tinta);color:var(--papel);text-decoration:none}
+.lab-fim-percurso button{background:transparent;color:inherit;border:2px solid currentColor}
+.lab-fim-percurso [hidden]{display:none!important}

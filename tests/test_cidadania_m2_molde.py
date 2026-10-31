@@ -309,8 +309,7 @@ class Molde(unittest.TestCase):
             for t in lingua:
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
-            # 30/10/2026: normalizar só finais de linha; os geradores usam CRLF no Windows.
-            self.assertEqual((R / f).read_bytes().replace(b'\r\n',b'\n'), antes.replace(b'\r\n',b'\n'), f)
+            self.assertEqual((R / f).read_bytes(), antes, f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):

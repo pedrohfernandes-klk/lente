@@ -5,7 +5,7 @@
       "id": "ver",
       "title": "Ver",
       "subtitle": "como os outros fizeram",
-      "question": "Como fizeram os outros?",
+      "question": "Porque é que resulta?",
       "anchor": "ler-como-quem-escreve"
     },
     {
@@ -28,14 +28,13 @@
       "id": "ordem",
       "block": "ver",
       "title": "Dar forma a uma história",
-      "question": "O que muda quando mudas a ordem?",
+      "question": "Que forma tem uma história, por baixo do que conta?",
       "reason": "Da estrutura geral às relações entre acontecimentos.",
       "pieces": [
         "aula-forma",
         "piramide",
         "historia-enredo",
         "comecar-pelo-meio",
-        "espingarda",
         "linhas-de-enredo",
         "desenlace",
         "espinha"
@@ -45,7 +44,7 @@
       "id": "personagem",
       "block": "ver",
       "title": "Conhecer uma personagem",
-      "question": "O que revelam os gestos e os lugares?",
+      "question": "O que move uma personagem, e o que lhe faz o lugar?",
       "reason": "Da personagem às ações e ao espaço que a revela.",
       "pieces": [
         "aula-personagem",
@@ -59,33 +58,37 @@
       "id": "nao-dito",
       "block": "ver",
       "title": "Ler o que não se diz",
-      "question": "Como percebemos o que ficou por dizer?",
+      "question": "Onde se esconde o que ninguém diz?",
       "reason": "Da leitura do implícito à proposta de uma cena.",
       "pieces": [
         "aula-nao-dito",
         "subtexto",
         "dialogo",
-        "proposta-subtexto"
+        "espingarda"
       ]
     },
     {
       "id": "voz",
       "block": "ver",
       "title": "Reconhecer quem conta",
-      "question": "Como muda a verdade com a voz que conta?",
+      "question": "Em quem confias quando alguém conta?",
       "reason": "Da perspetiva narrativa à fronteira entre testemunho e ficção.",
       "pieces": [
         "quem-conta",
         "formas/certa-manha",
         "margens/passo-01",
         "margens/passo-02"
-      ]
+      ],
+      "antes": {
+        "piece": "aula-nao-dito",
+        "text": "A ideia de «Quem conta?» vem da aula"
+      }
     },
     {
       "id": "olhar",
       "block": "ver",
       "title": "Observar para transformar",
-      "question": "O que faz um olhar atento descobrir?",
+      "question": "O que descobre quem olha devagar?",
       "reason": "Do desenho e da observação às mudanças de contexto.",
       "pieces": [
         "leonardo",
@@ -100,7 +103,7 @@
       "id": "montagem",
       "block": "ver",
       "title": "Passar das palavras à cena",
-      "question": "O que escolhes mostrar de um texto?",
+      "question": "Como se filma um texto?",
       "reason": "Do desfecho e do gesto à sobreposição de planos e ao narrador.",
       "pieces": [
         "corta/ines",
@@ -131,7 +134,7 @@
       "id": "dialogos",
       "block": "treinar",
       "title": "Fazer falar sem explicar",
-      "question": "Como deixam as falas perceber uma intenção?",
+      "question": "O que fica por trás de uma fala?",
       "reason": "Da distinção das vozes às interrupções e ao subtexto.",
       "pieces": [
         "treinar/sem-disse",
@@ -159,7 +162,7 @@
       "id": "frase",
       "block": "treinar",
       "title": "Escolher a palavra e o ritmo",
-      "question": "Como muda uma cena quando mudas a frase?",
+      "question": "Quanto pesa uma palavra?",
       "reason": "Da observação de um modelo à precisão e ao ritmo.",
       "pieces": [
         "treinar/copia-lenta",
@@ -173,7 +176,7 @@
       "id": "comeco",
       "block": "treinar",
       "title": "Escolher por onde começar",
-      "question": "O que precisa de aparecer primeiro?",
+      "question": "O que mostras primeiro, e pelos olhos de quem?",
       "reason": "Do material inicial à ordem, à preparação do fim e ao ponto de vista.",
       "pieces": [
         "treinar/lista-substantivos",
@@ -187,7 +190,7 @@
       "id": "rever",
       "block": "treinar",
       "title": "Rever com uma intenção",
-      "question": "O que fica melhor quando cortas?",
+      "question": "Onde tropeça o teu texto?",
       "reason": "Do primeiro rascunho à escuta, ao corte e à leitura por outra pessoa.",
       "pieces": [
         "treinar/rascunho-mau",
@@ -201,15 +204,16 @@
       "id": "ficcao",
       "block": "criar",
       "title": "Construir uma ficção",
-      "question": "Como levas uma ideia até ao desfecho?",
+      "question": "O que falta a uma ideia para ser história?",
       "reason": "Da restrição e do começo à personagem, ao espaço e ao argumento.",
       "pieces": [
-        "oficina-restricao",
         "oficina-ficcao-comecar",
         "oficina-ficcao-personagem",
+        "proposta-subtexto",
         "oficina-ficcao-espaco",
-        "oficina-arco",
         "oficina-ficcao-genero",
+        "oficina-restricao",
+        "oficina-arco",
         "oficina-argumento"
       ]
     },
@@ -217,14 +221,13 @@
       "id": "cena",
       "block": "criar",
       "title": "Construir com palavras e imagens",
-      "question": "Como passa uma ideia de um meio para outro?",
+      "question": "Que forma pede cada ideia?",
       "reason": "Do gesto e do visível à montagem, ao espaço e à escolha do meio.",
       "pieces": [
         "oficina-visivel",
         "oficina-ator",
         "oficina-plano",
         "oficina-texto-imagem",
-        "oficina-espaco",
         "oficina-matriz"
       ]
     },
@@ -240,34 +243,35 @@
         "oficina-epico",
         "oficina-dilema",
         "oficina-manifesto",
-        "oficina-dramaturgista",
-        "oficina-atelie"
+        "oficina-dramaturgista"
       ]
     },
     {
       "id": "experimentar",
       "block": "criar",
       "title": "Mudar uma escolha e comparar",
-      "question": "O que muda entre duas versões?",
+      "question": "Qual das duas versões escolhes, e porquê?",
       "reason": "Do plano em falta à montagem, à transformação de uma obra e a dois géneros.",
       "pieces": [
         "corta/cena-que-falta",
         "corta/mesa",
         "formas",
-        "formas/tres-cartas"
+        "formas/tres-cartas",
+        "variantes"
       ]
     },
     {
       "id": "espaco",
       "block": "criar",
       "title": "Criar para além da página",
-      "question": "Como pode uma ideia ocupar o espaço?",
+      "question": "O que acontece a uma ideia quando sai da página?",
       "reason": "Da variação de um objeto ao intervalo, ao volume e ao confronto de ideias.",
       "pieces": [
-        "variantes",
-        "fora-da-pagina/intervalo",
         "fora-da-pagina/escultura",
-        "fora-da-pagina/tese"
+        "fora-da-pagina/intervalo",
+        "fora-da-pagina/tese",
+        "oficina-espaco",
+        "oficina-atelie"
       ]
     }
   ],
@@ -278,7 +282,7 @@
       "title": "A forma da história",
       "type": "aula",
       "time": "12 min de leitura",
-      "description": "Lê exemplos de estrutura, ordem dos acontecimentos e desfecho.",
+      "description": "Leitura sem perguntas: como uma história sobe, chega a um pico e desce.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -300,7 +304,7 @@
       "title": "A pirâmide de Freytag",
       "type": "leitura",
       "time": "12 min",
-      "description": "Reconhece os seis momentos de uma história num excerto de teatro.",
+      "description": "Encontra o pico de uma peça de teatro e os seis momentos à volta dele.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -319,7 +323,7 @@
       "title": "História e enredo",
       "type": "leitura",
       "time": "13 min",
-      "description": "Distingue a ordem dos factos da ordem em que são contados.",
+      "description": "O que aconteceu e a ordem em que se conta: separa as duas coisas.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -338,7 +342,7 @@
       "title": "Começar pelo meio",
       "type": "leitura",
       "time": "13 min",
-      "description": "Identifica o que já aconteceu quando uma narrativa começa.",
+      "description": "Uma narrativa que arranca a meio: descobre o que já tinha acontecido.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -357,13 +361,13 @@
       "title": "A espingarda de Tchékhov",
       "type": "leitura",
       "time": "13 min",
-      "description": "Relaciona um sinal inicial com o que acontece mais tarde.",
+      "description": "Segue uma pista desde que aparece até ao momento em que se paga.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
         "id": "espingarda"
       },
-      "route": "ordem",
+      "route": "nao-dito",
       "incoming": [
         "mapa/index.html",
         "narrativas/espingarda/index.html",
@@ -376,7 +380,7 @@
       "title": "Linhas de enredo",
       "type": "leitura",
       "time": "13 min",
-      "description": "Distingue a ação principal das histórias que se cruzam com ela.",
+      "description": "Várias histórias correm ao mesmo tempo: procura onde se tocam.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -395,7 +399,7 @@
       "title": "O desenlace",
       "type": "leitura",
       "time": "13 min",
-      "description": "Compara maneiras de fechar uma história e o que deixam em aberto.",
+      "description": "O que um fim fecha e o que deixa por responder ao leitor.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -414,7 +418,7 @@
       "title": "A espinha da história",
       "type": "leitura",
       "time": "14 min",
-      "description": "Escolhe os acontecimentos que sustentam uma história.",
+      "description": "Conta uma história em sete linhas, de «Era uma vez…» a «E desde então…».",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -433,7 +437,7 @@
       "title": "A personagem",
       "type": "aula",
       "time": "10 min de leitura",
-      "description": "Lê exemplos de desejos, obstáculos, gestos e diálogo.",
+      "description": "Leitura sem perguntas: alguém que quer uma coisa, age e fala sem dizer tudo.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -454,7 +458,7 @@
       "title": "Querer, agir, responder",
       "type": "leitura",
       "time": "12 min",
-      "description": "Relaciona o desejo de uma personagem com a ação que escolhe.",
+      "description": "Circunstâncias, objetivo, obstáculo, ação: as quatro palavras do ator aplicadas a uma personagem.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -473,7 +477,7 @@
       "title": "A personagem pelo que faz",
       "type": "leitura",
       "time": "13 min",
-      "description": "Infere o carácter de uma personagem a partir do que faz.",
+      "description": "Quando o narrador escreve um adjetivo, procura o gesto que o prova.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -492,7 +496,7 @@
       "title": "O lugar",
       "type": "aula",
       "time": "8 min de leitura",
-      "description": "Lê como um lugar participa na história.",
+      "description": "Leitura curta: o lugar que empurra a história, de Cesário a Wenders.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -516,7 +520,7 @@
       "title": "O cenário como personagem",
       "type": "leitura",
       "time": "13 min",
-      "description": "Relaciona os detalhes do espaço com o efeito que produzem.",
+      "description": "Troca o lugar e vê se o poema sobrevive: o teste do cenário como personagem.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -535,7 +539,7 @@
       "title": "O que não se diz",
       "type": "aula",
       "time": "10 min de leitura",
-      "description": "Distingue o que o texto diz, sugere e deixa por saber.",
+      "description": "Leitura sem perguntas: o que uma história cala pesa tanto como o que diz.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -558,7 +562,7 @@
       "title": "O subtexto",
       "type": "leitura",
       "time": "13 min",
-      "description": "Reconhece o que uma fala deixa perceber sem o dizer.",
+      "description": "Personagens que dizem uma coisa e querem outra: procura a pista que as denuncia.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -578,7 +582,7 @@
       "title": "O diálogo que não explica",
       "type": "leitura",
       "time": "13 min",
-      "description": "Compara falas e reconhece o que revelam das personagens.",
+      "description": "Conversas em que ninguém diz o que sabe: ouve o que fica por dizer.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -596,14 +600,14 @@
       "url": "narrativas/proposta-subtexto/",
       "title": "Uma cena com subtexto",
       "type": "leitura",
-      "time": "Tempo não indicado",
-      "description": "Prepara uma cena em que as personagens não dizem tudo.",
+      "time": "",
+      "description": "Prepara uma cena tua, de dois minutos, em que as personagens não dizem tudo.",
       "progress": {
         "kind": "manual",
         "key": "lente-laboratorio-v1",
         "id": "proposta-subtexto"
       },
-      "route": "nao-dito",
+      "route": "ficcao",
       "incoming": [
         "narrativas/tudo/index.html"
       ]
@@ -614,7 +618,7 @@
       "title": "Quem conta?",
       "type": "leitura",
       "time": "14 min",
-      "description": "Distingue quem conta, o que sabe e o que te permite saber.",
+      "description": "Um poema, um romance e um registo da cadeia: quem fala e o que escolhe por ti.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -632,8 +636,8 @@
       "url": "narrativas/formas/certa-manha/",
       "title": "Certa manhã",
       "type": "leitura",
-      "time": "Tempo não indicado",
-      "description": "Compara duas maneiras de contar uma transformação.",
+      "time": "cerca de 30 min",
+      "description": "Uma frase de Kafka, lida três vezes: onde muda de mundo e o que muda quando sabes mais.",
       "progress": {
         "kind": "formas",
         "key": "lente-formas-v1",
@@ -794,7 +798,7 @@
       "title": "Duchamp",
       "type": "leitura",
       "time": "14 min de leitura",
-      "description": "Em 1917, um urinol assinado «R.",
+      "description": "Em 1917, um urinol assinado «R. Mutt» chegou a uma exposição de Nova Iorque que prometia aceitar tudo.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -817,7 +821,7 @@
       "title": "O desfecho de Inês Pereira",
       "type": "cena",
       "time": "6 min",
-      "description": "No fim da farsa, Inês ficou viúva do Escudeiro que a prendia em casa, e aceita Pêro Marques, o lavrador que antes recusou.",
+      "description": "No fim da farsa, Inês, viúva do Escudeiro que a prendia em casa, aceita Pêro Marques, o lavrador que antes recusara.",
       "progress": {
         "kind": "feitas",
         "key": "epi-corta",
@@ -1040,7 +1044,7 @@
       "title": "O quarto que fala",
       "type": "treino",
       "time": "12 min de escrita",
-      "description": "Descreve um quarto (ou uma casa) de forma a revelar quem lá vive, sem dizeres quem é nem o que sente.",
+      "description": "Descreve um quarto (ou uma casa) que revele quem lá vive, sem dizeres quem é nem o que sente.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1082,7 +1086,7 @@
       "title": "Duas vozes, nenhum nome",
       "type": "treino",
       "time": "12 min de escrita",
-      "description": "Nesta tentativa, escreve um diálogo de duas personagens sem dizer quem fala: nada de «disse», «perguntou», nem nomes antes das falas.",
+      "description": "Escreve um diálogo de duas personagens sem dizer quem fala: nada de «disse», «perguntou», nem nomes antes das falas.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1124,7 +1128,7 @@
       "title": "A pergunta que fica",
       "type": "treino",
       "time": "10 min de escrita",
-      "description": "Num diálogo, nenhuma pergunta recebe resposta direta.",
+      "description": "Escreve um diálogo em que nenhuma pergunta recebe resposta direta.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1145,7 +1149,7 @@
       "title": "Interromper",
       "type": "treino",
       "time": "10 min de escrita",
-      "description": "Num diálogo, ninguém acaba uma frase importante: as falas são cortadas ou abandonadas.",
+      "description": "Escreve um diálogo em que ninguém acaba uma frase importante: as falas são cortadas ou abandonadas.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1165,7 +1169,7 @@
       "title": "Uma fala, duas intenções",
       "type": "treino",
       "time": "12 min de escrita",
-      "description": "Nesta tentativa, cada fala diz uma coisa e quer outra.",
+      "description": "Escreve falas que dizem uma coisa e querem outra.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1330,7 +1334,7 @@
       "title": "Verbo forte",
       "type": "treino",
       "time": "10 min de escrita",
-      "description": "Nesta tentativa, troca cada verbo vago com complemento por um só verbo preciso: «andar depressa» por «apressar-se»; «dizer alto» por «bradar».",
+      "description": "Troca cada verbo vago com complemento por um só verbo preciso: «andar depressa» por «apressar-se»; «dizer alto» por «bradar».",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1351,7 +1355,7 @@
       "title": "Sem «-mente»",
       "type": "treino",
       "time": "8 min de escrita",
-      "description": "Nesta versão, experimenta retirar os advérbios em «-mente»: troca cada um por um verbo mais preciso, por um pormenor, ou corta-o.",
+      "description": "Retira os advérbios em «-mente»: troca cada um por um verbo mais preciso ou por um pormenor, ou corta-o.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1432,7 +1436,7 @@
       "title": "Começar pelo meio",
       "type": "treino",
       "time": "10 min de escrita",
-      "description": "Nesta tentativa, começa uma história com a ação já a decorrer.",
+      "description": "Começa uma história com a ação já a decorrer.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1495,7 +1499,7 @@
       "title": "Rascunho mau, de propósito",
       "type": "treino",
       "time": "8 min de escrita",
-      "description": "Escreve oito minutos sem parar, sem apagar, sem reler.",
+      "description": "Escreve durante oito minutos sem parar, sem apagar, sem reler.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1535,7 +1539,7 @@
       "title": "Matar a frase querida",
       "type": "treino",
       "time": "6 min de escrita",
-      "description": "Num texto teu, encontra a frase de que mais gostas.",
+      "description": "Num texto teu, encontra a frase de que mais gostas e pergunta se serve a cena; se não serve, corta-a.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1555,7 +1559,7 @@
       "title": "Cortar um quinto",
       "type": "treino",
       "time": "10 min de escrita",
-      "description": "Nesta tentativa, conta as palavras de um texto teu e corta pelo menos um quinto: em 100 palavras, ficam 80, sem mudar a história.",
+      "description": "Conta as palavras de um texto teu e corta pelo menos um quinto: em 100 palavras, ficam 80, sem mudar a história.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -1594,7 +1598,7 @@
       "url": "narrativas/oficina-restricao/",
       "title": "A restrição antiga",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
+      "time": "60 a 90 min",
       "description": "Os clássicos exigiam três unidades: uma só ação, um só lugar, um tempo que coincide com o da representação.",
       "progress": {
         "kind": "feitas",
@@ -1614,8 +1618,8 @@
       "url": "narrativas/oficina-ficcao-comecar/",
       "title": "Escrever ficção: começar",
       "type": "oficina",
-      "time": "5–8 min",
-      "description": "Uma chave na mesa.",
+      "time": "5 a 8 min",
+      "description": "Uma chave na mesa, alguém a leva: experimenta a ação, a ordem da informação e o ritmo.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1633,10 +1637,10 @@
     {
       "id": "oficina-ficcao-personagem",
       "url": "narrativas/oficina-ficcao-personagem/",
-      "title": "A personagem",
+      "title": "Escrever ficção: a personagem",
       "type": "oficina",
-      "time": "5–8 min",
-      "description": "«Podes confiar em mim.» Depois, a mão fecha-se sobre a chave.",
+      "time": "5 a 8 min",
+      "description": "Experimenta o gesto, o contexto e a voz do narrador numa cena com uma chave.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1652,9 +1656,9 @@
     {
       "id": "oficina-ficcao-espaco",
       "url": "narrativas/oficina-ficcao-espaco/",
-      "title": "O espaço",
+      "title": "Escrever ficção: o espaço",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
+      "time": "60 a 90 min",
       "description": "Eça precisa de duas frases para o Ramalhete ser uma personagem: um casarão «sombrio», de «paredes severas», com «aspecto tristonho».",
       "progress": {
         "kind": "feitas",
@@ -1674,8 +1678,8 @@
       "url": "narrativas/oficina-arco/",
       "title": "Exposição, nó, desenlace",
       "type": "oficina",
-      "time": "45 a 60 min de exploração",
-      "description": "Exposição: o mundo e o equilíbrio de partida.",
+      "time": "45 a 60 min",
+      "description": "Põe à prova um texto teu, ou de um colega: exposição, nó e desenlace.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1694,7 +1698,7 @@
       "url": "narrativas/oficina-ficcao-genero/",
       "title": "Género e suspense",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
+      "time": "60 a 90 min",
       "description": "«Romeiro, romeiro, quem és tu?» «Ninguém.» Garrett segura a resposta durante uma cena inteira: o público já desconfia, Telmo já desconfia, e a palavra só cai quando o bordão aponta para o retrato.",
       "progress": {
         "kind": "feitas",
@@ -1714,7 +1718,7 @@
       "url": "narrativas/oficina-argumento/",
       "title": "Do conceito ao argumento",
       "type": "oficina",
-      "time": "90 min de exploração",
+      "time": "90 min",
       "description": "Antes de haver guião, há uma cadeia de documentos, cada um mais longo do que o anterior.",
       "progress": {
         "kind": "feitas",
@@ -1734,7 +1738,7 @@
       "url": "narrativas/oficina-visivel/",
       "title": "A dramaturgia do visível",
       "type": "oficina",
-      "time": "60 min de exploração",
+      "time": "60 min",
       "description": "No teatro de hoje, a luz, o cenário e o figurino não decoram: significam.",
       "progress": {
         "kind": "feitas",
@@ -1754,7 +1758,7 @@
       "url": "narrativas/oficina-ator/",
       "title": "A dramaturgia do ator",
       "type": "oficina",
-      "time": "60 min de exploração",
+      "time": "60 min",
       "description": "O corpo do ator produz sentido antes da palavra: a respiração, o peso, o desvio de olhar.",
       "progress": {
         "kind": "feitas",
@@ -1774,8 +1778,8 @@
       "url": "narrativas/oficina-plano/",
       "title": "Da cena ao plano",
       "type": "oficina",
-      "time": "90 min de exploração",
-      "description": "Mike Nichols adaptou duas peças de violência verbal: Quem Tem Medo de Virginia Woolf?",
+      "time": "90 min",
+      "description": "Reescreve em planos uma cena de teatro, como Mike Nichols fez com _Quem Tem Medo de Virginia Woolf?_ e _Closer_.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1794,7 +1798,7 @@
       "url": "narrativas/oficina-texto-imagem/",
       "title": "Texto e imagem",
       "type": "oficina",
-      "time": "60 min de exploração",
+      "time": "60 min",
       "description": "Uma imagem sozinha diz de mais: é aberta, admite leituras a mais.",
       "progress": {
         "kind": "feitas",
@@ -1826,7 +1830,7 @@
         "key": "epi-narrativas",
         "id": "oficina-espaco"
       },
-      "route": "cena",
+      "route": "espaco",
       "incoming": [
         "mapa/index.html",
         "narrativas/oficina-espaco-imprimir/index.html",
@@ -1846,7 +1850,7 @@
       "title": "A matriz por meio",
       "type": "oficina",
       "time": "60 min",
-      "description": "A mesma ideia pode ganhar outra forma.",
+      "description": "Planeia duas versões de uma proposta, com palavras, imagem ou som, e escolhe uma.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1869,7 +1873,7 @@
       "url": "narrativas/oficina-readymade/",
       "title": "O readymade de palavras",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
+      "time": "60 a 90 min",
       "description": "Duchamp não fabricou o urinol: escolheu-o, virou-o, assinou-o com um nome falso e pô-lo onde não devia estar.",
       "progress": {
         "kind": "feitas",
@@ -1892,7 +1896,7 @@
       "url": "narrativas/oficina-pedacos/",
       "title": "A fábula em pedaços",
       "type": "oficina",
-      "time": "60 min de exploração",
+      "time": "60 min",
       "description": "Nem toda a história precisa de uma fábula com princípio, meio e fim.",
       "progress": {
         "kind": "feitas",
@@ -1912,7 +1916,7 @@
       "url": "narrativas/oficina-epico/",
       "title": "A rapsódia épica",
       "type": "oficina",
-      "time": "60 min de exploração",
+      "time": "60 min",
       "description": "Brecht queria que o público não se deixasse hipnotizar: a cena interrompe-se, alguém se vira para a plateia e diz o que a história não quer dizer.",
       "progress": {
         "kind": "feitas",
@@ -1933,7 +1937,7 @@
       "url": "narrativas/oficina-dilema/",
       "title": "O dilema, transposto para hoje",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
+      "time": "60 a 90 min",
       "description": "Shakespeare escreveu teatro em Inglaterra entre os séculos XVI e XVII, e os dilemas que pôs em cena continuam a servir.",
       "progress": {
         "kind": "feitas",
@@ -1953,8 +1957,8 @@
       "url": "narrativas/oficina-manifesto/",
       "title": "O manifesto na fachada",
       "type": "oficina",
-      "time": "60 a 90 min de exploração",
-      "description": "A fachada da escola, acima do portão, tem dezanove imperativos em letra cursiva e uma frase final: Creativity takes courage .",
+      "time": "60 a 90 min",
+      "description": "Lê a fachada da escola ao lado de três manifestos e escreve o voto do teu grupo.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1975,7 +1979,7 @@
       "title": "O dramaturgista",
       "type": "oficina",
       "time": "90 min",
-      "description": "O dramaturgo escreve a peça.",
+      "description": "Sê dramaturgista de um clássico: lê-o contra o presente, propõe os cortes e explica porquê.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -2001,7 +2005,7 @@
         "key": "epi-narrativas",
         "id": "oficina-atelie"
       },
-      "route": "transformar",
+      "route": "espaco",
       "incoming": [
         "mapa/index.html",
         "narrativas/oficina-atelie-imprimir/index.html",
@@ -2015,7 +2019,7 @@
       "url": "narrativas/corta/cena-que-falta/",
       "title": "A cena que falta",
       "type": "oficina",
-      "time": "Tempo não indicado",
+      "time": "cerca de 15 min",
       "description": "Escolhe o plano que liga uma perda a uma devolução.",
       "progress": {
         "kind": "formas",
@@ -2034,9 +2038,9 @@
     {
       "id": "corta/mesa",
       "url": "narrativas/corta/mesa/",
-      "title": "Corta. O sentido mexe.",
+      "title": "Mesa de montagem",
       "type": "oficina",
-      "time": "Tempo não indicado",
+      "time": "",
       "description": "Monta os mesmos planos para criar quatro efeitos diferentes.",
       "progress": {
         "kind": "montagem",
@@ -2059,10 +2063,10 @@
     {
       "id": "formas",
       "url": "narrativas/formas/",
-      "title": "Uma obra abre outra possibilidade.",
+      "title": "Obras para experimentar",
       "type": "oficina",
-      "time": "Tempo não indicado",
-      "description": "Observa, interpreta, contrapõe e transforma excertos de três obras.",
+      "time": "",
+      "description": "Três excertos breves, quatro passos: observar, interpretar, contrapor e criar.",
       "progress": {
         "kind": "manual",
         "key": "lente-laboratorio-v1",
@@ -2080,7 +2084,7 @@
       "url": "narrativas/formas/tres-cartas/",
       "title": "Três cartas, dois textos",
       "type": "oficina",
-      "time": "Tempo não indicado",
+      "time": "",
       "description": "Prepara um conto e uma notícia fictícia sobre o mesmo acontecimento.",
       "progress": {
         "kind": "formas",
@@ -2097,14 +2101,14 @@
       "url": "narrativas/variantes/",
       "title": "Fazer. Voltar a ver.",
       "type": "oficina",
-      "time": "Tempo não indicado",
-      "description": "Experimenta três variantes das oficinas e revê uma escolha.",
+      "time": "15 a 30 min",
+      "description": "Escolhe uma de três variantes curtas, em papel: um objeto, um espaço ou uma frase.",
       "progress": {
         "kind": "manual",
         "key": "lente-laboratorio-v1",
         "id": "variantes"
       },
-      "route": "espaco",
+      "route": "experimentar",
       "incoming": [
         "mapa/index.html",
         "narrativas/tudo/index.html",
@@ -2116,8 +2120,8 @@
       "url": "narrativas/fora-da-pagina/intervalo/",
       "title": "O acontecimento que não se desenha",
       "type": "oficina",
-      "time": "Tempo não indicado",
-      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "time": "",
+      "description": "Entre dois quadros, deixa uma ação fora da imagem e mantém duas hipóteses em aberto.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -2134,8 +2138,8 @@
       "url": "narrativas/fora-da-pagina/escultura/",
       "title": "Uma história que se rodeia",
       "type": "oficina",
-      "time": "Tempo não indicado",
-      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "time": "",
+      "description": "Rodeia uma cena com figuras e regista o que muda a cada ângulo, sem adivinhar intenções.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -2152,8 +2156,8 @@
       "url": "narrativas/fora-da-pagina/tese/",
       "title": "Uma tese com lugar para o contrário",
       "type": "oficina",
-      "time": "Tempo não indicado",
-      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "time": "",
+      "description": "Tira de uma observação de cinco minutos uma tese que um colega possa pôr à prova, com lugar para o contrário.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -2165,5 +2169,137 @@
         "narrativas/fora-da-pagina/index.html"
       ]
     }
-  ]
+  ],
+  "ancoras": [
+    "a-entrevista",
+    "a-espingarda",
+    "a-gaveta",
+    "acelerar-travar",
+    "amp-css",
+    "amp-js",
+    "aquecimentos",
+    "aula-forma",
+    "aula-lugar",
+    "aula-nao-dito",
+    "aula-personagem",
+    "aulas",
+    "aulas-narrativa",
+    "bras-cubas",
+    "cenario-personagem",
+    "cesario",
+    "chuva",
+    "comeca-mais-tarde",
+    "comecar-pelo-meio",
+    "copia-lenta",
+    "corta",
+    "cortar-um-quinto",
+    "criar",
+    "criar-titulo",
+    "desenlace",
+    "dialogo",
+    "dicionario",
+    "duas-horas",
+    "duas-vozes",
+    "espingarda",
+    "espinha",
+    "experimentar",
+    "experimentar-criar",
+    "experimentar-exercicios",
+    "experimentar-projeto",
+    "fora-da-pagina",
+    "frase-querida",
+    "frei-luis",
+    "historia-enredo",
+    "ines",
+    "interromper",
+    "lab-portas",
+    "ler-como-quem-escreve",
+    "ler-titulo",
+    "linhas-de-enredo",
+    "lista-substantivos",
+    "maias",
+    "mg-css",
+    "o-contrario",
+    "objeto-banal",
+    "oficina-arco",
+    "oficina-argumento",
+    "oficina-atelie",
+    "oficina-ator",
+    "oficina-dilema",
+    "oficina-dramaturgista",
+    "oficina-epico",
+    "oficina-espaco",
+    "oficina-ficcao-comecar",
+    "oficina-ficcao-espaco",
+    "oficina-ficcao-genero",
+    "oficina-ficcao-personagem",
+    "oficina-manifesto",
+    "oficina-matriz",
+    "oficina-pedacos",
+    "oficina-plano",
+    "oficina-readymade",
+    "oficina-restricao",
+    "oficina-texto-imagem",
+    "oficina-visivel",
+    "oficinas-cena",
+    "oficinas-escrever",
+    "oficinas-questionar",
+    "outro-ponto-de-vista",
+    "pelo-meio",
+    "pelo-que-faz",
+    "pergunta-sem-resposta",
+    "personagem-faz",
+    "piramide",
+    "quarto-que-fala",
+    "quem-conta",
+    "querer-agir",
+    "rascunho-mau",
+    "restelo",
+    "sem-disse",
+    "sem-mente",
+    "sem-olhos",
+    "so-gestos",
+    "subtexto",
+    "teste-do-colega",
+    "torneol",
+    "treinar",
+    "treinar-colecao",
+    "treinar-dialogo",
+    "treinar-estrutura",
+    "treinar-frase",
+    "treinar-rever",
+    "treinar-sentidos",
+    "treinar-titulo",
+    "treinar-voz",
+    "tres-em-cinco",
+    "verbo-forte",
+    "verdade-dificil",
+    "vidas-e-ideias",
+    "voz-alta"
+  ],
+  "aliases": {
+    "ler-titulo": "ver",
+    "aulas": "ver",
+    "aulas-narrativa": "ver",
+    "experimentar-exercicios": "ver",
+    "corta": "montagem",
+    "treinar-titulo": "treinar",
+    "treinar-colecao": "treinar",
+    "treinar-sentidos": "sentidos",
+    "treinar-dialogo": "dialogos",
+    "treinar-voz": "vozes",
+    "treinar-frase": "frase",
+    "treinar-estrutura": "comeco",
+    "treinar-rever": "rever",
+    "criar-titulo": "criar",
+    "experimentar": "criar",
+    "experimentar-criar": "criar",
+    "aquecimentos": "criar",
+    "oficinas-escrever": "ficcao",
+    "oficinas-cena": "cena",
+    "oficinas-questionar": "transformar",
+    "fora-da-pagina": "espaco",
+    "experimentar-projeto": "espaco",
+    "vidas-e-ideias": "criar"
+  }
 }

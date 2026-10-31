@@ -74,8 +74,8 @@ class Ginasio(unittest.TestCase):
             self.assertIn(passo, prop)
         # 30/10/2026: Laboratório simples (pedido do docente). A proposta continua no catálogo.
         lab = (R / 'narrativas/tudo/index.html').read_text('utf-8')
-        # 30/10/2026: a proposta de subtexto fecha o percurso de leitura do implícito.
-        i = lab.index('id="ler-como-quem-escreve"')
+        # 30/10/2026: a proposta de subtexto é uma cena para escrever; passa para Criar, no percurso da ficção (revisão do editor).
+        i = lab.index('id="criar"')
         self.assertIn('href="../proposta-subtexto/"', lab[i:lab.index('</section>', i)])
         for p in list((R / 'narrativas').rglob('index.html')) + [R / 'mapa/index.html']:
             t = p.read_text('utf-8')
@@ -137,7 +137,8 @@ class Ginasio(unittest.TestCase):
         self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s)) - {'caderno','docente'}), 30)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
             self.assertIn(antiga, s)
-            self.assertIn(antiga, entrada)
+        # 30/10/2026: a entrada já não guarda âncoras escondidas; uma âncora que lá não existe leva a tudo/.
+        self.assertIn('location.replace("tudo/"', entrada)
         self.assertIn("addEventListener('hashchange',encaminhar)", (R / 'assets/formas/entrada.js').read_text('utf-8'))
 
     def test_exercicios_e_oficinas_apontam_para_o_ginasio(self):

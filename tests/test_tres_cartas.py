@@ -12,9 +12,9 @@ class TresCartas(unittest.TestCase):
   # 30/10/2026: peça publicada, agora incluída no percurso; mantém noindex.
   self.assertIn('tres-cartas',(R/'narrativas/tudo/index.html').read_text('utf-8'))
  def test_curated_crops(self):
-  d=data();origin=json.loads((R/'assets/formas/baralho/origem.json').read_text('utf-8'))
-  self.assertEqual({c['id'] for c in origin['cards']},{'11-01','13-02','20-03'})
-  for c in origin['cards']:self.assertTrue(c['kept'])
+  # 30/10/2026: metadados das pranchas de IA retirados; ficam as três situações descritas, com os mesmos ids.
+  d=data();self.assertFalse((R/'assets/formas/baralho/origem.json').exists())
+  self.assertEqual({im['id'] for im in d['imagens']},{'11-01','13-02','20-03'})
   for im in d['imagens']:
    self.assertGreater(len(im['alt']),35)
    # 30/10/2026: descrições das três situações substituem os recortes de IA.
