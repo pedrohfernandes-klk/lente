@@ -7,6 +7,9 @@ const server=http.createServer((req,res)=>{let f=path.join(root,decodeURICompone
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}/narrativas/formas/tres-cartas/`;const browser=await chromium.launch();
 try{for(const width of [320,390,1366]){
  const ctx=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'});const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(base);
+ // 30/10/2026: no primeiro cartão a continuação não se vê (continuacao.css com [hidden]); fora do percurso, volta a Criar (decisão 34).
+ assert.equal(await p.evaluate(()=>{const n=document.querySelector('.lab-fim-percurso');return n?n.getClientRects().length:-1;}),0);assert.deepEqual(await p.evaluate(()=>[...document.querySelectorAll('.lab-fim-percurso a')].map(a=>a.textContent)),['Voltar a Criar']);
+
  const snap=async name=>{if(width===390)await p.screenshot({path:path.join(out,name+'.png')});};
  await snap('01-primeiro');const firstBox=await p.locator('[data-op]').last().boundingBox();assert(firstBox.y+firstBox.height<844);assert.equal(await p.locator('meta[name=robots]').getAttribute('content'),'noindex');
  await p.evaluate(()=>localStorage.setItem('epi-corta','preservar'));

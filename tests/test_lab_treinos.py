@@ -154,9 +154,14 @@ class Ginasio(unittest.TestCase):
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
         self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ver', 'Treinar', 'Criar'])
-        # 30/10/2026: Hokusai substitui a imagem habitual de Muybridge no cartão do Laboratório.
-        self.assertIn('assets/laboratorio/ver.webp', s[i:j])
-        self.assertIn('domínio público', s[i:j].casefold())
+        # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
+        # e os dados vêm de imagens.json (entrada «porta»).
+        porta = next(x for x in json.loads((R / 'assets/laboratorio/imagens.json').read_text('utf-8')) if x['id'] == 'porta')
+        self.assertIn('<img src="' + porta['file'] + '"', s[i:j])
+        self.assertTrue((R / porta['file']).is_file())
+        self.assertRegex(s[i:j], r'</a><div class="ld-corpo"><p class="m1-home-credit ld-credito">Vincent van Gogh, esboço de <i>O Quarto</i>')
+        for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
+            self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)
         self.assertIn('id="ferramentas"', s)
 

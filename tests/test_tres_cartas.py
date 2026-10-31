@@ -9,8 +9,10 @@ class TresCartas(unittest.TestCase):
   for dep in re.findall(r'(?:src|href)="([^"?#]+)',s):
    if dep.startswith(('http','?')):continue
    self.assertTrue((R/'narrativas/formas/tres-cartas'/dep).exists(),dep)
-  # 30/10/2026: peça publicada, agora incluída no percurso; mantém noindex.
-  self.assertIn('tres-cartas',(R/'narrativas/tudo/index.html').read_text('utf-8'))
+  # 30/10/2026: o protótipo fica fora do percurso até ter imagens reais ou desenho próprio (decisão 34)
+  self.assertNotIn('tres-cartas',(R/'narrativas/index.html').read_text('utf-8'))
+  for rel in ['narrativas/tudo/index.html','narrativas/criar/index.html','narrativas/percursos/experimentar/index.html']:
+   self.assertNotIn('tres-cartas',(R/rel).read_text('utf-8'),rel)
  def test_curated_crops(self):
   # 30/10/2026: metadados das pranchas de IA retirados; ficam as três situações descritas, com os mesmos ids.
   d=data();self.assertFalse((R/'assets/formas/baralho/origem.json').exists())

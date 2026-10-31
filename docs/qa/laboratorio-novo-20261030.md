@@ -4,11 +4,13 @@ Ramo: `codex/laboratorio-novo-20261030`. Base do Lente: `26b96c1`. Trabalho prep
 
 > 31/10/2026, depois da revisão (diretor de arte, revisor de português europeu, verificador técnico e editor do Laboratório): a ordem e a composição de sete percursos mudaram (ordem, não dito, ficção, cena, transformar, experimentar e espaço), as perguntas, as descrições e os tempos foram revistos, e a continuação de cada peça passou a ser escrita por `tools/laboratorio.py` a partir de `assets/laboratorio/percursos.json`. O inventário e as listas abaixo descrevem a entrega de 30/10; a ordem em vigor é a de `percursos.json`.
 
+> 31/10/2026, segunda correção (decisão 34 do docente): «Três cartas, dois textos» saiu do percurso «Mudar uma escolha e comparar» e continua acessível no seu endereço, com uma ligação de volta a Criar; os percursos têm agora 92 peças. As imagens mudaram (ver «Imagens»).
+
 ## Resultado
 
-93 peças, organizadas em 17 percursos de 4 a 8 passos. Ver, Treinar e Criar têm páginas próprias com pergunta, continuação e listas ordenadas. A entrada, o catálogo e os percursos leem os registos reais. Os endereços e as chaves existentes das peças mantêm-se.
+93 peças; 92 estão organizadas em 17 percursos de 4 a 8 passos. Ver, Treinar e Criar têm páginas próprias com pergunta, continuação e listas ordenadas. A entrada, o catálogo e os percursos leem os registos reais. Os endereços e as chaves existentes das peças mantêm-se.
 
-As 93 unidades do inventário são páginas de atividade: uma página com várias experiências continua a contar como uma peça. Excluem-se índices, caderno, guia e versões para imprimir. Foram geradas 23 páginas de navegação, incluindo o índice dos percursos. Todas as peças couberam num percurso; não foi necessário criar uma lista residual.
+As 93 unidades do inventário são páginas de atividade: uma página com várias experiências continua a contar como uma peça. Excluem-se índices, caderno, guia e versões para imprimir. Foram geradas 23 páginas de navegação, incluindo o índice dos percursos. Todas as peças couberam num percurso; não foi necessário criar uma lista residual. Desde 31/10, «Três cartas, dois textos» fica fora dos percursos até ter imagens reais ou desenho próprio (decisão 34).
 
 ## Inventário
 
@@ -95,7 +97,7 @@ Comparação com 109 lições do Português em `203eaf5dfbfb0cf9af921bb3a3691a35
 | [A dramaturgia do visível](../../narrativas/oficina-visivel/) | oficina | 60 min de exploração | epi-narrativas → feitas.oficina-visivel | Construir com palavras e imagens | _Frei Luís de Sousa_ (Almeida Garrett) | Obra também referida: _Frei Luís de Sousa_ [m4-f06, m4-f07, m4-f08, m4-f09, m4-f11, m4-f20, m4-f26, m4-f27, m4-f28, m7-f09, m7-f10] |
 | [A dramaturgia do ator](../../narrativas/oficina-ator/) | oficina | 60 min de exploração | epi-narrativas → feitas.oficina-ator | Construir com palavras e imagens | Referências, sem excerto autónomo: Stanislavski; o Group Theatre (1931) e o Actors Studio (1947); Samuel Beckett, Ato sem Palavras I (1957). | Não detetado nesta comparação |
 | [Da cena ao plano](../../narrativas/oficina-plano/) | oficina | 90 min de exploração | epi-narrativas → feitas.oficina-plano | Construir com palavras e imagens | _Frei Luís de Sousa_ (Almeida Garrett) | Obra também referida: _Frei Luís de Sousa_ [m4-f06, m4-f07, m4-f08, m4-f09, m4-f11, m4-f20, m4-f26, m4-f27, m4-f28, m7-f09, m7-f10] |
-| [Texto e imagem](../../narrativas/oficina-texto-imagem/) | oficina | 60 min de exploração | epi-narrativas → feitas.oficina-texto-imagem | Construir com palavras e imagens | «Tabacaria» (Álvaro de Campos (Fernando Pessoa)) | Obra também referida: «Tabacaria» [m5-f13, m6-f07, m7-f06, m7-f07, m7-f10, m7-f11, m7-f36] |
+| [Texto e imagem](../../narrativas/oficina-texto-imagem/) | oficina | 60 min de exploração | epi-narrativas → feitas.oficina-texto-imagem | Construir com palavras e imagens | «Tabacaria» (Álvaro de Campos, heterónimo de Fernando Pessoa) | Obra também referida: «Tabacaria» [m5-f13, m6-f07, m7-f06, m7-f07, m7-f10, m7-f11, m7-f36] |
 | [O espaço expandido](../../narrativas/oficina-espaco/) | oficina | 90 min | epi-narrativas → feitas.oficina-espaco | Construir com palavras e imagens | Proposta original; sem excerto literário autónomo identificado. | Não detetado nesta comparação |
 | [A matriz por meio](../../narrativas/oficina-matriz/) | oficina | 60 min | epi-narrativas → feitas.oficina-matriz | Construir com palavras e imagens | Proposta original; sem excerto literário autónomo identificado. | Não detetado nesta comparação |
 | [O readymade de palavras](../../narrativas/oficina-readymade/) | oficina | 60 a 90 min de exploração | epi-narrativas → feitas.oficina-readymade | Transformar uma forma conhecida | Referências, sem excerto autónomo: Marcel Duchamp, _Fountain_ (1917) e L.H.O.O.Q. (1919); Burroughs e Gysin, o cut-up (1959); Almada Negreiros, _Manifesto Anti-Dantas_ (1915). | Não detetado nesta comparação |
@@ -107,8 +109,8 @@ Comparação com 109 lições do Português em `203eaf5dfbfb0cf9af921bb3a3691a35
 | [Ateliê-Laboratório: a régua, o fio e a hipótese](../../narrativas/oficina-atelie/) | oficina | 90 min | epi-narrativas → feitas.oficina-atelie | Transformar uma forma conhecida | Referências, sem excerto autónomo: Leonardo da Vinci, Paisagem do vale do Arno (desenho a pena, 5 de agosto de 1473) e os cadernos; a perspetiva linear do século XV; Galileu, Sidereus Nuncius (1610), as montanhas da Lua medidas pelas sombras. | Não detetado nesta comparação |
 | [A cena que falta](../../narrativas/corta/cena-que-falta/) | oficina | Tempo não indicado | lente-formas-v1 → itens.cena-que-falta.experimentei / revi | Mudar uma escolha e comparar | Cena da carteira, criação do Lente. | Não detetado nesta comparação |
 | [Corta. O sentido mexe.](../../narrativas/corta/mesa/) | oficina | Tempo não indicado | lente-formas-corta-v1 → done, as quatro experiências | Mudar uma escolha e comparar | Cena da carteira, criação do Lente. | Não detetado nesta comparação |
-| [Uma obra abre outra possibilidade.](../../narrativas/formas/) | oficina | Tempo não indicado | lente-laboratorio-v1 → feitas.formas (registo explícito novo) | Mudar uma escolha e comparar | As três irmãs, em O fio das missangas, Mia Couto; verso de Mário Cesariny divulgado pela Assírio & Alvim e escuta de O Navio de Espelhos; _A Metamorfose_, Franz Kafka. Fontes em assets/formas/corpus.json. | Obra também referida: _A Metamorfose_ [m8-f01, m8-f03, m8-f10] |
-| [Três cartas, dois textos](../../narrativas/formas/tres-cartas/) | oficina | Tempo não indicado | lente-formas-v1 → itens.tres-cartas.experimentei / revi | Mudar uma escolha e comparar | Três situações e exemplos fictícios do Lente. | Não detetado nesta comparação |
+| [Uma obra abre outra possibilidade.](../../narrativas/formas/) | oficina | Tempo não indicado | lente-laboratorio-v1 → feitas.formas (registo explícito novo) | Mudar uma escolha e comparar | «As Três Irmãs», em _O Fio das Missangas_, de Mia Couto; verso de Mário Cesariny divulgado pela Assírio & Alvim e escuta de «O Navio de Espelhos»; _A Metamorfose_, Franz Kafka. Fontes em assets/formas/corpus.json. | Obra também referida: _A Metamorfose_ [m8-f01, m8-f03, m8-f10] |
+| [Três cartas, dois textos](../../narrativas/formas/tres-cartas/) | oficina | Tempo não indicado | lente-formas-v1 → itens.tres-cartas.experimentei / revi | Fora dos percursos desde 31/10 (decisão 34); antes, Mudar uma escolha e comparar | Três situações e exemplos fictícios do Lente. | Não detetado nesta comparação |
 | [Fazer. Voltar a ver.](../../narrativas/variantes/) | oficina | Tempo não indicado | lente-laboratorio-v1 → feitas.variantes (registo explícito novo) | Criar para além da página | Três situações originais; sem excerto literário. | Não detetado nesta comparação |
 | [O acontecimento que não se desenha](../../narrativas/fora-da-pagina/intervalo/) | oficina | Tempo não indicado | epi-narrativas → feitas.fdp-intervalo | Criar para além da página | Situações e diagramas didáticos originais do Lente; sem excerto literário. | Não detetado nesta comparação |
 | [Uma história que se rodeia](../../narrativas/fora-da-pagina/escultura/) | oficina | Tempo não indicado | epi-narrativas → feitas.fdp-escultura | Criar para além da página | Situações e diagramas didáticos originais do Lente; sem excerto literário. | Não detetado nesta comparação |
@@ -232,11 +234,14 @@ Da variação de um objeto ao intervalo, ao volume e ao confronto de ideias.
 
 ## Imagens
 
-- `assets/laboratorio/ver.webp`: Katsushika Hokusai, _A Grande Onda de Kanagawa_, cerca de 1830 a 1832. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg). O enquadramento aproxima a onda e reduz a montanha: uma escolha formal muda o que vemos.
-- `assets/laboratorio/treinar.webp`: Vincent van Gogh, _O quarto em Arles_, 1888. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:VanGogh_Bedroom_Arles1.jpg). Os objetos e a disposição do quarto tornam visível o que o treino pede para descrever.
-- `assets/laboratorio/criar.webp`: El Lissitzky, _Proun 5A_, 1923. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:El_Lissitzky_-_Proun_5A.jpg). A passagem entre superfície e espaço acompanha as oficinas que cruzam meios.
+Desde 31/10/2026 (decisão 34 do docente). Os dados estão em `assets/laboratorio/imagens.json`; as páginas geradas e a porta da entrada do Lente mostram a mesma tabela de museu.
 
-As três reproduções foram descarregadas das ligações originais das páginas do Commons, reduzidas para WebP sem recorte, e mantêm crédito visível. A data 1923 de _Proun 5A_ é a que indica quem carregou o ficheiro (a confirmar numa fonte do museu); a página do ficheiro indica fotografia de 2024. As licenças e as instituições ficam a confirmar na página de cada ficheiro: a API do Commons respondeu 429 a 31/10 e não se insistiu; o diretor de arte conferiu as páginas HTML (PD-Art para as três, sem a etiqueta dos EUA em _Proun 5A_).
+- Porta do Laboratório na entrada do Lente, `assets/laboratorio/van-gogh-quarto-carta.webp`: Vincent van Gogh, esboço de _O Quarto_ na carta a Theo (carta 705, Arles, 16 de outubro de 1888). Pena e tinta sobre papel. Van Gogh Museum, Amesterdão (Vincent van Gogh Foundation). Wikimedia Commons. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:Vincent_van_Gogh_-_Vincent%27s_Bedroom_in_Arles_-_Letter_Sketch_October_1888.jpg). Um quarto desenhado numa carta, para mostrar ao irmão um quadro: um esboço também é uma maneira de pensar uma obra.
+- Ver, `assets/laboratorio/blake-tyger.webp`: William Blake, primeiro rascunho de «The Tyger», no caderno de notas do poeta (o poema sai em _Songs of Experience_, 1794). British Library, Londres, Add MS 49460. Wikimedia Commons. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:Blake_manuscript_-_Notebook_25_-_Tyger_-_1st_draft.jpg). O primeiro rascunho de um poema conhecido, com versos riscados e emendas: ler também é ver as escolhas de quem escreveu.
+- Treinar, `assets/laboratorio/degas-barra.webp`: Edgar Degas, _Bailarinas a ensaiar na barra_, 1877. Técnica mista sobre tela. Metropolitan Museum of Art, Nova Iorque. Wikimedia Commons. CC0. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:Dancers_Practicing_at_the_Barre_MET_DT840.jpg). Duas bailarinas repetem um exercício na barra, longe do palco: em Treinar também se ensaia uma regra de cada vez.
+- Criar, `assets/laboratorio/lissitzky-cunha.webp`: El Lissitzky, _Bate os brancos com a cunha vermelha_, 1919–1920. Litografia. Biblioteca Estatal Russa, Moscovo. Wikimedia Commons. Domínio público. [Página do ficheiro](https://commons.wikimedia.org/wiki/File:Klinom_Krasnym_Bej_Belych.JPG). Um cartaz que diz uma ideia com um triângulo, um círculo e poucas palavras: em Criar, a forma também faz parte do que se diz.
+
+Os ficheiros são WebP com 640 px de largura (o rascunho de Blake fica com os 500 px da reprodução), sem recorte e com a cor do original; o recorte 3:2 faz-se na página com `object-position` (Blake e Degas 50% 0%, Lissitzky 50% 52%; na porta, 50% 20%, para que o canto rasgado da carta não entre no recorte do telemóvel). O tratamento final das imagens cabe à direção de arte. Saíram _A Grande Onda de Kanagawa_ de Hokusai, _O Quarto_ de Van Gogh (óleo) e _Proun 5A_ de El Lissitzky, e os seus ficheiros foram apagados.
 
 Saíram 11 imagens de IA: a prancha da carteira, os quatro recortes, os três desenhos vetoriais e os três recortes do Baralho improvável. Saíram também as duas imagens de Muybridge usadas no Laboratório. As páginas do Português usam a sua própria cópia e não foram alteradas.
 
@@ -306,17 +311,15 @@ Mudanças intencionais nos testes, assinaladas com «30/10/2026»: nomes curtos 
 - `assets/formas/tres-cartas-dados.js`: Apresenta os planos como descrições ou conserva o funcionamento sem as imagens retiradas.
 - `assets/formas/tres-cartas.css`: Apresenta os planos como descrições ou conserva o funcionamento sem as imagens retiradas.
 - `assets/formas/tres-cartas.js`: Apresenta os planos como descrições ou conserva o funcionamento sem as imagens retiradas.
-- `assets/laboratorio/criar.webp`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
+- `assets/laboratorio/blake-tyger.webp`, `degas-barra.webp`, `lissitzky-cunha.webp` e `van-gogh-quarto-carta.webp` (31/10, decisão 34): imagens de arquivo; saíram `ver.webp`, `treinar.webp` e `criar.webp`.
 - `assets/laboratorio/imagens.json`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
 - `assets/laboratorio/ligacoes.js`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
 - `assets/laboratorio/percursos.css`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
 - `assets/laboratorio/percursos.js`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
 - `assets/laboratorio/percursos.json`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
-- `assets/laboratorio/treinar.webp`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
-- `assets/laboratorio/ver.webp`: Dados, apresentação, imagens de arquivo ou leitura dos estados dos percursos.
 - `img/fontes/muybridge-horse-1878.jpg`: Retira a imagem habitual de Muybridge, já sem uso no Laboratório.
 - `img/narrativas/muybridge-grelha-1878.webp`: Retira a imagem habitual de Muybridge, já sem uso no Laboratório.
-- `index.html`: Atualiza apenas o cartão do Laboratório: nomes curtos e imagem de Hokusai.
+- `index.html`: Atualiza apenas o cartão do Laboratório: nomes curtos e, desde 31/10, o esboço de _O Quarto_ com a tabela de museu colada à imagem.
 - `narrativas/anguissola/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/aula-forma/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/aula-lugar/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
@@ -347,7 +350,7 @@ Mudanças intencionais nos testes, assinaladas com «30/10/2026»: nomes curtos 
 - `narrativas/fora-da-pagina/tese/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/formas/certa-manha/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/formas/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
-- `narrativas/formas/tres-cartas/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
+- `narrativas/formas/tres-cartas/index.html`: Fora dos percursos desde 31/10 (decisão 34): liga de volta a Criar; conserva o conteúdo e a chave.
 - `narrativas/galileu/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/historia-enredo/index.html`: Liga a peça ao percurso e à peça seguinte; conserva o conteúdo e a chave.
 - `narrativas/index.html`: Apresenta a pergunta e a lista ordenada, com estado quando aplicável.

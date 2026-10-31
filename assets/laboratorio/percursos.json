@@ -221,7 +221,7 @@
       "id": "cena",
       "block": "criar",
       "title": "Construir com palavras e imagens",
-      "question": "Que forma pede cada ideia?",
+      "question": "Em que meio vive melhor uma ideia?",
       "reason": "Do gesto e do visível à montagem, ao espaço e à escolha do meio.",
       "pieces": [
         "oficina-visivel",
@@ -251,12 +251,11 @@
       "block": "criar",
       "title": "Mudar uma escolha e comparar",
       "question": "Qual das duas versões escolhes, e porquê?",
-      "reason": "Do plano em falta à montagem, à transformação de uma obra e a dois géneros.",
+      "reason": "Do plano em falta à montagem, à transformação de uma obra e a uma variante em papel.",
       "pieces": [
         "corta/cena-que-falta",
         "corta/mesa",
         "formas",
-        "formas/tres-cartas",
         "variantes"
       ]
     },
@@ -1433,7 +1432,7 @@
     {
       "id": "treinar/pelo-meio",
       "url": "narrativas/treinar/pelo-meio/",
-      "title": "Começar pelo meio",
+      "title": "A meio da ação",
       "type": "treino",
       "time": "10 min de escrita",
       "description": "Começa uma história com a ação já a decorrer.",
@@ -1616,7 +1615,7 @@
     {
       "id": "oficina-ficcao-comecar",
       "url": "narrativas/oficina-ficcao-comecar/",
-      "title": "Escrever ficção: começar",
+      "title": "Escrever ficção: o começo",
       "type": "oficina",
       "time": "5 a 8 min",
       "description": "Uma chave na mesa, alguém a leva: experimenta a ação, a ordem da informação e o ritmo.",
@@ -2091,7 +2090,8 @@
         "key": "lente-formas-v1",
         "id": "tres-cartas"
       },
-      "route": "experimentar",
+      "route": null,
+      "block": "criar",
       "incoming": [
         "narrativas/formas/tres-cartas/index.html"
       ]
@@ -2099,7 +2099,7 @@
     {
       "id": "variantes",
       "url": "narrativas/variantes/",
-      "title": "Fazer. Voltar a ver.",
+      "title": "Fazer e voltar a ver",
       "type": "oficina",
       "time": "15 a 30 min",
       "description": "Escolhe uma de três variantes curtas, em papel: um objeto, um espaço ou uma frase.",

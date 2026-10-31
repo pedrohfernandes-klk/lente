@@ -181,7 +181,7 @@ window.LenteCenaQueFalta={
   {
     "id": "montar",
     "tipo": "planos",
-    "p": "Que plano pões entre a descoberta e a devolução?",
+    "p": "Que plano pões entre a perda e a devolução?",
     "o": [
       "Guardar a carteira",
       "Procurar no cartão",

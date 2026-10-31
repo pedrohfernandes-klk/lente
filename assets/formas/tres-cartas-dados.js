@@ -8,7 +8,7 @@ window.LenteTresCartasDados={
     },
     {
       "id": "13-02",
-      "alt": "Duas pessoas seguram, cada uma pela sua ponta, uma linha amarela esticada. Uma terceira passa a transportar um barco."
+      "alt": "Duas pessoas seguram, cada uma pela sua ponta, uma linha amarela esticada. Uma terceira passa por elas com um barco."
     },
     {
       "id": "20-03",
@@ -239,7 +239,7 @@ window.LenteTresCartasDados={
         {
           "id": "b",
           "texto": "Contudo",
-          "feedback": "Porém introduz oposição, não consequência."
+          "feedback": "Contudo introduz oposição, não consequência."
         }
       ],
       "certa": "a",
@@ -667,7 +667,7 @@ window.LenteTresCartasDados={
     "t11": "Versão para imprimir",
     "t12": "Cartão anterior",
     "t13": "Seguinte",
-    "t14": "Voltar ao percurso",
+    "t14": "Voltar a Criar",
     "t15": "Conserva A no caderno. A revisão será escrita como B.",
     "t16": "Plano copiado.",
     "t17": "Seleciona o plano e copia com o comando do teu aparelho.",

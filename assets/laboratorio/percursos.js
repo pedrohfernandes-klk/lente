@@ -1,6 +1,7 @@
 /* 30/10/2026: apenas lê os registos reais. Visitar nunca equivale a concluir.
    Não lê respostas, não envia dados e não consulta progresso em projeção (?projetar=1 ou dentro da moldura /projetar/).
-   31/10/2026: a reposição lê o aparelho no momento em que repõe; «a seguir» na primeira peça por fazer. */
+   31/10/2026: a reposição lê o aparelho no momento em que repõe; «a seguir» na primeira peça por fazer.
+   31/10/2026 (segunda correção): uma só marca «a seguir» por página, a peça para onde leva «Começar» ou «Continuar». */
 (function(){'use strict';
  const node=document.getElementById('lab-dados');if(!node)return;
  const D=JSON.parse(node.textContent),by=Object.fromEntries(D.map(p=>[p.id,p]));
@@ -17,15 +18,15 @@
    restore.onchange=async()=>{try{const file=restore.files[0];if(!file)return;note.textContent='Ficheiro escolhido: '+file.name+'.';if(file.size>100000)throw Error();const d=JSON.parse(await file.text());if(d.formato!=='lente-laboratorio'||d.versao!==1||!Array.isArray(d.registos)||d.registos.length>D.length)throw Error();const seen=new Set();for(const r of d.registos){if(!r||!Object.hasOwn(by,r.id)||seen.has(r.id)||!['feito','revisto'].includes(r.estado)||(r.estado==='revisto'&&by[r.id].progress.kind!=='formas'))throw Error();seen.add(r.id);}
     const changes={};for(const r of d.registos){const q=by[r.id].progress;if(!changes[q.key]){const raw=localStorage.getItem(q.key),v=raw?JSON.parse(raw):{};if(!v||typeof v!=='object'||Array.isArray(v))throw Error();changes[q.key]=v;}const s=changes[q.key];if(q.kind==='formas'){s.version=1;s.itens=s.itens||{};s.itens[q.id]=s.itens[q.id]||{};s.itens[q.id].experimentei=s.itens[q.id].experimentei||Date.now();if(r.estado==='revisto')s.itens[q.id].revi=s.itens[q.id].revi||Date.now();}else if(q.kind==='montagem'){s.version=1;s.done=[...new Set([...(Array.isArray(s.done)?s.done:[]),...q.ids])];}else{s.feitas=s.feitas||{};s.feitas[q.id]=s.feitas[q.id]||Date.now();}}
     for(const [k,v] of Object.entries(changes))localStorage.setItem(k,JSON.stringify(v));location.reload();
-   }catch{note.textContent='Não foi possível repor. Escolhe um ficheiro de progresso guardado nesta página, ou confirma que o progresso deste aparelho não está estragado.';}finally{restore.value='';}};
+   }catch{note.textContent='Não foi possível repor. Usa um ficheiro guardado nesta página com «Guardar num ficheiro». Se o erro se repetir, o registo deste aparelho pode estar danificado: avisa o docente.';}finally{restore.value='';}};
   }
  }
  function ids(el,key){return JSON.parse(el.dataset[key]);}
  document.querySelectorAll('[data-estado]').forEach(el=>{const s=states[el.dataset.estado];el.textContent=s;if(s!=='por fazer')el.closest('li').classList.add('feito');});
- document.querySelectorAll('ol.passos').forEach(ol=>{const li=[...ol.children].find(li=>states[li.dataset.peca]==='por fazer');if(li){li.classList.add('seguir');const c=li.querySelector('[data-estado]');if(c)c.textContent='a seguir';}});
+ const cont=document.querySelector('[data-continuar]');if(cont){const id=ids(cont,'continuar').find(i=>states[i]==='por fazer');const li=id&&document.querySelector('ol.passos li[data-peca="'+CSS.escape(id)+'"]');if(li){li.classList.add('seguir');const c=li.querySelector('[data-estado]');if(c)c.textContent='a seguir';}}
  document.querySelectorAll('[data-contagem]').forEach(el=>{const all=ids(el,'contagem'),n=all.filter(id=>states[id]!=='por fazer').length;el.textContent=n+' de '+all.length+' peças feitas';});
  const root=new URL(document.querySelector('[data-raiz]').dataset.raiz,location.href);
- document.querySelectorAll('[data-continuar]').forEach(el=>{const all=ids(el,'continuar'),done=all.some(id=>states[id]!=='por fazer'),id=all.find(id=>states[id]==='por fazer')||all[0],p=by[id];el.textContent=(all.every(id=>states[id]!=='por fazer')?'Percurso feito. Recomeçar: ':done?'Continuar: ':'Começar: ')+p.title+' →';const u=new URL(p.url,root);if(projected)u.searchParams.set('projetar','1');el.href=u.href;});
+ document.querySelectorAll('[data-continuar]').forEach(el=>{const all=ids(el,'continuar'),done=all.some(id=>states[id]!=='por fazer'),id=all.find(id=>states[id]==='por fazer')||all[0],p=by[id];el.textContent=(all.every(id=>states[id]!=='por fazer')?'Percurso feito. Recomeçar: ':done?'Continuar: ':'Começar: ')+p.title+'\u00a0→';const u=new URL(p.url,root);if(projected)u.searchParams.set('projetar','1');el.href=u.href;});
  if(projected)document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href);if(u.origin===location.origin){u.searchParams.set('projetar','1');a.href=u.href;}});
  const wide=matchMedia('(min-width:640px)');function dobras(){if(wide.matches)document.querySelectorAll('details.dobra').forEach(d=>{d.open=true;});}dobras();if(wide.addEventListener)wide.addEventListener('change',dobras);
  addEventListener('pageshow',e=>{if(e.persisted)location.reload();});

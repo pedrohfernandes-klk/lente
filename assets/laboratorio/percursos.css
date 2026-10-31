@@ -13,3 +13,7 @@ main{max-width:1168px;margin:auto;padding:24px 16px 72px}.barra-nav{display:flex
 
 /* 31/10/2026: o campo de ficheiro nativo fica escondido; a etiqueta é o botão (o mesmo padrão de .pf-l em pt/index.html). */
 .registos{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.registos label,.registos button{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:2px solid currentColor;background:var(--papel);color:var(--tinta);font-weight:700;cursor:pointer;max-width:100%}.registos input[type=file]{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.registos label:focus-within{outline:3px solid var(--tinta);outline-offset:3px}
+/* 31/10/2026 (segunda correção, direção de arte): a dobra mostra que abre; barra numa linha a 320 px; nomes de percurso com 44 px de alvo. */
+.dobra>summary{list-style:none;justify-content:space-between;gap:16px;border-top:2px solid currentColor}.dobra>summary::-webkit-details-marker{display:none}.dobra>summary::after{content:"+";font:700 1.5rem/1 Arial,Helvetica,sans-serif}.dobra[open]>summary::after{content:"−"}
+@media(max-width:359px){.barra-nav>a:nth-child(n+3):not([aria-current]){display:none}}
+.unidade>h2>a{display:inline-block;padding:6px 0}

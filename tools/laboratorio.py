@@ -2,6 +2,8 @@
 O gerador só escreve navegação, nunca os exercícios nem as suas chaves.
 31/10/2026: escreve também a continuação de cada peça (percurso, seguinte, menu e fim dos treinos)
 a partir da ordem dos percursos, para que a lista e a peça digam o mesmo.
+31/10/2026 (segunda correção): <title> e rótulo dos treinos também a partir dos percursos; uma peça
+fora dos percursos (decisão 34: «Três cartas») continua no endereço e volta ao seu bloco.
 """
 from pathlib import Path
 import json,html,posixpath,re
@@ -10,20 +12,24 @@ D=json.loads((R/'assets/laboratorio/percursos.json').read_text('utf-8'))
 IM={x['id']:x for x in json.loads((R/'assets/laboratorio/imagens.json').read_text('utf-8'))}
 P={x['id']:x for x in D['pieces']}
 ALIAS=D['aliases']
+INROUTE={id for r in D['routes'] for id in r['pieces']}
 ABS='https://pedrohfernandes-klk.github.io/lente/'
 NUM={4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
 e=html.escape
 def it(s):return re.sub(r'_(.+?)_',r'<i>\1</i>',e(s))
 def link(base,path):return posixpath.relpath(path or '.',base)+('/' if not path or path.endswith('/') else '')
 def a(base,path,label,cur=''):return '<a href="'+e(link(base,path))+'"'+(' aria-current="'+cur+'"' if cur else '')+'>'+label+'</a>'
+def credito(m):
+    # Tabela de museu: autor, obra (itálico com _…_), data, técnica, instituição, Commons e licença.
+    return (e(m['author'])+', '+it(m['title'])+(', '+e(m['date']) if m.get('date') else '')+'. '+(e(m['technique'])+'. ' if m.get('technique') else '')
+            +(e(m['institution'])+'. ' if m.get('institution') else '')+'<a href="'+e(m['source'])+'">Wikimedia Commons</a>. '+e(m['license'])+'.')
 def pic(base,b):
     m=IM[b]
     return ('<figure class="arquivo"><img src="'+link(base,m['file'])+'" width="'+str(m['width'])+'" height="'+str(m['height'])+'" alt="'+e(m['alt'])+'" style="--foco:'+e(m['foco'])+'" loading="lazy">'
-            '<figcaption>'+e(m['author'])+', <i>'+e(m['title'])+'</i>, '+e(m['date'])+'. '+(e(m['institution'])+'. ' if m.get('institution') else '')
-            +'<a href="'+e(m['source'])+'">Wikimedia Commons</a>, '+e(m['license'])+'.<span class="legenda">'+e(m['reason'])+'</span></figcaption></figure>')
+            '<figcaption>'+credito(m)+'<span class="legenda">'+e(m['reason'])+'</span></figcaption></figure>')
 def start(base,ids):
     p=P[ids[0]]
-    return '<a class="continuar" data-continuar="'+e(json.dumps(ids))+'" href="'+link(base,p['url'])+'">Começar: '+e(p['title'])+' →</a>'
+    return '<a class="continuar" data-continuar="'+e(json.dumps(ids))+'" href="'+link(base,p['url'])+'">Começar: '+e(p['title'])+'\u00a0→</a>'
 def steps(base,ids):
     out='<ol class="passos">'
     for n,id in enumerate(ids,1):
@@ -38,7 +44,8 @@ def extras(base,treinar=False):
     return '<footer class="mais">'+''.join(links+[a(base,'narrativas/tudo/','Tudo o que há no Laboratório')])+'</footer>'
 def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     rel=lambda x:link(base,x)
-    data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces']]
+    # 31/10/2026: só as peças que estão num percurso (uma peça fora dos percursos não conta nem se guarda aqui).
+    data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     cur=cur or {}
     nav=(a(base,'','Lente')+a(base,'narrativas/','Laboratório',cur.get('lab',''))
@@ -60,8 +67,8 @@ body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div c
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos de '+b['title']+' →')+'</header>'+pic('narrativas',b['id'])
-           +'<details class="dobra"><summary>Os '+n+' percursos</summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
+           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos de '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +'<details class="dobra"><summary>Mostrar os '+n+' percursos</summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
@@ -82,7 +89,7 @@ for r in D['routes']:
     antes=''
     if r.get('antes'):q=P[r['antes']['piece']];antes='<p class="antes">'+e(r['antes']['text'])+' '+a(base,q['url'],'«'+e(q['title'])+'»')+'.</p>'
     body='<header class="topo"><p class="marca">'+b['title']+'</p><h1>'+e(r['title'])+'</h1><p class="pergunta">'+e(r['question'])+'</p></header>'+start(base,r['pieces'])+'<section class="unidade">'+antes+count(r['pieces'])+steps(base,r['pieces'])+'</section>'
-    page(base,r['title'],body,r['question']+' '+str(len(r['pieces']))+' peças, por ordem.',treinar=b['id']=='treinar',cur={b['id']:'true'})
+    page(base,r['title'],body,r['question']+' '+NUM[len(r['pieces'])].capitalize()+' peças, por ordem.',treinar=b['id']=='treinar',cur={b['id']:'true'})
 
 # Tudo
 base='narrativas/tudo';body='<header class="topo"><h1>Tudo o que há no Laboratório</h1></header>'
@@ -106,27 +113,38 @@ page('narrativas/percursos','Percursos','<header class="topo"><h1>Percursos</h1>
 # Continuação nas peças (31/10/2026): a ordem vem de percursos.json.
 def continuacao():
     route={id:r for r in D['routes'] for id in r['pieces']}
+    blocks={b['id']:b for b in D['blocks']}
     changed=0
     for p in D['pieces']:
-        r=route[p['id']];ids=r['pieces'];i=ids.index(p['id']);nxt=P[ids[i+1]] if i+1<len(ids) else None
+        r=route.get(p['id'])
         f=R/p['url']/'index.html';s=f.read_text('utf-8');o=s
-        rurl=ABS+'narrativas/percursos/'+r['id']+'/'
+        if r:
+            ids=r['pieces'];i=ids.index(p['id']);nxt=P[ids[i+1]] if i+1<len(ids) else None
+            b=blocks[r['block']];rurl=ABS+'narrativas/percursos/'+r['id']+'/';rpath='narrativas/percursos/'+r['id']+'/';back='Voltar ao percurso'
+        else:
+            # fora dos percursos (decisão 34): volta ao bloco, sem «Seguinte»
+            nxt=None;b=blocks[p['block']];rurl=ABS+'narrativas/'+b['id']+'/';rpath='narrativas/'+b['id']+'/';back='Voltar a '+b['title']
+        # <title> igual em todas as peças: título | bloco | Laboratório | Lente
+        s=re.sub(r'<title>[^<]*</title>','<title>'+e(p['title'],quote=False)+' | '+b['title']+' | Laboratório | Lente</title>',s,count=1)
+        # rótulo dos treinos com o nome do percurso
+        if r and p['id'].startswith('treinar/'):
+            s=re.sub(r'(<p class=\\"etq-m\\">Treino · )[^·<]+?( · )',lambda m:m.group(1)+e(r['title'],quote=False)+m.group(2),s)
         # menu da casca: uma só saída, para o percurso
-        s=re.sub(r'</ol><a href="[^"]*">(?:Voltar ao ginásio|Voltar ao Laboratório|Voltar ao percurso|Voltar a Treinar)</a>','</ol><a href="'+rurl+'">Voltar ao percurso</a>',s)
+        s=re.sub(r'</ol><a href="[^"]*">(?:Voltar ao ginásio|Voltar ao Laboratório|Voltar ao percurso|Voltar a Treinar|Voltar a Ver|Voltar a Criar)</a>','</ol><a href="'+rurl+'">'+back+'</a>',s)
         # configuração do motor
         if 'EPIJogo.montar(' in s and 'percurso:"' in s:
             s=re.sub(r'percurso:"'+re.escape(ABS)+r'narrativas/percursos/[^"/]+/"','percurso:"'+rurl+'"',s)
             s=re.sub(r',seguinte:"[^"]*",seguinteRotulo:"[^"]*"','',s)
             if nxt:s=s.replace('voltarRotulo:"Voltar ao percurso"','voltarRotulo:"Voltar ao percurso",seguinte:"'+ABS+nxt['url']+'",seguinteRotulo:"Seguinte"',1)
             # fim dos treinos: o texto aponta para o mesmo sítio que o botão
-            fim=('Seguinte: <a href=\\"'+ABS+nxt['url']+'\\">'+e(nxt['title'],quote=False)+'</a>') if nxt else '<a href=\\"'+rurl+'\\">Voltar ao percurso</a>'
-            s=re.sub(r'(<p class=\\"sub\\">)(?:Treino seguinte: |Seguinte: )?<a href=\\"[^"\\]*\\">[^<]*</a>(\. Ou volta a este noutro dia: repetir é treinar\.)',lambda m:m.group(1)+fim+m.group(2),s)
+            fim=('Seguinte: <a href=\\"'+ABS+nxt['url']+'\\">'+e(nxt['title'],quote=False)+'</a>') if nxt else 'É o último treino deste percurso: <a href=\\"'+rurl+'\\">regressa à lista</a>'
+            s=re.sub(r'(<p class=\\"sub\\">)(?:Treino seguinte: |Seguinte: |É o último treino deste percurso: )?<a href=\\"[^"\\]*\\">[^<]*</a>(\. Ou volta a este noutro dia: repetir é treinar\.)',lambda m:m.group(1)+fim+m.group(2),s)
         # páginas sem motor: nav.lab-fim-percurso
         def nav(m):
             rel=lambda u:posixpath.relpath(u.rstrip('/'),p['url'].rstrip('/'))+'/'
-            return m.group(1)+'<a href="'+rel('narrativas/percursos/'+r['id']+'/')+'">Voltar ao percurso</a>'+(' <a href="'+rel(nxt['url'])+'">Seguinte: '+e(nxt['title'])+' →</a>' if nxt else '')+'</nav>'
+            return m.group(1)+'<a href="'+rel(rpath)+'">'+back+'</a>'+(' <a href="'+rel(nxt['url'])+'">Seguinte: '+e(nxt['title'])+'\u00a0→</a>' if nxt else '')+'</nav>'
         s=re.sub(r'(<nav class="lab-fim-percurso"[^>]*>).*?</nav>',nav,s,flags=re.S)
         if s!=o:f.write_text(s,'utf-8');changed+=1
     return changed
 continuacao()
-print('23 páginas geradas; 93 peças preservadas.')
+print('23 páginas geradas; '+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')
