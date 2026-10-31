@@ -16,4 +16,7 @@ main{max-width:1168px;margin:auto;padding:24px 16px 72px}.barra-nav{display:flex
 /* 31/10/2026 (segunda correção, direção de arte): a dobra mostra que abre; barra numa linha a 320 px; nomes de percurso com 44 px de alvo. */
 .dobra>summary{list-style:none;justify-content:space-between;gap:16px;border-top:2px solid currentColor}.dobra>summary::-webkit-details-marker{display:none}.dobra>summary::after{content:"+";font:700 1.5rem/1 Arial,Helvetica,sans-serif}.dobra[open]>summary::after{content:"−"}
 @media(max-width:359px){.barra-nav>a:nth-child(n+3):not([aria-current]){display:none}}
-.unidade>h2>a{display:inline-block;padding:6px 0}
+.unidade>h2>a{display:inline-block;padding:7px 0}
+/* 31/10/2026 (terceira correção, direção de arte e revisor): nomes de percurso com 45,7 px de alvo (acima); barra numa linha na projeção a menos de 560 px; a dobra diz «Mostrar» ou «Esconder» conforme o estado. */
+@media(max-width:559px){html.em-projecao .barra-nav>a:nth-child(n+3):not([aria-current]){display:none}}
+.dobra[open] .abrir,.dobra:not([open]) .fechar{display:none}

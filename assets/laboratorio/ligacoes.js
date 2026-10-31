@@ -22,6 +22,8 @@
   const col=document.querySelector('main')||document.querySelector('.formas-page main, article');
   if(!end&&col&&!col.contains(nav))col.appendChild(nav);
   if(document.querySelector('[data-lf-percurso]')||document.querySelector('#cartoes'))nav.hidden=!end;
+  // 31/10/2026 (terceira correção): com uma só ligação (fora dos percursos, «Três cartas»), o botão negro do motor já a repete.
+  if(end&&end.contains(nav)&&links.length===1&&!nav.querySelector('button'))nav.hidden=true;
  }
  place();new MutationObserver(place).observe(document.body,{childList:true,subtree:true});
 })();

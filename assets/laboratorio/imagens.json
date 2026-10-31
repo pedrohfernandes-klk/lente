@@ -2,7 +2,7 @@
   {
     "id": "porta",
     "file": "assets/laboratorio/van-gogh-quarto-carta.webp",
-    "title": "esboço de _O Quarto_ na carta a Theo (carta 705, Arles, 16 de outubro de 1888)",
+    "title": "esboço de _O Quarto_ enviado ao irmão, Theo, com a carta 705 (Arles, 16 de outubro de 1888)",
     "author": "Vincent van Gogh",
     "date": "",
     "technique": "Pena e tinta sobre papel",
@@ -11,15 +11,15 @@
     "original": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Vincent_van_Gogh_-_Vincent%27s_Bedroom_in_Arles_-_Letter_Sketch_October_1888.jpg",
     "license": "Domínio público",
     "alt": "Desenho a tinta de um quarto: uma cama de madeira à direita, duas cadeiras de palha, uma mesa com jarro e bacia, uma janela de portadas e quadros na parede.",
-    "reason": "Um quarto desenhado numa carta, para mostrar ao irmão um quadro: um esboço também é uma maneira de pensar uma obra.",
+    "reason": "Um quarto desenhado para mostrar ao irmão um quadro: um esboço também é uma maneira de pensar uma obra.",
     "foco": "50% 20%",
-    "width": 640,
-    "height": 401
+    "width": 900,
+    "height": 520
   },
   {
     "id": "ver",
     "file": "assets/laboratorio/blake-tyger.webp",
-    "title": "primeiro rascunho de «The Tyger», no caderno de notas do poeta (o poema sai em _Songs of Experience_, 1794)",
+    "title": "primeiro rascunho de «The Tyger», no caderno de notas do poeta (o poema foi publicado em 1794, em _Songs of Experience_)",
     "author": "William Blake",
     "date": "",
     "technique": "",
@@ -30,8 +30,8 @@
     "alt": "Página manuscrita do caderno de Blake: o poema «The Tyger» escrito à mão, com versos riscados e palavras emendadas por cima.",
     "reason": "O primeiro rascunho de um poema conhecido, com versos riscados e emendas: ler também é ver as escolhas de quem escreveu.",
     "foco": "50% 0%",
-    "width": 500,
-    "height": 598
+    "width": 704,
+    "height": 842
   },
   {
     "id": "treinar",
@@ -44,27 +44,27 @@
     "source": "https://commons.wikimedia.org/wiki/File:Dancers_Practicing_at_the_Barre_MET_DT840.jpg",
     "original": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Dancers_Practicing_at_the_Barre_MET_DT840.jpg",
     "license": "CC0",
-    "alt": "Duas bailarinas de tutu branco ensaiam encostadas a uma barra de madeira; uma estica a perna por cima da barra. No chão, à esquerda, um regador.",
+    "alt": "Duas bailarinas de tutu branco ensaiam numa barra de madeira, cada uma com uma perna esticada por cima dela. No chão, à esquerda, um regador.",
     "reason": "Duas bailarinas repetem um exercício na barra, longe do palco: em Treinar também se ensaia uma regra de cada vez.",
     "foco": "50% 0%",
     "width": 640,
-    "height": 591
+    "height": 590
   },
   {
     "id": "criar",
     "file": "assets/laboratorio/lissitzky-cunha.webp",
-    "title": "_Bate os brancos com a cunha vermelha_",
+    "title": "_Bate os Brancos com a cunha vermelha_",
     "author": "El Lissitzky",
-    "date": "1919–1920",
+    "date": "1919 a 1920",
     "technique": "Litografia",
     "institution": "Biblioteca Estatal Russa, Moscovo",
     "source": "https://commons.wikimedia.org/wiki/File:Klinom_Krasnym_Bej_Belych.JPG",
     "original": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Klinom_Krasnym_Bej_Belych.JPG",
     "license": "Domínio público",
     "alt": "Cartaz de formas geométricas: uma cunha vermelha entra num círculo branco sobre fundo preto, com palavras em russo espalhadas pela composição.",
-    "reason": "Um cartaz que diz uma ideia com um triângulo, um círculo e poucas palavras: em Criar, a forma também faz parte do que se diz.",
+    "reason": "Um cartaz da Guerra Civil Russa em que a cunha vermelha (os bolcheviques) entra no círculo branco (os Brancos, os seus adversários): em Criar, a forma também faz parte do que se diz.",
     "foco": "50% 52%",
-    "width": 640,
-    "height": 512
+    "width": 960,
+    "height": 768
   }
 ]

@@ -4,6 +4,8 @@ O gerador só escreve navegação, nunca os exercícios nem as suas chaves.
 a partir da ordem dos percursos, para que a lista e a peça digam o mesmo.
 31/10/2026 (segunda correção): <title> e rótulo dos treinos também a partir dos percursos; uma peça
 fora dos percursos (decisão 34: «Três cartas») continua no endereço e volta ao seu bloco.
+31/10/2026 (terceira correção): a dobra diz «Mostrar» ou «Esconder» conforme o estado; a casca de todas as
+peças apresenta-se como «Laboratório» (marca, cabeçalho do menu e «LAB»).
 """
 from pathlib import Path
 import json,html,posixpath,re
@@ -68,7 +70,7 @@ for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
            +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos de '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
-           +'<details class="dobra"><summary>Mostrar os '+n+' percursos</summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
+           +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
@@ -126,6 +128,12 @@ def continuacao():
             nxt=None;b=blocks[p['block']];rurl=ABS+'narrativas/'+b['id']+'/';rpath='narrativas/'+b['id']+'/';back='Voltar a '+b['title']
         # <title> igual em todas as peças: título | bloco | Laboratório | Lente
         s=re.sub(r'<title>[^<]*</title>','<title>'+e(p['title'],quote=False)+' | '+b['title']+' | Laboratório | Lente</title>',s,count=1)
+        # 31/10/2026 (terceira correção): a casca apresenta-se como «Laboratório» em todas as peças (decisão 15):
+        # marca do motor, ligação da marca na casca, cabeçalho do menu (sem tocar nas migalhas «Estás em:») e «LAB».
+        s=re.sub(r'marca:"[^"]*"','marca:"Laboratório"',s)
+        s=re.sub(r'(class="c-menu-cab"><p>)(?!Estás em:)[^<]*(</p>)',r'\1Laboratório\2',s)
+        s=re.sub(r'(<a class="c-marca"[^>]*>)LAB(</a>)',r'\1Laboratório\2',s)
+        s=re.sub(r'(<a class="c-marca" href="[^"]*" aria-label="Página inicial \()[^)"]*(\)">(?:<svg[^>]*>.*?</svg>)?)[^<]*(</a>)',r'\1Laboratório\2Laboratório\3',s)
         # rótulo dos treinos com o nome do percurso
         if r and p['id'].startswith('treinar/'):
             s=re.sub(r'(<p class=\\"etq-m\\">Treino · )[^·<]+?( · )',lambda m:m.group(1)+e(r['title'],quote=False)+m.group(2),s)
@@ -147,4 +155,24 @@ def continuacao():
         if s!=o:f.write_text(s,'utf-8');changed+=1
     return changed
 continuacao()
+
+# Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
+# Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.
+def mapa():
+    f=R/'mapa/index.html';s=f.read_text('utf-8')
+    ini='<section class="map-section"><h2><a href="'+ABS+'narrativas/">';i=s.index(ini);j=s.index('</section>',i)+len('</section>')
+    seta=' <span aria-hidden="true">→</span>'
+    def ramo(nome,abrir,dentro,extra=''):
+        return ('<li><details class="map-branch"><summary><span>'+nome+'</span><b aria-hidden="true">+</b></summary><div class="map-branch-body">'
+                '<p class="map-open"><a href="'+abrir+'">Abrir '+nome+seta+'</a></p>'+extra+'<ul class="map-tree">'+dentro+'</ul></div></details></li>')
+    out=ini+'Laboratório</a></h2><p class="map-open"><a href="'+ABS+'narrativas/tudo/">Tudo o que há no Laboratório'+seta+'</a></p><ul class="map-tree">'
+    for b in D['blocks']:
+        extra=('<p class="map-open"><a href="'+ABS+'narrativas/treinar/caderno/">O caderno de treino</a></p><p class="map-open"><a href="'+ABS+'narrativas/treinar/docente/">Como conduzir um treino (docente)</a></p>') if b['id']=='treinar' else ''
+        rs=''.join(ramo(e(r['title']),ABS+'narrativas/percursos/'+r['id']+'/',''.join('<li class="map-leaf"><a href="'+ABS+P[id]['url']+'">'+e(P[id]['title'])+'</a></li>' for id in r['pieces'])) for r in routes_of(b))
+        out+=ramo(b['title'],ABS+'narrativas/'+b['id']+'/',rs,extra)
+    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('projetos/','Projetos'),('docente/','Área do docente')]
+    out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
+    s2=s[:i]+out+s[j:]
+    if s2!=s:f.write_text(s2,'utf-8')
+mapa()
 print('23 páginas geradas; '+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')

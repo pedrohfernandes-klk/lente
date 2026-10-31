@@ -51,6 +51,8 @@ try{for(const width of [320,390,1366]){
   if(id==='exnoticia')break;
   await p.locator('[data-seguinte]').click();
  }
+ // 30/10/2026: terceira correção (diretor de arte): no último cartão, «Voltar a Criar» aparece uma só vez (o botão negro do motor), sem a continuação repetida.
+ assert.deepEqual(await p.evaluate(()=>[...document.querySelectorAll('a')].filter(a=>a.textContent.trim()==='Voltar a Criar'&&a.getClientRects().length).map(a=>new URL(a.href).pathname)),['/narrativas/criar/']);
  assert.match(await p.locator('#cartoes').innerText(),/CC BY-SA 4.0/);assert.equal(await p.evaluate(()=>localStorage.getItem('epi-corta')),'preservar');
  if(width===390){await p.emulateMedia({media:'print'});assert(await p.locator('.tc-print').isVisible());await p.pdf({path:path.join(out,'papel.pdf'),format:'A4',printBackground:true});await p.emulateMedia({media:'screen'});}
  const ls=await p.evaluate(()=>JSON.stringify(localStorage)),ss=await p.evaluate(()=>JSON.stringify(sessionStorage));
