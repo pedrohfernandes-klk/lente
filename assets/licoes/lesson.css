@@ -330,7 +330,7 @@ ol.passos .n{font-size:2rem}
    uma só cor no ecrã; o erro continua vermelho e riscado. Se o docente quiser manter o verde, basta apagar as regras do acerto
    (as três primeiras depois da projeção e o grupo «acerto no cartão»). O motor do Português continua com o verde. */
 @media (max-width:340px){.casca-topo{gap:0}}
-html.em-projecao .jogo{font-size:1.2em}
+html.em-projecao{font-size:137.5%}html.em-projecao .jogo{font-size:1em}
 html.em-projecao .jogo .rot,html.em-projecao .jogo .ler .fig figcaption{font-size:1.125rem}
 html.em-projecao .jogo .ler .fig img{max-height:min(62vh,640px)}
 .casca-folha.ok .c-folha-in{border-left-color:var(--tinta,#000)}.casca-folha.ok .c-s{color:var(--tinta,#000)}

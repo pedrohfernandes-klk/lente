@@ -41,7 +41,7 @@ NA_AULA = (
  '<p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.</p>')
 LEVAR = (
  '<p class="levar">Uma decisão de muitos vale o que valem as provas que a sustentam.</p>'
- '<p>Nesta sessão separaste facto de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o vosso júri decidiu pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p>'
+ '<p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o vosso júri decidiu pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Votar conta posições; deliberar pesa razões.</li>'
  '<li>Todos se presumem inocentes até prova em contrário.</li>'

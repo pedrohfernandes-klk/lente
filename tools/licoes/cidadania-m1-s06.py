@@ -5,7 +5,7 @@
 # (1976 e 1985) e Rawls (1971) na Stanford Encyclopedia of Philosophy (entradas «Doctrine of Double Effect» e «John Rawls»).
 import json, pathlib
 ABRE = (
- '<p class="pergunta-c">Uma regra é justa se a aceitasses sem saber o lugar que te ia calhar?</p>'
+ '<p class="pergunta-c">Uma regra é justa se a aceitares sem saber o lugar que te vai calhar?</p>'
  '<p>Caso inventado. Há seis turnos de filmagem para três grupos, A, B e C. O delegado de turma, que está num dos grupos, propõe a regra: primeiro quem tem o guião mais avançado. É o grupo dele.</p>'
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, pensar no problema do elétrico e repartir seis turnos sem saber o teu lugar.</p>')
 DECIDE = (

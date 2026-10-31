@@ -32,7 +32,7 @@ DECIDE = (
 CONCEITO = (
  '<p>Dois textos dizem o que uma regra da escola não pode apagar:</p>'
  '<ul><li><b>Constituição, artigo 13.º, n.º 2</b>: ninguém pode ser privilegiado, beneficiado, prejudicado ou privado de qualquer direito em razão, entre outras coisas, da língua, do território de origem ou da religião.</li>'
- '<li><b>Convenção sobre os Direitos da Criança, artigo 30.º</b>: a criança de uma minoria não pode ser privada do direito de ter a sua vida cultural, praticar a sua religião ou utilizar a sua própria língua, com os membros do seu grupo.</li></ul>'
+ '<li><b>Convenção sobre os Direitos da Criança, artigo 30.º</b>: a criança de uma minoria não pode ser privada do direito de ter a sua própria vida cultural, professar e praticar a sua religião ou utilizar a sua própria língua, com os membros do seu grupo.</li></ul>'
  '<p>Uma regra pode ser igual para todos e, mesmo assim, pesar mais sobre alguns.</p>')
 CDC30 = 'ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.'
 FOTO = (

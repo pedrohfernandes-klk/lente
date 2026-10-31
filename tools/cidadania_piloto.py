@@ -213,7 +213,7 @@ GUIA = {
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
   # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -298,7 +298,7 @@ CSS = (TOKENS +
  '.cid-piloto .proximo .prox-n{font:400 2.6rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:0}'
  '.cid-piloto .proximo .prox-t{font:700 1.15rem/1.25 Arial,Helvetica,sans-serif;margin:2px 0 12px}'
  '.cid-piloto a.continuar{display:inline-block;background:var(--papel);color:var(--tinta);text-decoration:none;font-weight:700;padding:12px 18px;border:3px solid var(--papel);margin:0}'
- '.cid-piloto a.continuar:focus-visible,.cid-piloto .sessoes a:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}'
+ '.cid-piloto :is(a,button):focus-visible{outline:3px solid var(--tinta);outline-offset:3px}'
  '.cid-piloto .proximo a.continuar:focus-visible{outline-color:var(--papel)}'
  '.cid-piloto .contagem{margin:0 0 16px;font-size:.95rem}'
  '.cid-piloto ol.sessoes{list-style:none;margin:0;padding:0;border-top:0}'
@@ -312,11 +312,14 @@ CSS = (TOKENS +
  '.cid-piloto ol.sessoes .n{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;grid-row:1/span 2;align-self:center}'
  '.cid-piloto ol.sessoes .tit{grid-column:2;line-height:1.25}'
  '.cid-piloto ol.sessoes strong{font-size:1.05rem;line-height:1.25}'
- '.cid-piloto ol.sessoes .perg{grid-column:2;color:var(--suave);font-size:.95rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}'
- '@media (max-width:599px){.cid-piloto ol.sessoes .perg{display:none}}'
+ '.cid-piloto ol.sessoes .perg{grid-column:2;color:var(--suave);font-size:.875rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}'
+ # 31/10/2026 (quinta correção, diretor de arte): de 600 a 767 px a pergunta cortava-se; abaixo de 768 px sai da linha e fica
+ # só na região «A seguir».
+ '.cid-piloto ol.sessoes a{column-gap:10px;grid-template-columns:2.4rem minmax(0,1fr) auto}'
+ '@media (max-width:767px){.cid-piloto ol.sessoes .perg{display:none}}'
  # 31/10/2026 (quarta correção, diretor de arte): sem a pergunta, o número e a seta ficam só na primeira linha da grelha, a do
  # título e do estado (ocupavam duas e o texto ficava 7 a 11 px acima do centro deles).
- '@media (max-width:599px){.cid-piloto ol.sessoes .n,.cid-piloto ol.sessoes a::after{grid-row:1}}'
+ '@media (max-width:767px){.cid-piloto ol.sessoes .n,.cid-piloto ol.sessoes a::after{grid-row:1}}'
  '.cid-piloto .proximo .prox-q{font:400 1rem/1.4 Georgia,"Times New Roman",serif;margin:-6px 0 14px;max-width:34em}'
  # 31/10/2026 (terceira correção, diretor de arte): o estado é a peça .etq do sistema (6.5 e 6.9): palavra em caixa alta; «Feita»
  # com o quadrado mostarda e contorno de 1,5 px a tinta; «A seguir» com o quadrado cheio a vermelho do token (no escuro, #e4555c);
@@ -347,6 +350,11 @@ CSS = (TOKENS +
  # 31/10/2026 (quarta correção, diretor de arte): no ecrã, a caixa fecha sobre o texto (com a medida de 28em, ficavam 208 px
  # vazios dentro dela, de 1024 a 1440 px); no papel fica como estava.
  '@media screen{.cid-piloto .caixa{width:fit-content;max-width:100%;box-sizing:border-box}}'
+ # 31/10/2026 (quinta correção, diretor de arte): no guia, caixa, grelha, lead e aviso acabam onde acaba o texto (28em); a ligação
+ # que é o único conteúdo da célula é um alvo de 44 px.
+ '@media screen and (min-width:600px){.cid-piloto section.sessao:not(#ponto) .tabela,.cid-piloto .caixa{max-width:28em}}'
+ '.cid-piloto.guia header .lead{max-width:28.3em;text-wrap:pretty}.cid-piloto.guia header .aviso-piloto{max-width:33em}'
+ '.cid-piloto td>a:only-child{display:inline-flex;align-items:center;min-height:44px}'
  '.cid-piloto table{border-collapse:collapse;width:100%;background:var(--papel);margin:8px 0 4px}'
  '.cid-piloto th,.cid-piloto td{border:1px solid var(--tinta);padding:6px 8px;text-align:left;vertical-align:top}'
  '.cid-piloto td.num,.cid-piloto th.num{text-align:right;white-space:nowrap;width:4.5rem}'
@@ -482,6 +490,8 @@ def pagina_guia(S):
              + '<header><p class="marca">Cidadania, módulo 1, piloto</p><h1>Guia do docente</h1>'
              '<p class="lead">Uma secção por sessão: o «Na aula» em pormenor, a imagem, o vídeo, o passo da Pergunta Humana e a grelha do produto da sessão.</p>'
              '<p class="aviso-piloto">Piloto escondido dos motores de busca. O módulo 1 atual mantém-se até 25/11. Os casos das lições são inventados; um caso real só entra depois de o docente o confirmar.</p></header>'
+             # 31/10/2026 (quinta correção, diretor de arte): a primeira ação do guia (ir à sessão do dia) logo no primeiro ecrã
+             f'<nav aria-label="Sessões"><h2>As 10 sessões</h2><ul class="indice">{indice}</ul></nav>'
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
@@ -490,8 +500,7 @@ def pagina_guia(S):
              '<h2>Avaliação</h2>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º, n.º 8).</p>'
              '<p class="pg">Cada sessão tem uma grelha /20 do produto da sessão. Em cada critério há três níveis: 0 pontos (não aparece), metade dos pontos (aparece, mas incompleto ou sem razão) e todos os pontos (como está descrito). A correspondência com os quatro instrumentos da <a href="../../../projeto/">Pergunta Humana</a> também é indicativa:</p>'
-             + instr + '</section>'
-             f'<nav aria-label="Sessões"><h2>As 10 sessões</h2><ul class="indice">{indice}</ul></nav>')
+             + instr + '</section>')
     for s in S:
         g = GUIA[s['n']]
         passos = ''.join(f'<li><span class="min">{m} min.</span> {e(t)}</li>' for m, t in g['passos'])
