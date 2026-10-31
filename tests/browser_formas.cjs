@@ -1,3 +1,4 @@
+// 30/10/2026: percursos substituem as montras; planos descritos substituem imagens de IA.
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 const ROOT=path.resolve(__dirname,'..'),D=require('../assets/formas/corpus.json');
@@ -31,9 +32,9 @@ async function prototipos(b,base){
    assert(await semRolar(page),'sem deslocamento horizontal');
    if(width===390){const r=await page.locator('.ls-cartao').evaluate(el=>{const a=el.querySelector('.lf-q').getBoundingClientRect(),bs=[...el.querySelectorAll('[data-op],[data-dono]')].map(b=>b.getBoundingClientRect());return {top:a.top,bottom:Math.max(a.bottom,...bs.map(b=>b.bottom)),lim:document.querySelector('.casca-acoes').getBoundingClientRect().top};});assert(r.top>=0&&r.bottom<=r.lim,'pergunta e escolhas no ecrã: '+JSON.stringify(r));}
   };
-  await page.goto(base+'/narrativas/');assert.equal(await page.locator('h1').innerText(),'Laboratório');assert.equal(await page.locator('.lab-portas a').count(),3);
+  await page.goto(base+'/narrativas/');assert.equal(await page.locator('h1').innerText(),'Laboratório');assert.equal(await page.locator('.blocos > .bloco').count(),3);
   if(width===390){await page.screenshot({path:path.join(dest,'entrada-390.png'),fullPage:true});console.log('Entrada:',await page.evaluate(()=>({palavras:document.querySelector('main').innerText.trim().split(/\s+/).length,altura:document.documentElement.scrollHeight})));}
-  await page.goto(base+'/narrativas/#treinar');await page.waitForURL('**/narrativas/tudo/#treinar');assert.equal(await page.locator('#treinar').count(),1);
+  await page.goto(base+'/narrativas/#treinar');assert(page.url().endsWith('/narrativas/#treinar'));assert.equal(await page.locator('#treinar').count(),1);
   await page.goto(base+'/narrativas/formas/certa-manha/');await auditar();assert.equal(await cartao(page),'corte');
   if(width===390)await page.screenshot({path:path.join(dest,'certa-manha-390.png'),fullPage:true});
   const inicio=Date.now();await page.locator('[data-op="2"]').focus();await page.keyboard.press('Enter');assert(Date.now()-inicio<10000);assert.match(await page.locator('.ls-feedback').innerText(),/impossível/);
@@ -47,7 +48,7 @@ async function prototipos(b,base){
   await page.goto(base+'/narrativas/formas/certa-manha/');await page.evaluate(()=>sessionStorage.clear());await page.reload();await page.locator('[data-op="2"]').click();await seguinte(page);await page.locator('[data-op="0"]').click();await seguinte(page);assert.equal(await page.locator('[data-dono]').count(),2);await auditar();await page.locator('[data-dono="sim"]').click();assert.equal(await page.locator('[data-op="1"]').getAttribute('aria-pressed'),'true');
   await page.goto(base+'/narrativas/corta/cena-que-falta/');await auditar();await page.locator('[data-op="0"]').click();await seguinte(page);await auditar();
   if(width===390)await page.screenshot({path:path.join(dest,'cena-escolha-390.png'),fullPage:true});
-  for(const i of [0,1,2]){await page.locator('[data-op="'+i+'"]').click();assert.equal(await page.locator('.ls-tira img').count(),5);assert(await page.locator('.ls-tira img').nth(3).getAttribute('src').then(s=>s.endsWith(['bolso','cartao','regresso'][i]+'.svg')));}
+  for(const i of [0,1,2]){await page.locator('[data-op="'+i+'"]').click();assert.equal(await page.locator('.ls-tira .ls-plano-texto').count(),5);assert.match(await page.locator('.ls-tira .ls-plano-texto').nth(3).innerText(),[/bolso/,/cartão/i,/volta/][i]);}
   await seguinte(page);await auditar();assert(await page.locator('[data-op="2"]').isDisabled());await page.locator('[data-op="0"]').click();await seguinte(page);await auditar();await page.locator('[data-op="0"]').click();await seguinte(page);assert.equal(await cartao(page),'fim');
   reg=await ls(page,'lente-formas-v1');assert(reg.itens['cena-que-falta'].experimentei&&reg.itens['cena-que-falta'].revi);
   await page.emulateMedia({media:'print'});assert(await page.locator('.lf-print').isVisible());assert.equal(await page.locator('.lf-print section').count(),4);if(width===390)await page.pdf({path:path.join(dest,'cena-papel.pdf'),format:'A4'});await page.emulateMedia({media:'screen'});
@@ -112,7 +113,7 @@ try{b=await chromium.launch({headless:true,...(process.env.PT_BROWSER_EXECUTABLE
  await page.reload();await page.locator('#kafka').waitFor();assert.equal(await page.locator('[data-write="draft"]').count(),0);
  await page.goto(base+'/narrativas/formas/?mesa=pt');await page.locator('#gogol').waitFor();assert.equal(await page.locator('[data-filter="pt"]').getAttribute('aria-pressed'),'true');
  // 30/10/2026: Laboratório simples (pedido do docente). O catálogo mudou de página.
- await page.goto(base+'/narrativas/tudo/');assert.match(await page.locator('h1').innerText(),/Tudo o que há no Laboratório/);assert.equal(await page.locator('section.lab-set').count(),3);assert.match(await page.locator('[data-formas-progress]').innerText(),/4 de 4/);
+ await page.goto(base+'/narrativas/tudo/');assert.match(await page.locator('h1').innerText(),/Tudo o que há no Laboratório/);assert.equal(await page.locator('main > section').count(),3);await page.goto(base+'/narrativas/percursos/experimentar/');assert.equal(await page.locator('[data-estado="corta/mesa"]').innerText(),'feito');
  await page.goto(base+'/narrativas/corta/');assert.equal(await page.locator('.missoes a[data-id]').count(),8);
  if(process.env.LENTE_SHOTS){fs.mkdirSync(process.env.LENTE_SHOTS,{recursive:true});await page.goto(base+'/narrativas/');await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-entrada.png'),fullPage:true,animations:'disabled'});await page.goto(base+'/narrativas/corta/mesa/');await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-corta.png'),fullPage:true,animations:'disabled'});await page.locator('[data-phase="1"]').click();await page.locator('[data-preset]').click();await page.locator('#compare').click();await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-comparar.png'),fullPage:true,animations:'disabled'});await page.goto(base+'/narrativas/formas/');await page.locator('#kafka').waitFor();await page.screenshot({path:path.join(process.env.LENTE_SHOTS,'lente-obras.png'),fullPage:true,animations:'disabled'});}
  if(process.env.LENTE_PREVIEW_DIR){

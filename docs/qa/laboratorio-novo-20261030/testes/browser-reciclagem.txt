@@ -1,0 +1,2 @@
+PASS 390 light percurso, registo antigo, duas projeções, Direitos e sessões
+PASS 1366 dark percurso, registo antigo, duas projeções, Direitos e sessões

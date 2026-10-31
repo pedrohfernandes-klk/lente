@@ -1,5 +1,5 @@
 {
- "_nota": "Manifesto de preservação do Laboratório (D0 do relatório de 23/10/2026), gerado a partir de main e4eeb82 antes de qualquer mudança: endereços, âncoras e chaves de progresso que não podem desaparecer sem decisão explícita. Uma mudança intencional atualiza este ficheiro no mesmo PR, com a razão no commit.",
+ "_nota": "Manifesto de preservação do Laboratório (D0 do relatório de 23/10/2026), gerado a partir de main e4eeb82 antes de qualquer mudança: endereços, âncoras e chaves de progresso que não podem desaparecer sem decisão explícita. Uma mudança intencional atualiza este ficheiro no mesmo PR, com a razão no commit. 30/10/2026: Laboratório novo; retirados os prefixos internos do cartaz da entrada (g-, g-atlas, g-cidade, l-), que não são registos de peças.",
  "base": "e4eeb827de01503ab74bd9bf73478bb7516c296c",
  "paginas": [
   "narrativas/anguissola/",
@@ -356,11 +356,7 @@
   ],
   "narrativas/": [
    "epi-corta",
-   "epi-treinos",
-   "g-",
-   "g-atlas",
-   "g-cidade",
-   "l-"
+   "epi-treinos"
   ],
   "narrativas/leonardo/": [
    "epi-narrativas",

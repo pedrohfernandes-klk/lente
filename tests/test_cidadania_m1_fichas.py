@@ -99,6 +99,7 @@ class FichasM1(unittest.TestCase):
   paths=list((R/'cidadania/m1/fichas').glob('*/index.html'))+list((R/'cidadania/m1/sessoes').glob('*/index.html'))+[R/p for p in ['cidadania/m1/index.html','cidadania/projeto/index.html','cidadania/m1/biblioteca/index.html','cidadania/m1/sessoes/index.html','cidadania/m1/oficina-guiao/index.html','index.html','docente/index.html','cidadania/index.html']]
   before={p:p.read_bytes() for p in paths}
   subprocess.run([sys.executable,'-B','tools/generate_cidadania_m1.py'],cwd=R,check=True,capture_output=True)
-  for p,content in before.items():self.assertEqual(content,p.read_bytes(),p)
+  # 30/10/2026: comparar conteúdo também em Windows, onde o gerador escreve CRLF.
+  for p,content in before.items():self.assertEqual(content.replace(b'\r\n',b'\n'),p.read_bytes().replace(b'\r\n',b'\n'),p)
 
 if __name__=='__main__':unittest.main()

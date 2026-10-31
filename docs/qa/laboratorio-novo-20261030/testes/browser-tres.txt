@@ -1,0 +1,4 @@
+Capturas e PDF: C:\Users\UTILIZ~1\AppData\Local\Temp\baralho-JDehZ8
+OK 320px: percurso, imagens, teclado, progresso, projeção e largura
+OK 390px: percurso, imagens, teclado, progresso, projeção e largura
+OK 1366px: percurso, imagens, teclado, progresso, projeção e largura

@@ -144,7 +144,7 @@ function guardar(){P.sessao(ID,S);}
 function atual(){return cartoes[s.atual];}
 function qHtml(q){return '<h2 class="lf-q" tabindex="-1">'+e(q.p)+'</h2>';}
 function opcoes(q){return '<div class="ls-opcoes">'+q.o.map((t,i)=>'<button type="button" class="lf-op" data-op="'+i+'" aria-pressed="'+(s.respostas[q.id]===i)+'">'+e(t)+'</button>').join('')+'</div>';}
-function foto(id,cls){const q=F.quadros[id];return '<img class="'+(cls||'')+'" src="'+e(IMG+id+(F.candidatos.includes(id)?'.svg':'.webp'))+'" alt="'+e(q.legenda)+'">';}
+function foto(id,cls){const q=F.quadros[id];return '<span class="ls-plano-texto '+(cls||'')+'">'+e(q.legenda)+'</span>';}
 function sequencia(p){return '<div class="ls-tira" aria-label="Sequência montada">'+['perda','olhar','mao',p,'devolucao'].map(x=>foto(x)).join('')+'</div>';}
 function primeiraTexto(v){const q=cartoes.find(q=>q.id==='primeira');return q&&q.o[q.valores.indexOf(v)]||colNome(v);}
 function comparacao(){
@@ -225,7 +225,7 @@ function impressaoHtml(){
   ap+='<section><h2>'+e(K.b1.rotulo)+'</h2>'+K.afirmacoes.map(a=>'<p><b>'+e(a.t)+'</b></p><ul>'+K.colunas.map(c=>'<li>'+e(c.t)+': '+e(a.b1[c.id].marca)+' '+e(nomeMarca(a.b1[c.id].marca))+'. '+e(a.b1[c.id].t)+'</li>').join('')+'</ul>').join('')+'</section>';
   ap+='<section><h2>'+e(K.f1.rotulo)+'</h2>'+K.afirmacoes.map(a=>'<p><b>'+e(a.t)+'</b></p><ul>'+K.f1.colunas.map(c=>'<li>'+e(c.t)+': '+e(a.f[c.id].marca)+' '+e(nomeMarca(a.f[c.id].marca))+'. '+e(a.f[c.id].t)+'</li>').join('')+'</ul>').join('')+'</section>';
  }else{
-  const fig=id=>{const q=F.quadros[id];return '<figure>'+(q.img?'<img src="'+e(IMG+q.img+'.webp')+'" alt="" width="600" height="600">':'<div class="lf-pq">'+e(q.intertitulo?q.legenda:'?')+'</div>')+'<figcaption>'+e(q.n+' '+q.titulo+'. '+q.legenda)+'</figcaption></figure>';};
+  const fig=id=>{const q=F.quadros[id];return '<figure>'+'<div class="ls-plano-texto">'+e(q.legenda)+'</div>'+'<figcaption>'+e(q.n+' '+q.titulo+'. '+q.legenda)+'</figcaption></figure>';};
   h+='<section><h2>'+e(F.abre.texto)+'</h2><div class="lf-pgrelha">'+F.tira.map(fig).join('')+'</div><h2>'+e(T.planosLugar)+'</h2><div class="lf-pgrelha">'+F.candidatos.map(fig).join('')+'</div></section>';
   en+='<section><h2>'+e(F.ve.pergunta)+'</h2><table><thead><tr><th>'+e(T.hipotese)+'</th><th>'+e(T.antes)+'</th>'+F.candidatos.map(p=>'<th>'+e(titulo(p))+'</th>').join('')+'</tr></thead><tbody>'+F.hipoteses.map(h1=>'<tr><td>'+e(h1.t)+'</td><td>□</td><td></td><td></td><td></td></tr>').join('')+'</tbody></table><p>'+e(T.legendaEstados)+'</p></section>';
   en+='<section><h2>'+e(F.compara.pergunta)+'</h2>'+linhas(3)+'<h2>'+e(F.escreve.pergunta)+'</h2><ol><li>'+e(F.escreve.frases[0])+'</li><li>______________________</li><li>'+e(F.escreve.frases[2])+'</li></ol><p>'+e(F.escreve.regra)+'</p></section>';

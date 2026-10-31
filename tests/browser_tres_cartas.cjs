@@ -1,3 +1,4 @@
+// 30/10/2026: descrições das situações, sem recortes de IA.
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 global.window={};require('../assets/formas/tres-cartas-dados.js');const D=window.LenteTresCartasDados;
@@ -13,7 +14,7 @@ try{for(const width of [320,390,1366]){
   const card=p.locator('[data-cartao]'),id=await card.getAttribute('data-cartao'),type=await card.getAttribute('data-tipo');
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}/${id}`);
 
-  if(['sombra','horizonte','rampa'].includes(id)){const im=p.locator('#cartoes img');assert(await im.evaluate(x=>x.complete&&x.naturalWidth===512&&x.naturalHeight===512));assert(await im.getAttribute('alt'));}
+  if(['sombra','horizonte','rampa'].includes(id)){const im=p.locator('#cartoes .tc-descricao');assert((await im.innerText()).length>35);assert.equal(await p.locator('#cartoes img').count(),0);}
   if(['escolher','completar','classificar','autoavaliacao'].includes(type)){
    if(id==='ligacao')await snap('04-escolha');
    const c=D.cartoes.find(c=>c.id===id);

@@ -1,0 +1,11 @@
+pasta | perguntas | denunciadoras | fora20 | certaMaisLonga | certaMaisCurta
+cidade | 95 | 0 | 7 | 22 | 22
+investigar | 41 | 0 | 0 | 11 | 9
+projetos | 19 | 0 | 0 | 5 | 1
+fachada | 3 | 0 | 0 | 0 | 0
+apresentar | 25 | 0 | 0 | 4 | 4
+estetica | 1 | 0 | 0 | 1 | 0
+etica | 1 | 0 | 0 | 1 | 0
+ler | 31 | 0 | 2 | 5 | 7
+direitos | 29 | 0 | 0 | 5 | 4
+olhar-e-decidir | 29 | 0 | 0 | 0 | 6

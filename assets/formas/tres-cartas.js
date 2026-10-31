@@ -12,7 +12,7 @@ let S=P.projetado?novo():(P.sessao(ID)||novo());
 if(!Number.isInteger(S.atual)||S.atual<0||S.atual>=D.cartoes.length)S=novo();
 const porId=id=>D.cartoes.find(c=>c.id===id),atual=()=>D.cartoes[S.atual];
 function guardar(){if(!P.projetado)P.sessao(ID,S);}
-function imagem(id){const im=D.imagens.find(i=>i.id===id);return '<img class="tc-imagem" src="../../../assets/formas/baralho/'+e(id)+'.webp" width="512" height="512" alt="'+e(im.alt)+'">';}
+function imagem(id){const im=D.imagens.find(i=>i.id===id);return '<div class="tc-imagem tc-descricao">'+e(im.alt)+'</div>';}
 function titulo(c){return '<h2 class="q lf-q" tabindex="-1">'+e(c.pergunta)+'</h2>'+(c.apoio?'<p class="dica">'+e(c.apoio)+'</p>':'');}
 function plano(c,respostas){const blocos=[];for(const p of c.partes){
  if(p.se&&respostas[p.se.fonte]!==p.se.valor)continue;

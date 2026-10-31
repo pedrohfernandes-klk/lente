@@ -1,6 +1,6 @@
 window.LenteTresCartasDados={
   "titulo": "Três cartas, dois textos",
-  "credito": "Baralho improvável, obra do Lente feita com assistência de IA, CC BY-SA 4.0",
+  "credito": "Baralho improvável, situações descritas do Lente, CC BY-SA 4.0",
   "imagens": [
     {
       "id": "11-01",

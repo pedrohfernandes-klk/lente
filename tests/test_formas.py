@@ -1,3 +1,4 @@
+# 30/10/2026: contratos atualizados para percursos e imagens retiradas por decisão do docente.
 from pathlib import Path
 import json, re, unittest
 ROOT=Path(__file__).resolve().parents[1]
@@ -43,7 +44,9 @@ class Formas(unittest.TestCase):
     target=(page.parent/clean).resolve()
     if clean.endswith('/'):target=target/'index.html'
     self.assertTrue(target.exists(),(rel,asset))
-  self.assertTrue((ROOT/'assets/formas/carteira-linha.png').is_file())
+  # 30/10/2026: planos descritos substituem a imagem de IA.
+  self.assertFalse((ROOT/'assets/formas/carteira-linha.png').exists())
+  self.assertIn('D.shots[id].caption',(ROOT/'assets/formas/corta.js').read_text('utf-8'))
 
 
 # ── 29/10/2026: Kafka com a frase da RTP Ensina e os dois protótipos em cartões curtos («Certa manhã», «A cena que falta») ──
@@ -191,7 +194,8 @@ class Prototipos(unittest.TestCase):
   for q in ('perda','regresso'):self.assertIn('esquerda',F['quadros'][q]['legenda'])
   for q in F['quadros'].values():
    if q.get('img'):
-    f=ROOT/'assets/formas/carteira'/(q['img']+'.webp');self.assertTrue(f.is_file());self.assertLess(f.stat().st_size,80_000)
+    # 30/10/2026: cada plano conserva a descrição; os ficheiros de IA saíram.
+    self.assertGreater(len(q['legenda']),25);self.assertFalse((ROOT/'assets/formas/carteira'/(q['img']+'.webp')).exists())
   self.assertTrue(all(F['quadros'][p].get('intertitulo') for p in F['candidatos']))
   self.assertNotIn('senta',F['escreve']['palavras']);self.assertIn('pensou',F['escreve']['palavras'])
   # C1 e C2: nada de «sem efeito» nem da linha genérica da câmara; a razão é a de cada combinação
@@ -220,7 +224,7 @@ class Prototipos(unittest.TestCase):
    t=Texto();t.feed((ROOT/rel).read_text('utf-8'))
    for v in t.partes:
     self.assertIsNone(PROIBIDAS.search(v),(rel,v));self.assertNotIn('—',v,(rel,v));self.assertNotRegex(v,r'[^\s/]\s·\s[^\s/]',(rel,v))
-  i=(ROOT/'narrativas/index.html').read_text('utf-8');bloco=i[i.index('<section class="lf-entry"'):i.index('</section>',i.index('<section class="lf-entry"'))]
+  i=(ROOT/'narrativas/index.html').read_text('utf-8');bloco=i.split('<script type="application/json"')[0] # 30/10/2026: toda a entrada nova, não apenas o piloto.
   t=Texto();t.feed(bloco)
   for v in t.partes:self.assertIsNone(PROIBIDAS.search(v),v);self.assertNotIn('·',v)
   corpus=json.loads((ROOT/'assets/formas/corpus.json').read_text('utf-8'))
@@ -265,10 +269,11 @@ class Prototipos(unittest.TestCase):
     self.assertIn(x,html,(rel,x))
   # 30/10/2026: Laboratório simples (pedido do docente). Catálogo e fontes passam para destinos próprios.
   entrada=(ROOT/'narrativas/index.html').read_text('utf-8')
-  for x in ('href="formas/certa-manha/"','href="tudo/"','Ver como os outros fizeram','Treinar uma regra','Criar uma peça'):self.assertIn(x,entrada)
+  for x in ('href="aula-forma/"','href="tudo/"','<h2>Ver</h2>','<h2>Treinar</h2>','<h2>Criar</h2>'):self.assertIn(x,entrada)
   tudo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
   for nome in ('duchamp','anguissola','fontana','leonardo','cigoli','galileu','margens'):self.assertIn('href="../'+nome+'/"',tudo)
-  self.assertIn('data-lab-pesquisa',tudo)
+  # 30/10/2026: catálogo simples por percursos, com todas as peças.
+  self.assertIn('class="catalogo"',tudo)
   js=(ROOT/'assets/formas/cartoes.js').read_text('utf-8')
   for texto in ('Guia do docente e fontes','Versão em papel','fonteHtml()'):self.assertIn(texto,js)
   mesa=(ROOT/'narrativas/corta/mesa/index.html').read_text('utf-8')
@@ -294,12 +299,17 @@ class PilotoSimples(unittest.TestCase):
   for q in medir_opcoes.laboratorio(ROOT):self.assertFalse(q['fora20'] or q['denunciadora'],q)
  def test_planos_imagens_e_creditos(self):
   for nome in ('bolso','cartao','regresso'):
-   p=ROOT/'assets/formas/carteira'/f'{nome}.svg';self.assertTrue(p.exists());self.assertIn('CC BY-SA 4.0',p.read_text('utf-8'))
+   # 30/10/2026: os planos passaram a descrições existentes, com a mesma licença.
+   self.assertFalse((ROOT/'assets/formas/carteira'/f'{nome}.svg').exists())
+   self.assertTrue(dados('cena-que-falta.js')['quadros'][nome]['legenda'])
+  self.assertIn('CC BY-SA 4.0',dados('cena-que-falta.js')['creditos'])
  def test_catalogo_preserva_destinos(self):
   from urllib.parse import urljoin
   # 30/10/2026: Laboratório simples (pedido do docente). Destinos de f7d8b9d, sem depender do histórico no CI.
   antes=set(['/lente/assets/appearance.css?v=20261025-universal-1', '/lente/assets/atelier-pages.css?v=20261019-2', '/lente/assets/formas/entrada.css?v=20261029', '/lente/assets/index-layout.css?v=20261026.1', '/lente/assets/lab-posters.css?v=20261019-3', '/lente/assets/lente-refino.css?v=20261022-1', '/lente/assets/narrativas-sets.css', '/lente/docente/', "/lente/narrativas/'+esc(x.url)+'", '/lente/narrativas/aula-forma/', '/lente/narrativas/aula-lugar/', '/lente/narrativas/aula-nao-dito/', '/lente/narrativas/aula-personagem/', '/lente/narrativas/cenario-personagem/', '/lente/narrativas/comecar-pelo-meio/', '/lente/narrativas/corta/cena-que-falta/', '/lente/narrativas/corta/mesa/', '/lente/narrativas/desenlace/', '/lente/narrativas/dialogo/', '/lente/narrativas/espingarda/', '/lente/narrativas/espinha/', '/lente/narrativas/fora-da-pagina/', '/lente/narrativas/formas/?mesa=pt', '/lente/narrativas/formas/certa-manha/', '/lente/narrativas/historia-enredo/', '/lente/narrativas/linhas-de-enredo/', '/lente/narrativas/oficina-arco/', '/lente/narrativas/oficina-argumento/', '/lente/narrativas/oficina-atelie/', '/lente/narrativas/oficina-ator/', '/lente/narrativas/oficina-dilema/', '/lente/narrativas/oficina-dramaturgista/', '/lente/narrativas/oficina-epico/', '/lente/narrativas/oficina-espaco/', '/lente/narrativas/oficina-ficcao-comecar/', '/lente/narrativas/oficina-ficcao-espaco/', '/lente/narrativas/oficina-ficcao-genero/', '/lente/narrativas/oficina-ficcao-personagem/', '/lente/narrativas/oficina-manifesto/', '/lente/narrativas/oficina-matriz/', '/lente/narrativas/oficina-pedacos/', '/lente/narrativas/oficina-plano/', '/lente/narrativas/oficina-readymade/', '/lente/narrativas/oficina-restricao/', '/lente/narrativas/oficina-texto-imagem/', '/lente/narrativas/oficina-visivel/', '/lente/narrativas/personagem-faz/', '/lente/narrativas/piramide/', '/lente/narrativas/proposta-subtexto/', '/lente/narrativas/quem-conta/', '/lente/narrativas/querer-agir/', '/lente/narrativas/subtexto/', '/lente/narrativas/treinar/', '/lente/narrativas/treinar/a-entrevista/', '/lente/narrativas/treinar/a-espingarda/', '/lente/narrativas/treinar/a-gaveta/', '/lente/narrativas/treinar/acelerar-travar/', '/lente/narrativas/treinar/comeca-mais-tarde/', '/lente/narrativas/treinar/copia-lenta/', '/lente/narrativas/treinar/cortar-um-quinto/', '/lente/narrativas/treinar/dicionario/', '/lente/narrativas/treinar/duas-horas/', '/lente/narrativas/treinar/duas-vozes/', '/lente/narrativas/treinar/frase-querida/', '/lente/narrativas/treinar/interromper/', '/lente/narrativas/treinar/lista-substantivos/', '/lente/narrativas/treinar/o-contrario/', '/lente/narrativas/treinar/objeto-banal/', '/lente/narrativas/treinar/outro-ponto-de-vista/', '/lente/narrativas/treinar/pelo-meio/', '/lente/narrativas/treinar/pelo-que-faz/', '/lente/narrativas/treinar/pergunta-sem-resposta/', '/lente/narrativas/treinar/quarto-que-fala/', '/lente/narrativas/treinar/rascunho-mau/', '/lente/narrativas/treinar/sem-disse/', '/lente/narrativas/treinar/sem-mente/', '/lente/narrativas/treinar/sem-olhos/', '/lente/narrativas/treinar/so-gestos/', '/lente/narrativas/treinar/teste-do-colega/', '/lente/narrativas/treinar/tres-em-cinco/', '/lente/narrativas/treinar/verbo-forte/', '/lente/narrativas/treinar/verdade-dificil/', '/lente/narrativas/treinar/voz-alta/'])
   novo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
   depois={urljoin('/lente/narrativas/tudo/',h) for h in re.findall(r'href="([^"#]+)"',novo) if not h.startswith(('https:','http:'))}
+  # 30/10/2026: preservam-se destinos de conteúdo; CSS antigo e literais JS não são destinos.
+  antes={u for u in antes if '/assets/' not in u and "'+esc" not in u}
   self.assertTrue(antes<=depois,antes-depois)
 if __name__=='__main__':unittest.main()

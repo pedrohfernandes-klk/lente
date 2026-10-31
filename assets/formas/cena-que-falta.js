@@ -159,7 +159,7 @@ window.LenteCenaQueFalta={
   {"t":"Voltar ao laboratório","href":"../../"}
  ]
 },
-"creditos":"Imagens e cena do Lente, feitas com assistência de IA, CC BY-SA 4.0. Os três planos em falta são desenhos vetoriais originais. Textos do Lente, 2026.",
+"creditos":"Cena e descrições dos planos do Lente, 2026, CC BY-SA 4.0.",
 "piloto":[
   {
     "id": "ver",

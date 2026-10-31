@@ -1,3 +1,4 @@
+# 30/10/2026: nomes curtos e listas de percursos substituem as montras.
 from pathlib import Path
 import json, re, unittest
 from urllib.parse import urlsplit
@@ -73,7 +74,8 @@ class Ginasio(unittest.TestCase):
             self.assertIn(passo, prop)
         # 30/10/2026: Laboratório simples (pedido do docente). A proposta continua no catálogo.
         lab = (R / 'narrativas/tudo/index.html').read_text('utf-8')
-        i = lab.index('id="criar"')
+        # 30/10/2026: a proposta de subtexto fecha o percurso de leitura do implícito.
+        i = lab.index('id="ler-como-quem-escreve"')
         self.assertIn('href="../proposta-subtexto/"', lab[i:lab.index('</section>', i)])
         for p in list((R / 'narrativas').rglob('index.html')) + [R / 'mapa/index.html']:
             t = p.read_text('utf-8')
@@ -128,11 +130,11 @@ class Ginasio(unittest.TestCase):
     def test_entrada_do_lab_em_tres_portas(self):
         # 30/10/2026: Laboratório simples (pedido do docente). Três portas curtas; os conjuntos passam para tudo/.
         entrada = (R / 'narrativas/index.html').read_text('utf-8')
-        for nome in ('Ver como os outros fizeram', 'Treinar uma regra', 'Criar uma peça'):
+        for nome in ('<h2>Ver</h2>', '<h2>Treinar</h2>', '<h2>Criar</h2>'):
             self.assertIn(nome, entrada)
         s = (R / 'narrativas/tudo/index.html').read_text('utf-8')
-        self.assertEqual(re.findall(r'<section class="lab-set" id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
-        self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s))), 30)
+        self.assertEqual(re.findall(r'<section id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s)) - {'caderno','docente'}), 30)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
             self.assertIn(antiga, s)
             self.assertIn(antiga, entrada)
@@ -150,9 +152,10 @@ class Ginasio(unittest.TestCase):
         # 30/10/2026: cartão do Laboratório refeito (pedido do docente); as três portas são as da entrada nova do
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ver como os outros fizeram', 'Treinar uma regra', 'Criar uma peça'])
-        self.assertIn('img/narrativas/muybridge-grelha-1878.webp', s[i:j])
-        self.assertIn('domínio público', s[i:j])
+        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ver', 'Treinar', 'Criar'])
+        # 30/10/2026: Hokusai substitui a imagem habitual de Muybridge no cartão do Laboratório.
+        self.assertIn('assets/laboratorio/ver.webp', s[i:j])
+        self.assertIn('domínio público', s[i:j].casefold())
         self.assertIn('id="inicio-vozes"', s)
         self.assertIn('id="ferramentas"', s)
 

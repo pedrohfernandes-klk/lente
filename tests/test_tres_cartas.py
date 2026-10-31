@@ -9,17 +9,18 @@ class TresCartas(unittest.TestCase):
   for dep in re.findall(r'(?:src|href)="([^"?#]+)',s):
    if dep.startswith(('http','?')):continue
    self.assertTrue((R/'narrativas/formas/tres-cartas'/dep).exists(),dep)
-  self.assertNotIn('tres-cartas',(R/'narrativas/index.html').read_text('utf-8'))
+  # 30/10/2026: peça publicada, agora incluída no percurso; mantém noindex.
+  self.assertIn('tres-cartas',(R/'narrativas/tudo/index.html').read_text('utf-8'))
  def test_curated_crops(self):
   d=data();origin=json.loads((R/'assets/formas/baralho/origem.json').read_text('utf-8'))
   self.assertEqual({c['id'] for c in origin['cards']},{'11-01','13-02','20-03'})
   for c in origin['cards']:self.assertTrue(c['kept'])
   for im in d['imagens']:
    self.assertGreater(len(im['alt']),35)
-   b=(R/('assets/formas/baralho/'+im['id']+'.webp')).read_bytes()
-   self.assertEqual(b[:4],b'RIFF');self.assertEqual(b[12:16],b'VP8L')
-   n=int.from_bytes(b[21:25],'little');self.assertEqual(((n&0x3fff)+1,((n>>14)&0x3fff)+1),(512,512))
-  self.assertEqual(d['credito'],'Baralho improvável, obra do Lente feita com assistência de IA, CC BY-SA 4.0')
+   # 30/10/2026: descrições das três situações substituem os recortes de IA.
+   self.assertFalse((R/('assets/formas/baralho/'+im['id']+'.webp')).exists())
+  self.assertIn('CC BY-SA 4.0',d['credito'])
+  self.assertNotIn('assistência de IA',d['credito'])
  def test_plano_em_blocos(self):
   for c in data()['cartoes']:
    if c['tipo']!='composicao':continue
