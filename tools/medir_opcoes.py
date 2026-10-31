@@ -4,7 +4,11 @@
 from pathlib import Path
 from html import unescape
 import argparse,json,re,sys
-PASTAS=('cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir')
+# 31/10/2026: as lições piloto da Cidadania refeita (cidadania/piloto) também se medem (revisão de pt-PT do M1).
+PASTAS=('cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto')
+# 31/10/2026: lacunas de uma ou duas palavras nas lições piloto da Cidadania refeita (M1): a diferença de 20 % entre
+# palavras curtas é de poucos carateres (nenhuma passa os 8 de fora20 nem é denunciadora); acertá-las mudava o sentido.
+R_CID = 'Lacuna de uma ou duas palavras (Cidadania, lição piloto do M1): termos curtos; não acrescentar palavras que mudem o sentido.'
 EXCECOES = {'cidade/m01/index.html#1': 'Rótulos de locais no mapa: conservar os nomes e a sigla EPI.',
  'cidade/m01/index.html#3': 'Rótulos de locais no mapa: conservar os nomes e a sigla EPI.',
  'cidade/m02/index.html#1': 'Rótulos ligados às zonas do mapa; preservar a correspondência com os locais e '
@@ -40,7 +44,25 @@ EXCECOES = {'cidade/m01/index.html#1': 'Rótulos de locais no mapa: conservar os
  'ler/passo-02/index.html#4': 'Inícios de estrofe citados literalmente.',
  'ler/passo-06/index.html#2': 'Versos citados literalmente; não cortar nem parafrasear.',
  'ler/passo-06/index.html#3': 'Conjuntos de nomes próprios; não substituir pessoas para acertar o '
-                              'comprimento.'}
+                              'comprimento.',
+ 'cidadania/piloto/m1-s02/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s02/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s03/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s04/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s04/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s05/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s06/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s06/index.html#7': R_CID,
+ 'cidadania/piloto/m1-s06/index.html#8': R_CID,
+ 'cidadania/piloto/m1-s07/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s07/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s08/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s08/index.html#7': R_CID,
+ 'cidadania/piloto/m1-s08/index.html#8': R_CID,
+ 'cidadania/piloto/m1-s09/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s09/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s10/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s10/index.html#7': R_CID}
 
 def visivel(texto):
  return re.sub(r'\s+',' ',unescape(re.sub(r'<[^>]*>','',texto)).replace('_','').replace('*','')).strip()
@@ -56,8 +78,12 @@ def perguntas(raiz):
     op=d['o'];c=d['c']
     if not all(isinstance(x,str) for x in op) or not 0<=c<len(op) or len(op)<2:raise ValueError(str(p)+': opções inválidas')
     numero+=1
-    n=list(map(lambda s:len(visivel(s)),op));err=max(v for i,v in enumerate(n) if i!=c)
-    yield {'excecao':EXCECOES.get(p.relative_to(raiz).as_posix()+'#'+str(numero)), 'amplitude20':max(n)>1.2*min(n),'numero':numero,'pagina':p.relative_to(raiz).as_posix(),'pasta':pasta,'pergunta':d.get('p',''),'linha':texto.count('\n',0,m.start())+1,'opcoes':op,'certa':c,'comprimentos':n,'denunciadora':n[c]>=1.25*err and n[c]-err>=5,'fora20':max(n)>1.2*min(n) and max(n)-min(n)>=8,'certaMaisLonga':n[c]>err,'certaMaisCurta':n[c]<min(v for i,v in enumerate(n) if i!=c),'k':len(op)}
+    yield {'excecao':EXCECOES.get(p.relative_to(raiz).as_posix()+'#'+str(numero)),'numero':numero,'pagina':p.relative_to(raiz).as_posix(),'pasta':pasta,'pergunta':d.get('p',''),'linha':texto.count('\n',0,m.start())+1,'opcoes':op,'certa':c,**escolha(op,c)}
+# 31/10/2026 (verificação final da Cidadania refeita, M1): a medida de uma escolha sai para uma função própria, para o Ponto de
+# partida e de chegada (tools/cidadania_piloto.py, PONTO, que não está numa página com JSON) se medir com a mesma regra.
+def escolha(op,c):
+ n=list(map(lambda s:len(visivel(s)),op));err=max(v for i,v in enumerate(n) if i!=c)
+ return {'amplitude20':max(n)>1.2*min(n),'comprimentos':n,'denunciadora':n[c]>=1.25*err and n[c]-err>=5,'fora20':max(n)>1.2*min(n) and max(n)-min(n)>=8,'certaMaisLonga':n[c]>err,'certaMaisCurta':n[c]<min(v for i,v in enumerate(n) if i!=c),'k':len(op)}
 def resumir(rows,chave):
  out={}
  for q in rows:

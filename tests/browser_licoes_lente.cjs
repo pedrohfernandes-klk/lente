@@ -13,6 +13,9 @@ async function responder(p,x){
  else if(x.t==='emparelhar'){for(const [a,b] of x.pares){await p.locator('#baralho button',{hasText:a}).first().click();await p.waitForTimeout(80);await p.locator('#baralho button',{hasText:b}).first().click();await p.waitForTimeout(120)}}
  else if(x.t==='sublinhar'){for(const j of x.certas)await p.locator('#baralho button.pal[data-j="'+j+'"]').click();await p.locator('.casca-acoes [data-confirmar]').click()}
  else if(x.t==='ordenar'){for(const t of x.passos){await p.locator('#baralho .soltos button',{hasText:t}).first().click();await p.waitForTimeout(80)}}
+ // 30/10/2026: as sessões 02 a 10 do M1 (pilotos de 31/10) têm cartões de completar; em cada lacuna escolhe-se o valor da
+ // opção certa, como o motor o guarda (o valor é o índice da opção em lacunas[k].o; data-k é a ordem da lacuna na frase).
+ else if(x.t==='completar'){for(let k=0;k<x.lacunas.length;k++){await p.locator('#baralho select[data-k="'+k+'"]').selectOption(String(x.lacunas[k].c));await p.waitForTimeout(80)}}
  else throw new Error('tipo sem resposta automática: '+x.t);
  await p.waitForTimeout(350);
  const conf=p.locator('.casca-acoes [data-confirmar]');if(await conf.count()&&await conf.isVisible()&&await conf.isEnabled())await conf.click();

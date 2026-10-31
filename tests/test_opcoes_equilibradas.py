@@ -15,7 +15,8 @@ class OpcoesEquilibradas(unittest.TestCase):
   for p in ('jogral','jograis','folhagem','fichário','professorado'):
    self.assertIsNone(PROIBIDAS.search(p),p)
  def test_ambito(self):
-  self.assertEqual(set(medir.PASTAS),{'cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir'})
+  # 30/10/2026: revisão de pt-PT da Cidadania refeita (M1, 31/10): as lições piloto (cidadania/piloto) também se medem.
+  self.assertEqual(set(medir.PASTAS),{'cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto'})
  def test_sem_denunciadoras(self):
   perguntas=list(medir.perguntas(ROOT));self.assertTrue(perguntas,'A medição não encontrou perguntas')
   falhas=[f"{q['pagina']} #{q['numero']}: {q['comprimentos']}, certa {q['certa']}" for q in perguntas if q['denunciadora']]
@@ -102,7 +103,10 @@ class OpcoesEquilibradas(unittest.TestCase):
    for p in sorted((ROOT/pasta).rglob('*.html')):
     s=p.read_text('utf-8')
     if not re.search(r'"t":\s*"(?:escolha|pistas)"',s):continue
-    self.assertIn('function opcoes(o,c)',s,p);self.assertRegex(s,r'estado\.ord=opcoes\(x\.o,x\.c\)')
+    # 30/10/2026: as lições piloto da Cidadania (cidadania/piloto) carregam o motor único de fora (assets/licoes/jogo.js):
+    # aí confirma-se no ficheiro do motor que as opções se baralham.
+    motor=(ROOT/'assets/licoes/jogo.js').read_text('utf-8') if 'assets/licoes/jogo.js' in s else s
+    self.assertIn('function opcoes(o,c)',motor,p);self.assertRegex(motor,r'estado\.ord=opcoes\(x\.o,x\.c\)')
     for obj,a,b in objetos(s):
      if obj.get('t') not in ('escolha','pistas'):continue
      fe=obj.get('fe');vistas+=1

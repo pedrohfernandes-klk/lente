@@ -1,0 +1,128 @@
+# Fonte da sessão 04 do M1 de Cidadania (piloto de 31/10/2026, no molde da sessão 01). Corre-se para escrever o .json ao
+# lado; o .json é que o gerador (tools/licoes_lente.py) lê. Escreve-se em Python para não ter de escapar aspas à mão.
+#
+# Fontes lidas a 31/10/2026 (nada citado de memória):
+# - Constituição, artigos 13.º, 26.º e 37.º: https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis
+# - Código Penal, artigo 180.º («Difamação»): https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?ficha=101&artigo_id=&nid=109&pagina=2&tabela=leis&nversao=&so_miolo=
+# - Convenção sobre os Direitos da Criança, artigos 2.º e 13.º (texto do Ministério Público):
+#   https://gddc.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf
+# - Imagem: «Les Poires», em «Le Charivari», 17/01/1834; desenho atribuído a Honoré Daumier a partir da litografia de
+#   Charles Philipon (1831), gravador desconhecido; Gallica (BnF); domínio público (PDM). Página do ficheiro:
+#   https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg . O recorte mostra os quatro desenhos com as legendas.
+#   O que o cartão diz da multa e do tribunal está impresso na própria página: «Faites à la cour d'assises de Paris par
+#   le directeur de la Caricature. Vendues pour payer les 6,000 fr. d'amende du journal le Charivari.» As legendas
+#   resumidas no cartão (tradução nossa): «Ce croquis ressemble à Louis-Philippe, vous condamnerez donc?» … «Et enfin,
+#   si vous êtes conséquens, vous ne sauriez absoudre cette poire, qui ressemble aux croquis précédens.»
+# - Vídeo: TED-Ed, «How false news can spread - Noah Tavlin», canal oficial @TEDEd (oEmbed, 31/10), id cSKGa_7XJkg,
+#   3 min 42 s (PT222S na página da lição: https://ed.ted.com/lessons/how-false-news-can-spread-noah-tavlin, que diz que
+#   o vídeo trata do «circular reporting»).
+# - As três afirmações reais do laboratório de verificação são escolhidas e confirmadas pelo docente (decisão 12).
+import json, pathlib
+ABRE = (
+ '<p class="pergunta-c">Onde acaba a liberdade de dizer e começa o dano a outra pessoa?</p>'
+ '<p>Caso inventado. A conta anónima de memes da turma publica uma caricatura do diretor com cara de pera. Por baixo, alguém comenta que o Diogo, do 10.º B, rouba na cantina. Ninguém viu nada.</p>'
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar opinião de acusação e verificar três afirmações reais.</p>')
+DECIDE = (
+ '<p>A conta deve ser apagada?</p>'
+ '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
+ '<details class="lado"><summary>A razão de quem gere a conta</summary><div><p>«É humor. Quem manda tem de aguentar críticas. Apagar a conta é censura.»</p></div></details>'
+ '<details class="lado"><summary>A razão do Diogo</summary><div><p>«A pera é uma piada. Dizer que eu roubo é uma acusação, com o meu nome, e é falsa.»</p></div></details>'
+ '<details class="lado"><summary>Uma objeção</summary><div><p>Apagar tudo ou só o comentário? E quem decide o que é piada?</p></div></details>'
+ '<p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>')
+# 31/10/2026 (revisão): o texto do Ministério Público tem «necessárias:» e a alínea a) à parte; o corte marca-se com (…).
+ART13_2_CDC = '(…) restrições previstas na lei e que sejam necessárias: a) Ao respeito dos direitos e da reputação de outrem; (…)'
+PERAS = (
+ '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/les-poires-1834.webp" '
+ 'alt="Quatro desenhos a traço, dois em cima e dois em baixo, com legendas em francês: o rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera, até ser só uma pera." loading="lazy"></span>'
+ '<figcaption><i>Les Poires</i>, em <i>Le Charivari</i>, 17 de janeiro de 1834; desenho atribuído a Honoré Daumier, a partir de Charles Philipon. Gallica, Biblioteca Nacional de França. Domínio público.</figcaption></figure>'
+ '<p>O rosto é o de Luís Filipe, rei dos Franceses. A página impressa diz que os desenhos foram feitos num tribunal de Paris e vendidos para pagar uma multa do jornal. As legendas perguntam: se condenam o primeiro desenho por se parecer com o rei, não terão de condenar também a pera?</p>'
+ '<p class="pergunta-c">Em que desenho deixa o rosto de ser o do rei?</p>'
+ '<p>Responde no caderno, numa linha.</p>')
+VIDEO = (
+ '<p>Um vídeo curto do TED-Ed, numa lição de Noah Tavlin, sobre o que o vídeo chama <i>circular reporting</i>: notícias que parecem confirmadas por muitas fontes. É em inglês: liga as legendas no leitor.</p>'
+ '<p class="pergunta-c">Segue o caminho de uma notícia falsa: onde nasce, quem a repete, porque parece verdadeira.</p>'
+ '<div class="yt" data-yt="cSKGa_7XJkg" data-titulo="How false news can spread, TED-Ed">'
+ '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «How false news can spread» (3 min 42 s)</button>'
+ '<p class="yt-cred">TED-Ed, lição de Noah Tavlin. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
+ '<p>Uma linha para cada passo, no caderno. Depois: que pergunta fazias antes de repetir o comentário sobre o Diogo?</p>')
+NA_AULA = (
+ '<p><b>O que se faz.</b> O laboratório de verificação. Cada grupo de três recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova. Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p>'
+ '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+ '<p><b>O que fica escrito.</b> O registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o registo de fontes do grupo para a Pergunta Humana.</p>')
+LEVAR = (
+ '<p class="levar">Criticar quem manda é um direito; acusar alguém sem prova é um dano.</p>'
+ '<p>Nesta sessão separaste opinião, sátira e acusação de facto, e verificaste antes de repetir. Volta às quatro peras: em que desenho puseste a linha? E o comentário sobre o Diogo, mantinhas, corrigias ou retiravas?</p>'
+ '<p><b>As frases da sessão</b></p>'
+ '<ul><li>Sem censura não quer dizer sem responsabilidade.</li>'
+ '<li>Uma opinião discute-se; um facto verifica-se.</li>'
+ '<li>Antes de repetir, procuro a fonte original.</li>'
+ '<li>O bom nome de uma pessoa também é um direito (artigo 26.º).</li></ul>')
+
+cartoes = [
+ {"t":"ler","rot":"Abre","titulo":"Posso dizer tudo?","html":ABRE},
+ {"t":"ler","rot":"Decide","titulo":"A conta de memes","html":DECIDE},
+ {"t":"escolha","g":"facto","p":"No caso da conta de memes, que frase afirma um facto que se pode verificar?","p2":"Destas frases, que afirmação é sobre um facto, verdadeiro ou falso, e não uma opinião?",
+  "o":["O Diogo rouba na cantina.","O diretor parece uma pera.","Esta escola é uma seca."],"c":0,
+  "f":"Dizer que o Diogo rouba na cantina é afirmar que aconteceu uma coisa concreta: pode ser verdade ou mentira, e tem de ser provado. A pera é uma sátira e «uma seca» é uma opinião: discutem-se, não se provam.",
+  "fe":["","Ninguém acha que o diretor é mesmo uma pera. É um exagero, uma sátira: não se verifica.","É uma opinião sobre a escola. Pode discutir-se, mas não há facto para verificar."]},
+ {"t":"emparelhar","g":"tipos","p":"Liga cada exemplo ao seu tipo.","p2":"De que tipo é cada um destes exemplos?",
+  "pares":[["A cantina devia ter mais opções.","Crítica"],["Um desenho do diretor com cara de pera","Sátira"],["O Diogo tirou dinheiro do bar.","Acusação de facto"],["Os alunos daquele país não deviam cá estar.","Ataque a um grupo"]],
+  "f":"Uma crítica diz o que está mal e discute-se; uma sátira exagera para fazer pensar; uma acusação de facto diz que alguém fez uma coisa e tem de ser provada; um ataque a um grupo visa pessoas pela origem, e a origem nunca pode ser razão para prejudicar alguém (Constituição, artigo 13.º, n.º 2).",
+  "fe":"Pergunta a cada exemplo: discute-se, exagera, afirma um facto sobre alguém ou ataca pessoas por serem de um grupo?"},
+ {"t":"vf","g":"censura","p":"A Constituição proíbe qualquer tipo ou forma de censura à liberdade de expressão.","p2":"Segundo a Constituição, a liberdade de expressão não pode ser limitada por nenhuma forma de censura.","v":True,
+  "f":"Artigo 37.º, n.º 2, da Constituição: o exercício destes direitos «não pode ser impedido ou limitado por qualquer tipo ou forma de censura».",
+  "fe":"Está no artigo 37.º, n.º 2, da Constituição: nenhuma forma de censura."},
+ {"t":"vf","g":"responder","p":"Como não há censura, quem publica não responde por nada do que diz.","p2":"Sem censura, ninguém pode ser responsabilizado pelo que publica.","v":False,
+  "f":"O artigo 37.º, n.º 3, da Constituição diz que as infrações cometidas no exercício destes direitos ficam sujeitas à lei e são apreciadas pelos tribunais ou por uma entidade administrativa independente. Sem censura antes; com responsabilidade depois.",
+  "fe":"Não haver censura quer dizer que ninguém te cala antes de falares. Depois, respondes pelo que disseste (artigo 37.º, n.º 3)."},
+ # 31/10/2026 (terceira correção, revisor de pt-PT): o retorno dizia «só… para respeitar» os direitos de outrem; o artigo 13.º, n.º 2,
+ # também admite restrições pela segurança nacional, ordem pública, saúde ou moral públicas (alínea b), por isso «por exemplo».
+ {"t":"sublinhar","g":"outrem","p":"Convenção sobre os Direitos da Criança, artigo 13.º, n.º 2: toca nas três palavras que dizem o que a liberdade de expressão tem de respeitar, e de quem.","p2":"Na Convenção, artigo 13.º, n.º 2, que três palavras dizem o que a tua liberdade de expressão tem de respeitar, e de quem? Toca nelas.","frase":ART13_2_CDC,"certas":[13,16,18],
+  "f":"A liberdade de expressão de uma criança só pode ter as restrições que a lei prevê e que sejam necessárias, por exemplo para respeitar os **direitos** e a **reputação** de **outrem**, isto é, de outras pessoas. Como o Diogo."},
+ {"t":"ler","rot":"Ver","titulo":"Quatro peras","html":PERAS},
+ {"t":"escolha","g":"peras","p":"Que mostram as quatro peras de 1834 sobre proibir uma caricatura?","p2":"Nas quatro peras, o rosto do rei passa a pera aos poucos. Que ideia defendem os desenhos?",
+  "o":["Proibir uma forma é proibir tudo o que se lhe parece.","Uma caricatura de quem manda é sempre um crime.","Um rei só pode ser desenhado com o seu acordo."],"c":0,
+  "f":"Cada desenho parece-se com o anterior. Se o primeiro é proibido por se parecer com o rei, o seguinte também, e assim até à pera. Proibir uma forma acaba por proibir tudo o que se lhe parece.",
+  "fe":["","Os desenhos defendem o contrário: que não se pode condenar uma caricatura só por se parecer com quem manda.","Os desenhos não pedem licença ao rei. Mostram que proibir um rosto leva a proibir uma pera."]},
+ {"t":"ordenar","g":"repetir","p":"Põe por ordem os passos antes de repetir uma acusação que leste.","p2":"Que ordem seguir antes de repetir uma acusação sobre alguém?",
+  "passos":["Perguntar quem disse primeiro.","Perguntar como é que essa pessoa sabe.","Procurar uma fonte independente.","Decidir: repetir, corrigir ou calar."],
+  "f":"Primeiro a origem, depois como se sabe, depois uma fonte que não dependa da primeira. Só então se decide: repetir, corrigir ou não dizer nada. No caso do Diogo, ninguém viu nada: a cadeia para logo no início."},
+ {"t":"ler","rot":"Ver","titulo":"Como se espalha uma notícia falsa","html":VIDEO},
+ {"t":"escolha","g":"circular","p":"O vídeo fala de _circular reporting_. Porque é que uma notícia falsa pode parecer confirmada?","p2":"Muitos sítios dizem a mesma coisa. Porque é que isso não chega para a confirmar?",
+  "o":["Porque todos podem repetir a mesma origem.","Porque os sítios grandes nunca se enganam.","Porque uma notícia repetida passa a verdade."],"c":0,
+  "f":"Quando vários sítios repetem a mesma origem, sem a verificar, a notícia parece confirmada muitas vezes, mas foi confirmada zero vezes. Conta as origens, não as repetições.",
+  "fe":["","Os sítios grandes também se enganam, e também copiam. O que conta é de onde vem a informação.","Repetir não torna verdadeiro: só dá essa impressão. É por isso que uma notícia falsa repetida engana."]},
+ {"t":"ler","rot":"Na aula","titulo":"O laboratório de verificação","html":NA_AULA},
+ {"t":"escolha","g":"grupo","p":"Caso inventado: um comentário na conta diz que os alunos de uma certa nacionalidade não deviam estar na escola. O que o distingue da pera?","p2":"Um comentário ataca os alunos de uma nacionalidade. Em que é diferente da caricatura do diretor?",
+  "o":["Ataca pessoas pela origem, não critica quem manda.","É só mais uma opinião, como a da caricatura.","É mais engraçado do que a caricatura do diretor."],"c":0,
+  "f":"A caricatura exagera quem tem poder. O comentário visa colegas por serem de um país: a Constituição diz que ninguém pode ser prejudicado em razão do território de origem (artigo 13.º, n.º 2) e a Convenção garante os direitos a todas as crianças, seja qual for a origem nacional (artigo 2.º).",
+  "fe":["","Uma opinião sobre o diretor discute-se. Dizer que um grupo de colegas não devia estar na escola ataca pessoas pela origem.","A graça não é o critério. A caricatura visa quem tem poder; este comentário visa colegas por serem de um país."]},
+ {"t":"vf","g":"satira","p":"Exagerar um traço de quem tem poder é diferente de atribuir um facto falso a um colega.","p2":"Fazer do diretor uma pera não é o mesmo que dizer, sem prova, que o Diogo rouba.","v":True,
+  "f":"A sátira exagera e toda a gente percebe que é exagero. Atribuir a alguém um facto que ofende a sua honra, mesmo sob a forma de suspeita, pode ser crime: o Código Penal chama-lhe difamação (artigo 180.º).",
+  "fe":"Pensa no que cada frase faz: uma exagera o rosto de quem manda; a outra diz que um colega concreto cometeu um furto."},
+ {"t":"completar","g":"verifica","p":"Completa a frase sobre o que se faz com cada tipo de afirmação.","p2":"Completa: o que se faz com uma opinião, com um facto e com uma acusação sem prova?",
+  "frase":"Uma opinião [1]; um facto [2]; uma acusação sem prova ofende o [3].",
+  "lacunas":[{"o":["discute-se","prova-se","esconde-se"],"c":0},{"o":["verifica-se","esquece-se","vota-se"],"c":0},{"o":["bom nome","bom gosto","bom senso"],"c":0}],
+  "f":"Uma opinião **discute-se**; um facto **verifica-se**; uma acusação sem prova ofende o **bom nome**, que a Constituição protege (artigo 26.º, n.º 1).",
+  "fe":"Uma opinião não se prova, um facto sim. E o bom nome é um direito, não uma questão de gosto."},
+ {"t":"escolha","g":"fontes","p":"Duas páginas dizem o mesmo, mas uma copiou a outra. Quantas fontes tens?","p2":"Encontraste a acusação em dois sítios, mas o segundo cita o primeiro. O que tens?",
+  "o":["Uma fonte, repetida em dois sítios.","Duas fontes, porque são dois sítios.","Nenhuma, porque a internet não conta."],"c":0,
+  "f":"Duas páginas que se copiam contam como uma só fonte. Duas fontes são independentes quando cada uma chegou à informação pelo seu lado, por exemplo uma testemunha e um documento.",
+  "fe":["","Contam as origens, não os sítios. Se uma página copiou a outra, a informação só foi encontrada uma vez.","A internet pode ter boas fontes. O problema aqui é outro: as duas páginas são, na verdade, uma."]},
+ {"t":"vf","g":"assistente","p":"Um assistente de inteligência artificial é uma fonte independente para confirmar uma acusação.","p2":"Se um assistente de inteligência artificial confirma a acusação, já tens uma fonte independente.","v":False,
+  "f":"O que um assistente de inteligência artificial responde é mais uma afirmação a verificar: não viu nada e muitas vezes não diz de onde vem. Uma fonte independente tem uma origem que se pode reencontrar.",
+  "fe":"Pergunta de onde vem a resposta. Se não há uma origem que se possa reencontrar, não há fonte."},
+ {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
+]
+dados = {
+ "id":"cidadania-m1-s04","chave":"epi-cid-m1-s04","versao":"2026-10-31-2",
+ "marca":"CD","titulo":"Sessão 04: Posso dizer tudo?","h1":"Cidadania, módulo 1, sessão 04: Posso dizer tudo?",
+ "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "saida":"cidadania/piloto/m1-s04/index.html","piloto":True,
+ "seguinte":"../m1-s05/","seguinteRotulo":"Sessão 05: Quem guarda os meus dados?",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.ºs 2 e 3; Código Penal, artigo 180.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 13.º, n.º 2, no texto do Ministério Público. Imagem: _Les Poires_, em _Le Charivari_, 17 de janeiro de 1834, desenho atribuído a Honoré Daumier a partir de Charles Philipon (Gallica, Biblioteca Nacional de França, domínio público). Vídeo: TED-Ed, «How false news can spread», lição de Noah Tavlin. Os casos são inventados.",
+ "cartoes":cartoes,
+}
+p = pathlib.Path(__file__).with_suffix('.json')
+p.write_text(json.dumps(dados, ensure_ascii=False, indent=1) + '\n', 'utf-8')
+print(p, len(cartoes), 'cartões', sum(1 for c in cartoes if c['t'] != 'ler'), 'de fazer')
