@@ -134,6 +134,8 @@ def continuacao():
         s=re.sub(r'(class="c-menu-cab"><p>)(?!Estás em:)[^<]*(</p>)',r'\1Laboratório\2',s)
         s=re.sub(r'(<a class="c-marca"[^>]*>)LAB(</a>)',r'\1Laboratório\2',s)
         s=re.sub(r'(<a class="c-marca" href="[^"]*" aria-label="Página inicial \()[^)"]*(\)">(?:<svg[^>]*>.*?</svg>)?)[^<]*(</a>)',r'\1Laboratório\2Laboratório\3',s)
+        # 31/10/2026 (releitura): a marca «Laboratório» leva ao Laboratório e o nome acessível é o texto visível
+        s=re.sub(r'(<a class="c-marca" href=")[^"]*(" aria-label=")[^"]*(")',r'\g<1>'+ABS+r'narrativas/\g<2>Laboratório\g<3>',s)
         # rótulo dos treinos com o nome do percurso
         if r and p['id'].startswith('treinar/'):
             s=re.sub(r'(<p class=\\"etq-m\\">Treino · )[^·<]+?( · )',lambda m:m.group(1)+e(r['title'],quote=False)+m.group(2),s)
@@ -170,7 +172,7 @@ def mapa():
         extra=('<p class="map-open"><a href="'+ABS+'narrativas/treinar/caderno/">O caderno de treino</a></p><p class="map-open"><a href="'+ABS+'narrativas/treinar/docente/">Como conduzir um treino (docente)</a></p>') if b['id']=='treinar' else ''
         rs=''.join(ramo(e(r['title']),ABS+'narrativas/percursos/'+r['id']+'/',''.join('<li class="map-leaf"><a href="'+ABS+P[id]['url']+'">'+e(P[id]['title'])+'</a></li>' for id in r['pieces'])) for r in routes_of(b))
         out+=ramo(b['title'],ABS+'narrativas/'+b['id']+'/',rs,extra)
-    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('projetos/','Projetos'),('docente/','Área do docente')]
+    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
     s2=s[:i]+out+s[j:]
     if s2!=s:f.write_text(s2,'utf-8')

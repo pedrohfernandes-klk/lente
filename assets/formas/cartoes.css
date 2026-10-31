@@ -303,3 +303,5 @@ body.lf-projetar .casca-folha .c-expl{font-size:1.25rem}
 .lf-art,.ls-plano-texto,.tc-descricao{display:block;padding:16px;font:1rem/1.45 Georgia,serif;background:var(--papel,#fff);color:var(--tinta,#242722);border:1px solid currentColor;aspect-ratio:auto;min-height:0}
 .ls-tira .ls-plano-texto{flex:1 1 0;min-width:0}
 @media(max-width:600px){.ls-tira{flex-direction:column}.ls-tira .ls-plano-texto{width:auto}}
+/* 31/10/2026: abaixo de 360 px a regra do M1 apaga a marca; nestas peças, sem ícone, fica a palavra */
+@media (max-width:359px){.formas-cartoes .casca-topo .c-marca{font-size:.74rem}}
