@@ -171,7 +171,9 @@ def pagina(d):
     if d.get('seguinte'):
         if urljoin(LENTE + d['saida'], d['seguinte']) != mod['url']:
             cfg.update({'percurso': mod['url'], 'percursoRotulo': 'As 10 sessões'})
-        cfg.update({'seguinte': d['seguinte'], 'seguinteRotulo': d.get('seguinteRotulo')})
+        # 31/10/2026 (quarta correção, diretor de arte): espaço inseparável depois das palavras de uma letra, para o rótulo do
+        # botão não acabar a linha em «A» («Sessão 02: A / imagem dos outros», a 320 px, com text-wrap:balance).
+        cfg.update({'seguinte': d['seguinte'], 'seguinteRotulo': re.sub(r'(?<!\S)(\w) ', '\\1\u00a0', d.get('seguinteRotulo') or '') or None})
     # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
     tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
     return (

@@ -140,7 +140,7 @@ GUIA = {
   'projeto': ('A recolha', '#fases', 'O plano de entrevistas e de dados (anonimato, onde se guarda, quando se apaga) entra no dossiê.'),
   'produto': 'Formulário revisto e registo',
   'grelha': [('Dados riscados com razão', 4), ('Finalidade e quem vê', 4), ('Prazo e forma de apagar', 4), ('Registo dos avisos, factual e sem rostos', 4), ('Plano de recolha do projeto, com anonimato', 4)],
-  'notas': ['Saída só à volta da escola, em aula, sem autorização especial (decisão 10). Quem não pode sair regista as câmaras e os avisos visíveis do portão.', 'Imagem: a planta de Willey Reveley não se conseguiu descarregar (o servidor respondeu 429 três vezes e não se insistiu); entrou a página de título da edição de 1791.', 'O Regulamento Geral sobre a Proteção de Dados (artigos 5.º e 8.º) fica fora dos cartões até se confirmar no EUR-Lex.'],
+  'notas': ['Saída só à volta da escola, em aula, sem autorização especial (decisão 10). Quem não pode sair regista as câmaras e os avisos visíveis do portão.', 'Imagem: a planta do panóptico desenhada pelo arquiteto Willey Reveley não se descarregou (o servidor recusou os pedidos três vezes e não se insistiu); entrou a página de título da edição de 1791.', 'O Regulamento Geral sobre a Proteção de Dados (artigos 5.º e 8.º) fica fora dos cartões até se confirmar no EUR-Lex.'],
  },
  '06': {
   'dominio': 'Democracia e Instituições Políticas (regras coletivas, ética e integridade, conflito de interesses); Direitos Humanos (igualdade).',
@@ -177,7 +177,7 @@ GUIA = {
   'projeto': ('Nenhum passo novo em aula', '#fases', 'Cinco minutos de ponto de situação do guião, que continua fora da aula.'),
   'produto': 'Acórdão',
   'grelha': [('Decisão clara', 3), ('Duas provas citadas, sem confundir prova com inferência', 5), ('Uma dúvida razoável', 4), ('Voto vencido com razão', 4), ('Papel cumprido, com notas próprias', 4)],
-  'notas': ['Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos de Temístocles não se conseguiu descarregar (429 e bloqueio do Flickr, sem insistir); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
+  'notas': ['Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
  },
  '08': {
   'dominio': 'Democracia e Instituições Políticas (órgãos de soberania, autarquias, União Europeia, eleições, petição, Provedor de Justiça).',
@@ -213,7 +213,7 @@ GUIA = {
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
   # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -276,6 +276,13 @@ CSS = (TOKENS +
  # numa só linha com o botão do tema (antes, duas linhas e 70 px, que empurravam a primeira ação para fora do primeiro ecrã).
  '.cid-piloto .migalhas a{color:inherit;display:inline-flex;align-items:center;min-height:44px}'
  '@media (max-width:359px){.cid-piloto .migalhas{gap:4px 10px;font-size:.8125rem}}'
+ # 31/10/2026 (quarta correção, diretor de arte): no guia e no Ponto, abaixo de 400 px, as migalhas ficam numa só linha de 44 px
+ # (tinham duas, 92 px, com o botão do tema sozinho na segunda); o nível atual sai da vista, mas fica para o leitor de ecrã, e o
+ # h1 por baixo repete-o. A página do módulo, só com duas ligações, não muda. O botão do tema vai à direita da barra (sistema,
+ # 6.1). «Lente» (33 a 36 px de largura) ganha uma área de toque de 44 px.
+ '@media (max-width:399px){.cid-piloto .migalhas:has(>a+a+a){flex-wrap:nowrap;gap:4px 10px;font-size:.8125rem}.cid-piloto .migalhas:has(>a+a+a) a{white-space:nowrap}.cid-piloto .migalhas>a+a+a+[aria-current]{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}'
+ '.cid-piloto .migalhas [data-appearance-control]{margin-left:auto}'
+ '.cid-piloto .migalhas a:first-child{position:relative}.cid-piloto .migalhas a:first-child::after{content:"";position:absolute;top:0;bottom:0;left:-6px;width:44px}'
  '.cid-piloto .marca{font:400 1rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;letter-spacing:.06em;margin:0 0 4px}'
  '.cid-piloto h1{font:700 clamp(2.4rem,9vw,3.6rem)/.95 Arial,Helvetica,sans-serif;margin:0 0 10px;letter-spacing:-.05em}'
  '.cid-piloto h1,.cid-piloto h2,.cid-piloto h3{text-wrap:balance}'
@@ -307,6 +314,9 @@ CSS = (TOKENS +
  '.cid-piloto ol.sessoes strong{font-size:1.05rem;line-height:1.25}'
  '.cid-piloto ol.sessoes .perg{grid-column:2;color:var(--suave);font-size:.95rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}'
  '@media (max-width:599px){.cid-piloto ol.sessoes .perg{display:none}}'
+ # 31/10/2026 (quarta correção, diretor de arte): sem a pergunta, o número e a seta ficam só na primeira linha da grelha, a do
+ # título e do estado (ocupavam duas e o texto ficava 7 a 11 px acima do centro deles).
+ '@media (max-width:599px){.cid-piloto ol.sessoes .n,.cid-piloto ol.sessoes a::after{grid-row:1}}'
  '.cid-piloto .proximo .prox-q{font:400 1rem/1.4 Georgia,"Times New Roman",serif;margin:-6px 0 14px;max-width:34em}'
  # 31/10/2026 (terceira correção, diretor de arte): o estado é a peça .etq do sistema (6.5 e 6.9): palavra em caixa alta; «Feita»
  # com o quadrado mostarda e contorno de 1,5 px a tinta; «A seguir» com o quadrado cheio a vermelho do token (no escuro, #e4555c);
@@ -318,9 +328,12 @@ CSS = (TOKENS +
  '.cid-piloto li.feita .estado::before{background:var(--mostarda);border:0;box-shadow:inset 0 0 0 1.5px var(--tinta)}'
  '.cid-piloto li.seguir .estado::before{background:var(--vermelho);border:0}'
  '@media (max-width:499px){.cid-piloto ol.sessoes .estado:not(:empty){display:flex;margin:4px 0 0}}'
- '.cid-piloto li.feita .n::after{content:"";display:block;width:1.6rem;height:4px;background:var(--acento);margin-top:4px}'
+ # 31/10/2026 (quarta correção, diretor de arte): o traço sob o número da sessão feita usa a mostarda do quadrado «Feita» (no
+ # claro eram dois amarelos, #d9a520 e #e0b23a, para o mesmo significado).
+ '.cid-piloto li.feita .n::after{content:"";display:block;width:1.6rem;height:4px;background:var(--mostarda);margin-top:4px}'
  '.cid-piloto footer.mais{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px}'
- '.cid-piloto footer.mais a{color:inherit;font-weight:700}'
+ # 31/10/2026 (quarta correção, diretor de arte): as ligações do rodapé são alvos de 44 px de altura (tinham 26).
+ '.cid-piloto footer.mais a{color:inherit;font-weight:700;display:inline-flex;align-items:center;min-height:44px}'
  '.cid-piloto .pg{overflow-wrap:break-word}.cid-piloto .fontes{overflow-wrap:anywhere}'
  # 31/10/2026 (verificação final): 28em (476 px a 1366) para a linha não passar dos 75 carateres na Georgia (com 34em chegava aos 91).
  '.cid-piloto .pg,.cid-piloto section.sessao p:not(.marca),.cid-piloto section.sessao li{font-family:Georgia,"Times New Roman",serif;max-width:28em;text-align:justify;hyphens:auto}'
@@ -331,6 +344,9 @@ CSS = (TOKENS +
  '.cid-piloto section.sessao{border-top:3px solid var(--tinta);margin-top:36px;padding-top:4px}'
  '.cid-piloto section.sessao>h2{font:400 2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:16px 0 6px}'
  '.cid-piloto .caixa{background:var(--papel);border:2px solid var(--tinta);padding:4px 16px;margin:12px 0}'
+ # 31/10/2026 (quarta correção, diretor de arte): no ecrã, a caixa fecha sobre o texto (com a medida de 28em, ficavam 208 px
+ # vazios dentro dela, de 1024 a 1440 px); no papel fica como estava.
+ '@media screen{.cid-piloto .caixa{width:fit-content;max-width:100%;box-sizing:border-box}}'
  '.cid-piloto table{border-collapse:collapse;width:100%;background:var(--papel);margin:8px 0 4px}'
  '.cid-piloto th,.cid-piloto td{border:1px solid var(--tinta);padding:6px 8px;text-align:left;vertical-align:top}'
  '.cid-piloto td.num,.cid-piloto th.num{text-align:right;white-space:nowrap;width:4.5rem}'
@@ -514,7 +530,9 @@ def pagina_guia(S):
             chave += f'<tr><td class="num">{i}</td><td>{e(q)}</td><td>{e(COTACAO_ESCRITA[i])}</td><td class="num">2</td><td>{e(ses)}</td></tr>'
     corpo += ('<section class="sessao" id="ponto"><p class="marca">Sessões 01 e 10</p><h2>Ponto de partida e de chegada: chave e cotação</h2>'
               '<p class="pg">Em papel, sem ajuda e sem consulta, 10 a 15 minutos. Cada aluno escreve o seu código, nunca o nome. As mesmas 10 perguntas, pela mesma ordem, na sessão 10. Máximo 12 pontos: 8 de escolha (1 ponto cada) e 2 escritas (0 a 2). O ganho de cada aluno (chegada menos partida, por código) calcula-se numa tabela fora do sítio. Perguntas propostas pela equipa a partir do plano, para o docente rever.</p>'
-              '<p><a href="../ponto/">Abrir o Ponto para imprimir</a></p>'
+              # 31/10/2026 (quarta correção, diretor de arte): a ligação ao Ponto é um botão como «Abrir a sessão» e «Projetar»
+              # (48 px de altura, como eles; tinha 19 px); como eles, não se imprime.
+              '<p class="abrir"><a class="botao" href="../ponto/">Abrir o Ponto para imprimir</a></p>'
               '<div class="tabela"><table><thead><tr><th scope="col" class="num">N.º</th><th scope="col">Pergunta</th><th scope="col">Chave ou cotação</th><th scope="col" class="num">Pontos</th><th scope="col">Sessão</th></tr></thead>'
               f'<tbody>{chave}</tbody></table></div></section>'
               '<footer class="mais"><a href="../">Voltar ao módulo</a><a href="../../../projeto/">Pergunta Humana</a></footer>')

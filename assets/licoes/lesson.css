@@ -357,6 +357,22 @@ html.em-projecao .jogo .ler .fig img{max-height:min(62vh,640px)}
 .jogo .pares .op .tx{-webkit-hyphens:auto}
 @media (max-width:399px){.jogo .pares{column-gap:20px}.jogo .pares .op{padding-left:8px;padding-right:8px;gap:6px;font-size:.875rem}}
 @media (max-width:359px){.jogo .pares{column-gap:16px}.jogo .pares .op{padding-left:6px;padding-right:6px;gap:4px;font-size:.8125rem}}
+/* 31/10/2026 (quarta correção, diretor de arte): o par ligado (contorno de 2 px) passava por cima dos espaços acima e, abaixo
+   de 400 px, o texto encolhia ao ligar (8 px a 320 px: «nacionalidad/e», «discriminaçã/o»). O contorno de 2 px mais estes
+   espaços dá a mesma largura de texto que 1 px de contorno e os espaços de cima; até 480 px, o mesmo na altura, e o botão não
+   cresce debaixo do dedo. */
+@media (max-width:480px){.jogo .pares .op.ligado{padding-top:9px;padding-bottom:9px}}
+@media (max-width:399px){.jogo .pares .op.ligado{padding-left:7px;padding-right:7px}}
+@media (max-width:359px){.jogo .pares .op.ligado{padding-left:5px;padding-right:5px}}
+/* 31/10/2026 (quarta correção): o mesmo no primeiro toque. A opção escolhida da esquerda (contorno de 3 px) também perdia 8 a
+   12 px de texto e crescia até 34 px antes de se tocar no par, e a 320 px partia «nacionalidade» e «discriminação». Com estes
+   espaços, o contorno mais grosso não muda a largura do texto; com o par já ligado, valem os espaços de .ligado. */
+.jogo .pares .op.escolhida:not(.ligado){padding-left:8px;padding-right:8px}
+@media (max-width:399px){.jogo .pares .op.escolhida:not(.ligado){padding-left:6px;padding-right:6px}}
+@media (max-width:359px){.jogo .pares .op.escolhida:not(.ligado){padding-left:4px;padding-right:4px}}
+/* 31/10/2026 (quarta correção): no menu da lição, os endereços das fontes partem-se onde for preciso, como no guia do docente
+   (.fontes); nas sessões 05 a 10 passavam até 484 px da caixa e ficavam cortados, de 320 a 1366 px. */
+.casca-menu .c-menu-extra{overflow-wrap:anywhere}
 /* 31/10/2026 (terceira correção, diretor de arte): nenhuma letra da casca abaixo dos 13 px do sistema («CD», «/19» e «Por
    ordenar» ficavam entre 11,2 e 12,8 px; «Por classificar» usa a mesma peça) */
 .c-marca{font-size:.8125rem}.c-num small{font-size:inherit}.jogo .soltos-t{font-size:.8125rem}
