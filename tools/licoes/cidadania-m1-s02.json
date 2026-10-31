@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s02",
  "chave": "epi-cid-m1-s02",
- "versao": "2026-10-31-3",
+ "versao": "2026-10-31-4",
  "marca": "CD",
  "titulo": "Sessão 02: A imagem dos outros",
  "h1": "Cidadania, módulo 1, sessão 02: A imagem dos outros",
@@ -14,7 +14,7 @@
  "piloto": true,
  "seguinte": "../m1-s03/",
  "seguinteRotulo": "Sessão 03: Quem tem lugar?",
- "fontes": "Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados. Ler mais: _The Truman Show_, filme de Peter Weir (1998), já visto no M1; não se volta a exibir.",
+ "fontes": "Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: Bullying No Way, «Be kind online: Consent to share and cyberbullying» (bullyingnoway.gov.au). Os casos são inventados. Ler mais: _The Truman Show_, filme de Peter Weir (1998), já visto no M1; não se volta a exibir.",
  "cartoes": [
   {
    "t": "ler",
@@ -187,7 +187,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Uma cara que se imita",
-   "html": "<p>O início de uma conferência TED de Sam Gregory, que dirige a WITNESS, uma organização que ajuda as pessoas a usar o vídeo para defender os seus direitos. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Segundo o orador, de quanto precisa alguém para imitar a tua voz e a tua cara? Que dois perigos vêm daí?</p><div class=\"yt\" data-yt=\"Hnjr7o-HNx8\" data-ini=\"0\" data-fim=\"47\" data-titulo=\"When AI Can Fake Reality, Who Can You Trust?, TED\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «When AI Can Fake Reality, Who Can You Trust?» (excerto, 47 s)</button><p class=\"yt-cred\">TED, conferência de Sam Gregory (12 min 5 s; vês só o início). O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada resposta, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>"
+   "html": "<p>Um vídeo curto do <i>Bullying. No Way!</i>, um sítio oficial australiano contra o bullying, sobre o consentimento para partilhar imagens de outras pessoas na Internet. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Enquanto vês, aponta duas coisas que o vídeo diz que se devem fazer antes de partilhar a imagem de alguém.</p><div class=\"yt\" data-yt=\"-iA17Exw9FM\" data-titulo=\"Be kind online: Consent to share and cyberbullying, Bullying No Way\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Be kind online: Consent to share and cyberbullying»</button><p class=\"yt-cred\">Bullying No Way, sítio oficial australiano contra o bullying. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada coisa, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>"
   },
   {
    "t": "escolha",
