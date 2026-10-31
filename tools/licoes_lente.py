@@ -8,6 +8,7 @@ Uso: python3 tools/licoes_lente.py tools/licoes/cidadania-m1-s01.json [...]   (s
 O .json é a fonte; a página gerada não se edita à mão. A validação corre sempre antes de escrever: se falhar, nada se
 escreve e a razão aparece no terminal."""
 import html, json, pathlib, re, sys
+from urllib.parse import urljoin
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PASTA = ROOT / 'tools' / 'licoes'
@@ -165,8 +166,12 @@ def pagina(d):
         f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
     # 31/10/2026 (revisão do diretor de arte, sistema 6.11): o ecrã final leva «A seguir» (a sessão seguinte) e o módulo.
+    # Verificação final: quando a seguinte já é o módulo (a s10 aponta para ../m1/), o módulo não se repete ao lado, como
+    # ligação e como botão para o mesmo destino; fica só o botão.
     if d.get('seguinte'):
-        cfg.update({'percurso': mod['url'], 'percursoRotulo': 'As 10 sessões', 'seguinte': d['seguinte'], 'seguinteRotulo': d.get('seguinteRotulo')})
+        if urljoin(LENTE + d['saida'], d['seguinte']) != mod['url']:
+            cfg.update({'percurso': mod['url'], 'percursoRotulo': 'As 10 sessões'})
+        cfg.update({'seguinte': d['seguinte'], 'seguinteRotulo': d.get('seguinteRotulo')})
     # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
     tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
     return (

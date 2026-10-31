@@ -15,7 +15,7 @@ DECIDE = (
  '<details class="lado"><summary>A razão dos dois</summary><div><p>«Uma captura mostra um nome, não mostra quem carregou no botão. Ainda não ouvimos o Tomás.»</p></div></details>'
  '<details class="lado"><summary>Uma objeção</summary><div><p>Há uma medida que proteja a colega sem castigar já o Tomás?</p></div></details>'
  '<p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>')
-INFERENCIA = 'A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o cortou e publicou.'
+INFERENCIA = 'A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o montou e publicou.'
 # 31/10/2026 (decisão 18): a imagem e o vídeo da sessão. A fotografia dos óstracos de Temístocles (Commons, CC BY-SA
 # 2.0, página verificada a 31/10) não se conseguiu descarregar: upload.wikimedia.org respondeu 429 (Retry-After 600 s)
 # e o Flickr da autora respondeu «CIDR range blocked»; não se insistiu. Entra uma litografia de Daumier do Met (Open
@@ -52,10 +52,10 @@ cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Nove contra dois","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"O Tomás sai já?","html":DECIDE},
  {"t":"sublinhar","g":"inferencia","p":"Toca nas duas palavras onde a frase deixa de descrever a captura e passa a tirar uma conclusão.","p2":"Onde começa a inferência nesta frase? Toca nas duas palavras.","frase":INFERENCIA,"certas":[11,12],
-  "f":"Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem cortou e quem publicou."},
+  "f":"Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem montou e quem publicou."},
  {"t":"escolha","g":"captura","p":"O que prova, com segurança, a captura de ecrã?","p2":"Com a captura na mão, o que se pode afirmar sem ir além dela?",
-  "o":["Que o nome do Tomás aparece ao lado do vídeo.","Que foi o Tomás quem cortou e publicou o vídeo.","Que o Tomás quis gozar com a colega no grupo."],"c":0,
-  "f":"A captura prova o que mostra: um nome ao lado de um vídeo. Quem cortou, quem publicou e com que intenção são perguntas que precisam de outras provas.",
+  "o":["Que o nome do Tomás aparece ao lado do vídeo.","Que foi o Tomás quem montou e publicou o vídeo.","Que o Tomás quis gozar com a colega no grupo."],"c":0,
+  "f":"A captura prova o que mostra: um nome ao lado de um vídeo. Quem montou, quem publicou e com que intenção são perguntas que precisam de outras provas.",
   "fe":["","Isso já é uma inferência. Um nome pode aparecer por muitas razões: uma conta partilhada, um reencaminhamento, uma montagem.","Ninguém ouviu ainda o Tomás. Dar-lhe uma intenção é concluir antes de ouvir."]},
  {"t":"vf","g":"presuncao","p":"A Constituição diz que todo o arguido se presume inocente até à condenação definitiva.","p2":"Segundo a Constituição, um arguido é tratado como inocente até haver sentença de condenação definitiva.","v":True,
   "f":"O artigo 32.º, n.º 2, diz que «todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação». Trânsito em julgado quer dizer que a sentença já não admite recurso. A Declaração Universal também consagra a presunção de inocência (artigo 11.º, n.º 1).",

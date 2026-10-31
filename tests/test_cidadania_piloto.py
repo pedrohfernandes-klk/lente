@@ -3,7 +3,7 @@ A página do módulo, o guia do docente e o Ponto de partida e de chegada saem d
 lições em tools/licoes/cidadania-m1-sNN.json. Confirma que a página do módulo lista as 10 sessões, que as ligações
 locais resolvem, que as três páginas estão escondidas dos motores de busca e que o guia diz que a avaliação é
 indicativa."""
-import html, importlib.util, json, pathlib, re, unittest
+import html, importlib.util, json, math, pathlib, re, unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('cidadania_piloto', ROOT / 'tools/cidadania_piloto.py')
@@ -98,6 +98,27 @@ class CidadaniaPiloto(unittest.TestCase):
                 self.assertIn(html.escape(ops[c]), g)
         self.assertNotIn('Chave', p)  # a chave e a cotação ficam no guia do docente
         self.assertIn('O teu código', p)
+
+    def test_ponto_opcoes_equilibradas(self):
+        # 30/10/2026: verificação final da Cidadania refeita (M1, 31/10): nenhuma ferramenta media o Ponto de partida e de
+        # chegada (PONTO não está numa página com JSON). Mede-se aqui com a função de tools/medir_opcoes.py (escolha e
+        # resumir), com as regras de tests/test_opcoes_equilibradas.py: no máximo 20 % de amplitude em cada pergunta,
+        # nenhuma certa denunciadora, e a certa a mais longa (ou a mais curta) no máximo tantas vezes quanto o acaso daria
+        # (3 em 8, com três opções).
+        spec_m = importlib.util.spec_from_file_location('medir_opcoes', ROOT / 'tools/medir_opcoes.py')
+        M = importlib.util.module_from_spec(spec_m); spec_m.loader.exec_module(M)
+        rows = []
+        for i, (_, q, ops, c) in enumerate(G.PONTO, 1):
+            if not ops:
+                continue
+            r = dict(M.escolha(ops, c), pagina='ponto')
+            self.assertFalse(r['amplitude20'], f'pergunta {i}: {r["comprimentos"]}')
+            self.assertFalse(r['denunciadora'], f'pergunta {i}: {r["comprimentos"]}')
+            rows.append(r)
+        self.assertEqual(len(rows), 8)
+        r = M.resumir(rows, 'pagina')['ponto']
+        self.assertLessEqual(r['certaMaisLonga'], math.ceil(r['esperadoMaisLonga']))
+        self.assertLessEqual(r['certaMaisCurta'], math.ceil(r['esperadoMaisLonga']))
 
 
 if __name__ == '__main__':

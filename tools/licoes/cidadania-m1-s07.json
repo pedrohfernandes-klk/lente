@@ -33,12 +33,12 @@
    "g": "inferencia",
    "p": "Toca nas duas palavras onde a frase deixa de descrever a captura e passa a tirar uma conclusão.",
    "p2": "Onde começa a inferência nesta frase? Toca nas duas palavras.",
-   "frase": "A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o cortou e publicou.",
+   "frase": "A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o montou e publicou.",
    "certas": [
     11,
     12
    ],
-   "f": "Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem cortou e quem publicou."
+   "f": "Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem montou e quem publicou."
   },
   {
    "t": "escolha",
@@ -47,11 +47,11 @@
    "p2": "Com a captura na mão, o que se pode afirmar sem ir além dela?",
    "o": [
     "Que o nome do Tomás aparece ao lado do vídeo.",
-    "Que foi o Tomás quem cortou e publicou o vídeo.",
+    "Que foi o Tomás quem montou e publicou o vídeo.",
     "Que o Tomás quis gozar com a colega no grupo."
    ],
    "c": 0,
-   "f": "A captura prova o que mostra: um nome ao lado de um vídeo. Quem cortou, quem publicou e com que intenção são perguntas que precisam de outras provas.",
+   "f": "A captura prova o que mostra: um nome ao lado de um vídeo. Quem montou, quem publicou e com que intenção são perguntas que precisam de outras provas.",
    "fe": [
     "",
     "Isso já é uma inferência. Um nome pode aparecer por muitas razões: uma conta partilhada, um reencaminhamento, uma montagem.",

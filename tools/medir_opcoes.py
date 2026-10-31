@@ -78,8 +78,12 @@ def perguntas(raiz):
     op=d['o'];c=d['c']
     if not all(isinstance(x,str) for x in op) or not 0<=c<len(op) or len(op)<2:raise ValueError(str(p)+': opções inválidas')
     numero+=1
-    n=list(map(lambda s:len(visivel(s)),op));err=max(v for i,v in enumerate(n) if i!=c)
-    yield {'excecao':EXCECOES.get(p.relative_to(raiz).as_posix()+'#'+str(numero)), 'amplitude20':max(n)>1.2*min(n),'numero':numero,'pagina':p.relative_to(raiz).as_posix(),'pasta':pasta,'pergunta':d.get('p',''),'linha':texto.count('\n',0,m.start())+1,'opcoes':op,'certa':c,'comprimentos':n,'denunciadora':n[c]>=1.25*err and n[c]-err>=5,'fora20':max(n)>1.2*min(n) and max(n)-min(n)>=8,'certaMaisLonga':n[c]>err,'certaMaisCurta':n[c]<min(v for i,v in enumerate(n) if i!=c),'k':len(op)}
+    yield {'excecao':EXCECOES.get(p.relative_to(raiz).as_posix()+'#'+str(numero)),'numero':numero,'pagina':p.relative_to(raiz).as_posix(),'pasta':pasta,'pergunta':d.get('p',''),'linha':texto.count('\n',0,m.start())+1,'opcoes':op,'certa':c,**escolha(op,c)}
+# 31/10/2026 (verificação final da Cidadania refeita, M1): a medida de uma escolha sai para uma função própria, para o Ponto de
+# partida e de chegada (tools/cidadania_piloto.py, PONTO, que não está numa página com JSON) se medir com a mesma regra.
+def escolha(op,c):
+ n=list(map(lambda s:len(visivel(s)),op));err=max(v for i,v in enumerate(n) if i!=c)
+ return {'amplitude20':max(n)>1.2*min(n),'comprimentos':n,'denunciadora':n[c]>=1.25*err and n[c]-err>=5,'fora20':max(n)>1.2*min(n) and max(n)-min(n)>=8,'certaMaisLonga':n[c]>err,'certaMaisCurta':n[c]<min(v for i,v in enumerate(n) if i!=c),'k':len(op)}
 def resumir(rows,chave):
  out={}
  for q in rows:

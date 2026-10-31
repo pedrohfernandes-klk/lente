@@ -35,7 +35,7 @@ PERAS = (
  '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/les-poires-1834.webp" '
  'alt="Quatro desenhos a traço, dois em cima e dois em baixo, com legendas em francês: o rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera, até ser só uma pera." loading="lazy"></span>'
  '<figcaption><i>Les Poires</i>, em <i>Le Charivari</i>, 17 de janeiro de 1834; desenho atribuído a Honoré Daumier, a partir de Charles Philipon. Gallica, Biblioteca Nacional de França. Domínio público.</figcaption></figure>'
- '<p>O rosto é o do rei Luís Filipe, rei dos Franceses. A página impressa diz que os desenhos foram feitos num tribunal de Paris e vendidos para pagar uma multa do jornal. As legendas perguntam: se condenam o primeiro desenho por se parecer com o rei, não terão de condenar também a pera?</p>'
+ '<p>O rosto é o de Luís Filipe, rei dos Franceses. A página impressa diz que os desenhos foram feitos num tribunal de Paris e vendidos para pagar uma multa do jornal. As legendas perguntam: se condenam o primeiro desenho por se parecer com o rei, não terão de condenar também a pera?</p>'
  '<p class="pergunta-c">Em que desenho deixa o rosto de ser o do rei?</p>'
  '<p>Responde no caderno, numa linha.</p>')
 VIDEO = (

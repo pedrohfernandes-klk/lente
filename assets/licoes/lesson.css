@@ -325,10 +325,29 @@ ol.passos .n{font-size:2rem}
 /* 31/10/2026 (revisão do diretor de arte da Cidadania refeita, M1): a 320 px a barra perde o espaço entre botões; na projeção
    (?projetar=1, classe em-projecao do sistema) a letra e as imagens crescem para o fundo da sala; o acerto diz-se a tinta, com o
    visto e a palavra «Certo.», e a lacuna certa leva 2 px de tinta (o sistema não tem verde: tinta, papel, mostarda para feito,
-   vermelho para atual). Se o docente quiser manter o verde, basta apagar as três últimas regras. */
+   vermelho para atual). Na verificação final, o resto do acerto no cartão também passa a tinta (a opção certa e o seu traço, as
+   palavras do sublinhar, o fio do emparelhar, o número do ordenar, o ponto do mapa e a cópia do modo rever), para o acerto ter
+   uma só cor no ecrã; o erro continua vermelho e riscado. Se o docente quiser manter o verde, basta apagar as regras do acerto
+   (as três primeiras depois da projeção e o grupo «acerto no cartão»). O motor do Português continua com o verde. */
 @media (max-width:340px){.casca-topo{gap:0}}
 html.em-projecao .jogo{font-size:1.2em}
 html.em-projecao .jogo .rot,html.em-projecao .jogo .ler .fig figcaption{font-size:1.125rem}
 html.em-projecao .jogo .ler .fig img{max-height:min(62vh,640px)}
 .casca-folha.ok .c-folha-in{border-left-color:var(--tinta,#000)}.casca-folha.ok .c-s{color:var(--tinta,#000)}
 .jogo select.ok{border:2px solid var(--tinta,#000)}
+/* acerto no cartão (verificação final de 31/10/2026) */
+.jogo button.op.bom{border-color:var(--tinta)}.jogo button.op.bom::before{color:var(--tinta)}.jogo .tracado rect{stroke:var(--tinta)}
+.jogo .pal.bom{border-color:var(--tinta)}.jogo .pal.bom::before{color:var(--tinta)}.jogo .pal.falta{outline-color:var(--tinta)}
+.jogo .pares .fios line.ok{stroke:var(--tinta)}.jogo .ordem .op .certo-n{color:var(--tinta)}
+.jogo .mapa-q .op-m.bom circle{fill:var(--tinta)}.jogo .mapa-q .op-m.bom .anel{stroke:var(--tinta)}.jogo.rev .f-rev.ok{border-left-color:var(--tinta)}
+/* 31/10/2026 (verificação final): a 320 px, a grelha do emparelhar encolhe abaixo da palavra mais comprida (minmax(0,1fr)) e o
+   texto parte-se dentro do botão, em vez de sair do cartão e ser cortado pela casca */
+.jogo .pares{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jogo .pares .op .tx{min-width:0;overflow-wrap:break-word;hyphens:auto}
+/* 31/10/2026 (verificação final): no ecrã final, até 480 px, o botão principal («Sessão NN: título») ocupa uma linha inteira, por
+   cima, e «Nova tentativa» e «As 10 sessões» ficam por baixo; o botão deixa de se partir em três a cinco linhas (a 320 px, um
+   título longo fica em duas linhas equilibradas, dentro dos 48 px) */
+@media (max-width:480px){.casca-acoes{flex-wrap:wrap}.casca-acoes [data-licao-seguinte]{flex:1 0 100%;order:-1;justify-content:space-between;text-align:left;text-wrap:balance}}
+/* 31/10/2026 (verificação final): uma imagem de texto (figure.texto, como a página de título de Bentham na sessão 05) não se
+   move: o kenburns aumenta 4 % e a moldura cortava a primeira letra das linhas */
+.jogo .ler .fig.texto .moldura img{animation:none}

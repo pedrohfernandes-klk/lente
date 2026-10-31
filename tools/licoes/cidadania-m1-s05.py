@@ -26,11 +26,16 @@ LEI_19_3 = ('Nos estabelecimentos de ensino, as câmaras de videovigilância só
 # «This could save lives— but are you willing to do it?», traz um travessão que a casa não usa: o botão cita-o abreviado e
 # as fontes passam o travessão a dois pontos (revisão do diretor de arte e de pt-PT, 31/10). A imagem foi recortada à lista
 # do título (de «AND IN PARTICULAR TO» a «AND SCHOOLS:»), que o cartão também transcreve.
+# 31/10/2026 (verificação final): novo recorte a partir da digitalização em resolução máxima do Internet Archive
+# (10059224bsb_jp2.zip, página 0000, 1209 px de largura): a lista ocupa 754 px; com cerca de 6 % de margem de cada lado fica
+# com 857 px, levada a 960 × 404 (Lanczos), em tons de cinzento, com o papel uniformizado. A figura leva a classe «texto»
+# (sem o movimento da moldura) e a lista em inglês vai num parágrafo próprio, lang="en", alinhado à esquerda.
 CARTAZ = (
- '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/panotico-bentham-1791.webp" '
+ '<figure class="fig inteiro texto"><span class="moldura"><img src="../../../img/cidadania/panotico-bentham-1791.webp" '
  'alt="Pormenor de uma página de título impressa: em maiúsculas, a lista dos edifícios onde o plano se pode usar, de «penitentiary-houses» e «prisons» até «hospitals», em duas colunas, e no fim «and schools»." loading="lazy"></span>'
  '<figcaption>Jeremy Bentham, <i>Panopticon; or, The Inspection-House</i>, página de título (pormenor), Dublin e Londres, 1791. Bayerische Staatsbibliothek, via Internet Archive. Domínio público.</figcaption></figure>'
- '<p>Num livro de 1791, o filósofo inglês Jeremy Bentham propôs um edifício circular, a que chamou panóptico: as celas à volta e, ao centro, o lugar de quem inspeciona. Lê a lista do título até ao fim: «penitentiary-houses, prisons, houses of industry, work-houses, poor-houses, manufactories, mad-houses, lazarettos, hospitals, and schools».</p>'
+ '<p>Num livro de 1791, o filósofo inglês Jeremy Bentham propôs um edifício circular, a que chamou panóptico: as celas à volta e, ao centro, o lugar de quem inspeciona. Lê a lista do título até ao fim:</p>'
+ '<p class="lista-en" lang="en">«penitentiary-houses, prisons, houses of industry, work-houses, poor-houses, manufactories, mad-houses, lazarettos, hospitals, and schools»</p>'
  '<p class="pergunta-c">Porque estará uma escola nesta lista?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
 VIDEO = (

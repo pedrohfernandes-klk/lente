@@ -7,3 +7,8 @@ body.licao-cidadania{--mostarda:#e0b23a}
 /* 31/10/2026 (revisão do diretor de arte): os pontos da folha de resposta a tinta. A mostarda da Cidadania sobre branco fica a
    1,98:1, e no sistema a mostarda quer dizer «feito», não pontos. */
 body.licao-cidadania .casca-folha .c-veredito .c-pts{color:var(--tinta)}
+/* 31/10/2026 (verificação final): a lista em inglês do título de Bentham (sessão 05) vai num parágrafo próprio, lang="en",
+   alinhada à esquerda: sem hifenização para inglês, o texto justificado abria grandes espaços. O !important é preciso porque a
+   regra do texto corrido justificado (assets/appearance.css, partilhada com o Português) usa :is() com uma especificidade
+   muito alta; mexer nessa lista desalinhava os dois sítios. */
+.licao-cidadania .ler .lista-en{text-align:start!important}

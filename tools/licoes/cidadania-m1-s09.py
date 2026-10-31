@@ -5,9 +5,18 @@
 # Universal e a Resolução do Conselho de Ministros n.º 127/2025 não entram nos cartões (endereços por confirmar).
 # Imagem: o plano previa Sherman, Pipers (Commons, domínio público); o descarregamento deu 429 três vezes e a NYPL tem um
 # bloqueio a robôs, que não se contornou. Fica a fotografia da Library of Congress (LC-D6-87, registo lido a 31/10/2026).
-# 31/10/2026 (verificador de factos): pode ser a de Lewis Hine, «Italian Family Seeking Lost Luggage, Ellis Island», 1905
-# (Met 285814). A comparação não se fez (a API do Met não dá a imagem; a LoC e o Commons responderam 429): até lá, a
-# tabela diz só «sem restrições conhecidas de publicação», sem «domínio público», e fica em «Para rever».
+# 31/10/2026 (verificação final, decisão 39): a fotografia da LoC saiu. O registo (97501656, LC-USZ62-67910) não diz quem a
+# tirou e só diz «No known restrictions on publication», que não é nenhum dos estatutos da casa; a atribuição a Lewis Hine
+# («Italian Family Seeking Lost Luggage», Met 285814) não se confirmou: o Met não mostra a imagem, o George Eastman Museum e o
+# MFAH têm bloqueio Cloudflare e a Biblioteca Pública de Nova Iorque um bloqueio Incapsula, que não se contornaram. Entrou outra
+# fotografia de Hine em Ellis Island, com domínio público declarado no Wikimedia Commons (PD-1923, PD-Art): «Immigrant Family
+# in the Baggage Room of Ellis Island», 1905, prova de 1939, Museum of Fine Arts, Houston (ficha do museu no Google Arts &
+# Culture, hwEWiyJnUAWQ5g, lida a 31/10/2026). O título do museu não diz a origem da família: o cartão fala de imigrantes e
+# não de um país, e descreve só o que se vê (a mulher com o bebé ao colo, o rapaz com o saco às riscas, a menina de touca, as
+# malas e a caixa com palavras escritas à mão).
+# A imagem veio do Google Arts & Culture (949 × 1200, a reprodução que o Commons guarda), porque upload.wikimedia.org respondeu
+# 429 quatro vezes (Retry-After de 600 s, respeitado, um pedido de cada vez). Tratamento igual ao da sessão 02 (Hine, Addie Card):
+# tons de cinzento, níveis de 0,5 % a 99,5 %, margens aparadas (4, 2, 2 e 3 px), 640 × 811, webp.
 import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p>'
@@ -27,11 +36,11 @@ CONCEITO = (
  '<p>Uma regra pode ser igual para todos e, mesmo assim, pesar mais sobre alguns.</p>')
 CDC30 = 'ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.'
 FOTO = (
- '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/familia-ellis-island-1910.webp" '
- 'alt="Fotografia a preto e branco. Uma mulher de vestido claro equilibra uma grande trouxa branca na cabeça; à esquerda, uma menina segura outro embrulho; à direita, um rapaz de chapéu tem ao colo uma criança pequena. Atrás, um carrinho de bagagem e uma grade." loading="lazy"></span>'
- '<figcaption>Fotógrafo não identificado, <i>Italian immigrant family at Ellis Island</i> (título do catálogo), Nova Iorque, cerca de 1910. Library of Congress (LC-D6-87), sem restrições conhecidas de publicação, segundo a biblioteca.</figcaption></figure>'
- '<p>Uma família chegada à ilha de Ellis, por onde entravam os imigrantes nos Estados Unidos. O catálogo da biblioteca chama-lhe «família italiana».</p>'
- '<p class="pergunta-c">Se esta fosse a única imagem que conhecesses de Itália, que ideia farias do país? O que é que a fotografia não mostra?</p>'
+ '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/hine-familia-bagagens-1905.webp" '
+ 'alt="Fotografia a preto e branco. Uma mulher de lenço na cabeça tem um bebé ao colo; ao lado, um rapaz de boné leva ao ombro um grande saco às riscas; à frente, uma menina pequena de touca. Atrás, malas e baús empilhados; no chão, à esquerda, uma caixa com palavras escritas à mão." loading="lazy"></span>'
+ '<figcaption>Lewis Hine, <i>Immigrant Family in the Baggage Room of Ellis Island</i>, 1905 (prova de 1939). Museum of Fine Arts, Houston, via Google Arts &amp; Culture. Domínio público.</figcaption></figure>'
+ '<p>Uma família na sala das bagagens da ilha de Ellis, por onde entravam os imigrantes nos Estados Unidos. Fotografou-a em 1905 o norte-americano Lewis Hine.</p>'
+ '<p class="pergunta-c">Se esta fosse a única imagem que conhecesses dos imigrantes que chegavam aos Estados Unidos, que ideia farias deles? O que é que a fotografia não mostra?</p>'
  '<p>Responde no caderno, numa linha para cada pergunta.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Sheila Marie Orfano e Densho: um estereótipo que parece um elogio também pode fazer mal. É em inglês: liga as legendas no leitor.</p>'
@@ -76,10 +85,10 @@ cartoes = [
   "f":"Mesmo quando parece bom, o estereótipo apaga a pessoa: quem não é «ótimo a matemática» fica de fora, e quem é deixa de ter mérito próprio. É o dano de que fala o vídeo.",
   "fe":["","Elogiar o trabalho de alguém é bom. O problema é atribuir uma qualidade a todos os de um grupo.","Quem diz a frase não muda o problema: a frase trata as pessoas pelo grupo."]},
  {"t":"ler","rot":"Ver","titulo":"Uma fotografia à chegada","html":FOTO},
- {"t":"escolha","g":"foto","p":"Na fotografia da ilha de Ellis, uma mulher e três crianças acabadas de chegar. O que é que esta imagem não pode mostrar?","p2":"A fotografia da ilha de Ellis mostra uma família à chegada. Que coisa fica, de certeza, fora dela?",
-  "o":["Como vivia o resto do seu país.","A trouxa que a mulher leva.","A criança ao colo do rapaz."],"c":0,
-  "f":"Uma fotografia mostra quatro pessoas num momento. Tomá-la pelo retrato de um país inteiro é o primeiro passo de um estereótipo.",
-  "fe":["","A trouxa vê-se bem, na cabeça da mulher: é das coisas que a fotografia mostra com certeza.","A criança está à vista, ao colo do rapaz. É o que a fotografia mostra."]},
+ {"t":"escolha","g":"foto","p":"Na fotografia da ilha de Ellis, uma mulher e três crianças na sala das bagagens. O que é que esta imagem não pode mostrar?","p2":"A fotografia da ilha de Ellis mostra uma família à chegada. Que coisa fica, de certeza, fora dela?",
+  "o":["Como eram as outras famílias à chegada.","O saco às riscas que o rapaz leva ao ombro.","O bebé que a mulher de lenço tem ao colo."],"c":0,
+  "f":"Uma fotografia mostra quatro pessoas num momento. Tomá-la pelo retrato de todos os imigrantes é o primeiro passo de um estereótipo.",
+  "fe":["","O saco vê-se bem, ao ombro do rapaz: é das coisas que a fotografia mostra com certeza.","O bebé está à vista, ao colo da mulher. É o que a fotografia mostra."]},
  {"t":"ordenar","g":"responder","p":"Alguém diz uma frase que generaliza sobre um grupo. Põe por ordem os passos para responder.","p2":"Por que ordem respondes a um comentário que generaliza?",
   "passos":["Perguntar de onde vem essa ideia.","Ouvir a resposta até ao fim.","Dar um facto que se possa verificar.","Propor outra pergunta para a conversa."],
   "f":"Perguntar primeiro abre a conversa em vez de a fechar. Depois ouve-se a resposta até ao fim, e só então se traz um facto. No fim, uma pergunta nova evita voltar ao mesmo."},
@@ -111,7 +120,7 @@ dados = {
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s09/index.html","piloto":True,
  "seguinte":"../m1-s10/","seguinteRotulo":"Sessão 10: O que conseguimos defender?",
- "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: fotógrafo não identificado, _Italian immigrant family at Ellis Island_, cerca de 1910 (Library of Congress, LC-D6-87, sem restrições conhecidas de publicação; https://www.loc.gov/item/97501656/). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; reprodução do Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, lida a 31/10/2026, em domínio público segundo o Wikimedia Commons). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

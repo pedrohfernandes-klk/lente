@@ -212,7 +212,8 @@ GUIA = {
   'projeto': ('O ensaio', '#av-teatro', 'O ensaio cruzado do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia de Sherman não se conseguiu descarregar (429 e bloqueio a robôs da Biblioteca Pública de Nova Iorque, sem insistir); entrou uma fotografia da Library of Congress (LC-D6-87).', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.', 'Para rever: a fotografia pode ser a de Lewis Hine, Italian Family Seeking Lost Luggage, Ellis Island, 1905 (Metropolitan Museum of Art, 285814). Comparar com a imagem do Met ou da George Eastman Museum: se coincidir, a tabela passa a Lewis Hine, 1905, domínio público; até lá, diz só «sem restrições conhecidas de publicação».'],
+  # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
+  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a de Sherman não se descarregou (429 e bloqueio a robôs) e a da Library of Congress (LC-D6-87) saiu: a biblioteca não diz quem a tirou nem o estatuto.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -236,19 +237,22 @@ GUIA = {
 
 # Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta da equipa a partir do plano, para o docente rever).
 # 8 de escolha (1 ponto cada) e 2 curtas escritas (0 a 2): máximo 12.
+# 31/10/2026 (verificação final): as opções das perguntas 3, 5 e 6 foram acertadas para a regra das opções equilibradas (no
+# máximo 20 % de amplitude e a certa a mais longa em 3 das 8, no máximo); tests/test_cidadania_piloto.py mede-as com a função
+# de tools/medir_opcoes.py.
 PONTO = [
  ('01', 'Uma fotografia tua, a dormir no autocarro, aparece no grupo da turma sem te perguntarem. Que direito está em causa em primeiro lugar?',
   ['a reserva da vida privada e a imagem', 'a liberdade de reunião no intervalo', 'o acesso gratuito ao ensino obrigatório'], 0),
  ('01', 'A Declaração Universal dos Direitos Humanos é…',
   ['uma lei aprovada pela Assembleia da República', 'uma declaração das Nações Unidas, não uma lei', 'um tratado que obriga só quem o assinou em 1948'], 1),
  ('02', 'A Marta aceitou ser filmada no ensaio para o grupo rever a cena. Para publicar o vídeo na conta da escola…',
-  ['já não é preciso pedir mais nada à Marta', 'é preciso pedir-lhe consentimento para esse uso', 'basta cortar as partes em que a Marta cai'], 1),
+  ['já não é preciso pedir mais nada à própria Marta', 'é preciso pedir-lhe consentimento para esse uso', 'basta cortar do vídeo as partes em que ela cai'], 1),
  ('03', 'Que situação mostra uma regra igual para todos que deixa alguém de fora?',
   ['a mostra é aberta a todos, num primeiro andar sem elevador', 'a mostra só aceita os alunos do 10.º A, por ser deles', 'a mostra é gratuita para todas as turmas da escola'], 0),
  ('04', 'Que frase é uma acusação de facto, que tem de ser provada?',
-  ['A comida da cantina é má.', 'O Diogo roubou dinheiro do bar.', 'O diretor parece uma pera.'], 1),
+  ['A comida da cantina é muito má.', 'O Diogo roubou dinheiro do bar.', 'O diretor parece mesmo uma pera.'], 1),
  ('05', 'Numa escola, onde podem estar câmaras de videovigilância?',
-  ['no interior das salas de aula', 'nos acessos e no perímetro exterior', 'em qualquer sítio, se houver furtos'], 1),
+  ['no interior das salas de aula comuns', 'nos acessos e no perímetro exterior', 'em qualquer sítio, se houver furtos'], 1),
  ('07', 'Uma captura de ecrã mostra o nome do Tomás ao lado de um vídeo. O que se pode dizer com segurança?',
   ['que foi o Tomás que publicou o vídeo', 'que o nome do Tomás aparece na captura', 'que o Tomás está a mentir à turma'], 1),
  ('08', 'A passadeira em frente à escola vai desaparecer. Que forma de contestar obriga quem decide a examinar o pedido e a responder?',
@@ -287,13 +291,19 @@ CSS = (TOKENS +
  '.cid-piloto .contagem{margin:0 0 16px;font-size:.95rem}'
  '.cid-piloto ol.sessoes{list-style:none;margin:0;padding:0;border-top:0}'
  '.cid-piloto ol.sessoes li{border-bottom:2px solid var(--fundo);background:var(--papel)}'
- '.cid-piloto ol.sessoes a{display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;gap:4px 14px;padding:12px;color:inherit;text-decoration:none}'
- '.cid-piloto ol.sessoes a::after{content:"→";grid-column:3;grid-row:1/span 3;align-self:center;font-weight:700}'
+ # 31/10/2026 (verificação final, decisão da equipa; decisão 39: não se pergunta ao docente): linhas de 56 a 64 px. O estado
+ # vai na linha do título; acima de 600 px a pergunta fica numa só linha, com reticências; abaixo, sai da linha e a da próxima
+ # sessão aparece na região «A seguir» (.prox-q).
+ '.cid-piloto ol.sessoes a{display:grid;grid-template-columns:2.6rem minmax(0,1fr) auto;column-gap:12px;align-items:center;min-height:56px;box-sizing:border-box;padding:8px 12px;color:inherit;text-decoration:none}'
+ '.cid-piloto ol.sessoes a::after{content:"→";grid-column:3;grid-row:1/span 2;align-self:center;font-weight:700}'
  '.cid-piloto li.seguir a{box-shadow:inset 4px 0 0 #c8232c}'
- '.cid-piloto ol.sessoes .n{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;grid-row:1/span 3}'
- '.cid-piloto ol.sessoes strong{font-size:1.1rem;line-height:1.25}'
- '.cid-piloto ol.sessoes .perg{color:var(--suave)}'
- '.cid-piloto .estado{justify-self:start;display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;border:0;padding:0;margin-top:2px}'
+ '.cid-piloto ol.sessoes .n{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;grid-row:1/span 2;align-self:center}'
+ '.cid-piloto ol.sessoes .tit{grid-column:2;line-height:1.25}'
+ '.cid-piloto ol.sessoes strong{font-size:1.05rem;line-height:1.25}'
+ '.cid-piloto ol.sessoes .perg{grid-column:2;color:var(--suave);font-size:.95rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}'
+ '@media (max-width:599px){.cid-piloto ol.sessoes .perg{display:none}}'
+ '.cid-piloto .proximo .prox-q{font:400 1rem/1.4 Georgia,"Times New Roman",serif;margin:-6px 0 14px;max-width:34em}'
+ '.cid-piloto .estado{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;line-height:1;font-weight:700;white-space:nowrap;vertical-align:baseline;margin-left:2px;border:0;padding:0}'
  '.cid-piloto .estado:empty{display:none}'
  '.cid-piloto li.feita .estado::before,.cid-piloto li.seguir .estado::before{content:"";width:11px;height:11px;box-sizing:border-box;flex:none}'
  '.cid-piloto li.feita .estado::before{background:var(--acento);border:1.5px solid var(--acento)}'
@@ -302,7 +312,8 @@ CSS = (TOKENS +
  '.cid-piloto footer.mais{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px}'
  '.cid-piloto footer.mais a{color:inherit;font-weight:700}'
  '.cid-piloto .pg{overflow-wrap:break-word}.cid-piloto .fontes{overflow-wrap:anywhere}'
- '.cid-piloto .pg,.cid-piloto section.sessao p:not(.marca),.cid-piloto section.sessao li{font-family:Georgia,"Times New Roman",serif;max-width:34em;text-align:justify;hyphens:auto}'
+ # 31/10/2026 (verificação final): 28em (476 px a 1366) para a linha não passar dos 75 carateres na Georgia (com 34em chegava aos 91).
+ '.cid-piloto .pg,.cid-piloto section.sessao p:not(.marca),.cid-piloto section.sessao li{font-family:Georgia,"Times New Roman",serif;max-width:28em;text-align:justify;hyphens:auto}'
  '.cid-piloto p.abrir{text-align:start}'
  '.cid-piloto a.botao{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:2px solid var(--tinta);font:700 1rem/1.2 Arial,Helvetica,sans-serif;text-decoration:none;margin:0 8px 8px 0}'
  '.cid-piloto ul.indice a{display:inline-block;padding:12px 0}'
@@ -314,6 +325,12 @@ CSS = (TOKENS +
  '.cid-piloto th,.cid-piloto td{border:1px solid var(--tinta);padding:6px 8px;text-align:left;vertical-align:top}'
  '.cid-piloto td.num,.cid-piloto th.num{text-align:right;white-space:nowrap;width:4.5rem}'
  '@media (max-width:599px){.cid-piloto td.num,.cid-piloto th.num{width:auto;white-space:normal}}'
+ # 31/10/2026 (verificação final): abaixo de 600 px, as tabelas do guia cabem na caixa (letra .875rem, células mais estreitas,
+ # hifenização); na chave do Ponto sai a coluna «Sessão», que o docente encontra em cada secção.
+ '@media (max-width:599px){.cid-piloto .tabela table{font-size:.875rem}.cid-piloto .tabela th,.cid-piloto .tabela td{padding:5px 6px;hyphens:auto;overflow-wrap:break-word}.cid-piloto #ponto th:last-child,.cid-piloto #ponto td:last-child{display:none}}'
+ # Abaixo de 360 px, a chave do Ponto ainda passava 21 px (309 em 288): as células podem partir uma palavra longa
+ # («videovigilância?», «consentimento»), que a hifenização do aparelho marca com hífen.
+ '@media (max-width:359px){.cid-piloto #ponto td{overflow-wrap:anywhere}}'
  '.cid-piloto ol.passos li{margin:0 0 6px}'
  '.cid-piloto ol.passos .min{font-weight:700;white-space:nowrap}'
  '.cid-piloto .indicativa{font-weight:700;border-left:6px solid var(--tinta);padding-left:10px}'
@@ -329,7 +346,18 @@ CSS = (TOKENS +
  '.cid-piloto section.sessao{break-before:page}.cid-piloto section.sessao:first-of-type{break-before:auto}'
  '.cid-piloto table,.cid-piloto .caixa{break-inside:avoid}'
  'body.cid-piloto{font-size:11pt;line-height:1.35}.cid-piloto .q{margin:0 0 10px}.cid-piloto .q ol{margin-top:4px}'
- '.cid-piloto .q ol li{margin:0}.cid-piloto .q p{margin:0 0 4px}.cid-piloto .linhas{height:1.6em}}')
+ '.cid-piloto .q ol li{margin:0}.cid-piloto .q p{margin:0 0 4px}.cid-piloto .linhas{height:1.6em}'
+ # 31/10/2026 (verificação final): cada sessão do guia em duas páginas A4. A página leva margens reais (10 e 12 mm, como as do
+ # navegador; sem elas o PDF saía sem margens). Cada sessão imprime-se em duas colunas de cerca de 9 cm (55 carateres por
+ # linha a 11 pt, entrelinha 1,4), com o número, o título e a pergunta por cima das duas; as fontes vão a 8,5 pt e a chave do
+ # Ponto a 9,5 pt, numa página. Medido com page.pdf e pdftotext: 23 páginas, duas por sessão.
+ '@page{size:A4;margin:10mm 12mm}'
+ '.cid-piloto .fontes{font-size:8.5pt;line-height:1.25}'
+ 'body.cid-piloto.guia{font-size:11pt;line-height:1.4}.cid-piloto.guia h3{margin:12px 0 4px;break-after:avoid}'
+ '.cid-piloto.guia section.sessao:not(#ponto){column-count:2;column-gap:8mm}.cid-piloto.guia section.sessao>:is(.marca,h2,.lead){column-span:all}'
+ '.cid-piloto.guia .pg,.cid-piloto.guia section.sessao p:not(.marca),.cid-piloto.guia section.sessao li{max-width:none}.cid-piloto.guia #ponto{font-size:9.5pt}}'
+ # 31/10/2026 (verificação final): as fontes, com endereços longos, alinham à esquerda (justificadas abriam rios).
+ '.cid-piloto section.sessao p.fontes{text-align:start}')
 
 
 def it(s):
@@ -356,10 +384,12 @@ def pagina_modulo(S):
     base = '../../../'
     linhas = ''
     for s in S:
-        linhas += (f'<li data-chave="{e(s["chave"])}" data-versao="{e(s["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}">'
+        linhas += (f'<li data-chave="{e(s["chave"])}" data-versao="{e(s["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}" data-pergunta="{e(LL.visivel(s["pergunta"]))}">'
                    f'<a href="../m1-s{s["n"]}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
-                   f'<strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong><span class="perg">{s["pergunta"]}</span>'
-                   '<span class="estado" data-estado></span></a></li>')
+                   # 31/10/2026 (verificação final, decisão da equipa): o estado vai na linha do título; a pergunta só aparece
+                   # na linha acima de 600 px, numa linha com reticências (abaixo, só a da próxima sessão, na região «A seguir»).
+                   f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado" data-estado></span></span>'
+                   f'<span class="perg">{s["pergunta"]}</span></a></li>')
     js = ('(function(){"use strict";var L=[].slice.call(document.querySelectorAll("[data-chave]")),feitas=0,prox=null;'
           'L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
           'var ok=!!(st&&st.lida&&st.versao===li.getAttribute("data-versao"));var el=li.querySelector("[data-estado]");'
@@ -368,16 +398,16 @@ def pagina_modulo(S):
           'var dd=function(n){return(n<10?"0":"")+n};'
           'if(ok){feitas++;li.classList.add("feita");var d=typeof st.t==="number"?new Date(st.t):null;el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
           'else if(!prox){prox=li;li.classList.add("seguir");el.textContent="A seguir"}});'
-          'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]"),pn=document.querySelector("[data-prox-n]"),pt=document.querySelector("[data-prox-t]"),pk=document.querySelector("[data-prox-k]");'
+          'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]"),pn=document.querySelector("[data-prox-n]"),pt=document.querySelector("[data-prox-t]"),pk=document.querySelector("[data-prox-k]"),pq=document.querySelector("[data-prox-q]");'
           'if(c)c.textContent=feitas+" de "+L.length+" sessões feitas";'
-          'if(b&&feitas){if(prox){b.href=prox.querySelector("a").getAttribute("href");b.textContent="Continuar: Sessão "+prox.getAttribute("data-n")+", "+prox.getAttribute("data-titulo")+"\\u00a0→";if(pn)pn.textContent=prox.getAttribute("data-n");if(pt)pt.textContent=prox.getAttribute("data-titulo")}'
+          'if(b&&feitas){if(prox){b.href=prox.querySelector("a").getAttribute("href");b.textContent="Continuar: Sessão "+prox.getAttribute("data-n")+", "+prox.getAttribute("data-titulo")+"\\u00a0→";if(pn)pn.textContent=prox.getAttribute("data-n");if(pt)pt.textContent=prox.getAttribute("data-titulo");if(pq)pq.textContent=prox.getAttribute("data-pergunta")}'
           'else{b.textContent="As 10 sessões estão feitas. Rever a sessão 01\\u00a0→";if(pk)pk.textContent="Módulo feito"}}})();')
     corpo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '')])
              + '<header><p class="marca">Cidadania, módulo 1</p><h1>Ser-se humano</h1>'
              '<p class="lead">Direitos humanos, democracia e instituições políticas, em 10 sessões de 180 minutos. Cada sessão é uma lição em cartões, com uma parte na aula.</p>'
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p></header>'
              f'<section class="proximo" aria-label="A seguir"><p class="kicker" data-prox-k>A seguir</p>'
-             f'<p class="prox-n" data-prox-n>01</p><p class="prox-t" data-prox-t>{e(S[0]["titulo"])}</p>'
+             f'<p class="prox-n" data-prox-n>01</p><p class="prox-t" data-prox-t>{e(S[0]["titulo"])}</p><p class="prox-q" data-prox-q>{S[0]["pergunta"]}</p>'
              f'<a class="continuar" data-continuar href="../m1-s01/">Começar: Sessão 01, {e(S[0]["titulo"])} →</a></section>'
              f'<p class="contagem" data-contagem>0 de {len(S)} sessões feitas</p>'
              f'<ol class="sessoes">{linhas}</ol>'
@@ -456,7 +486,8 @@ def pagina_guia(S):
                   f'<h3>Vídeo</h3>{yt}'
                   f'<h3>Grelha: {e(g["produto"])} (/20, indicativa)</h3>' + tabela_grelha(g)
                   + '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério.</p>'
-                  '<h3>Notas</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['notas']) + '</ul>'
+                  # 31/10/2026 (verificação final): as notas também levam os títulos de obras em itálico (_…_, LL.esc_it).
+                  '<h3>Notas</h3><ul>' + ''.join(f'<li>{LL.esc_it(x)}</li>' for x in g['notas']) + '</ul>'
                   # 31/10/2026: títulos de obras em itálico (_…_), com a guarda do motor (LL.esc_it), não com it(), que não a tem.
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{LL.esc_it(s["d"]["fontes"])}</p></section>')
     chave = ''
@@ -472,7 +503,7 @@ def pagina_guia(S):
               f'<tbody>{chave}</tbody></table></div></section>'
               '<footer class="mais"><a href="../">Voltar ao módulo</a><a href="../../../projeto/">Pergunta Humana</a></footer>')
     return (cabeca(base, 'Guia do docente, módulo 1 (piloto) · Cidadania · Lente', 'Guia do docente das 10 sessões do módulo 1 de Cidadania em piloto.')
-            + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
+            + '<body class="cid-piloto guia"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
             + f'<main id="conteudo">{corpo}</main></body></html>\n')
 
 
