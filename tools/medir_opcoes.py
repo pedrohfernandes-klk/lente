@@ -45,24 +45,25 @@ EXCECOES = {'cidade/m01/index.html#1': 'Rótulos de locais no mapa: conservar os
  'ler/passo-06/index.html#2': 'Versos citados literalmente; não cortar nem parafrasear.',
  'ler/passo-06/index.html#3': 'Conjuntos de nomes próprios; não substituir pessoas para acertar o '
                               'comprimento.',
- 'cidadania/piloto/m1-s02/index.html#5': R_CID,
+ # 31/10/2026: o cartão «Recupera» entra antes das lacunas nas sessões 02, 03, 04, 07, 09 e 10; os índices destas avançam um.
  'cidadania/piloto/m1-s02/index.html#6': R_CID,
- 'cidadania/piloto/m1-s03/index.html#5': R_CID,
- 'cidadania/piloto/m1-s04/index.html#5': R_CID,
+ 'cidadania/piloto/m1-s02/index.html#7': R_CID,
+ 'cidadania/piloto/m1-s03/index.html#6': R_CID,
  'cidadania/piloto/m1-s04/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s04/index.html#7': R_CID,
  'cidadania/piloto/m1-s05/index.html#5': R_CID,
  'cidadania/piloto/m1-s06/index.html#6': R_CID,
  'cidadania/piloto/m1-s06/index.html#7': R_CID,
  'cidadania/piloto/m1-s06/index.html#8': R_CID,
- 'cidadania/piloto/m1-s07/index.html#5': R_CID,
  'cidadania/piloto/m1-s07/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s07/index.html#7': R_CID,
  'cidadania/piloto/m1-s08/index.html#6': R_CID,
  'cidadania/piloto/m1-s08/index.html#7': R_CID,
  'cidadania/piloto/m1-s08/index.html#8': R_CID,
- 'cidadania/piloto/m1-s09/index.html#5': R_CID,
  'cidadania/piloto/m1-s09/index.html#6': R_CID,
- 'cidadania/piloto/m1-s10/index.html#5': R_CID,
- 'cidadania/piloto/m1-s10/index.html#7': R_CID}
+ 'cidadania/piloto/m1-s09/index.html#7': R_CID,
+ 'cidadania/piloto/m1-s10/index.html#6': R_CID,
+ 'cidadania/piloto/m1-s10/index.html#8': R_CID}
 
 def visivel(texto):
  return re.sub(r'\s+',' ',unescape(re.sub(r'<[^>]*>','',texto)).replace('_','').replace('*','')).strip()

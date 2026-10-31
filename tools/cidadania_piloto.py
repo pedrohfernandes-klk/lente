@@ -70,7 +70,7 @@ GUIA = {
   'projeto': ('Apresentação', '#pergunta-resposta', 'Nos últimos cinco minutos, apresentar a Pergunta Humana: um teatro-documento de 5 a 8 minutos, feito a partir de uma pergunta do grupo, que se escolhe na sessão 03.'),
   'produto': 'Mapa de direitos (por grupo)',
   'grelha': [('Situações descritas sem adjetivos nem nomes de colegas', 4), ('Artigo certo para cada situação', 5), ('Um choque de direitos identificado e pesado no caso', 4), ('Variedade de sítios e de direitos (espaço, regras, redes, turma)', 3), ('Leitura à turma e resposta às perguntas', 4)],
-  'notas': ['Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
+  'notas': ['Recupera (logo a seguir ao «Decide»): Marina Abramović, _Rhythm 0_, da Etapa 2, ligada ao artigo 1.º da Declaração. O cartão conta o essencial, também para quem não viu a etapa; não se mostram imagens da performance, porque os relatos são fortes.', 'Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
  },
  '02': {
   'dominio': 'Direitos Humanos (imagem, reserva da vida privada, consentimento); Media.',
@@ -87,7 +87,7 @@ GUIA = {
   'projeto': ('Ética das entrevistas', '', 'O pedido de consentimento entra no dossiê da Pergunta Humana; a página do projeto diz o que fazer com menores (autorização do encarregado de educação), com o anonimato e com quem desiste.'),
   'produto': 'Pedido de consentimento',
   'grelha': [('Finalidade dita em palavras simples', 4), ('Uso, sítio e prazo', 4), ('Direito a recusar e a retirar, com contacto', 4), ('Cuidado com terceiros e com menores (encarregado de educação)', 4), ('Decisão revista de uma situação, com o artigo certo', 4)],
-  'notas': ['Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.', 'O excerto refere imagens sexuais falsificadas (entre os 25 e os 34 s): ver antes e decidir se se mostra.'],
+  'notas': ['Recupera: _The Truman Show_ (Peter Weir, 1998), ligado ao caso da Marta. O filme já foi visto e não se volta a exibir; se for preciso, chega uma cena curta.', 'Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.', 'O excerto refere imagens sexuais falsificadas (entre os 25 e os 34 s): ver antes e decidir se se mostra.'],
  },
  '03': {
   'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
@@ -105,7 +105,7 @@ GUIA = {
   'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada grupo escolhe e delimita a pergunta do grupo para a Pergunta Humana.'),
   'produto': 'Proposta à direção e pergunta',
   'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta do grupo delimitada e investigável', 4)],
-  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
+  'notas': ['Recupera: o conto _The Egg_, de Andy Weir (em inglês, no sítio do autor), como exercício de se pôr no lugar do Rui.', 'Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
  },
  '04': {
   'dominio': 'Direitos Humanos (liberdade de expressão, bom nome); Democracia (discurso de ódio); Media (fontes, verificação).',
@@ -122,7 +122,7 @@ GUIA = {
   'projeto': ('As fontes', '#metodo', 'O registo de fontes, localizável, e a leitura lateral; o laboratório de verificação do módulo faz-se nesta sessão.'),
   'produto': 'Laboratório de verificação',
   'grelha': [('Origem identificada (quem, onde, quando)', 4), ('Duas fontes independentes e porque o são', 5), ('Veredicto proporcional à prova', 4), ('Decisão sobre as três publicações, com o artigo', 4), ('Registo localizável', 3)],
-  'notas': ['Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
+  'notas': ['Recupera: a alegoria da caverna (Platão, _A República_, livro VII), da Etapa 1, ligada ao comentário sobre o Diogo e à verificação das afirmações.', 'Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
  },
  '05': {
   'dominio': 'Direitos Humanos (reserva da vida privada, proteção de dados); Democracia (limites a quem vigia); Media.',
@@ -177,7 +177,7 @@ GUIA = {
   'projeto': ('Nenhum passo novo em aula', '#fases', 'Cinco minutos de ponto de situação do guião, que continua fora da aula.'),
   'produto': 'Acórdão',
   'grelha': [('Decisão clara', 3), ('Duas provas citadas, sem confundir prova com inferência', 5), ('Uma dúvida razoável', 4), ('Voto vencido com razão', 4), ('Papel cumprido, com notas próprias', 4)],
-  'notas': ['Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
+  'notas': ['Recupera: _Doze Homens em Fúria_ (Sidney Lumet, 1957), ligado ao voto de nove contra dois. O filme já foi visto e não se volta a exibir.', 'Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
  },
  '08': {
   'dominio': 'Democracia e Instituições Políticas (órgãos de soberania, autarquias, União Europeia, eleições, petição, Provedor de Justiça).',
@@ -213,7 +213,7 @@ GUIA = {
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
   # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['Recupera: os dois peixes do discurso de David Foster Wallace no Kenyon College (2005), da Etapa 1, ligados ao que cada um acha normal.', 'No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -231,7 +231,7 @@ GUIA = {
   'projeto': ('A apresentação e a defesa', '#av-teatro', 'A apresentação pública do teatro-documento e a defesa das escolhas do grupo.'),
   'produto': 'Apresentação e defesa',
   'grelha': [('Guião e cena fundamentados na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Duração de 5 a 8 minutos e clareza', 3), ('Defesa: resposta à objeção com fonte e limite', 5), ('Contributo de cada pessoa identificado', 3)],
-  'notas': ['Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
+  'notas': ['Recupera: Sísifo, na leitura de Albert Camus (_O Mito de Sísifo_, 1942), da Etapa 2, ligado à revisão depois da defesa.', 'Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
  },
 }
 
@@ -451,7 +451,7 @@ def pagina_modulo(S):
              # 31/10/2026 (terceira correção, diretor de arte): a linha do piloto vai para o rodapé (sistema, 6.10); no cabeçalho,
              # empurrava a primeira ação para fora do primeiro ecrã a 320 px.
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p>'
-             '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
+             '<footer class="mais"><a href="docente/">Guia do docente</a><a href="../../aula-1/">Etapa 1: o que vemos</a><a href="../../aula-2/">Etapa 2: o que somos</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Ser-se humano: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
             + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
@@ -496,6 +496,8 @@ def pagina_guia(S):
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
+             # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica do M1, mas não desaparecem.
+             '<p class="pg">As obras das primeiras etapas do módulo deixam de ser a base teórica, mas ficam como conhecimento a recuperar. Sete sessões têm, logo a seguir ao «Decide», um cartão «Recupera» que liga uma delas à pergunta do dia: 01, <i>Rhythm 0</i> de Marina Abramović; 02, <i>The Truman Show</i>; 03, <i>The Egg</i> de Andy Weir; 04, a caverna de Platão; 07, <i>Doze Homens em Fúria</i>; 09, os peixes de David Foster Wallace; 10, Sísifo e Camus. Cada cartão conta o essencial, também para quem não viu as <a href="../../../aula-1/">Etapas 1</a> e <a href="../../../aula-2/">2</a>; os filmes já vistos não voltam a ser exibidos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º, n.º 8).</p>'

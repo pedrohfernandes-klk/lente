@@ -60,6 +60,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"A imagem dos outros","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"O vídeo do ensaio","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"No filme _The Truman Show_ (Peter Weir, 1998), Truman vive numa cidade que é um cenário e a vida dele passa na televisão. Toda a gente à volta sabe, menos ele. O que falta, antes de tudo, ao uso que se faz da imagem dele?","p2":"Em _The Truman Show_, a vida de Truman é filmada e transmitida sem ele saber. O que falta, antes de tudo, ao uso da imagem dele?","o":["O consentimento dele para ser filmado e mostrado.","Uma lei que proíba programas de televisão em direto.","O acordo dos atores que contracenam com ele."],"c":0,"f":"Os atores à volta de Truman aceitaram os seus papéis; ele nunca foi ouvido. É o caso da Marta levado ao limite: é a pessoa retratada que decide o uso que se dá à sua imagem (Código Civil, artigo 79.º, n.º 1).","fe":["","O problema não é haver televisão em direto, é filmar e mostrar alguém sem lhe perguntar.","Os atores aceitaram os seus papéis. Quem nunca foi ouvido foi o próprio Truman."]},
  {"t":"escolha","g":"caso","p":"No caso do ensaio, que direito da Marta pesa mais?","p2":"A Marta aceitou ser filmada para o grupo rever a cena, não para publicar. Que direito dela está em causa?",
   "o":["O direito à imagem e à reserva da vida privada.","O direito de autor do grupo sobre o vídeo.","A liberdade de criação artística da turma."],"c":0,
   "f":"A Constituição reconhece a todos o direito à imagem e à reserva da intimidade da vida privada (artigo 26.º, n.º 1). É isso que está em causa quando um vídeo da Marta sai do grupo.",
@@ -113,12 +115,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s02","chave":"epi-cid-m1-s02","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s02","chave":"epi-cid-m1-s02","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 02: A imagem dos outros","h1":"Cidadania, módulo 1, sessão 02: A imagem dos outros",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s02/index.html","piloto":True,
  "seguinte":"../m1-s03/","seguinteRotulo":"Sessão 03: Quem tem lugar?",
- "fontes":"Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados.",
+ "fontes":"Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados. Ler mais: _The Truman Show_, filme de Peter Weir (1998), já visto no M1; não se volta a exibir.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

@@ -51,6 +51,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Nove contra dois","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"O Tomás sai já?","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"No filme _Doze Homens em Fúria_ (Sidney Lumet, 1957), onze jurados votam culpado logo no início e um vota inocente, porque não tem a certeza. O que pede esse jurado aos outros?","p2":"Em _Doze Homens em Fúria_, um jurado vota contra os outros onze no primeiro voto. O que lhes pede?","o":["Que falem das provas antes de decidir.","Que mudem logo o voto, para o acompanhar.","Que deixem a decisão ao juiz do caso."],"c":0,"f":"O jurado não diz que o acusado está inocente: diz que não tem a certeza e pede para falarem das provas. É o que os dois do vosso júri pedem: separar prova de inferência antes de votar.","fe":["","Ele não pede que o sigam. Pede tempo para examinar as provas antes de decidir.","No filme, a decisão é do júri e tem de ser unânime. Ele pede que a tomem só depois de falar das provas."]},
  {"t":"sublinhar","g":"inferencia","p":"Toca nas duas palavras onde a frase deixa de descrever a captura e passa a tirar uma conclusão.","p2":"Onde começa a inferência nesta frase? Toca nas duas palavras.","frase":INFERENCIA,"certas":[11,12],
   "f":"Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem montou e quem publicou."},
  {"t":"escolha","g":"captura","p":"O que prova, com segurança, a captura de ecrã?","p2":"Com a captura na mão, o que se pode afirmar sem ir além dela?",
@@ -103,12 +105,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s07","chave":"epi-cid-m1-s07","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s07","chave":"epi-cid-m1-s07","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 07: Nove contra dois","h1":"Cidadania, módulo 1, sessão 07: Nove contra dois",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s07/index.html","piloto":True,
  "seguinte":"../m1-s08/","seguinteRotulo":"Sessão 08: Quem decide o quê?",
- "fontes":"Constituição da República Portuguesa, artigos 32.º e 207.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Declaração Universal dos Direitos Humanos (1948), artigos 10.º e 11.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Imagem: Honoré Daumier, «Voilà le ministère public qui vous dit des choses très désagréables», prancha 21 de _Les Gens de Justice_, 1846, litografia (Metropolitan Museum of Art, CC0); legenda em tradução nossa. Vídeo: TED-Ed, «What did democracy really mean in Athens?», lição de Melissa Schwartzberg. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 32.º e 207.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Declaração Universal dos Direitos Humanos (1948), artigos 10.º e 11.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Imagem: Honoré Daumier, «Voilà le ministère public qui vous dit des choses très désagréables», prancha 21 de _Les Gens de Justice_, 1846, litografia (Metropolitan Museum of Art, CC0); legenda em tradução nossa. Vídeo: TED-Ed, «What did democracy really mean in Athens?», lição de Melissa Schwartzberg. Os casos são inventados. Ler mais: _Doze Homens em Fúria_, filme de Sidney Lumet (1957), já visto no M1; não se volta a exibir.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')
