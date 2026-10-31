@@ -49,8 +49,8 @@
   {
    "t": "emparelhar",
    "g": "tipos",
-   "p": "Liga cada frase ao seu tipo.",
-   "p2": "Que tipo de frase é cada uma destas?",
+   "p": "Liga cada exemplo ao seu tipo.",
+   "p2": "De que tipo é cada um destes exemplos?",
    "pares": [
     [
      "A cantina devia ter mais opções.",
@@ -70,7 +70,7 @@
     ]
    ],
    "f": "Uma crítica diz o que está mal e discute-se; uma sátira exagera para fazer pensar; uma acusação de facto diz que alguém fez uma coisa e tem de ser provada; um ataque a um grupo visa pessoas pela origem, e a origem nunca pode ser razão para prejudicar alguém (Constituição, artigo 13.º, n.º 2).",
-   "fe": "Pergunta a cada frase: discute-se, exagera, afirma um facto sobre alguém ou ataca pessoas por serem de um grupo?"
+   "fe": "Pergunta a cada exemplo: discute-se, exagera, afirma um facto sobre alguém ou ataca pessoas por serem de um grupo?"
   },
   {
    "t": "vf",
@@ -101,7 +101,7 @@
     16,
     18
    ],
-   "f": "A liberdade de expressão de uma criança só pode ter restrições previstas na lei e necessárias para respeitar os **direitos** e a **reputação** de **outrem**, isto é, de outras pessoas. Como o Diogo."
+   "f": "A liberdade de expressão de uma criança só pode ter as restrições que a lei prevê e que sejam necessárias, por exemplo para respeitar os **direitos** e a **reputação** de **outrem**, isto é, de outras pessoas. Como o Diogo."
   },
   {
    "t": "ler",

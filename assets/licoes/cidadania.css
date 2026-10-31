@@ -12,3 +12,12 @@ body.licao-cidadania .casca-folha .c-veredito .c-pts{color:var(--tinta)}
    regra do texto corrido justificado (assets/appearance.css, partilhada com o Português) usa :is() com uma especificidade
    muito alta; mexer nessa lista desalinhava os dois sítios. */
 .licao-cidadania .ler .lista-en{text-align:start!important}
+/* 31/10/2026 (terceira correção, diretor de arte): com o cartão a 640 px (do tablet ao computador), o texto corrido dos cartões
+   de leitura (Georgia a 17,6 ou 18,4 px) dava 83 a 89 carateres por linha. Medido em todos os cartões de leitura das 10
+   sessões: com 30em nos parágrafos (a proposta) ainda ficavam 10 linhas acima dos 75; com 29em da letra do cartão, mediana de
+   68 e máximo de 75, sem o espaço final. A medida calcula-se uma vez no cartão (propriedade registada, em px) e vale para os
+   parágrafos, as listas e os «details»: todos os blocos de texto acabam na mesma vertical (em em de cada parágrafo, a pergunta
+   em Arial e a linha «Hoje» ficavam mais estreitas). Sem media query: no telemóvel o cartão é mais estreito e nada muda. */
+@property --medida-ler{syntax:"<length>";inherits:true;initial-value:0px}
+.licao-cidadania .jogo .ler{--medida-ler:29em}
+.licao-cidadania .jogo .ler :is(p,ul,ol,details){max-width:var(--medida-ler)}

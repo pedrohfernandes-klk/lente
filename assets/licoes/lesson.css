@@ -351,3 +351,12 @@ html.em-projecao .jogo .ler .fig img{max-height:min(62vh,640px)}
 /* 31/10/2026 (verificação final): uma imagem de texto (figure.texto, como a página de título de Bentham na sessão 05) não se
    move: o kenburns aumenta 4 % e a moldura cortava a primeira letra das linhas */
 .jogo .ler .fig.texto .moldura img{animation:none}
+/* 31/10/2026 (terceira correção, diretor de arte): no emparelhar, a 320 e a 360 px, as palavras partiam-se a meio sem hífen
+   («Convençã/o», «discrimina/ção»). O Safari anterior à versão 17 (os iPhone de 320 px ficam no iOS 15) só hifeniza com o
+   prefixo; abaixo de 400 px a letra e os espaços do botão encolhem, para as palavras caberem inteiras (13 px, no mínimo). */
+.jogo .pares .op .tx{-webkit-hyphens:auto}
+@media (max-width:399px){.jogo .pares{column-gap:20px}.jogo .pares .op{padding-left:8px;padding-right:8px;gap:6px;font-size:.875rem}}
+@media (max-width:359px){.jogo .pares{column-gap:16px}.jogo .pares .op{padding-left:6px;padding-right:6px;gap:4px;font-size:.8125rem}}
+/* 31/10/2026 (terceira correção, diretor de arte): nenhuma letra da casca abaixo dos 13 px do sistema («CD», «/19» e «Por
+   ordenar» ficavam entre 11,2 e 12,8 px; «Por classificar» usa a mesma peça) */
+.c-marca{font-size:.8125rem}.c-num small{font-size:inherit}.jogo .soltos-t{font-size:.8125rem}

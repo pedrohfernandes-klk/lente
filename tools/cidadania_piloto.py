@@ -213,7 +213,7 @@ GUIA = {
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
   # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a de Sherman não se descarregou (429 e bloqueio a robôs) e a da Library of Congress (LC-D6-87) saiu: a biblioteca não diz quem a tirou nem o estatuto.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, domínio público segundo o Wikimedia Commons. O título não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -246,7 +246,7 @@ PONTO = [
  ('01', 'A Declaração Universal dos Direitos Humanos é…',
   ['uma lei aprovada pela Assembleia da República', 'uma declaração das Nações Unidas, não uma lei', 'um tratado que obriga só quem o assinou em 1948'], 1),
  ('02', 'A Marta aceitou ser filmada no ensaio para o grupo rever a cena. Para publicar o vídeo na conta da escola…',
-  ['já não é preciso pedir mais nada à própria Marta', 'é preciso pedir-lhe consentimento para esse uso', 'basta cortar do vídeo as partes em que ela cai'], 1),
+  ['já não é preciso pedir outra autorização à Marta', 'é preciso pedir-lhe consentimento para esse uso', 'basta cortar do vídeo as partes em que ela cai'], 1),
  ('03', 'Que situação mostra uma regra igual para todos que deixa alguém de fora?',
   ['a mostra é aberta a todos, num primeiro andar sem elevador', 'a mostra só aceita os alunos do 10.º A, por ser deles', 'a mostra é gratuita para todas as turmas da escola'], 0),
  ('04', 'Que frase é uma acusação de facto, que tem de ser provada?',
@@ -257,7 +257,7 @@ PONTO = [
   ['que foi o Tomás que publicou o vídeo', 'que o nome do Tomás aparece na captura', 'que o Tomás está a mentir à turma'], 1),
  ('08', 'A passadeira em frente à escola vai desaparecer. Que forma de contestar obriga quem decide a examinar o pedido e a responder?',
   ['uma petição à câmara, com o pedido e a razão', 'um comentário anónimo numa rede social', 'esperar pelas próximas eleições autárquicas'], 0),
- ('06', 'Há seis turnos de filmagem para três grupos. Escreve uma regra para as repartir e diz quem perde com ela.', None, None),
+ ('06', 'Há seis turnos de filmagem para três grupos. Escreve uma regra para os repartir e diz quem perde com ela.', None, None),
  ('03 e 09', 'Nos intervalos, a escola quer que se fale só português. Quem fica de fora desta regra, e que pergunta farias antes de decidir?', None, None),
 ]
 COTACAO_ESCRITA = {
@@ -266,13 +266,16 @@ COTACAO_ESCRITA = {
 }
 LETRAS = 'ABC'
 
-TOKENS = (':root{--tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;--mostarda:#d9a520}'
+TOKENS = (':root{--tinta:#000;--papel:#fff;--fundo:#f3f2ee;--suave:#444;--mostarda:#d9a520;--vermelho:#c8232c}'
           'body.cid-piloto{--acento:#e0b23a}')
 CSS = (TOKENS +
  'body.cid-piloto{margin:0;background:var(--fundo);color:var(--tinta);font:17px/1.5 Arial,Helvetica,sans-serif}'
  '.cid-piloto main{max-width:720px;margin:0 auto;padding:16px 16px 48px}'
  '.cid-piloto .migalhas{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:.9rem;margin:0 0 20px}'
- '.cid-piloto .migalhas a{color:inherit}'
+ # 31/10/2026 (terceira correção, diretor de arte): as migalhas são alvos de 44 px (tinham 22); abaixo de 360 px ficam compactas,
+ # numa só linha com o botão do tema (antes, duas linhas e 70 px, que empurravam a primeira ação para fora do primeiro ecrã).
+ '.cid-piloto .migalhas a{color:inherit;display:inline-flex;align-items:center;min-height:44px}'
+ '@media (max-width:359px){.cid-piloto .migalhas{gap:4px 10px;font-size:.8125rem}}'
  '.cid-piloto .marca{font:400 1rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;letter-spacing:.06em;margin:0 0 4px}'
  '.cid-piloto h1{font:700 clamp(2.4rem,9vw,3.6rem)/.95 Arial,Helvetica,sans-serif;margin:0 0 10px;letter-spacing:-.05em}'
  '.cid-piloto h1,.cid-piloto h2,.cid-piloto h3{text-wrap:balance}'
@@ -281,6 +284,8 @@ CSS = (TOKENS +
  '.cid-piloto h3{font:700 1rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
  '.cid-piloto .lead{font-size:1.05rem;margin:0 0 18px;max-width:38em}'
  '.cid-piloto .aviso-piloto{font-size:.9rem;color:var(--suave);margin:0 0 18px}'
+ # 31/10/2026 (terceira correção, diretor de arte): na página do módulo, a linha do piloto passa para o rodapé (sistema, 6.10).
+ '.cid-piloto ol.sessoes+.aviso-piloto{margin:24px 0 0}.cid-piloto .aviso-piloto+footer.mais{margin-top:16px}'
  '.cid-piloto section.proximo{background:var(--tinta);color:var(--papel);padding:14px 16px 16px;margin:4px 0 12px}'
  '.cid-piloto .proximo .kicker{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}'
  '.cid-piloto .proximo .prox-n{font:400 2.6rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:0}'
@@ -296,18 +301,23 @@ CSS = (TOKENS +
  # sessão aparece na região «A seguir» (.prox-q).
  '.cid-piloto ol.sessoes a{display:grid;grid-template-columns:2.6rem minmax(0,1fr) auto;column-gap:12px;align-items:center;min-height:56px;box-sizing:border-box;padding:8px 12px;color:inherit;text-decoration:none}'
  '.cid-piloto ol.sessoes a::after{content:"→";grid-column:3;grid-row:1/span 2;align-self:center;font-weight:700}'
- '.cid-piloto li.seguir a{box-shadow:inset 4px 0 0 #c8232c}'
+ '.cid-piloto li.seguir a{box-shadow:inset 4px 0 0 var(--vermelho)}'
  '.cid-piloto ol.sessoes .n{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;grid-row:1/span 2;align-self:center}'
  '.cid-piloto ol.sessoes .tit{grid-column:2;line-height:1.25}'
  '.cid-piloto ol.sessoes strong{font-size:1.05rem;line-height:1.25}'
  '.cid-piloto ol.sessoes .perg{grid-column:2;color:var(--suave);font-size:.95rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}'
  '@media (max-width:599px){.cid-piloto ol.sessoes .perg{display:none}}'
  '.cid-piloto .proximo .prox-q{font:400 1rem/1.4 Georgia,"Times New Roman",serif;margin:-6px 0 14px;max-width:34em}'
- '.cid-piloto .estado{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;line-height:1;font-weight:700;white-space:nowrap;vertical-align:baseline;margin-left:2px;border:0;padding:0}'
+ # 31/10/2026 (terceira correção, diretor de arte): o estado é a peça .etq do sistema (6.5 e 6.9): palavra em caixa alta; «Feita»
+ # com o quadrado mostarda e contorno de 1,5 px a tinta; «A seguir» com o quadrado cheio a vermelho do token (no escuro, #e4555c);
+ # até 499 px, sempre por baixo do título, para a mesma lista não ter o estado umas vezes ao lado e outras por baixo (o sistema
+ # diz 420 px, mas entre 430 e 480 px, com as 10 sessões feitas, «FEITA dd/mm» em caixa alta ainda descia em 2 a 4 linhas).
+ '.cid-piloto .estado{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;line-height:1;font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;vertical-align:baseline;margin-left:2px;border:0;padding:0}'
  '.cid-piloto .estado:empty{display:none}'
  '.cid-piloto li.feita .estado::before,.cid-piloto li.seguir .estado::before{content:"";width:11px;height:11px;box-sizing:border-box;flex:none}'
- '.cid-piloto li.feita .estado::before{background:var(--acento);border:1.5px solid var(--acento)}'
- '.cid-piloto li.seguir .estado::before{border:1.5px solid #c8232c}'
+ '.cid-piloto li.feita .estado::before{background:var(--mostarda);border:0;box-shadow:inset 0 0 0 1.5px var(--tinta)}'
+ '.cid-piloto li.seguir .estado::before{background:var(--vermelho);border:0}'
+ '@media (max-width:499px){.cid-piloto ol.sessoes .estado:not(:empty){display:flex;margin:4px 0 0}}'
  '.cid-piloto li.feita .n::after{content:"";display:block;width:1.6rem;height:4px;background:var(--acento);margin-top:4px}'
  '.cid-piloto footer.mais{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px}'
  '.cid-piloto footer.mais a{color:inherit;font-weight:700}'
@@ -340,7 +350,7 @@ CSS = (TOKENS +
  '.cid-piloto .q ol li{margin:2px 0}'
  '.cid-piloto .linhas{border-bottom:1px solid var(--tinta);height:1.8em}'
  '.cid-piloto .campos{display:flex;flex-wrap:wrap;gap:8px 24px;margin:0 0 20px;padding:10px 12px;border:2px solid var(--tinta);background:var(--papel)}'
- '.cid-piloto button.imprimir{font:700 1rem Arial,Helvetica,sans-serif;background:var(--papel);color:var(--tinta);border:3px solid var(--tinta);padding:8px 14px;cursor:pointer}'
+ '.cid-piloto button.imprimir{font:700 1rem Arial,Helvetica,sans-serif;background:var(--papel);color:var(--tinta);border:3px solid var(--tinta);padding:8px 14px;min-height:48px;cursor:pointer}'
  '@media print{.cid-piloto .migalhas,.cid-piloto button.imprimir,.cid-piloto footer.mais,[data-appearance-control]{display:none}'
  'body.cid-piloto{background:#fff;color:#000;font-size:12pt}.cid-piloto main{max-width:none;padding:0}'
  '.cid-piloto section.sessao{break-before:page}.cid-piloto section.sessao:first-of-type{break-before:auto}'
@@ -355,7 +365,10 @@ CSS = (TOKENS +
  '.cid-piloto .fontes{font-size:8.5pt;line-height:1.25}'
  'body.cid-piloto.guia{font-size:11pt;line-height:1.4}.cid-piloto.guia h3{margin:12px 0 4px;break-after:avoid}'
  '.cid-piloto.guia section.sessao:not(#ponto){column-count:2;column-gap:8mm}.cid-piloto.guia section.sessao>:is(.marca,h2,.lead){column-span:all}'
- '.cid-piloto.guia .pg,.cid-piloto.guia section.sessao p:not(.marca),.cid-piloto.guia section.sessao li{max-width:none}.cid-piloto.guia #ponto{font-size:9.5pt}}'
+ '.cid-piloto.guia .pg,.cid-piloto.guia section.sessao p:not(.marca),.cid-piloto.guia section.sessao li{max-width:none}.cid-piloto.guia #ponto{font-size:9.5pt}'
+ # 31/10/2026 (terceira correção, diretor de arte): no papel, os botões «Abrir a sessão» e «Projetar» não servem e não se imprimem;
+ # nenhum item de lista se parte entre colunas; entrelinha de 1,45 no texto corrido.
+ '.cid-piloto p.abrir{display:none}.cid-piloto.guia section.sessao li{break-inside:avoid}body.cid-piloto.guia{line-height:1.45}}'
  # 31/10/2026 (verificação final): as fontes, com endereços longos, alinham à esquerda (justificadas abriam rios).
  '.cid-piloto section.sessao p.fontes{text-align:start}')
 
@@ -405,12 +418,15 @@ def pagina_modulo(S):
     corpo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '')])
              + '<header><p class="marca">Cidadania, módulo 1</p><h1>Ser-se humano</h1>'
              '<p class="lead">Direitos humanos, democracia e instituições políticas, em 10 sessões de 180 minutos. Cada sessão é uma lição em cartões, com uma parte na aula.</p>'
-             '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p></header>'
+             '</header>'
              f'<section class="proximo" aria-label="A seguir"><p class="kicker" data-prox-k>A seguir</p>'
              f'<p class="prox-n" data-prox-n>01</p><p class="prox-t" data-prox-t>{e(S[0]["titulo"])}</p><p class="prox-q" data-prox-q>{S[0]["pergunta"]}</p>'
              f'<a class="continuar" data-continuar href="../m1-s01/">Começar: Sessão 01, {e(S[0]["titulo"])} →</a></section>'
              f'<p class="contagem" data-contagem>0 de {len(S)} sessões feitas</p>'
              f'<ol class="sessoes">{linhas}</ol>'
+             # 31/10/2026 (terceira correção, diretor de arte): a linha do piloto vai para o rodapé (sistema, 6.10); no cabeçalho,
+             # empurrava a primeira ação para fora do primeiro ecrã a 320 px.
+             '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p>'
              '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Ser-se humano: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'

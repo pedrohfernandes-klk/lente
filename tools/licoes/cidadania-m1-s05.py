@@ -75,7 +75,7 @@ cartoes = [
   "f":"Cada dado tem uma razão concreta. Um dado sem finalidade, como a profissão dos pais numa visita de estudo, não se pede.",
   "fe":"Pergunta para quê antes de perguntar o quê: o dado vem depois da finalidade."},
  {"t":"escolha","g":"art35","p":"O artigo 35.º da Constituição fala dos dados informatizados que te dizem respeito. O que te garante?","p2":"Que direitos te dá o artigo 35.º da Constituição sobre os teus dados?",
-  "o":["Aceder-lhes, corrigi-los e saber para que servem.","Apagar, quando quiseres, os dados de qualquer colega.","Escolher sozinho os dados que a escola recolhe."],"c":0,
+  "o":["Aceder a eles, corrigi-los e saber para que servem.","Apagar, quando quiseres, os dados de qualquer colega.","Escolher sozinho os dados que a escola recolhe."],"c":0,
   "f":"O artigo 35.º, n.º 1, garante o acesso aos dados informatizados que te digam respeito, o direito de exigir a sua retificação e atualização e o de conhecer a finalidade a que se destinam. O n.º 7 dá a mesma proteção aos dados em ficheiros manuais, como um formulário em papel.",
   "fe":["","O artigo protege os teus dados, não te dá poder sobre os dos outros. O n.º 4 proíbe o acesso a dados pessoais de terceiros, salvo exceções previstas na lei.","A escola pode pedir os dados que a lei exige ou que uma finalidade justifica. O que tens é o direito de os ver, corrigir e saber para quê."]},
  {"t":"ler","rot":"Ver","titulo":"Câmaras em todos os carros","html":VIDEO},

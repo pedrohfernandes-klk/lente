@@ -56,7 +56,7 @@ cartoes = [
  {"t":"escolha","g":"captura","p":"O que prova, com segurança, a captura de ecrã?","p2":"Com a captura na mão, o que se pode afirmar sem ir além dela?",
   "o":["Que o nome do Tomás aparece ao lado do vídeo.","Que foi o Tomás quem montou e publicou o vídeo.","Que o Tomás quis gozar com a colega no grupo."],"c":0,
   "f":"A captura prova o que mostra: um nome ao lado de um vídeo. Quem montou, quem publicou e com que intenção são perguntas que precisam de outras provas.",
-  "fe":["","Isso já é uma inferência. Um nome pode aparecer por muitas razões: uma conta partilhada, um reencaminhamento, uma montagem.","Ninguém ouviu ainda o Tomás. Dar-lhe uma intenção é concluir antes de ouvir."]},
+  "fe":["","Isso já é uma inferência. Um nome pode aparecer por muitas razões: uma conta partilhada, um reencaminhamento, uma captura falsificada.","Ninguém ouviu ainda o Tomás. Dar-lhe uma intenção é concluir antes de ouvir."]},
  {"t":"vf","g":"presuncao","p":"A Constituição diz que todo o arguido se presume inocente até à condenação definitiva.","p2":"Segundo a Constituição, um arguido é tratado como inocente até haver sentença de condenação definitiva.","v":True,
   "f":"O artigo 32.º, n.º 2, diz que «todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação». Trânsito em julgado quer dizer que a sentença já não admite recurso. A Declaração Universal também consagra a presunção de inocência (artigo 11.º, n.º 1).",
   "fe":"Está no artigo 32.º, n.º 2: a culpa tem de ser provada, não presumida."},
