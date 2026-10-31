@@ -1,0 +1,3739 @@
+{
+  "version": 1,
+  "blocks": [
+    {
+      "id": "ver",
+      "title": "Ver",
+      "subtitle": "como os outros fizeram",
+      "question": "Como fizeram os outros?",
+      "anchor": "ler-como-quem-escreve"
+    },
+    {
+      "id": "treinar",
+      "title": "Treinar",
+      "subtitle": "uma regra de cada vez",
+      "question": "Que escolha queres treinar?",
+      "anchor": "treinar"
+    },
+    {
+      "id": "criar",
+      "title": "Criar",
+      "subtitle": "uma peça, com palavras e imagens",
+      "question": "Como levas uma ideia mais longe?",
+      "anchor": "criar"
+    }
+  ],
+  "routes": [
+    {
+      "id": "ordem",
+      "block": "ver",
+      "title": "Dar forma a uma história",
+      "question": "O que muda quando mudas a ordem?",
+      "reason": "Da estrutura geral às relações entre acontecimentos.",
+      "pieces": [
+        "aula-forma",
+        "piramide",
+        "historia-enredo",
+        "comecar-pelo-meio",
+        "espingarda",
+        "linhas-de-enredo",
+        "desenlace",
+        "espinha"
+      ]
+    },
+    {
+      "id": "personagem",
+      "block": "ver",
+      "title": "Conhecer uma personagem",
+      "question": "O que revelam os gestos e os lugares?",
+      "reason": "Da personagem às ações e ao espaço que a revela.",
+      "pieces": [
+        "aula-personagem",
+        "querer-agir",
+        "personagem-faz",
+        "aula-lugar",
+        "cenario-personagem"
+      ]
+    },
+    {
+      "id": "nao-dito",
+      "block": "ver",
+      "title": "Ler o que não se diz",
+      "question": "Como percebemos o que ficou por dizer?",
+      "reason": "Da leitura do implícito à proposta de uma cena.",
+      "pieces": [
+        "aula-nao-dito",
+        "subtexto",
+        "dialogo",
+        "proposta-subtexto"
+      ]
+    },
+    {
+      "id": "voz",
+      "block": "ver",
+      "title": "Reconhecer quem conta",
+      "question": "Como muda a verdade com a voz que conta?",
+      "reason": "Da perspetiva narrativa à fronteira entre testemunho e ficção.",
+      "pieces": [
+        "quem-conta",
+        "formas/certa-manha",
+        "margens/passo-01",
+        "margens/passo-02"
+      ]
+    },
+    {
+      "id": "olhar",
+      "block": "ver",
+      "title": "Observar para transformar",
+      "question": "O que faz um olhar atento descobrir?",
+      "reason": "Do desenho e da observação às mudanças de contexto.",
+      "pieces": [
+        "leonardo",
+        "galileu",
+        "cigoli",
+        "anguissola",
+        "fontana",
+        "duchamp"
+      ]
+    },
+    {
+      "id": "montagem",
+      "block": "ver",
+      "title": "Passar das palavras à cena",
+      "question": "O que escolhes mostrar de um texto?",
+      "reason": "Do desfecho e do gesto à sobreposição de planos e ao narrador.",
+      "pieces": [
+        "corta/ines",
+        "corta/frei-luis",
+        "corta/restelo",
+        "corta/torneol",
+        "corta/cesario",
+        "corta/maias",
+        "corta/chuva",
+        "corta/bras-cubas"
+      ]
+    },
+    {
+      "id": "sentidos",
+      "block": "treinar",
+      "title": "Descrever com os sentidos",
+      "question": "Como dás a sentir um lugar?",
+      "reason": "De um sentido e de um objeto ao espaço observado em dois momentos.",
+      "pieces": [
+        "treinar/sem-olhos",
+        "treinar/objeto-banal",
+        "treinar/a-gaveta",
+        "treinar/quarto-que-fala",
+        "treinar/duas-horas"
+      ]
+    },
+    {
+      "id": "dialogos",
+      "block": "treinar",
+      "title": "Fazer falar sem explicar",
+      "question": "Como deixam as falas perceber uma intenção?",
+      "reason": "Da distinção das vozes às interrupções e ao subtexto.",
+      "pieces": [
+        "treinar/sem-disse",
+        "treinar/so-gestos",
+        "treinar/pergunta-sem-resposta",
+        "treinar/interromper",
+        "treinar/o-contrario"
+      ]
+    },
+    {
+      "id": "vozes",
+      "block": "treinar",
+      "title": "Dar uma voz à personagem",
+      "question": "Como reconheces uma personagem sem a descrever?",
+      "reason": "Do esboço à ação, ao conflito e ao contraste entre vozes.",
+      "pieces": [
+        "treinar/tres-em-cinco",
+        "treinar/pelo-que-faz",
+        "treinar/a-entrevista",
+        "treinar/verdade-dificil",
+        "treinar/duas-vozes"
+      ]
+    },
+    {
+      "id": "frase",
+      "block": "treinar",
+      "title": "Escolher a palavra e o ritmo",
+      "question": "Como muda uma cena quando mudas a frase?",
+      "reason": "Da observação de um modelo à precisão e ao ritmo.",
+      "pieces": [
+        "treinar/copia-lenta",
+        "treinar/dicionario",
+        "treinar/verbo-forte",
+        "treinar/sem-mente",
+        "treinar/acelerar-travar"
+      ]
+    },
+    {
+      "id": "comeco",
+      "block": "treinar",
+      "title": "Escolher por onde começar",
+      "question": "O que precisa de aparecer primeiro?",
+      "reason": "Do material inicial à ordem, à preparação do fim e ao ponto de vista.",
+      "pieces": [
+        "treinar/lista-substantivos",
+        "treinar/comeca-mais-tarde",
+        "treinar/pelo-meio",
+        "treinar/a-espingarda",
+        "treinar/outro-ponto-de-vista"
+      ]
+    },
+    {
+      "id": "rever",
+      "block": "treinar",
+      "title": "Rever com uma intenção",
+      "question": "O que fica melhor quando cortas?",
+      "reason": "Do primeiro rascunho à escuta, ao corte e à leitura por outra pessoa.",
+      "pieces": [
+        "treinar/rascunho-mau",
+        "treinar/voz-alta",
+        "treinar/frase-querida",
+        "treinar/cortar-um-quinto",
+        "treinar/teste-do-colega"
+      ]
+    },
+    {
+      "id": "ficcao",
+      "block": "criar",
+      "title": "Construir uma ficção",
+      "question": "Como levas uma ideia até ao desfecho?",
+      "reason": "Da restrição e do começo à personagem, ao espaço e ao argumento.",
+      "pieces": [
+        "oficina-restricao",
+        "oficina-ficcao-comecar",
+        "oficina-ficcao-personagem",
+        "oficina-ficcao-espaco",
+        "oficina-arco",
+        "oficina-ficcao-genero",
+        "oficina-argumento"
+      ]
+    },
+    {
+      "id": "cena",
+      "block": "criar",
+      "title": "Construir com palavras e imagens",
+      "question": "Como passa uma ideia de um meio para outro?",
+      "reason": "Do gesto e do visível à montagem, ao espaço e à escolha do meio.",
+      "pieces": [
+        "oficina-visivel",
+        "oficina-ator",
+        "oficina-plano",
+        "oficina-texto-imagem",
+        "oficina-espaco",
+        "oficina-matriz"
+      ]
+    },
+    {
+      "id": "transformar",
+      "block": "criar",
+      "title": "Transformar uma forma conhecida",
+      "question": "Como crias a partir do que já existe?",
+      "reason": "Da recolha e da fragmentação à intervenção e à investigação.",
+      "pieces": [
+        "oficina-readymade",
+        "oficina-pedacos",
+        "oficina-epico",
+        "oficina-dilema",
+        "oficina-manifesto",
+        "oficina-dramaturgista",
+        "oficina-atelie"
+      ]
+    },
+    {
+      "id": "experimentar",
+      "block": "criar",
+      "title": "Mudar uma escolha e comparar",
+      "question": "O que muda entre duas versões?",
+      "reason": "Do plano em falta à montagem, à transformação de uma obra e a dois géneros.",
+      "pieces": [
+        "corta/cena-que-falta",
+        "corta/mesa",
+        "formas",
+        "formas/tres-cartas"
+      ]
+    },
+    {
+      "id": "espaco",
+      "block": "criar",
+      "title": "Criar para além da página",
+      "question": "Como pode uma ideia ocupar o espaço?",
+      "reason": "Da variação de um objeto ao intervalo, ao volume e ao confronto de ideias.",
+      "pieces": [
+        "variantes",
+        "fora-da-pagina/intervalo",
+        "fora-da-pagina/escultura",
+        "fora-da-pagina/tese"
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "aula-forma",
+      "url": "narrativas/aula-forma/",
+      "title": "A forma da história",
+      "type": "aula",
+      "time": "12 min de leitura",
+      "description": "Lê exemplos de estrutura, ordem dos acontecimentos e desfecho.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "aula-forma"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/aula-forma/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v01/index.html",
+        "ver-para-fazer/v03/index.html",
+        "ver-para-fazer/v51/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Frei Luís de Sousa (Almeida Garrett); Os Lusíadas (Luís de Camões); Os Maias (Eça de Queirós)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Os Lusíadas": [
+          "m3-f02",
+          "m3-f03",
+          "m3-f09",
+          "m3-f10",
+          "m3-f13",
+          "m3-f16",
+          "m3-f17",
+          "m3-f18",
+          "m9-f07"
+        ],
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "a seguinte farsa de folgar foi representada ao muito alto e mui",
+          "licoes": [
+            "m2-f01"
+          ]
+        },
+        {
+          "trecho": "a casa que os maias vieram habitar em lisboa no outono de",
+          "licoes": [
+            "m5-f10"
+          ]
+        },
+        {
+          "trecho": "que sim mas todo o mundo mais ou menos a falha isto",
+          "licoes": [
+            "m5-f13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piramide",
+      "url": "narrativas/piramide/",
+      "title": "A pirâmide de Freytag",
+      "type": "leitura",
+      "time": "12 min",
+      "description": "Reconhece os seis momentos de uma história num excerto de teatro.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "piramide"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/piramide/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); A Metamorfose (Franz Kafka)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "A Metamorfose": [
+          "m8-f01",
+          "m8-f03",
+          "m8-f10"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "vos nao haveis de falar com homem nem mulher que seja nem",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "vos nao haveis de falar com homem nem mulher que seja nem",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "ines quem bem tem e mal escolhe por mal que lhe venha",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "ines quem bem tem e mal escolhe por mal que lhe venha",
+          "licoes": [
+            "m2-f06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historia-enredo",
+      "url": "narrativas/historia-enredo/",
+      "title": "História e enredo",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Distingue a ordem dos factos da ordem em que são contados.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "historia-enredo"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/historia-enredo/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Madame Bovary (Gustave Flaubert)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "oh que o nao saiba ele ao menos que nao suspeite o",
+          "licoes": [
+            "m4-f28"
+          ]
+        },
+        {
+          "trecho": "madalena portugues cativo da batalha de romeiro de alcacer quibir madalena espavorida",
+          "licoes": [
+            "m4-f08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comecar-pelo-meio",
+      "url": "narrativas/comecar-pelo-meio/",
+      "title": "Começar pelo meio",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Identifica o que já aconteceu quando uma narrativa começa.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "comecar-pelo-meio"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/comecar-pelo-meio/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Lusíadas (Luís de Camões); Memórias Póstumas de Brás Cubas (Machado de Assis)",
+      "obras_no_portugues": {
+        "Os Lusíadas": [
+          "m3-f02",
+          "m3-f03",
+          "m3-f09",
+          "m3-f10",
+          "m3-f13",
+          "m3-f16",
+          "m3-f17",
+          "m3-f18",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "no mar tanta tormenta e tanto dano tantas vezes a morte apercebida",
+          "licoes": [
+            "m3-f13"
+          ]
+        },
+        {
+          "trecho": "no mar tanta tormenta e tanto dano tantas vezes a morte apercebida",
+          "licoes": [
+            "m3-f13"
+          ]
+        },
+        {
+          "trecho": "mas um velho d aspeito venerando que ficava nas praias entre a",
+          "licoes": [
+            "m3-f03"
+          ]
+        },
+        {
+          "trecho": "mas um velho d aspeito venerando que ficava nas praias entre a",
+          "licoes": [
+            "m3-f03"
+          ]
+        },
+        {
+          "trecho": "fama o fraudulento gosto que se atica c uma aura popular que",
+          "licoes": [
+            "m3-f03"
+          ]
+        },
+        {
+          "trecho": "fama o fraudulento gosto que se atica c uma aura popular que",
+          "licoes": [
+            "m3-f03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espingarda",
+      "url": "narrativas/espingarda/",
+      "title": "A espingarda de Tchékhov",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Relaciona um sinal inicial com o que acontece mais tarde.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "espingarda"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/espingarda/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Memórias Póstumas de Brás Cubas (Machado de Assis)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "madalena hei de ver vos pelo menos ainda uma vez neste mundo",
+          "licoes": [
+            "m4-f06"
+          ]
+        },
+        {
+          "trecho": "oh mas e verdade vinde ca leva o diante dos tres retratos",
+          "licoes": [
+            "m4-f08",
+            "m4-f26",
+            "m4-f27"
+          ]
+        },
+        {
+          "trecho": "madalena portugues cativo da batalha de romeiro de alcacer quibir madalena espavorida",
+          "licoes": [
+            "m4-f08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linhas-de-enredo",
+      "url": "narrativas/linhas-de-enredo/",
+      "title": "Linhas de enredo",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Distingue a ação principal das histórias que se cruzam com ela.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "linhas-de-enredo"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/linhas-de-enredo/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Maias (Eça de Queirós); Orgulho e Preconceito (Jane Austen)",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "entao cohen diga nos voce conte nos ca o emprestimo faz se",
+          "licoes": [
+            "m5-f11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desenlace",
+      "url": "narrativas/desenlace/",
+      "title": "O desenlace",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Compara maneiras de fechar uma história e o que deixam em aberto.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "desenlace"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/desenlace/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Maias (Eça de Queirós); Amor de Perdição (Camilo Castelo Branco); Casa de Bonecas (Henrik Ibsen)",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ],
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "a casa que os maias vieram habitar em lisboa no outono de",
+          "licoes": [
+            "m5-f10"
+          ]
+        },
+        {
+          "trecho": "que sim mas todo o mundo mais ou menos a falha isto",
+          "licoes": [
+            "m5-f13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espinha",
+      "url": "narrativas/espinha/",
+      "title": "A espinha da história",
+      "type": "leitura",
+      "time": "14 min",
+      "description": "Escolhe os acontecimentos que sustentam uma história.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "espinha"
+      },
+      "route": "ordem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/espinha/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Don Quijote de la Mancha (Miguel de Cervantes)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "lavrar mais nem pontada ja tenho a vida cansada de fazer sempre",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "lavrar mais nem pontada ja tenho a vida cansada de fazer sempre",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "moco o meu amo e meu senhor ines dai me vos ca",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "moco o meu amo e meu senhor ines dai me vos ca",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "uma historia marido pero marques bofa que me praz mulher ines passemos",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "uma historia marido pero marques bofa que me praz mulher ines passemos",
+          "licoes": [
+            "m2-f06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aula-personagem",
+      "url": "narrativas/aula-personagem/",
+      "title": "A personagem",
+      "type": "aula",
+      "time": "10 min de leitura",
+      "description": "Lê exemplos de desejos, obstáculos, gestos e diálogo.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "aula-personagem"
+      },
+      "route": "personagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/aula-personagem/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v02/index.html",
+        "ver-para-fazer/v59/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Frei Luís de Sousa (Almeida Garrett); Os Maias (Eça de Queirós)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "ines renego deste lavrar e do primeiro que o usou o diabo",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "ines renego deste lavrar e do primeiro que o usou o diabo",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "de quem e este retrato aqui telmo telmo olha e vira a",
+          "licoes": [
+            "m4-f08",
+            "m4-f26"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "querer-agir",
+      "url": "narrativas/querer-agir/",
+      "title": "Querer, agir, responder",
+      "type": "leitura",
+      "time": "12 min",
+      "description": "Relaciona o desejo de uma personagem com a ação que escolhe.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "querer-agir"
+      },
+      "route": "personagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/querer-agir/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Casa de Bonecas (Henrik Ibsen)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "ines renego deste lavrar e do primeiro que o usou o diabo",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "ines renego deste lavrar e do primeiro que o usou o diabo",
+          "licoes": [
+            "m2-f02"
+          ]
+        },
+        {
+          "trecho": "vos nao haveis de falar com homem nem mulher que seja nem",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "vos nao haveis de falar com homem nem mulher que seja nem",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "pero marques tem que herdou fazenda de mil cruzados mas vos quereis",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "pero marques tem que herdou fazenda de mil cruzados mas vos quereis",
+          "licoes": [
+            "m2-f06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personagem-faz",
+      "url": "narrativas/personagem-faz/",
+      "title": "A personagem pelo que faz",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Infere o carácter de uma personagem a partir do que faz.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "personagem-faz"
+      },
+      "route": "personagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/personagem-faz/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Maias (Eça de Queirós); Amor de Perdição (Camilo Castelo Branco); Bartleby (Herman Melville)",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ],
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "aula-lugar",
+      "url": "narrativas/aula-lugar/",
+      "title": "O lugar",
+      "type": "aula",
+      "time": "8 min de leitura",
+      "description": "Lê como um lugar participa na história.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "aula-lugar"
+      },
+      "route": "personagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/aula-lugar/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v05/index.html",
+        "ver-para-fazer/v06/index.html",
+        "ver-para-fazer/v27/index.html",
+        "ver-para-fazer/v55/index.html",
+        "ver-para-fazer/v63/index.html"
+      ],
+      "texto_exemplo": "O Livro de Cesário Verde (Cesário Verde)",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "por baixo que portoes que arruamentos um parafuso cae nas lages as",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "por baixo que portoes que arruamentos um parafuso cae nas lages as",
+          "licoes": [
+            "m6-f07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cenario-personagem",
+      "url": "narrativas/cenario-personagem/",
+      "title": "O cenário como personagem",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Relaciona os detalhes do espaço com o efeito que produzem.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "cenario-personagem"
+      },
+      "route": "personagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/cenario-personagem/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "O Livro de Cesário Verde (Cesário Verde); O Sentimento dum Ocidental (Cesário Verde); A Queda da Casa de Usher (Edgar Allan Poe)",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "O Sentimento dum Ocidental": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f08",
+          "m6-f09",
+          "m6-f11"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "nas nossas ruas ao anoitecer ha tal soturnidade ha tal melancholia que",
+          "licoes": [
+            "m6-f06"
+          ]
+        },
+        {
+          "trecho": "nas nossas ruas ao anoitecer ha tal soturnidade ha tal melancholia que",
+          "licoes": [
+            "m6-f06"
+          ]
+        },
+        {
+          "trecho": "o tecto fundo de oxygenio d ar estende se ao comprido ao",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "o tecto fundo de oxygenio d ar estende se ao comprido ao",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "ah como a raca ruiva do porvir e as frotas dos avos",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "ah como a raca ruiva do porvir e as frotas dos avos",
+          "licoes": [
+            "m6-f07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aula-nao-dito",
+      "url": "narrativas/aula-nao-dito/",
+      "title": "O que não se diz",
+      "type": "aula",
+      "time": "10 min de leitura",
+      "description": "Distingue o que o texto diz, sugere e deixa por saber.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "aula-nao-dito"
+      },
+      "route": "nao-dito",
+      "incoming": [
+        "ler/index.html",
+        "mapa/index.html",
+        "narrativas/aula-nao-dito/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v07/index.html",
+        "ver-para-fazer/v17/index.html",
+        "ver-para-fazer/v69/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Autopsicografia (Fernando Pessoa); Dom Casmurro (Machado de Assis)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Autopsicografia": [
+          "m7-f01",
+          "m7-f02",
+          "m7-f11",
+          "m7-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "jorge romeiro romeiro quem es tu romeiro apontando com o bordao para",
+          "licoes": [
+            "m4-f08"
+          ]
+        },
+        {
+          "trecho": "oh mas e verdade vinde ca leva o diante dos tres retratos",
+          "licoes": [
+            "m4-f08",
+            "m4-f26",
+            "m4-f27"
+          ]
+        },
+        {
+          "trecho": "o poeta e um fingidor finge tao completamente que chega a fingir",
+          "licoes": [
+            "m7-f02"
+          ]
+        },
+        {
+          "trecho": "o poeta e um fingidor finge tao completamente que chega a fingir",
+          "licoes": [
+            "m7-f02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subtexto",
+      "url": "narrativas/subtexto/",
+      "title": "O subtexto",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Reconhece o que uma fala deixa perceber sem o dizer.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "subtexto"
+      },
+      "route": "nao-dito",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/proposta-subtexto/index.html",
+        "narrativas/subtexto/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Os Maias (Eça de Queirós); Amor de Perdição (Camilo Castelo Branco); Mrs Dalloway (Virginia Woolf)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ],
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "escudeiro vos cantais ines pereira em vodas m andaveis vos juro ao",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "escudeiro vos cantais ines pereira em vodas m andaveis vos juro ao",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "hei de eu responder lhe meu pae balbuciou ella das me o",
+          "licoes": [
+            "m5-f04"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dialogo",
+      "url": "narrativas/dialogo/",
+      "title": "O diálogo que não explica",
+      "type": "leitura",
+      "time": "13 min",
+      "description": "Compara falas e reconhece o que revelam das personagens.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "dialogo"
+      },
+      "route": "nao-dito",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/dialogo/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Amor de Perdição (Camilo Castelo Branco); A Importância de Ser Ernesto (Oscar Wilde)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "conheceis bem esse homem romeiro nao e assim romeiro como a mim",
+          "licoes": [
+            "m4-f08",
+            "m4-f26"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proposta-subtexto",
+      "url": "narrativas/proposta-subtexto/",
+      "title": "Uma cena com subtexto",
+      "type": "leitura",
+      "time": "Tempo não indicado",
+      "description": "Prepara uma cena em que as personagens não dizem tudo.",
+      "progress": {
+        "kind": "manual",
+        "key": "lente-laboratorio-v1",
+        "id": "proposta-subtexto"
+      },
+      "route": "nao-dito",
+      "incoming": [
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cena original do aluno; sem excerto literário.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "quem-conta",
+      "url": "narrativas/quem-conta/",
+      "title": "Quem conta?",
+      "type": "leitura",
+      "time": "14 min",
+      "description": "Distingue quem conta, o que sabe e o que te permite saber.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "quem-conta"
+      },
+      "route": "voz",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/quem-conta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Amor de Perdição (Camilo Castelo Branco); Autopsicografia (Fernando Pessoa); Dom Casmurro (Machado de Assis); Moby-Dick (Herman Melville)",
+      "obras_no_portugues": {
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ],
+        "Autopsicografia": [
+          "m7-f01",
+          "m7-f02",
+          "m7-f11",
+          "m7-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "o poeta e um fingidor finge tao completamente que chega a fingir",
+          "licoes": [
+            "m7-f02"
+          ]
+        },
+        {
+          "trecho": "o poeta e um fingidor finge tao completamente que chega a fingir",
+          "licoes": [
+            "m7-f02"
+          ]
+        },
+        {
+          "trecho": "folheando os livros de antigos assentamentos no cartorio das cadeas da relacao",
+          "licoes": [
+            "m5-f02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formas/certa-manha",
+      "url": "narrativas/formas/certa-manha/",
+      "title": "Certa manhã",
+      "type": "leitura",
+      "time": "Tempo não indicado",
+      "description": "Compara duas maneiras de contar uma transformação.",
+      "progress": {
+        "kind": "formas",
+        "key": "lente-formas-v1",
+        "id": "certa-manha"
+      },
+      "route": "voz",
+      "incoming": [
+        "narrativas/corta/cena-que-falta/index.html",
+        "narrativas/corta/mesa/index.html",
+        "narrativas/formas/index.html",
+        "narrativas/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "A Metamorfose, Franz Kafka; frase citada pela RTP Ensina, tradução não identificada.",
+      "obras_no_portugues": {
+        "A Metamorfose": [
+          "m8-f01",
+          "m8-f03",
+          "m8-f05",
+          "m8-f08",
+          "m8-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "margens/passo-01",
+      "url": "narrativas/margens/passo-01/",
+      "title": "Repórter X: ficção com cara de verdade",
+      "type": "leitura",
+      "time": "25 min",
+      "description": "Como sabes que a carta de um leitor, publicada num jornal, foi mesmo escrita por um leitor?",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-margens",
+        "id": "passo-01"
+      },
+      "route": "voz",
+      "incoming": [
+        "cidadania/m2/sessoes/06/index.html",
+        "cidadania/m2/sessoes/index.html",
+        "mapa/index.html",
+        "narrativas/margens/index.html",
+        "narrativas/margens/passo-01/index.html"
+      ],
+      "texto_exemplo": "«Conselhos a um futuro jornalista», Reinaldo Ferreira (Repórter X), Reporter X, n.º 9, p. 3.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "margens/passo-02",
+      "url": "narrativas/margens/passo-02/",
+      "title": "Luiz Pacheco: dizer em nome próprio",
+      "type": "leitura",
+      "time": "20 min",
+      "description": "Quando foi a última vez que disseste o que pensavas a quem não o queria ouvir?",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-margens",
+        "id": "passo-02"
+      },
+      "route": "voz",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/margens/index.html",
+        "narrativas/margens/passo-02/index.html"
+      ],
+      "texto_exemplo": "«O Que É o Neo-Abjeccionismo», Luiz Pacheco, em Exercícios de Estilo, 3.ª edição, Estampa, 1998, p. 139; transcrição citada de Sofia Narciso.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "leonardo",
+      "url": "narrativas/leonardo/",
+      "title": "Leonardo",
+      "type": "leitura",
+      "time": "11 min de leitura",
+      "description": "A obra mais antiga de Leonardo da Vinci (1452-1519) com data não é um retrato nem uma Virgem: é um vale visto do alto, desenhado a pena a 5 de agosto de 1473.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "leonardo"
+      },
+      "route": "olhar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/leonardo/index.html",
+        "narrativas/tudo/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Leonardo; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "galileu",
+      "url": "narrativas/galileu/",
+      "title": "Galileu",
+      "type": "leitura",
+      "time": "11 min de leitura",
+      "description": "A 30 de novembro de 1609, Galileu Galilei (1564-1642) apontou um telescópio à Lua.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "galileu"
+      },
+      "route": "olhar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/galileu/index.html",
+        "narrativas/tudo/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Galileu; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "cigoli",
+      "url": "narrativas/cigoli/",
+      "title": "Cigoli",
+      "type": "leitura",
+      "time": "8 min de leitura",
+      "description": "Numa cúpula de Roma, pintada entre 1610 e 1613, a Virgem sobe aos céus de pé sobre uma Lua cheia de crateras.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "cigoli"
+      },
+      "route": "olhar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/cigoli/index.html",
+        "narrativas/tudo/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Cigoli; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "anguissola",
+      "url": "narrativas/anguissola/",
+      "title": "Sofonisba Anguissola",
+      "type": "leitura",
+      "time": "10 min de leitura",
+      "description": "Em 1556, uma jovem de Cremona pintou-se de pincel na mão, a olhar para quem a olha.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "anguissola"
+      },
+      "route": "olhar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/anguissola/index.html",
+        "narrativas/tudo/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Sofonisba Anguissola; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "fontana",
+      "url": "narrativas/fontana/",
+      "title": "Lavinia Fontana",
+      "type": "leitura",
+      "time": "10 min de leitura",
+      "description": "Em 1577, uma pintora de Bolonha pintou-se a tocar espineta, com o cavalete ao fundo.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "fontana"
+      },
+      "route": "olhar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/fontana/index.html",
+        "narrativas/tudo/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Lavinia Fontana; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "duchamp",
+      "url": "narrativas/duchamp/",
+      "title": "Duchamp",
+      "type": "leitura",
+      "time": "14 min de leitura",
+      "description": "Em 1917, um urinol assinado «R.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "duchamp"
+      },
+      "route": "olhar",
+      "incoming": [
+        "investigar/index.html",
+        "mapa/index.html",
+        "narrativas/duchamp/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v57/index.html",
+        "ver-para-fazer/v70/index.html",
+        "vozes/index.html"
+      ],
+      "texto_exemplo": "Texto expositivo sobre Duchamp; obras de arte e documentos comentados, sem excerto literário autónomo.",
+      "obras_no_portugues": {
+        "Chuva Oblíqua": [
+          "m7-f34"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "corta/ines",
+      "url": "narrativas/corta/ines/",
+      "title": "O desfecho de Inês Pereira",
+      "type": "cena",
+      "time": "6 min",
+      "description": "No fim da farsa, Inês ficou viúva do Escudeiro que a prendia em casa, e aceita Pêro Marques, o lavrador que antes recusou.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "ines"
+      },
+      "route": "montagem",
+      "incoming": [
+        "cidadania/m1/sessoes/05/index.html",
+        "mapa/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/corta/ines/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "a morte a todos gasta o que havedes de fazer casade vos",
+          "licoes": [
+            "m2-f06"
+          ]
+        },
+        {
+          "trecho": "a morte a todos gasta o que havedes de fazer casade vos",
+          "licoes": [
+            "m2-f06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/frei-luis",
+      "url": "narrativas/corta/frei-luis/",
+      "title": "O incêndio e o Romeiro",
+      "type": "cena",
+      "time": "6 min",
+      "description": "No fim do ato I, Manuel de Sousa Coutinho deita fogo à própria casa para não a entregar aos governadores.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "frei-luis"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/frei-luis/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Frei Luiz de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Frei Luiz de Sousa": [
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f28"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "jorge romeiro romeiro quem es tu romeiro apontando com o bordao para",
+          "licoes": [
+            "m4-f08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/restelo",
+      "url": "narrativas/corta/restelo/",
+      "title": "O Velho na praia",
+      "type": "cena",
+      "time": "7 min",
+      "description": "No canto IV, a armada do Gama parte de Belém.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "restelo"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/corta/restelo/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Lusíadas (Luís de Camões)",
+      "obras_no_portugues": {
+        "Os Lusíadas": [
+          "m3-f02",
+          "m3-f03",
+          "m3-f09",
+          "m3-f10",
+          "m3-f13",
+          "m3-f16",
+          "m3-f17",
+          "m3-f18",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "mas um velho d aspeito venerando que ficava nas praias entre a",
+          "licoes": [
+            "m3-f03"
+          ]
+        },
+        {
+          "trecho": "mas um velho d aspeito venerando que ficava nas praias entre a",
+          "licoes": [
+            "m3-f03"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/torneol",
+      "url": "narrativas/corta/torneol/",
+      "title": "A madrugada de Torneol",
+      "type": "cena",
+      "time": "7 min",
+      "description": "Numa manhã fria, uma rapariga acorda o amigo que dorme.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "torneol"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/corta/torneol/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Levad', amigo, que dormides as manhanas frias (Nuno Fernandes Torneol)",
+      "obras_no_portugues": {
+        "Levad', amigo, que dormides as manhanas frias": [
+          "m1-f01"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "corta/cesario",
+      "url": "narrativas/corta/cesario/",
+      "title": "Quem filma Cesário",
+      "type": "cena",
+      "time": "6 min",
+      "description": "Um documentário sobre Cesário Verde tem de escolher: o poeta não deixou imagens de Lisboa, deixou versos.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "cesario"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/cesario/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "O Livro de Cesário Verde (Cesário Verde); O Sentimento dum Ocidental (Cesário Verde)",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "O Sentimento dum Ocidental": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f08",
+          "m6-f09",
+          "m6-f11"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "n um cutileiro de avental ao torno um forjador maneja um malho",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "n um cutileiro de avental ao torno um forjador maneja um malho",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "e saio a noite peza esmaga nos passeios de lagedo arrastam se",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "n um cutileiro de avental ao torno um forjador maneja um malho",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "e a analyse m o dessem casas de confeccoes e modas resplandecem",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "a pouco da solidao regouga um cauteleiro rouco tornam se mausoleos as",
+          "licoes": [
+            "m6-f07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/maias",
+      "url": "narrativas/corta/maias/",
+      "title": "Do Ramalhete ao americano",
+      "type": "cena",
+      "time": "7 min",
+      "description": "Dez anos depois, Carlos e Ega voltam ao Ramalhete.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "maias"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/corta/maias/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Maias (Eça de Queirós)",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "que sim mas todo o mundo mais ou menos a falha isto",
+          "licoes": [
+            "m5-f13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/chuva",
+      "url": "narrativas/corta/chuva/",
+      "title": "Os dois planos de «Chuva Oblíqua»",
+      "type": "cena",
+      "time": "6 min",
+      "description": "Em «Chuva Oblíqua», dois planos sobrepõem-se: uma paisagem com um porto e navios, e a chuva a bater numa vidraça.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "chuva"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/chuva/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Chuva Oblíqua (Fernando Pessoa)",
+      "obras_no_portugues": {
+        "Chuva Oblíqua": [
+          "m7-f34"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "atravessa esta paisagem o meu sonho dum porto infinito e a cor",
+          "licoes": [
+            "m7-f34"
+          ]
+        },
+        {
+          "trecho": "atravessa esta paisagem o meu sonho dum porto infinito e a cor",
+          "licoes": [
+            "m7-f34"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "corta/bras-cubas",
+      "url": "narrativas/corta/bras-cubas/",
+      "title": "Onze amigos à chuva",
+      "type": "cena",
+      "time": "7 min",
+      "description": "Brás Cubas começa as memórias pela morte.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-corta",
+        "id": "bras-cubas"
+      },
+      "route": "montagem",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/corta/bras-cubas/index.html",
+        "narrativas/corta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Memórias Póstumas de Brás Cubas (Machado de Assis)",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/sem-olhos",
+      "url": "narrativas/treinar/sem-olhos/",
+      "title": "Sem olhos",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Escreve uma cena sem nenhuma palavra de ver: nada de «ver», «olhar», cores ou luz.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "sem-olhos"
+      },
+      "route": "sentidos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/sem-olhos/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cesário Verde, «Num Bairro Moderno», em O Livro de Cesario Verde , 1887, na grafia da edição; transcrição do Project Gutenberg n.º 8698.",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "Num Bairro Moderno": [
+          "m6-f12"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/objeto-banal",
+      "url": "narrativas/treinar/objeto-banal/",
+      "title": "O objeto banal",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Pega num objeto banal ou feio e escreve sobre ele até o leitor o achar belo ou estranho.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "objeto-banal"
+      },
+      "route": "sentidos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/objeto-banal/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cesário Verde, «Num Bairro Moderno», em O Livro de Cesario Verde , 1887, na grafia e com a pontuação da edição; transcrição do Project Gutenberg n.º 8698. O poeta olha o cesto de uma vendedeira de hortaliça.",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "Num Bairro Moderno": [
+          "m6-f12"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/a-gaveta",
+      "url": "narrativas/treinar/a-gaveta/",
+      "title": "A gaveta",
+      "type": "treino",
+      "time": "8 min de escrita",
+      "description": "Faz o inventário de uma gaveta.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "a-gaveta"
+      },
+      "route": "sentidos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/a-gaveta/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/quarto-que-fala",
+      "url": "narrativas/treinar/quarto-que-fala/",
+      "title": "O quarto que fala",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Descreve um quarto (ou uma casa) de forma a revelar quem lá vive, sem dizeres quem é nem o que sente.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "quarto-que-fala"
+      },
+      "route": "sentidos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/quarto-que-fala/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Eça de Queirós, Os Maias , 1888, capítulo I, na grafia da primeira edição; Project Gutenberg n.º 40409.",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "apesar d este fresco nome de vivenda campestre o ramalhete sombrio casarao",
+          "licoes": [
+            "m5-f10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/duas-horas",
+      "url": "narrativas/treinar/duas-horas/",
+      "title": "Duas horas, o mesmo lugar",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Escreve o mesmo lugar duas vezes, de manhã e à noite.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "duas-horas"
+      },
+      "route": "sentidos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/duas-horas/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cesário Verde, «O Sentimento d'um Occidental», I, «Ave Marias», em O Livro de Cesario Verde , 1887, na grafia da edição; Project Gutenberg n.º 8698 (também na Biblioteca do Lente).",
+      "obras_no_portugues": {
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "O Sentimento dum Ocidental": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f08",
+          "m6-f09",
+          "m6-f11"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "nas nossas ruas ao anoitecer ha tal soturnidade ha tal melancholia que",
+          "licoes": [
+            "m6-f06"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/sem-disse",
+      "url": "narrativas/treinar/sem-disse/",
+      "title": "Duas vozes, nenhum nome",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Nesta tentativa, escreve um diálogo de duas personagens sem dizer quem fala: nada de «disse», «perguntou», nem nomes antes das falas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "sem-disse"
+      },
+      "route": "dialogos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/proposta-subtexto/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/sem-disse/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Gil Vicente, Farsa de Inês Pereira , 1523, versos 52 a 57, sem os nomes de quem fala; texto da edição usada na lição M2-F02.",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/so-gestos",
+      "url": "narrativas/treinar/so-gestos/",
+      "title": "Só gestos e uma palavra",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Escreve uma cena tensa entre duas personagens sem falas: só gestos e movimentos.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "so-gestos"
+      },
+      "route": "dialogos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/so-gestos/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/pergunta-sem-resposta",
+      "url": "narrativas/treinar/pergunta-sem-resposta/",
+      "title": "A pergunta que fica",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Num diálogo, nenhuma pergunta recebe resposta direta.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "pergunta-sem-resposta"
+      },
+      "route": "dialogos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/pergunta-sem-resposta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Almeida Garrett, Frei Luiz de Sousa , ato II, cena XIV, na grafia da edição histórica; Project Gutenberg n.º 17591 (Biblioteca do Lente). O Romeiro diz trazer notícias de um cativo; Madalena pergunta-lhe o nome desse cativo.",
+      "obras_no_portugues": {
+        "Frei Luiz de Sousa": [
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f28"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/interromper",
+      "url": "narrativas/treinar/interromper/",
+      "title": "Interromper",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Num diálogo, ninguém acaba uma frase importante: as falas são cortadas ou abandonadas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "interromper"
+      },
+      "route": "dialogos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/interromper/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/o-contrario",
+      "url": "narrativas/treinar/o-contrario/",
+      "title": "Uma fala, duas intenções",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Nesta tentativa, cada fala diz uma coisa e quer outra.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "o-contrario"
+      },
+      "route": "dialogos",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/proposta-subtexto/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/o-contrario/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/tres-em-cinco",
+      "url": "narrativas/treinar/tres-em-cinco/",
+      "title": "Três em cinco minutos",
+      "type": "treino",
+      "time": "5 min de escrita",
+      "description": "Inventa três personagens: nome, idade, ofício, um medo, um desejo e uma contradição para cada uma.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "tres-em-cinco"
+      },
+      "route": "vozes",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/tres-em-cinco/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/pelo-que-faz",
+      "url": "narrativas/treinar/pelo-que-faz/",
+      "title": "Pelo que faz",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Apresenta uma personagem só pelo que ela faz: nenhum adjetivo de carácter («corajosa», «tímida»), nenhum sentimento dito.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "pelo-que-faz"
+      },
+      "route": "vozes",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/pelo-que-faz/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Fernão Lopes, Crónica de D. João I , primeira parte, no texto da edição de 1897 usado na lição M1-F06 («Matam o Mestre!»). Lisboa, 6 de dezembro de 1383.",
+      "obras_no_portugues": {
+        "Crónica de D. João I": [
+          "m1-f06",
+          "m1-f07",
+          "m1-f08",
+          "m1-f10",
+          "m1-f11",
+          "m1-f15",
+          "m1-f20"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "alvaro pais que estava ja prestes e armado com uma coifa na",
+          "licoes": [
+            "m1-f06",
+            "m1-f20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/a-entrevista",
+      "url": "narrativas/treinar/a-entrevista/",
+      "title": "A entrevista",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Faz dez perguntas a uma personagem tua.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "a-entrevista"
+      },
+      "route": "vozes",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/a-entrevista/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Machado de Assis, Memórias Póstumas de Brás Cubas , 1881, «Ao leitor», na grafia da edição transcrita; Project Gutenberg n.º 54829 (Biblioteca do Lente). Quem fala é Brás Cubas, um narrador já morto.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/verdade-dificil",
+      "url": "narrativas/treinar/verdade-dificil/",
+      "title": "Uma verdade difícil",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Dá à tua personagem um pensamento verdadeiro e desconfortável, que ela nunca diria em voz alta.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "verdade-dificil"
+      },
+      "route": "vozes",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/verdade-dificil/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Álvaro de Campos (Fernando Pessoa), «Tabacaria», 1928; transcrição da Wikisource (Biblioteca do Lente).",
+      "obras_no_portugues": {
+        "Tabacaria": [
+          "m5-f13",
+          "m6-f07",
+          "m7-f06",
+          "m7-f07",
+          "m7-f10",
+          "m7-f11",
+          "m7-f36"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "nao sou nada nunca serei nada nao posso querer ser nada a",
+          "licoes": [
+            "m7-f06",
+            "m7-f36"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/duas-vozes",
+      "url": "narrativas/treinar/duas-vozes/",
+      "title": "A mesma coisa, duas vozes",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Conta o mesmo acontecimento duas vezes, por duas pessoas muito diferentes (um avô e uma neta, uma vizinha e um polícia).",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "duas-vozes"
+      },
+      "route": "vozes",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/duas-vozes/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Alberto Caeiro (Fernando Pessoa), O Guardador de Rebanhos , XX; texto disponibilizado pela Casa Fernando Pessoa (Biblioteca do Lente).",
+      "obras_no_portugues": {
+        "O Guardador de Rebanhos": [
+          "m7-f01",
+          "m7-f04",
+          "m7-f35"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "o tejo e mais belo que o rio que corre pela minha",
+          "licoes": [
+            "m7-f35"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/copia-lenta",
+      "url": "narrativas/treinar/copia-lenta/",
+      "title": "Cópia lenta",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Copia à mão, devagar, um parágrafo de um grande escritor.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "copia-lenta"
+      },
+      "route": "frase",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/copia-lenta/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Camilo Castelo Branco, Amor de Perdição , 1862, introdução, na grafia da época; Project Gutenberg n.º 16425.",
+      "obras_no_portugues": {
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "folheando os livros de antigos assentamentos no cartorio das cadeas da relacao",
+          "licoes": [
+            "m5-f02"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/dicionario",
+      "url": "narrativas/treinar/dicionario/",
+      "title": "Dicionário, não sinónimos",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Escolhe a palavra exata entre três quase-sinónimos, com o dicionário aberto.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "dicionario"
+      },
+      "route": "frase",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/dicionario/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino. Dicionários abertos: Priberam e Infopédia .",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/verbo-forte",
+      "url": "narrativas/treinar/verbo-forte/",
+      "title": "Verbo forte",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Nesta tentativa, troca cada verbo vago com complemento por um só verbo preciso: «andar depressa» por «apressar-se»; «dizer alto» por «bradar».",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "verbo-forte"
+      },
+      "route": "frase",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/verbo-forte/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Fernão Lopes, Crónica de D. João I , primeira parte, no texto da edição de 1897 usado na lição M1-F06.",
+      "obras_no_portugues": {
+        "Crónica de D. João I": [
+          "m1-f06",
+          "m1-f07",
+          "m1-f08",
+          "m1-f10",
+          "m1-f11",
+          "m1-f15",
+          "m1-f20"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "soaram as vozes do arruido pela cidade ouvindo todos bradar que matavam",
+          "licoes": [
+            "m1-f06",
+            "m1-f20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/sem-mente",
+      "url": "narrativas/treinar/sem-mente/",
+      "title": "Sem «-mente»",
+      "type": "treino",
+      "time": "8 min de escrita",
+      "description": "Nesta versão, experimenta retirar os advérbios em «-mente»: troca cada um por um verbo mais preciso, por um pormenor, ou corta-o.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "sem-mente"
+      },
+      "route": "frase",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/sem-mente/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino; Fernão Lopes, Crónica de D. João I , na edição usada na lição M1-F06.",
+      "obras_no_portugues": {
+        "Crónica de D. João I": [
+          "m1-f06",
+          "m1-f07",
+          "m1-f08",
+          "m1-f10",
+          "m1-f11",
+          "m1-f15",
+          "m1-f20"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/acelerar-travar",
+      "url": "narrativas/treinar/acelerar-travar/",
+      "title": "Acelerar e travar",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Escreve uma cena em que o ritmo muda: frases curtas quando tudo acontece depressa, uma frase longa quando o tempo abranda.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "acelerar-travar"
+      },
+      "route": "frase",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/acelerar-travar/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Fernão Lopes, Crónica de D. João I , primeira parte, no texto da edição de 1897 usado na lição M1-F06: os gritos do pajem e, mais adiante, a cidade.",
+      "obras_no_portugues": {
+        "Crónica de D. João I": [
+          "m1-f06",
+          "m1-f07",
+          "m1-f08",
+          "m1-f10",
+          "m1-f11",
+          "m1-f15",
+          "m1-f20"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "matam o mestre matam o mestre nos pacos da rainha acorrei ao",
+          "licoes": [
+            "m1-f06",
+            "m1-f07",
+            "m1-f10",
+            "m1-f15",
+            "m1-f20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/lista-substantivos",
+      "url": "narrativas/treinar/lista-substantivos/",
+      "title": "Lista de substantivos",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Escreve dez substantivos concretos, com artigo («o sótão», «a paragem»): da tua memória ou inventados.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "lista-substantivos"
+      },
+      "route": "comeco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/lista-substantivos/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/comeca-mais-tarde",
+      "url": "narrativas/treinar/comeca-mais-tarde/",
+      "title": "Começa mais tarde",
+      "type": "treino",
+      "time": "8 min de escrita",
+      "description": "Experimenta cortar o primeiro parágrafo de um texto teu.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "comeca-mais-tarde"
+      },
+      "route": "comeco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/comeca-mais-tarde/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/pelo-meio",
+      "url": "narrativas/treinar/pelo-meio/",
+      "title": "Começar pelo meio",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Nesta tentativa, começa uma história com a ação já a decorrer.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "pelo-meio"
+      },
+      "route": "comeco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/pelo-meio/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Luís de Camões, Os Lusíadas , 1572, canto I, estância 19; Project Gutenberg n.º 3333.",
+      "obras_no_portugues": {
+        "Os Lusíadas": [
+          "m3-f02",
+          "m3-f03",
+          "m3-f09",
+          "m3-f10",
+          "m3-f13",
+          "m3-f16",
+          "m3-f17",
+          "m3-f18",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/a-espingarda",
+      "url": "narrativas/treinar/a-espingarda/",
+      "title": "A espingarda",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Mostra no início um objeto que vai ser decisivo no fim.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "a-espingarda"
+      },
+      "route": "comeco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/a-espingarda/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Almeida Garrett, Frei Luiz de Sousa , ato II, didascália inicial e cena XV, na grafia da edição histórica; Project Gutenberg n.º 17591 (Biblioteca do Lente).",
+      "obras_no_portugues": {
+        "Frei Luiz de Sousa": [
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f28"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "jorge romeiro romeiro quem es tu romeiro apontando com o bordao para",
+          "licoes": [
+            "m4-f08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treinar/outro-ponto-de-vista",
+      "url": "narrativas/treinar/outro-ponto-de-vista/",
+      "title": "Outro ponto de vista",
+      "type": "treino",
+      "time": "12 min de escrita",
+      "description": "Conta uma cena conhecida pela personagem que estava calada, ou de quem os outros falam sempre.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "outro-ponto-de-vista"
+      },
+      "route": "comeco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/docente/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/outro-ponto-de-vista/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Nuno Fernandes Torneol, «Levad', amigo, que dormides as manhanas frias», século XIII; edição Cantigas Medievais Galego-Portuguesas (FCSH/NOVA), cantiga 662 (Biblioteca do Lente).",
+      "obras_no_portugues": {
+        "Levad', amigo, que dormides as manhanas frias": [
+          "m1-f01"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/rascunho-mau",
+      "url": "narrativas/treinar/rascunho-mau/",
+      "title": "Rascunho mau, de propósito",
+      "type": "treino",
+      "time": "8 min de escrita",
+      "description": "Escreve oito minutos sem parar, sem apagar, sem reler.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "rascunho-mau"
+      },
+      "route": "rever",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/rascunho-mau/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/voz-alta",
+      "url": "narrativas/treinar/voz-alta/",
+      "title": "Ler em voz alta",
+      "type": "treino",
+      "time": "8 min de escrita",
+      "description": "Lê o teu texto em voz alta, devagar.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "voz-alta"
+      },
+      "route": "rever",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/voz-alta/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/frase-querida",
+      "url": "narrativas/treinar/frase-querida/",
+      "title": "Matar a frase querida",
+      "type": "treino",
+      "time": "6 min de escrita",
+      "description": "Num texto teu, encontra a frase de que mais gostas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "frase-querida"
+      },
+      "route": "rever",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/frase-querida/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/cortar-um-quinto",
+      "url": "narrativas/treinar/cortar-um-quinto/",
+      "title": "Cortar um quinto",
+      "type": "treino",
+      "time": "10 min de escrita",
+      "description": "Nesta tentativa, conta as palavras de um texto teu e corta pelo menos um quinto: em 100 palavras, ficam 80, sem mudar a história.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "cortar-um-quinto"
+      },
+      "route": "rever",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/cortar-um-quinto/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "treinar/teste-do-colega",
+      "url": "narrativas/treinar/teste-do-colega/",
+      "title": "O teste do colega",
+      "type": "treino",
+      "time": "6 min de escrita",
+      "description": "Dá o teu texto a ler sem explicar nada.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-treinos",
+        "id": "teste-do-colega"
+      },
+      "route": "rever",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/treinar/index.html",
+        "narrativas/treinar/teste-do-colega/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Exemplo inventado para este treino.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-restricao",
+      "url": "narrativas/oficina-restricao/",
+      "title": "A restrição antiga",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "Os clássicos exigiam três unidades: uma só ação, um só lugar, um tempo que coincide com o da representação.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-restricao"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-restricao-imprimir/index.html",
+        "narrativas/oficina-restricao/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-ficcao-comecar",
+      "url": "narrativas/oficina-ficcao-comecar/",
+      "title": "Escrever ficção: começar",
+      "type": "oficina",
+      "time": "5–8 min",
+      "description": "Uma chave na mesa.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-ficcao-comecar"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "dar-forma-as-palavras/index.html",
+        "mapa/index.html",
+        "narrativas/oficina-ficcao-comecar/index.html",
+        "narrativas/tudo/index.html",
+        "narrativas/variantes/index.html"
+      ],
+      "texto_exemplo": "Proposta original; sem excerto literário autónomo identificado.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-ficcao-personagem",
+      "url": "narrativas/oficina-ficcao-personagem/",
+      "title": "A personagem",
+      "type": "oficina",
+      "time": "5–8 min",
+      "description": "«Podes confiar em mim.» Depois, a mão fecha-se sobre a chave.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-ficcao-personagem"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-ficcao-personagem/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "cadeira pero marques e que val aqui uma destas ines a parte",
+          "licoes": [
+            "m2-f07"
+          ]
+        },
+        {
+          "trecho": "cadeira pero marques e que val aqui uma destas ines a parte",
+          "licoes": [
+            "m2-f07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oficina-ficcao-espaco",
+      "url": "narrativas/oficina-ficcao-espaco/",
+      "title": "O espaço",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "Eça precisa de duas frases para o Ramalhete ser uma personagem: um casarão «sombrio», de «paredes severas», com «aspecto tristonho».",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-ficcao-espaco"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-ficcao-espaco-imprimir/index.html",
+        "narrativas/oficina-ficcao-espaco/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Maias (Eça de Queirós); O Livro de Cesário Verde (Cesário Verde); O Sentimento dum Ocidental (Cesário Verde)",
+      "obras_no_portugues": {
+        "Os Maias": [
+          "m5-f10",
+          "m5-f11",
+          "m5-f12",
+          "m5-f13",
+          "m5-f14",
+          "m5-f15",
+          "m9-f07"
+        ],
+        "O Livro de Cesário Verde": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f11",
+          "m6-f12"
+        ],
+        "O Sentimento dum Ocidental": [
+          "m6-f05",
+          "m6-f06",
+          "m6-f07",
+          "m6-f08",
+          "m6-f09",
+          "m6-f11"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "a casa que os maias vieram habitar em lisboa no outono de",
+          "licoes": [
+            "m5-f10"
+          ]
+        },
+        {
+          "trecho": "toca se as grades nas cadeias som que mortifica e deixa umas",
+          "licoes": [
+            "m6-f07"
+          ]
+        },
+        {
+          "trecho": "toca se as grades nas cadeias som que mortifica e deixa umas",
+          "licoes": [
+            "m6-f07"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oficina-arco",
+      "url": "narrativas/oficina-arco/",
+      "title": "Exposição, nó, desenlace",
+      "type": "oficina",
+      "time": "45 a 60 min de exploração",
+      "description": "Exposição: o mundo e o equilíbrio de partida.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-arco"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-arco-imprimir/index.html",
+        "narrativas/oficina-arco/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Frei Luís de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-ficcao-genero",
+      "url": "narrativas/oficina-ficcao-genero/",
+      "title": "Género e suspense",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "«Romeiro, romeiro, quem és tu?» «Ninguém.» Garrett segura a resposta durante uma cena inteira: o público já desconfia, Telmo já desconfia, e a palavra só cai quando o bordão aponta para o retrato.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-ficcao-genero"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-ficcao-genero-imprimir/index.html",
+        "narrativas/oficina-ficcao-genero/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett); Amor de Perdição (Camilo Castelo Branco)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ],
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": [
+        {
+          "trecho": "conheceis bem esse homem romeiro nao e assim romeiro como a mim",
+          "licoes": [
+            "m4-f08",
+            "m4-f26"
+          ]
+        },
+        {
+          "trecho": "jorge romeiro romeiro quem es tu romeiro apontando com o bordao para",
+          "licoes": [
+            "m4-f08"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oficina-argumento",
+      "url": "narrativas/oficina-argumento/",
+      "title": "Do conceito ao argumento",
+      "type": "oficina",
+      "time": "90 min de exploração",
+      "description": "Antes de haver guião, há uma cadeia de documentos, cada um mais longo do que o anterior.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-argumento"
+      },
+      "route": "ficcao",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-argumento-imprimir/index.html",
+        "narrativas/oficina-argumento/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: The Shining (Stanley Kubrick, 1980); The Terminator (James Cameron, 1984); a tua história.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-visivel",
+      "url": "narrativas/oficina-visivel/",
+      "title": "A dramaturgia do visível",
+      "type": "oficina",
+      "time": "60 min de exploração",
+      "description": "No teatro de hoje, a luz, o cenário e o figurino não decoram: significam.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-visivel"
+      },
+      "route": "cena",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-visivel-imprimir/index.html",
+        "narrativas/oficina-visivel/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-ator",
+      "url": "narrativas/oficina-ator/",
+      "title": "A dramaturgia do ator",
+      "type": "oficina",
+      "time": "60 min de exploração",
+      "description": "O corpo do ator produz sentido antes da palavra: a respiração, o peso, o desvio de olhar.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-ator"
+      },
+      "route": "cena",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-ator-imprimir/index.html",
+        "narrativas/oficina-ator/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: Stanislavski; o Group Theatre (1931) e o Actors Studio (1947); Samuel Beckett, Ato sem Palavras I (1957).",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-plano",
+      "url": "narrativas/oficina-plano/",
+      "title": "Da cena ao plano",
+      "type": "oficina",
+      "time": "90 min de exploração",
+      "description": "Mike Nichols adaptou duas peças de violência verbal: Quem Tem Medo de Virginia Woolf?",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-plano"
+      },
+      "route": "cena",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-plano-imprimir/index.html",
+        "narrativas/oficina-plano/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Frei Luís de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-texto-imagem",
+      "url": "narrativas/oficina-texto-imagem/",
+      "title": "Texto e imagem",
+      "type": "oficina",
+      "time": "60 min de exploração",
+      "description": "Uma imagem sozinha diz de mais: é aberta, admite leituras a mais.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-texto-imagem"
+      },
+      "route": "cena",
+      "incoming": [
+        "investigar/index.html",
+        "mapa/index.html",
+        "narrativas/oficina-texto-imagem-imprimir/index.html",
+        "narrativas/oficina-texto-imagem/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v106/index.html",
+        "ver-para-fazer/v107/index.html",
+        "ver-para-fazer/v112/index.html",
+        "ver-para-fazer/v41/index.html"
+      ],
+      "texto_exemplo": "Tabacaria (Álvaro de Campos (Fernando Pessoa))",
+      "obras_no_portugues": {
+        "Tabacaria": [
+          "m5-f13",
+          "m6-f07",
+          "m7-f06",
+          "m7-f07",
+          "m7-f10",
+          "m7-f11",
+          "m7-f36"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-espaco",
+      "url": "narrativas/oficina-espaco/",
+      "title": "O espaço expandido",
+      "type": "oficina",
+      "time": "90 min",
+      "description": "Escolhe um lugar e desenha uma intervenção: o que o público encontra, faz e pode escolher.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-espaco"
+      },
+      "route": "cena",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-espaco-imprimir/index.html",
+        "narrativas/oficina-espaco/index.html",
+        "narrativas/tudo/index.html",
+        "narrativas/variantes/index.html",
+        "ver-para-fazer/v18/index.html",
+        "ver-para-fazer/v22/index.html",
+        "ver-para-fazer/v33/index.html",
+        "ver-para-fazer/v71/index.html",
+        "ver-para-fazer/v73/index.html"
+      ],
+      "texto_exemplo": "Proposta original; sem excerto literário autónomo identificado.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-matriz",
+      "url": "narrativas/oficina-matriz/",
+      "title": "A matriz por meio",
+      "type": "oficina",
+      "time": "60 min",
+      "description": "A mesma ideia pode ganhar outra forma.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-matriz"
+      },
+      "route": "cena",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-matriz/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v105/index.html",
+        "ver-para-fazer/v109/index.html",
+        "ver-para-fazer/v117/index.html",
+        "ver-para-fazer/v122/index.html",
+        "ver-para-fazer/v123/index.html"
+      ],
+      "texto_exemplo": "Proposta original; sem excerto literário autónomo identificado.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-readymade",
+      "url": "narrativas/oficina-readymade/",
+      "title": "O readymade de palavras",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "Duchamp não fabricou o urinol: escolheu-o, virou-o, assinou-o com um nome falso e pô-lo onde não devia estar.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-readymade"
+      },
+      "route": "transformar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-readymade-imprimir/index.html",
+        "narrativas/oficina-readymade/index.html",
+        "narrativas/tudo/index.html",
+        "narrativas/variantes/index.html",
+        "ver-para-fazer/v10/index.html",
+        "ver-para-fazer/v31/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: Marcel Duchamp, Fountain (1917) e L.H.O.O.Q. (1919); Burroughs e Gysin, o cut-up (1959); Almada Negreiros, Manifesto Anti-Dantas (1915).",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-pedacos",
+      "url": "narrativas/oficina-pedacos/",
+      "title": "A fábula em pedaços",
+      "type": "oficina",
+      "time": "60 min de exploração",
+      "description": "Nem toda a história precisa de uma fábula com princípio, meio e fim.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-pedacos"
+      },
+      "route": "transformar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-pedacos-imprimir/index.html",
+        "narrativas/oficina-pedacos/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Amor de Perdição (Camilo Castelo Branco)",
+      "obras_no_portugues": {
+        "Amor de Perdição": [
+          "m5-f02",
+          "m5-f04",
+          "m5-f08",
+          "m5-f09",
+          "m5-f15",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-epico",
+      "url": "narrativas/oficina-epico/",
+      "title": "A rapsódia épica",
+      "type": "oficina",
+      "time": "60 min de exploração",
+      "description": "Brecht queria que o público não se deixasse hipnotizar: a cena interrompe-se, alguém se vira para a plateia e diz o que a história não quer dizer.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-epico"
+      },
+      "route": "transformar",
+      "incoming": [
+        "cidadania/m2/sessoes/07/index.html",
+        "mapa/index.html",
+        "narrativas/oficina-epico-imprimir/index.html",
+        "narrativas/oficina-epico/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Os Lusíadas (Luís de Camões)",
+      "obras_no_portugues": {
+        "Os Lusíadas": [
+          "m3-f02",
+          "m3-f03",
+          "m3-f09",
+          "m3-f10",
+          "m3-f13",
+          "m3-f16",
+          "m3-f17",
+          "m3-f18",
+          "m9-f07"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-dilema",
+      "url": "narrativas/oficina-dilema/",
+      "title": "O dilema, transposto para hoje",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "Shakespeare escreveu teatro em Inglaterra entre os séculos XVI e XVII, e os dilemas que pôs em cena continuam a servir.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-dilema"
+      },
+      "route": "transformar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-dilema-imprimir/index.html",
+        "narrativas/oficina-dilema/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: William Shakespeare, O Mercador de Veneza (ato III, cena 1, o discurso de Shylock) e Hamlet (Cláudio, Rosencrantz e Guildenstern, Horácio).",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-manifesto",
+      "url": "narrativas/oficina-manifesto/",
+      "title": "O manifesto na fachada",
+      "type": "oficina",
+      "time": "60 a 90 min de exploração",
+      "description": "A fachada da escola, acima do portão, tem dezanove imperativos em letra cursiva e uma frase final: Creativity takes courage .",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-manifesto"
+      },
+      "route": "transformar",
+      "incoming": [
+        "cidadania/m2/sessoes/09/index.html",
+        "mapa/index.html",
+        "narrativas/oficina-manifesto-imprimir/index.html",
+        "narrativas/oficina-manifesto/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: A fachada da EPI (Rua D. Luís I, Lisboa); Marinetti, Manifesto do Futurismo (1909); Almada Negreiros, Manifesto Anti-Dantas (1915); Dogma 95 (Lars von Trier e Thomas Vinterberg, 1995).",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-dramaturgista",
+      "url": "narrativas/oficina-dramaturgista/",
+      "title": "O dramaturgista",
+      "type": "oficina",
+      "time": "90 min",
+      "description": "O dramaturgo escreve a peça.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-dramaturgista"
+      },
+      "route": "transformar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-dramaturgista-imprimir/index.html",
+        "narrativas/oficina-dramaturgista/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Farsa de Inês Pereira (Gil Vicente); Frei Luís de Sousa (Almeida Garrett)",
+      "obras_no_portugues": {
+        "Farsa de Inês Pereira": [
+          "m2-f01",
+          "m2-f02",
+          "m2-f06",
+          "m2-f07",
+          "m2-f11",
+          "m2-f12",
+          "m2-f13"
+        ],
+        "Frei Luís de Sousa": [
+          "m4-f06",
+          "m4-f07",
+          "m4-f08",
+          "m4-f09",
+          "m4-f11",
+          "m4-f20",
+          "m4-f26",
+          "m4-f27",
+          "m4-f28",
+          "m7-f09",
+          "m7-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "oficina-atelie",
+      "url": "narrativas/oficina-atelie/",
+      "title": "Ateliê-Laboratório: a régua, o fio e a hipótese",
+      "type": "oficina",
+      "time": "90 min",
+      "description": "A obra mais antiga de Leonardo com data é um desenho a pena do vale do Arno, feito a 5 de agosto de 1473: um lugar visto do alto, registado antes de qualquer pintura.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "oficina-atelie"
+      },
+      "route": "transformar",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/oficina-atelie-imprimir/index.html",
+        "narrativas/oficina-atelie/index.html",
+        "narrativas/tudo/index.html",
+        "ver-para-fazer/v75/index.html"
+      ],
+      "texto_exemplo": "Referências, sem excerto autónomo: Leonardo da Vinci, Paisagem do vale do Arno (desenho a pena, 5 de agosto de 1473) e os cadernos; a perspetiva linear do século XV; Galileu, Sidereus Nuncius (1610), as montanhas da Lua medidas pelas sombras.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "corta/cena-que-falta",
+      "url": "narrativas/corta/cena-que-falta/",
+      "title": "A cena que falta",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Escolhe o plano que liga uma perda a uma devolução.",
+      "progress": {
+        "kind": "formas",
+        "key": "lente-formas-v1",
+        "id": "cena-que-falta"
+      },
+      "route": "experimentar",
+      "incoming": [
+        "narrativas/corta/index.html",
+        "narrativas/corta/mesa/index.html",
+        "narrativas/formas/certa-manha/index.html",
+        "narrativas/formas/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cena da carteira, criação do Lente.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "corta/mesa",
+      "url": "narrativas/corta/mesa/",
+      "title": "Corta. O sentido mexe.",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Monta os mesmos planos para criar quatro efeitos diferentes.",
+      "progress": {
+        "kind": "montagem",
+        "key": "lente-formas-corta-v1",
+        "ids": [
+          "curiosidade",
+          "suspense",
+          "surpresa",
+          "julgamento"
+        ]
+      },
+      "route": "experimentar",
+      "incoming": [
+        "narrativas/corta/index.html",
+        "narrativas/corta/mesa/index.html",
+        "narrativas/formas/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "Cena da carteira, criação do Lente.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "formas",
+      "url": "narrativas/formas/",
+      "title": "Uma obra abre outra possibilidade.",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Observa, interpreta, contrapõe e transforma excertos de três obras.",
+      "progress": {
+        "kind": "manual",
+        "key": "lente-laboratorio-v1",
+        "id": "formas"
+      },
+      "route": "experimentar",
+      "incoming": [
+        "narrativas/corta/mesa/index.html",
+        "narrativas/formas/index.html",
+        "narrativas/tudo/index.html"
+      ],
+      "texto_exemplo": "As três irmãs, em O fio das missangas, Mia Couto; verso de Mário Cesariny divulgado pela Assírio & Alvim e escuta de O Navio de Espelhos; A Metamorfose, Franz Kafka. Fontes em assets/formas/corpus.json.",
+      "obras_no_portugues": {
+        "A Metamorfose": [
+          "m8-f01",
+          "m8-f03",
+          "m8-f10"
+        ]
+      },
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "formas/tres-cartas",
+      "url": "narrativas/formas/tres-cartas/",
+      "title": "Três cartas, dois textos",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Prepara um conto e uma notícia fictícia sobre o mesmo acontecimento.",
+      "progress": {
+        "kind": "formas",
+        "key": "lente-formas-v1",
+        "id": "tres-cartas"
+      },
+      "route": "experimentar",
+      "incoming": [
+        "narrativas/formas/tres-cartas/index.html"
+      ],
+      "texto_exemplo": "Três situações e exemplos fictícios do Lente.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "variantes",
+      "url": "narrativas/variantes/",
+      "title": "Fazer. Voltar a ver.",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Experimenta três variantes das oficinas e revê uma escolha.",
+      "progress": {
+        "kind": "manual",
+        "key": "lente-laboratorio-v1",
+        "id": "variantes"
+      },
+      "route": "espaco",
+      "incoming": [
+        "mapa/index.html",
+        "narrativas/tudo/index.html",
+        "narrativas/variantes/index.html"
+      ],
+      "texto_exemplo": "Três situações originais; sem excerto literário.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "fora-da-pagina/intervalo",
+      "url": "narrativas/fora-da-pagina/intervalo/",
+      "title": "O acontecimento que não se desenha",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "fdp-intervalo"
+      },
+      "route": "espaco",
+      "incoming": [
+        "docente/index.html",
+        "narrativas/fora-da-pagina/index.html"
+      ],
+      "texto_exemplo": "Situações e diagramas didáticos originais do Lente; sem excerto literário.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "fora-da-pagina/escultura",
+      "url": "narrativas/fora-da-pagina/escultura/",
+      "title": "Uma história que se rodeia",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "fdp-escultura"
+      },
+      "route": "espaco",
+      "incoming": [
+        "docente/index.html",
+        "narrativas/fora-da-pagina/index.html"
+      ],
+      "texto_exemplo": "Situações e diagramas didáticos originais do Lente; sem excerto literário.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    },
+    {
+      "id": "fora-da-pagina/tese",
+      "url": "narrativas/fora-da-pagina/tese/",
+      "title": "Uma tese com lugar para o contrário",
+      "type": "oficina",
+      "time": "Tempo não indicado",
+      "description": "Experimenta a proposta e compara as tuas escolhas.",
+      "progress": {
+        "kind": "feitas",
+        "key": "epi-narrativas",
+        "id": "fdp-tese"
+      },
+      "route": "espaco",
+      "incoming": [
+        "docente/index.html",
+        "narrativas/fora-da-pagina/index.html"
+      ],
+      "texto_exemplo": "Situações e diagramas didáticos originais do Lente; sem excerto literário.",
+      "obras_no_portugues": {},
+      "trechos_coincidentes": []
+    }
+  ]
+}

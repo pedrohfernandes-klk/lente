@@ -85,7 +85,9 @@ PLANO=[
  ('P3','narrativas/oficina-arco-imprimir/',[('J','main.pg > p:not([class])'),('E','main.pg li',3)]),
  ('P3b','dar-forma-as-palavras/',[('J','.comum > p:not([class])')]),
  # 30/10/2026: Laboratório simples (pedido do docente). A prosa longa passou para o catálogo.
- ('E1','narrativas/tudo/',[('J','.p-cab > p.p-lead'),('J','.lab-saiu > p')]),
+ # 30/10/2026: o catálogo é uma lista; a prosa da entrada está em .lab-saiu.
+ # 30/10/2026: no telemóvel os percursos de cada bloco ficam dobrados; abrem-se antes de medir.
+ ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.modulo h3',17)]),
  ('E1','',[('E','a',5)]),
  ('E2','gigantes/',[('J','.p-cab p.p-lead'),('E','a.missao .s',5),('abrir','details.entrada-fontes'),('J','.entrada-fontes > p:not([class])')]),
  ('G1','narrativas/treinar/docente/',[('J','main.pg > p:not([class])')]),

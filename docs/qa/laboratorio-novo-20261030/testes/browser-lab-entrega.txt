@@ -1,0 +1,5 @@
+320 px: estado, projeção, imagens e 22 páginas sem deslocamento horizontal.
+390 px: estado, projeção, imagens e 22 páginas sem deslocamento horizontal.
+1366 px: estado, projeção, imagens e 22 páginas sem deslocamento horizontal.
+1440 px: estado, projeção, imagens e 22 páginas sem deslocamento horizontal.
+Capturas: ../laboratorio-novo/capturas

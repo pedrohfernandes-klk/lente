@@ -1,0 +1,6 @@
+cidadania/25-de-abril/index.html perguntas 8 máximo % 10.0 certa mais longa 1 [[41, 38, 40, 39], [40, 40, 42, 41], [53, 51, 53, 53], [54, 55, 54, 55], [51, 55, 50, 53], [50, 51, 51, 50], [49, 51, 49, 51], [63, 64, 62, 62]]
+sessao-03 perguntas 2 máximo % 7.69 certa mais longa 1 [[73, 68, 70], [66, 65, 70]]
+sessao-09 perguntas 2 máximo % 8.82 certa mais longa 1 [[70, 74, 68], [73, 75, 72]]
+direitos/passo-01/index.html perguntas 1 máximo % 8.0 certa mais longa 1 [[50, 54, 51]]
+direitos/passo-03/index.html perguntas 1 máximo % 3.77 certa mais longa 0 [[53, 55, 53]]
+direitos/passo-04/index.html perguntas 1 máximo % 7.55 certa mais longa 0 [[56, 53, 57]]

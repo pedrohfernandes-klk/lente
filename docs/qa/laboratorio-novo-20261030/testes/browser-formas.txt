@@ -1,0 +1,10 @@
+PASS four complete montage missions, rules, compare, reflection, print/projection privacy, persistent practice stamps, keyboard and layout at 360px
+PASS four complete montage missions, rules, compare, reflection, print/projection privacy, persistent practice stamps, keyboard and layout at 1440px
+PASS four interpretation levels, evidence, competing hypotheses, counter-reading and draft revision at 360px
+PASS four interpretation levels, evidence, competing hypotheses, counter-reading and draft revision at 1440px
+PASS source-backed reading experiments, drafts retained across filters, 10-source corpus, PT bridges, original routes and legacy progress; no browser errors
+PASS piloto: escolhas, efeitos, revisão, progresso, privacidade, papel e 320 px
+Entrada: { palavras: 493, altura: 5330 }
+PASS piloto: escolhas, efeitos, revisão, progresso, privacidade, papel e 390 px
+PASS piloto: escolhas, efeitos, revisão, progresso, privacidade, papel e 1366 px
+Capturas e PDF: C:\Users\UTILIZ~1\AppData\Local\Temp\lente-laboratorio-simples

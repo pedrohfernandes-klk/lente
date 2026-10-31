@@ -1,3 +1,4 @@
+// 30/10/2026: descrições das situações, sem recortes de IA.
 const {chromium}=require('playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 global.window={};require('../assets/formas/tres-cartas-dados.js');const D=window.LenteTresCartasDados;
@@ -6,6 +7,9 @@ const server=http.createServer((req,res)=>{let f=path.join(root,decodeURICompone
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}/narrativas/formas/tres-cartas/`;const browser=await chromium.launch();
 try{for(const width of [320,390,1366]){
  const ctx=await browser.newContext({viewport:{width,height:844},reducedMotion:'reduce'});const p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.goto(base);
+ // 30/10/2026: no primeiro cartão a continuação não se vê (continuacao.css com [hidden]); fora do percurso, volta a Criar (decisão 34).
+ assert.equal(await p.evaluate(()=>{const n=document.querySelector('.lab-fim-percurso');return n?n.getClientRects().length:-1;}),0);assert.deepEqual(await p.evaluate(()=>[...document.querySelectorAll('.lab-fim-percurso a')].map(a=>a.textContent)),['Voltar a Criar']);
+
  const snap=async name=>{if(width===390)await p.screenshot({path:path.join(out,name+'.png')});};
  await snap('01-primeiro');const firstBox=await p.locator('[data-op]').last().boundingBox();assert(firstBox.y+firstBox.height<844);assert.equal(await p.locator('meta[name=robots]').getAttribute('content'),'noindex');
  await p.evaluate(()=>localStorage.setItem('epi-corta','preservar'));
@@ -13,7 +17,7 @@ try{for(const width of [320,390,1366]){
   const card=p.locator('[data-cartao]'),id=await card.getAttribute('data-cartao'),type=await card.getAttribute('data-tipo');
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}/${id}`);
 
-  if(['sombra','horizonte','rampa'].includes(id)){const im=p.locator('#cartoes img');assert(await im.evaluate(x=>x.complete&&x.naturalWidth===512&&x.naturalHeight===512));assert(await im.getAttribute('alt'));}
+  if(['sombra','horizonte','rampa'].includes(id)){const im=p.locator('#cartoes .tc-descricao');assert((await im.innerText()).length>35);assert.equal(await p.locator('#cartoes img').count(),0);}
   if(['escolher','completar','classificar','autoavaliacao'].includes(type)){
    if(id==='ligacao')await snap('04-escolha');
    const c=D.cartoes.find(c=>c.id===id);
@@ -47,6 +51,8 @@ try{for(const width of [320,390,1366]){
   if(id==='exnoticia')break;
   await p.locator('[data-seguinte]').click();
  }
+ // 30/10/2026: terceira correção (diretor de arte): no último cartão, «Voltar a Criar» aparece uma só vez (o botão negro do motor), sem a continuação repetida.
+ assert.deepEqual(await p.evaluate(()=>[...document.querySelectorAll('a')].filter(a=>a.textContent.trim()==='Voltar a Criar'&&a.getClientRects().length).map(a=>new URL(a.href).pathname)),['/narrativas/criar/']);
  assert.match(await p.locator('#cartoes').innerText(),/CC BY-SA 4.0/);assert.equal(await p.evaluate(()=>localStorage.getItem('epi-corta')),'preservar');
  if(width===390){await p.emulateMedia({media:'print'});assert(await p.locator('.tc-print').isVisible());await p.pdf({path:path.join(out,'papel.pdf'),format:'A4',printBackground:true});await p.emulateMedia({media:'screen'});}
  const ls=await p.evaluate(()=>JSON.stringify(localStorage)),ss=await p.evaluate(()=>JSON.stringify(sessionStorage));

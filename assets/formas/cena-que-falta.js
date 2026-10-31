@@ -64,7 +64,7 @@ window.LenteCenaQueFalta={
   "H2":"Fica como estava com «O bolso» e perde apoio com «O regresso». Repara de onde vem a perda: não de nada que quem encontrou faça, mas de outra pessoa entrar na cena. É uma leitura discutível; a outra pessoa pode ter procurado na mesma.",
   "H3":"Só «O regresso» mostra que a dona deu pela falta. Com «O bolso», ela fica fora da história entre a perda e a devolução."},
  "cartao+regresso":{"principal":"H2","sintese":"As duas montagens dão uma razão para o encontro: alguém procurou, ou alguém voltou. Nenhuma prova que a outra razão não existiu.",
-  "H2":"Ganha apoio com «O cartão» e perde com «O regresso». Numa montagem, quem encontrou procura; na outra, quem perdeu volta. A devolução é a mesma imagem, mas o encontro deixa de ser obra da mesma pessoa.",
+  "H2":"Ganha apoio com «O cartão» e perde com «O regresso». Numa montagem, quem encontrou procura; na outra, quem perdeu volta. A devolução é o mesmo plano, mas o encontro deixa de ser obra da mesma pessoa.",
   "H3":"Só «O regresso» mostra a dona a procurar. Com «O cartão», ela só existe num retrato, nas mãos de outra pessoa.",
   "H4":"«O cartão» mostra a carteira aberta; «O regresso» não mostra a carteira. Uma montagem responde a esta hipótese; a outra deixa-a em aberto."}
 },
@@ -79,12 +79,12 @@ window.LenteCenaQueFalta={
  "rotulo":"Lê",
  "meta":"Corta! / montagem / cerca de 15 min",
  "texto":"Uma carteira perdida, uma carteira devolvida. Entre as duas, falta um plano.",
- "nota":"Uma cena do Lente, em desenhos e intertítulos. Não é uma adaptação de nenhuma obra.",
+ "nota":"Uma cena do Lente, em planos descritos e intertítulos. Não é uma adaptação de nenhuma obra.",
  "papel":"Também se faz sem ecrã: imprime o enunciado."
 },
 "ve":{
  "rotulo":"Vê",
- "pergunta":"Vê a sequência. Qual destas hipóteses te parece mais forte agora? Toca numa."
+ "pergunta":"Lê a sequência. Qual destas hipóteses te parece mais forte agora? Toca numa."
 },
 "escolhe":{
  "rotulo":"Escolhe",
@@ -101,14 +101,14 @@ window.LenteCenaQueFalta={
 },
 "compara":{
  "rotulo":"Compara",
- "pergunta":"As tuas duas montagens acabam na mesma imagem. Dá-lhe uma legenda em cada uma.",
+ "pergunta":"As tuas duas montagens acabam no mesmo plano. Dá-lhe uma legenda em cada uma.",
  "precisa":"Para comparar, precisas de duas montagens diferentes.",
- "difTitulo":"A mesma imagem, duas legendas.",
- "difCorpo":"Com «{p1}», legendaste «{l1}»; com «{p2}», «{l2}». A imagem não mudou: mudou o que vês no meio.",
+ "difTitulo":"O mesmo plano, duas legendas.",
+ "difCorpo":"Com «{p1}», legendaste «{l1}»; com «{p2}», «{l2}». O plano não mudou: mudou o que vês no meio.",
  "igualTitulo":"A mesma legenda nas duas.",
  "neutraTitulo":"A legenda mais prudente, nas duas.",
  "neutraCorpo":"«{l}» serve às duas montagens porque diz só o que vês: é a legenda mais prudente. As outras supõem mais, e cada uma se apoia num plano diferente. Experimenta uma delas e vê com que montagem condiz.",
- "igualCorpo":"Para ti, o plano do meio não muda o que a última imagem diz. Pode ser: «{l}» serve às duas montagens? Olha para o quadro: «{H}» mudou de uma montagem para a outra.",
+ "igualCorpo":"Para ti, o plano do meio não muda o que o último plano diz. Pode ser: «{l}» serve às duas montagens? Olha para o quadro: «{H}» mudou de uma montagem para a outra.",
  "ves":"Vês:",
  "supoesCom":"Supões, com apoio no plano do meio:",
  "supoesSem":"Supões sem apoio nesta montagem:",
@@ -125,7 +125,7 @@ window.LenteCenaQueFalta={
  "nenhumPlano":"Nenhum",
  "textos":{
   "mantenho":{"perdeu":"Manténs «{H}», embora tenha perdido apoio com «{P}». Pode fazer sentido: essa é só uma das cenas possíveis. Diz, no caderno, que plano escolhes para a tua versão.","ganhou":"Manténs «{H}», e «{G}» deu-lhe apoio. Repara que o apoio veio de um plano que tu escolheste pôr lá.","nenhum":"Manténs «{H}». Nenhum dos planos que experimentaste lhe tocou: a hipótese continua tão aberta como estava.","ambos":"Manténs «{H}»: «{G}» deu-lhe apoio e «{P}» tirou-lho. Mantê-la é escolher a montagem com «{G}»; diz, no caderno, porque te parece a mais provável."},
-  "corrijo":{"perdeu":"Corriges «{H}» depois de «{P}» lhe tirar apoio. A imagem do fim é a mesma; mudou o que vês no meio.","ambos":"Corriges «{H}»: «{P}» tirou-lhe apoio, embora «{G}» lho tenha dado. Que montagem te parece mais provável, e porquê?","ganhou":"Corriges «{H}», embora «{G}» lhe tenha dado apoio. Talvez outra montagem te pareça mais provável: qual?","nenhum":"Corriges «{H}» sem que os planos lhe tenham tocado. O que te fez mudar? Pode ter sido a comparação, e não um plano."},
+  "corrijo":{"perdeu":"Corriges «{H}» depois de «{P}» lhe tirar apoio. O plano do fim é o mesmo; mudou o que vês no meio.","ambos":"Corriges «{H}»: «{P}» tirou-lhe apoio, embora «{G}» lho tenha dado. Que montagem te parece mais provável, e porquê?","ganhou":"Corriges «{H}», embora «{G}» lhe tenha dado apoio. Talvez outra montagem te pareça mais provável: qual?","nenhum":"Corriges «{H}» sem que os planos lhe tenham tocado. O que te fez mudar? Pode ter sido a comparação, e não um plano."},
   "aberto":{"perdeu":"Deixas «{H}» em aberto: viste que um plano a pode enfraquecer. Suspender o juízo, aqui, é uma conclusão.","ganhou":"Deixas «{H}» em aberto, embora «{G}» a reforce. Um plano que apoia não é uma prova.","nenhum":"Deixas «{H}» em aberto, e nenhum plano lhe tocou. É a leitura mais prudente com o que viste.","ambos":"Deixas «{H}» em aberto: viste um plano reforçá-la e outro enfraquecê-la. Suspender o juízo, aqui, é uma conclusão."},
   "nenhuma":{"continua":"Manténs o juízo suspenso depois de veres planos que reforçam umas hipóteses e enfraquecem outras. É uma conclusão, não uma falta de resposta.","ganhou":"Escolhes agora «{H}». Repara de onde lhe veio a força: de «{G}», um plano que tu puseste no meio.","sem":"Escolhes «{H}», embora nenhum dos planos que experimentaste lhe tenha dado apoio. O que te fez escolher?"}
  },
@@ -151,7 +151,7 @@ window.LenteCenaQueFalta={
 },
 "fim":{
  "rotulo":"Para levar",
- "texto":"Um plano no meio pode mudar o que um fim quer dizer, sem mudar a imagem do fim. Vês o que um plano mostra; o resto supões. Um plano que dá apoio a uma hipótese não a prova.",
+ "texto":"Um plano no meio pode mudar o que um fim quer dizer, sem mudar o plano do fim. Vês o que um plano mostra; o resto supões. Um plano que dá apoio a uma hipótese não a prova.",
  "ligacoes":[
   {"t":"Certa manhã (Kafka) →","href":"../../formas/certa-manha/"},
   {"t":"As oito cenas literárias →","href":"../"},
@@ -159,7 +159,7 @@ window.LenteCenaQueFalta={
   {"t":"Voltar ao laboratório","href":"../../"}
  ]
 },
-"creditos":"Imagens e cena do Lente, feitas com assistência de IA, CC BY-SA 4.0. Os três planos em falta são desenhos vetoriais originais. Textos do Lente, 2026.",
+"creditos":"Cena e descrições dos planos: Lente, 2026, CC BY-SA 4.0.",
 "piloto":[
   {
     "id": "ver",
@@ -175,13 +175,13 @@ window.LenteCenaQueFalta={
       "H3",
       "H1"
     ],
-    "f": "As imagens mostram a perda e a devolução; o que aconteceu entre elas continua por descobrir.",
+    "f": "Os planos mostram a perda e a devolução; o que aconteceu entre eles continua por descobrir.",
     "fe": []
   },
   {
     "id": "montar",
     "tipo": "planos",
-    "p": "Que plano pões entre a descoberta e a devolução?",
+    "p": "Que plano pões entre a perda e a devolução?",
     "o": [
       "Guardar a carteira",
       "Procurar no cartão",
