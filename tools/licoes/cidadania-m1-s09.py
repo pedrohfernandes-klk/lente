@@ -65,6 +65,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Muitas vozes, uma escola","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"Só português no intervalo?","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"Num discurso de 2005, David Foster Wallace conta a história de dois peixes novos que não sabem o que é a água. Numa escola com muitas línguas e crenças, o que é a «água» de cada um?","p2":"Na história dos peixes de David Foster Wallace, a água é o que não se vê de tão constante. Numa escola com muitas línguas, o que é essa água?","o":["O que nos parece normal e nunca pensámos explicar.","A língua oficial que a escola usa em todas as aulas.","As regras escritas no regulamento da escola."],"c":0,"f":"A água é o que está sempre lá e por isso deixamos de ver: a nossa língua, os nossos feriados, o que comemos. Ouvir outra voz começa por dar conta da própria água.","fe":["","A língua oficial vê-se e discute-se. A água é o que nem chegamos a notar.","O regulamento está escrito e lê-se. A água é o que ninguém escreveu porque parece óbvio."]},
  {"t":"escolha","g":"direito","p":"Segundo a Constituição, que direito pode ser tocado pela regra «só português nos intervalos»?","p2":"A regra do português nos intervalos pode chocar com que direito da Constituição?",
   "o":["Não ser prejudicado por causa da língua.","Escolher a escola que se quer frequentar.","Ter um intervalo com a duração certa."],"c":0,
   "f":"O artigo 13.º, n.º 2, diz que ninguém pode ser prejudicado ou privado de qualquer direito em razão da língua. A regra não proíbe ninguém de estar na escola, mas pode prejudicar quem fala outra língua com os seus.",
@@ -115,12 +117,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s09","chave":"epi-cid-m1-s09","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s09","chave":"epi-cid-m1-s09","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 09: Muitas vozes, uma escola","h1":"Cidadania, módulo 1, sessão 09: Muitas vozes, uma escola",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s09/index.html","piloto":True,
  "seguinte":"../m1-s10/","seguinteRotulo":"Sessão 10: O que conseguimos defender?",
- "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; domínio público segundo o Wikimedia Commons, https://commons.wikimedia.org/w/index.php?curid=29801440; página e reprodução no Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, consultadas a 31/10/2026). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; domínio público segundo o Wikimedia Commons, https://commons.wikimedia.org/w/index.php?curid=29801440; página e reprodução no Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, consultadas a 31/10/2026). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados. Ler mais: David Foster Wallace, discurso no Kenyon College (21 de maio de 2005), na Etapa 1 do M1, «O que vemos» (cidadania/aula-1/).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

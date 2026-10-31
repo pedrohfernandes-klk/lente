@@ -11,7 +11,7 @@
 # - Fotografia: Lewis Hine, 1910, Library of Congress (cph.3a20286), domínio público («No known restrictions»; PDM no
 #   Commons). Página do ficheiro: https://commons.wikimedia.org/wiki/File:Addie_Card,_12_years._Spinner_in_North_Pormal_(i.e.,_Pownal)_Cotton_Mill._Vt._Girls_in_mill_say_she_is_ten_years._She_admitted_to_me_she_was_twelve;_that_she_started_during_school_vacation_LOC_cph.3a20286.jpg
 #   Registo: https://www.loc.gov/pictures/item/ncl2004001725/PP/
-# - Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust? | Sam Gregory | TED», canal oficial @TED (oEmbed, 31/10),
+# - Vídeo (até 31/10, substituído): TED, «When AI Can Fake Reality, Who Can You Trust? | Sam Gregory | TED», canal oficial @TED (oEmbed, 31/10),
 #   id Hnjr7o-HNx8, 12 min 5 s. Excerto de 0 a 47 s, marcado pela transcrição oficial do TED
 #   (https://www.ted.com/talks/sam_gregory_when_ai_can_fake_reality_who_can_you_trust/transcript): o primeiro minuto diz
 #   que bastam poucos segundos de voz e poucas imagens da cara para imitar alguém, e que fica mais fácil fabricar a
@@ -42,12 +42,15 @@ NA_AULA = (
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> O pedido de consentimento do grupo (para quê, que uso, onde fica, como se retira) e a decisão revista de uma das situações. O pedido entra no dossiê da Pergunta Humana.</p>')
 VIDEO = (
- '<p>O início de uma conferência TED de Sam Gregory, que dirige a WITNESS, uma organização que ajuda as pessoas a usar o vídeo para defender os seus direitos. É em inglês: liga as legendas no leitor.</p>'
- '<p class="pergunta-c">Segundo o orador, de quanto precisa alguém para imitar a tua voz e a tua cara? Que dois perigos vêm daí?</p>'
- '<div class="yt" data-yt="Hnjr7o-HNx8" data-ini="0" data-fim="47" data-titulo="When AI Can Fake Reality, Who Can You Trust?, TED">'
- '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «When AI Can Fake Reality, Who Can You Trust?» (excerto, 47 s)</button>'
- '<p class="yt-cred">TED, conferência de Sam Gregory (12 min 5 s; vês só o início). O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p>Uma linha para cada resposta, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>')
+ # 31/10/2026 (docente, ponto de situação): sai o excerto da TED de Sam Gregory; entra o vídeo sugerido pelo docente, do sítio
+ # oficial australiano Bullying. No Way! (bullyingnoway.gov.au liga ao canal @BullyingNoWay-ls7je; oEmbed conferido a 31/10).
+ # O conteúdo não se conseguiu ver daqui (o YouTube pede verificação de robô): a tarefa não presume nada além do título.
+ '<p>Um vídeo curto do <i>Bullying. No Way!</i>, um sítio oficial australiano contra o bullying, sobre o consentimento para partilhar imagens de outras pessoas na Internet. É em inglês: liga as legendas no leitor.</p>'
+ '<p class="pergunta-c">Enquanto vês, aponta duas coisas que o vídeo diz que se devem fazer antes de partilhar a imagem de alguém.</p>'
+ '<div class="yt" data-yt="-iA17Exw9FM" data-titulo="Be kind online: Consent to share and cyberbullying, Bullying No Way">'
+ '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Be kind online: Consent to share and cyberbullying»</button>'
+ '<p class="yt-cred">Bullying No Way, sítio oficial australiano contra o bullying. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
+ '<p>Uma linha para cada coisa, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>')
 LEVAR = (
  '<p class="levar">Aceitar ser filmado não é aceitar ser publicado.</p>'
  '<p>Nesta sessão separaste filmar, guardar e publicar, e viste que o consentimento vale para um uso. Volta à pergunta da fotografia de 1910: uma boa causa chega para tornar público o nome de uma criança? Mudou a tua resposta?</p>'
@@ -60,6 +63,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"A imagem dos outros","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"O vídeo do ensaio","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"No filme _The Truman Show_ (Peter Weir, 1998), Truman vive numa cidade que é um cenário e a vida dele passa na televisão. Toda a gente à volta sabe, menos ele. O que falta, antes de tudo, ao uso que se faz da imagem dele?","p2":"Em _The Truman Show_, a vida de Truman é filmada e transmitida sem ele saber. O que falta, antes de tudo, ao uso da imagem dele?","o":["O consentimento dele para ser filmado e mostrado.","Uma lei que proíba programas de televisão em direto.","O acordo dos atores que contracenam com ele."],"c":0,"f":"Os atores à volta de Truman aceitaram os seus papéis; ele nunca foi ouvido. É o caso da Marta levado ao limite: é a pessoa retratada que decide o uso que se dá à sua imagem (Código Civil, artigo 79.º, n.º 1).","fe":["","O problema não é haver televisão em direto, é filmar e mostrar alguém sem lhe perguntar.","Os atores aceitaram os seus papéis. Quem nunca foi ouvido foi o próprio Truman."]},
  {"t":"escolha","g":"caso","p":"No caso do ensaio, que direito da Marta pesa mais?","p2":"A Marta aceitou ser filmada para o grupo rever a cena, não para publicar. Que direito dela está em causa?",
   "o":["O direito à imagem e à reserva da vida privada.","O direito de autor do grupo sobre o vídeo.","A liberdade de criação artística da turma."],"c":0,
   "f":"A Constituição reconhece a todos o direito à imagem e à reserva da intimidade da vida privada (artigo 26.º, n.º 1). É isso que está em causa quando um vídeo da Marta sai do grupo.",
@@ -113,12 +118,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s02","chave":"epi-cid-m1-s02","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s02","chave":"epi-cid-m1-s02","versao":"2026-10-31-4",
  "marca":"CD","titulo":"Sessão 02: A imagem dos outros","h1":"Cidadania, módulo 1, sessão 02: A imagem dos outros",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s02/index.html","piloto":True,
  "seguinte":"../m1-s03/","seguinteRotulo":"Sessão 03: Quem tem lugar?",
- "fontes":"Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados.",
+ "fontes":"Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: Bullying No Way, «Be kind online: Consent to share and cyberbullying» (bullyingnoway.gov.au). Os casos são inventados. Ler mais: _The Truman Show_, filme de Peter Weir (1998), já visto no M1; não se volta a exibir.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

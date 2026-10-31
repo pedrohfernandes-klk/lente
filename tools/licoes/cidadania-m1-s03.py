@@ -59,6 +59,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Quem tem lugar?","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"A sala da mostra","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"No conto _The Egg_, de Andy Weir, um homem morre e descobre que vai viver a vida de cada pessoa que alguma vez existiu. Se soubesses que podias acordar na vida de qualquer pessoa da turma, aceitavas a mostra no primeiro andar?","p2":"Imagina, como no conto _The Egg_, que podes vir a ser qualquer pessoa da turma. A mostra no primeiro andar, sem elevador, continua a parecer-te justa?","o":["Não: posso ser o Rui, e o vídeo não é estar lá.","Sim, porque a regra é a mesma para toda a turma.","Sim: o Rui recebe o vídeo no próprio dia da mostra."],"c":0,"f":"Se pudesses ser o Rui, a regra igual no papel deixava-te de fora. É o exercício do conto: pôr-se no lugar de cada pessoa antes de chamar justa a uma regra.","fe":["","A regra é igual no papel, mas o Rui não consegue subir. Imagina-te no lugar dele: a regra ainda te parece justa?","O vídeo chega, mas o Rui fica sem a mostra, os colegas e o aplauso. Imagina-te no lugar dele."]},
  {"t":"escolha","g":"caso","p":"No caso da mostra, o que está confirmado?","p2":"Do caso da mostra, que informação é um facto e não uma suposição?",
   "o":["Não há elevador e o Rui usa cadeira de rodas.","O Rui prefere ver a mostra pelo vídeo.","A turma não quer que o Rui vá à mostra."],"c":0,
   "f":"O caso diz que a sala é no primeiro andar, sem elevador, e que o Rui usa cadeira de rodas. O que o Rui prefere, ninguém lhe perguntou; e do que a turma pensa só sabemos o que lhe disse.",
@@ -112,12 +114,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s03","chave":"epi-cid-m1-s03","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s03","chave":"epi-cid-m1-s03","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 03: Quem tem lugar?","h1":"Cidadania, módulo 1, sessão 03: Quem tem lugar?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s03/index.html","piloto":True,
  "seguinte":"../m1-s04/","seguinteRotulo":"Sessão 04: Posso dizer tudo?",
- "fontes":"Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados. Ler mais: Andy Weir, _The Egg_, conto em inglês no sítio do autor (galactanet.com/oneoff/theegg_mod.html).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')
