@@ -100,7 +100,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s01","chave":"epi-cid-m1-s01","versao":"2026-10-30-2",
  "marca":"CD","titulo":"Sessão 01: Um mapa de direitos","h1":"Cidadania, módulo 1, sessão 01: Um mapa de direitos",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"},
+ "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s01/index.html","piloto":True,
  "fontes":"Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Fotografia: Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, novembro de 1949 (Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0). Vídeo: TED-Ed, «What are the universal human rights?», lição de Benedetta Berti. Os casos são inventados.",
  "cartoes":cartoes,
