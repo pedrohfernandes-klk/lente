@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s03",
  "chave": "epi-cid-m1-s03",
- "versao": "2026-10-31-1",
+ "versao": "2026-10-31-2",
  "marca": "CD",
  "titulo": "Sessão 03: Quem tem lugar?",
  "h1": "Cidadania, módulo 1, sessão 03: Quem tem lugar?",
@@ -12,7 +12,9 @@
  },
  "saida": "cidadania/piloto/m1-s03/index.html",
  "piloto": true,
- "fontes": "Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, Sign at bus station. Rome, Georgia, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
+ "seguinte": "../m1-s04/",
+ "seguinteRotulo": "Sessão 04: Posso dizer tudo?",
+ "fontes": "Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
@@ -54,7 +56,7 @@
     5,
     6
    ],
-   "f": "Ninguém pode ser **prejudicado** nem **privado** de qualquer direito por causa da origem, do sexo, da língua ou da religião, entre outras razões. As outras palavras proíbem o contrário: privilegiar alguém ou dispensá-lo de um dever."
+   "f": "Ninguém pode ser **prejudicado** nem **privado** de qualquer direito por causa da origem, do sexo, da língua ou da religião, entre outras razões. Três outras palavras da lista proíbem o contrário: privilegiar, beneficiar ou dispensar alguém de um dever."
   },
   {
    "t": "emparelhar",
@@ -137,7 +139,7 @@
    "t": "ordenar",
    "g": "solucao",
    "p": "Põe por ordem os passos para chegar a uma solução acessível.",
-   "p2": "Que ordem seguir para resolver uma barreira na escola?",
+   "p2": "Que ordem seguir para tirar uma barreira na escola?",
    "passos": [
     "Descrever a barreira, sem culpar ninguém.",
     "Ouvir quem é afetado por ela.",
@@ -159,13 +161,13 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "Cartas de perspetiva",
-   "html": "<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, a mostra tem cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode à sexta-feira. O grupo decide, recebe uma informação nova e revê. Nos últimos 20 minutos, escolhe e delimita a pergunta da Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a pergunta do grupo.</p>"
+   "html": "<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. O grupo decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, escolhe e delimita a pergunta do grupo para a Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a pergunta do grupo.</p>"
   },
   {
    "t": "ler",
    "rot": "Ver",
    "titulo": "Um símbolo para quê?",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Adrian Treharne, sobre o símbolo internacional de acesso, o da cadeira de rodas. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"ppNYZq-hYTw\" data-titulo=\"What does this symbol actually mean?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What does this symbol actually mean?» (4 min 11 s)</button><p class=\"yt-cred\">TED-Ed, lição de Adrian Treharne. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p><p>Uma linha para cada uma, no caderno. Depois: quem mais precisa de acesso, mesmo sem cadeira de rodas?</p>"
+   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Adrian Treharne, sobre o símbolo internacional de acesso, o da cadeira de rodas. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p><div class=\"yt\" data-yt=\"ppNYZq-hYTw\" data-titulo=\"What does this symbol actually mean?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What does this symbol actually mean?» (4 min 11 s)</button><p class=\"yt-cred\">TED-Ed, lição de Adrian Treharne. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada uma, no caderno. Depois: quem mais precisa de acesso, mesmo sem cadeira de rodas?</p>"
   },
   {
    "t": "escolha",
@@ -198,7 +200,7 @@
    "t": "completar",
    "g": "efeito",
    "p": "Completa a frase sobre a mostra no primeiro andar.",
-   "p2": "Completa: o que faz uma regra igual a quem não pode subir?",
+   "p2": "Completa: que efeito tem uma regra igual para todos em quem não pode subir escadas?",
    "frase": "A regra é igual para todos, mas o efeito é [1]: quem usa cadeira de rodas fica [2].",
    "lacunas": [
     {
@@ -232,7 +234,7 @@
      "Constituição, artigo 13.º"
     ],
     [
-     "Nenhuma autoridade te pergunta a religião",
+     "Nenhuma autoridade te pode perguntar a religião",
      "Constituição, artigo 41.º"
     ],
     [
@@ -269,7 +271,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Uma regra igual para todos pode ter efeitos desiguais.</p><p>Nesta sessão viste barreiras no espaço, na informação, na decisão e no horário, e que ouvir quem é afetado faz parte da solução. Volta à placa de 1943 e à barreira que encontraste na tua escola: o que mudavas primeiro?</p><p><b>As frases da sessão</b></p><ul><li>Antes de decidir por alguém, pergunto-lhe.</li><li>Uma barreira pode estar no espaço, na informação ou no horário.</li><li>Ninguém pode ser prejudicado em razão do sexo, da língua, da origem ou da religião (artigo 13.º).</li><li>Assistir por vídeo não é o mesmo que participar.</li></ul>"
+   "html": "<p class=\"levar\">Uma regra igual para todos pode ter efeitos desiguais.</p><p>Nesta sessão viste barreiras no espaço, na informação, na decisão e no horário, e que ouvir quem é afetado faz parte da solução. Volta à placa de 1943 e à barreira que encontraste na tua escola: o que mudavas primeiro?</p><p><b>As frases da sessão</b></p><ul><li>Antes de decidir por alguém, pergunto-lhe.</li><li>Uma barreira pode estar no espaço, na informação, na decisão ou no horário.</li><li>Ninguém pode ser prejudicado em razão do sexo, da língua, da origem ou da religião (artigo 13.º).</li><li>Assistir por vídeo não é o mesmo que participar.</li></ul>"
   }
  ]
 }

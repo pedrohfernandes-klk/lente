@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s09",
  "chave": "epi-cid-m1-s09",
- "versao": "2026-10-31-1",
+ "versao": "2026-10-31-2",
  "marca": "CD",
  "titulo": "Sessão 09: Muitas vozes, uma escola",
  "h1": "Cidadania, módulo 1, sessão 09: Muitas vozes, uma escola",
@@ -12,13 +12,15 @@
  },
  "saida": "cidadania/piloto/m1-s09/index.html",
  "piloto": true,
- "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Gabinete de Documentação e Direito Comparado, https://gddc.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: fotógrafo não identificado, Italian immigrant family at Ellis Island, cerca de 1910 (Library of Congress, LC-D6-87, sem restrições conhecidas de publicação; https://www.loc.gov/item/97501656/). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
+ "seguinte": "../m1-s10/",
+ "seguinteRotulo": "Sessão 10: O que conseguimos defender?",
+ "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: fotógrafo não identificado, _Italian immigrant family at Ellis Island_, cerca de 1910 (Library of Congress, LC-D6-87, sem restrições conhecidas de publicação; https://www.loc.gov/item/97501656/). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Muitas vozes, uma escola",
-   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo, romeno e nepali. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento com outro grupo.</p>"
+   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento com outro grupo.</p>"
   },
   {
    "t": "ler",
@@ -53,15 +55,16 @@
   {
    "t": "sublinhar",
    "g": "cdc30",
-   "p": "Artigo 30.º da Convenção (a parte final): a criança de uma minoria não pode ser privada do direito de… Toca nas três palavras que protegem a língua de cada um.",
-   "p2": "No final do artigo 30.º da Convenção, que três palavras falam da língua? Toca nelas.",
+   "p": "Artigo 30.º da Convenção (a parte final): a criança de uma minoria não pode ser privada do direito de… Toca nas quatro palavras que dizem o que a criança tem o direito de fazer.",
+   "p2": "No final do artigo 30.º da Convenção, que quatro verbos dizem o que a criança pode fazer? Toca neles.",
    "frase": "ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.",
    "certas": [
-    14,
-    17,
-    18
+    0,
+    6,
+    8,
+    14
    ],
-   "f": "A Convenção protege o direito de **utilizar a sua própria língua**. Não é só ter uma língua: é poder usá-la, e é a de cada um, não a da maioria."
+   "f": "A Convenção protege quatro ações: **ter** a sua vida cultural, **professar** e **praticar** a sua religião e **utilizar** a sua própria língua. Não basta ter uma língua: é preciso poder usá-la."
   },
   {
    "t": "vf",
@@ -102,7 +105,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Um elogio que faz mal?",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Sheila Marie Orfano e Densho: um estereótipo que parece um elogio também pode fazer mal. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"aFXmyNUaXFo\" data-titulo=\"Can stereotypes ever be good?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Can stereotypes ever be good?» (5 min 52 s)</button><p class=\"yt-cred\">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">Escreve o estereótipo de que o vídeo fala, o dano que aponta e um exemplo da tua escola.</p><p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>"
+   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Sheila Marie Orfano e Densho: um estereótipo que parece um elogio também pode fazer mal. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Escreve o estereótipo de que o vídeo fala, o dano que aponta e um exemplo da tua escola.</p><div class=\"yt\" data-yt=\"aFXmyNUaXFo\" data-titulo=\"Can stereotypes ever be good?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Can stereotypes ever be good?» (5 min 52 s)</button><p class=\"yt-cred\">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>"
   },
   {
    "t": "escolha",
@@ -126,7 +129,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Uma fotografia à chegada",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/familia-ellis-island-1910.webp\" alt=\"Fotografia a preto e branco. Uma mulher de vestido claro equilibra uma grande trouxa branca na cabeça; à esquerda, uma menina segura outro embrulho; à direita, um rapaz de chapéu tem ao colo uma criança pequena. Atrás, um carrinho de bagagem e uma grade.\" loading=\"lazy\"></span><figcaption>Fotógrafo não identificado, <i>Italian immigrant family at Ellis Island</i> (título do catálogo), Nova Iorque, cerca de 1910. Library of Congress (LC-D6-87), sem restrições conhecidas de publicação (domínio público).</figcaption></figure><p>Uma família chegada à ilha de Ellis, por onde entravam os imigrantes nos Estados Unidos. O catálogo da biblioteca chama-lhe «família italiana».</p><p class=\"pergunta-c\">Se esta fosse a única imagem que conhecias de Itália, que ideia farias? O que é que a fotografia não mostra?</p><p>Responde no caderno, numa linha para cada pergunta.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/familia-ellis-island-1910.webp\" alt=\"Fotografia a preto e branco. Uma mulher de vestido claro equilibra uma grande trouxa branca na cabeça; à esquerda, uma menina segura outro embrulho; à direita, um rapaz de chapéu tem ao colo uma criança pequena. Atrás, um carrinho de bagagem e uma grade.\" loading=\"lazy\"></span><figcaption>Fotógrafo não identificado, <i>Italian immigrant family at Ellis Island</i> (título do catálogo), Nova Iorque, cerca de 1910. Library of Congress (LC-D6-87), sem restrições conhecidas de publicação, segundo a biblioteca.</figcaption></figure><p>Uma família chegada à ilha de Ellis, por onde entravam os imigrantes nos Estados Unidos. O catálogo da biblioteca chama-lhe «família italiana».</p><p class=\"pergunta-c\">Se esta fosse a única imagem que conhecesses de Itália, que ideia farias do país? O que é que a fotografia não mostra?</p><p>Responde no caderno, numa linha para cada pergunta.</p>"
   },
   {
    "t": "escolha",
@@ -153,11 +156,11 @@
    "p2": "Por que ordem respondes a um comentário que generaliza?",
    "passos": [
     "Perguntar de onde vem essa ideia.",
-    "Separar a pessoa do grupo.",
+    "Ouvir a resposta até ao fim.",
     "Dar um facto que se possa verificar.",
     "Propor outra pergunta para a conversa."
    ],
-   "f": "Perguntar primeiro abre a conversa em vez de a fechar. Depois separa-se a pessoa do grupo e traz-se um facto. No fim, uma pergunta nova evita voltar ao mesmo."
+   "f": "Perguntar primeiro abre a conversa em vez de a fechar. Depois ouve-se a resposta até ao fim, e só então se traz um facto. No fim, uma pergunta nova evita voltar ao mesmo."
   },
   {
    "t": "vf",
@@ -185,7 +188,7 @@
     "Cancelar a festa para a turma inteira."
    ],
    "c": 0,
-   "f": "Perguntar a quem é afetado e ajustar a hora ou a comida deixa a festa para todos. Ninguém tem de explicar a sua religião: basta dizer o que precisa.",
+   "f": "Perguntar a quem é afetado e ajustar a hora ou a comida deixa a festa para todos. Ninguém tem de explicar a sua religião: basta dizer aquilo de que precisa.",
    "fe": [
     "",
     "A maioria não decide sozinha sobre quem fica de fora. Uma pequena mudança pode bastar.",
@@ -254,7 +257,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ouvir outra voz não é concordar com ela: é saber o que se decide.</p><p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p><p><b>As frases da sessão</b></p><ul><li>Ninguém pode ser prejudicado pela língua ou pela religião (artigo 13.º).</li><li>Um estereótipo diz o mesmo de todos; uma pessoa é sempre mais.</li><li>Uma regra para todos tem de ser explicada a quem ela cala.</li><li>Na cena, a voz de quem discorda também tem fonte.</li></ul>"
+   "html": "<p class=\"levar\">Ouvir outra voz não é concordar com ela: é saber sobre o que se decide.</p><p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p><p><b>As frases da sessão</b></p><ul><li>Ninguém pode ser prejudicado pela língua ou pela religião (artigo 13.º).</li><li>Um estereótipo diz o mesmo de todos; uma pessoa é sempre mais.</li><li>Uma regra para todos tem de ser explicada a quem ela cala.</li><li>Na cena, a voz de quem discorda também tem fonte.</li></ul>"
   }
  ]
 }

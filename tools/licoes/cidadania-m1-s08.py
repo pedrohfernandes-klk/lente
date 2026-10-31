@@ -7,7 +7,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Quando uma decisão te afeta, a quem te diriges e como a contestas?</p>'
  '<p>Caso inventado. A passadeira em frente ao portão da escola vai desaparecer: passa a haver só um semáforo na esquina, a duzentos metros. A turma soube por um cartaz na paragem.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, descobrir quem decide a rua da escola e escrever um pedido à entidade certa.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, descobrir quem decide o que se faz na rua da escola e escrever um pedido à entidade certa.</p>')
 DECIDE = (
  '<p>A turma deve fazer uma petição contra a mudança?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -23,17 +23,17 @@ CONCEITO = (
  '<p>A petição (artigo 52.º) dirige-se a estes órgãos e a quaisquer autoridades. A Lei n.º 43/90 deixa de fora os tribunais, que têm os seus próprios caminhos.</p>')
 FOTO = (
  '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/kilburn-cartistas-1848.webp" '
- 'alt="Fotografia antiga e desbotada de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, uma carroça e um cavalo; ao fundo, uma chaminé alta e um edifício grande." loading="lazy"></span>'
+ 'alt="Fotografia antiga de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, uma carroça e um cavalo; ao fundo, uma chaminé alta e um edifício grande." loading="lazy"></span>'
  '<figcaption>William Edward Kilburn, <i>View of the Great Chartist Meeting on Kennington Common</i>, Londres, 1848, daguerreótipo. Royal Collection (RCIN 2932484), domínio público.</figcaption></figure>'
- '<p>Um comício do movimento cartista, no sul de Londres, em 1848. Os cartistas pediam reformas políticas e muita gente tinha medo deles: na véspera, havia tropas espalhadas pela cidade.</p>'
- '<p class="pergunta-c">Quem decide se o pedido desta multidão é ouvido? O que tem de ter um pedido para ser levado a sério?</p>'
+ '<p>Um comício do movimento cartista, no sul de Londres, em 1848. Os cartistas pediam reformas políticas.</p>'
+ '<p class="pergunta-c">O que tem de ter um pedido para ser levado a sério?</p>'
  '<p>Responde no caderno, numa linha.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Alex Gendler: cem habitantes de Marte votam onde construir um porto espacial. É em inglês: liga as legendas no leitor.</p>'
+ '<p class="pergunta-c">Enquanto vês, aponta as maneiras de contar os votos que o vídeo compara e o sítio que ganha com cada uma.</p>'
  '<div class="yt" data-yt="PaxVCsnox_4" data-titulo="Which voting system is the best?, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Which voting system is the best?» (5 min 33 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Alex Gendler. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p class="pergunta-c">Enquanto vês, aponta as maneiras de contar os votos que o vídeo compara e a base que ganha com cada uma.</p>'
  '<p>Uma linha para cada maneira, no caderno. Os votos são os mesmos: o que muda?</p>')
 NA_AULA = (
  '<p><b>O que se faz.</b> O mapa de quem decide. Em grupos de três, uma volta de 30 minutos ao quarteirão da escola: anotem seis coisas (passadeira, semáforo, contentor, banco, sinal, paragem) e quem acham que decide cada uma. Não se fotografam pessoas nem matrículas. Na sala, confirmam nos sítios da junta de freguesia e da câmara municipal e escrevem o pedido à entidade certa.</p>'
@@ -41,10 +41,10 @@ NA_AULA = (
  '<p><b>O que fica escrito.</b> O mapa de quem decide e um pedido de uma página: destinatário, pedido, fundamento com o artigo 52.º e assinaturas.</p>')
 LEVAR = (
  '<p class="levar">Contestar bem começa por saber quem decidiu.</p>'
- '<p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide a rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o vosso pedido que um grito não tem?</p>'
+ '<p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o vosso pedido que um grito não tem?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Uma petição tem destinatário, pedido e fundamento.</li>'
- '<li>A Assembleia da República faz leis; o Governo governa; os tribunais julgam; a câmara e a junta decidem a rua.</li>'
+ '<li>A Assembleia da República faz leis; o Governo governa; os tribunais julgam; a câmara e a junta decidem o que se faz na rua.</li>'
  '<li>O Provedor de Justiça recomenda, não decide (artigo 23.º).</li>'
  '<li>A regra de contar os votos também decide quem ganha.</li></ul>')
 
@@ -58,7 +58,7 @@ cartoes = [
  {"t":"vf","g":"peticao","p":"Qualquer cidadão pode apresentar uma petição, sozinho ou com outros, e tem direito a saber o resultado.","p2":"Uma petição pode ser individual ou coletiva, e quem a apresenta tem direito a ser informado do resultado.","v":True,
   "f":"O artigo 52.º da Constituição dá a todos os cidadãos o direito de apresentar petições, individual ou coletivamente, e de serem informados, em prazo razoável, sobre o resultado. A Lei n.º 43/90 (artigo 4.º) acrescenta que os estrangeiros que residem em Portugal também o podem fazer para defender os seus direitos.",
   "fe":"Não é preciso ser um grupo nem ter muitas assinaturas para pedir. E a resposta não é um favor: quem recebe tem de examinar e comunicar o que decidiu (Lei n.º 43/90, artigo 8.º)."},
- {"t":"ler","rot":"Conceito","titulo":"Quem decide o quê","html":CONCEITO},
+ {"t":"ler","rot":"Conceito","titulo":"Órgãos, autarquias e União Europeia","html":CONCEITO},
  {"t":"emparelhar","g":"quem","p":"Liga cada situação a quem tem de a tratar.","p2":"Em cada situação, a quem cabe decidir ou agir?",
   "pares":[["Uma lei nova sobre o ensino","Assembleia da República"],["Um conflito entre dois vizinhos que ninguém resolve","Um tribunal"],["O orçamento do município para o próximo ano","Assembleia municipal"],["Uma placa de sinalização torta numa rua municipal","Junta de freguesia"]],
   "f":"Fazer leis cabe à Assembleia da República (artigo 161.º). Resolver conflitos cabe aos tribunais (artigo 202.º). A assembleia da autarquia aprova o orçamento (artigo 237.º). A junta de freguesia conserva e repara a sinalização vertical não iluminada das vias municipais (Lei n.º 75/2013, anexo I, artigo 16.º).",
@@ -68,11 +68,11 @@ cartoes = [
   "f":"O artigo 23.º da Constituição diz que o Provedor aprecia as queixas «sem poder decisório» e dirige aos órgãos competentes as recomendações necessárias. É independente e designado pela Assembleia da República.",
   "fe":["","O Provedor não tem poder decisório: não anula decisões nem aplica multas. Recomenda a quem pode decidir.","Julgar é dos tribunais (artigo 202.º). O Provedor aprecia e recomenda."]},
  {"t":"ordenar","g":"passos","p":"Põe por ordem os passos para fazer uma petição.","p2":"Por que ordem se prepara uma petição?",
-  "passos":["Descobrir quem decide o assunto.","Escrever, em concreto, o que se pede.","Dar a razão: os factos e o artigo.","Juntar os nomes e as assinaturas.","Entregar e esperar pela resposta."],
+  "passos":["Descobrir quem decide o assunto.","Escrever, em concreto, o que se pede.","Justificar esse pedido: os factos e o artigo.","Juntar os nomes e as assinaturas.","Entregar e esperar pela resposta."],
   "f":"Sem destinatário certo, o pedido perde-se. Depois vem o pedido, a razão e as assinaturas: a Lei n.º 43/90 (artigo 9.º) pede que a petição seja escrita e assinada. Quem a recebe tem de a examinar e responder (artigo 8.º)."},
  {"t":"ler","rot":"Ver","titulo":"Uma multidão em 1848","html":FOTO},
  {"t":"escolha","g":"foto","p":"Olha outra vez para a fotografia de 1848. O que é que ela não te diz sobre o pedido daquela multidão?","p2":"Na fotografia de 1848 vê-se a multidão. Que informação sobre o pedido fica de fora?",
-  "o":["A quem se dirigia e o que pedia.","Quanta gente estava no comício.","Se havia bandeiras e palanque."],"c":0,
+  "o":["A quem se dirigia e o que pedia.","Que havia muita gente no comício.","Se havia bandeiras e palanque."],"c":0,
   "f":"A fotografia mostra a força do número, mas não diz o destinatário nem o pedido. É isso que torna um pedido possível de examinar e de responder.",
   "fe":["","Isso a fotografia mostra bem: a multidão enche o campo até ao fundo.","Vê-se um palanque ao centro e bandeiras por cima da multidão."]},
  {"t":"ler","rot":"Ver","titulo":"A regra muda","html":VIDEO},
@@ -85,16 +85,16 @@ cartoes = [
   "f":"Divide-se o número de votos de cada lista por 1, 2, 3: A dá 50, 25 e 16,7; B dá 30 e 15; C dá 20 e 10. Os três números mais altos são 50 (A), 30 (B) e 25 (A). A lista A fica com dois lugares e a B com um. A Constituição manda usar este método nas eleições para a Assembleia da República (artigo 149.º).",
   "fe":["","Com Hondt, a A não fica limitada a um lugar: o seu 25 (50 a dividir por 2) é maior do que o 20 da C.","A lista B, com 30 votos, tem um número maior do que o terceiro da A (16,7): fica com um lugar."]},
  {"t":"ler","rot":"Na aula","titulo":"O mapa de quem decide","html":NA_AULA},
- {"t":"escolha","g":"bar","p":"Caso inventado: o horário do bar da escola muda sem ninguém ouvir os alunos. A quem se dirige primeiro a reclamação?","p2":"O bar da escola passa a fechar mais cedo e ninguém ouviu os alunos. Por onde começa a reclamação?",
+ {"t":"escolha","g":"bar","p":"Caso inventado: a direção da escola muda o horário do bar sem ninguém ouvir os alunos. A quem se dirige primeiro a reclamação?","p2":"A direção da escola passa a fechar o bar mais cedo e ninguém ouviu os alunos. Por onde começa a reclamação?",
   "o":["À direção da escola, que tomou a decisão.","À Assembleia da República, que faz as leis.","Ao Provedor de Justiça, antes de tudo o mais."],"c":0,
   "f":"Uma reclamação dirige-se a quem praticou o ato ou ao seu superior (Lei n.º 43/90, artigo 2.º, n.º 3). Se a associação de estudantes a levar à direção, com o pedido e a razão, a decisão pode ser revista por quem a tomou.",
-  "fe":["","A Assembleia faz leis para o país inteiro, não decide o horário do bar de uma escola.","O Provedor aprecia queixas e recomenda, mas o primeiro passo é pedir a quem decidiu que reveja a decisão."]},
+  "fe":["","A Assembleia faz leis para o país inteiro, não decide o horário do bar de uma escola.","O Provedor aprecia queixas e recomenda, mas antes disso pede-se a quem decidiu que reveja a decisão."]},
  {"t":"vf","g":"anular","p":"O Provedor de Justiça pode anular uma decisão da câmara municipal.","p2":"Se discordar de uma decisão da câmara municipal, o Provedor de Justiça pode anulá-la.","v":False,
   "f":"O Provedor aprecia queixas «sem poder decisório» (artigo 23.º): faz recomendações aos órgãos competentes, que decidem se as seguem. Para anular uma decisão, o caminho é outro, por exemplo um tribunal.",
   "fe":"Recomendar não é decidir. O Provedor pode dizer à câmara o que deve corrigir, mas quem corrige é a câmara."},
  {"t":"completar","g":"pedido","p":"Completa a frase sobre o que tem de ter uma petição.","p2":"O que não pode faltar numa petição?",
   "frase":"Uma petição bem feita tem um [1] certo, um [2] concreto e um [3] com factos e com o artigo.",
-  "lacunas":[{"o":["destinatário","público","título"],"c":0},{"o":["pedido","protesto","desabafo"],"c":0},{"o":["fundamento","slogan","comentário"],"c":0}],
+  "lacunas":[{"o":["destinatário","remetente","formulário"],"c":0},{"o":["pedido","protesto","desabafo"],"c":0},{"o":["fundamento","lema","comentário"],"c":0}],
   "f":"Destinatário, pedido e fundamento: a quem, o quê e porquê. Sem destinatário ninguém tem de responder; sem pedido não se sabe o que decidir; sem fundamento é só uma opinião.",
   "fe":"Pensa nas três perguntas: a quem, o quê, porquê."},
  {"t":"vf","g":"europa","p":"Um cidadão da União Europeia pode apresentar uma petição ao Parlamento Europeu sobre um assunto da competência da União.","p2":"O Parlamento Europeu recebe petições de cidadãos da União sobre assuntos em que a União tem competência.","v":True,
@@ -107,11 +107,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s08","chave":"epi-cid-m1-s08","versao":"2026-10-31-1",
+ "id":"cidadania-m1-s08","chave":"epi-cid-m1-s08","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 08: Quem decide o quê?","h1":"Cidadania, módulo 1, sessão 08: Quem decide o quê?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s08/index.html","piloto":True,
- "fontes":"Constituição da República Portuguesa, artigos 23.º, 52.º, 110.º, 120.º, 149.º, 161.º, 182.º, 202.º, 235.º a 237.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Lei n.º 43/90 (exercício do direito de petição), artigos 1.º, 2.º, 4.º, 8.º e 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Lei n.º 75/2013 (regime jurídico das autarquias locais, anexo I), artigo 16.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1990&tabela=leis, lido a 31/10/2026). Tratado sobre o Funcionamento da União Europeia, artigo 227.º, segundo a página do Parlamento Europeu «O direito de petição» (https://www.europarl.europa.eu/factsheets/pt/sheet/148/o-direito-de-peticao, lida a 31/10/2026). Fotografia: William Edward Kilburn, View of the Great Chartist Meeting on Kennington Common, 1848 (Royal Collection, RCIN 2932484, domínio público; https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg). Vídeo: TED-Ed, «Which voting system is the best?», lição de Alex Gendler. Os casos são inventados.",
+ "seguinte":"../m1-s09/","seguinteRotulo":"Sessão 09: Muitas vozes, uma escola",
+ "fontes":"Constituição da República Portuguesa, artigos 23.º, 52.º, 110.º, 120.º, 149.º, 161.º, 182.º, 202.º, 235.º a 237.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Lei n.º 43/90 (exercício do direito de petição), artigos 1.º, 2.º, 4.º, 8.º e 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Lei n.º 75/2013 (regime jurídico das autarquias locais, anexo I), artigo 16.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1990&tabela=leis, lido a 31/10/2026). Tratado sobre o Funcionamento da União Europeia, artigo 227.º, segundo a página do Parlamento Europeu «O direito de petição» (https://www.europarl.europa.eu/factsheets/pt/sheet/148/o-direito-de-peticao, lida a 31/10/2026). Fotografia: William Edward Kilburn, _View of the Great Chartist Meeting on Kennington Common_, 1848 (Royal Collection, RCIN 2932484, domínio público; https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg). Vídeo: TED-Ed, «Which voting system is the best?», lição de Alex Gendler. Os casos são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

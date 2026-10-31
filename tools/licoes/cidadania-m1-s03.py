@@ -37,22 +37,22 @@ PLACA = (
  '<p class="pergunta-c">Esta regra estava escrita numa placa. Na tua escola, que barreira deixa alguém de fora sem estar escrita em lado nenhum?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, a mostra tem cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode à sexta-feira. O grupo decide, recebe uma informação nova e revê. Nos últimos 20 minutos, escolhe e delimita a pergunta da Pergunta Humana.</p>'
+ '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. O grupo decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, escolhe e delimita a pergunta do grupo para a Pergunta Humana.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a pergunta do grupo.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Adrian Treharne, sobre o símbolo internacional de acesso, o da cadeira de rodas. É em inglês: liga as legendas no leitor.</p>'
+ '<p class="pergunta-c">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p>'
  '<div class="yt" data-yt="ppNYZq-hYTw" data-titulo="What does this symbol actually mean?, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What does this symbol actually mean?» (4 min 11 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Adrian Treharne. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p class="pergunta-c">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p>'
  '<p>Uma linha para cada uma, no caderno. Depois: quem mais precisa de acesso, mesmo sem cadeira de rodas?</p>')
 LEVAR = (
  '<p class="levar">Uma regra igual para todos pode ter efeitos desiguais.</p>'
  '<p>Nesta sessão viste barreiras no espaço, na informação, na decisão e no horário, e que ouvir quem é afetado faz parte da solução. Volta à placa de 1943 e à barreira que encontraste na tua escola: o que mudavas primeiro?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Antes de decidir por alguém, pergunto-lhe.</li>'
- '<li>Uma barreira pode estar no espaço, na informação ou no horário.</li>'
+ '<li>Uma barreira pode estar no espaço, na informação, na decisão ou no horário.</li>'
  '<li>Ninguém pode ser prejudicado em razão do sexo, da língua, da origem ou da religião (artigo 13.º).</li>'
  '<li>Assistir por vídeo não é o mesmo que participar.</li></ul>')
 
@@ -64,7 +64,7 @@ cartoes = [
   "f":"O caso diz que a sala é no primeiro andar, sem elevador, e que o Rui usa cadeira de rodas. O que o Rui prefere, ninguém lhe perguntou; e do que a turma pensa só sabemos o que lhe disse.",
   "fe":["","Ninguém perguntou ao Rui o que prefere. Supor a preferência de alguém é decidir por essa pessoa.","O caso não diz o que a turma quer. Diz só o que ela propôs: mandar-lhe o vídeo."]},
  {"t":"sublinhar","g":"artigo13","p":"Constituição, artigo 13.º, n.º 2: toca nas duas palavras que dizem como alguém pode ficar a perder.","p2":"No artigo 13.º, n.º 2, que duas palavras descrevem uma perda? Toca nelas.","frase":ART13_2,"certas":[5,6],
-  "f":"Ninguém pode ser **prejudicado** nem **privado** de qualquer direito por causa da origem, do sexo, da língua ou da religião, entre outras razões. As outras palavras proíbem o contrário: privilegiar alguém ou dispensá-lo de um dever."},
+  "f":"Ninguém pode ser **prejudicado** nem **privado** de qualquer direito por causa da origem, do sexo, da língua ou da religião, entre outras razões. Três outras palavras da lista proíbem o contrário: privilegiar, beneficiar ou dispensar alguém de um dever."},
  {"t":"emparelhar","g":"barreiras","p":"Liga cada barreira ao sítio onde ela está.","p2":"Onde está cada uma destas barreiras?",
   "pares":[["Três degraus à entrada da sala","No espaço"],["Um debate só falado, sem nada escrito","Na informação"],["Uma reunião marcada sem ouvir ninguém","Na decisão"],["Uma mostra à sexta-feira às 21 horas","No horário"]],
   "f":"Uma barreira pode estar no espaço (degraus), na informação (só falado), na forma de decidir (sem ouvir ninguém) ou no horário. Encontrá-la é o primeiro passo para a tirar.",
@@ -81,7 +81,7 @@ cartoes = [
   "o":["Na placa, a exclusão está escrita na regra.","Na placa, a exclusão era só uma sugestão.","Na escada, a exclusão foi feita de propósito."],"c":0,
   "f":"A placa diz por escrito quem vai para onde: a discriminação está na própria regra. Na mostra, ninguém escreveu que o Rui não pode ir; a barreira está no espaço e na decisão de não mudar.",
   "fe":["","A placa não sugere: aponta uma sala separada pela cor da pele.","Nada no caso diz que a turma escolheu o primeiro andar para afastar o Rui. Uma barreira pode deixar alguém de fora sem que ninguém o queira."]},
- {"t":"ordenar","g":"solucao","p":"Põe por ordem os passos para chegar a uma solução acessível.","p2":"Que ordem seguir para resolver uma barreira na escola?",
+ {"t":"ordenar","g":"solucao","p":"Põe por ordem os passos para chegar a uma solução acessível.","p2":"Que ordem seguir para tirar uma barreira na escola?",
   "passos":["Descrever a barreira, sem culpar ninguém.","Ouvir quem é afetado por ela.","Comparar soluções e quanto custam.","Decidir e explicar a decisão a todos."],
   "f":"Descrever, ouvir, comparar, decidir. Ouvir quem é afetado vem antes de escolher a solução: senão, decide-se por essa pessoa."},
  {"t":"vf","g":"convencao","p":"A Convenção sobre os Direitos da Criança fala da participação ativa das crianças com deficiência na vida da comunidade.","p2":"Segundo a Convenção sobre os Direitos da Criança, uma criança com deficiência tem direito a participar ativamente na vida da comunidade.","v":True,
@@ -96,13 +96,13 @@ cartoes = [
  {"t":"vf","g":"transmitir","p":"Transmitir a mostra por vídeo resolve sempre a participação de quem não pode subir as escadas.","p2":"Com uma transmissão em vídeo, quem não pode subir participa na mostra como os outros.","v":False,
   "f":"Ver por vídeo é assistir. Participar inclui estar, intervir no debate e ser ouvido. Uma transmissão pode ajudar, mas não substitui uma sala acessível.",
   "fe":"Lembra-te do que o Rui disse: não quer ver a mostra, quer estar nela e falar no debate."},
- {"t":"completar","g":"efeito","p":"Completa a frase sobre a mostra no primeiro andar.","p2":"Completa: o que faz uma regra igual a quem não pode subir?",
+ {"t":"completar","g":"efeito","p":"Completa a frase sobre a mostra no primeiro andar.","p2":"Completa: que efeito tem uma regra igual para todos em quem não pode subir escadas?",
   "frase":"A regra é igual para todos, mas o efeito é [1]: quem usa cadeira de rodas fica [2].",
   "lacunas":[{"o":["desigual","igual","nenhum"],"c":0},{"o":["de fora","à frente","na mesma"],"c":0}],
   "f":"A regra é igual para todos, mas o efeito é **desigual**: quem usa cadeira de rodas fica **de fora**. Por isso se olha para o efeito de uma regra, não só para o que ela diz.",
   "fe":"Pensa no que acontece ao Rui no dia da mostra."},
  {"t":"emparelhar","g":"artigos","p":"Liga cada ideia ao artigo onde está escrita.","p2":"Em que artigo está escrita cada uma destas ideias?",
-  "pares":[["Todos são iguais perante a lei","Constituição, artigo 13.º"],["Nenhuma autoridade te pergunta a religião","Constituição, artigo 41.º"],["A criança com deficiência participa na comunidade","Convenção, artigo 23.º"],["Os direitos valem para todas as crianças, sem discriminação","Convenção, artigo 2.º"]],
+  "pares":[["Todos são iguais perante a lei","Constituição, artigo 13.º"],["Nenhuma autoridade te pode perguntar a religião","Constituição, artigo 41.º"],["A criança com deficiência participa na comunidade","Convenção, artigo 23.º"],["Os direitos valem para todas as crianças, sem discriminação","Convenção, artigo 2.º"]],
   "f":"A Constituição diz que todos são iguais perante a lei (13.º, n.º 1) e que nenhuma autoridade te pode perguntar a religião, salvo para estatísticas sem identificação (41.º, n.º 3). A Convenção garante os direitos a todas as crianças sem discriminação (2.º) e a participação ativa da criança com deficiência (23.º).",
   "fe":"Repara em quem é protegido: todos os cidadãos (Constituição) ou as crianças (Convenção)."},
  {"t":"escolha","g":"pergunta","p":"Qual das perguntas pode o grupo investigar na escola e no bairro, até ao fim do módulo?","p2":"Para a Pergunta Humana, que pergunta pode o grupo investigar com fontes e testemunhos?",
@@ -112,11 +112,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s03","chave":"epi-cid-m1-s03","versao":"2026-10-31-1",
+ "id":"cidadania-m1-s03","chave":"epi-cid-m1-s03","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 03: Quem tem lugar?","h1":"Cidadania, módulo 1, sessão 03: Quem tem lugar?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s03/index.html","piloto":True,
- "fontes":"Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, Sign at bus station. Rome, Georgia, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
+ "seguinte":"../m1-s04/","seguinteRotulo":"Sessão 04: Posso dizer tudo?",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

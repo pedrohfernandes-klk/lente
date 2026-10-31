@@ -49,7 +49,12 @@ class CidadaniaPiloto(unittest.TestCase):
             self.assertIn(re.search(r'<p class="pergunta-c">(.*?)</p>', d['cartoes'][0]['html']).group(1), s)
             self.assertEqual(d['modulo']['url'], G.LENTE + 'cidadania/piloto/m1/', 'a lição volta à página do módulo piloto')
         # só as sessões: o estado escreve-se por extenso (legível sem cor), Começar ou Continuar, e o guia do docente
-        self.assertEqual(s.count('data-estado>por fazer<'), 10)
+        # 30/10/2026: revisão do diretor de arte (sistema «Cartaz»): «por fazer» nunca se escreve; o estado começa vazio e o
+        # script escreve «Feita dd/mm» (a partir de st.t) ou «A seguir» (a próxima por fazer, com a classe seguir).
+        self.assertEqual(s.count('data-estado></span>'), 10)
+        self.assertNotIn('por fazer', re.sub(r'<script\b.*?</script>', '', s, flags=re.S))
+        self.assertIn('"Feita"', s); self.assertIn('li.classList.add("seguir")', s); self.assertIn('"A seguir"', s)
+        self.assertIn('<section class="proximo"', s)
         self.assertIn('data-continuar href="../m1-s01/">Começar: Sessão 01', s)
         self.assertIn('"Continuar: Sessão "', s)
         self.assertIn('<a href="docente/">Guia do docente</a>', s)

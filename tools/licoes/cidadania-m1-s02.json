@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s02",
  "chave": "epi-cid-m1-s02",
- "versao": "2026-10-31-1",
+ "versao": "2026-10-31-2",
  "marca": "CD",
  "titulo": "Sessão 02: A imagem dos outros",
  "h1": "Cidadania, módulo 1, sessão 02: A imagem dos outros",
@@ -12,7 +12,9 @@
  },
  "saida": "cidadania/piloto/m1-s02/index.html",
  "piloto": true,
- "fontes": "Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt., 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados.",
+ "seguinte": "../m1-s03/",
+ "seguinteRotulo": "Sessão 03: Quem tem lugar?",
+ "fontes": "Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
@@ -30,7 +32,7 @@
    "t": "escolha",
    "g": "caso",
    "p": "No caso do ensaio, que direito da Marta pesa mais?",
-   "p2": "A Marta aceitou ser filmada, mas não sabe que o vídeo vai ser publicado. Que direito dela está em causa?",
+   "p2": "A Marta aceitou ser filmada para o grupo rever a cena, não para publicar. Que direito dela está em causa?",
    "o": [
     "O direito à imagem e à reserva da vida privada.",
     "O direito de autor do grupo sobre o vídeo.",
@@ -73,19 +75,19 @@
    "p2": "A que parte de um pedido de consentimento responde cada pergunta da Marta?",
    "pares": [
     [
-     "«Para que é o vídeo?»",
+     "Para que é o vídeo?",
      "Para quê"
     ],
     [
-     "«Vai aparecer onde, e quem o vê?»",
+     "Vai aparecer onde, e quem o vê?",
      "Que uso"
     ],
     [
-     "«Até quando fica guardado?»",
+     "Até quando fica guardado?",
      "Onde fica e até quando"
     ],
     [
-     "«E se eu mudar de ideias?»",
+     "E se eu mudar de ideias?",
      "Como se retira"
     ]
    ],
@@ -98,7 +100,7 @@
    "p": "A escola diz que o vídeo da queda tem fins didáticos. Isso chega para o publicar sem perguntar à Marta?",
    "p2": "«É para fins didáticos», diz a escola. Pode então publicar o vídeo da queda sem a Marta concordar?",
    "o": [
-    "Não, se a imagem expuser a Marta ao ridículo.",
+    "Não: a queda pode ferir o decoro da Marta.",
     "Sim, porque os fins didáticos valem sempre.",
     "Sim, porque a conta pertence à escola."
    ],
@@ -127,7 +129,7 @@
    "passos": [
     "Ver quem aparece e se é reconhecível.",
     "Perguntar a cada pessoa se aceita aquele uso.",
-    "Mostrar a versão final a quem aparece.",
+    "Mostrar a versão final a quem disse que sim.",
     "Guardar a resposta e publicar só o que foi aceite."
    ],
    "f": "Primeiro saber quem aparece; depois pedir para aquele uso; depois mostrar o que vai sair; no fim, guardar a resposta. Assim, quem aparece decide antes, e não depois de ver o vídeo publicado."
@@ -136,7 +138,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Uma fotografia de 1910",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/hine-addie-card-1910.webp\" alt=\"Uma rapariga descalça, de vestido e avental, está de pé numa fábrica, entre duas filas de máquinas de fiar cheias de bobinas, e olha de frente para a câmara.\" loading=\"lazy\"></span><figcaption>Lewis Hine, <i>Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt.</i>, 1910. Library of Congress, National Child Labor Committee Collection. Domínio público.</figcaption></figure><p>Nos arquivos do National Child Labor Committee, a legenda desta fotografia dá o nome da rapariga, a idade e a fábrica onde trabalhava.</p><p class=\"pergunta-c\">O que acrescenta a legenda ao que se vê? A Addie podia recusar? Um fim bom chega para mostrar o nome?</p><p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/hine-addie-card-1910.webp\" alt=\"Uma rapariga descalça, de vestido e avental, está de pé numa fábrica, entre duas filas de máquinas de fiar cheias de bobinas, e olha de frente para a câmara.\" loading=\"lazy\"></span><figcaption>Lewis Hine, <i>Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt.</i>, 1910. Library of Congress, National Child Labor Committee Collection. Domínio público.</figcaption></figure><p>Nos arquivos do National Child Labor Committee, a legenda desta fotografia dá o nome da rapariga, a idade e a fábrica onde trabalhava.</p><p class=\"pergunta-c\">A legenda dá o nome e a idade da Addie. Uma boa causa chega para tornar público o nome de uma criança?</p><p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>"
   },
   {
    "t": "escolha",
@@ -160,13 +162,13 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "Decidir e voltar a decidir",
-   "html": "<p><b>O que se faz.</b> Em grupos de três, quatro situações em papel: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, o grupo decide, lê o efeito, recebe uma informação nova e revê a decisão. No fim, escreve o pedido de consentimento para as entrevistas da Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O pedido de consentimento do grupo (para quê, que uso, onde fica, como se retira) e a decisão revista de uma das situações. O pedido entra no dossiê da Pergunta Humana.</p>"
+   "html": "<p><b>O que se faz.</b> Em grupos de três, quatro situações em papel: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, o grupo decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, escreve o pedido de consentimento para as entrevistas da Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O pedido de consentimento do grupo (para quê, que uso, onde fica, como se retira) e a decisão revista de uma das situações. O pedido entra no dossiê da Pergunta Humana.</p>"
   },
   {
    "t": "ler",
    "rot": "Ver",
    "titulo": "Uma cara que se imita",
-   "html": "<p>O início de uma conferência TED de Sam Gregory, que dirige a WITNESS, uma organização que ajuda as pessoas a usar o vídeo para defender os seus direitos. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"Hnjr7o-HNx8\" data-ini=\"0\" data-fim=\"47\" data-titulo=\"When AI Can Fake Reality, Who Can You Trust?, TED\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «When AI Can Fake Reality, Who Can You Trust?» (excerto, 47 s)</button><p class=\"yt-cred\">TED, conferência de Sam Gregory (12 min 5 s; vês só o início). O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">Segundo o orador, de quanto precisa alguém para imitar a tua voz e a tua cara? Que dois perigos vêm daí?</p><p>Uma linha para cada resposta, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>"
+   "html": "<p>O início de uma conferência TED de Sam Gregory, que dirige a WITNESS, uma organização que ajuda as pessoas a usar o vídeo para defender os seus direitos. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Segundo o orador, de quanto precisa alguém para imitar a tua voz e a tua cara? Que dois perigos vêm daí?</p><div class=\"yt\" data-yt=\"Hnjr7o-HNx8\" data-ini=\"0\" data-fim=\"47\" data-titulo=\"When AI Can Fake Reality, Who Can You Trust?, TED\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «When AI Can Fake Reality, Who Can You Trust?» (excerto, 47 s)</button><p class=\"yt-cred\">TED, conferência de Sam Gregory (12 min 5 s; vês só o início). O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada resposta, no caderno. Depois: o que muda isto na decisão sobre o vídeo da Marta?</p>"
   },
   {
    "t": "escolha",
@@ -179,10 +181,10 @@
     "Publicar, mas sem dizer onde a fotografia foi tirada."
    ],
    "c": 0,
-   "f": "O Código Civil dispensa o consentimento quando a imagem vem enquadrada na de lugares públicos (artigo 79.º, n.º 2). Uma pessoa em primeiro plano já não é parte da rua: é o assunto da fotografia. Perguntar resolve; tirá-la do centro também.",
+   "f": "O Código Civil dispensa o consentimento quando a imagem vem enquadrada na de lugares públicos (artigo 79.º, n.º 2). Uma pessoa em primeiro plano, bem reconhecível, dificilmente está só enquadrada na rua: passa a ser o assunto da fotografia. Perguntar resolve; tirá-la do centro também.",
    "fe": [
     "",
-    "Estar na rua não é aceitar tudo. A lei dispensa o consentimento quando a pessoa aparece enquadrada no lugar, não quando é o assunto da imagem.",
+    "Estar na rua não é aceitar tudo: a exceção da lei fala de imagens enquadradas num lugar público, e aqui a pessoa é o centro da imagem.",
     "Esconder o sítio não esconde a pessoa: continua reconhecível."
    ]
   },
@@ -192,7 +194,7 @@
    "p": "Se a Marta pedir para tirar o vídeo depois de publicado, o grupo já não tem de fazer nada.",
    "p2": "Depois de o vídeo estar publicado, o pedido da Marta para o retirar já não obriga o grupo a nada.",
    "v": false,
-   "f": "Aceitar limitar um direito de personalidade, como o direito à imagem, é sempre revogável (Código Civil, artigo 81.º, n.º 2). Se a Marta já não aceita, o grupo tem de a ouvir e tirar o vídeo.",
+   "f": "Quem aceita limitar um direito de personalidade, como o direito à imagem, pode sempre voltar atrás (Código Civil, artigo 81.º, n.º 2). Se a Marta já não aceita, o grupo tem de a ouvir e tirar o vídeo.",
    "fe": "Publicar não apaga o direito à imagem. A Marta pode retirar o sim que deu, mesmo depois."
   },
   {
@@ -255,19 +257,19 @@
    "p2": "Que parte do pedido de consentimento cumpre cada uma destas frases?",
    "pares": [
     [
-     "«A entrevista serve para o nosso teatro-documento.»",
+     "A entrevista serve para o nosso teatro-documento.",
      "Para quê"
     ],
     [
-     "«Só usamos a tua voz, sem mostrar a cara.»",
+     "Só usamos a tua voz, sem mostrar a cara.",
      "Que uso"
     ],
     [
-     "«A gravação fica no computador da escola até julho.»",
+     "A gravação fica no computador da escola até julho.",
      "Onde fica e até quando"
     ],
     [
-     "«Podes desistir até ao dia do ensaio.»",
+     "Podes desistir até ao dia do ensaio.",
      "Como se retira"
     ]
    ],
@@ -278,7 +280,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Aceitar ser filmado não é aceitar ser publicado.</p><p>Nesta sessão separaste filmar, guardar e publicar, e viste que o consentimento vale para um uso. Volta à pergunta da fotografia de 1910: um fim bom chega para mostrar o nome? Mudou a tua resposta?</p><p><b>As frases da sessão</b></p><ul><li>O consentimento é para um uso, não para todos.</li><li>Posso retirar o consentimento; quem publicou tem de me ouvir.</li><li>Fins didáticos não autorizam expor alguém ao ridículo.</li><li>Antes de partilhar, pergunto a quem aparece.</li></ul>"
+   "html": "<p class=\"levar\">Aceitar ser filmado não é aceitar ser publicado.</p><p>Nesta sessão separaste filmar, guardar e publicar, e viste que o consentimento vale para um uso. Volta à pergunta da fotografia de 1910: uma boa causa chega para tornar público o nome de uma criança? Mudou a tua resposta?</p><p><b>As frases da sessão</b></p><ul><li>O consentimento é para um uso, não para todos.</li><li>Posso retirar o consentimento; quem publicou tem de me ouvir.</li><li>Fins didáticos não autorizam expor alguém ao ridículo.</li><li>Antes de partilhar, pergunto a quem aparece.</li></ul>"
   }
  ]
 }

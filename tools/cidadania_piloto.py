@@ -2,7 +2,7 @@
 
 Escreve três páginas escondidas dos motores de busca, a partir das lições em tools/licoes/cidadania-m1-sNN.json:
 - cidadania/piloto/m1/index.html: a página do módulo, só com as 10 sessões, numeradas, com o título, a pergunta, o
-  estado de cada uma (por fazer, feita) e «Começar» ou «Continuar». O estado lê-se das chaves epi-cid-m1-s01 a s10,
+  estado de cada uma («Feita dd/mm» ou «A seguir»; 31/10: «por fazer» não se escreve) e «Começar» ou «Continuar». O estado lê-se das chaves epi-cid-m1-s01 a s10,
   no formato que o motor grava (assets/licoes/jogo.js, função fim(): «lida» fica true no fim da lição e «versao» é a
   da lição; com outra versão, o motor recomeça, por isso a página também não a conta como feita);
 - cidadania/piloto/m1/docente/index.html: o guia do docente, uma secção por sessão, a partir do plano da coordenação
@@ -51,7 +51,7 @@ def sessoes():
 
 
 # O que só o docente lê. Tempos em minutos; o «Na aula» soma 60 a 75 minutos, com os 10 da pausa.
-# A grelha /20 de cada sessão é a do plano (por mim na sessão 01, que o plano não tinha); diz-se sempre indicativa (decisão 17).
+# A grelha /20 de cada sessão é a do plano (proposta da equipa na sessão 01, que o plano não tinha); diz-se sempre indicativa (decisão 17).
 GUIA = {
  '01': {
   'dominio': 'Direitos Humanos: a Declaração Universal, a Convenção sobre os Direitos da Criança e a Constituição.',
@@ -70,7 +70,7 @@ GUIA = {
   'projeto': ('Apresentação', '#pergunta-resposta', 'Nos últimos cinco minutos, apresentar a Pergunta Humana: um teatro-documento de 5 a 8 minutos, feito a partir de uma pergunta do grupo, que se escolhe na sessão 03.'),
   'produto': 'Mapa de direitos (por grupo)',
   'grelha': [('Situações descritas sem adjetivos nem nomes de colegas', 4), ('Artigo certo para cada situação', 5), ('Um choque de direitos identificado e pesado no caso', 4), ('Variedade de sítios e de direitos (espaço, regras, redes, turma)', 3), ('Leitura à turma e resposta às perguntas', 4)],
-  'notas': ['Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: por mim (o plano não a tinha); para rever.'],
+  'notas': ['Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
  },
  '02': {
   'dominio': 'Direitos Humanos (imagem, reserva da vida privada, consentimento); Media.',
@@ -87,22 +87,22 @@ GUIA = {
   'projeto': ('Ética das entrevistas', '', 'O pedido de consentimento entra no dossiê da Pergunta Humana; a página do projeto diz o que fazer com menores (autorização do encarregado de educação), com o anonimato e com quem desiste.'),
   'produto': 'Pedido de consentimento',
   'grelha': [('Finalidade dita em palavras simples', 4), ('Uso, sítio e prazo', 4), ('Direito a recusar e a retirar, com contacto', 4), ('Cuidado com terceiros e com menores (encarregado de educação)', 4), ('Decisão revista de uma situação, com o artigo certo', 4)],
-  'notas': ['Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.'],
+  'notas': ['Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.', 'O excerto refere imagens sexuais falsificadas (entre os 25 e os 34 s): ver antes e decidir se se mostra.'],
  },
  '03': {
   'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
   'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais e que ouvir quem é afetado faz parte da solução.',
   'passos': [
-   (5, 'Grupos de quatro. Cada pessoa tira uma carta (o Rui, a organização, quem orienta a mostra, quem só pode à sexta-feira); cada grupo recebe cinco unidades.'),
+   (5, 'Grupos de quatro. Cada pessoa tira uma carta (o Rui, a organização, quem orienta a mostra, quem só pode ir à sexta-feira); cada grupo recebe cinco unidades.'),
    (15, 'Cada pessoa defende a sua carta durante dois minutos; o grupo gasta as cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma.'),
    (5, 'O docente lê a informação nova (por exemplo: a sala do rés do chão tem menos lugares) e o grupo revê.'),
    (10, 'Pausa.'),
    (10, 'A proposta à direção, em cinco linhas: barreira, quem afeta, medida, custo, quem foi ouvido.'),
-   (20, 'A pergunta da Pergunta Humana: cada grupo escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
+   (20, 'A pergunta do grupo para a Pergunta Humana: cada grupo escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
   ],
   'materiais': ['Cartas de perspetiva, quatro por grupo.', 'Cinco unidades por grupo (clipes ou papéis) e a tabela dos custos.', 'O modelo da proposta à direção.', 'A secção «Uma boa pergunta» da página do projeto.'],
   'escrito': 'A proposta à direção em cinco linhas e a pergunta do grupo.',
-  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada grupo escolhe e delimita a pergunta da Pergunta Humana.'),
+  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada grupo escolhe e delimita a pergunta do grupo para a Pergunta Humana.'),
   'produto': 'Proposta à direção e pergunta',
   'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta do grupo delimitada e investigável', 4)],
   'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
@@ -146,14 +146,14 @@ GUIA = {
   'dominio': 'Democracia e Instituições Políticas (regras coletivas, ética e integridade, conflito de interesses); Direitos Humanos (igualdade).',
   'ensina': 'Comparar critérios de repartir, separar o resultado dos limites e ver o que muda quando quem decide ganha com a decisão.',
   'passos': [
-   (5, 'O problema no quadro: seis sessões de câmara para três grupos. Listar os critérios: igualdade, necessidade, ordem de inscrição, sorteio, outro.'),
+   (5, 'O problema no quadro: seis turnos de filmagem para três grupos. Listar os critérios: igualdade, necessidade, ordem de inscrição, sorteio, outro.'),
    (10, 'Cada grupo escolhe a regra e escreve-a numa frase, sem saber o lugar que lhe vai calhar.'),
-   (5, 'Cada grupo tira uma carta com o lugar (A, B ou C) e a situação desse lugar (por exemplo: o grupo C perdeu uma sessão porque o material não chegou).'),
+   (5, 'Cada grupo tira uma carta com o lugar (A, B ou C) e a situação desse lugar (por exemplo: o grupo C perdeu um turno porque o material não chegou).'),
    (10, 'Aplicar a regra. Quem perde apresenta a objeção em dois minutos; o grupo responde ou revê.'),
    (10, 'Pausa.'),
    (25, 'A mesma pergunta para o teatro-documento: como se repartem as falas e o tempo de cena. A regra do grupo e o primeiro esboço do guião (quem fala, quanto tempo, com que fonte).'),
   ],
-  'materiais': ['Cartas A, B e C, com a situação de cada lugar.', 'O quadro das seis sessões.', 'Papel para o esboço do guião.'],
+  'materiais': ['Cartas A, B e C, com a situação de cada lugar.', 'O quadro dos seis turnos.', 'Papel para o esboço do guião.'],
   'escrito': 'A regra final, quem perde com ela e porque a aceitaria mesmo assim; a regra do grupo para as falas, com o primeiro esboço do guião.',
   'projeto': ('O guião, em esboço', '#metodo', 'A regra do grupo para repartir falas e tempo de cena e o primeiro esboço do guião entram no dossiê.'),
   'produto': 'Regra e esboço',
@@ -181,7 +181,7 @@ GUIA = {
  },
  '08': {
   'dominio': 'Democracia e Instituições Políticas (órgãos de soberania, autarquias, União Europeia, eleições, petição, Provedor de Justiça).',
-  'ensina': 'Distinguir quem faz as leis, quem governa, quem julga e quem decide a rua, e escrever um pedido com destinatário e fundamento.',
+  'ensina': 'Distinguir quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escrever um pedido com destinatário e fundamento.',
   'passos': [
    (5, 'Grupos de três. As regras da volta (em aula, com o docente, sem fotografar pessoas nem matrículas) e a grelha das seis coisas.'),
    (30, 'A volta ao quarteirão: passadeira, semáforo, contentor, banco, sinal, paragem; ao lado de cada uma, quem acham que decide.'),
@@ -212,7 +212,7 @@ GUIA = {
   'projeto': ('O ensaio', '#av-teatro', 'O ensaio cruzado do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
   'produto': 'Ensaio',
   'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia de Sherman não se conseguiu descarregar (429 e bloqueio a robôs da Biblioteca Pública de Nova Iorque, sem insistir); entrou uma fotografia da Library of Congress (LC-D6-87).', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia de Sherman não se conseguiu descarregar (429 e bloqueio a robôs da Biblioteca Pública de Nova Iorque, sem insistir); entrou uma fotografia da Library of Congress (LC-D6-87).', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.', 'Para rever: a fotografia pode ser a de Lewis Hine, Italian Family Seeking Lost Luggage, Ellis Island, 1905 (Metropolitan Museum of Art, 285814). Comparar com a imagem do Met ou da George Eastman Museum: se coincidir, a tabela passa a Lewis Hine, 1905, domínio público; até lá, diz só «sem restrições conhecidas de publicação».'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
@@ -234,26 +234,26 @@ GUIA = {
  },
 }
 
-# Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta do plano, por mim; para rever).
+# Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta da equipa a partir do plano, para o docente rever).
 # 8 de escolha (1 ponto cada) e 2 curtas escritas (0 a 2): máximo 12.
 PONTO = [
  ('01', 'Uma fotografia tua, a dormir no autocarro, aparece no grupo da turma sem te perguntarem. Que direito está em causa em primeiro lugar?',
   ['a reserva da vida privada e a imagem', 'a liberdade de reunião no intervalo', 'o acesso gratuito ao ensino obrigatório'], 0),
  ('01', 'A Declaração Universal dos Direitos Humanos é…',
-  ['uma lei aprovada pela Assembleia da República', 'uma declaração das Nações Unidas que a Constituição manda ler', 'um tratado que só obriga os países que o assinaram em 1948'], 1),
+  ['uma lei aprovada pela Assembleia da República', 'uma declaração das Nações Unidas, não uma lei', 'um tratado que obriga só quem o assinou em 1948'], 1),
  ('02', 'A Marta aceitou ser filmada no ensaio para o grupo rever a cena. Para publicar o vídeo na conta da escola…',
-  ['não é preciso pedir mais nada à Marta', 'é preciso pedir-lhe autorização para esse uso', 'basta cortar as partes em que a Marta cai'], 1),
+  ['já não é preciso pedir mais nada à Marta', 'é preciso pedir-lhe consentimento para esse uso', 'basta cortar as partes em que a Marta cai'], 1),
  ('03', 'Que situação mostra uma regra igual para todos que deixa alguém de fora?',
   ['a mostra é aberta a todos, num primeiro andar sem elevador', 'a mostra só aceita os alunos do 10.º A, por ser deles', 'a mostra é gratuita para todas as turmas da escola'], 0),
  ('04', 'Que frase é uma acusação de facto, que tem de ser provada?',
-  ['«A comida da cantina é má.»', '«O Diogo roubou dinheiro do bar.»', '«O diretor parece uma pera.»'], 1),
+  ['A comida da cantina é má.', 'O Diogo roubou dinheiro do bar.', 'O diretor parece uma pera.'], 1),
  ('05', 'Numa escola, onde podem estar câmaras de videovigilância?',
   ['no interior das salas de aula', 'nos acessos e no perímetro exterior', 'em qualquer sítio, se houver furtos'], 1),
  ('07', 'Uma captura de ecrã mostra o nome do Tomás ao lado de um vídeo. O que se pode dizer com segurança?',
   ['que foi o Tomás que publicou o vídeo', 'que o nome do Tomás aparece na captura', 'que o Tomás está a mentir à turma'], 1),
- ('08', 'A passadeira em frente à escola vai desaparecer. Que forma de contestar usa um direito escrito na Constituição?',
+ ('08', 'A passadeira em frente à escola vai desaparecer. Que forma de contestar obriga quem decide a examinar o pedido e a responder?',
   ['uma petição à câmara, com o pedido e a razão', 'um comentário anónimo numa rede social', 'esperar pelas próximas eleições autárquicas'], 0),
- ('06', 'Há seis sessões de câmara para três grupos. Escreve uma regra para as repartir e diz quem perde com ela.', None, None),
+ ('06', 'Há seis turnos de filmagem para três grupos. Escreve uma regra para as repartir e diz quem perde com ela.', None, None),
  ('03 e 09', 'Nos intervalos, a escola quer que se fale só português. Quem fica de fora desta regra, e que pergunta farias antes de decidir?', None, None),
 ]
 COTACAO_ESCRITA = {
@@ -270,26 +270,42 @@ CSS = (TOKENS +
  '.cid-piloto .migalhas{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:.9rem;margin:0 0 20px}'
  '.cid-piloto .migalhas a{color:inherit}'
  '.cid-piloto .marca{font:400 1rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;letter-spacing:.06em;margin:0 0 4px}'
- '.cid-piloto h1{font:400 clamp(2.4rem,9vw,3.6rem)/.95 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:0 0 10px;letter-spacing:.01em}'
+ '.cid-piloto h1{font:700 clamp(2.4rem,9vw,3.6rem)/.95 Arial,Helvetica,sans-serif;margin:0 0 10px;letter-spacing:-.05em}'
+ '.cid-piloto h1,.cid-piloto h2,.cid-piloto h3{text-wrap:balance}'
+ '.cid-piloto a{color:inherit;text-underline-offset:.15em}'
  '.cid-piloto h2{font:700 1.25rem/1.25 Arial,Helvetica,sans-serif;margin:32px 0 10px}'
  '.cid-piloto h3{font:700 1rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
  '.cid-piloto .lead{font-size:1.05rem;margin:0 0 18px;max-width:38em}'
  '.cid-piloto .aviso-piloto{font-size:.9rem;color:var(--suave);margin:0 0 18px}'
- '.cid-piloto a.continuar{display:inline-block;background:var(--tinta);color:var(--papel);text-decoration:none;font-weight:700;padding:12px 18px;border:3px solid var(--tinta);margin:4px 0 8px}'
- '.cid-piloto a.continuar:focus-visible,.cid-piloto .sessoes a:focus-visible{outline:3px solid var(--acento);outline-offset:3px}'
+ '.cid-piloto section.proximo{background:var(--tinta);color:var(--papel);padding:14px 16px 16px;margin:4px 0 12px}'
+ '.cid-piloto .proximo .kicker{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}'
+ '.cid-piloto .proximo .prox-n{font:400 2.6rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:0}'
+ '.cid-piloto .proximo .prox-t{font:700 1.15rem/1.25 Arial,Helvetica,sans-serif;margin:2px 0 12px}'
+ '.cid-piloto a.continuar{display:inline-block;background:var(--papel);color:var(--tinta);text-decoration:none;font-weight:700;padding:12px 18px;border:3px solid var(--papel);margin:0}'
+ '.cid-piloto a.continuar:focus-visible,.cid-piloto .sessoes a:focus-visible{outline:3px solid var(--tinta);outline-offset:3px}'
+ '.cid-piloto .proximo a.continuar:focus-visible{outline-color:var(--papel)}'
  '.cid-piloto .contagem{margin:0 0 16px;font-size:.95rem}'
- '.cid-piloto ol.sessoes{list-style:none;margin:0;padding:0;border-top:3px solid var(--tinta)}'
- '.cid-piloto ol.sessoes li{border-bottom:3px solid var(--tinta);background:var(--papel)}'
- '.cid-piloto ol.sessoes a{display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:4px 14px;padding:14px 12px;color:inherit;text-decoration:none}'
+ '.cid-piloto ol.sessoes{list-style:none;margin:0;padding:0;border-top:0}'
+ '.cid-piloto ol.sessoes li{border-bottom:2px solid var(--fundo);background:var(--papel)}'
+ '.cid-piloto ol.sessoes a{display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;gap:4px 14px;padding:12px;color:inherit;text-decoration:none}'
+ '.cid-piloto ol.sessoes a::after{content:"→";grid-column:3;grid-row:1/span 3;align-self:center;font-weight:700}'
+ '.cid-piloto li.seguir a{box-shadow:inset 4px 0 0 #c8232c}'
  '.cid-piloto ol.sessoes .n{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;grid-row:1/span 3}'
  '.cid-piloto ol.sessoes strong{font-size:1.1rem;line-height:1.25}'
  '.cid-piloto ol.sessoes .perg{color:var(--suave)}'
- '.cid-piloto .estado{justify-self:start;font-size:.85rem;font-weight:700;border:2px solid var(--tinta);padding:1px 8px;margin-top:4px}'
- '.cid-piloto li.feita .estado{background:var(--tinta);color:var(--papel)}'
+ '.cid-piloto .estado{justify-self:start;display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;border:0;padding:0;margin-top:2px}'
+ '.cid-piloto .estado:empty{display:none}'
+ '.cid-piloto li.feita .estado::before,.cid-piloto li.seguir .estado::before{content:"";width:11px;height:11px;box-sizing:border-box;flex:none}'
+ '.cid-piloto li.feita .estado::before{background:var(--acento);border:1.5px solid var(--acento)}'
+ '.cid-piloto li.seguir .estado::before{border:1.5px solid #c8232c}'
  '.cid-piloto li.feita .n::after{content:"";display:block;width:1.6rem;height:4px;background:var(--acento);margin-top:4px}'
  '.cid-piloto footer.mais{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px}'
  '.cid-piloto footer.mais a{color:inherit;font-weight:700}'
- '.cid-piloto .pg{max-width:40em;overflow-wrap:break-word}.cid-piloto .fontes{overflow-wrap:anywhere}'
+ '.cid-piloto .pg{overflow-wrap:break-word}.cid-piloto .fontes{overflow-wrap:anywhere}'
+ '.cid-piloto .pg,.cid-piloto section.sessao p:not(.marca),.cid-piloto section.sessao li{font-family:Georgia,"Times New Roman",serif;max-width:34em;text-align:justify;hyphens:auto}'
+ '.cid-piloto p.abrir{text-align:start}'
+ '.cid-piloto a.botao{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:2px solid var(--tinta);font:700 1rem/1.2 Arial,Helvetica,sans-serif;text-decoration:none;margin:0 8px 8px 0}'
+ '.cid-piloto ul.indice a{display:inline-block;padding:12px 0}'
  '.cid-piloto .tabela{overflow-x:auto;max-width:100%}'
  '.cid-piloto section.sessao{border-top:3px solid var(--tinta);margin-top:36px;padding-top:4px}'
  '.cid-piloto section.sessao>h2{font:400 2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:16px 0 6px}'
@@ -297,9 +313,10 @@ CSS = (TOKENS +
  '.cid-piloto table{border-collapse:collapse;width:100%;background:var(--papel);margin:8px 0 4px}'
  '.cid-piloto th,.cid-piloto td{border:1px solid var(--tinta);padding:6px 8px;text-align:left;vertical-align:top}'
  '.cid-piloto td.num,.cid-piloto th.num{text-align:right;white-space:nowrap;width:4.5rem}'
+ '@media (max-width:599px){.cid-piloto td.num,.cid-piloto th.num{width:auto;white-space:normal}}'
  '.cid-piloto ol.passos li{margin:0 0 6px}'
  '.cid-piloto ol.passos .min{font-weight:700;white-space:nowrap}'
- '.cid-piloto .indicativa{font-weight:700;border-left:6px solid var(--acento);padding-left:10px}'
+ '.cid-piloto .indicativa{font-weight:700;border-left:6px solid var(--tinta);padding-left:10px}'
  '.cid-piloto ul.indice{columns:2 14rem;padding-left:1.2em}'
  '.cid-piloto .q{break-inside:avoid;margin:0 0 18px}'
  '.cid-piloto .q ol{list-style:none;padding-left:0;margin:6px 0 0}'
@@ -309,7 +326,10 @@ CSS = (TOKENS +
  '.cid-piloto button.imprimir{font:700 1rem Arial,Helvetica,sans-serif;background:var(--papel);color:var(--tinta);border:3px solid var(--tinta);padding:8px 14px;cursor:pointer}'
  '@media print{.cid-piloto .migalhas,.cid-piloto button.imprimir,.cid-piloto footer.mais,[data-appearance-control]{display:none}'
  'body.cid-piloto{background:#fff;color:#000;font-size:12pt}.cid-piloto main{max-width:none;padding:0}'
- '.cid-piloto section.sessao{break-before:page}.cid-piloto section.sessao:first-of-type{break-before:auto}}')
+ '.cid-piloto section.sessao{break-before:page}.cid-piloto section.sessao:first-of-type{break-before:auto}'
+ '.cid-piloto table,.cid-piloto .caixa{break-inside:avoid}'
+ 'body.cid-piloto{font-size:11pt;line-height:1.35}.cid-piloto .q{margin:0 0 10px}.cid-piloto .q ol{margin-top:4px}'
+ '.cid-piloto .q ol li{margin:0}.cid-piloto .q p{margin:0 0 4px}.cid-piloto .linhas{height:1.6em}}')
 
 
 def it(s):
@@ -339,21 +359,26 @@ def pagina_modulo(S):
         linhas += (f'<li data-chave="{e(s["chave"])}" data-versao="{e(s["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}">'
                    f'<a href="../m1-s{s["n"]}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
                    f'<strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong><span class="perg">{s["pergunta"]}</span>'
-                   '<span class="estado" data-estado>por fazer</span></a></li>')
+                   '<span class="estado" data-estado></span></a></li>')
     js = ('(function(){"use strict";var L=[].slice.call(document.querySelectorAll("[data-chave]")),feitas=0,prox=null;'
           'L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
           'var ok=!!(st&&st.lida&&st.versao===li.getAttribute("data-versao"));var el=li.querySelector("[data-estado]");'
-          'if(ok){feitas++;li.classList.add("feita");var tot=st.totalMelhor||st.total;el.textContent="feita"+(typeof st.melhor==="number"&&tot?", "+st.melhor+" de "+tot:"")}'
-          'else if(!prox)prox=li});'
-          'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]");'
+          # 31/10/2026 (revisão do diretor de arte): a sessão feita diz «Feita dd/mm» (o motor grava t=Date.now() no fim); a
+          # próxima por fazer leva «A seguir» e o filete vermelho; «por fazer» não se escreve.
+          'var dd=function(n){return(n<10?"0":"")+n};'
+          'if(ok){feitas++;li.classList.add("feita");var d=typeof st.t==="number"?new Date(st.t):null;el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
+          'else if(!prox){prox=li;li.classList.add("seguir");el.textContent="A seguir"}});'
+          'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]"),pn=document.querySelector("[data-prox-n]"),pt=document.querySelector("[data-prox-t]"),pk=document.querySelector("[data-prox-k]");'
           'if(c)c.textContent=feitas+" de "+L.length+" sessões feitas";'
-          'if(b&&feitas){if(prox){b.href=prox.querySelector("a").getAttribute("href");b.textContent="Continuar: Sessão "+prox.getAttribute("data-n")+", "+prox.getAttribute("data-titulo")+"\\u00a0→"}'
-          'else{b.textContent="As 10 sessões estão feitas. Rever a sessão 01\\u00a0→"}}})();')
+          'if(b&&feitas){if(prox){b.href=prox.querySelector("a").getAttribute("href");b.textContent="Continuar: Sessão "+prox.getAttribute("data-n")+", "+prox.getAttribute("data-titulo")+"\\u00a0→";if(pn)pn.textContent=prox.getAttribute("data-n");if(pt)pt.textContent=prox.getAttribute("data-titulo")}'
+          'else{b.textContent="As 10 sessões estão feitas. Rever a sessão 01\\u00a0→";if(pk)pk.textContent="Módulo feito"}}})();')
     corpo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '')])
              + '<header><p class="marca">Cidadania, módulo 1</p><h1>Ser-se humano</h1>'
              '<p class="lead">Direitos humanos, democracia e instituições políticas, em 10 sessões de 180 minutos. Cada sessão é uma lição em cartões, com uma parte na aula.</p>'
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p></header>'
-             f'<a class="continuar" data-continuar href="../m1-s01/">Começar: Sessão 01, {e(S[0]["titulo"])} →</a>'
+             f'<section class="proximo" aria-label="A seguir"><p class="kicker" data-prox-k>A seguir</p>'
+             f'<p class="prox-n" data-prox-n>01</p><p class="prox-t" data-prox-t>{e(S[0]["titulo"])}</p>'
+             f'<a class="continuar" data-continuar href="../m1-s01/">Começar: Sessão 01, {e(S[0]["titulo"])} →</a></section>'
              f'<p class="contagem" data-contagem>0 de {len(S)} sessões feitas</p>'
              f'<ol class="sessoes">{linhas}</ol>'
              '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
@@ -401,7 +426,7 @@ def pagina_guia(S):
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
-             '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º).</p>'
+             '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º, n.º 8).</p>'
              '<p class="pg">Cada sessão tem uma grelha /20 do produto da sessão. Em cada critério há três níveis: 0 pontos (não aparece), metade dos pontos (aparece, mas incompleto ou sem razão) e todos os pontos (como está descrito). A correspondência com os quatro instrumentos da <a href="../../../projeto/">Pergunta Humana</a> também é indicativa:</p>'
              + instr + '</section>'
              f'<nav aria-label="Sessões"><h2>As 10 sessões</h2><ul class="indice">{indice}</ul></nav>')
@@ -411,14 +436,15 @@ def pagina_guia(S):
         total = sum(m for m, _ in g['passos'])
         assert 60 <= total <= 75, (s['n'], total)
         proj_href = '../../../projeto/' + g['projeto'][1]
-        yt = (f'<p class="pg">«{it(s["yt_botao"])}». {s["yt_cred"]} <a href="{e(yt_link(s))}">Abrir no YouTube</a>'
+        # 31/10/2026: o texto do botão já traz «Título» (duração); não se volta a pôr entre «».
+        yt = (f'<p class="pg">{it(s["yt_botao"])}. {s["yt_cred"]} <a href="{e(yt_link(s))}">Abrir no YouTube</a>'
               + (f' (excerto de {s["yt_ini"]} a {s["yt_fim"]} s)' if s['yt_fim'] else '') + '.</p>'
               f'<p class="pg"><b>Tarefa.</b> {s["yt_tarefa"]}</p>'
               '<p class="pg"><b>Sem vídeo.</b> O docente conta o essencial em duas frases e a turma responde à mesma tarefa.</p>')
         corpo += (f'<section class="sessao" id="s{s["n"]}"><p class="marca">Sessão {s["n"]}</p><h2>{e(s["titulo"])}</h2>'
                   f'<p class="lead">{s["pergunta"]}</p>'
                   f'<p class="pg"><b>Domínio.</b> {e(g["dominio"])} <b>O que ensina.</b> {e(g["ensina"])}</p>'
-                  f'<p><a href="../../m1-s{s["n"]}/">Abrir a sessão</a> | <a href="../../m1-s{s["n"]}/?projetar=1">Projetar</a></p>'
+                  f'<p class="abrir"><a class="botao" href="../../m1-s{s["n"]}/">Abrir a sessão</a><a class="botao" href="../../m1-s{s["n"]}/?projetar=1">Projetar</a></p>'
                   + (f'<p class="pg"><b>Antes.</b> {e(g["antes"])}</p>' if g.get('antes') else '')
                   + '<h3>O que o aluno lê no cartão «Na aula»</h3>'
                   f'<div class="caixa">{s["aula"]["html"]}</div>'
@@ -431,7 +457,8 @@ def pagina_guia(S):
                   f'<h3>Grelha: {e(g["produto"])} (/20, indicativa)</h3>' + tabela_grelha(g)
                   + '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério.</p>'
                   '<h3>Notas</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['notas']) + '</ul>'
-                  f'<h3>Fontes da lição</h3><p class="pg fontes">{e(s["d"]["fontes"])}</p></section>')
+                  # 31/10/2026: títulos de obras em itálico (_…_), com a guarda do motor (LL.esc_it), não com it(), que não a tem.
+                  f'<h3>Fontes da lição</h3><p class="pg fontes">{LL.esc_it(s["d"]["fontes"])}</p></section>')
     chave = ''
     for i, (ses, q, ops, c) in enumerate(PONTO, 1):
         if ops:
@@ -439,7 +466,7 @@ def pagina_guia(S):
         else:
             chave += f'<tr><td class="num">{i}</td><td>{e(q)}</td><td>{e(COTACAO_ESCRITA[i])}</td><td class="num">2</td><td>{e(ses)}</td></tr>'
     corpo += ('<section class="sessao" id="ponto"><p class="marca">Sessões 01 e 10</p><h2>Ponto de partida e de chegada: chave e cotação</h2>'
-              '<p class="pg">Em papel, sem ajuda e sem consulta, 10 a 15 minutos. Cada aluno escreve o seu código, nunca o nome. As mesmas 10 perguntas, pela mesma ordem, na sessão 10. Máximo 12 pontos: 8 de escolha (1 ponto cada) e 2 escritas (0 a 2). O ganho de cada aluno (chegada menos partida, por código) calcula-se numa tabela fora do sítio. Perguntas por mim, a partir do plano: para rever.</p>'
+              '<p class="pg">Em papel, sem ajuda e sem consulta, 10 a 15 minutos. Cada aluno escreve o seu código, nunca o nome. As mesmas 10 perguntas, pela mesma ordem, na sessão 10. Máximo 12 pontos: 8 de escolha (1 ponto cada) e 2 escritas (0 a 2). O ganho de cada aluno (chegada menos partida, por código) calcula-se numa tabela fora do sítio. Perguntas propostas pela equipa a partir do plano, para o docente rever.</p>'
               '<p><a href="../ponto/">Abrir o Ponto para imprimir</a></p>'
               '<div class="tabela"><table><thead><tr><th scope="col" class="num">N.º</th><th scope="col">Pergunta</th><th scope="col">Chave ou cotação</th><th scope="col" class="num">Pontos</th><th scope="col">Sessão</th></tr></thead>'
               f'<tbody>{chave}</tbody></table></div></section>'

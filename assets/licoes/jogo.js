@@ -31,6 +31,8 @@ function montar(cfg){
  // «Para ir mais longe» (opcional, para casa), depois de «A aula acaba aqui»; com núcleo, a ordem dos cartões e das opções é a
  // mesma em todos os ecrãs (projeção e telemóveis), para a turma falar do mesmo cartão
  var PROJ=/[?&]projetar=1(&|$)/.test(location.search)||document.documentElement.classList.contains("epi-projection");
+ // 31/10/2026 (revisão do diretor de arte): na projeção, a classe do sistema (em-projecao) aumenta a letra e as imagens (lesson.css).
+ if(PROJ)document.documentElement.classList.add("em-projecao");
  var temMais=TODOS.some(function(x){return x&&x.mais})&&TODOS.some(function(x){return x&&!x.mais&&x.t!=="ler"}),emMais=false;if(temMais)cfg.aula=true;
  var st=(PROJ?null:ler(K))||{};
  // 23/10/2026 (decisão 5 do plano de melhoria): uma lição refeita traz cfg.versao; o progresso guardado de outra versão recomeça

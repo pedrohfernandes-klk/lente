@@ -137,6 +137,16 @@ def esc(s):
     return html.escape(str(s), quote=True)
 
 
+# 31/10/2026 (revisão de pt-PT): títulos de obras em itálico também nas fontes. Converte _…_ em <i>…</i> depois de escapar,
+# com a guarda do motor (assets/licoes/jogo.js, função it): só quando o _ não está colado a letras, a algarismos ou a «/»,
+# para não estragar endereços como convencao_sobre_direitos_da_crianca.pdf ou File:William_Edward_Kilburn_-_View….
+ITALICO = re.compile(r'(^|[^0-9A-Za-zÀ-ÖØ-öø-ÿ_/])_([^_\n<>]{1,100}?)_(?![0-9A-Za-zÀ-ÖØ-öø-ÿ_])')
+
+
+def esc_it(s):
+    return ITALICO.sub(r'\1<i>\2</i>', esc(s))
+
+
 def pagina(d):
     saida = d['saida']
     prof = saida.count('/')
@@ -146,12 +156,17 @@ def pagina(d):
     dados = json.dumps(d['cartoes'], ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     menu = (
         f'<div class="casca-menu" data-c-painel hidden><div class="c-menu-in" role="dialog" aria-label="Menu"><div class="c-menu-cab"><p>Cidadania, módulo {mod["n"]}<br>{esc(mod["nome"])}</p>'
-        '<button type="button" class="c-ic" data-c-fecha-menu aria-label="Fechar o menu">✕</button></div><nav><ol class="c-migalhas" aria-label="Onde estás">'
+        # 31/10/2026 (revisão do diretor de arte): o botão do tema vai para o menu (appearance.js usa este lugar); fora da barra,
+        # a casca deixa de passar a largura do ecrã a 320 e 360 px.
+        '<span data-appearance-control></span><button type="button" class="c-ic" data-c-fecha-menu aria-label="Fechar o menu">✕</button></div><nav><ol class="c-migalhas" aria-label="Onde estás">'
         f'<li style="--k:0"><a href="{LENTE}">Lente</a></li><li style="--k:1"><a href="{LENTE}cidadania/">Cidadania</a></li>'
         f'<li style="--k:2"><a href="{esc(mod["url"])}">Módulo {mod["n"]}: {esc(mod["nome"])}</a></li><li><span class="aqui" style="--k:3">Estás em: {esc(d["titulo"])}</span></li></ol>'
         f'<a href="{esc(mod["url"])}">As sessões do módulo</a><a href="https://pedrohfernandes-klk.github.io/pt/como/">Como se faz (vídeos)</a></nav>'
-        f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
+        f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
+    # 31/10/2026 (revisão do diretor de arte, sistema 6.11): o ecrã final leva «A seguir» (a sessão seguinte) e o módulo.
+    if d.get('seguinte'):
+        cfg.update({'percurso': mod['url'], 'percursoRotulo': 'As 10 sessões', 'seguinte': d['seguinte'], 'seguinteRotulo': d.get('seguinteRotulo')})
     # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
     tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
     return (

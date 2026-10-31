@@ -11,7 +11,7 @@
   '.yt .yt-abrir::before{content:"";flex:none;border-style:solid;border-width:7px 0 7px 11px;border-color:transparent transparent transparent currentColor}'+
   '.yt .yt-quadro{position:relative;aspect-ratio:16/9;width:100%;background:#000}.yt .yt-quadro iframe{position:absolute;inset:0;width:100%;height:100%;border:0}'+
   '.yt .yt-fechar{margin:8px 0 0;min-height:44px;padding:8px 12px;border:1px solid currentColor;background:transparent;color:inherit;font:700 .85rem Arial,sans-serif;cursor:pointer}'+
-  '.yt .yt-cred{font:.8rem/1.4 Arial,sans-serif;margin:6px 0 0;opacity:.85}';
+  '.yt .yt-cred{font:.8125rem/1.4 Arial,sans-serif;margin:6px 0 0;color:var(--suave)}';
   document.head.appendChild(s)}
  document.addEventListener('click',function(e){
   var b=e.target.closest('[data-yt-abrir],[data-yt-fechar]');if(!b)return;var box=b.closest('[data-yt]');if(!box)return;

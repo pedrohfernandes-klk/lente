@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s08",
  "chave": "epi-cid-m1-s08",
- "versao": "2026-10-31-1",
+ "versao": "2026-10-31-2",
  "marca": "CD",
  "titulo": "Sessão 08: Quem decide o quê?",
  "h1": "Cidadania, módulo 1, sessão 08: Quem decide o quê?",
@@ -12,13 +12,15 @@
  },
  "saida": "cidadania/piloto/m1-s08/index.html",
  "piloto": true,
- "fontes": "Constituição da República Portuguesa, artigos 23.º, 52.º, 110.º, 120.º, 149.º, 161.º, 182.º, 202.º, 235.º a 237.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Lei n.º 43/90 (exercício do direito de petição), artigos 1.º, 2.º, 4.º, 8.º e 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Lei n.º 75/2013 (regime jurídico das autarquias locais, anexo I), artigo 16.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1990&tabela=leis, lido a 31/10/2026). Tratado sobre o Funcionamento da União Europeia, artigo 227.º, segundo a página do Parlamento Europeu «O direito de petição» (https://www.europarl.europa.eu/factsheets/pt/sheet/148/o-direito-de-peticao, lida a 31/10/2026). Fotografia: William Edward Kilburn, View of the Great Chartist Meeting on Kennington Common, 1848 (Royal Collection, RCIN 2932484, domínio público; https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg). Vídeo: TED-Ed, «Which voting system is the best?», lição de Alex Gendler. Os casos são inventados.",
+ "seguinte": "../m1-s09/",
+ "seguinteRotulo": "Sessão 09: Muitas vozes, uma escola",
+ "fontes": "Constituição da República Portuguesa, artigos 23.º, 52.º, 110.º, 120.º, 149.º, 161.º, 182.º, 202.º, 235.º a 237.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Lei n.º 43/90 (exercício do direito de petição), artigos 1.º, 2.º, 4.º, 8.º e 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Lei n.º 75/2013 (regime jurídico das autarquias locais, anexo I), artigo 16.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1990&tabela=leis, lido a 31/10/2026). Tratado sobre o Funcionamento da União Europeia, artigo 227.º, segundo a página do Parlamento Europeu «O direito de petição» (https://www.europarl.europa.eu/factsheets/pt/sheet/148/o-direito-de-peticao, lida a 31/10/2026). Fotografia: William Edward Kilburn, _View of the Great Chartist Meeting on Kennington Common_, 1848 (Royal Collection, RCIN 2932484, domínio público; https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg). Vídeo: TED-Ed, «Which voting system is the best?», lição de Alex Gendler. Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Quem decide o quê?",
-   "html": "<p class=\"pergunta-c\">Quando uma decisão te afeta, a quem te diriges e como a contestas?</p><p>Caso inventado. A passadeira em frente ao portão da escola vai desaparecer: passa a haver só um semáforo na esquina, a duzentos metros. A turma soube por um cartaz na paragem.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, descobrir quem decide a rua da escola e escrever um pedido à entidade certa.</p>"
+   "html": "<p class=\"pergunta-c\">Quando uma decisão te afeta, a quem te diriges e como a contestas?</p><p>Caso inventado. A passadeira em frente ao portão da escola vai desaparecer: passa a haver só um semáforo na esquina, a duzentos metros. A turma soube por um cartaz na paragem.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, descobrir quem decide o que se faz na rua da escola e escrever um pedido à entidade certa.</p>"
   },
   {
    "t": "ler",
@@ -64,7 +66,7 @@
   {
    "t": "ler",
    "rot": "Conceito",
-   "titulo": "Quem decide o quê",
+   "titulo": "Órgãos, autarquias e União Europeia",
    "html": "<p>Quem decide depende do assunto.</p><ul><li><b>Órgãos de soberania</b> (Constituição, artigo 110.º): o Presidente da República, a Assembleia da República, que faz as leis, o Governo, que conduz a política geral do país, e os tribunais, que administram a justiça.</li><li><b>Autarquias</b> (artigos 235.º e seguintes): o município, com a câmara e a assembleia municipal, e a freguesia, com a junta e a assembleia de freguesia. Decidem muito do que se passa na rua.</li><li><b>União Europeia</b>: o Parlamento Europeu também recebe petições.</li></ul><p>A petição (artigo 52.º) dirige-se a estes órgãos e a quaisquer autoridades. A Lei n.º 43/90 deixa de fora os tribunais, que têm os seus próprios caminhos.</p>"
   },
   {
@@ -119,7 +121,7 @@
    "passos": [
     "Descobrir quem decide o assunto.",
     "Escrever, em concreto, o que se pede.",
-    "Dar a razão: os factos e o artigo.",
+    "Justificar esse pedido: os factos e o artigo.",
     "Juntar os nomes e as assinaturas.",
     "Entregar e esperar pela resposta."
    ],
@@ -129,7 +131,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Uma multidão em 1848",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/kilburn-cartistas-1848.webp\" alt=\"Fotografia antiga e desbotada de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, uma carroça e um cavalo; ao fundo, uma chaminé alta e um edifício grande.\" loading=\"lazy\"></span><figcaption>William Edward Kilburn, <i>View of the Great Chartist Meeting on Kennington Common</i>, Londres, 1848, daguerreótipo. Royal Collection (RCIN 2932484), domínio público.</figcaption></figure><p>Um comício do movimento cartista, no sul de Londres, em 1848. Os cartistas pediam reformas políticas e muita gente tinha medo deles: na véspera, havia tropas espalhadas pela cidade.</p><p class=\"pergunta-c\">Quem decide se o pedido desta multidão é ouvido? O que tem de ter um pedido para ser levado a sério?</p><p>Responde no caderno, numa linha.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/kilburn-cartistas-1848.webp\" alt=\"Fotografia antiga de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, uma carroça e um cavalo; ao fundo, uma chaminé alta e um edifício grande.\" loading=\"lazy\"></span><figcaption>William Edward Kilburn, <i>View of the Great Chartist Meeting on Kennington Common</i>, Londres, 1848, daguerreótipo. Royal Collection (RCIN 2932484), domínio público.</figcaption></figure><p>Um comício do movimento cartista, no sul de Londres, em 1848. Os cartistas pediam reformas políticas.</p><p class=\"pergunta-c\">O que tem de ter um pedido para ser levado a sério?</p><p>Responde no caderno, numa linha.</p>"
   },
   {
    "t": "escolha",
@@ -138,7 +140,7 @@
    "p2": "Na fotografia de 1848 vê-se a multidão. Que informação sobre o pedido fica de fora?",
    "o": [
     "A quem se dirigia e o que pedia.",
-    "Quanta gente estava no comício.",
+    "Que havia muita gente no comício.",
     "Se havia bandeiras e palanque."
    ],
    "c": 0,
@@ -153,7 +155,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "A regra muda",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Alex Gendler: cem habitantes de Marte votam onde construir um porto espacial. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"PaxVCsnox_4\" data-titulo=\"Which voting system is the best?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Which voting system is the best?» (5 min 33 s)</button><p class=\"yt-cred\">TED-Ed, lição de Alex Gendler. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">Enquanto vês, aponta as maneiras de contar os votos que o vídeo compara e a base que ganha com cada uma.</p><p>Uma linha para cada maneira, no caderno. Os votos são os mesmos: o que muda?</p>"
+   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Alex Gendler: cem habitantes de Marte votam onde construir um porto espacial. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Enquanto vês, aponta as maneiras de contar os votos que o vídeo compara e o sítio que ganha com cada uma.</p><div class=\"yt\" data-yt=\"PaxVCsnox_4\" data-titulo=\"Which voting system is the best?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Which voting system is the best?» (5 min 33 s)</button><p class=\"yt-cred\">TED-Ed, lição de Alex Gendler. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada maneira, no caderno. Os votos são os mesmos: o que muda?</p>"
   },
   {
    "t": "escolha",
@@ -200,8 +202,8 @@
   {
    "t": "escolha",
    "g": "bar",
-   "p": "Caso inventado: o horário do bar da escola muda sem ninguém ouvir os alunos. A quem se dirige primeiro a reclamação?",
-   "p2": "O bar da escola passa a fechar mais cedo e ninguém ouviu os alunos. Por onde começa a reclamação?",
+   "p": "Caso inventado: a direção da escola muda o horário do bar sem ninguém ouvir os alunos. A quem se dirige primeiro a reclamação?",
+   "p2": "A direção da escola passa a fechar o bar mais cedo e ninguém ouviu os alunos. Por onde começa a reclamação?",
    "o": [
     "À direção da escola, que tomou a decisão.",
     "À Assembleia da República, que faz as leis.",
@@ -212,7 +214,7 @@
    "fe": [
     "",
     "A Assembleia faz leis para o país inteiro, não decide o horário do bar de uma escola.",
-    "O Provedor aprecia queixas e recomenda, mas o primeiro passo é pedir a quem decidiu que reveja a decisão."
+    "O Provedor aprecia queixas e recomenda, mas antes disso pede-se a quem decidiu que reveja a decisão."
    ]
   },
   {
@@ -234,8 +236,8 @@
     {
      "o": [
       "destinatário",
-      "público",
-      "título"
+      "remetente",
+      "formulário"
      ],
      "c": 0
     },
@@ -250,7 +252,7 @@
     {
      "o": [
       "fundamento",
-      "slogan",
+      "lema",
       "comentário"
      ],
      "c": 0
@@ -290,7 +292,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Contestar bem começa por saber quem decidiu.</p><p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide a rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o vosso pedido que um grito não tem?</p><p><b>As frases da sessão</b></p><ul><li>Uma petição tem destinatário, pedido e fundamento.</li><li>A Assembleia da República faz leis; o Governo governa; os tribunais julgam; a câmara e a junta decidem a rua.</li><li>O Provedor de Justiça recomenda, não decide (artigo 23.º).</li><li>A regra de contar os votos também decide quem ganha.</li></ul>"
+   "html": "<p class=\"levar\">Contestar bem começa por saber quem decidiu.</p><p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o vosso pedido que um grito não tem?</p><p><b>As frases da sessão</b></p><ul><li>Uma petição tem destinatário, pedido e fundamento.</li><li>A Assembleia da República faz leis; o Governo governa; os tribunais julgam; a câmara e a junta decidem o que se faz na rua.</li><li>O Provedor de Justiça recomenda, não decide (artigo 23.º).</li><li>A regra de contar os votos também decide quem ganha.</li></ul>"
   }
  ]
 }

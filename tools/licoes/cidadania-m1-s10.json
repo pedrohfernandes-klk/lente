@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s10",
  "chave": "epi-cid-m1-s10",
- "versao": "2026-10-31-1",
+ "versao": "2026-10-31-2",
  "marca": "CD",
  "titulo": "Sessão 10: O que conseguimos defender?",
  "h1": "Cidadania, módulo 1, sessão 10: O que conseguimos defender?",
@@ -12,13 +12,15 @@
  },
  "saida": "cidadania/piloto/m1-s10/index.html",
  "piloto": true,
- "fontes": "Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, ... one-third of a nation, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
+ "seguinte": "../m1/",
+ "seguinteRotulo": "As 10 sessões",
+ "fontes": "Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "O que conseguimos defender?",
-   "html": "<p class=\"pergunta-c\">Depois de investigar, que resposta consegues defender diante de quem discorda?</p><p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem dois minutos para responder.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: o Ponto de chegada em papel, logo ao início; depois recuperar o módulo, apresentar e defender o teatro-documento.</p>"
+   "html": "<p class=\"pergunta-c\">Depois de investigar, que resposta consegues defender diante de quem discorda?</p><p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem três minutos para responder.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: o Ponto de chegada em papel, logo ao início; depois recuperar o módulo, apresentar e defender o teatro-documento.</p>"
   },
   {
    "t": "ler",
@@ -64,7 +66,7 @@
    "p": "Caso da sessão 02: a Marta aceitou ser filmada para o grupo rever o ensaio. Para pôr o vídeo na conta da escola, o que falta?",
    "p2": "A Marta deixou filmar o ensaio para o grupo o rever. Que falta para o publicar na conta da escola?",
    "o": [
-    "Pedir-lhe autorização para esse uso.",
+    "Pedir-lhe consentimento para esse uso.",
     "Nada: ela já aceitou ser filmada.",
     "Cortar as partes em que ela cai."
    ],
@@ -73,7 +75,7 @@
    "fe": [
     "",
     "Aceitar ser filmada para o grupo ver não é aceitar a publicação. O consentimento vale para um uso.",
-    "Cortar a queda ajuda, mas não substitui a autorização da Marta para publicar."
+    "Cortar a queda ajuda, mas não substitui o consentimento da Marta para publicar."
    ]
   },
   {
@@ -91,9 +93,9 @@
    "p": "Sessão 04: que frase é uma acusação de facto, que tem de ser provada por quem a faz?",
    "p2": "Destas frases, que acusação precisa de prova antes de ser dita em público?",
    "o": [
-    "«O Diogo tirou dinheiro do bar.»",
-    "«A comida da cantina sabe-me mal.»",
-    "«O cartaz da festa é muito feio.»"
+    "O Diogo tirou dinheiro do bar.",
+    "A comida da cantina sabe-me mal.",
+    "O cartaz da festa é muito feio."
    ],
    "c": 0,
    "f": "Dizer que alguém tirou dinheiro atribui-lhe um ato concreto. Se não for verdade, atinge o bom nome e a reputação dessa pessoa, que a Constituição protege (artigo 26.º).",
@@ -115,7 +117,7 @@
   {
    "t": "escolha",
    "g": "s06",
-   "p": "Sessão 06: o júri do concurso de cartazes inclui o irmão de um dos concorrentes. Que problema há aqui?",
+   "p": "Sessão 06: o júri do concurso de curtas inclui o irmão de um dos concorrentes. Que problema há aqui?",
    "p2": "Um dos membros do júri é irmão de um concorrente. Que nome tem este problema?",
    "o": [
     "Um conflito de interesses no júri.",
@@ -140,7 +142,7 @@
     11,
     12
    ],
-   "f": "Até à vírgula, a frase descreve o que a captura mostra. **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura, é uma inferência."
+   "f": "Até à vírgula, a frase descreve o que a captura mostra. A expressão **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura: é uma inferência."
   },
   {
    "t": "ordenar",
@@ -159,13 +161,13 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Um jornal vivo",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/one-third-of-a-nation-cartaz.webp\" alt=\"Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «... one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre».\" loading=\"lazy\"></span><figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>... one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure><p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p><p class=\"pergunta-c\">Que pergunta fazia esta peça? E a vossa?</p><p>Responde no caderno, numa linha para cada peça.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/one-third-of-a-nation-cartaz.webp\" alt=\"Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «… one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre».\" loading=\"lazy\"></span><figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>… one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure><p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p><p class=\"pergunta-c\">Que pergunta fazia esta peça? E a vossa?</p><p>Responde no caderno, numa linha para cada peça.</p>"
   },
   {
    "t": "ler",
    "rot": "Ver",
    "titulo": "Como se convence",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p><div class=\"yt\" data-yt=\"O2dEuMFR8kw\" data-titulo=\"What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button><p class=\"yt-cred\">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p class=\"pergunta-c\">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à vossa defesa?</p><p>Duas linhas no caderno, antes de apresentarem.</p>"
+   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à vossa defesa?</p><div class=\"yt\" data-yt=\"O2dEuMFR8kw\" data-titulo=\"What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button><p class=\"yt-cred\">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Duas linhas no caderno, antes de apresentarem.</p>"
   },
   {
    "t": "ler",
@@ -246,7 +248,7 @@
     "Mostra só a opinião de quem a escreveu."
    ],
    "c": 0,
-   "f": "O subtítulo diz «jornal vivo sobre a habitação»: um tema real, posto em cena. O vosso teatro-documento também parte do que se investigou.",
+   "f": "O subtítulo diz «a living newspaper about housing», um jornal vivo sobre a habitação: um tema real, posto em cena. O vosso teatro-documento também parte do que se investigou.",
    "fe": [
     "",
     "«Newspaper» quer dizer jornal: fala de assuntos reais, não de heróis inventados.",
@@ -259,9 +261,9 @@
    "p": "Qual das respostas a uma objeção mostra o caminho da investigação?",
    "p2": "Diante de uma objeção, que resposta conta como o grupo chegou à conclusão?",
    "o": [
-    "«Pensávamos outra coisa; a entrevista mudou-a.»",
-    "«Sempre soubemos isto, desde o primeiro dia.»",
-    "«Toda a gente concorda connosco, perguntem.»"
+    "Pensávamos outra coisa até à entrevista.",
+    "Sempre soubemos isto, desde o primeiro dia.",
+    "Toda a gente concorda connosco, perguntem."
    ],
    "c": 0,
    "f": "Contar o que se pensava antes e o que fez mudar mostra o caminho: houve uma fonte, e a resposta seguiu a prova.",

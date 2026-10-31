@@ -72,7 +72,7 @@ ul.lista{margin:4px 0;padding-left:1.3rem}ul.lista li{margin:0 0 4px}
 @media (prefers-color-scheme:dark){:root{--c-cinza:#3d3c38}}
 html.com-casca,html.com-casca body{height:100%;overflow:hidden;overscroll-behavior:none}
 html.com-casca body{margin:0}
-.casca{position:fixed;inset:0;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;height:100vh;height:var(--vh,100dvh);background:var(--fundo,#f3f2ee);color:var(--tinta,#000);z-index:10;font-family:Arial,Helvetica,sans-serif}
+.casca{position:fixed;inset:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;height:100vh;height:var(--vh,100dvh);background:var(--fundo,#f3f2ee);color:var(--tinta,#000);z-index:10;font-family:Arial,Helvetica,sans-serif}
 .casca.sobreposta{z-index:40}
 .casca .casca-faixa{position:static;grid-row:1}.casca>.casca-topo{grid-row:2}.casca>.casca-corpo{grid-row:3}.casca>.casca-acoes{grid-row:4}
 .casca-topo{display:flex;align-items:center;gap:4px;width:100%;max-width:var(--col);margin:0 auto;box-sizing:border-box;min-height:48px;padding:max(2px,env(safe-area-inset-top)) max(6px,env(safe-area-inset-right)) 2px max(10px,env(safe-area-inset-left))}
@@ -138,7 +138,7 @@ html.com-casca body{margin:0}
 .jogo{display:flex;flex-direction:column;flex:1 0 auto;margin:var(--d1,8px) 0 var(--d1,8px);min-height:0}
 .jogo .cartao{background:var(--papel);padding:var(--d2,20px);flex:0 0 auto;display:flex;flex-direction:column;position:relative;isolation:isolate;animation:cartaoEntra .2s ease-out both}
 @keyframes cartaoEntra{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
-.jogo .rot{display:flex;align-items:center;gap:7px;font:700 .7rem/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d2,20px)}
+.jogo .rot{display:flex;align-items:center;gap:7px;font:700 .8125rem/1.2 Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 var(--d2,20px)}
 .jogo .rot .forma{width:12px;height:12px;flex:none;overflow:visible}.jogo .rot .forma *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}.jogo .rot.feito .forma *{fill:currentColor}
 .jogo .tit{font:700 1.15rem/1.25 var(--serif,Georgia,serif);margin:0 0 var(--d1,8px)}
 /* 16/10/2026: um traço curto desenha-se debaixo do título de cada cartão de leitura (nada com «reduzir movimento») */
@@ -148,7 +148,7 @@ html.com-casca body{margin:0}
 .jogo .ler{font-family:var(--serif,Georgia,serif);font-size:1.1rem;line-height:1.6}.jogo .ler p{margin:0 0 var(--d1,8px)}.jogo .ler .v{white-space:pre-wrap;margin:0 0 var(--d1,8px)}.jogo .ler .v .n{display:inline-block;width:2.1em;color:var(--suave);font:400 .72em Arial;text-align:right;padding-right:.6em}
 .jogo .ler ol{margin:0;padding-left:1.3rem}.jogo .ler ul{margin:0 0 var(--d1,8px);padding-left:1.3rem;list-style:disc outside}.jogo .ler ul li{margin:0 0 4px}.jogo .ler li{margin:0 0 var(--d1,8px)}.jogo .ler .gl{font:400 .9rem/1.45 Arial;border-top:1px solid var(--tinta);margin-top:var(--d2,20px);padding-top:var(--d1,8px)}.jogo .ler .fonte{font:400 .82rem Arial;color:var(--suave);margin:var(--d1,8px) 0 0}
 .jogo .ler .abre{font-size:1.25rem;line-height:1.45}.jogo .ler .levar{font-size:1.45rem;line-height:1.3;font-style:italic;margin:6px 0 10px}.jogo .ler .pergU{font-style:italic;color:var(--suave)}
-.jogo .ver-fig{margin:0 0 12px;cursor:zoom-in}.jogo .ver-fig img{display:block;width:100%;height:auto;max-height:min(26vh,210px);max-height:min(26dvh,210px);object-fit:cover;object-position:50% 45%;border:1px solid var(--tinta);filter:grayscale(1)}.jogo .ver-fig.grande{cursor:zoom-out}.jogo .ver-fig.grande img{max-height:none;object-fit:contain}.jogo .ver-fig:focus-visible{outline:3px solid var(--vermelho,#c1272d);outline-offset:2px}.jogo .ler .fig{margin:0 0 var(--d2,20px)}.jogo .ler .fig img{display:block;max-width:100%;max-height:min(40vh,360px);max-height:min(40dvh,360px);width:auto;border:0;cursor:zoom-in}.jogo .ler .fig figcaption{font:400 .78rem/1.35 Arial;color:var(--suave);margin-top:6px}
+.jogo .ver-fig{margin:0 0 12px;cursor:zoom-in}.jogo .ver-fig img{display:block;width:100%;height:auto;max-height:min(26vh,210px);max-height:min(26dvh,210px);object-fit:cover;object-position:50% 45%;border:1px solid var(--tinta);filter:grayscale(1)}.jogo .ver-fig.grande{cursor:zoom-out}.jogo .ver-fig.grande img{max-height:none;object-fit:contain}.jogo .ver-fig:focus-visible{outline:3px solid var(--vermelho,#c1272d);outline-offset:2px}.jogo .ler .fig{margin:0 0 var(--d2,20px)}.jogo .ler .fig img{display:block;max-width:100%;max-height:min(40vh,360px);max-height:min(40dvh,360px);width:auto;border:0}.jogo .ler .fig figcaption{font:400 .8125rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave);margin-top:6px}
 .jogo .ler h3{font:700 .8rem Arial;letter-spacing:.1em;margin:var(--d2,20px) 0 var(--d1,8px);text-transform:uppercase}
 /* 11/10/2026 (docente: «falta de cuidados de design»): o cartão acaba onde acaba o texto (o papel aparece por baixo) e o título da
    primeira caixa fica a 8 px do rótulo (proximidade), em vez de 20 + 20 */
@@ -322,3 +322,13 @@ ol.passos .n{font-size:2rem}
  .jogo .ler .paralelo>.lado+.lado,.jogo .ler .paralelo>.onda+.lado{border-top:1px solid var(--tinta);padding-top:16px}
  .jogo .ler .paralelo>.onda{display:none}
 }
+/* 31/10/2026 (revisão do diretor de arte da Cidadania refeita, M1): a 320 px a barra perde o espaço entre botões; na projeção
+   (?projetar=1, classe em-projecao do sistema) a letra e as imagens crescem para o fundo da sala; o acerto diz-se a tinta, com o
+   visto e a palavra «Certo.», e a lacuna certa leva 2 px de tinta (o sistema não tem verde: tinta, papel, mostarda para feito,
+   vermelho para atual). Se o docente quiser manter o verde, basta apagar as três últimas regras. */
+@media (max-width:340px){.casca-topo{gap:0}}
+html.em-projecao .jogo{font-size:1.2em}
+html.em-projecao .jogo .rot,html.em-projecao .jogo .ler .fig figcaption{font-size:1.125rem}
+html.em-projecao .jogo .ler .fig img{max-height:min(62vh,640px)}
+.casca-folha.ok .c-folha-in{border-left-color:var(--tinta,#000)}.casca-folha.ok .c-s{color:var(--tinta,#000)}
+.jogo select.ok{border:2px solid var(--tinta,#000)}

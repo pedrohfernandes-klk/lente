@@ -6,7 +6,7 @@
 import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Depois de investigar, que resposta consegues defender diante de quem discorda?</p>'
- '<p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem dois minutos para responder.</p>'
+ '<p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem três minutos para responder.</p>'
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o Ponto de chegada em papel, logo ao início; depois recuperar o módulo, apresentar e defender o teatro-documento.</p>')
 DECIDE = (
  '<p>Mudar a resposta diante de uma objeção é perder?</p>'
@@ -21,17 +21,17 @@ RECUPERA = (
  '<p class="pergunta-c">Antes de cada um, lembra-te do caso dessa sessão. Depois responde.</p>')
 CARTAZ = (
  '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/one-third-of-a-nation-cartaz.webp" '
- 'alt="Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «... one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre»." loading="lazy"></span>'
- '<figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>... one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure>'
+ 'alt="Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «… one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre»." loading="lazy"></span>'
+ '<figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>… one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure>'
  '<p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p>'
  '<p class="pergunta-c">Que pergunta fazia esta peça? E a vossa?</p>'
  '<p>Responde no caderno, numa linha para cada peça.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p>'
+ '<p class="pergunta-c">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à vossa defesa?</p>'
  '<div class="yt" data-yt="O2dEuMFR8kw" data-titulo="What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p class="pergunta-c">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à vossa defesa?</p>'
  '<p>Duas linhas no caderno, antes de apresentarem.</p>')
 NA_AULA = (
  '<p><b>O que se faz.</b> A apresentação pública dos teatros-documento, 5 a 8 minutos cada, seguida de três minutos de defesa: uma pergunta do público e uma objeção preparada por outro grupo. O Ponto de chegada já foi feito ao início, em papel e sozinho.</p>'
@@ -56,25 +56,25 @@ cartoes = [
   "f":"O artigo 26.º protege a imagem e a reserva da vida privada; o 13.º proíbe prejudicar alguém em razão da língua; o 37.º garante a liberdade de exprimir o pensamento; o 52.º dá a todos o direito de petição.",
   "fe":"Pergunta primeiro o que a pessoa perdeu ou quer fazer. O artigo vem depois."},
  {"t":"escolha","g":"s02","p":"Caso da sessão 02: a Marta aceitou ser filmada para o grupo rever o ensaio. Para pôr o vídeo na conta da escola, o que falta?","p2":"A Marta deixou filmar o ensaio para o grupo o rever. Que falta para o publicar na conta da escola?",
-  "o":["Pedir-lhe autorização para esse uso.","Nada: ela já aceitou ser filmada.","Cortar as partes em que ela cai."],"c":0,
+  "o":["Pedir-lhe consentimento para esse uso.","Nada: ela já aceitou ser filmada.","Cortar as partes em que ela cai."],"c":0,
   "f":"O retrato de uma pessoa não pode ser exposto sem o consentimento dela (Código Civil, artigo 79.º, n.º 1). A Marta aceitou um uso, rever o ensaio, e não outro.",
-  "fe":["","Aceitar ser filmada para o grupo ver não é aceitar a publicação. O consentimento vale para um uso.","Cortar a queda ajuda, mas não substitui a autorização da Marta para publicar."]},
+  "fe":["","Aceitar ser filmada para o grupo ver não é aceitar a publicação. O consentimento vale para um uso.","Cortar a queda ajuda, mas não substitui o consentimento da Marta para publicar."]},
  {"t":"vf","g":"s03","p":"Caso da sessão 03: uma mostra aberta a todos, num primeiro andar sem elevador, trata todos por igual.","p2":"Se a mostra é aberta a todos mas fica num primeiro andar sem elevador, a regra trata todos da mesma maneira.","v":False,
   "f":"A regra é igual no papel, mas quem usa cadeira de rodas fica de fora. Para julgar uma regra, olha-se também para o efeito que tem em cada pessoa.",
   "fe":"Igual no papel não quer dizer igual no efeito. Quem não consegue subir as escadas não tem o mesmo acesso."},
  {"t":"escolha","g":"s04","p":"Sessão 04: que frase é uma acusação de facto, que tem de ser provada por quem a faz?","p2":"Destas frases, que acusação precisa de prova antes de ser dita em público?",
-  "o":["«O Diogo tirou dinheiro do bar.»","«A comida da cantina sabe-me mal.»","«O cartaz da festa é muito feio.»"],"c":0,
+  "o":["O Diogo tirou dinheiro do bar.","A comida da cantina sabe-me mal.","O cartaz da festa é muito feio."],"c":0,
   "f":"Dizer que alguém tirou dinheiro atribui-lhe um ato concreto. Se não for verdade, atinge o bom nome e a reputação dessa pessoa, que a Constituição protege (artigo 26.º).",
   "fe":["","É uma opinião sobre o gosto da comida, de quem a diz. Não acusa ninguém de nada.","É uma opinião sobre um cartaz. Pode magoar quem o fez, mas não lhe atribui um ato."]},
  {"t":"vf","g":"s05","p":"Sessão 05: numa escola, as câmaras de videovigilância podem filmar as salas de aula.","p2":"A lei deixa uma escola pôr câmaras de videovigilância dentro das salas de aula.","v":False,
   "f":"Nos estabelecimentos de ensino, as câmaras só podem incidir sobre os perímetros externos e os locais de acesso, e sobre espaços com bens que precisam de especial proteção, como laboratórios ou salas de informática (Lei n.º 58/2019, artigo 19.º, n.º 3).",
   "fe":"A lei diz onde as câmaras podem estar numa escola, e as salas de aula não estão na lista."},
- {"t":"escolha","g":"s06","p":"Sessão 06: o júri do concurso de cartazes inclui o irmão de um dos concorrentes. Que problema há aqui?","p2":"Um dos membros do júri é irmão de um concorrente. Que nome tem este problema?",
+ {"t":"escolha","g":"s06","p":"Sessão 06: o júri do concurso de curtas inclui o irmão de um dos concorrentes. Que problema há aqui?","p2":"Um dos membros do júri é irmão de um concorrente. Que nome tem este problema?",
   "o":["Um conflito de interesses no júri.","Um júri com gente a mais na sala.","Uma regra que favorece os mais novos."],"c":0,
   "f":"Quem decide não deve ter um interesse pessoal no resultado. A saída habitual é o irmão não votar nesse concurso e dizê-lo às claras.",
   "fe":["","O número de pessoas não é o problema. O problema é o laço entre quem julga e quem é julgado.","Nada no caso fala de idades. O que pesa é o laço de família com um concorrente."]},
  {"t":"sublinhar","g":"s07","p":"Sessão 07: toca nas duas palavras onde a frase deixa de descrever e passa a concluir.","p2":"Onde é que esta frase salta do que se vê para uma conclusão? Toca nas duas palavras.","frase":INFERENCIA,"certas":[11,12],
-  "f":"Até à vírgula, a frase descreve o que a captura mostra. **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura, é uma inferência."},
+  "f":"Até à vírgula, a frase descreve o que a captura mostra. A expressão **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura: é uma inferência."},
  {"t":"ordenar","g":"s08","p":"Sessão 08: põe por ordem os passos de uma petição.","p2":"Por que ordem se faz uma petição à entidade certa?",
   "passos":["Descobrir quem decide.","Escrever o pedido.","Juntar o fundamento.","Recolher as assinaturas."],
   "f":"Primeiro o destinatário, depois o pedido, o fundamento e as assinaturas. Uma petição é escrita e assinada (Lei n.º 43/90, artigo 9.º)."},
@@ -95,20 +95,21 @@ cartoes = [
   "fe":"Pensa no que faz uma resposta mudar: uma prova nova, não a pressão de quem discorda."},
  {"t":"escolha","g":"cartaz","p":"O cartaz chama à peça «a living newspaper about housing». Que tem isto em comum com o vosso teatro-documento?","p2":"Um «jornal vivo» sobre a habitação: que liga essa peça ao vosso teatro-documento?",
   "o":["Trata um tema real, como faz um jornal.","Conta a vida de um herói inventado.","Mostra só a opinião de quem a escreveu."],"c":0,
-  "f":"O subtítulo diz «jornal vivo sobre a habitação»: um tema real, posto em cena. O vosso teatro-documento também parte do que se investigou.",
+  "f":"O subtítulo diz «a living newspaper about housing», um jornal vivo sobre a habitação: um tema real, posto em cena. O vosso teatro-documento também parte do que se investigou.",
   "fe":["","«Newspaper» quer dizer jornal: fala de assuntos reais, não de heróis inventados.","Um jornal junta factos e vozes diferentes, não só a opinião de quem escreve."]},
  {"t":"escolha","g":"caminho","p":"Qual das respostas a uma objeção mostra o caminho da investigação?","p2":"Diante de uma objeção, que resposta conta como o grupo chegou à conclusão?",
-  "o":["«Pensávamos outra coisa; a entrevista mudou-a.»","«Sempre soubemos isto, desde o primeiro dia.»","«Toda a gente concorda connosco, perguntem.»"],"c":0,
+  "o":["Pensávamos outra coisa até à entrevista.","Sempre soubemos isto, desde o primeiro dia.","Toda a gente concorda connosco, perguntem."],"c":0,
   "f":"Contar o que se pensava antes e o que fez mudar mostra o caminho: houve uma fonte, e a resposta seguiu a prova.",
   "fe":["","Se nunca mudou nada, a investigação não serviu para nada. O que é que as fontes acrescentaram?","Concordar não é provar. Uma maioria pode estar enganada."]},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s10","chave":"epi-cid-m1-s10","versao":"2026-10-31-1",
+ "id":"cidadania-m1-s10","chave":"epi-cid-m1-s10","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 10: O que conseguimos defender?","h1":"Cidadania, módulo 1, sessão 10: O que conseguimos defender?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s10/index.html","piloto":True,
- "fontes":"Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, ... one-third of a nation, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
+ "seguinte":"../m1/","seguinteRotulo":"As 10 sessões",
+ "fontes":"Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')
