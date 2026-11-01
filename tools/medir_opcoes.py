@@ -5,7 +5,9 @@ from pathlib import Path
 from html import unescape
 import argparse,json,re,sys
 # 31/10/2026: as lições piloto da Cidadania refeita (cidadania/piloto) também se medem (revisão de pt-PT do M1).
-PASTAS=('cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto')
+# 30/10/2026: as lições do coração do Laboratório («Ideias», narrativas/ideias, piloto de 31/10) também se medem: escolhas,
+# lacunas e as zonas dos cartões «mapa», que o motor também mostra como opções.
+PASTAS=('cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto','narrativas/ideias')
 # 31/10/2026: lacunas de uma ou duas palavras nas lições piloto da Cidadania refeita (M1): a diferença de 20 % entre
 # palavras curtas é de poucos carateres (nenhuma passa os 8 de fora20 nem é denunciadora); acertá-las mudava o sentido.
 R_CID = 'Lacuna de uma ou duas palavras (Cidadania, lição piloto do M1): termos curtos; não acrescentar palavras que mudem o sentido.'

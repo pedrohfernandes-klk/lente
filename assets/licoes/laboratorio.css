@@ -1,0 +1,62 @@
+/* 31/10/2026: lições do Laboratório no motor único (assets/licoes/), a começar pelo coração «Ideias» (narrativas/ideias/,
+   piloto escondido). A casca é a do Português, como na Cidadania (assets/licoes/cidadania.css); a cor de destaque fica a do
+   Lente (a mostarda de assets/appearance.css, que no sistema «Cartaz» quer dizer «feito»), sem outra. Repetem-se as peças de
+   leitura da Cidadania que a casca não tem (a pergunta do «Abre» e do «Decide», os três lados, a linha «Hoje», a medida dos
+   parágrafos) e acrescenta-se o que é só desta família: as zonas do cartão «mapa» sobre uma obra («Toca no quadro»). */
+.licao-laboratorio .ler .pergunta-c{font:700 1.2rem/1.3 Arial,Helvetica,sans-serif;margin:4px 0 12px}
+.licao-laboratorio .ler details.lado>summary{font-weight:700}
+.licao-laboratorio .ler .aula-linha{font:400 .95rem/1.45 Arial,Helvetica,sans-serif;border-top:1px solid var(--tinta);padding-top:10px;margin-top:16px;text-align:start}
+/* os pontos da folha de resposta a tinta: a mostarda quer dizer «feito», não pontos (a mesma razão da Cidadania) */
+body.licao-laboratorio .casca-folha .c-veredito .c-pts{color:var(--tinta)}
+/* medida dos cartões de leitura: 29em da letra do cartão (cerca de 68 carateres, máximo 75), como na Cidadania */
+@property --medida-ler{syntax:"<length>";inherits:true;initial-value:0px}
+.licao-laboratorio .jogo .ler{--medida-ler:29em}
+.licao-laboratorio .jogo .ler :is(p,ul,ol,details,blockquote){max-width:var(--medida-ler)}
+/* a citação longa (Holmes e Watson, Young, Maupassant): o filete do motor, sem o recuo do navegador à direita */
+.licao-laboratorio .jogo .ler blockquote{margin:12px 0;padding-left:14px}
+.licao-laboratorio .jogo .ler blockquote p{margin:0 0 6px}
+.licao-laboratorio .jogo .ler .fonte{text-align:start}
+/* 31/10/2026 (revisão do diretor de arte): 20 px entre a linha da fonte e o parágrafo seguinte, que se lia como parte do crédito */
+.licao-laboratorio .jogo .ler .fonte:not(:last-child){margin-bottom:20px}
+/* 31/10/2026 (revisão do diretor de arte): as ligações à fonte no retorno em bloco e não em inline-flex (lesson.css), que
+   partia em colunas as que levam <i> e lhes comia os espaços («Aalto,Diving», «dePierre et Jean») */
+.licao-laboratorio .liga a{display:inline-block;min-height:44px;padding:12px 0;box-sizing:border-box}
+/* «Toca no quadro»: as zonas do cartão «mapa» são anéis, para o pormenor que se procura ficar à vista (no Atlas são pontos
+   cheios sobre um mapa a traço). Cada anel tem um halo da cor do papel por baixo, para se ver sobre o claro e o escuro da
+   pintura; a espessura não depende da escala do desenho (vector-effect), por isso é a mesma a 320 e a 1440 px. A imagem fica a
+   preto e branco, como as outras imagens das lições (lesson.css: a cor volta quando a lição fica feita). */
+/* o quadro maior do que o mapa do Atlas (46vh, 360 px): no computador e na projeção, os pormenores das mãos têm de se ver;
+   no telemóvel manda a largura do cartão */
+.licao-laboratorio .jogo .mapa-q svg{max-height:min(58vh,520px);max-height:min(58dvh,520px)}
+.licao-laboratorio .jogo .mapa-q svg image{filter:grayscale(1)}
+.licao-laboratorio .jogo.feita .mapa-q svg image{filter:none}
+.licao-laboratorio .mapa-q .op-m circle.halo{fill:none;stroke:var(--papel);stroke-width:7px;opacity:.9;vector-effect:non-scaling-stroke}
+.licao-laboratorio .mapa-q .op-m circle.anel{fill:none;stroke:var(--tinta);stroke-width:3px;stroke-dasharray:7 5;vector-effect:non-scaling-stroke}
+.licao-laboratorio .mapa-q .op-m.sel circle.anel{stroke:var(--vermelho);stroke-dasharray:none;stroke-width:4px}
+.licao-laboratorio .mapa-q .op-m.bom circle.anel{stroke:var(--tinta);stroke-dasharray:none;stroke-width:5px}
+.licao-laboratorio .mapa-q .op-m.mau circle.anel{stroke:var(--vermelho);stroke-dasharray:2 4;stroke-width:4px;opacity:1}
+.licao-laboratorio .mapa-q .op-m.mau circle.halo{opacity:.9}
+.licao-laboratorio .mapa-q .op-m:focus-visible circle.halo{fill:none;stroke:var(--papel)}
+.licao-laboratorio .mapa-q .op-m:focus-visible circle.anel{stroke:var(--vermelho);stroke-dasharray:none;stroke-width:5px}
+@media (prefers-reduced-motion:reduce){.licao-laboratorio .jogo .mapa-q svg image{transition:none}}
+/* 01/11/2026 (correção 2, diretor de arte): a barra de cima cabe a 320 e a 360 px. Abaixo de 400 px, o nome da marca
+   («Ideias», 81 px) fica só para o leitor de ecrã (o aria-label «Voltar a Ideias» também o diz) e a marca é a casa, num alvo
+   de 44 × 44; o botão Menu deixa de sair do ecrã (estava em x = 299 a 343 a 320 px). */
+@media (max-width:399px){.licao-laboratorio .c-marca-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.licao-laboratorio .c-marca{min-width:44px;justify-content:center}.licao-laboratorio .c-marca .c-casa{margin-right:0}}
+/* 01/11/2026 (correção 2, diretor de arte): as imagens que se observam (La Tour, Atget) maiores do que o limite do motor
+   (40dvh, 360 px): a figura domina o cartão e os pormenores que se perguntam veem-se; o cartão cresce e rola */
+.licao-laboratorio .jogo .ler .fig img{max-height:min(64vh,600px);max-height:min(64dvh,600px)}
+/* 01/11/2026 (correção 2, diretor de arte, sistema 8): na projeção, o botão Projetar some também nas lições */
+html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,html.em-projecao body.licao-laboratorio .epi-projection-launcher{display:none!important}
+/* 01/11/2026 (correção 2, diretor de arte): uma forma verbal com pronome não se parte no hífen (AO90, base XX) */
+.licao-laboratorio .nq{white-space:nowrap}
+/* 01/11/2026 (correção 4, diretor de arte): nas lacunas, o menu e a pontuação que o segue ficam juntos em linha e não numa
+   caixa inline-block, que deixava cair sozinho o «»» que fecha a citação (sessão 2, cartão 16, a 360 px). O nowrap de lesson.css
+   mantém-se. Só nesta família: para as duas, o sítio certo é colar() em jogo.js, num pedido à parte. */
+.licao-laboratorio .jogo .inline .nb{display:inline}
+/* 01/11/2026 (correção 5, diretor de arte, medida da hierarquia, R2): o título dos cartões a 21 px. O rótulo em caixa alta
+   («Decide», «Ler», «Ver», «Na aula», 13 px) tinha 0,71 da letra do título (18,4 px, lesson.css) e competia com ele; a 21 px
+   fica a 0,62. O título em cartaz do «Abre» não muda. Só nesta família: para as duas, o sítio certo é .jogo .tit em lesson.css,
+   num pedido à parte. Equilibrado, como os títulos das páginas de «Ideias»: a 21 px, «sina» (cartão 10, a 320 px) e «olhar»
+   (cartão 7, a 360 e a 390 px) ficavam sozinhas na segunda linha. */
+.licao-laboratorio .jogo .tit:not(.cartaz){font-size:1.3125rem;text-wrap:balance}
