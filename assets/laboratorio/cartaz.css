@@ -35,8 +35,16 @@
 @media(max-width:639px){[data-cartaz-laboratorio] .cz-grid,[data-cartaz-laboratorio] .mais{grid-template-columns:1fr}[data-cartaz-laboratorio] .passos .cz-row{grid-template-columns:24px minmax(0,1fr)}[data-cartaz-laboratorio] .cz-row .cz-state{grid-column:2}}
 @media print{[data-cartaz-laboratorio] .cz-grid{display:block}[data-cartaz-laboratorio] .registos{display:none}}
 [data-cartaz-laboratorio] .cz-state{text-transform:none;letter-spacing:normal}
-[data-cartaz-laboratorio] .topo h1{font:400 clamp(39px,5vw,61px)/1.05 var(--cz-font-poster)}
+[data-cartaz-laboratorio] .topo h1{font:400 var(--cz-t39)/1.05 var(--cz-font-poster)}
 [data-cartaz-laboratorio] .modulo.cz-door>a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:16px;min-height:88px}
 [data-cartaz-laboratorio] .modulo.cz-door>a>:not(span){grid-column:1;margin:0}
 [data-cartaz-laboratorio] .modulo.cz-door>a>span{grid-column:2;grid-row:1/4;align-self:center}
 [data-cartaz-laboratorio] .modulo.cz-door h3{font-size:20px}
+
+/* 01/11/2026: decisão 61, o título e a sua ligação partilham o mesmo degrau. */
+[data-cartaz-laboratorio] h2{font-size:var(--cz-t25)}
+[data-cartaz-laboratorio] .cz-fold-body h2 a{font-size:inherit}
+[data-cartaz-laboratorio] .topo .marca{font-size:var(--cz-t13)}
+[data-cartaz-laboratorio] .topo .lead{font-size:var(--cz-t16)}
+[data-cartaz-laboratorio] .topo .pergunta{font-size:var(--cz-t20)}
+@media(min-width:640px){[data-cartaz-laboratorio] .topo h1{font-size:var(--cz-t61)}}

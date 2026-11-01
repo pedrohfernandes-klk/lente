@@ -3,7 +3,7 @@
    conteúdo migrado, abaixo da barra. Sem ativação nas páginas deste lote.
    As dobras são details.cz-fold com open no HTML: conteúdo acessível sem JS.
    Crédito externo: data-external e nome acessível que indique saída do sítio. */
-[data-cartaz="2"]{--cz-font-ui:Arial,Helvetica,sans-serif;--cz-font-text:Georgia,serif;--cz-font-poster:'Bebas Neue','Arial Narrow',Arial,sans-serif;--cz-t13:.8125rem;--cz-t16:1rem;--cz-t20:1.25rem;--cz-t25:1.5625rem;--cz-t31:1.953125rem;--cz-t39:2.4414rem;--cz-t49:3.0518rem;--cz-t61:3.8147rem;--cz-s1:8px;--cz-s2:16px;--cz-s3:24px;--cz-s4:32px;--cz-s5:40px;--cz-s6:48px;--cz-s8:64px;--cz-reading:65ch;--cz-wide:1200px;--cz-target:48px;--cz-focus:3px;--cz-rule:2px}
+[data-cartaz="2"]{--cz-font-ui:Arial,Helvetica,sans-serif;--cz-font-text:Georgia,serif;--cz-font-poster:'Bebas Neue','Arial Narrow',Arial,sans-serif;--cz-t13:.8125rem;--cz-t16:1rem;--cz-t20:1.25rem;--cz-t25:1.5625rem;--cz-t31:1.9375rem;--cz-t39:2.4375rem;--cz-t49:3.0625rem;--cz-t61:3.8125rem;--cz-s1:8px;--cz-s2:16px;--cz-s3:24px;--cz-s4:32px;--cz-s5:40px;--cz-s6:48px;--cz-s8:64px;--cz-reading:65ch;--cz-wide:1200px;--cz-target:48px;--cz-focus:3px;--cz-rule:2px}
 [data-cartaz="2"]{--cz-ink:var(--tinta,#000);--cz-paper:var(--papel,#fff);--cz-ground:var(--fundo,#f3f2ee);--cz-muted:var(--suave,#444);--cz-done:var(--mostarda,#d9a520);--cz-current:var(--vermelho,#c8232c)}
 
 [data-cartaz="2"] :is([class^="cz-"],[class*=" cz-"]),[data-cartaz="2"] .cz-door>a{box-sizing:border-box}
@@ -11,7 +11,7 @@
 [data-cartaz="2"] :is(.cz-button,.cz-row,.cz-door>a,.cz-credit a,.cz-crumbs a,.cz-prose a,.cz-footer a,.cz-fold>summary):focus-visible,[data-cartaz="2"] .is-focus{outline:var(--cz-focus) solid currentColor;outline-offset:4px}
 [data-cartaz="2"] .cz-wrap{max-width:var(--cz-wide);margin-inline:auto;padding:var(--cz-s3) var(--cz-s2) var(--cz-s8)}
 [data-cartaz="2"] .cz-label{font:700 var(--cz-t13)/1.4 var(--cz-font-ui);letter-spacing:.1em;text-transform:uppercase}
-[data-cartaz="2"] .cz-title{font:400 clamp(var(--cz-t39),5vw,var(--cz-t61))/1.05 var(--cz-font-poster);text-wrap:balance;margin:var(--cz-s2) 0 var(--cz-s3);max-width:22ch}
+[data-cartaz="2"] .cz-title{font:400 var(--cz-t39)/1.05 var(--cz-font-poster);text-wrap:balance;margin:var(--cz-s2) 0 var(--cz-s3);max-width:22ch}
 [data-cartaz="2"] .cz-prose{font:var(--cz-t16)/1.55 var(--cz-font-text);max-width:var(--cz-reading);text-wrap:pretty;hyphens:auto;overflow-wrap:break-word}
 [data-cartaz="2"] .cz-prose a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
 [data-cartaz="2"] .cz-prose a:is(:hover,.is-hover){text-decoration-thickness:2px}
@@ -81,3 +81,6 @@ html.em-projecao [data-cartaz="2"] [data-personal]{display:none}
 [data-cartaz="2"] .cz-fold>summary::after{content:"+";margin-left:auto}
 [data-cartaz="2"] .cz-fold[open]>summary::after{content:"−"}
 @media print{[data-cartaz="2"] .cz-next .cz-button{color:#000;background:#fff;border-color:#000}}
+
+/* 01/11/2026: decisão 61, degraus exatos da escala, sem tamanhos intermédios. */
+@media(min-width:640px){[data-cartaz="2"] .cz-title{font-size:var(--cz-t61)}}
