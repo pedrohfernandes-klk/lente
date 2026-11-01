@@ -21,3 +21,9 @@ test('peças não alteram armazenamento nem se ligam às páginas existentes', (
     e.isDirectory() ? walk(path.join(dir,e.name)) : e.name.endsWith('.html') ? [path.join(dir,e.name)] : []);
   for(const file of walk(path.join(__dirname,'..'))) assert.doesNotMatch(fs.readFileSync(file,'utf8'),/cartaz-components\.(?:css|js)/,file);
 });
+
+// 01/11/2026: peças carregadas por appearance.css, ainda sem páginas ativadas.
+test('o carregamento comum importa as peças antes das regras existentes', () => {
+  const css=fs.readFileSync(path.join(__dirname,'../assets/appearance.css'),'utf8');
+  assert.ok(css.startsWith('@import url("cartaz-components.css?v=20261101-1");'));
+});
