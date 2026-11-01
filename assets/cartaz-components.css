@@ -84,3 +84,34 @@ html.em-projecao [data-cartaz="2"] [data-personal]{display:none}
 
 /* 01/11/2026: decisão 61, degraus exatos da escala, sem tamanhos intermédios. */
 @media(min-width:640px){[data-cartaz="2"] .cz-title{font-size:var(--cz-t61)}}
+/* 01/11/2026: movimento Cartaz. */
+.cz-motion-part{display:inline-block}
+:is(.cz-motion-line,.cz-motion-point,.cz-motion-correct,.cz-motion-error){position:relative}
+.cz-motion-line{display:block;height:2px;background:var(--cz-muted)}
+.cz-motion-line::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--cz-progress,100%);background:var(--cz-ink);transform-origin:left}
+.cz-motion-point{display:inline-grid;place-items:center;width:32px;height:32px;background:var(--cz-done);color:var(--cz-ink)}
+.cz-motion-point::after{content:"";position:absolute;inset:0;border:2px solid currentColor}
+.cz-motion-correct{display:inline-block;padding-bottom:8px}
+.cz-motion-correct::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:currentColor;transform-origin:left}
+.cz-motion-error{padding-left:24px}
+.cz-motion-error::before{content:"↳";position:absolute;left:0;top:0}
+.cz-motion-digits{display:inline-block;vertical-align:middle;width:3ch;height:1.2em;overflow:hidden;font:700 31px/1.2 Arial,sans-serif;font-variant-numeric:tabular-nums}
+.cz-motion-roll{display:block;transform:translateY(-50%)}
+.cz-motion-roll>b{display:block;height:1.2em;line-height:1.2}
+@keyframes cz-reveal{from{opacity:.72}to{opacity:1}}
+@keyframes cz-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes cz-cue{from{opacity:.3;transform:translateX(-4px)}to{opacity:1;transform:translateX(0)}}
+@keyframes cz-number{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media(prefers-reduced-motion:no-preference){
+:is(.cz-motion-part,.cz-motion-fold).cz-motion-active{animation:cz-reveal 180ms ease-out both}
+.cz-motion-line.cz-motion-active::after{animation:cz-draw 350ms ease-out both}
+.cz-motion-point.cz-motion-active::after{animation:cz-reveal 250ms ease-out both}
+.cz-motion-correct.cz-motion-active::after{animation:cz-draw 250ms ease-out both}
+.cz-motion-error.cz-motion-active::before{animation:cz-cue 220ms ease-out both}
+.cz-motion-number.cz-motion-active .cz-motion-roll{animation:cz-number 550ms ease-out both}
+html[data-cz-motion-enabled] .epi-ampliar.cz-motion-viewer{opacity:.72;transition:opacity 180ms ease-out}
+html[data-cz-motion-enabled] .epi-ampliar.cz-motion-viewer.cz-motion-active{opacity:1}}
+:is(.cz-next,[data-cz-motion-off]),:is(.cz-next,[data-cz-motion-off]) *,:is(.cz-next,[data-cz-motion-off])::before,:is(.cz-next,[data-cz-motion-off])::after,:is(.cz-next,[data-cz-motion-off]) *::before,:is(.cz-next,[data-cz-motion-off]) *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){[data-cz-motion-region],[data-cz-motion-region] *,[data-cz-motion-region] ::before,[data-cz-motion-region] ::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.epi-ampliar.cz-motion-viewer{opacity:1!important;transition:none!important}[data-cz-motion-region],[data-cz-motion-region] *,[data-cz-motion-region] ::before,[data-cz-motion-region] ::after{animation:none!important;transition:none!important}}
+/* fim */

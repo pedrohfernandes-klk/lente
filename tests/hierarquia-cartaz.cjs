@@ -3,7 +3,8 @@
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),http=require('http');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..');
-const candidates=['index.html','narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html'];
+// 01/11/2026: a demonstração nova também passa pela medição integral R1–R5.
+const candidates=['demonstracoes/cartaz-animacoes/index.html','index.html','narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html'];
 const pages=candidates.filter(p=>fs.existsSync(path.join(root,p))&&fs.readFileSync(path.join(root,p),'utf8').includes('data-cartaz="2"'));
 const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+new URL(q.url,'http://local').pathname.replace(/^\/lente/,''));if(f!==root&&!f.startsWith(root+path.sep)){r.writeHead(403);return r.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f));}catch{r.writeHead(404);r.end();}});
 const MEASURE=()=>{

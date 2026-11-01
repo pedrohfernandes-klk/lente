@@ -1,20 +1,60 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
     steps:
+      # 01/11/2026: base disponível para os contratos de isolamento.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # 01/11/2026: bateria Python completa, sem excluir famílias.
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node --test tests/cartaz.test.cjs tests/appearance.test.cjs tests/cartaz_animacoes.test.cjs
+      - run: node tests/browser_cartaz.cjs
+      # 01/11/2026: movimento, estado final, primeira ação e contrato do visor.
+      - run: node tests/browser_cartaz_animacoes.cjs
+      # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
+      - run: node tests/hierarquia-cartaz.cjs
+
+  regressao-navegador:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm install --no-save playwright
-      - run: npx playwright install --with-deps chromium
-      - run: node --test tests/cartaz.test.cjs tests/appearance.test.cjs
-      - run: node tests/browser_cartaz.cjs
-      # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
-      - run: node tests/hierarquia-cartaz.cjs
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      # 01/11/2026: todos os seis programas existentes, mesmo se um anterior falhar.
+      - if: ${{ !cancelled() }}
+        run: node tests/browser_formas.cjs
+      - if: ${{ !cancelled() }}
+        run: node tests/browser_lab_percursos.cjs
+      - if: ${{ !cancelled() }}
+        run: node tests/browser_tres_cartas.cjs
+      - if: ${{ !cancelled() }}
+        run: node tests/browser_licoes_lente.cjs
+      - if: ${{ !cancelled() }}
+        run: python tests/browser_reciclagem_lente.py
+      - if: ${{ !cancelled() }}
+        run: python tests/browser_texto_justificado.py
