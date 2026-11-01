@@ -1,4 +1,5 @@
 # Auditoria Cartaz, 31/10/2026
+**Decisão 54, comunicada em 01/11: Observar, Treinar, Criar.** As propostas usam Observar; as capturas mantêm Ver como prova histórica. A equipa da barra comum aplica os rótulos na entrada do Laboratório, na porta do Lente, nos percursos Observar 1…, no mapa e em Ideias. O Caderno já usa Observar. Mantêm-se narrativas/ver/, as âncoras e o progresso. Não se volta a pedir aprovação desta decisão.
 Fase 1. Proposta documental. Não fundir.
 [Abrir relatório HTML](relatorio.html) | [Biblioteca de peças](proposta/biblioteca.html) | [Tokens propostos](proposta/appearance.css)
 
@@ -51,7 +52,7 @@ Página: `/lente/narrativas/`
 
 | Onde | Problema | Princípio | Gravidade | Correção | Prova |
 |---|---|---|---|---|---|
-| 390 px / claro e escuro | «Os seis percursos de Ver» tem alvo de 44 px, mas conserva o sublinhado de uma ligação no texto. | Semelhança / hierarquia / proximidade | Importante | Cartão acionável completo, seta alinhada, sem sublinhado; listas dobradas em bandas de 88 px abaixo de 640 px. A lista completa continua no documento. | captura integral |
+| 390 px / claro e escuro | O rótulo publicado «Os seis percursos de Ver», substituído por «Observar» na decisão 54, tem alvo de 44 px, mas conserva o sublinhado de uma ligação no texto. | Semelhança / hierarquia / proximidade | Importante | Cartão acionável completo, seta alinhada, sem sublinhado; listas dobradas em bandas de 88 px abaixo de 640 px. A lista completa continua no documento. | captura integral |
 | 390 px / claro e escuro | «Wikimedia Commons» mede 122,8 × 15 px nesta família. | Semelhança / hierarquia / proximidade | Importante | Legenda adjacente à obra, 13/19,5 px; origem com alvo autónomo 44 px, sem sublinhado em repouso. Manter a imagem própria de cada página e a licença. | captura integral |
 | 390 px / claro e escuro | A ligação .continuar tem 58 px de altura na captura móvel e um contorno lateral vermelho. | Semelhança / hierarquia / proximidade | Importante | Usar .cz-next e botão de 48 px mínimo; o vermelho fica no estado atual. Não duplicar a região com outro convite preto. | captura integral |
 | 390 px / light | Wikimedia Commons: 122.8 × 15 px. | Dimensão do alvo / proximidade | Verificar contexto | a: Se ligação corrida, conservar sublinhado; se origem ou saída autónoma, separar e aplicar min-height:44px; min-width:44px. | medida |
@@ -64,7 +65,7 @@ Página: `/lente/narrativas/`
 [Claro, 390](capturas/lab-390-light.jpg) / [Escuro, 390](capturas/lab-390-dark.jpg) / [Claro, 1366](capturas/lab-1366-light.jpg) / [Escuro, 1366](capturas/lab-1366-dark.jpg)
 [Estudo depois](proposta/paginas/lab.html)
 
-## Ver
+## Observar
 Página: `/lente/narrativas/ver/`
 
 | Onde | Problema | Princípio | Gravidade | Correção | Prova |

@@ -669,7 +669,7 @@
     },
     {
       "selector": "a",
-      "text": "01 / LABORATÓRIO Ver Como os outros fizeram. →",
+      "text": "01 / LABORATÓRIO Observar Como os outros fizeram. →",
       "x": 32,
       "y": 5226.4,
       "w": 326,
@@ -687,7 +687,7 @@
     },
     {
       "selector": "a.is-hover",
-      "text": "01 / LABORATÓRIO Ver Como os outros fizeram. →",
+      "text": "01 / LABORATÓRIO Observar Como os outros fizeram. →",
       "x": 32,
       "y": 5521.4,
       "w": 326,
@@ -705,7 +705,7 @@
     },
     {
       "selector": "a.is-focus",
-      "text": "01 / LABORATÓRIO Ver Como os outros fizeram. →",
+      "text": "01 / LABORATÓRIO Observar Como os outros fizeram. →",
       "x": 32,
       "y": 5816.4,
       "w": 326,
@@ -723,7 +723,7 @@
     },
     {
       "selector": "a.is-active",
-      "text": "01 / LABORATÓRIO Ver Como os outros fizeram. →",
+      "text": "01 / LABORATÓRIO Observar Como os outros fizeram. →",
       "x": 32,
       "y": 6111.4,
       "w": 326,
@@ -741,7 +741,7 @@
     },
     {
       "selector": "a.is-visited",
-      "text": "01 / LABORATÓRIO Ver Como os outros fizeram. →",
+      "text": "01 / LABORATÓRIO Observar Como os outros fizeram. →",
       "x": 32,
       "y": 6406.3,
       "w": 326,
@@ -759,7 +759,7 @@
     },
     {
       "selector": "summary",
-      "text": "Ver: seis percursos",
+      "text": "Observar: seis percursos",
       "x": 48,
       "y": 6701.3,
       "w": 294,

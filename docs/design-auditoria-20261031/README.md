@@ -15,6 +15,10 @@ O relatório HTML abre localmente num navegador. As capturas e as tabelas Markdo
 
 As únicas adições estão nesta pasta. Sem alterações à barra, às páginas, a assets/appearance.css, a geradores ou a testes. O CSS desta pasta é uma amostra documental opt-in.
 
+## Decisão 54 já aprovada
+
+A primeira porta chama-se **Observar**: Observar, Treinar, Criar. Propostas e biblioteca atualizadas; capturas anteriores preservadas como prova. A equipa da barra comum aplica os rótulos visíveis. Mantêm-se `narrativas/ver/`, âncoras e progresso.
+
 ## Decisão pedida
 
 Aprovar ou ajustar D1 a D6 no relatório: ligações, retoma, escala de espaço, estados, dobras e exceções de identidade. Depois da ronda, fechar este pedido sem o fundir. A fase 2 só começa após decisão explícita.

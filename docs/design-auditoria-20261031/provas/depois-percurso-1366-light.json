@@ -1,5 +1,5 @@
 {
-  "title": "Dar forma a uma história / estudo",
+  "title": "Observar 1: Dar forma a uma história / estudo",
   "theme": "light",
   "viewport": {
     "w": 1366,
@@ -10,11 +10,11 @@
   "h1": [
     {
       "selector": "h1.cz-title",
-      "text": "Dar forma a uma história",
+      "text": "Observar 1: Dar forma a uma história",
       "x": 107,
       "y": 127.2,
       "w": 537.1,
-      "h": 64.1,
+      "h": 128.2,
       "font": "\"Bebas Neue\", \"Arial Narrow\", Arial, sans-serif",
       "size": 61.0352,
       "line": "64.087px",

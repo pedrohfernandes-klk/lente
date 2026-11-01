@@ -1,5 +1,5 @@
 {
-  "title": "Ver / estudo",
+  "title": "Observar / estudo",
   "theme": "light",
   "viewport": {
     "w": 390,
@@ -10,7 +10,7 @@
   "h1": [
     {
       "selector": "h1.cz-title",
-      "text": "Ver",
+      "text": "Observar",
       "x": 16,
       "y": 140.6,
       "w": 343.7,
@@ -67,7 +67,7 @@
     },
     {
       "selector": "summary",
-      "text": "Dar forma a uma história",
+      "text": "Observar 1: Dar forma a uma história",
       "x": 32,
       "y": 511.4,
       "w": 326,
@@ -103,7 +103,7 @@
     },
     {
       "selector": "summary",
-      "text": "Conhecer uma personagem",
+      "text": "Observar 2: Conhecer uma personagem",
       "x": 32,
       "y": 719.8,
       "w": 326,
@@ -139,7 +139,7 @@
     },
     {
       "selector": "summary",
-      "text": "Ler o que não se diz",
+      "text": "Observar 3: Ler o que não se diz",
       "x": 32,
       "y": 815.8,
       "w": 326,
