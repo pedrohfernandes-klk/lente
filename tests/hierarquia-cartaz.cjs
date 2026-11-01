@@ -3,10 +3,12 @@
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),http=require('http');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..');
+// 01/11/2026: serve o prefixo publicado do próprio repositório, também no Português.
+const site=require('node:child_process').execFileSync('git',['config','--get','remote.origin.url'],{cwd:root,encoding:'utf8'}).trim().split('/').pop().replace(/\.git$/,'');
 // 01/11/2026: a demonstração nova também passa pela medição integral R1–R5.
 const candidates=['demonstracoes/cartaz-animacoes/index.html','index.html','narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html'];
 const pages=candidates.filter(p=>fs.existsSync(path.join(root,p))&&fs.readFileSync(path.join(root,p),'utf8').includes('data-cartaz="2"'));
-const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+new URL(q.url,'http://local').pathname.replace(/^\/lente/,''));if(f!==root&&!f.startsWith(root+path.sep)){r.writeHead(403);return r.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f));}catch{r.writeHead(404);r.end();}});
+const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+new URL(q.url,'http://local').pathname.replace(new RegExp('^/'+site),''));if(f!==root&&!f.startsWith(root+path.sep)){r.writeHead(403);return r.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f));}catch{r.writeHead(404);r.end();}});
 const MEASURE=()=>{
   const vis=e=>{const r=e.getBoundingClientRect();if(r.width<2||r.height<2)return false;for(let x=e;x&&x!==document.documentElement;x=x.parentElement){if(x.hidden)return false;const c=getComputedStyle(x);if(c.display==='none'||c.visibility==='hidden'||+c.opacity<.05)return false;if(x.matches&&x.matches('.sr-only,.c-sr,.p-sr,.visually-hidden,dialog:not([open]),details:not([open])>:not(summary)'))return false;}return true;};
   const fs=e=>parseFloat(getComputedStyle(e).fontSize);
@@ -34,9 +36,9 @@ const MEASURE=()=>{
  for(const theme of ['light','dark'])for(const width of [390,1366]){
  const ctx=await browser.newContext({viewport:{width,height:900},colorScheme:theme,reducedMotion:'reduce'});
  // O CSS absoluto do próprio sítio é servido pela árvore local; fontes externas não alteram tamanhos.
- await ctx.route('**/*',async route=>{const u=new URL(route.request().url());if(u.origin===origin)return route.continue();if(u.hostname==='pedrohfernandes-klk.github.io'&&u.pathname.startsWith('/lente/')){const response=await ctx.request.get(origin+u.pathname+u.search);return route.fulfill({response});}return route.abort();});
+ await ctx.route('**/*',async route=>{const u=new URL(route.request().url());if(u.origin===origin)return route.continue();if(u.hostname==='pedrohfernandes-klk.github.io'&&u.pathname.startsWith('/'+site+'/')){const response=await ctx.request.get(origin+u.pathname+u.search);return route.fulfill({response});}return route.abort();});
  const page=await ctx.newPage();
- for(const p of pages){await page.goto(origin+'/lente/'+p,{waitUntil:'networkidle'});
+ for(const p of pages){await page.goto(origin+'/'+site+'/'+p,{waitUntil:'networkidle'});
  for(const mode of ['normal','dobras abertas']){
  if(mode==='dobras abertas')await page.locator('details').evaluateAll(es=>es.forEach(e=>e.open=true));
  const m=await page.evaluate(MEASURE);const row={page:p,width,theme,mode,...m};rows.push(row);

@@ -1,7 +1,7 @@
 /* 01/11/2026: comandos exclusivos da demonstração; não são adaptadores de páginas. */
 (()=>{'use strict';const motion=EPICartaz.motion,html=document.documentElement;
 for(const [id,attribute] of [['reduzir','data-cz-reduce'],['projetar','data-cz-projection']])document.getElementById(id).addEventListener('change',e=>{html.toggleAttribute(attribute,e.target.checked);motion.sync();});
-document.getElementById('escuro').addEventListener('change',e=>html.dataset.theme=e.target.checked?'dark':'light');
+
 document.querySelectorAll('[data-play]').forEach(button=>button.addEventListener('click',()=>{const kind=button.dataset.play,region=button.closest('[data-example]'),el=region.querySelector('.cz-motion-'+kind);if(kind==='point'){const before=button.dataset.done==='yes';button.dataset.done='yes';motion.complete(el,{before,after:true,event:'demo-conclusao'});}else if(kind==='number')motion.number(el,6,7);else motion.play(el);}));
 document.querySelectorAll('.demo-fold').forEach(fold=>{let gesture=false;fold.querySelector('summary').addEventListener('click',()=>gesture=true);fold.addEventListener('toggle',()=>{if(gesture&&fold.open)motion.play(fold.querySelector('.cz-motion-fold'));gesture=false;});});
 // Simulador do contrato acordado. Não define nem altera EPIAmpliar.
