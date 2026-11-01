@@ -395,4 +395,33 @@ async function responder(p,x){
      assert.equal(await p.locator('[data-c-num]').innerText(),'2/'+d.cartoes.length)}
     assert.equal(await largo(p),0,'lição: deslize, '+onde);assert.deepEqual(erros,[]);await ctx.close()}}
   console.log('PASS método: o bloco «O método» na entrada (5 larguras, claro, escuro e projeção), «Passo 1 de 5» na região «A seguir», no primeiro cartão, na barra a partir de 430 px e no título, e a apresentação de Young na sessão 1; nenhum passo sozinho numa linha, o passo inteiro no rótulo e «HOJE» a 13 px; a lista dos passos com o mesmo desenho na entrada e nas lições e o filete do bloco à largura da coluna; a linha do método no «Abre» até 75 carateres por linha')}
+ // 12. 01/11/2026: (correção 5 do método, diretor de arte) as palavras com hífen não partem no hífen sem o repetir (AO90, base
+ // XX, 4.º): «norte-americano» na entrada (ecrã e projeção), no guia do docente e no cartão 2 da sessão 1 («O método»), com a regra
+ // .nq; «estudá-lo» e «conta-o» na sessão 2 (retornos dos cartões 4 e 8 e o passo 3 do ordenar, antes e depois de responder),
+ // com a junção de palavras (U+2060) a seguir ao hífen, porque o motor escapa o texto dos cartões de fazer. De 320 a 700 px de 5 em
+ // 5 px e de 700 a 1440 px de 20 em 20, no ecrã e na projeção. Uma ocorrência conta como partida quando a palavra ocupa mais de
+ // uma linha. O «Maupassant conta-o» do passo 2 vem de d043fa1 e não entra nesta medida
+ {const PARTIDAS='(res=>{const out=[];const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=tw.nextNode()){const pe=n.parentElement;if(!pe||pe.closest("script,style,template,title"))continue;for(const src of res){const re=new RegExp(src,"gu");let m;while((m=re.exec(n.textContent))){const r=document.createRange();r.setStart(n,m.index);r.setEnd(n,m.index+m[0].length);const tops=[...new Set([...r.getClientRects()].filter(x=>x.width>0&&x.height>0).map(x=>Math.round(x.top)))];if(tops.length>1)out.push(m[0])}}}return out})';
+  const L12=[];for(let x=320;x<700;x+=5)L12.push(x);for(let x=700;x<=1440;x+=20)L12.push(x);
+  const NA=['norte-\\u2060?americano'],S2=['estudá-\\u2060?lo','(?<=1940 )conta-\\u2060?o','(?<=método )conta-\\u2060?o'];
+  let medidas=0;
+  async function semPartir(p,res,onde){for(const w of L12){await p.setViewportSize({width:w,height:800});await p.waitForTimeout(20);
+    const r=await p.evaluate(([F,R])=>eval(F)(R),[PARTIDAS,res]);medidas++;assert.deepEqual(r,[],onde+': palavra partida no hífen a '+w+' px')}}
+  async function presente(p,res,onde){const r=await p.evaluate(R=>R.some(src=>new RegExp(src,'u').test(document.body.innerText)),res);assert(r,onde+': a palavra não está na página')}
+  for(const q of ['','?projetar=1']){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,390,800,'light');
+   await presente(p,NA,'entrada'+q);await semPartir(p,NA,'entrada'+(q?' (projeção)':''));assert.deepEqual(erros,[]);await ctx.close()}
+  {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/docente/',390,800,'light');await presente(p,NA,'guia');await semPartir(p,NA,'guia do docente');assert.deepEqual(erros,[]);await ctx.close()}
+  const d1=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s01.json'),'utf8')),d2=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s02.json'),'utf8'));
+  for(const q of ['','?projetar=1']){
+   {const {ctx,p,erros}=await abrir(b,base+d1.saida.replace(/index\.html$/,'')+q,390,800,'light');await seguinte(p);
+    await presente(p,NA,'sessão 1, cartão 2'+q);await semPartir(p,NA,'sessão 1, cartão 2'+(q?' (projeção)':''));assert.deepEqual(erros,[]);await ctx.close()}
+   {const {ctx,p,erros}=await abrir(b,base+d2.saida.replace(/index\.html$/,'')+q,390,800,'light');let vistos=0;
+    for(let i=0;i<d2.cartoes.length;i++){const x=d2.cartoes[i],tem=S2.some(src=>new RegExp(src,'u').test(JSON.stringify(x)));
+     const onde='sessão 2, cartão '+(i+1)+(q?' (projeção)':'');
+     if(tem&&x.t==='ordenar'){await presente(p,S2,onde+', antes de responder');await semPartir(p,S2,onde+', antes de responder')}
+     if(x.t!=='ler'){await p.setViewportSize({width:390,height:800});await p.waitForTimeout(50);await responder(p,x)}
+     if(tem){await presente(p,S2,onde+', depois de responder');await semPartir(p,S2,onde+', depois de responder');vistos++;await p.setViewportSize({width:390,height:800});await p.waitForTimeout(50)}
+     if(i<d2.cartoes.length-1)await seguinte(p)}
+    assert.equal(vistos,3,'sessão 2: os três cartões com «estudá-lo» e «conta-o»'+(q?' (projeção)':''));assert.deepEqual(erros,[]);await ctx.close()}}
+  console.log('PASS hífen: «norte-americano», «estudá-lo» e «conta-o» nunca partem no hífen, de 320 a 1440 px, no ecrã e na projeção ('+medidas+' medidas)')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

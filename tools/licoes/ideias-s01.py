@@ -63,7 +63,7 @@ ABRE = (
 # por palavras nossas, é a da frase seguinte do livro («numa ordem definida»). A data (1940) é a da primeira edição, como na
 # Biblioteca.
 METODO = (
- '<p>James Webb Young foi um publicitário norte-americano. Em 1940 publicou <i>A Technique for Producing Ideas</i>, um livro de poucas páginas, nascido de uma aula na Universidade de Chicago. Ao apresentar o método, escreve:</p>'
+ '<p>James Webb Young foi um publicitário <span class="nq">norte-americano</span>. Em 1940 publicou <i>A Technique for Producing Ideas</i>, um livro de poucas páginas, nascido de uma aula na Universidade de Chicago. Ao apresentar o método, escreve:</p>'
  '<blockquote><p>«Esta técnica intelectual consiste em cinco passos. Tenho a certeza de que todos, um por um, são reconhecíveis.»</p></blockquote>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): na fonte, o título do livro como no texto do cartão, na entrada, no guia e
  # no menu de fontes (antes, «Uma Técnica para Produzir Ideias», e nada dizia ao aluno que era o mesmo livro)

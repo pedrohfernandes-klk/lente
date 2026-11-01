@@ -57,7 +57,7 @@ SESSOES = [
   'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
-  'passo': 'Passos 1 e 2 de 5: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
+  'passo': 'Passos 1 e 2 de 5: juntar o material geral e começar a trabalhá-lo', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
  {'n': 4, 'porta': 'treinar', 'titulo': 'Três cachimbos', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
   'passo': 'Passos 2 e 3 de 5: trabalhar o material e largá-lo', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
  {'n': 5, 'porta': 'criar', 'titulo': 'O estribo', 'pergunta': 'Quando a ideia aparece, sabes de onde veio?',
@@ -675,7 +675,7 @@ def pagina_entrada(L):
              # (a medida de 34 em). No telemóvel vem depois do gesto, como vinha a linha de informação: a região «A seguir» e o
              # gesto continuam no primeiro ecrã, e a frase de abertura e a região já dizem o método e o passo de hoje
              '<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>'
-             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
+             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário <span class="nq">norte-americano</span>, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
              '<ol class="passos-m">' + ''.join(f'<li><b>{n}</b> {t}</li>' for n, t in enumerate(PASSOS, 1)) + '</ol></section></header>'
              '<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>'
              # 01/11/2026 (método): o passo do método na linha do rótulo («Começa aqui: passo 1 de 5»), sem linha nova: a 390 px
@@ -818,7 +818,7 @@ def pagina_guia(L):
              # 01/11/2026 (correção 4 do método, revisor de pt-PT): «Há outros métodos; escolhemos este», com antecedente explícito, como na
              # entrada e no cartão 2 da sessão 1 («Não é o único método; escolhemo-lo» lia-se como «o percurso» ou «o livro»)
              '<section class="sessao" id="metodo"><h2>Porque seguimos um método</h2>'
-             '<p class="pg">O percurso adota como espinha <i>A Technique for Producing Ideas</i> (1940), o livro de poucas páginas em que o publicitário norte-americano James Webb Young descreve como se chega a uma ideia. Há outros métodos; escolhemos este por ser simples e claro, por fazer sentido e por ajudar de facto. O objetivo é que os alunos o aprendam aqui, passo a passo, e depois o usem por conta própria.</p>'
+             '<p class="pg">O percurso adota como espinha <i>A Technique for Producing Ideas</i> (1940), o livro de poucas páginas em que o publicitário <span class="nq">norte-americano</span> James Webb Young descreve como se chega a uma ideia. Há outros métodos; escolhemos este por ser simples e claro, por fazer sentido e por ajudar de facto. O objetivo é que os alunos o aprendam aqui, passo a passo, e depois o usem por conta própria.</p>'
              '<ol class="passos-g">' + ''.join(f'<li><b>{n}</b>: {e(t)}</li>' for n, t in GUIA_METODO) + '</ol>'
              '<p class="pg"><b>Na primeira aula.</b> Cinco minutos, logo a seguir ao «Abre»: no cartão 2 da sessão 1, o docente escreve os cinco passos no quadro, numerados, marca o primeiro e lê a frase do livro que o cartão cita. Nas sessões seguintes, basta voltar a escrever os cinco e marcar o do dia: o primeiro cartão de cada sessão faz o mesmo.</p>'
              '<p class="pg"><b>Onde o nome volta.</b> Os cartões apresentam Young uma vez, na sessão 1, e voltam a nomeá-lo só na passagem de um passo para o outro (no fim da sessão 2, para o passo 2) e na fonte das citações. No resto, pedem o passo sem dizer quem o manda: juntar material, olhar até ao fundo, largar o problema. Na aula, o docente pode fazer o mesmo.</p></section>'
