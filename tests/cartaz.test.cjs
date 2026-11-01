@@ -13,13 +13,17 @@ test('estados escritos por extenso, sem inventar datas', () => {
   assert.equal(stateLabel({done:true,date:'2026-02-30'}), 'Feita');
   assert.equal(stateLabel({done:true,date:'ontem'}), 'Feita');
 });
-test('peças não alteram armazenamento nem se ligam às páginas existentes', () => {
+test('peças não alteram armazenamento e exigem ativação explícita', () => {
   const source = fs.readFileSync(path.join(__dirname,'../assets/cartaz-components.js'),'utf8');
   assert.doesNotMatch(source,/localStorage|sessionStorage/);
   const walk = dir => fs.readdirSync(dir,{withFileTypes:true}).flatMap(e =>
     e.name.startsWith('.') || ['tests','node_modules'].includes(e.name) ? [] :
     e.isDirectory() ? walk(path.join(dir,e.name)) : e.name.endsWith('.html') ? [path.join(dir,e.name)] : []);
-  for(const file of walk(path.join(__dirname,'..'))) assert.doesNotMatch(fs.readFileSync(file,'utf8'),/cartaz-components\.(?:css|js)/,file);
+  // 01/11/2026: as migrações posteriores ativam as peças apenas no conteúdo marcado.
+  for(const file of walk(path.join(__dirname,'..'))) {
+    const html=fs.readFileSync(file,'utf8');
+    if(/cartaz-components\.(?:css|js)/.test(html)) assert.match(html,/data-cartaz="2"/,file);
+  }
 });
 
 // 01/11/2026: peças carregadas por appearance.css, ainda sem páginas ativadas.
