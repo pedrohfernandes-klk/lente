@@ -667,6 +667,10 @@ class Metodo(unittest.TestCase):
         self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li b{font:400 1.125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;', css)
         self.assertIn('@media (min-width:600px){.licao-laboratorio .jogo .ler ol.passos-m li b{font-size:1.3125rem}}', css)
         self.assertIn('.ideias ol.passos-m b{font:400 1.3125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif}', s)
+        # 01/11/2026: (correção 4 do método, diretor de arte) a linha do método com a medida do texto corrido (33 em, até 75 carateres);
+        # o filete continua à largura dos cartões de ler (as linhas medidas no Chromium em browser_ideias.cjs, secção 11)
+        self.assertIn('.licao-laboratorio .jogo .ler .metodo-linha p{max-width:33em}', css)
+        self.assertIn('.licao-laboratorio .jogo .ler .metodo-linha{max-width:var(--medida-ler)}', css)
         # o guião diz o passo no cabeçalho de cada sessão; o guia, na sequência e em cada sessão
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
         # 01/11/2026: (correção 1 do método, diretor de arte, revisor e verificador) o cabeçalho diz «Passo N de 5» e o nome do passo
@@ -747,9 +751,12 @@ class Metodo(unittest.TestCase):
         self.assertIn('<li><a href="#metodo">Porque seguimos um método</a></li>', guia)
         sec = re.search(r'<section class="sessao" id="metodo">.*?</section>', guia, re.S).group(0)
         t = L.visivel(sec)
-        for frag in ('adota como espinha', 'Não é o único método', 'simples e claro, por fazer sentido e por ajudar de facto', 'depois o usem por conta própria',
+        # 01/11/2026: (revisor de pt-PT, volta 4 do método) a frase do guia com antecedente explícito, como na entrada e no cartão 2
+        for frag in ('adota como espinha', 'Há outros métodos; escolhemos este por ser simples e claro', 'simples e claro, por fazer sentido e por ajudar de facto', 'depois o usem por conta própria',
                      'Na primeira aula. Cinco minutos', 'os cinco passos no quadro', 'Onde o nome volta.', 'só na passagem de um passo para o outro'):
             self.assertIn(frag, t)
+        # 01/11/2026: (correção 4 do método, revisor de pt-PT) a frase antiga, sem antecedente, não volta
+        self.assertNotIn('Não é o único método', t)
         self.assertEqual(re.findall(r'<li><b>([^<]+)</b>:', sec), self.PASSOS)
         # os números dos cartões no guia acertam com a lição (o vídeo e o resumo com a ligação)
         d1 = self.licoes()[0]

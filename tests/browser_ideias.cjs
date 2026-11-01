@@ -330,6 +330,10 @@ async function responder(p,x){
  const numeroEsperado=(w,q)=>['Bebas Neue',(w<600?18:21)*(q?1.375:1)],nomeEsperado=q=>15*(q?1.375:1);
  const DESENHO='(ol=>{const b=getComputedStyle(ol.querySelector("li b")),li=getComputedStyle(ol.querySelector("li"));return {numero:[b.fontFamily.split(",")[0].replace(/\x22/g,"").trim(),parseFloat(b.fontSize)],nome:parseFloat(li.fontSize)}})';
  const NB='\u00a0';
+ // 01/11/2026: (correção 4 do método, diretor de arte) a linha do método no «Abre» com a medida do texto corrido: nenhuma linha
+ // de .metodo-linha p com mais de 75 carateres (antes, de 1024 a 1440 px, 76 e 77, com o parágrafo à largura dos cartões de ler,
+ // 533,6 px; agora parte aos 33 em). Conta os carateres de cada linha visual, com os espaços de dentro e sem o do fim
+ const LINHAS='(p=>{const w=document.createTreeWalker(p,NodeFilter.SHOW_TEXT),L=[];let n,cur=null;while(n=w.nextNode())for(let i=0;i<n.textContent.length;i++){const c=n.textContent[i],r=document.createRange();r.setStart(n,i);r.setEnd(n,i+1);const q=[...r.getClientRects()].filter(x=>x.width>0);if(!q.length||(/\\s/.test(c)&&cur&&Math.abs(q[0].top-cur.t)>3)){if(cur)cur.s+=c;continue}if(!cur||Math.abs(q[0].top-cur.t)>3){cur={t:q[0].top,s:""};L.push(cur)}cur.s+=c}return L.map(l=>l.s.replace(/\\s+/g," ").trim())})';
  {const PASSOS=['1 Juntar material','2 Trabalhar o material','3 Largar','4 A ideia aparece','5 Dar forma e pôr à prova'];
   for(const [w,h] of LARGURAS)for(const [tema,q] of [['light',''],['dark',''],['light','?projetar=1']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,h,tema);
    const r=await p.evaluate(([PL,DS])=>{const m=document.querySelector('.metodo'),R=s=>document.querySelector(s).getBoundingClientRect(),mm=m.getBoundingClientRect();
@@ -368,12 +372,13 @@ async function responder(p,x){
    for(const [w,tema,q,nome,passo] of [[320,'light','',false,false],[390,'dark','',false,false],[400,'dark','',true,false],[429,'light','',true,false],[430,'dark','',false,true],[599,'light','',false,true],
                                        [600,'dark','',true,true],[1024,'light','',true,true],[1366,'dark','',true,true],[1440,'light','',true,true],[1366,'light','?projetar=1',true,true]]){
     const {ctx,p,erros}=await abrir(b,url+q,w,800,tema);
-    const r=await p.evaluate(([PL,DS])=>{const vis=e=>{const x=e.getBoundingClientRect();return x.width>2&&x.height>2};const m=document.querySelector('.c-marca'),mr=m.getBoundingClientRect(),cp=document.querySelector('.c-marca-p');
+    const r=await p.evaluate(([PL,DS,LN])=>{const vis=e=>{const x=e.getBoundingClientRect();return x.width>2&&x.height>2};const m=document.querySelector('.c-marca'),mr=m.getBoundingClientRect(),cp=document.querySelector('.c-marca-p');
      const hoje=[...document.querySelectorAll('#baralho ol.passos-m li[aria-current="step"]')],ht=getComputedStyle(document.querySelector('#baralho .hoje-t'));
      return {desenho:eval(DS)(document.querySelector('#baralho ol.passos-m')),passos:eval(PL)([...document.querySelectorAll('#baralho ol.passos-m li')]),hojeT:[parseFloat(ht.fontSize),+(parseFloat(ht.letterSpacing)/parseFloat(ht.fontSize)).toFixed(3)],nome:vis(document.querySelector('.c-marca-t')),passo:vis(cp),virgula:getComputedStyle(cp,'::before').content,txt:cp.textContent,marca:[Math.round(mr.width),Math.round(mr.height)],
       fora:[...document.querySelectorAll('.casca-topo a,.casca-topo button')].filter(e=>e.offsetParent!==null&&e.getBoundingClientRect().right>innerWidth+0.5).length,
       titulo:document.title,abre:document.querySelector('#baralho').innerText.replace(/\s+/g,' '),hoje:hoje.map(li=>li.innerText.replace(/\s+/g,' ').trim()),
-      linha:[...document.querySelectorAll('#baralho ol.passos-m li')].filter(li=>li.getBoundingClientRect().right>document.querySelector('#baralho').getBoundingClientRect().right+0.5).length}},[PORLINHA,DESENHO]);
+      linha:[...document.querySelectorAll('#baralho ol.passos-m li')].filter(li=>li.getBoundingClientRect().right>document.querySelector('#baralho').getBoundingClientRect().right+0.5).length,
+      metodo:eval(LN)(document.querySelector('#baralho .metodo-linha p'))}},[PORLINHA,DESENHO,LINHAS]);
     const onde=d.id+' a '+w+' px ('+tema+(q?', projeção':'')+'): '+JSON.stringify(r).slice(0,400);
     assert.equal(r.nome,nome,'lição: o nome «Ideias» na barra, '+onde);assert.equal(r.passo,passo,'lição: o passo na barra, '+onde);
     if(passo)assert.equal(r.txt,'Passo 1 de 5',onde);if(nome&&passo)assert.match(r.virgula,/^", "/,'lição: a vírgula entre o nome e o passo, '+onde);
@@ -384,9 +389,10 @@ async function responder(p,x){
     assert.deepEqual(r.passos,linhasEsperadas(w),'lição: um passo sozinho numa linha do «Abre», '+onde);
     assert.deepEqual(r.desenho,{numero:numeroEsperado(w,q),nome:nomeEsperado(q)},'lição: a lista dos cinco passos com outro desenho que a da entrada, '+onde);
     assert(r.hojeT[0]>=(q?17.875:13)&&Math.abs(r.hojeT[1]-0.14)<0.005,'lição: «HOJE» abaixo da letra mínima ou sem o espaçamento do rótulo de estado, '+onde);assert.equal(r.linha,0,'lição: a linha dos passos sai do cartão, '+onde);
+    assert(r.metodo.length>=2&&r.metodo.every(l=>l.length>0&&l.length<=75),'lição: uma linha do método com mais de 75 carateres, '+d.id+' a '+w+' px ('+tema+(q?', projeção':'')+'): '+JSON.stringify(r.metodo.map(l=>[l.length,l])));
     if(f==='ideias-s01.json'&&!q&&(w===390||w===1366)){await seguinte(p);const t=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');
      assert.match(t,/O MÉTODO/i,'sessão 1: o cartão 2 é «O método», '+onde);assert.match(t,/James Webb Young foi um publicitário norte-americano/,'sessão 1: a apresentação de Young, '+onde);
      assert.equal(await p.locator('[data-c-num]').innerText(),'2/'+d.cartoes.length)}
     assert.equal(await largo(p),0,'lição: deslize, '+onde);assert.deepEqual(erros,[]);await ctx.close()}}
-  console.log('PASS método: o bloco «O método» na entrada (5 larguras, claro, escuro e projeção), «Passo 1 de 5» na região «A seguir», no primeiro cartão, na barra a partir de 430 px e no título, e a apresentação de Young na sessão 1; nenhum passo sozinho numa linha, o passo inteiro no rótulo e «HOJE» a 13 px; a lista dos passos com o mesmo desenho na entrada e nas lições e o filete do bloco à largura da coluna')}
+  console.log('PASS método: o bloco «O método» na entrada (5 larguras, claro, escuro e projeção), «Passo 1 de 5» na região «A seguir», no primeiro cartão, na barra a partir de 430 px e no título, e a apresentação de Young na sessão 1; nenhum passo sozinho numa linha, o passo inteiro no rótulo e «HOJE» a 13 px; a lista dos passos com o mesmo desenho na entrada e nas lições e o filete do bloco à largura da coluna; a linha do método no «Abre» até 75 carateres por linha')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

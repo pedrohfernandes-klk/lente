@@ -68,6 +68,10 @@ html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,htm
 /* o parágrafo vai dentro de um <div>, como uma linha de informação (a linha «Hoje»): fica à esquerda, sem a justificação do texto
    corrido, que abria espaços largos à volta do rótulo a negro a 390 px */
 .licao-laboratorio .jogo .ler .metodo-linha p{margin:0;text-align:start;hyphens:manual}
+/* 01/11/2026 (correção 4 do método, diretor de arte): medida do texto corrido até 75 carateres. A 15,2 px e com a largura dos
+   cartões de ler (533,6 px), o parágrafo tinha linhas de 76 e 77 carateres de 1024 a 1440 px; o filete continua à largura dos
+   cartões de ler, só o texto passa a partir antes. Na projeção (20,9 px) os 33 em passam a largura do parágrafo e nada muda */
+.licao-laboratorio .jogo .ler .metodo-linha p{max-width:33em}
 /* o filete da linha do método acaba onde acaba o texto (a medida dos cartões de ler), como o da linha «Hoje» */
 .licao-laboratorio .jogo .ler .metodo-linha{max-width:var(--medida-ler)}
 /* 01/11/2026 (correção 1 do método, diretor de arte): abaixo de 600 px a linha corria em flex-wrap e o passo 5 ficava sozinho na
