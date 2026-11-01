@@ -3,7 +3,7 @@
 Abre todas as páginas do repositório a 390 e a 1366 px e corre as regras R1, R2, R3 e R5 da medição
 (design/hierarquia/medir-hierarquia.js; a função MEASURE está copiada abaixo sem alterações):
 - R1: um título mais pequeno do que um título de nível inferior que ele agrupa;
-- R2: antetítulo (texto curto em maiúsculas ou espaçado logo antes de um título) com letra acima de 65 % da do título;
+- R2: antetítulo (texto curto em maiúsculas ou espaçado, logo antes de um título) com letra acima de 65 % da do título;
 - R3: antetítulos da mesma classe com letra diferente na mesma página (família, tamanho ou peso);
 - R5: título mais pequeno do que o texto corrido que o segue.
 Os elementos decorativos com aria-hidden ficam fora de R2 e R3, como no script. R4 fica como relatório, fora daqui.
