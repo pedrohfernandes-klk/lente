@@ -98,3 +98,4 @@ html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
 [data-cartaz-entrada] .cz-footer{padding:16px;margin-top:24px}
 [data-cartaz-entrada] .site-portal-wrap{margin-block:24px}
 }
+[data-cartaz-entrada] .lab-sets>li{border-bottom:0}
