@@ -1,6 +1,8 @@
 # Fonte da sessão 2 de «Ideias», o coração do Laboratório (piloto escondido de 31/10/2026; plano em coracao/plano.md, no
 # caderno de bordo). Corre-se para escrever o .json ao lado; o .json é que o gerador (tools/licoes_lente.py) lê.
 #
+# 01/11/2026 (correção 4, revisor de pt-PT): o p2 do cartão «cedo» pede as três palavras que tocas; a linha do «Na aula» só serve
+# para esse «cocheiro»; «Também puseste» no «Para levar», sem duas frases seguidas a abrir com «E».
 # 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador («entre dez e catorze anos» depois do prefácio, o «lugar escolhido» sem «pela turma», O teu «cocheiro», «abrir a porta de casa»).
 #
 # Fontes lidas a 31/10/2026, um pedido de cada vez (nada citado de memória):
@@ -48,12 +50,12 @@ ATGET = (
  '<p>Entre dez e catorze anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
+ '<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
  '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>')
 LEVAR = (
  '<p class="levar">Olhar até a coisa deixar de ser igual às outras.</p>'
- '<p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial mantinha-se. E puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p>'
+ '<p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial mantinha-se. Também puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li>'
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
@@ -83,7 +85,7 @@ cartoes = [
   "o":["Contou-o à sua maneira e guardou o essencial.","Inventou-o e atribuiu-o a um escritor famoso.","Copiou Maupassant palavra por palavra."],"c":0,
   "f":"O conselho existe e está no prefácio de Maupassant; Young conta-o à sua maneira, sem dizer onde o leu. Uma testemunha que erra num pormenor não é uma testemunha que mente. Quando uma citação te interessa, vai à fonte.",
   "fe":["","O conselho não é inventado: está no prefácio de _Pierre et Jean_, de 1888.","As palavras não são as mesmas: o cavalo passou a cocheiro, e o merceeiro e o porteiro desapareceram."]},
- {"t":"sublinhar","g":"cedo","p":"Na frase de Young, três palavras dizem como é que a maioria de nós falha. Toca nelas.","p2":"Em que momento falhamos, segundo Young? Toca nas três palavras.",
+ {"t":"sublinhar","g":"cedo","p":"Na frase de Young, três palavras dizem como é que a maioria de nós falha. Toca nelas.","p2":"Que três palavras de Young dizem o que fazemos mal, e quando? Toca nelas.",
   "frase":"A maioria de nós interrompe demasiado cedo o processo que visa esse conhecimento.","certas":[4,5,6],
   "f":"As três palavras são **interrompe demasiado cedo**: paramos de olhar quando a diferença ainda não apareceu. É o contrário da «longa paciência» que Flaubert pedia a Maupassant.",
   "fe":"Procura o verbo que diz o que fazemos ao processo e as duas palavras que dizem quando."},

@@ -88,14 +88,14 @@ GUIA = {
   'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
   'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
   'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
-  'produto': 'auto de observação, por grupo',
+  'produto': 'o auto de observação, por grupo',
   'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
    'O quadro de Magritte (_Time Transfixed_) é o exemplo do resumo oficial da lição de Herman e não se reproduz no Lente: Magritte morreu em 1967 e a obra não está em domínio público.',
    'O título português do quadro de La Tour, _A leitora da sina_, é nosso, e o cartão di-lo. Nas lições, as imagens ficam a preto e branco e a cor volta no fim; para mostrar as cores à turma, o docente abre a página do Met.',
-   'Os dois cartões «Toca no quadro» são um uso novo do motor no Lente: quando duas zonas ficam muito juntas, o primeiro toque amplia o quadro e o segundo escolhe. Se no aparelho de algum aluno não funcionar, faz-se a mesma pergunta em voz alta, com o quadro projetado.',
+   'Os dois cartões «Toca no quadro» são novos no Lente: quando duas zonas ficam muito juntas, o primeiro toque amplia o quadro e o segundo escolhe. Se no aparelho de algum aluno não funcionar, faz-se a mesma pergunta em voz alta, com o quadro projetado.',
    'Para quem quiser ir mais longe: a enfermeira Florence Nightingale e a observação dos doentes, na Biblioteca; e Como se investiga, passo 2, «Olhar e registar».',
   ],
   'ligacoes': [('Florence Nightingale, _Notas sobre Enfermagem_ (Biblioteca)', '../../../biblioteca/nightingale-observacao/'), ('Como se investiga, passo 2', '../../../investigar/passo-02/'), ('_The Fortune-Teller_ no Met (cores)', 'https://www.metmuseum.org/art/collection/search/436838')],
@@ -109,7 +109,7 @@ GUIA = {
    ('15 a 50', 'Cartões 3 a 12: Young e Maupassant lidos em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (pares; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
-   ('145 a 165', 'Guião: as duas versões do conselho lado a lado; «Para levar».'),
+   ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
    ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para a sessão 3.'),
   ],
   'materiais': ['O material de cada aluno, com espaço para quinze notas.', 'Cartão rígido ou pranchetas para escrever na rua.', 'O guião da sessão 2, impresso.', 'O percurso até ao lugar e o quadro da sala para a lista dos «cocheiros» (só o nome de cada um, sem a linha).'],
@@ -120,7 +120,7 @@ GUIA = {
    'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
    'Young não diz onde leu a história; os cartões não dizem mais do que isto.',
    'As traduções de Maupassant são nossas e curtas; o texto inteiro, em francês, está no Project Gutenberg.',
-   'A saída é opcional (decisão do docente de 31/10): sem ela, cada par escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
+   'A saída é opcional (decisão do docente de 31/10): sem ela, cada aluno escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
    'Na fotografia de Atget há um homem sentado no alto de um fiacre, na ponta esquerda. Boa pergunta para a turma: o que prova o sítio onde está?',
   ],
   'ligacoes': [('Maupassant, prefácio de _Pierre et Jean_ (Project Gutenberg, em francês)', 'https://www.gutenberg.org/ebooks/11131'), ('_Kiosque et fiacres, Paris_ na Paris Musées', 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris')],
@@ -135,7 +135,8 @@ GUIA = {
 GUIAO = {
  1: {
   'frente': [
-   ('p', 'O teu palpite: <i class="b"></i> degraus. A contagem: <i class="b"></i> (grupos <i class="b"></i> e <i class="b"></i>).'),
+   # 01/11/2026 (correção 4, diretor de arte): no telemóvel, nenhum espaço para escrever sozinho numa linha
+   ('p', 'O teu palpite: <i class="b"></i> degraus. <span class="nq">A contagem: <i class="b"></i></span> <span class="nq">(grupos <i class="b"></i> e <i class="b"></i>).</span>'),
    ('h2', 'O vídeo de Herman, em duas colunas'),
    ('tabela', ['Está no quadro', 'Não está no quadro, mas conta'], 8),
    ('h2', 'O quadro de La Tour: cinco coisas que se veem'),
@@ -148,7 +149,7 @@ GUIAO = {
   'verso_titulo': 'O auto de observação',
   'verso': [
    ('p', 'Lugar: <i class="b"></i> Grupo: <i class="b"></i> Hora: <i class="b"></i>'),
-   ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo ___'], 10),
+   ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo\u00a0___'], 10),
    ('tabela', ['Inferência', 'Os dois factos que a apoiam'], 3),
    ('p', 'A pergunta que o lugar não responde: <i class="b l"></i>'),
    ('linhas', 2),
@@ -233,6 +234,9 @@ CSS = (TOKENS +
  '.ideias .abre .sub{font:italic 1.25rem/1.3 Georgia,"Times New Roman",serif;margin:4px 0 14px}'
  '.ideias .abre .lead{font:1.125rem/1.5 Georgia,"Times New Roman",serif;margin:0 0 10px;max-width:32em}'
  '.ideias .abre .info{font-size:.9375rem;color:var(--suave);margin:0 0 20px;max-width:36em}'
+ # 01/11/2026 (correção 4, diretor de arte): a linha de informação e a etiqueta de parede passavam os 75 carateres por linha
+ # (77 e 78 a 1366 px): 34 em
+ '.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}'
  # região «A seguir» (sistema 6.3): a única preta; nunca anima
  '.ideias .proximo{background:var(--tinta);color:var(--papel);padding:16px 16px 18px;margin:0 0 20px}'
  '.ideias .proximo .kicker{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}'
@@ -259,6 +263,9 @@ CSS = (TOKENS +
  # 01/11/2026 (correção 2, diretor de arte): abaixo de 380 px, com 80 px por botão, os rótulos partiam-se palavra a palavra
  # («Não / faço / ideia»; premido, o visto sozinho na primeira linha): três botões numa coluna
  '@media (max-width:379px){.ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
+ # 01/11/2026 (correção 4, diretor de arte): na projeção, entre 960 e 1099 px (o portátil ligado ao projetor), a coluna da
+ # direita deixa 107 a 116 px por botão e «Tenho um palpite» partia-se em três linhas: os três botões numa coluna
+ '@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
  '.ideias .gesto button{min-height:48px;padding:6px 8px;border:2px solid var(--tinta);background:transparent;color:var(--tinta);font:700 1rem/1.15 Arial,Helvetica,sans-serif;text-align:center;cursor:pointer}'
  '.ideias .gesto button[aria-pressed="true"]{border-width:4px;padding:4px 6px}'
  '.ideias .gesto button[aria-pressed="true"]::before{content:"✓ "}'
@@ -279,7 +286,9 @@ CSS = (TOKENS +
  # as sessões em três portas (sistema 6.5): faixa de nós e linhas de 64 px com estado
  # 01/11/2026 (correção 3, medida da hierarquia, R1): o h2 «As sete sessões» (32 px) era mais pequeno do que os nomes das
  # portas que agrupa (h3, 38,4 px); passa a 44 px
- '.ideias h2.sessoes-t{font:400 2.75rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:40px 0 8px}'
+ # 01/11/2026 (correção 4, diretor de arte): a 48 px (3 rem), 1,25 vezes os 38,4 px dos nomes das portas; a 44 px, os três
+ # níveis em Bebas (44, 38,4 e 35,2 px) quase se confundiam (relações de 1,15 e 1,09)
+ '.ideias h2.sessoes-t{font:400 3rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:40px 0 8px}'
  '.ideias .faixa{display:grid;grid-template-columns:2fr 2fr 3fr;gap:6px;margin:0 0 20px}'
  # 31/10/2026 (revisão do diretor de arte): a faixa do sistema (6.6): transparente, nós em barra numa linha contínua e o
  # rótulo em Arial, para não repetir em cartaz o nome da porta que vem logo abaixo
@@ -408,10 +417,17 @@ CSS = (TOKENS +
  '.ideias.guia section ul{padding-left:1.2em}'
  # 31/10/2026 (revisão do diretor de arte): sem inline-flex, que partia em colunas as ligações com <i> e, a 320 px, fazia a
  # página deslizar 16 px
- '.ideias.guia ul.ligacoes a{display:inline-block;min-height:44px;padding:9px 0}'
+ # 01/11/2026 (correção 4, diretor de arte): em bloco e não em inline-block, que alinhava a marca da lista pela última linha das
+ # ligações com duas ou três linhas; as alturas e os 44 px de alvo não mudam
+ '.ideias.guia ul.ligacoes a{display:block;min-height:44px;padding:9px 0}'
  '.ideias.guia .caixa{background:var(--papel);border:2px solid var(--tinta);padding:4px 16px;margin:12px 0;max-width:34em}'
  '.ideias.guia .indicativa{font-weight:700;border-left:6px solid var(--tinta);padding-left:10px;max-width:34em}'
  '.ideias.guia .botao-s{display:inline-flex;align-items:center;min-height:48px;padding:0 14px;border:2px solid var(--tinta);font-weight:700;text-decoration:none;margin:0 8px 8px 0}'
+ # 01/11/2026 (correção 4, diretor de arte): abaixo de 480 px, os três botões de cada sessão numa coluna, à largura do texto
+ # («O guião» ficava sozinho numa segunda fila a 320, 360 e 390 px)
+ '@media (max-width:479px){.ideias.guia .acoes-s{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.ideias.guia .acoes-s a.botao-s{margin:0}}'
+ # 01/11/2026 (correção 4, diretor de arte): os rótulos a negro do texto corrido não se partem («O / passo.»)
+ '.ideias.guia .pg b{white-space:nowrap}'
  '.ideias.guia ul.indice{padding-left:1.2em}.ideias.guia ul.indice a{display:inline-block;padding:10px 0}'
  '.ideias.guia .fontes{font-size:.875rem;color:var(--suave);overflow-wrap:anywhere}'
  '.ideias.guia .tabela{max-width:52em}'
@@ -701,13 +717,13 @@ def pagina_guia(L):
         if v:
             yt = (f'<p class="pg">{v["botao"]}. {g.get("video_cred", v["cred"])} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a> (a lição inteira).</p>'
                   f'<p class="pg"><b>Tarefa.</b> {v["tarefa"]}</p>'
-                  '<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (ligação no cartão seguinte) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
+                  '<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (a ligação aparece no retorno do cartão 8) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
         else:
             yt = '<p class="pg">Nenhum, de propósito: o centro da sessão é um texto lido devagar e um lugar visto ao vivo.</p>'
         corpo += (f'<section class="sessao pronta" id="s{s["n"]}"><p class="rotulo">Sessão {s["n"]}</p><h2>{e(s["titulo"])}</h2>'
                   f'<p class="pg"><b>A pergunta.</b> {pergunta_abre(d)} <b>O passo.</b> {e(s["passo"])}. <b>A porta.</b> {next(n for q, n, _a, _u in PORTAS if q == s["porta"])}, «{e(s["peca"][0])}», <a href="../../{s["peca"][2]}"><i>{e(s["peca"][1])}</i></a>.</p>'
                   f'<p class="pg"><b>O que ensina.</b> {e(g["ensina"])}</p>'
-                  f'<p><a class="botao-s" href="../sessao-{s["n"]:02d}/">Abrir a sessão</a><a class="botao-s" href="../sessao-{s["n"]:02d}/?projetar=1">Projetar</a><a class="botao-s" href="../guiao/#g{s["n"]}f">O guião</a></p>'
+                  f'<p class="acoes-s"><a class="botao-s" href="../sessao-{s["n"]:02d}/">Abrir a sessão</a><a class="botao-s" href="../sessao-{s["n"]:02d}/?projetar=1">Projetar</a><a class="botao-s" href="../guiao/#g{s["n"]}f">O guião</a></p>'
                   f'<p class="pg"><b>Antes da aula.</b> {e(g["antes"])}</p>'
                   '<h3>O que o aluno lê no cartão «Na aula»</h3>'
                   f'<div class="caixa">{aula["html"]}</div>'
@@ -822,6 +838,18 @@ def pagina_biblioteca():
 # (EPI_MISSOES). A função é idempotente: aplicada à lista já acertada, não muda nada.
 BIB_LINHA = (f'<a class="missao p-cartao sem-img" style="--k:15" href="{BIB_ID}/" data-id="{BIB_ID}"><span class="r">Ensaio</span>'
              '<span class="t">Uma Técnica para Produzir Ideias (excerto)</span><span class="s">James Webb Young, 1940, português (tradução nossa).&nbsp;·&nbsp;1&nbsp;min</span><span class="a"></span></a>')
+# 01/11/2026 (correção 4, verificador de factos): com o Young em «Em português», o rodapé da lista dizia que todos os textos em
+# português estão em domínio público e que só o cabeçalho e a nota são nossos; o excerto de Young é tradução nossa e não está
+# em domínio público (decisão 31: o original, com muita probabilidade, sim; a tradução, não). A frase vem do molde comum
+# (_interno/modelo/biblioteca.mjs, nas fontes; tarefa 150, «rodapé dos excertos»): a troca é idempotente e fica aqui até o molde
+# a trazer.
+RODAPE_ANTES = ('Os textos em português estão em domínio público; as transcrições vêm do Project Gutenberg, da Wikisource e do Internet '
+                'Archive, identificadas em cada página. Os textos em leitura ótica (OCR) mantêm a grafia e os erros da digitalização. Nada '
+                'se corrige: o que é nosso é o cabeçalho e a nota.')
+RODAPE_DEPOIS = ('Os textos em português estão em domínio público, exceto o excerto de Young, em tradução nossa; as transcrições vêm do '
+                 'Project Gutenberg, da Wikisource e do Internet Archive, identificadas em cada página. Os textos em leitura ótica (OCR) '
+                 'mantêm a grafia e os erros da digitalização. Nada se corrige: o que é nosso é o cabeçalho, a nota e, no excerto de '
+                 'Young, a tradução.')
 BIB_ANTES = 'data-id="reporterx-reporterxizar-1930"><span class="r">Nota editorial</span><span class="t">Reporterxizar</span><span class="s">Reinaldo Ferreira (Repórter X), 1930, português.&nbsp;·&nbsp;3&nbsp;min</span><span class="a"></span></a>'
 
 
@@ -856,6 +884,9 @@ def lista_biblioteca(s):
         s = s.replace('</head>', ESTILO_LISTA + '</head>')
     else:
         s = re.sub(r'<style id="ideias-lista">.*?</style>', lambda _m: ESTILO_LISTA, s, count=1, flags=re.S)
+    if RODAPE_ANTES in s:
+        s = s.replace(RODAPE_ANTES, RODAPE_DEPOIS)
+    assert s.count(RODAPE_DEPOIS) == 1, 'o rodapé da lista da Biblioteca'
     return s
 
 

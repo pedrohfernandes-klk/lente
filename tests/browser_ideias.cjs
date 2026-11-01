@@ -100,7 +100,9 @@ async function responder(p,x){
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const w of [320,1366]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/docente/',w,800,'light');
    const x=await p.evaluate(()=>({nums:[...document.querySelectorAll('td.num')].filter(td=>{const rg=document.createRange();rg.selectNodeContents(td);return rg.getBoundingClientRect().right>td.getBoundingClientRect().right+0.5}).map(td=>td.textContent),lig:[...document.querySelectorAll('ul.ligacoes a')].map(a=>getComputedStyle(a).display)}));
-   assert.deepEqual(x.nums,[],'guia: minutos por cima da borda a '+w+' px');assert(x.lig.length&&x.lig.every(d=>d==='inline-block'),'guia: ligações em '+x.lig.join(','));
+   // 30/10/2026: na quarta revisão (01/11), as ligações passam a bloco (com inline-block a marca da lista alinhava pela última
+   // linha); sem inline-flex, como antes
+   assert.deepEqual(x.nums,[],'guia: minutos por cima da borda a '+w+' px');assert(x.lig.length&&x.lig.every(d=>d==='block'),'guia: ligações em '+x.lig.join(','));
    assert.equal(await largo(p),0,'guia: deslize a '+w+' px');assert.deepEqual(erros,[]);await ctx.close()}
   for(const [pag,n] of [['narrativas/ideias/guiao/',4],['narrativas/ideias/docente/',8]]){const {ctx,p}=await abrir(b,base+pag,1024,768,'light');await p.emulateMedia({media:'print'});
    const pdf=(await p.pdf({format:'A4',printBackground:true,preferCSSPageSize:true})).toString('latin1');const pags=(pdf.match(/\/Type\s*\/Page[^s]/g)||[]).length;
@@ -186,4 +188,35 @@ async function responder(p,x){
     return {et:parseFloat(getComputedStyle(document.querySelector('.p-etiqueta')).fontSize),voltar:Math.round(v.height),em:Math.max(...[...document.querySelectorAll('.bib-texto p, .p-lead')].map(em)),lh:+(parseFloat(getComputedStyle(t).lineHeight)/parseFloat(getComputedStyle(t).fontSize)).toFixed(2),lead:getComputedStyle(document.querySelector('.p-lead')).textAlign}});
    assert(r.et>=13&&r.voltar>=44&&r.em<=32.01&&r.lh<=1.56&&r.lead==='start','Young a '+w+' px: '+JSON.stringify(r));assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS terceira revisão: tabelas do guia sem deslize de 320 a 1440 px, portas dobradas no telemóvel, tabela de museu ao lado da imagem, saídas a 320 px, pergunta do gesto, atol com níveis, página do Young')}
+ // 8. 30/10/2026: as correções da quarta revisão (01/11): na entrada, «As sete sessões» 1,25 vezes os nomes das portas, o gesto
+ // numa coluna na projeção entre 960 e 1099 px e a linha de informação e a etiqueta com 34 em de medida (75 carateres no
+ // máximo); no guia, os três botões de cada sessão numa coluna abaixo de 480 px e nenhum rótulo a negro partido; no guião, nenhum
+ // espaço para escrever sozinho numa linha no telemóvel; na sessão 2, o «»» do cartão 16 na linha do último menu
+ {for(const [w,q] of [[390,''],[1366,''],[1366,'?projetar=1']]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/'+q,w,900,'light');
+   const r=await p.evaluate(()=>{const f=s=>parseFloat(getComputedStyle(document.querySelector(s)).fontSize);return f('h2.sessoes-t')/f('.porta h3')});
+   assert(r>=1.249,'entrada: «As sete sessões» só '+r.toFixed(2)+' vezes os nomes das portas a '+w+' px'+q);await ctx.close()}
+  for(const [w,tema] of [[960,'light'],[1024,'dark'],[1099,'light']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/?projetar=1',w,800,tema);
+   const g=await p.evaluate(()=>[...document.querySelectorAll('[data-gesto] button[data-op]')].map(x=>{const r=x.getBoundingClientRect();return [Math.round(r.left),Math.round(r.height)]}));
+   assert(g.every(x=>x[0]===g[0][0]&&x[1]<=52),'projeção: o gesto a '+w+' px numa coluna, cada botão numa linha: '+JSON.stringify(g));assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const w of [1024,1366,1440]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/',w,900,'light');
+   const m=await p.evaluate(()=>['.abre .info','.atol figcaption'].map(s=>{const e=document.querySelector(s);return +(e.clientWidth/parseFloat(getComputedStyle(e).fontSize)).toFixed(2)}));
+   assert(m.every(v=>v<=34.01),'entrada: medida da linha de informação e da etiqueta em '+m.join(' e ')+' em a '+w+' px');await ctx.close()}
+  for(const w of [320,360,390,480,1024,1366,1440]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/docente/',w,800,w===360?'dark':'light');
+   const r=await p.evaluate(()=>({bts:[...document.querySelectorAll('p.acoes-s')].map(q=>[...q.querySelectorAll('a.botao-s')].map(a=>{const r=a.getBoundingClientRect();return [Math.round(r.left),Math.round(r.top)]})),
+    partidos:[...document.querySelectorAll('.pg b')].filter(x=>x.getClientRects().length>1).map(x=>x.textContent)}));
+   assert.equal(r.bts.length,2,'guia: botões das duas sessões');
+   for(const bs of r.bts){if(w<480)assert(bs.every(x=>x[0]===bs[0][0])&&bs[1][1]>bs[0][1]&&bs[2][1]>bs[1][1],'guia: botões numa coluna a '+w+' px: '+JSON.stringify(bs));
+    else assert(bs.every(x=>x[1]===bs[0][1]),'guia: botões numa fila a '+w+' px: '+JSON.stringify(bs))}
+   assert.deepEqual(r.partidos,[],'guia: rótulo a negro partido a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const w of [320,360,390]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/guiao/',w,800,'light');
+   const r=await p.evaluate(()=>{const pp=[...document.querySelectorAll('p.campo')].find(x=>x.textContent.startsWith('O teu palpite'));const t=[...pp.querySelectorAll('i.b')].map(i=>Math.round(i.getBoundingClientRect().top));
+    const th=[...document.querySelectorAll('th')].find(x=>x.textContent.startsWith('Confirmado'));const n=th.firstChild,s=n.textContent,i=s.indexOf('grupo');const r1=document.createRange();r1.setStart(n,i);r1.setEnd(n,i+5);const r2=document.createRange();r2.setStart(n,s.length-3);r2.setEnd(n,s.length);
+    return {t,grupo:Math.round(r1.getBoundingClientRect().top),tracos:Math.round(r2.getBoundingClientRect().top)}});
+   assert.equal(r.t[2],r.t[3],'guião: «(grupos ___ e ___)» partido a '+w+' px');assert.equal(r.grupo,r.tracos,'guião: o «___» do cabeçalho sozinho a '+w+' px');await ctx.close()}
+  {const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s02.json'),'utf8'));const {ctx,p,erros}=await abrir(b,base+d.saida.replace(/index\.html$/,''),360,740,'dark');
+   for(let i=0;i<15;i++){const x=d.cartoes[i];if(x.t!=='ler'){const txt=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');const c=d.cartoes.filter(y=>y.t!=='ler'&&[y.p,y.p2].some(t=>t&&txt.includes(vis(t).slice(0,50))));await responder(p,c.length===1?c[0]:x)}await seguinte(p)}
+   await responder(p,d.cartoes[15]);
+   const r=await p.evaluate(()=>{const e=document.querySelector('#baralho .inline');const ss=[...e.querySelectorAll('select')];const rg=document.createRange();rg.selectNodeContents(e.lastChild);return {txt:e.lastChild.textContent,sel:ss[ss.length-1].getBoundingClientRect().bottom,aspas:rg.getBoundingClientRect().top}});
+   assert(r.txt==='»'&&r.aspas<r.sel,'sessão 2, cartão 16: o «»» sozinho numa linha a 360 px ('+JSON.stringify(r)+')');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS quarta revisão: escala dos títulos da entrada, gesto na projeção a 960 a 1099 px, medida de 34 em, botões e rótulos do guia, guião no telemóvel, «»» do cartão 16')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

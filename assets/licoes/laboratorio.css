@@ -50,3 +50,7 @@ body.licao-laboratorio .casca-folha .c-veredito .c-pts{color:var(--tinta)}
 html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,html.em-projecao body.licao-laboratorio .epi-projection-launcher{display:none!important}
 /* 01/11/2026 (correção 2, diretor de arte): uma forma verbal com pronome não se parte no hífen (AO90, base XX) */
 .licao-laboratorio .nq{white-space:nowrap}
+/* 01/11/2026 (correção 4, diretor de arte): nas lacunas, o menu e a pontuação que o segue ficam juntos em linha e não numa
+   caixa inline-block, que deixava cair sozinho o «»» que fecha a citação (sessão 2, cartão 16, a 360 px). O nowrap de lesson.css
+   mantém-se. Só nesta família: para as duas, o sítio certo é colar() em jogo.js, num pedido à parte. */
+.licao-laboratorio .jogo .inline .nb{display:inline}

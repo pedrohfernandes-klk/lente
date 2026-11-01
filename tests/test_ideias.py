@@ -415,5 +415,63 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertIn('.p-etiqueta{font:700 .72rem/1.2 var(--sans)', orta)
 
 
+
+class QuartaRevisao(unittest.TestCase):
+    """30/10/2026: as correções da quarta revisão (01/11): o rodapé da lista da Biblioteca deixa de dizer que todos os textos em
+    português estão em domínio público (verificador de factos); o texto do revisor de pt-PT; e as regras de desenho do diretor de
+    arte que se podem confirmar sem navegador (as medidas estão em tests/browser_ideias.cjs, secção 8)."""
+
+    def test_rodape_da_biblioteca(self):
+        # 30/10/2026: o excerto de Young é tradução nossa e não está em domínio público (decisão 31)
+        lista = (ROOT / 'biblioteca/index.html').read_text('utf-8')
+        self.assertIn(f'<p class="rodape">{I.RODAPE_DEPOIS} ', lista)
+        self.assertNotIn('Os textos em português estão em domínio público;', lista)
+        self.assertNotIn('o que é nosso é o cabeçalho e a nota.', lista)
+        # a troca é idempotente
+        self.assertEqual(I.lista_biblioteca(lista), lista)
+
+    def test_texto_do_revisor(self):
+        guia = (PILOTO / 'docente/index.html').read_text('utf-8')
+        # a decisão do docente (saída opcional, com alternativa) e o «cocheiro» de cada aluno, como no cartão e na grelha
+        self.assertIn('sem ela, cada aluno escolhe o seu «cocheiro» da janela', guia)
+        self.assertNotIn('cada par escolhe', guia)
+        self.assertIn('Guião: cada um completa a tabela das duas versões do conselho; «Para levar».', guia)
+        self.assertIn('Grelha /20 indicativa: o auto de observação, por grupo</h3>', guia)
+        self.assertIn('Grelha indicativa: o auto de observação, por grupo</caption>', guia)
+        self.assertIn('Os dois cartões «Toca no quadro» são novos no Lente:', guia)
+        self.assertNotRegex(L.visivel(re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', guia, flags=re.S)), r'\bmotor\b')  # jargão da equipa
+        self.assertIn('(a ligação aparece no retorno do cartão 8)', guia)
+        s1 = json.loads((ROOT / 'tools/licoes/ideias-s01.json').read_text('utf-8'))
+        self.assertEqual(s1['cartoes'][7]['g'], 'resumo')
+        self.assertTrue(s1['cartoes'][7].get('liga'))
+        estatuto = next(c for c in s1['cartoes'] if c.get('g') == 'estatuto')
+        self.assertTrue(all(re.match(r'^Uma? [^\W\d_]+: ', d) for _e, d in estatuto['pares']), estatuto['pares'])
+        s2 = json.loads((ROOT / 'tools/licoes/ideias-s02.json').read_text('utf-8'))
+        cedo = next(c for c in s2['cartoes'] if c.get('g') == 'cedo')
+        self.assertEqual(cedo['p2'], 'Que três palavras de Young dizem o que fazemos mal, e quando? Toca nelas.')
+        self.assertEqual(len(cedo['certas']), 3)
+        html2 = json.dumps(s2['cartoes'], ensure_ascii=False)
+        self.assertIn('escreve uma linha que só sirva para esse «cocheiro».', html2)
+        self.assertIn('Também puseste uma descrição à prova', html2)
+
+    def test_regras_de_desenho(self):
+        entrada = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('.ideias h2.sessoes-t{font:400 3rem/1 ', entrada)
+        self.assertIn('@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}', entrada)
+        self.assertIn('.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}', entrada)
+        guia = (PILOTO / 'docente/index.html').read_text('utf-8')
+        self.assertEqual(guia.count('<p class="acoes-s"><a class="botao-s"'), 2)
+        self.assertIn('@media (max-width:479px){.ideias.guia .acoes-s{display:grid;', guia)
+        self.assertIn('.ideias.guia .pg b{white-space:nowrap}', guia)
+        self.assertIn('.ideias.guia ul.ligacoes a{display:block;min-height:44px;padding:9px 0}', guia)
+        guiao = (PILOTO / 'guiao/index.html').read_text('utf-8')
+        self.assertIn('<span class="nq">(grupos <i class="b"></i> e <i class="b"></i>).</span>', guiao)
+        self.assertIn('pelo grupo\u00a0___', guiao)
+        # só na família do Laboratório: a Cidadania não carrega este ficheiro
+        self.assertIn('.licao-laboratorio .jogo .inline .nb{display:inline}', (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8'))
+        for p in (ROOT / 'cidadania/piloto').rglob('index.html'):
+            self.assertNotIn('laboratorio.css', p.read_text('utf-8'), p)
+
+
 if __name__ == '__main__':
     unittest.main()

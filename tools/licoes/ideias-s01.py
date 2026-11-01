@@ -2,6 +2,8 @@
 # caderno de bordo). Corre-se para escrever o .json ao lado; o .json é que o gerador (tools/licoes_lente.py) lê.
 # Escreve-se em Python para não ter de escapar aspas à mão.
 #
+# 01/11/2026 (correção 4, revisor de pt-PT): no emparelhar «estatuto», o quarto par na forma dos outros três («Uma pergunta:
+# fica por investigar.»).
 # 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador (o retorno do resumo de Herman, «apontar no quadro o que ela diz» e «o que não se vê numa imagem»).
 #
 # Fontes lidas a 31/10/2026, um pedido de cada vez (nada citado de memória):
@@ -123,7 +125,7 @@ cartoes = [
   "f":"Junto à medalha, duas mãos seguram a corrente do rapaz. Que a estão a cortar é uma inferência: o quadro não mostra o fim do gesto. E repara para onde olha o rapaz enquanto isto acontece.",
   "fe":"Começa no ombro do rapaz e segue a corrente até à medalha, que fica pendurada mais abaixo, ao centro: quem lhe está a tocar?"},
  {"t":"emparelhar","g":"estatuto","p":"Liga cada frase sobre o quadro ao que ela é.","p2":"Que tipo de frase é cada uma destas, sobre o quadro?",
-  "pares":[["A velha segura uma moeda entre os dedos.","Um facto: vê-se no quadro."],["O rapaz está a ser roubado.","Uma inferência: junta várias pistas."],["As quatro mulheres combinaram tudo antes.","Uma hipótese: o quadro não a prova."],["Porque é que o rapaz não olha para as mãos?","Uma pergunta que fica por investigar."]],
+  "pares":[["A velha segura uma moeda entre os dedos.","Um facto: vê-se no quadro."],["O rapaz está a ser roubado.","Uma inferência: junta várias pistas."],["As quatro mulheres combinaram tudo antes.","Uma hipótese: o quadro não a prova."],["Porque é que o rapaz não olha para as mãos?","Uma pergunta: fica por investigar."]],
   "f":"Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
   "fe":"Pergunta a cada frase: consigo apontar no quadro, com o dedo, o que ela diz? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."},
  {"t":"ler","rot":"Na aula","titulo":"O auto de observação","html":NA_AULA},

@@ -133,7 +133,7 @@
    "t": "sublinhar",
    "g": "cedo",
    "p": "Na frase de Young, três palavras dizem como é que a maioria de nós falha. Toca nelas.",
-   "p2": "Em que momento falhamos, segundo Young? Toca nas três palavras.",
+   "p2": "Que três palavras de Young dizem o que fazemos mal, e quando? Toca nelas.",
    "frase": "A maioria de nós interrompe demasiado cedo o processo que visa esse conhecimento.",
    "certas": [
     4,
@@ -180,7 +180,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O teu «cocheiro»",
-   "html": "<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
+   "html": "<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
   },
   {
    "t": "escolha",
@@ -271,7 +271,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial <span class=\"nq\">mantinha-se</span>. E puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Para a sessão 3:</b> junta dez notas de material geral, sobre coisas que sabes bem e que não vêm da escola (um desporto, uma receita, uma canção, um ofício da família), uma por nota, com um pormenor que só tu sabes.</p>"
+   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial <span class=\"nq\">mantinha-se</span>. Também puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Para a sessão 3:</b> junta dez notas de material geral, sobre coisas que sabes bem e que não vêm da escola (um desporto, uma receita, uma canção, um ofício da família), uma por nota, com um pormenor que só tu sabes.</p>"
   }
  ]
 }
