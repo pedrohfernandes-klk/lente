@@ -25,3 +25,5 @@ jobs:
       - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
+      # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
+      - run: node tests/hierarquia-cartaz.cjs

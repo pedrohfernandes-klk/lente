@@ -49,3 +49,11 @@
 /* A mostarda fica reservada à conclusão; a marca mantém o estado do script original. */
 [data-cartaz-entrada] .lente-nome:not(.ganho) i,[data-cartaz-entrada] .site-portal .sp-title>span{color:var(--cz-ink)}
 [data-cartaz-entrada] .ferr-num{background:transparent;color:var(--cz-ink)}
+
+/* 01/11/2026: decisão 61, títulos e antetítulos na escala Cartaz. */
+[data-cartaz-entrada] .lente-nome{font-size:var(--cz-t49)}
+[data-cartaz-entrada] .lente-ferr h2{font-size:var(--cz-t31)}
+[data-cartaz-entrada] .lente-frase{font-size:var(--cz-t20)}
+[data-cartaz-entrada] .site-portal .sp-title{font-size:var(--cz-t31)}
+[data-cartaz-entrada] .lab-set-copy strong{font-size:var(--cz-t20)}
+@media(min-width:640px){[data-cartaz-entrada] .lente-nome{font-size:var(--cz-t61)}[data-cartaz-entrada] .site-portal .sp-title{font-size:var(--cz-t39)}}
