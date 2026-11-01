@@ -90,7 +90,8 @@ GUIA = {
   'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
   'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
   'produto': 'o auto de observação, por grupo',
-  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
+  # 01/11/2026 (correção 6, revisor de pt-PT): «A pergunta a que o lugar não responde», como o campo do guião que avalia
+  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
@@ -135,7 +136,7 @@ GUIA = {
 # Atget com sete filas, para as «pelo menos três linhas» de cada coluna), em vez de 113 e 143 mm de branco no fundo das páginas
 # 3 e 4; continuam 4 páginas A4.
 # 01/11/2026 (correção 3, diretor de arte): o mesmo na sessão 1, cujas páginas acabavam com 88,6 e 84,8 mm de branco (contra
-# 63,5 e 65,3 na sessão 2): o vídeo de Herman com oito filas e a pergunta que o lugar não responde com três linhas.
+# 63,5 e 65,3 na sessão 2): o vídeo de Herman com oito filas e a pergunta a que o lugar não responde com três linhas.
 GUIAO = {
  1: {
   'frente': [
@@ -155,7 +156,8 @@ GUIAO = {
    ('p', 'Lugar: <i class="b"></i> Grupo: <i class="b"></i> Hora: <i class="b"></i>'),
    ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo\u00a0___'], 10),
    ('tabela', ['Inferência', 'Os dois factos que a apoiam'], 3),
-   ('p', 'A pergunta que o lugar não responde: <i class="b l"></i>'),
+   # 01/11/2026 (correção 6, revisor de pt-PT): «responder a» (a pergunta a que…), aqui e na grelha do guia
+   ('p', 'A pergunta a que o lugar não responde: <i class="b l"></i>'),
    ('linhas', 2),
    ('nota', 'Os teus factos ficam onde guardas o material; este papel entrega-se ao docente.'),
    ('p', 'Para a sessão 2, um lugar a cinco minutos da escola por onde passas sem olhar: <i class="b l"></i>'),
@@ -270,6 +272,10 @@ CSS = (TOKENS +
  # 01/11/2026 (correção 2, diretor de arte): abaixo de 380 px, com 80 px por botão, os rótulos partiam-se palavra a palavra
  # («Não / faço / ideia»; premido, o visto sozinho na primeira linha): três botões numa coluna
  '@media (max-width:379px){.ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
+ # 01/11/2026 (correção 6, diretor de arte): na projeção, de 380 a 469 px, os botões de 100 a 130 px partiam «Tenho um palpite» e
+ # «Não faço ideia» palavra a palavra, em três linhas (premido, «✓ Tenho um palpite» ficava em três até 460 px): também numa
+ # coluna. A partir de 470 px as etiquetas cabem em duas linhas, também premidas
+ '@media (min-width:380px) and (max-width:469px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
  # 01/11/2026 (correção 4, diretor de arte): na projeção, entre 960 e 1099 px (o portátil ligado ao projetor), a coluna da
  # direita deixa 107 a 116 px por botão e «Tenho um palpite» partia-se em três linhas: os três botões numa coluna
  '@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
@@ -372,6 +378,12 @@ CSS = (TOKENS +
  '.ideias .abre .lead{font-size:1.3125rem}'
  # a imagem baixa para 16:9 (o anel inteiro cabe), para a coluna da esquerda não ficar muito mais alta do que a da direita
  '.ideias .atol .campo{aspect-ratio:16/9}.ideias .atol img{object-position:50% 55%}}'
+ # 01/11/2026 (correção 6, diretor de arte): na projeção, de 960 a 1099 px (o portátil ligado ao projetor; a moldura a 1280 × 800
+ # e 1366 × 768), a coluna da direita cresce com o gesto numa coluna e a tabela de museu descolava-se da imagem: ficava 20 px abaixo
+ # do gesto, toda abaixo do pé da imagem, e lia-se como parte do gesto. Aqui a tabela volta para debaixo da imagem, 8 px abaixo e
+ # alinhada à sua margem; o gesto ocupa a coluna da direita até ao fim. No ecrã e na projeção a partir de 1100 px não muda
+ '@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .topo{grid-template-areas:"abre proximo" "abre gesto" "atol gesto" "cap gesto";grid-template-rows:auto auto auto 1fr}'
+ 'html.em-projecao .ideias .topo .atol figcaption{align-self:start;margin:8px 0 0}}'
  # a faixa alinha pelas três colunas das portas (continuidade): cada grupo de nós por cima da sua porta
  '@media (min-width:1024px){.ideias .portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.ideias .faixa{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}'
  # 31/10/2026 (revisão do diretor de arte): na projeção a letra cresce na raiz, para os tamanhos em rem crescerem também
@@ -564,10 +576,12 @@ def pagina_entrada(L):
           'q("[data-p-feito]").textContent="Feita: sessão "+u.li.getAttribute("data-n")+(u.data?", "+u.data:"")+".";'
           'if(prox){q("[data-p-k]").textContent="Continuar";q("[data-p-n]").textContent=q("[data-p-srn]").textContent=prox.getAttribute("data-n");q("[data-p-t]").textContent=prox.getAttribute("data-titulo");'
           'q("[data-p-linha]").textContent=prox.getAttribute("data-linha");q("[data-p-papel]").textContent="No fim, em papel: "+prox.getAttribute("data-papel");'
-          'var b=q("[data-p-botao]");b.href=prox.getAttribute("data-href");b.textContent="Continuar na sessão "+prox.getAttribute("data-n")+"\\u00a0→"}'
+          # 01/11/2026 (correção 6, diretor de arte): «sessão N» inseparável no botão (na projeção a 320 px partia-se em «Começar a
+          # sessão» / «1 →»; agora «Começar a» / «sessão 1 →»), no «Começar», no «Continuar» e no «Rever»
+          'var b=q("[data-p-botao]");b.href=prox.getAttribute("data-href");b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"}'
           + (f'else{{q("[data-p-k]").textContent="A seguir, em preparação";q("[data-p-n]").textContent=q("[data-p-srn]").textContent="{proxima_prep["n"]}";q("[data-p-t]").textContent="{proxima_prep["titulo"]}";'
              'q("[data-p-linha]").textContent="As sessões prontas estão feitas. A próxima ainda está a ser preparada.";q("[data-p-papel]").textContent="";'
-             'var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão "+u.li.getAttribute("data-n")+"\\u00a0→"}'
+             'var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"}'
              if proxima_prep else 'else{q("[data-p-k]").textContent="Feitas";}')
           + '}'
           # o gesto: não grava nada; um segundo toque desfaz; a sessão 1 ganha «Começa aqui»
@@ -595,7 +609,7 @@ def pagina_entrada(L):
              '<p class="kicker" data-p-k>Começa aqui</p>'
              f'<div class="cab"><p class="num" data-p-n aria-hidden="true">{s1["n"]}</p><h2 id="prox-t"><span class="c-sr">Sessão <span data-p-srn>{s1["n"]}</span>: </span><span data-p-t>{e(s1["titulo"])}</span></h2></div>'
              f'<p class="linha" data-p-linha>{e(s1["linha"])}</p><p class="papel" data-p-papel>No fim, em papel: {e(s1["papel"])}</p><p class="feito" data-p-feito></p>'
-             f'<a class="botao" data-p-botao href="sessao-01/">Começar a sessão 1 →</a></section>'
+             f'<a class="botao" data-p-botao href="sessao-01/">Começar a sessão 1 →</a></section>'
              # 01/11/2026 (correção 2, diretor de arte): a resposta vem de um <template>, já com «subiu-lhe» numa <span class="nq">
              '<section class="gesto" aria-labelledby="gesto-q" data-gesto>'
              f'<p class="q" id="gesto-q">{pergunta_abre(d1)}</p>'

@@ -518,5 +518,30 @@ class QuintaRevisao(unittest.TestCase):
             self.assertIn('@media (min-width:768px){.ideias main{padding-left:24px;padding-right:24px;max-width:1248px}}', (PILOTO / rel).read_text('utf-8'), rel)
 
 
+class SextaRevisao(unittest.TestCase):
+    """30/10/2026: as correções da sexta revisão (01/11): a regência de «responder a» no auto de observação (revisor de pt-PT) e
+    as regras de desenho do diretor de arte que se podem confirmar sem navegador (as medidas estão em tests/browser_ideias.cjs,
+    secção 10)."""
+
+    def test_texto_do_revisor(self):
+        guiao = L.visivel((PILOTO / 'guiao/index.html').read_text('utf-8'))
+        guia = L.visivel((PILOTO / 'docente/index.html').read_text('utf-8'))
+        # o campo do guião e o critério da grelha que o avalia dizem o mesmo
+        self.assertIn('A pergunta a que o lugar não responde:', guiao)
+        self.assertIn('A pergunta a que o lugar não responde', guia)
+        for t in (guiao, guia):
+            self.assertNotIn('pergunta que o lugar', t)
+
+    def test_regras_de_desenho(self):
+        entrada = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .topo{grid-template-areas:"abre proximo" "abre gesto" "atol gesto" "cap gesto";grid-template-rows:auto auto auto 1fr}'
+                      'html.em-projecao .ideias .topo .atol figcaption{align-self:start;margin:8px 0 0}}', entrada)
+        self.assertIn('@media (min-width:380px) and (max-width:469px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}', entrada)
+        # «sessão N» inseparável no botão: no HTML («Começar») e no script que o reescreve («Continuar» e «Rever»)
+        self.assertIn('data-p-botao href="sessao-01/">Começar a sessão\u00a01\u00a0→</a>', entrada)
+        self.assertIn('b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"', entrada)
+        self.assertIn('b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"', entrada)
+        self.assertNotIn('Começar a sessão 1', entrada)
+
 if __name__ == '__main__':
     unittest.main()

@@ -246,4 +246,24 @@ async function responder(p,x){
    const r=await p.evaluate(()=>[Math.round(document.querySelector('h1').getBoundingClientRect().left),Math.round(window.innerWidth-document.querySelector('.migalhas').getBoundingClientRect().right)]);
    assert.deepEqual(r,[x,x],pag+': margem lateral de '+r.join('/')+' px a '+w+' px (esperados '+x+')');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS quinta revisão: título dos cartões a 21 px e equilibrado, gesto numa coluna a partir de 1080 px, projeção abaixo de 600 px, margem de 24 px a partir de 768 px')}
+ // 10. 30/10/2026: as correções da sexta revisão (01/11): na projeção, de 960 a 1099 px, a tabela de museu colada à imagem (logo
+ // abaixo dela e alinhada à sua margem), e não 20 px abaixo do gesto, na coluna da direita; no ecrã e na projeção a partir de
+ // 1100 px fica na coluna da direita, como estava; na projeção, de 380 a 469 px, o gesto numa coluna (cada botão numa linha) e
+ // três colunas a partir de 470 px; «sessão N» inseparável no botão da região «A seguir» («Começar», «Continuar» e «Rever»)
+ {for(const [w,tema] of [[960,'light'],[1024,'dark'],[1099,'light']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/?projetar=1',w,768,tema);
+   const r=await p.evaluate(()=>{const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect();return {dy:Math.round(f.top-c.bottom),dx:Math.round(f.left-c.left)}});
+   assert(r.dy>=0&&r.dy<=12&&Math.abs(r.dx)<=1,'projeção: a tabela de museu descolada da imagem a '+w+' px ('+JSON.stringify(r)+')');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const [w,q] of [[1024,''],[1099,''],[1100,'?projetar=1'],[1366,'?projetar=1']]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/'+q,w,800,'light');
+   const r=await p.evaluate(()=>{const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect();return f.left-c.right});
+   assert(r>=20,'entrada: a tabela de museu saiu da coluna da direita a '+w+' px'+q);await ctx.close()}
+  for(const [w,col] of [[380,1],[390,1],[469,1],[470,3]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/?projetar=1',w,844,w===390?'dark':'light');
+   const lin=()=>p.evaluate(()=>{const bs=[...document.querySelectorAll('[data-gesto] button[data-op]')];return {esq:new Set(bs.map(x=>Math.round(x.getBoundingClientRect().left))).size,alt:Math.max(...bs.map(x=>Math.round(x.getBoundingClientRect().height)))}});
+   let r=await lin();assert.equal(r.esq,col,'projeção: o gesto em '+r.esq+' colunas a '+w+' px (esperadas '+col+')');if(col===1)assert(r.alt<=52,'projeção: botão do gesto em mais de uma linha a '+w+' px');
+   await p.locator('[data-gesto] button[data-op]').nth(1).click();await p.waitForTimeout(200);r=await lin();if(col===1)assert(r.alt<=52,'projeção: «✓ Tenho um palpite» em mais de uma linha a '+w+' px');
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const [w,q,prep,txt] of [[320,'?projetar=1',null,'Começar a sessão 1 →'],[340,'?projetar=1',null,'Começar a sessão 1 →'],[320,'',{content:"localStorage.setItem('epi-lab-ideias-s01',"+JSON.stringify(JSON.stringify(FEITA1))+")"},'Continuar na sessão 2 →']]){
+   const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,640,'light',prep);
+   const r=await p.evaluate(()=>{const a=document.querySelector('[data-p-botao]'),n=a.firstChild,t=n.textContent,top=i=>{const g=document.createRange();g.setStart(n,i);g.setEnd(n,i+1);return Math.round(g.getBoundingClientRect().top)};const i=t.indexOf('sessão');return {t,junto:top(i)===top(i+7)}});
+   assert.equal(r.t,txt,'entrada: o texto do botão a '+w+' px'+q);assert(r.junto,'entrada: o número da sessão separado de «sessão» a '+w+' px'+q);assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS sexta revisão: tabela de museu colada à imagem na projeção de 960 a 1099 px, gesto numa coluna na projeção de 380 a 469 px, «sessão N» inseparável no botão')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});
