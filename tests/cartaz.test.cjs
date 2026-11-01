@@ -19,7 +19,8 @@ test('peças não alteram armazenamento nem se ligam às páginas existentes', (
   const walk = dir => fs.readdirSync(dir,{withFileTypes:true}).flatMap(e =>
     e.name.startsWith('.') || ['tests','node_modules'].includes(e.name) ? [] :
     e.isDirectory() ? walk(path.join(dir,e.name)) : e.name.endsWith('.html') ? [path.join(dir,e.name)] : []);
-  for(const file of walk(path.join(__dirname,'..'))) assert.doesNotMatch(fs.readFileSync(file,'utf8'),/cartaz-components\.(?:css|js)/,file);
+  // 01/11/2026: a entrada é a primeira família autorizada a usar as peças.
+  for(const file of walk(path.join(__dirname,'..')).filter(f=>f!==path.join(__dirname,'../index.html') && path.resolve(f)!==path.resolve(__dirname,'../index.html'))) assert.doesNotMatch(fs.readFileSync(file,'utf8'),/cartaz-components\.(?:css|js)/,file);
 });
 
 // 01/11/2026: peças carregadas por appearance.css, ainda sem páginas ativadas.
