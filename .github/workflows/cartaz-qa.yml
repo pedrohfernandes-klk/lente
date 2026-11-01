@@ -27,3 +27,45 @@ jobs:
       - run: node tests/browser_cartaz_familia.cjs
       # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
       - run: node tests/hierarquia-cartaz.cjs
+
+  # 01/11/2026: bateria integral, incluindo os moldes que não acionam workflows por caminhos.
+  regressao-completa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - node tests/browser_formas.cjs
+          - node tests/browser_lab_percursos.cjs
+          - node tests/browser_tres_cartas.cjs
+          - node tests/browser_licoes_lente.cjs
+          - node tests/browser_ideias.cjs
+          - node tests/browser_cidadania_m1_sessoes.cjs
+          - node tests/browser_cidadania_m2_sessoes.cjs
+          - node tests/browser_opcoes.cjs
+          - node tests/browser_resultados_turma.cjs
+          - python tests/browser_reciclagem_lente.py
+          - python tests/browser_texto_justificado.py
+          - python tests/browser_hierarquia_titulos.py
+          - python tests/browser_cidadania_percurso.py
+          - python tests/browser_cidadania_butler_singer.py
+          - python tests/browser_cidadania_anomalias.py
+          - python tests/browser_lab_treinos.py
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar navegador
+        run: |
+          pip install playwright
+          npm install --no-save --package-lock=false playwright
+          python -m playwright install --with-deps chromium
+      - name: Verificar molde completo
+        run: ${{ matrix.command }}

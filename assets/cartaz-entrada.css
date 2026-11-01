@@ -30,7 +30,7 @@
 [data-cartaz-entrada] .sp-credit a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:inherit}
 [data-cartaz-entrada] .sp-credit a[data-external]::after{content:' ↗'}
 [data-cartaz-entrada] .cz-footer .lente-nota{margin:24px 0 0;font-size:13px}
-[data-cartaz-entrada] .cz-footer .lente-nota a{display:inline-flex;min-height:44px;align-items:center;padding:0;background:transparent}
+
 [data-cartaz-entrada] .teacher-archive{position:static;display:inline-flex;width:64px;height:64px;margin-top:24px;padding:16px}
 @media(max-width:639px){[data-cartaz-entrada] .lente-div,[data-cartaz-entrada] .ferr-grupos{grid-template-columns:1fr}}
 @media(min-width:640px){[data-cartaz-entrada]{padding-inline:24px}}
@@ -57,3 +57,44 @@
 [data-cartaz-entrada] .site-portal .sp-title{font-size:var(--cz-t31)}
 [data-cartaz-entrada] .lab-set-copy strong{font-size:var(--cz-t20)}
 @media(min-width:640px){[data-cartaz-entrada] .lente-nome{font-size:var(--cz-t61)}[data-cartaz-entrada] .site-portal .sp-title{font-size:var(--cz-t39)}}
+
+/* 01/11/2026: revisão curta; composição e projeção, sem alterar as peças partilhadas. */
+[data-cartaz-entrada] .cz-footer .lente-nota a{display:inline;min-height:0;background:none;padding:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+[data-cartaz-entrada] .cz-footer-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-cartaz-entrada] :is(.cz-label,.ld-rot,.lente-etq,.sp-kicker){letter-spacing:.14em}
+[data-cartaz-entrada] .lab-sets{border-top:0}
+[data-cartaz-entrada] .lab-sets a.cz-row{border-top:0;border-bottom:2px solid var(--cz-ground);grid-template-columns:32px minmax(0,1fr) 24px;gap:8px}
+[data-cartaz-entrada] .site-map-link{font-size:var(--cz-t13)}
+[data-cartaz-entrada] .site-map-link>span{display:none}
+[data-cartaz-entrada] .sp-credit{text-align:right}
+[data-cartaz-entrada] .sp-image-label{font-family:var(--cz-font-ui)}
+[data-cartaz-entrada] .ld .cz-fold{border:0;padding:0;margin:0}
+[data-cartaz-entrada] .ld .cz-fold>summary{padding:16px 24px;min-height:88px}
+[data-cartaz-entrada] .ferr-grupo summary h3{font:inherit;margin:0;font-size:var(--cz-t20)}
+[data-cartaz-entrada] .ld-credito{line-height:1.5}
+[data-cartaz-entrada] .ld-credito a,[data-cartaz-entrada] .sp-credit a{display:inline;min-height:0;min-width:0;padding-block:15px;line-height:inherit}
+[data-cartaz-entrada] .ld-open{align-self:start;margin:0 0 16px}
+@media(max-width:599px){[data-cartaz-entrada] .etq-longa{display:none}}
+@media(min-width:600px){[data-cartaz-entrada] .etq-curta{display:none}}
+@media(max-width:639px){[data-cartaz-entrada] .cz-footer-links{grid-template-columns:1fr}}
+@media(min-width:640px){[data-cartaz-entrada] .ld-credito{min-height:3lh}}
+@media(min-width:960px){[data-cartaz-entrada]{display:grid;grid-template-columns:7fr 5fr;column-gap:24px}[data-cartaz-entrada]>*{grid-column:1/-1}[data-cartaz-entrada]>.lente-cab{grid-column:1;grid-row:1}[data-cartaz-entrada]>.cz-next{grid-column:2;grid-row:1;margin:0;align-self:start}}
+html.em-projecao [data-cartaz-entrada] :is(.lente-etq,.ld-rot,.ld-credito,small,.sp-kicker,.sp-description,.sp-action,.sp-image-label,.sp-credit,.site-map-link,.ferr-num,.cz-label,.cz-state){font-size:var(--cz-t20)}
+html.em-projecao [data-cartaz-entrada] :is(.ld-f,.lente-ferr a,.lab-sets strong,.cz-next p,.cz-button){font-size:var(--cz-t25)}
+html.em-projecao [data-cartaz-entrada] .cz-next .cz-label{font-size:var(--cz-t20)}
+html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
+@media(max-width:639px){
+[data-cartaz-entrada]{padding-top:16px;padding-bottom:32px}
+[data-cartaz-entrada] .lente-cab{margin-bottom:0;padding-bottom:16px}
+[data-cartaz-entrada] .cz-next{margin:16px 0 24px;padding:16px}
+[data-cartaz-entrada] .ld .ld-rot{min-height:40px;padding:8px 16px}
+[data-cartaz-entrada] .ld .cz-fold>summary{padding:16px}
+[data-cartaz-entrada] .ld-corpo{padding:16px}
+[data-cartaz-entrada] .ld-f{margin:8px 0 16px}
+[data-cartaz-entrada] .ld-open{margin-bottom:8px}
+[data-cartaz-entrada] .lab-sets a.cz-row{padding-block:8px;min-height:64px}
+[data-cartaz-entrada] .lente-ferr{margin-top:24px;padding-top:16px}
+[data-cartaz-entrada] .ferr-grupos{gap:8px}
+[data-cartaz-entrada] .cz-footer{padding:16px;margin-top:24px}
+[data-cartaz-entrada] .site-portal-wrap{margin-block:24px}
+}
