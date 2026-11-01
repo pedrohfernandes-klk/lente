@@ -2,8 +2,9 @@
  "id": "ideias-s01",
  "familia": "laboratorio",
  "chave": "epi-lab-ideias-s01",
- "versao": "2026-10-31-1",
+ "versao": "2026-11-01-1",
  "marca": "Ideias",
+ "passo": "Passo 1 de 5",
  "titulo": "Sessão 1: Ver ou observar?",
  "h1": "Laboratório, Ideias, sessão 1: Ver ou observar?",
  "seccao": {
@@ -23,18 +24,24 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Dezassete degraus",
-   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola. É a primeira de sete sessões. No fim da sétima, terás seguido uma ideia tua da primeira nota até à última versão.</p>"
+   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><div class=\"metodo-linha\"><p><b>Passo 1 de 5: juntar material.</b> Estas sete sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div><ol class=\"passos-m\" aria-label=\"Os cinco passos do método\"><li class=\"hoje\" aria-current=\"step\"><b>1</b> Juntar material <span class=\"hoje-t\">hoje</span></li><li><b>2</b> Trabalhar o material</li><li><b>3</b> Largar</li><li><b>4</b> A ideia aparece</li><li><b>5</b> Dar forma e pôr à prova</li></ol><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>"
+  },
+  {
+   "t": "ler",
+   "rot": "O método",
+   "titulo": "Cinco passos, por ordem",
+   "html": "<p>James Webb Young foi um publicitário <span class=\"nq\">norte-americano</span>. Em 1940 publicou <i>A Technique for Producing Ideas</i>, um livro de poucas páginas, nascido de uma aula na Universidade de Chicago. Ao apresentar o método, escreve:</p><blockquote><p>«Esta técnica intelectual consiste em cinco passos. Tenho a certeza de que todos, um por um, são reconhecíveis.»</p></blockquote><p class=\"fonte\">James Webb Young, <i>A Technique for Producing Ideas</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p><p>Os passos <span class=\"nq\">dão-se</span> por ordem. Há outros métodos; seguimos este por ser simples e claro, por fazer sentido e por ajudar de facto. <span class=\"nq\">Aprende-o</span> aqui, para depois o usares por tua conta.</p>"
   },
   {
    "t": "ler",
    "rot": "Decide",
    "titulo": "O banho e o atol",
-   "html": "<p>As ideias caem do céu?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão de quem diz que sim</summary><div><p>James Webb Young, o publicitário norte-americano que vamos seguir nestas sessões, escreve que a ideia chega quando menos se espera: «enquanto se faz a barba, no banho, ou, mais vulgarmente, enquanto estamos ainda meio acordados, de manhã».</p></div></details><details class=\"lado\"><summary>A razão de quem diz que não</summary><div><p>O mesmo Young compara uma ideia a um atol, uma ilha de coral que aparece de repente no meio do mar. Parece magia, mas é obra de corais que trabalham debaixo de água, sem ninguém os ver.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>Se uma ideia dá assim tanto trabalho, porque é que não aparece à hora marcada?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: voltas a ela na última sessão.</p>"
+   "html": "<p>As ideias caem do céu?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão de quem diz que sim</summary><div><p>O livro do método diz que a ideia chega quando menos se espera: «enquanto se faz a barba, no banho, ou, mais vulgarmente, enquanto estamos ainda meio acordados, de manhã».</p></div></details><details class=\"lado\"><summary>A razão de quem diz que não</summary><div><p>O mesmo livro compara uma ideia a um atol, uma ilha de coral que aparece de repente no meio do mar. Parece magia, mas é obra de corais que trabalham debaixo de água, sem ninguém os ver.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>Se uma ideia dá assim tanto trabalho, porque é que não aparece à hora marcada?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: voltas a ela na última sessão.</p>"
   },
   {
    "t": "escolha",
    "g": "atol",
-   "p": "Young compara uma ideia a um atol que aparece de repente no mar. Na comparação, o que são os corais que ninguém vê?",
+   "p": "Uma ideia é como um atol que aparece de repente no mar. Na comparação, o que são os corais que ninguém vê?",
    "p2": "Se a ideia é o atol, o que são os corais que o construíram debaixo de água?",
    "o": [
     "O trabalho feito antes de a ideia aparecer.",
@@ -42,10 +49,10 @@
     "Os colegas que copiam a ideia mais tarde."
    ],
    "c": 0,
-   "f": "Para Young, o atol parece surgir do nada, mas «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral». A ideia é só a parte que chega à superfície; o trabalho fica por baixo.",
+   "f": "O atol parece surgir do nada, mas, diz o livro, «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral». A ideia é só a parte que chega à superfície; o trabalho fica por baixo.",
    "fe": [
     "",
-    "A sorte não constrói nada debaixo de água. Young fala de «processos de construção», isto é, de trabalho que ninguém vê.",
+    "A sorte não constrói nada debaixo de água. A comparação fala de «processos de construção», isto é, de trabalho que ninguém vê.",
     "Os corais vêm antes do atol, não depois. Copiar só pode acontecer quando a ideia já existe."
    ]
   },
@@ -151,7 +158,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "O rapaz e a leitora da sina",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Agora é a tua vez: dois minutos em silêncio, a olhar. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Agora é a tua vez: dois minutos em silêncio. Vê primeiro o quadro inteiro; depois <span class=\"nq\">amplia-o</span> e procura as mãos. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
   },
   {
    "t": "mapa",
@@ -280,8 +287,8 @@
   {
    "t": "sublinhar",
    "g": "superficie",
-   "p": "Young explica porque é que tantos param de olhar cedo demais. Toca nas palavras que dizem o erro.",
-   "p2": "Que palavras de Young dizem o erro de quem para de olhar?",
+   "p": "O livro do método explica porque é que tantos param de olhar cedo demais. Toca nas palavras que dizem o erro.",
+   "p2": "Que palavras desta frase dizem o erro de quem para de olhar?",
    "frase": "Se as diferenças não forem claramente visíveis à superfície, assumimos que não as há.",
    "certas": [
     9,
@@ -296,19 +303,19 @@
   {
    "t": "escolha",
    "g": "cartoes",
-   "p": "Young aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve, segundo ele?",
-   "p2": "Porque é que Young manda passar a escrito, cartão a cartão, o que se recolhe?",
+   "p": "O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve?",
+   "p2": "Porque é que o método manda passar a escrito, cartão a cartão, o que se recolhe?",
    "o": [
     "Obriga a escrever e mostra o que falta.",
     "Prova ao docente que trabalhaste muito.",
     "Ajuda a decorar os factos para um teste."
    ],
    "c": 0,
-   "f": "Young diz que o método ajuda a «dar ordem ao trabalho» e a «evidenciar as falhas no conhecimento», e que obriga o cérebro «a passar pelo processo de expressar os conteúdos pesquisados em forma escrita». Cartões, caderno ou telemóvel: escolhe a forma, mas regista uma coisa de cada vez.",
+   "f": "O livro diz que o registo ajuda a «dar ordem ao trabalho» e a «evidenciar as falhas no conhecimento», e que obriga o cérebro «a passar pelo processo de expressar os conteúdos pesquisados em forma escrita». Cartões, caderno ou telemóvel: escolhe a forma, mas regista uma coisa de cada vez.",
    "fe": [
     "",
-    "Young não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.",
-    "Young não fala de decorar. Escrever serve para pensar e para ver o que ainda não se sabe."
+    "O conselho dos cartões não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.",
+    "O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe."
    ]
   },
   {
@@ -329,7 +336,7 @@
   {
    "t": "ordenar",
    "g": "metodo",
-   "p": "Põe por ordem o método de observação desta sessão.",
+   "p": "Põe por ordem a observação desta sessão, do primeiro ao último gesto.",
    "p2": "Em que ordem se faz a observação desta sessão?",
    "passos": [
     "Olhar em silêncio, sem concluir nada.",
@@ -337,13 +344,13 @@
     "Juntar factos numa inferência.",
     "Procurar um facto que a desminta."
    ],
-   "f": "Primeiro olhar, depois registar, depois concluir. O último passo é o do detetive honesto: antes de acreditares na tua inferência, procura o que a deitaria abaixo."
+   "f": "Primeiro olhar, depois registar, depois concluir. Por fim, o gesto do detetive honesto: antes de acreditares na tua inferência, procura o que a deitaria abaixo."
   },
   {
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p>Separaste o que se vê do que se conclui, num quadro e num lugar da escola: é o primeiro passo de Young, juntar material de olhos abertos. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio apontado à Lua mostrou que ela não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2:</b> repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
+   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste o que se vê do que se conclui, num quadro e na escola. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
   }
  ]
 }

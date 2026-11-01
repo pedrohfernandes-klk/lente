@@ -60,3 +60,45 @@ html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,htm
    num pedido à parte. Equilibrado, como os títulos das páginas de «Ideias»: a 21 px, «sina» (cartão 10, a 320 px) e «olhar»
    (cartão 7, a 360 e a 390 px) ficavam sozinhas na segunda linha. */
 .licao-laboratorio .jogo .tit:not(.cartaz){font-size:1.3125rem;text-wrap:balance}
+/* 01/11/2026 (método, encargo do docente: assumir o método de Young, passo a passo): no «Abre» de cada sessão, a linha do
+   método (o passo de hoje, o que pede e porque vem agora) e os cinco passos numa linha, por ordem, com o de hoje marcado com a
+   palavra «hoje» (texto, não só cor) e o traço vermelho do «atual» do sistema; os outros a cinzento de texto secundário. A
+   linha parte entre passos e nunca dentro de um (nowrap), como a lista do bloco «O método» da entrada. */
+.licao-laboratorio .ler .metodo-linha{font:400 .95rem/1.45 Arial,Helvetica,sans-serif;border-top:1px solid var(--tinta);padding-top:10px;margin-top:16px;margin-bottom:8px;text-align:start}
+/* o parágrafo vai dentro de um <div>, como uma linha de informação (a linha «Hoje»): fica à esquerda, sem a justificação do texto
+   corrido, que abria espaços largos à volta do rótulo a negro a 390 px */
+.licao-laboratorio .jogo .ler .metodo-linha p{margin:0;text-align:start;hyphens:manual}
+/* 01/11/2026 (correção 4 do método, diretor de arte): medida do texto corrido até 75 carateres. A 15,2 px e com a largura dos
+   cartões de ler (533,6 px), o parágrafo tinha linhas de 76 e 77 carateres de 1024 a 1440 px; o filete continua à largura dos
+   cartões de ler, só o texto passa a partir antes. Na projeção (20,9 px) os 33 em passam a largura do parágrafo e nada muda */
+.licao-laboratorio .jogo .ler .metodo-linha p{max-width:33em}
+/* o filete da linha do método acaba onde acaba o texto (a medida dos cartões de ler), como o da linha «Hoje» */
+.licao-laboratorio .jogo .ler .metodo-linha{max-width:var(--medida-ler)}
+/* 01/11/2026 (correção 1 do método, diretor de arte): abaixo de 600 px a linha corria em flex-wrap e o passo 5 ficava sozinho na
+   última linha (a 360 e 390 px [[1, 2], [3, 4], [5]]; a 599 px [[1, 2, 3, 4], [5]]): agora um passo por linha; a regra de 600 px,
+   mais abaixo, continua a dar três mais dois */
+.licao-laboratorio .jogo .ler ol.passos-m{list-style:none;display:grid;grid-template-columns:max-content;gap:4px 20px;margin:0 0 4px;padding:0}
+/* 01/11/2026 (correção 2 do método, diretor de arte): a lista dos cinco passos é a mesma peça do bloco «O método» da entrada e
+   tem o mesmo desenho: o nome a 15 px e o número em cartaz (Bebas Neue), a 18 px abaixo de 600 px e a 21 px a partir daí, como
+   os números do sistema; antes, o número ia em Arial 700 a 14 px. O que muda entre as duas é só o estado: aqui, o passo de hoje
+   a tinta, com «hoje» e o traço vermelho, e os outros a cinzento */
+.licao-laboratorio .jogo .ler ol.passos-m li{margin:0;padding:2px 0 3px;font:400 .9375rem/1.2 Arial,Helvetica,sans-serif;color:var(--suave);white-space:nowrap}
+.licao-laboratorio .jogo .ler ol.passos-m li b{font:400 1.125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin-right:4px}
+.licao-laboratorio .jogo .ler ol.passos-m li.hoje{color:var(--tinta);font-weight:700;box-shadow:inset 0 -3px 0 var(--vermelho)}
+/* 01/11/2026 (correção 1 do método, diretor de arte): «hoje» é um rótulo de estado (sistema, escala: 13 px, caixa alta, 0,14 em);
+   a 12 px (16,5 px na projeção) ficava abaixo da letra mínima */
+.licao-laboratorio .jogo .ler ol.passos-m .hoje-t{font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;margin-left:2px}
+/* a partir de 600 px, os cinco passos em três e dois, em colunas (antes, o 5 ficava sozinho na segunda linha a 1366 px) */
+@media (min-width:600px){.licao-laboratorio .jogo .ler ol.passos-m{display:grid;grid-template-columns:repeat(3,max-content);column-gap:20px;row-gap:4px}}
+/* 01/11/2026 (correção 2 do método, diretor de arte): o número a 21 px a partir de 600 px, como na lista da entrada (vem depois
+   da regra do número, para a vencer) */
+@media (min-width:600px){.licao-laboratorio .jogo .ler ol.passos-m li b{font-size:1.3125rem}}
+/* 01/11/2026 (método): o passo do método na marca da casca, à vista em todos os cartões, discreto como a marca: «Ideias, passo 1
+   de 5» a partir de 600 px; de 430 a 599 px só «Passo 1 de 5» (o nome fica para o leitor de ecrã, como abaixo de 400 px).
+   Abaixo de 430 px não cabe: a barra tem sete peças (a casa, o número do cartão, a barra de progresso, Como se faz, Som,
+   Projetar e Menu) e a de progresso já está perto dos 48 px mínimos (102 px a 390, 72 a 360, 56 a 320); aí o passo fica no
+   primeiro e no último cartão e no título da página, e o leitor de ecrã continua a ouvi-lo. */
+.licao-laboratorio .c-marca-p::before{content:", ";content:", "/""}
+@media (max-width:599px){.licao-laboratorio .c-marca-p::before{content:none}}
+@media (min-width:430px) and (max-width:599px){.licao-laboratorio .c-marca-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media (max-width:429px){.licao-laboratorio .c-marca-p{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}

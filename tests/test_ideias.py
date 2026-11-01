@@ -91,7 +91,9 @@ class Licoes(unittest.TestCase):
             self.assertIn('class="licao-lente licao-laboratorio"', s)
             self.assertIn('assets/licoes/laboratorio.css', s)
             self.assertNotIn('cidadania.css', s)
-            self.assertIn('<title>' + d['titulo'].replace('?', '?') + ' | Ideias | Laboratório | Lente</title>', s)
+            # 01/11/2026: com o método assumido, o <title> diz também o passo («Sessão 1: Ver ou observar? (passo 1 de 5) | …»)
+            self.assertRegex(d['passo'], r'^Passos? \d( e \d)? de 5$')
+            self.assertIn('<title>' + d['titulo'] + ' (' + d['passo'].lower() + ') | Ideias | Laboratório | Lente</title>', s)
 
     def test_cada_sessao_tem_imagem_e_a_primeira_video(self):
         for p in FONTES:
@@ -142,7 +144,8 @@ class Licoes(unittest.TestCase):
                 self.assertTrue(0 < x < 1000 and 0 < y < 827)
 
     def test_numeros_da_sessao(self):
-        for p, (n, fazer) in zip(FONTES, [(20, 13), (19, 12)]):
+        # 01/11/2026: a sessão 1 ganha o cartão de leitura «O método» (a apresentação de Young): 21 cartões, os mesmos 13 de fazer
+        for p, (n, fazer) in zip(FONTES, [(21, 13), (19, 12)]):
             d = json.loads(p.read_text('utf-8'))
             self.assertEqual(len(d['cartoes']), n, p.name)
             self.assertEqual(sum(c['t'] in L.TIPOS_FAZER for c in d['cartoes']), fazer, p.name)
@@ -329,7 +332,8 @@ class SegundaRevisao(unittest.TestCase):
         # no Laboratório, o nome da marca num <span> (escondido abaixo de 400 px); na Cidadania, como estava
         for p in FONTES:
             d = json.loads(p.read_text('utf-8'))
-            self.assertIn('<span class="c-marca-t">Ideias</span></a>', (ROOT / d['saida']).read_text('utf-8'))
+            # 01/11/2026: a marca leva também o passo do método, numa <span> própria, logo a seguir ao nome
+            self.assertIn('<span class="c-marca-t">Ideias</span><span class="c-marca-p">Passo 1 de 5</span></a>', (ROOT / d['saida']).read_text('utf-8'))
         for p in sorted((ROOT / 'tools/licoes').glob('cidadania-*.json')):
             d = json.loads(p.read_text('utf-8'))
             self.assertNotIn('c-marca-t', (ROOT / d['saida']).read_text('utf-8'), p.name)
@@ -373,6 +377,10 @@ class TerceiraRevisao(unittest.TestCase):
         # alguma coisa (teste mudado de propósito; a frase nova confirma-se também em QuintaRevisao)
         self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
         self.assertIn('cita-o duas vezes no livro', guia)
+        # 01/11/2026: (correção 2 do método, revisor de pt-PT) quem traz Holmes é o autor do método, que o cita no livro; «quem o traz
+        # é o próprio método» dava os cinco passos como quem cita (no guia, «o método» são os passos e «o livro» é o livro)
+        self.assertIn('Sherlock Holmes é a testemunha que volta, e quem o traz é o autor do método: cita-o duas vezes no livro.', L.visivel(guia))
+        self.assertNotIn('o próprio método', L.visivel(guia))
         self.assertNotIn('«Decide»', guiao)  # o papel do aluno não fala das peças da página
         self.assertIn('data-papel="o teu «cocheiro», a linha que levaste à fila e o resultado."', entrada)
 
@@ -442,15 +450,17 @@ class QuartaRevisao(unittest.TestCase):
         self.assertIn('Grelha indicativa: o auto de observação, por grupo</caption>', guia)
         self.assertIn('Os dois cartões «Toca no quadro» são novos no Lente:', guia)
         self.assertNotRegex(L.visivel(re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', guia, flags=re.S)), r'\bmotor\b')  # jargão da equipa
-        self.assertIn('(a ligação aparece no retorno do cartão 8)', guia)
+        # 01/11/2026: com o cartão «O método» na posição 2, o resumo com a ligação passa a cartão 9 (índice 8)
+        self.assertIn('(a ligação aparece no retorno do cartão 9)', guia)
         s1 = json.loads((ROOT / 'tools/licoes/ideias-s01.json').read_text('utf-8'))
-        self.assertEqual(s1['cartoes'][7]['g'], 'resumo')
-        self.assertTrue(s1['cartoes'][7].get('liga'))
+        self.assertEqual(s1['cartoes'][8]['g'], 'resumo')
+        self.assertTrue(s1['cartoes'][8].get('liga'))
         estatuto = next(c for c in s1['cartoes'] if c.get('g') == 'estatuto')
         self.assertTrue(all(re.match(r'^Uma? [^\W\d_]+: ', d) for _e, d in estatuto['pares']), estatuto['pares'])
         s2 = json.loads((ROOT / 'tools/licoes/ideias-s02.json').read_text('utf-8'))
         cedo = next(c for c in s2['cartoes'] if c.get('g') == 'cedo')
-        self.assertEqual(cedo['p2'], 'Que três palavras de Young dizem o que fazemos mal, e quando? Toca nelas.')
+        # 01/11/2026: o nome de Young só onde o método fala; a pergunta é a mesma, sobre «a frase»
+        self.assertEqual(cedo['p2'], 'Que três palavras da frase dizem o que fazemos mal, e quando? Toca nelas.')
         self.assertEqual(len(cedo['certas']), 3)
         html2 = json.dumps(s2['cartoes'], ensure_ascii=False)
         self.assertIn('escreve uma linha que só sirva para esse «cocheiro».', html2)
@@ -501,8 +511,9 @@ class QuintaRevisao(unittest.TestCase):
         self.assertNotIn('de cada aluno, individual', guia)
         self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
         self.assertNotIn('o que prova o sítio', guia)
-        self.assertIn('projeta-se com legendas no cartão 7;', guia)
-        self.assertNotIn('a partir do cartão 7', guia)
+        # 01/11/2026: com o cartão «O método» na posição 2, o vídeo de Herman passa a cartão 8
+        self.assertIn('projeta-se com legendas no cartão 8;', guia)
+        self.assertNotRegex(guia, r'a partir do cartão \d')
         self.assertRegex((PILOTO / 'docente/index.html').read_text('utf-8'), r'com legendas no leitor\. <a href="https://www\.youtube\.com/watch\?v=ubEadhXWwV4">Abrir no YouTube</a>\.</p>')
         self.assertNotIn('a lição inteira', guia)
         # o guia copia o cartão «Na aula»
@@ -542,6 +553,220 @@ class SextaRevisao(unittest.TestCase):
         self.assertIn('b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"', entrada)
         self.assertIn('b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"', entrada)
         self.assertNotIn('Começar a sessão 1', entrada)
+
+
+class Metodo(unittest.TestCase):
+    """01/11/2026: o método de Young assumido à cabeça, passo a passo (encargo do docente de 01/11: «Young é demasiado
+    omnipresente»; o método fica como espinha, apresentado uma vez, e depois trabalha sem se anunciar). Guarda a regra nova: o
+    bloco «O método» na entrada, logo abaixo do título, com os cinco passos numa lista numerada; «Passo N de 5» em cada sessão
+    (na lista da entrada, no rótulo da região «A seguir», no «Abre», na marca da casca, no <title>, no último cartão, no guião e
+    no guia); a apresentação de Young num cartão próprio na sessão 1; e o nome de Young só onde o método fala (no máximo três vezes
+    em cada sessão, contando a fonte no menu). As medidas no navegador estão em tests/browser_ideias.cjs, secção 11."""
+
+    PASSOS = ['Juntar material', 'Trabalhar o material', 'Largar', 'A ideia aparece', 'Dar forma e pôr à prova']
+
+    def licoes(self):
+        return [json.loads(p.read_text('utf-8')) for p in FONTES]
+
+    def young(self, d):
+        # o nome em todo o texto que o aluno pode ver na sessão: os cartões (também o p2) e o menu, com as fontes
+        cartoes = sum(len(re.findall(r'Young', ' '.join(L.textos(c)))) for c in d['cartoes'])
+        s = (ROOT / d['saida']).read_text('utf-8')
+        menu = re.search(r'<div class="casca-menu".*?</div></div>', s, re.S).group(0)
+        return cartoes, len(re.findall(r'Young', L.visivel(menu)))
+
+    def test_bloco_o_metodo_na_entrada(self):
+        s = (PILOTO / 'index.html').read_text('utf-8')
+        abre = re.search(r'<header class="abre">(.*?)</header>', s, re.S).group(1)
+        # logo abaixo do título: o bloco é o que vem a seguir à frase de abertura, dentro da abertura
+        self.assertRegex(abre, r'<h1>Ideias</h1><p class="sub">Como nasce uma ideia</p><p class="lead">[^<]*método de cinco passos[^<]*</p>'
+                               r'<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>')
+        bloco = re.search(r'<section class="metodo".*?</section>', abre, re.S).group(0)
+        texto = L.visivel(bloco)
+        for frag in ('James Webb Young', 'publicitário norte-americano', 'A Technique for Producing Ideas (1940)', 'um livro de poucas páginas',
+                     'Seguimos, passo a passo, o método', 'Há outros', 'escolhemos este por ser simples, claro e útil'):
+            self.assertIn(frag, texto)
+        self.assertIn('<i>A Technique for Producing Ideas</i>', bloco)  # título de obra em itálico
+        # 01/11/2026: (correção 2 do método, revisor de pt-PT) «Há outros;» lia-se também como «há outros livros» (o nome mais perto é
+        # «um livro de poucas páginas»): a frase diz «métodos», como o encargo pede (ponto 1)
+        self.assertIn('Há outros métodos; escolhemos este por ser simples, claro e útil.', texto)
+        # 01/11/2026: (correção 2 do método, diretor de arte) o bloco com a largura da coluna, para o filete acabar onde acabam o título,
+        # a frase de abertura e a imagem (com 34 em, a 17 px, acabava a meio dela a 1366 e 1440 px); o parágrafo continua com 34 em
+        self.assertIn('.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:none}', s)
+        self.assertIn('.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}', s)
+        self.assertEqual(re.findall(r'<li><b>(\d)</b> ([^<]+)</li>', bloco), [(str(n), t) for n, t in enumerate(self.PASSOS, 1)])
+        self.assertEqual(I.PASSOS, self.PASSOS)
+        # a linha de informação antiga (o livro e Holmes «como guia») deu lugar ao bloco
+        self.assertNotIn('como guia', L.visivel(abre))
+        # o passo também no rótulo da região «A seguir» («Começa aqui: passo 1 de 5»), que o script troca com o progresso
+        # 01/11/2026: (correção 1 do método, diretor de arte) «passo 1 de 5» inseparável, com espaços duros, no rótulo inicial, no
+        # data-passo das sessões prontas e na sessão em preparação que o script escreve (antes partia-se dentro do passo)
+        self.assertIn('<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: passo\u00a01\u00a0de\u00a05</span></p>', s)
+        self.assertEqual(re.findall(r'data-passo="([^"]*)"', s), ['passo\u00a01\u00a0de\u00a05'] * 2)
+        self.assertIn('q("[data-p-passo]").textContent=": passos\u00a01\u00a0e\u00a02\u00a0de\u00a05";', s)
+        # 01/11/2026: (correção 1 do método, diretor de arte) a lista dos cinco passos em grelha, para nenhum ficar sozinho numa linha:
+        # um por linha abaixo de 600 px, três mais dois a partir de 600 px (as medidas estão em browser_ideias.cjs, secção 11)
+        self.assertIn('@media (max-width:599px){.ideias ol.passos-m{display:grid;grid-template-columns:max-content;row-gap:0}', s)
+        self.assertIn('@media (min-width:600px){.ideias ol.passos-m{display:grid;grid-template-columns:repeat(3,max-content);column-gap:16px}}', s)
+        self.assertIn('q("[data-p-passo]").textContent=": "+prox.getAttribute("data-passo");', s)
+
+    def test_passo_n_de_5_em_cada_sessao(self):
+        s = (PILOTO / 'index.html').read_text('utf-8')
+        apoios = re.findall(r'<span class="apoio">(.*?)</span>', s)
+        self.assertEqual(len(apoios), 7)
+        for n, a in enumerate(apoios, 1):
+            self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
+        self.assertEqual([x.split(':')[0] for x in apoios[:6]], ['Passo 1 de 5', 'Passo 1 de 5', 'Passos 1 e 2 de 5', 'Passos 2 e 3 de 5', 'Passo 4 de 5', 'Passo 5 de 5'])
+        # 01/11/2026: (correção 2 do método, diretor de arte) o passo escrito em cada porta é o das sessões que estão dentro dela (antes,
+        # Ver dizia «Passos 1 e 2» sobre duas sessões do passo 1 e Treinar «Passos 2 e 3» sobre as sessões dos passos 1 a 3); a sessão
+        # de síntese («Os cinco passos juntos») não tem um passo só
+        def passos(t):
+            m = re.match(r'Passos? (\d)(?: (e|a) (\d))?(?: de 5)?:', t)
+            self.assertIsNotNone(m, t)
+            a, b = int(m.group(1)), int(m.group(3) or m.group(1))
+            return set(range(a, b + 1)) if m.group(2) != 'e' else {a, b}
+        portas = [(pid, re.sub(r'<[^>]+>', '', t), ss) for pid, t, ss in  # sem as <span class="nq"> que seguram «trabalhá-lo»
+                  re.findall(r'<div class="porta-corpo" id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">(.*?)</ol></div>', s, re.S)]
+        # 01/11/2026: (correção 3 do método, revisor de pt-PT) a porta Treinar diz «juntar o material geral», para os três elementos da
+        # enumeração serem infinitivos paralelos («juntar», «trabalhá-lo», «largá-lo»); antes, «o material geral» ficava sem a ação
+        self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.'),
+                                                              ('treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.'),
+                                                              ('criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.')])
+        for pid, t, sessoes in portas:
+            dentro = [a for a in re.findall(r'<span class="apoio">(.*?)</span>', sessoes) if not a.startswith('Os cinco passos juntos')]
+            self.assertTrue(dentro, pid)
+            self.assertEqual(passos(t), set().union(*(passos(a) for a in dentro)), pid)
+        for d in self.licoes():
+            pag = (ROOT / d['saida']).read_text('utf-8')
+            abre, ultimo = d['cartoes'][0]['html'], d['cartoes'][-1]['html']
+            # o «Abre» situa o método: o passo de hoje e os cinco passos numa linha, com o de hoje marcado com texto
+            self.assertIn('<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material', abre, d['id'])
+            linha = re.search(r'<ol class="passos-m" aria-label="Os cinco passos do método">(.*?)</ol>', abre).group(1)
+            self.assertEqual(re.findall(r'<b>(\d)</b> ([^<]+?)(?: <span|</li>)', linha), [(str(n), t) for n, t in enumerate(self.PASSOS, 1)])
+            self.assertEqual(linha.count('class="hoje" aria-current="step"'), 1)
+            self.assertIn('<li class="hoje" aria-current="step"><b>1</b> Juntar material <span class="hoje-t">hoje</span></li>', linha)
+            # o último cartão diz que passo se fez e o que vem a seguir
+            # 01/11/2026: (correção 1 do método, revisor de pt-PT) na sessão 2, «Passo 1 de 5: feito» dava o passo por acabado com o
+            # material geral ainda por juntar (sessão 3): passa a «Passo 1 de 5: falta o material geral»
+            self.assertRegex(L.visivel(ultimo), r'(Fizeste o passo 1 de 5|Passo 1 de 5: falta o material geral)', d['id'])
+            self.assertRegex(L.visivel(ultimo), r'(Para a sessão 2 , o mesmo passo|passo 2 de Young)', d['id'])
+            # a marca da casca e o <title>
+            self.assertIn('<span class="c-marca-p">Passo 1 de 5</span>', pag)
+            self.assertIn('(passo 1 de 5) | Ideias | Laboratório | Lente</title>', pag)
+        css = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li.hoje{', css)
+        self.assertIn('@media (max-width:429px){.licao-laboratorio .c-marca-p{position:absolute', css)
+        # 01/11/2026: (correção 1 do método, diretor de arte) a linha dos passos em grelha também abaixo de 600 px (um por linha), e
+        # «hoje» como rótulo de estado do sistema (13 px, 0,14 em), não abaixo da letra mínima
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m{list-style:none;display:grid;grid-template-columns:max-content;', css)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m .hoje-t{font-size:.8125rem;letter-spacing:.14em;', css)
+        # 01/11/2026: (correção 2 do método, diretor de arte) a lista dos cinco passos do «Abre» com o desenho da lista da entrada: o
+        # nome a 15 px e o número em Bebas Neue, a 18 px abaixo de 600 px e a 21 px a partir daí (as medidas, ao lado das da entrada, em
+        # browser_ideias.cjs, secção 11)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li{margin:0;padding:2px 0 3px;font:400 .9375rem/1.2 Arial,Helvetica,sans-serif;', css)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li b{font:400 1.125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;', css)
+        self.assertIn('@media (min-width:600px){.licao-laboratorio .jogo .ler ol.passos-m li b{font-size:1.3125rem}}', css)
+        self.assertIn('.ideias ol.passos-m b{font:400 1.3125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif}', s)
+        # 01/11/2026: (correção 4 do método, diretor de arte) a linha do método com a medida do texto corrido (33 em, até 75 carateres);
+        # o filete continua à largura dos cartões de ler (as linhas medidas no Chromium em browser_ideias.cjs, secção 11)
+        self.assertIn('.licao-laboratorio .jogo .ler .metodo-linha p{max-width:33em}', css)
+        self.assertIn('.licao-laboratorio .jogo .ler .metodo-linha{max-width:var(--medida-ler)}', css)
+        # o guião diz o passo no cabeçalho de cada sessão; o guia, na sequência e em cada sessão
+        g = (PILOTO / 'guiao/index.html').read_text('utf-8')
+        # 01/11/2026: (correção 1 do método, diretor de arte, revisor e verificador) o cabeçalho diz «Passo N de 5» e o nome do passo
+        # (encargo, ponto 3), com as palavras do «Abre» de cada sessão; antes, a sessão 2 dizia «o material específico»
+        self.assertEqual(re.findall(r'<p class="passo-g">([^<]*)</p>', g), ['Passo 1 de 5: juntar material, com os olhos', 'Passo 1 de 5: juntar material, até ao fundo'])
+        self.assertIn('Passo 1 de 5: juntar material, até ao fundo.', L.visivel(self.licoes()[1]['cartoes'][0]['html']))
+        guia = (PILOTO / 'docente/index.html').read_text('utf-8')
+        # 01/11/2026: (correção 3 do método, verificador) a sequência do guia diz os passos de cada porta como a entrada
+        self.assertIn('O passo 1 do método leva a Ver; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar.', L.visivel(guia))
+        self.assertNotIn('Os passos 1 e 2 do método levam a Ver', guia)
+        self.assertEqual(len(re.findall(r'data-r="Passo">(?:Passos? \d( e \d)? de 5|Os cinco passos juntos)', guia)), 7)
+        self.assertEqual(guia.count('<b>O passo.</b> Passo 1 de 5:'), 2)
+
+    def test_apresentacao_de_young_na_sessao_1(self):
+        d1, d2 = self.licoes()
+        c = d1['cartoes'][1]
+        self.assertEqual((c['t'], c['rot']), ('ler', 'O método'))
+        t = L.visivel(c['html'])
+        for frag in ('James Webb Young foi um publicitário norte-americano', 'Em 1940 publicou A Technique for Producing Ideas', 'um livro de poucas páginas',
+                     'Há outros métodos', 'seguimos este por ser simples e claro, por fazer sentido e por ajudar de facto', 'usares por tua conta'):
+            self.assertIn(frag, t)
+        # a frase de Young que resume o método, conferida letra a letra na tradução nossa (capítulo «Ideias São Novas Combinações»)
+        self.assertIn('<blockquote><p>«Esta técnica intelectual consiste em cinco passos. Tenho a certeza de que todos, um por um, são reconhecíveis.»</p></blockquote>'
+                      '<p class="fonte">James Webb Young, <i>A Technique for Producing Ideas</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>', c['html'])
+        # 01/11/2026: (correção 1 do método, revisor de pt-PT) na fonte, o título como no texto do cartão, na entrada, no guia e no menu
+        # de fontes (antes, «Uma Técnica para Produzir Ideias»); o outro título não aparece em nenhum cartão das duas sessões
+        for d in (d1, d2):
+            self.assertNotIn('Uma Técnica para Produzir Ideias', ' '.join(' '.join(L.textos(x)) for x in d['cartoes']), d['id'])
+        # o cartão novo muda a ordem: a versão da sessão 1 sobe; a sessão 2 não ganha cartão e fica com a versão
+        self.assertEqual((d1['versao'], d2['versao']), ('2026-11-01-1', '2026-10-31-1'))
+        self.assertEqual((d1['chave'], d2['chave']), ('epi-lab-ideias-s01', 'epi-lab-ideias-s02'))
+
+    def test_respostas_certas_nao_mudam(self):
+        # as perguntas, as respostas certas e a ordem dos cartões de fazer, como em d043fa1
+        certas = lambda d: [(c['g'], c['t'], c.get('c'), c.get('v'), c.get('certas'), len(c.get('o', [])), len(c.get('pares', [])), len(c.get('passos', [])),
+                             [l['c'] for l in c.get('lacunas', [])]) for c in d['cartoes'] if c['t'] in L.TIPOS_FAZER]
+        d1, d2 = self.licoes()
+        self.assertEqual(certas(d1), [('atol', 'escolha', 0, None, None, 3, 0, 0, []), ('watson', 'escolha', 0, None, None, 3, 0, 0, []), ('frase', 'completar', None, None, None, 0, 0, 0, [0, 0]),
+                                      ('resumo', 'emparelhar', None, None, None, 0, 4, 0, []), ('invisivel', 'vf', None, True, None, 0, 0, 0, []), ('cordao', 'mapa', 0, None, None, 4, 0, 0, []),
+                                      ('medalha', 'mapa', 0, None, None, 4, 0, 0, []), ('estatuto', 'emparelhar', None, None, None, 0, 4, 0, []), ('confirmar', 'escolha', 0, None, None, 3, 0, 0, []),
+                                      ('superficie', 'sublinhar', None, None, [9, 10, 11, 12, 13], 0, 0, 0, []), ('cartoes', 'escolha', 0, None, None, 3, 0, 0, []),
+                                      ('aalto', 'vf', None, True, None, 0, 0, 0, []), ('metodo', 'ordenar', None, None, None, 0, 0, 4, [])])
+        self.assertEqual(certas(d2), [('young', 'escolha', 0, None, None, 3, 0, 0, []), ('testemunha', 'emparelhar', None, None, None, 0, 4, 0, []), ('palavra', 'escolha', 0, None, None, 3, 0, 0, []),
+                                      ('leitura', 'escolha', 0, None, None, 3, 0, 0, []), ('cedo', 'sublinhar', None, None, [4, 5, 6], 0, 0, 0, []), ('banal', 'vf', None, False, None, 0, 0, 0, []),
+                                      ('deduzo', 'escolha', 0, None, None, 3, 0, 0, []), ('fila', 'escolha', 0, None, None, 3, 0, 0, []), ('exata', 'vf', None, False, None, 0, 0, 0, []),
+                                      ('materias', 'completar', None, None, None, 0, 0, 0, [0, 0]), ('prova', 'escolha', 0, None, None, 3, 0, 0, []), ('viagem', 'ordenar', None, None, None, 0, 0, 4, [])])
+
+    def test_young_so_onde_o_metodo_fala(self):
+        d1, d2 = self.licoes()
+        for d in (d1, d2):
+            cartoes, menu = self.young(d)
+            self.assertLessEqual(cartoes, 2, d['id'])
+            self.assertLessEqual(cartoes + menu, 3, d['id'])
+        # sessão 1: só na apresentação (o nome e a fonte da citação); sessão 2: na fonte da citação do cocheiro e na passagem para
+        # o passo 2, no «Para levar»
+        onde = lambda d: [(i, c.get('rot') or c.get('g')) for i, c in enumerate(d['cartoes'], 1) if 'Young' in ' '.join(L.textos(c))]
+        self.assertEqual(onde(d1), [(2, 'O método')])
+        self.assertEqual(onde(d2), [(3, 'Ler'), (19, 'Para levar')])
+        self.assertIn('passo 2 de Young', L.visivel(d2['cartoes'][-1]['html']))
+        # nos retornos, o método fala sem se anunciar
+        cartoes1 = {c.get('g'): c for c in d1['cartoes']}
+        self.assertEqual(cartoes1['cartoes']['fe'][2], 'O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe.')
+        # 01/11/2026: (correção 1 do método, verificador de factos) o passo 5 do método é levar a ideia a quem a critica: quem não fala
+        # de mostrar trabalho é o conselho dos cartões; e a citação do atol diz de onde vem («diz o livro»), sem o nome
+        self.assertEqual(cartoes1['cartoes']['fe'][1], 'O conselho dos cartões não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.')
+        self.assertIn('mas, diz o livro, «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral»', cartoes1['atol']['f'])
+        # as páginas do piloto: a entrada (o bloco e a saída para a Biblioteca), o guião (nenhuma) e o guia (a razão do método,
+        # onde o nome volta e as fontes das duas sessões)
+        vis = lambda rel: L.visivel(re.sub(r'<(script|style|title)[^>]*>.*?</\1>', ' ', (PILOTO / rel).read_text('utf-8'), flags=re.S))
+        self.assertEqual(vis('index.html').count('Young'), 2)
+        self.assertEqual(vis('guiao/index.html').count('Young'), 0)
+        self.assertLessEqual(vis('docente/index.html').count('Young'), 4)
+
+    def test_guia_abre_com_o_metodo(self):
+        guia = (PILOTO / 'docente/index.html').read_text('utf-8')
+        corpo = guia[guia.index('<main'):]
+        self.assertLess(corpo.index('<section class="sessao" id="metodo"><h2>Porque seguimos um método</h2>'), corpo.index('id="antes"'))
+        self.assertIn('<li><a href="#metodo">Porque seguimos um método</a></li>', guia)
+        sec = re.search(r'<section class="sessao" id="metodo">.*?</section>', guia, re.S).group(0)
+        t = L.visivel(sec)
+        # 01/11/2026: (revisor de pt-PT, volta 4 do método) a frase do guia com antecedente explícito, como na entrada e no cartão 2
+        for frag in ('adota como espinha', 'Há outros métodos; escolhemos este por ser simples e claro', 'simples e claro, por fazer sentido e por ajudar de facto', 'depois o usem por conta própria',
+                     'Na primeira aula. Cinco minutos', 'os cinco passos no quadro', 'Onde o nome volta.', 'só na passagem de um passo para o outro'):
+            self.assertIn(frag, t)
+        # 01/11/2026: (correção 4 do método, revisor de pt-PT) a frase antiga, sem antecedente, não volta
+        self.assertNotIn('Não é o único método', t)
+        self.assertEqual(re.findall(r'<li><b>([^<]+)</b>:', sec), self.PASSOS)
+        # os números dos cartões no guia acertam com a lição (o vídeo e o resumo com a ligação)
+        d1 = self.licoes()[0]
+        video = next(i for i, c in enumerate(d1['cartoes'], 1) if 'data-yt=' in (c.get('html') or ''))
+        liga = next(i for i, c in enumerate(d1['cartoes'], 1) if c.get('liga'))
+        tg = L.visivel(guia)
+        self.assertIn(f'projeta-se com legendas no cartão {video};', tg)
+        self.assertIn(f'(a ligação aparece no retorno do cartão {liga})', tg)
+        self.assertIn('«O método» (cartão 2)', tg)
+        self.assertEqual(d1['cartoes'][1]['rot'], 'O método')
 
 if __name__ == '__main__':
     unittest.main()

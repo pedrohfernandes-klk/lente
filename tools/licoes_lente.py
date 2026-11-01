@@ -76,6 +76,9 @@ def validar(d):
     for k in ('id', 'chave', 'versao', 'titulo', 'h1', 'saida', 'fontes', F['grupo'], 'marca'):
         if not d.get(k):
             erros.append(f'falta o campo «{k}»')
+    # 01/11/2026: o passo do método na marca da casca (só no Laboratório): «Passo N de M» ou «Passos N e N+1 de M»
+    if d.get('passo') and not re.fullmatch(r'Passos? \d+(?: e \d+)? de \d+', d['passo']):
+        erros.append('«passo» tem de ser «Passo N de M» ou «Passos N e N+1 de M»')
     if not re.fullmatch(F['chave'], d.get('chave', '')):
         erros.append(f'a chave tem de ser {F["chave_txt"]}')
     g = d.get(F['grupo']) or {}
@@ -255,12 +258,21 @@ def pagina(d):
     # 31/10/2026: <title>, classe do <body>, CSS e marca da casca pela família (a Cidadania como estava; o Laboratório com o
     # padrão das peças do Laboratório: «título | secção | Laboratório | Lente»).
     titulo = (f'{esc(d["titulo"])} | {esc(mod["nome"])} | Laboratório | Lente' if lab else f'{esc(d["titulo"])} · Cidadania · Lente')
+    # 01/11/2026 (método): no Laboratório, com o campo «passo», o <title> diz também o passo do método («Sessão 1: Ver ou
+    # observar? (passo 1 de 5) | Ideias | Laboratório | Lente»), porque abaixo de 430 px a marca da casca não tem lugar para ele
+    if lab and d.get('passo'):
+        titulo = f'{esc(d["titulo"])} ({esc(d["passo"][0].lower() + d["passo"][1:])}) | {esc(mod["nome"])} | Laboratório | Lente'
     marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar a {esc(mod["nome"])}">' if lab
              else f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar ao módulo {mod["n"]} de Cidadania">')
     # 01/11/2026 (correção 2 do coração do Laboratório, diretor de arte): no Laboratório, o nome da marca vai num <span>, que
     # assets/licoes/laboratorio.css esconde abaixo de 400 px («Ideias» tem 81 px e empurrava o botão Menu para fora do ecrã a
     # 320 e 360 px); o aria-label continua a dizer o nome. A Cidadania fica como estava, byte a byte.
     marca_t = f'<span class="c-marca-t">{esc(d["marca"])}</span>' if lab else esc(d['marca'])
+    # 01/11/2026 (método do coração do Laboratório): no Laboratório, o passo do método («Passo 1 de 5») segue a marca numa
+    # <span> própria, à vista em todos os cartões; assets/licoes/laboratorio.css junta-lhe a vírgula quando o nome se vê e
+    # deixa-o sozinho abaixo de 400 px. Sem o campo «passo» (e na Cidadania) a barra fica como estava, byte a byte.
+    if lab and d.get('passo'):
+        marca_t += f'<span class="c-marca-p">{esc(d["passo"])}</span>'
     return (
         '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         f'<title>{titulo}</title>'
