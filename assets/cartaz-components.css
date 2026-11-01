@@ -18,10 +18,14 @@
 [data-cartaz="2"] .cz-prose a:is(:visited,.is-visited){text-decoration-style:double}
 [data-cartaz="2"] .cz-prose a:is(:active,.is-active){text-underline-offset:.1em}
 [data-cartaz="2"] .cz-credit{font:var(--cz-t13)/1.5 var(--cz-font-ui);color:var(--cz-muted);margin:0;overflow-wrap:anywhere}
-/* 01/11/2026: revisão curta, a ligação do crédito fica em linha; o padding vertical dá 45 px de área de toque sem mexer na entrelinha. */
-[data-cartaz="2"] .cz-credit a{display:inline;min-height:0;min-width:0;padding-block:15px;text-decoration:none}
-[data-cartaz="2"] .cz-credit a:is(:hover,.is-hover){color:var(--cz-ink);outline:1px solid currentColor;outline-offset:2px}
-[data-cartaz="2"] .cz-credit a:is(:active,.is-active){background:var(--cz-ground)}
+/* 01/11/2026: volta 2. A ligação do crédito fica em linha e sem padding: a caixa não passa da entrelinha e os estados pintam só o texto
+   (sublinhado no hover, fundo na caixa de conteúdo no toque, anel de foco a 1 px das letras e por cima do hover).
+   A área de toque é um ::before invisível com 44 × 44 px no mínimo, também em ligações curtas como «CC0». */
+[data-cartaz="2"] .cz-credit a{display:inline;position:relative;padding-block:0;text-decoration:none}
+[data-cartaz="2"] .cz-credit a::before{content:"";position:absolute;top:-15px;bottom:-15px;left:min(0px,calc(50% - 22px));right:min(0px,calc(50% - 22px))}
+[data-cartaz="2"] .cz-credit a:is(:hover,.is-hover){color:var(--cz-ink);outline:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+[data-cartaz="2"] .cz-credit a:is(:active,.is-active){background:var(--cz-ground);background-clip:content-box}
+[data-cartaz="2"] .cz-credit a:is(:focus-visible,.is-focus){outline:var(--cz-focus) solid currentColor;outline-offset:1px}
 [data-cartaz="2"] .cz-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:var(--cz-target);min-width:var(--cz-target);padding:8px 24px;border:2px solid currentColor;border-radius:0;box-shadow:none;text-decoration:none;font:700 var(--cz-t16)/1.5 var(--cz-font-ui);background:transparent;cursor:pointer;max-width:100%;white-space:normal;text-align:center}
 [data-cartaz="2"] .cz-button.primary{background:var(--cz-ink);color:var(--cz-paper);border-color:var(--cz-ink)}
 [data-cartaz="2"] .cz-button:is(:hover,.is-hover){outline:2px solid currentColor;outline-offset:2px}
@@ -68,10 +72,13 @@
 @media(max-width:420px){[data-cartaz="2"] .cz-row{grid-template-columns:24px minmax(0,1fr) 24px;gap:8px}[data-cartaz="2"] .cz-row .cz-state{grid-column:2}[data-cartaz="2"] .cz-row .arrow{grid-column:3;grid-row:1/3}}
 @media(prefers-reduced-motion:no-preference){[data-cartaz="2"] .cz-door>a{transition:outline-color .15s ease}}
 @media(prefers-reduced-motion:reduce){[data-cartaz="2"] :is([class^="cz-"],[class*=" cz-"]),[data-cartaz="2"] .cz-door>a{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-/* 01/11/2026: revisão curta, projeção só em degraus da escala (20 e 16 px com a raiz a 16 px). */
-html.em-projecao [data-cartaz="2"]{font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz="2"] :is(.cz-label,.cz-credit,.cz-state,.cz-crumbs,.cz-row small){font-size:var(--cz-t16)}
-html.em-projecao [data-cartaz="2"] :is(.cz-prose,.cz-button){font-size:var(--cz-t20)}
+/* 01/11/2026: volta 2. Em projeção, a raiz sobe para 137,5 % (22 px), como em lesson.css e laboratorio/percursos.css (na moldura
+   continua a mandar o !important de projection-frame.css), e as peças ficam nos degraus normais: texto e botões a 22 px; rótulos,
+   créditos, estados e migalhas a 17,875 px, o mínimo do sistema (SISTEMA-DESENHO, secção 8). Não dependem da raiz da família. */
+html.em-projecao:has([data-cartaz="2"]){font-size:137.5%}
+html.em-projecao [data-cartaz="2"]{font-size:var(--cz-t16)}
+html.em-projecao [data-cartaz="2"] :is(.cz-label,.cz-credit,.cz-state,.cz-crumbs,.cz-row small){font-size:var(--cz-t13)}
+html.em-projecao [data-cartaz="2"] :is(.cz-prose,.cz-button){font-size:var(--cz-t16)}
 html.em-projecao [data-cartaz="2"] [data-personal]{display:none}
 @media print{[data-cartaz="2"]{--cz-ink:#000;--cz-paper:#fff;--cz-ground:#fff;--cz-muted:#444;color:#000;background:white;font-size:11pt}[data-cartaz="2"] .cz-wrap{padding:0;max-width:none}[data-cartaz="2"] :is(.cz-next,.cz-door,.cz-row,.cz-museum,.cz-quote,.cz-notice){color:#000;background:#fff;break-inside:avoid}[data-cartaz="2"] .cz-next{border:2px solid #000}[data-cartaz="2"] .cz-grid{display:block}[data-cartaz="2"] .cz-title{font-size:30pt}}
 

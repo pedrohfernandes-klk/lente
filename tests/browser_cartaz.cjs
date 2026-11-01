@@ -14,7 +14,7 @@ const fixture = theme => `<!doctype html><html lang="pt" data-theme="${theme}"><
 <button class="cz-button">Voltar</button><button class="cz-button" disabled>Indisponível</button>
 <div class="cz-grid"><article class="cz-door"><a href="#destino"><h2>Observar</h2><span>Descobre os percursos.</span><span class="arrow">→</span></a></article></div>
 <a class="cz-row" href="#destino"><b>1</b><span>Percurso</span><span class="cz-state current">A seguir</span><span>→</span></a>
-<p class="cz-credit">Fotografia em <a href="https://commons.wikimedia.org/" data-external aria-label="Wikimedia Commons, sítio externo">Wikimedia Commons</a>.</p>
+<p class="cz-credit">Fotografia em <a href="https://commons.wikimedia.org/" data-external aria-label="Wikimedia Commons, sítio externo">Wikimedia Commons</a>. Licença <a href="#destino">CC0</a>.</p>
 <nav class="cz-crumbs"><a href="#destino">Início</a><span aria-current="page">Observar</span></nav>
 <span class="cz-state"></span><span class="cz-state done">Feita 01/11</span>
 <details class="cz-fold" open><summary>Primeira banda</summary><p id="destino">Conteúdo da primeira banda</p></details>
@@ -37,9 +37,21 @@ const fixture = theme => `<!doctype html><html lang="pt" data-theme="${theme}"><
    await page.evaluate(()=>location.hash='alvo');
    await page.waitForFunction(()=>document.getElementById('alvo').parentElement.open);
    // 01/11/2026: revisão curta. As caixas do rodapé são as ligações de .cz-footer-links; a ligação do texto do rodapé é verificada abaixo.
-   for (const selector of ['.cz-button','.cz-row','.cz-door>a','.cz-credit a','.cz-crumbs a','.cz-footer-links a','.cz-fold>summary']) {
+   for (const selector of ['.cz-button','.cz-row','.cz-door>a','.cz-crumbs a','.cz-footer-links a','.cz-fold>summary']) {
     const sizes = await page.locator(selector).evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect();return [r.width,r.height]}));
     for(const [w,h] of sizes) assert.ok(w>=44 && h>=(selector==='.cz-button'?48:44),`${selector}: ${w}×${h}`);
+   }
+   // 01/11/2026: volta 2. A ligação do crédito não tem padding: o alvo é o ::before invisível, que se mede em todas as ligações
+   // do crédito, também na curta («CC0»). Mínimo de 44 × 44 px, à unidade de desenho do Chrome (1/64 px, que arredonda os 50 %
+   // de uma ligação de 26 px); um toque perto dos cantos desse quadrado abre a ligação.
+   const creditTargets = await page.locator('.cz-credit a').evaluateAll(es=>es.map(e=>{e.scrollIntoView({block:'center'});const s=getComputedStyle(e,'::before'),r=e.getBoundingClientRect(),cx=(r.left+r.right)/2,cy=(r.top+r.bottom)/2;
+    const hits=[[-21,-21],[21,-21],[-21,21],[21,21]].map(([dx,dy])=>{const t=document.elementFromPoint(cx+dx,cy+dy);return !!t&&(t===e||e.contains(t));});
+    return {text:e.textContent,content:s.content,w:parseFloat(s.width),h:parseFloat(s.height),hits};}));
+   assert.equal(creditTargets.length,2);
+   for(const t of creditTargets) {
+    assert.equal(t.content,'""',`${t.text}: sem ::before`);
+    assert.ok(t.w>=44-1/64 && t.h>=44-1/64,`.cz-credit a::before (${t.text}): ${t.w}×${t.h}`);
+    assert.deepEqual(t.hits,[true,true,true,true],`${t.text}: toque nos cantos do alvo`);
    }
    assert.equal(await page.locator('.cz-fold>summary').first().evaluate(e=>e.getBoundingClientRect().height),88);
    assert.equal(await page.locator('.cz-state:empty').evaluate(e=>getComputedStyle(e).display),'none');
@@ -50,6 +62,22 @@ const fixture = theme => `<!doctype html><html lang="pt" data-theme="${theme}"><
    const credit = await page.locator('.cz-credit').evaluate(e=>({h:e.getBoundingClientRect().height,lh:parseFloat(getComputedStyle(e).lineHeight),display:getComputedStyle(e.querySelector('a')).display}));
    assert.equal(credit.display,'inline');
    assert.ok(credit.h<44 && Math.abs(credit.h-credit.lh*Math.round(credit.h/credit.lh))<.5,`crédito: ${credit.h} px para linhas de ${credit.lh} px`);
+   // 01/11/2026: volta 2. A caixa de cada ligação do crédito não passa da entrelinha, e os estados ficam nessa caixa: o fundo de
+   // :active pinta só a caixa de conteúdo, o hover sublinha sem contorno e o anel de foco (3 px, também com o rato por cima) cabe
+   // no espaço entre o texto desta linha e o das vizinhas. Assim nenhum estado tapa as linhas vizinhas.
+   const creditStates = await page.locator('.cz-credit a').evaluateAll(es=>es.map(e=>{
+    const lh=parseFloat(getComputedStyle(e.parentElement).lineHeight),box=()=>{const r=e.getBoundingClientRect(),s=getComputedStyle(e);return {h:r.height,content:r.height-parseFloat(s.paddingTop)-parseFloat(s.paddingBottom)-parseFloat(s.borderTopWidth)-parseFloat(s.borderBottomWidth)};};
+    const read=c=>{e.className=c;const s=getComputedStyle(e),out={...box(),clip:s.backgroundClip,bg:s.backgroundColor,outline:s.outlineStyle,ow:parseFloat(s.outlineWidth),oo:parseFloat(s.outlineOffset),deco:s.textDecorationLine};e.className='';return out;};
+    return {text:e.textContent,lh,normal:box(),active:read('is-active'),hover:read('is-hover'),focus:read('is-hover is-focus')};}));
+   for(const c of creditStates) {
+    assert.ok(c.normal.h<=c.lh,`${c.text}: caixa de ${c.normal.h} px numa linha de ${c.lh} px`);
+    assert.equal(c.active.clip,'content-box',`${c.text}: fundo de :active fora da caixa de conteúdo`);
+    assert.notEqual(c.active.bg,'rgba(0, 0, 0, 0)');
+    assert.ok(c.active.content<=c.lh,`${c.text}: fundo de :active com ${c.active.content} px numa linha de ${c.lh} px`);
+    assert.deepEqual([c.hover.outline,c.hover.deco],['none','underline'],`${c.text}: hover`);
+    assert.equal(c.focus.ow,3,`${c.text}: anel de foco perdido com o rato por cima`);
+    assert.ok(c.focus.oo+c.focus.ow<=c.lh-c.normal.h,`${c.text}: anel de foco a ${c.focus.oo}+${c.focus.ow} px, entre o texto de duas linhas há ${c.lh-c.normal.h} px`);
+   }
    // 01/11/2026: revisão curta. A ligação do texto do rodapé fica com o desenho de .cz-prose a.
    assert.deepEqual(await page.locator('.cz-footer .cz-prose a').evaluate(e=>{const s=getComputedStyle(e);return [s.display,s.textDecorationLine,s.backgroundColor];}),['inline','underline','rgba(0, 0, 0, 0)']);
    // 01/11/2026: revisão curta. Rótulos com 0,14 em de espaçamento.
@@ -92,12 +120,16 @@ const fixture = theme => `<!doctype html><html lang="pt" data-theme="${theme}"><
    await page.goto('http://cartaz.test/?projetar=1');
    await page.addScriptTag({content:js});
    assert.deepEqual(await page.locator('.cz-fold').evaluateAll(es=>es.map(e=>e.open)),[true,true,true]);
-   // 01/11/2026: revisão curta. Em projeção (classe do sistema), só degraus da escala: 20 e 16 px com a raiz a 16 px;
-   // o antetítulo fica abaixo de 65 % do título da região «A seguir».
+   // 01/11/2026: volta 2. Em projeção (classe do sistema), a raiz fica a 22 px e as peças nos degraus normais, sem depender da
+   // raiz da família: texto a 22 px, rótulos, créditos, estados e migalhas a 17,875 px (SISTEMA-DESENHO, secção 8); o antetítulo
+   // fica abaixo de 65 % do título da região «A seguir». Antes: 20 e 16 px com a raiz da página a 16 px.
    await page.evaluate(()=>document.documentElement.classList.add('em-projecao'));
    const projected = await page.evaluate(()=>{const size=s=>parseFloat(getComputedStyle(document.querySelector(s)).fontSize);return {root:size('[data-cartaz="2"]'),label:size('.cz-label'),credit:size('.cz-credit'),state:size('.cz-state:not(:empty)'),crumbs:size('.cz-crumbs'),prose:size('.cz-prose'),button:size('.cz-button'),title:size('.cz-next h2')};});
-   assert.deepEqual(projected,{root:20,label:16,credit:16,state:16,crumbs:16,prose:20,button:20,title:25});
+   assert.deepEqual(projected,{root:22,label:17.875,credit:17.875,state:17.875,crumbs:17.875,prose:22,button:22,title:34.375});
    assert.ok(projected.label<=.65*projected.title,`antetítulo ${projected.label} px para título de ${projected.title} px`);
+   // 01/11/2026: volta 2. Nenhum texto visível das peças abaixo do mínimo da projeção (17,9 px, isto é, 13 × 1,375 = 17,875).
+   const small = await page.evaluate(()=>[...document.querySelectorAll('[data-cartaz="2"], [data-cartaz="2"] *')].filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden').map(e=>[e.tagName.toLowerCase()+(e.className?'.'+e.className:''),parseFloat(getComputedStyle(e).fontSize)]).filter(([,size])=>size<17.85));
+   assert.deepEqual(small,[],'texto das peças abaixo de 17,85 px em projeção');
    assert.equal(await page.evaluate(()=>localStorage.length),0);
    assert.equal(await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);
    await context.close();
