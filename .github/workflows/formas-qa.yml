@@ -44,6 +44,8 @@ jobs:
           node --check assets/formas/cena-que-falta.js
           python -m unittest discover -s tests -p 'test_formas.py' -v
           python -m unittest discover -s tests -p 'test_lab*.py' -v
+          # 30/10/2026: o coração do Laboratório (narrativas/ideias) fica fora dos percursos e sem ligações de entrada.
+          python -m unittest discover -s tests -p 'test_ideias.py' -v
           python -m unittest discover -s tests -p 'test_appearance_universal.py' -v
           python -m unittest discover -s tests -p 'test_texto_justificado.py' -v
       - name: Preparar navegador
