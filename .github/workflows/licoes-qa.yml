@@ -51,6 +51,23 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Percurso completo de cada lição
         run: node tests/browser_licoes_lente.cjs
+  # 01/11/2026: o teste de navegador de «Ideias» passa para um trabalho próprio, em paralelo. No mesmo trabalho que o
+  # percurso das lições, o tempo total passava os 10 minutos do limite e o GitHub cancelava a execução.
+  ideias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
       # 30/10/2026: as páginas de «Ideias» em cinco larguras, claro e escuro, e na projeção; as duas lições a 320 e 1440 px.
       - name: Coração do Laboratório no navegador
         run: node tests/browser_ideias.cjs
