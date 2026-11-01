@@ -36,12 +36,24 @@ class Conteudos(unittest.TestCase):
         s=(ROOT/'narrativas/piramide/index.html').read_text('utf-8')
         cards=json.JSONDecoder().raw_decode(s.split('itens:',1)[1])[0]
         self.assertEqual(len(cards),11)
-        for a,b,c in zip(cards,cards[1:],cards[2:]):
+        # 01/11/2026: a revisão repõe as quatro leituras; a variedade é exigida nas ações C05 a C09.
+        self.assertEqual([c['t'] for c in cards[:4]], ['ler']*4)
+        self.assertNotIn('conteudos-contexto', cards[0]['html'])
+        self.assertNotIn('E que ande a meu mandar', cards[1]['html'])
+        self.assertIn('E que ande a meu mandar', cards[2]['html'])
+        for a,b,c in zip(cards[4:9],cards[5:9],cards[6:9]):
             self.assertFalse(a['t']==b['t']==c['t'])
-        self.assertEqual(cards[6]['t'],'sublinhar')
+        self.assertEqual(cards[6]['t'],'escolha')
+        self.assertIn('casamento', cards[6]['p'])
         self.assertIn('não torna merecido',cards[6]['f'])
+        self.assertEqual(cards[7]['t'],'sublinhar')
+        self.assertEqual([cards[7]['frase'].split()[i] for i in cards[7]['certas']],
+                         ['Que','culpa','vos','tenho','eu?'])
+        self.assertNotIn(3, cards[7]['certas'])
         self.assertIn('não uma regra',cards[10]['html'])
         self.assertIn('Kafka',cards[10]['html'])
+        self.assertIn('class="caderno"',cards[10]['html'])
+        self.assertIn('Sucesso:',cards[10]['html'])
 
 
 if __name__=='__main__':unittest.main()
