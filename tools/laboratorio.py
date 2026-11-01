@@ -44,8 +44,46 @@ def extras(base,treinar=False):
     # 31/10/2026: o guia do docente só fala de treinos; «Tudo» diz o que é; sem « / » entre ligações.
     links=[a(base,'narrativas/treinar/caderno/','O caderno de treino'),a(base,'narrativas/treinar/docente/','Como conduzir um treino (docente)')] if treinar else []
     return '<footer class="mais">'+''.join(links+[a(base,'narrativas/tudo/','Tudo o que há no Laboratório')])+'</footer>'
+# 01/11/2026: decisão 57. Migração limitada às quatro entradas; restantes moldes intactos.
+CARTAZ_ENTRADAS={'narrativas','narrativas/ver','narrativas/treinar','narrativas/criar'}
+def cartaz_body(base,body):
+    body=re.sub(r'\bVer\b','Observar',body)
+    # 01/11/2026: a mesma peça de continuação tem título, estado e uma ação.
+    def next_region(m):
+        ids=json.loads(html.unescape(re.search(r'data-continuar="([^"]+)"',m[0])[1]))
+        return '<section class="cz-next" aria-labelledby="cz-prox"><p class="cz-label">A seguir</p><h2 id="cz-prox">'+e(P[ids[0]]['title'])+'</h2><p data-cz-estado></p>'+m[0]+'</section>'
+    body=re.sub(r'<a class="continuar".*?</a>',next_region,body,count=1,flags=re.S)
+    body=body.replace('class="continuar"','class="continuar cz-button primary"')
+    body=body.replace('class="arquivo"','class="arquivo cz-museum"').replace('<figcaption>','<figcaption class="cz-credit">')
+    body=re.sub(r'<a href="(https://commons.wikimedia.org/[^"]+)"',r'<a data-external aria-label="Wikimedia Commons, sítio externo" href="\1"',body)
+    body=body.replace('class="dobra"','class="dobra cz-fold" open')
+    body=body.replace('class="chip"','class="chip cz-state"').replace('>por fazer</span>','></span>')
+    body=re.sub(r'(<li data-peca="[^"]+"><a)( href=)',r'\1 class="cz-row"\2',body)
+    body=body.replace(' data-estado=', ' data-estado=')
+    body=re.sub(r'(<span class="chip cz-state"[^>]*>.*?</span>)(</a>)',r'\1<span class="arrow" aria-hidden="true">→</span>\2',body)
+    if base=='narrativas':
+        groups=iter(D['blocks'])
+        def group(m):
+            b=next(groups);ids=[id for r in routes_of(b) for id in r['pieces']]
+            return '<details class="dobra cz-fold" open data-cz-ids="'+e(json.dumps(ids))+'">'
+        body=re.sub(r'<details class="dobra cz-fold" open>',group,body)
+    if base!='narrativas':
+        def fold(m):
+            ident,title,rest=m.groups()
+            label=re.sub('<[^>]*>','',title)
+            href=re.search(r'href="([^"]+)"',title)[1]
+            return '<details class="unidade cz-fold" id="'+ident+'" open><summary><h2>'+label+'</h2></summary><div class="cz-fold-body"><a class="cz-button" href="'+href+'">Abrir o percurso →</a>'+rest+'</div></details>'
+        body=re.sub(r'<section class="unidade" id="([^"]+)"><h2>(.*?)</h2>(.*?)</section>',fold,body,flags=re.S)
+    return body
+
 def page(base,title,body,desc,foot=True,treinar=False,cur=None):
+    if '--cartaz-entradas' in __import__('sys').argv and base not in CARTAZ_ENTRADAS:return
     rel=lambda x:link(base,x)
+    migrated=base in CARTAZ_ENTRADAS
+    if migrated:
+        body=cartaz_body(base,body)
+        title=re.sub(r'\bVer\b','Observar',title)
+        desc=re.sub(r'\bVer\b','Observar',desc)
     # 31/10/2026: só as peças que estão num percurso (uma peça fora dos percursos não conta nem se guarda aqui).
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
@@ -57,8 +95,16 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
        '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
        '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script></body></html>\n')
+    if migrated:
+        s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
+        s=s.replace('class="mais"','class="mais cz-footer"')
+        s=s.replace(rel('assets/appearance.css')+'"',rel('assets/appearance.css')+'?v=20261101-1"')
+        s=s.replace('</head>','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" media="print" onload="this.media=\'all\'"><link rel="stylesheet" href="'+rel('assets/cartaz-components.css')+'?v=20261101-1"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'?v=20261101-1"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'?v=20261101-1"></script><script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script></head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
 def routebox(base,r):
+    if base=='narrativas':
+        number=next(i for i,x in enumerate(routes_of(block_of(r)),1) if x['id']==r['id'])
+        return '<article class="modulo"><a class="cz-row" data-cz-route="'+e(json.dumps(r['pieces']))+'" href="'+link(base,'narrativas/percursos/'+r['id']+'/')+'"><b>'+str(number)+'</b><div><h3>'+e(r['title'])+'</h3><small>'+e(r['question'])+'</small>'+count(r['pieces'])+'</div><span class="cz-state"></span><span class="arrow" aria-hidden="true">→</span></a></article>'
     return '<article class="modulo"><a href="'+link(base,'narrativas/percursos/'+r['id']+'/')+'"><h3>'+e(r['title'])+'</h3><p>'+e(r['question'])+'</p>'+count(r['pieces'])+'<span>Abrir →</span></a></article>'
 def routes_of(b):return [r for r in D['routes'] if r['block']==b['id']]
 def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
@@ -69,14 +115,14 @@ body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div c
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos de '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
            +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
 # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.
 body+='<script>(function(){function f(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!document.getElementById(h))location.replace("tudo/"+location.search+location.hash)}addEventListener("hashchange",f);f()})()</script>'
-page('narrativas','Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três blocos, Ver, Treinar e Criar.',cur={'lab':'page'})
+page('narrativas','Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três blocos (Observar, Treinar e Criar).',cur={'lab':'page'})
 
 # Blocos
 for b in D['blocks']:
@@ -156,7 +202,7 @@ def continuacao():
         s=re.sub(r'(<nav class="lab-fim-percurso"[^>]*>).*?</nav>',nav,s,flags=re.S)
         if s!=o:f.write_text(s,'utf-8');changed+=1
     return changed
-continuacao()
+if '--cartaz-entradas' not in __import__('sys').argv:continuacao()
 
 # Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
 # Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.
@@ -176,5 +222,5 @@ def mapa():
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
     s2=s[:i]+out+s[j:]
     if s2!=s:f.write_text(s2,'utf-8')
-mapa()
-print('23 páginas geradas; '+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')
+if '--cartaz-entradas' not in __import__('sys').argv:mapa()
+print(('4 entradas geradas; ' if '--cartaz-entradas' in __import__('sys').argv else '23 páginas geradas; ')+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')

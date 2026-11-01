@@ -130,7 +130,8 @@ class Ginasio(unittest.TestCase):
     def test_entrada_do_lab_em_tres_portas(self):
         # 30/10/2026: Laboratório simples (pedido do docente). Três portas curtas; os conjuntos passam para tudo/.
         entrada = (R / 'narrativas/index.html').read_text('utf-8')
-        for nome in ('<h2>Ver</h2>', '<h2>Treinar</h2>', '<h2>Criar</h2>'):
+        # 01/11/2026: decisão 54, Observar; as três portas e os destinos mantêm-se.
+        for nome in ('<h2>Observar</h2>', '<h2>Treinar</h2>', '<h2>Criar</h2>'):
             self.assertIn(nome, entrada)
         s = (R / 'narrativas/tudo/index.html').read_text('utf-8')
         self.assertEqual(re.findall(r'<section id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
