@@ -145,4 +145,45 @@ async function responder(p,x){
    assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('#sequencia')).breakBefore),'page','guia: «A sequência» abre página');
    assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS segunda revisão: barra das lições a 320 e 360 px, Projetar na projeção, gesto numa coluna a 320 px, nenhuma forma com pronome partida no hífen, Atget maior, tema do Young na barra, índice do guia')}
+ // 7. 30/10/2026: as correções da terceira revisão (01/11): no guia, nenhuma tabela esconde nada num deslize lateral, de 320 a
+ // 1440 px (o quadro da sequência passa a fichas abaixo de 640 px); na entrada, as portas só com sessões em preparação dobram-se
+ // em bandas de 88 px no telemóvel (com script e fora da projeção), a tabela de museu fica ao lado da imagem a partir de 960 px,
+ // as saídas não transbordam a 320 px e a pergunta do gesto equilibra as linhas; a imagem do atol com níveis (o recife separa-se
+ // do oceano); na página do Young, letra mínima de 13 px, «Voltar à Biblioteca» com 44 px, medida de 32 em (cerca de 71
+ // carateres em Georgia) e a abertura à esquerda
+ {for(const w of [320,360,390,480,599,639,640,1024,1366,1440]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/docente/',w,800,w===390?'dark':'light');
+   const x=await p.evaluate(()=>({esc:[...document.querySelectorAll('main .tabela')].map(t=>t.scrollWidth-t.clientWidth),seq:getComputedStyle(document.querySelector('table.seq')).display,
+    rotulos:[...document.querySelectorAll('table.seq tbody td')].every(td=>td.getAttribute('data-r'))}));
+   assert(x.esc.every(v=>v===0),'guia: tabela com '+x.esc.join('/')+' px escondidos a '+w+' px');assert(x.rotulos,'guia: célula da sequência sem data-r');
+   assert.equal(x.seq,w<640?'block':'table','guia: a sequência a '+w+' px em '+x.seq);assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',390,844,'light');
+   const est=()=>p.evaluate(()=>['ver','treinar','criar'].map(k=>{const s=document.getElementById('porta-'+k),bt=s.querySelector('.porta-abre');return {h:Math.round(s.getBoundingClientRect().height),bt:bt?[Math.round(bt.getBoundingClientRect().width),Math.round(bt.getBoundingClientRect().height),bt.getAttribute('aria-expanded'),bt.getAttribute('aria-label')]:null,lista:s.querySelector('ol.sessoes').offsetParent!==null}}));
+   const alt=await p.evaluate(()=>document.documentElement.scrollHeight);assert(alt<2500,'entrada com '+alt+' px a 390 (era 2912)');
+   let e1=await est();assert(e1[0].lista&&!e1[0].bt,'a porta Ver fica aberta');
+   for(const [k,nome] of [[1,'Treinar'],[2,'Criar']]){assert(e1[k].h>=86&&e1[k].h<=92,nome+': banda com '+e1[k].h+' px');assert.deepEqual(e1[k].bt,[48,48,'false','Abrir '+nome]);assert(!e1[k].lista,nome+': lista à vista na banda')}
+   await p.locator('#porta-treinar .porta-abre').click();await p.waitForTimeout(150);let e2=await est();assert.deepEqual(e2[1].bt.slice(2),['true','Fechar Treinar']);assert(e2[1].lista&&e2[1].h>200,'Treinar aberta');
+   await p.locator('#porta-treinar .porta-abre').click();await p.waitForTimeout(150);assert.equal((await est())[1].h,e1[1].h,'Treinar volta a fechar');
+   await p.locator('.faixa a[href="#porta-criar"]').click();await p.waitForTimeout(250);assert((await est())[2].lista,'a faixa abre a porta Criar');
+   assert.deepEqual(erros,[]);await ctx.close()}
+  for(const [url,w,js,quem] of [['narrativas/ideias/',640,true,'a 640 px'],['narrativas/ideias/?projetar=1',390,true,'na projeção'],['narrativas/ideias/',390,false,'sem script']]){
+   const ctx=await b.newContext({viewport:{width:w,height:844},javaScriptEnabled:js});const p=await ctx.newPage();await p.goto(base+url);await p.waitForTimeout(400);
+   const r=await p.evaluate(()=>[...document.querySelectorAll('.porta[data-dobra]')].map(s=>s.querySelector('ol.sessoes').offsetParent!==null));
+   assert(r.length===2&&r.every(Boolean),'as portas dobram-se '+quem);await ctx.close()}
+  for(const [w,h] of [[1024,768],[1366,900],[1440,900]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',w,h,'light');
+   const r=await p.evaluate(()=>{const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect(),g=document.querySelector('.gesto').getBoundingClientRect();return {ao_lado:f.left>=c.right,pe:Math.abs(f.bottom-c.bottom),vazio:Math.round(f.top-g.bottom),dentro:!!document.querySelector('figure.atol > figcaption')}});
+   assert(r.ao_lado&&r.pe<=1&&r.dentro,'a tabela de museu ao lado da imagem a '+w+' px: '+JSON.stringify(r));assert(r.vazio<200,'vazio de '+r.vazio+' px à direita a '+w+' px (era 292 a 319)');assert.deepEqual(erros,[]);await ctx.close()}
+  {const {ctx,p}=await abrir(b,base+'narrativas/ideias/',320,640,'light');
+   assert.deepEqual(await p.evaluate(()=>[...document.querySelectorAll('.saidas a')].filter(a=>a.scrollWidth>a.clientWidth).map(a=>a.textContent)),[],'saídas a transbordar a 320 px');
+   assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('.gesto .q')).textWrapStyle||getComputedStyle(document.querySelector('.gesto .q')).textWrap),'balance','a pergunta do gesto sem órfã');
+   const n=await p.evaluate(async()=>{const im=document.querySelector('.atol img');await im.decode();const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;const x=c.getContext('2d');x.drawImage(im,0,0);
+    const d=x.getImageData(0,0,c.width,c.height).data,v=[];for(let i=0;i<d.length;i+=16)v.push(d[i]);v.sort((a,b)=>a-b);return {p50:v[Math.floor(v.length*.5)],p99:v[Math.floor(v.length*.99)]}});
+   assert(n.p99-n.p50>=140,'atol: o recife mal se separa do oceano ('+JSON.stringify(n)+'; eram 149 e 226)');await ctx.close()}
+  for(const [w,tema] of [[320,'dark'],[1366,'light']]){const {ctx,p,erros}=await abrir(b,base+'biblioteca/young-tecnica-1940/',w,800,tema);
+   // a medida em em (32 em: cerca de 71 carateres em Georgia, medidos com a Gelasio, que tem as mesmas métricas), e não em
+   // carateres, porque sem a Georgia a letra de recurso muda a conta
+   const r=await p.evaluate(()=>{const em=e=>+(e.clientWidth/parseFloat(getComputedStyle(e).fontSize)).toFixed(2);
+    const v=[...document.querySelectorAll('a')].find(a=>a.textContent.trim()==='Voltar à Biblioteca').getBoundingClientRect();const t=document.querySelector('.bib-texto p');
+    return {et:parseFloat(getComputedStyle(document.querySelector('.p-etiqueta')).fontSize),voltar:Math.round(v.height),em:Math.max(...[...document.querySelectorAll('.bib-texto p, .p-lead')].map(em)),lh:+(parseFloat(getComputedStyle(t).lineHeight)/parseFloat(getComputedStyle(t).fontSize)).toFixed(2),lead:getComputedStyle(document.querySelector('.p-lead')).textAlign}});
+   assert(r.et>=13&&r.voltar>=44&&r.em<=32.01&&r.lh<=1.56&&r.lead==='start','Young a '+w+' px: '+JSON.stringify(r));assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS terceira revisão: tabelas do guia sem deslize de 320 a 1440 px, portas dobradas no telemóvel, tabela de museu ao lado da imagem, saídas a 320 px, pergunta do gesto, atol com níveis, página do Young')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

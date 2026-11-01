@@ -340,5 +340,80 @@ class SegundaRevisao(unittest.TestCase):
         self.assertIn('</ol><span data-appearance-control></span></nav>', BIB.read_text('utf-8'))
 
 
+class TerceiraRevisao(unittest.TestCase):
+    """30/10/2026: terceira correção (revisões de 01/11 do diretor de arte, do revisor de pt-PT e do verificador de factos)."""
+
+    def ler(self, rel):
+        return L.visivel((PILOTO / rel).read_text('utf-8'))
+
+    def test_texto_e_factos(self):
+        s1 = json.loads(FONTES[0].read_text('utf-8'))
+        s2 = json.loads(FONTES[1].read_text('utf-8'))
+        c1 = {c.get('g'): c for c in s1['cartoes']}
+        c2 = {c.get('g'): c for c in s2['cartoes']}
+        # verificador: o resumo do TED-Ed fala do que se vê e do que não se vê; a fotografia de Atget é de 1898 a 1902
+        self.assertIn('o que não se vê numa imagem', c1['invisivel']['p2'])
+        self.assertIn('a quem serve (médicos, enfermeiros e polícias) e o que se treina (o que se vê e o que não se vê)', c1['resumo']['f'])
+        self.assertIn('consigo apontar no quadro, com o dedo, o que ela diz?', c1['estatuto']['fe'])
+        self.assertIn('abrir a porta de casa é verdade', c2['fila']['f'])
+        html2 = ''.join(c.get('html') or '' for c in s2['cartoes'])
+        self.assertIn('Entre dez e catorze anos depois do prefácio', html2)
+        self.assertNotIn('Uns dez anos', html2)
+        # revisor: quem escolhe o lugar da saída é o docente
+        self.assertIn('até ao lugar escolhido.', html2)
+        self.assertNotIn('escolhido pela turma', html2)
+        self.assertIn('O teu «cocheiro»', [c.get('titulo') for c in s2['cartoes']])
+        guia, guiao, entrada = self.ler('docente/index.html'), self.ler('guiao/index.html'), (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('as três colunas da fotografia passam a limpo no guião', guia)
+        self.assertIn('(reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', guia)
+        self.assertIn('a enfermeira Florence Nightingale', guia)
+        self.assertIn('salvo quando o critério diz outros', guia)
+        self.assertIn('se não houver saída, a alternativa', guia)
+        self.assertIn('Boa pergunta para a turma: o que prova o sítio onde está?', guia)
+        self.assertIn('cita-o duas vezes no livro', guia)
+        self.assertNotIn('«Decide»', guiao)  # o papel do aluno não fala das peças da página
+        self.assertIn('data-papel="o teu «cocheiro», a linha que levaste à fila e o resultado."', entrada)
+
+    def test_sequencia_em_fichas_no_telemovel(self):
+        s = (PILOTO / 'docente/index.html').read_text('utf-8')
+        tab = re.search(r'<table class="seq" role="table">(.*?)</table>', s, re.S).group(1)
+        cab = re.findall(r'<th role="columnheader"[^>]*>(.*?)</th>', tab)
+        self.assertEqual(cab, I.SEQ_COLS)
+        linhas = re.findall(r'<tr role="row">(.*?)</tr>', re.search(r'<tbody role="rowgroup">(.*)', tab, re.S).group(1))
+        self.assertEqual(len(linhas), 7)
+        for ln in linhas:
+            self.assertEqual(re.findall(r'data-r="([^"]+)"', ln), I.SEQ_COLS)
+        self.assertIn('@media (max-width:639px){.ideias table.seq,', s)
+
+    def test_portas_dobradas_e_guiao(self):
+        s = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertNotIn('id="porta-ver" aria-labelledby="pt-ver" data-dobra', s)
+        for pid, nome, linha in (('treinar', 'Treinar', 'Sessões 3 e 4, em preparação'), ('criar', 'Criar', 'Sessões 5 a 7, em preparação')):
+            self.assertIn(f'id="porta-{pid}" aria-labelledby="pt-{pid}" data-dobra', s)
+            self.assertIn(f'<p class="porta-linha">{linha}</p><button type="button" class="porta-abre" data-nome="{nome}" '
+                          f'aria-expanded="false" aria-controls="pc-{pid}" aria-label="Abrir {nome}"></button>', s)
+            self.assertIn(f'id="pc-{pid}"', s)
+        # html.cv só com script e fora da projeção, no <head>
+        cab = s[:s.index('</head>')]
+        self.assertIn('document.documentElement.classList.add("cv")', cab)
+        self.assertIn('projetar=1', cab)
+        # a tabela de museu continua dentro do <figure>
+        self.assertRegex(s, r'<figure class="atol">.*?<figcaption>.*?</figcaption></figure>')
+        g = (PILOTO / 'guiao/index.html').read_text('utf-8')
+        herman = re.search(r'O vídeo de Herman, em duas colunas</h3><table class="grelha-escrever">(.*?)</table>', g).group(1)
+        self.assertEqual(herman.count('<tr><td></td><td></td></tr>'), 8)
+
+    def test_young_so_nesta_pagina(self):
+        s = BIB.read_text('utf-8')
+        for regra in ('.p-cab .p-etiqueta{font-size:.8125rem}', '.bib-fonte>a[href$="/biblioteca/"]{display:inline-flex;align-items:center;min-height:44px}',
+                      '.bib .bib-texto{max-width:32em;line-height:1.55}', '.p-cab .p-lead{text-align:start!important;max-width:32em}'):
+            self.assertIn(regra, s)
+        self.assertNotIn('letter-spacing:.2em', s)
+        # o molde comum das outras páginas da Biblioteca não muda neste pedido
+        orta = (ROOT / 'biblioteca/orta-benjui/index.html').read_text('utf-8')
+        self.assertNotIn('.bib .bib-texto{max-width:32em', orta)
+        self.assertIn('.p-etiqueta{font:700 .72rem/1.2 var(--sans)', orta)
+
+
 if __name__ == '__main__':
     unittest.main()

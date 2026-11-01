@@ -2,6 +2,8 @@
 # caderno de bordo). Corre-se para escrever o .json ao lado; o .json é que o gerador (tools/licoes_lente.py) lê.
 # Escreve-se em Python para não ter de escapar aspas à mão.
 #
+# 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador (o retorno do resumo de Herman, «apontar no quadro o que ela diz» e «o que não se vê numa imagem»).
+#
 # Fontes lidas a 31/10/2026, um pedido de cada vez (nada citado de memória):
 # - Arthur Conan Doyle, «A Scandal in Bohemia», The Strand Magazine, julho de 1891:
 #   https://www.gutenberg.org/cache/epub/1661/pg1661.txt (os dezassete degraus; «my eyes are as good as yours»).
@@ -103,10 +105,10 @@ cartoes = [
  {"t":"ler","rot":"Ver","titulo":"Um quadro para treinar o olhar","html":HERMAN},
  {"t":"emparelhar","g":"resumo","p":"Do resumo oficial da lição de Herman tirámos quatro elementos. Liga cada um ao papel que tem.","p2":"No resumo oficial da lição de Herman, que papel tem cada um destes elementos?",
   "pares":[["Analisar arte prepara para investigar no mundo real.","A tese"],["Médicos, enfermeiros e polícias.","A quem serve"],["_Time Transfixed_, de René Magritte.","O exemplo"],["O que se vê e o que não se vê.","O que se treina"]],
-  "f":"Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve e o que se treina: o que se vê e o que não se vê.",
+  "f":"Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve (médicos, enfermeiros e polícias) e o que se treina (o que se vê e o que não se vê).",
   "fe":"Pergunta a cada elemento: é o que Herman defende, o caso que usa, a quem serve ou o que se treina?",
   "liga":[{"href":TEDED,"t":"A lição no TED-Ed, com o resumo oficial (em inglês)"}]},
- {"t":"vf","g":"invisivel","p":"Para Herman, o que não está num quadro também pode contar como pista.","p2":"Segundo o resumo oficial da lição de Herman, o que falta numa imagem também pode contar.","v":True,
+ {"t":"vf","g":"invisivel","p":"Para Herman, o que não está num quadro também pode contar como pista.","p2":"Segundo o resumo oficial da lição de Herman, o que não se vê numa imagem também pode contar.","v":True,
   "f":"O resumo oficial da lição fala de treinar a atenção ao que se vê e ao que não se vê. Numa investigação, o que falta (uma testemunha, uma sombra, um som) também é informação.",
   "fe":"A lição pede atenção às duas coisas: ao que se vê e ao que não se vê. O que falta numa cena também diz alguma coisa."},
  {"t":"ler","rot":"Ver","titulo":"O rapaz e a leitora da sina","html":LATOUR},
@@ -123,7 +125,7 @@ cartoes = [
  {"t":"emparelhar","g":"estatuto","p":"Liga cada frase sobre o quadro ao que ela é.","p2":"Que tipo de frase é cada uma destas, sobre o quadro?",
   "pares":[["A velha segura uma moeda entre os dedos.","Um facto: vê-se no quadro."],["O rapaz está a ser roubado.","Uma inferência: junta várias pistas."],["As quatro mulheres combinaram tudo antes.","Uma hipótese: o quadro não a prova."],["Porque é que o rapaz não olha para as mãos?","Uma pergunta que fica por investigar."]],
   "f":"Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
-  "fe":"Pergunta a cada frase: consigo apontá-la com o dedo no quadro? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."},
+  "fe":"Pergunta a cada frase: consigo apontar no quadro, com o dedo, o que ela diz? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."},
  {"t":"ler","rot":"Na aula","titulo":"O auto de observação","html":NA_AULA},
  {"t":"escolha","g":"confirmar","p":"Três registos inventados de um auto de observação. Qual deles é um facto que outro grupo possa ir confirmar?","p2":"Registos inventados, sobre uma escada da escola: que registo pode outro grupo ir confirmar?",
   "o":["O corrimão tem três parafusos soltos à esquerda.","A escada parece mais antiga do que a escola.","Quem sobe esta escada anda sempre com pressa."],"c":0,

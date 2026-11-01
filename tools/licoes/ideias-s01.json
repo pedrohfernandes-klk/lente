@@ -129,7 +129,7 @@
      "O que se treina"
     ]
    ],
-   "f": "Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve e o que se treina: o que se vê e o que não se vê.",
+   "f": "Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve (médicos, enfermeiros e polícias) e o que se treina (o que se vê e o que não se vê).",
    "fe": "Pergunta a cada elemento: é o que Herman defende, o caso que usa, a quem serve ou o que se treina?",
    "liga": [
     {
@@ -142,7 +142,7 @@
    "t": "vf",
    "g": "invisivel",
    "p": "Para Herman, o que não está num quadro também pode contar como pista.",
-   "p2": "Segundo o resumo oficial da lição de Herman, o que falta numa imagem também pode contar.",
+   "p2": "Segundo o resumo oficial da lição de Herman, o que não se vê numa imagem também pode contar.",
    "v": true,
    "f": "O resumo oficial da lição fala de treinar a atenção ao que se vê e ao que não se vê. Numa investigação, o que falta (uma testemunha, uma sombra, um som) também é informação.",
    "fe": "A lição pede atenção às duas coisas: ao que se vê e ao que não se vê. O que falta numa cena também diz alguma coisa."
@@ -251,7 +251,7 @@
     ]
    ],
    "f": "Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
-   "fe": "Pergunta a cada frase: consigo apontá-la com o dedo no quadro? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."
+   "fe": "Pergunta a cada frase: consigo apontar no quadro, com o dedo, o que ela diz? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."
   },
   {
    "t": "ler",

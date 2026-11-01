@@ -1,6 +1,8 @@
 # Fonte da sessão 2 de «Ideias», o coração do Laboratório (piloto escondido de 31/10/2026; plano em coracao/plano.md, no
 # caderno de bordo). Corre-se para escrever o .json ao lado; o .json é que o gerador (tools/licoes_lente.py) lê.
 #
+# 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador («entre dez e catorze anos» depois do prefácio, o «lugar escolhido» sem «pela turma», O teu «cocheiro», «abrir a porta de casa»).
+#
 # Fontes lidas a 31/10/2026, um pedido de cada vez (nada citado de memória):
 # - James Webb Young, Uma Técnica para Produzir Ideias, tradução nossa (texto de trabalho no caderno de bordo,
 #   biblioteca-young/texto.txt):
@@ -43,10 +45,10 @@ ATGET = (
  'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy"></span>'
  '<figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17 cm. '
  '<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure>'
- '<p>Uns dez anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
+ '<p>Entre dez e catorze anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido pela turma. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
+ '<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
  '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>')
 LEVAR = (
@@ -93,10 +95,10 @@ cartoes = [
   "o":["É um cocheiro à espera de clientes.","Tem uma capa comprida e um chapéu.","Está de pé, ao lado de um candeeiro."],"c":0,
   "f":"A capa, o chapéu e o candeeiro veem-se. Dizer que é um cocheiro à espera de clientes junta pistas (a capa, os fiacres atrás), mas a fotografia não o prova: vai para a coluna «concluo». Repara no homem sentado no alto de um fiacre, na ponta esquerda: o sítio onde está é uma pista mais forte do que uma capa.",
   "fe":["","A capa e o chapéu estão à vista de qualquer pessoa. É observação.","O homem e o candeeiro estão na fotografia. É observação, e situa-o."]},
- {"t":"ler","rot":"Na aula","titulo":"O teu cocheiro","html":NA_AULA},
+ {"t":"ler","rot":"Na aula","titulo":"O teu «cocheiro»","html":NA_AULA},
  {"t":"escolha","g":"fila","p":"Caso inventado: cinco chaves numa mesa. Qual destas descrições passaria na fila de reconhecimento?","p2":"Caso inventado: que descrição permitiria a um estranho escolher a chave certa entre cinco?",
   "o":["A do dente do meio gasto até brilhar.","Uma chave prateada, bonita e útil.","A que abre a porta da minha casa."],"c":0,
-  "f":"Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e a porta de casa é verdade, mas não se vê na mesa.",
+  "f":"Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e abrir a porta de casa é verdade, mas não se vê na mesa.",
   "fe":["","Prateadas e úteis são quase todas. «Bonita» é uma opinião: ninguém reconhece uma chave por ela.","É verdade, mas quem procura a chave na mesa não vê a tua porta. Uma descrição para reconhecer tem de mostrar o que está à vista."]},
  {"t":"vf","g":"exata","p":"Para distinguir uma coisa, uma palavra rara vale mais do que a palavra exata.","p2":"Para distinguir uma coisa, mais vale uma palavra difícil do que a palavra certa.","v":False,
   "f":"Maupassant resume assim as ideias de Flaubert sobre o estilo: «seja qual for a coisa que se queira dizer, só há uma palavra para a exprimir, um verbo para a animar e um adjetivo para a qualificar» (tradução nossa). Exata, não rara.",

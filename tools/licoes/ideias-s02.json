@@ -156,7 +156,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Um quiosque e uns fiacres",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/atget-quiosque-fiacres.webp\" alt=\"Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles.\" loading=\"lazy\"></span><figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17 cm. <a href=\"https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris\">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure><p>Uns dez anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p><p class=\"pergunta-c\">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/atget-quiosque-fiacres.webp\" alt=\"Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles.\" loading=\"lazy\"></span><figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17 cm. <a href=\"https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris\">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure><p>Entre dez e catorze anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p><p class=\"pergunta-c\">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>"
   },
   {
    "t": "escolha",
@@ -179,8 +179,8 @@
   {
    "t": "ler",
    "rot": "Na aula",
-   "titulo": "O teu cocheiro",
-   "html": "<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido pela turma. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
+   "titulo": "O teu «cocheiro»",
+   "html": "<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para ele. De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
   },
   {
    "t": "escolha",
@@ -193,7 +193,7 @@
     "A que abre a porta da minha casa."
    ],
    "c": 0,
-   "f": "Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e a porta de casa é verdade, mas não se vê na mesa.",
+   "f": "Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e abrir a porta de casa é verdade, mas não se vê na mesa.",
    "fe": [
     "",
     "Prateadas e úteis são quase todas. «Bonita» é uma opinião: ninguém reconhece uma chave por ela.",

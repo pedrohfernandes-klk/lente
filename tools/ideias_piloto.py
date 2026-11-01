@@ -45,7 +45,7 @@ SESSOES = [
   'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
   'passo': 'Passo 1: o material específico, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
-  'linha': 'O publicitário James Webb Young, o escritor Guy de Maupassant, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'as quinze notas do teu «cocheiro» e a linha que levaste à fila.'},
+  'linha': 'O publicitário James Webb Young, o escritor Guy de Maupassant, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
   'passo': 'Passos 1 e 2: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
  {'n': 4, 'porta': 'treinar', 'titulo': 'Três cachimbos', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
@@ -57,11 +57,16 @@ SESSOES = [
  {'n': 7, 'porta': 'criar', 'titulo': 'As versões à mostra', 'pergunta': 'Como se mostra o caminho de uma ideia?',
   'passo': 'Os cinco passos juntos', 'peca': ('Criar para além da página', 'O espaço expandido', 'oficina-espaco/')},
 ]
+# 01/11/2026 (correção 3, diretor de arte): a imagem voltou a ser tratada, porque o recife mal se separava do oceano (2,06:1
+# em claro e 1,80:1 em escuro). Em cinzento: a vinheta da fotografia original aplanada (fundo estimado pelo percentil 25 em
+# blocos de 40 px, alisado), depois níveis de entrada 110 a 235 levados a 0 a 255, com gama 1,0; a multiplicação sobre
+# --campo continua no CSS. Mediana 78 e percentil 99 239: 4,84:1 sobre #d9a520 e 3,32:1 sobre #9a7a22, e o canto inferior
+# direito já não escurece (de 113 para 79 de média, como o resto do oceano).
 ATOL = {
  'src': '../../assets/laboratorio/ideias/manihi-atol.webp', 'w': 1200, 'h': 789,
  'alt': 'Vista do espaço: um anel estreito de recife e ilhotas fecha uma lagoa no meio do oceano, com pequenas nuvens à volta.',
  'tabela': ('Tripulação da Expedição 6 da Estação Espacial Internacional, <i>Atol de Manihi, arquipélago das Tuamotu</i> (título nosso), '
-            '9 de março de 2003. Fotografia ISS006-E-37110. Imagem cedida pela Earth Science and Remote Sensing Unit, NASA Johnson Space Center '
+            '9 de março de 2003. Fotografia <span class="id">ISS006-E-37110</span>. Imagem cedida pela Earth Science and Remote Sensing Unit, NASA Johnson Space Center '
             '(<a href="https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?mission=ISS006&amp;roll=E&amp;frame=37110">eol.jsc.nasa.gov</a>). '
             'Domínio público. Recorte e tratamento a duas cores: nossos.'),
 }
@@ -91,7 +96,7 @@ GUIA = {
    'O quadro de Magritte (_Time Transfixed_) é o exemplo do resumo oficial da lição de Herman e não se reproduz no Lente: Magritte morreu em 1967 e a obra não está em domínio público.',
    'O título português do quadro de La Tour, _A leitora da sina_, é nosso, e o cartão di-lo. Nas lições, as imagens ficam a preto e branco e a cor volta no fim; para mostrar as cores à turma, o docente abre a página do Met.',
    'Os dois cartões «Toca no quadro» são um uso novo do motor no Lente: quando duas zonas ficam muito juntas, o primeiro toque amplia o quadro e o segundo escolhe. Se no aparelho de algum aluno não funcionar, faz-se a mesma pergunta em voz alta, com o quadro projetado.',
-   'Para quem quiser ir mais longe: Florence Nightingale e a observação dos doentes, na Biblioteca; e Como se investiga, passo 2, «Olhar e registar».',
+   'Para quem quiser ir mais longe: a enfermeira Florence Nightingale e a observação dos doentes, na Biblioteca; e Como se investiga, passo 2, «Olhar e registar».',
   ],
   'ligacoes': [('Florence Nightingale, _Notas sobre Enfermagem_ (Biblioteca)', '../../../biblioteca/nightingale-observacao/'), ('Como se investiga, passo 2', '../../../investigar/passo-02/'), ('_The Fortune-Teller_ no Met (cores)', 'https://www.metmuseum.org/art/collection/search/436838')],
  },
@@ -99,24 +104,24 @@ GUIA = {
   'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o primeiro passo de Young, até ao fundo.',
   'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
   'tempos': [
-   ('0 a 5', '«Abre»: o lugar da saída diz-se à turma.'),
+   ('0 a 5', '«Abre»: diz-se à turma o lugar da saída ou, se não houver saída, a alternativa (a janela ou uma fotografia de rua).'),
    ('5 a 15', '«Decide», de braço no ar.'),
    ('15 a 50', 'Cartões 3 a 12: Young e Maupassant lidos em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (pares; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: as duas versões do conselho lado a lado; «Para levar».'),
-   ('165 a 180', 'Folga. Explicar as dez notas de material geral para a sessão 3.'),
+   ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para a sessão 3.'),
   ],
   'materiais': ['O material de cada aluno, com espaço para quinze notas.', 'Cartão rígido ou pranchetas para escrever na rua.', 'O guião da sessão 2, impresso.', 'O percurso até ao lugar e o quadro da sala para a lista dos «cocheiros» (só o nome de cada um, sem a linha).'],
   'escrito': 'As quinze notas; a linha antes e depois da fila, com o resultado; as três colunas sobre a fotografia; as duas versões do conselho comparadas.',
   'produto': 'o «cocheiro» de cada aluno, individual',
-  'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida, 6; não reconhecida mas revista, 4)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
+  'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
   'notas': [
    'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
    'Young não diz onde leu a história; os cartões não dizem mais do que isto.',
    'As traduções de Maupassant são nossas e curtas; o texto inteiro, em francês, está no Project Gutenberg.',
    'A saída é opcional (decisão do docente de 31/10): sem ela, cada par escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
-   'Na fotografia de Atget há um homem sentado no alto de um fiacre, na ponta esquerda: é uma boa pergunta para a turma (o que prova o sítio onde está?).',
+   'Na fotografia de Atget há um homem sentado no alto de um fiacre, na ponta esquerda. Boa pergunta para a turma: o que prova o sítio onde está?',
   ],
   'ligacoes': [('Maupassant, prefácio de _Pierre et Jean_ (Project Gutenberg, em francês)', 'https://www.gutenberg.org/ebooks/11131'), ('_Kiosque et fiacres, Paris_ na Paris Musées', 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris')],
  },
@@ -125,16 +130,18 @@ GUIA = {
 # 01/11/2026 (correção 2, diretor de arte): na sessão 2, mais linhas de escrita onde se pedem razões e versões (a tabela de
 # Atget com sete filas, para as «pelo menos três linhas» de cada coluna), em vez de 113 e 143 mm de branco no fundo das páginas
 # 3 e 4; continuam 4 páginas A4.
+# 01/11/2026 (correção 3, diretor de arte): o mesmo na sessão 1, cujas páginas acabavam com 88,6 e 84,8 mm de branco (contra
+# 63,5 e 65,3 na sessão 2): o vídeo de Herman com oito filas e a pergunta que o lugar não responde com três linhas.
 GUIAO = {
  1: {
   'frente': [
    ('p', 'O teu palpite: <i class="b"></i> degraus. A contagem: <i class="b"></i> (grupos <i class="b"></i> e <i class="b"></i>).'),
    ('h2', 'O vídeo de Herman, em duas colunas'),
-   ('tabela', ['Está no quadro', 'Não está no quadro, mas conta'], 5),
+   ('tabela', ['Está no quadro', 'Não está no quadro, mas conta'], 8),
    ('h2', 'O quadro de La Tour: cinco coisas que se veem'),
    ('nota', 'Só o que se vê: nada de «parece» nem de «está a pensar».'),
    ('linhas', 5),
-   ('h2', 'A tua posição no «Decide»: as ideias caem do céu?'),
+   ('h2', 'A tua posição: as ideias caem do céu?'),
    ('p', 'Sim, não ou depende: <i class="b"></i>'),
    ('p', 'A razão, numa linha: <i class="b l"></i>'),
   ],
@@ -144,6 +151,7 @@ GUIAO = {
    ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo ___'], 10),
    ('tabela', ['Inferência', 'Os dois factos que a apoiam'], 3),
    ('p', 'A pergunta que o lugar não responde: <i class="b l"></i>'),
+   ('linhas', 2),
    ('nota', 'Os teus factos ficam onde guardas o material; este papel entrega-se ao docente.'),
    ('p', 'Para a sessão 2, um lugar a cinco minutos da escola por onde passas sem olhar: <i class="b l"></i>'),
   ],
@@ -154,7 +162,7 @@ GUIAO = {
    ('tabela-linhas', ['', 'Young (1940)', 'Maupassant (1888)', 'Mudou ou ficou?'], ['Quem dá o conselho', 'O que se olha', 'O que se pede', 'Com quantas palavras']),
    ('h2', 'A fotografia de Atget, em três colunas'),
    ('tabela', ['Vejo', 'Concluo', 'Não sei'], 7),
-   ('h2', 'A tua posição no «Decide»: uma árvore da tua rua é só uma árvore?'),
+   ('h2', 'A tua posição: uma árvore da tua rua é só uma árvore?'),
    ('p', 'Sim, não ou depende, e porquê: <i class="b l"></i>'),
    ('linhas', 3),
   ],
@@ -243,6 +251,8 @@ CSS = (TOKENS +
  # gesto de decisão (sistema 6.8): botões de contorno de 48 px, aria-pressed, resposta na mesma região
  '.ideias .gesto{background:var(--papel);padding:16px;margin:0 0 20px}'
  '.ideias .gesto .q{font:700 1.125rem/1.35 Georgia,"Times New Roman",serif;margin:0 0 12px}'
+ # 01/11/2026 (correção 3, diretor de arte): a pergunta acabava em «os dias?» sozinho (a 320, 1366 e 1440 px e na projeção)
+ '.ideias .gesto .q{text-wrap:balance}'
  # 31/10/2026 (revisão do diretor de arte): três colunas iguais, como a variante .gesto .opcoes.tres do sistema (nenhuma
  # opção sozinha numa linha)
  '.ideias .gesto .ops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}'
@@ -264,8 +274,12 @@ CSS = (TOKENS +
  '.ideias .atol img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1);mix-blend-mode:multiply}'
  '.ideias .atol figcaption{font:.8125rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave);margin:8px 0 0}'
  '.ideias .atol figcaption a{overflow-wrap:anywhere}'
+ # 01/11/2026 (correção 3): o número da fotografia não se parte no hífen (com a etiqueta de parede, partia em «ISS006- / E-37110»)
+ '.ideias .atol figcaption .id{white-space:nowrap}'
  # as sessões em três portas (sistema 6.5): faixa de nós e linhas de 64 px com estado
- '.ideias h2.sessoes-t{font:400 2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:40px 0 8px}'
+ # 01/11/2026 (correção 3, medida da hierarquia, R1): o h2 «As sete sessões» (32 px) era mais pequeno do que os nomes das
+ # portas que agrupa (h3, 38,4 px); passa a 44 px
+ '.ideias h2.sessoes-t{font:400 2.75rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:40px 0 8px}'
  '.ideias .faixa{display:grid;grid-template-columns:2fr 2fr 3fr;gap:6px;margin:0 0 20px}'
  # 31/10/2026 (revisão do diretor de arte): a faixa do sistema (6.6): transparente, nós em barra numa linha contínua e o
  # rótulo em Arial, para não repetir em cartaz o nome da porta que vem logo abaixo
@@ -280,6 +294,16 @@ CSS = (TOKENS +
  '.ideias .faixa .no.prep{border-style:dashed}'
  '.ideias .porta{margin:0 0 24px;scroll-margin-top:16px}'
  '.ideias .porta h3{font:400 2.4rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:0 0 4px}'
+ # 01/11/2026 (correção 3, diretor de arte; sistema 3 e 6.4): abaixo de 640 px, as portas só com sessões em preparação dobram-se
+ # numa banda de 88 px (nome em Bebas a 1,75 rem, uma linha e o botão + de 48 × 48) e abrem-se no sítio. Só com script
+ # (html.cv, posto no <head>; sem script fica tudo aberto) e nunca na projeção. A 390 px, a entrada passa de 2912 para 2361 px.
+ '.ideias .porta-linha,.ideias .porta-abre{display:none}'
+ '@media (max-width:639px){html.cv .ideias .porta[data-dobra] .porta-cab{display:grid;grid-template-columns:minmax(0,1fr) 48px;grid-template-areas:"nome abre" "linha abre";column-gap:12px;align-items:center;min-height:88px;padding:10px 12px 10px 16px;background:var(--papel)}'
+ 'html.cv .ideias .porta[data-dobra] h3{grid-area:nome;align-self:end;font-size:1.75rem;margin:0}'
+ 'html.cv .ideias .porta[data-dobra] .porta-linha{display:block;grid-area:linha;align-self:start;margin:2px 0 0;font-size:.9375rem;line-height:1.3;color:var(--suave)}'
+ 'html.cv .ideias .porta[data-dobra] .porta-abre{display:inline-flex;align-items:center;justify-content:center;grid-area:abre;width:48px;height:48px;padding:0;border:2px solid var(--tinta);background:transparent;color:var(--tinta);font:700 1.625rem/1 Arial,Helvetica,sans-serif;cursor:pointer}'
+ 'html.cv .ideias .porta-abre::before{content:"+"}html.cv .ideias .porta-abre[aria-expanded="true"]::before{content:"\\2212"}'
+ 'html.cv .ideias .porta[data-dobra]:not(.aberta) .porta-corpo{display:none}html.cv .ideias .porta[data-dobra].aberta .porta-corpo{padding-top:10px}}'
  '.ideias .porta .apoio-porta{font:1rem/1.45 Georgia,"Times New Roman",serif;color:var(--suave);margin:0 0 10px;max-width:30em}'
  '.ideias ol.sessoes{list-style:none;margin:0;padding:0}'
  '.ideias ol.sessoes li{background:var(--papel);border-bottom:2px solid var(--fundo)}'
@@ -310,6 +334,8 @@ CSS = (TOKENS +
  '.ideias .saidas a::after{content:"→";margin-left:auto;padding-left:8px}'
  '.ideias .rodape .nota{font-size:.875rem;color:var(--suave);margin:0}'
  '@media (min-width:900px){.ideias .saidas{grid-template-columns:repeat(4,minmax(0,1fr))}}'
+ # 01/11/2026 (correção 3, diretor de arte): abaixo de 360 px, «Biblioteca:» empurrava a seta 2 px para fora da caixa
+ '@media (max-width:359px){.ideias .saidas a{padding:10px 12px}.ideias .saidas a::after{padding-left:6px}}'
  # até 959 px, a linha de informação passa para cima da imagem, depois da região e do gesto: a primeira ação fica no primeiro
  # ecrã também a 320 × 640 (estava em y = 723)
  '@media (max-width:959px){.ideias .topo{display:flex;flex-direction:column}.ideias .topo .abre{display:contents}.ideias .topo .abre>*{order:1}'
@@ -317,8 +343,11 @@ CSS = (TOKENS +
  # a partir de 960 px (sistema 3): 7/12 para a abertura e a imagem, 5/12 para a região «A seguir» e o gesto
  # 31/10/2026 (revisão do diretor de arte): o gesto fica 20 px abaixo da região «A seguir» (proximidade), e não na linha da
  # imagem, 90 px abaixo
- '@media (min-width:960px){.ideias .topo{display:grid;grid-template-columns:7fr 5fr;column-gap:40px;grid-template-areas:"abre proximo" "abre gesto" "atol gesto";grid-template-rows:auto auto 1fr;align-items:start}'
- '.ideias .topo .abre{grid-area:abre}.ideias .topo .proximo{grid-area:proximo;margin-top:8px}.ideias .topo .gesto{grid-area:gesto;align-self:start}.ideias .topo .atol{grid-area:atol}'
+ # 01/11/2026 (correção 3, diretor de arte): a tabela de museu passa a etiqueta de parede, na coluna da direita, alinhada ao pé
+ # da imagem (deixava 319 px de vazio à direita a 1366 px e corria a 109 carateres por linha); no DOM continua no <figure>
+ '@media (min-width:960px){.ideias .topo{display:grid;grid-template-columns:7fr 5fr;column-gap:40px;grid-template-areas:"abre proximo" "abre gesto" "atol gesto" "atol cap";grid-template-rows:auto auto 1fr auto;align-items:start}'
+ '.ideias .topo .abre{grid-area:abre}.ideias .topo .proximo{grid-area:proximo;margin-top:8px}.ideias .topo .gesto{grid-area:gesto;align-self:start}'
+ '.ideias .topo .atol{display:contents}.ideias .topo .atol .campo{grid-area:atol}.ideias .topo .atol figcaption{grid-area:cap;align-self:end;margin:0}'
  '.ideias .abre .lead{font-size:1.3125rem}'
  # a imagem baixa para 16:9 (o anel inteiro cabe), para a coluna da esquerda não ficar muito mais alta do que a da direita
  '.ideias .atol .campo{aspect-ratio:16/9}.ideias .atol img{object-position:50% 55%}}'
@@ -340,6 +369,9 @@ CSS = (TOKENS +
  '.ideias .lado p{margin:0 0 8px}.ideias .lado p.campo{text-align:start;line-height:1.9}'
  '.ideias .nome{display:flex;gap:8px;align-items:flex-end;font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 12px}'
  '.ideias .nome i{flex:1;border-bottom:1px solid var(--tinta);height:1.2rem}'
+ # 01/11/2026 (correção 3, medida da hierarquia, R2): «Nome e turma» é o rótulo de um campo, como «Lugar:» e «Grupo:», e não um
+ # antetítulo; em maiúsculas espaçadas competia com o título que vem logo a seguir (13 px contra 16 px)
+ '.ideias .lado p.nome{font-size:.875rem;letter-spacing:0;text-transform:none}'
  '.ideias i.b{display:inline-block;min-width:3.5em;border-bottom:1px solid var(--tinta);height:1.1em;vertical-align:baseline}'
  '.ideias i.b.l{display:block;width:100%;margin-top:4px}'
  '.ideias .escrever{border-bottom:1px solid var(--suave);height:1.9em}'
@@ -353,6 +385,17 @@ CSS = (TOKENS +
  '.ideias td.num,.ideias th.num{text-align:right;white-space:nowrap;width:6.5rem}'
  # o n.º da sessão, no quadro da sequência, só tem um algarismo: coluna estreita, para a tabela de seis colunas caber melhor
  '.ideias table.seq td.num,.ideias table.seq th.num{width:3.5rem}'
+ # 01/11/2026 (correção 3, diretor de arte, bloqueante): abaixo de 640 px o quadro da sequência deslizava para o lado dentro da
+ # caixa (183 px escondidos a 320, a coluna «Estado» invisível). Passa a uma ficha por sessão: «Sessão N: título» em cabeça e,
+ # por baixo, cada campo com o nome da coluna (data-r); os papéis ARIA guardam a tabela para o leitor de ecrã, que não ouve o
+ # rótulo duas vezes (texto alternativo vazio no content, onde o navegador o aceita)
+ '@media (max-width:639px){.ideias table.seq,.ideias table.seq tbody,.ideias table.seq tr,.ideias table.seq td{display:block;width:auto}'
+ '.ideias table.seq thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}'
+ '.ideias table.seq tr{border:1px solid var(--tinta);margin:0 0 8px;padding:8px 10px}.ideias table.seq td{border:0;padding:2px 0}'
+ '.ideias table.seq td::before{content:attr(data-r) ": ";content:attr(data-r) ": "/"";font-weight:700}'
+ '.ideias table.seq td.num,.ideias table.seq td.num+td{display:inline;font:700 1.0625rem/1.3 Arial,Helvetica,sans-serif;text-align:left;width:auto;padding:0}'
+ '.ideias table.seq td.num::before{content:"Sessão ";content:"Sessão "/""}.ideias table.seq td.num+td::before{content:": ";content:": "/""}'
+ '.ideias table.seq td:nth-child(3){margin-top:4px}}'
  '.ideias .guia section.sessao,.ideias.guia section.sessao{border-top:3px solid var(--tinta);margin-top:36px;padding-top:4px;max-width:860px}'
  '.ideias.guia section.sessao>h2{font:400 2.2rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:16px 0 6px}'
  '.ideias.guia h3{font:700 1.0625rem/1.3 Arial,Helvetica,sans-serif;margin:22px 0 6px}'
@@ -459,8 +502,16 @@ def pagina_entrada(L):
                 linhas += (f'<li class="prep" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}"><div class="linha"><span class="n" aria-hidden="true">{s["n"]}</span>'
                            f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado">Em preparação</span></span>'
                            f'<span class="apoio">{apoio_l}</span></div></li>')
-        portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
-                   f'<p class="apoio-porta">{e(apoio)}</p><ol class="sessoes">{linhas}</ol></section>')
+        # 01/11/2026 (correção 3, diretor de arte): uma porta sem nenhuma sessão pronta dobra-se no telemóvel (CSS e script abaixo)
+        dobra = all(s['n'] not in L for s in ss)
+        cab = f'<h3 id="pt-{pid}">{nome}</h3>'
+        if dobra:
+            nn = [s['n'] for s in ss]
+            quais = f'Sessão {nn[0]}' if len(nn) == 1 else (f'Sessões {nn[0]} e {nn[1]}' if len(nn) == 2 else f'Sessões {nn[0]} a {nn[-1]}')
+            cab += (f'<p class="porta-linha">{quais}, em preparação</p><button type="button" class="porta-abre" data-nome="{nome}" '
+                    f'aria-expanded="false" aria-controls="pc-{pid}" aria-label="Abrir {nome}"></button>')
+        portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"{" data-dobra" if dobra else ""}><div class="porta-cab">{cab}</div>'
+                   f'<div class="porta-corpo" id="pc-{pid}"><p class="apoio-porta">{e(apoio)}</p><ol class="sessoes">{linhas}</ol></div></section>')
     proxima_prep = next((s for s in SESSOES if s['n'] not in L), None)
     js = ('(function(){"use strict";var proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'
           'if(proj)document.documentElement.classList.add("em-projecao");'
@@ -494,6 +545,10 @@ def pagina_entrada(L):
           # 31/10/2026 (revisão do diretor de arte, sistema 6.8): a página rola o necessário para a resposta ficar à vista
           'var rr=res.getBoundingClientRect();if(rr.bottom>innerHeight)scrollBy({top:rr.bottom-innerHeight+16,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});'
           'if(l1&&!l1.classList.contains("feita")){l1.classList.add("comeca");l1.querySelector("[data-estado]").textContent="Começa aqui"}})})}'
+          # 01/11/2026 (correção 3): as portas dobradas (abaixo de 640 px, com html.cv) abrem e fecham no sítio; a faixa abre a sua
+          'var abre=function(s,on){s.classList.toggle("aberta",on);var bt=s.querySelector(".porta-abre");bt.setAttribute("aria-expanded",on?"true":"false");bt.setAttribute("aria-label",(on?"Fechar ":"Abrir ")+bt.getAttribute("data-nome"))};'
+          '[].slice.call(document.querySelectorAll(".porta[data-dobra]")).forEach(function(s){s.querySelector(".porta-abre").addEventListener("click",function(){abre(s,!s.classList.contains("aberta"))});'
+          'var a=document.querySelector(".faixa a[href=\\"#"+s.id+"\\"]");if(a)a.addEventListener("click",function(){abre(s,true)});if(location.hash==="#"+s.id)abre(s,true)});'
           '})();')
     d1 = L[1]
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
@@ -525,7 +580,9 @@ def pagina_entrada(L):
              + f'<a href="../../biblioteca/{BIB_ID}/">Biblioteca: Young</a></nav>'
              '<p class="nota">Piloto em revisão, escondido dos motores de busca. O que fazes fica só neste aparelho.</p></footer>')
     corpo = LL.nq(corpo)  # 01/11/2026 (correção 2, diretor de arte): formas verbais com pronome sem quebra no hífen
-    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório a partir de James Webb Young (piloto).')
+    cv = ('<script>(function(){if(!(/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top))'
+          'document.documentElement.classList.add("cv")})();</script></head>')
+    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório a partir de James Webb Young (piloto).').replace('</head>', cv, 1)
             + f'<body class="ideias"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main><script>{js}</script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
@@ -598,6 +655,9 @@ def video_de(d):
     return None
 
 
+SEQ_COLS = ['N.º', 'Sessão', 'Pergunta', 'Passo de Young', 'Porta e peça', 'Estado']
+
+
 def pagina_guia(L):
     base = '../../../'
     seq = ''
@@ -605,8 +665,10 @@ def pagina_guia(L):
         rota, peca, _u = s['peca']
         porta = next(n for p, n, _a, _u2 in PORTAS if p == s['porta'])
         estado = 'Pronta (piloto)' if s['n'] in L else 'Em preparação'
-        seq += (f'<tr><td class="num">{s["n"]}</td><td>{e(s["titulo"])}</td><td>{e(s["pergunta"])}</td><td>{e(s["passo"])}</td>'
-                f'<td>{porta}, «{e(rota)}», <i>{e(peca)}</i></td><td>{estado}</td></tr>')
+        # 01/11/2026 (correção 3): cada célula leva o nome da coluna (data-r), que a ficha mostra abaixo de 640 px
+        cel = [(SEQ_COLS[0], str(s['n']), ' class="num"'), (SEQ_COLS[1], e(s['titulo']), ''), (SEQ_COLS[2], e(s['pergunta']), ''),
+               (SEQ_COLS[3], e(s['passo']), ''), (SEQ_COLS[4], f'{porta}, «{e(rota)}», <i>{e(peca)}</i>', ''), (SEQ_COLS[5], estado, '')]
+        seq += '<tr role="row">' + ''.join(f'<td role="cell"{c} data-r="{r}">{v}</td>' for r, v, c in cel) + '</tr>'
     indice = '<li><a href="#antes">Antes de começar</a></li><li><a href="#sequencia">A sequência</a></li>' + ''.join(
         f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in SESSOES if s['n'] in L)
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guia do docente', '')])
@@ -617,17 +679,19 @@ def pagina_guia(L):
              '<section class="sessao" id="antes"><h2>Antes de começar</h2>'
              '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos de James Webb Young (juntar material, trabalhá-lo na cabeça, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
              '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (Young aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
-             '<p class="pg"><b>O método de interpretação.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é o guia que volta: é o próprio Young quem o chama.</p>'
+             '<p class="pg"><b>O método de interpretação.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é o guia que volta, e é o próprio Young quem o traz: cita-o duas vezes no livro.</p>'
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
-             '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
+             '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis, salvo quando o critério diz outros: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
              '<p class="pg">Os passos 1 e 2 de Young levam a Ver; os passos 2 e 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
-             '<div class="tabela"><table class="seq"><thead><tr><th scope="col" class="num">N.º</th><th scope="col">Sessão</th><th scope="col">Pergunta</th><th scope="col">Passo de Young</th><th scope="col">Porta e peça</th><th scope="col">Estado</th></tr></thead>'
-             f'<tbody>{seq}</tbody></table></div></section>')
+             '<div class="tabela"><table class="seq" role="table"><thead role="rowgroup"><tr role="row">'
+             + ''.join('<th role="columnheader" scope="col"' + (' class="num"' if k == 0 else '') + f'>{c}</th>' for k, c in enumerate(SEQ_COLS)) + '</tr></thead>'
+             f'<tbody role="rowgroup">{seq}</tbody></table></div></section>')
     for s in SESSOES:
         if s['n'] not in L:
             continue
+        # 01/11/2026 (correção 3): sem aspas iguais às da f-string dentro das chavetas (o Python 3.11 do CI não as aceita)
         d, g = L[s['n']], GUIA[s['n']]
         aula = next(c for c in d['cartoes'] if c.get('rot') == 'Na aula')
         img = next(c for c in d['cartoes'] if '<img' in (c.get('html') or ''))
@@ -641,7 +705,7 @@ def pagina_guia(L):
         else:
             yt = '<p class="pg">Nenhum, de propósito: o centro da sessão é um texto lido devagar e um lugar visto ao vivo.</p>'
         corpo += (f'<section class="sessao pronta" id="s{s["n"]}"><p class="rotulo">Sessão {s["n"]}</p><h2>{e(s["titulo"])}</h2>'
-                  f'<p class="pg"><b>A pergunta.</b> {pergunta_abre(d)} <b>O passo.</b> {e(s["passo"])}. <b>A porta.</b> {next(n for q, n, _a, _u in PORTAS if q == s['porta'])}, «{e(s["peca"][0])}», <a href="../../{s["peca"][2]}"><i>{e(s["peca"][1])}</i></a>.</p>'
+                  f'<p class="pg"><b>A pergunta.</b> {pergunta_abre(d)} <b>O passo.</b> {e(s["passo"])}. <b>A porta.</b> {next(n for q, n, _a, _u in PORTAS if q == s["porta"])}, «{e(s["peca"][0])}», <a href="../../{s["peca"][2]}"><i>{e(s["peca"][1])}</i></a>.</p>'
                   f'<p class="pg"><b>O que ensina.</b> {e(g["ensina"])}</p>'
                   f'<p><a class="botao-s" href="../sessao-{s["n"]:02d}/">Abrir a sessão</a><a class="botao-s" href="../sessao-{s["n"]:02d}/?projetar=1">Projetar</a><a class="botao-s" href="../guiao/#g{s["n"]}f">O guião</a></p>'
                   f'<p class="pg"><b>Antes da aula.</b> {e(g["antes"])}</p>'
@@ -723,9 +787,17 @@ def pagina_biblioteca():
             # 01/11/2026 (correção 2, diretor de arte): o botão do tema acosta à barra (como nas páginas de «Ideias», sistema 6.1)
             # em vez de flutuar por cima da coluna de texto (tapava «cada», «conhecimento», «uma», «lei» a 320 e 360 px). Só nesta
             # página: o molde da família está em _interno/modelo/biblioteca.mjs, nas fontes (decisão 44, barra comum).
-            '<style>.bib-texto p.corte{text-align:center;color:var(--suave);letter-spacing:.2em}'
+            # 01/11/2026 (correção 3, diretor de arte): também só nesta página (o molde comum não muda neste pedido): a etiqueta
+            # a 13 px (era 11,52), «Voltar à Biblioteca» com 44 px de alvo (era 113 × 16), o texto com cerca de 71 carateres por
+            # linha e entrelinha de 1,55 (eram 80 e 1,65 a partir de 1024 px), a abertura alinhada à esquerda e com a mesma medida
+            # (era justificada, a 81 carateres) e o corte escrito «[…]», sem o espaçamento que o mostrava como «[ … ]». A regra
+            # comum do texto corrido (assets/appearance.css) justifica .p-cab > p.p-lead com um seletor :is() muito específico:
+            # aqui só !important o vence, e só nesta página
+            '<style>.bib-texto p.corte{text-align:center;color:var(--suave)}'
             '.migalhas{display:flex;align-items:flex-start}.migalhas ol{flex:1 1 auto;min-width:0}.migalhas li{min-width:0}'
-            '.migalhas [aria-current]{max-width:min(62vw,100%)}.migalhas>[data-appearance-control]{margin-left:12px}</style>'
+            '.migalhas [aria-current]{max-width:min(62vw,100%)}.migalhas>[data-appearance-control]{margin-left:12px}'
+            '.p-cab .p-etiqueta{font-size:.8125rem}.bib-fonte>a[href$="/biblioteca/"]{display:inline-flex;align-items:center;min-height:44px}'
+            '.bib .bib-texto{max-width:32em;line-height:1.55}.p-cab .p-lead{text-align:start!important;max-width:32em}</style>'
             '<link rel="stylesheet" href="../../assets/appearance.css?v=20261025-universal-1"><script src="../../assets/appearance.js?v=20261025-universal-1"></script></head>'
             f'<body data-texto="{BIB_ID}"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="{LENTE}"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li>'
             f'<li><a href="{LENTE}biblioteca/">Biblioteca</a></li><li><span aria-current="page">{titulo}</span></li></ol><span data-appearance-control></span></nav><main class="bib">\n'
