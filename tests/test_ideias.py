@@ -377,6 +377,10 @@ class TerceiraRevisao(unittest.TestCase):
         # alguma coisa (teste mudado de propósito; a frase nova confirma-se também em QuintaRevisao)
         self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
         self.assertIn('cita-o duas vezes no livro', guia)
+        # 01/11/2026: (correção 2 do método, revisor de pt-PT) quem traz Holmes é o autor do método, que o cita no livro; «quem o traz
+        # é o próprio método» dava os cinco passos como quem cita (no guia, «o método» são os passos e «o livro» é o livro)
+        self.assertIn('Sherlock Holmes é a testemunha que volta, e quem o traz é o autor do método: cita-o duas vezes no livro.', L.visivel(guia))
+        self.assertNotIn('o próprio método', L.visivel(guia))
         self.assertNotIn('«Decide»', guiao)  # o papel do aluno não fala das peças da página
         self.assertIn('data-papel="o teu «cocheiro», a linha que levaste à fila e o resultado."', entrada)
 
@@ -583,6 +587,13 @@ class Metodo(unittest.TestCase):
                      'Seguimos, passo a passo, o método', 'Há outros', 'escolhemos este por ser simples, claro e útil'):
             self.assertIn(frag, texto)
         self.assertIn('<i>A Technique for Producing Ideas</i>', bloco)  # título de obra em itálico
+        # 01/11/2026: (correção 2 do método, revisor de pt-PT) «Há outros;» lia-se também como «há outros livros» (o nome mais perto é
+        # «um livro de poucas páginas»): a frase diz «métodos», como o encargo pede (ponto 1)
+        self.assertIn('Há outros métodos; escolhemos este por ser simples, claro e útil.', texto)
+        # 01/11/2026: (correção 2 do método, diretor de arte) o bloco com a largura da coluna, para o filete acabar onde acabam o título,
+        # a frase de abertura e a imagem (com 34 em, a 17 px, acabava a meio dela a 1366 e 1440 px); o parágrafo continua com 34 em
+        self.assertIn('.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:none}', s)
+        self.assertIn('.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}', s)
         self.assertEqual(re.findall(r'<li><b>(\d)</b> ([^<]+)</li>', bloco), [(str(n), t) for n, t in enumerate(self.PASSOS, 1)])
         self.assertEqual(I.PASSOS, self.PASSOS)
         # a linha de informação antiga (o livro e Holmes «como guia») deu lugar ao bloco
@@ -606,6 +617,23 @@ class Metodo(unittest.TestCase):
         for n, a in enumerate(apoios, 1):
             self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
         self.assertEqual([x.split(':')[0] for x in apoios[:6]], ['Passo 1 de 5', 'Passo 1 de 5', 'Passos 1 e 2 de 5', 'Passos 2 e 3 de 5', 'Passo 4 de 5', 'Passo 5 de 5'])
+        # 01/11/2026: (correção 2 do método, diretor de arte) o passo escrito em cada porta é o das sessões que estão dentro dela (antes,
+        # Ver dizia «Passos 1 e 2» sobre duas sessões do passo 1 e Treinar «Passos 2 e 3» sobre as sessões dos passos 1 a 3); a sessão
+        # de síntese («Os cinco passos juntos») não tem um passo só
+        def passos(t):
+            m = re.match(r'Passos? (\d)(?: (e|a) (\d))?(?: de 5)?:', t)
+            self.assertIsNotNone(m, t)
+            a, b = int(m.group(1)), int(m.group(3) or m.group(1))
+            return set(range(a, b + 1)) if m.group(2) != 'e' else {a, b}
+        portas = [(pid, re.sub(r'<[^>]+>', '', t), ss) for pid, t, ss in  # sem as <span class="nq"> que seguram «trabalhá-lo»
+                  re.findall(r'<div class="porta-corpo" id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">(.*?)</ol></div>', s, re.S)]
+        self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.'),
+                                                              ('treinar', 'Passos 1 a 3: o material geral, trabalhá-lo na cabeça e, depois, largá-lo.'),
+                                                              ('criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.')])
+        for pid, t, sessoes in portas:
+            dentro = [a for a in re.findall(r'<span class="apoio">(.*?)</span>', sessoes) if not a.startswith('Os cinco passos juntos')]
+            self.assertTrue(dentro, pid)
+            self.assertEqual(passos(t), set().union(*(passos(a) for a in dentro)), pid)
         for d in self.licoes():
             pag = (ROOT / d['saida']).read_text('utf-8')
             abre, ultimo = d['cartoes'][0]['html'], d['cartoes'][-1]['html']
@@ -630,6 +658,13 @@ class Metodo(unittest.TestCase):
         # «hoje» como rótulo de estado do sistema (13 px, 0,14 em), não abaixo da letra mínima
         self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m{list-style:none;display:grid;grid-template-columns:max-content;', css)
         self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m .hoje-t{font-size:.8125rem;letter-spacing:.14em;', css)
+        # 01/11/2026: (correção 2 do método, diretor de arte) a lista dos cinco passos do «Abre» com o desenho da lista da entrada: o
+        # nome a 15 px e o número em Bebas Neue, a 18 px abaixo de 600 px e a 21 px a partir daí (as medidas, ao lado das da entrada, em
+        # browser_ideias.cjs, secção 11)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li{margin:0;padding:2px 0 3px;font:400 .9375rem/1.2 Arial,Helvetica,sans-serif;', css)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li b{font:400 1.125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;', css)
+        self.assertIn('@media (min-width:600px){.licao-laboratorio .jogo .ler ol.passos-m li b{font-size:1.3125rem}}', css)
+        self.assertIn('.ideias ol.passos-m b{font:400 1.3125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif}', s)
         # o guião diz o passo no cabeçalho de cada sessão; o guia, na sequência e em cada sessão
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
         # 01/11/2026: (correção 1 do método, diretor de arte, revisor e verificador) o cabeçalho diz «Passo N de 5» e o nome do passo

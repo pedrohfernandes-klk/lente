@@ -40,9 +40,11 @@ e = html.escape
 
 # As sete sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
 # outras aparecem «Em preparação», sem ligação. «linha» e «papel» são o que a região «A seguir» mostra dessa sessão.
+# 01/11/2026 (correção 2 do método, diretor de arte): o passo de cada porta é o das sessões que estão dentro dela (Ver, sessões
+# 1 e 2: passo 1; Treinar, sessões 3 e 4: passos 1 a 3); antes, Ver dizia «Passos 1 e 2» e Treinar «Passos 2 e 3»
 PORTAS = [
- ('ver', 'Ver', 'Passos 1 e 2: juntar material, com os olhos e com as mãos, e começar a trabalhá-lo.', '../ver/'),
- ('treinar', 'Treinar', 'Passos 2 e 3: trabalhar o material na cabeça e, depois, largá-lo.', '../treinar/'),
+ ('ver', 'Ver', 'Passo 1: juntar material, com os olhos e até ao fundo.', '../ver/'),
+ ('treinar', 'Treinar', 'Passos 1 a 3: o material geral, trabalhá-lo na cabeça e, depois, largá-lo.', '../treinar/'),
  ('criar', 'Criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.', '../criar/'),
 ]
 SESSOES = [
@@ -265,7 +267,10 @@ CSS = (TOKENS +
  # 01/11/2026 (método): o bloco «O método» (sistema 6.2, abertura): um filete, o rótulo em caixa alta como os títulos de secção
  # do rodapé, o parágrafo a tinta e os cinco passos numa lista numerada que parte entre passos e nunca dentro de um, com os
  # números em cartaz, como os das sessões
- '.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:34em}'
+ # 01/11/2026 (correção 2 do método, diretor de arte): o bloco fica com a largura da coluna (o título, a frase de abertura e a
+ # imagem), para o filete acabar onde ela acaba; com 34 em (a 17 px, 578 px), acabava a meio da coluna a 1366 e 1440 px. A medida
+ # do parágrafo continua nos 34 em da linha de informação (a 15 px, 510 px), pela regra de cima
+ '.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:none}'
  '.ideias .metodo h2{float:left;font:700 .8125rem/1.67 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 10px 0 0}'
  '.ideias .abre .metodo .info{color:var(--tinta);margin:0 0 8px}'
  '.ideias ol.passos-m{clear:both;list-style:none;display:flex;flex-wrap:wrap;gap:0 18px;margin:0;padding:0}'
@@ -668,7 +673,7 @@ def pagina_entrada(L):
              # (a medida de 34 em). No telemóvel vem depois do gesto, como vinha a linha de informação: a região «A seguir» e o
              # gesto continuam no primeiro ecrã, e a frase de abertura e a região já dizem o método e o passo de hoje
              '<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>'
-             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros; escolhemos este por ser simples, claro e útil.</p>'
+             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
              '<ol class="passos-m">' + ''.join(f'<li><b>{n}</b> {t}</li>' for n, t in enumerate(PASSOS, 1)) + '</ol></section></header>'
              '<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>'
              # 01/11/2026 (método): o passo do método na linha do rótulo («Começa aqui: passo 1 de 5»), sem linha nova: a 390 px
@@ -816,7 +821,7 @@ def pagina_guia(L):
              '<section class="sessao" id="antes"><h2>Antes de começar</h2>'
              '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos do método (juntar material, trabalhá-lo, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
              '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (o livro aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
-             '<p class="pg"><b>Ler como um detetive.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta, e quem o traz é o próprio método: o autor cita-o duas vezes no livro.</p>'
+             '<p class="pg"><b>Ler como um detetive.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta, e quem o traz é o autor do método: cita-o duas vezes no livro.</p>'
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis, salvo quando o critério diz outros: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
