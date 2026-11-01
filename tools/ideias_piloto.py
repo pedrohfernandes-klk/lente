@@ -376,8 +376,12 @@ CSS = (TOKENS +
  '.ideias .topo .abre{grid-area:abre}.ideias .topo .proximo{grid-area:proximo;margin-top:8px}.ideias .topo .gesto{grid-area:gesto;align-self:start}'
  '.ideias .topo .atol{display:contents}.ideias .topo .atol .campo{grid-area:atol}.ideias .topo .atol figcaption{grid-area:cap;align-self:end;margin:0}'
  '.ideias .abre .lead{font-size:1.3125rem}'
- # a imagem baixa para 16:9 (o anel inteiro cabe), para a coluna da esquerda não ficar muito mais alta do que a da direita
- '.ideias .atol .campo{aspect-ratio:16/9}.ideias .atol img{object-position:50% 55%}}'
+ # a imagem baixa para 16:9, para a coluna da esquerda não ficar muito mais alta do que a da direita
+ # 01/11/2026 (correção 8, diretor de arte): o enquadramento escolhe-se à mão, pelo anel, e não pelo tamanho da caixa. Com
+ # 50% 55%, a curva de baixo do anel saía 8 a 14 px pelo pé a 16:9 e, com o gesto premido (a imagem estica até 0,97:1), a ponta
+ # nordeste saía até 47 px pela borda direita. Com 75% 83%, o anel (na fonte de 1200 × 789: x 368 a 1042, y 107 a 757) fica
+ # inteiro de 0,90:1 a 16:9: 12 px de folga da fonte em cima e em baixo a 16:9, 42 e 49 px dos lados a 0,97:1
+ '.ideias .atol .campo{aspect-ratio:16/9}.ideias .atol img{object-position:75% 83%}}'
  # 01/11/2026 (correção 7, diretor de arte): quando a coluna da direita é mais alta do que a abertura com a imagem a 16:9 (na
  # projeção de 1100 a 1239 px, na moldura /projetar/ a 1440 × 900 e 1400 × 1050, no ecrã com a sessão 1 feita de 1080 a 1199 px),
  # a tabela de museu descia até 81 px abaixo do pé da imagem e agrupava-se com o gesto. A imagem estica até ao pé da tabela e nunca

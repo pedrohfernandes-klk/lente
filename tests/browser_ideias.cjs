@@ -282,4 +282,24 @@ async function responder(p,x){
    assert.deepEqual(r.img,[0,0],'entrada: a imagem não enche o recorte'+onde);
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS sétima revisão: o pé da tabela de museu no pé da imagem na projeção a 1100, 1160 e 1220 px e no ecrã a 1100 px com a sessão 1 feita')}
+ // 10. (continuação) 01/11/2026: a correção da oitava revisão (diretor de arte, 01/11): o enquadramento da imagem do atol
+ // escolhe-se à mão, pelo anel (object-position 75% 83% a partir de 960 px), e não pelo tamanho da caixa. Com 50% 55%, com o
+ // gesto premido na projeção a 1100 e 1120 px (a imagem estica até 0,97:1), a ponta nordeste do anel saía até 47 px pela borda
+ // direita; a 16:9, no ecrã a 1366 px, a curva de baixo saía 11 px pelo pé. Calcula a janela visível da fotografia em píxeis da
+ // fonte (object-fit:cover, naturalWidth e naturalHeight, a caixa da imagem e o object-position calculado) e confirma que o anel
+ // (na fonte de 1200 × 789: x 368 a 1042, y 107 a 757) fica todo dentro, com 0 px de fora
+ {for(const [w,q,tema,toque] of [[1100,'?projetar=1','light',true],[1120,'?projetar=1','dark',true],[1366,'','light',false]]){
+   const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,900,tema);
+   await p.evaluate(()=>{const i=document.querySelector('.atol img');i.loading='eager';return i.decode()});
+   if(toque){await p.locator('.gesto button').nth(1).click();await p.waitForTimeout(300)}
+   const r=await p.evaluate(()=>{const A={x0:368,x1:1042,y0:107,y1:757},i=document.querySelector('.atol img'),c=i.getBoundingClientRect(),nw=i.naturalWidth,nh=i.naturalHeight;
+    const s=Math.max(c.width/nw,c.height/nh),vw=c.width/s,vh=c.height/s,[px,py]=getComputedStyle(i).objectPosition.split(' ').map(v=>parseFloat(v)/100),x0=(nw-vw)*px,y0=(nh-vh)*py;
+    const fora={esq:x0-A.x0,dir:A.x1-(x0+vw),cima:y0-A.y0,baixo:A.y1-(y0+vh)};for(const k in fora)fora[k]=Math.max(0,+(fora[k]*s).toFixed(2));
+    return {nat:[nw,nh],prop:+(c.width/c.height).toFixed(2),op:getComputedStyle(i).objectPosition,premido:document.querySelectorAll('.gesto button[aria-pressed="true"]').length,fora}});
+   const onde=' a '+w+' px'+(q||' (ecrã)')+(toque?', com o gesto premido':'')+' ('+JSON.stringify(r)+')';
+   assert.deepEqual(r.nat,[1200,789],'entrada: a fotografia do atol não tem 1200 × 789 píxeis'+onde);
+   if(toque)assert.equal(r.premido,1,'entrada: o gesto não ficou premido'+onde);
+   assert.deepEqual(r.fora,{esq:0,dir:0,cima:0,baixo:0},'entrada: o recorte corta o anel do atol'+onde);
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS oitava revisão: o anel do atol inteiro no recorte na projeção a 1100 e 1120 px com o gesto premido e no ecrã a 1366 px')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});
