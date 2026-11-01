@@ -25,7 +25,9 @@ class TeacherHub(unittest.TestCase):
   self.assertIn('fotografias legíveis',source)
  def test_home_buoy_targets_the_hub(self):
   s=(ROOT/'index.html').read_text('utf-8')
-  self.assertIn('class="teacher-archive" href="docente/"',s)
-  self.assertIn('aria-label="Guiões e materiais do docente"',s)
+  # 01/11/2026: a revisão transfere a âncora para a saída com texto e elimina o ícone duplicado.
+  self.assertIn('<a id="inicio-vozes" href="docente/">Para o docente <span aria-hidden="true">→</span></a>',s)
+  self.assertNotIn('<a id="inicio-vozes" class="teacher-archive"',s)
+  self.assertEqual(s.count('id="inicio-vozes"'),1)
 
 if __name__=='__main__':unittest.main()

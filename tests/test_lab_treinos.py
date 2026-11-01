@@ -153,13 +153,16 @@ class Ginasio(unittest.TestCase):
         # 30/10/2026: cartão do Laboratório refeito (pedido do docente); as três portas são as da entrada nova do
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ver', 'Treinar', 'Criar'])
+        # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
+        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Observar', 'Treinar', 'Criar'])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).
         porta = next(x for x in json.loads((R / 'assets/laboratorio/imagens.json').read_text('utf-8')) if x['id'] == 'porta')
         self.assertIn('<img src="' + porta['file'] + '"', s[i:j])
         self.assertTrue((R / porta['file']).is_file())
-        self.assertRegex(s[i:j], r'</a><div class="ld-corpo"><p class="m1-home-credit ld-credito">Vincent van Gogh, esboço de <i>O Quarto</i>')
+        # 01/11/2026: D1, classe comum dos créditos; mesma imagem e posição da legenda.
+        # 01/11/2026: a dobra mantém a imagem, o título e o crédito na mesma porta, sem perder a fonte.
+        self.assertRegex(s[i:j], r'</a><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo"><p class="m1-home-credit ld-credito cz-credit">Vincent van Gogh, esboço de <i>O Quarto</i>')
         for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
             self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)

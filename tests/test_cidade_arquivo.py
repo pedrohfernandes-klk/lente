@@ -18,7 +18,8 @@ class Links(HTMLParser):
 class ArchiveAndFieldwork(unittest.TestCase):
     def test_tools_have_distinct_named_groups_and_no_promotional_banner(self):
         page = (ROOT / 'index.html').read_text('utf-8')
-        groups = re.findall(r'<section class="ferr-grupo".*?</section>', page, re.S)
+        # 01/11/2026: D5, mesmos três grupos em dobras abertas sem JavaScript.
+        groups = re.findall(r'<details class="ferr-grupo cz-fold" open.*?</details>', page, re.S)
         self.assertEqual(len(groups), 3)
         expected = [
             ('Ler e investigar', ['biblioteca', 'ler', 'investigar']),
