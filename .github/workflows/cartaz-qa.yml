@@ -1,14 +1,17 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
     steps:
+      # 01/11/2026: contratos comparam a base publicada, sem reduzir os testes.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -16,3 +19,5 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: node --test tests/cartaz.test.cjs tests/appearance.test.cjs
       - run: node tests/browser_cartaz.cjs
+      - run: node tests/browser_cartaz_familia.cjs
+      - run: node --test tests/cartaz_laboratorio.test.cjs

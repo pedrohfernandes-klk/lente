@@ -44,8 +44,40 @@ def extras(base,treinar=False):
     # 31/10/2026: o guia do docente só fala de treinos; «Tudo» diz o que é; sem « / » entre ligações.
     links=[a(base,'narrativas/treinar/caderno/','O caderno de treino'),a(base,'narrativas/treinar/docente/','Como conduzir um treino (docente)')] if treinar else []
     return '<footer class="mais">'+''.join(links+[a(base,'narrativas/tudo/','Tudo o que há no Laboratório')])+'</footer>'
+# 01/11/2026: decisão 57. Migração limitada às quatro entradas; restantes moldes intactos.
+CARTAZ_ENTRADAS={'narrativas','narrativas/ver','narrativas/treinar','narrativas/criar'}
+def cartaz_body(base,body):
+    body=re.sub(r'\bVer\b','Observar',body)
+    body=re.sub(r'(<a class="continuar".*?</a>)',r'<section class="cz-next"><p class="cz-label">A seguir</p>\1</section>',body,count=1,flags=re.S)
+    body=body.replace('class="continuar"','class="continuar cz-button primary"')
+    body=body.replace('class="arquivo"','class="arquivo cz-museum"').replace('<figcaption>','<figcaption class="cz-credit">')
+    body=re.sub(r'<a href="(https://commons.wikimedia.org/[^"]+)"',r'<a data-external aria-label="Wikimedia Commons, sítio externo" href="\1"',body)
+    body=body.replace('class="modulo"','class="modulo cz-door"').replace('class="modulos"','class="modulos cz-grid"')
+    body=body.replace('class="dobra"','class="dobra cz-fold" open')
+    body=body.replace('class="chip"','class="chip cz-state"').replace('>por fazer</span>','></span>')
+    body=re.sub(r'(<li data-peca="[^"]+"><a)( href=)',r'\1 class="cz-row"\2',body)
+    if base=='narrativas':
+        groups=iter(D['blocks'])
+        def group(m):
+            b=next(groups);ids=[id for r in routes_of(b) for id in r['pieces']]
+            return '<details class="dobra cz-fold" open data-cz-ids="'+e(json.dumps(ids))+'">'
+        body=re.sub(r'<details class="dobra cz-fold" open>',group,body)
+    if base!='narrativas':
+        def fold(m):
+            ident,title,rest=m.groups()
+            label=re.sub('<[^>]*>','',title)
+            return '<details class="unidade cz-fold" id="'+ident+'" open><summary>'+label+'</summary><div class="cz-fold-body"><h2>'+title+'</h2>'+rest+'</div></details>'
+        body=re.sub(r'<section class="unidade" id="([^"]+)"><h2>(.*?)</h2>(.*?)</section>',fold,body,flags=re.S)
+    return body
+
 def page(base,title,body,desc,foot=True,treinar=False,cur=None):
+    if '--cartaz-entradas' in __import__('sys').argv and base not in CARTAZ_ENTRADAS:return
     rel=lambda x:link(base,x)
+    migrated=base in CARTAZ_ENTRADAS
+    if migrated:
+        body=cartaz_body(base,body)
+        title=re.sub(r'\bVer\b','Observar',title)
+        desc=re.sub(r'\bVer\b','Observar',desc)
     # 31/10/2026: só as peças que estão num percurso (uma peça fora dos percursos não conta nem se guarda aqui).
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
@@ -57,6 +89,10 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
        '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
        '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script></body></html>\n')
+    if migrated:
+        s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
+        s=s.replace('class="mais"','class="mais cz-footer"')
+        s=s.replace('</head>','<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'"></script><script defer src="'+rel('assets/cartaz-components.js')+'"></script></head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
 def routebox(base,r):
     return '<article class="modulo"><a href="'+link(base,'narrativas/percursos/'+r['id']+'/')+'"><h3>'+e(r['title'])+'</h3><p>'+e(r['question'])+'</p>'+count(r['pieces'])+'<span>Abrir →</span></a></article>'
@@ -156,7 +192,7 @@ def continuacao():
         s=re.sub(r'(<nav class="lab-fim-percurso"[^>]*>).*?</nav>',nav,s,flags=re.S)
         if s!=o:f.write_text(s,'utf-8');changed+=1
     return changed
-continuacao()
+if '--cartaz-entradas' not in __import__('sys').argv:continuacao()
 
 # Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
 # Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.
@@ -176,5 +212,5 @@ def mapa():
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
     s2=s[:i]+out+s[j:]
     if s2!=s:f.write_text(s2,'utf-8')
-mapa()
-print('23 páginas geradas; '+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')
+if '--cartaz-entradas' not in __import__('sys').argv:mapa()
+print(('4 entradas geradas; ' if '--cartaz-entradas' in __import__('sys').argv else '23 páginas geradas; ')+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')

@@ -1,0 +1,42 @@
+/* 01/11/2026: decisão 57, apenas as entradas do Laboratório. */
+[data-cartaz-laboratorio]{max-width:1200px;padding:24px 16px 64px;color:var(--cz-ink)}
+[data-cartaz-laboratorio] .topo{margin-bottom:32px}
+[data-cartaz-laboratorio] .cz-next .continuar{width:100%;margin:0;font-size:16px}
+[data-cartaz-laboratorio] .cz-next .cz-label{margin:0 0 16px}
+[data-cartaz-laboratorio] .blocos{gap:40px}
+[data-cartaz-laboratorio] .bloco{padding:0;border:0;background:transparent}
+[data-cartaz-laboratorio] .bloco>header{padding:24px;background:var(--cz-paper)}
+[data-cartaz-laboratorio] .bloco>header>a{display:flex;align-items:center;justify-content:space-between;min-height:64px;padding:16px 0;font:700 16px/1.5 Arial,sans-serif;text-decoration:none}
+[data-cartaz-laboratorio] .cz-museum{margin-block:0 24px}
+[data-cartaz-laboratorio] .cz-credit{font-size:13px}
+[data-cartaz-laboratorio] .legenda{margin-top:8px;font-size:13px}
+[data-cartaz-laboratorio] .cz-grid{padding:16px;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-cartaz-laboratorio] .cz-door{border:0;margin:0;padding:0}
+[data-cartaz-laboratorio] .cz-door>a{padding:24px;min-height:160px;color:var(--cz-ink)}
+[data-cartaz-laboratorio] .cz-door :is(h3,p,span){text-decoration:none}
+[data-cartaz-laboratorio] .cz-door h3{font-size:20px}
+[data-cartaz-laboratorio] .cz-door p{font-size:16px}
+[data-cartaz-laboratorio] .cz-door .contagem{font-size:13px}
+[data-cartaz-laboratorio] .cz-fold{padding:0;border:0}
+[data-cartaz-laboratorio] .cz-fold>summary{padding:24px;min-height:88px;font-size:16px}
+[data-cartaz-laboratorio] .cz-fold-body{padding:0 24px 24px}
+[data-cartaz-laboratorio] .cz-fold-body h2 a{display:flex;align-items:center;min-height:44px;text-decoration:none;font:700 20px/1.5 Arial,sans-serif}
+[data-cartaz-laboratorio] .passos{margin-top:24px}
+[data-cartaz-laboratorio] .passos li{border:0}
+[data-cartaz-laboratorio] .passos .cz-row{grid-template-columns:32px minmax(0,1fr) auto;min-height:64px;gap:16px;padding:16px;text-decoration:none}
+[data-cartaz-laboratorio] .passos .cz-row :is(strong,.descricao){text-decoration:none;font-size:16px}
+[data-cartaz-laboratorio] .passos .chip{font-size:13px;white-space:normal;padding:0;background:transparent;color:var(--cz-ink)}
+[data-cartaz-laboratorio] .passos .chip:empty{display:none}
+[data-cartaz-laboratorio] .passos .cz-row small{font-size:13px}
+[data-cartaz-laboratorio] .contagem{font-size:13px}
+[data-cartaz-laboratorio] .registos :is(button,.repor){min-height:48px;padding:16px;font-size:16px}
+[data-cartaz-laboratorio] .mais{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+[data-cartaz-laboratorio] .mais a{min-height:64px;font-size:16px}
+@media(max-width:639px){[data-cartaz-laboratorio] .cz-grid,[data-cartaz-laboratorio] .mais{grid-template-columns:1fr}[data-cartaz-laboratorio] .passos .cz-row{grid-template-columns:24px minmax(0,1fr)}[data-cartaz-laboratorio] .cz-row .cz-state{grid-column:2}}
+@media print{[data-cartaz-laboratorio] .cz-grid{display:block}[data-cartaz-laboratorio] .registos{display:none}}
+[data-cartaz-laboratorio] .cz-state{text-transform:none;letter-spacing:normal}
+[data-cartaz-laboratorio] .topo h1{font:400 clamp(39px,5vw,61px)/1.05 var(--cz-font-poster)}
+[data-cartaz-laboratorio] .modulo.cz-door>a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:16px;min-height:88px}
+[data-cartaz-laboratorio] .modulo.cz-door>a>:not(span){grid-column:1;margin:0}
+[data-cartaz-laboratorio] .modulo.cz-door>a>span{grid-column:2;grid-row:1/4;align-self:center}
+[data-cartaz-laboratorio] .modulo.cz-door h3{font-size:20px}
