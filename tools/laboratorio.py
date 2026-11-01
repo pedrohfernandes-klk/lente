@@ -48,14 +48,19 @@ def extras(base,treinar=False):
 CARTAZ_ENTRADAS={'narrativas','narrativas/ver','narrativas/treinar','narrativas/criar'}
 def cartaz_body(base,body):
     body=re.sub(r'\bVer\b','Observar',body)
-    body=re.sub(r'(<a class="continuar".*?</a>)',r'<section class="cz-next"><p class="cz-label">A seguir</p>\1</section>',body,count=1,flags=re.S)
+    # 01/11/2026: a mesma peça de continuação tem título, estado e uma ação.
+    def next_region(m):
+        ids=json.loads(html.unescape(re.search(r'data-continuar="([^"]+)"',m[0])[1]))
+        return '<section class="cz-next" aria-labelledby="cz-prox"><p class="cz-label">A seguir</p><h2 id="cz-prox">'+e(P[ids[0]]['title'])+'</h2><p data-cz-estado></p>'+m[0]+'</section>'
+    body=re.sub(r'<a class="continuar".*?</a>',next_region,body,count=1,flags=re.S)
     body=body.replace('class="continuar"','class="continuar cz-button primary"')
     body=body.replace('class="arquivo"','class="arquivo cz-museum"').replace('<figcaption>','<figcaption class="cz-credit">')
     body=re.sub(r'<a href="(https://commons.wikimedia.org/[^"]+)"',r'<a data-external aria-label="Wikimedia Commons, sítio externo" href="\1"',body)
-    body=body.replace('class="modulo"','class="modulo cz-door"').replace('class="modulos"','class="modulos cz-grid"')
     body=body.replace('class="dobra"','class="dobra cz-fold" open')
     body=body.replace('class="chip"','class="chip cz-state"').replace('>por fazer</span>','></span>')
     body=re.sub(r'(<li data-peca="[^"]+"><a)( href=)',r'\1 class="cz-row"\2',body)
+    body=body.replace(' data-estado=', ' data-estado=')
+    body=re.sub(r'(<span class="chip cz-state"[^>]*>.*?</span>)(</a>)',r'\1<span class="arrow" aria-hidden="true">→</span>\2',body)
     if base=='narrativas':
         groups=iter(D['blocks'])
         def group(m):
@@ -66,7 +71,8 @@ def cartaz_body(base,body):
         def fold(m):
             ident,title,rest=m.groups()
             label=re.sub('<[^>]*>','',title)
-            return '<details class="unidade cz-fold" id="'+ident+'" open><summary>'+label+'</summary><div class="cz-fold-body"><h2>'+title+'</h2>'+rest+'</div></details>'
+            href=re.search(r'href="([^"]+)"',title)[1]
+            return '<details class="unidade cz-fold" id="'+ident+'" open><summary><h2>'+label+'</h2></summary><div class="cz-fold-body"><a class="cz-button" href="'+href+'">Abrir o percurso →</a>'+rest+'</div></details>'
         body=re.sub(r'<section class="unidade" id="([^"]+)"><h2>(.*?)</h2>(.*?)</section>',fold,body,flags=re.S)
     return body
 
@@ -92,9 +98,13 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     if migrated:
         s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
         s=s.replace('class="mais"','class="mais cz-footer"')
-        s=s.replace('</head>','<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'"></script><script defer src="'+rel('assets/cartaz-components.js')+'"></script></head>')
+        s=s.replace(rel('assets/appearance.css')+'"',rel('assets/appearance.css')+'?v=20261101-1"')
+        s=s.replace('</head>','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" media="print" onload="this.media=\'all\'"><link rel="stylesheet" href="'+rel('assets/cartaz-components.css')+'?v=20261101-1"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'?v=20261101-1"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'?v=20261101-1"></script><script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script></head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
 def routebox(base,r):
+    if base=='narrativas':
+        number=next(i for i,x in enumerate(routes_of(block_of(r)),1) if x['id']==r['id'])
+        return '<article class="modulo"><a class="cz-row" data-cz-route="'+e(json.dumps(r['pieces']))+'" href="'+link(base,'narrativas/percursos/'+r['id']+'/')+'"><b>'+str(number)+'</b><div><h3>'+e(r['title'])+'</h3><small>'+e(r['question'])+'</small>'+count(r['pieces'])+'</div><span class="cz-state"></span><span class="arrow" aria-hidden="true">→</span></a></article>'
     return '<article class="modulo"><a href="'+link(base,'narrativas/percursos/'+r['id']+'/')+'"><h3>'+e(r['title'])+'</h3><p>'+e(r['question'])+'</p>'+count(r['pieces'])+'<span>Abrir →</span></a></article>'
 def routes_of(b):return [r for r in D['routes'] if r['block']==b['id']]
 def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
@@ -105,14 +115,14 @@ body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div c
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos de '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
            +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
 # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.
 body+='<script>(function(){function f(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!document.getElementById(h))location.replace("tudo/"+location.search+location.hash)}addEventListener("hashchange",f);f()})()</script>'
-page('narrativas','Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três blocos, Ver, Treinar e Criar.',cur={'lab':'page'})
+page('narrativas','Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três blocos (Observar, Treinar e Criar).',cur={'lab':'page'})
 
 # Blocos
 for b in D['blocks']:
