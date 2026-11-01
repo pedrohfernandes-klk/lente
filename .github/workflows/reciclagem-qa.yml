@@ -7,6 +7,10 @@ on:
       - 'tools/cidadania_m2*'
       - 'tests/*reciclagem*'
       - 'tests/test_cidadania_m2_molde.py'
+      # 01/11/2026: a hierarquia dos títulos (decisão 61) mede todas as páginas; corre com qualquer página ou estilo.
+      - '**/*.html'
+      - 'assets/**'
+      - 'tests/browser_hierarquia_titulos.py'
       - '.github/workflows/reciclagem-qa.yml'
 permissions:
   contents: read
@@ -36,3 +40,5 @@ jobs:
         run: |
           python tests/browser_reciclagem_lente.py
           python tests/browser_texto_justificado.py
+          # 01/11/2026: R1, R2, R3 e R5 em todas as páginas, a 390 e a 1366 px (lista de pendentes datada no teste).
+          python tests/browser_hierarquia_titulos.py

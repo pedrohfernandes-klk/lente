@@ -304,6 +304,16 @@ class Molde(unittest.TestCase):
         # base passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; depois da fusão a
         # base já as tem e a troca não muda nada. Tudo o resto continua igual, byte a byte.
         lingua = json.loads((R / 'tools/trocas/lingua-perguntas-20261030.json').read_text('utf-8'))
+        # 01/11/2026: hierarquia dos títulos (decisão 61). A revisão do M1 muda só pela troca registada em
+        # tools/trocas/hierarquia-titulos-20261101.json (rótulo do passo a 13 px, pergunta a 20 px); cada «novo» tem de
+        # estar no sítio o número de vezes registado e nenhum «antigo» pode ter voltado. Tudo o resto, byte a byte.
+        hierarquia = json.loads((R / 'tools/trocas/hierarquia-titulos-20261101.json').read_text('utf-8'))
+        for t in hierarquia:
+            self.assertEqual(set(t), {'ficheiro', 'antigo', 'novo', 'ocorrencias'})
+            s = (R / t['ficheiro']).read_text('utf-8')
+            self.assertEqual(s.count(t['novo']), t['ocorrencias'], t['ficheiro'])
+            self.assertNotIn(t['antigo'], s, t['ficheiro'])
+        lingua = lingua + hierarquia
         for f in lista + ['assets/cidadania-m1-sessoes.css', 'assets/cidadania-m1-sessoes.js']:
             antes = subprocess.check_output(['git', 'show', base + ':' + f], cwd=R)
             for t in lingua:
