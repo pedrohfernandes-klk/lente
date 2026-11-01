@@ -11,6 +11,8 @@ a{color:inherit;text-underline-offset:3px}
 .lado-rot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--assinatura);margin-right:8px;vertical-align:middle}
 .lado h1{font:700 clamp(1.7rem,5vw,2.3rem)/1.05 Arial,sans-serif;letter-spacing:-.03em;margin:0 0 8px}
 .lado h2{font:700 1.02rem/1.25 Arial,sans-serif;margin:16px 0 6px;padding:0 0 4px;border-bottom:1px solid var(--tinta)}
+/* 01/11/2026: hierarquia dos títulos (decisão 61): os h2 sobem para 20 px, na escala do «Cartaz»; o antetítulo do verso (11,5 px) deixa de competir com o título. */
+.lado h2{font-size:1.25rem;text-wrap:balance}
 .lado p{margin:0 0 6px}.pq{font:.8rem/1.4 Arial,sans-serif;color:var(--suave)}
 @page{size:A4;margin:10mm 12mm}
 @media print{:root{--tinta:#000;--papel:#fff;--fundo:#fff;--suave:#333;--cinza:#999}body{background:#fff;color:#000;font-size:10pt}.so-ecra,.comum nav,.epi-projection-launcher{display:none!important}.lado{padding:0 1px;margin:0;break-after:page;page-break-after:always}.lado:last-of-type{break-after:auto;page-break-after:auto}}
