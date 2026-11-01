@@ -42,10 +42,10 @@ PORTAS = [
 SESSOES = [
  {'n': 1, 'porta': 'ver', 'titulo': 'Ver ou observar?', 'pergunta': 'Quantos degraus tem a escada que sobes todos os dias?',
   'passo': 'Passo 1: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
-  'linha': 'Holmes, a historiadora de arte Amy E. Herman, um quadro de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
+  'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
   'passo': 'Passo 1: o material específico, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
-  'linha': 'Young, o escritor Guy de Maupassant, uma fotografia de Paris e uma saída à rua.', 'papel': 'as quinze notas do teu «cocheiro» e a linha que levaste à fila.'},
+  'linha': 'O publicitário James Webb Young, o escritor Guy de Maupassant, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'as quinze notas do teu «cocheiro» e a linha que levaste à fila.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
   'passo': 'Passos 1 e 2: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
  {'n': 4, 'porta': 'treinar', 'titulo': 'Três cachimbos', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
@@ -77,17 +77,19 @@ GUIA = {
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
    ('120 a 145', 'Cartões 15 a 19.'),
    ('145 a 165', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
-   ('165 a 180', 'Folga: as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
+   ('165 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
   ],
+  # 01/11/2026 (correção 2, revisor de pt-PT): no guia, o crédito do vídeo sem a instrução ao aluno («ativa as legendas»)
+  'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
   'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
-  'escrito': 'O palpite e a contagem; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
+  'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
   'produto': 'auto de observação, por grupo',
   'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
-   'O quadro de Magritte (_Time Transfixed_) aparece no vídeo de Herman e não se reproduz no Lente: Magritte morreu em 1967 e a obra não está em domínio público.',
-   'O título português do quadro de La Tour, _A leitora da sina_, é nosso, e o cartão di-lo. Nas lições, as imagens ficam a preto e branco e a cor volta no fim; para mostrar as cores à turma, abre a página do Met.',
+   'O quadro de Magritte (_Time Transfixed_) é o exemplo do resumo oficial da lição de Herman e não se reproduz no Lente: Magritte morreu em 1967 e a obra não está em domínio público.',
+   'O título português do quadro de La Tour, _A leitora da sina_, é nosso, e o cartão di-lo. Nas lições, as imagens ficam a preto e branco e a cor volta no fim; para mostrar as cores à turma, o docente abre a página do Met.',
    'Os dois cartões «Toca no quadro» são um uso novo do motor no Lente: quando duas zonas ficam muito juntas, o primeiro toque amplia o quadro e o segundo escolhe. Se no aparelho de algum aluno não funcionar, faz-se a mesma pergunta em voz alta, com o quadro projetado.',
    'Para quem quiser ir mais longe: Florence Nightingale e a observação dos doentes, na Biblioteca; e Como se investiga, passo 2, «Olhar e registar».',
   ],
@@ -95,7 +97,7 @@ GUIA = {
  },
  2: {
   'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o primeiro passo de Young, até ao fundo.',
-  'antes': 'Escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
+  'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
   'tempos': [
    ('0 a 5', '«Abre»: o lugar da saída diz-se à turma.'),
    ('5 a 15', '«Decide», de braço no ar.'),
@@ -110,7 +112,7 @@ GUIA = {
   'produto': 'o «cocheiro» de cada aluno, individual',
   'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida, 6; não reconhecida mas revista, 4)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
   'notas': [
-   'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma for para o cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
+   'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
    'Young não diz onde leu a história; os cartões não dizem mais do que isto.',
    'As traduções de Maupassant são nossas e curtas; o texto inteiro, em francês, está no Project Gutenberg.',
    'A saída é opcional (decisão do docente de 31/10): sem ela, cada par escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
@@ -120,6 +122,9 @@ GUIA = {
  },
 }
 # O guião em papel (plano final, 8.1): frente e verso por sessão pronta.
+# 01/11/2026 (correção 2, diretor de arte): na sessão 2, mais linhas de escrita onde se pedem razões e versões (a tabela de
+# Atget com sete filas, para as «pelo menos três linhas» de cada coluna), em vez de 113 e 143 mm de branco no fundo das páginas
+# 3 e 4; continuam 4 páginas A4.
 GUIAO = {
  1: {
   'frente': [
@@ -148,19 +153,23 @@ GUIAO = {
    ('h2', 'As duas versões do conselho, lado a lado'),
    ('tabela-linhas', ['', 'Young (1940)', 'Maupassant (1888)', 'Mudou ou ficou?'], ['Quem dá o conselho', 'O que se olha', 'O que se pede', 'Com quantas palavras']),
    ('h2', 'A fotografia de Atget, em três colunas'),
-   ('tabela', ['Vejo', 'Concluo', 'Não sei'], 4),
+   ('tabela', ['Vejo', 'Concluo', 'Não sei'], 7),
    ('h2', 'A tua posição no «Decide»: uma árvore da tua rua é só uma árvore?'),
    ('p', 'Sim, não ou depende, e porquê: <i class="b l"></i>'),
+   ('linhas', 3),
   ],
   'verso_titulo': 'O teu «cocheiro»',
   'verso': [
    ('p', 'O que é e onde está: <i class="b l"></i>'),
+   ('linhas', 3),
    ('h2', 'As quinze notas, resumidas em cinco linhas'),
    ('linhas', 5),
    ('p', 'A linha que só serve para ele, antes da fila: <i class="b l"></i>'),
+   ('linhas', 3),
    ('p', 'Resultado da fila: reconhecido por <i class="b"></i> de <i class="b"></i> colegas.'),
    ('p', 'A linha revista: <i class="b l"></i>'),
-   ('nota', 'Para a sessão 3: dez notas de material geral, onde guardas o material (um desporto, uma receita, uma canção, um ofício da família), uma coisa por nota, com um pormenor que só tu sabes.'),
+   ('linhas', 3),
+   ('nota', 'Para a sessão 3: dez notas de material geral (um desporto, uma receita, uma canção, um ofício da família), uma coisa por nota, com um pormenor que só tu sabes. Guarda-as onde guardas o material.'),
   ],
  },
 }
@@ -227,12 +236,19 @@ CSS = (TOKENS +
  '.ideias .proximo .feito{font-weight:700}.ideias .proximo .feito:empty{display:none}'
  '.ideias .proximo .botao{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;background:var(--papel);color:var(--tinta);font-weight:700;text-decoration:none;border:3px solid var(--papel)}'
  '.ideias .proximo .botao:focus-visible{outline-color:var(--papel)}'
+ # 01/11/2026 (correção 2): abaixo de 400 px, a linha «No fim, em papel» passa para depois do botão. Com as pessoas
+ # apresentadas (revisor de pt-PT), a linha da sessão 2 ganhou uma linha e, a 320 × 640 com progresso, «Continuar» saía do
+ # primeiro ecrã (y = 612 a 660); assim fica a ação logo a seguir ao que se vai fazer, e nada se perde
+ '@media (max-width:399px){.ideias .proximo{display:flex;flex-direction:column;align-items:flex-start}.ideias .proximo .papel{order:1;margin:14px 0 0}.ideias .proximo .papel:empty{display:none}}'
  # gesto de decisão (sistema 6.8): botões de contorno de 48 px, aria-pressed, resposta na mesma região
  '.ideias .gesto{background:var(--papel);padding:16px;margin:0 0 20px}'
  '.ideias .gesto .q{font:700 1.125rem/1.35 Georgia,"Times New Roman",serif;margin:0 0 12px}'
  # 31/10/2026 (revisão do diretor de arte): três colunas iguais, como a variante .gesto .opcoes.tres do sistema (nenhuma
  # opção sozinha numa linha)
  '.ideias .gesto .ops{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}'
+ # 01/11/2026 (correção 2, diretor de arte): abaixo de 380 px, com 80 px por botão, os rótulos partiam-se palavra a palavra
+ # («Não / faço / ideia»; premido, o visto sozinho na primeira linha): três botões numa coluna
+ '@media (max-width:379px){.ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
  '.ideias .gesto button{min-height:48px;padding:6px 8px;border:2px solid var(--tinta);background:transparent;color:var(--tinta);font:700 1rem/1.15 Arial,Helvetica,sans-serif;text-align:center;cursor:pointer}'
  '.ideias .gesto button[aria-pressed="true"]{border-width:4px;padding:4px 6px}'
  '.ideias .gesto button[aria-pressed="true"]::before{content:"✓ "}'
@@ -255,6 +271,9 @@ CSS = (TOKENS +
  # rótulo em Arial, para não repetir em cartaz o nome da porta que vem logo abaixo
  '.ideias .faixa a{display:flex;align-items:center;gap:3px;flex-wrap:wrap;min-height:56px;padding:10px 0 8px;background:none;text-decoration:none}'
  '.ideias .faixa .nome{font:700 .875rem/1.2 Arial,Helvetica,sans-serif;width:100%}'
+ # 01/11/2026 (correção 2, diretor de arte): a partir de 1024 px a faixa fica por cima de cada porta, que repete o nome 82 px
+ # abaixo; o rótulo fica só para o leitor de ecrã. Abaixo de 1024 px, a faixa vem numa linha à parte e o rótulo vê-se.
+ '@media (min-width:1024px){.ideias .faixa .nome{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}'
  '.ideias .faixa .no{flex:1 1 0;width:auto;height:14px;border:1.5px solid var(--tinta)}'
  '.ideias .faixa .no.feita{background:var(--mostarda)}'
  '.ideias .faixa .no.seguir{border:3.5px solid var(--vermelho)}'
@@ -311,7 +330,8 @@ CSS = (TOKENS +
  'html.epi-projection .ideias .migalhas{font-size:.8125rem!important}'
  '@media (prefers-reduced-motion:reduce){.ideias *{animation:none!important;transition:none!important}}'
  # guião e guia do docente: páginas de papel (A4), as mesmas peças
- '.ideias .imprimir{font:700 1rem Arial,Helvetica,sans-serif;background:var(--papel);color:var(--tinta);border:3px solid var(--tinta);padding:8px 14px;min-height:48px;cursor:pointer}'
+ # 01/11/2026 (correção 2, diretor de arte): 2 px de traço, como os outros botões de contorno (semelhança)
+ '.ideias .imprimir{font:700 1rem Arial,Helvetica,sans-serif;background:var(--papel);color:var(--tinta);border:2px solid var(--tinta);padding:9px 15px;min-height:48px;cursor:pointer}'
  '.ideias .papel-cab{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:0 0 20px}'
  '.ideias .papel-cab .pq{font-size:.875rem;color:var(--suave)}'
  '.ideias section.lado{background:var(--papel);padding:18px 16px 20px;margin:0 0 20px;max-width:860px}'
@@ -339,7 +359,10 @@ CSS = (TOKENS +
  '.ideias.guia .pg,.ideias.guia section li{font-family:Georgia,"Times New Roman",serif;max-width:32em}'
  '.ideias.guia .pg{margin:0 0 10px}'
  # texto corrido do guia justificado e hifenizado, com o limiar da casa (à esquerda abaixo de 360 px: --epi-texto-corrido)
- '.ideias.guia :is(.pg:not(.fontes),section.sessao li),.ideias .abre .lead{text-align:var(--epi-texto-corrido,justify);hyphens:auto;-webkit-hyphens:auto}'
+ # 01/11/2026 (correção 2, diretor de arte): só o texto corrido; as listas e a frase de abertura ficam à esquerda (são itens e
+ # texto de cartaz: justificadas, abriam espaços até 12,4 vezes o normal a 360 px), e as listas ganham 21 px de medida
+ '.ideias.guia .pg:not(.fontes){text-align:var(--epi-texto-corrido,justify);hyphens:auto;-webkit-hyphens:auto}'
+ '.ideias.guia section ul{padding-left:1.2em}'
  # 31/10/2026 (revisão do diretor de arte): sem inline-flex, que partia em colunas as ligações com <i> e, a 320 px, fazia a
  # página deslizar 16 px
  '.ideias.guia ul.ligacoes a{display:inline-block;min-height:44px;padding:9px 0}'
@@ -349,6 +372,17 @@ CSS = (TOKENS +
  '.ideias.guia ul.indice{padding-left:1.2em}.ideias.guia ul.indice a{display:inline-block;padding:10px 0}'
  '.ideias.guia .fontes{font-size:.875rem;color:var(--suave);overflow-wrap:anywhere}'
  '.ideias.guia .tabela{max-width:52em}'
+ # 01/11/2026 (correção 2, diretor de arte): duas margens direitas no mesmo fio, a do texto (32em, 544 px) e a das tabelas e
+ # dos filetes; a caixa «Na aula», a nota da avaliação e as listas acabam onde acaba o texto
+ '.ideias.guia .caixa,.ideias.guia .indicativa,.ideias.guia section ul{max-width:32em}.ideias.guia section li{max-width:none}'
+ # e, a partir de 1100 px, o índice numa coluna à direita, sempre à vista durante a aula (ocupa o vazio de 308 px)
+ '@media (min-width:1100px){.ideias.guia main{display:grid;grid-template-columns:minmax(0,860px) minmax(180px,1fr);column-gap:40px;align-items:start}'
+ '.ideias.guia main>*{grid-column:1}.ideias.guia main>.migalhas{grid-column:1/-1}'
+ '.ideias.guia main>nav.indice-nav{grid-column:2;grid-row:2/span 40;position:sticky;top:24px;align-self:start;padding-top:12px}'
+ '.ideias.guia nav.indice-nav ul.indice{list-style:none;margin:0;padding:8px 0 0;border-top:3px solid var(--tinta);font-size:.9375rem}'
+ '.ideias.guia nav.indice-nav ul.indice a{padding:12px 0;min-height:44px;box-sizing:border-box}}'
+ # 01/11/2026 (correção 2, diretor de arte): uma forma verbal com pronome não se parte no hífen (AO90, base XX)
+ '.ideias .nq{white-space:nowrap}'
  '@media (max-width:599px){.ideias .tabela table{font-size:.875rem}.ideias th,.ideias td{padding:5px 6px;hyphens:auto}}'
  # 31/10/2026 (revisão do diretor de arte): no telemóvel, nenhum cabeçalho partido a meio da palavra («Maupassa / nt») e
  # nenhum rótulo com a última palavra sozinha
@@ -364,7 +398,15 @@ CSS = (TOKENS +
  # o cabeçalho de ecrã, e linhas de escrita de 9,5 mm (continuam 4 páginas)
  '.ideias.guia section.sessao.pronta{break-before:page}'
  '.ideias.guiao .abre{display:none}.ideias .escrever{height:9.5mm}.ideias table.grelha-escrever td{height:9.5mm}'
- '.ideias.guia .pg,.ideias.guia section li{max-width:none}}')
+ # 01/11/2026 (correção 2, diretor de arte): o título de secção nunca fica sozinho no fundo da página («A sequência» abre
+ # página); o índice de ligações não serve em papel; o texto corrido com 120 mm de medida (72 carateres medidos; com os 128 mm propostos eram 76 a 80; eram 97
+ # a 114 a toda a largura); a caixa e a nota da avaliação acabam no mesmo fio, as tabelas e os filetes a toda a largura
+ '.ideias.guia section.sessao>h2{break-after:avoid}.ideias.guia #sequencia{break-before:page}.ideias.guia ul.indice{display:none}'
+ '.ideias.guia .pg,.ideias.guia section ul,.ideias.guia .caixa,.ideias.guia .indicativa{max-width:120mm}.ideias.guia section li{max-width:none}'
+ # 01/11/2026 (correção 2): em papel, as ligações sem os 44 px de alvo de toque (com eles, as «Fontes da lição» da sessão 1
+ # passavam duas linhas para uma página quase vazia),
+ # e os títulos de grupo mais perto do texto (de 22 para 14 px por cima), para cada sessão caber nas suas três páginas
+ '.ideias.guia ul.ligacoes a{min-height:0;padding:0}.ideias.guia h3{margin:14px 0 4px}.ideias.guia .pg{margin:0 0 6px}.ideias.guia section ul{margin:4px 0 6px}}')
 
 
 def migalhas(base, itens):
@@ -448,7 +490,7 @@ def pagina_entrada(L):
           'bs.forEach(function(b){b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")==="true";'
           'bs.forEach(function(o){o.setAttribute("aria-pressed","false")});'
           'if(on){res.textContent="";if(l1&&!l1.classList.contains("feita")){l1.classList.remove("comeca");if(l1.classList.contains("seguir"))l1.querySelector("[data-estado]").textContent="A seguir"}return}'
-          'b.setAttribute("aria-pressed","true");res.textContent=G.getAttribute("data-resposta-txt");'
+          'b.setAttribute("aria-pressed","true");res.innerHTML=G.querySelector("template[data-resposta-html]").innerHTML;'
           # 31/10/2026 (revisão do diretor de arte, sistema 6.8): a página rola o necessário para a resposta ficar à vista
           'var rr=res.getBoundingClientRect();if(rr.bottom>innerHeight)scrollBy({top:rr.bottom-innerHeight+16,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});'
           'if(l1&&!l1.classList.contains("feita")){l1.classList.add("comeca");l1.querySelector("[data-estado]").textContent="Começa aqui"}})})}'
@@ -458,16 +500,18 @@ def pagina_entrada(L):
              + '<div class="topo">'
              '<header class="abre"><p class="rotulo">Laboratório, piloto</p><h1>Ideias</h1><p class="sub">Como nasce uma ideia</p>'
              '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Em sete sessões, segues uma ideia tua da primeira nota à última versão.</p>'
-             '<p class="info">Sete sessões de 180 minutos, a partir de <i>Uma Técnica para Produzir Ideias</i>, de James Webb Young (1940), com Sherlock Holmes, o detetive dos contos de Conan Doyle, como testemunha.</p></header>'
+             '<p class="info">Sete sessões de 180 minutos, a partir de <i>Uma Técnica para Produzir Ideias</i>, de James Webb Young (1940), com Sherlock Holmes, o detetive dos contos de Conan Doyle, como guia.</p></header>'
              '<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>'
              '<p class="kicker" data-p-k>Começa aqui</p>'
              f'<div class="cab"><p class="num" data-p-n aria-hidden="true">{s1["n"]}</p><h2 id="prox-t"><span class="c-sr">Sessão <span data-p-srn>{s1["n"]}</span>: </span><span data-p-t>{e(s1["titulo"])}</span></h2></div>'
              f'<p class="linha" data-p-linha>{e(s1["linha"])}</p><p class="papel" data-p-papel>No fim, em papel: {e(s1["papel"])}</p><p class="feito" data-p-feito></p>'
              f'<a class="botao" data-p-botao href="sessao-01/">Começar a sessão 1 →</a></section>'
-             f'<section class="gesto" aria-labelledby="gesto-q" data-gesto data-resposta-txt="Watson, o amigo médico de Holmes, subiu-lhe a escada centenas de vezes e não sabia quantos degraus tinha. Holmes sabia: dezassete. Na sessão 1, contas os da escola.">'
+             # 01/11/2026 (correção 2, diretor de arte): a resposta vem de um <template>, já com «subiu-lhe» numa <span class="nq">
+             '<section class="gesto" aria-labelledby="gesto-q" data-gesto>'
              f'<p class="q" id="gesto-q">{pergunta_abre(d1)}</p>'
              '<div class="ops" role="group" aria-labelledby="gesto-q"><button type="button" data-op aria-pressed="false">Sei</button><button type="button" data-op aria-pressed="false">Tenho um palpite</button><button type="button" data-op aria-pressed="false">Não faço ideia</button></div>'
              '<p class="resposta" data-resposta role="status" aria-live="polite"></p>'
+             '<template data-resposta-html>Watson, o amigo médico de Holmes, subiu-lhe a escada centenas de vezes e não sabia quantos degraus tinha. Holmes sabia: dezassete. Na sessão 1, contas os da escola.</template>'
              '<p class="sala">Na sala: cada um escreve o seu número antes de alguém dizer o dele.</p></section>'
              f'<figure class="atol"><span class="campo"><img src="{ATOL["src"]}" width="{ATOL["w"]}" height="{ATOL["h"]}" alt="{e(ATOL["alt"])}" loading="lazy"></span>'
              f'<figcaption>{ATOL["tabela"]}</figcaption></figure>'
@@ -480,6 +524,7 @@ def pagina_entrada(L):
              + ''.join(f'<a href="{u}">{n}</a>' for _p, n, _a, u in PORTAS)
              + f'<a href="../../biblioteca/{BIB_ID}/">Biblioteca: Young</a></nav>'
              '<p class="nota">Piloto em revisão, escondido dos motores de busca. O que fazes fica só neste aparelho.</p></footer>')
+    corpo = LL.nq(corpo)  # 01/11/2026 (correção 2, diretor de arte): formas verbais com pronome sem quebra no hífen
     return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório a partir de James Webb Young (piloto).')
             + f'<body class="ideias"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main><script>{js}</script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
@@ -527,6 +572,7 @@ def pagina_guiao(L):
              '<p class="papel-cab"><button type="button" class="imprimir" onclick="window.print()">Imprimir</button><span class="pq">As sessões 3 a 7 entram quando estiverem prontas.</span></p>'
              + lados
              + '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../docente/">Para o docente →</a></p>')
+    corpo = LL.nq(corpo)
     return (cabeca(base, 'Guião | Ideias | Laboratório | Lente', 'O guião em papel das sessões de Ideias, no Laboratório: frente e verso por sessão (piloto).')
             + f'<body class="ideias guiao"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
@@ -567,11 +613,11 @@ def pagina_guia(L):
              + '<header class="abre"><p class="rotulo">Ideias, piloto</p><h1>Guia do docente</h1>'
              '<p class="lead">As sessões prontas em pormenor (tempos, materiais, o que fica escrito e a grelha /20 indicativa) e, antes delas, o quadro das sete sessões.</p>'
              '<p class="info">Piloto escondido dos motores de busca, sem ligação a partir do mapa, das portas nem da entrada do Laboratório, até o docente o ver.</p></header>'
-             f'<nav aria-label="Neste guia"><ul class="indice">{indice}</ul></nav>'
+             f'<nav class="indice-nav" aria-label="Neste guia"><ul class="indice">{indice}</ul></nav>'
              '<section class="sessao" id="antes"><h2>Antes de começar</h2>'
              '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos de James Webb Young (juntar material, trabalhá-lo na cabeça, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
              '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (Young aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
-             '<p class="pg"><b>O método de interpretação.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta: é o próprio Young quem o chama.</p>'
+             '<p class="pg"><b>O método de interpretação.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é o guia que volta: é o próprio Young quem o chama.</p>'
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
@@ -589,7 +635,7 @@ def pagina_guia(L):
         v = video_de(d)
         tempos = ''.join(f'<tr><td class="num">{e(m)}</td><td>{e(t)}</td></tr>' for m, t in g['tempos'])
         if v:
-            yt = (f'<p class="pg">{v["botao"]}. {v["cred"]} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a> (a lição inteira).</p>'
+            yt = (f'<p class="pg">{v["botao"]}. {g.get("video_cred", v["cred"])} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a> (a lição inteira).</p>'
                   f'<p class="pg"><b>Tarefa.</b> {v["tarefa"]}</p>'
                   '<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (ligação no cartão seguinte) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
         else:
@@ -612,6 +658,7 @@ def pagina_guia(L):
                   + '<h3>Ligações</h3><ul class="ligacoes">' + ''.join(f'<li><a href="{e(u)}">{it(t)}</a></li>' for t, u in g['ligacoes']) + '</ul>'
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{it(d["fontes"])}</p></section>')
     corpo += '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../guiao/">O guião →</a></p>'
+    corpo = LL.nq(corpo)
     return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e grelhas (piloto).')
             + f'<body class="ideias guia"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
@@ -673,10 +720,15 @@ def pagina_biblioteca():
             '<meta name="description" content="James Webb Young, Uma Técnica para Produzir Ideias (1940): os dois princípios em que assenta o livro, num excerto em tradução nossa.">'
             '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">'
             + css +
-            '<style>.bib-texto p.corte{text-align:center;color:var(--suave);letter-spacing:.2em}</style>'
+            # 01/11/2026 (correção 2, diretor de arte): o botão do tema acosta à barra (como nas páginas de «Ideias», sistema 6.1)
+            # em vez de flutuar por cima da coluna de texto (tapava «cada», «conhecimento», «uma», «lei» a 320 e 360 px). Só nesta
+            # página: o molde da família está em _interno/modelo/biblioteca.mjs, nas fontes (decisão 44, barra comum).
+            '<style>.bib-texto p.corte{text-align:center;color:var(--suave);letter-spacing:.2em}'
+            '.migalhas{display:flex;align-items:flex-start}.migalhas ol{flex:1 1 auto;min-width:0}.migalhas li{min-width:0}'
+            '.migalhas [aria-current]{max-width:min(62vw,100%)}.migalhas>[data-appearance-control]{margin-left:12px}</style>'
             '<link rel="stylesheet" href="../../assets/appearance.css?v=20261025-universal-1"><script src="../../assets/appearance.js?v=20261025-universal-1"></script></head>'
             f'<body data-texto="{BIB_ID}"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="{LENTE}"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li>'
-            f'<li><a href="{LENTE}biblioteca/">Biblioteca</a></li><li><span aria-current="page">{titulo}</span></li></ol></nav><main class="bib">\n'
+            f'<li><a href="{LENTE}biblioteca/">Biblioteca</a></li><li><span aria-current="page">{titulo}</span></li></ol><span data-appearance-control></span></nav><main class="bib">\n'
             f'<header class="p-cab"><p class="p-etiqueta"><a href="{LENTE}">Lente</a> · <a href="{LENTE}biblioteca/">Biblioteca</a></p><h1>{titulo}</h1>'
             '<p class="p-sub">James Webb Young, 1940, português (tradução nossa), 1 min de leitura</p>'
             '<p class="p-lead">Um livro curto de um publicitário norte-americano, que descreve em cinco passos como se chega a uma ideia. Aqui ficam os dois princípios em que assenta; o primeiro retoma uma ideia do sociólogo italiano Vilfredo Pareto, que o livro cita antes.</p></header>\n'

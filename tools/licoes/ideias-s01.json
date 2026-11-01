@@ -17,13 +17,13 @@
  "piloto": true,
  "seguinte": "../sessao-02/",
  "seguinteRotulo": "Sessão 2: O cocheiro",
- "fontes": "Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Os registos do auto de observação são inventados. Lidos a 31/10/2026.",
+ "fontes": "Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Dezassete degraus",
-   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. Guarda-o: antes do fim da aula, vais saber se acertaste.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola. É a primeira de sete sessões. No fim da sétima, terás seguido uma ideia tua da primeira nota até à última versão.</p>"
+   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola. É a primeira de sete sessões. No fim da sétima, terás seguido uma ideia tua da primeira nota até à última versão.</p>"
   },
   {
    "t": "ler",
@@ -104,7 +104,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "Um quadro para treinar o olhar",
-   "html": "<p>Amy E. Herman é historiadora de arte. Nesta lição do TED-Ed, explica porque é que analisar quadros pode preparar médicos, enfermeiros e polícias para investigar no mundo real. Um dos quadros é <i lang=\"en\">Time Transfixed</i>, do pintor belga René Magritte.</p><p class=\"pergunta-c\">Enquanto vês, faz duas colunas no caderno: o que está no quadro e o que lá não está, mas conta.</p><div class=\"yt\" data-yt=\"ubEadhXWwV4\" data-titulo=\"How art can help you analyze, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir><span>Ver: «<span lang=\"en\">How art can help you analyze</span>» (4 min 50 s)</span></button><p class=\"yt-cred\">TED-Ed, lição de Amy E. Herman. É em inglês: liga as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>"
+   "html": "<p>Amy E. Herman é historiadora de arte. Nesta lição do TED-Ed, explica porque é que analisar quadros pode preparar médicos, enfermeiros e polícias para investigar no mundo real. No resumo oficial, o exemplo é <i lang=\"en\">Time Transfixed</i>, do pintor belga René Magritte.</p><p class=\"pergunta-c\">Enquanto vês, faz duas colunas no caderno: o que está em cada quadro que o vídeo mostra e o que lá não está, mas conta.</p><div class=\"yt\" data-yt=\"ubEadhXWwV4\" data-titulo=\"How art can help you analyze, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir><span>Ver: «<span lang=\"en\">How art can help you analyze</span>» (4 min 50 s)</span></button><p class=\"yt-cred\">TED-Ed, lição de Amy E. Herman. É em inglês: ativa as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>"
   },
   {
    "t": "emparelhar",
@@ -129,8 +129,8 @@
      "O que se treina"
     ]
    ],
-   "f": "Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem se dirige e o que treina: o que se vê e o que não se vê.",
-   "fe": "Pergunta a cada elemento: é o que Herman defende, o caso que usa, para quem fala ou o que se aprende?",
+   "f": "Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve e o que se treina: o que se vê e o que não se vê.",
+   "fe": "Pergunta a cada elemento: é o que Herman defende, o caso que usa, a quem serve ou o que se treina?",
    "liga": [
     {
      "href": "https://ed.ted.com/lessons/how-art-can-help-you-analyze-amy-e-herman",
@@ -151,7 +151,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "O rapaz e a leitora da sina",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Faz como Herman: dois minutos em silêncio, a olhar. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Agora é a tua vez: dois minutos em silêncio, a olhar. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
   },
   {
    "t": "mapa",
@@ -194,11 +194,11 @@
    "t": "mapa",
    "g": "medalha",
    "rot": "Toca no quadro",
-   "p": "Segue a corrente que o rapaz traz ao peito, até à medalha. Toca nas mãos que a seguram.",
+   "p": "Segue a corrente que o rapaz traz ao peito, até à medalha. Toca nas mãos que seguram essa corrente.",
    "p2": "Onde estão as mãos que seguram a corrente da medalha do rapaz?",
    "o": [
     "o par de mãos ao centro",
-    "a mão de baixo da velha",
+    "a mão mais baixa da velha",
     "a mão aberta do rapaz",
     "a moeda entre os dedos"
    ],
@@ -223,7 +223,7 @@
    ],
    "rotulo": "Toca numa mão ou num objeto.",
    "rotulo2": "Toca outra vez, no sítio que queres.",
-   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"o par de mãos ao centro\"><circle class=\"halo\" cx=\"600\" cy=\"615\" r=\"40\"/><circle class=\"anel\" cx=\"600\" cy=\"615\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"a mão de baixo da velha\"><circle class=\"halo\" cx=\"712\" cy=\"582\" r=\"40\"/><circle class=\"anel\" cx=\"712\" cy=\"582\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"a mão aberta do rapaz\"><circle class=\"halo\" cx=\"556\" cy=\"486\" r=\"40\"/><circle class=\"anel\" cx=\"556\" cy=\"486\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"a moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g></svg>",
+   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"o par de mãos ao centro\"><circle class=\"halo\" cx=\"600\" cy=\"615\" r=\"40\"/><circle class=\"anel\" cx=\"600\" cy=\"615\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"a mão mais baixa da velha\"><circle class=\"halo\" cx=\"712\" cy=\"582\" r=\"40\"/><circle class=\"anel\" cx=\"712\" cy=\"582\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"a mão aberta do rapaz\"><circle class=\"halo\" cx=\"556\" cy=\"486\" r=\"40\"/><circle class=\"anel\" cx=\"556\" cy=\"486\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"a moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g></svg>",
    "f": "Junto à medalha, duas mãos seguram a corrente do rapaz. Que a estão a cortar é uma inferência: o quadro não mostra o fim do gesto. E repara para onde olha o rapaz enquanto isto acontece.",
    "fe": "Começa no ombro do rapaz e segue a corrente até à medalha, que fica pendurada mais abaixo, ao centro: quem lhe está a tocar?"
   },
@@ -250,14 +250,14 @@
      "Uma pergunta que fica por investigar."
     ]
    ],
-   "f": "Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica para investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
+   "f": "Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
    "fe": "Pergunta a cada frase: consigo apontá-la com o dedo no quadro? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."
   },
   {
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista factos, um de cada vez; o grupo escolhe dez que outro grupo possa confirmar e junta-lhes três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>"
+   "html": "<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista factos, um de cada vez; o grupo escolhe dez que outro grupo possa confirmar e <span class=\"nq\">junta-lhes</span> três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>"
   },
   {
    "t": "escolha",
@@ -343,7 +343,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p>Separaste o que se vê do que se conclui, num quadro e num lugar da escola: é o primeiro passo de Young, juntar material de olhos abertos. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio apontado à Lua mostrou que ela não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2:</b> repara num lugar a cinco minutos da escola por onde passas sem olhar e escreve-o no guião. A turma vai a um deles.</p>"
+   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p>Separaste o que se vê do que se conclui, num quadro e num lugar da escola: é o primeiro passo de Young, juntar material de olhos abertos. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio apontado à Lua mostrou que ela não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2:</b> repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
   }
  ]
 }

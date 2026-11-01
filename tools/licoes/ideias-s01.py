@@ -14,7 +14,7 @@
 #   biblioteca-young/texto.txt).
 # - Universidade Aalto, Diving into Radical Creativity, «Ideation» (parte pública):
 #   https://divingintoradicalcreativity.aalto.fi/sub-chapter/observing-andideation/ («The creative process starts with observation.»).
-import json, pathlib
+import importlib.util, json, pathlib
 
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 IMG = '../../../assets/laboratorio/ideias/'
@@ -39,17 +39,17 @@ HOLMES = (
  '<p>«Exatamente! Não observou. E, no entanto, viu. É isso que eu quero dizer. Ora, eu sei que são dezassete degraus, porque vi e observei.»</p></blockquote>'
  '<p class="fonte">Arthur Conan Doyle, «A Scandal in Bohemia», <i>The Strand Magazine</i>, julho de 1891. Tradução nossa.</p>')
 HERMAN = (
- '<p>Amy E. Herman é historiadora de arte. Nesta lição do TED-Ed, explica porque é que analisar quadros pode preparar médicos, enfermeiros e polícias para investigar no mundo real. Um dos quadros é <i lang="en">Time Transfixed</i>, do pintor belga René Magritte.</p>'
- '<p class="pergunta-c">Enquanto vês, faz duas colunas no caderno: o que está no quadro e o que lá não está, mas conta.</p>'
+ '<p>Amy\u00a0E.\u00a0Herman é historiadora de arte. Nesta lição do TED-Ed, explica porque é que analisar quadros pode preparar médicos, enfermeiros e polícias para investigar no mundo real. No resumo oficial, o exemplo é <i lang="en">Time Transfixed</i>, do pintor belga René Magritte.</p>'
+ '<p class="pergunta-c">Enquanto vês, faz duas colunas no caderno: o que está em cada quadro que o vídeo mostra e o que lá não está, mas conta.</p>'
  '<div class="yt" data-yt="ubEadhXWwV4" data-titulo="How art can help you analyze, TED-Ed">'
- '<button type="button" class="yt-abrir" data-yt-abrir><span>Ver: «<span lang="en">How art can help you analyze</span>» (4 min 50 s)</span></button>'
- '<p class="yt-cred">TED-Ed, lição de Amy E. Herman. É em inglês: liga as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+ '<button type="button" class="yt-abrir" data-yt-abrir><span>Ver: «<span lang="en">How art can help you analyze</span>» (4\u00a0min\u00a050\u00a0s)</span></button>'
+ '<p class="yt-cred">TED-Ed, lição de Amy\u00a0E.\u00a0Herman. É em inglês: ativa as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
 LATOUR = (
  f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}latour-leitora-da-sina.webp" '
  'alt="Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres." loading="lazy"></span>'
- '<figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. '
+ '<figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. '
  '<a href="https://www.metmuseum.org/art/collection/search/436838">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure>'
- '<p>Faz como Herman: dois minutos em silêncio, a olhar. Ainda não concluas nada.</p>'
+ '<p>Agora é a tua vez: dois minutos em silêncio, a olhar. Ainda não concluas nada.</p>'
  '<p class="pergunta-c">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>')
 
 
@@ -66,7 +66,7 @@ def quadro(zonas, rotulo):
 # Zonas (nome, centro): conferidas a 31/10 sobre a imagem, com as mãos ampliadas.
 CORDAO = [('a mão do punho de renda', (240, 645)), ('a mão do rapaz, na anca', (278, 515)),
           ('a moeda entre os dedos', (582, 418)), ('o laço da faixa à cintura', (431, 481))]
-MEDALHA = [('o par de mãos ao centro', (600, 615)), ('a mão de baixo da velha', (712, 582)),
+MEDALHA = [('o par de mãos ao centro', (600, 615)), ('a mão mais baixa da velha', (712, 582)),
            ('a mão aberta do rapaz', (556, 486)), ('a moeda entre os dedos', (582, 418))]
 NA_AULA = (
  '<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista factos, um de cada vez; o grupo escolhe dez que outro grupo possa confirmar e junta-lhes três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p>'
@@ -81,7 +81,7 @@ LEVAR = (
  '<li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul>'
  '<p><b>No Laboratório:</b> <a href="../../galileu/">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio apontado à Lua mostrou que ela não é lisa.</p>'
  '<p><b>Para aprofundar:</b> <a href="../../../investigar/passo-02/">Como se investiga, passo 2, «Olhar e registar»</a>.</p>'
- '<p><b>Para a sessão 2:</b> repara num lugar a cinco minutos da escola por onde passas sem olhar e escreve-o no guião. A turma vai a um deles.</p>')
+ '<p><b>Para a sessão 2:</b> repara num lugar a cinco minutos da escola por onde passas sem olhar e escreve-o no guião. A turma pode ir a um deles.</p>')
 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Dezassete degraus","html":ABRE},
@@ -103,8 +103,8 @@ cartoes = [
  {"t":"ler","rot":"Ver","titulo":"Um quadro para treinar o olhar","html":HERMAN},
  {"t":"emparelhar","g":"resumo","p":"Do resumo oficial da lição de Herman tirámos quatro elementos. Liga cada um ao papel que tem.","p2":"No resumo oficial da lição de Herman, que papel tem cada um destes elementos?",
   "pares":[["Analisar arte prepara para investigar no mundo real.","A tese"],["Médicos, enfermeiros e polícias.","A quem serve"],["_Time Transfixed_, de René Magritte.","O exemplo"],["O que se vê e o que não se vê.","O que se treina"]],
-  "f":"Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem se dirige e o que treina: o que se vê e o que não se vê.",
-  "fe":"Pergunta a cada elemento: é o que Herman defende, o caso que usa, para quem fala ou o que se aprende?",
+  "f":"Ler um vídeo como se lê um texto é procurar a tese (analisar arte prepara para investigar), o exemplo que a mostra (um quadro de Magritte), a quem serve e o que se treina: o que se vê e o que não se vê.",
+  "fe":"Pergunta a cada elemento: é o que Herman defende, o caso que usa, a quem serve ou o que se treina?",
   "liga":[{"href":TEDED,"t":"A lição no TED-Ed, com o resumo oficial (em inglês)"}]},
  {"t":"vf","g":"invisivel","p":"Para Herman, o que não está num quadro também pode contar como pista.","p2":"Segundo o resumo oficial da lição de Herman, o que falta numa imagem também pode contar.","v":True,
   "f":"O resumo oficial da lição fala de treinar a atenção ao que se vê e ao que não se vê. Numa investigação, o que falta (uma testemunha, uma sombra, um som) também é informação.",
@@ -115,14 +115,14 @@ cartoes = [
   "fig":quadro(CORDAO,"La Tour, A leitora da sina: quatro zonas para tocar"),
   "f":"À esquerda, junto à cintura do rapaz, a mão da mulher de mangas claras segura um cordão com uma borla. O que vem preso ao cordão não se vê: dizer que é a bolsa dele já é uma inferência.",
   "fe":"Procura do lado esquerdo do quadro, à altura da cintura do rapaz, e segue cada mão até ao ombro de quem a tem: há uma que não é dele."},
- {"t":"mapa","g":"medalha","rot":"Toca no quadro","p":"Segue a corrente que o rapaz traz ao peito, até à medalha. Toca nas mãos que a seguram.","p2":"Onde estão as mãos que seguram a corrente da medalha do rapaz?",
+ {"t":"mapa","g":"medalha","rot":"Toca no quadro","p":"Segue a corrente que o rapaz traz ao peito, até à medalha. Toca nas mãos que seguram essa corrente.","p2":"Onde estão as mãos que seguram a corrente da medalha do rapaz?",
   "o":[n for n, _ in MEDALHA],"c":0,"centros":[list(c) for _, c in MEDALHA],"rotulo":"Toca numa mão ou num objeto.","rotulo2":"Toca outra vez, no sítio que queres.",
   "fig":quadro(MEDALHA,"La Tour, A leitora da sina: quatro zonas para tocar"),
   "f":"Junto à medalha, duas mãos seguram a corrente do rapaz. Que a estão a cortar é uma inferência: o quadro não mostra o fim do gesto. E repara para onde olha o rapaz enquanto isto acontece.",
   "fe":"Começa no ombro do rapaz e segue a corrente até à medalha, que fica pendurada mais abaixo, ao centro: quem lhe está a tocar?"},
  {"t":"emparelhar","g":"estatuto","p":"Liga cada frase sobre o quadro ao que ela é.","p2":"Que tipo de frase é cada uma destas, sobre o quadro?",
   "pares":[["A velha segura uma moeda entre os dedos.","Um facto: vê-se no quadro."],["O rapaz está a ser roubado.","Uma inferência: junta várias pistas."],["As quatro mulheres combinaram tudo antes.","Uma hipótese: o quadro não a prova."],["Porque é que o rapaz não olha para as mãos?","Uma pergunta que fica por investigar."]],
-  "f":"Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica para investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
+  "f":"Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
   "fe":"Pergunta a cada frase: consigo apontá-la com o dedo no quadro? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."},
  {"t":"ler","rot":"Na aula","titulo":"O auto de observação","html":NA_AULA},
  {"t":"escolha","g":"confirmar","p":"Três registos inventados de um auto de observação. Qual deles é um facto que outro grupo possa ir confirmar?","p2":"Registos inventados, sobre uma escada da escola: que registo pode outro grupo ir confirmar?",
@@ -146,13 +146,20 @@ cartoes = [
   "f":"Primeiro olhar, depois registar, depois concluir. O último passo é o do detetive honesto: antes de acreditares na tua inferência, procura o que a deitaria abaixo."},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
+# 01/11/2026 (correção 2, diretor de arte): nos cartões de ler, as formas verbais com pronome não se partem no hífen
+# (nq() de tools/licoes_lente.py; a regra .nq está em assets/licoes/laboratorio.css)
+_spec = importlib.util.spec_from_file_location('licoes_lente', pathlib.Path(__file__).resolve().parents[1] / 'licoes_lente.py')
+LL = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(LL)
+for c in cartoes:
+    if c['t'] == 'ler':
+        c['html'] = LL.nq(c['html'])
 dados = {
  "id":"ideias-s01","familia":"laboratorio","chave":"epi-lab-ideias-s01","versao":"2026-10-31-1",
  "marca":"Ideias","titulo":"Sessão 1: Ver ou observar?","h1":"Laboratório, Ideias, sessão 1: Ver ou observar?",
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
  "saida":"narrativas/ideias/sessao-01/index.html","piloto":True,
  "seguinte":"../sessao-02/","seguinteRotulo":"Sessão 2: O cocheiro",
- "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Os registos do auto de observação são inventados. Lidos a 31/10/2026.",
+ "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy\u00a0E.\u00a0Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

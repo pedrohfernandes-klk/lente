@@ -303,5 +303,42 @@ class Imagens(unittest.TestCase):
         self.assertIn('<b data-feitas>0</b> de 16 textos lidos', lista)
 
 
+class SegundaRevisao(unittest.TestCase):
+    """30/10/2026: segunda correção (revisões de 01/11 do diretor de arte, do revisor de pt-PT e do verificador de factos)."""
+
+    def test_fontes_consultadas(self):
+        # «Lidos a» não concordava com «Fontes» e colava-se aos casos inventados
+        for p in FONTES:
+            f = json.loads(p.read_text('utf-8'))['fontes']
+            self.assertNotIn('Lidos a', f, p.name)
+            self.assertIn('Consultadas a 31/10/2026.', f, p.name)
+
+    def test_formas_com_pronome_sem_quebra_no_hifen(self):
+        # nq() é idempotente: se não muda nada, todas as formas verbais com pronome do texto já estão numa <span class="nq">
+        for p in FONTES:
+            for c in json.loads(p.read_text('utf-8'))['cartoes']:
+                if c['t'] == 'ler':
+                    self.assertEqual(L.nq(c['html']), c['html'], p.name + ' ' + (c.get('titulo') or c.get('rot') or ''))
+        for rel in ('index.html', 'guiao/index.html', 'docente/index.html'):
+            s = (PILOTO / rel).read_text('utf-8')
+            corpo = re.search(r'<main id="conteudo">(.*)</main>', s, re.S).group(1)
+            self.assertEqual(L.nq(corpo), corpo, rel)
+        self.assertIn('Amy\u00a0E.\u00a0Herman', (PILOTO / 'index.html').read_text('utf-8'))
+
+    def test_marca_da_barra_e_cidadania_igual(self):
+        # no Laboratório, o nome da marca num <span> (escondido abaixo de 400 px); na Cidadania, como estava
+        for p in FONTES:
+            d = json.loads(p.read_text('utf-8'))
+            self.assertIn('<span class="c-marca-t">Ideias</span></a>', (ROOT / d['saida']).read_text('utf-8'))
+        for p in sorted((ROOT / 'tools/licoes').glob('cidadania-*.json')):
+            d = json.loads(p.read_text('utf-8'))
+            self.assertNotIn('c-marca-t', (ROOT / d['saida']).read_text('utf-8'), p.name)
+        css = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
+        self.assertIn('.licao-laboratorio .c-marca-t{position:absolute', css)
+
+    def test_tema_do_young_na_barra(self):
+        self.assertIn('</ol><span data-appearance-control></span></nav>', BIB.read_text('utf-8'))
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -10,7 +10,7 @@
 #   d'inconnu», «en quelques phrases», o cavalo de fiacre «par un seul mot», «qu'un mot pour l'exprimer»).
 # - Eugène Atget, Kiosque et fiacres, Paris, Musée Carnavalet, PH1179: página da Paris Musées, «CC0 Paris Musées / Musée
 #   Carnavalet – Histoire de Paris» (imagem pm_diaporama_zoom, 804 × 1080, em assets/laboratorio/ideias/).
-import json, pathlib
+import importlib.util, json, pathlib
 
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 IMG = '../../../assets/laboratorio/ideias/'
@@ -19,12 +19,12 @@ MAUP = 'https://www.gutenberg.org/ebooks/11131'
 ABRE = (
  '<p class="pergunta-c">O que distingue uma coisa de todas as outras iguais a ela?</p>'
  '<p>Hoje a turma olha para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou o mesmo exercício da janela ou numa fotografia de rua).</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')
 DECIDE = (
  '<p>Uma árvore da tua rua é só uma árvore?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
  '<details class="lado"><summary>A razão de quem diz que sim</summary><div><p>Há milhares de árvores iguais na cidade. Olhar meia hora para uma é perder meia hora.</p></div></details>'
- '<details class="lado"><summary>A razão de Flaubert</summary><div><p>O escritor francês Guy de Maupassant resume assim uma lição do seu mestre, o romancista Gustave Flaubert: «Para descrever um fogo que arde e uma árvore numa planície, fiquemos diante desse fogo e dessa árvore até que deixem de se parecer, para nós, com qualquer outra árvore e com qualquer outro fogo» (tradução nossa).</p></div></details>'
+ '<details class="lado"><summary>A razão de quem diz que não</summary><div><p>O escritor francês Guy de Maupassant resume assim uma lição do seu mestre, o romancista Gustave Flaubert: «Para descrever um fogo que arde e uma árvore numa planície, fiquemos diante desse fogo e dessa árvore até que deixem de se parecer, para nós, com qualquer outra árvore e com qualquer outro fogo» (tradução nossa).</p></div></details>'
  '<details class="lado"><summary>Uma objeção</summary><div><p>Mesmo que as diferenças existam, para que servem a quem quer escrever ou criar?</p></div></details>'
  '<p>Não há resposta certa neste cartão. Guarda a tua posição: voltas a ela no fim.</p>')
 YOUNG = (
@@ -35,12 +35,12 @@ YOUNG = (
 MAUPASSANT = (
  '<p>Maupassant contou a história em 1888, no prefácio do romance <i>Pierre et Jean</i>, onde resume assim a lição do mestre, Gustave Flaubert:</p>'
  '<blockquote><p>Trata-se de olhar para tudo o que se quer exprimir durante tempo suficiente e com atenção suficiente para lhe descobrir um aspeto que ninguém tenha visto nem dito.</p></blockquote>'
- '<p>Flaubert obrigava-o a exprimir, em poucas frases, um ser ou um objeto de maneira a distingui-lo de todos os outros da mesma espécie. E dizia-lhe:</p>'
- '<blockquote><p>«Quando passa diante de um merceeiro sentado à porta, diante de um porteiro que fuma cachimbo, diante de uma praça de fiacres, […] faça-me ver, com uma só palavra, em que é que um cavalo de fiacre não se parece com os cinquenta outros que o seguem e o precedem.»</p></blockquote>'
+ '<p>Flaubert obrigava-o a exprimir, em poucas frases, um ser ou um objeto, até o distinguir de todos os outros da mesma espécie. E dizia-lhe:</p>'
+ '<blockquote><p>«Quando passa diante de um merceeiro sentado à porta, diante de um porteiro que fuma cachimbo, diante de uma praça de fiacres, […] faça-me ver, com uma só palavra, em que é que um cavalo de fiacre não se parece com os outros cinquenta que o seguem e o precedem.»</p></blockquote>'
  '<p class="fonte">Guy de Maupassant, «Le Roman», prefácio de <i>Pierre et Jean</i>, 1888. Tradução nossa.</p>')
 ATGET = (
  f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}atget-quiosque-fiacres.webp" '
- 'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque de ferro e vidro com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy"></span>'
+ 'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy"></span>'
  '<figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17 cm. '
  '<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure>'
  '<p>Uns dez anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
@@ -57,7 +57,7 @@ LEVAR = (
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
  '<li>Uma palavra exata vale mais do que três bonitas.</li></ul>'
  '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
- '<p><b>Para a sessão 3:</b> junta ao teu material dez notas de material geral: coisas que sabes bem e não vêm da escola (um desporto, uma receita, uma canção, um ofício da família), uma por nota, com um pormenor que só tu sabes.</p>')
+ '<p><b>Para a sessão 3:</b> junta dez notas de material geral, sobre coisas que sabes bem e que não vêm da escola (um desporto, uma receita, uma canção, um ofício da família), uma por nota, com um pormenor que só tu sabes.</p>')
 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Cinquenta cavalos","html":ABRE},
@@ -81,7 +81,7 @@ cartoes = [
   "o":["Contou-o à sua maneira e guardou o essencial.","Inventou-o e atribuiu-o a um escritor famoso.","Copiou Maupassant palavra por palavra."],"c":0,
   "f":"O conselho existe e está no prefácio de Maupassant; Young conta-o à sua maneira, sem dizer onde o leu. Uma testemunha que erra num pormenor não é uma testemunha que mente. Quando uma citação te interessa, vai à fonte.",
   "fe":["","O conselho não é inventado: está no prefácio de _Pierre et Jean_, de 1888.","As palavras não são as mesmas: o cavalo passou a cocheiro, e o merceeiro e o porteiro desapareceram."]},
- {"t":"sublinhar","g":"cedo","p":"Young explica onde quase todos falham. Toca nas três palavras que o dizem.","p2":"Em que momento falhamos, segundo Young? Toca nas três palavras.",
+ {"t":"sublinhar","g":"cedo","p":"Na frase de Young, três palavras dizem como é que a maioria de nós falha. Toca nelas.","p2":"Em que momento falhamos, segundo Young? Toca nas três palavras.",
   "frase":"A maioria de nós interrompe demasiado cedo o processo que visa esse conhecimento.","certas":[4,5,6],
   "f":"As três palavras são **interrompe demasiado cedo**: paramos de olhar quando a diferença ainda não apareceu. É o contrário da «longa paciência» que Flaubert pedia a Maupassant.",
   "fe":"Procura o verbo que diz o que fazemos ao processo e as duas palavras que dizem quando."},
@@ -97,9 +97,9 @@ cartoes = [
  {"t":"escolha","g":"fila","p":"Caso inventado: cinco chaves numa mesa. Qual destas descrições passaria na fila de reconhecimento?","p2":"Caso inventado: que descrição permitiria a um estranho escolher a chave certa entre cinco?",
   "o":["A do dente do meio gasto até brilhar.","Uma chave prateada, bonita e útil.","A que abre a porta da minha casa."],"c":0,
   "f":"Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e a porta de casa é verdade, mas não se vê na mesa.",
-  "fe":["","Prateadas e úteis são quase todas. «Bonita» é uma opinião: ninguém reconhece uma chave por ela.","É verdade, mas quem está na fila não vê a tua porta. Uma descrição para reconhecer tem de mostrar o que está à vista."]},
+  "fe":["","Prateadas e úteis são quase todas. «Bonita» é uma opinião: ninguém reconhece uma chave por ela.","É verdade, mas quem procura a chave na mesa não vê a tua porta. Uma descrição para reconhecer tem de mostrar o que está à vista."]},
  {"t":"vf","g":"exata","p":"Para distinguir uma coisa, uma palavra rara vale mais do que a palavra exata.","p2":"Para distinguir uma coisa, mais vale uma palavra difícil do que a palavra certa.","v":False,
-  "f":"Maupassant resume assim as ideias de Flaubert sobre o estilo: «seja qual for a coisa que se quer dizer, só há uma palavra para a exprimir, um verbo para a animar e um adjetivo para a qualificar» (tradução nossa). Exata, não rara.",
+  "f":"Maupassant resume assim as ideias de Flaubert sobre o estilo: «seja qual for a coisa que se queira dizer, só há uma palavra para a exprimir, um verbo para a animar e um adjetivo para a qualificar» (tradução nossa). Exata, não rara.",
   "fe":"Uma palavra rara chama a atenção para si; uma palavra exata chama a atenção para a coisa. Na fila de reconhecimento, qual delas ajuda?"},
  {"t":"completar","g":"materias","p":"Completa a ideia de Young sobre o que é preciso juntar.","p2":"Completa: de que tipos são as matérias-primas de uma ideia, segundo Young?",
   "frase":"«As matérias-primas que é necessário recolher são de dois tipos: [1] e [2].»",
@@ -112,16 +112,23 @@ cartoes = [
   "fe":["","Pode ser verdade, mas não é isso que faz da fila uma prova. O que conta é testar a linha em quem não sabe o que descreves.","A fila não serve para igualar notas. Serve para saber se a linha funciona sem o autor ao lado a explicar."]},
  {"t":"ordenar","g":"viagem","p":"Põe por ordem a viagem do conselho, de Paris até ti.","p2":"Que caminho fez o conselho de Flaubert até chegar a esta sessão?",
   "passos":["Flaubert dá o conselho ao jovem Maupassant.","Maupassant conta-o no prefácio de 1888.","Young conta-o à sua maneira, em 1940.","Lês a versão de Young, em tradução nossa."],
-  "f":"Cada etapa da viagem mudou alguma coisa no conselho. Por isso, quando uma citação te interessa, segue-a até à fonte."},
+  "f":"Em cada etapa da viagem, o conselho pode mudar. Por isso, quando uma citação te interessa, segue-a até à fonte."},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
+# 01/11/2026 (correção 2, diretor de arte): nos cartões de ler, as formas verbais com pronome não se partem no hífen
+# (nq() de tools/licoes_lente.py; a regra .nq está em assets/licoes/laboratorio.css)
+_spec = importlib.util.spec_from_file_location('licoes_lente', pathlib.Path(__file__).resolve().parents[1] / 'licoes_lente.py')
+LL = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(LL)
+for c in cartoes:
+    if c['t'] == 'ler':
+        c['html'] = LL.nq(c['html'])
 dados = {
  "id":"ideias-s02","familia":"laboratorio","chave":"epi-lab-ideias-s02","versao":"2026-10-31-1",
  "marca":"Ideias","titulo":"Sessão 2: O cocheiro","h1":"Laboratório, Ideias, sessão 2: O cocheiro",
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
  "saida":"narrativas/ideias/sessao-02/index.html","piloto":True,
  "seguinte":"../","seguinteRotulo":"As sete sessões",
- "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). O caso das chaves é inventado. Lidos a 31/10/2026.",
+ "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

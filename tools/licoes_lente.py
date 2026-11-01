@@ -188,6 +188,23 @@ def esc_it(s):
     return ITALICO.sub(r'\1<i>\2</i>', esc(s))
 
 
+# 01/11/2026 (correção 2 do coração do Laboratório, diretor de arte): o navegador parte a linha no hífen de uma forma verbal
+# com pronome («largá-|lo», «subiu-|lhe») sem repetir o hífen na linha seguinte, como manda o AO90 (base XX). nq() envolve
+# essas formas em <span class="nq"> (white-space:nowrap no CSS da família), só no texto e nunca dentro das etiquetas nem
+# duas vezes. Usam-na o Laboratório (tools/licoes/ideias-sNN.py, nos cartões de ler, e tools/ideias_piloto.py); a Cidadania
+# não a chama, e as suas páginas ficam iguais byte a byte.
+NQ_RE = re.compile(r'(?<![\w-])([^\W\d_]+(?:-(?:lo|la|los|las|lhe|lhes|se|me|te|nos|vos|o|a|os|as|no|na|nas))+'
+                   r'(?:-(?:á|ás|ão|ei|emos|eis|ia|ias|íamos|íeis|iam))?)(?![\w-])')
+
+
+def nq(s):
+    partes = re.split(r'(<[^>]+>)', s)
+    for i in range(0, len(partes), 2):
+        if not (i and partes[i - 1] == '<span class="nq">'):
+            partes[i] = NQ_RE.sub(r'<span class="nq">\1</span>', partes[i])
+    return ''.join(partes)
+
+
 def _menu_cidadania(d, mod):
     return (
         f'<div class="casca-menu" data-c-painel hidden><div class="c-menu-in" role="dialog" aria-label="Menu"><div class="c-menu-cab"><p>Cidadania, módulo {mod["n"]}<br>{esc(mod["nome"])}</p>'
@@ -240,6 +257,10 @@ def pagina(d):
     titulo = (f'{esc(d["titulo"])} | {esc(mod["nome"])} | Laboratório | Lente' if lab else f'{esc(d["titulo"])} · Cidadania · Lente')
     marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar a {esc(mod["nome"])}">' if lab
              else f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar ao módulo {mod["n"]} de Cidadania">')
+    # 01/11/2026 (correção 2 do coração do Laboratório, diretor de arte): no Laboratório, o nome da marca vai num <span>, que
+    # assets/licoes/laboratorio.css esconde abaixo de 400 px («Ideias» tem 81 px e empurrava o botão Menu para fora do ecrã a
+    # 320 e 360 px); o aria-label continua a dizer o nome. A Cidadania fica como estava, byte a byte.
+    marca_t = f'<span class="c-marca-t">{esc(d["marca"])}</span>' if lab else esc(d['marca'])
     return (
         '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         f'<title>{titulo}</title>'
@@ -251,7 +272,7 @@ def pagina(d):
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
         f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
-        f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{esc(d["marca"])}</a>'
+        f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{marca_t}</a>'
         '<span class="c-num" data-c-num></span><button type="button" class="c-barra" data-c-barra aria-label="Ver os cartões já feitos" disabled><svg viewBox="0 0 1 10" preserveAspectRatio="none" aria-hidden="true"></svg></button>'
         '<span class="c-modo" data-c-modo hidden></span><button type="button" class="c-ic" data-c-como aria-label="Como se faz" title="Como se faz" hidden><span class="c-roda">?</span></button>'
         '<button type="button" class="c-ic" data-c-som aria-pressed="false" aria-label="Som" title="Som ligado ou desligado"><span class="c-roda">♪</span></button>'

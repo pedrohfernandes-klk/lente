@@ -86,9 +86,11 @@ async function responder(p,x){
    assert(mh<=60,pag+': a barra em mais de uma linha a '+w+' px ('+mh+' px)');assert.deepEqual(erros,[]);await ctx.close()}
   {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',320,640,'light',{content:'('+prep+')('+JSON.stringify(FEITA1)+')'});
    const bt=await p.locator('[data-p-botao]').boundingBox();assert(bt.y+bt.height<=640,'com progresso, «Continuar» fora do primeiro ecrã a 320 × 640 ('+(bt.y+bt.height)+')');assert.deepEqual(erros,[]);await ctx.close()}
-  for(const [w,h] of [[360,740],[390,844]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',w,h,'light');
+  // 30/10/2026: segunda correção (diretor de arte, 01/11): abaixo de 380 px o gesto passa a uma coluna (os rótulos partiam-se
+  // palavra a palavra); a 390 px continua numa linha
+  for(const [w,h,filas] of [[360,740,3],[390,844,1]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',w,h,'light');
    const tops=await p.evaluate(()=>[...new Set([...document.querySelectorAll('[data-gesto] button[data-op]')].map(x=>Math.round(x.getBoundingClientRect().top)))].length);
-   assert.equal(tops,1,'o gesto em mais de uma linha a '+w+' px');
+   assert.equal(tops,filas,'o gesto em '+tops+' filas a '+w+' px (esperadas '+filas+')');
    await p.evaluate(()=>document.querySelectorAll('[data-gesto] button[data-op]')[1].click());await p.waitForTimeout(900);
    const r=await p.evaluate(()=>document.querySelector('[data-resposta]').getBoundingClientRect().bottom);assert(r<=h,'a resposta do gesto cortada a '+w+' × '+h+' ('+Math.round(r)+')');
    assert.deepEqual(erros,[]);await ctx.close()}
@@ -104,4 +106,43 @@ async function responder(p,x){
    const pdf=(await p.pdf({format:'A4',printBackground:true,preferCSSPageSize:true})).toString('latin1');const pags=(pdf.match(/\/Type\s*\/Page[^s]/g)||[]).length;
    assert.equal(pags,n,pag+': '+pags+' páginas A4 (esperadas '+n+')');await ctx.close()}
   console.log('PASS correções da revisão: barra numa linha, «Continuar» a 320 × 640, gesto e resposta, projeção, guia, 4 + 8 páginas A4')}
+  // 6. 30/10/2026: as correções da segunda revisão (01/11): nas lições, a barra de cima cabe a 320 e 360 px (o botão Menu saía do
+ // ecrã) e o botão Projetar some na projeção; o gesto numa coluna a 320 px; as formas verbais com pronome sem quebra no hífen;
+ // as imagens que se observam maiores; na página do Young, o tema na barra e não por cima do texto; no guia, o índice à direita
+ // a partir de 1100 px sem tapar o conteúdo, e em papel sem o índice e com o título de cada secção junto do texto
+ {for(const f of ['ideias-s01.json','ideias-s02.json']){const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes',f),'utf8'));const url=base+d.saida.replace(/index\.html$/,'');
+   for(const w of [320,360]){const {ctx,p,erros}=await abrir(b,url,w,700,'dark');
+    const fora=await p.evaluate(()=>[...document.querySelectorAll('.casca-topo a,.casca-topo button')].filter(e=>e.offsetParent!==null&&e.getBoundingClientRect().right>innerWidth+0.5).map(e=>e.getAttribute('aria-label')||e.textContent.trim()));
+    assert.deepEqual(fora,[],d.id+': controlos da barra fora do ecrã a '+w+' px');
+    const m=await p.evaluate(()=>{const r=document.querySelector('.c-marca').getBoundingClientRect();return [r.width,r.height]});assert(m[0]>=44&&m[1]>=44,d.id+': a marca com '+m.join('×'));
+    assert.deepEqual(erros,[]);await ctx.close()}
+   const q=await abrir(b,url+'?projetar=1',1366,768,'light');await q.p.waitForTimeout(300);
+   assert.equal(await q.p.evaluate(()=>{const l=document.querySelector('.epi-projection-launcher');return l?getComputedStyle(l).display:'none'}),'none',d.id+': o botão Projetar na projeção');
+   assert.deepEqual(q.erros,[]);await q.ctx.close()}
+  {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',320,640,'light');
+   const g=await p.evaluate(()=>[...document.querySelectorAll('[data-gesto] button[data-op]')].map(x=>{const r=x.getBoundingClientRect();return [Math.round(r.left),Math.round(r.height)]}));
+   assert(g.every(x=>x[0]===g[0][0]&&x[1]<=52),'o gesto a 320 px numa coluna, cada botão numa linha: '+JSON.stringify(g));
+   await p.evaluate(()=>document.querySelectorAll('[data-gesto] button[data-op]')[1].click());await p.waitForTimeout(300);
+   assert.equal(await p.locator('[data-resposta] .nq').count(),1,'a resposta do gesto com «subiu-lhe» sem quebra');
+   const bt=await p.locator('[data-p-botao]').boundingBox();assert(bt.y+bt.height<=640,'o botão «Começar» fora do primeiro ecrã a 320 × 640');
+   assert.deepEqual(erros,[]);await ctx.close()}
+  for(const pag of ['narrativas/ideias/','narrativas/ideias/guiao/','narrativas/ideias/docente/'])for(const w of [320,390,1366]){const {ctx,p}=await abrir(b,base+pag,w,800,'light');
+   const q=await p.evaluate(()=>{const out=[];const tw=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);let n;
+    while(n=tw.nextNode()){if(!n.parentElement||n.parentElement.closest('.nq'))continue;const re=/[a-zà-ÿ]-(?:lo|la|los|las|lhe|lhes|se|me|te|nos|vos|o|a|os|as)(?![a-zà-ÿ-])/gi;if(re.test(n.textContent))out.push(n.textContent.trim().slice(0,40))}return out});
+   assert.deepEqual(q,[],pag+': forma verbal com pronome fora de .nq a '+w+' px');await ctx.close()}
+  for(const [f,n] of [['ideias-s02.json',11]]){const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes',f),'utf8'));
+   const {ctx,p}=await abrir(b,base+d.saida.replace(/index\.html$/,''),1366,900,'light');
+   for(let i=0;i<n-1;i++){const x=d.cartoes[i];if(x.t!=='ler'){const txt=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');const c=d.cartoes.filter(y=>y.t!=='ler'&&[y.p,y.p2].some(t=>t&&txt.includes(vis(t).slice(0,50))));await responder(p,c.length===1?c[0]:x)}await seguinte(p)}
+   const h=await p.evaluate(()=>{const im=[...document.querySelectorAll('#baralho img')].find(i=>i.offsetParent!==null);return im?im.getBoundingClientRect().height:0});
+   assert(h>=500,'a fotografia de Atget com '+Math.round(h)+' px de altura a 1366 × 900 (era 361)');await ctx.close()}
+  for(const w of [320,390]){const {ctx,p,erros}=await abrir(b,base+'biblioteca/young-tecnica-1940/',w,700,'light');
+   const t=await p.evaluate(()=>{const e=document.querySelector('.epi-appearance-toggle');return e?{naBarra:!!e.closest('nav.migalhas'),flutua:!!e.closest('[data-appearance-floating]')}:null});
+   assert(t&&t.naBarra&&!t.flutua,'Young: o botão do tema na barra a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/docente/',1366,900,'light');await p.evaluate(()=>window.scrollTo(0,4000));await p.waitForTimeout(300);
+   const r=await p.evaluate(()=>{const nav=document.querySelector('nav.indice-nav');const nr=nav.getBoundingClientRect();const sobre=[...document.querySelectorAll('main > section, main > header')].filter(e=>{const q=e.getBoundingClientRect();return q.right>nr.left&&q.left<nr.right&&q.bottom>nr.top&&q.top<nr.bottom}).length;return {pos:getComputedStyle(nav).position,top:Math.round(nr.top),sobre}});
+   assert.equal(r.pos,'sticky','guia: o índice à direita');assert(r.top>=0&&r.top<=40,'guia: o índice à vista depois de rolar ('+r.top+')');assert.equal(r.sobre,0,'guia: o índice por cima do conteúdo');
+   await p.emulateMedia({media:'print'});assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('ul.indice')).display),'none','guia: o índice em papel');
+   assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('#sequencia')).breakBefore),'page','guia: «A sequência» abre página');
+   assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS segunda revisão: barra das lições a 320 e 360 px, Projetar na projeção, gesto numa coluna a 320 px, nenhuma forma com pronome partida no hífen, Atget maior, tema do Young na barra, índice do guia')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

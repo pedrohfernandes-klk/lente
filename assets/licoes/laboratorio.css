@@ -39,3 +39,14 @@ body.licao-laboratorio .casca-folha .c-veredito .c-pts{color:var(--tinta)}
 .licao-laboratorio .mapa-q .op-m:focus-visible circle.halo{fill:none;stroke:var(--papel)}
 .licao-laboratorio .mapa-q .op-m:focus-visible circle.anel{stroke:var(--vermelho);stroke-dasharray:none;stroke-width:5px}
 @media (prefers-reduced-motion:reduce){.licao-laboratorio .jogo .mapa-q svg image{transition:none}}
+/* 01/11/2026 (correção 2, diretor de arte): a barra de cima cabe a 320 e a 360 px. Abaixo de 400 px, o nome da marca
+   («Ideias», 81 px) fica só para o leitor de ecrã (o aria-label «Voltar a Ideias» também o diz) e a marca é a casa, num alvo
+   de 44 × 44; o botão Menu deixa de sair do ecrã (estava em x = 299 a 343 a 320 px). */
+@media (max-width:399px){.licao-laboratorio .c-marca-t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.licao-laboratorio .c-marca{min-width:44px;justify-content:center}.licao-laboratorio .c-marca .c-casa{margin-right:0}}
+/* 01/11/2026 (correção 2, diretor de arte): as imagens que se observam (La Tour, Atget) maiores do que o limite do motor
+   (40dvh, 360 px): a figura domina o cartão e os pormenores que se perguntam veem-se; o cartão cresce e rola */
+.licao-laboratorio .jogo .ler .fig img{max-height:min(64vh,600px);max-height:min(64dvh,600px)}
+/* 01/11/2026 (correção 2, diretor de arte, sistema 8): na projeção, o botão Projetar some também nas lições */
+html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,html.em-projecao body.licao-laboratorio .epi-projection-launcher{display:none!important}
+/* 01/11/2026 (correção 2, diretor de arte): uma forma verbal com pronome não se parte no hífen (AO90, base XX) */
+.licao-laboratorio .nq{white-space:nowrap}
