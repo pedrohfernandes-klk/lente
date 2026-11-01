@@ -378,6 +378,11 @@ CSS = (TOKENS +
  '.ideias .abre .lead{font-size:1.3125rem}'
  # a imagem baixa para 16:9 (o anel inteiro cabe), para a coluna da esquerda não ficar muito mais alta do que a da direita
  '.ideias .atol .campo{aspect-ratio:16/9}.ideias .atol img{object-position:50% 55%}}'
+ # 01/11/2026 (correção 7, diretor de arte): quando a coluna da direita é mais alta do que a abertura com a imagem a 16:9 (na
+ # projeção de 1100 a 1239 px, na moldura /projetar/ a 1440 × 900 e 1400 × 1050, no ecrã com a sessão 1 feita de 1080 a 1199 px),
+ # a tabela de museu descia até 81 px abaixo do pé da imagem e agrupava-se com o gesto. A imagem estica até ao pé da tabela e nunca
+ # fica abaixo de 16:9 (o ::before guarda a altura mínima, a imagem enche o recorte): o pé da tabela fica no pé da imagem
+ '@media (min-width:960px){.ideias .topo .atol .campo{position:relative;aspect-ratio:auto;align-self:stretch}.ideias .topo .atol .campo::before{content:"";display:block;padding-top:56.25%}.ideias .topo .atol img{position:absolute;inset:0}}'
  # 01/11/2026 (correção 6, diretor de arte): na projeção, de 960 a 1099 px (o portátil ligado ao projetor; a moldura a 1280 × 800
  # e 1366 × 768), a coluna da direita cresce com o gesto numa coluna e a tabela de museu descolava-se da imagem: ficava 20 px abaixo
  # do gesto, toda abaixo do pé da imagem, e lia-se como parte do gesto. Aqui a tabela volta para debaixo da imagem, 8 px abaixo e

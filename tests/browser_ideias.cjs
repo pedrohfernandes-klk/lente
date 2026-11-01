@@ -266,4 +266,20 @@ async function responder(p,x){
    const r=await p.evaluate(()=>{const a=document.querySelector('[data-p-botao]'),n=a.firstChild,t=n.textContent,top=i=>{const g=document.createRange();g.setStart(n,i);g.setEnd(n,i+1);return Math.round(g.getBoundingClientRect().top)};const i=t.indexOf('sessão');return {t,junto:top(i)===top(i+7)}});
    assert.equal(r.t,txt,'entrada: o texto do botão a '+w+' px'+q);assert(r.junto,'entrada: o número da sessão separado de «sessão» a '+w+' px'+q);assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS sexta revisão: tabela de museu colada à imagem na projeção de 960 a 1099 px, gesto numa coluna na projeção de 380 a 469 px, «sessão N» inseparável no botão')}
+ // 10. (continuação) 01/11/2026: a correção da sétima revisão (diretor de arte, 01/11): quando a coluna da direita é mais alta
+ // do que a abertura com a imagem a 16:9, a imagem do atol estica até ao pé da tabela de museu (nunca abaixo de 16:9). O pé da
+ // tabela fica a 0 a 3 px do pé da imagem na projeção a 1100, 1160 e 1220 px (descia 81, 61 e 42 px) e no ecrã a 1100 px com a
+ // sessão 1 feita (descia 31 px); a tabela continua na coluna da direita e a imagem nunca fica mais baixa do que 16:9
+ {const prep={content:"localStorage.setItem('epi-lab-ideias-s01',"+JSON.stringify(JSON.stringify(FEITA1))+")"};
+  for(const [w,q,pr,tema] of [[1100,'?projetar=1',null,'light'],[1160,'?projetar=1',null,'dark'],[1220,'?projetar=1',null,'light'],[1100,'',prep,'dark']]){
+   const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,900,tema,pr);
+   const r=await p.evaluate(()=>{const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect(),i=document.querySelector('.atol img').getBoundingClientRect();
+    return {pe:Math.round(f.bottom-c.bottom),dx:Math.round(f.left-c.right),alt:c.height,min:c.width*9/16,img:[Math.round(i.width-c.width),Math.round(i.height-c.height)]}});
+   const onde=' a '+w+' px'+(q||' (ecrã, sessão 1 feita)')+' ('+JSON.stringify(r)+')';
+   assert(r.pe>=0&&r.pe<=3,'entrada: o pé da tabela de museu afastado do pé da imagem'+onde);
+   assert(r.dx>=20,'entrada: a tabela de museu saiu da coluna da direita'+onde);
+   assert(r.alt>=r.min-1,'entrada: a imagem do atol mais baixa do que 16:9'+onde);
+   assert.deepEqual(r.img,[0,0],'entrada: a imagem não enche o recorte'+onde);
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS sétima revisão: o pé da tabela de museu no pé da imagem na projeção a 1100, 1160 e 1220 px e no ecrã a 1100 px com a sessão 1 feita')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});
