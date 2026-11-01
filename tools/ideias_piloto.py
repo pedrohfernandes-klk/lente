@@ -21,6 +21,12 @@ de partida e à Pergunta Humana, e as suas páginas são comparadas byte a byte;
 com a tabela de museu, o gesto, as sessões por porta, as sessões ainda em preparação) e o guião é em papel, frente e verso.
 Partilham-se as regras de escrita e as funções de tools/licoes_lente.py (visivel, PROIBIDAS, QUAL_NOME, esc_it).
 
+01/11/2026 (método, encargo do docente «assumir o método de Young, passo a passo»): a entrada abre com o bloco «O método»
+(quem é Young, o livro de 1940, que as sete sessões seguem o método dele passo a passo, que há outros e porque seguimos este, e
+os cinco passos numa lista numerada, PASSOS) e a frase de abertura nomeia o método; cada sessão diz «Passo N de 5» (ou
+«Passos N e N+1 de 5») na lista e na região «A seguir»; o guião diz o passo no cabeçalho de cada sessão; o guia do docente abre
+com «Porque seguimos um método» e deixa de repetir «Young» onde basta «o método» ou «o passo».
+
 Uso: python3 tools/ideias_piloto.py              (escreve as páginas e acerta a linha da lista da Biblioteca)
      python3 tools/ideias_piloto.py --verificar  (confirma que estão atualizadas e que cumprem as regras da casa)"""
 import html, importlib.util, json, pathlib, re, sys
@@ -35,28 +41,34 @@ e = html.escape
 # As sete sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
 # outras aparecem «Em preparação», sem ligação. «linha» e «papel» são o que a região «A seguir» mostra dessa sessão.
 PORTAS = [
- ('ver', 'Ver', 'Passos 1 e 2 de Young: juntar material, com os olhos e com as mãos, e começar a trabalhá-lo.', '../ver/'),
+ ('ver', 'Ver', 'Passos 1 e 2: juntar material, com os olhos e com as mãos, e começar a trabalhá-lo.', '../ver/'),
  ('treinar', 'Treinar', 'Passos 2 e 3: trabalhar o material na cabeça e, depois, largá-lo.', '../treinar/'),
  ('criar', 'Criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.', '../criar/'),
 ]
 SESSOES = [
  {'n': 1, 'porta': 'ver', 'titulo': 'Ver ou observar?', 'pergunta': 'Quantos degraus tem a escada que sobes todos os dias?',
-  'passo': 'Passo 1: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
+  'passo': 'Passo 1 de 5: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
   'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
-  'passo': 'Passo 1: o material específico, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
-  'linha': 'O publicitário James Webb Young, o escritor Guy de Maupassant, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
+  'passo': 'Passo 1 de 5: o material específico, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
+  'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
-  'passo': 'Passos 1 e 2: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
+  'passo': 'Passos 1 e 2 de 5: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
  {'n': 4, 'porta': 'treinar', 'titulo': 'Três cachimbos', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
-  'passo': 'Passos 2 e 3: mastigar o material e largá-lo', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
+  'passo': 'Passos 2 e 3 de 5: trabalhar o material e largá-lo', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
  {'n': 5, 'porta': 'criar', 'titulo': 'O estribo', 'pergunta': 'Quando a ideia aparece, sabes de onde veio?',
-  'passo': 'Passo 4: a ideia aparece', 'peca': ('Construir uma ficção', 'Do conceito ao argumento', 'oficina-argumento/')},
+  'passo': 'Passo 4 de 5: a ideia aparece', 'peca': ('Construir uma ficção', 'Do conceito ao argumento', 'oficina-argumento/')},
  {'n': 6, 'porta': 'criar', 'titulo': 'A manhã seguinte', 'pergunta': 'Quem pode tornar a tua ideia melhor?',
-  'passo': 'Passo 5: pôr a ideia à prova', 'peca': ('Construir com palavras e imagens', 'A matriz por meio', 'oficina-matriz/')},
+  'passo': 'Passo 5 de 5: dar forma e pôr à prova', 'peca': ('Construir com palavras e imagens', 'A matriz por meio', 'oficina-matriz/')},
  {'n': 7, 'porta': 'criar', 'titulo': 'As versões à mostra', 'pergunta': 'Como se mostra o caminho de uma ideia?',
   'passo': 'Os cinco passos juntos', 'peca': ('Criar para além da página', 'O espaço expandido', 'oficina-espaco/')},
 ]
+# 01/11/2026 (método): os cinco passos do método, com nomes simples conferidos no resumo do próprio Young (texto de trabalho no
+# caderno de bordo, biblioteca-young/texto.txt, capítulo «A Fase Final»: «a recolha de matérias-primas», «o tratamento mental
+# destas matérias-primas», «a fase de incubação, em que deixamos algo para além da mente consciente fazer o trabalho de
+# síntese», «o nascimento propriamente dito da ideia», «a moldagem e desenvolvimento final da ideia»; e «submetê-la à crítica de
+# pessoas criteriosas»). Os mesmos nomes nos cartões (tools/licoes/ideias-sNN.py) e no guia.
+PASSOS = ['Juntar material', 'Trabalhar o material', 'Largar', 'A ideia aparece', 'Dar forma e pôr à prova']
 # 01/11/2026 (correção 3, diretor de arte): a imagem voltou a ser tratada, porque o recife mal se separava do oceano (2,06:1
 # em claro e 1,80:1 em escuro). Em cinzento: a vinheta da fotografia original aplanada (fundo estimado pelo percentil 25 em
 # blocos de 40 px, alisado), depois níveis de entrada 110 a 235 levados a 0 a 255, com gama 1,0; a multiplicação sobre
@@ -73,17 +85,20 @@ ATOL = {
 # O guia do docente: o que só o docente lê, por sessão pronta (plano final, secção 8). Tempos em minutos.
 GUIA = {
  1: {
-  'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o primeiro passo de Young: juntar material específico.',
+  'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o passo 1 de 5, juntar material, no material específico.',
   'antes': 'Ter a lista dos lugares da escola para os grupos (a escada, o portão, o bar, o pátio), um por grupo, para dois grupos não se cruzarem. Confirmar o som do projetor para o vídeo.',
   'tempos': [
    ('0 a 5', '«Abre»: cada um escreve o número de degraus, em silêncio. O docente anota três palpites no quadro, sem nomes.'),
-   ('5 a 15', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
+   # 01/11/2026 (método): o cartão novo «O método» (cartão 2) leva 5 minutos, tirados da folga do fim; os cartões seguintes
+   # passam um número para a frente
+   ('5 a 10', '«O método» (cartão 2): os cinco passos no quadro, numerados, com o passo 1 marcado (ver «Porque seguimos um método», acima).'),
+   ('10 a 20', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
    # 01/11/2026 (correção 5, revisor de pt-PT): «no cartão 7», o único com o vídeo («a partir do» lia-se «daí em diante»)
-   ('15 a 50', 'Cartões 3 a 13. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 7; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
-   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
-   ('120 a 145', 'Cartões 15 a 19.'),
-   ('145 a 165', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
-   ('165 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
+   ('20 a 55', 'Cartões 4 a 14. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 8; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
+   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
+   ('125 a 150', 'Cartões 16 a 20.'),
+   ('150 a 170', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
+   ('170 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
   ],
   # 01/11/2026 (correção 2, revisor de pt-PT): no guia, o crédito do vídeo sem a instrução ao aluno («ativa as legendas»)
   'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
@@ -103,12 +118,12 @@ GUIA = {
   'ligacoes': [('Florence Nightingale, _Notas sobre Enfermagem_ (Biblioteca)', '../../../biblioteca/nightingale-observacao/'), ('Como se investiga, passo 2', '../../../investigar/passo-02/'), ('_The Fortune-Teller_ no Met (cores)', 'https://www.metmuseum.org/art/collection/search/436838')],
  },
  2: {
-  'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o primeiro passo de Young, até ao fundo.',
+  'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o passo 1 de 5, até ao fundo.',
   'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
   'tempos': [
    ('0 a 5', '«Abre»: diz-se à turma o lugar da saída ou, se não houver saída, a alternativa (a janela ou uma fotografia de rua).'),
    ('5 a 15', '«Decide», de braço no ar.'),
-   ('15 a 50', 'Cartões 3 a 12: Young e Maupassant lidos em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
+   ('15 a 50', 'Cartões 3 a 12: as duas versões do conselho (a do livro, de 1940, e a de Maupassant, de 1888) lidas em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (pares; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
@@ -120,8 +135,8 @@ GUIA = {
   'produto': 'o «cocheiro», individual',
   'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
   'notas': [
-   'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
-   'Young não diz onde leu a história; os cartões não dizem mais do que isto.',
+   'A descoberta da sessão não é «o livro enganou-se»: é que a versão de 1940 muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
+   'O livro não diz onde foi buscar a história; os cartões não dizem mais do que isto.',
    'As traduções de Maupassant são nossas e curtas; o texto inteiro, em francês, está no Project Gutenberg.',
    'A saída é opcional (decisão do docente de 31/10): sem ela, cada aluno escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
    # 01/11/2026 (correção 5, revisor de pt-PT): a pergunta já não dá por certo que o sítio prova alguma coisa (o retorno do
@@ -166,7 +181,8 @@ GUIAO = {
  2: {
   'frente': [
    ('h2', 'As duas versões do conselho, lado a lado'),
-   ('tabela-linhas', ['', 'Young (1940)', 'Maupassant (1888)', 'Mudou ou ficou?'], ['Quem dá o conselho', 'O que se olha', 'O que se pede', 'Com quantas palavras']),
+   # 01/11/2026 (método): as colunas com os nomes que as versões têm nos cartões («a versão de 1940», «em 1888»)
+   ('tabela-linhas', ['', 'Versão de 1940', 'Versão de 1888', 'Mudou ou ficou?'], ['Quem dá o conselho', 'O que se olha', 'O que se pede', 'Com quantas palavras']),
    ('h2', 'A fotografia de Atget, em três colunas'),
    ('tabela', ['Vejo', 'Concluo', 'Não sei'], 7),
    ('h2', 'A tua posição: uma árvore da tua rua é só uma árvore?'),
@@ -246,6 +262,15 @@ CSS = (TOKENS +
  # 01/11/2026 (correção 4, diretor de arte): a linha de informação e a etiqueta de parede passavam os 75 carateres por linha
  # (77 e 78 a 1366 px): 34 em
  '.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}'
+ # 01/11/2026 (método): o bloco «O método» (sistema 6.2, abertura): um filete, o rótulo em caixa alta como os títulos de secção
+ # do rodapé, o parágrafo a tinta e os cinco passos numa lista numerada que parte entre passos e nunca dentro de um, com os
+ # números em cartaz, como os das sessões
+ '.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:34em}'
+ '.ideias .metodo h2{float:left;font:700 .8125rem/1.67 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 10px 0 0}'
+ '.ideias .abre .metodo .info{color:var(--tinta);margin:0 0 8px}'
+ '.ideias ol.passos-m{clear:both;list-style:none;display:flex;flex-wrap:wrap;gap:0 18px;margin:0;padding:0}'
+ '.ideias ol.passos-m li{display:inline-flex;align-items:baseline;gap:6px;font:700 .9375rem/1.4 Arial,Helvetica,sans-serif;white-space:nowrap}'
+ '.ideias ol.passos-m b{font:400 1.3125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif}'
  # região «A seguir» (sistema 6.3): a única preta; nunca anima
  '.ideias .proximo{background:var(--tinta);color:var(--papel);padding:16px 16px 18px;margin:0 0 20px}'
  '.ideias .proximo .kicker{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}'
@@ -366,7 +391,7 @@ CSS = (TOKENS +
  # até 959 px, a linha de informação passa para cima da imagem, depois da região e do gesto: a primeira ação fica no primeiro
  # ecrã também a 320 × 640 (estava em y = 723)
  '@media (max-width:959px){.ideias .topo{display:flex;flex-direction:column}.ideias .topo .abre{display:contents}.ideias .topo .abre>*{order:1}'
- '.ideias .topo .proximo{order:2}.ideias .topo .gesto{order:3}.ideias .topo .abre>.info{order:4;margin:0 0 12px}.ideias .topo .atol{order:5}}'
+ '.ideias .topo .proximo{order:2}.ideias .topo .gesto{order:3}.ideias .topo .abre>.metodo{order:4;margin:0 0 12px}.ideias .topo .atol{order:5}}'
  # a partir de 960 px (sistema 3): 7/12 para a abertura e a imagem, 5/12 para a região «A seguir» e o gesto
  # 31/10/2026 (revisão do diretor de arte): o gesto fica 20 px abaixo da região «A seguir» (proximidade), e não na linha da
  # imagem, 90 px abaixo
@@ -471,6 +496,10 @@ CSS = (TOKENS +
  '.ideias.guia ul.indice{padding-left:1.2em}.ideias.guia ul.indice a{display:inline-block;padding:10px 0}'
  '.ideias.guia .fontes{font-size:.875rem;color:var(--suave);overflow-wrap:anywhere}'
  '.ideias.guia .tabela{max-width:52em}'
+ # 01/11/2026 (método): os cinco passos à cabeça do guia, numa lista numerada com a medida do texto
+ '.ideias.guia ol.passos-g{font-family:Georgia,"Times New Roman",serif;max-width:32em;padding-left:1.4em;margin:4px 0 12px}.ideias.guia ol.passos-g li{margin:0 0 4px}'
+ # 01/11/2026 (método): no guião, o passo do método logo abaixo do título de cada sessão
+ '.ideias .lado p.passo-g{font:700 .9375rem/1.3 Arial,Helvetica,sans-serif;margin:-2px 0 6px}'
  # 01/11/2026 (correção 2, diretor de arte): duas margens direitas no mesmo fio, a do texto (32em, 544 px) e a das tabelas e
  # dos filetes; a caixa «Na aula», a nota da avaliação e as listas acabam onde acaba o texto
  '.ideias.guia .caixa,.ideias.guia .indicativa,.ideias.guia section ul{max-width:32em}.ideias.guia section li{max-width:none}'
@@ -501,6 +530,9 @@ CSS = (TOKENS +
  # página); o índice de ligações não serve em papel; o texto corrido com 120 mm de medida (72 carateres medidos; com os 128 mm propostos eram 76 a 80; eram 97
  # a 114 a toda a largura); a caixa e a nota da avaliação acabam no mesmo fio, as tabelas e os filetes a toda a largura
  '.ideias.guia section.sessao>h2{break-after:avoid}.ideias.guia #sequencia{break-before:page}.ideias.guia ul.indice{display:none}'
+ # 01/11/2026 (método): o guia abre com «Porque seguimos um método», na primeira página com o cabeçalho; «Antes de começar» abre
+ # página, para não se partir entre duas (o guia passa de 8 para 9 páginas A4)
+ '.ideias.guia #antes{break-before:page}'
  '.ideias.guia .pg,.ideias.guia section ul,.ideias.guia .caixa,.ideias.guia .indicativa{max-width:120mm}.ideias.guia section li{max-width:none}'
  # 01/11/2026 (correção 2): em papel, as ligações sem os 44 px de alvo de toque (com eles, as «Fontes da lição» da sessão 1
  # passavam duas linhas para uma página quase vazia),
@@ -527,6 +559,13 @@ def cabeca(base, titulo, desc, robots=True):
             f'<style>{CSS}</style><link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script></head>')
 
 
+def passo_n(s):
+    """01/11/2026 (método): o passo da sessão só com o número, para o rótulo da região «A seguir» («passo 1 de 5», «passos 1 e
+    2 de 5», «os cinco passos»); a forma longa, com o que a sessão faz nesse passo, fica na lista, no guião e no guia."""
+    t = s['passo'].split(':')[0]
+    return t[0].lower() + t[1:]
+
+
 def pergunta_abre(d):
     return re.search(r'<p class="pergunta-c">(.*?)</p>', d['cartoes'][0]['html']).group(1)
 
@@ -550,7 +589,7 @@ def pagina_entrada(L):
             if s['n'] in L:
                 d = L[s['n']]
                 linhas += (f'<li data-chave="{e(d["chave"])}" data-versao="{e(d["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}" '
-                           f'data-linha="{e(s["linha"])}" data-papel="{e(s["papel"])}" data-href="sessao-{s["n"]:02d}/">'
+                           f'data-passo="{e(passo_n(s))}" data-linha="{e(s["linha"])}" data-papel="{e(s["papel"])}" data-href="sessao-{s["n"]:02d}/">'
                            f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
                            f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado" data-estado></span></span>'
                            f'<span class="apoio">{apoio_l}</span></a></li>')
@@ -584,11 +623,11 @@ def pagina_entrada(L):
           'if(R&&feitas.length){var q=function(s){return R.querySelector(s)},u=feitas[feitas.length-1];'
           'q("[data-p-feito]").textContent="Feita: sessão "+u.li.getAttribute("data-n")+(u.data?", "+u.data:"")+".";'
           'if(prox){q("[data-p-k]").textContent="Continuar";q("[data-p-n]").textContent=q("[data-p-srn]").textContent=prox.getAttribute("data-n");q("[data-p-t]").textContent=prox.getAttribute("data-titulo");'
-          'q("[data-p-linha]").textContent=prox.getAttribute("data-linha");q("[data-p-papel]").textContent="No fim, em papel: "+prox.getAttribute("data-papel");'
+          'q("[data-p-passo]").textContent=": "+prox.getAttribute("data-passo");q("[data-p-linha]").textContent=prox.getAttribute("data-linha");q("[data-p-papel]").textContent="No fim, em papel: "+prox.getAttribute("data-papel");'
           # 01/11/2026 (correção 6, diretor de arte): «sessão N» inseparável no botão (na projeção a 320 px partia-se em «Começar a
           # sessão» / «1 →»; agora «Começar a» / «sessão 1 →»), no «Começar», no «Continuar» e no «Rever»
           'var b=q("[data-p-botao]");b.href=prox.getAttribute("data-href");b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"}'
-          + (f'else{{q("[data-p-k]").textContent="A seguir, em preparação";q("[data-p-n]").textContent=q("[data-p-srn]").textContent="{proxima_prep["n"]}";q("[data-p-t]").textContent="{proxima_prep["titulo"]}";'
+          + (f'else{{q("[data-p-k]").textContent="A seguir, em preparação";q("[data-p-n]").textContent=q("[data-p-srn]").textContent="{proxima_prep["n"]}";q("[data-p-t]").textContent="{proxima_prep["titulo"]}";q("[data-p-passo]").textContent=": {passo_n(proxima_prep)}";'
              'q("[data-p-linha]").textContent="As sessões prontas estão feitas. A próxima ainda está a ser preparada.";q("[data-p-papel]").textContent="";'
              'var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"}'
              if proxima_prep else 'else{q("[data-p-k]").textContent="Feitas";}')
@@ -612,10 +651,20 @@ def pagina_entrada(L):
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
              + '<div class="topo">'
              '<header class="abre"><p class="rotulo">Laboratório, piloto</p><h1>Ideias</h1><p class="sub">Como nasce uma ideia</p>'
-             '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Em sete sessões, segues uma ideia tua da primeira nota à última versão.</p>'
-             '<p class="info">Sete sessões de 180 minutos, a partir de <i>Uma Técnica para Produzir Ideias</i>, de James Webb Young (1940), com Sherlock Holmes, o detetive dos contos de Conan Doyle, como guia.</p></header>'
+             '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Em sete sessões, levas uma ideia tua por um método de cinco passos.</p>'
+             # 01/11/2026 (método): o bloco «O método», logo abaixo do título, no lugar da linha de informação (que dizia o livro
+             # de Young e as sete sessões de 180 minutos): quem é Young, o livro, que as sessões o seguem passo a passo, que há
+             # outros métodos e porque seguimos este, e os cinco passos numa lista numerada. O parágrafo guarda a classe «info»
+             # (a medida de 34 em). No telemóvel vem depois do gesto, como vinha a linha de informação: a região «A seguir» e o
+             # gesto continuam no primeiro ecrã, e a frase de abertura e a região já dizem o método e o passo de hoje
+             '<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>'
+             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros; escolhemos este por ser simples, claro e útil.</p>'
+             '<ol class="passos-m">' + ''.join(f'<li><b>{n}</b> {t}</li>' for n, t in enumerate(PASSOS, 1)) + '</ol></section></header>'
              '<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>'
-             '<p class="kicker" data-p-k>Começa aqui</p>'
+             # 01/11/2026 (método): o passo do método na linha do rótulo («Começa aqui: passo 1 de 5»), sem linha nova: a 390 px
+             # cabe na mesma linha e a entrada fica abaixo dos 2500 px; a 320 px parte em duas e a primeira ação continua no
+             # primeiro ecrã. O nome do passo está na linha da sessão, mais abaixo, e no bloco «O método»
+             f'<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: {e(passo_n(s1))}</span></p>'
              f'<div class="cab"><p class="num" data-p-n aria-hidden="true">{s1["n"]}</p><h2 id="prox-t"><span class="c-sr">Sessão <span data-p-srn>{s1["n"]}</span>: </span><span data-p-t>{e(s1["titulo"])}</span></h2></div>'
              f'<p class="linha" data-p-linha>{e(s1["linha"])}</p><p class="papel" data-p-papel>No fim, em papel: {e(s1["papel"])}</p><p class="feito" data-p-feito></p>'
              f'<a class="botao" data-p-botao href="sessao-01/">Começar a sessão 1 →</a></section>'
@@ -640,7 +689,7 @@ def pagina_entrada(L):
     corpo = LL.nq(corpo)  # 01/11/2026 (correção 2, diretor de arte): formas verbais com pronome sem quebra no hífen
     cv = ('<script>(function(){if(!(/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top))'
           'document.documentElement.classList.add("cv")})();</script></head>')
-    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório a partir de James Webb Young (piloto).').replace('</head>', cv, 1)
+    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório que seguem, passo a passo, o método de James Webb Young (piloto).').replace('</head>', cv, 1)
             + f'<body class="ideias"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main><script>{js}</script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
@@ -676,7 +725,9 @@ def pagina_guiao(L):
             continue
         g = GUIAO[s['n']]
         lados += (f'<section class="lado" aria-labelledby="g{s["n"]}f"><p class="rotulo">Lente, Ideias, guião. Sessão {s["n"]}, frente</p>'
-                  f'<h2 id="g{s["n"]}f">Sessão {s["n"]}: {e(s["titulo"])}</h2><p class="nome">Nome e turma <i></i></p>'
+                  f'<h2 id="g{s["n"]}f">Sessão {s["n"]}: {e(s["titulo"])}</h2>'
+                  # 01/11/2026 (método): o cabeçalho de cada sessão diz o passo do método e o nome dele
+                  f'<p class="passo-g">{e(s["passo"])}</p><p class="nome">Nome e turma <i></i></p>'
                   + bloco_guiao(g['frente']) + '</section>'
                   f'<section class="lado" aria-labelledby="g{s["n"]}v"><p class="rotulo">Sessão {s["n"]}, verso</p>'
                   f'<h2 id="g{s["n"]}v">{e(g["verso_titulo"])}</h2>' + bloco_guiao(g['verso']) + '</section>')
@@ -715,7 +766,17 @@ def video_de(d):
     return None
 
 
-SEQ_COLS = ['N.º', 'Sessão', 'Pergunta', 'Passo de Young', 'Porta e peça', 'Estado']
+# 01/11/2026 (método): a coluna diz «Passo» (o método já está apresentado à cabeça do guia), e não «Passo de Young»
+SEQ_COLS = ['N.º', 'Sessão', 'Pergunta', 'Passo', 'Porta e peça', 'Estado']
+# 01/11/2026 (método): «Porque seguimos um método», à cabeça do guia do docente. As sessões de cada passo vêm do quadro SESSOES
+# (passo 1: sessões 1 a 3; passo 2: 3 e 4; passo 3: 4 e a semana até à 5; passo 4: 5; passo 5: 6; a 7 junta os cinco).
+GUIA_METODO = [
+ ('Juntar material', 'o específico, do problema concreto, e o geral, de toda a vida (sessões 1 a 3).'),
+ ('Trabalhar o material', 'virar os factos de todos os lados e juntá-los, à procura de relações (sessões 3 e 4).'),
+ ('Largar', 'esquecer o problema e fazer outra coisa (sessão 4 e a semana até à 5, de propósito).'),
+ ('A ideia aparece', 'quando menos se espera, depois de largado o problema (sessão 5).'),
+ ('Dar forma e pôr à prova', 'adaptar a ideia ao uso e levá-la a quem a pode criticar (sessão 6; a 7 junta os cinco passos).'),
+]
 
 
 def pagina_guia(L):
@@ -729,22 +790,28 @@ def pagina_guia(L):
         cel = [(SEQ_COLS[0], str(s['n']), ' class="num"'), (SEQ_COLS[1], e(s['titulo']), ''), (SEQ_COLS[2], e(s['pergunta']), ''),
                (SEQ_COLS[3], e(s['passo']), ''), (SEQ_COLS[4], f'{porta}, «{e(rota)}», <i>{e(peca)}</i>', ''), (SEQ_COLS[5], estado, '')]
         seq += '<tr role="row">' + ''.join(f'<td role="cell"{c} data-r="{r}">{v}</td>' for r, v, c in cel) + '</tr>'
-    indice = '<li><a href="#antes">Antes de começar</a></li><li><a href="#sequencia">A sequência</a></li>' + ''.join(
+    indice = '<li><a href="#metodo">Porque seguimos um método</a></li><li><a href="#antes">Antes de começar</a></li><li><a href="#sequencia">A sequência</a></li>' + ''.join(
         f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in SESSOES if s['n'] in L)
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guia do docente', '')])
              + '<header class="abre"><p class="rotulo">Ideias, piloto</p><h1>Guia do docente</h1>'
              '<p class="lead">As sessões prontas em pormenor (tempos, materiais, o que fica escrito e a grelha /20 indicativa) e, antes delas, o quadro das sete sessões.</p>'
              '<p class="info">Piloto escondido dos motores de busca, sem ligação a partir do mapa, das portas nem da entrada do Laboratório, até o docente o ver.</p></header>'
              f'<nav class="indice-nav" aria-label="Neste guia"><ul class="indice">{indice}</ul></nav>'
+             # 01/11/2026 (método): o guia abre com a razão do método, como o apresentar na primeira aula e onde o nome volta
+             '<section class="sessao" id="metodo"><h2>Porque seguimos um método</h2>'
+             '<p class="pg">O percurso adota como espinha <i>A Technique for Producing Ideas</i> (1940), o livro de poucas páginas em que o publicitário norte-americano James Webb Young descreve como se chega a uma ideia. Não é o único método; escolhemo-lo por ser simples e claro, por fazer sentido e por ajudar de facto. O objetivo é que os alunos o aprendam aqui, passo a passo, e depois o usem por conta própria.</p>'
+             '<ol class="passos-g">' + ''.join(f'<li><b>{n}</b>: {e(t)}</li>' for n, t in GUIA_METODO) + '</ol>'
+             '<p class="pg"><b>Na primeira aula.</b> Cinco minutos, logo a seguir ao «Abre»: no cartão 2 da sessão 1, o docente escreve os cinco passos no quadro, numerados, marca o primeiro e lê a frase do livro que o cartão cita. Nas sessões seguintes, basta voltar a escrever os cinco e marcar o do dia: o primeiro cartão de cada sessão faz o mesmo.</p>'
+             '<p class="pg"><b>Onde o nome volta.</b> Os cartões apresentam Young uma vez, na sessão 1, e voltam a nomeá-lo só na passagem de um passo para o outro (no fim da sessão 2, para o passo 2) e na fonte das citações. No resto, pedem o passo sem dizer quem o manda: juntar material, olhar até ao fundo, largar o problema. Na aula, o docente pode fazer o mesmo.</p></section>'
              '<section class="sessao" id="antes"><h2>Antes de começar</h2>'
-             '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos de James Webb Young (juntar material, trabalhá-lo na cabeça, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
-             '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (Young aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
-             '<p class="pg"><b>O método de interpretação.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é o guia que volta, e é o próprio Young quem o traz: cita-o duas vezes no livro.</p>'
+             '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos do método (juntar material, trabalhá-lo, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
+             '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (o livro aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
+             '<p class="pg"><b>Ler como um detetive.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta, e quem o traz é o próprio método: o autor cita-o duas vezes no livro.</p>'
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis, salvo quando o critério diz outros: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
-             '<p class="pg">Os passos 1 e 2 de Young levam a Ver; os passos 2 e 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
+             '<p class="pg">Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
              '<div class="tabela"><table class="seq" role="table"><thead role="rowgroup"><tr role="row">'
              + ''.join('<th role="columnheader" scope="col"' + (' class="num"' if k == 0 else '') + f'>{c}</th>' for k, c in enumerate(SEQ_COLS)) + '</tr></thead>'
              f'<tbody role="rowgroup">{seq}</tbody></table></div></section>')
@@ -757,13 +824,16 @@ def pagina_guia(L):
         img = next(c for c in d['cartoes'] if '<img' in (c.get('html') or ''))
         fig = re.search(r'<figcaption>(.*?)</figcaption>', img['html']).group(1)
         v = video_de(d)
+        n_liga = next((i for i, c in enumerate(d['cartoes'], 1) if c.get('liga')), 0)
         tempos = ''.join(f'<tr><td class="num">{e(m)}</td><td>{e(t)}</td></tr>' for m, t in g['tempos'])
         # 01/11/2026 (correção 5, revisor de pt-PT): sem «(a lição inteira)», que fazia crer que o cartão 7 só traz um excerto (o
         # leitor do cartão mostra o vídeo inteiro, sem início nem fim)
         if v:
             yt = (f'<p class="pg">{v["botao"]}. {g.get("video_cred", v["cred"])} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a>.</p>'
                   f'<p class="pg"><b>Tarefa.</b> {v["tarefa"]}</p>'
-                  '<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (a ligação aparece no retorno do cartão 8) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
+                  # 01/11/2026 (método): o número do cartão com a ligação ao resumo sai da lição (era «cartão 8»; com o cartão «O
+                  # método», é o 9)
+                  f'<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (a ligação aparece no retorno do cartão {n_liga}) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
         else:
             yt = '<p class="pg">Nenhum, de propósito: o centro da sessão é um texto lido devagar e um lugar visto ao vivo.</p>'
         corpo += (f'<section class="sessao pronta" id="s{s["n"]}"><p class="rotulo">Sessão {s["n"]}</p><h2>{e(s["titulo"])}</h2>'

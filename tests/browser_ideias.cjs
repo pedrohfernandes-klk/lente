@@ -11,7 +11,9 @@ const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.
 const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.startsWith('/lente/'))u=u.slice(6);if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
 const LARGURAS=[[320,640],[390,844],[1024,768],[1366,900],[1440,900]];
 const PAGINAS=['narrativas/ideias/','narrativas/ideias/guiao/','narrativas/ideias/docente/','biblioteca/young-tecnica-1940/'];
-const FEITA1={lida:true,versao:'2026-10-31-1',t:Date.parse('2026-11-07T10:00:00'),melhor:13};
+// 01/11/2026: a versão da sessão 1 sobe com o cartão novo «O método» (2026-11-01-1); o progresso de teste lê-a da lição, para a
+// sessão feita continuar a contar como feita (com a versão antiga, o motor e a entrada recomeçam, e é isso que se quer)
+const FEITA1={lida:true,versao:JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s01.json'),'utf8')).versao,t:Date.parse('2026-11-07T10:00:00'),melhor:13};
 const vis=s=>String(s).replace(/\*\*|_/g,'');
 async function abrir(b,url,w,h,tema,prep){const ctx=await b.newContext({viewport:{width:w,height:h},colorScheme:tema});const p=await ctx.newPage();const erros=[];
  p.on('pageerror',e=>erros.push(e.message));p.on('console',m=>{if(m.type()==='error'&&!/Failed to load resource|net::ERR/.test(m.text()))erros.push(m.text())});
@@ -104,10 +106,12 @@ async function responder(p,x){
    // linha); sem inline-flex, como antes
    assert.deepEqual(x.nums,[],'guia: minutos por cima da borda a '+w+' px');assert(x.lig.length&&x.lig.every(d=>d==='block'),'guia: ligações em '+x.lig.join(','));
    assert.equal(await largo(p),0,'guia: deslize a '+w+' px');assert.deepEqual(erros,[]);await ctx.close()}
-  for(const [pag,n] of [['narrativas/ideias/guiao/',4],['narrativas/ideias/docente/',8]]){const {ctx,p}=await abrir(b,base+pag,1024,768,'light');await p.emulateMedia({media:'print'});
+  // 01/11/2026: o guia abre com «Porque seguimos um método», numa primeira página com o cabeçalho, e «Antes de começar» abre a
+  // segunda (antes partia-se entre duas): 9 páginas A4, eram 8. O guião continua em 4
+  for(const [pag,n] of [['narrativas/ideias/guiao/',4],['narrativas/ideias/docente/',9]]){const {ctx,p}=await abrir(b,base+pag,1024,768,'light');await p.emulateMedia({media:'print'});
    const pdf=(await p.pdf({format:'A4',printBackground:true,preferCSSPageSize:true})).toString('latin1');const pags=(pdf.match(/\/Type\s*\/Page[^s]/g)||[]).length;
    assert.equal(pags,n,pag+': '+pags+' páginas A4 (esperadas '+n+')');await ctx.close()}
-  console.log('PASS correções da revisão: barra numa linha, «Continuar» a 320 × 640, gesto e resposta, projeção, guia, 4 + 8 páginas A4')}
+  console.log('PASS correções da revisão: barra numa linha, «Continuar» a 320 × 640, gesto e resposta, projeção, guia, 4 + 9 páginas A4')}
   // 6. 30/10/2026: as correções da segunda revisão (01/11): nas lições, a barra de cima cabe a 320 e 360 px (o botão Menu saía do
  // ecrã) e o botão Projetar some na projeção; o gesto numa coluna a 320 px; as formas verbais com pronome sem quebra no hífen;
  // as imagens que se observam maiores; na página do Young, o tema na barra e não por cima do texto; no guia, o índice à direita
@@ -145,6 +149,8 @@ async function responder(p,x){
    assert.equal(r.pos,'sticky','guia: o índice à direita');assert(r.top>=0&&r.top<=40,'guia: o índice à vista depois de rolar ('+r.top+')');assert.equal(r.sobre,0,'guia: o índice por cima do conteúdo');
    await p.emulateMedia({media:'print'});assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('ul.indice')).display),'none','guia: o índice em papel');
    assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('#sequencia')).breakBefore),'page','guia: «A sequência» abre página');
+   // 01/11/2026: «Antes de começar» também abre página, depois de «Porque seguimos um método»
+   assert.equal(await p.evaluate(()=>getComputedStyle(document.querySelector('#antes')).breakBefore),'page','guia: «Antes de começar» abre página');
    assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS segunda revisão: barra das lições a 320 e 360 px, Projetar na projeção, gesto numa coluna a 320 px, nenhuma forma com pronome partida no hífen, Atget maior, tema do Young na barra, índice do guia')}
  // 7. 30/10/2026: as correções da terceira revisão (01/11): no guia, nenhuma tabela esconde nada num deslize lateral, de 320 a
@@ -302,4 +308,54 @@ async function responder(p,x){
    assert.deepEqual(r.fora,{esq:0,dir:0,cima:0,baixo:0},'entrada: o recorte corta o anel do atol'+onde);
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS oitava revisão: o anel do atol inteiro no recorte na projeção a 1100 e 1120 px com o gesto premido e no ecrã a 1366 px')}
+
+ // 11. 01/11/2026: o método assumido à cabeça (encargo do docente de 01/11: o método de Young como espinha, apresentado uma vez).
+ // Na entrada, o bloco «O método» logo a seguir à frase de abertura, dentro da abertura, com os cinco passos numa lista numerada,
+ // de 320 a 1440 px, em claro e escuro e na projeção: a partir de 960 px fica na coluna da abertura, por cima da imagem; abaixo
+ // disso vem depois da região «A seguir» e do gesto, que continuam no primeiro ecrã. O rótulo da região «A seguir» diz o passo
+ // («Começa aqui: passo 1 de 5»; com a sessão 1 feita, «Continuar: passo 1 de 5»; a projeção não lê o progresso). Nas lições, o
+ // primeiro cartão diz «Passo 1 de 5: juntar material» e marca o passo de hoje com a palavra «hoje»; a marca da casca diz «Ideias,
+ // passo 1 de 5» a partir de 600 px e «Passo 1 de 5» de 430 a 599 px (de 400 a 429 px fica «Ideias», como antes; abaixo de 400 px, só
+ // a casa), sem empurrar os controlos para fora do ecrã; o <title> diz
+ // o passo; e a sessão 1 apresenta Young no cartão 2, «O método»
+ {const PASSOS=['1 Juntar material','2 Trabalhar o material','3 Largar','4 A ideia aparece','5 Dar forma e pôr à prova'];
+  for(const [w,h] of LARGURAS)for(const [tema,q] of [['light',''],['dark',''],['light','?projetar=1']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,h,tema);
+   const r=await p.evaluate(()=>{const m=document.querySelector('.metodo'),R=s=>document.querySelector(s).getBoundingClientRect(),mm=m.getBoundingClientRect();
+    return {t:m.querySelector('h2').textContent,passos:[...m.querySelectorAll('ol.passos-m li')].map(li=>li.textContent.replace(/\s+/g,' ').trim()),alt:Math.round(mm.height),
+     depoisLead:mm.top>=R('.abre .lead').bottom-0.5,acimaImg:mm.bottom<=R('.atol .campo').top+0.5,depoisGesto:mm.top>=R('.gesto').bottom-0.5,
+     kicker:document.querySelector('.proximo .kicker').textContent,fora:[...m.querySelectorAll('li,p,h2')].filter(e=>e.getBoundingClientRect().right>innerWidth+0.5).length,
+     cor:getComputedStyle(m.querySelector('.info')).color===getComputedStyle(document.querySelector('.abre .lead')).color}});
+   const onde=' a '+w+' px ('+tema+(q?', projeção':'')+'): '+JSON.stringify(r);
+   assert.equal(r.t,'O método','entrada: o título do bloco'+onde);assert.deepEqual(r.passos,PASSOS,'entrada: os cinco passos'+onde);
+   assert(r.alt>60&&r.depoisLead&&r.acimaImg&&r.fora===0&&r.cor,'entrada: o bloco «O método» fora do lugar'+onde);
+   if(w<960)assert(r.depoisGesto,'entrada: no telemóvel, o bloco antes do gesto'+onde);
+   assert.equal(r.kicker,'Começa aqui: passo 1 de 5','entrada: o rótulo da região «A seguir»'+onde);
+   const bt=await p.locator('[data-p-botao]').boundingBox();if(!q)assert(bt.y+bt.height<=h,'entrada: o botão «Começar» fora do primeiro ecrã'+onde);
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  {const prep={content:"localStorage.setItem('epi-lab-ideias-s01',"+JSON.stringify(JSON.stringify(FEITA1))+")"};
+   for(const q of ['','?projetar=1']){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,390,844,'light',prep);
+    assert.equal(await p.locator('.proximo .kicker').textContent(),q?'Começa aqui: passo 1 de 5':'Continuar: passo 1 de 5','entrada: o rótulo com a sessão 1 feita'+(q?' (projeção)':''));
+    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}}
+  for(const f of ['ideias-s01.json','ideias-s02.json']){const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes',f),'utf8'));const url=base+d.saida.replace(/index\.html$/,'');
+   for(const [w,tema,q,nome,passo] of [[320,'light','',false,false],[390,'dark','',false,false],[400,'dark','',true,false],[429,'light','',true,false],[430,'dark','',false,true],[599,'light','',false,true],
+                                       [600,'dark','',true,true],[1024,'light','',true,true],[1366,'dark','',true,true],[1440,'light','',true,true],[1366,'light','?projetar=1',true,true]]){
+    const {ctx,p,erros}=await abrir(b,url+q,w,800,tema);
+    const r=await p.evaluate(()=>{const vis=e=>{const x=e.getBoundingClientRect();return x.width>2&&x.height>2};const m=document.querySelector('.c-marca'),mr=m.getBoundingClientRect(),cp=document.querySelector('.c-marca-p');
+     const hoje=[...document.querySelectorAll('#baralho ol.passos-m li[aria-current="step"]')];
+     return {nome:vis(document.querySelector('.c-marca-t')),passo:vis(cp),virgula:getComputedStyle(cp,'::before').content,txt:cp.textContent,marca:[Math.round(mr.width),Math.round(mr.height)],
+      fora:[...document.querySelectorAll('.casca-topo a,.casca-topo button')].filter(e=>e.offsetParent!==null&&e.getBoundingClientRect().right>innerWidth+0.5).length,
+      titulo:document.title,abre:document.querySelector('#baralho').innerText.replace(/\s+/g,' '),hoje:hoje.map(li=>li.innerText.replace(/\s+/g,' ').trim()),
+      linha:[...document.querySelectorAll('#baralho ol.passos-m li')].filter(li=>li.getBoundingClientRect().right>document.querySelector('#baralho').getBoundingClientRect().right+0.5).length}});
+    const onde=d.id+' a '+w+' px ('+tema+(q?', projeção':'')+'): '+JSON.stringify(r).slice(0,400);
+    assert.equal(r.nome,nome,'lição: o nome «Ideias» na barra, '+onde);assert.equal(r.passo,passo,'lição: o passo na barra, '+onde);
+    if(passo)assert.equal(r.txt,'Passo 1 de 5',onde);if(nome&&passo)assert.match(r.virgula,/^", "/,'lição: a vírgula entre o nome e o passo, '+onde);
+    assert.equal(r.fora,0,'lição: controlos da barra fora do ecrã, '+onde);assert(r.marca[0]>=44&&r.marca[1]>=44,'lição: a marca com menos de 44 px, '+onde);
+    assert.match(r.titulo,/\(passo 1 de 5\) \| Ideias \| Laboratório \| Lente$/,onde);
+    assert.match(r.abre,/Passo 1 de 5: juntar material/,'lição: o primeiro cartão sem o passo, '+onde);
+    assert.deepEqual(r.hoje,['1 Juntar material HOJE'],'lição: o passo de hoje marcado com texto, '+onde);assert.equal(r.linha,0,'lição: a linha dos passos sai do cartão, '+onde);
+    if(f==='ideias-s01.json'&&!q&&(w===390||w===1366)){await seguinte(p);const t=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');
+     assert.match(t,/O MÉTODO/i,'sessão 1: o cartão 2 é «O método», '+onde);assert.match(t,/James Webb Young foi um publicitário norte-americano/,'sessão 1: a apresentação de Young, '+onde);
+     assert.equal(await p.locator('[data-c-num]').innerText(),'2/'+d.cartoes.length)}
+    assert.equal(await largo(p),0,'lição: deslize, '+onde);assert.deepEqual(erros,[]);await ctx.close()}}
+  console.log('PASS método: o bloco «O método» na entrada (5 larguras, claro, escuro e projeção), «Passo 1 de 5» na região «A seguir», no primeiro cartão, na barra a partir de 430 px e no título, e a apresentação de Young na sessão 1')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});
