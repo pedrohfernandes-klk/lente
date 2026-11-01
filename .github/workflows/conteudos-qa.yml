@@ -1,0 +1,42 @@
+name: Conteúdos lote 1, bateria completa
+on:
+  pull_request:
+    paths:
+      - 'tools/aplicar_conteudos.py'
+      - 'tools/trocas/conteudos-lote1-20261101.json'
+      - 'tests/*conteudos*'
+      - '.github/workflows/conteudos-qa.yml'
+permissions:
+  contents: read
+jobs:
+  regressao:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Todos os testes e medição das opções
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          python tools/aplicar_conteudos.py --verificar
+          python tools/medir_opcoes.py --verificar
+          python tests/test_reciclagem_lente.py --medir
+      - name: Preparar os dois clientes do navegador
+        run: |
+          pip install playwright
+          npm install --no-save playwright
+          python -m playwright install --with-deps chromium
+      - name: Toda a bateria existente de navegador
+        run: python tests/run_conteudos_browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: conteudos-navegador
+          path: conteudos-browser-ci.json
