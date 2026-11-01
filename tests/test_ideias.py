@@ -369,7 +369,9 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertIn('a enfermeira Florence Nightingale', guia)
         self.assertIn('salvo quando o critério diz outros', guia)
         self.assertIn('se não houver saída, a alternativa', guia)
-        self.assertIn('Boa pergunta para a turma: o que prova o sítio onde está?', guia)
+        # 30/10/2026: na quinta revisão (01/11), o revisor de pt-PT reescreveu a pergunta, que dava por certo que o sítio prova
+        # alguma coisa (teste mudado de propósito; a frase nova confirma-se também em QuintaRevisao)
+        self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
         self.assertIn('cita-o duas vezes no livro', guia)
         self.assertNotIn('«Decide»', guiao)  # o papel do aluno não fala das peças da página
         self.assertIn('data-papel="o teu «cocheiro», a linha que levaste à fila e o resultado."', entrada)
@@ -471,6 +473,49 @@ class QuartaRevisao(unittest.TestCase):
         self.assertIn('.licao-laboratorio .jogo .inline .nb{display:inline}', (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8'))
         for p in (ROOT / 'cidadania/piloto').rglob('index.html'):
             self.assertNotIn('laboratorio.css', p.read_text('utf-8'), p)
+
+
+class QuintaRevisao(unittest.TestCase):
+    """30/10/2026: as correções da quinta revisão (01/11): o texto do revisor de pt-PT e as regras de desenho do diretor de arte que
+    se podem confirmar sem navegador (as medidas estão em tests/browser_ideias.cjs, secção 9)."""
+
+    def test_texto_do_revisor(self):
+        s1 = json.loads(FONTES[0].read_text('utf-8'))
+        s2 = json.loads(FONTES[1].read_text('utf-8'))
+        c1 = {c.get('g'): c for c in s1['cartoes']}
+        c2 = {c.get('g'): c for c in s2['cartoes']}
+        aula = next(c for c in s1['cartoes'] if c.get('rot') == 'Na aula')['html']
+        self.assertIn('Cada um regista os seus factos, um por nota; o grupo escolhe dez', aula)
+        self.assertNotIn('um de cada vez', aula)
+        # o motor mostra a zona sozinha numa linha por baixo do quadro: maiúscula inicial, no nome e no aria-label
+        for g in ('cordao', 'medalha'):
+            self.assertTrue(all(o[:1].isupper() for o in c1[g]['o']), c1[g]['o'])
+            for o in c1[g]['o']:
+                self.assertIn(f'aria-label="{o}"', c1[g]['fig'])
+        self.assertIn('«Prateada» e «útil» servem para quase todas, «bonita» é uma opinião', c2['fila']['f'])
+        guia = L.visivel((PILOTO / 'docente/index.html').read_text('utf-8'))
+        guiao = L.visivel((PILOTO / 'guiao/index.html').read_text('utf-8'))
+        self.assertIn('escreve-se no guião impresso e onde cada um guarda o material.', guiao)
+        self.assertNotIn('escreve-se aqui', guiao)
+        self.assertIn('Grelha /20 indicativa: o «cocheiro», individual', guia)
+        self.assertNotIn('de cada aluno, individual', guia)
+        self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
+        self.assertNotIn('o que prova o sítio', guia)
+        self.assertIn('projeta-se com legendas no cartão 7;', guia)
+        self.assertNotIn('a partir do cartão 7', guia)
+        self.assertRegex((PILOTO / 'docente/index.html').read_text('utf-8'), r'com legendas no leitor\. <a href="https://www\.youtube\.com/watch\?v=ubEadhXWwV4">Abrir no YouTube</a>\.</p>')
+        self.assertNotIn('a lição inteira', guia)
+        # o guia copia o cartão «Na aula»
+        self.assertIn('Cada um regista os seus factos, um por nota;', guia)
+
+    def test_regras_de_desenho(self):
+        lab = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
+        self.assertIn('.licao-laboratorio .jogo .tit:not(.cartaz){font-size:1.3125rem;text-wrap:balance}', lab)
+        entrada = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('@media (min-width:1080px){html:not(.em-projecao) .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}', entrada)
+        self.assertIn('@media (max-width:599px){html.em-projecao .ideias h2.sessoes-t{font-size:2.5rem}html.em-projecao .ideias .porta h3{font-size:2rem}', entrada)
+        for rel in ('index.html', 'guiao/index.html', 'docente/index.html'):
+            self.assertIn('@media (min-width:768px){.ideias main{padding-left:24px;padding-right:24px;max-width:1248px}}', (PILOTO / rel).read_text('utf-8'), rel)
 
 
 if __name__ == '__main__':

@@ -160,10 +160,10 @@
    "p": "Toca na mão que segura um cordão com uma borla.",
    "p2": "No quadro, onde está a mão que segura um cordão com uma borla?",
    "o": [
-    "a mão do punho de renda",
-    "a mão do rapaz, na anca",
-    "a moeda entre os dedos",
-    "o laço da faixa à cintura"
+    "A mão do punho de renda",
+    "A mão do rapaz, na anca",
+    "A moeda entre os dedos",
+    "O laço da faixa à cintura"
    ],
    "c": 0,
    "centros": [
@@ -186,7 +186,7 @@
    ],
    "rotulo": "Toca numa mão ou num objeto.",
    "rotulo2": "Toca outra vez, no sítio que queres.",
-   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"a mão do punho de renda\"><circle class=\"halo\" cx=\"240\" cy=\"645\" r=\"40\"/><circle class=\"anel\" cx=\"240\" cy=\"645\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"a mão do rapaz, na anca\"><circle class=\"halo\" cx=\"278\" cy=\"515\" r=\"40\"/><circle class=\"anel\" cx=\"278\" cy=\"515\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"a moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"o laço da faixa à cintura\"><circle class=\"halo\" cx=\"431\" cy=\"481\" r=\"40\"/><circle class=\"anel\" cx=\"431\" cy=\"481\" r=\"40\"/></g></svg>",
+   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"A mão do punho de renda\"><circle class=\"halo\" cx=\"240\" cy=\"645\" r=\"40\"/><circle class=\"anel\" cx=\"240\" cy=\"645\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"A mão do rapaz, na anca\"><circle class=\"halo\" cx=\"278\" cy=\"515\" r=\"40\"/><circle class=\"anel\" cx=\"278\" cy=\"515\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"A moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"O laço da faixa à cintura\"><circle class=\"halo\" cx=\"431\" cy=\"481\" r=\"40\"/><circle class=\"anel\" cx=\"431\" cy=\"481\" r=\"40\"/></g></svg>",
    "f": "À esquerda, junto à cintura do rapaz, a mão da mulher de mangas claras segura um cordão com uma borla. O que vem preso ao cordão não se vê: dizer que é a bolsa dele já é uma inferência.",
    "fe": "Procura do lado esquerdo do quadro, à altura da cintura do rapaz, e segue cada mão até ao ombro de quem a tem: há uma que não é dele."
   },
@@ -197,10 +197,10 @@
    "p": "Segue a corrente que o rapaz traz ao peito, até à medalha. Toca nas mãos que seguram essa corrente.",
    "p2": "Onde estão as mãos que seguram a corrente da medalha do rapaz?",
    "o": [
-    "o par de mãos ao centro",
-    "a mão mais baixa da velha",
-    "a mão aberta do rapaz",
-    "a moeda entre os dedos"
+    "O par de mãos ao centro",
+    "A mão mais baixa da velha",
+    "A mão aberta do rapaz",
+    "A moeda entre os dedos"
    ],
    "c": 0,
    "centros": [
@@ -223,7 +223,7 @@
    ],
    "rotulo": "Toca numa mão ou num objeto.",
    "rotulo2": "Toca outra vez, no sítio que queres.",
-   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"o par de mãos ao centro\"><circle class=\"halo\" cx=\"600\" cy=\"615\" r=\"40\"/><circle class=\"anel\" cx=\"600\" cy=\"615\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"a mão mais baixa da velha\"><circle class=\"halo\" cx=\"712\" cy=\"582\" r=\"40\"/><circle class=\"anel\" cx=\"712\" cy=\"582\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"a mão aberta do rapaz\"><circle class=\"halo\" cx=\"556\" cy=\"486\" r=\"40\"/><circle class=\"anel\" cx=\"556\" cy=\"486\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"a moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g></svg>",
+   "fig": "<svg viewBox=\"0 0 1000 827\" role=\"group\" aria-label=\"La Tour, A leitora da sina: quatro zonas para tocar\"><image href=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" width=\"1000\" height=\"827\" aria-hidden=\"true\"/><g class=\"op-m\" data-j=\"0\" tabindex=\"0\" role=\"button\" aria-label=\"O par de mãos ao centro\"><circle class=\"halo\" cx=\"600\" cy=\"615\" r=\"40\"/><circle class=\"anel\" cx=\"600\" cy=\"615\" r=\"40\"/></g><g class=\"op-m\" data-j=\"1\" tabindex=\"0\" role=\"button\" aria-label=\"A mão mais baixa da velha\"><circle class=\"halo\" cx=\"712\" cy=\"582\" r=\"40\"/><circle class=\"anel\" cx=\"712\" cy=\"582\" r=\"40\"/></g><g class=\"op-m\" data-j=\"2\" tabindex=\"0\" role=\"button\" aria-label=\"A mão aberta do rapaz\"><circle class=\"halo\" cx=\"556\" cy=\"486\" r=\"40\"/><circle class=\"anel\" cx=\"556\" cy=\"486\" r=\"40\"/></g><g class=\"op-m\" data-j=\"3\" tabindex=\"0\" role=\"button\" aria-label=\"A moeda entre os dedos\"><circle class=\"halo\" cx=\"582\" cy=\"418\" r=\"40\"/><circle class=\"anel\" cx=\"582\" cy=\"418\" r=\"40\"/></g></svg>",
    "f": "Junto à medalha, duas mãos seguram a corrente do rapaz. Que a estão a cortar é uma inferência: o quadro não mostra o fim do gesto. E repara para onde olha o rapaz enquanto isto acontece.",
    "fe": "Começa no ombro do rapaz e segue a corrente até à medalha, que fica pendurada mais abaixo, ao centro: quem lhe está a tocar?"
   },
@@ -257,7 +257,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista factos, um de cada vez; o grupo escolhe dez que outro grupo possa confirmar e <span class=\"nq\">junta-lhes</span> três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>"
+   "html": "<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista os seus factos, um por nota; o grupo escolhe dez que outro grupo possa confirmar e <span class=\"nq\">junta-lhes</span> três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>"
   },
   {
    "t": "escolha",

@@ -68,12 +68,16 @@ def quadro(zonas, rotulo):
 
 
 # Zonas (nome, centro): conferidas a 31/10 sobre a imagem, com as mãos ampliadas.
-CORDAO = [('a mão do punho de renda', (240, 645)), ('a mão do rapaz, na anca', (278, 515)),
-          ('a moeda entre os dedos', (582, 418)), ('o laço da faixa à cintura', (431, 481))]
-MEDALHA = [('o par de mãos ao centro', (600, 615)), ('a mão mais baixa da velha', (712, 582)),
-           ('a mão aberta do rapaz', (556, 486)), ('a moeda entre os dedos', (582, 418))]
+# 01/11/2026 (correção 5, revisor de pt-PT): os nomes com maiúscula inicial, porque o motor mostra a zona escolhida sozinha
+# numa linha por baixo do quadro («A moeda entre os dedos?»); o tamanho das opções não muda.
+CORDAO = [('A mão do punho de renda', (240, 645)), ('A mão do rapaz, na anca', (278, 515)),
+          ('A moeda entre os dedos', (582, 418)), ('O laço da faixa à cintura', (431, 481))]
+MEDALHA = [('O par de mãos ao centro', (600, 615)), ('A mão mais baixa da velha', (712, 582)),
+           ('A mão aberta do rapaz', (556, 486)), ('A moeda entre os dedos', (582, 418))]
+# 01/11/2026 (correção 5, revisor de pt-PT): «um por nota» e não «um de cada vez», que logo a seguir a «Cada um» se lia
+# também como «à vez»; o guia (um facto de cada vez) e a grelha (factos registados um a um) dizem o mesmo.
 NA_AULA = (
- '<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista factos, um de cada vez; o grupo escolhe dez que outro grupo possa confirmar e junta-lhes três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p>'
+ '<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista os seus factos, um por nota; o grupo escolhe dez que outro grupo possa confirmar e junta-lhes três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p>'
  '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>')
 LEVAR = (

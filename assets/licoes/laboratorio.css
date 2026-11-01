@@ -54,3 +54,9 @@ html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,htm
    caixa inline-block, que deixava cair sozinho o «»» que fecha a citação (sessão 2, cartão 16, a 360 px). O nowrap de lesson.css
    mantém-se. Só nesta família: para as duas, o sítio certo é colar() em jogo.js, num pedido à parte. */
 .licao-laboratorio .jogo .inline .nb{display:inline}
+/* 01/11/2026 (correção 5, diretor de arte, medida da hierarquia, R2): o título dos cartões a 21 px. O rótulo em caixa alta
+   («Decide», «Ler», «Ver», «Na aula», 13 px) tinha 0,71 da letra do título (18,4 px, lesson.css) e competia com ele; a 21 px
+   fica a 0,62. O título em cartaz do «Abre» não muda. Só nesta família: para as duas, o sítio certo é .jogo .tit em lesson.css,
+   num pedido à parte. Equilibrado, como os títulos das páginas de «Ideias»: a 21 px, «sina» (cartão 10, a 320 px) e «olhar»
+   (cartão 7, a 360 e a 390 px) ficavam sozinhas na segunda linha. */
+.licao-laboratorio .jogo .tit:not(.cartaz){font-size:1.3125rem;text-wrap:balance}

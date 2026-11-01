@@ -219,4 +219,31 @@ async function responder(p,x){
    const r=await p.evaluate(()=>{const e=document.querySelector('#baralho .inline');const ss=[...e.querySelectorAll('select')];const rg=document.createRange();rg.selectNodeContents(e.lastChild);return {txt:e.lastChild.textContent,sel:ss[ss.length-1].getBoundingClientRect().bottom,aspas:rg.getBoundingClientRect().top}});
    assert(r.txt==='»'&&r.aspas<r.sel,'sessão 2, cartão 16: o «»» sozinho numa linha a 360 px ('+JSON.stringify(r)+')');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   console.log('PASS quarta revisão: escala dos títulos da entrada, gesto na projeção a 960 a 1099 px, medida de 34 em, botões e rótulos do guia, guião no telemóvel, «»» do cartão 16')}
+ // 9. 30/10/2026: as correções da quinta revisão (01/11): nas lições, o título dos cartões a 21 px (o rótulo em caixa alta fica
+ // abaixo de 65 % do título, regra R2 da medida da hierarquia) e equilibrado (nenhuma palavra sozinha na última linha); na
+ // entrada, o gesto numa coluna no ecrã a partir de 1080 px, com o pé da tabela de museu no pé da imagem, e três colunas abaixo
+ // disso e na projeção a partir de 1100 px; na projeção abaixo de 600 px, «As sete sessões» numa linha, os rótulos da faixa só
+ // para o leitor de ecrã e a proporção 2:2:3; nas três páginas, 24 px de margem lateral a partir de 768 px
+ {for(const [f,w,h,tema] of [['ideias-s01.json',390,844,'light'],['ideias-s02.json',1366,900,'dark']]){const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/'+f),'utf8'));
+   const {ctx,p,erros}=await abrir(b,base+d.saida.replace(/index\.html$/,''),w,h,tema);await seguinte(p);
+   const r=await p.evaluate(()=>{const t=document.querySelector('#baralho h2.tit:not(.cartaz)'),o=document.querySelector('#baralho .rot');const cs=getComputedStyle(t);return {tit:parseFloat(cs.fontSize),rot:parseFloat(getComputedStyle(o).fontSize),wrap:cs.textWrapStyle||cs.textWrap}});
+   assert(r.rot/r.tit<=0.65&&r.tit>=20.9,f+': rótulo a '+(r.rot/r.tit).toFixed(2)+' do título a '+w+' px ('+JSON.stringify(r)+')');assert.equal(r.wrap,'balance',f+': título dos cartões sem equilíbrio');
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const [w,q,col] of [[1024,'',3],[1079,'',3],[1080,'',1],[1366,'',1],[1440,'',1],[1366,'?projetar=1',3]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,900,w===1366?'dark':'light');
+   const r=await p.evaluate(()=>{const bs=[...document.querySelectorAll('[data-gesto] button[data-op]')].map(x=>x.getBoundingClientRect());const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect();
+    return {esq:new Set(bs.map(x=>Math.round(x.left))).size,alt:Math.max(...bs.map(x=>Math.round(x.height))),pe:Math.round(Math.abs(f.bottom-c.bottom))}});
+   assert.equal(r.esq,col,'entrada: o gesto em '+r.esq+' colunas a '+w+' px'+q+' (esperadas '+col+')');if(col===1)assert(r.alt<=52,'entrada: botão do gesto em duas linhas a '+w+' px');
+   // o pé alinhado de 1080 a 1440 px mediu-se com a Gelasio (as métricas da Georgia) e a Bebas Neue; com a letra de recurso do
+   // Chromium de teste a coluna da esquerda muda de altura, por isso aqui só se confirma a 1366 e a 1440 px
+   if(!q&&w>=1366)assert(r.pe<=1,'entrada: o pé da tabela de museu a '+r.pe+' px do pé da imagem a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const [w,tema] of [[320,'light'],[360,'dark'],[599,'light']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/?projetar=1',w,800,tema);
+   const r=await p.evaluate(()=>{const h=document.querySelector('#sessoes');const rg=document.createRange();rg.selectNodeContents(h);const cols=[...document.querySelectorAll('.faixa a')].map(a=>a.getBoundingClientRect().width);
+    return {linhas:new Set([...rg.getClientRects()].map(x=>Math.round(x.top))).size,nomes:[...document.querySelectorAll('.faixa .nome')].map(n=>Math.round(n.getBoundingClientRect().width)),prop:+(cols[2]/cols[0]).toFixed(2),igual:Math.abs(cols[0]-cols[1])<1,rel:parseFloat(getComputedStyle(h).fontSize)/parseFloat(getComputedStyle(document.querySelector('.porta h3')).fontSize)}});
+   assert.equal(r.linhas,1,'projeção: «As sete sessões» em '+r.linhas+' linhas a '+w+' px');assert(r.nomes.every(x=>x<=1),'projeção: rótulos da faixa à vista a '+w+' px');
+   assert(r.igual&&r.prop>=1.45&&r.prop<=1.55,'projeção: a faixa fora da proporção 2:2:3 a '+w+' px ('+r.prop+')');assert(r.rel>=1.249,'projeção: h2 só '+r.rel.toFixed(2)+' vezes os nomes das portas a '+w+' px');
+   assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  for(const pag of ['narrativas/ideias/','narrativas/ideias/guiao/','narrativas/ideias/docente/'])for(const [w,x] of [[390,16],[768,24],[1024,24]]){const {ctx,p,erros}=await abrir(b,base+pag,w,800,'light');
+   const r=await p.evaluate(()=>[Math.round(document.querySelector('h1').getBoundingClientRect().left),Math.round(window.innerWidth-document.querySelector('.migalhas').getBoundingClientRect().right)]);
+   assert.deepEqual(r,[x,x],pag+': margem lateral de '+r.join('/')+' px a '+w+' px (esperados '+x+')');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
+  console.log('PASS quinta revisão: título dos cartões a 21 px e equilibrado, gesto numa coluna a partir de 1080 px, projeção abaixo de 600 px, margem de 24 px a partir de 768 px')}
  await b.close();srv.close()})().catch(e=>{console.error(e);process.exit(1)});

@@ -98,9 +98,10 @@ cartoes = [
   "f":"A capa, o chapéu e o candeeiro veem-se. Dizer que é um cocheiro à espera de clientes junta pistas (a capa, os fiacres atrás), mas a fotografia não o prova: vai para a coluna «concluo». Repara no homem sentado no alto de um fiacre, na ponta esquerda: o sítio onde está é uma pista mais forte do que uma capa.",
   "fe":["","A capa e o chapéu estão à vista de qualquer pessoa. É observação.","O homem e o candeeiro estão na fotografia. É observação, e situa-o."]},
  {"t":"ler","rot":"Na aula","titulo":"O teu «cocheiro»","html":NA_AULA},
+ # 01/11/2026 (correção 5, revisor de pt-PT): no retorno, as palavras citadas como palavras vão entre aspas, como no «fe»
  {"t":"escolha","g":"fila","p":"Caso inventado: cinco chaves numa mesa. Qual destas descrições passaria na fila de reconhecimento?","p2":"Caso inventado: que descrição permitiria a um estranho escolher a chave certa entre cinco?",
   "o":["A do dente do meio gasto até brilhar.","Uma chave prateada, bonita e útil.","A que abre a porta da minha casa."],"c":0,
-  "f":"Só o dente gasto se vê e é só daquela chave. Prateada e útil servem para quase todas, bonita é uma opinião, e abrir a porta de casa é verdade, mas não se vê na mesa.",
+  "f":"Só o dente gasto se vê e é só daquela chave. «Prateada» e «útil» servem para quase todas, «bonita» é uma opinião, e abrir a porta de casa é verdade, mas não se vê na mesa.",
   "fe":["","Prateadas e úteis são quase todas. «Bonita» é uma opinião: ninguém reconhece uma chave por ela.","É verdade, mas quem procura a chave na mesa não vê a tua porta. Uma descrição para reconhecer tem de mostrar o que está à vista."]},
  {"t":"vf","g":"exata","p":"Para distinguir uma coisa, uma palavra rara vale mais do que a palavra exata.","p2":"Para distinguir uma coisa, mais vale uma palavra difícil do que a palavra certa.","v":False,
   "f":"Maupassant resume assim as ideias de Flaubert sobre o estilo: «seja qual for a coisa que se queira dizer, só há uma palavra para a exprimir, um verbo para a animar e um adjetivo para a qualificar» (tradução nossa). Exata, não rara.",

@@ -78,7 +78,8 @@ GUIA = {
   'tempos': [
    ('0 a 5', '«Abre»: cada um escreve o número de degraus, em silêncio. O docente anota três palpites no quadro, sem nomes.'),
    ('5 a 15', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
-   ('15 a 50', 'Cartões 3 a 13. O vídeo de Herman (4 min 50 s) projeta-se com legendas a partir do cartão 7; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
+   # 01/11/2026 (correção 5, revisor de pt-PT): «no cartão 7», o único com o vídeo («a partir do» lia-se «daí em diante»)
+   ('15 a 50', 'Cartões 3 a 13. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 7; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
    ('120 a 145', 'Cartões 15 a 19.'),
    ('145 a 165', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
@@ -114,14 +115,17 @@ GUIA = {
   ],
   'materiais': ['O material de cada aluno, com espaço para quinze notas.', 'Cartão rígido ou pranchetas para escrever na rua.', 'O guião da sessão 2, impresso.', 'O percurso até ao lugar e o quadro da sala para a lista dos «cocheiros» (só o nome de cada um, sem a linha).'],
   'escrito': 'As quinze notas; a linha antes e depois da fila, com o resultado; as três colunas sobre a fotografia; as duas versões do conselho comparadas.',
-  'produto': 'o «cocheiro» de cada aluno, individual',
+  # 01/11/2026 (correção 5, revisor de pt-PT): sem «de cada aluno», que repetia «individual», e em paralelo com a sessão 1
+  'produto': 'o «cocheiro», individual',
   'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
   'notas': [
    'A descoberta da sessão não é «Young enganou-se»: é que a versão dele muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
    'Young não diz onde leu a história; os cartões não dizem mais do que isto.',
    'As traduções de Maupassant são nossas e curtas; o texto inteiro, em francês, está no Project Gutenberg.',
    'A saída é opcional (decisão do docente de 31/10): sem ela, cada aluno escolhe o seu «cocheiro» da janela, numa fotografia de rua ou no caminho de casa para a escola, com as mesmas regras.',
-   'Na fotografia de Atget há um homem sentado no alto de um fiacre, na ponta esquerda. Boa pergunta para a turma: o que prova o sítio onde está?',
+   # 01/11/2026 (correção 5, revisor de pt-PT): a pergunta já não dá por certo que o sítio prova alguma coisa (o retorno do
+   # cartão 12 chama-lhe «uma pista mais forte do que uma capa», e a sessão ensina que uma inferência não é uma prova)
+   'Na fotografia de Atget há um homem sentado no alto de um fiacre, na ponta esquerda. Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?',
   ],
   'ligacoes': [('Maupassant, prefácio de _Pierre et Jean_ (Project Gutenberg, em francês)', 'https://www.gutenberg.org/ebooks/11131'), ('_Kiosque et fiacres, Paris_ na Paris Musées', 'https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris')],
  },
@@ -210,6 +214,9 @@ CSS = (TOKENS +
  '*{box-sizing:border-box}'
  'body.ideias{margin:0;background:var(--fundo);color:var(--tinta);font:17px/1.5 Arial,Helvetica,sans-serif}'
  '.ideias main{max-width:1200px;margin:0 auto;padding:0 16px 56px}'
+ # 01/11/2026 (correção 5, diretor de arte; sistema 3): 24 px de margem lateral a partir de 768 px, como na Cidadania piloto
+ # (eram 16 px a 768 e a 1024 px); a largura útil fica nos 1200 px do --larga do sistema
+ '@media (min-width:768px){.ideias main{padding-left:24px;padding-right:24px;max-width:1248px}}'
  '.ideias a{color:inherit;text-underline-offset:.15em}'
  '.ideias :is(a,button,summary):focus-visible{outline:3px solid var(--tinta);outline-offset:3px}'
  '.ideias .c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'
@@ -266,6 +273,11 @@ CSS = (TOKENS +
  # 01/11/2026 (correção 4, diretor de arte): na projeção, entre 960 e 1099 px (o portátil ligado ao projetor), a coluna da
  # direita deixa 107 a 116 px por botão e «Tenho um palpite» partia-se em três linhas: os três botões numa coluna
  '@media (min-width:960px) and (max-width:1099px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
+ # 01/11/2026 (correção 5, diretor de arte): no ecrã, a partir de 1080 px, a mesma coluna única: com três colunas de 141 px as
+ # etiquetas partiam-se desiguais (a 1366 px, «Sei» numa linha, «Tenho um palpite» em duas, «Não faço ideia» numa) e a tabela
+ # de museu ficava sozinha a meio de 132 a 159 px de vazio. Abaixo não, porque o pé da tabela desceria abaixo do da imagem: o
+ # diretor propôs 1060 px com a margem de 16 px; com a de 24 px (acima), o pé descia 15 a 18 px de 1060 a 1071 px
+ '@media (min-width:1080px){html:not(.em-projecao) .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}'
  '.ideias .gesto button{min-height:48px;padding:6px 8px;border:2px solid var(--tinta);background:transparent;color:var(--tinta);font:700 1rem/1.15 Arial,Helvetica,sans-serif;text-align:center;cursor:pointer}'
  '.ideias .gesto button[aria-pressed="true"]{border-width:4px;padding:4px 6px}'
  '.ideias .gesto button[aria-pressed="true"]::before{content:"✓ "}'
@@ -366,6 +378,13 @@ CSS = (TOKENS +
  # (letra mínima de 13 para 17,9 px, sistema 8); o botão Projetar some; na moldura /projetar/, as migalhas a 17,9 px
  'html.em-projecao{font-size:137.5%}html.em-projecao body.ideias{font-size:1rem}html.em-projecao .epi-projection-launcher{display:none!important}'
  'html.epi-projection .ideias .migalhas{font-size:.8125rem!important}'
+ # 01/11/2026 (correção 5, diretor de arte): na projeção abaixo de 600 px, «As sete sessões» (66 px) partia-se e deixava
+ # «sessões» sozinha; os títulos a 55 e 44 px (a mesma relação de 1,25 entre o h2 e os nomes das portas). Na faixa, o rótulo
+ # «Treinar» enchia a coluna e ficava a 6 px de «Criar»: os rótulos ficam só para o leitor de ecrã, como a partir de 1024 px
+ # (os nomes das portas vêm logo abaixo), e as colunas com mínimo 0, para a proporção 2:2:3 dos nós não se perder
+ '@media (max-width:599px){html.em-projecao .ideias h2.sessoes-t{font-size:2.5rem}html.em-projecao .ideias .porta h3{font-size:2rem}'
+ 'html.em-projecao .ideias .faixa{grid-template-columns:minmax(0,2fr) minmax(0,2fr) minmax(0,3fr)}'
+ 'html.em-projecao .ideias .faixa .nome{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}'
  '@media (prefers-reduced-motion:reduce){.ideias *{animation:none!important;transition:none!important}}'
  # guião e guia do docente: páginas de papel (A4), as mesmas peças
  # 01/11/2026 (correção 2, diretor de arte): 2 px de traço, como os outros botões de contorno (semelhança)
@@ -639,9 +658,11 @@ def pagina_guiao(L):
                   f'<section class="lado" aria-labelledby="g{s["n"]}v"><p class="rotulo">Sessão {s["n"]}, verso</p>'
                   f'<h2 id="g{s["n"]}v">{e(g["verso_titulo"])}</h2>' + bloco_guiao(g['verso']) + '</section>')
     n = len([s for s in SESSOES if s['n'] in L])
+    # 01/11/2026 (correção 5, revisor de pt-PT): «escreve-se no guião impresso» e não «aqui», que no ecrã apontava para a página
+    # web, onde não se escreve
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guião', '')])
              + '<header class="abre"><p class="rotulo">Ideias, piloto</p><h1>O guião</h1>'
-             f'<p class="lead">Para imprimir em A4: frente e verso de cada sessão pronta ({2 * n} páginas). No telemóvel só se toca; escreve-se aqui e onde cada um guarda o material.</p></header>'
+             f'<p class="lead">Para imprimir em A4: frente e verso de cada sessão pronta ({2 * n} páginas). No telemóvel só se toca; escreve-se no guião impresso e onde cada um guarda o material.</p></header>'
              '<p class="papel-cab"><button type="button" class="imprimir" onclick="window.print()">Imprimir</button><span class="pq">As sessões 3 a 7 entram quando estiverem prontas.</span></p>'
              + lados
              + '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../docente/">Para o docente →</a></p>')
@@ -714,8 +735,10 @@ def pagina_guia(L):
         fig = re.search(r'<figcaption>(.*?)</figcaption>', img['html']).group(1)
         v = video_de(d)
         tempos = ''.join(f'<tr><td class="num">{e(m)}</td><td>{e(t)}</td></tr>' for m, t in g['tempos'])
+        # 01/11/2026 (correção 5, revisor de pt-PT): sem «(a lição inteira)», que fazia crer que o cartão 7 só traz um excerto (o
+        # leitor do cartão mostra o vídeo inteiro, sem início nem fim)
         if v:
-            yt = (f'<p class="pg">{v["botao"]}. {g.get("video_cred", v["cred"])} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a> (a lição inteira).</p>'
+            yt = (f'<p class="pg">{v["botao"]}. {g.get("video_cred", v["cred"])} <a href="https://www.youtube.com/watch?v={e(v["id"])}">Abrir no YouTube</a>.</p>'
                   f'<p class="pg"><b>Tarefa.</b> {v["tarefa"]}</p>'
                   '<p class="pg"><b>Sem vídeo.</b> O docente lê o resumo oficial da lição (a ligação aparece no retorno do cartão 8) e a turma faz a mesma tarefa diante do quadro de La Tour.</p>')
         else:
