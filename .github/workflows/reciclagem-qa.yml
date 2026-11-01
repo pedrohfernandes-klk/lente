@@ -10,6 +10,9 @@ on:
       # 01/11/2026: a hierarquia dos títulos (decisão 61) mede todas as páginas; corre com qualquer página ou estilo.
       - '**/*.html'
       - 'assets/**'
+      # 01/11/2026: páginas que se desenham a partir de scripts ou de dados (lesson.js, catálogos .json) também acionam a medição.
+      - '**/*.js'
+      - '**/*.json'
       - 'tests/browser_hierarquia_titulos.py'
       - '.github/workflows/reciclagem-qa.yml'
 permissions:
