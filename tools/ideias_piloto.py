@@ -42,9 +42,11 @@ e = html.escape
 # outras aparecem «Em preparação», sem ligação. «linha» e «papel» são o que a região «A seguir» mostra dessa sessão.
 # 01/11/2026 (correção 2 do método, diretor de arte): o passo de cada porta é o das sessões que estão dentro dela (Ver, sessões
 # 1 e 2: passo 1; Treinar, sessões 3 e 4: passos 1 a 3); antes, Ver dizia «Passos 1 e 2» e Treinar «Passos 2 e 3»
+# 01/11/2026 (correção 3 do método, revisor de pt-PT): na porta Treinar, «juntar o material geral», para os três elementos
+# serem infinitivos paralelos (antes, «o material geral» ficava sem a ação do passo 1)
 PORTAS = [
  ('ver', 'Ver', 'Passo 1: juntar material, com os olhos e até ao fundo.', '../ver/'),
- ('treinar', 'Treinar', 'Passos 1 a 3: o material geral, trabalhá-lo na cabeça e, depois, largá-lo.', '../treinar/'),
+ ('treinar', 'Treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.', '../treinar/'),
  ('criar', 'Criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.', '../criar/'),
 ]
 SESSOES = [
@@ -825,8 +827,10 @@ def pagina_guia(L):
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis, salvo quando o critério diz outros: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
+             # 01/11/2026 (correção 3 do método, verificador e revisor): a sequência diz os passos de cada porta como a entrada (PORTAS)
+             # e o quadro abaixo; antes, ficara com o mapa antigo («Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar»)
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
-             '<p class="pg">Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
+             '<p class="pg">O passo 1 do método leva a Ver; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
              '<div class="tabela"><table class="seq" role="table"><thead role="rowgroup"><tr role="row">'
              + ''.join('<th role="columnheader" scope="col"' + (' class="num"' if k == 0 else '') + f'>{c}</th>' for k, c in enumerate(SEQ_COLS)) + '</tr></thead>'
              f'<tbody role="rowgroup">{seq}</tbody></table></div></section>')

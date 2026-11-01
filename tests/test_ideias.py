@@ -627,8 +627,10 @@ class Metodo(unittest.TestCase):
             return set(range(a, b + 1)) if m.group(2) != 'e' else {a, b}
         portas = [(pid, re.sub(r'<[^>]+>', '', t), ss) for pid, t, ss in  # sem as <span class="nq"> que seguram «trabalhá-lo»
                   re.findall(r'<div class="porta-corpo" id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">(.*?)</ol></div>', s, re.S)]
+        # 01/11/2026: (correção 3 do método, revisor de pt-PT) a porta Treinar diz «juntar o material geral», para os três elementos da
+        # enumeração serem infinitivos paralelos («juntar», «trabalhá-lo», «largá-lo»); antes, «o material geral» ficava sem a ação
         self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.'),
-                                                              ('treinar', 'Passos 1 a 3: o material geral, trabalhá-lo na cabeça e, depois, largá-lo.'),
+                                                              ('treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.'),
                                                               ('criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.')])
         for pid, t, sessoes in portas:
             dentro = [a for a in re.findall(r'<span class="apoio">(.*?)</span>', sessoes) if not a.startswith('Os cinco passos juntos')]
@@ -672,6 +674,9 @@ class Metodo(unittest.TestCase):
         self.assertEqual(re.findall(r'<p class="passo-g">([^<]*)</p>', g), ['Passo 1 de 5: juntar material, com os olhos', 'Passo 1 de 5: juntar material, até ao fundo'])
         self.assertIn('Passo 1 de 5: juntar material, até ao fundo.', L.visivel(self.licoes()[1]['cartoes'][0]['html']))
         guia = (PILOTO / 'docente/index.html').read_text('utf-8')
+        # 01/11/2026: (correção 3 do método, verificador) a sequência do guia diz os passos de cada porta como a entrada
+        self.assertIn('O passo 1 do método leva a Ver; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar.', L.visivel(guia))
+        self.assertNotIn('Os passos 1 e 2 do método levam a Ver', guia)
         self.assertEqual(len(re.findall(r'data-r="Passo">(?:Passos? \d( e \d)? de 5|Os cinco passos juntos)', guia)), 7)
         self.assertEqual(guia.count('<b>O passo.</b> Passo 1 de 5:'), 2)
 
