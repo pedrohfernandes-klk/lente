@@ -1,0 +1,17 @@
+{
+  "baseCases": 240,
+  "proposalCases": 96,
+  "libraryCases": 4,
+  "missing": [],
+  "brokenLocalLinks": [],
+  "authoredLanguageFindings": [],
+  "baseOverflow": 0,
+  "proposalOverflow": 0,
+  "proposalContrastFindings": 0,
+  "libraryContrastFindings": 0,
+  "baseJavascriptErrors": 0,
+  "proposalJavascriptErrors": 0,
+  "baseReducedMotionRunning": 0,
+  "files": 906,
+  "note": "Contraste calculado apenas em fundos sólidos. As capturas de páginas antigas preservam o texto original como prova. Não há certificação WCAG integral."
+}

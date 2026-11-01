@@ -1,0 +1,15 @@
+{
+  "overflow": 0,
+  "pages": 24,
+  "figures": 216,
+  "atlasControl": {
+    "text": "+",
+    "selector": "SUMMARY.",
+    "color": "rgb(163, 71, 46)",
+    "x": 1227,
+    "y": 434.890625,
+    "w": 24,
+    "h": 31.1875,
+    "parent": "<summary><strong>Portugal</strong><span>65 pessoas</span><b aria-hidden=\"true\">+</b></summary>"
+  }
+}

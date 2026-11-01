@@ -1,0 +1,105 @@
+{
+  "title": "A forma da história / estudo",
+  "theme": "dark",
+  "viewport": {
+    "w": 1366,
+    "h": 900
+  },
+  "height": 900,
+  "overflow": 0,
+  "h1": [
+    {
+      "selector": "h1.cz-title",
+      "text": "A forma da história",
+      "x": 107,
+      "y": 71.2,
+      "w": 537.1,
+      "h": 64.1,
+      "font": "\"Bebas Neue\", \"Arial Narrow\", Arial, sans-serif",
+      "size": 61.0352,
+      "line": "64.087px",
+      "color": "rgb(236, 235, 229)",
+      "background": "rgba(0, 0, 0, 0)",
+      "underline": "none",
+      "border": "0px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    }
+  ],
+  "firstAction": {
+    "selector": "button.cz-button.primary",
+    "text": "Seguinte →",
+    "x": 819.7,
+    "y": 169,
+    "w": 151.6,
+    "h": 48,
+    "font": "Arial, Helvetica, sans-serif",
+    "size": 16,
+    "line": "24px",
+    "color": "rgb(236, 235, 229)",
+    "background": "rgb(18, 18, 16)",
+    "underline": "none",
+    "border": "2px",
+    "radius": "0px",
+    "shadow": "none",
+    "href": null
+  },
+  "smallTargets": [],
+  "links": [
+    {
+      "selector": "button.cz-button.primary",
+      "text": "Seguinte →",
+      "x": 819.7,
+      "y": 169,
+      "w": 151.6,
+      "h": 48,
+      "font": "Arial, Helvetica, sans-serif",
+      "size": 16,
+      "line": "24px",
+      "color": "rgb(236, 235, 229)",
+      "background": "rgb(18, 18, 16)",
+      "underline": "none",
+      "border": "2px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    }
+  ],
+  "smallText": [],
+  "contrastFailures": [],
+  "contrastMin": 7.9,
+  "contrastMethod": "Cores opacas sólidas; fundos com imagem, alfa e opacidade excluídos. Não constitui certificação AA.",
+  "paragraphs": [
+    {
+      "selector": "#destino",
+      "text": "Estudo de composição, sem aplicação. Recorte das três mudanças propostas; não representa a página inteira nem suprime conteúdos. A altura re",
+      "x": 107,
+      "y": 573.1,
+      "w": 1152,
+      "h": 39,
+      "font": "Arial, Helvetica, sans-serif",
+      "size": 13,
+      "line": "19.5px",
+      "color": "rgb(179, 177, 170)",
+      "background": "rgba(0, 0, 0, 0)",
+      "underline": "none",
+      "border": "0px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    }
+  ],
+  "images": [],
+  "animations": 0,
+  "storageKeys": [],
+  "htmlClasses": "",
+  "job": {
+    "key": "depois-peca-1366-dark",
+    "url": "/lente/docs/design-auditoria-20261031/proposta/paginas/peca.html?tema=escuro",
+    "w": 1366,
+    "theme": "dark",
+    "kind": "proposal"
+  },
+  "errors": []
+}

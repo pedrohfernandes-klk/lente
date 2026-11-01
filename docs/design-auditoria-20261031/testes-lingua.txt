@@ -1,0 +1,9 @@
+test_padroes (test_lingua_perguntas.LinguaDasPerguntas.test_padroes) ... ok
+test_sem_imperativo_de_voce (test_lingua_perguntas.LinguaDasPerguntas.test_sem_imperativo_de_voce) ... ok
+test_sem_qual_mais_nome (test_lingua_perguntas.LinguaDasPerguntas.test_sem_qual_mais_nome) ... ok
+test_trocas_registadas (test_lingua_perguntas.LinguaDasPerguntas.test_trocas_registadas) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 9.035s
+
+OK

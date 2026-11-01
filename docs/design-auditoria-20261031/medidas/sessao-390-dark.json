@@ -1,0 +1,110 @@
+{
+  "title": "Sessão 01: Um mapa de direitos · Cidadania · Lente",
+  "theme": "dark",
+  "viewport": {
+    "w": 390,
+    "h": 844
+  },
+  "height": 844,
+  "overflow": 0,
+  "h1": [],
+  "firstAction": {
+    "selector": "button.c-prim",
+    "text": "Seguinte",
+    "x": 246.4,
+    "y": 788,
+    "w": 133.6,
+    "h": 48,
+    "font": "Arial",
+    "size": 16,
+    "line": "19.2px",
+    "color": "rgb(18, 18, 16)",
+    "background": "rgb(236, 235, 229)",
+    "underline": "none",
+    "border": "0px",
+    "radius": "0px",
+    "shadow": "none",
+    "href": null
+  },
+  "smallTargets": [],
+  "links": [
+    {
+      "selector": "button.c-prim",
+      "text": "Seguinte",
+      "x": 246.4,
+      "y": 788,
+      "w": 133.6,
+      "h": 48,
+      "font": "Arial",
+      "size": 16,
+      "line": "19.2px",
+      "color": "rgb(18, 18, 16)",
+      "background": "rgb(236, 235, 229)",
+      "underline": "none",
+      "border": "0px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    }
+  ],
+  "smallText": [],
+  "contrastFailures": [],
+  "contrastMin": 7.9,
+  "contrastMethod": "Cores opacas sólidas; fundos com imagem, alfa e opacidade excluídos. Não constitui certificação AA.",
+  "paragraphs": [
+    {
+      "selector": "p",
+      "text": "Caso inventado. Às 8h20, uma aluna é fotografada a dormir no autocarro. A fotografia chega ao grupo da turma antes da primeira aula. Ninguém",
+      "x": 24,
+      "y": 223.9,
+      "w": 342,
+      "h": 107.5,
+      "font": "Georgia, \"Times New Roman\", serif",
+      "size": 16.8,
+      "line": "26.88px",
+      "color": "rgb(236, 235, 229)",
+      "background": "rgba(0, 0, 0, 0)",
+      "underline": "none",
+      "border": "0px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    },
+    {
+      "selector": "p.aula-linha",
+      "text": "Hoje, 180 minutos com uma pausa: o Ponto de partida em papel, depois decidir, ligar casos a artigos e fazer o mapa de direitos da escola.",
+      "x": 24,
+      "y": 347.4,
+      "w": 342,
+      "h": 77.1,
+      "font": "Arial, Helvetica, sans-serif",
+      "size": 15.2,
+      "line": "22.04px",
+      "color": "rgb(236, 235, 229)",
+      "background": "rgba(0, 0, 0, 0)",
+      "underline": "none",
+      "border": "1px 0px 0px",
+      "radius": "0px",
+      "shadow": "none",
+      "href": null
+    }
+  ],
+  "images": [],
+  "animations": 0,
+  "storageKeys": [],
+  "htmlClasses": "com-casca",
+  "page": {
+    "id": "sessao",
+    "title": "Cidadania, sessão piloto 1",
+    "url": "/lente/cidadania/piloto/m1-s01/",
+    "w": 390,
+    "theme": "dark"
+  },
+  "errors": [],
+  "failed": [],
+  "capturedAt": "2026-10-31T23:48:16.143Z",
+  "reducedMotion": {
+    "running": 0,
+    "nonzero": 0
+  }
+}

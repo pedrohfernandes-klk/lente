@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pt",
+    "title": "Português",
+    "url": "/pt/"
+  },
+  {
+    "id": "lente",
+    "title": "Lente",
+    "url": "/lente/"
+  },
+  {
+    "id": "lab",
+    "title": "Laboratório",
+    "url": "/lente/narrativas/"
+  },
+  {
+    "id": "ver",
+    "title": "Ver",
+    "url": "/lente/narrativas/ver/"
+  },
+  {
+    "id": "treinar",
+    "title": "Treinar",
+    "url": "/lente/narrativas/treinar/"
+  },
+  {
+    "id": "criar",
+    "title": "Criar",
+    "url": "/lente/narrativas/criar/"
+  },
+  {
+    "id": "percurso",
+    "title": "Dar forma a uma história",
+    "url": "/lente/narrativas/percursos/ordem/"
+  },
+  {
+    "id": "peca",
+    "title": "A forma da história",
+    "url": "/lente/narrativas/aula-forma/"
+  },
+  {
+    "id": "m1",
+    "title": "Português, módulo 1",
+    "url": "/pt/m1/"
+  },
+  {
+    "id": "m2",
+    "title": "Português, módulo 2",
+    "url": "/pt/m2/"
+  },
+  {
+    "id": "m3",
+    "title": "Português, módulo 3",
+    "url": "/pt/m3/"
+  },
+  {
+    "id": "m4",
+    "title": "Português, módulo 4",
+    "url": "/pt/m4/"
+  },
+  {
+    "id": "m5",
+    "title": "Português, módulo 5",
+    "url": "/pt/m5/"
+  },
+  {
+    "id": "m6",
+    "title": "Português, módulo 6",
+    "url": "/pt/m6/"
+  },
+  {
+    "id": "m7",
+    "title": "Português, módulo 7",
+    "url": "/pt/m7/"
+  },
+  {
+    "id": "m8",
+    "title": "Português, módulo 8",
+    "url": "/pt/m8/"
+  },
+  {
+    "id": "m9",
+    "title": "Português, módulo 9",
+    "url": "/pt/m9/"
+  },
+  {
+    "id": "licao",
+    "title": "Português, lição M7-F01",
+    "url": "/pt/m7/licao-m7-f01/"
+  },
+  {
+    "id": "cidadania",
+    "title": "Cidadania",
+    "url": "/lente/cidadania/"
+  },
+  {
+    "id": "piloto",
+    "title": "Cidadania, módulo piloto 1",
+    "url": "/lente/cidadania/piloto/m1/"
+  },
+  {
+    "id": "sessao",
+    "title": "Cidadania, sessão piloto 1",
+    "url": "/lente/cidadania/piloto/m1-s01/"
+  },
+  {
+    "id": "biblioteca",
+    "title": "Biblioteca",
+    "url": "/lente/biblioteca/"
+  },
+  {
+    "id": "atlas",
+    "title": "Atlas",
+    "url": "/pt/atlas/"
+  },
+  {
+    "id": "exame",
+    "title": "Exame",
+    "url": "/pt/exame/"
+  }
+]

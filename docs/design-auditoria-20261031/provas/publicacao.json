@@ -1,0 +1,194 @@
+[
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "54ecdcfecbe75d17ac45695977ad7bf62b99c7789e42d63a5e19abfc53211c7c",
+    "localSHA256": "0cd6bb0377e53db13511c7c134027e7ddd62447abab6861c10c3d61f395fac29"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "06dadde141c6f02a034ef16f526cd066cbc0dc9dc8e5d100219659ac396240da",
+    "localSHA256": "d52cd556dfddba40b944b041b8dffabc4646c0c4128f1d1e2267c62a995f69af"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "76216e4a5f26eb450cee6c2ffe9f8059a9991c281c6769d06f2598b5dcee2e62",
+    "localSHA256": "5d6ab4550a7592afde765aa07de3aa73a7182ecd425a7628cec5383b8b9a1581"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/ver/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "43d262fb3a1080afdbbb4ee894f631a1d7d0985ee6ca69f16e7ea5a3f3d73441",
+    "localSHA256": "fcf7d0202b361b73d5aaf961674d1ab71774f99236dca3bfb4b12a28135ec292"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "c0d9c5fe913c9a4cab6ff217d67b396df08d3cadf0580257f495ee77ed899526",
+    "localSHA256": "ec972dc61b379c01f452d8883cbedc484b3f8bb9d73fca840b30145f300ce0e9"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/criar/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "ba3e44d52083617a6b3fe0199f45ad055f45c5b94fb62f6de855cb82b8808013",
+    "localSHA256": "0522c5139bd5097c582c57228c7755f21e08a26bc49744b0139279150ccde382"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/ordem/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "b71fd4a2a7d8ecd20c16d23412510257d86512d10203704d55c067b1f3e4b9f4",
+    "localSHA256": "b611ff0ecca8f5ca7438c12af115f8b1cb7ebec259a4dfd8d42e271f7f7d2466"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "243b812a3faea6cd5b0f985cd4defd7522f0b583add17b0b9a915a56e58cdf38",
+    "localSHA256": "5bdaa8cf519ec8f903d71f6ac5abaef9ec9afbf0b3aaae090521b96c3001edfc"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m1/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "28fb92a6202b262e14427b07ff1cc448088c77bb2f8698709c912bdacf14f7c1",
+    "localSHA256": "744a4f7e666da8c94c08664f486e7b582045332a99c7186d77cac170d2d9d2fa"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m2/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "4d9c823c39bfe6faf537ec223cf119ee223d080317dbd591b8c2a41618e8d68c",
+    "localSHA256": "d1105adaaf3e47e7e4075a56b5f77c26080e39f049b2e2d69980cbce85b6d22b"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m3/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "b682ddd29ba8736ca641328080bec57c49b858381cacc6f042bc14d34b161a7c",
+    "localSHA256": "5601722590cbda72693616e0725fe5dcdb78e3d4e7b731d3c0b663bcf1a92ded"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m4/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "9433d90ffe8ba3ec4f06f9b2f3edc20debf089fb748a948cf789e316fcd3b2a8",
+    "localSHA256": "a73f110e132cf8a1d6ef2930345e00d17ed65f5d83385b5d0e0b5eb52f14ee6c"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m5/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "545459f85df44a6b79526d2958239722da22b7cce91b1c97ac09b87b7055afa8",
+    "localSHA256": "3f000cdfad980644cb31aa84292bd5cd850521c0e8d3b4499c7addc31d08023a"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m6/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "32dc518f9e49fd1a2c5d645e8b08b2067a0fffa165ffb7072f716e561d499346",
+    "localSHA256": "4d21d90d05cf70d8bbb418d04a0484cfcb4926082655a031977ee5ed1d5cd3de"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m7/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "6639bb76cd14b016863762bddd42dfe79ae6d9a1adfe46894ea5b3f0f8bedd90",
+    "localSHA256": "11d220482736c4f2a948a00affaf2d4306cfe14b200961a2131abef7dea67ecf"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m8/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "e317015520a917e086091c873631de78f80351588da8503dcf93c36efe1d634b",
+    "localSHA256": "032149a2fcca19027a01696c66535ae77aacf8fbcc616e6032b2222d8340c138"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m9/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "f71ef4ddb746a7434047c221a274fe6d588ab01473045df3f6fbdb656eb2f731",
+    "localSHA256": "5659e650a3184b8f9b29a4b2337c84a47922fa30733096f990c4ea9ae404dc75"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f01/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "a7bf34894b397521680151cfcf0de4b23fc4bc8ea473086c0adb78528c0f32b9",
+    "localSHA256": "50c5d0cf0a5f576ba8b3f8a8c4512901298ed4f5fae65a2d2aa86caf5a56a8cb"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "78eea1bdc745e1ddff6d30d0df61075964d0142c4cffaa9f54f506d0878e6784",
+    "localSHA256": "acbc53647f5743e1fe3c37e8fd18b66bc7f4e80c77f88ed295d1af172c6e78f1"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "2c143b03dd123742cd67ccec6ed74e70dd55dbbfb78d91d59bc69381fa2c214b",
+    "localSHA256": "604a22c9a3a6e378db4b9ccadf65c8369af985a32a508a303cddb64ce233a02c"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1-s01/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "b5986f3bc3f580f7f413a597aa9695b4ef50d7118c900b34b17c817454f160df",
+    "localSHA256": "9c6283dec4eea696ea853d558bb92567c17e438c784550fa6bf50b5da24981e1"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/lente/biblioteca/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "53142918f89ffb164e932dff1802102c547c942096cd4caef42511298b4a474b",
+    "localSHA256": "7cfc2cfcaf1bea4f9b3d8b1b8ab4b848960573c22960587b20bc275c472afb4c"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/atlas/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "b06ac16671a9408b41b344690b2f989a6c58e05d03175d30430434c023d10876",
+    "localSHA256": "a4ca609bb70f194657a7508683097604c21c614f99c11c139e71dd515a4ad484"
+  },
+  {
+    "url": "https://pedrohfernandes-klk.github.io/pt/exame/",
+    "status": 200,
+    "sameHTML": false,
+    "sameHTMLNormalized": true,
+    "remoteSHA256": "464cf91a74f751a5bc793fdb1e6aab00698572ebc41d90038a52d07251143ed1",
+    "localSHA256": "9f86d59e4282e30390a908e494c32edcb90f62afe2a7e45b950ec8c5d0591859"
+  }
+]
