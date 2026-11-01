@@ -161,7 +161,8 @@ class Ginasio(unittest.TestCase):
         self.assertIn('<img src="' + porta['file'] + '"', s[i:j])
         self.assertTrue((R / porta['file']).is_file())
         # 01/11/2026: D1, classe comum dos créditos; mesma imagem e posição da legenda.
-        self.assertRegex(s[i:j], r'</a><div class="ld-corpo"><p class="m1-home-credit ld-credito cz-credit">Vincent van Gogh, esboço de <i>O Quarto</i>')
+        # 01/11/2026: a dobra mantém a imagem, o título e o crédito na mesma porta, sem perder a fonte.
+        self.assertRegex(s[i:j], r'</a><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo"><p class="m1-home-credit ld-credito cz-credit">Vincent van Gogh, esboço de <i>O Quarto</i>')
         for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
             self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)
