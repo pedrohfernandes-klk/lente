@@ -588,7 +588,15 @@ class Metodo(unittest.TestCase):
         # a linha de informação antiga (o livro e Holmes «como guia») deu lugar ao bloco
         self.assertNotIn('como guia', L.visivel(abre))
         # o passo também no rótulo da região «A seguir» («Começa aqui: passo 1 de 5»), que o script troca com o progresso
-        self.assertIn('<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: passo 1 de 5</span></p>', s)
+        # 01/11/2026: (correção 1 do método, diretor de arte) «passo 1 de 5» inseparável, com espaços duros, no rótulo inicial, no
+        # data-passo das sessões prontas e na sessão em preparação que o script escreve (antes partia-se dentro do passo)
+        self.assertIn('<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: passo\u00a01\u00a0de\u00a05</span></p>', s)
+        self.assertEqual(re.findall(r'data-passo="([^"]*)"', s), ['passo\u00a01\u00a0de\u00a05'] * 2)
+        self.assertIn('q("[data-p-passo]").textContent=": passos\u00a01\u00a0e\u00a02\u00a0de\u00a05";', s)
+        # 01/11/2026: (correção 1 do método, diretor de arte) a lista dos cinco passos em grelha, para nenhum ficar sozinho numa linha:
+        # um por linha abaixo de 600 px, três mais dois a partir de 600 px (as medidas estão em browser_ideias.cjs, secção 11)
+        self.assertIn('@media (max-width:599px){.ideias ol.passos-m{display:grid;grid-template-columns:max-content;row-gap:0}', s)
+        self.assertIn('@media (min-width:600px){.ideias ol.passos-m{display:grid;grid-template-columns:repeat(3,max-content);column-gap:16px}}', s)
         self.assertIn('q("[data-p-passo]").textContent=": "+prox.getAttribute("data-passo");', s)
 
     def test_passo_n_de_5_em_cada_sessao(self):
@@ -608,7 +616,9 @@ class Metodo(unittest.TestCase):
             self.assertEqual(linha.count('class="hoje" aria-current="step"'), 1)
             self.assertIn('<li class="hoje" aria-current="step"><b>1</b> Juntar material <span class="hoje-t">hoje</span></li>', linha)
             # o último cartão diz que passo se fez e o que vem a seguir
-            self.assertRegex(L.visivel(ultimo), r'(Fizeste o passo 1 de 5|Passo 1 de 5: feito)', d['id'])
+            # 01/11/2026: (correção 1 do método, revisor de pt-PT) na sessão 2, «Passo 1 de 5: feito» dava o passo por acabado com o
+            # material geral ainda por juntar (sessão 3): passa a «Passo 1 de 5: falta o material geral»
+            self.assertRegex(L.visivel(ultimo), r'(Fizeste o passo 1 de 5|Passo 1 de 5: falta o material geral)', d['id'])
             self.assertRegex(L.visivel(ultimo), r'(Para a sessão 2 , o mesmo passo|passo 2 de Young)', d['id'])
             # a marca da casca e o <title>
             self.assertIn('<span class="c-marca-p">Passo 1 de 5</span>', pag)
@@ -616,9 +626,16 @@ class Metodo(unittest.TestCase):
         css = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
         self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li.hoje{', css)
         self.assertIn('@media (max-width:429px){.licao-laboratorio .c-marca-p{position:absolute', css)
+        # 01/11/2026: (correção 1 do método, diretor de arte) a linha dos passos em grelha também abaixo de 600 px (um por linha), e
+        # «hoje» como rótulo de estado do sistema (13 px, 0,14 em), não abaixo da letra mínima
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m{list-style:none;display:grid;grid-template-columns:max-content;', css)
+        self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m .hoje-t{font-size:.8125rem;letter-spacing:.14em;', css)
         # o guião diz o passo no cabeçalho de cada sessão; o guia, na sequência e em cada sessão
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
-        self.assertEqual(re.findall(r'<p class="passo-g">(Passo \d de 5)[^<]*</p>', g), ['Passo 1 de 5', 'Passo 1 de 5'])
+        # 01/11/2026: (correção 1 do método, diretor de arte, revisor e verificador) o cabeçalho diz «Passo N de 5» e o nome do passo
+        # (encargo, ponto 3), com as palavras do «Abre» de cada sessão; antes, a sessão 2 dizia «o material específico»
+        self.assertEqual(re.findall(r'<p class="passo-g">([^<]*)</p>', g), ['Passo 1 de 5: juntar material, com os olhos', 'Passo 1 de 5: juntar material, até ao fundo'])
+        self.assertIn('Passo 1 de 5: juntar material, até ao fundo.', L.visivel(self.licoes()[1]['cartoes'][0]['html']))
         guia = (PILOTO / 'docente/index.html').read_text('utf-8')
         self.assertEqual(len(re.findall(r'data-r="Passo">(?:Passos? \d( e \d)? de 5|Os cinco passos juntos)', guia)), 7)
         self.assertEqual(guia.count('<b>O passo.</b> Passo 1 de 5:'), 2)
@@ -633,7 +650,11 @@ class Metodo(unittest.TestCase):
             self.assertIn(frag, t)
         # a frase de Young que resume o método, conferida letra a letra na tradução nossa (capítulo «Ideias São Novas Combinações»)
         self.assertIn('<blockquote><p>«Esta técnica intelectual consiste em cinco passos. Tenho a certeza de que todos, um por um, são reconhecíveis.»</p></blockquote>'
-                      '<p class="fonte">James Webb Young, <i>Uma Técnica para Produzir Ideias</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>', c['html'])
+                      '<p class="fonte">James Webb Young, <i>A Technique for Producing Ideas</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>', c['html'])
+        # 01/11/2026: (correção 1 do método, revisor de pt-PT) na fonte, o título como no texto do cartão, na entrada, no guia e no menu
+        # de fontes (antes, «Uma Técnica para Produzir Ideias»); o outro título não aparece em nenhum cartão das duas sessões
+        for d in (d1, d2):
+            self.assertNotIn('Uma Técnica para Produzir Ideias', ' '.join(' '.join(L.textos(x)) for x in d['cartoes']), d['id'])
         # o cartão novo muda a ordem: a versão da sessão 1 sobe; a sessão 2 não ganha cartão e fica com a versão
         self.assertEqual((d1['versao'], d2['versao']), ('2026-11-01-1', '2026-10-31-1'))
         self.assertEqual((d1['chave'], d2['chave']), ('epi-lab-ideias-s01', 'epi-lab-ideias-s02'))
@@ -668,6 +689,10 @@ class Metodo(unittest.TestCase):
         # nos retornos, o método fala sem se anunciar
         cartoes1 = {c.get('g'): c for c in d1['cartoes']}
         self.assertEqual(cartoes1['cartoes']['fe'][2], 'O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe.')
+        # 01/11/2026: (correção 1 do método, verificador de factos) o passo 5 do método é levar a ideia a quem a critica: quem não fala
+        # de mostrar trabalho é o conselho dos cartões; e a citação do atol diz de onde vem («diz o livro»), sem o nome
+        self.assertEqual(cartoes1['cartoes']['fe'][1], 'O conselho dos cartões não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.')
+        self.assertIn('mas, diz o livro, «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral»', cartoes1['atol']['f'])
         # as páginas do piloto: a entrada (o bloco e a saída para a Biblioteca), o guião (nenhuma) e o guia (a razão do método,
         # onde o nome volta e as fontes das duas sessões)
         vis = lambda rel: L.visivel(re.sub(r'<(script|style|title)[^>]*>.*?</\1>', ' ', (PILOTO / rel).read_text('utf-8'), flags=re.S))

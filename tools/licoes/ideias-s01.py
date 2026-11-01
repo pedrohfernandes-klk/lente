@@ -11,6 +11,10 @@
 # recomeça no primeiro cartão (jogo.js; a entrada deixa de a mostrar como feita). As perguntas, as respostas certas, a chave e
 # os 13 cartões de fazer não mudam.
 #
+# 01/11/2026 (correção 1 do método): a fonte do cartão «O método» com o título do livro como no texto (revisor de pt-PT); no
+# retorno do atol, a citação volta a ter dono, «diz o livro», sem o nome (revisor); no retorno dos cartões, «O conselho dos
+# cartões não fala de mostrar trabalho…» (era «O método…», e o passo 5 do método é levar a ideia à crítica; verificador).
+#
 # 01/11/2026 (correção 4, revisor de pt-PT): no emparelhar «estatuto», o quarto par na forma dos outros três («Uma pergunta:
 # fica por investigar.»).
 # 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador (o retorno do resumo de Herman, «apontar no quadro o que ela diz» e «o que não se vê numa imagem»).
@@ -61,7 +65,9 @@ ABRE = (
 METODO = (
  '<p>James Webb Young foi um publicitário norte-americano. Em 1940 publicou <i>A Technique for Producing Ideas</i>, um livro de poucas páginas, nascido de uma aula na Universidade de Chicago. Ao apresentar o método, escreve:</p>'
  '<blockquote><p>«Esta técnica intelectual consiste em cinco passos. Tenho a certeza de que todos, um por um, são reconhecíveis.»</p></blockquote>'
- '<p class="fonte">James Webb Young, <i>Uma Técnica para Produzir Ideias</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>'
+ # 01/11/2026 (correção 1 do método, revisor de pt-PT): na fonte, o título do livro como no texto do cartão, na entrada, no guia e
+ # no menu de fontes (antes, «Uma Técnica para Produzir Ideias», e nada dizia ao aluno que era o mesmo livro)
+ '<p class="fonte">James Webb Young, <i>A Technique for Producing Ideas</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>'
  '<p>Os passos dão-se por ordem. Há outros métodos; seguimos este por ser simples e claro, por fazer sentido e por ajudar de facto. Aprende-o aqui, para depois o usares por tua conta.</p>')
 DECIDE = (
  '<p>As ideias caem do céu?</p>'
@@ -132,7 +138,7 @@ cartoes = [
  {"t":"ler","rot":"Decide","titulo":"O banho e o atol","html":DECIDE},
  {"t":"escolha","g":"atol","p":"Uma ideia é como um atol que aparece de repente no mar. Na comparação, o que são os corais que ninguém vê?","p2":"Se a ideia é o atol, o que são os corais que o construíram debaixo de água?",
   "o":["O trabalho feito antes de a ideia aparecer.","A sorte de estar no sítio certo à hora certa.","Os colegas que copiam a ideia mais tarde."],"c":0,
-  "f":"O atol parece surgir do nada, mas «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral». A ideia é só a parte que chega à superfície; o trabalho fica por baixo.",
+  "f":"O atol parece surgir do nada, mas, diz o livro, «resulta dos esforços ocultos de inúmeros e invisíveis construtores de coral». A ideia é só a parte que chega à superfície; o trabalho fica por baixo.",
   "fe":["","A sorte não constrói nada debaixo de água. A comparação fala de «processos de construção», isto é, de trabalho que ninguém vê.","Os corais vêm antes do atol, não depois. Copiar só pode acontecer quando a ideia já existe."]},
  {"t":"ler","rot":"Ler","titulo":"Vê, mas não observa","html":HOLMES},
  {"t":"escolha","g":"watson","p":"Watson subiu a escada centenas de vezes e não sabe quantos degraus tem. O que lhe faltou?","p2":"Que faltou a Watson, que viu os degraus centenas de vezes, para saber o número?",
@@ -180,7 +186,7 @@ cartoes = [
  {"t":"escolha","g":"cartoes","p":"O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve?","p2":"Porque é que o método manda passar a escrito, cartão a cartão, o que se recolhe?",
   "o":["Obriga a escrever e mostra o que falta.","Prova ao docente que trabalhaste muito.","Ajuda a decorar os factos para um teste."],"c":0,
   "f":"O livro diz que o registo ajuda a «dar ordem ao trabalho» e a «evidenciar as falhas no conhecimento», e que obriga o cérebro «a passar pelo processo de expressar os conteúdos pesquisados em forma escrita». Cartões, caderno ou telemóvel: escolhe a forma, mas regista uma coisa de cada vez.",
-  "fe":["","O método não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.","O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe."]},
+  "fe":["","O conselho dos cartões não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.","O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe."]},
  {"t":"vf","g":"aalto","p":"No curso aberto da Universidade Aalto sobre criatividade, o processo criativo começa pela observação.","p2":"Segundo o curso da Universidade Aalto, a criatividade começa por observar.","v":True,
   "f":"Na parte pública do curso _Diving into Radical Creativity_, a Universidade Aalto, na Finlândia, escreve: «The creative process starts with observation» (o processo criativo começa com a observação; tradução nossa).",
   "fe":"Holmes, Herman e o curso da Aalto dizem o mesmo por outras palavras: antes das ideias, é preciso material, e o material recolhe-se a olhar.",

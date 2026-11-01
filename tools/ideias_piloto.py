@@ -50,7 +50,7 @@ SESSOES = [
   'passo': 'Passo 1 de 5: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
   'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
-  'passo': 'Passo 1 de 5: o material específico, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
+  'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
   'passo': 'Passos 1 e 2 de 5: o material geral e as relações', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
@@ -85,7 +85,7 @@ ATOL = {
 # O guia do docente: o que só o docente lê, por sessão pronta (plano final, secção 8). Tempos em minutos.
 GUIA = {
  1: {
-  'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o passo 1 de 5, juntar material, no material específico.',
+  'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o passo 1 de 5: juntar material específico.',
   'antes': 'Ter a lista dos lugares da escola para os grupos (a escada, o portão, o bar, o pátio), um por grupo, para dois grupos não se cruzarem. Confirmar o som do projetor para o vídeo.',
   'tempos': [
    ('0 a 5', '«Abre»: cada um escreve o número de degraus, em silêncio. O docente anota três palpites no quadro, sem nomes.'),
@@ -271,6 +271,13 @@ CSS = (TOKENS +
  '.ideias ol.passos-m{clear:both;list-style:none;display:flex;flex-wrap:wrap;gap:0 18px;margin:0;padding:0}'
  '.ideias ol.passos-m li{display:inline-flex;align-items:baseline;gap:6px;font:700 .9375rem/1.4 Arial,Helvetica,sans-serif;white-space:nowrap}'
  '.ideias ol.passos-m b{font:400 1.3125rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif}'
+ # 01/11/2026 (correção 1 do método, diretor de arte): em flex-wrap, a lista partia onde calhava e o passo 5 ficava sozinho na
+ # última linha (a 360 e 390 px [[1, 2], [3, 4], [5]]; de 1024 a 1440 px e na moldura a 1024 px [[1, 2, 3, 4], [5]]). Em grelha:
+ # um passo por linha abaixo de 600 px, mais juntos (entrelinha 1,2 e o número a 18 px, para a entrada a 390 px ficar abaixo dos
+ # 2500 px), e três mais dois, em colunas, a partir de 600 px, como a linha dos passos no «Abre» das lições. Vem depois das regras
+ # do li e do b, para a entrelinha e o número as vencerem
+ '@media (max-width:599px){.ideias ol.passos-m{display:grid;grid-template-columns:max-content;row-gap:0}.ideias ol.passos-m li{line-height:1.2}.ideias ol.passos-m b{font-size:1.125rem}}'
+ '@media (min-width:600px){.ideias ol.passos-m{display:grid;grid-template-columns:repeat(3,max-content);column-gap:16px}}'
  # região «A seguir» (sistema 6.3): a única preta; nunca anima
  '.ideias .proximo{background:var(--tinta);color:var(--papel);padding:16px 16px 18px;margin:0 0 20px}'
  '.ideias .proximo .kicker{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px}'
@@ -563,7 +570,10 @@ def passo_n(s):
     """01/11/2026 (método): o passo da sessão só com o número, para o rótulo da região «A seguir» («passo 1 de 5», «passos 1 e
     2 de 5», «os cinco passos»); a forma longa, com o que a sessão faz nesse passo, fica na lista, no guião e no guia."""
     t = s['passo'].split(':')[0]
-    return t[0].lower() + t[1:]
+    # 01/11/2026 (correção 1 do método, diretor de arte): inseparável (espaços duros), como «sessão N» no botão: o rótulo partia
+    # dentro do passo e deixava um pedaço sozinho («… passos 1» / «e 2 de 5» a 390 px; «Começa aqui: passo» / «1 de 5» na projeção a
+    # 320 px). Serve o data-passo, o rótulo inicial e a sessão em preparação no script
+    return (t[0].lower() + t[1:]).replace(' ', '\u00a0')
 
 
 def pergunta_abre(d):

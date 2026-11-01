@@ -8,6 +8,9 @@
 # fica 2026-10-31-1. As perguntas, as respostas certas, a chave e os 12 cartões de fazer não mudam; a opção «O nome de
 # Flaubert, que Young não diz.» passa a «O nome de Flaubert, que o livro omite.», com o mesmo comprimento (38 carateres).
 #
+# 01/11/2026 (correção 1 do método, revisor de pt-PT): a fonte do cartão 3 com o título do livro como no menu de fontes; no
+# «Para levar», «Passo 1 de 5: falta o material geral.» (era «feito», com o material geral ainda por juntar na sessão 3).
+#
 # 01/11/2026 (correção 4, revisor de pt-PT): o p2 do cartão «cedo» pede as três palavras que tocas; a linha do «Na aula» só serve
 # para esse «cocheiro»; «Também puseste» no «Para levar», sem duas frases seguidas a abrir com «E».
 # 01/11/2026 (correção 3): o texto do revisor de pt-PT e os factos do verificador («entre dez e catorze anos» depois do prefácio, o «lugar escolhido» sem «pela turma», O teu «cocheiro», «abrir a porta de casa»).
@@ -53,7 +56,8 @@ DECIDE = (
 YOUNG = (
  '<p>No livro do método, de 1940, vem um conselho dado ao jovem Guy de Maupassant, o contista francês, quando aprendia a escrever:</p>'
  '<blockquote><p>«Saia para as ruas de Paris», disse-lhe um dia um escritor mais velho, «e escolha um cocheiro. Parecer-lhe-á um cocheiro igual a tantos outros. Estude-o até conseguir descrevê-lo como um indivíduo único, distinto de todos os outros cocheiros do mundo.»</p></blockquote>'
- '<p class="fonte">James Webb Young, <i>Uma Técnica para Produzir Ideias</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>'
+ # 01/11/2026 (correção 1 do método, revisor de pt-PT): o título do livro como no menu de fontes e na sessão 1
+ '<p class="fonte">James Webb Young, <i>A Technique for Producing Ideas</i>, capítulo «Ideias São Novas Combinações». Tradução nossa.</p>'
  '<p>O livro não diz onde foi buscar a história. Um detetive vai à fonte.</p>')
 MAUPASSANT = (
  '<p>Maupassant contou a história em 1888, no prefácio do romance <i>Pierre et Jean</i>, onde resume assim a lição do mestre, Gustave Flaubert:</p>'
@@ -82,7 +86,9 @@ LEVAR = (
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
  '<li>Uma palavra exata vale mais do que três bonitas.</li></ul>'
  '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
- '<p><b>Passo 1 de 5: feito.</b> Na sessão 3, juntas o material geral e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>')
+ # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
+ # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
+ '<p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, junta-lo e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>')
 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Cinquenta cavalos","html":ABRE},
