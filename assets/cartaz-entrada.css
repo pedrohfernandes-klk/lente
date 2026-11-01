@@ -46,3 +46,6 @@
 [data-cartaz-entrada] .site-portal .sp-image{color:var(--cz-ink);background:var(--cz-paper)}
 [data-cartaz-entrada] .lab-sets a .cz-state{grid-column:2;font:700 13px/1.4 var(--cz-font-ui);text-transform:none;letter-spacing:normal}
 [data-cartaz-entrada] .site-portal :is(.sp-kicker,.sp-description,.sp-action){font-size:13px;line-height:1.5}
+/* A mostarda fica reservada à conclusão; a marca mantém o estado do script original. */
+[data-cartaz-entrada] .lente-nome:not(.ganho) i,[data-cartaz-entrada] .site-portal .sp-title>span{color:var(--cz-ink)}
+[data-cartaz-entrada] .ferr-num{background:transparent;color:var(--cz-ink)}
