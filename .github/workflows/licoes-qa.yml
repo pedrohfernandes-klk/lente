@@ -7,6 +7,17 @@ on:
       - 'tools/licoes_lente.py'
       - 'cidadania/piloto/**'
       - 'tests/*licoes*'
+      # 30/10/2026: coração do Laboratório («Ideias», piloto escondido de 31/10): lições, entrada, guião, guia do docente,
+      # imagens, a página do Young na Biblioteca e a medida das opções da pasta nova.
+      - 'narrativas/ideias/**'
+      - 'assets/laboratorio/ideias/**'
+      - 'tools/ideias_piloto.py'
+      - 'biblioteca/index.html'
+      - 'biblioteca/young-tecnica-1940/**'
+      - 'tools/medir_opcoes.py'
+      - 'tests/*ideias*'
+      - 'tests/test_opcoes_equilibradas.py'
+      - 'tests/test_lab_percursos.py'
       - '.github/workflows/licoes-qa.yml'
 permissions:
   contents: read
@@ -28,9 +39,18 @@ jobs:
           node --check assets/licoes/casca.js
           python tools/licoes_lente.py --verificar
           python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
+          # 30/10/2026: coração do Laboratório (31/10)
+          python tools/ideias_piloto.py --verificar
+          python tools/medir_opcoes.py --verificar
+          python -m unittest discover -s tests -p 'test_ideias.py' -v
+          python -m unittest discover -s tests -p 'test_opcoes_equilibradas.py' -v
+          python -m unittest discover -s tests -p 'test_lab_percursos.py' -v
       - name: Preparar navegador
         run: |
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
       - name: Percurso completo de cada lição
         run: node tests/browser_licoes_lente.cjs
+      # 30/10/2026: as páginas de «Ideias» em cinco larguras, claro e escuro, e na projeção; as duas lições a 320 e 1440 px.
+      - name: Coração do Laboratório no navegador
+        run: node tests/browser_ideias.cjs
