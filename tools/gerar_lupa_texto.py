@@ -36,7 +36,7 @@ def linhas():
 
 def svg():
     corpo = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {LARGURA} {ALTURA}" width="{LARGURA}" height="{ALTURA}">',
-             '<!-- Desenho nosso, EPI, 2026. Texto: epígrafe de Ensaio sobre a Cegueira, de José Saramago (1995). '
+             '<!-- Grafismo gerado com recurso a IA, EPI, 2026. Texto: epígrafe de Ensaio sobre a Cegueira, de José Saramago (1995). '
              'Gerado por tools/gerar_lupa_texto.py. -->',
              f'<g font-family="Georgia,\'Times New Roman\',serif" font-size="{CORPO}" fill="#1c1b19" fill-opacity=".72">']
     for n, linha in enumerate(linhas()):
