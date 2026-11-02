@@ -25,7 +25,14 @@ try{for(const width of [320,390,1366,1440]){const ctx=await b.newContext({viewpo
  await p.evaluate(()=>localStorage.clear());
  for(const url of ['/narrativas/','/narrativas/tudo/','/narrativas/ver/','/narrativas/treinar/','/narrativas/criar/',...D.routes.map(r=>'/narrativas/percursos/'+r.id+'/'),'/narrativas/percursos/'/* 30/10/2026: a 23.ª página gerada também entra. */]){
   await p.goto(base+url);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+url);
-  if(url==='/narrativas/')for(const im of await p.locator('main img').all()){await im.scrollIntoViewIfNeeded();assert(await im.evaluate(i=>i.complete&&i.naturalWidth>0));assert((await im.getAttribute('alt')).length>25);}
+  // 02/11/2026: a porta inteira fecha no telemóvel; abrir pelo teclado antes de verificar a imagem, sem omitir nenhuma.
+  if(url==='/narrativas/')for(const im of await p.locator('main img').all()){
+   const block=im.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," bloco ")]'),fold=block.locator('details.dobra');
+   const closed=await fold.count()&&!await fold.evaluate(e=>e.open);
+   if(closed){const summary=fold.locator('summary');await summary.focus();await p.keyboard.press('Enter');assert(await fold.evaluate(e=>e.open));}
+   await im.scrollIntoViewIfNeeded();assert(await im.isVisible());assert(await im.evaluate(i=>i.complete&&i.naturalWidth>0));assert((await im.getAttribute('alt')).length>25);
+   if(closed){await fold.locator('summary').focus();await p.keyboard.press('Enter');assert(!await fold.evaluate(e=>e.open));assert(!await im.isVisible());}
+  }
   if([390,1366].includes(width)&&['/narrativas/','/narrativas/percursos/ordem/','/narrativas/tudo/'].includes(url)){await p.evaluate(()=>scrollTo(0,0));const n=url==='/narrativas/'?'entrada':url.includes('tudo')?'tudo':'percurso';await p.screenshot({path:path.join(out,n+'-'+width+'.png'),fullPage:true});}
  }
  await p.emulateMedia({colorScheme:'dark'});await p.goto(base+'/narrativas/');assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(width===390)await p.screenshot({path:path.join(out,'entrada-escuro-390.png')});
