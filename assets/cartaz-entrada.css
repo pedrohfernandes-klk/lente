@@ -1,6 +1,5 @@
 /* 01/11/2026: decisões 57, D1–D5. Só a entrada publicada do Lente. */
 [data-cartaz-entrada]{max-width:1200px;padding:24px 16px 64px}
-[data-cartaz-entrada] .cz-next{margin:32px 0 40px}
 [data-cartaz-entrada] .lente-div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:24px;margin:0}
 [data-cartaz-entrada] .ld{position:relative;display:flex;flex-direction:column;min-width:0;margin:0!important;padding:0;background:var(--cz-paper);border:0}
 [data-cartaz-entrada] .ld-rot{padding:16px 24px;font-size:13px;line-height:1.5}
@@ -77,15 +76,11 @@
 @media(max-width:599px){[data-cartaz-entrada] .etq-longa{display:none}}
 @media(min-width:600px){[data-cartaz-entrada] .etq-curta{display:none}}
 @media(max-width:639px){[data-cartaz-entrada] .cz-footer-links{grid-template-columns:1fr}}
-@media(min-width:960px){[data-cartaz-entrada]{display:grid;grid-template-columns:7fr 5fr;column-gap:24px}[data-cartaz-entrada]>*{grid-column:1/-1}[data-cartaz-entrada]>.lente-cab{grid-column:1;grid-row:1}[data-cartaz-entrada]>.cz-next{grid-column:2;grid-row:1;margin:0;align-self:start}}
 html.em-projecao [data-cartaz-entrada] :is(.lente-etq,.ld-rot,.lente-ferr small,.sp-kicker,.sp-description,.sp-action,.sp-image-label,.sp-credit,.site-map-link,.ferr-num,.cz-label,.cz-state){font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz-entrada] :is(.ld-f,.lente-ferr a,.lab-sets strong,.cz-next p,.cz-button){font-size:var(--cz-t25)}
-html.em-projecao [data-cartaz-entrada] .cz-next .cz-label{font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
+html.em-projecao [data-cartaz-entrada] :is(.ld-f,.lente-ferr a,.lab-sets strong,.cz-button){font-size:var(--cz-t25)}
 @media(max-width:639px){
 [data-cartaz-entrada]{padding-top:16px;padding-bottom:32px}
 [data-cartaz-entrada] .lente-cab{margin-bottom:0;padding-bottom:16px}
-[data-cartaz-entrada] .cz-next{margin:16px 0 24px;padding:16px}
 [data-cartaz-entrada] .ld .ld-rot{min-height:40px;padding:8px 16px}
 [data-cartaz-entrada] .ld .cz-fold>summary{padding:16px}
 [data-cartaz-entrada] .ld-corpo{padding:16px}
@@ -114,3 +109,4 @@ html.em-projecao [data-cartaz-entrada] .ferr-grupo summary h3{font-size:var(--cz
 html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-sets small,.cz-footer .lente-nota){font-size:var(--cz-t20)}html.em-projecao [data-cartaz-entrada][data-cartaz="2"] .cz-footer-links a{font-size:var(--cz-t25)}
 /* 02/11/2026: com as peças da volta 4, a projeção sobe a raiz para 137,5 %. Abaixo de 768 px de largura (projeção num ecrã estreito), a raiz volta a 100 %, para nada deslizar; os degraus da projeção mantêm-se. */
 @media(max-width:767px){html.em-projecao:has([data-cartaz-entrada]){font-size:100%}}
+/* 02/11/2026: decisão 131 (docente). A entrada deixa a caixa «A seguir» e a grelha 7/5 que a punha ao lado do título; a retoma só escolhe a divisão aberta no telemóvel. */
