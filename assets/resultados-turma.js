@@ -204,7 +204,7 @@
       var est = !n ? 'sem resposta' : (uma ? 'respondida' : plural(n, 'resposta', 'respostas')) + ', ' + plural(pal, 'palavra', 'palavras');
       return {rotulo: rot, estado: est, contas: {resposta: n}, texto: t};
     }],
-    [/^lente-(justica|etica|estetica)-licao-(\d)$/i, function (m, j) { var b = baralho(j, true); return {rotulo: de(JUIZO, m[1].toLowerCase()) + ', lição ' + m[2], estado: b.estado, contas: {licao: b.feito ? 1 : 0}}; }],
+    [/^lente-(justica|etica|estetica)-licao-(\d+)$/i, function (m, j) { var b = baralho(j, true); return {rotulo: de(JUIZO, m[1].toLowerCase()) + ', lição ' + m[2], estado: b.estado, contas: {licao: b.feito ? 1 : 0}}; }],
     [/^epi-[a-z]+(?:-m\d)?(?::visto|:arco|:dupla)$/i, null],
     [/^epi-treinos$/i, function (m, j) {
       var vezes = E.ehObj(j) && E.ehObj(j.vezes) ? j.vezes : {};
