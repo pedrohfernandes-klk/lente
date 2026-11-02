@@ -47,11 +47,10 @@ def extras(base,treinar=False):
 # 01/11/2026: decisão 57. Migração limitada às quatro entradas; restantes moldes intactos.
 CARTAZ_ENTRADAS={'narrativas','narrativas/ver','narrativas/treinar','narrativas/criar'}
 def cartaz_body(base,body):
-    body=re.sub(r'\bVer\b','Observar',body)
     # 01/11/2026: a mesma peça de continuação tem título, estado e uma ação.
     def next_region(m):
         ids=json.loads(html.unescape(re.search(r'data-continuar="([^"]+)"',m[0])[1]))
-        return '<section class="cz-next" aria-labelledby="cz-prox"><p class="cz-label">A seguir</p><h2 id="cz-prox">'+e(P[ids[0]]['title'])+'</h2><p data-cz-estado></p>'+m[0]+'</section>'
+        return '<section class="cz-next" aria-labelledby="cz-prox"><p class="cz-label">A seguir</p><h2 id="cz-prox">'+e(P[ids[0]]['title'])+'</h2><p data-cz-estado></p>'+re.sub(r'>[^<]*</a>$','>Começar →</a>',m[0])+'</section>'
     body=re.sub(r'<a class="continuar".*?</a>',next_region,body,count=1,flags=re.S)
     body=body.replace('class="continuar"','class="continuar cz-button primary"')
     body=body.replace('class="arquivo"','class="arquivo cz-museum"').replace('<figcaption>','<figcaption class="cz-credit">')
@@ -59,7 +58,6 @@ def cartaz_body(base,body):
     body=body.replace('class="dobra"','class="dobra cz-fold" open')
     body=body.replace('class="chip"','class="chip cz-state"').replace('>por fazer</span>','></span>')
     body=re.sub(r'(<li data-peca="[^"]+"><a)( href=)',r'\1 class="cz-row"\2',body)
-    body=body.replace(' data-estado=', ' data-estado=')
     body=re.sub(r'(<span class="chip cz-state"[^>]*>.*?</span>)(</a>)',r'\1<span class="arrow" aria-hidden="true">→</span>\2',body)
     if base=='narrativas':
         groups=iter(D['blocks'])
@@ -82,8 +80,6 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     migrated=base in CARTAZ_ENTRADAS
     if migrated:
         body=cartaz_body(base,body)
-        title=re.sub(r'\bVer\b','Observar',title)
-        desc=re.sub(r'\bVer\b','Observar',desc)
     # 31/10/2026: só as peças que estão num percurso (uma peça fora dos percursos não conta nem se guarda aqui).
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
