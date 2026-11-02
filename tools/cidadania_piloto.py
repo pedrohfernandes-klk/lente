@@ -1,6 +1,6 @@
 """31/10/2026: Cidadania refeita, M1 em piloto (decisões do docente de 30/10, segunda ronda, 5, 8, 17, 18 e 38).
 
-Escreve três páginas escondidas dos motores de busca, a partir das lições em tools/licoes/cidadania-m1-sNN.json:
+Escreve quatro páginas escondidas dos motores de busca, a partir das lições em tools/licoes/cidadania-m1-sNN.json:
 - cidadania/piloto/m1/index.html: a página do módulo, só com as 10 sessões, numeradas, com o título, a pergunta, o
   estado de cada uma («Feita dd/mm» ou «A seguir»; 31/10: «por fazer» não se escreve) e «Começar» ou «Continuar». O estado lê-se das chaves epi-cid-m1-s01 a s10,
   no formato que o motor grava (assets/licoes/jogo.js, função fim(): «lida» fica true no fim da lição e «versao» é a
@@ -8,9 +8,10 @@ Escreve três páginas escondidas dos motores de busca, a partir das lições em
 - cidadania/piloto/m1/docente/index.html: o guia do docente, uma secção por sessão, a partir do plano da coordenação
   (scratchpad cid-m1/plano.md, 31/10) e do que as lições dizem (o «Na aula», a imagem, o vídeo, as fontes);
 - cidadania/piloto/m1/ponto/index.html: o Ponto de partida e de chegada, as mesmas 10 perguntas, para imprimir.
+- cidadania/piloto/m1/projeto/index.html: o enunciado individual, com os instrumentos e pesos publicados.
 
 O texto vem das lições; o que é só do docente (passos, tempos, materiais, grelhas) está em GUIA, abaixo.
-Uso: python3 tools/cidadania_piloto.py              (escreve as três páginas)
+Uso: python3 tools/cidadania_piloto.py              (escreve as quatro páginas)
      python3 tools/cidadania_piloto.py --verificar  (confirma que estão atualizadas e que cumprem as regras da casa)"""
 import html, importlib.util, json, pathlib, re, sys
 
@@ -452,7 +453,7 @@ def pagina_modulo(S):
              # 31/10/2026 (terceira correção, diretor de arte): a linha do piloto vai para o rodapé (sistema, 6.10); no cabeçalho,
              # empurrava a primeira ação para fora do primeiro ecrã a 320 px.
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p>'
-             '<footer class="mais"><a href="docente/">Guia do docente</a><a href="../../aula-1/">Etapa 1: o que vemos</a><a href="../../aula-2/">Etapa 2: o que somos</a></footer>')
+             '<footer class="mais"><a href="projeto/">Pergunta Humana: enunciado individual</a><a href="docente/">Guia do docente</a><a href="../../aula-1/">Etapa 1: o que vemos</a><a href="../../aula-2/">Etapa 2: o que somos</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Ser-se humano: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
             + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
@@ -584,9 +585,52 @@ def regras(nome, s):
     return erros
 
 
+def pagina_projeto():
+    """02/11/2026: enunciado individual do piloto, com os requisitos publicados."""
+    base = '../../../../'
+    fonte = (ROOT / 'cidadania/projeto/index.html').read_text('utf-8')
+    # Reutiliza o enunciado público e conserva as suas âncoras, fontes e pesos.
+    corpo = fonte.split('</header>', 1)[1].split('</main>', 1)[0]
+    corpo = re.sub(r'<section class="cid-current">.*?</section>', '', corpo, count=1, flags=re.S)
+    trocas = {
+        'Cada grupo escolhe': 'Cada aluno escolhe',
+        'o grupo consegue investigar': 'consegues investigar',
+        'a pergunta do teu grupo': 'a tua pergunta',
+        'do vosso diário e escolher uma em grupo': 'do teu diário e escolher uma individualmente',
+        'O que precisamos de saber? Quem vamos ouvir? Que fontes vamos procurar?': 'O que precisas de saber? Quem vais ouvir? Que fontes vais procurar?',
+        'Cada um identifica a sua parte.': 'Identifica a tua autoria e distingue-a das fontes.',
+        'Têm de defender as vossas escolhas.': 'Defende as tuas escolhas durante três minutos.',
+        'à investigação do grupo': 'à tua investigação',
+        'o que o grupo pode investigar': 'o que podes investigar',
+        'voz do grupo': 'a tua voz',
+        'escritas pelo grupo': 'escritas por ti',
+        '(em grupo, com a tua parte identificada)': '(individual)',
+        'contributo de cada pessoa identificados': 'autoria individual identificadas',
+        'as escolhas do grupo': 'as tuas escolhas',
+        'O trabalho de equipa, a autonomia e o respeito pelas pessoas': 'A autonomia, a revisão do próprio trabalho e o respeito pelas pessoas',
+        'Pesos publicados, mantidos.': 'Referência indicativa para este piloto: pesos publicados, mantidos.',
+        ' · ': ', ',
+    }
+    for a, b in trocas.items():
+        if a not in corpo:
+            raise ValueError('Enunciado de origem mudou: ' + a)
+        corpo = corpo.replace(a, b)
+    corpo = corpo.replace(LENTE + 'cidadania/projeto/', '../projeto/')
+    corpo = corpo.replace(LENTE + 'cidadania/m1/#aula-2026-10-28', '../')
+    corpo = corpo.replace('O que escreves nesta página fica guardado só no teu aparelho.', 'Guarda o teu diário, dossiê e guião em papel ou nos teus materiais do projeto.')
+    topo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '../'), ('Pergunta Humana', '')])
+            + '<header><p class="marca">Cidadania, módulo 1</p><h1>Pergunta Humana</h1>'
+            '<p class="lead">Um teatro-documento individual: investigar, dar voz às fontes e defender uma resposta.</p>'
+            '<p>Cada aluno escreve e apresenta o seu guião, dando voz às diferentes personagens. Todas as tarefas e entregas são individuais.</p></header>')
+    return (cabeca(base, 'Pergunta Humana individual · Cidadania · Lente', 'Enunciado individual da Pergunta Humana no piloto do módulo 1.')
+            + f'<body class="cid-piloto"><main id="conteudo">{topo}{corpo}</main></body></html>\n')
+
+
 def paginas():
     S = sessoes()
-    return {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': pagina_guia(S), MODULO + 'ponto/index.html': pagina_ponto()}
+    guia = pagina_guia(S).replace('../../../projeto/', '../projeto/')
+    return {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': guia,
+            MODULO + 'ponto/index.html': pagina_ponto(), MODULO + 'projeto/index.html': pagina_projeto()}
 
 
 def main(argv):

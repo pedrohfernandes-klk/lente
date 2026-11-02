@@ -13,6 +13,21 @@ BASE = json.loads((ROOT / 'tests/fixtures/cidadania-indices-20261102.json').read
 
 
 class Individual(unittest.TestCase):
+    def test_projeto_individual_com_os_mesmos_pesos_e_fontes(self):
+        # 02/11/2026: reforça o contrato do piloto, preservando o enunciado anterior.
+        antes = (ROOT / 'cidadania/projeto/index.html').read_text('utf-8')
+        depois = (ROOT / 'cidadania/piloto/m1/projeto/index.html').read_text('utf-8')
+        self.assertEqual(re.findall(r'<td class="n">(\d+)%</td>', antes),
+                         re.findall(r'<td class="n">(\d+)%</td>', depois))
+        self.assertEqual(re.findall(r'<td class="n">(\d+)%</td>', depois), ['20', '20', '30', '30'])
+        self.assertNotRegex(depois, r'(?i)em grupo|cada grupo|do grupo|vosso|vossa|trabalho de equipa')
+        for ancora in ('pergunta-resposta', 'fases', 'metodo', 'avaliacao', 'av-diario', 'av-laboratorio', 'av-dossie', 'av-teatro'):
+            self.assertIn(f'id="{ancora}"', depois)
+        for requisito in ('5 a 8 minutos', 'três minutos', 'duas fontes independentes', 'Consentimento', 'Anonimato'):
+            self.assertIn(requisito, depois)
+        self.assertIn('href="projeto/"', (ROOT / 'cidadania/piloto/m1/index.html').read_text('utf-8'))
+        self.assertNotIn('../../../projeto/', (ROOT / 'cidadania/piloto/m1/docente/index.html').read_text('utf-8'))
+
     def test_entregas_e_instrucoes_individuais(self):
         proibido = re.compile(r'em grupos|cada grupo|por grupo|do teu grupo|do vosso grupo|outro grupo|acórdão da turma', re.I)
         for n, g in G.GUIA.items():

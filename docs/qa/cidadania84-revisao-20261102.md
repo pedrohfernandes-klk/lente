@@ -20,6 +20,10 @@ A procura de ficheiros percorreu o espaço de trabalho, os anexos disponíveis e
 
 Não foram editados `tools/ideias_piloto.py`, `tools/licoes_lente.py`, `tools/laboratorio.py` ou `assets/licoes/`, reservados ao pedido 1 de Ideias. O pedido não está pronto para publicação enquanto a ampliação exigida não funcionar.
 
-## Limite de âmbito
+## Enunciado do piloto
 
-O enunciado público antigo em `cidadania/projeto/` e os geradores do percurso anterior ainda contêm trabalho de grupo. Esta correção altera o piloto do #84; o guia declara expressamente a autoria individual. A atualização coerente do enunciado anterior deve ser coordenada antes da publicação, pois há testes que exigem a preservação desse percurso. Nenhum desses testes foi relaxado.
+O piloto tem agora o seu enunciado individual em `cidadania/piloto/m1/projeto/`, gerado pelo mesmo gerador do guia a partir dos requisitos públicos. A entrada e o guia ligam para esse enunciado. Mantém as âncoras, fontes, consentimento, anonimato, duração e instrumentos, com pesos 20, 20, 30 e 30 %. Os testes exigem esses valores, autoria individual, destinos válidos e ausência de indexação nas quatro páginas do piloto.
+
+A página passou nove contextos de navegador (320, 390 e 1366 px; claro, escuro e projeção), sem deslocamento horizontal nem erros JavaScript. A avaliação a 390 px foi aberta e vista. As provas ficam em `outputs/cidadania84-projeto-20261102/`, fora do repositório.
+
+O enunciado anterior em `cidadania/projeto/` mantém os seus contratos de preservação; os quatro testes operacionais respetivos passaram sem alterações. A mudança do #84 abrange o piloto. O percurso anterior ainda contém instruções coletivas, a inventariar na aplicação geral da decisão 138, mas já não é o enunciado de destino da entrada e do guia do piloto.
