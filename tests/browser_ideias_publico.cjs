@@ -19,6 +19,12 @@ try{for(const pagePath of ['','narrativas/'])for(const width of [320,390,1366])f
  const region=p.locator(pagePath?'.ideias-publico':'#inicio-narrativas');
  if(!pagePath){const fold=region.locator('details');if(!await fold.evaluate(e=>e.open))await fold.locator('summary').click()}
  const a=pagePath?region.locator('a').filter({hasText:/^Abrir Ideias/}):region.locator('a[href*="narrativas/ideias/"]');assert.equal(await a.count(),1);assert.ok(await a.isVisible());assert.equal(await a.evaluate(e=>new URL(e.href).pathname),'/lente/narrativas/ideias/');
+ // 02/11/2026: Ideias não recebe o estado da porta Observar; a retoma original mantém a associação.
+ if(!pagePath&&mode!=='projection'){
+  await p.waitForFunction(()=>document.querySelectorAll('#inicio-narrativas .lab-sets .cz-state').length===3);
+  assert.equal(await a.locator('.cz-state').count(),0);
+  assert.equal(await region.locator('.lab-sets a.current strong').innerText(),'Observar');
+ }
  const r=await a.boundingBox();assert.ok(r.height>=44);
  if(pagePath){for(const n of ['01','02'])assert.equal(await region.locator('a[href*="ideias/sessao-'+n+'/"]').count(),1);assert.equal(await region.locator('a').count(),3)}
  assert.deepEqual(errors,[]);

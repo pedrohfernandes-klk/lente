@@ -156,7 +156,7 @@ class Ginasio(unittest.TestCase):
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
         # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
         # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ideias', 'Observar', 'Treinar', 'Criar'])
+        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Observar', 'Treinar', 'Criar', 'Ideias'])
         self.assertIn('href="narrativas/ideias/"',s[i:j])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).
