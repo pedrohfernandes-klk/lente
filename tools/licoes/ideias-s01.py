@@ -118,9 +118,9 @@ MEDALHA = [('O par de mãos ao centro', (600, 615)), ('A mão mais baixa da velh
 # 01/11/2026 (correção 5, revisor de pt-PT): «um por nota» e não «um de cada vez», que logo a seguir a «Cada um» se lia
 # também como «à vez»; o guia (um facto de cada vez) e a grelha (factos registados um a um) dizem o mesmo.
 NA_AULA = (
- '<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista os seus factos, um por nota; o grupo escolhe dez que outro grupo possa confirmar e junta-lhes três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p>'
+ '<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Depois, verifica individualmente os factos registados por um colega e marca cada um como confirmado ou desmentido. Pelo caminho, conta os degraus da escada.</p>'
  '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>')
+ '<p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material; o número de degraus, conferido por outra pessoa.</p>')
 LEVAR = (
  '<p class="levar">Ver não custa nada. Observar é contar os degraus.</p>'
  '<p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste o que se vê do que se conclui, num quadro e na escola. Volta ao número que escreveste no início: acertaste?</p>'
@@ -128,7 +128,7 @@ LEVAR = (
  '<ul><li>Primeiro o que se vê; só depois o que se conclui.</li>'
  '<li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li>'
  '<li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul>'
- '<p><b>No Laboratório:</b> <a href="../../galileu/">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p>'
+ '<p><b>No Laboratório:</b> <a href="../../galileu/">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p>'
  '<p><b>Para aprofundar:</b> <a href="../../../investigar/passo-02/">Como se investiga, passo 2, «Olhar e registar»</a>.</p>'
  '<p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: repara num lugar a cinco minutos da escola por onde passas sem olhar e escreve-o no guião. A turma pode ir a um deles.</p>')
 
@@ -175,9 +175,9 @@ cartoes = [
   "f":"Um facto vê-se; uma inferência junta factos; uma hipótese ainda espera provas; uma pergunta fica por investigar. É a ordem desta sessão: primeiro o que se vê, depois o que se conclui.",
   "fe":"Pergunta a cada frase: consigo apontar no quadro, com o dedo, o que ela diz? Se sim, é um facto. Se preciso de juntar várias coisas, é uma inferência. Se nada no quadro a confirma, é uma hipótese."},
  {"t":"ler","rot":"Na aula","titulo":"O auto de observação","html":NA_AULA},
- {"t":"escolha","g":"confirmar","p":"Três registos inventados de um auto de observação. Qual deles é um facto que outro grupo possa ir confirmar?","p2":"Registos inventados, sobre uma escada da escola: que registo pode outro grupo ir confirmar?",
+ {"t":"escolha","g":"confirmar","p":"Três registos inventados de um auto de observação. Qual deles é um facto que outra pessoa possa ir confirmar?","p2":"Registos inventados, sobre uma escada da escola: que registo pode outra pessoa ir confirmar?",
   "o":["O corrimão tem três parafusos soltos à esquerda.","A escada parece mais antiga do que a escola.","Quem sobe esta escada anda sempre com pressa."],"c":0,
-  "f":"Três parafusos soltos contam-se: outro grupo pode ir lá confirmar ou desmentir. A idade que a escada parece ter é uma impressão, e o «sempre» faz da pressa uma generalização.",
+  "f":"Três parafusos soltos contam-se: outra pessoa pode ir lá confirmar ou desmentir. A idade que a escada parece ter é uma impressão, e o «sempre» faz da pressa uma generalização.",
   "fe":["","A palavra «parece» denuncia a impressão. Que pormenor te fez achar que é antiga? Esse pormenor, sim, é um facto.","Ninguém pode confirmar «sempre». Quantas pessoas viste subir, e quantas iam a correr? Isso conta-se."]},
  {"t":"sublinhar","g":"superficie","p":"O livro do método explica porque é que tantos param de olhar cedo demais. Toca nas palavras que dizem o erro.","p2":"Que palavras desta frase dizem o erro de quem para de olhar?",
   "frase":"Se as diferenças não forem claramente visíveis à superfície, assumimos que não as há.","certas":[9,10,11,12,13],

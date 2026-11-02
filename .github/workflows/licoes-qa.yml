@@ -28,12 +28,15 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      # 02/11/2026: L104-01, inclui o contrato de modalidade e a comparação com a base.
       - name: Fontes, validação e páginas geradas
         run: |
           node --check assets/licoes/jogo.js
@@ -44,7 +47,7 @@ jobs:
           python tools/ideias_piloto.py --verificar
           python tools/ideias_publico.py --verificar
           python tools/medir_opcoes.py --verificar
-          python -m unittest discover -s tests -p 'test_ideias.py' -v
+          python -m unittest discover -s tests -p 'test_ideias*.py' -v
           python -m unittest discover -s tests -p 'test_opcoes_equilibradas.py' -v
           python -m unittest discover -s tests -p 'test_lab_percursos.py' -v
       - name: Preparar navegador
@@ -60,6 +63,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'

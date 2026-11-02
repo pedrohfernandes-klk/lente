@@ -181,7 +181,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O teu «cocheiro»",
-   "html": "<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
+   "html": "<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, <span class=\"nq\">faz-se</span> o mesmo da janela ou numa fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>"
   },
   {
    "t": "escolha",
@@ -245,7 +245,7 @@
    "o": [
     "Testa a linha em quem não sabe o que é.",
     "Quem escreve gosta sempre do que escreveu.",
-    "Assim todos os pares têm a mesma nota."
+    "Assim todas as descrições têm a mesma nota."
    ],
    "c": 0,
    "f": "Quem escreveu sabe o que descreve e lê na linha o que lá não está. Só quem não sabe mostra se a linha chega. É a mesma ideia do passo 5 do método: levar a ideia a quem a pode criticar.",
@@ -272,7 +272,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial <span class=\"nq\">mantinha-se</span>. Também puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, <span class=\"nq\">junta-lo</span> e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>"
+   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial <span class=\"nq\">mantinha-se</span>. Também puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, <span class=\"nq\">junta-lo</span> e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>"
   }
  ]
 }

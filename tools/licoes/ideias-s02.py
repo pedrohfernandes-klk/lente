@@ -75,7 +75,7 @@ ATGET = (
  '<p>Vê primeiro a fotografia inteira; depois amplia-a e percorre-a de uma ponta à outra.</p>'
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Aos pares, saem com o docente até ao lugar escolhido. Cada um escolhe o seu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vê; cinco do que ouve, cheira ou toca; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
+ '<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
  '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>')
 LEVAR = (
@@ -85,7 +85,7 @@ LEVAR = (
  '<ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li>'
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
  '<li>Uma palavra exata vale mais do que três bonitas.</li></ul>'
- '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Ver, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
+ '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
  # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
  '<p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, junta-lo e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>')
@@ -139,7 +139,7 @@ cartoes = [
   "f":"**Específicas** (as do problema, como o teu «cocheiro») e **gerais** (tudo o que vais juntando sobre a vida). Hoje juntaste material específico; na sessão 3, juntas o geral.",
   "fe":"O método opõe o material do problema concreto ao material que se junta a vida inteira."},
  {"t":"escolha","g":"prova","p":"Porque é que a fila de reconhecimento prova mais do que a opinião de quem escreveu a linha?","p2":"O que torna a fila de reconhecimento uma prova melhor do que a opinião do autor?",
-  "o":["Testa a linha em quem não sabe o que é.","Quem escreve gosta sempre do que escreveu.","Assim todos os pares têm a mesma nota."],"c":0,
+  "o":["Testa a linha em quem não sabe o que é.","Quem escreve gosta sempre do que escreveu.","Assim todas as descrições têm a mesma nota."],"c":0,
   "f":"Quem escreveu sabe o que descreve e lê na linha o que lá não está. Só quem não sabe mostra se a linha chega. É a mesma ideia do passo 5 do método: levar a ideia a quem a pode criticar.",
   "fe":["","Pode ser verdade, mas não é isso que faz da fila uma prova. O que conta é testar a linha em quem não sabe o que descreves.","A fila não serve para igualar notas. Serve para saber se a linha funciona sem o autor ao lado a explicar."]},
  {"t":"ordenar","g":"viagem","p":"Põe por ordem a viagem do conselho, de Paris até ti.","p2":"Que caminho fez o conselho de Flaubert até chegar a esta sessão?",

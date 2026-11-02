@@ -367,7 +367,8 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertIn('Entre dez e catorze anos depois do prefácio', html2)
         self.assertNotIn('Uns dez anos', html2)
         # revisor: quem escolhe o lugar da saída é o docente
-        self.assertIn('até ao lugar escolhido.', html2)
+        # 02/11/2026: L104-01, deslocação segura aos pares, trabalho individual.
+        self.assertIn('ao lugar escolhido, aos pares por segurança.', html2)
         self.assertNotIn('escolhido pela turma', html2)
         self.assertIn('O teu «cocheiro»', [c.get('titulo') for c in s2['cartoes']])
         guia, guiao, entrada = self.ler('docente/index.html'), self.ler('guiao/index.html'), (PILOTO / 'index.html').read_text('utf-8')
@@ -449,8 +450,9 @@ class QuartaRevisao(unittest.TestCase):
         self.assertIn('sem ela, cada aluno escolhe o seu «cocheiro» da janela', guia)
         self.assertNotIn('cada par escolhe', guia)
         self.assertIn('Guião: cada um completa a tabela das duas versões do conselho; «Para levar».', guia)
-        self.assertIn('Grelha /20 indicativa: o auto de observação, por grupo</h3>', guia)
-        self.assertIn('Grelha indicativa: o auto de observação, por grupo</caption>', guia)
+        # 02/11/2026: L104-01, decisão 138; produto individual, critérios preservados.
+        self.assertIn('Grelha /20 indicativa: o auto de observação, individual</h3>', guia)
+        self.assertIn('Grelha indicativa: o auto de observação, individual</caption>', guia)
         self.assertIn('Os dois cartões «Toca no quadro» são novos no Lente:', guia)
         self.assertNotRegex(L.visivel(re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', guia, flags=re.S)), r'\bmotor\b')  # jargão da equipa
         # 01/11/2026: com o cartão «O método» na posição 2, o resumo com a ligação passa a cartão 9 (índice 8)
@@ -480,8 +482,9 @@ class QuartaRevisao(unittest.TestCase):
         self.assertIn('.ideias.guia .pg b{white-space:nowrap}', guia)
         self.assertIn('.ideias.guia ul.ligacoes a{display:block;min-height:44px;padding:9px 0}', guia)
         guiao = (PILOTO / 'guiao/index.html').read_text('utf-8')
-        self.assertIn('<span class="nq">(grupos <i class="b"></i> e <i class="b"></i>).</span>', guiao)
-        self.assertIn('pelo grupo\u00a0___', guiao)
+        # 02/11/2026: L104-01, identificação de quem verifica o auto individual.
+        self.assertIn('<span class="nq">Verificado por: <i class="b"></i></span>', guiao)
+        self.assertIn('Verificado por\u00a0___', guiao)
         # só na família do Laboratório: a Cidadania não carrega este ficheiro
         self.assertIn('.licao-laboratorio .jogo .inline .nb{display:inline}', (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8'))
         for p in (ROOT / 'cidadania/piloto').rglob('index.html'):
@@ -498,7 +501,8 @@ class QuintaRevisao(unittest.TestCase):
         c1 = {c.get('g'): c for c in s1['cartoes']}
         c2 = {c.get('g'): c for c in s2['cartoes']}
         aula = next(c for c in s1['cartoes'] if c.get('rot') == 'Na aula')['html']
-        self.assertIn('Cada um regista os seus factos, um por nota; o grupo escolhe dez', aula)
+        # 02/11/2026: L104-01, a tarefa individual conserva dez factos verificáveis.
+        self.assertIn('Regista dez factos, um por nota, que outra pessoa possa confirmar.', aula)
         self.assertNotIn('um de cada vez', aula)
         # o motor mostra a zona sozinha numa linha por baixo do quadro: maiúscula inicial, no nome e no aria-label
         for g in ('cordao', 'medalha'):
@@ -520,7 +524,8 @@ class QuintaRevisao(unittest.TestCase):
         self.assertRegex((PILOTO / 'docente/index.html').read_text('utf-8'), r'com legendas no leitor\. <a href="https://www\.youtube\.com/watch\?v=ubEadhXWwV4">Abrir no YouTube</a>\.</p>')
         self.assertNotIn('a lição inteira', guia)
         # o guia copia o cartão «Na aula»
-        self.assertIn('Cada um regista os seus factos, um por nota;', guia)
+        # 02/11/2026: L104-01, o guia reproduz a tarefa individual aprovada.
+        self.assertIn('Regista dez factos, um por nota, que outra pessoa possa confirmar.', guia)
 
     def test_regras_de_desenho(self):
         lab = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')

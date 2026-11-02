@@ -52,7 +52,7 @@ PORTAS = [
 SESSOES = [
  {'n': 1, 'porta': 'ver', 'titulo': 'Ver ou observar?', 'pergunta': 'Quantos degraus tem a escada que sobes todos os dias?',
   'passo': 'Passo 1 de 5: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
-  'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
+  'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o teu auto de observação.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
   'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
@@ -90,7 +90,7 @@ ATOL = {
 GUIA = {
  1: {
   'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o passo 1 de 5: juntar material específico.',
-  'antes': 'Ter a lista dos lugares da escola para os grupos (a escada, o portão, o bar, o pátio), um por grupo, para dois grupos não se cruzarem. Confirmar o som do projetor para o vídeo.',
+  'antes': 'Ter a lista dos lugares da escola (a escada, o portão, o bar, o pátio) e atribuir um lugar a cada aluno, com horários que evitem aglomerações. Confirmar o som do projetor para o vídeo.',
   'tempos': [
    ('0 a 5', '«Abre»: cada um escreve o número de degraus, em silêncio. O docente anota três palpites no quadro, sem nomes.'),
    # 01/11/2026 (método): o cartão novo «O método» (cartão 2) leva 5 minutos, tirados da folga do fim; os cartões seguintes
@@ -99,7 +99,7 @@ GUIA = {
    ('10 a 20', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
    # 01/11/2026 (correção 5, revisor de pt-PT): «no cartão 7», o único com o vídeo («a partir do» lia-se «daí em diante»)
    ('20 a 55', 'Cartões 4 a 14. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 8; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
-   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
+   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras do trabalho individual; 20 no lugar (um facto por nota; contam-se os degraus); 10 de pausa; 15 na verificação individual, em que cada aluno confere os factos de um colega e marca cada um como confirmado ou desmentido; 15 na sala, a passar o seu auto para o guião; 5 para conferir o número de degraus com outra pessoa.'),
    ('125 a 150', 'Cartões 16 a 20.'),
    ('150 a 170', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
    ('170 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
@@ -107,10 +107,10 @@ GUIA = {
   # 01/11/2026 (correção 2, revisor de pt-PT): no guia, o crédito do vídeo sem a instrução ao aluno («ativa as legendas»)
   'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
   'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
-  'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
-  'produto': 'o auto de observação, por grupo',
+  'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto individual, com as marcas de quem o verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
+  'produto': 'o auto de observação, individual',
   # 01/11/2026 (correção 6, revisor de pt-PT): «A pergunta a que o lugar não responde», como o campo do guião que avalia
-  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
+  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados por outra pessoa', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
@@ -123,12 +123,12 @@ GUIA = {
  },
  2: {
   'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o passo 1 de 5, até ao fundo.',
-  'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
+  'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde cada aluno possa estar sempre à vista do docente, com deslocação aos pares por segurança.',
   'tempos': [
    ('0 a 5', '«Abre»: diz-se à turma o lugar da saída ou, se não houver saída, a alternativa (a janela ou uma fotografia de rua).'),
    ('5 a 15', '«Decide», de braço no ar.'),
    ('15 a 50', 'Cartões 3 a 12: as duas versões do conselho (a do livro, de 1940, e a de Maupassant, de 1888) lidas em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
-   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (pares; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
+   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (deslocação aos pares por segurança; trabalho individual; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
    ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para a sessão 3.'),
@@ -160,7 +160,7 @@ GUIAO = {
  1: {
   'frente': [
    # 01/11/2026 (correção 4, diretor de arte): no telemóvel, nenhum espaço para escrever sozinho numa linha
-   ('p', 'O teu palpite: <i class="b"></i> degraus. <span class="nq">A contagem: <i class="b"></i></span> <span class="nq">(grupos <i class="b"></i> e <i class="b"></i>).</span>'),
+   ('p', 'O teu palpite: <i class="b"></i> degraus. <span class="nq">A contagem: <i class="b"></i></span> <span class="nq">Verificado por: <i class="b"></i></span>'),
    ('h2', 'O vídeo de Herman, em duas colunas'),
    ('tabela', ['Está no quadro', 'Não está no quadro, mas conta'], 8),
    ('h2', 'O quadro de La Tour: cinco coisas que se veem'),
@@ -172,8 +172,8 @@ GUIAO = {
   ],
   'verso_titulo': 'O auto de observação',
   'verso': [
-   ('p', 'Lugar: <i class="b"></i> Grupo: <i class="b"></i> Hora: <i class="b"></i>'),
-   ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo\u00a0___'], 10),
+   ('p', 'Lugar: <i class="b"></i> Nome: <i class="b"></i> Hora: <i class="b"></i>'),
+   ('tabela', ['Facto (um que outra pessoa possa confirmar)', 'Confirmado ou desmentido. Verificado por\u00a0___'], 10),
    ('tabela', ['Inferência', 'Os dois factos que a apoiam'], 3),
    # 01/11/2026 (correção 6, revisor de pt-PT): «responder a» (a pergunta a que…), aqui e na grelha do guia
    ('p', 'A pergunta a que o lugar não responde: <i class="b l"></i>'),

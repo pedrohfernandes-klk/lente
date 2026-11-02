@@ -218,10 +218,11 @@ async function responder(p,x){
     else assert(bs.every(x=>x[1]===bs[0][1]),'guia: botões numa fila a '+w+' px: '+JSON.stringify(bs))}
    assert.deepEqual(r.partidos,[],'guia: rótulo a negro partido a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const w of [320,360,390]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/guiao/',w,800,'light');
-   const r=await p.evaluate(()=>{const pp=[...document.querySelectorAll('p.campo')].find(x=>x.textContent.startsWith('O teu palpite'));const t=[...pp.querySelectorAll('i.b')].map(i=>Math.round(i.getBoundingClientRect().top));
-    const th=[...document.querySelectorAll('th')].find(x=>x.textContent.startsWith('Confirmado'));const n=th.firstChild,s=n.textContent,i=s.indexOf('grupo');const r1=document.createRange();r1.setStart(n,i);r1.setEnd(n,i+5);const r2=document.createRange();r2.setStart(n,s.length-3);r2.setEnd(n,s.length);
-    return {t,grupo:Math.round(r1.getBoundingClientRect().top),tracos:Math.round(r2.getBoundingClientRect().top)}});
-   assert.equal(r.t[2],r.t[3],'guião: «(grupos ___ e ___)» partido a '+w+' px');assert.equal(r.grupo,r.tracos,'guião: o «___» do cabeçalho sozinho a '+w+' px');await ctx.close()}
+   // 02/11/2026: L104-01. O auto é individual; o nome de quem verifica fica junto ao campo.
+   const r=await p.evaluate(()=>{const pp=[...document.querySelectorAll('p.campo')].find(x=>x.textContent.startsWith('O teu palpite'));const nq=[...pp.querySelectorAll('span.nq')];
+    const th=[...document.querySelectorAll('th')].find(x=>x.textContent.startsWith('Confirmado'));const n=th.firstChild,s=n.textContent,i=s.indexOf('por');const r1=document.createRange();r1.setStart(n,i);r1.setEnd(n,i+3);const r2=document.createRange();r2.setStart(n,s.length-3);r2.setEnd(n,s.length);
+    return {fields:pp.querySelectorAll('i.b').length,juntos:nq.every(e=>e.getClientRects().length===1),label:pp.textContent,por:Math.round(r1.getBoundingClientRect().top),tracos:Math.round(r2.getBoundingClientRect().top)}});
+   assert.equal(r.fields,3);assert(r.juntos,'guião: rótulo e campo separados a '+w+' px');assert.match(r.label,/Verificado por/);assert.equal(r.por,r.tracos,'guião: o nome de quem verifica fica junto ao rótulo a '+w+' px');await ctx.close()}
   {const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s02.json'),'utf8'));const {ctx,p,erros}=await abrir(b,base+d.saida.replace(/index\.html$/,''),360,740,'dark');
    for(let i=0;i<15;i++){const x=d.cartoes[i];if(x.t!=='ler'){const txt=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');const c=d.cartoes.filter(y=>y.t!=='ler'&&[y.p,y.p2].some(t=>t&&txt.includes(vis(t).slice(0,50))));await responder(p,c.length===1?c[0]:x)}await seguinte(p)}
    await responder(p,d.cartoes[15]);
