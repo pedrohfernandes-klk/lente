@@ -1,0 +1,14 @@
+[
+ {
+  "ficheiro": "cidadania/m1/revisao/index.html",
+  "antigo": ".rev h2{border:0;margin:0 0 8px;font:italic 1.15rem/1.35 var(--serif);letter-spacing:0;padding:0}\n.porta{",
+  "novo": ".rev h2{border:0;margin:0 0 8px;font:italic 1.15rem/1.35 var(--serif);letter-spacing:0;padding:0}\n/* 01/11/2026: hierarquia dos títulos (decisão 61): «Passo 01» volta a ser rótulo (13 px, sem a letra do texto corrido que .pg p lhe dava) e a pergunta sobe para 20 px, na escala do «Cartaz». */\n.rev .p-rot{font:700 .8125rem/1.2 var(--sans)}.rev h2{font-size:1.25rem;text-wrap:balance}\n.porta{",
+  "ocorrencias": 1
+ },
+ {
+  "ficheiro": "cidadania/m2/revisao/index.html",
+  "antigo": ".rev h2{border:0;margin:0 0 8px;font:italic 1.15rem/1.35 var(--serif);letter-spacing:0;padding:0}\n.porta{",
+  "novo": ".rev h2{border:0;margin:0 0 8px;font:italic 1.15rem/1.35 var(--serif);letter-spacing:0;padding:0}\n/* 01/11/2026: hierarquia dos títulos (decisão 61): «Passo 01» volta a ser rótulo (13 px, sem a letra do texto corrido que .pg p lhe dava) e a pergunta sobe para 20 px, na escala do «Cartaz». */\n.rev .p-rot{font:700 .8125rem/1.2 var(--sans)}.rev h2{font-size:1.25rem;text-wrap:balance}\n.porta{",
+  "ocorrencias": 1
+ }
+]
