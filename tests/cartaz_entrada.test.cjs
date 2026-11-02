@@ -12,3 +12,12 @@ test('mantém ligações, âncoras, ferramentas e todos os scripts anteriores',(
 test('retoma lê as chaves anteriores e não grava visitas',()=>{
  const js=fs.readFileSync(path.join(root,'assets/cartaz-entrada.js'),'utf8');assert.ok(js.includes('epi-ultima'));assert.doesNotMatch(js,/localStorage\.(?:setItem|removeItem|clear)/);
 });
+// 02/11/2026: decisão 125. Fundo animado «A lente»: decorativo, parado sem JavaScript, na projeção e com movimento reduzido.
+test('fundo «A lente»: decorativo e parado por omissão',()=>{
+ const css=fs.readFileSync(path.join(root,'assets/fundo-lente.css'),'utf8'),js=fs.readFileSync(path.join(root,'assets/cartaz-entrada.js'),'utf8');
+ assert.match(now,/<header class="lente-cab"><div class="lf-fundo" aria-hidden="true">/);assert.match(now,/Desenho nosso, a traço, EPI, 2026\./);assert.doesNotMatch(now,/class="lente-cab[^"]*lf-anda/);
+ const anim=[...css.matchAll(/animation(?:-name)?:\s*([\w-]+)/g)];assert.ok(anim.length>=2);
+ for(const m of anim){const antes=css.slice(0,m.index),bloco=antes.lastIndexOf('@media(prefers-reduced-motion:no-preference)');assert.ok(bloco>=0&&antes.lastIndexOf('}}')<bloco,'animação fora do bloco de movimento');assert.match(css.slice(bloco,m.index),/html:not\(\.em-projecao\)/);}
+ assert.match(js,/matchMedia\('\(prefers-reduced-motion: no-preference\)'\)/);assert.match(js,/classList\.add\('lf-anda'\)/);assert.match(js,/IntersectionObserver/);
+ assert.match(css,/@media print\{[^@]*\.lf-fundo\{display:none\}\}/);
+});
