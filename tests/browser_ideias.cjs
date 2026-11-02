@@ -1,3 +1,4 @@
+// 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
 // 30/10/2026: coração do Laboratório, «Ideias» (narrativas/ideias/), piloto escondido construído a 31/10. Mede no Chromium as
 // páginas novas como no sítio público (servidas em /lente/, para o botão de projeção aparecer): a 320, 390, 1024, 1366 e
 // 1440 px, em claro e escuro, e na projeção (?projetar=1). Confirma: nenhum erro de JavaScript, nenhum deslize horizontal, a
@@ -5,7 +6,7 @@
 // «Começa aqui», desfaz-se ao segundo toque, não grava nada), o «Continuar» com progresso, e a projeção sem ler o progresso.
 // Percorre também as duas lições a responder certo a 320 px (claro) e a 1440 px (escuro), sem deslize em nenhum cartão;
 // o percurso a 390 e 1366 px, com o progresso e a projeção, está em tests/browser_licoes_lente.cjs.
-const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert');
 const ROOT=path.resolve(__dirname,'..');
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'};
 const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.startsWith('/lente/'))u=u.slice(6);if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
@@ -30,10 +31,11 @@ async function responder(p,x){
  else if(x.t==='ordenar'){for(const t of x.passos){await p.locator('#baralho .soltos button',{hasText:vis(t)}).first().click();await p.waitForTimeout(80)}}
  else if(x.t==='completar'){for(let k=0;k<x.lacunas.length;k++){await p.locator('#baralho select[data-k="'+k+'"]').selectOption(String(x.lacunas[k].c));await p.waitForTimeout(80)}}
  await p.waitForTimeout(300);const conf=p.locator('.casca-acoes [data-confirmar]');if(await conf.count()&&await conf.isVisible()&&await conf.isEnabled())await conf.click();await p.waitForTimeout(250)}
-(async()=>{await new Promise(r=>srv.listen(0,r));const base='http://localhost:'+srv.address().port+'/lente/';const b=await chromium.launch();
+(async()=>{await new Promise(r=>srv.listen(0,r));const base='http://localhost:'+srv.address().port+'/lente/';const b=await chromium.launch(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{});
  // 1. as quatro páginas, nas cinco larguras e nos dois temas
  for(const pag of PAGINAS)for(const [w,h] of LARGURAS)for(const tema of ['light','dark']){
   const {ctx,p,erros}=await abrir(b,base+pag,w,h,tema);
+  assert.equal(await p.locator('meta[name=robots][content*=noindex]').count(),0,'Ideias público');
   assert.equal(await largo(p),0,pag+': deslize horizontal a '+w+' px ('+tema+')');
   if(pag==='narrativas/ideias/'){
    const bt=await p.locator('[data-p-botao]').boundingBox();assert(bt&&bt.y+bt.height<=h,'entrada: o botão «Começar» fora do primeiro ecrã a '+w+' px');
@@ -165,18 +167,19 @@ async function responder(p,x){
    assert(x.esc.every(v=>v===0),'guia: tabela com '+x.esc.join('/')+' px escondidos a '+w+' px');assert(x.rotulos,'guia: célula da sequência sem data-r');
    assert.equal(x.seq,w<640?'block':'table','guia: a sequência a '+w+' px em '+x.seq);assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',390,844,'light');
-   const est=()=>p.evaluate(()=>['ver','treinar','criar'].map(k=>{const s=document.getElementById('porta-'+k),bt=s.querySelector('.porta-abre');return {h:Math.round(s.getBoundingClientRect().height),bt:bt?[Math.round(bt.getBoundingClientRect().width),Math.round(bt.getBoundingClientRect().height),bt.getAttribute('aria-expanded'),bt.getAttribute('aria-label')]:null,lista:s.querySelector('ol.sessoes').offsetParent!==null}}));
-   const alt=await p.evaluate(()=>document.documentElement.scrollHeight);assert(alt<2500,'entrada com '+alt+' px a 390 (era 2912)');
-   let e1=await est();assert(e1[0].lista&&!e1[0].bt,'a porta Ver fica aberta');
-   for(const [k,nome] of [[1,'Treinar'],[2,'Criar']]){assert(e1[k].h>=86&&e1[k].h<=92,nome+': banda com '+e1[k].h+' px');assert.deepEqual(e1[k].bt,[48,48,'false','Abrir '+nome]);assert(!e1[k].lista,nome+': lista à vista na banda')}
-   await p.locator('#porta-treinar .porta-abre').click();await p.waitForTimeout(150);let e2=await est();assert.deepEqual(e2[1].bt.slice(2),['true','Fechar Treinar']);assert(e2[1].lista&&e2[1].h>200,'Treinar aberta');
-   await p.locator('#porta-treinar .porta-abre').click();await p.waitForTimeout(150);assert.equal((await est())[1].h,e1[1].h,'Treinar volta a fechar');
-   await p.locator('.faixa a[href="#porta-criar"]').click();await p.waitForTimeout(250);assert((await est())[2].lista,'a faixa abre a porta Criar');
+   // 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+   assert.equal(await p.locator('.porta').count(),1);
+   assert.equal(await p.locator('#pt-ver').textContent(),'Observar');
+   assert.equal(await p.locator('ol.sessoes li').count(),2);
+   assert.deepEqual(await p.locator('ol.sessoes a').evaluateAll(es=>es.map(e=>e.getAttribute('href'))),['sessao-01/','sessao-02/']);
+   assert.equal(await p.locator('.prep,.porta[data-dobra]').count(),0);
+   assert(!/Em preparação|piloto/i.test(await p.locator('body').innerText()));
+   const alt=await p.evaluate(()=>document.documentElement.scrollHeight);assert(alt<2500,'entrada com '+alt+' px a 390');
    assert.deepEqual(erros,[]);await ctx.close()}
   for(const [url,w,js,quem] of [['narrativas/ideias/',640,true,'a 640 px'],['narrativas/ideias/?projetar=1',390,true,'na projeção'],['narrativas/ideias/',390,false,'sem script']]){
    const ctx=await b.newContext({viewport:{width:w,height:844},javaScriptEnabled:js});const p=await ctx.newPage();await p.goto(base+url);await p.waitForTimeout(400);
-   const r=await p.evaluate(()=>[...document.querySelectorAll('.porta[data-dobra]')].map(s=>s.querySelector('ol.sessoes').offsetParent!==null));
-   assert(r.length===2&&r.every(Boolean),'as portas dobram-se '+quem);await ctx.close()}
+   const r=await p.evaluate(()=>[...document.querySelectorAll('.porta ol.sessoes')].map(s=>s.offsetParent!==null));
+   assert(r.length===1&&r.every(Boolean),'sessões publicadas acessíveis '+quem);assert.equal(await p.locator('ol.sessoes a').count(),2);await ctx.close()}
   for(const [w,h] of [[1024,768],[1366,900],[1440,900]]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',w,h,'light');
    const r=await p.evaluate(()=>{const c=document.querySelector('.atol .campo').getBoundingClientRect(),f=document.querySelector('.atol figcaption').getBoundingClientRect(),g=document.querySelector('.gesto').getBoundingClientRect();return {ao_lado:f.left>=c.right,pe:Math.abs(f.bottom-c.bottom),vazio:Math.round(f.top-g.bottom),dentro:!!document.querySelector('figure.atol > figcaption')}});
    assert(r.ao_lado&&r.pe<=1&&r.dentro,'a tabela de museu ao lado da imagem a '+w+' px: '+JSON.stringify(r));assert(r.vazio<200,'vazio de '+r.vazio+' px à direita a '+w+' px (era 292 a 319)');assert.deepEqual(erros,[]);await ctx.close()}
@@ -215,10 +218,11 @@ async function responder(p,x){
     else assert(bs.every(x=>x[1]===bs[0][1]),'guia: botões numa fila a '+w+' px: '+JSON.stringify(bs))}
    assert.deepEqual(r.partidos,[],'guia: rótulo a negro partido a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const w of [320,360,390]){const {ctx,p}=await abrir(b,base+'narrativas/ideias/guiao/',w,800,'light');
-   const r=await p.evaluate(()=>{const pp=[...document.querySelectorAll('p.campo')].find(x=>x.textContent.startsWith('O teu palpite'));const t=[...pp.querySelectorAll('i.b')].map(i=>Math.round(i.getBoundingClientRect().top));
-    const th=[...document.querySelectorAll('th')].find(x=>x.textContent.startsWith('Confirmado'));const n=th.firstChild,s=n.textContent,i=s.indexOf('grupo');const r1=document.createRange();r1.setStart(n,i);r1.setEnd(n,i+5);const r2=document.createRange();r2.setStart(n,s.length-3);r2.setEnd(n,s.length);
-    return {t,grupo:Math.round(r1.getBoundingClientRect().top),tracos:Math.round(r2.getBoundingClientRect().top)}});
-   assert.equal(r.t[2],r.t[3],'guião: «(grupos ___ e ___)» partido a '+w+' px');assert.equal(r.grupo,r.tracos,'guião: o «___» do cabeçalho sozinho a '+w+' px');await ctx.close()}
+   // 02/11/2026: L104-01. O auto é individual; o nome de quem verifica fica junto ao campo.
+   const r=await p.evaluate(()=>{const pp=[...document.querySelectorAll('p.campo')].find(x=>x.textContent.startsWith('O teu palpite'));const nq=[...pp.querySelectorAll('span.nq')];
+    const th=[...document.querySelectorAll('th')].find(x=>x.textContent.startsWith('Confirmado'));const n=th.firstChild,s=n.textContent,i=s.indexOf('por');const r1=document.createRange();r1.setStart(n,i);r1.setEnd(n,i+3);const r2=document.createRange();r2.setStart(n,s.length-3);r2.setEnd(n,s.length);
+    return {fields:pp.querySelectorAll('i.b').length,juntos:nq.every(e=>e.getClientRects().length===1),label:pp.textContent,por:Math.round(r1.getBoundingClientRect().top),tracos:Math.round(r2.getBoundingClientRect().top)}});
+   assert.equal(r.fields,3);assert(r.juntos,'guião: rótulo e campo separados a '+w+' px');assert.match(r.label,/Verificado por/);assert.equal(r.por,r.tracos,'guião: o nome de quem verifica fica junto ao rótulo a '+w+' px');await ctx.close()}
   {const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s02.json'),'utf8'));const {ctx,p,erros}=await abrir(b,base+d.saida.replace(/index\.html$/,''),360,740,'dark');
    for(let i=0;i<15;i++){const x=d.cartoes[i];if(x.t!=='ler'){const txt=(await p.locator('#baralho').innerText()).replace(/\s+/g,' ');const c=d.cartoes.filter(y=>y.t!=='ler'&&[y.p,y.p2].some(t=>t&&txt.includes(vis(t).slice(0,50))));await responder(p,c.length===1?c[0]:x)}await seguinte(p)}
    await responder(p,d.cartoes[15]);
@@ -244,9 +248,10 @@ async function responder(p,x){
    if(!q&&w>=1366)assert(r.pe<=1,'entrada: o pé da tabela de museu a '+r.pe+' px do pé da imagem a '+w+' px');assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const [w,tema] of [[320,'light'],[360,'dark'],[599,'light']]){const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/?projetar=1',w,800,tema);
    const r=await p.evaluate(()=>{const h=document.querySelector('#sessoes');const rg=document.createRange();rg.selectNodeContents(h);const cols=[...document.querySelectorAll('.faixa a')].map(a=>a.getBoundingClientRect().width);
-    return {linhas:new Set([...rg.getClientRects()].map(x=>Math.round(x.top))).size,nomes:[...document.querySelectorAll('.faixa .nome')].map(n=>Math.round(n.getBoundingClientRect().width)),prop:+(cols[2]/cols[0]).toFixed(2),igual:Math.abs(cols[0]-cols[1])<1,rel:parseFloat(getComputedStyle(h).fontSize)/parseFloat(getComputedStyle(document.querySelector('.porta h3')).fontSize)}});
+    return {linhas:new Set([...rg.getClientRects()].map(x=>Math.round(x.top))).size,nomes:[...document.querySelectorAll('.faixa .nome')].map(n=>Math.round(n.getBoundingClientRect().width)),count:cols.length,fill:Math.abs(cols[0]-document.querySelector('.faixa').getBoundingClientRect().width)<1,rel:parseFloat(getComputedStyle(h).fontSize)/parseFloat(getComputedStyle(document.querySelector('.porta h3')).fontSize)}});
    assert.equal(r.linhas,1,'projeção: «As sete sessões» em '+r.linhas+' linhas a '+w+' px');assert(r.nomes.every(x=>x<=1),'projeção: rótulos da faixa à vista a '+w+' px');
-   assert(r.igual&&r.prop>=1.45&&r.prop<=1.55,'projeção: a faixa fora da proporção 2:2:3 a '+w+' px ('+r.prop+')');assert(r.rel>=1.249,'projeção: h2 só '+r.rel.toFixed(2)+' vezes os nomes das portas a '+w+' px');
+   // 02/11/2026: decisão do docente (141): só a porta com sessões publicadas ocupa a faixa.
+   assert(r.count===1&&r.fill,'projeção: a porta publicada ocupa a faixa a '+w+' px');assert(r.rel>=1.249,'projeção: h2 só '+r.rel.toFixed(2)+' vezes os nomes das portas a '+w+' px');
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const pag of ['narrativas/ideias/','narrativas/ideias/guiao/','narrativas/ideias/docente/'])for(const [w,x] of [[390,16],[768,24],[1024,24]]){const {ctx,p,erros}=await abrir(b,base+pag,w,800,'light');
    const r=await p.evaluate(()=>[Math.round(document.querySelector('h1').getBoundingClientRect().left),Math.round(window.innerWidth-document.querySelector('.migalhas').getBoundingClientRect().right)]);
@@ -359,13 +364,14 @@ async function responder(p,x){
   // partia-se em «… passos 1 e 2» / «de 5»; a 390 px, em «… passos 1» / «e 2 de 5»); na projeção a 320 px, «passo 1 de 5» inteiro
   {const F2={lida:true,versao:JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s02.json'),'utf8')).versao,t:Date.parse('2026-11-14T10:00:00'),melhor:12};
    const prep={content:"localStorage.setItem('epi-lab-ideias-s01',"+JSON.stringify(JSON.stringify(FEITA1))+");localStorage.setItem('epi-lab-ideias-s02',"+JSON.stringify(JSON.stringify(F2))+")"};
-   for(const [w,h,q,pr,txt] of [[320,640,'',prep,'A seguir, em preparação: '+['passos','1','e','2','de','5'].join(NB)],[390,844,'',prep,'A seguir, em preparação: '+['passos','1','e','2','de','5'].join(NB)],
-                                [1024,768,'',prep,'A seguir, em preparação: '+['passos','1','e','2','de','5'].join(NB)],[320,640,'?projetar=1',null,'Começa aqui: '+['passo','1','de','5'].join(NB)],
+   for(const [w,h,q,pr,txt] of [[320,640,'',prep,'Feitas: '+['passo','1','de','5'].join(NB)],[390,844,'',prep,'Feitas: '+['passo','1','de','5'].join(NB)],
+                                [1024,768,'',prep,'Feitas: '+['passo','1','de','5'].join(NB)],[320,640,'?projetar=1',null,'Começa aqui: '+['passo','1','de','5'].join(NB)],
                                 [360,740,'?projetar=1',null,'Começa aqui: '+['passo','1','de','5'].join(NB)]]){
     const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/'+q,w,h,'light',pr);
     const r=await p.evaluate(()=>{const k=document.querySelector('.proximo .kicker'),sp=k.querySelector('[data-p-passo]'),n=sp.firstChild,rg=document.createRange();rg.setStart(n,2);rg.setEnd(n,n.textContent.length);
      const tops=[...new Set([...rg.getClientRects()].filter(x=>x.width>0).map(x=>Math.round(x.top)))];return {txt:k.textContent,linhasPasso:tops.length}});
     const onde=' a '+w+' px'+(q?' (projeção)':'')+': '+JSON.stringify(r);
+    if(pr){assert.equal(await p.locator('[data-p-botao]').getAttribute('href'),'sessao-02/');assert.match(await p.locator('[data-p-botao]').innerText(),/Rever/);assert.equal(await p.locator('li.feita').count(),2)}
     assert.equal(r.txt,txt,'entrada: o rótulo da região «A seguir»'+onde);assert.equal(r.linhasPasso,1,'entrada: o passo partido no rótulo'+onde);
     assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}}
   for(const f of ['ideias-s01.json','ideias-s02.json']){const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes',f),'utf8'));const url=base+d.saida.replace(/index\.html$/,'');

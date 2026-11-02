@@ -155,7 +155,9 @@ class Ginasio(unittest.TestCase):
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
         # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Observar', 'Treinar', 'Criar'])
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Observar', 'Treinar', 'Criar', 'Ideias'])
+        self.assertIn('href="narrativas/ideias/"',s[i:j])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).
         porta = next(x for x in json.loads((R / 'assets/laboratorio/imagens.json').read_text('utf-8')) if x['id'] == 'porta')
