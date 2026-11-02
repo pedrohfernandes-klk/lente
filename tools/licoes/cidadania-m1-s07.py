@@ -35,13 +35,14 @@ VIDEO = (
  '<div class="yt" data-yt="0fivQUlC7-8" data-titulo="What did democracy really mean in Athens?, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What did democracy really mean in Athens?» (4 min 51 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Melissa Schwartzberg. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> O Tribunal de turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.</p>')
+'<p><b>O que se faz.</b> Analisa individualmente o dossiê do Tribunal de turma. Lê a acusação, a defesa e os três depoimentos. Regista uma decisão inicial com uma razão; distingue provas de inferências e escreve a melhor objeção à tua decisão. Depois revê-a. Não representes a colega do caso.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu acórdão: decisão, duas provas citadas, uma dúvida razoável e uma posição contrária fundamentada. Junta as tuas notas e a decisão inicial.</p>')
 LEVAR = (
  '<p class="levar">Uma decisão de muitos vale o que valem as provas que a sustentam.</p>'
- '<p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o vosso júri decidiu pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p>'
+ '<p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: decidiste pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Votar conta posições; deliberar pesa razões.</li>'
  '<li>Todos se presumem inocentes até prova em contrário.</li>'
@@ -51,6 +52,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Nove contra dois","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"O Tomás sai já?","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"No filme _Doze Homens em Fúria_ (Sidney Lumet, 1957), onze jurados votam culpado logo no início e um vota inocente, porque não tem a certeza. O que pede esse jurado aos outros?","p2":"Em _Doze Homens em Fúria_, um jurado vota contra os outros onze no primeiro voto. O que lhes pede?","o":["Que falem das provas antes de decidir.","Que mudem logo o voto, para o acompanhar.","Que deixem a decisão ao juiz do caso."],"c":0,"f":"O jurado não diz que o acusado está inocente: diz que não tem a certeza e pede para falarem das provas. É o que os dois jurados do caso pedem: separar prova de inferência antes de votar.","fe":["","Ele não pede que o sigam. Pede tempo para examinar as provas antes de decidir.","No filme, a decisão é do júri e tem de ser unânime. Ele pede que a tomem só depois de falar das provas."]},
  {"t":"sublinhar","g":"inferencia","p":"Toca nas duas palavras onde a frase deixa de descrever a captura e passa a tirar uma conclusão.","p2":"Onde começa a inferência nesta frase? Toca nas duas palavras.","frase":INFERENCIA,"certas":[11,12],
   "f":"Até ao **por isso**, a frase descreve o que se vê. Depois, tira uma conclusão que a captura não mostra: quem montou e quem publicou."},
  {"t":"escolha","g":"captura","p":"O que prova, com segurança, a captura de ecrã?","p2":"Com a captura na mão, o que se pode afirmar sem ir além dela?",
@@ -88,11 +91,11 @@ cartoes = [
  {"t":"vf","g":"nova","p":"Se a maioria já votou, uma informação nova já não muda nada.","p2":"Depois do voto, uma prova nova não deve alterar a decisão.","v":False,
   "f":"O voto fecha a discussão daquele momento, não a verdade. Uma prova nova pode e deve reabrir a decisão.",
   "fe":"Pensa no caso ao contrário: se as mensagens aparecessem depois do voto, o Tomás ficava culpado na mesma?"},
- {"t":"completar","g":"acordao","p":"Completa o que leva o acórdão do Tribunal de turma.","p2":"Que palavras completam o acórdão da turma?",
-  "frase":"O acórdão da turma tem a decisão, duas [1] citadas, uma [2] e um voto [3].",
-  "lacunas":[{"o":["provas","opiniões","pessoas"],"c":0},{"o":["dúvida razoável","certeza absoluta","regra nova"],"c":0},{"o":["vencido","secreto","anulado"],"c":0}],
-  "f":"Um acórdão mostra porque se decidiu: as provas citadas, a dúvida que ficou e o voto de quem perdeu, com a razão. Quem o lê percebe o caminho, não só o resultado.",
-  "fe":"Pensa no que o acórdão tem de mostrar: com que provas se decidiu, que dúvida ficou e quem votou contra."},
+ {"t":"completar","g":"acordao","p":"Completa o que leva o acórdão do Tribunal de turma.","p2":"Que palavras completam o teu acórdão?",
+  "frase":"O teu acórdão tem a decisão, duas [1] citadas, uma [2] e uma posição [3].",
+  "lacunas":[{"o":["provas","opiniões","pessoas"],"c":0},{"o":["dúvida razoável","certeza absoluta","regra nova"],"c":0},{"o":["contrária","favorável","definitiva"],"c":0}],
+  "f":"O teu acórdão mostra porque decidiste: as provas citadas, a dúvida que ficou e uma posição contrária, com a razão. Quem o lê percebe o caminho, não só o resultado.",
+  "fe":"Pensa no que o teu acórdão tem de mostrar: com que provas decidiste, que dúvida ficou e que razão se pode opor à tua decisão."},
  {"t":"escolha","g":"medida","p":"Enquanto se apura quem fez, que medida protege a colega sem castigar já o Tomás?","p2":"Que medida protege já a colega, antes de se saber quem fez o vídeo?",
   "o":["Pedir que o vídeo saia do grupo e seja apagado.","Tirar o Tomás do grupo de trabalho até ao fim do ano.","Publicar a captura para todos verem quem foi."],"c":0,
   "f":"Retirar o vídeo protege a colega já e não decide nada sobre quem o fez. Castigar antes de ouvir o Tomás seria decidir sem provas.",
@@ -103,12 +106,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s07","chave":"epi-cid-m1-s07","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s07","chave":"epi-cid-m1-s07","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 07: Nove contra dois","h1":"Cidadania, módulo 1, sessão 07: Nove contra dois",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s07/index.html","piloto":True,
  "seguinte":"../m1-s08/","seguinteRotulo":"Sessão 08: Quem decide o quê?",
- "fontes":"Constituição da República Portuguesa, artigos 32.º e 207.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Declaração Universal dos Direitos Humanos (1948), artigos 10.º e 11.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Imagem: Honoré Daumier, «Voilà le ministère public qui vous dit des choses très désagréables», prancha 21 de _Les Gens de Justice_, 1846, litografia (Metropolitan Museum of Art, CC0); legenda em tradução nossa. Vídeo: TED-Ed, «What did democracy really mean in Athens?», lição de Melissa Schwartzberg. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 32.º e 207.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Declaração Universal dos Direitos Humanos (1948), artigos 10.º e 11.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Imagem: Honoré Daumier, «Voilà le ministère public qui vous dit des choses très désagréables», prancha 21 de _Les Gens de Justice_, 1846, litografia (Metropolitan Museum of Art, CC0); legenda em tradução nossa. Vídeo: TED-Ed, «What did democracy really mean in Athens?», lição de Melissa Schwartzberg. Os casos são inventados. Ler mais: _Doze Homens em Fúria_, filme de Sidney Lumet (1957), já visto no M1; não se volta a exibir.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

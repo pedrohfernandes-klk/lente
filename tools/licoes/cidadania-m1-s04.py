@@ -45,10 +45,11 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «How false news can spread» (3 min 42 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Noah Tavlin. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Uma linha para cada passo, no caderno. Depois: que pergunta fazias antes de repetir o comentário sobre o Diogo?</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> O laboratório de verificação. Cada grupo de três recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova. Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o registo de fontes do grupo para a Pergunta Humana.</p>')
+'<p><b>O que se faz.</b> O laboratório de verificação é individual. Recebes três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova. Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o teu registo de fontes para a Pergunta Humana.</p>')
 LEVAR = (
  '<p class="levar">Criticar quem manda é um direito; acusar alguém sem prova é um dano.</p>'
  '<p>Nesta sessão separaste opinião, sátira e acusação de facto, e verificaste antes de repetir. Volta às quatro peras: em que desenho puseste a linha? E o comentário sobre o Diogo, mantinhas, corrigias ou retiravas?</p>'
@@ -61,6 +62,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Posso dizer tudo?","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"A conta de memes","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"Na alegoria da caverna (Platão, _A República_, livro VII), os prisioneiros só veem sombras na parede e julgam que são as próprias coisas. O comentário sobre o Diogo circula, mas ninguém viu nada. Que gesto é o de quem se vira para ver de onde vem a sombra?","p2":"Na caverna de Platão, quem se vira descobre de onde vêm as sombras. Diante do comentário sobre o Diogo, que gesto é virar-se?","o":["Procurar quem escreveu primeiro, e com que provas.","Partilhar logo, para avisar quem conheces na escola.","Contar quantas pessoas já reagiram àquele comentário."],"c":0,"f":"Virar-se é perguntar pela origem: quem escreveu primeiro, quando e com que provas. As partilhas e as reações são mais sombras na parede: dizem quantos viram, não o que é verdade.","fe":["","Partilhar sem verificar é passar a sombra a mais gente. Primeiro vira-se a cabeça: de onde vem?","Muitas reações não fazem um facto. É como contar quem olha para a mesma sombra."]},
  {"t":"escolha","g":"facto","p":"No caso da conta de memes, que frase afirma um facto que se pode verificar?","p2":"Destas frases, que afirmação é sobre um facto, verdadeiro ou falso, e não uma opinião?",
   "o":["O Diogo rouba na cantina.","O diretor parece uma pera.","Esta escola é uma seca."],"c":0,
   "f":"Dizer que o Diogo rouba na cantina é afirmar que aconteceu uma coisa concreta: pode ser verdade ou mentira, e tem de ser provado. A pera é uma sátira e «uma seca» é uma opinião: discutem-se, não se provam.",
@@ -115,12 +118,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s04","chave":"epi-cid-m1-s04","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s04","chave":"epi-cid-m1-s04","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 04: Posso dizer tudo?","h1":"Cidadania, módulo 1, sessão 04: Posso dizer tudo?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s04/index.html","piloto":True,
  "seguinte":"../m1-s05/","seguinteRotulo":"Sessão 05: Quem guarda os meus dados?",
- "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.ºs 2 e 3; Código Penal, artigo 180.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 13.º, n.º 2, no texto do Ministério Público. Imagem: _Les Poires_, em _Le Charivari_, 17 de janeiro de 1834, desenho atribuído a Honoré Daumier a partir de Charles Philipon (Gallica, Biblioteca Nacional de França, domínio público). Vídeo: TED-Ed, «How false news can spread», lição de Noah Tavlin. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.ºs 2 e 3; Código Penal, artigo 180.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 13.º, n.º 2, no texto do Ministério Público. Imagem: _Les Poires_, em _Le Charivari_, 17 de janeiro de 1834, desenho atribuído a Honoré Daumier a partir de Charles Philipon (Gallica, Biblioteca Nacional de França, domínio público). Vídeo: TED-Ed, «How false news can spread», lição de Noah Tavlin. Os casos são inventados. Ler mais: Platão, _A República_, livro VII, a alegoria da caverna, na Etapa 1 do M1, «O que vemos» (cidadania/aula-1/).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

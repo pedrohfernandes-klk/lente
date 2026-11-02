@@ -21,7 +21,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p>'
  '<p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento com outro grupo.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar individualmente o teu teatro-documento.</p>')
 DECIDE = (
  '<p>A regra do português nos intervalos deve avançar?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -49,10 +49,11 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Can stereotypes ever be good?» (5 min 52 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada grupo mostra o teatro-documento em ensaio a outro grupo. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> As notas dadas ao outro grupo e duas mudanças que o vosso grupo decide fazer, uma delas para incluir uma voz que ainda não estava.</p>')
+'<p><b>O que se faz.</b> No aquecimento «O outro lado», tira uma posição e defende-a durante um minuto; depois, experimenta a contrária. Ensaia individualmente o teu teatro-documento, lendo as diferentes vozes. Regista em três colunas o que se ouve, de quem é a voz e de que fonte vem. Procura uma voz que falta e prepara uma objeção ao teu trabalho.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu registo do ensaio, uma objeção e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>')
 LEVAR = (
  '<p class="levar">Ouvir outra voz não é concordar com ela: é saber sobre o que se decide.</p>'
  '<p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p>'
@@ -65,6 +66,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Muitas vozes, uma escola","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"Só português no intervalo?","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"Num discurso de 2005, David Foster Wallace conta a história de dois peixes novos que não sabem o que é a água. Numa escola com muitas línguas e crenças, o que é a «água» de cada um?","p2":"Na história dos peixes de David Foster Wallace, a água é o que não se vê de tão constante. Numa escola com muitas línguas, o que é essa água?","o":["O que nos parece normal e nunca pensámos explicar.","A língua oficial que a escola usa em todas as aulas.","As regras escritas no regulamento da escola."],"c":0,"f":"A água é o que está sempre lá e por isso deixamos de ver: a nossa língua, os nossos feriados, o que comemos. Ouvir outra voz começa por dar conta da própria água.","fe":["","A língua oficial vê-se e discute-se. A água é o que nem chegamos a notar.","O regulamento está escrito e lê-se. A água é o que ninguém escreveu porque parece óbvio."]},
  {"t":"escolha","g":"direito","p":"Segundo a Constituição, que direito pode ser tocado pela regra «só português nos intervalos»?","p2":"A regra do português nos intervalos pode chocar com que direito da Constituição?",
   "o":["Não ser prejudicado por causa da língua.","Escolher a escola que se quer frequentar.","Ter um intervalo com a duração certa."],"c":0,
   "f":"O artigo 13.º, n.º 2, diz que ninguém pode ser prejudicado ou privado de qualquer direito em razão da língua. A regra não proíbe ninguém de estar na escola, mas pode prejudicar quem fala outra língua com os seus.",
@@ -109,18 +112,18 @@ cartoes = [
   "lacunas":[{"o":["explicada","imposta","escondida"],"c":0},{"o":["cala","ouve","avisa"],"c":0}],
   "f":"Uma regra comum justa explica-se a quem a cumpre e não cala ninguém. Se calar sempre os mesmos, tem de ser revista.",
   "fe":"Volta ao caso do intervalo: a quem é que a regra tira a palavra?"},
- {"t":"vf","g":"discorda","p":"No teatro-documento, a fala de alguém que discorda do grupo pode entrar, desde que se diga de onde vem.","p2":"Uma voz contrária à do grupo pode entrar no teatro-documento, se tiver a sua fonte.","v":True,
-  "f":"O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que o grupo ouviu mais do que um lado.",
+ {"t":"vf","g":"discorda","p":"No teatro-documento, a fala de alguém que discorda de ti pode entrar, desde que se diga de onde vem.","p2":"Uma voz contrária à tua pode entrar no teatro-documento, se tiver a sua fonte.","v":True,
+  "f":"O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que ouviste mais do que um lado.",
   "fe":"Pôr em cena quem discorda não é dar-lhe razão: é mostrar o que se ouviu, com a fonte."},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s09","chave":"epi-cid-m1-s09","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s09","chave":"epi-cid-m1-s09","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 09: Muitas vozes, uma escola","h1":"Cidadania, módulo 1, sessão 09: Muitas vozes, uma escola",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s09/index.html","piloto":True,
  "seguinte":"../m1-s10/","seguinteRotulo":"Sessão 10: O que conseguimos defender?",
- "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; domínio público segundo o Wikimedia Commons, https://commons.wikimedia.org/w/index.php?curid=29801440; página e reprodução no Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, consultadas a 31/10/2026). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
+ "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; domínio público segundo o Wikimedia Commons, https://commons.wikimedia.org/w/index.php?curid=29801440; página e reprodução no Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, consultadas a 31/10/2026). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados. Ler mais: David Foster Wallace, discurso no Kenyon College (21 de maio de 2005), na Etapa 1 do M1, «O que vemos» (cidadania/aula-1/).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

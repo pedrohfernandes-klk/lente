@@ -24,19 +24,20 @@ CARTAZ = (
  'alt="Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «… one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre»." loading="lazy"></span>'
  '<figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>… one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure>'
  '<p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p>'
- '<p class="pergunta-c">Que pergunta fazia esta peça? E a vossa?</p>'
+ '<p class="pergunta-c">Que pergunta fazia esta peça? E a tua?</p>'
  '<p>Responde no caderno, numa linha para cada peça.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p>'
- '<p class="pergunta-c">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à vossa defesa?</p>'
+ '<p class="pergunta-c">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à tua defesa?</p>'
  '<div class="yt" data-yt="O2dEuMFR8kw" data-titulo="What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Duas linhas no caderno, antes de apresentarem.</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> A apresentação pública dos teatros-documento, 5 a 8 minutos cada, seguida de três minutos de defesa: uma pergunta do público e uma objeção preparada por outro grupo. O Ponto de chegada já foi feito ao início, em papel e sozinho.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O teu Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» em três linhas e o mapa de direitos da sessão 01 revisto: o que mudou?</p>')
+'<p><b>O que se faz.</b> Apresenta individualmente o teu teatro-documento, de 5 a 8 minutos, e defende-o durante três minutos: responde a uma pergunta do público e à objeção que preparaste. O docente distribui as apresentações pelo tempo disponível, sem encurtar os requisitos. O Ponto de chegada já foi feito ao início, em papel e sozinho.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» em três linhas e o teu mapa de direitos da sessão 01 revisto: o que mudou?</p>')
 LEVAR = (
  '<p class="levar">Uma boa resposta diz o que sabe, de onde o sabe e o que ainda não sabe.</p>'
  '<p>Nesta sessão defendeste uma resposta com fontes e respondeste a uma objeção. Volta ao mapa de direitos da sessão 01 e ao teu Ponto de partida: o que mudou na tua maneira de ver a escola?</p>'
@@ -50,6 +51,8 @@ INFERENCIA = 'A captura mostra o nome do Tomás ao lado do vídeo, por isso foi 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"O que conseguimos defender?","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"Isso é só a vossa opinião","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"Albert Camus acaba _O Mito de Sísifo_ (1942) com a ideia de que é preciso imaginar Sísifo feliz, a empurrar outra vez a mesma pedra. Depois da defesa, qual é a tua pedra?","p2":"Para Camus, é preciso imaginar Sísifo feliz a recomeçar com a pedra. Depois de defender a resposta, que trabalho recomeça?","o":["Rever a resposta com as objeções que ouviste.","Guardar a resposta exatamente como foi apresentada.","Escolher uma pergunta nova e começar do zero."],"c":0,"f":"Uma resposta defendida volta ao início com o que se aprendeu: as objeções, as fontes que faltaram. Para Camus, o sentido que damos à tarefa muda a tarefa; rever é empurrar a pedra sabendo porquê.","fe":["","Guardar sem rever é deixar a pedra lá em cima, como se não tivesse rolado. As objeções pedem uma segunda versão.","Começar do zero deita fora o que a defesa ensinou. A pedra é a mesma: volta-se à resposta com as objeções."]},
  {"t":"ler","rot":"Recupera","titulo":"Depois do Ponto de chegada","html":RECUPERA},
  {"t":"emparelhar","g":"artigos","p":"Liga cada situação ao direito da Constituição que está em causa.","p2":"Que direito da Constituição pesa em cada uma destas situações?",
   "pares":[["Uma fotografia publicada sem perguntar","Imagem e vida privada (artigo 26.º)"],["Um colega posto de parte pela língua que fala","Igualdade (artigo 13.º)"],["Uma crítica à cantina no jornal da escola","Liberdade de expressão (artigo 37.º)"],["Um pedido à câmara para manter a passadeira","Direito de petição (artigo 52.º)"]],
@@ -104,12 +107,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s10","chave":"epi-cid-m1-s10","versao":"2026-10-31-2",
+ "id":"cidadania-m1-s10","chave":"epi-cid-m1-s10","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 10: O que conseguimos defender?","h1":"Cidadania, módulo 1, sessão 10: O que conseguimos defender?",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s10/index.html","piloto":True,
  "seguinte":"../m1/","seguinteRotulo":"As 10 sessões",
- "fontes":"Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
+ "fontes":"Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados. Ler mais: Albert Camus, _O Mito de Sísifo_ (1942), na Etapa 2 do M1, «O que somos» (cidadania/aula-2/).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

@@ -11,6 +11,7 @@ G = importlib.util.module_from_spec(spec); spec.loader.exec_module(G)
 MOD = ROOT / 'cidadania/piloto/m1/index.html'
 GUIA = ROOT / 'cidadania/piloto/m1/docente/index.html'
 PONTO = ROOT / 'cidadania/piloto/m1/ponto/index.html'
+PROJETO = ROOT / 'cidadania/piloto/m1/projeto/index.html'
 
 
 def ler(p):
@@ -33,7 +34,8 @@ class CidadaniaPiloto(unittest.TestCase):
             self.assertEqual((ROOT / rel).read_text('utf-8'), s, rel + ': corre python3 tools/cidadania_piloto.py')
 
     def test_escondidas_dos_motores_de_busca(self):
-        for p in (MOD, GUIA, PONTO):
+        # 02/11/2026: o enunciado individual pertence ao piloto e também exige noindex.
+        for p in (MOD, GUIA, PONTO, PROJETO):
             self.assertEqual(ler(p).count('<meta name="robots" content="noindex, nofollow">'), 1, p)
             self.assertIn('<html lang="pt-PT" data-appearance-site="lente">', ler(p))
 
@@ -65,7 +67,7 @@ class CidadaniaPiloto(unittest.TestCase):
         self.assertIn('st.lida&&st.versao===li.getAttribute("data-versao")', s)
 
     def test_ligacoes_locais_resolvem(self):
-        for p in (MOD, GUIA, PONTO):
+        for p in (MOD, GUIA, PONTO, PROJETO):
             for h in ligacoes_locais(p):
                 alvo = (p.parent / h.split('#')[0].split('?')[0]).resolve()
                 if h.split('#')[0].split('?')[0].endswith('/') or alvo.is_dir():
@@ -83,7 +85,9 @@ class CidadaniaPiloto(unittest.TestCase):
         for n, g in G.GUIA.items():
             self.assertEqual(sum(p for _, p in g['grelha']), 20, n)
             self.assertTrue(60 <= sum(m for m, _ in g['passos']) <= 75, n)
-            self.assertIn('../../../projeto/', s)
+            # 02/11/2026: decisão 138, o guia liga ao enunciado individual do piloto.
+            self.assertIn('../projeto/', s)
+            self.assertNotIn('../../../projeto/', s)
         self.assertEqual(s.count('<h3>Pergunta Humana: '), 10)
         self.assertIn('href="../ponto/"', s)
 

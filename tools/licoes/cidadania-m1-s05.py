@@ -26,14 +26,14 @@ LEI_19_3 = ('Nos estabelecimentos de ensino, as câmaras de videovigilância só
 # «This could save lives— but are you willing to do it?», traz um travessão que a casa não usa: o botão cita-o abreviado e
 # as fontes passam o travessão a dois pontos (revisão do diretor de arte e de pt-PT, 31/10). A imagem foi recortada à lista
 # do título (de «AND IN PARTICULAR TO» a «AND SCHOOLS:»), que o cartão também transcreve.
-# 31/10/2026 (verificação final): novo recorte a partir da digitalização em resolução máxima do Internet Archive
-# (10059224bsb_jp2.zip, página 0000, 1209 px de largura): a lista ocupa 754 px; com cerca de 6 % de margem de cada lado fica
-# com 857 px, levada a 960 × 404 (Lanczos), em tons de cinzento, com o papel uniformizado. A figura leva a classe «texto»
-# (sem o movimento da moldura) e a lista em inglês vai num parágrafo próprio, lang="en", alinhado à esquerda.
+# 02/11/2026: sai o recorte. Página 0000 inteira, 1209 × 1919, sem alteração de cor ou escala,
+# obtida em https://archive.org/download/10059224bsb/page/n0.jpg e vista.
+# Registo Commons lido: File:Panopticon_(IA_10059224bsb).pdf, Public Domain Mark 1.0.
+# O manifesto da biblioteca de origem indica NoC-NC; a diferença fica no relatório para revisão.
 CARTAZ = (
- '<figure class="fig inteiro texto"><span class="moldura"><img src="../../../img/cidadania/panotico-bentham-1791.webp" '
- 'alt="Pormenor de uma página de título impressa: em maiúsculas, a lista dos edifícios onde o plano se pode usar, de «penitentiary-houses» e «prisons» até «hospitals», em duas colunas, e no fim «and schools»." loading="lazy"></span>'
- '<figcaption>Jeremy Bentham, <i>Panopticon; or, The Inspection-House</i>, página de título (pormenor), Dublin e Londres, 1791. Bayerische Staatsbibliothek, via Internet Archive. Domínio público.</figcaption></figure>'
+ '<figure class="fig inteiro texto"><span class="moldura"><img src="../../../img/cidadania/panopticon-titulo-inteiro-1791.jpg" '
+ 'alt="Página de título inteira de Panopticon: título no alto, lista dos edifícios em duas colunas ao centro, nome de Jeremy Bentham e data de 1791 na parte inferior." loading="lazy"></span>'
+ '<figcaption>Jeremy Bentham, <i>Panopticon; or, The Inspection-House</i>, página de título, Dublin e Londres, 1791. Bayerische Staatsbibliothek, via Internet Archive. Domínio público segundo o Wikimedia Commons.</figcaption></figure>'
  '<p>Num livro de 1791, o filósofo inglês Jeremy Bentham propôs um edifício circular, a que chamou panóptico: as celas à volta e, ao centro, o lugar de quem inspeciona. Lê a lista do título até ao fim:</p>'
  '<p class="lista-en" lang="en">«penitentiary-houses, prisons, houses of industry, work-houses, poor-houses, manufactories, mad-houses, lazarettos, hospitals, and schools»</p>'
  '<p class="pergunta-c">Porque estará uma escola nesta lista?</p>'
@@ -44,10 +44,11 @@ VIDEO = (
  '<div class="yt" data-yt="tmwIhOCXLrQ" data-titulo="This could save lives, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «This could save lives» (título abreviado, 5 min 30 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Michael Vazquez e Sarah Stroud. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, em grupos de três, a auditoria do formulário da visita de estudo, inventado e em papel: riscar o que não é preciso, dizer quem vê cada dado e quando se apaga. Depois, uma volta de 20 minutos ao quarteirão da escola, com o docente, a contar câmaras e avisos de videovigilância e a anotar o que cada aviso diz. Não se fotografam pessoas nem matrículas.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O formulário revisto, uma nota de privacidade em cinco linhas, o registo dos avisos e o plano de recolha das entrevistas da Pergunta Humana: o que se guarda, onde e até quando.</p>')
+'<p><b>O que se faz.</b> Revê individualmente o formulário inventado da visita de estudo, em papel: risca o que não é preciso, diz quem vê cada dado e quando se apaga. Depois, numa volta de 20 minutos ao quarteirão com o docente, faz o teu registo de câmaras e avisos de videovigilância. Não fotografes pessoas nem matrículas.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu formulário revisto, a tua nota de privacidade, o teu registo dos avisos e o teu plano de recolha das entrevistas.</p>')
 LEVAR = (
  '<p class="levar">Os dados pedem-se para uma finalidade, e só aqueles de que essa finalidade precisa.</p>'
  '<p>Nesta sessão pesaste segurança e privacidade e viste o que a lei deixa fazer numa escola. Volta ao panóptico: em que sítio da escola te sentes dentro dele? E volta à tua posição do início: as câmaras nas salas ficavam?</p>'

@@ -18,10 +18,11 @@ CONCEITO = (
  '<ul><li><b>Declaração Universal dos Direitos Humanos</b> (Nações Unidas, Paris, 10 de dezembro de 1948): uma declaração, não um tratado.</li>'
  '<li><b>Convenção sobre os Direitos da Criança</b> (1989): um tratado. Portugal ratificou-o em 1990, por isso obriga o Estado.</li>'
  '<li><b>Constituição da República Portuguesa</b>: a lei mais alta do país. O artigo 16.º manda ler os direitos fundamentais de acordo com a Declaração.</li></ul>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, em grupos de três, o mapa de direitos: na planta da escola, colada na parede, cada grupo põe post-its com uma situação real ou possível e o número do artigo que a protege.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O teu Ponto de partida e dois post-its do teu grupo, com a situação e o artigo. O mapa fica fotografado para a sessão 10.</p>')
+'<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, faz o teu mapa de direitos: numa planta da escola, põe post-its com situações reais ou possíveis e o número do artigo que protege cada uma. Onde dois direitos chocam, desenha uma seta e explica qual pesa mais naquele caso.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu Ponto de partida, o teu mapa e dois post-its teus, com a situação e o artigo. Guarda uma fotografia do mapa para a sessão 10.</p>')
 # 30/10/2026 (pedido do docente: «falta imagem e vídeo»): a fotografia de 1949, com a tabela de museu colada a ela, e
 # o vídeo do TED-Ed, com uma tarefa tirada das três perguntas da descrição oficial do vídeo.
 CARTAZ = (
@@ -50,6 +51,8 @@ LEVAR = (
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Um mapa de direitos","html":ABRE},
  {"t":"ler","rot":"Decide","titulo":"A fotografia no grupo","html":DECIDE},
+ # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica, mas ficam como conhecimento a recuperar.
+ {"t":"escolha","g":"recupera","rot":"Recupera","p":"Em _Rhythm 0_ (Nápoles, 1974), Marina Abramović ficou seis horas imóvel ao lado de uma mesa com 72 objetos, que o público podia usar nela. Houve quem passasse a gestos violentos e quem a defendesse. Que artigo da Declaração responde ao que a sala pôs à prova?","p2":"Em _Rhythm 0_, o público pôde fazer o que quis a Marina Abramović durante seis horas. Que artigo da Declaração diz o que ninguém lhe podia tirar?","o":["Artigo 1.º: todos nascem livres e iguais em dignidade e em direitos.","Artigo 19.º: todos têm direito à liberdade de opinião e de expressão.","Artigo 20.º: todos têm direito à liberdade de reunião e de associação."],"c":0,"f":"A Declaração começa pela dignidade, que vale para todos, também quando ninguém a respeita. Em _Rhythm 0_, a dignidade da artista não dependia do que o público fazia com os objetos: foi isso que a sala pôs à prova.","fe":["","A liberdade de expressão está noutro artigo. Na galeria, o que estava em causa era o modo de tratar uma pessoa: a dignidade.","Reunir-se é um direito, mas o problema da galeria era o que se fazia a uma pessoa: a dignidade."]},
  {"t":"escolha","g":"caso","p":"No caso da fotografia, que direito da aluna está em causa em primeiro lugar?","p2":"A fotografia da aluna a dormir chegou ao grupo da turma. Que direito pesa mais neste caso?",
   "o":["A reserva da vida privada e a imagem.","A liberdade de reunião durante o intervalo.","O acesso gratuito ao ensino obrigatório."],"c":0,
   "f":"A fotografia mostra a aluna num momento que ela não escolheu mostrar. A Declaração protege a vida privada (artigo 12.º) e a Constituição protege a imagem e a reserva da intimidade (artigo 26.º).",
@@ -98,12 +101,12 @@ cartoes = [
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
- "id":"cidadania-m1-s01","chave":"epi-cid-m1-s01","versao":"2026-10-31-1",
+ "id":"cidadania-m1-s01","chave":"epi-cid-m1-s01","versao":"2026-10-31-3",
  "marca":"CD","titulo":"Sessão 01: Um mapa de direitos","h1":"Cidadania, módulo 1, sessão 01: Um mapa de direitos",
  "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s01/index.html","piloto":True,
  "seguinte":"../m1-s02/","seguinteRotulo":"Sessão 02: A imagem dos outros",
- "fontes":"Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Fotografia: Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, novembro de 1949 (Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0). Vídeo: TED-Ed, «What are the universal human rights?», lição de Benedetta Berti. Os casos são inventados.",
+ "fontes":"Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), artigos 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Constituição da República Portuguesa, artigos 16.º, 26.º, 34.º e 37.º. Fotografia: Eleanor Roosevelt com o cartaz da Declaração Universal, Lake Success, novembro de 1949 (Biblioteca Presidencial Franklin D. Roosevelt, CC BY 2.0). Vídeo: TED-Ed, «What are the universal human rights?», lição de Benedetta Berti. Os casos são inventados. Ler mais: Marina Abramović, _Rhythm 0_ (1974), na Etapa 2 do M1, «O que somos» (cidadania/aula-2/).",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')

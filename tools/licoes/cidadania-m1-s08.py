@@ -35,10 +35,11 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Which voting system is the best?» (5 min 33 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Alex Gendler. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Uma linha para cada maneira, no caderno. Os votos são os mesmos: o que muda?</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> O mapa de quem decide. Em grupos de três, uma volta de 30 minutos ao quarteirão da escola: anotem seis coisas (passadeira, semáforo, contentor, banco, sinal, paragem) e quem acham que decide cada uma. Não se fotografam pessoas nem matrículas. Na sala, confirmam nos sítios da junta de freguesia e da câmara municipal e escrevem o pedido à entidade certa.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O mapa de quem decide e um pedido de uma página: destinatário, pedido, fundamento com o artigo 52.º e assinaturas.</p>')
+'<p><b>O que se faz.</b> Faz o teu mapa de quem decide. Numa volta de 30 minutos ao quarteirão com o docente, anota seis coisas (passadeira, semáforo, contentor, banco, sinal, paragem) e quem pensas que decide cada uma. Não fotografes pessoas nem matrículas. Na sala, confirma nos sítios da junta e da câmara e escreve o teu pedido à entidade certa.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu mapa de quem decide e o teu pedido de uma página, com destinatário, fundamento e assinatura.</p>')
 LEVAR = (
  '<p class="levar">Contestar bem começa por saber quem decidiu.</p>'
  '<p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o vosso pedido que um grito não tem?</p>'

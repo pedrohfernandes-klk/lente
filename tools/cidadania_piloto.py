@@ -1,6 +1,6 @@
 """31/10/2026: Cidadania refeita, M1 em piloto (decisões do docente de 30/10, segunda ronda, 5, 8, 17, 18 e 38).
 
-Escreve três páginas escondidas dos motores de busca, a partir das lições em tools/licoes/cidadania-m1-sNN.json:
+Escreve quatro páginas escondidas dos motores de busca, a partir das lições em tools/licoes/cidadania-m1-sNN.json:
 - cidadania/piloto/m1/index.html: a página do módulo, só com as 10 sessões, numeradas, com o título, a pergunta, o
   estado de cada uma («Feita dd/mm» ou «A seguir»; 31/10: «por fazer» não se escreve) e «Começar» ou «Continuar». O estado lê-se das chaves epi-cid-m1-s01 a s10,
   no formato que o motor grava (assets/licoes/jogo.js, função fim(): «lida» fica true no fim da lição e «versao» é a
@@ -8,9 +8,10 @@ Escreve três páginas escondidas dos motores de busca, a partir das lições em
 - cidadania/piloto/m1/docente/index.html: o guia do docente, uma secção por sessão, a partir do plano da coordenação
   (scratchpad cid-m1/plano.md, 31/10) e do que as lições dizem (o «Na aula», a imagem, o vídeo, as fontes);
 - cidadania/piloto/m1/ponto/index.html: o Ponto de partida e de chegada, as mesmas 10 perguntas, para imprimir.
+- cidadania/piloto/m1/projeto/index.html: o enunciado individual, com os instrumentos e pesos publicados.
 
 O texto vem das lições; o que é só do docente (passos, tempos, materiais, grelhas) está em GUIA, abaixo.
-Uso: python3 tools/cidadania_piloto.py              (escreve as três páginas)
+Uso: python3 tools/cidadania_piloto.py              (escreve as quatro páginas)
      python3 tools/cidadania_piloto.py --verificar  (confirma que estão atualizadas e que cumprem as regras da casa)"""
 import html, importlib.util, json, pathlib, re, sys
 
@@ -50,6 +51,7 @@ def sessoes():
     return out
 
 
+# 02/11/2026: decisão 138, todas as tarefas e entregas são individuais.
 # O que só o docente lê. Tempos em minutos; o «Na aula» soma 60 a 75 minutos, com os 10 da pausa.
 # A grelha /20 de cada sessão é a do plano (proposta da equipa na sessão 01, que o plano não tinha); diz-se sempre indicativa (decisão 17).
 GUIA = {
@@ -58,77 +60,77 @@ GUIA = {
   'ensina': 'Situar casos da escola em artigos concretos e distinguir uma declaração, um tratado e a Constituição.',
   'antes': 'Antes de abrir a lição: o Ponto de partida, em papel, sem ajuda e sem consulta (10 a 15 minutos). Os cartões de fazer ensinam as respostas das perguntas 1 e 2; por isso o Ponto vem primeiro, ainda que o cartão «Na aula» o lembre mais tarde.',
   'passos': [
-   (5, 'Pôr a planta da escola na parede e dar a regra: uma situação por post-it, descrita sem adjetivos e sem nomes de colegas, com o número do artigo.'),
-   (20, 'Em grupos de três, quatro a seis post-its: situações reais ou possíveis, no sítio da planta onde acontecem.'),
+   (5, 'Dar a cada aluno uma planta da escola e dar a regra: uma situação por post-it, descrita sem adjetivos e sem nomes de colegas, com o número do artigo.'),
+   (20, 'Cada aluno escreve quatro a seis post-its: situações reais ou possíveis, no sítio da planta onde acontecem.'),
    (10, 'Pausa.'),
-   (15, 'Volta à parede: cada grupo lê dois post-its; a turma confirma o artigo ou propõe outro.'),
-   (10, 'Onde dois direitos chocam, o grupo desenha uma seta entre os post-its e escreve qual pesa mais naquele caso.'),
-   (5, 'Fotografar o mapa (volta na sessão 10) e recolher os Pontos de partida.'),
+   (15, 'Volta à parede: alguns alunos leem dois post-its seus; a turma confirma o artigo ou propõe outro.'),
+   (10, 'Onde dois direitos chocam, cada aluno desenha uma seta no seu mapa entre os post-its e escreve qual pesa mais naquele caso.'),
+   (5, 'Cada aluno fotografa o seu mapa (volta na sessão 10) e recolher os Pontos de partida.'),
   ],
-  'materiais': ['Ponto de partida impresso, um por aluno (ligação abaixo).', 'Planta da escola em A3, ou desenhada no quadro.', 'Post-its de duas cores e marcadores.', 'Os artigos da sessão, projetados: Declaração, 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção, 12.º; Constituição, 16.º, 26.º, 34.º e 37.º.'],
-  'escrito': 'O Ponto de partida de cada aluno, com o código e sem o nome; dois post-its por grupo, com a situação e o artigo; a fotografia do mapa.',
-  'projeto': ('Apresentação', '#pergunta-resposta', 'Nos últimos cinco minutos, apresentar a Pergunta Humana: um teatro-documento de 5 a 8 minutos, feito a partir de uma pergunta do grupo, que se escolhe na sessão 03.'),
-  'produto': 'Mapa de direitos (por grupo)',
+  'materiais': ['Ponto de partida impresso, um por aluno (ligação abaixo).', 'Uma planta da escola por aluno, em A3 ou copiada do quadro.', 'Post-its de duas cores e marcadores.', 'Os artigos da sessão, projetados: Declaração, 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção, 12.º; Constituição, 16.º, 26.º, 34.º e 37.º.'],
+  'escrito': 'O Ponto de partida de cada aluno, com o código e sem o nome; dois post-its por aluno, com a situação e o artigo; a fotografia do mapa individual.',
+  'projeto': ('Apresentação', '#pergunta-resposta', 'Nos últimos cinco minutos, apresentar a Pergunta Humana: um teatro-documento de 5 a 8 minutos, feito a partir de uma pergunta individual, que cada aluno escolhe na sessão 03.'),
+  'produto': 'Mapa de direitos individual',
   'grelha': [('Situações descritas sem adjetivos nem nomes de colegas', 4), ('Artigo certo para cada situação', 5), ('Um choque de direitos identificado e pesado no caso', 4), ('Variedade de sítios e de direitos (espaço, regras, redes, turma)', 3), ('Leitura à turma e resposta às perguntas', 4)],
-  'notas': ['Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
+  'notas': ['Recupera (logo a seguir ao «Decide»): Marina Abramović, _Rhythm 0_, da Etapa 2, ligada ao artigo 1.º da Declaração. O cartão conta o essencial, também para quem não viu a etapa; não se mostram imagens da performance, porque os relatos são fortes.', 'Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
  },
  '02': {
   'dominio': 'Direitos Humanos (imagem, reserva da vida privada, consentimento); Media.',
   'ensina': 'Separar filmar, guardar e publicar, e ver que o consentimento vale para um uso.',
   'passos': [
-   (5, 'Grupos de três. Cada grupo recebe as quatro situações num envelope, com a informação nova dobrada à parte.'),
-   (25, 'Uma situação de cada vez, cerca de 6 minutos cada: decidir, ler o efeito, abrir a informação nova e rever. Alguém do grupo regista a decisão do início e a revista.'),
+   (5, 'Cada aluno recebe as quatro situações num envelope, com a informação nova dobrada à parte.'),
+   (25, 'Uma situação de cada vez, cerca de 6 minutos cada: decidir, ler o efeito, abrir a informação nova e rever. Cada aluno regista a decisão do início e a revista.'),
    (10, 'Pausa.'),
    (20, 'O pedido de consentimento para as entrevistas da Pergunta Humana, nas quatro partes: para quê, que uso, onde fica e até quando, como se retira.'),
-   (5, 'Dois grupos leem o pedido em voz alta; a turma diz o que falta.'),
+   (5, 'Dois alunos leem o seu pedido em voz alta; a turma diz o que falta.'),
   ],
   'materiais': ['As quatro situações em papel: o ensaio da Marta; uma fotografia de rua com uma pessoa reconhecível em primeiro plano; uma captura de ecrã de uma conversa privada; a entrevista do projeto. Cada uma com o efeito da decisão e uma informação nova (por exemplo: a pessoa da fotografia de rua é menor).', 'O modelo do pedido de consentimento, em quatro partes.', 'Código Civil, artigo 79.º, projetado.'],
-  'escrito': 'O pedido de consentimento do grupo e a decisão revista de uma das situações.',
+  'escrito': 'O pedido de consentimento individual e a decisão revista de uma das situações.',
   'projeto': ('Ética das entrevistas', '', 'O pedido de consentimento entra no dossiê da Pergunta Humana; a página do projeto diz o que fazer com menores (autorização do encarregado de educação), com o anonimato e com quem desiste.'),
   'produto': 'Pedido de consentimento',
   'grelha': [('Finalidade dita em palavras simples', 4), ('Uso, sítio e prazo', 4), ('Direito a recusar e a retirar, com contacto', 4), ('Cuidado com terceiros e com menores (encarregado de educação)', 4), ('Decisão revista de uma situação, com o artigo certo', 4)],
-  'notas': ['Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.', 'O excerto refere imagens sexuais falsificadas (entre os 25 e os 34 s): ver antes e decidir se se mostra.'],
+  'notas': ['Recupera: _The Truman Show_ (Peter Weir, 1998), ligado ao caso da Marta. O filme já foi visto e não se volta a exibir; se for preciso, chega uma cena curta.', 'Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'Vídeo escolhido pelo docente (31/10): «Be kind online: Consent to share and cyberbullying», do sítio oficial australiano Bullying. No Way! Ver antes da aula: daqui não se conseguiu ver o conteúdo; a tarefa só pede duas coisas que o vídeo diga.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.'],
  },
  '03': {
   'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
   'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais e que ouvir quem é afetado faz parte da solução.',
   'passos': [
-   (5, 'Grupos de quatro. Cada pessoa tira uma carta (o Rui, a organização, quem orienta a mostra, quem só pode ir à sexta-feira); cada grupo recebe cinco unidades.'),
-   (15, 'Cada pessoa defende a sua carta durante dois minutos; o grupo gasta as cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma.'),
-   (5, 'O docente lê a informação nova (por exemplo: a sala do rés do chão tem menos lugares) e o grupo revê.'),
+   (5, 'Cada aluno recebe as quatro cartas (o Rui, a organização, quem orienta a mostra, quem só pode ir à sexta-feira) e cinco unidades.'),
+   (15, 'Cada aluno escreve a razão de cada perspetiva e decide como gastar as cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma.'),
+   (5, 'O docente lê a informação nova (por exemplo: a sala do rés do chão tem menos lugares) e cada aluno revê a sua decisão.'),
    (10, 'Pausa.'),
    (10, 'A proposta à direção, em cinco linhas: barreira, quem afeta, medida, custo, quem foi ouvido.'),
-   (20, 'A pergunta do grupo para a Pergunta Humana: cada grupo escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
+   (20, 'A pergunta individual para a Pergunta Humana: cada aluno escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
   ],
-  'materiais': ['Cartas de perspetiva, quatro por grupo.', 'Cinco unidades por grupo (clipes ou papéis) e a tabela dos custos.', 'O modelo da proposta à direção.', 'A secção «Uma boa pergunta» da página do projeto.'],
-  'escrito': 'A proposta à direção em cinco linhas e a pergunta do grupo.',
-  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada grupo escolhe e delimita a pergunta do grupo para a Pergunta Humana.'),
+  'materiais': ['Cartas de perspetiva, quatro por aluno.', 'Cinco unidades por aluno (clipes ou papéis) e a tabela dos custos.', 'O modelo da proposta à direção.', 'A secção «Uma boa pergunta» da página do projeto.'],
+  'escrito': 'A proposta à direção em cinco linhas e a pergunta individual.',
+  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada aluno escolhe e delimita a pergunta individual para a Pergunta Humana.'),
   'produto': 'Proposta à direção e pergunta',
-  'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta do grupo delimitada e investigável', 4)],
-  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
+  'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta individual delimitada e investigável', 4)],
+  'notas': ['Recupera: o conto _The Egg_, de Andy Weir (em inglês, no sítio do autor), como exercício de se pôr no lugar do Rui.', 'Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
  },
  '04': {
   'dominio': 'Direitos Humanos (liberdade de expressão, bom nome); Democracia (discurso de ódio); Media (fontes, verificação).',
   'ensina': 'Separar opinião, sátira e acusação de facto, e verificar antes de repetir.',
   'passos': [
-   (5, 'Grupos de três. Cada grupo recebe as três afirmações reais e as três publicações inventadas sobre a escola.'),
+   (5, 'Cada aluno recebe as três afirmações reais e as três publicações inventadas sobre a escola.'),
    (25, 'Verificar cada afirmação: origem (quem, onde, quando), duas fontes independentes e veredicto (verdadeiro, falso, enganador ou sem prova). Leitura lateral: abrir outros separadores antes de ler a página até ao fim.'),
    (10, 'Pausa.'),
    (15, 'As três publicações: manter, corrigir ou retirar, com o artigo (Constituição, 37.º e 26.º; Convenção, 13.º).'),
-   (10, 'O registo de fontes do grupo para a Pergunta Humana: duas fontes da pergunta do grupo, com o que é preciso para as reencontrar.'),
+   (10, 'O registo de fontes individual para a Pergunta Humana: duas fontes da pergunta individual, com o que é preciso para as reencontrar.'),
   ],
-  'materiais': ['As três afirmações reais: o docente escolhe-as e confirma-as num verificador de factos antes da aula (não vêm prontas aqui).', 'Três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.', 'O registo de verificação: origem, fonte 1, fonte 2, porque são independentes, veredicto.', 'Um computador ou telemóvel por grupo.'],
-  'escrito': 'O registo de verificação das três afirmações (é o laboratório de verificação do módulo) e o registo de fontes do grupo.',
+  'materiais': ['As três afirmações reais: o docente escolhe-as e confirma-as num verificador de factos antes da aula (não vêm prontas aqui).', 'Três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.', 'O registo de verificação: origem, fonte 1, fonte 2, porque são independentes, veredicto.', 'Um computador ou telemóvel por aluno.'],
+  'escrito': 'O registo de verificação das três afirmações (é o laboratório de verificação do módulo) e o registo de fontes individual.',
   'projeto': ('As fontes', '#metodo', 'O registo de fontes, localizável, e a leitura lateral; o laboratório de verificação do módulo faz-se nesta sessão.'),
   'produto': 'Laboratório de verificação',
   'grelha': [('Origem identificada (quem, onde, quando)', 4), ('Duas fontes independentes e porque o são', 5), ('Veredicto proporcional à prova', 4), ('Decisão sobre as três publicações, com o artigo', 4), ('Registo localizável', 3)],
-  'notas': ['Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
+  'notas': ['Recupera: a alegoria da caverna (Platão, _A República_, livro VII), da Etapa 1, ligada ao comentário sobre o Diogo e à verificação das afirmações.', 'Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
  },
  '05': {
   'dominio': 'Direitos Humanos (reserva da vida privada, proteção de dados); Democracia (limites a quem vigia); Media.',
   'ensina': 'Pesar segurança e privacidade e saber o que a lei deixa fazer numa escola.',
   'passos': [
-   (5, 'Grupos de três. Cada grupo recebe o formulário inventado da visita de estudo.'),
+   (5, 'Cada aluno recebe o formulário inventado da visita de estudo.'),
    (15, 'Riscar o que não é preciso para a visita; ao lado de cada dado que fica, quem o vê e quando se apaga.'),
    (5, 'As regras da volta: em aula, com o docente, sem fotografar pessoas nem matrículas; anota-se só o que o aviso diz.'),
    (20, 'A volta ao quarteirão da escola, a contar câmaras e avisos de videovigilância: onde estão, quem é o responsável, que finalidade dizem.'),
@@ -147,43 +149,43 @@ GUIA = {
   'ensina': 'Comparar critérios de repartir, separar o resultado dos limites e ver o que muda quando quem decide ganha com a decisão.',
   'passos': [
    (5, 'O problema no quadro: seis turnos de filmagem para três grupos. Listar os critérios: igualdade, necessidade, ordem de inscrição, sorteio, outro.'),
-   (10, 'Cada grupo escolhe a regra e escreve-a numa frase, sem saber o lugar que lhe vai calhar.'),
-   (5, 'Cada grupo tira uma carta com o lugar (A, B ou C) e a situação desse lugar (por exemplo: o grupo C perdeu um turno porque o material não chegou).'),
-   (10, 'Aplicar a regra. Quem perde apresenta a objeção em dois minutos; o grupo responde ou revê.'),
+   (10, 'Cada aluno escolhe a regra e escreve-a numa frase, sem saber o lugar que lhe vai calhar.'),
+   (5, 'Cada aluno tira uma carta com o lugar (A, B ou C) e a situação desse lugar (por exemplo: o grupo C perdeu um turno porque o material não chegou).'),
+   (10, 'Cada aluno aplica a regra, escreve a objeção de quem perde e responde-lhe ou revê a regra.'),
    (10, 'Pausa.'),
-   (25, 'A mesma pergunta para o teatro-documento: como se repartem as falas e o tempo de cena. A regra do grupo e o primeiro esboço do guião (quem fala, quanto tempo, com que fonte).'),
+   (25, 'A mesma pergunta para o teatro-documento: como se repartem as falas e o tempo de cena. A regra individual para as falas das personagens e o primeiro esboço do guião (quem fala, quanto tempo, com que fonte).'),
   ],
   'materiais': ['Cartas A, B e C, com a situação de cada lugar.', 'O quadro dos seis turnos.', 'Papel para o esboço do guião.'],
-  'escrito': 'A regra final, quem perde com ela e porque a aceitaria mesmo assim; a regra do grupo para as falas, com o primeiro esboço do guião.',
-  'projeto': ('O guião, em esboço', '#metodo', 'A regra do grupo para repartir falas e tempo de cena e o primeiro esboço do guião entram no dossiê.'),
+  'escrito': 'A regra final, quem perde com ela e porque a aceitaria mesmo assim; a regra individual para as falas das personagens, com o primeiro esboço do guião.',
+  'projeto': ('O guião, em esboço', '#metodo', 'A regra individual para repartir as falas das personagens e tempo de cena e o primeiro esboço do guião entram no dossiê.'),
   'produto': 'Regra e esboço',
-  'grelha': [('Regra clara e aplicável', 4), ('Quem perde e porquê, dito do ponto de vista de quem perde', 4), ('Objeção respondida', 4), ('Conflito de interesses reconhecido', 4), ('Regra das falas do grupo', 4)],
+  'grelha': [('Regra clara e aplicável', 4), ('Quem perde e porquê, dito do ponto de vista de quem perde', 4), ('Objeção respondida', 4), ('Conflito de interesses reconhecido', 4), ('Regra das falas das personagens', 4)],
   'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): à volta da Justiça, a gravura mostra castigos corporais do século XVI.', 'O problema do elétrico (Foot, Thomson) e a escolha de regras sem saber o lugar (Rawls) ficam como linha de fonte; a lição 1 da Justiça pode servir como leitura a mais, sem obrigatoriedade.'],
  },
  '07': {
   'dominio': 'Democracia e Instituições Políticas (deliberar e votar, tribunais); Direitos Humanos (presunção de inocência, direito a ser ouvido). Mecânica do M1: o Tribunal de turma.',
   'ensina': 'Separar prova de inferência, ouvir a defesa e ver o voto mudar, ou não mudar, com as provas.',
   'passos': [
-   (5, 'Distribuir as cartas de papéis (acusação, defesa, três testemunhas, júri, relator, quem guarda o tempo) e o dossiê do caso.'),
-   (10, 'Preparação por papel: a acusação e a defesa escolhem duas provas cada; as testemunhas leem o seu depoimento.'),
-   (5, 'Primeiro voto do júri, em boletim, com uma razão obrigatória.'),
-   (20, 'A audiência: acusação, defesa, três testemunhas e alegações finais, dois minutos por intervenção, com o relógio à vista.'),
+   (5, 'Distribuir a cada aluno o dossiê do caso, com acusação, defesa, três depoimentos e cronologia.'),
+   (10, 'Cada aluno lê os argumentos de acusação e de defesa e os três depoimentos, assinalando provas e inferências.'),
+   (5, 'Cada aluno regista uma decisão inicial, com uma razão obrigatória.'),
+   (20, 'Análise individual: confrontar a acusação com a defesa, ordenar os depoimentos e escrever a melhor objeção à decisão inicial.'),
    (10, 'Pausa.'),
-   (10, 'Deliberação do júri e segundo voto, com razão; o relator conta quantos votos citam uma prova.'),
-   (10, 'O acórdão da turma: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.'),
+   (10, 'Cada aluno revê a decisão e indica a prova que a sustenta ou que o fez mudar.'),
+   (10, 'O acórdão individual: decisão, duas provas citadas, uma dúvida razoável e uma posição contrária fundamentada.'),
   ],
-  'materiais': ['Cartas de papéis; numa turma grande, o júri tem as pessoas que sobram.', 'O dossiê do caso inventado: a captura de ecrã, três depoimentos curtos e a cronologia.', 'Boletins, dois por jurado, e um relógio visível.', 'O modelo do acórdão.'],
-  'escrito': 'O acórdão da turma e as notas de cada papel, com o nome de quem as escreveu.',
+  'materiais': ['Dossiê completo, um exemplar por aluno.', 'O dossiê do caso inventado: a captura de ecrã, três depoimentos curtos e a cronologia.', 'Dois registos de decisão por aluno e um relógio visível.', 'O modelo do acórdão.'],
+  'escrito': 'O acórdão individual, as notas e a decisão inicial, com o nome do aluno.',
   'projeto': ('Nenhum passo novo em aula', '#fases', 'Cinco minutos de ponto de situação do guião, que continua fora da aula.'),
   'produto': 'Acórdão',
-  'grelha': [('Decisão clara', 3), ('Duas provas citadas, sem confundir prova com inferência', 5), ('Uma dúvida razoável', 4), ('Voto vencido com razão', 4), ('Papel cumprido, com notas próprias', 4)],
-  'notas': ['Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
+  'grelha': [('Decisão clara', 3), ('Duas provas citadas, sem confundir prova com inferência', 5), ('Uma dúvida razoável', 4), ('Posição contrária com razão', 4), ('Percurso de decisão com notas próprias', 4)],
+  'notas': ['Recupera: _Doze Homens em Fúria_ (Sidney Lumet, 1957), ligado ao voto de nove contra dois. O filme já foi visto e não se volta a exibir.', 'Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
  },
  '08': {
   'dominio': 'Democracia e Instituições Políticas (órgãos de soberania, autarquias, União Europeia, eleições, petição, Provedor de Justiça).',
   'ensina': 'Distinguir quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escrever um pedido com destinatário e fundamento.',
   'passos': [
-   (5, 'Grupos de três. As regras da volta (em aula, com o docente, sem fotografar pessoas nem matrículas) e a grelha das seis coisas.'),
+   (5, 'Registo individual. As regras da volta (em aula, com o docente, sem fotografar pessoas nem matrículas) e a grelha das seis coisas.'),
    (30, 'A volta ao quarteirão: passadeira, semáforo, contentor, banco, sinal, paragem; ao lado de cada uma, quem acham que decide.'),
    (10, 'Pausa.'),
    (10, 'Na sala, confirmar nos sítios da junta de freguesia e da câmara municipal quem decide cada coisa.'),
@@ -201,37 +203,37 @@ GUIA = {
   'ensina': 'Ver como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos; no ensaio, procurar a voz que falta.',
   'passos': [
    (10, 'Aquecimento «O outro lado»: cada pessoa tira uma posição e defende-a durante um minuto, mesmo sem concordar; depois troca.'),
-   (5, 'Emparelhar grupos (A observa B, B observa A) e entregar a grelha de três colunas.'),
-   (15, 'O grupo A mostra o ensaio (5 a 8 minutos) e recebe as notas: o que se ouviu, de quem é a voz, de que fonte vem, que voz falta.'),
+   (5, 'Entregar a cada aluno a grelha de três colunas para observar o seu ensaio.'),
+   (15, 'Cada aluno faz um primeiro ensaio individual (5 a 8 minutos), lê as diferentes vozes e regista: o que se ouviu, de quem é a voz, de que fonte vem, que voz falta.'),
    (10, 'Pausa.'),
-   (15, 'O grupo B mostra o ensaio e recebe as notas.'),
-   (10, 'Cada grupo decide duas mudanças, uma delas para incluir uma voz que ainda não estava. Cada grupo prepara também uma objeção para outro grupo, para a sessão 10.'),
+   (15, 'Cada aluno faz um segundo ensaio individual e completa o seu registo.'),
+   (10, 'Cada aluno decide duas mudanças, uma delas para incluir uma voz que ainda não estava. Prepara também uma objeção ao seu trabalho, para a sessão 10.'),
   ],
   'materiais': ['Cartões de posição para «O outro lado» (a regra do português nos intervalos e outras posições do módulo).', 'A grelha de observação em três colunas.', 'Um relógio visível.'],
-  'escrito': 'As notas dadas ao outro grupo e duas mudanças decididas pelo grupo.',
-  'projeto': ('O ensaio', '#av-teatro', 'O ensaio cruzado do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
+  'escrito': 'O registo individual do ensaio, uma objeção e duas mudanças decididas pelo aluno.',
+  'projeto': ('O ensaio', '#av-teatro', 'O ensaio individual do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
   'produto': 'Ensaio',
-  'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas ao outro grupo', 4), ('Duas mudanças decididas e justificadas', 5)],
+  'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Registo concreto do próprio ensaio', 4), ('Duas mudanças decididas e justificadas', 5)],
   # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'notas': ['Recupera: os dois peixes do discurso de David Foster Wallace no Kenyon College (2005), da Etapa 1, ligados ao que cada um acha normal.', 'No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
  },
  '10': {
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
   'ensina': 'Defender uma resposta com fontes e responder a uma objeção.',
   'antes': 'Antes de abrir a lição: o Ponto de chegada, em papel, sem ajuda e sem consulta (10 a 15 minutos), com as mesmas 10 perguntas do Ponto de partida. Os cartões de recuperação vêm depois, para não ensinarem as respostas antes.',
   'passos': [
-   (5, 'A ordem das apresentações e as regras da defesa: uma pergunta do público e a objeção preparada por outro grupo na sessão 09.'),
-   (30, 'As primeiras apresentações: 5 a 8 minutos cada, seguidos de três minutos de defesa.'),
+   (5, 'A ordem das apresentações e as regras da defesa: uma pergunta do público e a objeção preparada por cada aluno ao seu trabalho na sessão 09.'),
+   (30, 'As primeiras apresentações individuais: 5 a 8 minutos cada, seguidos de três minutos de defesa.'),
    (10, 'Pausa.'),
-   (25, 'As restantes apresentações. Com mais de cinco grupos, as que faltam passam para os 25 minutos finais, antes dos últimos cartões.'),
+   (25, 'As restantes apresentações individuais. O docente distribui os alunos por momentos adicionais quando o tempo não chega, mantendo os 5 a 8 minutos e os três de defesa para cada um.'),
    (5, 'A autoavaliação «Vi, Situei, Fiz», em três linhas, e o mapa de direitos da sessão 01 revisto: o que mudou.'),
   ],
-  'materiais': ['O Ponto de chegada impresso, um por aluno (ligação abaixo).', 'A ordem das apresentações e as objeções preparadas na sessão 09.', 'Um relógio visível.', 'A fotografia do mapa de direitos da sessão 01.'],
+  'materiais': ['O Ponto de chegada impresso, um por aluno (ligação abaixo).', 'A ordem das apresentações e as objeções preparadas na sessão 09.', 'Um relógio visível.', 'A fotografia do mapa individual de direitos da sessão 01.'],
   'escrito': 'O Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» e o mapa de direitos revisto.',
-  'projeto': ('A apresentação e a defesa', '#av-teatro', 'A apresentação pública do teatro-documento e a defesa das escolhas do grupo.'),
+  'projeto': ('A apresentação e a defesa', '#av-teatro', 'A apresentação pública do teatro-documento e a defesa das escolhas individuais.'),
   'produto': 'Apresentação e defesa',
-  'grelha': [('Guião e cena fundamentados na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Duração de 5 a 8 minutos e clareza', 3), ('Defesa: resposta à objeção com fonte e limite', 5), ('Contributo de cada pessoa identificado', 3)],
-  'notas': ['Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
+  'grelha': [('Guião e cena fundamentados na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Duração de 5 a 8 minutos e clareza', 3), ('Defesa: resposta à objeção com fonte e limite', 5), ('Autoria individual identificada', 3)],
+  'notas': ['Recupera: Sísifo, na leitura de Albert Camus (_O Mito de Sísifo_, 1942), da Etapa 2, ligado à revisão depois da defesa.', 'Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
  },
 }
 
@@ -288,7 +290,7 @@ CSS = (TOKENS +
  '.cid-piloto h1,.cid-piloto h2,.cid-piloto h3{text-wrap:balance}'
  '.cid-piloto a{color:inherit;text-underline-offset:.15em}'
  '.cid-piloto h2{font:700 1.25rem/1.25 Arial,Helvetica,sans-serif;margin:32px 0 10px}'
- '.cid-piloto h3{font:700 1rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
+ '.cid-piloto h3{font:700 1.125rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
  '.cid-piloto .lead{font-size:1.05rem;margin:0 0 18px;max-width:38em}'
  '.cid-piloto .aviso-piloto{font-size:.9rem;color:var(--suave);margin:0 0 18px}'
  # 31/10/2026 (terceira correção, diretor de arte): na página do módulo, a linha do piloto passa para o rodapé (sistema, 6.10).
@@ -451,7 +453,7 @@ def pagina_modulo(S):
              # 31/10/2026 (terceira correção, diretor de arte): a linha do piloto vai para o rodapé (sistema, 6.10); no cabeçalho,
              # empurrava a primeira ação para fora do primeiro ecrã a 320 px.
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p>'
-             '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
+             '<footer class="mais"><a href="projeto/">Pergunta Humana: enunciado individual</a><a href="docente/">Guia do docente</a><a href="../../aula-1/">Etapa 1: o que vemos</a><a href="../../aula-2/">Etapa 2: o que somos</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Ser-se humano: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
             + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
@@ -476,7 +478,7 @@ def pagina_guia(S):
     tempos = ('<div class="tabela"><table><thead><tr><th scope="col">Parte</th><th scope="col">Tempo</th><th scope="col">O que acontece</th></tr></thead><tbody>'
               '<tr><td>Ponto de partida ou de chegada</td><td>10 a 15 min</td><td>Só nas sessões 01 e 10, em papel, antes de abrir a lição.</td></tr>'
               '<tr><td>Cartões até ao «Na aula»</td><td>cerca de 50 min</td><td>Abre, Decide, recuperar, ver a imagem e o vídeo, decidir.</td></tr>'
-              '<tr><td>«Na aula»</td><td>60 a 75 min</td><td>A atividade de turma, com a pausa de 10 minutos.</td></tr>'
+              '<tr><td>«Na aula»</td><td>60 a 75 min</td><td>O trabalho individual em aula, com a pausa de 10 minutos.</td></tr>'
               '<tr><td>Cartões depois do «Na aula»</td><td>cerca de 25 min</td><td>Aplicar a um caso novo.</td></tr>'
               '<tr><td>«Para levar»</td><td>5 min</td><td>A frase da sessão e a fotografia do que ficou escrito, com o código e a data.</td></tr>'
               '</tbody></table></div>')
@@ -494,8 +496,11 @@ def pagina_guia(S):
              f'<nav aria-label="Sessões"><h2>As 10 sessões</h2><ul class="indice">{indice}</ul></nav>'
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
+             '<p class="pg">Todas as tarefas e entregas são individuais, incluindo a investigação, o guião, o teatro-documento e a defesa da Pergunta Humana. Cada aluno dá voz às personagens do seu guião e identifica a fonte de cada fala. A discussão em aula ajuda a rever o trabalho de cada um.</p>'
              + tempos +
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
+             # 31/10/2026 (docente): as obras das primeiras etapas deixam de ser a base teórica do M1, mas não desaparecem.
+             '<p class="pg">As obras das primeiras etapas do módulo deixam de ser a base teórica, mas ficam como conhecimento a recuperar. Sete sessões têm, logo a seguir ao «Decide», um cartão «Recupera» que liga uma delas à pergunta do dia: 01, <i>Rhythm 0</i> de Marina Abramović; 02, <i>The Truman Show</i>; 03, <i>The Egg</i> de Andy Weir; 04, a caverna de Platão; 07, <i>Doze Homens em Fúria</i>; 09, os peixes de David Foster Wallace; 10, Sísifo e Camus. Cada cartão conta o essencial, também para quem não viu as <a href="../../../aula-1/">Etapas 1</a> e <a href="../../../aula-2/">2</a>; os filmes já vistos não voltam a ser exibidos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º, n.º 8).</p>'
@@ -580,9 +585,52 @@ def regras(nome, s):
     return erros
 
 
+def pagina_projeto():
+    """02/11/2026: enunciado individual do piloto, com os requisitos publicados."""
+    base = '../../../../'
+    fonte = (ROOT / 'cidadania/projeto/index.html').read_text('utf-8')
+    # Reutiliza o enunciado público e conserva as suas âncoras, fontes e pesos.
+    corpo = fonte.split('</header>', 1)[1].split('</main>', 1)[0]
+    corpo = re.sub(r'<section class="cid-current">.*?</section>', '', corpo, count=1, flags=re.S)
+    trocas = {
+        'Cada grupo escolhe': 'Cada aluno escolhe',
+        'o grupo consegue investigar': 'consegues investigar',
+        'a pergunta do teu grupo': 'a tua pergunta',
+        'do vosso diário e escolher uma em grupo': 'do teu diário e escolher uma individualmente',
+        'O que precisamos de saber? Quem vamos ouvir? Que fontes vamos procurar?': 'O que precisas de saber? Quem vais ouvir? Que fontes vais procurar?',
+        'Cada um identifica a sua parte.': 'Identifica a tua autoria e distingue-a das fontes.',
+        'Têm de defender as vossas escolhas.': 'Defende as tuas escolhas durante três minutos.',
+        'à investigação do grupo': 'à tua investigação',
+        'o que o grupo pode investigar': 'o que podes investigar',
+        'voz do grupo': 'a tua voz',
+        'escritas pelo grupo': 'escritas por ti',
+        '(em grupo, com a tua parte identificada)': '(individual)',
+        'contributo de cada pessoa identificados': 'autoria individual identificadas',
+        'as escolhas do grupo': 'as tuas escolhas',
+        'O trabalho de equipa, a autonomia e o respeito pelas pessoas': 'A autonomia, a revisão do próprio trabalho e o respeito pelas pessoas',
+        'Pesos publicados, mantidos.': 'Referência indicativa para este piloto: pesos publicados, mantidos.',
+        ' · ': ', ',
+    }
+    for a, b in trocas.items():
+        if a not in corpo:
+            raise ValueError('Enunciado de origem mudou: ' + a)
+        corpo = corpo.replace(a, b)
+    corpo = corpo.replace(LENTE + 'cidadania/projeto/', '../projeto/')
+    corpo = corpo.replace(LENTE + 'cidadania/m1/#aula-2026-10-28', '../')
+    corpo = corpo.replace('O que escreves nesta página fica guardado só no teu aparelho.', 'Guarda o teu diário, dossiê e guião em papel ou nos teus materiais do projeto.')
+    topo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '../'), ('Pergunta Humana', '')])
+            + '<header><p class="marca">Cidadania, módulo 1</p><h1>Pergunta Humana</h1>'
+            '<p class="lead">Um teatro-documento individual: investigar, dar voz às fontes e defender uma resposta.</p>'
+            '<p>Cada aluno escreve e apresenta o seu guião, dando voz às diferentes personagens. Todas as tarefas e entregas são individuais.</p></header>')
+    return (cabeca(base, 'Pergunta Humana individual · Cidadania · Lente', 'Enunciado individual da Pergunta Humana no piloto do módulo 1.')
+            + f'<body class="cid-piloto"><main id="conteudo">{topo}{corpo}</main></body></html>\n')
+
+
 def paginas():
     S = sessoes()
-    return {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': pagina_guia(S), MODULO + 'ponto/index.html': pagina_ponto()}
+    guia = pagina_guia(S).replace('../../../projeto/', '../projeto/')
+    return {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': guia,
+            MODULO + 'ponto/index.html': pagina_ponto(), MODULO + 'projeto/index.html': pagina_projeto()}
 
 
 def main(argv):
