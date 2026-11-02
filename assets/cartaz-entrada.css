@@ -72,7 +72,7 @@
 [data-cartaz-entrada] .ld .cz-fold>summary{padding:16px 24px;min-height:88px}
 [data-cartaz-entrada] .ferr-grupo summary h3{font:inherit;margin:0;font-size:var(--cz-t20)}
 [data-cartaz-entrada] .ld-credito{line-height:1.5}
-[data-cartaz-entrada] .ld-credito a,[data-cartaz-entrada] .sp-credit a{display:inline;min-height:0;min-width:0;padding-block:15px;line-height:inherit}
+[data-cartaz-entrada] .ld-credito a,[data-cartaz-entrada] .sp-credit a{display:inline;min-height:0;min-width:0;padding-block:0;line-height:inherit}
 [data-cartaz-entrada] .ld-open{align-self:start;margin:0 0 16px}
 @media(max-width:599px){[data-cartaz-entrada] .etq-longa{display:none}}
 @media(min-width:600px){[data-cartaz-entrada] .etq-curta{display:none}}
@@ -112,3 +112,5 @@ html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
 html.em-projecao [data-cartaz-entrada] .ferr-grupo summary h3{font-size:var(--cz-t31)}html.em-projecao [data-cartaz-entrada] .lente-ferr>h2{font-size:var(--cz-t39)}
 /* 02/11/2026: projeção, créditos, descrições das linhas e rodapé na escala da entrada (vencem a peça do #87). */
 html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-sets small,.cz-footer .lente-nota){font-size:var(--cz-t20)}html.em-projecao [data-cartaz-entrada][data-cartaz="2"] .cz-footer-links a{font-size:var(--cz-t25)}
+/* 02/11/2026: com as peças da volta 4, a projeção sobe a raiz para 137,5 %. Abaixo de 768 px de largura (projeção num ecrã estreito), a raiz volta a 100 %, para nada deslizar; os degraus da projeção mantêm-se. */
+@media(max-width:767px){html.em-projecao:has([data-cartaz-entrada]){font-size:100%}}

@@ -31,7 +31,8 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366])f
   // 02/11/2026: projeção, o título de cada grupo das Ferramentas fica acima das suas ligações.
   assert.ok(await page.evaluate(()=>[...document.querySelectorAll('.ferr-grupo')].every(g=>parseFloat(getComputedStyle(g.querySelector('h3')).fontSize)>parseFloat(getComputedStyle(g.querySelector('ul a')).fontSize))),'grupo acima das ligações em projeção');
   // 02/11/2026: projeção, créditos, descrições das linhas e nota do rodapé a 20 px e ligações do rodapé a 25 px, na escala da entrada.
-  assert.deepEqual(await page.evaluate(()=>{const t=q=>[...new Set([...document.querySelectorAll(q)].map(e=>getComputedStyle(e).fontSize))];return [t('.ld-credito,.lab-sets small,.cz-footer .lente-nota'),t('.cz-footer-links a')];}),[['20px'],['25px']],'projeção: créditos e rodapé');
+  // 02/11/2026: com as peças da volta 4, a projeção sobe a raiz (137,5 % a partir de 768 px); os créditos e o rodapé ficam nos degraus 20 e 25 dessa unidade.
+  {const u=await page.evaluate(()=>parseFloat(getComputedStyle(document.documentElement).fontSize)/16);assert.deepEqual(await page.evaluate(()=>{const t=q=>[...new Set([...document.querySelectorAll(q)].map(e=>Math.round(parseFloat(getComputedStyle(e).fontSize)*1000)/1000))];return [t('.ld-credito,.lab-sets small,.cz-footer .lente-nota'),t('.cz-footer-links a')];}),[[Math.round(20*u*1000)/1000],[Math.round(25*u*1000)/1000]],'projeção: créditos e rodapé');}
   if(width>=1024)await naoDobra(`${width} ${theme} projeção`);
  }
  await page.evaluate(()=>dispatchEvent(new Event('beforeprint')));await page.emulateMedia({media:'print'});
