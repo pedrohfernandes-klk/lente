@@ -115,7 +115,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s02","chave":"epi-cid-m1-s02","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 02: A imagem dos outros","h1":"Cidadania, módulo 1, sessão 02: A imagem dos outros",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s02/index.html","piloto":True,
  "seguinte":"../m1-s03/","seguinteRotulo":"Sessão 03: Quem tem lugar?",
  "fontes":"Código Civil, artigos 79.º (direito à imagem) e 81.º, n.º 2; Constituição da República Portuguesa, artigos 26.º, n.º 1, e 34.º, n.º 1; Lei n.º 58/2019, artigo 16.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigo 16.º, no texto do Ministério Público. Fotografia: Lewis Hine, _Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt._, 1910 (Library of Congress, National Child Labor Committee Collection, domínio público). Vídeo: TED, «When AI Can Fake Reality, Who Can You Trust?», conferência de Sam Gregory (excerto). Os casos são inventados.",

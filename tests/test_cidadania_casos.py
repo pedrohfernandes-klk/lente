@@ -21,7 +21,7 @@ class Casos(unittest.TestCase):
    for i in c:
     if i['t'] in ['decisao','revelar','posicoes','sintese']:self.assertTrue(i['reflexao'])
    key=re.search(r'chave:"([^"]+)"',s)[1];keys.append(key);self.assertNotIn('guia-docente',s)
-   if x['module']=='m2':self.assertNotIn('Ser-se humano',s);self.assertIn('Os algoritmos',s)
+   if x['module']=='m2':self.assertNotIn('Humanos',s);self.assertIn('Algoritmos',s)
   self.assertEqual(len(set(keys)),6)
  def test_branch_state_is_transient_and_displayed(self):
   s=(R/'assets/cidadania-casos.js').read_text('utf-8');self.assertIn('x.efeitos[d.j]',s);self.assertIn('state.primeira',s);self.assertIn('state.revista',s);self.assertNotIn('localStorage',s)

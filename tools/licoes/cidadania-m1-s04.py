@@ -117,7 +117,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s04","chave":"epi-cid-m1-s04","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 04: Posso dizer tudo?","h1":"Cidadania, módulo 1, sessão 04: Posso dizer tudo?",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s04/index.html","piloto":True,
  "seguinte":"../m1-s05/","seguinteRotulo":"Sessão 05: Quem guarda os meus dados?",
  "fontes":"Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.ºs 2 e 3; Código Penal, artigo 180.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 13.º, n.º 2, no texto do Ministério Público. Imagem: _Les Poires_, em _Le Charivari_, 17 de janeiro de 1834, desenho atribuído a Honoré Daumier a partir de Charles Philipon (Gallica, Biblioteca Nacional de França, domínio público). Vídeo: TED-Ed, «How false news can spread», lição de Noah Tavlin. Os casos são inventados.",
