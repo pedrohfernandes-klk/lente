@@ -77,9 +77,8 @@
 @media(max-width:599px){[data-cartaz-entrada] .etq-longa{display:none}}
 @media(min-width:600px){[data-cartaz-entrada] .etq-curta{display:none}}
 @media(max-width:639px){[data-cartaz-entrada] .cz-footer-links{grid-template-columns:1fr}}
-@media(min-width:640px){[data-cartaz-entrada] .ld-credito{min-height:3lh}}
 @media(min-width:960px){[data-cartaz-entrada]{display:grid;grid-template-columns:7fr 5fr;column-gap:24px}[data-cartaz-entrada]>*{grid-column:1/-1}[data-cartaz-entrada]>.lente-cab{grid-column:1;grid-row:1}[data-cartaz-entrada]>.cz-next{grid-column:2;grid-row:1;margin:0;align-self:start}}
-html.em-projecao [data-cartaz-entrada] :is(.lente-etq,.ld-rot,.ld-credito,small,.sp-kicker,.sp-description,.sp-action,.sp-image-label,.sp-credit,.site-map-link,.ferr-num,.cz-label,.cz-state){font-size:var(--cz-t20)}
+html.em-projecao [data-cartaz-entrada] :is(.lente-etq,.ld-rot,.lente-ferr small,.sp-kicker,.sp-description,.sp-action,.sp-image-label,.sp-credit,.site-map-link,.ferr-num,.cz-label,.cz-state){font-size:var(--cz-t20)}
 html.em-projecao [data-cartaz-entrada] :is(.ld-f,.lente-ferr a,.lab-sets strong,.cz-next p,.cz-button){font-size:var(--cz-t25)}
 html.em-projecao [data-cartaz-entrada] .cz-next .cz-label{font-size:var(--cz-t20)}
 html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
@@ -99,4 +98,17 @@ html.em-projecao [data-cartaz-entrada] .cz-next h2{font-size:var(--cz-t39)}
 [data-cartaz-entrada] .site-portal-wrap{margin-block:24px}
 }
 [data-cartaz-entrada] .lab-sets>li{border-bottom:0}
-[data-cartaz-entrada] .ld-n{min-width:0;overflow-wrap:anywhere}
+[data-cartaz-entrada] .ld-n{min-width:0;overflow-wrap:normal}
+/* 02/11/2026: nenhuma palavra partida no nome da porta; com a fonte alternativa, o nome desce um ou dois degraus da escala conforme a largura da dobra (25, 31 e 39 px). */
+[data-cartaz-entrada] .ld>.cz-fold{container-type:inline-size}@container (max-width:399px){[data-cartaz-entrada] .cz-door .ld-n{font-size:var(--cz-t31)}}@container (max-width:319px){[data-cartaz-entrada] .cz-door .ld-n{font-size:var(--cz-t25)}}
+/* 02/11/2026: decisão 34, tabela de museu colada à imagem (8 px), também com a dobra; abaixo de 640 px a porta dobrada é só banda (D5), sem imagem nem tabela. */
+[data-cartaz-entrada] .ld>.ld-credito{margin:0;padding:8px 24px 0;min-height:0}
+@media(max-width:639px){[data-cartaz-entrada] .ld>.ld-credito{padding:8px 16px 0}[data-cartaz-entrada] .ld:has(>details:not([open]))>:is(.ld-img,.ld-credito){display:none}}
+/* 02/11/2026: subgrid do sistema (secção 3), para os nomes das duas portas ficarem à mesma altura. */
+@media(min-width:640px){[data-cartaz-entrada] .lente-div{grid-template-rows:repeat(4,auto)}[data-cartaz-entrada] .lente-div>:is(#inicio-cidadania,#inicio-narrativas){display:grid;grid-row:span 4;grid-template-rows:subgrid;grid-template-columns:minmax(0,1fr);row-gap:0}[data-cartaz-entrada] .lente-div .ld>*{grid-column:1;grid-row:auto}[data-cartaz-entrada] #trans-t{position:absolute}}
+/* 02/11/2026: D5, nada se dobra a partir de 640 px nem na projeção: sem sinal nem cursor de dobra. O seletor do sinal leva [data-cartaz="2"] e [open] para vencer «[data-cartaz="2"] .cz-fold[open]>summary::after» das peças. */
+@media(min-width:640px){[data-cartaz-entrada] .cz-fold>summary{cursor:default}[data-cartaz-entrada][data-cartaz="2"] :is(.cz-fold,.cz-fold[open])>summary::after{content:none}}html.em-projecao [data-cartaz-entrada] .cz-fold>summary::after{content:none}
+/* 02/11/2026: projeção, o título de cada grupo das Ferramentas nunca fica menor do que as suas ligações. */
+html.em-projecao [data-cartaz-entrada] .ferr-grupo summary h3{font-size:var(--cz-t31)}html.em-projecao [data-cartaz-entrada] .lente-ferr>h2{font-size:var(--cz-t39)}
+/* 02/11/2026: projeção, créditos, descrições das linhas e rodapé na escala da entrada (vencem a peça do #87). */
+html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-sets small,.cz-footer .lente-nota){font-size:var(--cz-t20)}html.em-projecao [data-cartaz-entrada][data-cartaz="2"] .cz-footer-links a{font-size:var(--cz-t25)}

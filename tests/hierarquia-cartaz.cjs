@@ -43,6 +43,8 @@ const MEASURE=()=>{
  for(const rule of ['r1','r2','r3','r5'])assert.deepEqual(m[rule],[],`${p} ${width} ${theme} ${mode} ${rule}: ${JSON.stringify(m[rule])}`);
  const offScale=await page.evaluate(()=>{const scale=[13,16,20,25,31,39,49,61];return [...document.querySelectorAll('[data-cartaz="2"] :is(h1,h2,h3,h4,h5,h6,[role=heading],h1 a,h2 a,h3 a,.cz-label,.marca,.lente-etq,.ld-rot,.sp-title,.sp-kicker)')].filter(e=>!e.closest('[aria-hidden="true"]')&&e.getBoundingClientRect().height>0).map(e=>({text:e.textContent.trim().slice(0,60),size:parseFloat(getComputedStyle(e).fontSize)})).filter(x=>!scale.some(n=>Math.abs(n-x.size)<.02));});
  assert.deepEqual(offScale,[],`${p} fora da escala: ${JSON.stringify(offScale)}`);
+ // 02/11/2026: nas Ferramentas, o título do grupo nunca fica menor do que as suas ligações.
+ const inv=await page.evaluate(()=>[...document.querySelectorAll('.ferr-grupo')].filter(g=>{const h=g.querySelector('summary h3');return h&&[...g.querySelectorAll('li>a')].some(a=>parseFloat(getComputedStyle(a).fontSize)>parseFloat(getComputedStyle(h).fontSize)+.5);}).map(g=>g.querySelector('summary h3').textContent));assert.deepEqual(inv,[],`${p} ${width} ${theme} ${mode} projeção=${projection}: ${JSON.stringify(inv)}`);
  }
  }await ctx.close();}
  const roles=new Map();let r4=0;
