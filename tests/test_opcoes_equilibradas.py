@@ -16,7 +16,8 @@ class OpcoesEquilibradas(unittest.TestCase):
    self.assertIsNone(PROIBIDAS.search(p),p)
  def test_ambito(self):
   # 30/10/2026: revisão de pt-PT da Cidadania refeita (M1, 31/10): as lições piloto (cidadania/piloto) também se medem.
-  self.assertEqual(set(medir.PASTAS),{'cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto'})
+  # 30/10/2026: e as do coração do Laboratório (narrativas/ideias, piloto de 31/10).
+  self.assertEqual(set(medir.PASTAS),{'cidade','investigar','projetos','fachada','apresentar','estetica','etica','ler','direitos','olhar-e-decidir','cidadania/piloto','narrativas/ideias'})
  def test_sem_denunciadoras(self):
   perguntas=list(medir.perguntas(ROOT));self.assertTrue(perguntas,'A medição não encontrou perguntas')
   falhas=[f"{q['pagina']} #{q['numero']}: {q['comprimentos']}, certa {q['certa']}" for q in perguntas if q['denunciadora']]

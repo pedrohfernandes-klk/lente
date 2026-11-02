@@ -80,7 +80,12 @@ const results = [];
         assert.equal(await p.locator('[data-stage]').count(), 5);
         assert.equal(await p.locator('[data-session-done]').count(), 1);
         assert.equal(await p.locator('[data-stage]:visible').count(), 0, 'abre na capa');
-        assert.equal(await p.locator('.c10-obra').count(), route.includes('/10/') ? 0 : 1, route);
+        // 01/11/2026: #77 substituiu as obras das sessões 03/09 por casos; exigir o contrato publicado completo.
+        const caso = /sessoes\/(03|09)\//.test(route);
+        assert.equal(await p.locator('.c10-obra').count(), caso || route.includes('/10/') ? 0 : 1, route);
+        assert.equal(await p.locator('#caso-reciclado').count(), caso ? 1 : 0, route);
+        assert.equal(await p.locator('#caso-reciclado [data-opcoes-reciclagem]').count(), caso ? 2 : 0, route);
+        if (caso) assert.equal(await p.locator('#caso-reciclado summary', { hasText: 'Ler o relato em português' }).count(), 1, route);
         assert.equal(await p.locator('.c10-mapa li[aria-current="step"]').count(), 1, route);
       }
     }
