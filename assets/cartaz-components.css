@@ -131,9 +131,8 @@ html.em-projecao [data-cartaz="2"] [data-personal]{display:none}
 .cz-motion-point.cz-motion-active::after{animation:cz-reveal 250ms ease-out both}
 .cz-motion-correct.cz-motion-active::after{animation:cz-draw 250ms ease-out both}
 .cz-motion-error.cz-motion-active::before{animation:cz-cue 220ms ease-out both}
-.cz-motion-number.cz-motion-active .cz-motion-roll{animation:cz-number 550ms ease-out both}
-html[data-cz-motion-enabled] .epi-ampliar.cz-motion-viewer{opacity:.72;transition:opacity 180ms ease-out}
-html[data-cz-motion-enabled] .epi-ampliar.cz-motion-viewer.cz-motion-active{opacity:1}}
+.cz-motion-number.cz-motion-active .cz-motion-roll{animation:cz-number 350ms ease-out both}
+html[data-cz-motion-enabled] .epi-ampliar.cz-motion-viewer.cz-motion-active{animation:cz-reveal 180ms ease-out both}}
 :is(.cz-next,[data-cz-motion-off]),:is(.cz-next,[data-cz-motion-off]) *,:is(.cz-next,[data-cz-motion-off])::before,:is(.cz-next,[data-cz-motion-off])::after,:is(.cz-next,[data-cz-motion-off]) *::before,:is(.cz-next,[data-cz-motion-off]) *::after{animation:none!important;transition:none!important}
 @media(prefers-reduced-motion:reduce){[data-cz-motion-region],[data-cz-motion-region] *,[data-cz-motion-region] ::before,[data-cz-motion-region] ::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.epi-ampliar.cz-motion-viewer{opacity:1!important;transition:none!important}[data-cz-motion-region],[data-cz-motion-region] *,[data-cz-motion-region] ::before,[data-cz-motion-region] ::after{animation:none!important;transition:none!important}}
