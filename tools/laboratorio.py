@@ -8,8 +8,11 @@ fora dos percursos (decisão 34: «Três cartas») continua no endereço e volta
 peças apresenta-se como «Laboratório» (marca, cabeçalho do menu e «LAB»).
 """
 from pathlib import Path
-import json,html,posixpath,re
+import json,html,posixpath,re,importlib.util
 R=Path(__file__).resolve().parents[1]
+# 02/11/2026: decisão 115, apresentação sem pontos nas peças incorporadas.
+_sp=importlib.util.spec_from_file_location('laboratorio_sem_pontos',R/'tools/laboratorio_sem_pontos.py')
+SP=importlib.util.module_from_spec(_sp);_sp.loader.exec_module(SP)
 D=json.loads((R/'assets/laboratorio/percursos.json').read_text('utf-8'))
 IM={x['id']:x for x in json.loads((R/'assets/laboratorio/imagens.json').read_text('utf-8'))}
 P={x['id']:x for x in D['pieces']}
@@ -207,7 +210,13 @@ def continuacao():
             rel=lambda u:posixpath.relpath(u.rstrip('/'),p['url'].rstrip('/'))+'/'
             return m.group(1)+'<a href="'+rel(rpath)+'">'+back+'</a>'+(' <a href="'+rel(nxt['url'])+'">Seguinte: '+e(nxt['title'])+'\u00a0→</a>' if nxt else '')+'</nav>'
         s=re.sub(r'(<nav class="lab-fim-percurso"[^>]*>).*?</nav>',nav,s,flags=re.S)
-        if s!=o:f.write_text(s,'utf-8');changed+=1
+        s=SP.aplicar(s)
+        if s!=o:f.write_bytes(s.encode('utf-8'));changed+=1
+    # 02/11/2026: três versões para imprimir incluem também o motor incorporado.
+    for nome in ('oficina-ficcao-comecar-imprimir', 'oficina-ficcao-personagem-imprimir', 'oficina-matriz-imprimir'):
+        f=R/'narrativas'/nome/'index.html'
+        antes=f.read_text('utf-8');depois=SP.aplicar(antes)
+        if depois!=antes:f.write_bytes(depois.encode('utf-8'));changed+=1
     return changed
 if '--cartaz-entradas' not in __import__('sys').argv:continuacao()
 

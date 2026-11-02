@@ -48,7 +48,10 @@ async function responder(p,x){
     if(i<d.cartoes.length-1)await seguinte(p);
    }
    await seguinte(p).catch(()=>{});await p.waitForTimeout(1400); // o «x de y» do fim anima durante cerca de 900 ms
-   const fim=await p.locator('#baralho').innerText();assert.match(fim,new RegExp(fazer+'\\s*de\\s*'+fazer),f+': o fim tem de mostrar '+fazer+' de '+fazer);
+   const fim=await p.locator('#baralho').innerText();
+   // 02/11/2026: sem pontos no Laboratório; mantém-se abaixo a prova da contagem guardada.
+   if(d.familia==='laboratorio'){assert.match(fim,/Lição feita/);assert.doesNotMatch(fim,/\d+\s+(?:pontos|de\s+\d+)/)}
+   else assert.match(fim,new RegExp(fazer+'\\s*de\\s*'+fazer),f+': o fim tem de mostrar '+fazer+' de '+fazer);
    const st=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),d.chave);assert(st&&st.melhor===fazer,f+': progresso gravado em '+d.chave);
    if(w===390)await p.screenshot({path:path.join(require('os').tmpdir(),'licao-'+d.id+'-fim-390.png')});
    assert.deepEqual(erros,[],f+' a '+w+' px');await ctx.close();

@@ -31,13 +31,10 @@ IMG = '../../../assets/laboratorio/ideias/'
 MAUP = 'https://www.gutenberg.org/ebooks/11131'
 
 # 01/11/2026 (método): os cinco passos, como na sessão 1 e na entrada (tools/ideias_piloto.py, PASSOS)
-PASSOS = ['Juntar material', 'Trabalhar o material', 'Largar', 'A ideia aparece', 'Dar forma e pôr à prova']
-
-
-def passos(hoje):
-    return ('<ol class="passos-m" aria-label="Os cinco passos do método">'
-            + ''.join(f'<li class="hoje" aria-current="step"><b>{n}</b> {t} <span class="hoje-t">hoje</span></li>' if n in hoje
-                      else f'<li><b>{n}</b> {t}</li>' for n, t in enumerate(PASSOS, 1)) + '</ol>')
+# 02/11/2026: fonte única dos passos; não altera os cartões nem a versão da sessão.
+_metodo_spec = importlib.util.spec_from_file_location('metodo', pathlib.Path(__file__).resolve().parents[1] / 'metodo.py')
+M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_module(M)
+PASSOS, passos = M.PASSOS, M.passos
 
 
 ABRE = (
@@ -74,13 +71,10 @@ ATGET = (
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro a fotografia inteira, depois ampliada
  '<p>Vê primeiro a fotografia inteira; depois amplia-a e percorre-a de uma ponta à outra.</p>'
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
-NA_AULA = (
- '<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro»: uma banca, uma árvore, uma montra, uma porta (pessoas só de longe, e nunca se fotografam caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue dos outros. No guião, escreve uma linha que só sirva para esse «cocheiro». De volta à sala, a fila de reconhecimento: cada um lê a sua linha sem dizer o que é, e a turma tenta dizer qual é. Se a turma não sair, faz-se o mesmo da janela ou numa fotografia de rua.</p>'
- '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> As quinze notas, onde guardas o material; no guião, a tua linha e o resultado da fila.</p>')
+NA_AULA = '<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente: pessoas só de longe, sem fotografar caras. Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que distingue o teu «cocheiro». No guião, escreve uma linha que só sirva para esse «cocheiro». Lê sem o identificar: a turma tenta reconhecê-lo. Sem saída, usa a janela ou uma fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>' + M.esta_bom(2)
 LEVAR = (
  '<p class="levar">Olhar até a coisa deixar de ser igual às outras.</p>'
- '<p>Foste à fonte de uma citação: a testemunha mudava pormenores, mas o essencial mantinha-se. Também puseste uma descrição à prova em quem não sabia o que descrevias. E agora: uma árvore da tua rua é só uma árvore?</p>'
+ '<p>Foste à fonte de uma citação. Também puseste uma descrição à prova. Uma árvore da tua rua é só uma árvore?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li>'
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
@@ -88,7 +82,7 @@ LEVAR = (
  '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
  # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
- '<p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, junta-lo e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola: um desporto, uma receita, um ofício da família.</p>')
+ '<p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, junta-lo e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola.</p>')
 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Cinquenta cavalos","html":ABRE},
@@ -151,7 +145,10 @@ cartoes = [
 # (nq() de tools/licoes_lente.py; a regra .nq está em assets/licoes/laboratorio.css)
 _spec = importlib.util.spec_from_file_location('licoes_lente', pathlib.Path(__file__).resolve().parents[1] / 'licoes_lente.py')
 LL = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(LL)
+LEVAR_CAIXA = M.para_caixa('Guarda as quinze notas, a linha antes e depois da prova e o resultado do reconhecimento.')
 for c in cartoes:
+    if c.get('rot') == 'Para levar':
+        c['html'] += LEVAR_CAIXA
     if c['t'] == 'ler':
         c['html'] = LL.nq(c['html'])
 dados = {
