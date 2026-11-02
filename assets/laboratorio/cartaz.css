@@ -68,9 +68,9 @@ html.em-projecao [data-cartaz-laboratorio] :is(.contagem,.cz-credit,.legenda,.ch
 html.em-projecao [data-cartaz-laboratorio] :is(.passos strong,.passos .descricao,.cz-door p,.mais a,.bloco>header>a,.cz-next p,.cz-next .continuar){font-size:var(--cz-t25)}
 html.em-projecao [data-cartaz-laboratorio] .cz-next .cz-label{font-size:var(--cz-t20)}
 html.em-projecao [data-cartaz-laboratorio] .cz-next h2{font-size:var(--cz-t39)}
-/* 01/11/2026: a raiz antiga aumenta rem em projeção; a família mantém a escala aprovada. */
-html.em-projecao [data-cartaz-laboratorio]{--cz-t13:13px;--cz-t16:16px;--cz-t20:20px;--cz-t25:25px;--cz-t31:31px;--cz-t39:39px;--cz-t49:49px;--cz-t61:61px}
-html.em-projecao [data-cartaz-laboratorio] .blocos .modulo :is(small,.contagem){font-size:20px}
+/* 02/11/2026: com as peças da volta 4, a projeção sobe a raiz para 137,5 % e a família lê a escala nessa unidade, como a entrada do Lente (#88); deixa de fixar os degraus em px. Abaixo de 768 px de largura, a raiz volta a 100 %, para nada deslizar. */
+@media(max-width:767px){html.em-projecao:has([data-cartaz-laboratorio]){font-size:100%}html.em-projecao [data-cartaz-laboratorio] :is(.subtitulo,.cz-row>b,.cz-row .arrow,.progresso p,.cz-fold-body .cz-button){font-size:var(--cz-t20)}}
+html.em-projecao [data-cartaz-laboratorio] .blocos .modulo :is(small,.contagem){font-size:var(--cz-t20)}
 /* 02/11/2026: achados 1 a 6, abertura 7/12 + 5/12 e percursos 5/12 + 7/12. */
 [data-cartaz-laboratorio] .blocos .modulo>.cz-row.current{border-left:4px solid var(--cz-current);padding-left:12px}
 @media(min-width:960px){[data-cartaz-laboratorio]{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:24px}[data-cartaz-laboratorio]>*{grid-column:1/-1}[data-cartaz-laboratorio]>.topo{grid-column:1;grid-row:1}[data-cartaz-laboratorio]>.cz-next{grid-column:2;grid-row:1;margin:0;align-self:start}[data-cartaz-laboratorio] .unidade.cz-fold{max-width:none}[data-cartaz-laboratorio] .cz-fold-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:24px;align-items:start}[data-cartaz-laboratorio] .cz-fold-body>:not(.passos){grid-column:1;justify-self:start}[data-cartaz-laboratorio] .cz-fold-body>.passos{grid-column:2;grid-row:1/span 3;margin-top:0}}
