@@ -4,7 +4,10 @@
  // 02/11/2026: D5, as dobras só fecham abaixo de 640 px e nunca na projeção (o click também apanha Enter e Espaço).
  main.querySelectorAll('.cz-fold>summary').forEach(s=>s.addEventListener('click',e=>{if(!matchMedia('(max-width:639px)').matches||document.documentElement.classList.contains('em-projecao'))e.preventDefault();}));
  matchMedia('(min-width:640px)').addEventListener('change',e=>{if(e.matches)main.querySelectorAll('.cz-fold').forEach(f=>f.open=true);});
- if(new URLSearchParams(location.search).get('projetar')==='1'||self!==top){document.documentElement.classList.add('em-projecao');return;}
+ // 02/11/2026: decisão 125. O fundo «A lente» só anda fora da projeção e sem movimento reduzido, e pára quando sai do ecrã.
+ const cab=main.querySelector('.lente-cab'),projetada=new URLSearchParams(location.search).get('projetar')==='1'||self!==top;
+ if(cab&&!projetada&&matchMedia('(prefers-reduced-motion: no-preference)').matches){cab.classList.add('lf-anda');if('IntersectionObserver'in window)new IntersectionObserver(e=>cab.classList.toggle('lf-fora',!e[e.length-1].isIntersecting)).observe(cab);}
+ if(projetada){document.documentElement.classList.add('em-projecao');return;}
  const read=k=>{try{return JSON.parse(localStorage.getItem(k)||'null')||{};}catch{return {};}};
  // 02/11/2026: decisão 131 (docente). Sem a caixa «A seguir», a retoma só escolhe a divisão marcada e, no telemóvel, a que fica aberta.
  function show(url){
