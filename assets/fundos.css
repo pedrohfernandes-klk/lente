@@ -1,0 +1,9 @@
+/* 02/11/2026: decisão 137. Motor comum dos fundos animados (igual no Português e no Lente): pausa fora do ecrã e com o
+   separador escondido, e o botão de texto «Parar o desenho» na linha do crédito (WCAG 2.2.2). O crédito do «Cartaz» desliga os toques
+   (pointer-events:none) e só os devolve às ligações: o botão devolve-os a si próprio. */
+[data-fundo].fundo-pausa *{animation-play-state:paused!important}
+.fundo-botao{display:inline-flex;align-items:center;min-height:44px;margin:0 0 0 .35em;padding:0 .2em;border:0;border-radius:0;background:none;color:inherit;font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;vertical-align:middle;pointer-events:auto}
+.fundo-botao[hidden]{display:none}
+.fundo-botao:hover{text-decoration-thickness:2px}
+.fundo-botao:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+@media print{.fundo-botao{display:none}}

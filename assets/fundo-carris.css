@@ -26,5 +26,4 @@ html:not(.em-projecao) .ju .jc-anda .jc-lamina{animation:jc-lamina 36s cubic-bez
 html:not(.em-projecao) .ju .jc-anda .jc-ramo-e{animation:jc-ramo-e 36s cubic-bezier(.45,.05,.55,.95) infinite}
 html:not(.em-projecao) .ju .jc-anda .jc-ramo-d{animation:jc-ramo-d 36s cubic-bezier(.45,.05,.55,.95) infinite}
 }
-.ju .jc-fora *{animation-play-state:paused!important}
 @media print{.ju .jc-fundo{display:none}}
