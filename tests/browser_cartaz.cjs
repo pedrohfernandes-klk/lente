@@ -29,6 +29,44 @@ const fixtureCreditos = theme => `<!doctype html><html lang="pt" data-theme="${t
 <p class="cz-credit" id="seguidas" style="max-width:12.5em">Fotografia de Joshua Benoliel, 1910. <a href="#o">Arquivo Municipal</a> <a href="#l">CC BY-SA 4.0</a>.</p>
 <p class="cz-credit" id="quebra">Joseph Wright of Derby, <i>Uma experiência com uma ave numa bomba de ar</i>, 1768. Óleo sobre tela. National Gallery, Londres. <a href="https://commons.wikimedia.org/" data-external aria-label="Wikimedia Commons, sítio externo">Wikimedia Commons</a>. Domínio público.</p>
 </main></body></html>`;
+// 01/11/2026: volta 4. Pontuação colada à ligação do crédito (corre na página, com page.evaluate). Para cada ligação dos créditos
+// escolhidos e para cada largura do crédito, desde a largura da ligação mais 8 px até à largura toda (sem max-width), de 1 em 1 px:
+// - o primeiro carácter do texto a seguir à ligação, medido com um Range de um carácter, fica na mesma linha que o fim da ligação
+//   (centros a menos de meia entrelinha). Sem retângulo, só se aceita um espaço em que a linha parte: o navegador retira-o no fim
+//   da linha da ligação, e exige-se que o carácter a seguir a ele comece numa linha abaixo (em #seguidas, entre as duas ligações).
+//   Qualquer outro carácter sem retângulo falha;
+// - nenhuma ligação do crédito parte por dentro (um só retângulo em getClientRects).
+// No fim, o max-width do crédito volta ao que era.
+const creditLines = selector => [...document.querySelectorAll(selector)].flatMap(c=>{
+ const keep=c.style.maxWidth,lh=parseFloat(getComputedStyle(c).lineHeight),links=[...c.querySelectorAll('a')];
+ c.style.maxWidth='none';
+ const full=Math.floor(c.getBoundingClientRect().width);
+ const out=links.map(a=>{
+  const walker=document.createTreeWalker(c,NodeFilter.SHOW_TEXT);walker.currentNode=a;
+  let next=walker.nextNode();while(next&&(a.contains(next)||!next.length))next=walker.nextNode();
+  let then=next,thenAt=1;if(then&&then.length<2){thenAt=0;then=walker.nextNode();while(then&&!then.length)then=walker.nextNode();}
+  const charRect=(node,i)=>{if(!node)return;const r=document.createRange();r.setStart(node,i);r.setEnd(node,i+1);const cs=r.getClientRects();return cs[cs.length-1];};
+  const from=Math.ceil(a.getBoundingClientRect().width)+8,bad=[];let widths=0;
+  if(next)for(let w=from;w<=full;w++){
+   c.style.maxWidth=w+'px';widths++;
+   const split=links.filter(l=>l.getClientRects().length!==1).map(l=>l.textContent);
+   const rects=a.getClientRects(),end=rects[rects.length-1],ch=charRect(next,0),below=!ch&&/^\s$/.test(next.data[0])&&charRect(then,thenAt);
+   const dy=ch&&end ? ((ch.top+ch.bottom)-(end.top+end.bottom))/2 : null;
+   const same=ch ? !!end&&Math.abs(dy)<lh/2 : !!below&&!!end&&((below.top+below.bottom)-(end.top+end.bottom))/2>=lh/2;
+   if(split.length||!same)bad.push({w,split,linhas:dy===null?null:Math.round(dy/lh)});
+  }
+  return {credit:c.id?'#'+c.id:'.'+c.className,text:a.textContent,after:next?next.data[0]:null,from,full,widths,bad};
+ });
+ c.style.maxWidth=keep;
+ return out;
+});
+const assertCreditLines = (lines,where,count) => {
+ assert.equal(lines.length,count,`${where}: ligações de crédito verificadas`);
+ for(const l of lines) {
+  assert.ok(l.after!==null && l.widths>0 && l.widths===l.full-l.from+1,`${where}, ${l.credit} ${l.text}: sem texto a seguir ou sem larguras (${l.from} a ${l.full} px)`);
+  assert.equal(l.bad.length,0,`${where}, ${l.credit} ${l.text}: em ${l.bad.length} de ${l.widths} larguras (${l.from} a ${l.full} px), ${JSON.stringify(l.after)} sai da linha da ligação ou uma ligação parte por dentro; a primeira: ${JSON.stringify(l.bad[0])}`);
+ }
+};
 (async () => {
  const browser = await chromium.launch({headless:true,...(process.env.CHROME_PATH ? {executablePath:process.env.CHROME_PATH} : {})});
  try {
@@ -65,11 +103,16 @@ const fixtureCreditos = theme => `<!doctype html><html lang="pt" data-theme="${t
    for(const selector of ['.cz-row','.cz-door>a','.cz-credit a','.cz-button']) {
     assert.equal(await page.locator(selector).first().evaluate(e=>getComputedStyle(e).textDecorationLine),'none');
    }
+   // 01/11/2026: volta 4. No crédito da peça, a pontuação a seguir a cada ligação fica na linha da ligação, e nenhuma ligação parte
+   // por dentro, em todas as larguras do crédito desde a ligação mais 8 px (creditLines, acima; também nos créditos longos, abaixo).
+   assertCreditLines(await page.evaluate(creditLines,'.cz-credit'),`${theme}, ${width} px, crédito da peça`,2);
    // 01/11/2026: revisão curta. A ligação do crédito fica em linha e não muda a entrelinha da frase.
    // 01/11/2026: volta 3. A ligação passa a inline-block, para não partir de linha e o ::before envolver um só retângulo (verificado
    // abaixo, nos créditos longos). A entrelinha da frase continua garantida pela altura do crédito, múltipla da linha.
+   // 01/11/2026: volta 4. A ligação volta a inline, com white-space:nowrap: o inline-block abria uma quebra antes da pontuação. Não
+   // partir continua verificado nos créditos longos e, com a pontuação colada, em creditLines.
    const credit = await page.locator('.cz-credit').evaluate(e=>({h:e.getBoundingClientRect().height,lh:parseFloat(getComputedStyle(e).lineHeight),display:getComputedStyle(e.querySelector('a')).display}));
-   assert.equal(credit.display,'inline-block');
+   assert.equal(credit.display,'inline');
    assert.ok(credit.h<44 && Math.abs(credit.h-credit.lh*Math.round(credit.h/credit.lh))<.5,`crédito: ${credit.h} px para linhas de ${credit.lh} px`);
    // 01/11/2026: volta 2. A caixa de cada ligação do crédito não passa da entrelinha, e os estados ficam nessa caixa: o fundo de
    // :active pinta só a caixa de conteúdo, o hover sublinha sem contorno e o anel de foco (3 px, também com o rato por cima) cabe
@@ -155,6 +198,9 @@ const fixtureCreditos = theme => `<!doctype html><html lang="pt" data-theme="${t
   //   um só retângulo, com o ::before de 44 × 44 px no mínimo à volta dela; os cantos do ::before e um toque a ±21 px do centro abrem-na.
   // - Nenhum ponto a mais de 15 px acima ou abaixo de uma ligação, nem fora dos 44 px de largura mínima, a abre (com 1 px de
   //   arredondamento do Chrome). A altura de cada crédito é múltipla da entrelinha e não há deslize horizontal.
+  // - 01/11/2026: volta 4. Como a peça tem white-space:nowrap na ligação, a procura da largura de quebra de #quebra põe também
+  //   white-space:normal na ligação enquanto procura, e retira-o depois. Em #quebra e #seguidas, a pontuação a seguir a cada ligação
+  //   fica na linha da ligação e nenhuma ligação parte por dentro (creditLines), em todas as larguras desde a ligação mais 8 px.
   for (const theme of ['light','dark']) for (const width of [320,390,1366]) for (const projection of [false,true]) {
    const where = `${theme}, ${width} px${projection?', projeção':''}`;
    const context = await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});
@@ -165,9 +211,9 @@ const fixtureCreditos = theme => `<!doctype html><html lang="pt" data-theme="${t
    const r = await page.evaluate(()=>{
     const hit=(a,x,y)=>{const t=document.elementFromPoint(x,y);return !!t&&(t===a||a.contains(t));};
     const q=document.getElementById('quebra'),qa=q.querySelector('a');let breakWidth=0;
-    qa.style.display='inline';
+    qa.style.display='inline';qa.style.whiteSpace='normal';
     for(let w=Math.ceil(q.getBoundingClientRect().width);w>=120;w--){q.style.maxWidth=w+'px';if(qa.getClientRects().length>1){breakWidth=w;break;}}
-    qa.style.removeProperty('display');
+    qa.style.removeProperty('display');qa.style.removeProperty('white-space');
     const links=[...document.querySelectorAll('.cz-credit a')].map(a=>{
      a.scrollIntoView({block:'center'});
      const p=a.parentElement.getBoundingClientRect(),R=a.getBoundingClientRect(),s=getComputedStyle(a,'::before');
@@ -201,6 +247,8 @@ const fixtureCreditos = theme => `<!doctype html><html lang="pt" data-theme="${t
    assert.deepEqual(wiki.near,[true,true,true,true],`${where}: toque a ±21 px do centro de «Wikimedia Commons»`);
    for(const c of r.credits) assert.ok(Math.abs(c.h-c.lh*Math.round(c.h/c.lh))<.5,`${where}, #${c.id}: ${c.h} px para linhas de ${c.lh} px`);
    assert.equal(r.slide,0,`${where}: deslize horizontal`);
+   // 01/11/2026: volta 4. Pontuação colada e ligações inteiras em #quebra e #seguidas, em todas as larguras dos dois créditos.
+   assertCreditLines(await page.evaluate(creditLines,'#quebra, #seguidas'),where,3);
    await context.close();
   }
   const nojs = await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});

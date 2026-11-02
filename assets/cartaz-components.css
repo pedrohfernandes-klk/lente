@@ -21,13 +21,18 @@
 /* 01/11/2026: volta 2. A ligação do crédito fica sem padding: a caixa não passa da entrelinha e os estados pintam só o texto
    (sublinhado no hover, fundo na caixa de conteúdo no toque, anel de foco a 1 px das letras e por cima do hover).
    A área de toque é um ::before invisível com 44 × 44 px no mínimo, também em ligações curtas como «CC0».
-   01/11/2026: volta 3. A ligação não parte de linha (inline-block, no máximo da largura da linha): o ::before envolve sempre um só
-   retângulo, mesmo quando «Wikimedia Commons» calharia no fim da linha. Com line-height:1.15 a caixa fica do tamanho das letras e a
-   entrelinha da frase não muda. As áreas de toque ficam por baixo do texto (z-index:-1 dentro do crédito isolado) e o texto simples do
+   01/11/2026: volta 3. As áreas de toque ficam por baixo do texto (z-index:-1 dentro do crédito isolado) e o texto simples do
    crédito não recebe toques: as letras de cada ligação ganham sempre à área de outra ligação na linha de cima ou de baixo, e por cima
-   das palavras simples a área continua a abrir a ligação. Limite: uma ligação maior do que a linha parte por dentro, com entrelinha 1,15. */
+   das palavras simples a área continua a abrir a ligação.
+   01/11/2026: volta 4. A ligação fica em linha (display:inline) e não parte por causa do white-space:nowrap: o ::before envolve
+   sempre um só retângulo, mesmo quando «Wikimedia Commons» calharia no fim da linha, e a pontuação seguinte fica colada a ela,
+   porque entre o fim da ligação e o ponto não há quebra possível. Em linha, a caixa tem a altura das letras e a entrelinha da frase
+   não muda. Antes (volta 3), o inline-block com line-height:1.15 abria uma quebra antes da pontuação («. Domínio público.» no início
+   da linha) e uma ligação longa partia com entrelinha apertada. Regra das peças: a ligação do crédito leva só o nome da fonte ou da
+   licença («Wikimedia Commons», «Library of Congress», «CC BY-SA 4.0»), com «Fonte:» e «Domínio público.» fora da ligação, para
+   caber numa linha a 320 px. Uma ligação mais larga do que a linha não parte: sai da coluna. */
 [data-cartaz="2"] .cz-credit{isolation:isolate;pointer-events:none}
-[data-cartaz="2"] .cz-credit a{display:inline-block;max-width:100%;line-height:1.15;position:relative;padding-block:0;text-decoration:none;pointer-events:auto}
+[data-cartaz="2"] .cz-credit a{display:inline;white-space:nowrap;position:relative;padding-block:0;text-decoration:none;pointer-events:auto}
 [data-cartaz="2"] .cz-credit a::before{content:"";position:absolute;z-index:-1;top:-15px;bottom:-15px;left:min(0px,calc(50% - 22px));right:min(0px,calc(50% - 22px))}
 [data-cartaz="2"] .cz-credit a:is(:hover,.is-hover){color:var(--cz-ink);outline:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
 [data-cartaz="2"] .cz-credit a:is(:active,.is-active){background:var(--cz-ground);background-clip:content-box}
