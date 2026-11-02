@@ -1,0 +1,8 @@
+[
+  "node tests/browser_formas.cjs",
+  "node tests/browser_lab_percursos.cjs",
+  "node tests/browser_tres_cartas.cjs",
+  "node tests/browser_licoes_lente.cjs",
+  "python tests/browser_reciclagem_lente.py",
+  "python tests/browser_texto_justificado.py"
+]
