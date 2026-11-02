@@ -1,4 +1,6 @@
 // 30/10/2026: lições do Lente no motor único (assets/licoes/), a começar pela sessão 01 do M1 de Cidadania (piloto).
+// 30/10/2026: cobre também as lições do coração do Laboratório («Ideias», narrativas/ideias/, 31/10), com os cartões «mapa»
+// sobre o quadro de La Tour (a lupa incluída) e o leitor do vídeo, que só se liga ao toque.
 // Percorre cada lição de tools/licoes/*.json a responder certo a todos os cartões, em 390 e 1366 px, e confirma: nenhum
 // erro, nenhum deslocamento horizontal, o fim com todas as certas, o progresso gravado na chave da lição, e a projeção a
 // não gravar nada.
@@ -7,12 +9,20 @@ const ROOT=path.resolve(__dirname,'..');
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'};
 const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
 async function seguinte(p){const s=p.locator('.casca-folha:not([hidden]) button, .casca-acoes button',{hasText:/Seguinte|Continuar|Ver o resultado|Terminar/});await s.first().click();await p.waitForTimeout(250)}
+// 30/10/2026: o texto dos botões é o das opções sem as marcas de itálico e negrito (_…_ e **…**), que o motor converte
+// (coração do Laboratório, 31/10: «_Time Transfixed_, de René Magritte.»).
+const vis=s=>String(s).replace(/\*\*|_/g,'');
+// 30/10/2026: o cartão «mapa» (coração do Laboratório, 31/10: «Toca no quadro»). Toca-se no centro do anel da zona certa,
+// como um dedo: o motor procura a zona mais próxima do toque. Se duas zonas ficam a menos de 44 px no ecrã, o primeiro toque
+// abre a lupa (a figura amplia-se à volta do dedo) e é preciso tocar outra vez; o «Confirmar» fica para o fim de responder().
+async function tocarZona(p,j){const box=await p.locator('#baralho .op-m[data-j="'+j+'"] circle.anel').boundingBox();await p.mouse.click(box.x+box.width/2,box.y+box.height/2);await p.waitForTimeout(250)}
 async function responder(p,x){
- if(x.t==='escolha'){await p.locator('#baralho button.op',{hasText:x.o[x.c]}).first().click()}
+ if(x.t==='escolha'){await p.locator('#baralho button.op',{hasText:vis(x.o[x.c])}).first().click()}
+ else if(x.t==='mapa'){await tocarZona(p,x.c);if(await p.locator('#baralho .mapa-q svg.lupa').count())await tocarZona(p,x.c);assert.match(await p.locator('#baralho .mapa-esc').innerText(),new RegExp(x.o[x.c].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')),'zona escolhida: '+x.o[x.c])}
  else if(x.t==='vf'){await p.locator('#baralho button.op',{hasText:x.v?'Verdadeiro':'Falso'}).click()}
- else if(x.t==='emparelhar'){for(const [a,b] of x.pares){await p.locator('#baralho button',{hasText:a}).first().click();await p.waitForTimeout(80);await p.locator('#baralho button',{hasText:b}).first().click();await p.waitForTimeout(120)}}
+ else if(x.t==='emparelhar'){for(const [a,b] of x.pares){await p.locator('#baralho button',{hasText:vis(a)}).first().click();await p.waitForTimeout(80);await p.locator('#baralho button',{hasText:vis(b)}).first().click();await p.waitForTimeout(120)}}
  else if(x.t==='sublinhar'){for(const j of x.certas)await p.locator('#baralho button.pal[data-j="'+j+'"]').click();await p.locator('.casca-acoes [data-confirmar]').click()}
- else if(x.t==='ordenar'){for(const t of x.passos){await p.locator('#baralho .soltos button',{hasText:t}).first().click();await p.waitForTimeout(80)}}
+ else if(x.t==='ordenar'){for(const t of x.passos){await p.locator('#baralho .soltos button',{hasText:vis(t)}).first().click();await p.waitForTimeout(80)}}
  // 30/10/2026: as sessões 02 a 10 do M1 (pilotos de 31/10) têm cartões de completar; em cada lacuna escolhe-se o valor da
  // opção certa, como o motor o guarda (o valor é o índice da opção em lacunas[k].o; data-k é a ordem da lacuna na frase).
  else if(x.t==='completar'){for(let k=0;k<x.lacunas.length;k++){await p.locator('#baralho select[data-k="'+k+'"]').selectOption(String(x.lacunas[k].c));await p.waitForTimeout(80)}}
