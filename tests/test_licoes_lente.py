@@ -32,6 +32,8 @@ class LicoesLente(unittest.TestCase):
             s = (ROOT / d['saida']).read_text('utf-8')
             self.assertIn('assets/licoes/jogo.js', s); self.assertIn('assets/licoes/casca.js', s); self.assertIn('assets/licoes/lesson.css', s)
             self.assertIn('"variar": false', s)  # numa aula, todos os cartões; o motor não tira à sorte
+            # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+            if d['id'].startswith('ideias-'):self.assertFalse(d.get('piloto'))
             self.assertEqual(s.count('robots" content="noindex'), 1 if d.get('piloto') else 0, p.name)
 
     def test_o_validador_apanha_os_erros(self):

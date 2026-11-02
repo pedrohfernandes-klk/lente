@@ -5,7 +5,9 @@ for(const rel of ['narrativas/index.html','narrativas/ver/index.html','narrativa
  const old=cp.execFileSync('git',['show','03ef772:'+rel],{cwd:root,encoding:'utf8'}),now=fs.readFileSync(path.join(root,rel),'utf8');
  for(const match of old.matchAll(/<a\b[^>]*href="([^"]+)"/g))assert.ok(now.includes('href="'+match[1]+'"'),match[1]);
  for(const match of old.matchAll(/\bid="([^"]+)"/g))assert.ok(now.includes('id="'+match[1]+'"'),match[1]);
- // 01/11/2026: decisão 54; só o rótulo muda, mantendo a barra e os destinos exatos.
- assert.equal(now.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0],old.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0].replace('>Ver<','>Observar<'));
+ // 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas.
+ // A barra mantém todos os destinos e recebe exatamente uma ligação, a seguir a Laboratório.
+ const ideia='<a href="'+(rel==='narrativas/index.html'?'ideias/':'../ideias/')+'">Ideias</a>';
+ assert.equal(now.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0],old.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0].replace('>Ver<','>Observar<').replace(/(<a[^>]*>Laboratório<\/a>)/,'$1'+ideia));
  assert.equal(now.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1],old.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1]);
 });

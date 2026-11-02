@@ -38,21 +38,21 @@ LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 PASTA = 'narrativas/ideias/'
 e = html.escape
 
-# As sete sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
+# As sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
 # outras aparecem «Em preparação», sem ligação. «linha» e «papel» são o que a região «A seguir» mostra dessa sessão.
 # 01/11/2026 (correção 2 do método, diretor de arte): o passo de cada porta é o das sessões que estão dentro dela (Ver, sessões
 # 1 e 2: passo 1; Treinar, sessões 3 e 4: passos 1 a 3); antes, Ver dizia «Passos 1 e 2» e Treinar «Passos 2 e 3»
 # 01/11/2026 (correção 3 do método, revisor de pt-PT): na porta Treinar, «juntar o material geral», para os três elementos
 # serem infinitivos paralelos (antes, «o material geral» ficava sem a ação do passo 1)
 PORTAS = [
- ('ver', 'Ver', 'Passo 1: juntar material, com os olhos e até ao fundo.', '../ver/'),
+ ('ver', 'Observar', 'Passo 1: juntar material, com os olhos e até ao fundo.', '../ver/'),
  ('treinar', 'Treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.', '../treinar/'),
  ('criar', 'Criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.', '../criar/'),
 ]
 SESSOES = [
  {'n': 1, 'porta': 'ver', 'titulo': 'Ver ou observar?', 'pergunta': 'Quantos degraus tem a escada que sobes todos os dias?',
   'passo': 'Passo 1 de 5: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
-  'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o auto de observação do grupo.'},
+  'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o teu auto de observação.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
   'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
@@ -90,7 +90,7 @@ ATOL = {
 GUIA = {
  1: {
   'ensina': 'Separar o que se vê do que se conclui; observar é ver com uma pergunta. É o passo 1 de 5: juntar material específico.',
-  'antes': 'Ter a lista dos lugares da escola para os grupos (a escada, o portão, o bar, o pátio), um por grupo, para dois grupos não se cruzarem. Confirmar o som do projetor para o vídeo.',
+  'antes': 'Ter a lista dos lugares da escola (a escada, o portão, o bar, o pátio) e atribuir um lugar a cada aluno, com horários que evitem aglomerações. Confirmar o som do projetor para o vídeo.',
   'tempos': [
    ('0 a 5', '«Abre»: cada um escreve o número de degraus, em silêncio. O docente anota três palpites no quadro, sem nomes.'),
    # 01/11/2026 (método): o cartão novo «O método» (cartão 2) leva 5 minutos, tirados da folga do fim; os cartões seguintes
@@ -99,7 +99,7 @@ GUIA = {
    ('10 a 20', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
    # 01/11/2026 (correção 5, revisor de pt-PT): «no cartão 7», o único com o vídeo («a partir do» lia-se «daí em diante»)
    ('20 a 55', 'Cartões 4 a 14. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 8; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
-   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras e os grupos de três; 20 no lugar (um facto de cada vez; contam-se os degraus); 10 de pausa; 15 na troca, em que cada grupo vai ao lugar de outro e marca cada facto como confirmado ou desmentido; 15 na sala, a passar o auto para o guião; 5 para dois grupos dizerem o número de degraus.'),
+   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras do trabalho individual; 20 no lugar (um facto por nota; contam-se os degraus); 10 de pausa; 15 na verificação individual, em que cada aluno confere os factos de um colega e marca cada um como confirmado ou desmentido; 15 na sala, a passar o seu auto para o guião; 5 para conferir o número de degraus com outra pessoa.'),
    ('125 a 150', 'Cartões 16 a 20.'),
    ('150 a 170', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
    ('170 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
@@ -107,10 +107,10 @@ GUIA = {
   # 01/11/2026 (correção 2, revisor de pt-PT): no guia, o crédito do vídeo sem a instrução ao aluno («ativa as legendas»)
   'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
   'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
-  'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto do grupo, com as marcas do grupo que verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
-  'produto': 'o auto de observação, por grupo',
+  'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto individual, com as marcas de quem o verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
+  'produto': 'o auto de observação, individual',
   # 01/11/2026 (correção 6, revisor de pt-PT): «A pergunta a que o lugar não responde», como o campo do guião que avalia
-  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados pelo grupo que foi verificar', 4), ('Factos registados um a um, na forma escolhida', 3)],
+  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados por outra pessoa', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
@@ -123,12 +123,12 @@ GUIA = {
  },
  2: {
   'ensina': 'Ir à fonte de uma citação sem cinismo (uma testemunha que erra num pormenor não mente) e pôr uma descrição à prova em quem não sabe o que se descreve. É o passo 1 de 5, até ao fundo.',
-  'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde os pares possam estar sempre à vista do docente.',
+  'antes': 'Se a turma sair, escolher, entre os lugares que os alunos escreveram no guião da sessão 1, um só lugar a cinco minutos da escola, com um percurso sem travessias perigosas, onde cada aluno possa estar sempre à vista do docente, com deslocação aos pares por segurança.',
   'tempos': [
    ('0 a 5', '«Abre»: diz-se à turma o lugar da saída ou, se não houver saída, a alternativa (a janela ou uma fotografia de rua).'),
    ('5 a 15', '«Decide», de braço no ar.'),
    ('15 a 50', 'Cartões 3 a 12: as duas versões do conselho (a do livro, de 1940, e a de Maupassant, de 1888) lidas em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
-   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (pares; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
+   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (deslocação aos pares por segurança; trabalho individual; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
    ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para a sessão 3.'),
@@ -160,7 +160,7 @@ GUIAO = {
  1: {
   'frente': [
    # 01/11/2026 (correção 4, diretor de arte): no telemóvel, nenhum espaço para escrever sozinho numa linha
-   ('p', 'O teu palpite: <i class="b"></i> degraus. <span class="nq">A contagem: <i class="b"></i></span> <span class="nq">(grupos <i class="b"></i> e <i class="b"></i>).</span>'),
+   ('p', 'O teu palpite: <i class="b"></i> degraus. <span class="nq">A contagem: <i class="b"></i></span> <span class="nq">Verificado por: <i class="b"></i></span>'),
    ('h2', 'O vídeo de Herman, em duas colunas'),
    ('tabela', ['Está no quadro', 'Não está no quadro, mas conta'], 8),
    ('h2', 'O quadro de La Tour: cinco coisas que se veem'),
@@ -172,8 +172,8 @@ GUIAO = {
   ],
   'verso_titulo': 'O auto de observação',
   'verso': [
-   ('p', 'Lugar: <i class="b"></i> Grupo: <i class="b"></i> Hora: <i class="b"></i>'),
-   ('tabela', ['Facto (um que outro grupo possa confirmar)', 'Confirmado ou desmentido pelo grupo\u00a0___'], 10),
+   ('p', 'Lugar: <i class="b"></i> Nome: <i class="b"></i> Hora: <i class="b"></i>'),
+   ('tabela', ['Facto (um que outra pessoa possa confirmar)', 'Confirmado ou desmentido. Verificado por\u00a0___'], 10),
    ('tabela', ['Inferência', 'Os dois factos que a apoiam'], 3),
    # 01/11/2026 (correção 6, revisor de pt-PT): «responder a» (a pergunta a que…), aqui e na grelha do guia
    ('p', 'A pergunta a que o lugar não responde: <i class="b l"></i>'),
@@ -227,7 +227,8 @@ def licoes():
     out = {}
     for p in sorted((ROOT / 'tools/licoes').glob('ideias-s*.json')):
         d = json.loads(p.read_text('utf-8'))
-        out[int(d['id'][-2:])] = d
+        # 02/11/2026: decisão 141, uma fonte em piloto ainda não é pública.
+        if not d.get('piloto'):out[int(d['id'][-2:])] = d
     return out
 
 
@@ -341,7 +342,7 @@ CSS = (TOKENS +
  # 01/11/2026 (correção 3): o número da fotografia não se parte no hífen (com a etiqueta de parede, partia em «ISS006- / E-37110»)
  '.ideias .atol figcaption .id{white-space:nowrap}'
  # as sessões em três portas (sistema 6.5): faixa de nós e linhas de 64 px com estado
- # 01/11/2026 (correção 3, medida da hierarquia, R1): o h2 «As sete sessões» (32 px) era mais pequeno do que os nomes das
+ # 01/11/2026 (correção 3, medida da hierarquia, R1): o h2 «As sessões» (32 px) era mais pequeno do que os nomes das
  # portas que agrupa (h3, 38,4 px); passa a 44 px
  # 01/11/2026 (correção 4, diretor de arte): a 48 px (3 rem), 1,25 vezes os 38,4 px dos nomes das portas; a 44 px, os três
  # níveis em Bebas (44, 38,4 e 35,2 px) quase se confundiam (relações de 1,15 e 1,09)
@@ -438,7 +439,7 @@ CSS = (TOKENS +
  # (letra mínima de 13 para 17,9 px, sistema 8); o botão Projetar some; na moldura /projetar/, as migalhas a 17,9 px
  'html.em-projecao{font-size:137.5%}html.em-projecao body.ideias{font-size:1rem}html.em-projecao .epi-projection-launcher{display:none!important}'
  'html.epi-projection .ideias .migalhas{font-size:.8125rem!important}'
- # 01/11/2026 (correção 5, diretor de arte): na projeção abaixo de 600 px, «As sete sessões» (66 px) partia-se e deixava
+ # 01/11/2026 (correção 5, diretor de arte): na projeção abaixo de 600 px, «As sessões» (66 px) partia-se e deixava
  # «sessões» sozinha; os títulos a 55 e 44 px (a mesma relação de 1,25 entre o h2 e os nomes das portas). Na faixa, o rótulo
  # «Treinar» enchia a coluna e ficava a 6 px de «Criar»: os rótulos ficam só para o leitor de ecrã, como a partir de 1024 px
  # (os nomes das portas vêm logo abaixo), e as colunas com mínimo 0, para a proporção 2:2:3 dos nós não se perder
@@ -554,6 +555,9 @@ CSS = (TOKENS +
  '.ideias.guia ul.ligacoes a{min-height:0;padding:0}.ideias.guia h3{margin:14px 0 4px}.ideias.guia .pg{margin:0 0 6px}.ideias.guia section ul{margin:4px 0 6px}}')
 
 
+# 02/11/2026: decisão 141. Uma só porta publicada ocupa a largura disponível.
+CSS += '.ideias .faixa:has(>a:only-child),.ideias .portas:has(>.porta:only-of-type){grid-template-columns:1fr}'
+
 def migalhas(base, itens):
     out = '<nav class="migalhas" aria-label="Onde estás">'
     for k, (rot, href) in enumerate(itens):
@@ -563,7 +567,7 @@ def migalhas(base, itens):
     return out + '<span data-appearance-control></span></nav>'
 
 
-def cabeca(base, titulo, desc, robots=True):
+def cabeca(base, titulo, desc, robots=False):
     return ('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{e(titulo)}</title>' + ('<meta name="robots" content="noindex, nofollow">' if robots else '')
@@ -594,7 +598,10 @@ def pagina_entrada(L):
     portas = ''
     faixa = ''
     for pid, nome, apoio, _url in PORTAS:
-        ss = [s for s in SESSOES if s['porta'] == pid]
+        ss = [s for s in prontas if s['porta'] == pid]
+        if not ss:
+            portas += f'<span id="porta-{pid}" hidden></span><span id="pt-{pid}" hidden></span><span id="pc-{pid}" hidden></span>'
+            continue
         nums = ', '.join(str(s['n']) for s in ss[:-1]) + ' e ' + str(ss[-1]['n'])
         faixa += (f'<a href="#porta-{pid}"><span class="nome">{nome}</span>'
                   + ''.join(f'<span class="no{"" if s["n"] in L else " prep"}" data-no="{s["n"]}" aria-hidden="true"></span>' for s in ss)
@@ -624,7 +631,8 @@ def pagina_entrada(L):
                     f'aria-expanded="false" aria-controls="pc-{pid}" aria-label="Abrir {nome}"></button>')
         portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"{" data-dobra" if dobra else ""}><div class="porta-cab">{cab}</div>'
                    f'<div class="porta-corpo" id="pc-{pid}"><p class="apoio-porta">{e(apoio)}</p><ol class="sessoes">{linhas}</ol></div></section>')
-    proxima_prep = next((s for s in SESSOES if s['n'] not in L), None)
+    # 02/11/2026: decisão 141. Só sessões publicadas, sem promessas.
+    proxima_prep = None
     js = ('(function(){"use strict";var proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'
           'if(proj)document.documentElement.classList.add("em-projecao");'
           'var dd=function(n){return(n<10?"0":"")+n};'
@@ -647,7 +655,7 @@ def pagina_entrada(L):
           + (f'else{{q("[data-p-k]").textContent="A seguir, em preparação";q("[data-p-n]").textContent=q("[data-p-srn]").textContent="{proxima_prep["n"]}";q("[data-p-t]").textContent="{proxima_prep["titulo"]}";q("[data-p-passo]").textContent=": {passo_n(proxima_prep)}";'
              'q("[data-p-linha]").textContent="As sessões prontas estão feitas. A próxima ainda está a ser preparada.";q("[data-p-papel]").textContent="";'
              'var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"}'
-             if proxima_prep else 'else{q("[data-p-k]").textContent="Feitas";}')
+             if proxima_prep else 'else{q("[data-p-k]").textContent="Feitas";q("[data-p-n]").textContent=q("[data-p-srn]").textContent=u.li.getAttribute("data-n");q("[data-p-t]").textContent=u.li.getAttribute("data-titulo");q("[data-p-passo]").textContent=": "+u.li.getAttribute("data-passo");q("[data-p-linha]").textContent="As sessões publicadas estão feitas.";q("[data-p-papel]").textContent="";var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→";}')
           + '}'
           # o gesto: não grava nada; um segundo toque desfaz; a sessão 1 ganha «Começa aqui»
           'var G=document.querySelector("[data-gesto]");if(G){if(feitas.length&&!proj)G.classList.add("ja-feita");'
@@ -667,8 +675,8 @@ def pagina_entrada(L):
     d1 = L[1]
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
              + '<div class="topo">'
-             '<header class="abre"><p class="rotulo">Laboratório, piloto</p><h1>Ideias</h1><p class="sub">Como nasce uma ideia</p>'
-             '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Em sete sessões, levas uma ideia tua por um método de cinco passos.</p>'
+             '<header class="abre"><p class="rotulo">Laboratório</p><h1>Ideias</h1><p class="sub">Como nasce uma ideia</p>'
+             '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Levas uma ideia tua por um método de cinco passos.</p>'
              # 01/11/2026 (método): o bloco «O método», logo abaixo do título, no lugar da linha de informação (que dizia o livro
              # de Young e as sete sessões de 180 minutos): quem é Young, o livro, que as sessões o seguem passo a passo, que há
              # outros métodos e porque seguimos este, e os cinco passos numa lista numerada. O parágrafo guarda a classe «info»
@@ -695,18 +703,18 @@ def pagina_entrada(L):
              f'<figure class="atol"><span class="campo"><img src="{ATOL["src"]}" width="{ATOL["w"]}" height="{ATOL["h"]}" alt="{e(ATOL["alt"])}" loading="lazy"></span>'
              f'<figcaption>{ATOL["tabela"]}</figcaption></figure>'
              '</div>'
-             '<h2 class="sessoes-t" id="sessoes">As sete sessões</h2>'
-             f'<nav class="faixa" aria-label="As sete sessões, por porta do Laboratório">{faixa}</nav>'
+             '<h2 class="sessoes-t" id="sessoes">As sessões</h2>'
+             f'<nav class="faixa" aria-label="As sessões, por porta do Laboratório">{faixa}</nav>'
              f'<div class="portas">{portas}</div>'
              '<p class="saidas-sec"><a href="guiao/">Em papel: o guião →</a><a href="docente/">Para o docente →</a></p>'
              '<footer class="rodape"><h2>Daqui também se vai</h2><nav class="saidas" aria-label="Daqui também se vai">'
              + ''.join(f'<a href="{u}">{n}</a>' for _p, n, _a, u in PORTAS)
              + f'<a href="../../biblioteca/{BIB_ID}/">Biblioteca: Young</a></nav>'
-             '<p class="nota">Piloto em revisão, escondido dos motores de busca. O que fazes fica só neste aparelho.</p></footer>')
+             '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     corpo = LL.nq(corpo)  # 01/11/2026 (correção 2, diretor de arte): formas verbais com pronome sem quebra no hífen
     cv = ('<script>(function(){if(!(/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top))'
           'document.documentElement.classList.add("cv")})();</script></head>')
-    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sete sessões do Laboratório que seguem, passo a passo, o método de James Webb Young (piloto).').replace('</head>', cv, 1)
+    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sessões do Laboratório que seguem, passo a passo, o método de James Webb Young.').replace('</head>', cv, 1)
             + f'<body class="ideias"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main><script>{js}</script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
@@ -752,13 +760,13 @@ def pagina_guiao(L):
     # 01/11/2026 (correção 5, revisor de pt-PT): «escreve-se no guião impresso» e não «aqui», que no ecrã apontava para a página
     # web, onde não se escreve
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guião', '')])
-             + '<header class="abre"><p class="rotulo">Ideias, piloto</p><h1>O guião</h1>'
+             + '<header class="abre"><p class="rotulo">Ideias</p><h1>O guião</h1>'
              f'<p class="lead">Para imprimir em A4: frente e verso de cada sessão pronta ({2 * n} páginas). No telemóvel só se toca; escreve-se no guião impresso e onde cada um guarda o material.</p></header>'
              '<p class="papel-cab"><button type="button" class="imprimir" onclick="window.print()">Imprimir</button><span class="pq">As sessões 3 a 7 entram quando estiverem prontas.</span></p>'
              + lados
              + '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../docente/">Para o docente →</a></p>')
     corpo = LL.nq(corpo)
-    return (cabeca(base, 'Guião | Ideias | Laboratório | Lente', 'O guião em papel das sessões de Ideias, no Laboratório: frente e verso por sessão (piloto).')
+    return (cabeca(base, 'Guião | Ideias | Laboratório | Lente', 'O guião em papel das sessões de Ideias, no Laboratório: frente e verso por sessão.')
             + f'<body class="ideias guiao"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
 
@@ -802,7 +810,7 @@ def pagina_guia(L):
     for s in SESSOES:
         rota, peca, _u = s['peca']
         porta = next(n for p, n, _a, _u2 in PORTAS if p == s['porta'])
-        estado = 'Pronta (piloto)' if s['n'] in L else 'Em preparação'
+        estado = 'Pronta' if s['n'] in L else 'Em preparação'
         # 01/11/2026 (correção 3): cada célula leva o nome da coluna (data-r), que a ficha mostra abaixo de 640 px
         cel = [(SEQ_COLS[0], str(s['n']), ' class="num"'), (SEQ_COLS[1], e(s['titulo']), ''), (SEQ_COLS[2], e(s['pergunta']), ''),
                (SEQ_COLS[3], e(s['passo']), ''), (SEQ_COLS[4], f'{porta}, «{e(rota)}», <i>{e(peca)}</i>', ''), (SEQ_COLS[5], estado, '')]
@@ -810,9 +818,9 @@ def pagina_guia(L):
     indice = '<li><a href="#metodo">Porque seguimos um método</a></li><li><a href="#antes">Antes de começar</a></li><li><a href="#sequencia">A sequência</a></li>' + ''.join(
         f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in SESSOES if s['n'] in L)
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guia do docente', '')])
-             + '<header class="abre"><p class="rotulo">Ideias, piloto</p><h1>Guia do docente</h1>'
+             + '<header class="abre"><p class="rotulo">Ideias</p><h1>Guia do docente</h1>'
              '<p class="lead">As sessões prontas em pormenor (tempos, materiais, o que fica escrito e a grelha /20 indicativa) e, antes delas, o quadro das sete sessões.</p>'
-             '<p class="info">Piloto escondido dos motores de busca, sem ligação a partir do mapa, das portas nem da entrada do Laboratório, até o docente o ver.</p></header>'
+             '</header>'
              f'<nav class="indice-nav" aria-label="Neste guia"><ul class="indice">{indice}</ul></nav>'
              # 01/11/2026 (método): o guia abre com a razão do método, como o apresentar na primeira aula e onde o nome volta
              # 01/11/2026 (correção 4 do método, revisor de pt-PT): «Há outros métodos; escolhemos este», com antecedente explícito, como na
@@ -832,7 +840,7 @@ def pagina_guia(L):
              # 01/11/2026 (correção 3 do método, verificador e revisor): a sequência diz os passos de cada porta como a entrada (PORTAS)
              # e o quadro abaixo; antes, ficara com o mapa antigo («Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar»)
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
-             '<p class="pg">O passo 1 do método leva a Ver; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
+             '<p class="pg">O passo 1 do método leva a Observar; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
              '<div class="tabela"><table class="seq" role="table"><thead role="rowgroup"><tr role="row">'
              + ''.join('<th role="columnheader" scope="col"' + (' class="num"' if k == 0 else '') + f'>{c}</th>' for k, c in enumerate(SEQ_COLS)) + '</tr></thead>'
              f'<tbody role="rowgroup">{seq}</tbody></table></div></section>')
@@ -876,7 +884,7 @@ def pagina_guia(L):
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{it(d["fontes"])}</p></section>')
     corpo += '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../guiao/">O guião →</a></p>'
     corpo = LL.nq(corpo)
-    return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e grelhas (piloto).')
+    return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e grelhas.')
             + f'<body class="ideias guia"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
 
@@ -963,6 +971,7 @@ def pagina_biblioteca():
             '<p class="bib-passagem">James Webb Young, <i>Uma Técnica para Produzir Ideias</i> (<i lang="en">A Technique for Producing Ideas</i>), Advertising Publications, 1940; edição de 1960. Tradução nossa.</p>\n'
             '<div class="bib-lido"><button type="button" data-lido aria-pressed="false">Li este texto</button><small>Fica só no teu aparelho. Conta na Biblioteca como texto lido.</small></div>\n'
             f'<div class="bib-lido"><a class="bib-orig" href="{YOUNG_REGISTO}" target="_blank" rel="noopener">Abrir o registo do livro</a><small>Impressão de 1944, no Internet Archive, só em empréstimo controlado (com conta gratuita). Abre noutro separador.</small></div>\n'
+            f'<p class="bib-fonte"><a href="{LENTE}narrativas/ideias/sessao-01/">Ideias: sessão 1, Ver ou observar? →</a></p>\n'
             f'<p class="bib-fonte" style="margin-top:24px;border-bottom:0"><a href="{LENTE}biblioteca/">Voltar à Biblioteca</a></p>\n'
             '</main><script>(function(){var K="epi-biblioteca",id=document.body.getAttribute("data-texto"),b=document.querySelector("[data-lido]");if(!b)return;\n'
             'function ler(){try{return JSON.parse(localStorage.getItem(K)||"null")||{}}catch(x){return{}}}\n'

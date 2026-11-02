@@ -111,3 +111,5 @@ html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-set
 /* 02/11/2026: decisão 131 (docente). A entrada deixa a caixa «A seguir» e a grelha 7/5 que a punha ao lado do título; a retoma só escolhe a divisão aberta no telemóvel. */
 /* 02/11/2026: decisão 133 (docente). O nome «Lente.» volta ao tamanho original da marca (o clamp do index.html) e o ponto fica sempre mostarda, como antes do «Cartaz». */
 [data-cartaz-entrada] .lente-nome i{color:var(--mostarda,#d9a520)}
+/* 02/11/2026: decisão 141. A nova ligação cabe no cartão móvel sem reduzir alvos nem texto. */
+@media(max-width:639px){[data-cartaz-entrada] #inicio-narrativas .ld-f{margin-bottom:8px}[data-cartaz-entrada] #inicio-narrativas .ld-corpo{padding-bottom:0}}

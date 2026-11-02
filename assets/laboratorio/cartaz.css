@@ -72,3 +72,19 @@ html.em-projecao [data-cartaz-laboratorio] .blocos .modulo :is(small,.contagem){
 html.em-projecao [data-cartaz-laboratorio] .topo .lead{font-size:var(--cz-t25)}
 html.em-projecao [data-cartaz-laboratorio] .dobra>summary span{font-size:var(--cz-t20)}
 /* 02/11/2026: decisão 134 (docente). Saem a caixa «A seguir» e a grelha 7/5 que a punha ao lado do título; o progresso continua a marcar as linhas. */
+/* 02/11/2026: decisão 141, acesso público ao método e às sessões disponíveis. */
+[data-cartaz-laboratorio] .ideias-publico{margin:0 0 24px;padding:16px;border-top:2px solid var(--cz-ink);background:var(--cz-paper)}
+[data-cartaz-laboratorio] .ideias-publico h2{font-size:var(--cz-t25);margin:0 0 8px}
+[data-cartaz-laboratorio] .ideias-publico p{margin:0 0 8px;font-size:var(--cz-t16)}
+[data-cartaz-laboratorio] .ideias-publico nav{display:flex;flex-wrap:wrap;gap:8px}
+[data-cartaz-laboratorio] .ideias-publico .cz-button{min-height:48px;white-space:normal;text-align:start;font-size:var(--cz-t16)}
+html.em-projecao [data-cartaz-laboratorio] .ideias-publico :is(p,a){font-size:var(--cz-t20)}
+/* 02/11/2026: o bloco novo ocupa os intervalos da abertura no telemóvel;
+   mantêm-se o tamanho dos títulos, as imagens e os alvos de 88 px. */
+@media(max-width:639px){
+ [data-cartaz-laboratorio]:has(>.ideias-publico){padding-top:16px}
+ [data-cartaz-laboratorio]:has(>.ideias-publico) .topo{margin-bottom:8px;padding-bottom:8px}
+ [data-cartaz-laboratorio] .ideias-publico{margin-bottom:8px}
+ [data-cartaz-laboratorio]:has(>.ideias-publico) .blocos{gap:16px}
+ [data-cartaz-laboratorio]:has(>.ideias-publico) .progresso{margin-top:24px}
+}
