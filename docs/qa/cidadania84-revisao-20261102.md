@@ -31,3 +31,9 @@ O piloto tem agora o seu enunciado individual em `cidadania/piloto/m1/projeto/`,
 A página passou nove contextos de navegador (320, 390 e 1366 px; claro, escuro e projeção), sem deslocamento horizontal nem erros JavaScript. A avaliação a 390 px foi aberta e vista. As provas ficam em `outputs/cidadania84-projeto-20261102/`, fora do repositório.
 
 O enunciado anterior em `cidadania/projeto/` mantém os seus contratos de preservação; os quatro testes operacionais respetivos passaram sem alterações. A mudança do #84 abrange o piloto. O percurso anterior ainda contém instruções coletivas, a inventariar na aplicação geral da decisão 138, mas já não é o enunciado de destino da entrada e do guia do piloto.
+
+## Hierarquia dos títulos após CI
+
+O CI da cabeça 95c4ffc encontrou títulos h3 a 16 px antes de texto a 17 px no guia e na nova página do projeto. O gerador passa esses títulos a 18 px (1.125rem), abaixo dos h2 de 20 px. Regeneram-se as quatro páginas do piloto. A lista de pendentes do teste perde os casos corrigidos; as regras e as medições ficam iguais. Não se acrescenta nenhuma exceção.
+
+A pesquisa adicional do Panopticon na UCL não resolveu os direitos: https://transcribe-bentham.ucl.ac.uk/td/Terms_of_Use exige autorização para reutilizar imagens. A indicação CC BY-NC-ND refere-se às transcrições. Continua por resolver a divergência entre Commons e o manifesto da BSB; a imagem não está aprovada para publicação.
