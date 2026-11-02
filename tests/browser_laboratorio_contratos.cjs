@@ -30,12 +30,24 @@ async function responder(p,x){
 try{for(const w of [390,1366])for(const proj of [false,true]){
  const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/sessao-01/'+(proj?'?projetar=1':''),w,900,'light');
  await p.addScriptTag({url:base+'assets/licoes/relogio.js'});const antes=await p.evaluate(()=>JSON.stringify(Object.entries(localStorage).sort()));
- await p.evaluate(()=>{const imagem={src:'../../../assets/laboratorio/ideias/atget-quiosque-fiacres.webp',alt:'Fotografia de uma rua.',credito:'Eugène Atget, CC0.'};EPIJogo.montar({casca:EPICasca.pagina(),el:document.querySelector('#baralho'),marca:'Verificação',chave:'qa-imagens',semPontos:true,aula:true,variar:false,itens:[{t:'escolha',p:'Escolhe um.',o:['Um','Dois'],c:0,f:'Um vem primeiro.',fe:['','Dois vem depois.'],imagens:[imagem,imagem]},{t:'ordenar',p:'Ordena.',passos:['Um','Dois','Três'],f:'Esta é a ordem.',imagens:[imagem,imagem,imagem]},{t:'ler',rot:'Para levar',html:'<div class="tr-relogio" data-relogio="3"><p class="tr-tempo">0:03</p><button data-rl="ir">Começar</button><button data-rl="pausa">Pausa</button><button data-rl="zero">Repor</button><p class="tr-aviso" role="status"></p></div>'}]})});
+ await p.evaluate(()=>{const imagens=[0,1,2].map(j=>({src:'../../../assets/laboratorio/ideias/atget-quiosque-fiacres.webp?amostra='+j,alt:'Fotografia de uma rua, amostra '+j+'.',credito:'Eugène Atget, CC0. Amostra '+j+'.'}));EPIJogo.montar({casca:EPICasca.pagina(),el:document.querySelector('#baralho'),marca:'Verificação',chave:'qa-creditos-2',semPontos:true,aula:true,variar:false,itens:[{t:'escolha',p:'Escolhe um.',o:['Um','Dois'],c:0,f:'Um vem primeiro.',fe:['','Dois vem depois.'],imagens:imagens.slice(0,2)},{t:'ordenar',p:'Ordena.',passos:['Um','Dois','Três'],f:'Esta é a ordem.',imagens},{t:'ler',rot:'Para levar',html:'<div class="tr-relogio" data-relogio="3"><p class="tr-tempo">0:03</p><button data-rl="ir">Começar</button><button data-rl="pausa">Pausa</button><button data-rl="zero">Repor</button><p class="tr-aviso" role="status"></p></div>'}]})});
  await p.locator('.op-imagem').first().waitFor();assert.equal(await p.locator('.op-imagem').count(),2);assert(await p.locator('.op-imagem').first().evaluate(e=>e.complete&&e.naturalWidth>0));
+ // Conferir por índice de dados, nunca pela posição visual baralhada.
+ async function creditos(){for(const btn of await p.locator('#baralho button.op').all()){
+  const j=await btn.getAttribute('data-j'),cred=btn.locator('.op-credito');
+  assert.equal(await cred.innerText(),'Eugène Atget, CC0. Amostra '+j+'.');assert(await cred.isVisible());
+  assert.equal(await btn.locator('img').getAttribute('alt'),'Fotografia de uma rua, amostra '+j+'.');
+  assert((await btn.locator('img').getAttribute('src')).endsWith('?amostra='+j));
+  assert.equal(await btn.locator('a,button').count(),0);assert.match(await btn.ariaSnapshot(),/Eugène Atget, CC0/);
+ }}
+ await creditos();let baralhadas=(await p.locator("#baralho button.op").evaluateAll(bs=>bs.map(b=>b.dataset.j).join(",")))!=="0,1";
  const errada=p.locator('#baralho button.op',{hasText:'Dois'});await errada.focus();await p.keyboard.press('Enter');assert.match(await p.locator('.casca-folha').innerText(),/Dois vem depois/);await seguinte(p);
- assert.equal(await p.locator('.op-imagem').count(),3);for(const t of ['Um','Dois','Três']){const btn=p.locator('.soltos button',{hasText:t});await btn.focus();await p.keyboard.press('Enter')}
+ assert.equal(await p.locator('.op-imagem').count(),3);await creditos();baralhadas=baralhadas&&(await p.locator('#baralho button.op').evaluateAll(bs=>bs.map(b=>b.dataset.j).join(',')))!=='0,1,2';assert(baralhadas,'a amostra tem de exercer uma ordem baralhada');
+ // Selecionar e retirar antes da sequência completa mantém a atribuição no mesmo botão.
+ const primeiro=p.locator('#baralho button.op[data-j="0"]');await primeiro.click();await creditos();await primeiro.click();await creditos();
+ for(const t of ['Um','Dois','Três']){const btn=p.locator('.soltos button',{hasText:t});await btn.focus();await p.keyboard.press('Enter');await creditos()}
  assert.match(await p.locator('.casca-folha').innerText(),/Certo/);await seguinte(p);
  await p.locator('[data-rl="ir"]').click();await p.waitForTimeout(1150);await p.locator('[data-rl="pausa"]').click();assert.equal(await p.locator('[data-relogio]').getAttribute('data-resta'),'2');await p.locator('[data-rl="zero"]').click();assert.equal(await p.locator('.tr-tempo').innerText(),'0:03');
- await seguinte(p);await p.waitForTimeout(1100);assert.doesNotMatch(await p.locator('.fim').innerText(),/\d+\s+(?:pontos|de\s+\d+)/);if(proj)assert.equal(await p.evaluate(()=>JSON.stringify(Object.entries(localStorage).sort())),antes);else assert.equal(await p.evaluate(()=>JSON.parse(localStorage.getItem('qa-imagens')).melhor),1);
+ await seguinte(p);await p.waitForTimeout(1100);assert.doesNotMatch(await p.locator('.fim').innerText(),/\d+\s+(?:pontos|de\s+\d+)/);if(proj)assert.equal(await p.evaluate(()=>JSON.stringify(Object.entries(localStorage).sort())),antes);else assert.equal(await p.evaluate(()=>JSON.parse(localStorage.getItem('qa-creditos-2')).melhor),1);
  assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close();console.log('PASS imagens, teclado, retorno e relógio',w,proj);
 }}finally{await b.close();srv.closeAllConnections();srv.close()}})().catch(e=>{console.error(e);process.exit(1)});

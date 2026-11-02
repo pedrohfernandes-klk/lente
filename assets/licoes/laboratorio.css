@@ -114,3 +114,6 @@ html.em-projecao body.licao-laboratorio .casca-topo .epi-projection-launcher,htm
 .licao-laboratorio .tr-tempo{font:700 2rem/1.2 Arial,sans-serif;font-variant-numeric:tabular-nums}
 .licao-laboratorio .tr-relogio button{min-height:44px;margin:.25rem;padding:.5rem;border:1px solid currentColor;background:transparent;color:inherit}
 html.em-projecao .licao-laboratorio .tr-tempo{font-size:3rem}
+
+/* O crédito viaja com a imagem quando a opção muda de posição. */
+.licao-laboratorio .op .op-credito{display:block;font-size:.8em;line-height:1.35;font-weight:400;margin:0 0 .5rem;overflow-wrap:anywhere}

@@ -88,7 +88,7 @@ function montar(cfg){
  // 23/10/2026: uma citação que já traz as aspas («…» ou «…».) não leva outras
  function citar(c){c=String(c).trim();return /^«[\s\S]*»[.!?…]?$/.test(c)&&c.indexOf("«",1)<0?it(c):"«"+it(c)+"»"}
  // 02/11/2026: imagens opcionais nas escolhas e sequências; os rótulos e respostas mantêm-se.
- function figuraOpcao(x,j){var f=x.imagens&&x.imagens[j];return f?'<img class="op-imagem" src="'+esc(f.src)+'" alt="'+esc(f.alt)+'" loading="lazy">':''}
+ function figuraOpcao(x,j){var f=x.imagens&&x.imagens[j];return f?'<img class="op-imagem" src="'+esc(f.src)+'" alt="'+esc(f.alt)+'" loading="lazy"><span class="op-credito">'+esc(f.credito)+'</span>':''}
  function corpo0(x){
   if(x.t!=="ler")semear(x);
   if(tipoExt(x))return '<div data-tipo-ext="'+esc(x.t)+'">'+tipoExt(x).html(x,API())+'</div>';

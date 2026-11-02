@@ -40,6 +40,12 @@ Os controlos de respostas, linguagem, modalidade individual, ligações, ausênc
 
 ## Limites e dependências por resolver
 
+### Correções da primeira revisão
+
+O CI de «formas e montagem» falhou em `test_motores_antigos_so_recebem_transformacao_autorizada`: o checkout superficial não disponibilizava a árvore da base fixa `e71ebf4600a11b3d2bd73abce68fa92f6be22076`. O trabalho `lab` passa a carregar o histórico completo. Mantém-se a comparação exata dos 86 motores; não se altera o teste nem a base.
+
+`figuraOpcao` apresentava a imagem e o texto alternativo, mas omitia o crédito validado pelo gerador. O crédito passa a ser texto simples escapado, visível e acessível no mesmo botão. Não contém ligações ou controlos aninhados. A imagem, o crédito e a opção usam o mesmo índice e deslocam-se juntos ao selecionar, retirar e ordenar. O ensaio usa créditos e imagens identificados por amostra, confere a correspondência por `data-j`, a presença no nome acessível e a ausência de elementos interativos internos. Exige também que a amostra exerça uma ordem baralhada.
+
 Esta entrega não cumpre o requisito dos cinco tipos `classificar`, `linha`, `escala`, `diferencas` e `estimar`. Faltam o código original e os respetivos contratos positivos e negativos em `assets/licoes/`, `tools/licoes_lente.py` e nos testes do motor. As referências `eaa33dd` e `b729dd1` pertencem a um ambiente externo sem caminho ou ramo acessível confirmado. A coordenação ficou com a recuperação; não se recriam os tipos por inferência. S1 e S2 não os usam. As sessões futuras que dependem deles permanecem condicionadas à recuperação e validação.
 
 O visor foi ensaiado isoladamente, mas não está integrado nesta entrega. Os mapas existentes de S1 continuam a usar o motor publicado e os seus ensaios; isso não prova os cinco tipos ausentes nem constitui integração do novo visor.
