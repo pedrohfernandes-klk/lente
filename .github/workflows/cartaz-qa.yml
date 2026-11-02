@@ -1,37 +1,59 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['assets/cartaz-components.*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
     steps:
-      # 01/11/2026: base disponível para os contratos de isolamento.
+      # 01/11/2026: contratos comparam a base publicada, sem reduzir os testes.
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      # 01/11/2026: bateria Python completa, sem excluir famílias.
-      - run: python -m unittest discover -s tests -p 'test_*.py' -v
+      # 01/11/2026: bateria inteira antes de instalar dependências que contêm HTML alheio ao sítio.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_*.py'
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
-      - run: node --test tests/cartaz.test.cjs tests/appearance.test.cjs tests/cartaz_animacoes.test.cjs
+      - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
       - run: node tests/browser_cartaz.cjs
+      - run: node tests/browser_cartaz_familia.cjs
       # 01/11/2026: movimento, estado final, primeira ação e contrato do visor.
       - run: node tests/browser_cartaz_animacoes.cjs
       # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
       - run: node tests/hierarquia-cartaz.cjs
 
-  regressao-navegador:
+  # 01/11/2026: bateria integral, incluindo os moldes que não acionam workflows por caminhos.
+  regressao-completa:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        command:
+          - node tests/browser_formas.cjs
+          - node tests/browser_lab_percursos.cjs
+          - node tests/browser_tres_cartas.cjs
+          - node tests/browser_licoes_lente.cjs
+          - node tests/browser_ideias.cjs
+          - node tests/browser_cidadania_m1_sessoes.cjs
+          - node tests/browser_cidadania_m2_sessoes.cjs
+          - node tests/browser_opcoes.cjs
+          - node tests/browser_resultados_turma.cjs
+          - python tests/browser_reciclagem_lente.py
+          - python tests/browser_texto_justificado.py
+          - python tests/browser_hierarquia_titulos.py
+          - python tests/browser_cidadania_percurso.py
+          - python tests/browser_cidadania_butler_singer.py
+          - python tests/browser_cidadania_anomalias.py
+          - python tests/browser_lab_treinos.py
     steps:
       - uses: actions/checkout@v4
         with:
@@ -42,19 +64,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-save playwright
-      - run: pip install playwright
-      - run: python -m playwright install --with-deps chromium
-      # 01/11/2026: todos os seis programas existentes, mesmo se um anterior falhar.
-      - if: ${{ !cancelled() }}
-        run: node tests/browser_formas.cjs
-      - if: ${{ !cancelled() }}
-        run: node tests/browser_lab_percursos.cjs
-      - if: ${{ !cancelled() }}
-        run: node tests/browser_tres_cartas.cjs
-      - if: ${{ !cancelled() }}
-        run: node tests/browser_licoes_lente.cjs
-      - if: ${{ !cancelled() }}
-        run: python tests/browser_reciclagem_lente.py
-      - if: ${{ !cancelled() }}
-        run: python tests/browser_texto_justificado.py
+      - name: Preparar navegador
+        run: |
+          pip install playwright
+          npm install --no-save --package-lock=false playwright
+          python -m playwright install --with-deps chromium
+      - name: Verificar molde completo
+        run: ${{ matrix.command }}
