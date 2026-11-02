@@ -207,7 +207,7 @@ dados = {
  "id":"ideias-s01","familia":"laboratorio","chave":"epi-lab-ideias-s01","versao":"2026-11-01-1",
  "marca":"Ideias","passo":"Passo 1 de 5","titulo":"Sessão 1: Ver ou observar?","h1":"Laboratório, Ideias, sessão 1: Ver ou observar?",
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
- "saida":"narrativas/ideias/sessao-01/index.html","piloto":True,
+ "saida":"narrativas/ideias/sessao-01/index.html","piloto":False,
  "seguinte":"../sessao-02/","seguinteRotulo":"Sessão 2: O cocheiro",
  "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy\u00a0E.\u00a0Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
  "cartoes":cartoes,

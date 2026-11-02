@@ -84,7 +84,8 @@ class Licoes(unittest.TestCase):
             self.assertEqual(L.validar(d), [], p.name)
             self.assertEqual(d['familia'], 'laboratorio')
             self.assertRegex(d['chave'], r'^epi-lab-ideias-s\d{2}$')
-            self.assertTrue(d['piloto'])
+            # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+            self.assertFalse(d['piloto'])
             self.assertTrue(d['saida'].startswith('narrativas/ideias/sessao-'))
             s = (ROOT / d['saida']).read_text('utf-8')
             self.assertEqual(s, L.pagina(d), p.name + ': corre python3 tools/licoes_lente.py')
@@ -160,35 +161,35 @@ class Paginas(unittest.TestCase):
         lista = (ROOT / 'biblioteca/index.html').read_text('utf-8')
         self.assertEqual(I.lista_biblioteca(lista), lista)
 
-    def test_noindex_no_piloto_e_biblioteca_publica(self):
+    def test_ideias_e_biblioteca_publicos(self):
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
         pags = paginas_piloto()
         self.assertEqual(sorted(p.relative_to(ROOT).as_posix() for p in pags),
                          ['narrativas/ideias/docente/index.html', 'narrativas/ideias/guiao/index.html', 'narrativas/ideias/index.html',
                           'narrativas/ideias/sessao-01/index.html', 'narrativas/ideias/sessao-02/index.html'])
         for p in pags:
-            self.assertEqual(p.read_text('utf-8').count(ROBOTS), 1, p)
+            self.assertNotIn('noindex', p.read_text('utf-8'), p)
+            self.assertNotIn('nofollow', p.read_text('utf-8'), p)
+            self.assertNotIn('piloto', L.visivel(p.read_text('utf-8')).lower(), p)
         # a página do Young na Biblioteca é pública (encargo: a entrada na lista é pública, só com o excerto aprovado)
         self.assertNotIn('noindex', BIB.read_text('utf-8'))
 
-    def test_nenhuma_pagina_fora_do_piloto_liga_para_ele(self):
-        piloto = PILOTO.resolve()
-        falhas = []
-        for p in sorted(ROOT.rglob('*.html')):
-            rel = p.relative_to(ROOT).as_posix()
-            if rel.split('/')[0] in ('.git', 'tests', 'tools', 'node_modules') or p.resolve().is_relative_to(piloto):
-                continue
-            s = p.read_text('utf-8', errors='replace')
-            if 'ideias' not in s:
-                continue
-            for url in analisar(s).links:
-                a = alvo(p, url)
-                if a is not None and a.resolve().is_relative_to(piloto):
-                    falhas.append(f'{rel}: {url}')
-        self.assertEqual(falhas, [])
-        for rel in ('assets/laboratorio/percursos.json', 'assets/laboratorio/imagens.json'):
-            self.assertNotIn('narrativas/ideias', (ROOT / rel).read_text('utf-8'), rel)
-        # nem a página do Young na Biblioteca, enquanto o coração for piloto
-        self.assertNotIn('narrativas/ideias', BIB.read_text('utf-8'))
+    def test_ligacoes_publicas_exigidas(self):
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        destinos={
+            'index.html':['narrativas/ideias/index.html'],
+            'narrativas/index.html':['narrativas/ideias/index.html','narrativas/ideias/sessao-01/index.html','narrativas/ideias/sessao-02/index.html'],
+            'mapa/index.html':['narrativas/ideias/index.html'],
+            'biblioteca/young-tecnica-1940/index.html':['narrativas/ideias/sessao-01/index.html'],
+            'ver-para-fazer/oficina-ideias/index.html':['narrativas/ideias/index.html'],
+        }
+        for rel,required in destinos.items():
+            p=ROOT/rel
+            targets={str(t.resolve()) for u in analisar(p.read_text('utf-8')).links if (t:=alvo(p,u)) is not None}
+            for dest in required:self.assertIn(str((ROOT/dest).resolve()),targets,rel+' → '+dest)
+        for rel in ['narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html']:
+            nav=re.search(r'<nav class="barra-nav".*?</nav>',(ROOT/rel).read_text('utf-8')).group()
+            self.assertIn('>Ideias</a>',nav,rel)
 
     def test_ligacoes_internas_e_ancoras_resolvem(self):
         falhas = []
@@ -220,8 +221,10 @@ class Paginas(unittest.TestCase):
         self.assertEqual(s.count('class="botao"'), 1)
         self.assertLess(s.index('class="botao"'), s.index('class="gesto"'))
         self.assertEqual(len(re.findall(r'<button type="button" data-op aria-pressed="false">', s)), 3)
-        self.assertEqual(len(re.findall(r'<li (?:class="prep" )?data-', s)), 7)
-        self.assertEqual(s.count('Em preparação</span>'), 5)
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        self.assertEqual(len(re.findall(r'<li (?:class="prep" )?data-', s)), len(FONTES))
+        self.assertNotIn('Em preparação', L.visivel(s))
+        self.assertNotIn('A seguir, em preparação',s)
         for p in FONTES:
             d = json.loads(p.read_text('utf-8'))
             self.assertIn(f'data-chave="{d["chave"]}" data-versao="{d["versao"]}"', s)
@@ -398,11 +401,11 @@ class TerceiraRevisao(unittest.TestCase):
     def test_portas_dobradas_e_guiao(self):
         s = (PILOTO / 'index.html').read_text('utf-8')
         self.assertNotIn('id="porta-ver" aria-labelledby="pt-ver" data-dobra', s)
-        for pid, nome, linha in (('treinar', 'Treinar', 'Sessões 3 e 4, em preparação'), ('criar', 'Criar', 'Sessões 5 a 7, em preparação')):
-            self.assertIn(f'id="porta-{pid}" aria-labelledby="pt-{pid}" data-dobra', s)
-            self.assertIn(f'<p class="porta-linha">{linha}</p><button type="button" class="porta-abre" data-nome="{nome}" '
-                          f'aria-expanded="false" aria-controls="pc-{pid}" aria-label="Abrir {nome}"></button>', s)
-            self.assertIn(f'id="pc-{pid}"', s)
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        for pid in ['treinar','criar']:
+            for prefix in ['porta','pt','pc']:self.assertIn(f'id="{prefix}-{pid}"',s)
+            self.assertNotIn(f'id="porta-{pid}" aria-labelledby',s)
+        self.assertIn('<h3 id="pt-ver">Observar</h3>',s)
         # html.cv só com script e fora da projeção, no <head>
         cab = s[:s.index('</head>')]
         self.assertIn('document.documentElement.classList.add("cv")', cab)
@@ -603,7 +606,9 @@ class Metodo(unittest.TestCase):
         # data-passo das sessões prontas e na sessão em preparação que o script escreve (antes partia-se dentro do passo)
         self.assertIn('<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: passo\u00a01\u00a0de\u00a05</span></p>', s)
         self.assertEqual(re.findall(r'data-passo="([^"]*)"', s), ['passo\u00a01\u00a0de\u00a05'] * 2)
-        self.assertIn('q("[data-p-passo]").textContent=": passos\u00a01\u00a0e\u00a02\u00a0de\u00a05";', s)
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        self.assertNotIn('A seguir, em preparação',s)
+        self.assertIn('As sessões publicadas estão feitas.',s)
         # 01/11/2026: (correção 1 do método, diretor de arte) a lista dos cinco passos em grelha, para nenhum ficar sozinho numa linha:
         # um por linha abaixo de 600 px, três mais dois a partir de 600 px (as medidas estão em browser_ideias.cjs, secção 11)
         self.assertIn('@media (max-width:599px){.ideias ol.passos-m{display:grid;grid-template-columns:max-content;row-gap:0}', s)
@@ -613,10 +618,11 @@ class Metodo(unittest.TestCase):
     def test_passo_n_de_5_em_cada_sessao(self):
         s = (PILOTO / 'index.html').read_text('utf-8')
         apoios = re.findall(r'<span class="apoio">(.*?)</span>', s)
-        self.assertEqual(len(apoios), 7)
+        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
+        self.assertEqual(len(apoios), len(FONTES))
         for n, a in enumerate(apoios, 1):
             self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
-        self.assertEqual([x.split(':')[0] for x in apoios[:6]], ['Passo 1 de 5', 'Passo 1 de 5', 'Passos 1 e 2 de 5', 'Passos 2 e 3 de 5', 'Passo 4 de 5', 'Passo 5 de 5'])
+        self.assertEqual([x.split(':')[0] for x in apoios[:6]], ['Passo 1 de 5', 'Passo 1 de 5'])
         # 01/11/2026: (correção 2 do método, diretor de arte) o passo escrito em cada porta é o das sessões que estão dentro dela (antes,
         # Ver dizia «Passos 1 e 2» sobre duas sessões do passo 1 e Treinar «Passos 2 e 3» sobre as sessões dos passos 1 a 3); a sessão
         # de síntese («Os cinco passos juntos») não tem um passo só
@@ -629,9 +635,7 @@ class Metodo(unittest.TestCase):
                   re.findall(r'<div class="porta-corpo" id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">(.*?)</ol></div>', s, re.S)]
         # 01/11/2026: (correção 3 do método, revisor de pt-PT) a porta Treinar diz «juntar o material geral», para os três elementos da
         # enumeração serem infinitivos paralelos («juntar», «trabalhá-lo», «largá-lo»); antes, «o material geral» ficava sem a ação
-        self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.'),
-                                                              ('treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.'),
-                                                              ('criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.')])
+        self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.')])
         for pid, t, sessoes in portas:
             dentro = [a for a in re.findall(r'<span class="apoio">(.*?)</span>', sessoes) if not a.startswith('Os cinco passos juntos')]
             self.assertTrue(dentro, pid)
@@ -679,7 +683,7 @@ class Metodo(unittest.TestCase):
         self.assertIn('Passo 1 de 5: juntar material, até ao fundo.', L.visivel(self.licoes()[1]['cartoes'][0]['html']))
         guia = (PILOTO / 'docente/index.html').read_text('utf-8')
         # 01/11/2026: (correção 3 do método, verificador) a sequência do guia diz os passos de cada porta como a entrada
-        self.assertIn('O passo 1 do método leva a Ver; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar.', L.visivel(guia))
+        self.assertIn('O passo 1 do método leva a Observar; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar.', L.visivel(guia))
         self.assertNotIn('Os passos 1 e 2 do método levam a Ver', guia)
         self.assertEqual(len(re.findall(r'data-r="Passo">(?:Passos? \d( e \d)? de 5|Os cinco passos juntos)', guia)), 7)
         self.assertEqual(guia.count('<b>O passo.</b> Passo 1 de 5:'), 2)

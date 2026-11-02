@@ -158,7 +158,7 @@ dados = {
  "id":"ideias-s02","familia":"laboratorio","chave":"epi-lab-ideias-s02","versao":"2026-10-31-1",
  "marca":"Ideias","passo":"Passo 1 de 5","titulo":"Sessão 2: O cocheiro","h1":"Laboratório, Ideias, sessão 2: O cocheiro",
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
- "saida":"narrativas/ideias/sessao-02/index.html","piloto":True,
+ "saida":"narrativas/ideias/sessao-02/index.html","piloto":False,
  "seguinte":"../","seguinteRotulo":"As sete sessões",
  "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
  "cartoes":cartoes,
