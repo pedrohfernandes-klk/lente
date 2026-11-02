@@ -44,10 +44,11 @@ VIDEO = (
  '<div class="yt" data-yt="tmwIhOCXLrQ" data-titulo="This could save lives, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «This could save lives» (título abreviado, 5 min 30 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Michael Vazquez e Sarah Stroud. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, em grupos de três, a auditoria do formulário da visita de estudo, inventado e em papel: riscar o que não é preciso, dizer quem vê cada dado e quando se apaga. Depois, uma volta de 20 minutos ao quarteirão da escola, com o docente, a contar câmaras e avisos de videovigilância e a anotar o que cada aviso diz. Não se fotografam pessoas nem matrículas.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O formulário revisto, uma nota de privacidade em cinco linhas, o registo dos avisos e o plano de recolha das entrevistas da Pergunta Humana: o que se guarda, onde e até quando.</p>')
+'<p><b>O que se faz.</b> Revê individualmente o formulário inventado da visita de estudo, em papel: risca o que não é preciso, diz quem vê cada dado e quando se apaga. Depois, numa volta de 20 minutos ao quarteirão com o docente, faz o teu registo de câmaras e avisos de videovigilância. Não fotografes pessoas nem matrículas.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu formulário revisto, a tua nota de privacidade, o teu registo dos avisos e o teu plano de recolha das entrevistas.</p>')
 LEVAR = (
  '<p class="levar">Os dados pedem-se para uma finalidade, e só aqueles de que essa finalidade precisa.</p>'
  '<p>Nesta sessão pesaste segurança e privacidade e viste o que a lei deixa fazer numa escola. Volta ao panóptico: em que sítio da escola te sentes dentro dele? E volta à tua posição do início: as câmaras nas salas ficavam?</p>'

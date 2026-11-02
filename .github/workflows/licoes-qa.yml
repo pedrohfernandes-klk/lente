@@ -7,6 +7,11 @@ on:
       - 'tools/licoes_lente.py'
       - 'cidadania/piloto/**'
       - 'tests/*licoes*'
+      # 02/11/2026: decisão 138, autoria individual sem alterar índices de progresso.
+      - 'tools/cidadania_piloto.py'
+      - 'tests/test_cidadania_individual.py'
+      - 'tests/test_cidadania_piloto.py'
+      - 'tests/fixtures/cidadania-indices-20261102.json'
       # 30/10/2026: coração do Laboratório («Ideias», piloto escondido de 31/10): lições, entrada, guião, guia do docente,
       # imagens, a página do Young na Biblioteca e a medida das opções da pasta nova.
       - 'narrativas/ideias/**'
@@ -39,6 +44,9 @@ jobs:
           node --check assets/licoes/casca.js
           python tools/licoes_lente.py --verificar
           python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
+          python tools/cidadania_piloto.py --verificar
+          python -m unittest discover -s tests -p 'test_cidadania_piloto.py' -v
+          python -m unittest discover -s tests -p 'test_cidadania_individual.py' -v
           # 30/10/2026: coração do Laboratório (31/10)
           python tools/ideias_piloto.py --verificar
           python tools/medir_opcoes.py --verificar

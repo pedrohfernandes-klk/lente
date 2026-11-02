@@ -40,7 +40,7 @@
     "Que deixem a decisão ao juiz do caso."
    ],
    "c": 0,
-   "f": "O jurado não diz que o acusado está inocente: diz que não tem a certeza e pede para falarem das provas. É o que os dois do vosso júri pedem: separar prova de inferência antes de votar.",
+   "f": "O jurado não diz que o acusado está inocente: diz que não tem a certeza e pede para falarem das provas. É o que os dois jurados do caso pedem: separar prova de inferência antes de votar.",
    "fe": [
     "",
     "Ele não pede que o sigam. Pede tempo para examinar as provas antes de decidir.",
@@ -190,7 +190,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O Tribunal de turma",
-   "html": "<p><b>O que se faz.</b> O Tribunal de turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.</p>"
+   "html": "<p><b>O que se faz.</b> Analisa individualmente o dossiê do Tribunal de turma. Lê a acusação, a defesa e os três depoimentos. Regista uma decisão inicial com uma razão; distingue provas de inferências e escreve a melhor objeção à tua decisão. Depois revê-a. Não representes a colega do caso.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: decisão, duas provas citadas, uma dúvida razoável e uma posição contrária fundamentada. Junta as tuas notas e a decisão inicial.</p>"
   },
   {
    "t": "escolha",
@@ -223,8 +223,8 @@
    "t": "completar",
    "g": "acordao",
    "p": "Completa o que leva o acórdão do Tribunal de turma.",
-   "p2": "Que palavras completam o acórdão da turma?",
-   "frase": "O acórdão da turma tem a decisão, duas [1] citadas, uma [2] e um voto [3].",
+   "p2": "Que palavras completam o teu acórdão?",
+   "frase": "O teu acórdão tem a decisão, duas [1] citadas, uma [2] e uma posição [3].",
    "lacunas": [
     {
      "o": [
@@ -244,15 +244,15 @@
     },
     {
      "o": [
-      "vencido",
-      "secreto",
-      "anulado"
+      "contrária",
+      "favorável",
+      "definitiva"
      ],
      "c": 0
     }
    ],
-   "f": "Um acórdão mostra porque se decidiu: as provas citadas, a dúvida que ficou e o voto de quem perdeu, com a razão. Quem o lê percebe o caminho, não só o resultado.",
-   "fe": "Pensa no que o acórdão tem de mostrar: com que provas se decidiu, que dúvida ficou e quem votou contra."
+   "f": "O teu acórdão mostra porque decidiste: as provas citadas, a dúvida que ficou e uma posição contrária, com a razão. Quem o lê percebe o caminho, não só o resultado.",
+   "fe": "Pensa no que o teu acórdão tem de mostrar: com que provas decidiste, que dúvida ficou e que razão se pode opor à tua decisão."
   },
   {
    "t": "escolha",
@@ -285,7 +285,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Uma decisão de muitos vale o que valem as provas que a sustentam.</p><p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o vosso júri decidiu pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p><p><b>As frases da sessão</b></p><ul><li>Votar conta posições; deliberar pesa razões.</li><li>Todos se presumem inocentes até prova em contrário.</li><li>Uma captura de ecrã mostra um nome, não mostra quem fez.</li><li>Quem pode ser castigado tem direito a ser ouvido (artigo 32.º, n.º 10).</li></ul>"
+   "html": "<p class=\"levar\">Uma decisão de muitos vale o que valem as provas que a sustentam.</p><p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: decidiste pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p><p><b>As frases da sessão</b></p><ul><li>Votar conta posições; deliberar pesa razões.</li><li>Todos se presumem inocentes até prova em contrário.</li><li>Uma captura de ecrã mostra um nome, não mostra quem fez.</li><li>Quem pode ser castigado tem direito a ser ouvido (artigo 32.º, n.º 10).</li></ul>"
   }
  ]
 }

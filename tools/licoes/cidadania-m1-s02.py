@@ -21,7 +21,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Quem decide o que se faz com a tua imagem?</p>'
  '<p>Caso inventado. No ensaio de quinta-feira, a Marta aceitou ser filmada para o grupo rever a cena. Aos 40 segundos, escorrega e cai. O grupo acha que a cena ficou ótima e quer publicar o vídeo na conta da escola.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ver uma fotografia de 1910, separar filmar de publicar e escrever o pedido de consentimento do teu grupo.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ver uma fotografia de 1910, separar filmar de publicar e escrever o teu pedido de consentimento.</p>')
 DECIDE = (
  '<p>O grupo pode publicar o vídeo do ensaio?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -37,10 +37,11 @@ FOTO = (
  '<p>Nos arquivos do National Child Labor Committee, a legenda desta fotografia dá o nome da rapariga, a idade e a fábrica onde trabalhava.</p>'
  '<p class="pergunta-c">A legenda dá o nome e a idade da Addie. Uma boa causa chega para tornar público o nome de uma criança?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Em grupos de três, quatro situações em papel: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, o grupo decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, escreve o pedido de consentimento para as entrevistas da Pergunta Humana.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O pedido de consentimento do grupo (para quê, que uso, onde fica, como se retira) e a decisão revista de uma das situações. O pedido entra no dossiê da Pergunta Humana.</p>')
+'<p><b>O que se faz.</b> Analisa individualmente quatro situações em papel: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, decide, lê o efeito, recebe uma informação nova e revê. No fim, escreve o teu pedido de consentimento para as entrevistas da Pergunta Humana.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu pedido de consentimento (para quê, que uso, onde fica, como se retira) e a tua decisão revista de uma das situações. O pedido entra no teu dossiê da Pergunta Humana.</p>')
 VIDEO = (
  # 31/10/2026 (docente, ponto de situação): sai o excerto da TED de Sam Gregory; entra o vídeo sugerido pelo docente, do sítio
  # oficial australiano Bullying. No Way! (bullyingnoway.gov.au liga ao canal @BullyingNoWay-ls7je; oEmbed conferido a 31/10).
@@ -112,8 +113,8 @@ cartoes = [
   "f":"A Constituição diz que o sigilo da correspondência e dos outros meios de comunicação privada é inviolável (artigo 34.º, n.º 1). A Convenção sobre os Direitos da Criança também protege a correspondência (artigo 16.º).",
   "fe":["","A liberdade de expressão protege o que tu pensas e dizes. Não te dá a conversa de outra pessoa para mostrar.","Ninguém impediu o grupo de se reunir. O que está em causa é uma conversa que era só de duas pessoas."]},
  {"t":"emparelhar","g":"projeto","p":"Frases do pedido de consentimento para as entrevistas da Pergunta Humana. Liga cada frase à parte do pedido que cumpre.","p2":"Que parte do pedido de consentimento cumpre cada uma destas frases?",
-  "pares":[["A entrevista serve para o nosso teatro-documento.","Para quê"],["Só usamos a tua voz, sem mostrar a cara.","Que uso"],["A gravação fica no computador da escola até julho.","Onde fica e até quando"],["Podes desistir até ao dia do ensaio.","Como se retira"]],
-  "f":"Um pedido completo responde às quatro perguntas da Marta: para quê, que uso, onde fica e até quando, e como se retira. É este o pedido que o teu grupo leva para as entrevistas.",
+  "pares":[["A entrevista serve para o meu teatro-documento.","Para quê"],["Só uso a tua voz, sem mostrar a cara.","Que uso"],["A gravação fica no computador da escola até julho.","Onde fica e até quando"],["Podes desistir até ao dia do ensaio.","Como se retira"]],
+  "f":"Um pedido completo responde às quatro perguntas da Marta: para quê, que uso, onde fica e até quando, e como se retira. É este o pedido que levas para as tuas entrevistas.",
   "fe":"Pergunta a cada frase: diz para que serve, como se usa, onde fica ou como se desiste?"},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]

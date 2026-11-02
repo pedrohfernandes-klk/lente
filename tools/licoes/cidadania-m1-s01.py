@@ -18,10 +18,11 @@ CONCEITO = (
  '<ul><li><b>Declaração Universal dos Direitos Humanos</b> (Nações Unidas, Paris, 10 de dezembro de 1948): uma declaração, não um tratado.</li>'
  '<li><b>Convenção sobre os Direitos da Criança</b> (1989): um tratado. Portugal ratificou-o em 1990, por isso obriga o Estado.</li>'
  '<li><b>Constituição da República Portuguesa</b>: a lei mais alta do país. O artigo 16.º manda ler os direitos fundamentais de acordo com a Declaração.</li></ul>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, em grupos de três, o mapa de direitos: na planta da escola, colada na parede, cada grupo põe post-its com uma situação real ou possível e o número do artigo que a protege.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O teu Ponto de partida e dois post-its do teu grupo, com a situação e o artigo. O mapa fica fotografado para a sessão 10.</p>')
+'<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, faz o teu mapa de direitos: numa planta da escola, põe post-its com situações reais ou possíveis e o número do artigo que protege cada uma. Onde dois direitos chocam, desenha uma seta e explica qual pesa mais naquele caso.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> O teu Ponto de partida, o teu mapa e dois post-its teus, com a situação e o artigo. Guarda uma fotografia do mapa para a sessão 10.</p>')
 # 30/10/2026 (pedido do docente: «falta imagem e vídeo»): a fotografia de 1949, com a tabela de museu colada a ela, e
 # o vídeo do TED-Ed, com uma tarefa tirada das três perguntas da descrição oficial do vídeo.
 CARTAZ = (

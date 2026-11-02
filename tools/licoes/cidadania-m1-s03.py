@@ -19,7 +19,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Uma regra igual para todos pode deixar alguém de fora?</p>'
  '<p>Caso inventado. A mostra de fim de período vai ser no primeiro andar, sem elevador. O Rui usa cadeira de rodas. A turma diz-lhe que depois lhe manda o vídeo.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ler uma placa de 1943, encontrar barreiras e propor uma solução com orçamento; no fim, a pergunta do teu grupo.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ler uma placa de 1943, encontrar barreiras e propor uma solução com orçamento; no fim, a tua pergunta.</p>')
 DECIDE = (
  '<p>A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -36,10 +36,11 @@ PLACA = (
  '<p>Numa estação de autocarros dos Estados Unidos, a placa aponta a «sala de espera para pessoas de cor» (tradução nossa). A regra está escrita: separa as pessoas pela cor da pele.</p>'
  '<p class="pergunta-c">Esta regra estava escrita numa placa. Na tua escola, que barreira deixa alguém de fora sem estar escrita em lado nenhum?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
+# 02/11/2026: decisão 138, trabalho e entrega individuais; casos narrados preservados.
 NA_AULA = (
- '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. O grupo decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, escolhe e delimita a pergunta do grupo para a Pergunta Humana.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a pergunta do grupo.</p>')
+'<p><b>O que se faz.</b> Lê as quatro cartas de perspetiva: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide individualmente como gastar cinco unidades: mudar de sala custa três, texto para acompanhar por escrito custa uma, transmitir custa uma. Recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, escolhe e delimita a tua pergunta para a Pergunta Humana.</p>'
+'<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
+'<p><b>O que fica escrito.</b> A tua proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a tua pergunta.</p>')
 VIDEO = (
  '<p>Um vídeo curto do TED-Ed, numa lição de Adrian Treharne, sobre o símbolo internacional de acesso, o da cadeira de rodas. É em inglês: liga as legendas no leitor.</p>'
  '<p class="pergunta-c">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p>'
@@ -107,10 +108,10 @@ cartoes = [
   "pares":[["Todos são iguais perante a lei","Constituição, artigo 13.º"],["Nenhuma autoridade te pode perguntar a religião","Constituição, artigo 41.º"],["A criança com deficiência participa na comunidade","Convenção, artigo 23.º"],["Os direitos valem para todas as crianças, sem discriminação","Convenção, artigo 2.º"]],
   "f":"A Constituição diz que todos são iguais perante a lei (13.º, n.º 1) e que nenhuma autoridade te pode perguntar a religião, salvo para estatísticas sem identificação (41.º, n.º 3). A Convenção garante os direitos a todas as crianças sem discriminação (2.º) e a participação ativa da criança com deficiência (23.º).",
   "fe":"Repara em quem é protegido: todos os cidadãos (Constituição) ou as crianças (Convenção)."},
- {"t":"escolha","g":"pergunta","p":"Qual das perguntas pode o grupo investigar na escola e no bairro, até ao fim do módulo?","p2":"Para a Pergunta Humana, que pergunta pode o grupo investigar com fontes e testemunhos?",
+ {"t":"escolha","g":"pergunta","p":"Qual das perguntas podes investigar na escola e no bairro, até ao fim do módulo?","p2":"Para a Pergunta Humana, que pergunta podes investigar com fontes e testemunhos?",
   "o":["Que barreiras encontram os alunos com cadeira de rodas na escola?","Porque é que existe discriminação em todas as sociedades humanas?","A nossa escola é acessível, sim ou não, para toda a gente?"],"c":0,
   "f":"Uma boa pergunta é delimitada (um lugar, um grupo, um tempo) e pede uma resposta que se investiga com fontes e testemunhos. As outras são amplas demais ou respondem-se com sim ou não.",
-  "fe":["","É uma pergunta importante, mas grande demais para um grupo responder num módulo, com fontes da escola e do bairro.","Responde-se com sim ou não e fecha a investigação. Que barreiras, para quem e onde?"]},
+  "fe":["","É uma pergunta importante, mas grande demais para responderes num módulo, com fontes da escola e do bairro.","Responde-se com sim ou não e fecha a investigação. Que barreiras, para quem e onde?"]},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]
 dados = {
