@@ -15,7 +15,7 @@
   "rotulo": "As sete sessões"
  },
  "saida": "narrativas/ideias/sessao-01/index.html",
- "piloto": true,
+ "piloto": false,
  "seguinte": "../sessao-02/",
  "seguinteRotulo": "Sessão 2: O cocheiro",
  "fontes": "Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
@@ -264,20 +264,20 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Em grupos de três, vão a um lugar da escola por onde todos passam (a escada, o portão, o bar). Cada um regista os seus factos, um por nota; o grupo escolhe dez que outro grupo possa confirmar e <span class=\"nq\">junta-lhes</span> três inferências e uma pergunta. Depois, os grupos trocam de lugar e confirmam ou desmentem os factos uns dos outros. Pelo caminho, contam os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O auto de observação do grupo, no guião; os teus factos, onde guardas o material; o número de degraus, contado por dois grupos.</p>"
+   "html": "<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Depois, verifica individualmente os factos registados por um colega e marca cada um como confirmado ou desmentido. Pelo caminho, conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material; o número de degraus, conferido por outra pessoa.</p>"
   },
   {
    "t": "escolha",
    "g": "confirmar",
-   "p": "Três registos inventados de um auto de observação. Qual deles é um facto que outro grupo possa ir confirmar?",
-   "p2": "Registos inventados, sobre uma escada da escola: que registo pode outro grupo ir confirmar?",
+   "p": "Três registos inventados de um auto de observação. Qual deles é um facto que outra pessoa possa ir confirmar?",
+   "p2": "Registos inventados, sobre uma escada da escola: que registo pode outra pessoa ir confirmar?",
    "o": [
     "O corrimão tem três parafusos soltos à esquerda.",
     "A escada parece mais antiga do que a escola.",
     "Quem sobe esta escada anda sempre com pressa."
    ],
    "c": 0,
-   "f": "Três parafusos soltos contam-se: outro grupo pode ir lá confirmar ou desmentir. A idade que a escada parece ter é uma impressão, e o «sempre» faz da pressa uma generalização.",
+   "f": "Três parafusos soltos contam-se: outra pessoa pode ir lá confirmar ou desmentir. A idade que a escada parece ter é uma impressão, e o «sempre» faz da pressa uma generalização.",
    "fe": [
     "",
     "A palavra «parece» denuncia a impressão. Que pormenor te fez achar que é antiga? Esse pormenor, sim, é um facto.",
@@ -350,7 +350,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste o que se vê do que se conclui, num quadro e na escola. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Ver, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
+   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste o que se vê do que se conclui, num quadro e na escola. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
   }
  ]
 }

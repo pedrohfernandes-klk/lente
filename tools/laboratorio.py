@@ -29,6 +29,17 @@ def pic(base,b):
     m=IM[b]
     return ('<figure class="arquivo"><img src="'+link(base,m['file'])+'" width="'+str(m['width'])+'" height="'+str(m['height'])+'" alt="'+e(m['alt'])+'" style="--foco:'+e(m['foco'])+'" loading="lazy">'
             '<figcaption>'+credito(m)+'<span class="legenda">'+e(m['reason'])+'</span></figcaption></figure>')
+def ideias_publicadas():
+    # 02/11/2026: decisão 141. A lista acompanha apenas as sessões publicadas.
+    fontes=sorted((R/'tools/licoes').glob('ideias-s*.json'))
+    sessoes=[json.loads(p.read_text('utf-8')) for p in fontes]
+    sessoes=[d for d in sessoes if not d.get('piloto') and (R/d['saida']).exists()]
+    return ('<section class="ideias-publico" aria-labelledby="ideias-publico-t"><h2 id="ideias-publico-t">Ideias: o método em cinco passos</h2>'
+            '<p>Junta material, trabalha-o e põe uma ideia tua à prova, passo a passo.</p>'
+            '<nav aria-label="Ideias"><a class="cz-button" href="ideias/">Abrir Ideias →</a>'
+            + ''.join('<a class="cz-button" href="'+link('narrativas',d['saida'].removesuffix('index.html'))+'">'+e(d['titulo'])+' →</a>' for d in sessoes)
+            + '</nav></section>')
+
 def start(base,ids):
     p=P[ids[0]]
     return '<a class="continuar" data-continuar="'+e(json.dumps(ids))+'" href="'+link(base,p['url'])+'">Começar: '+e(p['title'])+'\u00a0→</a>'
@@ -84,7 +95,7 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     cur=cur or {}
-    nav=(a(base,'','Lente')+a(base,'narrativas/','Laboratório',cur.get('lab',''))
+    nav=(a(base,'','Lente')+a(base,'narrativas/','Laboratório',cur.get('lab',''))+(a(base,'narrativas/ideias/','Ideias') if base in CARTAZ_ENTRADAS else '')
          +''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])+'<span data-appearance-control></span>')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
@@ -107,7 +118,7 @@ def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
 
 # Entrada
 allids=[p for r in D['routes'] for p in r['pieces']]
-body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div class="lab-saiu"><p class="lead">Observa uma escolha, experimenta uma regra e cria uma peça tua.</p></div></header>'+start('narrativas',allids)+'<div class="blocos">'
+body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div class="lab-saiu"><p class="lead">Observa uma escolha, experimenta uma regra e cria uma peça tua.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos">'
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
@@ -210,6 +221,8 @@ def mapa():
         return ('<li><details class="map-branch"><summary><span>'+nome+'</span><b aria-hidden="true">+</b></summary><div class="map-branch-body">'
                 '<p class="map-open"><a href="'+abrir+'">Abrir '+nome+seta+'</a></p>'+extra+'<ul class="map-tree">'+dentro+'</ul></div></details></li>')
     out=ini+'Laboratório</a></h2><p class="map-open"><a href="'+ABS+'narrativas/tudo/">Tudo o que há no Laboratório'+seta+'</a></p><ul class="map-tree">'
+    # 02/11/2026: decisão 141, acesso público antes das três portas.
+    out+='<li class="map-leaf"><a href="'+ABS+'narrativas/ideias/">Ideias: o método em cinco passos</a></li>'
     for b in D['blocks']:
         extra=('<p class="map-open"><a href="'+ABS+'narrativas/treinar/caderno/">O caderno de treino</a></p><p class="map-open"><a href="'+ABS+'narrativas/treinar/docente/">Como conduzir um treino (docente)</a></p>') if b['id']=='treinar' else ''
         rs=''.join(ramo(e(r['title']),ABS+'narrativas/percursos/'+r['id']+'/',''.join('<li class="map-leaf"><a href="'+ABS+P[id]['url']+'">'+e(P[id]['title'])+'</a></li>' for id in r['pieces'])) for r in routes_of(b))
