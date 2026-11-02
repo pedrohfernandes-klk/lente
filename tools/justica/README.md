@@ -35,3 +35,11 @@ O teto de 26 cartões mantém-se. O validador cobre as palavras proibidas, a pon
 O molde novo exige pelo menos 14 atividades, cinco tipos sem escrita, no máximo uma escrita, nunca três atividades seguidas do mesmo tipo, «Na aula», imagem no «Abre», «Olha» logo a seguir e «No fim, consegues». A navegação é lida pelo manifesto; o teste exige índice, anterior e seguinte. Os menus existentes ficam preservados na fase 0.
 
 `desenhos.py` e `desenhos.json` conservam as primitivas do desenho a traço. A tabela de comparação está em `docs/qa/justica-fase0-20261102.md`. O redesenho e as imagens documentais pertencem à fase 1. Nenhuma imagem documental foi acrescentada nesta fase.
+# Produção livre e sequência do molde novo
+
+02/11/2026: os achados L95-01 e L95-02 corrigem a interpretação das regras, sem alterar os tetos. `frase` e `versos` ordenam material dado: contam para a variedade sem escrita. Só `escrita` é produção livre pelo tipo. Um cartão `ler` que peça produção livre em papel declara `"producao_livre": true`; esse pedido entra no mesmo teto de uma produção por lição. O campo é booleano e só se aplica a `ler`. A autoria tem de o declarar, sem inferência automática a partir do texto.
+
+`validar_molde_novo` verifica a sequência apresentada ao aluno, incluindo as leituras. Três escolhas separadas por leituras não são consecutivas; três leituras seguidas são. Quando houver variantes, o chamador entrega a sequência já selecionada. A contagem de atividades continua a excluir `ler`.
+
+Os testes sintéticos exercem estas regras mesmo enquanto todos os bancos publicados têm `molde_novo=false`: ordenações com uma escrita; duas escritas; produção livre dentro de leituras; marcação inválida; escolhas intercaladas; três escolhas ou três leituras consecutivas. A validação geral do banco chama também estas regras quando recebe `novo=true`.
+

@@ -97,20 +97,50 @@ class BasesJustica(unittest.TestCase):
         for m in MANIFESTO:
             if not m['molde_novo']:
                 continue
-            itens = banco(m['numero']); fazer = [x for x in itens if x['t'] != 'ler']
-            self.assertTrue(20 <= len(itens) <= 26)
-            self.assertGreaterEqual(len(fazer), 14)
-            escrita = {'escrita', 'frase', 'versos'}
-            self.assertLessEqual(sum(x['t'] in escrita for x in fazer), 1)
-            self.assertGreaterEqual(len({x['t'] for x in fazer} - escrita), 5)
-            for a,b,c in zip(fazer, fazer[1:], fazer[2:]):
-                self.assertFalse(a['t']==b['t']==c['t'])
-            self.assertEqual(sum(x.get('rot')=='Na aula' for x in itens), 1)
-            self.assertEqual(itens[0]['rot'], 'Abre')
-            self.assertIn('No fim, consegues', itens[0]['html'])
-            self.assertRegex(itens[0]['html'], r'<img\b')
-            self.assertEqual(itens[1]['rot'], 'Olha')
-            self.assertEqual(itens[1]['t'], 'mapa')
+            self.assertEqual(V.validar_molde_novo(banco(m['numero'])), [])
+
+    def molde_de_prova(self):
+        # 02/11/2026: prova independente dos bancos antigos, todos molde_novo=false.
+        tipos = ['escolha', 'ler', 'escolha', 'ler', 'escolha', 'frase',
+                 'versos', 'vf', 'frase', 'versos', 'vf', 'escolha',
+                 'escrita', 'frase', 'versos', 'vf', 'escolha', 'ler']
+        return [{'t':'ler', 'rot':'Abre', 'html':'<img src="exemplo.svg">No fim, consegues comparar.'},
+                {'t':'mapa', 'rot':'Olha'}] + [dict(t=t) for t in tipos[:-1]] + [{'t':'ler', 'rot':'Na aula'}]
+
+    def test_molde_ordena_palavras_e_versos_sem_contar_como_escrita(self):
+        # 02/11/2026: L95-01; frase e versos contam também para os cinco tipos.
+        itens = self.molde_de_prova()
+        self.assertEqual(V.validar_molde_novo(itens), [])
+        itens[7]['t'] = 'escrita'
+        self.assertIn('producao_livre', V.validar_molde_novo(itens))
+
+    def test_molde_conta_producao_livre_em_leitura(self):
+        # 02/11/2026: L95-01; produção em papel não desaparece dentro de ler.
+        itens = self.molde_de_prova()
+        itens[-1]['producao_livre'] = True
+        self.assertIn('producao_livre', V.validar_molde_novo(itens))
+        next(x for x in itens if x['t'] == 'escrita')['t'] = 'vf'
+        self.assertEqual(V.validar_molde_novo(itens), [])
+        itens[3]['producao_livre'] = True
+        self.assertIn('producao_livre', V.validar_molde_novo(itens))
+        itens[3]['producao_livre'] = 'sim'
+        self.assertIn('marcacao_producao_livre', V.validar_molde_novo(itens))
+
+    def test_molde_mede_sucessao_visivel_incluindo_leituras(self):
+        # 02/11/2026: L95-02; escolha/ler/escolha/ler/escolha não são três seguidas.
+        itens = self.molde_de_prova()
+        self.assertEqual(V.validar_molde_novo(itens), [])
+        itens[3]['t'] = 'escolha'
+        self.assertIn('sucessao', V.validar_molde_novo(itens))
+        itens = self.molde_de_prova()
+        itens[2]['t'] = 'ler'; itens[4]['t'] = 'ler'
+        self.assertIn('sucessao', V.validar_molde_novo(itens))
+
+    def test_validacao_do_banco_aplica_molde_novo(self):
+        # 02/11/2026: o caminho usado pelo gerador não pode ignorar a regra.
+        itens = self.molde_de_prova()
+        itens[3]['t'] = 'escolha'
+        self.assertIn('L4: molde novo: sucessao', V.validar_banco(itens, 4, True))
 
 
 if __name__ == '__main__':
