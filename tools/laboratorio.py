@@ -49,8 +49,8 @@ CARTAZ_ENTRADAS={'narrativas','narrativas/ver','narrativas/treinar','narrativas/
 def cartaz_body(base,body):
     # 01/11/2026: a mesma peça de continuação tem título, estado e uma ação.
     def next_region(m):
-        ids=json.loads(html.unescape(re.search(r'data-continuar="([^"]+)"',m[0])[1]))
-        return '<section class="cz-next" aria-labelledby="cz-prox"><p class="cz-label">A seguir</p><h2 id="cz-prox">'+e(P[ids[0]]['title'])+'</h2><p data-cz-estado></p>'+re.sub(r'>[^<]*</a>$','>Começar →</a>',m[0])+'</section>'
+        # 02/11/2026: decisão 134 (docente). Sem a caixa «A seguir»: a ligação de continuar fica escondida, só para o progresso marcar a peça seguinte nas linhas.
+        return m[0].replace('<a class="continuar"','<a class="continuar" hidden',1)
     body=re.sub(r'<a class="continuar".*?</a>',next_region,body,count=1,flags=re.S)
     body=body.replace('class="continuar"','class="continuar cz-button primary"')
     body=body.replace('class="arquivo"','class="arquivo cz-museum"').replace('<figcaption>','<figcaption class="cz-credit">')

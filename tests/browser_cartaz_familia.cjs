@@ -14,8 +14,8 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  await page.route('https://pedrohfernandes-klk.github.io/lente/**',async route=>{const u=new URL(route.request().url());const response=await ctx.request.get(origin+u.pathname+u.search);await route.fulfill({response});});
  await page.goto(origin+'/lente/'+pagePath,{waitUntil:'networkidle'});
  // 01/11/2026: 320 e 1024 px, títulos sem transbordo e retoma completa.
- // 02/11/2026: decisão 131 (docente). A entrada do Lente deixa a caixa «A seguir»; as entradas do Laboratório mantêm-na.
- assert.deepEqual(errors,[]);assert.equal(await page.locator('.cz-next').count(),pagePath===''?0:1);
+ // 02/11/2026: decisões 131 e 134 (docente). Nem a entrada do Lente nem as entradas do Laboratório têm a caixa «A seguir».
+ assert.deepEqual(errors,[]);assert.equal(await page.locator('.cz-next').count(),0);
  assert.equal(await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0,pagePath);
  for(const sel of ['.cz-next .cz-button','.cz-fold>summary'])for(const box of await page.locator(sel).all()){const r=await box.boundingBox();assert.ok(r.height>=(sel.includes('summary')?88:48),`${pagePath} ${sel}: ${r.height}`);}
  const clipped=await page.locator('.modulo h3').evaluateAll(es=>es.filter(e=>e.scrollWidth>e.clientWidth).map(e=>e.textContent));assert.deepEqual(clipped,[],'títulos dos percursos');
@@ -24,8 +24,8 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  // 02/11/2026: regressões da confirmação, imagem sem caixa 3:2 e largura útil da legenda.
  if(pagePath==='narrativas/'&&width===390)assert.ok(await page.evaluate(()=>document.documentElement.scrollHeight)<3000,'Laboratório abaixo de 3000 px');
  if(pagePath.startsWith('narrativas/')&&width>=1024){
-  const layout=await page.evaluate(()=>{const r=s=>document.querySelector(s).getBoundingClientRect();return {main:r('main').width,next:r('.cz-next').width,x:r('.cz-next').x,top:r('.topo').right,title:getComputedStyle(document.querySelector('.cz-next h2')).fontSize,folds:[...document.querySelectorAll('.unidade.cz-fold')].map(e=>e.getBoundingClientRect().width)};});
-  assert.equal(layout.title,'25px');assert.ok(layout.x>=layout.top+23,'A seguir à direita da abertura');
+  const layout=await page.evaluate(()=>{const r=s=>document.querySelector(s).getBoundingClientRect();return {main:r('main').width,folds:[...document.querySelectorAll('.unidade.cz-fold')].map(e=>e.getBoundingClientRect().width)};});
+  // 02/11/2026: decisão 134. Sem a caixa «A seguir», deixa de se medir a região ao lado da abertura; as dobras continuam à largura útil.
   for(const w of layout.folds)assert.ok(Math.abs(w-(layout.main-32))<=1,'dobras ocupam toda a largura útil');
   if(pagePath!=='narrativas/'){
    const museum=await page.locator('main>.cz-museum').evaluate(e=>({height:e.getBoundingClientRect().height,caption:e.querySelector('figcaption').getBoundingClientRect().width,ratio:getComputedStyle(e.querySelector('img')).aspectRatio}));
@@ -57,7 +57,8 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),p=await ctx.newPage();
  for(const route of pages){await p.goto(origin+'/lente/'+route);assert.equal(await p.locator('.cz-fold:not([open])').count(),0,'sem JavaScript');
  // 02/11/2026: o botão sem JavaScript não repete o título, mas conserva o destino.
- if(route.startsWith('narrativas/'))assert.equal((await p.locator('.cz-next .continuar').textContent()).replace(/\s+/g,' '),'Começar →');}
+ // 02/11/2026: decisão 134. A caixa saiu; a ligação de continuar fica escondida, com o destino, só para o progresso.
+ if(route.startsWith('narrativas/')){assert.equal(await p.locator('.cz-next').count(),0);assert.equal(await p.locator('a.continuar[hidden][data-continuar]').count(),1);assert.ok(await p.locator('a.continuar[hidden]').getAttribute('href'));}}
  await ctx.close();
  if(lab){const ctx=await browser.newContext({viewport:{width:390,height:900}});const data=JSON.parse(fs.readFileSync(path.join(root,'assets/laboratorio/percursos.json'),'utf8')),item=data.pieces.find(p=>p.progress.kind==='feitas'),key=item.progress.key,id=item.progress.id;
  const value={feitas:{[id]:Date.UTC(2026,10,1,12)}};await ctx.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key,value});
