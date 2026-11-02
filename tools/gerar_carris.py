@@ -42,7 +42,7 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 DESTINO=ROOT/'assets/carris-eletrico.svg'
 PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
-CREDITO='Desenho nosso, EPI, 2026. Um elétrico de Lisboa aproxima-se da agulha e pára antes dela. Duas vias possíveis, sem desfecho.'
+CREDITO='Grafismo gerado com recurso a IA, EPI, 2026. Um elétrico de Lisboa aproxima-se da agulha e pára antes dela. Duas vias possíveis, sem desfecho.'
 
 def instalar(texto):
     desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'

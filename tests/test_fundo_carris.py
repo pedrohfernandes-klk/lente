@@ -41,6 +41,9 @@ class FundoCarris(unittest.TestCase):
         self.assertIn(lead + '\n<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36"><svg ', HTML)
         # 02/11/2026: encargo das 20h, crédito descreve a nova cena, não afirma uma reconstituição histórica.
         self.assertIn('<p class="jc-credito">'+GERADOR.CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>', HTML)
+        # 02/11/2026: atribuição editorial expressa do docente, também nos grafismos vetoriais.
+        self.assertIn('Grafismo gerado com recurso a IA, EPI, 2026.', HTML)
+        self.assertNotIn('Desenho nosso', HTML)
         self.assertNotIn('jc-anda', HTML, 'o movimento só se liga pelo script')
         self.assertEqual(HTML.count('class="jc-alavanca"'), 1)
         self.assertEqual(HTML.count('class="jc-eletrico"'), 1)
