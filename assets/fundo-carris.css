@@ -1,0 +1,30 @@
+/* 02/11/2026: decisão 125 (docente). Fundo animado a traço «Os carris» (protótipo 04) na entrada da Justiça.
+   Desenho nosso. Numa faixa abaixo da apresentação: a página é de texto corrido e o texto não muda.
+   Parado é o estado de partida: sem JavaScript, com movimento reduzido e na projeção, a alavanca fica a meio e os dois ramos
+   iguais, a preto (não escolhe por ti); na impressão, o desenho não sai. Os dois lados têm o mesmo tempo, ao segundo. */
+.ju .jc-fundo{--jc-alt:420px;--jc-acento:#a84939;--op-meio:.7;--op-fundo:.4;position:relative;overflow:hidden;height:calc(var(--jc-alt) * .44);margin:28px 0 0;color:var(--tinta,#000);pointer-events:none}
+@media(min-width:640px){.ju .jc-fundo{--jc-alt:540px}}
+@media(min-width:960px){.ju .jc-fundo{--jc-alt:clamp(600px,78vh,760px)}}
+:root[data-theme=dark] .ju .jc-fundo{--jc-acento:#e0876f}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .ju .jc-fundo{--jc-acento:#e0876f}}
+/* a cena tem a proporção do protótipo (1440 × 760) e assenta no fundo da faixa: só se vê a parte de baixo, onde vive a via */
+.ju .jc-fundo>svg{position:absolute;bottom:0;left:50%;width:min(max(100%,calc(var(--jc-alt) * 1440 / 760)),2400px);max-width:none;height:auto;aspect-ratio:1440/760;transform:translateX(-50%);overflow:visible}
+@media(min-width:960px){.ju .jc-fundo>svg{left:auto;right:0;transform:none}}
+.ju .jc-fundo svg *{vector-effect:non-scaling-stroke}
+.ju .jc-ramo{color:var(--tinta,#000)}
+@media(max-width:959px){.ju .jc-via-pos{transform:translateX(-173px)}.ju .jc-alav-pos{transform:translate(958px,746px) scale(.84)}}
+.ju .jc-credito{margin:8px 0 0;font:400 .8125rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
+@keyframes jc-tv{0%{transform:translate(893px,626px) scale(121.6,1);opacity:0}14%{transform:translate(893px,641.5px) scale(132.6,1);opacity:0.35}28%{transform:translate(893px,660px) scale(145.9,1);opacity:0.7}42%{transform:translate(893px,682.7px) scale(162.1,1);opacity:0.7}55%{transform:translate(893px,708.7px) scale(180.7,1);opacity:0.7}67%{transform:translate(893px,738.8px) scale(202.2,1);opacity:0.7}78%{transform:translate(893px,773.3px) scale(226.9,1);opacity:0.7}87%{transform:translate(893px,808.6px) scale(252.1,1);opacity:0.7}94%{transform:translate(893px,841.9px) scale(276,1);opacity:0.7}100%{transform:translate(893px,876px) scale(300.3,1);opacity:0.7}}
+@keyframes jc-alav{0%,8.333%{transform:rotate(0)}16.667%,36.111%{transform:rotate(-16deg)}44.444%,58.333%{transform:rotate(0)}66.667%,86.111%{transform:rotate(16deg)}94.444%,100%{transform:rotate(0)}}
+@keyframes jc-lamina{0%,8.333%{transform:rotate(0)}16.667%,36.111%{transform:rotate(-3deg)}44.444%,58.333%{transform:rotate(0)}66.667%,86.111%{transform:rotate(3deg)}94.444%,100%{transform:rotate(0)}}
+@keyframes jc-ramo-e{0%,8.333%{color:var(--tinta);opacity:1}16.667%,36.111%{color:var(--jc-acento);opacity:1}44.444%,58.333%{color:var(--tinta);opacity:1}66.667%,86.111%{color:var(--tinta);opacity:.35}94.444%,100%{color:var(--tinta);opacity:1}}
+@keyframes jc-ramo-d{0%,8.333%{color:var(--tinta);opacity:1}16.667%,36.111%{color:var(--tinta);opacity:.35}44.444%,58.333%{color:var(--tinta);opacity:1}66.667%,86.111%{color:var(--jc-acento);opacity:1}94.444%,100%{color:var(--tinta);opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+html:not(.em-projecao) .ju .jc-anda .jc-tvs path{animation:jc-tv 36s linear infinite}
+html:not(.em-projecao) .ju .jc-anda .jc-alavanca{animation:jc-alav 36s cubic-bezier(.45,.05,.55,.95) infinite}
+html:not(.em-projecao) .ju .jc-anda .jc-lamina{animation:jc-lamina 36s cubic-bezier(.45,.05,.55,.95) infinite}
+html:not(.em-projecao) .ju .jc-anda .jc-ramo-e{animation:jc-ramo-e 36s cubic-bezier(.45,.05,.55,.95) infinite}
+html:not(.em-projecao) .ju .jc-anda .jc-ramo-d{animation:jc-ramo-d 36s cubic-bezier(.45,.05,.55,.95) infinite}
+}
+.ju .jc-fora *{animation-play-state:paused!important}
+@media print{.ju .jc-fundo{display:none}}
