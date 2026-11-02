@@ -307,3 +307,17 @@ test('sem DOM nem armazenamento nem rede nos dois ficheiros de regras', () => {
       assert(!s.includes(proibido), f + ': ' + proibido);
   }
 });
+
+// 02/11/2026: lições de dois algarismos conservam o formato e a leitura do progresso antigo.
+test('Justiça: lições 1, 10 e 13 no resumo, sem perder progresso antigo', () => {
+  const registos = {};
+  for (const n of [1, 10, 13]) registos['lente-justica-licao-' + n] = json({lida: true, melhor: 7, totalMelhor: 8});
+  const g = R.resumir(registos)['Ter juízo: Justiça, Ética e Estética'];
+  assert.equal(R.textoGrupo(g), '3 lições concluídas');
+  for (const n of [1, 10, 13]) {
+    const item = g.itens.find(i => i.chave === 'lente-justica-licao-' + n);
+    assert.equal(item.rotulo, 'Justiça, lição ' + n);
+    assert.match(item.estado, /concluída/);
+    assert.match(item.estado, /7 de 8/);
+  }
+});

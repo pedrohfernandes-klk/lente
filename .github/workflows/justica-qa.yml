@@ -1,0 +1,35 @@
+name: Justiça, bases e regressão
+on:
+  pull_request:
+    paths:
+      - 'tools/justica/**'
+      - 'olhar-e-decidir/justica/**'
+      - 'assets/resultados-turma.js'
+      - 'tests/*justica*'
+      - 'tests/resultados_turma.test.cjs'
+      - '.github/workflows/justica-qa.yml'
+permissions:
+  contents: read
+jobs:
+  bases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Regeneração e todos os testes Python
+        run: |
+          python tools/justica/build.py --verificar
+          python -m unittest discover -s tests -p 'test_*.py' -v
+          node --test tests/resultados_turma.test.cjs
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Telemóvel, projeção e progresso antigo
+        run: node tests/browser_justica.cjs

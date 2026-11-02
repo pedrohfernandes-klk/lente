@@ -1,0 +1,41 @@
+[
+  {
+    "numero": 1,
+    "chave": "lente-justica-licao-1",
+    "video": "kBdfcR-8hEY",
+    "aulas": [
+      1,
+      2
+    ],
+    "anterior": "../",
+    "seguinte": "../licao-2/",
+    "molde_novo": false,
+    "sha256_publicado": "5251a4578c52c3f6ecf396f0ac2fad730ee16536f1c24681fe65cf400e50a905"
+  },
+  {
+    "numero": 2,
+    "chave": "lente-justica-licao-2",
+    "video": "0O2Rq4HJBxw",
+    "aulas": [
+      3,
+      4
+    ],
+    "anterior": "../licao-1/",
+    "seguinte": "../licao-3/",
+    "molde_novo": false,
+    "sha256_publicado": "d4474a8f5e8604321476ceb070d076408e23dcf54672423143e93c0e55eba7ff"
+  },
+  {
+    "numero": 3,
+    "chave": "lente-justica-licao-3",
+    "video": "Qw4l1w0rkjs",
+    "aulas": [
+      5,
+      6
+    ],
+    "anterior": "../licao-2/",
+    "seguinte": "../aplicar/",
+    "molde_novo": false,
+    "sha256_publicado": "fe069a8318d0982fd705a3f29d52446f369c782150c9919e3924f426aa2ff4c0"
+  }
+]
