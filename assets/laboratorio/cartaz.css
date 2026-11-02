@@ -1,8 +1,6 @@
 /* 01/11/2026: decisão 57, apenas as entradas do Laboratório. */
 [data-cartaz-laboratorio]{max-width:1200px;padding:24px 16px 64px;color:var(--cz-ink)}
 [data-cartaz-laboratorio] .topo{margin-bottom:32px}
-[data-cartaz-laboratorio] .cz-next .continuar{width:100%;margin:0;font-size:16px}
-[data-cartaz-laboratorio] .cz-next .cz-label{margin:0 0 16px}
 [data-cartaz-laboratorio] .blocos{gap:40px}
 [data-cartaz-laboratorio] .bloco{padding:0;border:0;background:transparent}
 [data-cartaz-laboratorio] .bloco>header{padding:24px;background:var(--cz-paper)}
@@ -49,8 +47,6 @@
 [data-cartaz-laboratorio] .topo .pergunta{font-size:var(--cz-t20)}
 @media(min-width:640px){[data-cartaz-laboratorio] .topo h1{font-size:var(--cz-t61)}}
 /* 01/11/2026: revisão curta, percursos em linhas e títulos nas dobras. */
-[data-cartaz-laboratorio] .cz-next .continuar{width:auto;display:inline-flex}
-[data-cartaz-laboratorio] .cz-next [data-cz-estado]:empty{display:none}
 [data-cartaz-laboratorio] .blocos .modulos{display:grid;grid-template-columns:1fr;padding:0;gap:2px}
 [data-cartaz-laboratorio] .blocos .modulo{padding:0;border:0;margin:0;min-width:0}
 [data-cartaz-laboratorio] .blocos .modulo>.cz-row{display:grid;grid-template-columns:24px minmax(0,1fr) auto 16px;gap:8px;padding:16px;min-height:88px;border:0;border-bottom:2px solid var(--cz-ground);text-decoration:none;color:var(--cz-ink)}
@@ -65,15 +61,14 @@
 @media(min-width:900px){[data-cartaz-laboratorio]>.cz-museum{display:grid;max-width:none;width:fit-content;grid-template-columns:auto minmax(0,60ch);align-items:end;gap:24px}[data-cartaz-laboratorio]>.cz-museum img{max-height:360px}}
 @media(max-width:639px){[data-cartaz-laboratorio] .passos .cz-row{grid-template-columns:24px minmax(0,1fr) 16px}[data-cartaz-laboratorio] .passos .cz-row>.arrow{grid-column:3;grid-row:1}[data-cartaz-laboratorio] .blocos .modulo>.cz-row{grid-template-columns:24px minmax(0,1fr) 16px}[data-cartaz-laboratorio] .blocos .modulo>.cz-row>.arrow{grid-column:3;grid-row:1}}
 html.em-projecao [data-cartaz-laboratorio] :is(.contagem,.cz-credit,.legenda,.chip,.cz-row small,.cz-label,.marca,.cz-state){font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz-laboratorio] :is(.passos strong,.passos .descricao,.cz-door p,.mais a,.bloco>header>a,.cz-next p,.cz-next .continuar){font-size:var(--cz-t25)}
-html.em-projecao [data-cartaz-laboratorio] .cz-next .cz-label{font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz-laboratorio] .cz-next h2{font-size:var(--cz-t39)}
+html.em-projecao [data-cartaz-laboratorio] :is(.passos strong,.passos .descricao,.cz-door p,.mais a,.bloco>header>a){font-size:var(--cz-t25)}
 /* 02/11/2026: com as peças da volta 4, a projeção sobe a raiz para 137,5 % e a família lê a escala nessa unidade, como a entrada do Lente (#88); deixa de fixar os degraus em px. Abaixo de 768 px de largura, a raiz volta a 100 %, para nada deslizar. */
 @media(max-width:767px){html.em-projecao:has([data-cartaz-laboratorio]){font-size:100%}html.em-projecao [data-cartaz-laboratorio] :is(.subtitulo,.cz-row>b,.cz-row .arrow,.progresso p,.cz-fold-body .cz-button){font-size:var(--cz-t20)}}
 html.em-projecao [data-cartaz-laboratorio] .blocos .modulo :is(small,.contagem){font-size:var(--cz-t20)}
 /* 02/11/2026: achados 1 a 6, abertura 7/12 + 5/12 e percursos 5/12 + 7/12. */
 [data-cartaz-laboratorio] .blocos .modulo>.cz-row.current{border-left:4px solid var(--cz-current);padding-left:12px}
-@media(min-width:960px){[data-cartaz-laboratorio]{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:24px}[data-cartaz-laboratorio]>*{grid-column:1/-1}[data-cartaz-laboratorio]>.topo{grid-column:1;grid-row:1}[data-cartaz-laboratorio]>.cz-next{grid-column:2;grid-row:1;margin:0;align-self:start}[data-cartaz-laboratorio] .unidade.cz-fold{max-width:none}[data-cartaz-laboratorio] .cz-fold-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:24px;align-items:start}[data-cartaz-laboratorio] .cz-fold-body>:not(.passos){grid-column:1;justify-self:start}[data-cartaz-laboratorio] .cz-fold-body>.passos{grid-column:2;grid-row:1/span 3;margin-top:0}}
+@media(min-width:960px){[data-cartaz-laboratorio] .unidade.cz-fold{max-width:none}[data-cartaz-laboratorio] .cz-fold-body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:24px;align-items:start}[data-cartaz-laboratorio] .cz-fold-body>:not(.passos){grid-column:1;justify-self:start}[data-cartaz-laboratorio] .cz-fold-body>.passos{grid-column:2;grid-row:1/span 3;margin-top:0}}
 @media(max-width:639px){[data-cartaz-laboratorio] .bloco:has(>details.dobra:not([open]))>figure,[data-cartaz-laboratorio] .bloco:has(>details.dobra:not([open]))>header>:not(h2){display:none}[data-cartaz-laboratorio] .bloco:has(>details.dobra:not([open]))>header{padding:16px 24px 0}[data-cartaz-laboratorio] .bloco:has(>details.dobra:not([open]))>details.dobra{margin-top:0}}
 html.em-projecao [data-cartaz-laboratorio] .topo .lead{font-size:var(--cz-t25)}
 html.em-projecao [data-cartaz-laboratorio] .dobra>summary span{font-size:var(--cz-t20)}
+/* 02/11/2026: decisão 134 (docente). Saem a caixa «A seguir» e a grelha 7/5 que a punha ao lado do título; o progresso continua a marcar as linhas. */
