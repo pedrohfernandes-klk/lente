@@ -20,7 +20,9 @@ try{
   const ctx=await context(width,scheme),p=await ctx.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));
   for(const route of ['','cidadania/','cidadania/m1/','cidadania/projeto/','cidadania/m1/biblioteca/','cidadania/m1/sessoes/03/','cidadania/m1/sessoes/04/','cidadania/m1/sessoes/06/','cidadania/m1/sessoes/09/','cidadania/m1/sessoes/']){
    assert.equal((await p.goto(origin+'/lente/'+route)).status(),200);await p.waitForTimeout(80);
-   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width} ${scheme} ${route}`);assert.deepEqual(errors,[],route);
+   // 01/11/2026: conservar o limite e identificar os elementos que transbordam, incluindo fontes alternativas.
+   const overflow = await p.evaluate(()=>({width:document.documentElement.scrollWidth,viewport:innerWidth,elements:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,60)}))}));
+   assert(overflow.width<=overflow.viewport,`${width} ${scheme} ${route}: ${JSON.stringify(overflow)}`);assert.deepEqual(errors,[],route);
    if(route==='cidadania/m1/'){assert.equal(await p.locator('[data-session-card]').count(),10);assert((await p.locator('[data-continue]').getAttribute('href')).includes('03/'));assert(await p.locator('.c10 .epi-projection-menu-link').isVisible());}
    if(width===1440&&scheme==='light'&&['cidadania/m1/','cidadania/m1/sessoes/03/','cidadania/m1/sessoes/06/'].includes(route))await p.screenshot({path:path.join(OUT,route==='cidadania/m1/'?'modulo.png':route.includes('03/')?'sessao-03.png':'sessao-06.png'),fullPage:true});
    if(width===390&&scheme==='dark'&&route==='cidadania/m1/sessoes/09/')await p.screenshot({path:path.join(OUT,'sessao-09-telemovel.png'),fullPage:true});
