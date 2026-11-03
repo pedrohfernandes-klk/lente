@@ -47,3 +47,14 @@ Dois testes de preservação/comparação exata aprovados após o merge. Dezoito
 A revisão automática recusou uma reposição global durante a resolução. Foi adotada resolução delimitada a 35 caminhos, depois de salvaguardar os 41 caminhos divergentes e o índice em outputs/lente109-merge-salvaguarda-20261103.zip. Nenhum trabalho não guardado se perdeu. A cópia de segurança fica fora do repositório.
 
 Resultado após o merge: browser_cartaz_familia.cjs aprovado, incluindo temas, alvos, dobras, projeção, impressão, alternativa sem JavaScript e progresso.
+
+
+## Correção da falha CI depois da publicação do #107
+
+Job 125865947739, cabeça 216f7f66: uma falha em 273 testes Python. test_m1_igual_a_origin_main chamava renomear com base_ja_renomeada=True; a asserção exigia que todas as ocorrências de «Humanos» fossem títulos renomeados. No exercício «O júri», «Direitos Humanos» já aparecia no conteúdo da base anterior.
+
+O auxiliar passa a calcular a contagem final a partir do commit imutável 349d2457e1f056b69c6dda550aace2a6f5377051, aplicando o manifesto fechado e conferindo primeiro cada contagem antiga. Exige a contagem final exata, incluindo os usos anteriores. A comparação binária integral com a base continua intacta. Nenhuma página, CSS, script público ou limite de preservação muda neste incremento.
+
+Regressão adicional: compara a base antiga e a publicação bbdbec47, em bytes e texto; demonstra que «Direitos Humanos» permanece e que contagens em falta ou a mais são rejeitadas. Dois testes novos aprovados; 26 testes de Cidadania M2, incluindo a asserção falhada, aprovados. A alteração foi preparada em outputs/lente109-ci-20261103, mantendo intacta a árvore original enquanto decorria o ensaio independente de movimento.
+
+Os dois testes de preservação/comparação exata também passaram. Total desta verificação local: 30 testes aprovados. CI integral da nova cabeça pendente.
