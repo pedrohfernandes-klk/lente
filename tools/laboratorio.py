@@ -115,7 +115,8 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
         s=s.replace(rel('assets/appearance.css')+'"',rel('assets/appearance.css')+'?v=20261101-1"')
         s=s.replace('</head>','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" media="print" onload="this.media=\'all\'"><link rel="stylesheet" href="'+rel('assets/cartaz-components.css')+'?v=20261101-1"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'?v=20261101-1"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'?v=20261101-1"></script><script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script></head>')
     if migrated:
-        s=s.replace(rel('assets/cartaz-components.js')+'?v=20261101-1',rel('assets/cartaz-components.js')+'?v=20261103-1')
+        # O piloto tem o seu controlador de dobras; não carrega o controlador comum nem altera o lote de animações.
+        s=s.replace('<script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script>','')
         s=s.replace(rel('assets/laboratorio/percursos.js')+'"',rel('assets/laboratorio/percursos.js')+'?v=20261103-1"')
     if migrated:s=s.replace('</head>','<link rel="stylesheet" href="'+rel('assets/laboratorio/menus.css')+'?v=20261102-1"><script defer src="'+rel('assets/laboratorio/menus.js')+'?v=20261102-1"></script></head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())

@@ -86,3 +86,16 @@ A bateria integral Python passou: 275 testes, 172,682 s, sem falhas. Os menus pa
 Na cabeça 27d3b99, o CI detetou que a boia interceptava «Cartão anterior» e «Nova tentativa» nos visores fixos. O espaço no corpo da página não chegava à `.casca`, que ocupa a janela inteira. O componente reserva agora 88 px também nesse visor, apenas em ecrã, sem alterar a impressão. A boia usa um botão com `aria-expanded` e `aria-controls`, evitando interferência com os `details` do conteúdo. Os testes existentes não foram modificados.
 
 Após a correção, `browser_formas.cjs` passou integralmente, incluindo o ponto exato da falha, e os 60 contextos da boia passaram novamente. Provas finais em `outputs/lente108-boia-final-20261103/`. A família Cartaz também passou antes deste acerto específico do visor. A execução local de `browser_reciclagem_lente.py` não arrancou porque o Python disponível não tem o módulo Playwright; a confirmação desse percurso fica no CI da nova cabeça.
+
+
+## Zoom nativo a 200% e confirmação do CI
+
+Prova isolada em Chrome com perfis temporários: preferência nativa `partition.default_zoom_level`, nível `log(2)/log(1.2)`. Numa janela de 1366 × 900, a largura útil passa de 1350 a 675, a altura de 805 a 402 e devicePixelRatio de 1 a 2. O zoom CSS de html/body e visualViewport.scale ficam em 1. Não se usou zoom CSS nem emulação de densidade. Método, script, medições e capturas em `outputs/lente108-zoom-nativo-20261103/`, fora do ramo. Base técnica: [ChromeZoomLevelPrefs](https://chromium.googlesource.com/chromium/src/+/lkgr/chrome/browser/ui/zoom/chrome_zoom_level_prefs.cc).
+
+A prova cobre 84 vistas: quatro entradas, claro/escuro, normal/projeção real, mais seis vistas do protótipo, em larguras úteis de 320/390/675 píxeis CSS a 200%. Inclui o percurso até aos recursos e regresso à resposta, menus e boia por teclado. A captura habitual recortava a superfície ampliada; as capturas finais são obtidas diretamente da superfície do navegador.
+
+A inspeção visual encontrou uma sobreposição da boia com texto a meio da página, apesar de a prova anterior confirmar o rodapé. Corrigiu-se apenas nas quatro entradas: a navegação e o conteúdo deslocam-se numa área que termina antes da boia, incluindo em projeção ampliada. A prova da boia passa a exigir o limite de toda essa área, não apenas a última ação. Passaram 84 vistas nativas, 60 contextos de apoios e 72 de menus após este acerto.
+
+Na cabeça a44c502, passaram no CI as regressões de formas, reciclagem e todas as 16 baterias de famílias do Cartaz. Dois pontos adicionais: o teste de Explorar lia o título antes do evento hashchange renderizar a vista; conserva-se a asserção exata e espera-se também a renderização. O teste de isolamento do lote de animações detetou a alteração do controlador comum feita pelos menus. O controlador comum volta a ser idêntico ao main e as quatro entradas usam apenas o controlador próprio dos menus. O teste de isolamento mantém-se intacto.
+
+O teste local de entrada que invoca `python3` não arranca neste Windows, onde o executável disponível se chama python.exe; não foi alterado nem excluído. A confirmação integral continua no CI da cabeça final. Nenhuma publicação, alteração da página da Justiça reservada ao #103 ou controlo interativo do computador.

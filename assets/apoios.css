@@ -1,6 +1,11 @@
 /* Faixa inferior reservada: a última ação e o rodapé podem subir acima da boia. */
 body.com-boia{padding-bottom:88px!important}
 @media screen{body.com-boia .casca{bottom:88px;height:calc(var(--vh,100dvh) - 88px)}}
+/* As quatro entradas dos menus deslocam o conteúdo acima da faixa da boia. */
+@media screen{
+ body.com-boia-menu{height:100dvh;box-sizing:border-box;overflow:hidden}
+ .epi-apoios-area{height:100%;overflow:auto;box-sizing:border-box}
+}
 .epi-boia{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;font:16px/1.5 Arial,sans-serif;color:var(--tinta,#20201c);background:var(--papel,#f4f2eb);border:1px solid currentColor;border-radius:50%;margin:0;padding:0}
 .epi-boia>button{display:flex;align-items:center;justify-content:center;list-style:none;width:48px;height:48px;min-height:48px;padding:0;cursor:pointer;border:0;border-radius:50%;color:inherit;background:transparent}
 .epi-boia>button::-webkit-details-marker{display:none}

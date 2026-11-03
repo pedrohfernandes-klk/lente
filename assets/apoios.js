@@ -29,6 +29,15 @@
       if (event.key === 'Escape') { close(); trigger.focus(); }
     });
     document.body.classList.add('com-boia');
+    if (document.querySelector('body>main[data-menu-piloto]')) {
+      var area = document.createElement('div');
+      area.className = 'epi-apoios-area';
+      Array.from(document.body.children).filter(function (e) {
+        return !['SCRIPT', 'STYLE', 'LINK'].includes(e.tagName);
+      }).forEach(function (e) { area.appendChild(e); });
+      document.body.classList.add('com-boia-menu');
+      document.body.appendChild(area);
+    }
     document.body.appendChild(dock);
   }
   var css = document.createElement('link');
