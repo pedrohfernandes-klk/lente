@@ -1,3 +1,4 @@
+@import url("cabecalho-compacto.css?v=20261103-1");
 /* 03/11/2026: fundo integrado no cabeçalho. Conserva a página de texto e a lupa
    da decisão 139, o crédito e o motor comum. O texto ampliado desloca-se -2,6
    vezes o deslocamento da lupa. Movimento reduzido, projeção e ausência de
@@ -36,9 +37,9 @@
 [data-cartaz-entrada] .lf-aro .lf-virola{fill:var(--lf-acento)}
 [data-cartaz-entrada] .lf-aro .lf-cabo{fill:currentColor}
 [data-cartaz-entrada] .lf-credito{margin:8px 0 0;font:400 .8125rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
-/* um ciclo: a lupa dá uma volta larga pela página e volta ao ponto de partida */
-@keyframes lf-passa{0%,100%{transform:translate(0,0)}25%{transform:translate(14%,-9%)}50%{transform:translate(36%,4%)}75%{transform:translate(18%,10%)}}
-@keyframes lf-amplia{0%,100%{transform:translate(0,0)}25%{transform:translate(-36.4%,23.4%)}50%{transform:translate(-93.6%,-10.4%)}75%{transform:translate(-46.8%,-26%)}}
+/* 03/11/2026: percurso contido no cabeçalho compacto; conserva a relação -2,6 da ampliação. */
+@keyframes lf-passa{0%,100%{transform:translate(0,0)}25%{transform:translate(3%,-4%)}50%{transform:translate(6%,2%)}75%{transform:translate(-3%,3%)}}
+@keyframes lf-amplia{0%,100%{transform:translate(0,0)}25%{transform:translate(-7.8%,10.4%)}50%{transform:translate(-15.6%,-5.2%)}75%{transform:translate(7.8%,-7.8%)}}
 @media(prefers-reduced-motion:no-preference){
 html:not(.em-projecao) [data-cartaz-entrada] .lf-anda .lf-lupa{animation:lf-passa 40s ease-in-out infinite;will-change:transform}
 html:not(.em-projecao) [data-cartaz-entrada] .lf-anda .lf-zoom{animation:lf-amplia 40s ease-in-out infinite;will-change:transform}
