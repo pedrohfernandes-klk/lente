@@ -1,0 +1,58 @@
+{
+  "index.html": [
+    "Lente e Ferramentas",
+    "Duas portas com ações secundárias concorrentes; grupos de ferramentas com numeração decorativa."
+  ],
+  "narrativas/index.html": [
+    "Laboratório",
+    "Recursos, catálogo e exploração têm pouco contraste entre níveis."
+  ],
+  "narrativas/ideias/index.html": [
+    "Ideias",
+    "Ação principal e saídas de apoio precisam de ritmo e foco comuns."
+  ],
+  "narrativas/ver/index.html": [
+    "Observar",
+    "Linhas e aberturas com pouco espaço entre grupos."
+  ],
+  "narrativas/treinar/index.html": [
+    "Treinar",
+    "Linhas e aberturas com pouco espaço entre grupos."
+  ],
+  "narrativas/criar/index.html": [
+    "Criar",
+    "Linhas e aberturas com pouco espaço entre grupos."
+  ],
+  "narrativas/tudo/index.html": [
+    "Catálogo do Laboratório",
+    "Lista longa, ligações sublinhadas e grupos pouco diferenciados."
+  ],
+  "cidadania/index.html": [
+    "Cidadania",
+    "Módulos, recursos e referências precisam de separação visual consistente."
+  ],
+  "mapa/index.html": [
+    "Mapa",
+    "Árvore extensa com ligações de menu visualmente próximas de prosa."
+  ],
+  "como/index.html": [
+    "Como se usa",
+    "A saída de navegação tem o tratamento de ligação em prosa."
+  ],
+  "docente/index.html": [
+    "Apoio ao docente",
+    "Saídas dos percursos e ligações de apoio pouco distintas do texto."
+  ],
+  "narrativas/ideias/docente/index.html": [
+    "Apoio a Ideias",
+    "Saídas de apoio sem o mesmo tratamento do índice."
+  ],
+  "ler/index.html": [
+    "Como se lê",
+    "No rodapé, apoios longos partilham linhas e competem com a continuação; falta alvo inteiro."
+  ],
+  "apresentar/index.html": [
+    "Como se apresenta",
+    "Apoios do rodapé competem com o percurso e não têm alinhamento comum."
+  ]
+}

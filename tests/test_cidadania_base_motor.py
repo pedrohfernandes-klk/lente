@@ -48,6 +48,14 @@ class CidadaniaBase(unittest.TestCase):
                     carris = importlib.util.module_from_spec(spec)
                     spec.loader.exec_module(carris)
                     esperado = carris.instalar(esperado)
+                # 03/11: camada dos menus, com igualdade integral e reversão
+                # independente em test_menus_acabamento (sem excluir conteúdo).
+                if nome in {'cidadania/index.html','docente/index.html','index.html','mapa/index.html'}:
+                    import importlib.util
+                    spec = importlib.util.spec_from_file_location('menus', ROOT/'tools/menus_acabamento.py')
+                    menus = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(menus)
+                    esperado = menus.instalar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

@@ -1,0 +1,92 @@
+/* 03/11/2026. Menus: proximidade, hierarquia e alvo inteiro. Prosa preservada. */
+[data-menus-acabamento] {--menu-rule:color-mix(in srgb,currentColor 24%,transparent);--menu-wash:color-mix(in srgb,currentColor 7%,transparent)}
+[data-menus-acabamento] :is(.ideias-recursos,.saidas-sec,.mais,.cz-footer-links,.map-open){gap:8px 24px}
+[data-menus-acabamento] :is(.ideias-recursos,.saidas-sec,.mais,.cz-footer-links,.map-open,.ligacoes)>a,
+[data-menus-acabamento] :is(.ferr-grupo,.lista,.catalogo,.map-tree) li>a,
+[data-menus-acabamento] :is(.ideias-mapa,.guide-route>a,.m1-teacher-update>a){
+ color:inherit;text-decoration:none;min-height:48px;box-sizing:border-box;padding:12px 16px;
+ border-bottom:1px solid var(--menu-rule);border-radius:0;overflow-wrap:anywhere;line-height:1.45;
+}
+[data-menus-acabamento] :is(.ferr-grupo,.lista,.catalogo,.map-tree) li>a{display:block;width:100%}
+[data-menus-acabamento] :is(.ideias-recursos,.saidas-sec,.mais,.cz-footer-links,.map-open,.ligacoes)>a,
+[data-menus-acabamento] :is(.ideias-mapa,.guide-route>a,.m1-teacher-update>a){display:inline-flex;align-items:center;max-width:100%;gap:12px}
+[data-menus-acabamento] :is(.ferr-grupo,.lista) li>a small{display:block;margin-top:4px;line-height:1.5;font-weight:400}
+[data-menus-acabamento] :is(.cz-row,.linha,.p-cartao,.ideias-explorar a){text-decoration:none;color:inherit}
+[data-menus-acabamento] :is(.cz-row,.linha){min-height:64px;padding-block:16px;border-color:var(--menu-rule)}
+[data-menus-acabamento] :is(.ideias-recursos,.saidas-sec,.mais,.cz-footer-links,.map-open,.ligacoes)>a:hover,
+[data-menus-acabamento] :is(.ferr-grupo,.lista,.catalogo,.map-tree) li>a:hover,
+[data-menus-acabamento] :is(.cz-row,.linha,.ideias-mapa,.guide-route>a,.p-cartao,.ideias-explorar a):hover{background:var(--menu-wash);text-decoration:none}
+[data-menus-acabamento] :is(a,button,summary):focus-visible{outline:3px solid currentColor;outline-offset:4px}
+[data-menus-acabamento] summary{cursor:pointer;min-height:48px;box-sizing:border-box}
+[data-menus-acabamento] summary:hover{background:var(--menu-wash)}
+[data-menus-acabamento] :is(.ferr-grupo,.cid-resource,.map-branch,.metodo){border:0;border-top:1px solid var(--menu-rule);border-radius:0;box-shadow:none;background:transparent}
+[data-menus-acabamento] :is(.ferr-grupo,.cid-resource,.map-branch,.metodo)>summary{padding:18px 16px;color:inherit;background:transparent}
+[data-menus-acabamento] :is(.ferr-grupo,.cid-resource,.map-branch,.metodo)[open]>summary{border-bottom:1px solid var(--menu-rule)}
+[data-menus-acabamento] .ferr-num{display:none}
+[data-menus-acabamento] .ferr-grupos{gap:32px}
+[data-menus-acabamento] .ferr-grupo ul{padding:0;margin:0;list-style:none}
+[data-menus-acabamento] .ferr-grupo li{margin:0}
+[data-menus-acabamento] .ld-corpo>.ld-open{margin-bottom:20px}
+[data-menus-acabamento] .ld-corpo>.ideias-mapa{font-weight:400}
+[data-menus-acabamento] .ideias-recursos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:24px 0 8px;gap:0}
+[data-menus-acabamento] .ideias-recursos>a{justify-content:center;padding:14px 8px;font-weight:700;border-block:1px solid var(--menu-rule)}
+[data-menus-acabamento] .ideias-recursos>a+a{border-left:1px solid var(--menu-rule)}
+[data-menus-acabamento] [data-menu-piloto] .bloco{padding-block:24px;border-color:var(--menu-rule)}
+[data-menus-acabamento] [data-menu-piloto] .cz-fold>summary{padding-inline:16px}
+[data-menus-acabamento] [data-menu-piloto] .cz-fold-body{padding-inline:16px}
+[data-menus-acabamento] .ideias-explorar{margin-top:48px;padding-top:32px;border-color:var(--menu-rule)}
+[data-menus-acabamento] .ideias-explorar a{padding:16px;min-height:64px;border-bottom:1px solid var(--menu-rule)}
+[data-menus-acabamento] .ideias-explorar a b{text-decoration:none}
+[data-menus-acabamento] .ideias-explorar details{margin-top:16px}
+[data-menus-acabamento] .ideias-explorar summary{padding:16px}
+[data-menus-acabamento] .saidas-sec{margin-top:40px;padding-top:24px;border-color:var(--menu-rule)}
+[data-menus-acabamento] .catalogo{list-style:none;padding:0;margin:0 0 40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+[data-menus-acabamento] .catalogo li{margin:0;min-width:0}
+[data-menus-acabamento] .catalogo li::before{display:none}
+[data-menus-acabamento] main[data-raiz]>section{margin-block:48px;padding-top:24px;border-top:1px solid var(--menu-rule)}
+[data-menus-acabamento] main[data-raiz]>section>h3{margin:32px 0 8px}
+[data-menus-acabamento] main[data-raiz]>section>h3 a{display:block;min-height:48px;padding:12px 16px;color:inherit;text-decoration:none;border-left:3px solid currentColor}
+[data-menus-acabamento] .cid-resource{margin-top:24px}
+[data-menus-acabamento] .cid-resource>h3{margin:28px 16px 8px}
+[data-menus-acabamento] .cid-resource .lista{padding-inline:0;margin-bottom:28px}
+[data-menus-acabamento] .cid-modules{gap:24px}
+[data-menus-acabamento] .cid-modules .p-cartao{border:0;border-bottom:1px solid var(--menu-rule);border-radius:0;box-shadow:none}
+[data-menus-acabamento] .map-section{margin-block:40px}
+[data-menus-acabamento] .map-tree{padding-left:16px;list-style:none}
+[data-menus-acabamento] .map-tree li{margin-block:0}
+[data-menus-acabamento] .map-branch{margin-block:8px 16px}
+[data-menus-acabamento] .guide-route{border:0;border-top:1px solid var(--menu-rule);border-radius:0;padding-top:24px}
+@media(max-width:600px){
+ [data-menus-acabamento] .catalogo{grid-template-columns:1fr}
+ [data-menus-acabamento] .ferr-grupos{gap:24px}
+ [data-menus-acabamento] .ideias-recursos{grid-template-columns:1fr}
+ [data-menus-acabamento] .ideias-recursos>a{justify-content:flex-start;border-top:0}
+ [data-menus-acabamento] .ideias-recursos>a+a{border-left:0}
+ [data-menus-acabamento] .map-tree{padding-left:8px}
+}
+html:is(.em-projecao,.epi-projection) [data-menus-acabamento] :is(.catalogo,.map-tree,.ferr-grupo,.lista,.ideias-recursos,.saidas-sec,.mais,.cz-footer-links,.map-open,.ligacoes){font-size:max(18px,1.125rem)}
+@media(prefers-reduced-motion:reduce){[data-menus-acabamento] :is(a,summary){transition:none!important}}
+@media print{[data-menus-acabamento] .catalogo{display:block}[data-menus-acabamento] a{break-inside:avoid}}
+/* A ação principal tem peso próprio; os números decorativos não competem. */
+[data-menus-acabamento] .ld-corpo>.ld-open{background:var(--cz-ink,#111);color:var(--cz-paper,#fff);border-color:var(--cz-ink,#111)}
+[data-menus-acabamento] .lab-sets .lab-set-number{display:none}
+[data-menus-acabamento] .lab-sets .cz-row{grid-template-columns:minmax(0,1fr) 24px}
+[data-menus-acabamento] :is(.catalogo,.ferr-grupo,.lista) li>a{position:relative;padding-right:36px}
+[data-menus-acabamento] :is(.catalogo,.ferr-grupo,.lista) li>a::after{content:"";position:absolute;right:16px;top:22px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);pointer-events:none}
+/* O mapa é navegação: os títulos de área e as saídas são alvos inteiros. */
+[data-menus-acabamento] :is(.map-open p,.map-section>h2,.map-footer){margin-block:8px}
+[data-menus-acabamento] :is(.map-open p,.map-section>h2,.map-footer)>a{display:flex;align-items:center;min-height:48px;box-sizing:border-box;padding:12px 16px;color:inherit;text-decoration:none;line-height:1.45;overflow-wrap:anywhere;border-bottom:1px solid var(--menu-rule)}
+[data-menus-acabamento] :is(.map-open p,.map-section>h2,.map-footer)>a:hover{background:var(--menu-wash)}
+/* Apoios dos percursos: um destino por linha, separados dos passos. */
+[data-menus-acabamento] .tambem{display:grid;grid-template-columns:1fr;gap:0;margin-top:40px;padding:24px 0 0;border-top:1px solid var(--menu-rule)}
+[data-menus-acabamento] .tambem>.p-rot{margin:0 0 12px}
+[data-menus-acabamento] .tambem>a{display:flex;align-items:center;width:100%;min-height:48px;box-sizing:border-box;padding:14px 16px;border-bottom:1px solid var(--menu-rule);color:inherit;text-decoration:none;line-height:1.5;overflow-wrap:anywhere}
+[data-menus-acabamento] .tambem>a:hover{background:var(--menu-wash)}
+[data-menus-acabamento] .map-tree .menu-curso-principal{background:var(--cz-ink,var(--tinta,#111));color:var(--cz-paper,var(--papel,#fff));font-weight:700;margin-block:16px 24px;padding:20px;min-height:64px}
+[data-menus-acabamento] .menu-apoios{border-top:1px solid var(--menu-rule);margin-top:24px}
+[data-menus-acabamento] .menu-apoios>summary{padding:18px 16px;font-weight:700}
+[data-menus-acabamento] .menu-apoios>div{padding:0 16px 16px}
+[data-menus-acabamento] .lab-sets .lab-set-copy{grid-column:1;min-width:0;width:auto}
+[data-menus-acabamento] .lab-sets .lab-set-arrow{grid-column:2;min-width:0}
+html.epi-projection [data-menus-acabamento] [data-cartaz-entrada] .lab-sets a.cz-row,
+[data-menus-acabamento] [data-cartaz-entrada] .lab-sets a.cz-row{grid-template-columns:minmax(0,1fr) 24px}

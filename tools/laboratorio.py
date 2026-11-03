@@ -10,6 +10,7 @@ peças apresenta-se como «Laboratório» (marca, cabeçalho do menu e «LAB»).
 from pathlib import Path
 from laboratorio_menus import apresentar
 import laboratorio_ideias_entrada as eixo
+import menus_acabamento as menus
 import json,html,posixpath,re,importlib.util
 R=Path(__file__).resolve().parents[1]
 # 02/11/2026: decisão 115, apresentação sem pontos nas peças incorporadas.
@@ -120,7 +121,7 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     if migrated:s=s.replace('</head>','<link rel="stylesheet" href="'+rel('assets/laboratorio/menus.css')+'?v=20261102-1"><script defer src="'+rel('assets/laboratorio/menus.js')+'?v=20261102-1"></script></head>')
     if base=='narrativas':
         s=s.replace('</head>','<link rel="stylesheet" href="../assets/laboratorio/ideias-eixo.css?v=20261103-1">'+eixo.scripts('../')+'</head>')
-    p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
+    p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(menus.instalar(s,base+'/index.html').encode() if base+'/index.html' in menus.PAGES else s.encode())
 def routebox(base,r):
     if base=='narrativas':
         number=next(i for i,x in enumerate(routes_of(block_of(r)),1) if x['id']==r['id'])
@@ -249,7 +250,7 @@ def mapa():
         out+=ramo(b['title'],ABS+'narrativas/'+b['id']+'/',rs,extra)
     mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
-    s2=s[:i]+out+s[j:]
+    s2=menus.instalar(s[:i]+out+s[j:], 'mapa/index.html')
     if s2!=s:f.write_text(s2,'utf-8')
 if '--cartaz-entradas' not in __import__('sys').argv:mapa()
 print(('4 entradas geradas; ' if '--cartaz-entradas' in __import__('sys').argv else '23 páginas geradas; ')+str(len(INROUTE))+' peças nos percursos; '+str(len(P))+' peças preservadas.')

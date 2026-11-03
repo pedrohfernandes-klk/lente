@@ -1,0 +1,46 @@
+name: Menus, acabamento e preservação
+on:
+  pull_request:
+    paths:
+      - 'assets/menus-acabamento.css'
+      - 'tools/menus_acabamento.py'
+      - 'tools/menus-acabamento-20261103.json'
+      - 'tests/*menus_acabamento*'
+      - 'tests/browser_menus_acoes.cjs'
+      - '.github/workflows/menus-acabamento-qa.yml'
+      - '**/index.html'
+permissions:
+  contents: read
+jobs:
+  menus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: 1
+      MENUS_PHASES: depois
+      MENUS_PROVAS: /tmp/menus-provas
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Texto, scripts, dados, destinos e regeneração
+        run: python -m unittest discover -s tests -p test_menus_acabamento.py
+      - name: Preparar navegador
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Larguras, temas, projeção, teclado e alvos
+        run: |
+          node tests/browser_menus_acabamento.cjs
+          node tests/browser_menus_acoes.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: menus-provas
+          path: /tmp/menus-provas

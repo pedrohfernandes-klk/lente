@@ -949,8 +949,10 @@ def regras(nome, s):
 
 def paginas():
     L = licoes()
-    return {PASTA + 'index.html': pagina_entrada(L), PASTA + 'guiao/index.html': pagina_guiao(L),
+    from menus_acabamento import instalar, PAGES
+    dados = {PASTA + 'index.html': pagina_entrada(L), PASTA + 'guiao/index.html': pagina_guiao(L),
             PASTA + 'docente/index.html': pagina_guia(L), f'biblioteca/{BIB_ID}/index.html': pagina_biblioteca()}
+    return {nome: instalar(s, nome) if nome in PAGES else s for nome,s in dados.items()}
 
 
 def main(argv):
