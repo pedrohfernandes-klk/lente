@@ -4,6 +4,10 @@ on:
     paths:
       - 'assets/licoes/**'
       - 'tools/licoes/**'
+      - 'tools/modelos/**'
+      - 'demonstracoes/cidadania-sessao-modelo/**'
+      - 'assets/ampliar-documentos.*'
+      - 'tests/*cidadania_modelo*'
       - 'tools/licoes_lente.py'
       - 'cidadania/piloto/**'
       - 'tests/*licoes*'
@@ -79,3 +83,19 @@ jobs:
       # 30/10/2026: as páginas de «Ideias» em cinco larguras, claro e escuro, e na projeção; as duas lições a 320 e 1440 px.
       - name: Coração do Laboratório no navegador
         run: node tests/browser_ideias.cjs
+
+  modelo-cidadania:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -p 'test_cidadania_modelo.py' -v
+      - run: npm install --no-save --package-lock=false playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/browser_cidadania_modelo.cjs
