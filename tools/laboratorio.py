@@ -8,6 +8,7 @@ fora dos percursos (decisão 34: «Três cartas») continua no endereço e volta
 peças apresenta-se como «Laboratório» (marca, cabeçalho do menu e «LAB»).
 """
 from pathlib import Path
+from laboratorio_menus import apresentar
 import json,html,posixpath,re,importlib.util
 R=Path(__file__).resolve().parents[1]
 # 02/11/2026: decisão 115, apresentação sem pontos nas peças incorporadas.
@@ -93,23 +94,31 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
     rel=lambda x:link(base,x)
     migrated=base in CARTAZ_ENTRADAS
     if migrated:
-        body=cartaz_body(base,body)
+        body=apresentar(base,cartaz_body(base,body))
     # 31/10/2026: só as peças que estão num percurso (uma peça fora dos percursos não conta nem se guarda aqui).
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     cur=cur or {}
     nav=(a(base,'','Lente')+a(base,'narrativas/','Laboratório',cur.get('lab',''))+(a(base,'narrativas/ideias/','Ideias') if base in CARTAZ_ENTRADAS else '')
          +''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])+'<span data-appearance-control></span>')
+    if migrated:
+        portas=''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])
+        nav=nav.replace(portas,'<details class="menu-portas"><summary>Percursos</summary><div>'+portas+'</div></details>')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
        '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
        '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script></body></html>\n')
     if migrated:
-        s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
+        s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio data-menu-piloto id="conteudo"')
         s=s.replace('class="mais"','class="mais cz-footer"')
         s=s.replace(rel('assets/appearance.css')+'"',rel('assets/appearance.css')+'?v=20261101-1"')
         s=s.replace('</head>','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" media="print" onload="this.media=\'all\'"><link rel="stylesheet" href="'+rel('assets/cartaz-components.css')+'?v=20261101-1"><link rel="stylesheet" href="'+rel('assets/laboratorio/cartaz.css')+'?v=20261101-1"><script defer src="'+rel('assets/laboratorio/cartaz.js')+'?v=20261101-1"></script><script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script></head>')
+    if migrated:
+        # O piloto tem o seu controlador de dobras; não carrega o controlador comum nem altera o lote de animações.
+        s=s.replace('<script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script>','')
+        s=s.replace(rel('assets/laboratorio/percursos.js')+'"',rel('assets/laboratorio/percursos.js')+'?v=20261103-1"')
+    if migrated:s=s.replace('</head>','<link rel="stylesheet" href="'+rel('assets/laboratorio/menus.css')+'?v=20261102-1"><script defer src="'+rel('assets/laboratorio/menus.js')+'?v=20261102-1"></script></head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
 def routebox(base,r):
     if base=='narrativas':
