@@ -23,7 +23,7 @@ try{
    // 01/11/2026: conservar o limite e identificar os elementos que transbordam, incluindo fontes alternativas.
    const overflow = await p.evaluate(()=>({width:document.documentElement.scrollWidth,viewport:innerWidth,elements:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,60)}))}));
    assert(overflow.width<=overflow.viewport,`${width} ${scheme} ${route}: ${JSON.stringify(overflow)}`);assert.deepEqual(errors,[],route);
-   if(route==='cidadania/m1/'){assert.equal(await p.locator('[data-session-card]').count(),10);assert((await p.locator('[data-continue]').getAttribute('href')).includes('03/'));assert(await p.locator('.c10 .epi-projection-menu-link').isVisible());}
+   if(route==='cidadania/m1/'){assert.equal(await p.locator('[data-session-card]').count(),10);assert((await p.locator('[data-continue]').getAttribute('href'))==='licoes/01/');assert(await p.locator('.c10 .epi-projection-menu-link').isVisible());}
    if(width===1440&&scheme==='light'&&['cidadania/m1/','cidadania/m1/sessoes/03/','cidadania/m1/sessoes/06/'].includes(route))await p.screenshot({path:path.join(OUT,route==='cidadania/m1/'?'modulo.png':route.includes('03/')?'sessao-03.png':'sessao-06.png'),fullPage:true});
    if(width===390&&scheme==='dark'&&route==='cidadania/m1/sessoes/09/')await p.screenshot({path:path.join(OUT,'sessao-09-telemovel.png'),fullPage:true});
    results.push({route,width,scheme,overflow:false,errors:[]});
@@ -46,7 +46,8 @@ try{
  await p.locator('[data-stage-link]').nth(2).click();await p.locator('[data-feedback]>summary').focus();await p.keyboard.press('Enter');assert(await p.locator('[data-feedback]').evaluate(e=>e.open));
  await p.locator('[data-stage-link]').nth(4).click();await p.locator('[data-session-done]').check();await p.reload();assert(await p.locator('[data-session-done]').isChecked());
  assert.deepEqual(await p.evaluate(keys=>Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)])),Object.keys(legacy)),legacy);
- await p.goto(origin+'/lente/cidadania/m1/');assert((await p.locator('[data-continue]').getAttribute('href')).includes('04/'));
+ // A sessão antiga concluída não conclui a nova lição.
+ await p.goto(origin+'/lente/cidadania/m1/');assert((await p.locator('[data-continue]').getAttribute('href'))==='licoes/01/');assert.match(await p.locator('[data-session-card="03"] [data-status]').textContent(),/Registo anterior conservado/);
  await p.goto(origin+'/lente/cidadania/m1/sessoes/06/');await p.locator('[data-start]').click();
  await p.evaluate(()=>dispatchEvent(new Event('beforeprint')));assert.equal(await p.locator('[data-stage]:visible').count(),5);
  await p.emulateMedia({media:'print'});await p.pdf({path:path.join(OUT,'sessao-06-impressao.pdf'),format:'A4',printBackground:true});await p.emulateMedia({media:'screen'});await p.evaluate(()=>dispatchEvent(new Event('afterprint')));assert.equal(await p.locator('[data-stage]:visible').count(),1);
@@ -56,7 +57,7 @@ try{
  await f.locator('[data-start]').click();await f.locator('[data-next]').click();assert.equal(await p.evaluate(k=>localStorage.getItem(k),KEY),before);await p.screenshot({path:path.join(OUT,'projecao.png')});
  await p.goto(origin+'/lente/cidadania/m1/#unidade-3');await p.waitForURL('**/sessoes/06/');
  assert.deepEqual(errors,[]);results.push({functions:'condução por momentos; teclado; impressão completa; retomada; estado legado intacto; projeção 3 tamanhos; âncoras antigas',passed:true});await ctx.close();
- for(const seed of ['{invalid','{"version":2,"sessions":[]}']){const c=await context(),q=await c.newPage();await q.goto(origin+'/lente/cidadania/m1/');await q.evaluate(([key,s])=>localStorage.setItem(key,s),[KEY,seed]);await q.reload();assert((await q.locator('[data-continue]').getAttribute('href')).includes('03/'));await c.close()}
+ for(const seed of ['{invalid','{"version":2,"sessions":[]}']){const c=await context(),q=await c.newPage();await q.goto(origin+'/lente/cidadania/m1/');await q.evaluate(([key,s])=>localStorage.setItem(key,s),[KEY,seed]);await q.reload();assert((await q.locator('[data-continue]').getAttribute('href'))==='licoes/01/');await c.close()}
  const c=await context(),q=await c.newPage();await c.addInitScript(()=>{Storage.prototype.getItem=function(){throw Error('blocked')};Storage.prototype.setItem=function(){throw Error('blocked')}});await q.goto(origin+'/lente/cidadania/m1/sessoes/03/');await q.locator('[data-start]').click();await q.locator('[data-stage-link]').nth(4).click();await q.locator('[data-session-done]').check();assert((await q.locator('[data-live]').textContent()).includes('não permite guardar'));await c.close();
  const no=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),np=await no.newPage();await np.goto(origin+'/lente/cidadania/m1/sessoes/03/');assert.equal(await np.locator('[data-stage]:visible').count(),5);await np.locator('[data-feedback]>summary').click();assert(await np.locator('[data-feedback] p').isVisible());await no.close();
  results.push({fallbacks:'estado inválido; armazenamento bloqueado; sem JavaScript',passed:true});fs.writeFileSync(path.join(OUT,'qa-browser.json'),JSON.stringify(results,null,2));console.log(JSON.stringify({observations:results.length,passed:true,output:OUT}));

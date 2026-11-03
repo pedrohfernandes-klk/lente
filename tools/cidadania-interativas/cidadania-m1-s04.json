@@ -1,0 +1,306 @@
+{
+ "id": "cidadania-m1-s04",
+ "chave": "epi-cid-m1-s04",
+ "versao": "2026-11-03-real-1",
+ "marca": "CD",
+ "titulo": "Sessão 04: Posso dizer tudo?",
+ "h1": "Humanos, sessão 04: Posso dizer tudo?",
+ "modulo": {
+  "n": 1,
+  "nome": "Humanos",
+  "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"
+ },
+ "saida": "cidadania/m1/licoes/04/index.html",
+ "piloto": false,
+ "modelo": false,
+ "ampliar": true,
+ "seguinte": "../../",
+ "seguinteRotulo": "Voltar ao módulo",
+ "fontes": "Constituição da República Portuguesa, artigos 26.º e 37.º, sínteses conferidas no texto oficial da Assembleia da República. _Les Poires_, _Le Charivari_, 17 de janeiro de 1834, desenho possivelmente de Honoré Daumier a partir de Charles Philipon, gravador desconhecido, Gallica/BnF, domínio público. Caso, publicações A e B, resposta de IA, continuação e procedimento são construções pedagógicas.",
+ "cartoes": [
+  {
+   "t": "ler",
+   "rot": "Abre",
+   "titulo": "Posso dizer tudo?",
+   "html": "<p class=\"pergunta-c\">Criticar e acusar pedem o mesmo tipo de prova?</p><p>Caso inventado. Uma conta de memes da turma mostra o diretor com cara de pera. Um comentário acrescenta: «O Diogo rouba na cantina.» Não apresenta provas nem identifica alguém que tenha visto o episódio.</p><p>Diogo pede que retirem a acusação. Vais observar uma caricatura, distinguir afirmações e examinar as suas fontes. No fim, escreves três linhas em papel.</p>",
+   "id": "m1-s04-c01",
+   "g": "m1-s04-c01"
+  },
+  {
+   "t": "ler",
+   "rot": "Olha",
+   "titulo": "Um rosto transforma-se",
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../../img/cidadania/les-poires-1834.webp\" alt=\"Quatro desenhos mostram um rosto com patilhas a aproximar-se da forma de uma pera, até restar uma pera com uma pequena haste.\"></span><figcaption><i>Les Poires</i>, <i>Le Charivari</i>, 17 de janeiro de 1834. Desenho possivelmente de Honoré Daumier, a partir de Charles Philipon; gravador desconhecido. Gallica, BnF, bpt6k3058046f/f3. <a href=\"https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg\">Fonte e direitos: domínio público</a>. Recorte em WebP.</figcaption></figure><p>Observa a transformação da forma. A imagem não mostra como a pessoa retratada reagiu nem o efeito da publicação.</p>",
+   "id": "m1-s04-c02",
+   "g": "m1-s04-c02"
+  },
+  {
+   "t": "escolha",
+   "p": "Que afirmação descreve uma transformação visível nos desenhos?",
+   "p2": "Que mudança consegues observar sem supor a reação de quem viu a publicação?",
+   "o": [
+    "O rosto aproxima-se da forma de uma pera.",
+    "O rei aprovou a publicação destes desenhos.",
+    "O jornal desistiu de publicar a caricatura."
+   ],
+   "c": 0,
+   "f": "A mudança de forma é visível; aprovação e decisões editoriais não se deduzem dos desenhos.",
+   "fe": [
+    "",
+    "Confundiste representação com reação: a imagem não mostra uma aprovação.",
+    "A imagem não documenta uma desistência editorial: compara apenas as formas desenhadas."
+   ],
+   "ver": "<img src=\"../../../../img/cidadania/les-poires-1834.webp\" alt=\"Quatro desenhos mostram um rosto com patilhas a aproximar-se da forma de uma pera, até restar uma pera com uma pequena haste.\">",
+   "g": "m1-s04-c03",
+   "id": "m1-s04-c03"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Na acusação inventada, seleciona as três palavras que atribuem uma ação verificável a Diogo.",
+   "p2": "Que três palavras da frase afirmam uma ação que precisaria de prova?",
+   "frase": "O Diogo rouba na cantina.",
+   "certas": [
+    2,
+    3,
+    4
+   ],
+   "f": "A frase atribui a Diogo uma ação concreta; identificá-la não significa confirmar que aconteceu.",
+   "fe": "O nome identifica a pessoa; procura a ação que lhe é atribuída no comentário.",
+   "g": "m1-s04-c04",
+   "id": "m1-s04-c04"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Expressão e responsabilidade",
+   "html": "<p><b>Para distinguir:</b> uma opinião exprime uma apreciação; uma sátira usa transformação ou exagero para criticar; uma afirmação factual diz algo que pode ser confrontado com provas.</p><p>A Constituição protege a expressão, proíbe a censura e prevê responsabilidade por infrações no seu exercício, no artigo 37.º. O artigo 26.º protege, entre outros direitos, o bom nome e a reputação. Criticar e atribuir um facto não são a mesma operação.</p><p class=\"credito\"><a href=\"https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx\">Constituição, artigos 26.º e 37.º</a>. Síntese pedagógica</p>",
+   "id": "m1-s04-c05",
+   "g": "m1-s04-c05"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada exemplo inventado à operação que realiza.",
+   "p2": "Que exemplo faz uma apreciação, transforma uma figura ou afirma um acontecimento?",
+   "pares": [
+    [
+     "A cantina devia servir refeições mais variadas.",
+     "Opinião"
+    ],
+    [
+     "O diretor aparece desenhado com cara de pera.",
+     "Sátira"
+    ],
+    [
+     "Diogo levou dinheiro da caixa da cantina.",
+     "Afirmação factual"
+    ]
+   ],
+   "f": "Reconhecer uma afirmação factual indica que ela pode ser testada, não que já seja verdadeira.",
+   "fe": "Não confundas afirmação de um acontecimento com prova: procura o que cada frase está a fazer.",
+   "g": "m1-s04-c06",
+   "id": "m1-s04-c06"
+  },
+  {
+   "t": "vf",
+   "p": "A proibição da censura elimina a responsabilidade pelo que se publica.",
+   "p2": "Se a expressão está protegida, o apoio diz que quem publica deixa de responder por infrações.",
+   "v": false,
+   "f": "O artigo 37.º reúne proteção da expressão e responsabilidade por infrações no seu exercício.",
+   "fe": "Confundiste proteção com ausência de responsabilidade: relê as duas partes do apoio.",
+   "g": "m1-s04-c07",
+   "id": "m1-s04-c07"
+  },
+  {
+   "t": "escolha",
+   "p": "Que elemento permite começar a verificar a acusação, em vez de contar repetições?",
+   "p2": "Que apoio permite investigar o episódio atribuído a Diogo?",
+   "o": [
+    "Um registo direto do episódio com origem identificada.",
+    "Uma repetição do comentário por outra conta da turma.",
+    "Uma votação da turma sobre a credibilidade de Diogo."
+   ],
+   "c": 0,
+   "f": "Um registo com origem identificada pode ser examinado; ainda é preciso verificar a sua autenticidade e pertinência.",
+   "fe": [
+    "",
+    "Repetir o comentário não acrescenta uma observação do episódio: procura a origem da informação.",
+    "Uma votação mede opiniões, não prova o episódio: distingue popularidade de evidência."
+   ],
+   "g": "m1-s04-c08",
+   "id": "m1-s04-c08"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Duas páginas, uma origem",
+   "html": "<p><b>Publicações inventadas:</b> A publica a acusação sem apresentar documentos ou identificar testemunhas. B repete a mesma acusação e liga apenas para A; não acrescenta um registo próprio.</p><p><b>Procedimento proposto:</b> localizar a origem, procurar a prova apresentada, verificar se outras páginas acrescentam provas independentes e só depois decidir sobre a partilha.</p><p>Contar páginas não basta: é preciso seguir as ligações e saber de onde vem a informação.</p>",
+   "id": "m1-s04-c09",
+   "g": "m1-s04-c09"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena o procedimento de verificação apresentado no apoio.",
+   "p2": "Reconstrói a sequência desde a origem até à decisão sobre partilhar.",
+   "passos": [
+    "Localizar a origem da afirmação publicada.",
+    "Procurar a prova que essa origem apresenta.",
+    "Verificar se outras páginas acrescentam provas independentes.",
+    "Decidir sobre a partilha à luz do que foi apurado."
+   ],
+   "f": "Seguir a origem e examinar as provas evita tratar a repetição como confirmação.",
+   "fe": "Contar outras páginas antes de conhecer a origem pode contar a mesma informação várias vezes.",
+   "g": "m1-s04-c10",
+   "id": "m1-s04-c10"
+  },
+  {
+   "t": "escolha",
+   "p": "Que relação entre A e B está demonstrada no apoio?",
+   "p2": "O que permite concluir a ligação de B para A, sem provas próprias?",
+   "o": [
+    "As duas publicações dependem do mesmo relato.",
+    "As duas publicações confirmam relatos distintos.",
+    "As duas publicações apresentam registos diretos."
+   ],
+   "c": 0,
+   "f": "B remete apenas para A e não acrescenta uma prova própria, pelo que não constitui confirmação independente.",
+   "fe": [
+    "",
+    "Confundiste duas páginas com duas origens: segue a ligação de B.",
+    "O apoio diz que não há registo próprio em B e que A não apresenta documentos."
+   ],
+   "g": "m1-s04-c11",
+   "id": "m1-s04-c11"
+  },
+  {
+   "t": "vf",
+   "p": "A ligação de B para A ajuda a reconhecer a dependência entre as publicações.",
+   "p2": "Seguir a ligação indicada por B permite perceber de onde veio a sua afirmação.",
+   "v": true,
+   "f": "A ligação mostra a origem usada por B e ajuda a evitar uma contagem duplicada da mesma informação.",
+   "fe": "O endereço não prova a acusação, mas permite seguir a sua origem: relê a descrição de B.",
+   "g": "m1-s04-c12",
+   "id": "m1-s04-c12"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Seleciona as três palavras que indicam a falta de documentos em A.",
+   "p2": "No resumo de A, que três palavras assinalam uma ausência de prova documental?",
+   "frase": "A publica a acusação sem apresentar documentos ou identificar testemunhas.",
+   "certas": [
+    4,
+    5,
+    6
+   ],
+   "f": "A expressão identifica uma ausência de prova documental; não prova, por si, o contrário da acusação.",
+   "fe": "Distingue o conteúdo da acusação do apoio que falta: procura a expressão sobre documentos.",
+   "g": "m1-s04-c13",
+   "id": "m1-s04-c13"
+  },
+  {
+   "t": "ler",
+   "rot": "Na aula",
+   "titulo": "Uma repetição não resolve a dúvida",
+   "html": "<p>Continuação inventada. A conta pode retirar o comentário e publicar uma correção para o mesmo público. Diogo mantém o pedido. Ninguém apresentou um registo do episódio.</p><p>Uma resposta de IA repete a acusação de A, sem indicar nova fonte. Não se sabe quem guardou cópias das publicações.</p><p>Decide o tratamento da acusação com estes dados, sem confundir a caricatura com o comentário nem prometer controlar todas as cópias.</p>",
+   "id": "m1-s04-c14",
+   "g": "m1-s04-c14"
+  },
+  {
+   "t": "escolha",
+   "p": "Que informação falta para sustentar a acusação?",
+   "p2": "Que pergunta procura uma prova do episódio, em vez de uma repetição?",
+   "o": [
+    "Que registo ou testemunho apoia o episódio?",
+    "Que resposta de IA voltou a repetir o relato?",
+    "Que conta consegue retirar o comentário?"
+   ],
+   "c": 0,
+   "f": "Falta um apoio verificável ao episódio; a repetição e a possibilidade de editar não o fornecem.",
+   "fe": [
+    "",
+    "A resposta de IA já foi descrita e não apresenta nova fonte: procura uma prova do episódio.",
+    "Saber quem pode retirar o texto ajuda a agir, mas não sustenta a acusação."
+   ],
+   "g": "m1-s04-c15",
+   "id": "m1-s04-c15"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada material ao que permite sustentar neste percurso.",
+   "p2": "Que prova fornece cada material, sem lhe atribuir informação que não contém?",
+   "pares": [
+    [
+     "A caricatura observada",
+     "Há uma transformação visual do rosto."
+    ],
+    [
+     "O apoio do artigo 37.º",
+     "A expressão protegida não elimina responsabilidade."
+    ],
+    [
+     "O relato da continuação inventada",
+     "A conta pode retirar o comentário e corrigir."
+    ]
+   ],
+   "f": "A imagem, o texto normativo e o relato fornecem apoios diferentes para analisar a publicação.",
+   "fe": "Não uses uma imagem histórica para provar o caso de Diogo: volta à origem de cada afirmação.",
+   "g": "m1-s04-c16",
+   "id": "m1-s04-c16"
+  },
+  {
+   "t": "ordenar",
+   "p": "Organiza esta justificação para tratar a acusação sem prova.",
+   "p2": "Começa no que foi apurado e termina no limite da medida proposta.",
+   "passos": [
+    "A acusação continua sem apoio verificável apresentado.",
+    "O bom nome é uma proteção relevante para o caso.",
+    "Retirar o comentário e corrigir responde à publicação sem prova.",
+    "A medida não garante eliminar todas as cópias guardadas."
+   ],
+   "f": "A justificação liga os dados a uma proteção e a uma medida, sem prometer controlo sobre cópias desconhecidas.",
+   "fe": "A limitação da medida vem depois da proposta: não confundas corrigir a publicação com apagar todas as cópias.",
+   "g": "m1-s04-c17",
+   "id": "m1-s04-c17"
+  },
+  {
+   "t": "escolha",
+   "p": "Que medida responde à acusação sem prova, sem apagar também a crítica?",
+   "p2": "Escolhe a proposta que distingue o comentário acusatório da caricatura.",
+   "o": [
+    "Retirar a acusação sem prova e publicar uma correção.",
+    "Apagar toda a conta para impedir também novas críticas.",
+    "Manter a acusação enquanto se procura quem a confirme."
+   ],
+   "c": 0,
+   "f": "A proposta dirige-se à acusação sem apoio e à sua correção, sem equiparar essa acusação a toda a crítica.",
+   "fe": [
+    "",
+    "Apagar toda a crítica não distingue os conteúdos: compara caricatura e acusação factual.",
+    "Manter a publicação sem prova prolonga o problema: procurar apoio não exige conservá-la publicada."
+   ],
+   "g": "m1-s04-c18",
+   "id": "m1-s04-c18"
+  },
+  {
+   "t": "vf",
+   "p": "A resposta de IA que repete A confirma a acusação com uma fonte independente.",
+   "p2": "A repetição de A por uma resposta de IA sem nova fonte acrescenta uma confirmação independente.",
+   "v": false,
+   "f": "Neste caso, a resposta repete a mesma origem sem acrescentar prova verificável.",
+   "fe": "Confundiste um novo texto com uma nova fonte: segue a origem da informação na continuação.",
+   "g": "m1-s04-c19",
+   "id": "m1-s04-c19"
+  },
+  {
+   "t": "ler",
+   "rot": "Para levar",
+   "titulo": "Três linhas antes de partilhar",
+   "html": "<p>Escreve individualmente, em papel:</p><ol><li>Que tratamento propões para a acusação publicada?</li><li>Que dado e que proteção sustentam a tua proposta?</li><li>Que verificação ou limite ainda precisa de atenção?</li></ol><p>Confere: distinguiste crítica e acusação? Não contaste repetições como fontes independentes? Reconheceste o que a correção pode e não pode resolver?</p>",
+   "escuro": true,
+   "id": "m1-s04-c20",
+   "g": "m1-s04-c20"
+  }
+ ],
+ "edicao": "20261103",
+ "guia": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/licoes/docente/",
+ "guiao": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/licoes/guiao/"
+}
