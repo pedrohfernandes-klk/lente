@@ -9,6 +9,7 @@ peças apresenta-se como «Laboratório» (marca, cabeçalho do menu e «LAB»).
 """
 from pathlib import Path
 from laboratorio_menus import apresentar
+import laboratorio_ideias_entrada as eixo
 import json,html,posixpath,re,importlib.util
 R=Path(__file__).resolve().parents[1]
 # 02/11/2026: decisão 115, apresentação sem pontos nas peças incorporadas.
@@ -38,11 +39,9 @@ def ideias_publicadas():
     fontes=sorted((R/'tools/licoes').glob('ideias-s*.json'))
     sessoes=[json.loads(p.read_text('utf-8')) for p in fontes]
     sessoes=[d for d in sessoes if not d.get('piloto') and (R/d['saida']).exists()]
-    return ('<section class="ideias-publico" aria-labelledby="ideias-publico-t"><h2 id="ideias-publico-t">Ideias: o método em cinco passos</h2>'
-            '<p>Junta material, trabalha-o e põe uma ideia tua à prova, passo a passo.</p>'
-            '<nav aria-label="Ideias"><a class="cz-button" href="ideias/">Abrir Ideias →</a>'
-            + ''.join('<a class="cz-button" href="'+link('narrativas',d['saida'].removesuffix('index.html'))+'">'+e(d['titulo'])+' →</a>' for d in sessoes)
-            + '</nav></section>')
+    return ('<section class="ideias-publico" aria-labelledby="ideias-publico-t"><h2 id="ideias-publico-t">O método em cinco passos</h2>'
+            '<nav aria-label="Ideias">'+eixo.acao('../')+'</nav><a class="ideias-mapa" href="ideias/">O curso e as sessões →</a>'
+            '<noscript><p>As sessões publicadas:</p><ul>'+''.join('<li><a href="'+link('narrativas',d['saida'].removesuffix('index.html'))+'">'+e(d['titulo'])+'</a></li>' for d in sessoes)+'</ul></noscript></section>')
 
 def start(base,ids):
     p=P[ids[0]]
@@ -103,7 +102,7 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
          +''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])+'<span data-appearance-control></span>')
     if migrated:
         portas=''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])
-        nav=nav.replace(portas,'<details class="menu-portas"><summary>Percursos</summary><div>'+portas+'</div></details>')
+        nav=nav.replace(portas,'<details class="menu-portas"><summary>Recursos</summary><div>'+portas+'</div></details>')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
        '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
@@ -119,6 +118,8 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
         s=s.replace('<script defer src="'+rel('assets/cartaz-components.js')+'?v=20261101-1"></script>','')
         s=s.replace(rel('assets/laboratorio/percursos.js')+'"',rel('assets/laboratorio/percursos.js')+'?v=20261103-1"')
     if migrated:s=s.replace('</head>','<link rel="stylesheet" href="'+rel('assets/laboratorio/menus.css')+'?v=20261102-1"><script defer src="'+rel('assets/laboratorio/menus.js')+'?v=20261102-1"></script></head>')
+    if base=='narrativas':
+        s=s.replace('</head>','<link rel="stylesheet" href="../assets/laboratorio/ideias-eixo.css?v=20261103-1">'+eixo.scripts('../')+'</head>')
     p=R/base/'index.html';p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode())
 def routebox(base,r):
     if base=='narrativas':
@@ -130,13 +131,14 @@ def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
 
 # Entrada
 allids=[p for r in D['routes'] for p in r['pieces']]
-body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div class="lab-saiu"><p class="lead">Observa uma escolha, experimenta uma regra e cria uma peça tua.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos">'
+body='<header class="topo"><p class="marca">Lente / Laboratório</p><h1>Ideias</h1><div class="lab-saiu"><p class="lead">Junta material e põe uma ideia tua à prova.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos" aria-label="Recursos para Ideias">'
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')
+           +('<p>'+a('narrativas',P[allids[0]]['url'],'Recurso: '+e(P[allids[0]]['title']))+'</p>' if b==D['blocks'][0] else '')+'</header>'+pic('narrativas',b['id'])
            +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
-body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
+body+=('</div>'+eixo.explorar()+eixo.portugues()+'<section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
 # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.

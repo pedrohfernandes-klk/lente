@@ -39,6 +39,12 @@
       document.body.appendChild(area);
     }
     document.body.appendChild(dock);
+    // O apoio contextual usa apenas o endereço, nunca respostas nem registos.
+    if (/\/narrativas\/(ideias\/sessao-0[12]|galileu|personagem-faz)\/(?:index\.html)?$/.test(location.pathname)) {
+      var retorno = document.createElement('script');
+      retorno.src = new URL('assets/laboratorio/ideias-retorno.js?v=20261103-1', root).href;
+      document.head.appendChild(retorno);
+    }
   }
   var css = document.createElement('link');
   css.rel = 'stylesheet'; css.href = new URL('assets/apoios.css?v=20261103-1', root).href;

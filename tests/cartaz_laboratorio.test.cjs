@@ -10,7 +10,7 @@ for(const rel of ['narrativas/index.html','narrativas/ver/index.html','narrativa
  const ideia='<a href="'+(rel==='narrativas/index.html'?'ideias/':'../ideias/')+'">Ideias</a>';
  // 02/11/2026: piloto dos menus. As mesmas três ligações ficam na abertura Percursos.
  const expected=old.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0].replace('>Ver<','>Observar<').replace(/(<a[^>]*>Laboratório<\/a>)/,'$1'+ideia)
-  .replace(/(<a[^>]*>Observar<\/a><a[^>]*>Treinar<\/a><a[^>]*>Criar<\/a>)/,'<details class="menu-portas"><summary>Percursos</summary><div>$1</div></details>');
+  .replace(/(<a[^>]*>Observar<\/a><a[^>]*>Treinar<\/a><a[^>]*>Criar<\/a>)/,'<details class="menu-portas"><summary>Recursos</summary><div>$1</div></details>');
  assert.ok(expected.includes('<details class="menu-portas">'));
  assert.equal(now.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0],expected);
  assert.equal(now.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1],old.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1]);

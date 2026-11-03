@@ -1,0 +1,19 @@
+/* Ideias é o curso; os recursos apoiam o trabalho sem outra sequência numerada. */
+.ideias-recursos{display:flex;flex-wrap:wrap;gap:8px 24px;margin:16px 0}
+.ideias-recursos a,.ideias-mapa{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-underline-offset:4px;font:700 1rem/1.4 Arial,sans-serif}
+[data-menu-piloto] .topo h1{font-size:var(--cz-t61)}
+[data-menu-piloto] .ideias-publico nav>a{font-size:1.15rem}
+[data-menu-piloto] .ideias-publico h2{font:700 1rem/1.4 Arial,sans-serif}
+.ideias-explorar,.ideias-portugues{border-top:1px solid currentColor;padding:24px 0;margin-top:24px}
+.ideias-explorar h2,.ideias-portugues h2{font:700 var(--cz-t25)/1.2 Arial,sans-serif}
+.ideias-explorar ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+@media(min-width:760px){.ideias-explorar .ideias-destaques{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}}
+.ideias-explorar a{display:block;padding:12px 0;color:inherit;min-height:44px;box-sizing:border-box;text-underline-offset:4px}
+.ideias-explorar a span,.ideias-explorar a small{display:block;font:400 1rem/1.5 Arial,sans-serif}
+.ideias-portugues svg{display:block;width:min(360px,100%);height:auto;fill:none;stroke:currentColor;stroke-width:3}
+.ideias-portugues small{display:block;font:400 .85rem/1.5 Arial,sans-serif}
+html:is(.em-projecao,.epi-projection) [data-menu-piloto] :is(.ideias-explorar,.ideias-portugues) :is(p,a,b,span,small),
+html:is(.em-projecao,.epi-projection) .ideias-recursos a,
+html:is(.em-projecao,.epi-projection) .ideias-mapa{font-size:max(18px,1.125rem)}
+
+html:is(.em-projecao,.epi-projection) [data-menu-piloto] .ideias-publico h2{font-size:var(--cz-t20)}

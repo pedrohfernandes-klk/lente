@@ -1,0 +1,93 @@
+[
+  [
+    "Jogar com palavras",
+    [
+      [
+        "Wordle",
+        "Descobre a palavra do dia em inglês.",
+        "https://www.nytimes.com/games/wordle/index.html",
+        "Inglês"
+      ],
+      [
+        "Léxico",
+        "Experimenta um desafio de palavras em português.",
+        "https://letra.games/lexico",
+        "Português"
+      ],
+      [
+        "Elos",
+        "Procura ligações entre palavras.",
+        "https://letra.games/elos",
+        "Português"
+      ]
+    ]
+  ],
+  [
+    "Ver e desenhar",
+    [
+      [
+        "Color",
+        "Ajusta a cor até encontrares a combinação.",
+        "https://color.method.ac/",
+        "Inglês"
+      ],
+      [
+        "Boolean",
+        "Combina e recorta formas para construir outra.",
+        "https://boolean.method.ac/",
+        "Inglês"
+      ],
+      [
+        "Bézier",
+        "Desenha curvas com pontos e puxadores.",
+        "https://bezier.method.ac/",
+        "Inglês. Teclado e rato ou painel tátil"
+      ]
+    ]
+  ],
+  [
+    "Criar com som",
+    [
+      [
+        "Music Lab",
+        "Experimenta ritmos, sons e melodias.",
+        "https://musiclab.chromeexperiments.com/Experiments",
+        "Inglês. Som"
+      ],
+      [
+        "Blob Opera",
+        "Move as vozes e cria uma pequena composição.",
+        "https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw",
+        "Som"
+      ]
+    ]
+  ],
+  [
+    "Experimentar decisões",
+    [
+      [
+        "Polygons",
+        "Muda escolhas individuais e observa o efeito no conjunto.",
+        "https://ncase.me/polygons/",
+        "Inglês"
+      ]
+    ]
+  ],
+  [
+    "Descobrir",
+    [
+      [
+        "Arts & Culture",
+        "Escolhe uma obra e observa os seus pormenores.",
+        "https://artsandculture.google.com/",
+        "Várias línguas"
+      ],
+      [
+        "RTP Ensina",
+        "Descobre uma história, uma obra ou uma ideia em vídeo.",
+        "https://ensina.rtp.pt/",
+        "Português. Som nos vídeos"
+      ]
+    ]
+  ]
+]

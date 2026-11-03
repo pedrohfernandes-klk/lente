@@ -28,5 +28,6 @@
   if(pt&&pt.time>latest)show(pt.url);
   else if(last){const order=data.routes.flatMap(r=>r.pieces),next=order.slice(Math.max(0,order.indexOf(last.id))).concat(order).find(id=>!states.get(id).done),p=data.pieces.find(p=>p.id===next);if(p)show(p.url);else{const route=data.routes.find(r=>r.pieces.includes(last.id));show('narrativas/percursos/'+route.id+'/');}}
   const links=main.querySelectorAll('#inicio-narrativas .lab-sets a');data.blocks.forEach((b,i)=>{const a=links[i];if(!a)return;const ids=data.routes.filter(r=>r.block===b.id).flatMap(r=>r.pieces),done=ids.length>0&&ids.every(id=>states.get(id).done),times=ids.map(id=>states.get(id).time),date=done&&times.every(Boolean)?new Date(Math.max(...times)).toISOString():null,next=!done&&i===data.blocks.findIndex(block=>data.routes.filter(r=>r.block===block.id).some(r=>r.pieces.some(id=>!states.get(id).done)));const span=document.createElement('span');span.className='cz-state'+(done?' done':next?' current':'');span.textContent=window.EPICartaz.stateLabel({done,next,date});a.append(span);a.classList.toggle('current',next);});
+  main.dataset.retomaPronta='true';
  }).catch(()=>{});
 })();

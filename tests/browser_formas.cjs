@@ -32,7 +32,7 @@ async function prototipos(b,base){
    assert(await semRolar(page),'sem deslocamento horizontal');
    if(width===390){const r=await page.locator('.ls-cartao').evaluate(el=>{const a=el.querySelector('.lf-q').getBoundingClientRect(),bs=[...el.querySelectorAll('[data-op],[data-dono]')].map(b=>b.getBoundingClientRect());return {top:a.top,bottom:Math.max(a.bottom,...bs.map(b=>b.bottom)),lim:document.querySelector('.casca-acoes').getBoundingClientRect().top};});assert(r.top>=0&&r.bottom<=r.lim,'pergunta e escolhas no ecrã: '+JSON.stringify(r));}
   };
-  await page.goto(base+'/narrativas/');assert.equal(await page.locator('h1').innerText(),'Laboratório');assert.equal(await page.locator('.blocos > .bloco').count(),3);
+  await page.goto(base+'/narrativas/');assert.equal(await page.locator('h1').innerText(),'Ideias');assert.equal(await page.locator('.blocos > .bloco').count(),3);
   if(width===390){await page.screenshot({path:path.join(dest,'entrada-390.png'),fullPage:true});console.log('Entrada:',await page.evaluate(()=>({palavras:document.querySelector('main').innerText.trim().split(/\s+/).length,altura:document.documentElement.scrollHeight})));}
   await page.goto(base+'/narrativas/#treinar');assert(page.url().endsWith('/narrativas/#treinar'));assert.equal(await page.locator('#treinar').count(),1);
   await page.goto(base+'/narrativas/formas/certa-manha/');await auditar();assert.equal(await cartao(page),'corte');

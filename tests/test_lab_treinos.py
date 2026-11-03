@@ -156,7 +156,13 @@ class Ginasio(unittest.TestCase):
         self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
         # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
         # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Observar', 'Treinar', 'Criar', 'Ideias'])
+        # 03/11/2026: pedido do docente: Ideias é o eixo, os três recursos ficam
+        # subordinados, sem outra sequência numerada. Conferir a estrutura exata.
+        self.assertIn('<h2 class="ld-n">Ideias.</h2>', s[i:j])
+        recursos = re.search(r'<nav class="ideias-recursos".*?</nav>', s[i:j]).group()
+        self.assertEqual(re.findall(r'<a [^>]*>([^<]+)</a>', recursos), ['Observar', 'Treinar', 'Criar'])
+        self.assertEqual(s[i:j].count('data-ideias-acao '), 1)
+        self.assertNotIn('lab-set-number', s[i:j])
         self.assertIn('href="narrativas/ideias/"',s[i:j])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).
@@ -167,7 +173,7 @@ class Ginasio(unittest.TestCase):
         # 02/11/2026: decisão 34, tabela colada à imagem também com a dobra
         self.assertRegex(s[i:j], r'</a><p class="m1-home-credit ld-credito cz-credit">Vincent van Gogh, esboço de <i>O Quarto</i>')
         # 02/11/2026: a dobra continua a seguir-se à tabela, com o nome da porta no summary e a fonte no mesmo cartão.
-        self.assertRegex(s[i:j], r'Domínio público\.</p><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo">')
+        self.assertRegex(s[i:j], r'Domínio público\.</p><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Ideias\.</h2></summary><div class="ld-corpo">')
         for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
             self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)
