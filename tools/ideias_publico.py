@@ -8,14 +8,9 @@ ROOT_URL='https://pedrohfernandes-klk.github.io/lente/'
 
 def atualizar(rel,s):
     if rel=='index.html':
-        marker='<ul class="lab-sets" aria-label="Entradas do Laboratório">'
-        link='<li><a class="cz-row" href="narrativas/ideias/"><span class="lab-set-number" aria-hidden="true">↗</span><span class="lab-set-copy"><strong>Ideias</strong><small>O método em cinco passos</small></span><span class="lab-set-arrow" aria-hidden="true">→</span></a></li>'
-        # 02/11/2026: a retoma associa os três primeiros itens às portas.
-        # A ligação nova vem depois deles, preservando esse contrato sem mudar o motor.
-        s=s.replace(link,'')
-        assert s.count(marker)==1
-        pos=s.index('</ul>',s.index(marker))
-        s=s[:pos]+link+s[pos:]
+        # A entrada atual tem um cartão próprio; o mesmo gerador verifica a raiz.
+        from laboratorio_ideias_entrada import instalar_raiz
+        s=instalar_raiz(s)
     else:
         link='<p class="ideias-publico-link"><a href="../../narrativas/ideias/">Ideias: o método em cinco passos →</a></p>'
         if link not in s:

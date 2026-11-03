@@ -40,3 +40,11 @@ Passaram as quatro baterias repetidas: `browser_formas.cjs`, `browser_lab_percur
 ## Limites
 
 Só estão publicadas duas sessões de Ideias. Esta alteração não apresenta as restantes como concluídas. As aplicações externas não foram ensaiadas integralmente. A integração real de Cidadania é uma entrega distinta: os dez pilotos do M1 e a sessão revista do #110 não equivalem à conversão das vinte sessões principais.
+
+### Correções das verificações automáticas de 03/11
+
+O verificador `tools/ideias_publico.py --verificar` ainda procurava a lista antiga da raiz. Passa a usar a transformação idempotente da entrada atual, mantendo a comparação integral e a verificação da ligação na oficina.
+
+Os títulos de Ideias e dos dois blocos novos usavam 60,8 e 24 px, fora da escala comum. Passam a usar os tokens de 61 e 25 px; os títulos dos recursos em projeção usam o token de 20 px. Nenhum teste foi alterado nesta correção.
+
+Passaram o verificador de geração, a hierarquia R1 a R5 em seis páginas, dois tamanhos, dois temas, normal/projeção e dobras abertas/fechadas, e as 24 entradas com início, conclusão e dois regressos à resposta conservada. Provas adicionais: `outputs/ideias-real-ci-20261103/`.
