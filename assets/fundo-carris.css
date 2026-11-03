@@ -8,7 +8,7 @@
 @media(min-width:640px){.ju .jc-fundo{height:340px;margin-top:32px}}
 @media(min-width:960px){.ju .jc-fundo{height:clamp(360px,44vh,440px);margin-top:36px}}
 /* A frente do elétrico termina em x=666; a agulha começa em x=705.
-   O patamar mantém a aproximação parada durante os últimos 40% de cada ciclo. */
+   O patamar mantém a aproximação parada durante os últimos 40% da aproximação única. */
 @keyframes jc-aproxima{0%,10%{transform:translateX(0)}60%,100%{transform:translateX(56px)}}
 @media(prefers-reduced-motion:no-preference){
 html:not(.em-projecao) .ju .jc-anda .jc-eletrico{animation:jc-aproxima 36s ease-in-out 1;animation-fill-mode:forwards}

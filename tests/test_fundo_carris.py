@@ -1,9 +1,9 @@
 # 03/11/2026: aproximação única e repouso final, sem salto entre ciclos.
 """02/11/2026: decisão 125 (docente). Fundo animado a traço «Os carris» na entrada da Justiça.
 
-O desenho é decorativo (aria-hidden) e fica numa faixa abaixo da apresentação, sem mudar o texto da página. Parado por
-omissão (sem JavaScript, com movimento reduzido e na projeção: a alavanca a meio e os dois ramos iguais); não sai na
-impressão. Os dois lados do ciclo da alavanca têm o mesmo tempo, e nunca há pessoas nos carris.
+O desenho é decorativo (aria-hidden) e integra a abertura. A aproximação única termina antes da agulha.
+Sem JavaScript, com movimento reduzido e em projeção, mostra logo esse estado final. Não sai na impressão.
+A alavanca fica neutra, nenhum ramo é escolhido e nunca há pessoas nos carris.
 """
 from pathlib import Path
 import re
