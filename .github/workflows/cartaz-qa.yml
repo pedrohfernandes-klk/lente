@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -25,6 +25,7 @@ jobs:
       - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
+      - run: node tests/browser_lente_projecao_entrada.cjs
       # 01/11/2026: movimento, estado final, primeira ação e contrato do visor.
       - run: node tests/browser_cartaz_animacoes.cjs
       # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.

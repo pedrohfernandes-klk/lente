@@ -13,7 +13,7 @@ BASE='66dc1b818e6f99ed1b0bddf7b5d4f7b5cca59f0d'
 M=R/'cidadania/m1'
 def old(path):return subprocess.check_output(['git','show',BASE+':'+path],cwd=R).decode('utf-8')
 def write(path,s):
- p=R/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s,encoding='utf-8')
+ p=R/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(s.encode('utf-8'))
 def rel(path,target):
  value=posixpath.relpath(target,posixpath.dirname(path))
  return value+'/' if target.endswith('/') and not value.endswith('/') else value
