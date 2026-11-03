@@ -2,6 +2,14 @@
 
 ## Integração de 03/11/2026
 
+### Correção L107-01
+
+Os quatro trabalhos de CI falhados na cabeça a882dfd8 partilhavam três causas: comparação do M1 com a base sem renomeação; comparação dos 86 motores antigos que não reconhecia os dois rótulos de Anguissola/Cigoli; hash histórico de Justiça calculado depois de renomear a navegação. Os testes passam agora pelo mesmo manifesto fechado, com contagens exatas por ficheiro. Na Justiça desfazem-se apenas os rótulos antes de verificar o hash original, que permanece intacto. Não mudam páginas, motores, opções, contagens, lista de exceções de leitura ou limites de testes.
+
+Sete testes de contratos, dez de Justiça e 26 de Cidadania M2 conferidos; a comparação binária do M1 foi repetida com os dois assets locais repostos nos bytes LF do Git. As cinco verificações de regeneração do CI passaram: Justiça, lições, Ideias piloto, Ideias público e opções. O achado visual L107-02 fica no cabeçalho #109, fora deste incremento.
+
+A correção técnica das fontes foi entregue separadamente em fontes #17, cabeça d97d0eec7da7976ecc6c64c37003d49002d6a54b. Resolve CRLF e Python no Windows, mas a comparação do modelo antigo com o sítio atual continua a mostrar divergências, explicitadas nesse pedido. Não se copia essa saída sobre as páginas deste pedido.
+
 Main publicado `349d2457e1f056b69c6dda550aace2a6f5377051` integrado por merge `86b61a5`. Os doze conflitos foram resolvidos conservando o main e reaplicando apenas os títulos autorizados. Menus, cabeçalho e fundos não entram nesta entrega.
 
 Comparação exata de 124 ficheiros com esse main, segundo manifesto fechado em `tests/fixtures/cidadania-nomes-20261103.json`. O contrato anterior de preservação mantém a base fixa, a comparação binária e a única normalização de cache; reconhece agora os títulos por ficheiro e contagem. O teste adicional compara todo o texto dos 124 ficheiros com o main mais essas trocas. URLs, identificadores, progresso e usos literários não mudam. No Windows, os ficheiros de texto da cópia de ensaio foram repostos em LF para a comparação binária; os PDFs conservam os bytes do Git.
