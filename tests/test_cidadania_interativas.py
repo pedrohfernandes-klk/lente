@@ -1,4 +1,4 @@
-"""Integração real: quatro bancos, 80 cartões, sem reaplicar respostas antigas."""
+"""Integração real: dez bancos, 200 cartões, sem reaplicar respostas antigas."""
 from pathlib import Path
 import json, hashlib, sys, unittest
 ROOT=Path(__file__).resolve().parents[1]
@@ -6,8 +6,9 @@ sys.path.insert(0,str(ROOT/'tools'))
 import cidadania_interativas as G
 
 class Interativas(unittest.TestCase):
+ # 03/11/2026: dez bancos e 200 cartões; conservar os mesmos contratos em todos.
  def test_bancos_paginas_e_ordem(self):
-  dados=G.bancos();self.assertEqual(len(dados),4)
+  dados=G.bancos();self.assertEqual(len(dados),10)
   for d in dados:
    self.assertEqual(G.L.validar(d),[])
    self.assertFalse(d['piloto']);self.assertFalse(d['modelo'])
@@ -17,9 +18,19 @@ class Interativas(unittest.TestCase):
    s=(ROOT/d['saida']).read_text('utf-8');self.assertEqual(s,G.L.pagina(d))
    self.assertIn('"chave": "'+d['chave']+'-20261103"',s)
    self.assertNotIn('noindex',s);self.assertNotIn('ensaio-',s)
+ def test_seis_sessoes_com_tipos_e_imagens_declarados(self):
+  # 03/11/2026: a integração conserva os seis tipos e os apoios visuais do lote revisto.
+  for d in G.bancos()[4:]:
+   n=int(d['id'][-2:])
+   self.assertEqual({c['t'] for c in d['cartoes'] if c['t']!='ler'},{'escolha','vf','emparelhar','ordenar','sublinhar','completar'})
+   self.assertEqual(d['ampliar'],n in {6,7,8})
+   for c in d['cartoes']:
+    for campo in ['html','ver']:
+     for src in __import__('re').findall(r'<img[^>]+src="([^"]+)"',c.get(campo,'')):
+      self.assertTrue((ROOT/d['saida']).parent.joinpath(src).resolve().is_file(),src)
  def test_mapa_nao_migra(self):
   mapa=json.loads((ROOT/'docs/qa/cidadania-m1-migracao-20261103.json').read_text('utf-8'))
-  self.assertEqual(len(mapa['sessoes']),4)
+  self.assertEqual(len(mapa['sessoes']),10)
   for d,m in zip(G.bancos(),mapa['sessoes']):
    antigo=json.loads((ROOT/m['original_main']).read_text('utf-8'))
    self.assertEqual(hashlib.sha256(json.dumps(antigo,ensure_ascii=False,sort_keys=True).encode()).hexdigest(),m['sha256_main_json'])
@@ -31,8 +42,7 @@ class Interativas(unittest.TestCase):
     self.assertEqual(x['sha256_cartao'],hashlib.sha256(json.dumps(c,ensure_ascii=False,sort_keys=True).encode()).hexdigest())
  def test_indice_e_guias_reproduziveis(self):
   s=(ROOT/'cidadania/m1/index.html').read_text('utf-8');self.assertEqual(G.instalar_indice(s),s)
-  for n in range(1,5):self.assertIn('href="licoes/'+f'{n:02}'+'/"',s)
-  for n in range(5,11):self.assertIn('href="sessoes/'+f'{n:02}'+'/"',s)
+  for n in range(1,11):self.assertIn('href="licoes/'+f'{n:02}'+'/"',s)
   for flag,pasta in [(True,'docente'),(False,'guiao')]:self.assertEqual((ROOT/'cidadania/m1/licoes'/pasta/'index.html').read_text('utf-8'),G.pagina_guia(flag))
  def test_indice_nao_escreve(self):
   s=(ROOT/'assets/cidadania-interativas-indice.js').read_text('utf-8')

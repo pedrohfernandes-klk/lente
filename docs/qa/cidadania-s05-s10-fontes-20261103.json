@@ -1,0 +1,2060 @@
+{
+ "data": "2026-11-03",
+ "natureza": "Correspondência editorial, não migração de respostas. Novos casos explicitamente inventados. Origem preservada.",
+ "fontes": {
+  "caso": {
+   "natureza": "Construção pedagógica inventada",
+   "prova": "Os casos, declarações, documentos e números são fornecidos integralmente nos apoios; não representam pessoas ou acontecimentos reais."
+  },
+  "procedimento": {
+   "natureza": "Procedimento pedagógico proposto",
+   "prova": "A ordenação reproduz a sequência explicitada no apoio; não é uma ordem jurídica universal nem uma paráfrase atribuída a um filósofo."
+  },
+  "lei58": {
+   "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis",
+   "local": "Artigos 19.º e 21.º",
+   "verificado": "2026-11-03",
+   "limite": "Sínteses verificadas na auditoria; não certificam a legalidade de uma recolha real."
+  },
+  "peticao": {
+   "url": "https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf",
+   "local": "Artigos 2.º, 4.º, 8.º, 9.º e 13.º",
+   "verificado": "2026-11-03",
+   "limite": "Apoio não apresenta citação de artigo legal como requisito de forma."
+  },
+  "crp23": {
+   "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+   "local": "Artigo 23.º, n.ºs 1 e 2",
+   "verificado": "2026-11-03"
+  },
+  "crp32": {
+   "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+   "local": "Artigo 32.º, n.ºs 2 e 10",
+   "verificado": "2026-11-03",
+   "limite": "Separar processo criminal, processo sancionatório e análise da simulação."
+  },
+  "crp13": {
+   "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+   "local": "Artigo 13.º, n.º 2",
+   "verificado": "2026-11-03"
+  },
+  "cpa": {
+   "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=2248&tabela=leis",
+   "local": "Artigos 9.º e 69.º–72.º",
+   "verificado": "2026-11-03",
+   "limite": "Vínculos e impedimento no procedimento administrativo; regra do delegado é construção pedagógica."
+  },
+  "met-justicia": {
+   "url": "https://www.metmuseum.org/art/collection/search/410925",
+   "autor": "Philips Galle, segundo Pieter Bruegel",
+   "data": "cerca de1559–1560",
+   "instituicao": "Metropolitan Museum of Art",
+   "numero": "28.4(29)",
+   "direitos": "Public Domain; Open Access CC0",
+   "politica": "https://www.metmuseum.org/hubs/open-access",
+   "ficheiro": "img/cidadania/justica-galle-bruegel.webp",
+   "dimensoes": [
+    640,
+    485
+   ],
+   "vista": "Ficheiro local visto na auditoria de03/11/2026",
+   "limite": "Não usar esta resolução para perguntas sobre letras minúsculas ou detalhes indistintos."
+  },
+  "met-daumier": {
+   "url": "https://www.metmuseum.org/art/collection/search/625296",
+   "autor": "Honoré Daumier",
+   "data": "1846-08-24",
+   "instituicao": "Metropolitan Museum of Art",
+   "numero": "2013.999.1",
+   "direitos": "Public Domain; Open Access CC0",
+   "politica": "https://www.metmuseum.org/hubs/open-access",
+   "ficheiro": "img/cidadania/daumier-gens-de-justice-21.webp",
+   "dimensoes": [
+    640,
+    780
+   ],
+   "vista": "Ficheiro local visto na auditoria de03/11/2026",
+   "limite": "A legenda não aparece no recorte; o apoio dá um resumo identificado como tal. Legenda localizada também no catálogo Princeton 13089.",
+   "fonte_legenda": "https://artmuseum.princeton.edu/art/collections/objects/13089"
+  },
+  "kilburn": {
+   "url": "https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg",
+   "autor": "William Edward Kilburn",
+   "data": "1848",
+   "instituicao": "Royal Collection",
+   "numero": "RCIN2932484",
+   "direitos": "Domínio público, vida+100/PDM na página do ficheiro",
+   "ficheiro": "img/cidadania/kilburn-cartistas-1848.webp",
+   "dimensoes": [
+    640,
+    456
+   ],
+   "vista": "Ficheiro local visto na auditoria de03/11/2026",
+   "limite": "Não se lê o conteúdo do pedido ou das bandeiras nesta imagem."
+  }
+ },
+ "sessoes": [
+  {
+   "sessao": 8,
+   "banco": "cidadania-m1-s08.json",
+   "sha256": "d44b35658422c6addd1394ae93ab73d1f17e8f87762e75ae7dd662e76d0a5f78",
+   "origem": "tools/licoes/cidadania-m1-s08.json",
+   "sha256_original": "674cd459c5883c44022382b29e9c0cbcd29577c8f956ae565c999bf1332d6749",
+   "id": "cidadania-m1-s08",
+   "chave_base": "epi-cid-m1-s08",
+   "chave_ensaio": "ensaio-epi-cid-m1-s08",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "Quem decide o quê?",
+     "originais": [
+      1,
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "O que uma fotografia permite saber",
+     "originais": [
+      9
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "kilburn"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que informação exige outro documento além desta fotografia?",
+     "originais": [
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "kilburn"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona as duas palavras que indicam o que a turma ainda desconhece.",
+     "originais": [
+      1,
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso",
+      "kilburn"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "Pedir, fundamentar e receber resposta",
+     "originais": [
+      4,
+      8,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "peticao"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada parte do pedido à pergunta a que responde.",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      5
+     ],
+     "provas": [
+      "caso",
+      "peticao"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "Uma petição entregue a uma entidade incompetente fica necessariamente sem seguimento.",
+     "originais": [
+      8,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "peticao"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que proposta respeita o apoio sobre a forma da petição?",
+     "originais": [
+      4
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "peticao"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Confirmar antes de enviar",
+     "originais": [
+      7,
+      8,
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "peticao",
+      "crp23",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena o procedimento proposto para apresentar o pedido.",
+     "originais": [
+      8
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "crp23",
+      "peticao",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Queres pedir à própria direção que reveja o horário do bar. Que meio corresponde a essa intenção?",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "crp23",
+      "peticao",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "O Provedor pode recomendar uma correção sem anular ele próprio a decisão.",
+     "originais": [
+      7,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "crp23",
+      "peticao",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa o resumo do caminho descrito no apoio.",
+     "originais": [
+      7,
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "crp23",
+      "peticao",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Um registo que pode ser conferido",
+     "originais": [
+      14,
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que afirmação respeita o alcance deste registo?",
+     "originais": [
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada elemento ao seu papel nesta continuação.",
+     "originais": [
+      14,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena esta justificação, do dado conhecido ao passo seguinte.",
+     "originais": [
+      8,
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "crp23",
+      "peticao",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que pedido evita afirmar mais do que os dados permitem?",
+     "originais": [
+      17,
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "As 140 travessias provam, por si, que a mudança tornará o percurso mais perigoso.",
+     "originais": [
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  },
+  {
+   "sessao": 7,
+   "banco": "cidadania-m1-s07.json",
+   "sha256": "25a0c953769ddd3ebad9182a6df7596587e9d2d879779d66273250b3f1f86d02",
+   "origem": "tools/licoes/cidadania-m1-s07.json",
+   "sha256_original": "b83d5e55c5912a174510cd8a79694503c887a6e086c535f429477ce6f376cac8",
+   "id": "cidadania-m1-s07",
+   "chave_base": "epi-cid-m1-s07",
+   "chave_ensaio": "ensaio-epi-cid-m1-s07",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "Nove contra dois",
+     "originais": [
+      1,
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "Uma cena e uma legenda",
+     "originais": [
+      8
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "met-daumier"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que informação vem da legenda, e não apenas da imagem?",
+     "originais": [
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "met-daumier"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona as duas palavras que introduzem a inferência.",
+     "originais": [
+      4
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso",
+      "met-daumier"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "Três documentos da simulação",
+     "originais": [
+      14
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada documento ao que nele está efetivamente registado.",
+     "originais": [
+      9,
+      14
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "A declaração de Inês identifica a pessoa que publicou o vídeo.",
+     "originais": [
+      5
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que elemento falta para ligar uma pessoa à publicação?",
+     "originais": [
+      5
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Ouvir e rever",
+     "originais": [
+      6,
+      7,
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "crp32",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena o procedimento de análise apresentado.",
+     "originais": [
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "crp32",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Que conclusão respeita os três documentos disponíveis?",
+     "originais": [
+      5,
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "Ouvir Tomás é compatível com proteger já a colega da circulação do vídeo.",
+     "originais": [
+      7,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      9
+     ],
+     "provas": [
+      "caso",
+      "crp32",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa a distinção entre o que se vê e o que se conclui.",
+     "originais": [
+      4,
+      5
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Uma informação nova, ainda limitada",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que passo responde à mensagem nova sem inventar uma conclusão?",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada afirmação ao seu estatuto no caso.",
+     "originais": [
+      15,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena esta justificação para reexaminar a conclusão.",
+     "originais": [
+      15,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "crp32",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que medida protege a colega sem atribuir já a autoria?",
+     "originais": [
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "crp32",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "A mensagem de Leonor prova que Tomás não participou na montagem do vídeo.",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  },
+  {
+   "sessao": 5,
+   "banco": "cidadania-m1-s05.json",
+   "sha256": "87f5b2cadc848f335ec5ce0855f77702b34c60fa26f80765a904f5b819e606e9",
+   "origem": "tools/licoes/cidadania-m1-s05.json",
+   "sha256_original": "d7a058a9036e4d5a4d9b9b7f9d8c26c738c89ccbcb2ecf0023c3a46dafd474c5",
+   "id": "cidadania-m1-s05",
+   "chave_base": "epi-cid-m1-s05",
+   "chave_ensaio": "ensaio-epi-cid-m1-s05",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "Quem guarda os meus dados?",
+     "originais": [
+      1
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "Um formulário para examinar",
+     "originais": [
+      7,
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que campo não responde às finalidades descritas?",
+     "originais": [
+      7,
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona a finalidade que explica a recolha das alergias relevantes.",
+     "originais": [
+      7
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "O que pode a videovigilância abranger?",
+     "originais": [
+      4,
+      5,
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "lei58"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada elemento à distinção que o apoio permite fazer.",
+     "originais": [
+      4,
+      5,
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "lei58"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "Com a escola aberta e sem autorização prévia da CNPD, a videovigilância pode gravar as conversas.",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "lei58"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que afirmação respeita o alcance do apoio legal?",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "lei58"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Finalidade, acesso e conservação",
+     "originais": [
+      12,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena o procedimento proposto antes da recolha.",
+     "originais": [
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Que organização de acesso respeita a necessidade descrita?",
+     "originais": [
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      9
+     ],
+     "provas": [
+      "caso",
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "Um prazo imposto por lei pode limitar o apagamento imediato de dados.",
+     "originais": [
+      12,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5,
+      9
+     ],
+     "provas": [
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa as duas perguntas sobre a organização da recolha.",
+     "originais": [
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5,
+      9
+     ],
+     "provas": [
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Uma pasta aberta a mais pessoas",
+     "originais": [
+      10,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que alteração responde ao problema da pasta?",
+     "originais": [
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada informação ao problema que ajuda a resolver.",
+     "originais": [
+      7,
+      10,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena esta justificação para eliminar a gravação da simulação.",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "lei58",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que conclusão se aplica à entrevista descrita?",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "O desaparecimento dos telemóveis demonstra que filmar as salas comuns resolverá os furtos.",
+     "originais": [
+      1,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      5
+     ],
+     "provas": [
+      "caso",
+      "lei58"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  },
+  {
+   "sessao": 10,
+   "banco": "cidadania-m1-s10.json",
+   "sha256": "97c0232637472d339a4af100fb16182d0bf60fdb94d428189ead38dfc6c2eb35",
+   "origem": "tools/licoes/cidadania-m1-s10.json",
+   "sha256_original": "50a46b4e69aac5bc8939f463051d2e130cee77352194142603581f337fa4f1c2",
+   "id": "cidadania-m1-s10",
+   "chave_base": "epi-cid-m1-s10",
+   "chave_ensaio": "ensaio-epi-cid-m1-s10",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "O que conseguimos defender?",
+     "originais": [
+      1,
+      2,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "Um pedido e dois documentos",
+     "originais": [
+      16,
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que afirmação tem apoio direto no documento A?",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona as palavras que limitam a conclusão do inquérito.",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "Distinguir prova, proposta e limite",
+     "originais": [
+      17,
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada frase ao seu papel no caso.",
+     "originais": [
+      16,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "As respostas de 20 alunos demonstram que toda a escola quer a biblioteca aberta mais cedo.",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que pergunta procura informação que falta à proposta?",
+     "originais": [
+      16,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Responder a uma objeção",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena os passos iniciais do procedimento apresentado.",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Que resposta reconhece o alcance da objeção?",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "Uma investigação pode ser útil mesmo quando a conclusão inicial se mantém.",
+     "originais": [
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5,
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa a distinção que evita uma generalização.",
+     "originais": [
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Uma resposta mais informada",
+     "originais": [
+      16,
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que condição continua por confirmar?",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada elemento novo àquilo que acrescenta.",
+     "originais": [
+      16,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena a justificação da proposta revista.",
+     "originais": [
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que conclusão pode Joana defender com estes dados?",
+     "originais": [
+      16,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "As oito intenções de uso equivalem a oito utilizações já observadas.",
+     "originais": [
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      21
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  },
+  {
+   "sessao": 6,
+   "banco": "cidadania-m1-s06.json",
+   "sha256": "5a00ef1684c45ceaaa3efd15c76964d40b2dbef858ea5d3da65585889de53bc8",
+   "origem": "tools/licoes/cidadania-m1-s06.json",
+   "sha256_original": "4d416a65a94acdb72884cdba5e5a6427e4fae3268a7042f9bb38b19bf20a2408",
+   "id": "cidadania-m1-s06",
+   "chave_base": "epi-cid-m1-s06",
+   "chave_ensaio": "ensaio-epi-cid-m1-s06",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "Uma regra para quem perde",
+     "originais": [
+      1,
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "Olhar para a Justiça",
+     "originais": [
+      8
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "met-justicia"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que afirmação descreve um elemento da figura central?",
+     "originais": [
+      11
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "met-justicia"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona as palavras que ligam o delegado a um interesse no caso.",
+     "originais": [
+      3
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso",
+      "met-justicia"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "Três propostas comparáveis",
+     "originais": [
+      4,
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada proposta ao critério que a orienta.",
+     "originais": [
+      4
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "Na proposta de prioridade ao guião pronto, o grupo B recebe um dos seis turnos.",
+     "originais": [
+      4
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que objeção identifica um efeito da prioridade ao guião pronto?",
+     "originais": [
+      4,
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Testar uma regra e afastar um conflito",
+     "originais": [
+      10,
+      14,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "cpa",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena o procedimento de teste apresentado.",
+     "originais": [
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "cpa",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Que medida reduz o conflito na decisão da simulação?",
+     "originais": [
+      3,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      9
+     ],
+     "provas": [
+      "caso",
+      "cpa",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "Explicar com clareza uma regra pode ajudar a discuti-la sem provar que ela é justa.",
+     "originais": [
+      17,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5,
+      9
+     ],
+     "provas": [
+      "caso",
+      "cpa",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa os nomes dos critérios a partir das distribuições.",
+     "originais": [
+      15
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Uma objeção muda a proposta",
+     "originais": [
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que informação justifica reexaminar a exclusão de B?",
+     "originais": [
+      12,
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada dado da continuação à questão que esclarece.",
+     "originais": [
+      3,
+      12,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena a justificação da revisão proposta.",
+     "originais": [
+      10,
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "cpa",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que conclusão respeita a proposta revista?",
+     "originais": [
+      12,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "A aceitação provisória de C demonstra que já recebeu compensação pelo turno anterior.",
+     "originais": [
+      12
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  },
+  {
+   "sessao": 9,
+   "banco": "cidadania-m1-s09.json",
+   "sha256": "a7f499c124058904db7ae9a37bb9c0b9ae0c8148d38ff7a9bce5251a4ac75399",
+   "origem": "tools/licoes/cidadania-m1-s09.json",
+   "sha256_original": "e89ec5e86f629dc8cdd66b039ccc783269acc3b0a21f69b14fefb5cd23c06f97",
+   "id": "cidadania-m1-s09",
+   "chave_base": "epi-cid-m1-s09",
+   "chave_ensaio": "ensaio-epi-cid-m1-s09",
+   "versao_proposta": "2026-11-03-proposta-1",
+   "cartoes": [
+    {
+     "novo": 1,
+     "tipo": "ler",
+     "operacao": "Muitas vozes, uma escola",
+     "originais": [
+      1,
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 2,
+     "tipo": "ler",
+     "operacao": "Dois relatos não são a escola inteira",
+     "originais": [
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 3,
+     "tipo": "escolha",
+     "operacao": "Que afirmação é sustentada pelo relato de Lina?",
+     "originais": [
+      2
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 4,
+     "tipo": "sublinhar",
+     "operacao": "Seleciona a expressão que limita a generalização dos relatos.",
+     "originais": [
+      5
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      1,
+      2
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 5,
+     "tipo": "ler",
+     "operacao": "Direitos e efeitos de uma regra",
+     "originais": [
+      4,
+      5,
+      14,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "crp13",
+      "caso"
+     ]
+    },
+    {
+     "novo": 6,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada informação à questão que permite examinar.",
+     "originais": [
+      5,
+      8
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      5
+     ],
+     "provas": [
+      "caso",
+      "crp13"
+     ]
+    },
+    {
+     "novo": 7,
+     "tipo": "vf",
+     "operacao": "Uma regra escrita da mesma forma para todos tem necessariamente o mesmo efeito em cada pessoa.",
+     "originais": [
+      14
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      5
+     ],
+     "provas": [
+      "caso",
+      "crp13"
+     ]
+    },
+    {
+     "novo": 8,
+     "tipo": "escolha",
+     "operacao": "Que pergunta procura informação sem atribuir uma intenção?",
+     "originais": [
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      5
+     ],
+     "provas": [
+      "caso",
+      "crp13"
+     ]
+    },
+    {
+     "novo": 9,
+     "tipo": "ler",
+     "operacao": "Responder a uma generalização",
+     "originais": [
+      8,
+      10,
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 10,
+     "tipo": "ordenar",
+     "operacao": "Ordena o procedimento para examinar a generalização.",
+     "originais": [
+      13
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 11,
+     "tipo": "escolha",
+     "operacao": "Que reformulação respeita os dois relatos?",
+     "originais": [
+      8,
+      10
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 12,
+     "tipo": "vf",
+     "operacao": "O relato de Lina basta para concluir que ninguém se sente excluído das conversas.",
+     "originais": [
+      14
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 13,
+     "tipo": "completar",
+     "operacao": "Completa a forma de ler os dois relatos.",
+     "originais": [
+      8
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      2,
+      9
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 14,
+     "tipo": "ler",
+     "operacao": "Uma festa com condições por conhecer",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 15,
+     "tipo": "escolha",
+     "operacao": "Que primeiro passo respeita a informação disponível?",
+     "originais": [
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 16,
+     "tipo": "emparelhar",
+     "operacao": "Liga cada afirmação ao seu estatuto nesta continuação.",
+     "originais": [
+      16,
+      17
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 17,
+     "tipo": "ordenar",
+     "operacao": "Ordena a revisão da proposta de festa.",
+     "originais": [
+      13,
+      16
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      9,
+      14
+     ],
+     "provas": [
+      "caso",
+      "procedimento"
+     ]
+    },
+    {
+     "novo": 18,
+     "tipo": "escolha",
+     "operacao": "Que conclusão evita prometer o que ainda não se sabe?",
+     "originais": [
+      16,
+      18
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 19,
+     "tipo": "vf",
+     "operacao": "Ouvir quem é afetado permite comparar soluções sem exigir que todos concordem à partida.",
+     "originais": [
+      19
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [
+      14
+     ],
+     "provas": [
+      "caso"
+     ]
+    },
+    {
+     "novo": 20,
+     "tipo": "ler",
+     "operacao": "Três linhas para concluir",
+     "originais": [
+      20
+     ],
+     "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+     "apoios_anteriores": [],
+     "provas": [
+      "caso"
+     ]
+    }
+   ]
+  }
+ ]
+}

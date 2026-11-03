@@ -300,9 +300,9 @@ class Molde(unittest.TestCase):
         lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', base, 'cidadania/m1'], cwd=R).decode().split()
         # 30/10/2026: caminhos com barras normais, para correr também no Windows
         locais = sorted(p.relative_to(R).as_posix() for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
-        # 03/11/2026: lista fechada das quatro lições e dos dois guiões novos.
+        # 03/11/2026: lista fechada das dez lições e dos dois guiões novos.
         # O conteúdo é comparado ao gerador no contrato das sessões interativas.
-        novos = [f'cidadania/m1/licoes/{n}/index.html' for n in ['01','02','03','04','docente','guiao']]
+        novos = [f'cidadania/m1/licoes/{n}/index.html' for n in ['01','02','03','04','05','06','07','08','09','10','docente','guiao']]
         self.assertEqual(sorted(set(lista+novos)), locais)
         # 30/10/2026: pedido do docente (perguntas em português europeu, «Qual das perguntas…» e não «Qual pergunta…»): a
         # base passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; depois da fusão a
