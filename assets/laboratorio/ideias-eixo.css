@@ -12,3 +12,7 @@
 .ideias-explorar a span,.ideias-explorar a small{display:block;font:400 1rem/1.5 Arial,sans-serif}
 .ideias-portugues svg{display:block;width:min(360px,100%);height:auto;fill:none;stroke:currentColor;stroke-width:3}
 .ideias-portugues small{display:block;font:400 .85rem/1.5 Arial,sans-serif}
+html:is(.em-projecao,.epi-projection) [data-menu-piloto] :is(.ideias-explorar,.ideias-portugues) :is(p,a,b,span,small),
+html:is(.em-projecao,.epi-projection) [data-menu-piloto] .ideias-publico h2,
+html:is(.em-projecao,.epi-projection) .ideias-recursos a,
+html:is(.em-projecao,.epi-projection) .ideias-mapa{font-size:max(18px,1.125rem)}

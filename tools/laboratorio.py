@@ -131,7 +131,7 @@ def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
 
 # Entrada
 allids=[p for r in D['routes'] for p in r['pieces']]
-body='<header class="topo"><p class="marca">Lente / Laboratório</p><h1>Ideias</h1><div class="lab-saiu"><p class="lead">Junta material e põe uma ideia tua à prova.</p></div></header>'+ideias_publicadas()+'<div class="blocos" aria-label="Recursos para Ideias">'
+body='<header class="topo"><p class="marca">Lente / Laboratório</p><h1>Ideias</h1><div class="lab-saiu"><p class="lead">Junta material e põe uma ideia tua à prova.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos" aria-label="Recursos para Ideias">'
 for b in D['blocks']:
     rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
