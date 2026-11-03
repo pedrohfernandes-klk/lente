@@ -1,0 +1,32 @@
+[
+  [
+    "(function(){var d=document.documentElement,K=\"epi-cidadania-m2\";",
+    "(function(){if(self!==top||new URLSearchParams(location.search).get(\"projetar\")===\"1\")return;var d=document.documentElement,K=\"epi-cidadania-m2\";",
+    1
+  ],
+  [
+    "try{S=JSON.parse(localStorage.getItem(window.EPI_CHAVE)",
+    "if(!(self!==top||new URLSearchParams(location.search).get(\"projetar\")===\"1\"))try{S=JSON.parse(localStorage.getItem(window.EPI_CHAVE)",
+    1
+  ],
+  [
+    "(function(){function ls(k){try{return JSON.parse(localStorage.getItem(k)",
+    "(function(){function ls(k){if(self!==top||new URLSearchParams(location.search).get(\"projetar\")===\"1\")return null;try{return JSON.parse(localStorage.getItem(k)",
+    1
+  ],
+  [
+    "function(a){try{var x=JSON.parse(localStorage.getItem(\"epi-pt-\"",
+    "function(a){if(self!==top||new URLSearchParams(location.search).get(\"projetar\")===\"1\")return;try{var x=JSON.parse(localStorage.getItem(\"epi-pt-\"",
+    1
+  ],
+  [
+    "try{localStorage.setItem(K+\":visto\",",
+    "if(!(self!==top||new URLSearchParams(location.search).get(\"projetar\")===\"1\"))try{localStorage.setItem(K+\":visto\",",
+    1
+  ],
+  [
+    "cidadania-sessoes-molde.js?v=20261028-m2-1",
+    "cidadania-sessoes-molde.js?v=20261103-privacidade",
+    1
+  ]
+]

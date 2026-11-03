@@ -1,5 +1,5 @@
 from pathlib import Path
-import subprocess,re,unittest
+import subprocess,re,unittest,json
 R=Path(__file__).resolve().parents[1]
 class Percurso(unittest.TestCase):
  def test_private_guide_absent_from_public_tree_and_ancestry(self):
@@ -30,6 +30,14 @@ class Percurso(unittest.TestCase):
     scripts=[script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/(?:appearance|cidadania-sessoes-molde)\.js',script)]
     scripts=[script.replace('p=!!prox&&prox.id===id&&feitas.length>0;','p=!!prox&&prox.id===id;') for script in scripts]
     return [re.sub(r'("ordem":\[[^\]]*),"sidequests"(\])',r'\1\2',script) for script in scripts]
+   # 03/11/2026: só as cinco proteções de privacidade e o cache do manifesto.
+   # Mantém a igualdade integral dos scripts depois destas alterações exatas.
+   if path == 'cidadania/m2/index.html':
+    changes=json.loads((R/'tests/fixtures/cidadania-m2-privacidade-20261103.json').read_text('utf-8'))
+    self.assertEqual(len(changes),6)
+    for before,after,count in changes:
+     self.assertEqual(old.count(before),count)
+     old=old.replace(before,after)
    self.assertEqual(engines(old),engines(new))
   s=(R/'cidadania/contra-feed/index.html').read_text('utf-8');self.assertIn('Não há uma conclusão filosófica única premiada',s)
 if __name__=='__main__':unittest.main()
