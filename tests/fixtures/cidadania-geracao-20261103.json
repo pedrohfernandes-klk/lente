@@ -17,5 +17,12 @@
       "assets/fundo-lente.css?v=20261103-1",
       1
     ]
+  ],
+  "tools/generate_cidadania_m1.py": [
+    [
+      "p.write_text(s,encoding='utf-8')",
+      "p.write_bytes(s.encode('utf-8'))",
+      1
+    ]
   ]
 }

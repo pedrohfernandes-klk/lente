@@ -58,3 +58,14 @@ O auxiliar passa a calcular a contagem final a partir do commit imutável 349d24
 Regressão adicional: compara a base antiga e a publicação bbdbec47, em bytes e texto; demonstra que «Direitos Humanos» permanece e que contagens em falta ou a mais são rejeitadas. Dois testes novos aprovados; 26 testes de Cidadania M2, incluindo a asserção falhada, aprovados. A alteração foi preparada em outputs/lente109-ci-20261103, mantendo intacta a árvore original enquanto decorria o ensaio independente de movimento.
 
 Os dois testes de preservação/comparação exata também passaram. Total desta verificação local: 30 testes aprovados. CI integral da nova cabeça pendente.
+
+
+## Reprodução integral no Windows
+
+A bateria independente deixou 57 ficheiros com diferenças exclusivamente CRLF/LF. Estado preservado antes da correção em outputs/lente109-ci-geracao-antes-20261103.zip e inventariado em lente109-ci-geracao-antes-20261103.json. Causas: core.autocrlf=true no Git do Windows e Path.write_text sem newline explícito no gerador do M1. O gerador do Laboratório já escreve bytes LF, mas encontrava inicialmente páginas convertidas para CRLF pelo checkout.
+
+Correção delimitada: .gitattributes fixa LF apenas nos HTML e três recursos de Cidadania abrangidos pelas comparações binárias e nos índices/percursos gerados do Laboratório. Não abrange PDF ou imagens. O escritor de generate_cidadania_m1.py passa a gravar os bytes UTF-8, preservando os LF de origem, tal como em Linux. O manifesto técnico regista essa substituição literal, exatamente uma vez; as asserções dos testes permanecem intactas.
+
+Depois de conferir que as diferenças locais eram apenas finais de linha, os ficheiros abrangidos foram repostos nos bytes exatos de HEAD. Execução nativa no Windows, sem adaptações ao executor, normalização dentro dos testes ou monkeypatch: python -m unittest discover -s tests -p 'test_*.py'. Resultado: 275 testes aprovados em 84,169 segundos. A geração não deixou alterações de conteúdo nas páginas; os ficheiros tocados foram comparados byte a byte com HEAD.
+
+Provas: outputs/lente109-windows-275-20261103.txt e outputs/lente109-windows-final-20261103.json. Sem repetição dos ensaios visuais, pois este incremento não altera HTML publicado, CSS ou animações. CI da nova cabeça e revisão ainda necessários; sem publicação.
