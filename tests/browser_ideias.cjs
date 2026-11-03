@@ -37,6 +37,10 @@ for(const width of [320,390,1366])for(const mode of ['light','dark','projection'
  const botao=p.locator('[data-p-botao]'),r=await botao.boundingBox();assert(r&&r.y+r.height<=900,'ação fora do primeiro ecrã');assert.equal(await botao.count(),1);
  const inicio=mode==='projection'||estado==='inicio',acao=inicio?'Começar':estado==='meio'?'Continuar':'Rever';assert.match(await botao.innerText(),new RegExp('^'+acao));assert.match(await botao.getAttribute('href'),new RegExp('sessao-0'+(inicio?1:2)+'/'));
  assert.equal(await p.locator('li.feita').count(),mode==='projection'?0:estado==='inicio'?0:estado==='meio'?1:2);
+ // 03/11/2026: estados vazios não deixam a moldura de ::before; estados reais conservam o quadrado.
+ const estados=await p.locator('.sessoes [data-estado]').evaluateAll(es=>es.map(e=>({txt:e.textContent,display:getComputedStyle(e).display,rects:e.getClientRects().length,before:getComputedStyle(e,'::before').width})));
+ for(const e of estados){if(!e.txt){assert.equal(e.display,'none');assert.equal(e.rects,0);}else{assert.notEqual(e.display,'none');assert(e.rects>0);assert.equal(e.before,'11px');}}
+
  if(!inicio)assert.match(await p.locator('li.feita [data-estado]').first().textContent(),/Feita 01\/11/);
  assert.equal(await p.locator('a[aria-current="step"]').count(),mode==='projection'||estado!=='feito'?1:0);
  assert.equal(await largo(p),0);assert.equal(await p.locator('[data-gesto],.atol').count(),0);
