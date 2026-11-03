@@ -21,3 +21,16 @@ Laboratório e Ideias foram avaliados: mantêm as entradas breves, a ação prin
 Provas locais: `outputs/lente-cabecalho-provas-20261103/comparacao.html`, imagens antes/depois e `movimento-pausa.webm`. Ensaio local: `outputs/lente-cabecalho-browser.cjs`; ampliação: `outputs/lente-cabecalho-zoom.cjs`.
 
 A entrega aguarda revisão visual, confirmação dos limites e CI. Não autoriza publicação.
+
+
+## L107-02: moldura real de projeção
+
+03/11/2026. Reproduzidos 338 px para janela de 320 px no tamanho médio, e 426 px no tamanho grande. Na cabeça anterior deste pedido, a caixa da lupa ocupava exatamente 0–320 px e a epígrafe 16–304 px. A medição de todos os elementos identificou o excesso documental no título «Ferramentas»; o tamanho grande revelou ainda créditos sem quebra, títulos de grupos e rótulos. A imagem decorativa conserva a máscara original; não se acrescenta ocultação para fazer caber texto.
+
+Correção em cartaz-entrada.css, limitada a html.epi-projection: texto recompõe-se à largura disponível, créditos podem quebrar linha, números dos percursos usam a largura do conteúdo e a porta Português passa a uma coluna em ecrãs estreitos. Não se reduz a escala de texto nem se esconde excesso. Cache da folha atualizada.
+
+Regressão nova tests/browser_lente_projecao_entrada.cjs, incluída no CI: moldura /projetar/ com iframe real, 320/390/1366 px, claro/escuro, pequeno/médio/grande, 18 contextos. Todos aprovados: largura documental igual à janela, caixas da lupa/título/frase/epígrafe dentro dos limites, nenhum conteúdo textual ou controlo com excesso na sua caixa. O fundo decorativo sangra para a margem do cabeçalho, mantendo ambas as caixas dentro da janela; não se confunde esse fundo ampliado com texto interativo. Capturas de 320 px nos dois temas abertas e conferidas, com QR recolhido.
+
+Provas: outputs/lente-cabecalho-projecao-final-20261103/medidas.json e capturas. Isto verifica a projeção real, não substitui a verificação pendente de zoom nativo. Sem publicação.
+
+O teste integral existente browser_cartaz_familia.cjs também passou após esta correção: temas, alvos, dobras, projeção, impressão, alternativa sem JavaScript e progresso. Nenhuma asserção ou limite existente foi alterado.
