@@ -13,13 +13,15 @@ try{
   const f=p.locator('.jc-fundo'),button=p.locator('[data-fundo-botao="jc"]');await f.scrollIntoViewIfNeeded();await p.waitForTimeout(80);
   const m=await p.evaluate(measure);assert.equal(m.overflow,0);assert.ok(m.height>=(width<640?232:360)&&m.height<=(width<640?300:440));
   if(width<640){assert.ok(Math.abs(m.width-width)<1);assert.ok(Math.abs(m.left)<1)}
-  if(mode==='dark'){const rgb=m.background.match(/\d+/g).map(Number);assert.ok(Math.max(...rgb.slice(0,3))<60,'o escuro não acende a página')}
+  if(mode==='dark'){assert.equal(m.background,'rgba(0, 0, 0, 0)','fundo transparente integrado no tema')}
   const storage=await p.evaluate(()=>JSON.stringify({...localStorage}));
   if(mode==='projection'){assert.deepEqual(m.animations,[]);assert.ok(await button.isHidden());assert.ok(!await f.evaluate(e=>e.classList.contains('jc-anda')))}
   else{
-   assert.deepEqual(m.animations,[{name:'jc-aproxima',duration:36000,iterations:2}]);assert.equal(await button.textContent(),'Parar o desenho');
+   assert.deepEqual(m.animations,[{name:'jc-aproxima',duration:36000,iterations:1}]);assert.equal(await button.textContent(),'Parar o desenho');
    // O desenho não muda caixas nem atravessa a agulha em nenhum instante do movimento.
-   const samples=await f.evaluate(e=>{const anim=e.getAnimations({subtree:true})[0];anim.pause();const data=[];for(const t of [0,3600,12000,21600,30000,35999]){anim.currentTime=t;const body=e.querySelector('.jc-eletrico>g>path'),switchPath=e.querySelector('.jc-agulha'),r=e.getBoundingClientRect();data.push({x:body.getBoundingClientRect().right,limit:switchPath.getBoundingClientRect().left,w:r.width,h:r.height})}anim.currentTime=0;anim.play();return data});
+   const samples=await f.evaluate(e=>{const anim=e.getAnimations({subtree:true})[0];anim.pause();const data=[];for(const t of [0,3600,12000,21600,30000,35999,36000,36001,71999]){anim.currentTime=t;const body=e.querySelector('.jc-eletrico>g>path'),switchPath=e.querySelector('.jc-agulha'),r=e.getBoundingClientRect();data.push({x:body.getBoundingClientRect().right,limit:switchPath.getBoundingClientRect().left,w:r.width,h:r.height})}anim.currentTime=0;anim.play();return data});
+   // 03/11/2026: nos limites de 36 s e no repouso não há reinício nem salto.
+   assert(samples.slice(-4).every(s=>Math.abs(s.x-samples[samples.length-1].x)<.01));
    for(const s of samples){assert.ok(s.x<s.limit);assert.equal(s.w,m.width);assert.equal(s.h,m.height)}
    await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.equal(await button.textContent(),'Pôr o desenho a andar');
    await button.click();await p.clock.fastForward(72001);assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0,'pára depois de dois ciclos');assert.equal(await button.textContent(),'Pôr o desenho a andar');
@@ -34,5 +36,5 @@ try{
   const ctx=await context({viewport:{width:390,height:844},...options}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');await p.locator('.jc-fundo').scrollIntoViewIfNeeded();assert.ok(await p.locator('.jc-fundo svg').isVisible());assert.ok(await p.locator('[data-fundo-botao="jc"]').isHidden());assert.equal(await p.locator('.jc-fundo').evaluate(e=>e.getAnimations({subtree:true}).length),0);await ctx.close();
  }
  const ctx=await context({viewport:{width:768,height:900},reducedMotion:'reduce'}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');assert.equal((await p.locator('.jc-fundo').boundingBox()).height,340);await ctx.close();
- if(out)fs.writeFileSync(path.join(out,'medidas.json'),JSON.stringify(rows,null,2));console.log('PASS 9 cenários; teclado, dois ciclos, pausa, estado parado, impressão e tablet.');
+ if(out)fs.writeFileSync(path.join(out,'medidas.json'),JSON.stringify(rows,null,2));console.log('PASS 9 cenários; teclado, aproximação única, repouso, pausa, estado parado, impressão e tablet.');
 }finally{await b.close();server.closeAllConnections();server.close()}})().catch(e=>{console.error(e);process.exitCode=1});

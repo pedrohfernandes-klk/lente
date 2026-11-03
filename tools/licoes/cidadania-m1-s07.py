@@ -105,7 +105,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s07","chave":"epi-cid-m1-s07","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 07: Nove contra dois","h1":"Cidadania, módulo 1, sessão 07: Nove contra dois",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s07/index.html","piloto":True,
  "seguinte":"../m1-s08/","seguinteRotulo":"Sessão 08: Quem decide o quê?",
  "fontes":"Constituição da República Portuguesa, artigos 32.º e 207.º; Convenção sobre os Direitos da Criança (1989), artigo 12.º; Declaração Universal dos Direitos Humanos (1948), artigos 10.º e 11.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Imagem: Honoré Daumier, «Voilà le ministère public qui vous dit des choses très désagréables», prancha 21 de _Les Gens de Justice_, 1846, litografia (Metropolitan Museum of Art, CC0); legenda em tradução nossa. Vídeo: TED-Ed, «What did democracy really mean in Athens?», lição de Melissa Schwartzberg. Os casos são inventados.",

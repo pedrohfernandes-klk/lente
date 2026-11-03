@@ -1,3 +1,4 @@
+# 03/11/2026: aproximação única e repouso final, sem salto entre ciclos.
 """02/11/2026: decisão 125 (docente). Fundo animado a traço «Os carris» na entrada da Justiça.
 
 O desenho é decorativo (aria-hidden) e fica numa faixa abaixo da apresentação, sem mudar o texto da página. Parado por
@@ -71,7 +72,10 @@ class FundoCarris(unittest.TestCase):
         anim = bloco(CSS, '@keyframes jc-aproxima{')
         self.assertIn('0%,10%{transform:translateX(0)}', anim)
         self.assertIn('60%,100%{transform:translateX(56px)}', anim)
-        self.assertIn('animation:jc-aproxima 36s ease-in-out 2;', CSS)
+        self.assertIn('animation:jc-aproxima 36s ease-in-out 1;', CSS)
+        self.assertIn('.ju .jc-eletrico{transform:translateX(56px)}',CSS)
+        self.assertIn('<header class="jc-abertura">',HTML)
+        self.assertNotIn('pára',GERADOR.CREDITO)
         self.assertNotRegex(CSS, r'jc-(?:alavanca|agulha|ramo)[^{]*\{')
         self.assertLess(330+280+56, 705, 'a frente do elétrico pára antes da agulha')
 

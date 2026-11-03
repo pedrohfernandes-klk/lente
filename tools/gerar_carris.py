@@ -42,7 +42,7 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 DESTINO=ROOT/'assets/carris-eletrico.svg'
 PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
-CREDITO='Grafismo gerado com recurso a IA, EPI, 2026. Um elétrico de Lisboa aproxima-se da agulha e pára antes dela. Duas vias possíveis, sem desfecho.'
+CREDITO='Grafismo gerado com recurso a IA, EPI, 2026. Um elétrico de Lisboa aproxima-se da agulha e para antes dela. Duas vias possíveis, sem desfecho.'
 
 def instalar(texto):
     desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'
@@ -53,6 +53,12 @@ def instalar(texto):
     assert n==1, 'Esperava-se um só crédito'
     texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261102-3',texto)
     assert n==1, 'Esperava-se um só carregamento do CSS'
+    # 03/11/2026: integra a gravura na abertura sem alterar os seus textos.
+    if '<header class="jc-abertura">' not in texto:
+        texto,n=re.subn(
+            r'(<h1>Justiça.*?</h1>\s*<p class="lead">.*?</p>)\s*(<div class="jc-fundo".*?</svg></div>)',
+            r'<header class="jc-abertura">\1\n\2</header>', texto, flags=re.S)
+        assert n==1, 'Esperava-se uma abertura da Justiça'
     return texto
 
 def main():

@@ -264,7 +264,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Depois, verifica individualmente os factos registados por um colega e marca cada um como confirmado ou desmentido. Pelo caminho, conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material; o número de degraus, conferido por outra pessoa.</p>"
+   "html": "<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola. Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega. Conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os factos e os degraus conferidos.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>Os dez factos são verificáveis, sem opinião, um por nota.</li><li>As três inferências <span class=\"nq\">apoiam-se</span> em dois factos cada. A pergunta a que o lugar não responde fica registada.</li><li>Um colega confirma ou desmente os factos; outra pessoa confere os degraus.</li></ul></div>"
   },
   {
    "t": "escolha",
@@ -350,7 +350,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste o que se vê do que se conclui, num quadro e na escola. Volta ao número que escreveste no início: acertaste?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro o que se vê; só depois o que se conclui.</li><li>Uma inferência junta factos; uma hipótese ainda está à espera deles.</li><li>Se não vês diferença nenhuma, ainda não olhaste o suficiente.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: repara num lugar a cinco minutos da escola por onde passas sem olhar e <span class=\"nq\">escreve-o</span> no guião. A turma pode ir a um deles.</p>"
+   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste factos de inferências. Acertaste nos degraus?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro observar, depois concluir.</li><li>Uma inferência junta factos; uma hipótese espera por eles.</li><li>Olha até encontrares diferenças.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: escolhe um lugar perto da escola e <span class=\"nq\">escreve-o</span> no guião.</p><aside class=\"para-caixa\"><p><b>Para a tua caixa</b></p><p>Guarda os teus dez factos e a pergunta por investigar. Um assunto por nota, para voltar a olhar.</p></aside>"
   }
  ]
 }

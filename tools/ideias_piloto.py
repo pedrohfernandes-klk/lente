@@ -1,34 +1,17 @@
-"""31/10/2026: «Ideias», o coração do Laboratório, em piloto escondido (decisões do docente 31 a 34 e 39; plano final em
-coracao/plano.md, no caderno de bordo).
+"""Gera a entrada pública de Ideias, os guiões e o guia do docente.
 
-Escreve, a partir das lições em tools/licoes/ideias-sNN.json (as que já existem) e do quadro SESSOES abaixo:
-- narrativas/ideias/index.html: a entrada da secção no sistema «Cartaz» (barra, abertura com a imagem do atol, uma só
-  região preta «A seguir», o gesto de decisão das escadas, as sete sessões em três portas, saídas e rodapé). Lê o progresso
-  das chaves epi-lab-ideias-sNN (o formato que o motor grava no fim de uma lição: «lida», «versao» e «t»); na projeção
-  (?projetar=1) não lê nada e mostra sempre «Começa aqui: 1»;
-- narrativas/ideias/guiao/index.html: o guião em papel, frente e verso por sessão, para imprimir em A4;
-- narrativas/ideias/docente/index.html: o guia do docente, com o quadro da sequência e, por sessão pronta, os tempos, os
-  materiais, o que fica escrito, a imagem, o vídeo, a grelha /20 indicativa e as notas;
-- biblioteca/young-tecnica-1940/index.html: a página do Young na Biblioteca, no molde das outras (biblioteca/orta-benjui/),
-  só com o excerto aprovado (decisão 31: até 120 palavras, «tradução nossa», crédito e ligação ao registo do livro). É
-  pública, entra na lista da Biblioteca (biblioteca/index.html, «Em português») e não liga ao coração enquanto ele for piloto.
+A entrada usa notas e fios, uma ação principal, progresso guardado neste aparelho
+(incluindo conclusões anteriores) e o método numa secção expansível. Na projeção
+não lê nem grava progresso. Só as sessões com dados publicados têm ligação;
+as âncoras anteriores mantêm-se para conservar os destinos existentes.
 
-As três páginas do coração levam noindex, nofollow e nenhuma página do mapa, das portas, da entrada do Laboratório ou de
-assets/laboratorio/percursos.json liga para elas (tests/test_ideias.py confirma).
+Os cinco passos e os critérios vêm de tools/metodo.py. Os guiões conservam uma
+frente e um verso por sessão. A Biblioteca mantém o excerto aprovado de Young.
+Cidadania conserva o seu gerador e é comparada com a base publicada.
 
-Porquê um gerador próprio e não uma extensão de tools/cidadania_piloto.py: aquele está preso às dez sessões do M1, ao Ponto
-de partida e à Pergunta Humana, e as suas páginas são comparadas byte a byte; a entrada de «Ideias» tem outra forma (a imagem
-com a tabela de museu, o gesto, as sessões por porta, as sessões ainda em preparação) e o guião é em papel, frente e verso.
-Partilham-se as regras de escrita e as funções de tools/licoes_lente.py (visivel, PROIBIDAS, QUAL_NOME, esc_it).
-
-01/11/2026 (método, encargo do docente «assumir o método de Young, passo a passo»): a entrada abre com o bloco «O método»
-(quem é Young, o livro de 1940, que as sete sessões seguem o método dele passo a passo, que há outros e porque seguimos este, e
-os cinco passos numa lista numerada, PASSOS) e a frase de abertura nomeia o método; cada sessão diz «Passo N de 5» (ou
-«Passos N e N+1 de 5») na lista e na região «A seguir»; o guião diz o passo no cabeçalho de cada sessão; o guia do docente abre
-com «Porque seguimos um método» e deixa de repetir «Young» onde basta «o método» ou «o passo».
-
-Uso: python3 tools/ideias_piloto.py              (escreve as páginas e acerta a linha da lista da Biblioteca)
-     python3 tools/ideias_piloto.py --verificar  (confirma que estão atualizadas e que cumprem as regras da casa)"""
+Uso: python tools/ideias_piloto.py
+     python tools/ideias_piloto.py --verificar
+"""
 import html, importlib.util, json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -72,7 +55,10 @@ SESSOES = [
 # destas matérias-primas», «a fase de incubação, em que deixamos algo para além da mente consciente fazer o trabalho de
 # síntese», «o nascimento propriamente dito da ideia», «a moldagem e desenvolvimento final da ideia»; e «submetê-la à crítica de
 # pessoas criteriosas»). Os mesmos nomes nos cartões (tools/licoes/ideias-sNN.py) e no guia.
-PASSOS = ['Juntar material', 'Trabalhar o material', 'Largar', 'A ideia aparece', 'Dar forma e pôr à prova']
+# 02/11/2026: a entrada e as sessões usam os mesmos cinco passos.
+_metodo_spec = importlib.util.spec_from_file_location('metodo', ROOT / 'tools/metodo.py')
+M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_module(M)
+PASSOS = M.PASSOS
 # 01/11/2026 (correção 3, diretor de arte): a imagem voltou a ser tratada, porque o recife mal se separava do oceano (2,06:1
 # em claro e 1,80:1 em escuro). Em cinzento: a vinheta da fotografia original aplanada (fundo estimado pelo percentil 25 em
 # blocos de 40 px, alisado), depois níveis de entrada 110 a 235 levados a 0 a 255, com gama 1,0; a multiplicação sobre
@@ -110,7 +96,6 @@ GUIA = {
   'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto individual, com as marcas de quem o verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
   'produto': 'o auto de observação, individual',
   # 01/11/2026 (correção 6, revisor de pt-PT): «A pergunta a que o lugar não responde», como o campo do guião que avalia
-  'grelha': [('Factos verificáveis, sem opinião nem «parece»', 6), ('Três inferências, cada uma apoiada em dois factos', 5), ('A pergunta a que o lugar não responde', 2), ('Factos confirmados por outra pessoa', 4), ('Factos registados um a um, na forma escolhida', 3)],
   'notas': [
    'Se a escola não tiver uma escada com degraus contáveis, conta-se outra coisa que todos veem e ninguém contou (as janelas da fachada, os cacifos do corredor); o «Abre» diz «escada», e o docente troca a palavra em voz alta.',
    'No conto, Watson já está casado e só visita Baker Street: os cartões dizem que o visita, nunca que vive com Holmes.',
@@ -137,7 +122,6 @@ GUIA = {
   'escrito': 'As quinze notas; a linha antes e depois da fila, com o resultado; as três colunas sobre a fotografia; as duas versões do conselho comparadas.',
   # 01/11/2026 (correção 5, revisor de pt-PT): sem «de cada aluno», que repetia «individual», e em paralelo com a sessão 1
   'produto': 'o «cocheiro», individual',
-  'grelha': [('Quinze notas nas três categorias (vê; ouve, cheira ou toca; distingue)', 6), ('Nenhuma inferência escrita como observação', 4), ('A linha que só serve para aquele «cocheiro», testada na fila (reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', 6), ('As duas versões do conselho comparadas: o que mudou e o que ficou', 4)],
   'notas': [
    'A descoberta da sessão não é «o livro enganou-se»: é que a versão de 1940 muda três pormenores e guarda o essencial, que está em Maupassant quase com as mesmas palavras. Se a turma cair no cinismo, o docente lê esta frase do prefácio: Flaubert «obrigava-me a exprimir, em poucas frases, um ser ou um objeto de maneira a particularizá-lo nitidamente» (tradução nossa).',
    'O livro não diz onde foi buscar a história; os cartões não dizem mais do que isto.',
@@ -592,130 +576,46 @@ def pergunta_abre(d):
 
 
 def pagina_entrada(L):
+    """02/11/2026: proposta A, com progresso real e detalhe por abertura progressiva."""
     base = '../../'
     prontas = [s for s in SESSOES if s['n'] in L]
-    s1 = SESSOES[0]
+    primeira = prontas[0]
     portas = ''
-    faixa = ''
     for pid, nome, apoio, _url in PORTAS:
         ss = [s for s in prontas if s['porta'] == pid]
         if not ss:
-            portas += f'<span id="porta-{pid}" hidden></span><span id="pt-{pid}" hidden></span><span id="pc-{pid}" hidden></span>'
+            portas += ''.join(f'<span id="{prefix}-{pid}" hidden></span>' for prefix in ('porta', 'pt', 'pc'))
             continue
-        nums = ', '.join(str(s['n']) for s in ss[:-1]) + ' e ' + str(ss[-1]['n'])
-        faixa += (f'<a href="#porta-{pid}"><span class="nome">{nome}</span>'
-                  + ''.join(f'<span class="no{"" if s["n"] in L else " prep"}" data-no="{s["n"]}" aria-hidden="true"></span>' for s in ss)
-                  + f'<span class="c-sr">: sessões {nums}</span></a>')
         linhas = ''
         for s in ss:
-            rota, peca, _u = s['peca']
-            apoio_l = f'{e(s["passo"])}. Leva à peça <i>{e(peca)}</i>.'
-            if s['n'] in L:
-                d = L[s['n']]
-                linhas += (f'<li data-chave="{e(d["chave"])}" data-versao="{e(d["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}" '
-                           f'data-passo="{e(passo_n(s))}" data-linha="{e(s["linha"])}" data-papel="{e(s["papel"])}" data-href="sessao-{s["n"]:02d}/">'
-                           f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
-                           f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado" data-estado></span></span>'
-                           f'<span class="apoio">{apoio_l}</span></a></li>')
-            else:
-                linhas += (f'<li class="prep" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}"><div class="linha"><span class="n" aria-hidden="true">{s["n"]}</span>'
-                           f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado">Em preparação</span></span>'
-                           f'<span class="apoio">{apoio_l}</span></div></li>')
-        # 01/11/2026 (correção 3, diretor de arte): uma porta sem nenhuma sessão pronta dobra-se no telemóvel (CSS e script abaixo)
-        dobra = all(s['n'] not in L for s in ss)
-        cab = f'<h3 id="pt-{pid}">{nome}</h3>'
-        if dobra:
-            nn = [s['n'] for s in ss]
-            quais = f'Sessão {nn[0]}' if len(nn) == 1 else (f'Sessões {nn[0]} e {nn[1]}' if len(nn) == 2 else f'Sessões {nn[0]} a {nn[-1]}')
-            cab += (f'<p class="porta-linha">{quais}, em preparação</p><button type="button" class="porta-abre" data-nome="{nome}" '
-                    f'aria-expanded="false" aria-controls="pc-{pid}" aria-label="Abrir {nome}"></button>')
-        portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"{" data-dobra" if dobra else ""}><div class="porta-cab">{cab}</div>'
-                   f'<div class="porta-corpo" id="pc-{pid}"><p class="apoio-porta">{e(apoio)}</p><ol class="sessoes">{linhas}</ol></div></section>')
-    # 02/11/2026: decisão 141. Só sessões publicadas, sem promessas.
-    proxima_prep = None
-    js = ('(function(){"use strict";var proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'
-          'if(proj)document.documentElement.classList.add("em-projecao");'
-          'var dd=function(n){return(n<10?"0":"")+n};'
-          'var L=[].slice.call(document.querySelectorAll("ol.sessoes li[data-chave]")),feitas=[],prox=null;'
-          'L.forEach(function(li){var st=null;if(!proj){try{st=JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}}'
-          'var ok=!!(st&&st.lida&&st.versao===li.getAttribute("data-versao"));var el=li.querySelector("[data-estado]");'
-          'var no=document.querySelector("[data-no=\\""+li.getAttribute("data-n")+"\\"]");'
-          'if(ok){var d=typeof st.t==="number"?new Date(st.t):null,data=d&&!isNaN(d)?dd(d.getDate())+"/"+dd(d.getMonth()+1):"";'
-          'feitas.push({li:li,data:data});li.classList.add("feita");el.textContent="Feita"+(data?" "+data:"");if(no)no.classList.add("feita")}'
-          'else if(!prox){prox=li;li.classList.add("seguir");el.textContent="A seguir";if(no)no.classList.add("seguir")}});'
-          # a região «A seguir»: «Continuar» na sessão a seguir à última feita; com as prontas todas feitas, a próxima em preparação
-          'var R=document.querySelector("[data-proximo]");'
-          'if(R&&feitas.length){var q=function(s){return R.querySelector(s)},u=feitas[feitas.length-1];'
-          'q("[data-p-feito]").textContent="Feita: sessão "+u.li.getAttribute("data-n")+(u.data?", "+u.data:"")+".";'
-          'if(prox){q("[data-p-k]").textContent="Continuar";q("[data-p-n]").textContent=q("[data-p-srn]").textContent=prox.getAttribute("data-n");q("[data-p-t]").textContent=prox.getAttribute("data-titulo");'
-          'q("[data-p-passo]").textContent=": "+prox.getAttribute("data-passo");q("[data-p-linha]").textContent=prox.getAttribute("data-linha");q("[data-p-papel]").textContent="No fim, em papel: "+prox.getAttribute("data-papel");'
-          # 01/11/2026 (correção 6, diretor de arte): «sessão N» inseparável no botão (na projeção a 320 px partia-se em «Começar a
-          # sessão» / «1 →»; agora «Começar a» / «sessão 1 →»), no «Começar», no «Continuar» e no «Rever»
-          'var b=q("[data-p-botao]");b.href=prox.getAttribute("data-href");b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"}'
-          + (f'else{{q("[data-p-k]").textContent="A seguir, em preparação";q("[data-p-n]").textContent=q("[data-p-srn]").textContent="{proxima_prep["n"]}";q("[data-p-t]").textContent="{proxima_prep["titulo"]}";q("[data-p-passo]").textContent=": {passo_n(proxima_prep)}";'
-             'q("[data-p-linha]").textContent="As sessões prontas estão feitas. A próxima ainda está a ser preparada.";q("[data-p-papel]").textContent="";'
-             'var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"}'
-             if proxima_prep else 'else{q("[data-p-k]").textContent="Feitas";q("[data-p-n]").textContent=q("[data-p-srn]").textContent=u.li.getAttribute("data-n");q("[data-p-t]").textContent=u.li.getAttribute("data-titulo");q("[data-p-passo]").textContent=": "+u.li.getAttribute("data-passo");q("[data-p-linha]").textContent="As sessões publicadas estão feitas.";q("[data-p-papel]").textContent="";var b2=q("[data-p-botao]");b2.href=u.li.getAttribute("data-href");b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→";}')
-          + '}'
-          # o gesto: não grava nada; um segundo toque desfaz; a sessão 1 ganha «Começa aqui»
-          'var G=document.querySelector("[data-gesto]");if(G){if(feitas.length&&!proj)G.classList.add("ja-feita");'
-          'var res=G.querySelector("[data-resposta]"),bs=[].slice.call(G.querySelectorAll("button[data-op]")),l1=document.querySelector("li[data-n=\\"1\\"][data-chave]");'
-          'bs.forEach(function(b){b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")==="true";'
-          'bs.forEach(function(o){o.setAttribute("aria-pressed","false")});'
-          'if(on){res.textContent="";if(l1&&!l1.classList.contains("feita")){l1.classList.remove("comeca");if(l1.classList.contains("seguir"))l1.querySelector("[data-estado]").textContent="A seguir"}return}'
-          'b.setAttribute("aria-pressed","true");res.innerHTML=G.querySelector("template[data-resposta-html]").innerHTML;'
-          # 31/10/2026 (revisão do diretor de arte, sistema 6.8): a página rola o necessário para a resposta ficar à vista
-          'var rr=res.getBoundingClientRect();if(rr.bottom>innerHeight)scrollBy({top:rr.bottom-innerHeight+16,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});'
-          'if(l1&&!l1.classList.contains("feita")){l1.classList.add("comeca");l1.querySelector("[data-estado]").textContent="Começa aqui"}})})}'
-          # 01/11/2026 (correção 3): as portas dobradas (abaixo de 640 px, com html.cv) abrem e fecham no sítio; a faixa abre a sua
-          'var abre=function(s,on){s.classList.toggle("aberta",on);var bt=s.querySelector(".porta-abre");bt.setAttribute("aria-expanded",on?"true":"false");bt.setAttribute("aria-label",(on?"Fechar ":"Abrir ")+bt.getAttribute("data-nome"))};'
-          '[].slice.call(document.querySelectorAll(".porta[data-dobra]")).forEach(function(s){s.querySelector(".porta-abre").addEventListener("click",function(){abre(s,!s.classList.contains("aberta"))});'
-          'var a=document.querySelector(".faixa a[href=\\"#"+s.id+"\\"]");if(a)a.addEventListener("click",function(){abre(s,true)});if(location.hash==="#"+s.id)abre(s,true)});'
-          '})();')
-    d1 = L[1]
+            d = L[s['n']]
+            linhas += (f'<li data-chave="{e(d["chave"])}" data-versao="{e(d["versao"])}" data-n="{s["n"]}" '
+                       f'data-titulo="{e(s["titulo"])}" data-papel="{e(s.get("papel", ""))}" data-href="sessao-{s["n"]:02d}/">'
+                       f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
+                       f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong>'
+                       '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
+        portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
+                   f'<div id="pc-{pid}"><ol class="sessoes">{linhas}</ol></div></section>')
+    desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
-             + '<div class="topo">'
-             '<header class="abre"><p class="rotulo">Laboratório</p><h1>Ideias</h1><p class="sub">Como nasce uma ideia</p>'
-             '<p class="lead">Uma ideia é a parte que se vê de um trabalho que não se vê. Levas uma ideia tua por um método de cinco passos.</p>'
-             # 01/11/2026 (método): o bloco «O método», logo abaixo do título, no lugar da linha de informação (que dizia o livro
-             # de Young e as sete sessões de 180 minutos): quem é Young, o livro, que as sessões o seguem passo a passo, que há
-             # outros métodos e porque seguimos este, e os cinco passos numa lista numerada. O parágrafo guarda a classe «info»
-             # (a medida de 34 em). No telemóvel vem depois do gesto, como vinha a linha de informação: a região «A seguir» e o
-             # gesto continuam no primeiro ecrã, e a frase de abertura e a região já dizem o método e o passo de hoje
-             '<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>'
-             '<p class="info">Seguimos, passo a passo, o método de James Webb Young, publicitário <span class="nq">norte-americano</span>, em <i>A Technique for Producing Ideas</i> (1940), um livro de poucas páginas. Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
-             '<ol class="passos-m">' + ''.join(f'<li><b>{n}</b> {t}</li>' for n, t in enumerate(PASSOS, 1)) + '</ol></section></header>'
-             '<section class="proximo inverso" aria-labelledby="prox-t" data-proximo>'
-             # 01/11/2026 (método): o passo do método na linha do rótulo («Começa aqui: passo 1 de 5»), sem linha nova: a 390 px
-             # cabe na mesma linha e a entrada fica abaixo dos 2500 px; a 320 px parte em duas e a primeira ação continua no
-             # primeiro ecrã. O nome do passo está na linha da sessão, mais abaixo, e no bloco «O método»
-             f'<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: {e(passo_n(s1))}</span></p>'
-             f'<div class="cab"><p class="num" data-p-n aria-hidden="true">{s1["n"]}</p><h2 id="prox-t"><span class="c-sr">Sessão <span data-p-srn>{s1["n"]}</span>: </span><span data-p-t>{e(s1["titulo"])}</span></h2></div>'
-             f'<p class="linha" data-p-linha>{e(s1["linha"])}</p><p class="papel" data-p-papel>No fim, em papel: {e(s1["papel"])}</p><p class="feito" data-p-feito></p>'
-             f'<a class="botao" data-p-botao href="sessao-01/">Começar a sessão 1 →</a></section>'
-             # 01/11/2026 (correção 2, diretor de arte): a resposta vem de um <template>, já com «subiu-lhe» numa <span class="nq">
-             '<section class="gesto" aria-labelledby="gesto-q" data-gesto>'
-             f'<p class="q" id="gesto-q">{pergunta_abre(d1)}</p>'
-             '<div class="ops" role="group" aria-labelledby="gesto-q"><button type="button" data-op aria-pressed="false">Sei</button><button type="button" data-op aria-pressed="false">Tenho um palpite</button><button type="button" data-op aria-pressed="false">Não faço ideia</button></div>'
-             '<p class="resposta" data-resposta role="status" aria-live="polite"></p>'
-             '<template data-resposta-html>Watson, o amigo médico de Holmes, subiu-lhe a escada centenas de vezes e não sabia quantos degraus tinha. Holmes sabia: dezassete. Na sessão 1, contas os da escola.</template>'
-             '<p class="sala">Na sala: cada um escreve o seu número antes de alguém dizer o dele.</p></section>'
-             f'<figure class="atol"><span class="campo"><img src="{ATOL["src"]}" width="{ATOL["w"]}" height="{ATOL["h"]}" alt="{e(ATOL["alt"])}" loading="lazy"></span>'
-             f'<figcaption>{ATOL["tabela"]}</figcaption></figure>'
-             '</div>'
-             '<h2 class="sessoes-t" id="sessoes">As sessões</h2>'
-             f'<nav class="faixa" aria-label="As sessões, por porta do Laboratório">{faixa}</nav>'
-             f'<div class="portas">{portas}</div>'
-             '<p class="saidas-sec"><a href="guiao/">Em papel: o guião →</a><a href="docente/">Para o docente →</a></p>'
-             '<footer class="rodape"><h2>Daqui também se vai</h2><nav class="saidas" aria-label="Daqui também se vai">'
-             + ''.join(f'<a href="{u}">{n}</a>' for _p, n, _a, u in PORTAS)
-             + f'<a href="../../biblioteca/{BIB_ID}/">Biblioteca: Young</a></nav>'
+             + '<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
+             '<p class="lead">Observa o que te rodeia e dá forma a uma ideia tua.</p>'
+             f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
+             f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
+             '<figure class="drawing"><div aria-hidden="true">' + desenho + '</div>'
+             '<figcaption>Grafismo gerado com recurso a IA<br>EPI, 2026. Notas e fios numa mesa.</figcaption></figure></header>'
+             '<details class="metodo" id="metodo"><summary id="metodo-t">Como funciona</summary><div class="method-body">'
+             '<p>Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940). Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
+             + M.passos(set()) + f'<p>Nas {len(prontas)} sessões publicadas, começas por juntar material e observar melhor.</p>'
+             f'<a href="../../biblioteca/{BIB_ID}/">Ler sobre o método de Young →</a></div></details>'
+             '<h2 class="sessoes-t" id="sessoes">As sessões</h2><div class="portas">' + portas + '</div>'
+             '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
-    corpo = LL.nq(corpo)  # 01/11/2026 (correção 2, diretor de arte): formas verbais com pronome sem quebra no hífen
-    cv = ('<script>(function(){if(!(/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top))'
-          'document.documentElement.classList.add("cv")})();</script></head>')
-    return (cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias, como nasce uma ideia: sessões do Laboratório que seguem, passo a passo, o método de James Webb Young.').replace('</head>', cv, 1)
-            + f'<body class="ideias"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main><script>{js}</script>'
+    cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
+    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261103-1"></head>')
+    return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{LL.nq(corpo)}</main>'
+            f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
+            f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
 
@@ -755,7 +655,7 @@ def pagina_guiao(L):
                   f'<p class="passo-g">{e(s["passo"])}</p><p class="nome">Nome e turma <i></i></p>'
                   + bloco_guiao(g['frente']) + '</section>'
                   f'<section class="lado" aria-labelledby="g{s["n"]}v"><p class="rotulo">Sessão {s["n"]}, verso</p>'
-                  f'<h2 id="g{s["n"]}v">{e(g["verso_titulo"])}</h2>' + bloco_guiao(g['verso']) + '</section>')
+                  f'<h2 id="g{s["n"]}v">{e(g["verso_titulo"])}</h2>' + bloco_guiao(g['verso']) + esta_bom(s['n']) + '</section>')
     n = len([s for s in SESSOES if s['n'] in L])
     # 01/11/2026 (correção 5, revisor de pt-PT): «escreve-se no guião impresso» e não «aqui», que no ecrã apontava para a página
     # web, onde não se escreve
@@ -770,12 +670,8 @@ def pagina_guiao(L):
             + f'<body class="ideias guiao"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
 
-def tabela_grelha(g):
-    soma = sum(p for _, p in g['grelha'])
-    assert soma == 20, (g['produto'], soma)
-    linhas = ''.join(f'<tr><td>{e(c)}</td><td class="num">{p}</td></tr>' for c, p in g['grelha'])
-    return (f'<div class="tabela"><table><caption class="c-sr">Grelha indicativa: {e(g["produto"])}</caption><thead><tr><th scope="col">Critério</th><th scope="col" class="num">Pontos</th></tr></thead>'
-            f'<tbody>{linhas}</tbody><tfoot><tr><th scope="row">Total (indicativo)</th><td class="num">20</td></tr></tfoot></table></div>')
+def esta_bom(n):
+    return M.esta_bom(n)
 
 
 def video_de(d):
@@ -819,7 +715,7 @@ def pagina_guia(L):
         f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in SESSOES if s['n'] in L)
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../../'), ('Ideias', '../'), ('Guia do docente', '')])
              + '<header class="abre"><p class="rotulo">Ideias</p><h1>Guia do docente</h1>'
-             '<p class="lead">As sessões prontas em pormenor (tempos, materiais, o que fica escrito e a grelha /20 indicativa) e, antes delas, o quadro das sete sessões.</p>'
+             '<p class="lead">As sessões prontas em pormenor (tempos, materiais, o que fica escrito e os três critérios sem nota) e, antes delas, o quadro das sete sessões.</p>'
              '</header>'
              f'<nav class="indice-nav" aria-label="Neste guia"><ul class="indice">{indice}</ul></nav>'
              # 01/11/2026 (método): o guia abre com a razão do método, como o apresentar na primeira aula e onde o nome volta
@@ -836,7 +732,7 @@ def pagina_guia(L):
              '<p class="pg"><b>Ler como um detetive.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta, e quem o traz é o autor do método: cita-o duas vezes no livro.</p>'
              '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
-             '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17 do docente). Em cada critério há três níveis, salvo quando o critério diz outros: 0 pontos (não aparece), metade (aparece, incompleto ou sem razão) e todos (como está descrito).</p></section>'
+             '<p class="indicativa">O Laboratório não tem avaliação nem pontos. Os três critérios ajudam a rever o trabalho.</p></section>'
              # 01/11/2026 (correção 3 do método, verificador e revisor): a sequência diz os passos de cada porta como a entrada (PORTAS)
              # e o quadro abaixo; antes, ficara com o mapa antigo («Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar»)
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
@@ -878,13 +774,13 @@ def pagina_guia(L):
                   f'<h3>O que fica escrito</h3><p class="pg">{e(g["escrito"])}</p>'
                   f'<h3>Imagem</h3><p class="pg">{fig}</p>'
                   f'<h3>Vídeo</h3>{yt}'
-                  f'<h3>Grelha /20 indicativa: {e(g["produto"])}</h3>' + tabela_grelha(g)
+                  f'<h3>O que observar: {e(g["produto"])}</h3>' + esta_bom(s['n'])
                   + '<h3>Notas</h3><ul>' + ''.join(f'<li>{it(x)}</li>' for x in g['notas']) + '</ul>'
                   + '<h3>Ligações</h3><ul class="ligacoes">' + ''.join(f'<li><a href="{e(u)}">{it(t)}</a></li>' for t, u in g['ligacoes']) + '</ul>'
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{it(d["fontes"])}</p></section>')
     corpo += '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../guiao/">O guião →</a></p>'
     corpo = LL.nq(corpo)
-    return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e grelhas.')
+    return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e critérios sem nota.')
             + f'<body class="ideias guia"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
 
 

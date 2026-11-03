@@ -216,22 +216,22 @@ class Paginas(unittest.TestCase):
         self.assertEqual(falhas, [])
 
     def test_entrada(self):
+        # 02/11/2026: pedido 2, proposta A e critérios sem nota substituem o contrato anterior.
         s = (PILOTO / 'index.html').read_text('utf-8')
-        self.assertEqual(s.count('class="proximo inverso"'), 1)
-        self.assertEqual(s.count('class="botao"'), 1)
-        self.assertLess(s.index('class="botao"'), s.index('class="gesto"'))
-        self.assertEqual(len(re.findall(r'<button type="button" data-op aria-pressed="false">', s)), 3)
-        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
-        self.assertEqual(len(re.findall(r'<li (?:class="prep" )?data-', s)), len(FONTES))
+        self.assertEqual(s.count('class="botao inverso"'), 1)
+        self.assertLess(s.index('data-p-botao'), s.index('class="drawing"'))
+        self.assertNotIn('data-gesto', s)
+        self.assertNotIn('manihi-atol.webp', s)
+        self.assertEqual(len(re.findall(r'<li data-chave=', s)), len(FONTES))
         self.assertNotIn('Em preparação', L.visivel(s))
-        self.assertNotIn('A seguir, em preparação',s)
         for p in FONTES:
             d = json.loads(p.read_text('utf-8'))
             self.assertIn(f'data-chave="{d["chave"]}" data-versao="{d["versao"]}"', s)
         self.assertIn('Ideias | Laboratório | Lente', s)
-        self.assertIn('Como nasce uma ideia', s)
-        self.assertIn('projetar=1', s)  # a projeção não lê o progresso
-        self.assertIn('manihi-atol.webp', s)
+        self.assertIn('Observa o que te rodeia e dá forma a uma ideia tua.', s)
+        self.assertIn('Grafismo gerado com recurso a IA', s)
+        self.assertIn('assets/laboratorio/ideias/entrada.js', s)
+        self.assertNotIn('estados-ensaio.js', s)
 
     def test_guiao_e_guia(self):
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
@@ -241,8 +241,12 @@ class Paginas(unittest.TestCase):
         for n in (1, 2):
             self.assertIn(f'id="s{n}"', d)
             self.assertIn(f'href="../sessao-0{n}/?projetar=1"', d)
-        self.assertEqual(d.count('<td class="num">20</td>'), 2)
-        self.assertIn('Avaliação indicativa', d)
+        # 02/11/2026: os critérios substituem as duas grelhas, sem nota.
+        self.assertEqual(d.count('<td class="num">20</td>'), 0)
+        self.assertEqual(g.count('class="esta-bom"'), 2)
+        self.assertEqual(d.count('class="esta-bom"'), 4)
+        self.assertNotIn('Avaliação indicativa', d)
+        self.assertIn('O Laboratório não tem avaliação nem pontos.', d)
 
 
 class Opcoes(unittest.TestCase):
@@ -284,13 +288,16 @@ class Escrita(unittest.TestCase):
 class Imagens(unittest.TestCase):
     def test_imagens_vistas_com_tabela_e_licenca(self):
         pasta = ROOT / 'assets/laboratorio/ideias'
-        self.assertEqual(sorted(f.name for f in pasta.iterdir()), ['atget-quiosque-fiacres.webp', 'latour-leitora-da-sina.webp', 'manihi-atol.webp'])
+        self.assertEqual(sorted(f.name for f in pasta.iterdir()), ['atget-quiosque-fiacres.webp', 'entrada.css', 'entrada.js', 'latour-leitora-da-sina.webp', 'manihi-atol.webp', 'notas-fios.svg'])
         for f in pasta.iterdir():
             self.assertLess(f.stat().st_size, 200_000, f.name)
         tudo = ''.join(p.read_text('utf-8') for p in paginas_piloto())
-        for nome, licenca in (('latour-leitora-da-sina.webp', 'Domínio público (Open Access)'), ('atget-quiosque-fiacres.webp', 'CC0'), ('manihi-atol.webp', 'Domínio público')):
+        for nome, licenca in (('latour-leitora-da-sina.webp', 'Domínio público (Open Access)'), ('atget-quiosque-fiacres.webp', 'CC0')):
             self.assertIn(nome, tudo)
             self.assertIn(licenca, tudo)
+        # 02/11/2026: o atol sai da entrada, mas o recurso e o crédito documental ficam preservados.
+        self.assertTrue((pasta / 'manihi-atol.webp').is_file())
+        self.assertIn('Domínio público', I.ATOL['tabela'])
         # as imagens das portas do Laboratório (decisão 34) não se repetem aqui
         for porta in ('van-gogh', 'blake', 'degas', 'lissitzky'):
             self.assertNotIn(porta, tudo)
@@ -329,7 +336,8 @@ class SegundaRevisao(unittest.TestCase):
             s = (PILOTO / rel).read_text('utf-8')
             corpo = re.search(r'<main id="conteudo">(.*)</main>', s, re.S).group(1)
             self.assertEqual(L.nq(corpo), corpo, rel)
-        self.assertIn('Amy\u00a0E.\u00a0Herman', (PILOTO / 'index.html').read_text('utf-8'))
+        # 02/11/2026: a referência detalhada passou para o guia, preservando os espaços inseparáveis.
+        self.assertIn('Amy\u00a0E.\u00a0Herman', (PILOTO / 'docente/index.html').read_text('utf-8'))
 
     def test_marca_da_barra_e_cidadania_igual(self):
         # no Laboratório, o nome da marca num <span> (escondido abaixo de 400 px); na Cidadania, como estava
@@ -373,9 +381,11 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertIn('O teu «cocheiro»', [c.get('titulo') for c in s2['cartoes']])
         guia, guiao, entrada = self.ler('docente/index.html'), self.ler('guiao/index.html'), (PILOTO / 'index.html').read_text('utf-8')
         self.assertIn('as três colunas da fotografia passam a limpo no guião', guia)
-        self.assertIn('(reconhecida: 6 pontos; não reconhecida, mas revista: 4 pontos)', guia)
+        # 02/11/2026: conserva reconhecimento e revisão, sem pontuação.
+        self.assertIn('se não, é revista depois da prova.', guia)
+        self.assertNotIn('6 pontos', guia)
         self.assertIn('a enfermeira Florence Nightingale', guia)
-        self.assertIn('salvo quando o critério diz outros', guia)
+        self.assertIn('Os três critérios ajudam a rever o trabalho.', guia)
         self.assertIn('se não houver saída, a alternativa', guia)
         # 30/10/2026: na quinta revisão (01/11), o revisor de pt-PT reescreveu a pergunta, que dava por certo que o sítio prova
         # alguma coisa (teste mudado de propósito; a frase nova confirma-se também em QuintaRevisao)
@@ -407,12 +417,10 @@ class TerceiraRevisao(unittest.TestCase):
             for prefix in ['porta','pt','pc']:self.assertIn(f'id="{prefix}-{pid}"',s)
             self.assertNotIn(f'id="porta-{pid}" aria-labelledby',s)
         self.assertIn('<h3 id="pt-ver">Observar</h3>',s)
-        # html.cv só com script e fora da projeção, no <head>
-        cab = s[:s.index('</head>')]
-        self.assertIn('document.documentElement.classList.add("cv")', cab)
-        self.assertIn('projetar=1', cab)
-        # a tabela de museu continua dentro do <figure>
-        self.assertRegex(s, r'<figure class="atol">.*?<figcaption>.*?</figcaption></figure>')
+        # 02/11/2026: abertura progressiva nativa, sem portas fictícias nem o atol na entrada.
+        self.assertIn('<details class="metodo"', s)
+        self.assertNotRegex(s, r'<section[^>]*data-dobra')
+        self.assertRegex(s, re.compile(r'<figure class="drawing">.*?<figcaption>Grafismo gerado com recurso a IA', re.S))
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
         herman = re.search(r'O vídeo de Herman, em duas colunas</h3><table class="grelha-escrever">(.*?)</table>', g).group(1)
         self.assertEqual(herman.count('<tr><td></td><td></td></tr>'), 8)
@@ -451,8 +459,9 @@ class QuartaRevisao(unittest.TestCase):
         self.assertNotIn('cada par escolhe', guia)
         self.assertIn('Guião: cada um completa a tabela das duas versões do conselho; «Para levar».', guia)
         # 02/11/2026: L104-01, decisão 138; produto individual, critérios preservados.
-        self.assertIn('Grelha /20 indicativa: o auto de observação, individual</h3>', guia)
-        self.assertIn('Grelha indicativa: o auto de observação, individual</caption>', guia)
+        self.assertIn('O que observar: o auto de observação, individual</h3>', guia)
+        self.assertNotIn('Grelha indicativa', guia)
+        self.assertIn(L.nq(I.esta_bom(1)), guia)
         self.assertIn('Os dois cartões «Toca no quadro» são novos no Lente:', guia)
         self.assertNotRegex(L.visivel(re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', guia, flags=re.S)), r'\bmotor\b')  # jargão da equipa
         # 01/11/2026: com o cartão «O método» na posição 2, o resumo com a ligação passa a cartão 9 (índice 8)
@@ -514,7 +523,7 @@ class QuintaRevisao(unittest.TestCase):
         guiao = L.visivel((PILOTO / 'guiao/index.html').read_text('utf-8'))
         self.assertIn('escreve-se no guião impresso e onde cada um guarda o material.', guiao)
         self.assertNotIn('escreve-se aqui', guiao)
-        self.assertIn('Grelha /20 indicativa: o «cocheiro», individual', guia)
+        self.assertIn('O que observar: o «cocheiro», individual', guia)
         self.assertNotIn('de cada aluno, individual', guia)
         self.assertIn('Boa pergunta para a turma: o sítio onde está é uma prova ou só uma pista mais forte?', guia)
         self.assertNotIn('o que prova o sítio', guia)
@@ -558,8 +567,8 @@ class SextaRevisao(unittest.TestCase):
         self.assertIn('@media (min-width:380px) and (max-width:469px){html.em-projecao .ideias .gesto .ops{grid-template-columns:minmax(0,1fr)}}', entrada)
         # «sessão N» inseparável no botão: no HTML («Começar») e no script que o reescreve («Continuar» e «Rever»)
         self.assertIn('data-p-botao href="sessao-01/">Começar a sessão\u00a01\u00a0→</a>', entrada)
-        self.assertIn('b.textContent="Continuar na sessão\\u00a0"+prox.getAttribute("data-n")+"\\u00a0→"', entrada)
-        self.assertIn('b2.textContent="Rever a sessão\\u00a0"+u.li.getAttribute("data-n")+"\\u00a0→"', entrada)
+        self.assertIn('Continuar na sessão\u00a0', (ROOT / 'assets/laboratorio/ideias/entrada.js').read_text('utf-8'))
+        self.assertIn('Rever a sessão\u00a0', (ROOT / 'assets/laboratorio/ideias/entrada.js').read_text('utf-8'))
         self.assertNotIn('Começar a sessão 1', entrada)
 
 
@@ -584,67 +593,25 @@ class Metodo(unittest.TestCase):
         return cartoes, len(re.findall(r'Young', L.visivel(menu)))
 
     def test_bloco_o_metodo_na_entrada(self):
+        # 02/11/2026: pedido 2, proposta A e critérios sem nota substituem o contrato anterior.
         s = (PILOTO / 'index.html').read_text('utf-8')
-        abre = re.search(r'<header class="abre">(.*?)</header>', s, re.S).group(1)
-        # logo abaixo do título: o bloco é o que vem a seguir à frase de abertura, dentro da abertura
-        self.assertRegex(abre, r'<h1>Ideias</h1><p class="sub">Como nasce uma ideia</p><p class="lead">[^<]*método de cinco passos[^<]*</p>'
-                               r'<section class="metodo" aria-labelledby="metodo-t"><h2 id="metodo-t">O método</h2>')
-        bloco = re.search(r'<section class="metodo".*?</section>', abre, re.S).group(0)
+        bloco = re.search(r'<details class="metodo".*?</details>', s, re.S).group(0)
+        self.assertNotRegex(bloco.split('>')[0], r'\bopen\b')
+        self.assertIn('<summary id="metodo-t">Como funciona</summary>', bloco)
         texto = L.visivel(bloco)
-        for frag in ('James Webb Young', 'publicitário norte-americano', 'A Technique for Producing Ideas (1940)', 'um livro de poucas páginas',
-                     'Seguimos, passo a passo, o método', 'Há outros', 'escolhemos este por ser simples, claro e útil'):
+        for frag in ('James Webb Young', 'publicitário norte-americano', 'A Technique for Producing Ideas (1940)', 'Seguimos, passo a passo, o método', 'Há outros métodos; escolhemos este por ser simples, claro e útil.'):
             self.assertIn(frag, texto)
-        self.assertIn('<i>A Technique for Producing Ideas</i>', bloco)  # título de obra em itálico
-        # 01/11/2026: (correção 2 do método, revisor de pt-PT) «Há outros;» lia-se também como «há outros livros» (o nome mais perto é
-        # «um livro de poucas páginas»): a frase diz «métodos», como o encargo pede (ponto 1)
-        self.assertIn('Há outros métodos; escolhemos este por ser simples, claro e útil.', texto)
-        # 01/11/2026: (correção 2 do método, diretor de arte) o bloco com a largura da coluna, para o filete acabar onde acabam o título,
-        # a frase de abertura e a imagem (com 34 em, a 17 px, acabava a meio dela a 1366 e 1440 px); o parágrafo continua com 34 em
-        self.assertIn('.ideias .metodo{border-top:2px solid var(--tinta);padding-top:8px;margin:0 0 20px;max-width:none}', s)
-        self.assertIn('.ideias .abre .info,.ideias .topo .atol figcaption{max-width:34em}', s)
+        self.assertIn('<i>A Technique for Producing Ideas</i>', bloco)
         self.assertEqual(re.findall(r'<li><b>(\d)</b> ([^<]+)</li>', bloco), [(str(n), t) for n, t in enumerate(self.PASSOS, 1)])
         self.assertEqual(I.PASSOS, self.PASSOS)
-        # a linha de informação antiga (o livro e Holmes «como guia») deu lugar ao bloco
-        self.assertNotIn('como guia', L.visivel(abre))
-        # o passo também no rótulo da região «A seguir» («Começa aqui: passo 1 de 5»), que o script troca com o progresso
-        # 01/11/2026: (correção 1 do método, diretor de arte) «passo 1 de 5» inseparável, com espaços duros, no rótulo inicial, no
-        # data-passo das sessões prontas e na sessão em preparação que o script escreve (antes partia-se dentro do passo)
-        self.assertIn('<p class="kicker"><span data-p-k>Começa aqui</span><span data-p-passo>: passo\u00a01\u00a0de\u00a05</span></p>', s)
-        self.assertEqual(re.findall(r'data-passo="([^"]*)"', s), ['passo\u00a01\u00a0de\u00a05'] * 2)
-        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
-        self.assertNotIn('A seguir, em preparação',s)
-        self.assertIn('As sessões publicadas estão feitas.',s)
-        # 01/11/2026: (correção 1 do método, diretor de arte) a lista dos cinco passos em grelha, para nenhum ficar sozinho numa linha:
-        # um por linha abaixo de 600 px, três mais dois a partir de 600 px (as medidas estão em browser_ideias.cjs, secção 11)
-        self.assertIn('@media (max-width:599px){.ideias ol.passos-m{display:grid;grid-template-columns:max-content;row-gap:0}', s)
-        self.assertIn('@media (min-width:600px){.ideias ol.passos-m{display:grid;grid-template-columns:repeat(3,max-content);column-gap:16px}}', s)
-        self.assertIn('q("[data-p-passo]").textContent=": "+prox.getAttribute("data-passo");', s)
+        self.assertIn('biblioteca/young-tecnica-1940/', bloco)
+        self.assertLess(s.index('data-p-botao'), s.index('<details class="metodo"'))
 
     def test_passo_n_de_5_em_cada_sessao(self):
-        s = (PILOTO / 'index.html').read_text('utf-8')
-        apoios = re.findall(r'<span class="apoio">(.*?)</span>', s)
-        # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
-        self.assertEqual(len(apoios), len(FONTES))
-        for n, a in enumerate(apoios, 1):
-            self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
-        self.assertEqual([x.split(':')[0] for x in apoios[:6]], ['Passo 1 de 5', 'Passo 1 de 5'])
-        # 01/11/2026: (correção 2 do método, diretor de arte) o passo escrito em cada porta é o das sessões que estão dentro dela (antes,
-        # Ver dizia «Passos 1 e 2» sobre duas sessões do passo 1 e Treinar «Passos 2 e 3» sobre as sessões dos passos 1 a 3); a sessão
-        # de síntese («Os cinco passos juntos») não tem um passo só
-        def passos(t):
-            m = re.match(r'Passos? (\d)(?: (e|a) (\d))?(?: de 5)?:', t)
-            self.assertIsNotNone(m, t)
-            a, b = int(m.group(1)), int(m.group(3) or m.group(1))
-            return set(range(a, b + 1)) if m.group(2) != 'e' else {a, b}
-        portas = [(pid, re.sub(r'<[^>]+>', '', t), ss) for pid, t, ss in  # sem as <span class="nq"> que seguram «trabalhá-lo»
-                  re.findall(r'<div class="porta-corpo" id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">(.*?)</ol></div>', s, re.S)]
-        # 01/11/2026: (correção 3 do método, revisor de pt-PT) a porta Treinar diz «juntar o material geral», para os três elementos da
-        # enumeração serem infinitivos paralelos («juntar», «trabalhá-lo», «largá-lo»); antes, «o material geral» ficava sem a ação
-        self.assertEqual([(pid, t) for pid, t, _ in portas], [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.')])
-        for pid, t, sessoes in portas:
-            dentro = [a for a in re.findall(r'<span class="apoio">(.*?)</span>', sessoes) if not a.startswith('Os cinco passos juntos')]
-            self.assertTrue(dentro, pid)
-            self.assertEqual(passos(t), set().union(*(passos(a) for a in dentro)), pid)
+        # 02/11/2026: a entrada mostra os passos em detalhe progressivo; as sessões mantêm todas as marcas.
+        entrada = s = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('<details class="metodo"', entrada)
+        self.assertEqual(len(I.PASSOS), 5)
         for d in self.licoes():
             pag = (ROOT / d['saida']).read_text('utf-8')
             abre, ultimo = d['cartoes'][0]['html'], d['cartoes'][-1]['html']

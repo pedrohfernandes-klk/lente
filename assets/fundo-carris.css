@@ -1,5 +1,5 @@
 /* 02/11/2026: encargo das 20h. Gravura original gerada por tools/gerar_carris.py.
-   O elétrico aproxima-se da agulha e pára antes dela. Alavanca e agulha neutras,
+   O elétrico aproxima-se da agulha e para antes dela. Alavanca e agulha neutras,
    sem pessoas nos carris e sem escolher uma via. Motor comum, sem dados guardados. */
 .ju .jc-fundo{--jc-papel:var(--fundo,#f3f2ee);position:relative;overflow:hidden;height:clamp(232px,64vw,300px);margin:28px 0 0;color:var(--tinta,#161616);background:var(--jc-papel);pointer-events:none}
 .ju .jc-fundo>svg{display:block;width:100%;height:100%;max-width:none}
@@ -11,7 +11,17 @@
    O patamar mantém a aproximação parada durante os últimos 40% de cada ciclo. */
 @keyframes jc-aproxima{0%,10%{transform:translateX(0)}60%,100%{transform:translateX(56px)}}
 @media(prefers-reduced-motion:no-preference){
-html:not(.em-projecao) .ju .jc-anda .jc-eletrico{animation:jc-aproxima 36s ease-in-out 2;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-eletrico{animation:jc-aproxima 36s ease-in-out 1;animation-fill-mode:forwards}
 }
 @media print{.ju .jc-fundo{display:none}}
 @media print{.ju .jc-credito{display:none}}
+
+/* 03/11/2026: abertura integrada; o estado parado coincide com a chegada, sem salto aos 36/72 s. */
+.ju .jc-abertura{position:relative;isolation:isolate;margin:0;padding:0 0 260px}
+.ju .jc-abertura h1{margin-bottom:24px}
+.ju .jc-abertura .lead{margin:0;position:relative;z-index:1}
+.ju .jc-abertura .jc-fundo{position:absolute;z-index:-1;bottom:0;left:calc(50% - 50vw);width:100vw;max-width:none;margin:0;background:transparent;opacity:.65;--jc-papel:var(--papel,#fff)}
+.ju .jc-eletrico{transform:translateX(56px)}
+@media(min-width:640px){.ju .jc-abertura{padding-bottom:360px}}
+@media(min-width:960px){.ju .jc-abertura{padding-bottom:440px}}
+@media print{.ju .jc-abertura{padding:0}}
