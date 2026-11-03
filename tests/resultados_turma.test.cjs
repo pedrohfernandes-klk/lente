@@ -183,7 +183,7 @@ test('resumo por percurso: lições, sessões, apoios, Atlas, Ginásio, question
   assert.equal(t('Atlas Lusófono'), '1 pessoa conhecida; 1 país conquistado');
   assert.equal(t('Cidadania e Desenvolvimento'), 'M1: 1 de 8 sessões com registo (da 03 à 10); M2: 2 de 10 sessões com registo; 2 de 18 apoios do M1 com trabalho registado; 1 resposta escrita');
   assert.equal(t('Laboratório: Narrativas e Ginásio'), '2 treinos feitos');
-  assert.equal(t('Ter juízo: Justiça, Ética e Estética'), '1 lição concluída');
+  assert.equal(t('Decisões: Justiça, Ética e Estética'), '1 lição concluída');
   assert.equal(t(E.OUTROS), '1 registo');
   const licao = g['Português: lições e percursos dos módulos'].itens.find(i => i.chave === 'licao-m1-f04');
   assert.equal(licao.rotulo, 'M1, lição F04');
@@ -312,7 +312,7 @@ test('sem DOM nem armazenamento nem rede nos dois ficheiros de regras', () => {
 test('Justiça: lições 1, 10 e 13 no resumo, sem perder progresso antigo', () => {
   const registos = {};
   for (const n of [1, 10, 13]) registos['lente-justica-licao-' + n] = json({lida: true, melhor: 7, totalMelhor: 8});
-  const g = R.resumir(registos)['Ter juízo: Justiça, Ética e Estética'];
+  const g = R.resumir(registos)['Decisões: Justiça, Ética e Estética'];
   assert.equal(R.textoGrupo(g), '3 lições concluídas');
   for (const n of [1, 10, 13]) {
     const item = g.itens.find(i => i.chave === 'lente-justica-licao-' + n);

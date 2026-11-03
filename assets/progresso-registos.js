@@ -60,7 +60,7 @@
     ["^(epi-atlas|atlas-)", "Atlas Lusófono"],
     ["^(epi-bairro|bairro-)", "A cidade antes da aula"],
     ["^(epi-cidadania|epi-cid-|epi-cd-|cd\\d?-|lente-cidadania-)", "Cidadania e Desenvolvimento"],
-    ["^(epi-justica|lente-(justica|etica|estetica)-)", "Ter juízo: Justiça, Ética e Estética"],
+    ["^(epi-justica|lente-(justica|etica|estetica)-)", "Decisões: Justiça, Ética e Estética"],
     ["^epi-(narrativas|treinos|ficcao|guiao)", "Laboratório: Narrativas e Ginásio"],
     ["^epi-margens", "Margens"],
     ["^epi-gigantes", "Aos ombros de gigantes"],

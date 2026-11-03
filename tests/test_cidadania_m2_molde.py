@@ -5,6 +5,7 @@ ecrã; Faz fecha na casa da sessão do mapa do Contra-feed (dez casas, sem pesos
 obra nas sessões 01 a 09; chave de progresso nova; escrita do Lente; ligações locais; correções dos «Riscos»;
 e o M1 igual a origin/main, byte a byte.
 """
+from renomeacoes_cidadania import renomear
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -319,7 +320,7 @@ class Molde(unittest.TestCase):
             for t in lingua:
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
-            self.assertEqual((R / f).read_bytes(), antes, f)
+            self.assertEqual((R / f).read_bytes(), renomear(antes, f, base_ja_renomeada=True), f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):
