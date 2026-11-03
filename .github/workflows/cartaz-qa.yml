@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -23,6 +23,20 @@ jobs:
       - run: npm install --no-save playwright
       - run: npx playwright install --with-deps chromium
       - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
+      # 03/11/2026: cabeçalhos compactos, contraste real, projeção e zoom nativo.
+      - run: node tests/browser_cabecalhos_compactos.cjs
+        env:
+          HEADER_OUTPUT: ${{ runner.temp }}/cabecalhos-compactos
+      # 03/11/2026: oito ciclos completos da lupa e dezoito estados parados.
+      - run: node tests/browser_lupa_compacta.cjs
+        env:
+          LUPA_OUTPUT: ${{ runner.temp }}/cabecalhos-compactos/ciclos
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cabecalhos-compactos
+          path: ${{ runner.temp }}/cabecalhos-compactos
+          retention-days: 30
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
       - run: node tests/browser_lente_projecao_entrada.cjs

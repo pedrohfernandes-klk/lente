@@ -1,0 +1,18 @@
+/* 03/11/2026: abertura compacta. A lupa ocupa o topo, atrás do nome,
+   com a página inteira como campo e espaço protegido à esquerda para o texto. */
+body[data-site="lente"] [data-cartaz-entrada] header.lente-cab{
+  min-height:240px;padding-top:16px;padding-bottom:24px;
+}
+body[data-site="lente"] [data-cartaz-entrada] .lente-cab>.lente-etq{margin-bottom:16px;color:var(--tinta)}
+body[data-site="lente"] [data-cartaz-entrada] .lente-cab>.lente-frase{margin-top:24px}
+body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{
+  --lf-d:168px;--lf-x:48%;inset:-48px -16px auto;height:280px;opacity:.42;
+  mask-image:linear-gradient(to right,transparent,rgba(0,0,0,.14) 12%,rgba(0,0,0,.14) 48%,#000 74%,#000 88%,transparent),linear-gradient(to bottom,transparent,#000 18%,#000 78%,transparent);
+}
+:root[data-theme="dark"] body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{opacity:.34}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{opacity:.34}}
+@media(min-width:640px){
+  body[data-site="lente"] [data-cartaz-entrada] header.lente-cab{min-height:304px;padding-top:24px;padding-bottom:24px}
+  body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{--lf-d:224px;--lf-x:66%;inset:-40px -24px auto;height:344px}
+}
+@media print{body[data-site="lente"] [data-cartaz-entrada] header.lente-cab{min-height:0;padding-block:16px}}
