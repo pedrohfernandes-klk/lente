@@ -64,3 +64,15 @@ As leituras têm 49 a 80 palavras pelo validador. Os 16 testes Python de liçõe
 Resultado da revisão: passaram os 12 percursos completos (3 larguras × 2 temas × 2 modos), com os 20 cartões e 14 atividades em cada um, e os seis contextos adicionais do lançador real. Zero erros JavaScript e zero deslocamento lateral nos cartões. Visor por teclado, Escape, foco, resultado individual e isolamento do progresso conferidos. Capturas de seis cartões por contexto em `outputs/cidadania110-revisao-20261103/`; capturas do lançador em `outputs/cidadania110-lancador-20261103/`. Inspecionadas, entre outras, a leitura dos artigos a 320 px em escuro, a conclusão a 390 px em claro e a fotografia no lançador a 320/1366 px.
 
 Entrega pronta para revisão pedagógica deste modelo, sem substituir a sessão existente. Permanecem por validar a duração de sala, a sequência posterior, a integração no guia e a seleção do núcleo reduzido de sessões. O CI da cabeça anterior tinha três execuções verdes; o novo commit de prova desencadeia CI próprio. Não se declara publicação nem aprovação pedagógica final.
+
+## Acertos após a revisão pedagógica, 3/11
+
+- C110-01: o apoio da fotografia passa a traduzir o título, identificando a tradução de trabalho. O cartão 4 pede as palavras que significam «direitos humanos»; os índices continuam a selecionar Human Rights.
+- C110-02: aplica-se a alternativa mínima escolhida. O cartão 11 pede uma ação concreta da turma que realize o ensino referido no preâmbulo: comparar um caso com o sentido de um artigo. Os outros cartões mantêm-se; não se acrescentam cartões nem tipos. As opções têm 53, 53 e 51 caracteres, com a correta empatada no máximo.
+- C110-03: o retorno do cartão 18 deixa de confundir o papel de quem publicou com a sua identificação. Distingue a proteção enunciada no artigo dos factos ainda por esclarecer.
+
+Dados corrigidos e página regenerada pelo gerador. Mantêm-se 20 cartões, 14 atividades e cinco tipos. As seis leituras têm 67, 71, 61, 80, 72 e 49 palavras. Quatro testes do modelo passam, incluindo um contrato específico dos acertos. A versão do ensaio muda para `2026-11-03-2`; não muda a chave da sessão original.
+
+A conversão e integração das restantes sessões continua pendente. O modelo corrigido não passa a representar Cidadania completa.
+
+Após os acertos passaram novamente os 12 percursos completos, com 20 cartões e 14 respostas certas por percurso, e os seis contextos do lançador real. Provas em `outputs/cidadania110-acertos-20261103/`. A fotografia com a tradução acrescentada foi inspecionada a 320 px, em tema escuro; o texto cabe sem ocultar os controlos.

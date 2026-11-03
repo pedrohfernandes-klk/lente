@@ -1,7 +1,7 @@
 {
  "id": "cidadania-m1-s01",
  "chave": "epi-cid-m1-s01",
- "versao": "2026-11-03-modelo-1",
+ "versao": "2026-11-03-2",
  "marca": "CD",
  "titulo": "Sessão 01: Uma fotografia no grupo",
  "h1": "Humanos, sessão 01: Uma fotografia no grupo",
@@ -28,7 +28,7 @@
    "t": "ler",
    "rot": "Olha",
    "titulo": "Um documento nas mãos",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../img/cidadania/eleanor-roosevelt-dudh-1949.webp\" alt=\"Eleanor Roosevelt segura com ambas as mãos um cartaz inclinado, com o emblema da ONU, o título inglês da Declaração Universal e várias colunas de texto.\"></span><figcaption>Eleanor Roosevelt com a Declaração Universal, Lake Success, novembro de 1949. Fotógrafo não identificado. FDR Presidential Library &amp; Museum, 64-165. <a href=\"https://www.flickr.com/photos/fdrlibrary/27758131387/\">Fonte</a>; <a href=\"https://creativecommons.org/licenses/by/2.0/\">CC BY 2.0</a>. Reprodução em WebP.</figcaption></figure><p>Observa o que as mãos seguram e a disposição do texto. A fotografia permite ler o título; não precisamos de decifrar os artigos dentro da imagem.</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../img/cidadania/eleanor-roosevelt-dudh-1949.webp\" alt=\"Eleanor Roosevelt segura com ambas as mãos um cartaz inclinado, com o emblema da ONU, o título inglês da Declaração Universal e várias colunas de texto.\"></span><figcaption>Eleanor Roosevelt com a Declaração Universal, Lake Success, novembro de 1949. Fotógrafo não identificado. FDR Presidential Library &amp; Museum, 64-165. <a href=\"https://www.flickr.com/photos/fdrlibrary/27758131387/\">Fonte</a>; <a href=\"https://creativecommons.org/licenses/by/2.0/\">CC BY 2.0</a>. Reprodução em WebP.</figcaption></figure><p>Observa o que as mãos seguram e a disposição do texto. A fotografia permite ler o título; não precisamos de decifrar os artigos dentro da imagem.</p><p>Tradução de trabalho do título: «A Declaração Universal dos Direitos Humanos». «Human Rights» significa «direitos humanos».</p>"
   },
   {
    "t": "escolha",
@@ -49,8 +49,8 @@
   },
   {
    "t": "sublinhar",
-   "p": "No título transcrito, seleciona as duas palavras que identificam de quem são os direitos.",
-   "p2": "Que duas palavras do título significam «direitos humanos»?",
+   "p": "Que duas palavras do título significam «direitos humanos»?",
+   "p2": "Seleciona, no título transcrito, a expressão inglesa que corresponde a «direitos humanos».",
    "frase": "The Universal Declaration of Human Rights",
    "certas": [
     4,
@@ -130,19 +130,19 @@
   },
   {
    "t": "escolha",
-   "p": "Que meio é nomeado no apoio para desenvolver o respeito pelos direitos?",
-   "p2": "Que meio aparece nas palavras do preâmbulo que acabaste de ler?",
+   "p": "Que ação da turma põe em prática o ensino referido no preâmbulo?",
+   "p2": "Que proposta ajuda a compreender os direitos através de uma situação concreta?",
    "o": [
-    "O ensino e a educação das pessoas.",
-    "A divulgação e a leitura de cartazes.",
-    "A discussão e a aprovação de normas."
+    "Comparar um caso da turma com o sentido de um artigo.",
+    "Mostrar um cartaz à turma e pedir que escolham a cor.",
+    "Votar na turma para escolher quem escreve o cartaz."
    ],
    "c": 0,
-   "f": "O apoio cita «pelo ensino e pela educação». As outras propostas não estão no excerto.",
+   "f": "Comparar o caso com um artigo permite explicar o direito e discutir o seu sentido. É uma forma concreta de ensinar e aprender.",
    "fe": [
     "",
-    "A fotografia mostra um cartaz, mas esse não é o meio mencionado no excerto. Localiza as palavras que vêm depois de «pelo».",
-    "O excerto pede desenvolvimento do respeito através do ensino e da educação."
+    "Escolher a cor pode ajudar a apresentar um cartaz, mas a proposta não pede que a turma compreenda os direitos.",
+    "Escolher quem escreve organiza o trabalho. Falta uma ação que ensine o sentido dos direitos."
    ]
   },
   {
@@ -234,7 +234,7 @@
    "f": "O artigo ajuda a pensar a vida privada. Não prova intenções nem garante que uma imagem seja apagada de todos os aparelhos.",
    "fe": [
     "",
-    "O artigo não revela a intenção de quem publicou. O caso também já apresenta essa pessoa pela sua ação.",
+    "O artigo não prova a intenção de quem publicou. Distingue a proteção enunciada no texto dos factos que ainda precisas de esclarecer.",
     "Uma norma não garante, por si, a remoção de cópias. Falta conhecer a circulação."
    ]
   },

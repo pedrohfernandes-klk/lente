@@ -28,4 +28,12 @@ class Modelo(unittest.TestCase):
   self.assertIn('assets/ampliar-documentos.js',s)
   self.assertEqual(D['saida'],'demonstracoes/cidadania-sessao-modelo/index.html')
   self.assertTrue((R/'cidadania/piloto/m1-s01/index.html').is_file())
+ def test_revisao_pedagogica_110(self):
+  c=D['cartoes']
+  self.assertIn('«Human Rights» significa «direitos humanos»',c[1]['html'])
+  self.assertEqual(c[3]['p'],'Que duas palavras do título significam «direitos humanos»?')
+  self.assertEqual([c[3]['frase'].split()[i] for i in c[3]['certas']],['Human','Rights'])
+  self.assertEqual(c[10]['o'][c[10]['c']],'Comparar um caso da turma com o sentido de um artigo.')
+  self.assertIn('não prova a intenção',c[17]['fe'][1])
+  self.assertNotIn('já apresenta essa pessoa',c[17]['fe'][1])
 if __name__=='__main__':unittest.main()
