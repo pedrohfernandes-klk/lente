@@ -14,7 +14,7 @@ from cidadania_m2_molde import (PASSOS, LINHA, MARCA, CHAVE, TEMPOS, TEMPOS_MOST
                                 DECISOES, IMAGENS, LISBOA_1907, SESSOES, OBRAS, CASOS_RECICLADOS)
 
 FOLHAS = ['cidadania-m1-sessoes.css?v=20261027-molde-2', 'cidadania-m2-sessoes.css?v=20261028-m2-2']
-SCRIPTS = ['cidadania-sessoes-molde.js?v=20261028-m2-1']
+SCRIPTS = ['cidadania-sessoes-molde.js?v=20261103-privacidade']
 R = Path(__file__).resolve().parents[1]
 LICENCA = ('CC BY-SA 3.0', 'https://creativecommons.org/licenses/by-sa/3.0')  # o endereço que o Lente já usa (cidade/)
 # A imagem da abertura ocupa, no máximo, metade da largura no computador e a largura toda no telemóvel.

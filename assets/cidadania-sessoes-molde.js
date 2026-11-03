@@ -3,7 +3,7 @@
    porque o HTML do M1 não muda). A página diz qual é a sua chave e que sessões contam:
      <main data-c10 data-chave="lente-cidadania-m2-sessoes-v1" data-sessoes="01 02 ... 10" data-session="03">
    Numa lista de sessões (sem data-session), pinta os estados e o botão «Começar» ou «Continuar» (data-continue).
-   O registo fica neste aparelho; em projeção (moldura ou ?projetar=1) nada é gravado. Só lê e escreve a sua chave. */
+   O registo fica neste aparelho; em projeção (moldura ou ?projetar=1) não é lido, mostrado ou gravado. */
 (function () {
   'use strict';
   var root = document.querySelector('[data-c10][data-chave]');
@@ -23,6 +23,8 @@
 
   function say(t) { if (live) live.textContent = t; }
   function read() {
+    // 03/11/2026: a projeção começa sem retoma pessoal, também em pageshow e storage.
+    if (projected) return (state = { version: 1, sessions: {} });
     try {
       var d = JSON.parse(localStorage.getItem(KEY) || 'null');
       if (d && d.version === 1 && d.sessions && typeof d.sessions === 'object' && !Array.isArray(d.sessions)) state = d;

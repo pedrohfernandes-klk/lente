@@ -1,0 +1,21 @@
+name: Cidadania, privacidade da projeção
+on:
+  pull_request:
+    paths:
+      - 'assets/cidadania-sessoes-molde.js'
+      - 'tests/browser_cidadania_m2_privacidade.cjs'
+      - '.github/workflows/cidadania-privacidade-qa.yml'
+permissions:
+  contents: read
+jobs:
+  privacidade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/browser_cidadania_m2_privacidade.cjs
+      - run: node tests/browser_cidadania_m2_sessoes.cjs
