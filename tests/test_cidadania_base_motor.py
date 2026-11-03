@@ -40,6 +40,14 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in geracao.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
+                # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
+                # conserva a comparação integral de todos os restantes conteúdos.
+                if nome == 'olhar-e-decidir/justica/index.html':
+                    import importlib.util
+                    spec = importlib.util.spec_from_file_location('carris', ROOT / 'tools/gerar_carris.py')
+                    carris = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(carris)
+                    esperado = carris.instalar(esperado)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 
