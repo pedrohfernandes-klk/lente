@@ -949,10 +949,14 @@ def regras(nome, s):
 
 def paginas():
     L = licoes()
-    from menus_acabamento import instalar, PAGES
+    # Funciona também quando o gerador é carregado por caminho num teste isolado.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('menus_acabamento', ROOT/'tools/menus_acabamento.py')
+    menus = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(menus)
     dados = {PASTA + 'index.html': pagina_entrada(L), PASTA + 'guiao/index.html': pagina_guiao(L),
             PASTA + 'docente/index.html': pagina_guia(L), f'biblioteca/{BIB_ID}/index.html': pagina_biblioteca()}
-    return {nome: instalar(s, nome) if nome in PAGES else s for nome,s in dados.items()}
+    return {nome: menus.instalar(s, nome) if nome in menus.PAGES else s for nome,s in dados.items()}
 
 
 def main(argv):
