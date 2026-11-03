@@ -8,6 +8,13 @@
   var origin = win.location.origin;
   var canMessage = /^https?:\/\//.test(origin);
   var framed = win.self !== win.top;
+  /* O ponto comum já presente em todas as páginas carrega os apoios locais. */
+  if (doc.currentScript && doc.currentScript.src) {
+    var supports = doc.createElement('script');
+    supports.src = new URL('apoios.js?v=20261103-1', doc.currentScript.src).href;
+    supports.defer = true;
+    doc.head.appendChild(supports);
+  }
   var mediaSources = new WeakMap();
 
   /* Reutiliza as variantes escuras existentes, mesmo quando a escolha manual

@@ -9,8 +9,8 @@ html.em-projecao{font-size:23px}html.em-projecao .ligacao{animation:none!importa
 
 /* Peças comuns propostas, isoladas do sítio publicado. */
 :root{--certo:#1b7f3b;--errado:#c8232c;--certo-fundo:#e2f3e8;--errado-fundo:#fbe5e3;--resultado-duracao:180ms}
-body{height:100dvh;display:flex;flex-direction:column}.revisao,.caminho{flex-shrink:0}.caminho{width:100%}main{width:100%;flex:1;min-height:0;overflow:auto;scroll-padding:24px}
-.apoios-dock{flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;gap:16px;border-top:1px solid var(--line);background:var(--paper);font:14px Arial,sans-serif;z-index:5}
+body{height:100dvh;display:flex;flex-direction:column;padding-bottom:66px}.revisao,.caminho{flex-shrink:0}.caminho{width:100%}main{width:100%;flex:1;min-height:0;overflow:auto;scroll-padding:24px}
+.apoios-dock{flex-shrink:0;position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;gap:16px;border-top:1px solid var(--line);background:var(--paper);font:14px Arial,sans-serif;z-index:5}
 .boia>summary{list-style:none;border:1px solid currentColor;border-radius:28px;padding:12px 16px;min-width:48px;min-height:48px}.boia>summary::-webkit-details-marker{display:none}.boia nav{position:absolute;left:12px;bottom:72px;max-width:calc(100vw - 24px);width:280px;max-height:60dvh;overflow:auto;background:var(--paper);border:1px solid var(--ink);padding:12px;box-shadow:0 8px 28px #0003}.boia nav a,.boia nav button{display:block;padding:12px;min-height:48px;width:100%;text-align:left}.boia nav button{border:0;text-decoration:underline}#projetar{display:flex;align-items:center;gap:10px;min-width:48px;min-height:48px;padding:10px;border-radius:24px}#projetar svg{flex-shrink:0}
 .feedback.positivo{border-color:var(--certo);background:var(--certo-fundo);color:var(--ink)}.feedback.negativo{border-color:var(--errado);background:var(--errado-fundo);color:var(--ink)}.feedback{position:relative}.feedback:not(:empty)::before{content:"";position:absolute;left:-4px;top:0;bottom:0;width:4px;background:var(--resultado-marca);transform-origin:top;animation:resultado-entra var(--resultado-duracao) ease-out}.feedback.positivo{--resultado-marca:var(--certo)}.feedback.negativo{--resultado-marca:var(--errado)}.resultado-simbolo{color:var(--resultado-marca)}.feedback b{display:block}
 @keyframes resultado-entra{from{transform:scaleY(0)}to{transform:scaleY(1)}}
@@ -18,7 +18,7 @@ body{height:100dvh;display:flex;flex-direction:column}.revisao,.caminho{flex-shr
 .wordle{display:block;border-left:4px solid var(--accent);padding:8px 12px;margin:24px 0;text-decoration:none;font:700 1rem/1.4 Arial,sans-serif}.wordle small{display:block;font-weight:400;font-size:.8rem;margin-top:4px}
 @media(prefers-color-scheme:dark){:root{--certo:#7fd9bb;--errado:#e4555c;--certo-fundo:#163d30;--errado-fundo:#4a1f1f}}
 @media(prefers-reduced-motion:reduce){.feedback,.feedback::before{animation:none!important}}
-html.em-projecao .feedback,html.em-projecao .feedback::before{animation:none!important}html.em-projecao .boia{visibility:hidden}
+html.em-projecao .feedback,html.em-projecao .feedback::before{animation:none!important}
 @media print{body{height:auto;display:block}main{overflow:visible}.apoios-dock{display:none!important}.feedback,.feedback::before{animation:none!important}}
 
 /* Explorar acompanha o percurso principal; onze recursos, sem incorporações. */

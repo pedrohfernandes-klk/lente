@@ -27,7 +27,7 @@ Correção de contraste de 03/11: texto e rótulo usam a tinta principal (`--ink
 
 Ícone único: SVG `viewBox="0 0 24 24"`, retângulo `x=3 y=3 width=18 height=13 rx=1`, suporte `M12 16v5M7 21h10`, traço 1,6, sem preenchimento. `aria-hidden` no SVG; botão com nome acessível, foco visível, alvo mínimo 48 px. Não esconder em móvel. A integração final deve conservar o lançador e os parâmetros reais de projeção; o botão do protótipo só demonstra o modo visual e não substitui o QR.
 
-Boia: docente, guião para imprimir, impressão e apoio contextual. Abrir/fechar por teclado, Escape devolve foco ao botão. No protótipo, o conteúdo principal tem deslocamento próprio acima da faixa inferior, pelo que a boia fechada não tapa controlos a 320/390 px. A abertura dos apoios é explícita. Em projeção, a boia sai; imprimir remove os controlos.
+Boia: docente, guião para imprimir, impressão e apoio contextual. Abrir/fechar por teclado, Escape devolve foco ao botão. No protótipo, o conteúdo principal tem deslocamento próprio acima da faixa inferior, pelo que a boia fechada não tapa controlos a 320/390 px. A abertura dos apoios é explícita. Decisão posterior do docente, 03/11: a boia mantém-se no canto inferior esquerdo também em projeção; imprimir remove os controlos. Os acessos «Para o docente» passam para o interior da boia, conservando os destinos.
 
 ## Porta Português e materiais
 
@@ -37,4 +37,4 @@ Wordle: pesquisa de duplicados sem ocorrências no ramo. Uma ligação compacta 
 
 ## Alinhamento
 
-GPT3 recebe esta especificação para comparar e adaptar as peças em Português. Os quatro caminhos reservados do Lente continuam sob responsabilidade do GPT4: `tools/ideias_piloto.py`, `tools/licoes_lente.py`, `tools/laboratorio.py` e `assets/licoes/`. Nenhum desses caminhos é alterado por esta demonstração. A propagação requer revisão do percurso e dos contratos de comportamento.
+GPT3 recebe esta especificação para comparar e adaptar as peças em Português. Os quatro caminhos reservados do Lente continuam sob responsabilidade do GPT4: `tools/ideias_piloto.py`, `tools/licoes_lente.py`, `tools/laboratorio.py` e `assets/licoes/`. A integração posterior ajusta em `tools/ideias_piloto.py` apenas a largura da tabela do guião em projeção, detetada ao verificar a boia. A propagação requer revisão do percurso e dos contratos de comportamento.

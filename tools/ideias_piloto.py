@@ -453,6 +453,7 @@ CSS = (TOKENS +
  '.ideias th,.ideias td{border:1px solid var(--tinta);padding:6px 8px;text-align:left;vertical-align:top;overflow-wrap:break-word}'
  '.ideias table.grelha-escrever td{height:2.1em}'
  '.ideias table.grelha-escrever th{font:700 .8125rem/1.25 Arial,Helvetica,sans-serif}'
+ 'html.epi-projection .ideias.guiao table.grelha-escrever{table-layout:fixed;width:100%;overflow-wrap:anywhere}'
  '.ideias .tabela{overflow-x:auto;max-width:100%}'
  # 31/10/2026 (revisão do diretor de arte): 6,5 rem, para «120 a 145» caber na coluna sem passar por cima da borda
  '.ideias td.num,.ideias th.num{text-align:right;white-space:nowrap;width:6.5rem}'

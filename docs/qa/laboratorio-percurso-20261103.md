@@ -64,3 +64,18 @@ A bateria Python encontrou duas falhas, ambas na demonstração: faltava o par a
 Menus: 72 contextos aprovados. Percurso: 27 contextos com seis vistas, retorno à resposta e armazenamento preservado, mais os controlos, Explorar e ligações externas. Contraste após o tema comum: 48 combinações aprovadas, mínimo do texto 10,08:1 e dos símbolos 3,82:1. A demonstração continua explicitamente um excerto com estados simulados, não uma sessão completa nem uma implementação do lançador/QR.
 
 Provas atuais: outputs/lente108-main-menus-20261103/, outputs/lente108-main-percurso-final-20261103/ e outputs/lente108-main-contraste-final-20261103/. A ampliação por CSS não certifica zoom nativo. Não foram alterados os pedidos #110/#111 nem ampliada a seleção de Explorar. Sem publicação.
+
+
+## Boia comum e acessos docentes, 03/11/2026
+
+Decisão do docente recebida durante a integração: retirar os acessos expostos «Para o docente» e reuni-los na boia fixa no canto inferior esquerdo. `assets/apoios.js` é carregado pelo ponto comum de aparência, já presente nas páginas. Move os elementos de ligação, conservando o endereço e o identificador; não elimina materiais. No interior usa «Guia do docente». Sem JavaScript, os destinos originais continuam acessíveis. As páginas sem ligação docente específica recebem o acesso geral.
+
+O rodapé da Justiça em `olhar-e-decidir/justica/index.html` está incluído: o reconhecimento aceita «Para o docente:». Não se edita essa página, reservada ao #103. A boia tem nome acessível, alvo de 48 px, abertura por Enter, Escape com devolução do foco, espaço inferior reservado e permanece acessível em projeção. A demonstração usa a faixa inferior fixa e deixa de esconder a boia nesse modo.
+
+`tests/browser_apoios.cjs`: 60 contextos, cinco páginas, 320/390/1366 px, claro/escuro e projeção real. Exige destinos docentes preservados, ausência de acessos com o rótulo anterior, posição fixa, teclado, ausência de transbordo e última ação/rodapé fora da boia. Os elementos de percursos fechados não são conteúdo visível; a medição usa `checkVisibility()`. Capturas em `outputs/lente108-boia-20261103/`, incluindo móvel claro e projeção escura, conferidas.
+
+A verificação encontrou uma tabela do guião com 19 px de transbordo a 320 px em projeção. Corrigiu-se no gerador de Ideias a distribuição das colunas e a quebra de palavras apenas em projeção; regeneraram-se a entrada, o guião e o guia docente. Nenhum texto, grelha ou dimensão de impressão foi alterado.
+
+Após o acerto: 27 percursos e 48 combinações de contraste passaram; mínimos 10,08:1 no texto e 3,82:1 nos símbolos. Os 15 testes da aparência passaram. A especificação comum foi atualizada e enviada ao GPT3 com autorização direta do docente. Não houve controlo interativo do computador nem publicação.
+
+A bateria integral Python passou: 275 testes, 172,682 s, sem falhas. Os menus passaram nos 72 contextos; o zoom 2 deste ensaio é CSS, não zoom nativo do navegador.
