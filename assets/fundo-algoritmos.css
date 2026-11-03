@@ -1,0 +1,17 @@
+/* 03/11/2026: piloto de Algoritmos, sinais e regra de encaminhamento. */
+.civic-index .p-cab[data-fundo=ca]{position:relative;isolation:isolate;container-type:inline-size;min-height:360px;padding-top:24px;padding-bottom:165px}
+.p-cab[data-fundo=ca]>:not(.ca-grafismo){position:relative;z-index:1}
+.p-cab[data-fundo=ca] h1{font-size:min(2.3rem,18cqi)}
+.p-cab[data-fundo=ca] .p-sub{margin-top:24px}
+.p-cab[data-fundo=ca] .p-lead{max-width:38ch}
+.ca-grafismo{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:.7;mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.06) 55%,#000 80%,#000 92%,transparent),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}
+.ca-grafismo svg{position:absolute;width:100%;height:220px;right:0;bottom:0;overflow:visible;color:var(--tinta)}
+.ca-linhas{opacity:.35}.ca-entradas,.ca-saidas{opacity:.6}
+.ca-acento{fill:var(--mostarda,#d9a520)}
+.ca-rota{stroke:var(--tinta);stroke-width:3;stroke-dasharray:8 92;stroke-dashoffset:-55}
+.ca-credito{font:.8125rem/1.5 Arial,sans-serif;color:var(--suave);margin:0 0 24px;max-width:78ch}
+@media(min-width:760px){.civic-index .p-cab[data-fundo=ca]{padding-bottom:48px;min-height:360px}.ca-grafismo{mask-image:linear-gradient(to right,transparent,rgba(0,0,0,.06) 35%,#000 68%,#000 93%,transparent),linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent)}.ca-grafismo svg{width:72%;height:320px;bottom:0}}
+@keyframes ca-percurso{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+@media(prefers-reduced-motion:no-preference){html:not(.em-projecao) .ca-anda .ca-rota{animation:ca-percurso 36s linear infinite}}
+html.em-projecao .ca-credito{font-size:1.25rem}
+@media print{.ca-grafismo{display:none}.civic-index .p-cab[data-fundo=ca]{min-height:0;padding-bottom:16px}}
