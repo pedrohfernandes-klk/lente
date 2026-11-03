@@ -53,3 +53,14 @@ Achado do GPT3 corrigido: texto e rótulo passam à tinta principal sobre fundos
 Verificação das páginas oficiais em 03/11/2026: os dez endereços além de Wordle responderam ao leitor web; Léxico e Elos apresentam uma aplicação JavaScript («A carregar…»). Wordle mantém o endereço oficial aprovado na coordenação, mas o leitor web devolveu erro de acesso. Isto não demonstra que o recurso esteja indisponível. Não se promete funcionamento completo das aplicações externas. Bézier declara expressamente teclado e rato ou painel tátil. Não se acrescentaram recursos à seleção aprovada.
 
 As ligações verificáveis e as frases de ação ficam em demonstracoes/laboratorio-percurso/percurso.js. O teste de navegador exige os onze endereços exatos, as cinco categorias, apenas três destaques, novo separador seguro, ausência de pedidos externos e retorno ao Laboratório. Mantém também os 27 percursos, os estados das respostas, o armazenamento intacto e os limites de largura.
+
+
+## Integração do main com #109, 03/11/2026
+
+Merge 372296de0c0f5b8cb4777f3934f70760392dbbe2, com main 2f88092636389458a6ea9bf3ca9362bd42e6bb3b como segundo pai. Cabeçalho, projeção, renomeações e atributos LF preservados. Os conflitos das camadas anteriores ficaram com main; o gerador do Laboratório recebeu apenas o incremento próprio dos menus. Quatro entradas e conteúdo do protótipo regenerados sem diferenças.
+
+A bateria Python encontrou duas falhas, ambas na demonstração: faltava o par appearance.css/appearance.js exigido em todas as páginas. Corrigido o HTML, com data-appearance-site e um lugar próprio para o controlo de tema na navegação. Nenhum teste dispensado. Os 17 testes dos dois conjuntos afetados passaram depois da correção. Os restantes 273 da execução integral anterior tinham passado; o CI repetirá a bateria completa.
+
+Menus: 72 contextos aprovados. Percurso: 27 contextos com seis vistas, retorno à resposta e armazenamento preservado, mais os controlos, Explorar e ligações externas. Contraste após o tema comum: 48 combinações aprovadas, mínimo do texto 10,08:1 e dos símbolos 3,82:1. A demonstração continua explicitamente um excerto com estados simulados, não uma sessão completa nem uma implementação do lançador/QR.
+
+Provas atuais: outputs/lente108-main-menus-20261103/, outputs/lente108-main-percurso-final-20261103/ e outputs/lente108-main-contraste-final-20261103/. A ampliação por CSS não certifica zoom nativo. Não foram alterados os pedidos #110/#111 nem ampliada a seleção de Explorar. Sem publicação.
