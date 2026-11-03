@@ -90,3 +90,7 @@ html:is(.em-projecao,.epi-projection) [data-menus-acabamento] :is(.catalogo,.map
 [data-menus-acabamento] .lab-sets .lab-set-arrow{grid-column:2;min-width:0}
 html.epi-projection [data-menus-acabamento] [data-cartaz-entrada] .lab-sets a.cz-row,
 [data-menus-acabamento] [data-cartaz-entrada] .lab-sets a.cz-row{grid-template-columns:minmax(0,1fr) 24px}
+[data-menus-acabamento] .projetar{margin-top:32px;padding-top:16px;border-top:1px solid var(--menu-rule)}
+[data-menus-acabamento] .projetar>a{display:flex;align-items:center;min-height:48px;padding:12px 16px;box-sizing:border-box;max-width:100%;color:inherit;text-decoration:none;line-height:1.5;overflow-wrap:anywhere;border-bottom:1px solid var(--menu-rule)}
+[data-menus-acabamento] .projetar>a:hover{background:var(--menu-wash)}
+[data-menus-acabamento] .tambem+[data-cartaz="raiz"]{margin-top:32px;padding-top:24px;border-top:1px solid var(--menu-rule)}

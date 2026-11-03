@@ -36,10 +36,14 @@ O gerador acrescenta apenas uma marca no body e a ligação à folha de estilos,
 
 Matriz de navegador: 320, 390 e 1366 px; claro, escuro e visor real de projeção em ambos os temas, com a classe epi-projection e a folha do visor carregadas. Capturas antes e depois; largura, alvos mínimos, foco, teclado e armazenamento. A entrada geral conserva as dobras abertas no ecrã largo e na projeção, como exige o script publicado; as outras aberturas continuam a responder ao teclado.
 
-Estado da ronda: em curso. Não declarar aprovação antes de terminar. Provas locais: outputs/lente-menus-acabamento-provas-20261103/. A comparação usa a proposta #112 como antes, não afirma que essa proposta já esteja publicada.
+Ronda aprovada: 336 contextos, 168 antes e 168 depois, nas catorze páginas. Zero erros de JavaScript, sem deslocamento lateral na proposta, alvos de navegação com pelo menos 44 px, foco e teclado. A nova abertura do mapa conserva os seis destinos e responde a Enter. Passaram também 40 contextos separados: Começar/Continuar/Rever com registos reais, preservação do armazenamento, projeção e alternativa sem JavaScript. Provas locais: outputs/lente-menus-acabamento-provas-20261103/. A comparação usa a proposta #112 como antes, não afirma que essa proposta já esteja publicada.
 
 A primeira ronda por parâmetro não certificava o visor em cinco páginas. A ronda final usa o visor real. Este revelou uma regra de grelha específica da projeção que conservava três colunas depois de retirar a numeração decorativa; corrigiu-se a grelha dos módulos, sem alterar o cabeçalho nem reduzir o texto.
 
 ## Retoma e limites
 
 Checkout: outputs/lente-menus-acabamento-20261103. Ramo: codex/menus-acabamento-20261103. A integração deve aguardar revisão da cabeça exata, verificações automáticas e vez de publicação. A autorização comunicada para este âmbito não substitui a revisão dos pré-requisitos #108 e #112. #115, sessões e outros lotes não fazem parte desta camada.
+
+## Acerto pontual do visor
+
+A pedido do docente, transmitido pela coordenação, projetar/index.html muda apenas «Abrir fora da projeção ↗» para «Sair da projeção». O destino e o comportamento existentes mantêm-se; não se alteram scripts, estilos, identificadores ou arquitetura do visor. Esta substituição foi recebida no checkout e incluída na entrega.

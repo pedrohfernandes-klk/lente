@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'..'),before=path.resolve(root,'../lente-ideia
 const out=process.env.MENUS_PROVAS||path.resolve(root,'../lente-menus-acabamento-provas-20261103');
 const pages=JSON.parse(fs.readFileSync(path.join(root,'tools/menus-acabamento-20261103.json'),'utf8'));
 const selected=process.env.MENUS_PAGES?process.env.MENUS_PAGES.split(','):Object.keys(pages);assert(selected.every(x=>x in pages));
-const targets='.ideias-recursos>a,.ferr-grupo li>a,.lista li>a,.catalogo li>a,.map-tree li>a,.saidas-sec>a,.cz-footer-links>a,.ideias-mapa,.guide-route>a,.ligacoes>a,.map-open p>a,.map-section>h2>a,.map-footer>a,.tambem>a';
+const targets='.ideias-recursos>a,.ferr-grupo li>a,.lista li>a,.catalogo li>a,.map-tree li>a,.saidas-sec>a,.cz-footer-links>a,.ideias-mapa,.guide-route>a,.ligacoes>a,.map-open p>a,.map-section>h2>a,.map-footer>a,.tambem>a,.projetar>a';
 (async()=>{fs.mkdirSync(out,{recursive:true});const browser=await chromium.launch({executablePath:process.env.CHROME_PATH});const phases=process.env.MENUS_PHASES?process.env.MENUS_PHASES.split(','):(fs.existsSync(before)?['antes','depois']:['depois']);assert(phases.every(x=>['antes','depois'].includes(x)));const saved=path.join(out,'resultados.json');const rows=fs.existsSync(saved)?JSON.parse(fs.readFileSync(saved,'utf8')).filter(r=>!phases.includes(r.phase)||!selected.includes(r.file)):[];
 try{for(const phase of phases)for(const file of selected)for(const width of [320,390,1366])for(const mode of ['light','dark','projection-light','projection-dark']){
  const projected=mode.startsWith('projection'),dark=mode.endsWith('dark'),base=phase==='antes'?before:root;
