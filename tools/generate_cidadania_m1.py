@@ -47,7 +47,7 @@ def shell(path,title,body):
  return '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+e(title)+' · Cidadania · Lente</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"><link rel="stylesheet" href="'+rel(path,'assets/appearance.css')+'"><script src="'+rel(path,'assets/appearance.js')+'"></script>'+assets(path)+'</head><body class="m1-sheet">'+body+'<script defer src="'+rel(path,'assets/projection-launcher.js')+'" data-site="lente"></script></body></html>\n'
 def wrap(path,body,aliases=()):
  s=old(path);s=s.replace('</head>',assets(path)+'</head>')
- if path=='cidadania/projeto/index.html':s=re.sub(r'<title>.*?</title>','<title>SER-SE HUMANO · Projeto · Cidadania</title>',s,count=1)
+ if path=='cidadania/projeto/index.html':s=re.sub(r'<title>.*?</title>','<title>HUMANOS · Projeto · Cidadania</title>',s,count=1)
  # Preservar todos os scripts e o corpo antigo no mesmo endereço evita quebrar
  # caminhos relativos. Âncoras de critérios passam para o enunciado vigente.
  m=re.search(r'<body\b[^>]*>',s);end=s.rfind('</body>');legacy=s[m.end():end]
@@ -58,7 +58,7 @@ def wrap(path,body,aliases=()):
 
 def ficha(n):
  f=FICHAS[n-1];u=(n-1)//3;ident=f'F{n:02}';path=f'cidadania/m1/fichas/{ident.lower()}/index.html'
- body=f'<p class="m1-kicker">Apoio {n:02} · {UNITS[u][0]} · Ser-se humano</p><h1>{e(f["title"])}</h1><p class="m1-lead">{e(f["question"])}</p><section class="m1-reading" aria-label="Contexto"><p>{e(f["context"])}</p></section>'
+ body=f'<p class="m1-kicker">Apoio {n:02} · {UNITS[u][0]} · Humanos</p><h1>{e(f["title"])}</h1><p class="m1-lead">{e(f["question"])}</p><section class="m1-reading" aria-label="Contexto"><p>{e(f["context"])}</p></section>'
  if 'capsule' in f:
   c=CAPSULES[f['capsule']];links=[]
   for label,url in c['sources']:
@@ -66,7 +66,7 @@ def ficha(n):
    links.append('<li><a href="'+e(url,quote=True)+'">'+e(label)+'</a></li>')
   body+='<section class="m1-block" data-capsule="'+f['capsule']+'"><p class="m1-kicker">História do teatro · cápsula integrada</p><h2>'+e(c['title'])+'</h2><p>'+e(c['text'])+'</p><p><strong>Aplicar à escrita.</strong> '+e(c['task'])+'</p><details><summary>Fontes da cápsula</summary><div><ul>'+''.join(links)+'</ul></div></details></section>'
  body+='<section class="m1-block"><h2>Ler e comparar</h2><p class="m1-note">Exemplo didático redigido para este apoio; casos e obras identificados no contexto. Não é uma citação.</p><div class="m1-sample">'+e(f['sample'])+'</div><ol class="m1-tasks">'+''.join('<li>'+e(t)+'</li>' for t in f['tasks'])+'</ol><details data-feedback><summary>Depois de decidir · comparar razões</summary><div><p>'+e(f['feedback'])+'</p></div></details></section>'
- body+='<section class="m1-block" id="oficina"><p class="m1-kicker">SER-SE HUMANO · oficina de escrita</p><h2>Levar ao guião</h2><p>'+e(f['work'])+'</p><p><strong>Rever.</strong> '+e(f['review'])+'</p><p class="m1-note">Escreve no caderno ou no ficheiro do projeto. Este apoio não cria uma entrega separada.</p></section>'
+ body+='<section class="m1-block" id="oficina"><p class="m1-kicker">HUMANOS · oficina de escrita</p><h2>Levar ao guião</h2><p>'+e(f['work'])+'</p><p><strong>Rever.</strong> '+e(f['review'])+'</p><p class="m1-note">Escreve no caderno ou no ficheiro do projeto. Este apoio não cria uma entrega separada.</p></section>'
  body+='<aside class="m1-justice"><h2>Regressar à Justiça</h2><p>'+e(f['justice'])+'</p>'+anchor(path,'cidadania/m1/#unidade-3','Retomar a unidade central')+'</aside>'
  body+='<details><summary>Fontes e recursos completos</summary><div>'+resources(path,f['resources'])+'<p>'+anchor(path,'cidadania/m1/biblioteca/','Biblioteca completa: obras, fontes, créditos e materiais anteriores')+'</p><p class="m1-note">Contextualização e exemplos: síntese didática do LENTE. As fontes originais permitem aprofundar e verificar; uma ligação não implica visionamento integral obrigatório.</p></div></details>'
  body+='<section class="m1-progress" data-m1-storage hidden aria-label="Registo pessoal"><label><input type="checkbox" data-m1-done="'+ident+'">Registei e revi este trabalho no meu caderno ou projeto.</label><p class="m1-live" data-m1-live role="status" aria-live="polite">Este registo fica neste aparelho. Não é uma classificação automática.</p></section><noscript><p>As tarefas e os apoios podem ser lidos e impressos sem JavaScript. Conserva o registo no caderno.</p></noscript>'

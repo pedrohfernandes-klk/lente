@@ -20,8 +20,7 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  for(const sel of ['.cz-next .cz-button','.cz-fold>summary'])for(const box of await page.locator(sel).all()){const r=await box.boundingBox();assert.ok(r.height>=(sel.includes('summary')?88:48),`${pagePath} ${sel}: ${r.height}`);}
  const clipped=await page.locator('.modulo h3').evaluateAll(es=>es.filter(e=>e.scrollWidth>e.clientWidth).map(e=>e.textContent));assert.deepEqual(clipped,[],'títulos dos percursos');
  if(entry&&pagePath===''&&width===390)assert.ok(await page.evaluate(()=>document.documentElement.scrollHeight)<3000,'entrada abaixo de 3000 px');
- if(pagePath.startsWith('narrativas/')){// 02/11/2026: no piloto os percursos abrem por pedido, em todas as larguras.
-  if(await page.locator('[data-menu-piloto]').count()){assert.equal(await page.locator('main .cz-fold[open]').count(),0);const f=page.locator('main .cz-fold').first();await f.locator('summary').focus();await page.keyboard.press('Enter');assert(await f.evaluate(e=>e.open));await page.keyboard.press('Space');assert(!await f.evaluate(e=>e.open));}else assert.ok(await page.locator('.cz-fold[open]').count()>=1,'banda do próximo passo aberta');assert.equal(await page.locator('.cz-state').filter({hasText:'por fazer'}).count(),0);}
+ if(pagePath.startsWith('narrativas/')){assert.ok(await page.locator('.cz-fold[open]').count()>=1,'banda do próximo passo aberta');assert.equal(await page.locator('.cz-state').filter({hasText:'por fazer'}).count(),0);}
  // 02/11/2026: regressões da confirmação, imagem sem caixa 3:2 e largura útil da legenda.
  if(pagePath==='narrativas/'&&width===390)assert.ok(await page.evaluate(()=>document.documentElement.scrollHeight)<3000,'Laboratório abaixo de 3000 px');
  if(pagePath.startsWith('narrativas/')&&width>=1024){
@@ -29,8 +28,7 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
   // 02/11/2026: decisão 134. Sem a caixa «A seguir», deixa de se medir a região ao lado da abertura; as dobras continuam à largura útil.
   for(const w of layout.folds)assert.ok(Math.abs(w-(layout.main-32))<=1,'dobras ocupam toda a largura útil');
   if(pagePath!=='narrativas/'){
-   const imagem=page.locator('.menu-imagem');if(await imagem.count()){await imagem.locator('summary').focus();await page.keyboard.press('Enter');assert(await imagem.evaluate(e=>e.open));}
-   const museum=await page.locator('main>.cz-museum, main>.menu-imagem>.cz-museum').evaluate(e=>({height:e.getBoundingClientRect().height,caption:e.querySelector('figcaption').getBoundingClientRect().width,ratio:getComputedStyle(e.querySelector('img')).aspectRatio}));
+   const museum=await page.locator('main>.cz-museum').evaluate(e=>({height:e.getBoundingClientRect().height,caption:e.querySelector('figcaption').getBoundingClientRect().width,ratio:getComputedStyle(e.querySelector('img')).aspectRatio}));
    assert.ok(museum.caption>=240,JSON.stringify(museum));assert.ok(museum.height<=400,JSON.stringify(museum));assert.equal(museum.ratio,'auto');
   }
  }
@@ -41,8 +39,7 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  if(entry&&pagePath===''&&width>=1024)await naoDobra(`${width} ${theme}`);
  if(process.env.CARTAZ_CAPTURAS){await page.evaluate(async()=>{await Promise.all([...document.images].map(im=>{im.loading='eager';return im.decode().catch(()=>{});}));});fs.mkdirSync(process.env.CARTAZ_CAPTURAS,{recursive:true});await page.screenshot({path:path.join(process.env.CARTAZ_CAPTURAS,(pagePath.replaceAll('/','-')||'entrada')+width+'-'+theme+'.png'),fullPage:true});}
  await page.goto(origin+'/lente/'+pagePath+'?projetar=1',{waitUntil:'networkidle'});
- // 03/11/2026: o piloto mantém a abertura por pedido também na projeção; as outras famílias conservam o contrato anterior.
- if(await page.locator('[data-menu-piloto]').count()){assert.equal(await page.locator('main .cz-fold[open]').count(),0,'piloto em projeção');const f=page.locator('main .cz-fold').first();await f.locator('summary').focus();await page.keyboard.press('Enter');assert(await f.evaluate(e=>e.open));await page.keyboard.press('Space');assert(!await f.evaluate(e=>e.open));}else assert.equal(await page.locator('.cz-fold:not([open])').count(),0,'projeção');assert.deepEqual(errors,[]);assert.equal(await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0,'projeção');
+ assert.equal(await page.locator('.cz-fold:not([open])').count(),0,'projeção');assert.deepEqual(errors,[]);assert.equal(await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0,'projeção');
  // 02/11/2026: mede texto efetivamente visível, incluindo o lead e os rótulos das dobras.
  if(pagePath.startsWith('narrativas/'))assert.deepEqual(await page.locator('main').evaluate(main=>[...main.querySelectorAll('*')].filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden').filter(e=>parseFloat(getComputedStyle(e).fontSize)<17.85).map(e=>({text:e.textContent.trim(),size:getComputedStyle(e).fontSize}))),[],'projeção sem texto abaixo de 17,9 px arredondados');
  if(entry&&pagePath===''){
@@ -61,7 +58,7 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  for(const route of pages){await p.goto(origin+'/lente/'+route);assert.equal(await p.locator('.cz-fold:not([open])').count(),0,'sem JavaScript');
  // 02/11/2026: o botão sem JavaScript não repete o título, mas conserva o destino.
  // 02/11/2026: decisão 134. A caixa saiu; a ligação de continuar fica escondida, com o destino, só para o progresso.
- if(route.startsWith('narrativas/')){assert.equal(await p.locator('.cz-next').count(),0);assert.equal(await p.locator('a.continuar[data-continuar]').count(),1);assert.ok(await p.locator('a.continuar[data-continuar]').getAttribute('href'));/* 03/11/2026: o piloto torna a continuação visível nas três portas, incluindo sem JavaScript. */if(route!=='narrativas/'&&await p.locator('[data-menu-piloto]').count())assert.equal(await p.locator('a.continuar[hidden]').count(),0);else assert.equal(await p.locator('a.continuar[hidden]').count(),1);}}
+ if(route.startsWith('narrativas/')){assert.equal(await p.locator('.cz-next').count(),0);assert.equal(await p.locator('a.continuar[hidden][data-continuar]').count(),1);assert.ok(await p.locator('a.continuar[hidden]').getAttribute('href'));}}
  await ctx.close();
  if(lab){const ctx=await browser.newContext({viewport:{width:390,height:900}});const data=JSON.parse(fs.readFileSync(path.join(root,'assets/laboratorio/percursos.json'),'utf8')),item=data.pieces.find(p=>p.progress.kind==='feitas'),key=item.progress.key,id=item.progress.id;
  const value={feitas:{[id]:Date.UTC(2026,10,1,12)}};await ctx.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key,value});

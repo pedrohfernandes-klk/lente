@@ -440,7 +440,7 @@ def pagina_modulo(S):
           'if(b&&feitas){if(prox){b.href=prox.querySelector("a").getAttribute("href");b.textContent="Continuar: Sessão "+prox.getAttribute("data-n")+", "+prox.getAttribute("data-titulo")+"\\u00a0→";if(pn)pn.textContent=prox.getAttribute("data-n");if(pt)pt.textContent=prox.getAttribute("data-titulo");if(pq)pq.textContent=prox.getAttribute("data-pergunta")}'
           'else{b.textContent="As 10 sessões estão feitas. Rever a sessão 01\\u00a0→";if(pk)pk.textContent="Módulo feito"}}})();')
     corpo = (migalhas(base, [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), ('Módulo 1 (piloto)', '')])
-             + '<header><p class="marca">Cidadania, módulo 1</p><h1>Ser-se humano</h1>'
+             + '<header><p class="marca">Cidadania, módulo 1</p><h1>Humanos</h1>'
              '<p class="lead">Direitos humanos, democracia e instituições políticas, em 10 sessões de 180 minutos. Cada sessão é uma lição em cartões, com uma parte na aula.</p>'
              '</header>'
              f'<section class="proximo" aria-label="A seguir"><p class="kicker" data-prox-k>A seguir</p>'
@@ -452,7 +452,7 @@ def pagina_modulo(S):
              # empurrava a primeira ação para fora do primeiro ecrã a 320 px.
              '<p class="aviso-piloto">Piloto em revisão. O que fazes fica só neste aparelho.</p>'
              '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
-    return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Ser-se humano: as 10 sessões em piloto.')
+    return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Humanos: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
             + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
 

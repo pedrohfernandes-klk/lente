@@ -51,3 +51,19 @@ Esta entrega não cumpre o requisito dos cinco tipos `classificar`, `linha`, `es
 O visor foi ensaiado isoladamente, mas não está integrado nesta entrega. Os mapas existentes de S1 continuam a usar o motor publicado e os seus ensaios; isso não prova os cinco tipos ausentes nem constitui integração do novo visor.
 
 A reorganização geral dos menus do Laboratório e a mudança dos títulos de Cidadania para «Humanos», «Algoritmos» e «Decisões» ficam em entregas separadas. Não se alteram aqui os repositórios de Português nem as fontes privadas. Publicação apenas depois de revisão da cabeça exata, verificações aprovadas e vez na fila.
+
+
+## Confirmação incremental L106-02, 03/11/2026
+
+O botão de pausa da amostra de teste usava `data-rl="pausa"`, enquanto o motor e os consumidores publicados usam `data-rl="parar"`. Corrigiu-se a amostra para o comando existente. O motor não mudou e conserva os comandos anteriores.
+
+O ensaio espera pela primeira diminuição do relógio, aciona a pausa, exige a remoção de `a-correr` e confirma que o valor e o texto ficam inalterados após 1250 ms, antes de acionar Repor. A pesquisa nos consumidores encontrou 31 ocorrências de `parar` e nenhuma de `pausa` nos dados HTML não escapados; os testes antigos dos treinos também usam `parar`.
+
+A bateria `browser_laboratorio_contratos.cjs` passou nos quatro contextos: 390 e 1366 px, normal e projeção. Mantém a prova dos créditos baralhados, do teclado e dos retornos. Esta correção não constitui aprovação global do #106.
+
+
+## Estado vazio na entrada, 03/11/2026
+
+A regra posterior `.entrada-a .sessoes .estado` sobrepunha `display:block` à ocultação de `.estado:empty`. O pseudoelemento do estado deixava assim um traço sem texto sob «O cocheiro». A regra específica de estado vazio passa a ocultá-lo; os estados reais mantêm `inline-flex`, com o quadrado de 11 px e a legenda.
+
+O teste existente da entrada exige agora área nula e `display:none` nos estados vazios, e área visível com quadrado de 11 px nos estados preenchidos. Os 27 contextos passaram: início/meio/feito, 320/390/1366 px, claro/escuro/projeção, com armazenamento, destinos, foco, contraste e ação principal preservados. Provas locais: `outputs/ideias-estados-provas-20261103/`. Só a entrada foi regenerada. Não muda a navegação nem o motor.

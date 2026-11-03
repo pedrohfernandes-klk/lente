@@ -102,7 +102,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s06","chave":"epi-cid-m1-s06","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 06: Uma regra para quem perde","h1":"Cidadania, módulo 1, sessão 06: Uma regra para quem perde",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s06/index.html","piloto":True,
  "seguinte":"../m1-s07/","seguinteRotulo":"Sessão 07: Nove contra dois",
  "fontes":"Constituição da República Portuguesa, artigo 13.º; Declaração Universal dos Direitos Humanos (1948), artigo 1.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf); Código do Procedimento Administrativo (Decreto-Lei n.º 4/2015), artigos 9.º e 69.º. O problema do elétrico: Philippa Foot, «The Problem of Abortion and the Doctrine of the Double Effect» (1967), e Judith Jarvis Thomson, «The Trolley Problem» (1985). Escolher regras sem saber o lugar: John Rawls, _A Theory of Justice_ (1971). Imagem: Philips Galle, segundo Pieter Bruegel, o Velho, _Justicia_, da série _As Virtudes_, cerca de 1559 a 1560 (Metropolitan Museum of Art, CC0). Vídeo: TED-Ed, «Would you sacrifice one person to save five?», lição de Eleanor Nelsen. Os casos são inventados.",

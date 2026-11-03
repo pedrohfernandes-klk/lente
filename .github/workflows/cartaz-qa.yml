@@ -1,21 +1,10 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio*.py', 'assets/laboratorio/cartaz.*', 'assets/laboratorio/menus.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', 'tests/*laboratorio_menus*', 'assets/laboratorio/percursos.js', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['index.html', 'narrativas/**', 'tools/laboratorio*.py', 'assets/laboratorio/cartaz.*', 'assets/laboratorio/menus.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', 'tests/*laboratorio_menus*', 'assets/laboratorio/percursos.js', '.github/workflows/cartaz-qa.yml']
+    paths: ['index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
-  menus-laboratorio:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm install --no-save playwright
-      - run: npx playwright install --with-deps chromium
-      - run: node tests/browser_laboratorio_menus.cjs
   pieces:
     runs-on: ubuntu-latest
     steps:

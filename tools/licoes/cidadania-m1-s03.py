@@ -114,7 +114,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s03","chave":"epi-cid-m1-s03","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 03: Quem tem lugar?","h1":"Cidadania, módulo 1, sessão 03: Quem tem lugar?",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s03/index.html","piloto":True,
  "seguinte":"../m1-s04/","seguinteRotulo":"Sessão 04: Posso dizer tudo?",
  "fontes":"Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",

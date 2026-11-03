@@ -15,7 +15,7 @@
   const initialized = new WeakSet();
   function init(doc = root.document) {
     if (!doc || initialized.has(doc)) return;
-    const folds = [...doc.querySelectorAll('[data-cartaz="2"]:not([data-menu-piloto]) details.cz-fold')];
+    const folds = [...doc.querySelectorAll('[data-cartaz="2"] details.cz-fold')];
     if (!folds.length) return;
     initialized.add(doc);
     const mobile = root.matchMedia('(max-width: 639px)');

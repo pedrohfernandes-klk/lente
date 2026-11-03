@@ -1,0 +1,9 @@
+{
+  "tools/cidadania_m1_layout.py": [
+    [
+      " write('cidadania/m1/percurso-anterior.html',old('cidadania/m1/index.html'))",
+      " anterior=old('cidadania/m1/index.html')\n assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'\n write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))",
+      1
+    ]
+  ]
+}

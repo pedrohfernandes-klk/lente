@@ -115,7 +115,7 @@ cartoes = [
 dados = {
  "id":"cidadania-m1-s05","chave":"epi-cid-m1-s05","versao":"2026-10-31-2",
  "marca":"CD","titulo":"Sessão 05: Quem guarda os meus dados?","h1":"Cidadania, módulo 1, sessão 05: Quem guarda os meus dados?",
- "modulo":{"n":1,"nome":"Ser-se humano","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
+ "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
  "saida":"cidadania/piloto/m1-s05/index.html","piloto":True,
  "seguinte":"../m1-s06/","seguinteRotulo":"Sessão 06: Uma regra para quem perde",
  "fontes":"Lei n.º 58/2019, de 8 de agosto (Lei da Proteção de Dados Pessoais), artigos 3.º, 19.º e 21.º; Constituição da República Portuguesa, artigos 18.º, 26.º e 35.º; Convenção sobre os Direitos da Criança (1989), artigo 16.º; Declaração Universal dos Direitos Humanos (1948), artigo 12.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Jeremy Bentham, _Panopticon; or, The Inspection-House_ (1791), cartas II e V. Imagem: Jeremy Bentham, _Panopticon; or, The Inspection-House_, página de título (pormenor), 1791 (Bayerische Staatsbibliothek, via Internet Archive, domínio público). Vídeo: TED-Ed, «This could save lives: but are you willing to do it?», lição de Michael Vazquez e Sarah Stroud. Os casos são inventados.",
