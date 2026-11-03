@@ -269,6 +269,13 @@ def pagina(d):
     dados = json.dumps(LC.cartoes(d), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     menu = _menu_laboratorio(d, mod) if lab else _menu_cidadania(d, mod)
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
+    # 03/11/2026: a edição revista não reutiliza respostas por índice nem apaga
+    # a chave antiga. Só os bancos novos optam por esta separação explícita.
+    if d.get('edicao'):
+        if not re.fullmatch(r'\d{8}', d['edicao']):
+            raise ValueError('edição inválida')
+        cfg['chave'] = d['chave'] + '-' + d['edicao']
+        menu = menu.replace('</nav>', '<a href="'+esc(d['guiao'])+'">Registo breve em papel</a><a href="'+esc(d['guia'])+'">Guia do docente</a></nav>')
     # 02/11/2026: o Laboratório conserva o feito antigo e deixa de mostrar pontuações.
     if lab:
         cfg.update({'semPontos': True, 'preservarAnterior': True})
@@ -314,7 +321,8 @@ def pagina(d):
         '<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">'
         f'<link rel="stylesheet" href="{base}assets/licoes/lesson.css?v={VERSAO_FICHEIROS}"><link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={VERSAO_FICHEIROS}">'
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
-        f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
+        + (f'<link rel="stylesheet" href="{base}assets/ampliar-documentos.css?v=20261103-1"><script defer src="{base}assets/ampliar-documentos.js?v=20261103-1"></script>' if d.get('ampliar') else '')
+        + f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
         f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{marca_t}</a>'
         '<span class="c-num" data-c-num></span><button type="button" class="c-barra" data-c-barra aria-label="Ver os cartões já feitos" disabled><svg viewBox="0 0 1 10" preserveAspectRatio="none" aria-hidden="true"></svg></button>'
@@ -324,6 +332,7 @@ def pagina(d):
         f'<h1 class="c-sr">{esc(d["h1"])}</h1><main class="casca-corpo" id="casca-corpo" tabindex="-1"><div id="baralho" class="jogo-alvo"></div></main>'
         '<footer class="casca-acoes" data-c-acoes></footer><section class="casca-folha" data-c-folha role="status" aria-live="polite" hidden></section>'
         + menu + extra + '</div><div id="aviso" role="status"></div>'
+        + ('<noscript><style>.casca{display:none}main{max-width:65ch;margin:auto;padding:24px}a{display:block;padding:12px}</style><main><h1>'+esc(d['titulo'])+'</h1><p>Os exercícios precisam de JavaScript. Podes ler os materiais e fazer o registo breve em papel.</p><a href="'+esc(d['guia'])+'">Ler os materiais</a><a href="'+esc(d['guiao'])+'">Registo breve em papel</a></main></noscript>' if d.get('edicao') else '')
         + (f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>' if lab else '')
         + (f'<script defer src="{base}assets/licoes/relogio.js?v={VERSAO_FICHEIROS}"></script>' if lab and any('data-relogio=' in c.get('html','') for c in LC.cartoes(d)) else '')
         +f'<script src="{base}assets/licoes/casca.js?v={VERSAO_FICHEIROS}"></script><script src="{base}assets/licoes/jogo.js?v={VERSAO_FICHEIROS}"></script>'

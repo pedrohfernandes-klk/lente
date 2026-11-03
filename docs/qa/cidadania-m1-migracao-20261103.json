@@ -1,0 +1,1788 @@
+{
+  "data": "2026-11-03",
+  "base_main": "1f990b2aebe9ba4fa4043310efff3c53f63b5cc2",
+  "politica": "Chaves novas para perguntas novas. Nenhuma resposta ou conclusão anterior é reaplicada; as chaves anteriores ficam intactas. Correspondência editorial, nunca equivalência de índices.",
+  "fontes": {
+    "CC79": {
+      "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis",
+      "local": "artigo79.º,n.os1–3",
+      "verificacao": "Texto lido na revisão de03/11/2026; síntese pedagógica, sem citação literal nos bancos."
+    },
+    "CC81": {
+      "url": "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis",
+      "local": "artigo81.º,n.º2",
+      "verificacao": "Revogabilidade e ressalva indemnizatória lidas em03/11/2026."
+    },
+    "CRP13": {
+      "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+      "local": "artigo13.º,n.º1",
+      "verificacao": "Excerto literal confrontado em03/11/2026."
+    },
+    "CRP26_37": {
+      "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+      "local": "artigos26.º,n.º1,e37.º,n.os1–3",
+      "verificacao": "Sínteses confrontadas em03/11/2026."
+    },
+    "HINE": {
+      "url": "https://commons.wikimedia.org/wiki/File:Addie_Card,_12_years._Spinner_in_North_Pormal_(i.e.,_Pownal)_Cotton_Mill._Vt._Girls_in_mill_say_she_is_ten_years._She_admitted_to_me_she_was_twelve;_that_she_started_during_school_vacation_LOC_cph.3a20286.jpg",
+      "local": "descrição,data,autor,Licensing e histórico",
+      "ficheiro_reutilizado": "img/cidadania/hine-addie-card-1910.webp",
+      "dimensoes": [
+        640,
+        811
+      ],
+      "verificacao": "Imagem local vista; domínio público no país de origem/vida+70 na página do ficheiro; identidade/idade provêm da legenda. O registo LOC não abriu nesta ronda. Não se transferiu nova imagem."
+    },
+    "POIRES": {
+      "url": "https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg",
+      "local": "Summary e Licensing; Gallica bpt6k3058046f/f3",
+      "ficheiro_reutilizado": "img/cidadania/les-poires-1834.webp",
+      "dimensoes": [
+        640,
+        626
+      ],
+      "verificacao": "Recorte local visto; atribuição possível, data e domínio público no país de origem/vida+100 conferidos na página do ficheiro."
+    },
+    "CASO": {
+      "natureza": "Construção pedagógica",
+      "verificacao": "Não é facto de uma escola real nem fala de uma pessoa real; os apoios assinalam caso, exemplos, simulação e continuação inventados."
+    },
+    "PROCEDIMENTO": {
+      "natureza": "Proposta pedagógica",
+      "verificacao": "Não é transcrição normativa, cronologia histórica ou regra de ordem universal."
+    }
+  },
+  "sessoes": [
+    {
+      "sessao": 1,
+      "original_main": "tools/licoes/cidadania-m1-s01.json",
+      "versao_main": "2026-10-31-1",
+      "referencia_110": null,
+      "banco": "tools/cidadania-interativas/cidadania-m1-s01.json",
+      "chave_anterior": "epi-cid-m1-s01",
+      "chave_atual": "epi-cid-m1-s01-20261103",
+      "saida": "cidadania/m1/licoes/01/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "originais": [
+            1,
+            2
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            1,
+            2
+          ],
+          "id": "m1-s01-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "2f6a1dc8c9a1c716cb401ac709ae844c06ccdf5852f083a3a52035e95e109eb1"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "originais": [
+            6
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            6
+          ],
+          "id": "m1-s01-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "78b31a741681a755a3c9727af84125f3e50df0fc5acb5063a971efe876c91043"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "originais": [
+            6
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            2
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            6
+          ],
+          "id": "m1-s01-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "68460d106b639da5e8c3fa5407a3552e520fe710efda335032d27492d450bbe3"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "originais": [
+            6
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            2
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            6
+          ],
+          "id": "m1-s01-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "afb7c0b50a238c67cd675f967974ccef3df3dd6d414a41c2eb67b0e1051c15a7"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "originais": [
+            4,
+            10
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            4,
+            10
+          ],
+          "id": "m1-s01-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "de0b13a9dbc9c75aa85e2573a2a90dec907d1ddd5f723a350bf24281c30d900e"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "originais": [
+            4
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            5
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            4
+          ],
+          "id": "m1-s01-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1e0adb47f21f97f898949ea51e4cb17d307df0c8c67776b8698caaaf4ee7fa21"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "originais": [
+            3
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            5
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            3
+          ],
+          "id": "m1-s01-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "6fca0077d51cf428864f37a68e28de47d39d04d301bca7d3e2437a2918be8cb0"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "originais": [
+            10
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            5
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            10
+          ],
+          "id": "m1-s01-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "93da2cbf2dd829dc4a748da9821757f484bec6bb60ce78b3b94d0106a092ebb9"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "originais": [
+            7
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            7
+          ],
+          "id": "m1-s01-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8c181b7c91029f79983189bc509409649cf69b17b40a648657061eded759bb31"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "originais": [],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            9
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [],
+          "id": "m1-s01-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4cada7e3e1ba835f04a05e86fff2f516182cd07ab52c91292fcf51999cef6724"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "originais": [],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            9
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [],
+          "id": "m1-s01-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "005b1a337b91ee153f40e804be55641f8ae4005dbf7a24f9ef369e6dde8df7d9"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "originais": [
+            7
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            9
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            7
+          ],
+          "id": "m1-s01-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "319bc8d86d0f814c8ea9525cab0de6d3af9513039956387f6176c46ce71672b6"
+        },
+        {
+          "novo": 13,
+          "tipo": "sublinhar",
+          "originais": [
+            7
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            9
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            7
+          ],
+          "id": "m1-s01-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "74b8b1b667d50564be08d84674314125654713c4c2923b9e3833e0806c9e580e"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "originais": [
+            2,
+            18
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            2,
+            18
+          ],
+          "id": "m1-s01-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1e02542483b5f0d22704d673842407260dca59963005e6ac74e463bbbd364eaa"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "originais": [
+            2,
+            3
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            14
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            2,
+            3
+          ],
+          "id": "m1-s01-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "27e37b7ce3ada5ba4e074b4ec74afcb5be3635e65ee9eb36c77376a4495de587"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "originais": [
+            4,
+            12
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            14
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            4,
+            12
+          ],
+          "id": "m1-s01-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ee6dac25ab282c842ff527431990e788af02e214445f3b02d61faf87b5cee15c"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "originais": [
+            12
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            14
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            12
+          ],
+          "id": "m1-s01-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9b1eb15f724ceb338263ff6410eb930e1a3d79957c259e31f993c6384ab91637"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "originais": [
+            3,
+            18
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            14
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            3,
+            18
+          ],
+          "id": "m1-s01-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7c77c40c5fdb3b19ba2952fb477ec4e32ca2faed084feb38c5a0cea71de16b04"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "originais": [
+            18
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [
+            14
+          ],
+          "originais_referencia_110": [],
+          "originais_main": [
+            18
+          ],
+          "id": "m1-s01-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "038dc0bab450ea70022e5000695511445293d0209c90d17122ff53734483dc3c"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "originais": [
+            19
+          ],
+          "operacao": "Retoma editorial no modelo revisto; a pergunta nova não herda respostas.",
+          "apoios_anteriores": [],
+          "originais_referencia_110": [],
+          "originais_main": [
+            19
+          ],
+          "id": "m1-s01-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1c945002e1655a747736bc2deadcad7c2f0c3fe807b419b9bdc059b9f0b82b1b"
+        }
+      ],
+      "sha256_main_json": "638ae514fe0d61dd9f19e829629e0e341157434be1b76016be139d3604903513"
+    },
+    {
+      "sessao": 2,
+      "original_main": "tools/licoes/cidadania-m1-s02.json",
+      "versao_main": "2026-10-31-2",
+      "referencia_110": "18e2641e7df808944e0c4c3f4d2c9a5ce9f9dcaad6d1f6a32dee1be1b0efdce2",
+      "banco": "tools/cidadania-interativas/cidadania-m1-s02.json",
+      "chave_anterior": "epi-cid-m1-s02",
+      "chave_atual": "epi-cid-m1-s02-20261103",
+      "saida": "cidadania/m1/licoes/02/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Retoma o caso e a finalidade aceite, sem votação ou duração.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [
+            1,
+            2
+          ],
+          "id": "m1-s02-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d38789a2f1a50eeec65d86bad5b37101a205fc01943ae257cb704cb928766d8a"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Antecipa a fotografia; corrige o alt e distingue idade documental de aparência.",
+          "apoios_anteriores": [],
+          "provas": [
+            "HINE"
+          ],
+          "originais_referencia_110": [
+            11
+          ],
+          "originais_main": [
+            10
+          ],
+          "id": "m1-s02-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0c9d9465d7bd386d20220b19c7e2becdceafd0c59d2de3b58b28ce54650c5364"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Converte a observação em decisão com retorno por erro.",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "HINE"
+          ],
+          "originais_referencia_110": [
+            12
+          ],
+          "originais_main": [
+            11
+          ],
+          "id": "m1-s02-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "6c82b8601f14f894bd66858c2403acf6abf5755f1aa89f009b5f433bc686ccf5"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Localiza idade na legenda, sem a atribuir à imagem.",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "HINE"
+          ],
+          "originais_referencia_110": [
+            11,
+            12
+          ],
+          "originais_main": [
+            10,
+            11
+          ],
+          "id": "m1-s02-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e9447b3d75e3c62f138195ceefa6786d5f06b2468451335ed6f4a66140e4b036"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Fornece síntese de regra, exceções e limite antes das perguntas.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CC79"
+          ],
+          "originais_referencia_110": [
+            5,
+            6,
+            8
+          ],
+          "originais_main": [
+            4,
+            5,
+            7
+          ],
+          "id": "m1-s02-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "549cdb9796c541743f24822b8b7b7b7d9313d0cb015d6bca3b86d90edd8419df"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Cria ligação entre pergunta e parte do artigo.",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "CC79"
+          ],
+          "originais_referencia_110": [
+            5,
+            6,
+            8
+          ],
+          "originais_main": [
+            4,
+            5,
+            7
+          ],
+          "id": "m1-s02-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "406f1430be0d98a6ad0f6dfa56f33342c9a8be4ba97988dd0616af776910e785"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Distingue exceção de ausência de limites.",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "CC79"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [
+            7
+          ],
+          "id": "m1-s02-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "b443d9cfe83b3e519dcfedf5efb66c36c8a7e2e41fd219d0a4957885a17b15da"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Aplica o limite à queda sem decidir automaticamente o caso.",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "CC79",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [
+            7
+          ],
+          "id": "m1-s02-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "aa7404e23986635946ad5d038d5dd05ff0c5ab04bc1dc766cbde2524d6283f53"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Fornece procedimento, revogação e ressalva antes de os usar.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CC81",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            10,
+            16,
+            19
+          ],
+          "originais_main": [
+            9,
+            15,
+            18
+          ],
+          "id": "m1-s02-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8e2b6c9a187f15db37a2b81ba47d8593764a787d6ce79a5c6e7e848f3c4153a5"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Mantém a sequência como procedimento proposto.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [
+            9
+          ],
+          "id": "m1-s02-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e3ff4460631f7e38e8246e8b3cf1de5a1a89bae837c64fc0a451c2846ea82939"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Compara finalidade aceite e uso proposto.",
+          "apoios_anteriores": [
+            1,
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            1,
+            2,
+            4
+          ],
+          "originais_main": [
+            1,
+            2,
+            3
+          ],
+          "id": "m1-s02-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c5d4e5e83c2b9e570dec195990b31986883192ab11dc142e00bb2440212af931"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Não confunde cortar uma parte com obter nova decisão.",
+          "apoios_anteriores": [
+            1,
+            5,
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2,
+            8
+          ],
+          "originais_main": [
+            2,
+            7
+          ],
+          "id": "m1-s02-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "61b78d35176df9280aa54a6889233a52f288ef78f9d5c5bd8f6a48c4028c3b91"
+        },
+        {
+          "novo": 13,
+          "tipo": "sublinhar",
+          "operacao": "Localiza o público referido pela fala.",
+          "apoios_anteriores": [
+            1
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2
+          ],
+          "originais_main": [
+            2
+          ],
+          "id": "m1-s02-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9149697dfd45e3733abf29ca9908f159523aa10fa09e34287b49efa55bf7ecc3"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Fornece continuação completa, sem tarefas externas anunciadas.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO",
+            "CC81"
+          ],
+          "originais_referencia_110": [
+            1,
+            13,
+            19
+          ],
+          "originais_main": [
+            1,
+            12,
+            18
+          ],
+          "id": "m1-s02-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7bdea13d8e97c2066910fab3f7fa8c5bfdb3abe726c9d0ce0b4ab265a1182216"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Identifica a decisão ainda não obtida.",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            7,
+            19
+          ],
+          "originais_main": [
+            6,
+            18
+          ],
+          "id": "m1-s02-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "282e0818907857ae74229f5a7db9663903ca9374083fa6c4dd1573d5a1094a6d"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Corrige a cláusula de retirada e distingue conservação de contacto.",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "CASO",
+            "CC81"
+          ],
+          "originais_referencia_110": [
+            7,
+            19
+          ],
+          "originais_main": [
+            6,
+            18
+          ],
+          "id": "m1-s02-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "66c67a7b9521060132e1503823e7550ad54298c7c8af18ae4019a7297738f511"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Monta justificação concreta, não uma regra universal.",
+          "apoios_anteriores": [
+            1,
+            9,
+            14
+          ],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            10,
+            17,
+            20
+          ],
+          "originais_main": [
+            9,
+            16,
+            19
+          ],
+          "id": "m1-s02-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "032a3b1e162a863e09372a5aff122be5015cb028261ef532cb2f887c2ab0c885"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Escolhe conclusão compatível com os factos.",
+          "apoios_anteriores": [
+            1,
+            9,
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            4,
+            17,
+            20
+          ],
+          "originais_main": [
+            3,
+            16,
+            19
+          ],
+          "id": "m1-s02-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a563e1b7d4419353e1a164c513b6e82e5f96b23cf00b46523ab9f2445c0e26d8"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "Recusa prazo de retirada inferido da conservação.",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "CASO",
+            "CC81"
+          ],
+          "originais_referencia_110": [
+            16,
+            19
+          ],
+          "originais_main": [
+            15,
+            18
+          ],
+          "id": "m1-s02-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ebca1ddb8fd7d0b4c8eb7eee1f7507974dddd04fc3ce6c56e5caa687b0a155c4"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Reduz a entrega a três linhas com prova e dúvida.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO",
+            "CC79",
+            "CC81"
+          ],
+          "originais_referencia_110": [
+            13,
+            20
+          ],
+          "originais_main": [
+            12,
+            19
+          ],
+          "id": "m1-s02-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f51de7978ea81f8d48fe47a962bdbfb11980be0ef5e7c1b37dcd17687daa7b55"
+        }
+      ],
+      "sha256_main_json": "6160d2eb567516a65644e61aede07b1d929dda08976dde01d5521793ad009761"
+    },
+    {
+      "sessao": 3,
+      "original_main": "tools/licoes/cidadania-m1-s03.json",
+      "versao_main": "2026-10-31-2",
+      "referencia_110": "cf64f51f20ac9127158c1ac2265fc7a2b217aeabba624ff3785154ed670fa4aa",
+      "banco": "tools/cidadania-interativas/cidadania-m1-s03.json",
+      "chave_anterior": "epi-cid-m1-s03",
+      "chave_atual": "epi-cid-m1-s03-20261103",
+      "saida": "cidadania/m1/licoes/03/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Retoma Rui e o objetivo de participar.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [
+            1,
+            2
+          ],
+          "id": "m1-s03-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5e573b8363e92be21e3d82d35d380c8206a37909502f88b471e1f9f2b66a65de"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Antecipa um excerto oficial; dispensa imagem não fechada.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CRP13"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [
+            4
+          ],
+          "id": "m1-s03-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "58c7b0e7db760bcb8cf1afd33d1fe88dabd23f70824c38b834e46ae73728ac71"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Distingue princípio expresso de facto não demonstrado.",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "CRP13"
+          ],
+          "originais_referencia_110": [
+            5,
+            18
+          ],
+          "originais_main": [
+            4,
+            17
+          ],
+          "id": "m1-s03-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d41976020a00712061e4a8f46fe4482d87b13b6393926c14116b2100b4e9ce2e"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Localiza sujeito no excerto, sem inferir exclusões de outros direitos.",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "CRP13"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [
+            4
+          ],
+          "id": "m1-s03-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5446efa67ff4ea669490789909c40741143b2e7f4a74194781bfbc2809e8806e"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Fornece exemplos e distingue efeito de intenção.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            4,
+            6,
+            10
+          ],
+          "originais_main": [
+            3,
+            5,
+            9
+          ],
+          "id": "m1-s03-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "56180a8039b338b99abee5590d13c9f5a736a27aca703f99c9b32b136fb00a56"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Mantém três barreiras com correspondência única.",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            6
+          ],
+          "originais_main": [
+            5
+          ],
+          "id": "m1-s03-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "36ee0142ddd4facb2c886095eb23e430719650878de7852ac663cd5863c70b1b"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Examina efeito desigual da mesma sala.",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            8,
+            17
+          ],
+          "originais_main": [
+            7,
+            16
+          ],
+          "id": "m1-s03-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "10830f49815c7dd322e030323934e79d87b889b373a461009b6adb54077b1b19"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Separa efeito confirmado e intenção atribuída.",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            4,
+            10
+          ],
+          "originais_main": [
+            3,
+            9
+          ],
+          "id": "m1-s03-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ea50faf5441c6189c925caa83c89383077b683ef6585c5c9da05bab4d7318ad8"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Fornece orçamento, acesso e procedimento antes das decisões.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            11,
+            13
+          ],
+          "originais_main": [
+            10,
+            12
+          ],
+          "id": "m1-s03-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9c75851878cccd9ff005f8d4fe4df8f42f50bacef58f23b60141c499eae41ee8"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Mantém procedimento com retorno específico.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            11
+          ],
+          "originais_main": [
+            10
+          ],
+          "id": "m1-s03-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4ecdb6e08e1c9aee508f4b4ddad8fb9ebd2738c0116c1263fb2c23124bb33840"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Compara custo e resposta ao acesso físico.",
+          "apoios_anteriores": [
+            1,
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            13,
+            16
+          ],
+          "originais_main": [
+            12,
+            15
+          ],
+          "id": "m1-s03-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ca5c46accd0b9ff3f627e07f8fee0d84e2afdf6d3260291db5adea6ba49d79ec"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Distingue transmissão e possibilidade de intervir.",
+          "apoios_anteriores": [
+            1,
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [
+            15
+          ],
+          "id": "m1-s03-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a9adf5f3f06b4a89bcfef3470ed130a3801d172b272790ff89e5367891c4fc5f"
+        },
+        {
+          "novo": 13,
+          "tipo": "sublinhar",
+          "operacao": "Localiza o pedido de participação.",
+          "apoios_anteriores": [
+            1
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2
+          ],
+          "originais_main": [
+            2
+          ],
+          "id": "m1-s03-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c5ec90461d52b255269c8397a0ccd073964110fce04b25388b7579576b3759f2"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Fornece nova lotação e inscrições como dados inventados explícitos.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2,
+            13
+          ],
+          "originais_main": [
+            2,
+            12
+          ],
+          "id": "m1-s03-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8552a8473f9d85c26f09fb5e8e6599afb230b997c8c043f5db1392ea96587df2"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Identifica o limite da lotação.",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2,
+            13
+          ],
+          "originais_main": [
+            2,
+            12
+          ],
+          "id": "m1-s03-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a0989725780e471177a13c0694c4514109a9b6e8a3712389498a6155970279d1"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga medidas aos efeitos sustentados.",
+          "apoios_anteriores": [
+            5,
+            9,
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            6,
+            13,
+            16
+          ],
+          "originais_main": [
+            5,
+            12,
+            15
+          ],
+          "id": "m1-s03-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "bc1cbc1b0e8136b7fb3dc5b7d5d904bd894da1253e74647e384425eadedb2bf9"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Organiza justificação com limite da solução.",
+          "apoios_anteriores": [
+            1,
+            9,
+            14
+          ],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            11,
+            13
+          ],
+          "originais_main": [
+            10,
+            12
+          ],
+          "id": "m1-s03-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0e9cdf9e8e5bf460cc792a5c03b1eae620a9ff78602041779b482ddde0723a33"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Reconhece melhoria sem declarar o problema todo resolvido.",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            13,
+            16,
+            20
+          ],
+          "originais_main": [
+            12,
+            15,
+            19
+          ],
+          "id": "m1-s03-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "acdcf6f52cc6f957050a8d70e524ebb34d17f802aeb84dd6fc5e8391f1836a19"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "Recusa inferência de intenção pela consequência.",
+          "apoios_anteriores": [
+            1,
+            5,
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [
+            9
+          ],
+          "id": "m1-s03-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5c4cf5f34c8c5ac949722b84a99eb594f442666595308aea1b798a3689ed1387"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Reduz proposta a três linhas, sem inventar recursos.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            13,
+            20
+          ],
+          "originais_main": [
+            12,
+            19
+          ],
+          "id": "m1-s03-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ccb3ebdb945aac52cc257f1e1228b3aac5b652b7d0a8c0b796517f4f7c43acd3"
+        }
+      ],
+      "sha256_main_json": "4f8e9b45709fce01ce7d8e90b23e0ebb23fc41a98adc1b0d857ebede0d52fae3"
+    },
+    {
+      "sessao": 4,
+      "original_main": "tools/licoes/cidadania-m1-s04.json",
+      "versao_main": "2026-10-31-2",
+      "referencia_110": "afe816bc38ebcf5faa70feb9b94460d99fe0177dc5c3108ad4881ad00a2569f0",
+      "banco": "tools/cidadania-interativas/cidadania-m1-s04.json",
+      "chave_anterior": "epi-cid-m1-s04",
+      "chave_atual": "epi-cid-m1-s04-20261103",
+      "saida": "cidadania/m1/licoes/04/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Retoma caricatura e acusação, sem dependência de leitura anterior.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [
+            1,
+            2
+          ],
+          "id": "m1-s04-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a52653f4cba85dc11425b3e43d41834f40ee4e86537c9e6ab62437631ad0c2f6"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Antecipa recorte, atribuição cautelosa, fonte e direitos.",
+          "apoios_anteriores": [],
+          "provas": [
+            "POIRES"
+          ],
+          "originais_referencia_110": [
+            9
+          ],
+          "originais_main": [
+            8
+          ],
+          "id": "m1-s04-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e7dcdee59fb03bfabb22ddc965e06183e7f33d33865f60fc4e282cde1560c790"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Observa transformação sem inferir aprovação ou censura.",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "POIRES"
+          ],
+          "originais_referencia_110": [
+            9,
+            10
+          ],
+          "originais_main": [
+            8,
+            9
+          ],
+          "id": "m1-s04-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0904528d9d24a4a0be0546a1d41c830777eea882f21cc116aa128be1264e9c20"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Isola ação atribuída na acusação inventada.",
+          "apoios_anteriores": [
+            1
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            4
+          ],
+          "originais_main": [
+            3
+          ],
+          "id": "m1-s04-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4ba4b9b4278d40079e132b36063cfab9376dc61c5e00ee0941d0bece9466693f"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Fornece distinções e síntese constitucional antes de perguntar.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CRP26_37"
+          ],
+          "originais_referencia_110": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "originais_main": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "id": "m1-s04-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e9507db9527f325191789ae1ae677426ffd2b35312ca8320362852a1a817ca12"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Classifica exemplos sem certificar a acusação como verdadeira.",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "CRP26_37",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [
+            4
+          ],
+          "id": "m1-s04-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f1ed2fb18022efe594e08ecfcb7819eef0dd942e4661addc16006e632fe2383b"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Distingue proteção e responsabilidade.",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "CRP26_37"
+          ],
+          "originais_referencia_110": [
+            6,
+            7
+          ],
+          "originais_main": [
+            5,
+            6
+          ],
+          "id": "m1-s04-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "649d0a31c29000f0d9e65fdfa0abbc08141de25064eae6ffbcb9c21191f3fb74"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Escolhe tipo de apoio verificável, sem supor que existe.",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            11,
+            14
+          ],
+          "originais_main": [
+            10,
+            13
+          ],
+          "id": "m1-s04-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d3af4c07f4c3f0b0e7bc3c9dcd927358c103da3528e431f12d76fae304bb2ebe"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Explicita duas publicações e dependência, sem vídeo.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            13,
+            18
+          ],
+          "originais_main": [
+            12,
+            17
+          ],
+          "id": "m1-s04-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1a96b2b3cde574b8c5ee9899f82a1f03b03e72739b5b8e3bab18e94e09b7edb3"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Mantém procedimento proposto de verificação.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "CASO",
+            "PROCEDIMENTO"
+          ],
+          "originais_referencia_110": [
+            11
+          ],
+          "originais_main": [
+            10
+          ],
+          "id": "m1-s04-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c0d9cdd7a83650882d2c98c4f4ba9da81b31fbfd4ecf7bd76385e511a912ff74"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Reconhece origem comum.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            18
+          ],
+          "originais_main": [
+            17
+          ],
+          "id": "m1-s04-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "32e46775a3945760cada983bdfbf8f9e43bee6eecab04da14b1ad8aefe893132"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Usa a ligação como pista de proveniência, não prova da acusação.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            18
+          ],
+          "originais_main": [
+            17
+          ],
+          "id": "m1-s04-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "6c6abcf760670627f71a8499b464e549634776fcd1c2a45de5b6cabf952b4d9b"
+        },
+        {
+          "novo": 13,
+          "tipo": "sublinhar",
+          "operacao": "Localiza falta de apoio documental.",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            13,
+            18
+          ],
+          "originais_main": [
+            12,
+            17
+          ],
+          "id": "m1-s04-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "32c260c657bfe8807445b55715a9f47f0eeffb35a9f1ba8b94168491b57bb097"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Fornece continuação completa e repetição de IA inventada.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2,
+            14,
+            19
+          ],
+          "originais_main": [
+            2,
+            13,
+            18
+          ],
+          "id": "m1-s04-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "3fa262de352f3fa3ce9ce4d3ada2384ef74d1e6f4aa227a536f2252102ebb664"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Identifica a prova ainda necessária.",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            11,
+            14
+          ],
+          "originais_main": [
+            10,
+            13
+          ],
+          "id": "m1-s04-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "cc914283143ec8404680ebb6a5b3c4cbfb822b7ffd9b520f4f445d4c673d4991"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Distingue alcance da imagem, norma e relato.",
+          "apoios_anteriores": [
+            1,
+            2,
+            5,
+            14
+          ],
+          "provas": [
+            "CRP26_37",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            4,
+            5,
+            9
+          ],
+          "originais_main": [
+            3,
+            4,
+            8
+          ],
+          "id": "m1-s04-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d03f785df5cad8efa1fe1f11bf62b1be168ab9dcb96023f3b2a6360f4c3ba2ee"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Organiza proposta e limite, sem sentença jurídica.",
+          "apoios_anteriores": [
+            5,
+            9,
+            14
+          ],
+          "provas": [
+            "CRP26_37",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            11,
+            14,
+            20
+          ],
+          "originais_main": [
+            10,
+            13,
+            19
+          ],
+          "id": "m1-s04-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0a33b0d65895bf56bb3ab52c4c4966a6b9d93cca5f7ae354bf214bc112de31be"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Compara medidas dirigidas ao conteúdo, não à eliminação de toda a crítica.",
+          "apoios_anteriores": [
+            1,
+            5,
+            9,
+            14
+          ],
+          "provas": [
+            "CRP26_37",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            2,
+            15,
+            16,
+            20
+          ],
+          "originais_main": [
+            2,
+            14,
+            15,
+            19
+          ],
+          "id": "m1-s04-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "09a9a739ea7059899035673175e27c110ec2b4dbb09702d4b87f84a80b30bcd4"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "Examina a resposta de IA descrita, não um serviço real.",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            19
+          ],
+          "originais_main": [
+            18
+          ],
+          "id": "m1-s04-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7e8dbb4c729906b88f8389a9a840f53a6b06d9e00f305a76815d66e8dbad1f12"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Reduz registo de verificação a três linhas.",
+          "apoios_anteriores": [],
+          "provas": [
+            "CRP26_37",
+            "CASO"
+          ],
+          "originais_referencia_110": [
+            14,
+            20
+          ],
+          "originais_main": [
+            13,
+            19
+          ],
+          "id": "m1-s04-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7598a366d2e10e93a874f6052388af3e5de7827fd335b44092b758938a531644"
+        }
+      ],
+      "sha256_main_json": "341a3cc58abacd476c103f8dd542d53127fbb2512d338a628b12fcf41cadf7cc"
+    }
+  ]
+}

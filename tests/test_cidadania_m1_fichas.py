@@ -50,7 +50,9 @@ class FichasM1(unittest.TestCase):
   self.assertEqual((R/'cidadania/projeto/index.html').read_bytes(),subprocess.check_output(['git','show',BASE+':cidadania/projeto/index.html'],cwd=R))
   s=(R/'cidadania/m1/index.html').read_text('utf-8')
   self.assertEqual(len(re.findall(r'data-session-card="\d{2}"',s)),10)
-  self.assertIn('href="sessoes/03/" data-continue',s);self.assertNotIn('data-m1-next',s)
+  # 03/11/2026: a ação abre a primeira lição revista; o enunciado e a sessão
+  # anterior continuam protegidos pelas comparações integrais deste teste.
+  self.assertIn('href="licoes/01/" data-continue',s);self.assertNotIn('data-m1-next',s)
   # 27/10/2026 (molde das sessões): as sessões 01 e 02 já decorreram; ficam sem registo pessoal e sem
   # avisos sobre o que a turma já estudou, que pertencem ao guia do docente. O plano da sessão 03
   # (sete grupos, 10, 5, 60, 35 e 70 minutos) confere-se no guia; a página do aluno só diz o que fazer.

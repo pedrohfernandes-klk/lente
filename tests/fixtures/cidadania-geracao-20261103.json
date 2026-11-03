@@ -23,6 +23,11 @@
       "p.write_text(s,encoding='utf-8')",
       "p.write_bytes(s.encode('utf-8'))",
       1
+    ],
+    [
+      " build(globals())\n",
+      " build(globals())\n # 03/11/2026: quatro sessões interativas no índice real; arquivos preservados.\n from cidadania_interativas import gerar as gerar_interativas\n gerar_interativas()\n",
+      1
     ]
   ]
 }

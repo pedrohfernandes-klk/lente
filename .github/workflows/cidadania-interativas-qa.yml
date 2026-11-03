@@ -1,0 +1,42 @@
+name: Cidadania interativa
+on:
+  pull_request:
+    paths:
+      - 'tools/cidadania-interativas/**'
+      - 'tools/cidadania_interativas.py'
+      - 'tools/licoes_lente.py'
+      - 'assets/licoes/**'
+      - 'assets/ampliar-documentos.*'
+      - 'assets/cidadania-interativas-indice.js'
+      - 'cidadania/m1/**'
+      - 'tests/*cidadania_interativas*'
+      - 'docs/qa/cidadania-m1-migracao-20261103.json'
+      - '.github/workflows/cidadania-interativas-qa.yml'
+permissions:
+  contents: read
+jobs:
+  sessoes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        sessao: ['01', '02', '03', '04']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -p test_cidadania_interativas.py
+      - run: npm install --no-save playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/browser_cidadania_interativas.cjs
+        env:
+          CIDADANIA_SESSAO: ${{ matrix.sessao }}
+      - if: matrix.sessao == '01'
+        run: node tests/browser_cidadania_interativas_indice.cjs

@@ -1,0 +1,304 @@
+{
+ "id": "cidadania-m1-s02",
+ "chave": "epi-cid-m1-s02",
+ "versao": "2026-11-03-real-1",
+ "marca": "CD",
+ "titulo": "Sessão 02: A imagem dos outros",
+ "h1": "Humanos, sessão 02: A imagem dos outros",
+ "modulo": {
+  "n": 1,
+  "nome": "Humanos",
+  "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"
+ },
+ "saida": "cidadania/m1/licoes/02/index.html",
+ "piloto": false,
+ "modelo": false,
+ "ampliar": true,
+ "seguinte": "../03/",
+ "seguinteRotulo": "Sessão 03",
+ "fontes": "Código Civil, artigos 79.º e 81.º, sínteses conferidas na Procuradoria-Geral Regional de Lisboa. Lewis Hine, fotografia de Addie Card, 1910, Library of Congress, cph.3a20286, domínio público. A idade é informação da legenda documental. Caso, continuação, procedimento e propostas são construções pedagógicas.",
+ "cartoes": [
+  {
+   "t": "ler",
+   "rot": "Abre",
+   "titulo": "A imagem dos outros",
+   "html": "<p class=\"pergunta-c\">Aceitar uma gravação é aceitar qualquer publicação?</p><p>Caso inventado. Marta aceitou ser filmada para o grupo rever um ensaio. Durante a gravação, cai. O grupo quer publicar o vídeo na conta da escola.</p><p>Marta explica: «Aceitei que o grupo visse o ensaio.» Vais observar uma fotografia, ler apoios e comparar usos da imagem. No fim, escreves três linhas em papel.</p>",
+   "id": "m1-s02-c01",
+   "g": "m1-s02-c01"
+  },
+  {
+   "t": "ler",
+   "rot": "Olha",
+   "titulo": "Uma imagem e a sua legenda",
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../../img/cidadania/hine-addie-card-1910.webp\" alt=\"Uma rapariga de vestido está diante de máquinas com bobinas, apoia uma mão na máquina e olha para a câmara.\"></span><figcaption>Fotografia de Addie Card numa fábrica de algodão. Lewis Hine, 1910. Library of Congress, cph.3a20286. <a href=\"https://commons.wikimedia.org/wiki/File:Addie_Card,_12_years._Spinner_in_North_Pormal_(i.e.,_Pownal)_Cotton_Mill._Vt._Girls_in_mill_say_she_is_ten_years._She_admitted_to_me_she_was_twelve;_that_she_started_during_school_vacation_LOC_cph.3a20286.jpg\">Fonte e direitos: domínio público</a>. Reprodução em WebP.</figcaption></figure><p>A legenda do arquivo identifica Addie Card e regista 12 anos. Essa idade vem da informação recolhida pelo fotógrafo, não da aparência. Observa as máquinas e distingue o que vês do que a legenda acrescenta.</p>",
+   "id": "m1-s02-c02",
+   "g": "m1-s02-c02"
+  },
+  {
+   "t": "escolha",
+   "p": "Que afirmação descreve algo diretamente visível na fotografia?",
+   "p2": "Que informação podes confirmar olhando para a fotografia, sem a legenda?",
+   "o": [
+    "A imagem mostra bobinas atrás da rapariga.",
+    "A imagem permite confirmar a idade exata.",
+    "A imagem revela o acordo para a publicação."
+   ],
+   "c": 0,
+   "f": "As bobinas são visíveis atrás da rapariga; a idade e uma autorização não se observam na imagem.",
+   "fe": [
+    "",
+    "Confundiste aparência com informação documental: procura a idade na legenda.",
+    "Uma pose não prova consentimento para publicar: olha para o que a fotografia efetivamente mostra."
+   ],
+   "ver": "<img src=\"../../../../img/cidadania/hine-addie-card-1910.webp\" alt=\"Uma rapariga de vestido está diante de máquinas com bobinas, apoia uma mão na máquina e olha para a câmara.\">",
+   "g": "m1-s02-c03",
+   "id": "m1-s02-c03"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Seleciona as duas palavras que indicam a idade registada na legenda.",
+   "p2": "Na adaptação da legenda, toca nas duas palavras que indicam a idade.",
+   "frase": "Addie Card, 12 anos, numa fábrica de algodão, em 1910.",
+   "certas": [
+    2,
+    3
+   ],
+   "f": "A indicação «12 anos» pertence à legenda do arquivo, não é uma idade deduzida da fotografia.",
+   "fe": "Distingue a idade da data: 1910 identifica o ano da fotografia.",
+   "g": "m1-s02-c04",
+   "id": "m1-s02-c04"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Regra, exceções e limite",
+   "html": "<p><b>Artigo 79.º do Código Civil, resumo:</b> o n.º 1 estabelece o consentimento como regra para expor ou reproduzir um retrato. O n.º 2 prevê exceções, incluindo finalidades didáticas quando o justifiquem. O n.º 3 impede usos que prejudiquem a honra, a reputação ou o simples decoro da pessoa.</p><p>Não basta invocar uma finalidade: é preciso examinar o caso e os limites.</p><p class=\"credito\"><a href=\"https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis\">Código Civil, artigo 79.º</a>. Síntese pedagógica, não citação</p>",
+   "id": "m1-s02-c05",
+   "g": "m1-s02-c05"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada pergunta ao número do artigo que ajuda a examiná-la.",
+   "p2": "Que parte do resumo permite começar a responder a cada pergunta?",
+   "pares": [
+    [
+     "A pessoa aceitou a exposição do retrato?",
+     "N.º 1: regra do consentimento"
+    ],
+    [
+     "Há uma finalidade didática que justifique a exceção?",
+     "N.º 2: situações excecionais"
+    ],
+    [
+     "O uso prejudica a honra, a reputação ou o decoro?",
+     "N.º 3: limite do uso"
+    ]
+   ],
+   "f": "As três perguntas distinguem regra, exceção e limite, que devem ser lidos em conjunto.",
+   "fe": "Não confundas justificar uma exceção com ultrapassar o limite: relê os n.ºs 2 e 3.",
+   "g": "m1-s02-c06",
+   "id": "m1-s02-c06"
+  },
+  {
+   "t": "vf",
+   "p": "Invocar uma finalidade didática dispensa avaliar o prejuízo para a pessoa retratada.",
+   "p2": "Basta escrever «fins didáticos» para deixar de ser necessário examinar o limite do n.º 3.",
+   "v": false,
+   "f": "O resumo mantém o limite do n.º 3 mesmo quando se invoca uma das exceções do n.º 2.",
+   "fe": "Confundiste exceção com autorização sem limites: volta à parte sobre honra, reputação e decoro.",
+   "g": "m1-s02-c07",
+   "id": "m1-s02-c07"
+  },
+  {
+   "t": "escolha",
+   "p": "Que pergunta aplica o limite do n.º 3 ao vídeo da queda?",
+   "p2": "Que pergunta examina o possível efeito do vídeo sobre a pessoa retratada?",
+   "o": [
+    "A publicação pode prejudicar o decoro de Marta?",
+    "A publicação faz parte do trabalho desta turma?",
+    "A publicação apresenta o ensaio desta semana?"
+   ],
+   "c": 0,
+   "f": "O limite pede que se examine o efeito sobre Marta, não apenas a finalidade escolar do vídeo.",
+   "fe": [
+    "",
+    "Ser trabalho escolar refere a finalidade, mas não responde ao limite: relê o n.º 3.",
+    "Identificar o ensaio não esclarece o possível prejuízo: procura no apoio o que fica protegido."
+   ],
+   "g": "m1-s02-c08",
+   "id": "m1-s02-c08"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Um procedimento antes da publicação",
+   "html": "<p><b>Procedimento proposto:</b> identifica quem aparece; pergunta se aceita o uso previsto; mostra a versão final; regista a decisão antes de publicar.</p><p>O artigo 81.º, n.º 2, permite revogar uma limitação voluntária legal de um direito de personalidade, embora possa haver obrigação de indemnizar prejuízos causados a legítimas expectativas. Não transforma o dia do ensaio num prazo final para desistir.</p><p>Uma data de conservação do ficheiro e um contacto para pedir retirada respondem a perguntas diferentes.</p><p class=\"credito\"><a href=\"https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis\">Código Civil, artigo 81.º</a>. Resumo; procedimento pedagógico</p>",
+   "id": "m1-s02-c09",
+   "g": "m1-s02-c09"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena o procedimento proposto antes de publicar.",
+   "p2": "Reconstrói a sequência do apoio, desde identificar as pessoas até registar a decisão.",
+   "passos": [
+    "Identificar quem aparece na gravação.",
+    "Perguntar se aceita o uso previsto.",
+    "Mostrar a versão final que se propõe publicar.",
+    "Registar a decisão antes da publicação."
+   ],
+   "f": "A sequência permite decidir sobre um uso e uma versão conhecidos antes da publicação.",
+   "fe": "Pedir uma decisão depois de publicar inverte o procedimento: relê a sequência apresentada.",
+   "g": "m1-s02-c10",
+   "id": "m1-s02-c10"
+  },
+  {
+   "t": "escolha",
+   "p": "Que informação mostra que o uso proposto é diferente do que Marta aceitou?",
+   "p2": "Que facto do caso distingue a revisão do ensaio da publicação na conta da escola?",
+   "o": [
+    "A gravação destinava-se à revisão pelo grupo.",
+    "A gravação incluía uma queda durante o ensaio.",
+    "A gravação foi feita para o trabalho da turma."
+   ],
+   "c": 0,
+   "f": "Marta aceitou a revisão pelo grupo; essa finalidade não é a publicação proposta.",
+   "fe": [
+    "",
+    "A queda pode ser relevante para o efeito da imagem, mas compara agora os públicos e usos.",
+    "Dizer que é trabalho da turma não identifica quem podia ver: relê a fala de Marta."
+   ],
+   "g": "m1-s02-c11",
+   "id": "m1-s02-c11"
+  },
+  {
+   "t": "vf",
+   "p": "Cortar a queda deixa por esclarecer se Marta aceita a publicação na conta da escola.",
+   "p2": "Mesmo sem a queda, ainda falta saber se Marta concorda com o novo uso.",
+   "v": true,
+   "f": "Alterar a versão do vídeo não demonstra, por si, que Marta aceitou a publicação.",
+   "fe": "Confundiste mudança no conteúdo com decisão sobre o uso: volta ao que Marta aceitou.",
+   "g": "m1-s02-c12",
+   "id": "m1-s02-c12"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Seleciona as duas palavras que identificam o público aceite por Marta.",
+   "p2": "Na fala de Marta, que duas palavras indicam quem podia ver o ensaio?",
+   "frase": "Aceitei que o grupo visse o ensaio.",
+   "certas": [
+    2,
+    3
+   ],
+   "f": "Marta refere o grupo; não diz que aceitou disponibilizar o vídeo numa conta aberta.",
+   "fe": "O ensaio é o conteúdo visto, não quem o vê: procura o sujeito de «visse».",
+   "g": "m1-s02-c13",
+   "id": "m1-s02-c13"
+  },
+  {
+   "t": "ler",
+   "rot": "Na aula",
+   "titulo": "Uma proposta com dados concretos",
+   "html": "<p>Continuação inventada. O grupo propõe mostrar o ensaio sem a queda numa conta aberta da escola. O ficheiro da escola fica guardado até ao fim do período. O pedido indica o contacto da equipa para pedir a retirada, sem prazo para o fazer.</p><p>Marta ainda não viu a versão final nem respondeu à proposta. Não se sabe se outras pessoas guardarão cópias.</p><p>Usa estes dados nos próximos cartões; só escreves a conclusão no fim.</p>",
+   "id": "m1-s02-c14",
+   "g": "m1-s02-c14"
+  },
+  {
+   "t": "escolha",
+   "p": "Que pergunta falta esclarecer antes de avançar com esta proposta?",
+   "p2": "Que informação ainda não consta da continuação do caso?",
+   "o": [
+    "Marta aceita a versão final para a conta aberta?",
+    "O ficheiro fica guardado até ao fim do período?",
+    "O pedido indica o contacto para pedir retirada?"
+   ],
+   "c": 0,
+   "f": "Ainda falta a decisão de Marta sobre a versão e o uso propostos.",
+   "fe": [
+    "",
+    "O período de conservação já foi indicado: relê a frase sobre o ficheiro da escola.",
+    "O contacto já consta do pedido: não o confundas com a decisão que Marta ainda não tomou."
+   ],
+   "g": "m1-s02-c15",
+   "id": "m1-s02-c15"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada parte da proposta à pergunta a que responde.",
+   "p2": "Que informação fornece cada uma destas partes do pedido?",
+   "pares": [
+    [
+     "Conta aberta da escola",
+     "Onde será publicado?"
+    ],
+    [
+     "Até ao fim do período",
+     "Até quando se conserva o ficheiro da escola?"
+    ],
+    [
+     "Contacto da equipa, sem prazo para pedir retirada",
+     "Como comunicar um pedido de retirada?"
+    ]
+   ],
+   "f": "Destino, conservação e pedido de retirada são informações diferentes e não substituem a decisão de Marta.",
+   "fe": "A data refere o ficheiro da escola; não a uses como limite para contactar a equipa.",
+   "g": "m1-s02-c16",
+   "id": "m1-s02-c16"
+  },
+  {
+   "t": "ordenar",
+   "p": "Organiza esta justificação para pedir uma nova decisão a Marta.",
+   "p2": "Começa pelo uso aceite e termina no passo que responde à dúvida.",
+   "passos": [
+    "Marta aceitou a revisão do ensaio pelo grupo.",
+    "A proposta agora é publicar numa conta aberta.",
+    "Marta ainda não decidiu sobre essa versão e esse uso.",
+    "É preciso mostrar a versão e pedir essa decisão."
+   ],
+   "f": "A justificação compara os usos, identifica o que falta e propõe um passo para o esclarecer.",
+   "fe": "Não tomes a proposta como aceitação: põe a dúvida antes do pedido que a pode esclarecer.",
+   "g": "m1-s02-c17",
+   "id": "m1-s02-c17"
+  },
+  {
+   "t": "escolha",
+   "p": "Que conclusão distingue a proposta da decisão de Marta?",
+   "p2": "Escolhe a conclusão que respeita os factos conhecidos sobre o novo uso.",
+   "o": [
+    "Há outro uso proposto; falta a decisão de Marta.",
+    "Há outro uso proposto; basta a aprovação da escola.",
+    "Há outro uso proposto; vale o acordo da gravação."
+   ],
+   "c": 0,
+   "f": "A proposta está descrita, mas a decisão de Marta sobre ela continua por obter.",
+   "fe": [
+    "",
+    "A aprovação da escola não demonstra a decisão de Marta: relê o que falta na continuação.",
+    "O acordo anterior tinha outra finalidade: compara revisão pelo grupo com publicação aberta."
+   ],
+   "g": "m1-s02-c18",
+   "id": "m1-s02-c18"
+  },
+  {
+   "t": "vf",
+   "p": "A data de eliminação do ficheiro fixa também o último dia para pedir a retirada.",
+   "p2": "Depois da data de conservação, o contacto indicado deixa de poder receber um pedido de retirada.",
+   "v": false,
+   "f": "O prazo de conservação refere o ficheiro da escola; o pedido não impõe um prazo para comunicar a retirada.",
+   "fe": "Juntaste duas informações diferentes: relê a data de conservação e o contacto sem prazo.",
+   "g": "m1-s02-c19",
+   "id": "m1-s02-c19"
+  },
+  {
+   "t": "ler",
+   "rot": "Para levar",
+   "titulo": "Três linhas sobre o uso da imagem",
+   "html": "<p>Escreve individualmente, em papel:</p><ol><li>Que decisão propões antes de publicar este vídeo?</li><li>Que facto do caso e que parte do apoio sustentam essa decisão?</li><li>Que dúvida ainda precisas de esclarecer?</li></ol><p>Confere: distinguiste gravar, rever e publicar? Separaste a decisão de Marta da proposta do grupo? Não prometas apagar cópias que desconheces.</p>",
+   "escuro": true,
+   "id": "m1-s02-c20",
+   "g": "m1-s02-c20"
+  }
+ ],
+ "edicao": "20261103",
+ "guia": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/licoes/docente/",
+ "guiao": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/licoes/guiao/"
+}

@@ -157,4 +157,7 @@ if __name__=='__main__':
  library();extract_legacy_css();integrations()
  from cidadania_m1_sessoes import build
  build(globals())
+ # 03/11/2026: quatro sessões interativas no índice real; arquivos preservados.
+ from cidadania_interativas import gerar as gerar_interativas
+ gerar_interativas()
  print('Dez sessões geradas. Enunciado publicado de Pergunta Humana preservado; fichas disponíveis como apoio.')

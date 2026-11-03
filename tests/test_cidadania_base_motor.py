@@ -4,8 +4,11 @@ import re
 import json
 import subprocess
 import unittest
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'tools'))
+from cidadania_interativas import instalar_indice
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
 RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json').read_text(encoding='utf-8'))
 
@@ -25,6 +28,10 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
+                # 03/11/2026: só o índice encaminha para as quatro sessões reais.
+                # A transformação é fechada; todos os arquivos continuam iguais.
+                if nome == 'cidadania/m1/index.html':
+                    antes = instalar_indice(antes.decode('utf-8')).encode('utf-8')
                 self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))
 
@@ -48,6 +55,8 @@ class CidadaniaBase(unittest.TestCase):
                     carris = importlib.util.module_from_spec(spec)
                     spec.loader.exec_module(carris)
                     esperado = carris.instalar(esperado)
+                if nome == 'cidadania/m1/index.html':
+                    esperado = instalar_indice(esperado)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 
