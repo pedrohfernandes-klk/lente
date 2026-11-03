@@ -34,3 +34,7 @@ Não houve controlo interativo. Zoom real a 200% continua fora da validação. N
 ## Validação da entrega
 
 27 percursos aprovados: três estados, 320/390/1366 px, claro/escuro/projeção, com seis vistas por contexto. Regresso à opção escolhida e armazenamento intacto. Mais seis contextos conferem boia sem sobreposição, Enter/Escape/foco, sinais e tokens dos resultados, ligação única ao Wordle e zero pedidos externos. Pausa, retoma e projeção dinâmica aprovadas. Gerador sem diferenças. Capturas móveis da entrada e da porta Português abertas e conferidas. Provas locais em `outputs/laboratorio-percurso-provas-20261103/`. A especificação comum foi enviada ao GPT3 após autorização direta do docente.
+
+## Correção de contraste, 03/11
+
+Achado do GPT3 corrigido: texto e rótulo passam à tinta principal sobre fundos tintados; só a marca e o símbolo conservam verde/vermelho. Animação de 180 ms apenas no desenho da marca, sem atenuar texto. O novo ensaio de CI mede 48 resultados em 320/390/1366, claro/escuro, normal/projeção e com/sem movimento reduzido. Texto mínimo 10,75:1; símbolo mínimo 3,82:1, acompanhado sempre de rótulo. Texto sem animação e com opacidade 1; marca estática em projeção/redução. Capturas claro positivo e escuro negativo abertas e conferidas. Provas: `outputs/laboratorio-contraste-provas-20261103/contraste.json`.
