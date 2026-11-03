@@ -6,7 +6,7 @@ const seed=JSON.stringify({version:1,sessions:{'01':{done:true,stage:4},'02':{do
 try{for(const width of [320,1366])for(const mode of ['normal','parametro','visor']){
  const c=await browser.newContext({viewport:{width,height:900}});
  await c.route('**/*',r=>{const u=r.request().url();if(!u.startsWith(base))return r.abort();let f=decodeURIComponent(u.slice(base.length).split(/[?#]/)[0]);if(!f||f.endsWith('/'))f+='index.html';f=path.resolve(root,f);if(!f.startsWith(root+path.sep)||!fs.existsSync(f))return r.fulfill({status:404,body:''});return r.fulfill({body:fs.readFileSync(f),contentType:({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'})[path.extname(f)]||'application/octet-stream'});});
- await c.addInitScript(({key,seed})=>{if(!sessionStorage.getItem('qa-iniciado')){localStorage.setItem(key,seed);sessionStorage.setItem('qa-iniciado','1');}window.qaAcessos=[];window.qaLerOriginal=Storage.prototype.getItem;for(const method of ['getItem','setItem','removeItem','clear']){const original=Storage.prototype[method];Storage.prototype[method]=function(...args){if(this===localStorage&&(args[0]===key||method==='clear'))qaAcessos.push({method,key:args[0]});return original.apply(this,args);};}},{key,seed});
+ await c.addInitScript(({key,seed})=>{if(!sessionStorage.getItem('qa-iniciado')){localStorage.setItem(key,seed);localStorage.setItem('epi-cidadania-m2',JSON.stringify({feitas:{'passo-00':1}}));localStorage.setItem('epi-cidadania-m2:visto','0');sessionStorage.setItem('qa-iniciado','1');}window.qaAcessos=[];window.qaLerOriginal=Storage.prototype.getItem;for(const method of ['getItem','setItem','removeItem','clear']){const original=Storage.prototype[method];Storage.prototype[method]=function(...args){if(this===localStorage&&(/^(epi-cidadania|lente-cidadania|epi-pt-|epi-cartaz|epi-ultima|epi-atlas|epi-bairro)/.test(args[0])||method==='clear'))qaAcessos.push({method,key:args[0]});return original.apply(this,args);};}},{key,seed});
  const p=await c.newPage();const errors=[];p.on('pageerror',e=>errors.push(e.message));
  for(const route of ['cidadania/m2/','cidadania/m2/sessoes/01/']){
   await p.goto(mode==='visor'?base+'projetar/?pagina=/lente/'+route:base+route+(mode==='parametro'?'?projetar=1':''));
@@ -25,7 +25,7 @@ try{for(const width of [320,1366])for(const mode of ['normal','parametro','visor
    assert.equal(await surface.locator('[data-continue]').textContent(),projected?'Começar na sessão 01':'Continuar na sessão 03');
    assert.equal(await surface.locator('[data-session-card][data-complete="true"]').count(),projected?0:2);
   }
-  if(projected){await surface.evaluate(key=>{dispatchEvent(new StorageEvent('storage',{key}));dispatchEvent(new Event('pageshow'));},key);assert.deepEqual(await surface.evaluate(()=>qaAcessos),[]);assert.equal(await surface.evaluate(key=>qaLerOriginal.call(localStorage,key),key),seed);}
+  if(projected){await surface.evaluate(key=>{dispatchEvent(new StorageEvent('storage',{key}));dispatchEvent(new Event('pageshow'));},key);assert.deepEqual(await surface.evaluate(()=>qaAcessos),[]);assert.equal(await surface.evaluate(key=>qaLerOriginal.call(localStorage,key),key),seed);assert.equal(await surface.evaluate(()=>qaLerOriginal.call(localStorage,'epi-cidadania-m2:visto')),'0');assert.equal(await surface.evaluate(()=>qaLerOriginal.call(localStorage,'epi-cidadania-m2')),JSON.stringify({feitas:{'passo-00':1}}));assert.equal(await surface.locator('.p-feito,.arco-p.feito').count(),0);}
   assert.deepEqual(errors,[]);count++;
  }
  await c.close();

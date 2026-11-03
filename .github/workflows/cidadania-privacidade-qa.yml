@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'assets/cidadania-sessoes-molde.js'
+      - 'tools/generate_cidadania_m2.py'
+      - 'tools/cidadania_m2_sessoes.py'
+      - 'cidadania/m2/**'
       - 'tests/browser_cidadania_m2_privacidade.cjs'
       - '.github/workflows/cidadania-privacidade-qa.yml'
 permissions:
