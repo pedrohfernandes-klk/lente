@@ -34,3 +34,16 @@ Regressão nova tests/browser_lente_projecao_entrada.cjs, incluída no CI: moldu
 Provas: outputs/lente-cabecalho-projecao-final-20261103/medidas.json e capturas. Isto verifica a projeção real, não substitui a verificação pendente de zoom nativo. Sem publicação.
 
 O teste integral existente browser_cartaz_familia.cjs também passou após esta correção: temas, alvos, dobras, projeção, impressão, alternativa sem JavaScript e progresso. Nenhuma asserção ou limite existente foi alterado.
+
+
+## Integração do main publicado, 03/11/2026
+
+Merge `a54b702e2dc949c8f3713165d3035426a7969b04`, com main `bbdbec4705477c43ccdff1a93e399bdade2e3a8f` como segundo pai. Preserva os commits anteriores. Os conflitos de Ideias, pilotos de Cidadania e contratos ficaram exatamente como no main publicado. Os menus herdados do antigo ramo-base #108 foram separados desta entrega; os pedidos #108, #110 e #111 não mudaram.
+
+Diferença delimitada contra main: os seis ficheiros próprios do cabeçalho/projeção e o manifesto técnico de comparação. No index.html só mudam duas versões de cache das folhas de estilo. O manifesto acrescenta apenas essas duas substituições literais, uma ocorrência cada, mantendo a comparação integral dos 124 ficheiros e todas as asserções. Nenhum teste é removido nem passa a ignorar diferenças arbitrárias de cache.
+
+Dois testes de preservação/comparação exata aprovados após o merge. Dezoito contextos de projeção real aprovados novamente, sobre o main com Humanos, Algoritmos e Decisões. Prova atual: outputs/lente109-main-projecao-20261103/medidas.json. A bateria visual existente é repetida porque a separação dos menus mudou a base efetiva do ensaio.
+
+A revisão automática recusou uma reposição global durante a resolução. Foi adotada resolução delimitada a 35 caminhos, depois de salvaguardar os 41 caminhos divergentes e o índice em outputs/lente109-merge-salvaguarda-20261103.zip. Nenhum trabalho não guardado se perdeu. A cópia de segurança fica fora do repositório.
+
+Resultado após o merge: browser_cartaz_familia.cjs aprovado, incluindo temas, alvos, dobras, projeção, impressão, alternativa sem JavaScript e progresso.
