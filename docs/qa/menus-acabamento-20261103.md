@@ -47,3 +47,11 @@ Checkout: outputs/lente-menus-acabamento-20261103. Ramo: codex/menus-acabamento-
 ## Acerto pontual do visor
 
 A pedido do docente, transmitido pela coordenação, projetar/index.html muda apenas «Abrir fora da projeção ↗» para «Sair da projeção». O destino e o comportamento existentes mantêm-se; não se alteram scripts, estilos, identificadores ou arquitetura do visor. Esta substituição foi recebida no checkout e incluída na entrega.
+
+## Ampliação real e contraste
+
+A prova adicional da cabeça e96a8aa passou 112 contextos com ampliação nativa do Chrome a 200 %, nas catorze páginas, nos dois temas e no visor real. A calibração confirmou o dobro da densidade de píxeis e metade da largura útil, sem CSS zoom. Não houve deslocamento lateral nem alvos abaixo de 44 px. O painel QR foi fechado pelo respetivo botão.
+
+A prova de contraste revelou dois defeitos nesta camada: o foco branco da ação principal desaparecia no fundo claro; no mapa, o hover clareava o fundo da entrada de Ideias sem mudar o texto branco. As correções limitam-se ao contorno exterior e ao estado hover desses elementos. O teste novo mede texto com mínimo de 4,5:1 e contorno com mínimo de 3:1, nos estados normal, hover e foco, nos dois temas. Integra as verificações automáticas, sem exceções nem redução dos mínimos.
+
+Ronda final de contraste aprovada: 1350 medições, catorze páginas em cada tema. Contraste mínimo do texto: 5.36:1; do contorno de foco: 14.15:1. Os dois testes de preservação e regeneração passaram novamente.
