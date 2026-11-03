@@ -28,6 +28,6 @@
  const root=new URL(document.querySelector('[data-raiz]').dataset.raiz,location.href);
  document.querySelectorAll('[data-continuar]').forEach(el=>{const all=ids(el,'continuar'),done=all.some(id=>states[id]!=='por fazer'),id=all.find(id=>states[id]==='por fazer')||all[0],p=by[id];el.textContent=(all.every(id=>states[id]!=='por fazer')?'Percurso feito. Recomeçar: ':done?'Continuar: ':'Começar: ')+p.title+'\u00a0→';const u=new URL(p.url,root);if(projected)u.searchParams.set('projetar','1');el.href=u.href;});
  if(projected)document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href);if(u.origin===location.origin){u.searchParams.set('projetar','1');a.href=u.href;}});
- const wide=matchMedia('(min-width:640px)');function dobras(){if(wide.matches)document.querySelectorAll('details.dobra').forEach(d=>{d.open=true;});}dobras();if(wide.addEventListener)wide.addEventListener('change',dobras);
+ const wide=matchMedia('(min-width:640px)');function dobras(){if(wide.matches&&!document.querySelector('[data-menu-piloto]'))document.querySelectorAll('details.dobra').forEach(d=>{d.open=true;});}dobras();if(wide.addEventListener)wide.addEventListener('change',dobras);
  addEventListener('pageshow',e=>{if(e.persisted)location.reload();});
 })();
