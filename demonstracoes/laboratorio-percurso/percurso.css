@@ -20,3 +20,11 @@ body{height:100dvh;display:flex;flex-direction:column}.revisao,.caminho{flex-shr
 @media(prefers-reduced-motion:reduce){.feedback,.feedback::before{animation:none!important}}
 html.em-projecao .feedback,html.em-projecao .feedback::before{animation:none!important}html.em-projecao .boia{visibility:hidden}
 @media print{body{height:auto;display:block}main{overflow:visible}.apoios-dock{display:none!important}.feedback,.feedback::before{animation:none!important}}
+
+/* Explorar acompanha o percurso principal; onze recursos, sem incorporações. */
+.explorar-entrada{border-top:1px solid var(--line);padding-top:28px;margin-top:32px}
+.explorar-destaques{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.recurso-externo{display:block;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;min-height:48px}
+.recurso-externo b,.recurso-externo span,.recurso-externo small{display:block}.recurso-externo b{font:700 1.05rem/1.4 Arial,sans-serif}.recurso-externo span{margin:6px 0}.recurso-externo small{font: .8rem/1.5 Arial,sans-serif}.recurso-externo:hover b{text-decoration:underline}
+.recurso-externo.wordle{border-left:0;margin:0;font:inherit}.explorar-categorias{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.explorar-categorias h2{margin-bottom:8px}
+@media(max-width:700px){.explorar-destaques,.explorar-categorias{grid-template-columns:1fr}.explorar-destaques{gap:0}}

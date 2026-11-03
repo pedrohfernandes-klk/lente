@@ -38,3 +38,18 @@ Não houve controlo interativo. Zoom real a 200% continua fora da validação. N
 ## Correção de contraste, 03/11
 
 Achado do GPT3 corrigido: texto e rótulo passam à tinta principal sobre fundos tintados; só a marca e o símbolo conservam verde/vermelho. Animação de 180 ms apenas no desenho da marca, sem atenuar texto. O novo ensaio de CI mede 48 resultados em 320/390/1366, claro/escuro, normal/projeção e com/sem movimento reduzido. Texto mínimo 10,75:1; símbolo mínimo 3,82:1, acompanhado sempre de rótulo. Texto sem animação e com opacidade 1; marca estática em projeção/redução. Capturas claro positivo e escuro negativo abertas e conferidas. Provas: `outputs/laboratorio-contraste-provas-20261103/contraste.json`.
+
+
+## Explorar, decisão do docente de 03/11/2026
+
+Área secundária a Ideias, nesta mesma proposta de redesenho. Onze recursos, seleção fechada. A entrada destaca Wordle, Color e Music Lab; os restantes aparecem nas cinco categorias aprovadas. Cada ligação tem nome, ação, língua ou requisito relevante e indicação de novo separador. Nenhum recurso é incorporado ou consultado antes do clique. O retorno conserva a escolha da sessão em memória.
+
+- Jogar com palavras: Wordle, Léxico, Elos.
+- Ver e desenhar: Color, Boolean, Bézier.
+- Criar com som: Music Lab, Blob Opera.
+- Experimentar decisões: Polygons.
+- Descobrir: Arts & Culture, RTP Ensina.
+
+Verificação das páginas oficiais em 03/11/2026: os dez endereços além de Wordle responderam ao leitor web; Léxico e Elos apresentam uma aplicação JavaScript («A carregar…»). Wordle mantém o endereço oficial aprovado na coordenação, mas o leitor web devolveu erro de acesso. Isto não demonstra que o recurso esteja indisponível. Não se promete funcionamento completo das aplicações externas. Bézier declara expressamente teclado e rato ou painel tátil. Não se acrescentaram recursos à seleção aprovada.
+
+As ligações verificáveis e as frases de ação ficam em demonstracoes/laboratorio-percurso/percurso.js. O teste de navegador exige os onze endereços exatos, as cinco categorias, apenas três destaques, novo separador seguro, ausência de pedidos externos e retorno ao Laboratório. Mantém também os 27 percursos, os estados das respostas, o armazenamento intacto e os limites de largura.
