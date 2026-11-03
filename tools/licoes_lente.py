@@ -244,6 +244,9 @@ def pagina(d):
     dados = json.dumps(d['cartoes'], ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     menu = _menu_laboratorio(d, mod) if lab else _menu_cidadania(d, mod)
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
+    # 03/11/2026: o ensaio isolado nunca lê nem substitui o progresso da sessão existente.
+    if d.get('modelo'):
+        cfg['chave'] = 'ensaio-' + d['chave']
     # 31/10/2026 (revisão do diretor de arte, sistema 6.11): o ecrã final leva «A seguir» (a sessão seguinte) e o módulo.
     # Verificação final: quando a seguinte já é o módulo (a s10 aponta para ../m1/), o módulo não se repete ao lado, como
     # ligação e como botão para o mesmo destino; fica só o botão.
@@ -282,7 +285,8 @@ def pagina(d):
         '<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">'
         f'<link rel="stylesheet" href="{base}assets/licoes/lesson.css?v={d["versao"]}"><link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={d["versao"]}">'
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
-        f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
+        + (f'<link rel="stylesheet" href="{base}assets/ampliar-documentos.css?v=20261103-1"><script defer src="{base}assets/ampliar-documentos.js?v=20261103-1"></script>' if d.get('ampliar') else '')
+        + f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
         f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{marca_t}</a>'
         '<span class="c-num" data-c-num></span><button type="button" class="c-barra" data-c-barra aria-label="Ver os cartões já feitos" disabled><svg viewBox="0 0 1 10" preserveAspectRatio="none" aria-hidden="true"></svg></button>'
