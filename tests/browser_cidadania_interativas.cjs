@@ -3,7 +3,7 @@
 // Confere também o lançador real, visor por teclado, resultado privado e progresso original intacto.
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert');
 const ROOT=path.resolve(__dirname,'..'),resultados=[];
-const sessoes=process.env.CIDADANIA_SESSAO?[process.env.CIDADANIA_SESSAO]:['01','02','03','04'];assert(sessoes.every(n=>/^0[1-4]$/.test(n)));
+const sessoes=process.env.CIDADANIA_SESSAO?[process.env.CIDADANIA_SESSAO]:['01','02','03','04','05','06','07','08','09','10'];assert(sessoes.every(n=>/^(0[1-9]|10)$/.test(n)));
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'};
 const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]).replace(/^\/lente(?=\/)/,'');if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
 async function seguinte(p){const s=p.locator('.casca-folha:not([hidden]) button, .casca-acoes button',{hasText:/Seguinte|Continuar|Ver o resultado|Terminar/});await s.first().click();await p.waitForTimeout(250)}
@@ -64,7 +64,9 @@ async function responder(p,x){
   const frame=p.frames().find(f=>f!==p.mainFrame()&&f.url().includes('/cidadania/m1/licoes/'+n+'/'));
   assert.equal(await frame.locator('[data-c-num]').innerText(),'1/20');await seguinte(frame);
   assert.equal(await frame.locator('[data-c-num]').innerText(),'2/20');assert(await frame.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  if(n!=='03'){const img=frame.locator('#baralho figure img');await img.focus();await p.keyboard.press('Enter');assert.equal(await frame.locator('.amp-ov[role="dialog"]').count(),1);await p.keyboard.press('Escape');assert(await img.evaluate(e=>document.activeElement===e));}
+  const banco=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/cidadania-interativas/cidadania-m1-s'+n+'.json'),'utf8'));
+  // 03/11/2026: exigir o visor nas sessões com imagem; nas textuais, exigir a sua ausência.
+  if(banco.ampliar){const img=frame.locator('#baralho figure img');await img.focus();await p.keyboard.press('Enter');assert.equal(await frame.locator('.amp-ov[role="dialog"]').count(),1);await p.keyboard.press('Escape');assert(await img.evaluate(e=>document.activeElement===e));}else assert.equal(await frame.locator('#baralho figure img').count(),0);
   assert.equal(await frame.evaluate(k=>localStorage.getItem(k),chave+'-20261103'),null);assert.equal(await frame.evaluate(k=>localStorage.getItem(k),chave),JSON.stringify({lida:true,versao:'original',t:123}));assert.deepEqual(erros,[]);
   if(process.env.MODELO_PROVAS)await p.screenshot({path:path.join(process.env.MODELO_PROVAS,`lancador-${n}-${w}-${tema}.png`)});
   resultados.push({sessao:n,largura:w,tema,lancadorReal:true,visorTeclado:true,originalIntacto:true,semErros:true});await ctx.close();console.log('PASS lançador real '+w+' '+tema);

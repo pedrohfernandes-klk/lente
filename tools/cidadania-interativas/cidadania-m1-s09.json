@@ -1,0 +1,317 @@
+{
+ "id": "cidadania-m1-s09",
+ "chave": "epi-cid-m1-s09",
+ "versao": "2026-11-03-real-1",
+ "marca": "CD",
+ "titulo": "Sessão 09: Muitas vozes, uma escola",
+ "h1": "Humanos, sessão 09: Muitas vozes, uma escola",
+ "modulo": {
+  "n": 1,
+  "nome": "Humanos",
+  "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"
+ },
+ "saida": "cidadania/m1/licoes/09/index.html",
+ "modelo": false,
+ "piloto": false,
+ "ampliar": false,
+ "seguinte": "../10/",
+ "seguinteRotulo": "Sessão 10",
+ "fontes": "Apoios com fontes identificadas nos cartões. Casos, documentos, dados numéricos e procedimentos são construções pedagógicas explicitamente inventadas. Sem vídeos não visionados. Fontes e limites indicados nos materiais de leitura.",
+ "cartoes": [
+  {
+   "t": "ler",
+   "rot": "Abre",
+   "titulo": "Muitas vozes, uma escola",
+   "html": "<p>Caso inventado. Nos intervalos ouvem-se várias línguas. A direção propõe que se fale apenas português, para facilitar conversas entre todos. Uma aluna explica que costuma falar com a irmã na língua que usam em casa.</p><p>Como avaliar os efeitos sem adivinhar intenções nem tratar todas as pessoas como iguais? Lê as situações e escreve apenas três linhas no fim.</p>",
+   "id": "m1-s09-c01",
+   "g": "m1-s09-c01"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Dois relatos não são a escola inteira",
+   "html": "<p>Relatos inventados:</p><p><b>Ana:</b> «Quero participar nas conversas, mas nem sempre percebo a língua usada.»</p><p><b>Lina:</b> «No intervalo falo com a minha irmã na nossa língua. Também converso em português com outros colegas.»</p><p>Os relatos mostram duas experiências. Não demonstram que todos os alunos pensam o mesmo nem que falar outra língua seja uma tentativa de excluir alguém.</p>",
+   "id": "m1-s09-c02",
+   "g": "m1-s09-c02"
+  },
+  {
+   "t": "escolha",
+   "p": "Que afirmação é sustentada pelo relato de Lina?",
+   "p2": "Que afirmação é sustentada pelo relato de Lina?",
+   "o": [
+    "Lina usa línguas diferentes com pessoas diferentes.",
+    "Lina evita conversar com todos os colegas portugueses.",
+    "Lina exige que a turma aprenda a língua da sua família."
+   ],
+   "c": 0,
+   "f": "Lina descreve usos diferentes, sem afirmar recusa ou exigência.",
+   "fe": [
+    "",
+    "O relato menciona conversas em português: não lhe atribuas uma recusa que não está escrita.",
+    "Lina não exige essa aprendizagem: distingue o que conta do que imaginas."
+   ],
+   "g": "m1-s09-c03",
+   "id": "m1-s09-c03"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Seleciona a expressão que limita a generalização dos relatos.",
+   "p2": "Seleciona a expressão que limita a generalização dos relatos.",
+   "frase": "Estes dois relatos mostram experiências de duas pessoas, não de toda a escola.",
+   "certas": [
+    6,
+    7
+   ],
+   "f": "O apoio não permite tomar duas experiências como descrição de toda a escola.",
+   "fe": "Procura a dimensão do conjunto ouvido, não o conjunto sobre o qual seria precipitado concluir.",
+   "g": "m1-s09-c04",
+   "id": "m1-s09-c04"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Direitos e efeitos de uma regra",
+   "html": "<p>A Constituição proíbe prejudicar alguém em razão da língua ou religião. A mesma formulação de uma regra pode afetar pessoas de maneiras diferentes.</p><p>No caso, é preciso examinar a dificuldade de Ana em participar e o uso que Lina faz da língua com a irmã. Ouvir uma necessidade não significa aceitar automaticamente qualquer solução. Explicar uma regra também não basta para a tornar justa.</p><p class=\"credito\"><a href=\"https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx\">Constituição, artigo 13.º, n.º 2</a>. Síntese pedagógica.</p>",
+   "id": "m1-s09-c05",
+   "g": "m1-s09-c05"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada informação à questão que permite examinar.",
+   "p2": "Liga cada informação à questão que permite examinar.",
+   "pares": [
+    [
+     "Ana nem sempre compreende a conversa",
+     "Possibilidade de participar"
+    ],
+    [
+     "Lina fala com a irmã na sua língua",
+     "Efeito da proibição proposta"
+    ],
+    [
+     "Só há dois relatos disponíveis",
+     "Limite da informação recolhida"
+    ]
+   ],
+   "f": "As necessidades e os limites devem ser considerados sem apagar uma das experiências.",
+   "fe": "Não uses a dificuldade de uma pessoa para afirmar que já conheces todas as outras.",
+   "g": "m1-s09-c06",
+   "id": "m1-s09-c06"
+  },
+  {
+   "t": "vf",
+   "p": "Uma regra escrita da mesma forma para todos tem necessariamente o mesmo efeito em cada pessoa.",
+   "p2": "Uma regra escrita da mesma forma para todos tem necessariamente o mesmo efeito em cada pessoa.",
+   "v": false,
+   "f": "As situações de Ana e Lina mostram que a mesma regra pode produzir efeitos diferentes.",
+   "fe": "Compara as conversas descritas por cada uma, em vez de olhar só para a formulação da regra.",
+   "g": "m1-s09-c07",
+   "id": "m1-s09-c07"
+  },
+  {
+   "t": "escolha",
+   "p": "Que pergunta procura informação sem atribuir uma intenção?",
+   "p2": "Que pergunta procura informação sem atribuir uma intenção?",
+   "o": [
+    "Em que conversas sentes dificuldade em participar?",
+    "Porque recusas integrar os colegas nas tuas conversas?",
+    "Porque consideras inferior a língua dos teus colegas?"
+   ],
+   "c": 0,
+   "f": "A pergunta pede uma situação concreta, sem presumir recusa ou desprezo.",
+   "fe": [
+    "",
+    "A recusa não foi demonstrada: volta ao que os relatos dizem efetivamente.",
+    "Não há declaração de inferioridade no caso: não transformes uma pergunta numa acusação."
+   ],
+   "g": "m1-s09-c08",
+   "id": "m1-s09-c08"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Responder a uma generalização",
+   "html": "<p>Exemplo inventado: «Quem fala outra língua não quer participar.» A frase atribui a mesma intenção a um grupo inteiro. O relato de Lina mostra que falar outra língua e conversar em português podem coexistir.</p><p>Procedimento proposto: identifica a generalização; pergunta em que dados assenta; compara esses dados com casos concretos; reformula sem atribuir a todos a mesma intenção. A comparação pode limitar uma afirmação sem provar o contrário sobre todo o grupo.</p>",
+   "id": "m1-s09-c09",
+   "g": "m1-s09-c09"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena o procedimento para examinar a generalização.",
+   "p2": "Ordena o procedimento para examinar a generalização.",
+   "passos": [
+    "Identificar a afirmação sobre o grupo.",
+    "Perguntar em que dados se baseia.",
+    "Comparar os dados com casos concretos.",
+    "Reformular sem atribuir a todos a mesma intenção."
+   ],
+   "f": "A revisão confronta uma afirmação geral com o alcance dos dados.",
+   "fe": "Não troques um estereótipo pelo seu contrário: examina primeiro os dados.",
+   "g": "m1-s09-c10",
+   "id": "m1-s09-c10"
+  },
+  {
+   "t": "escolha",
+   "p": "Que reformulação respeita os dois relatos?",
+   "p2": "Que reformulação respeita os dois relatos?",
+   "o": [
+    "Há dificuldades de participação que importa ouvir.",
+    "Há uma recusa geral de participar em português.",
+    "Há compreensão garantida em todas as conversas."
+   ],
+   "c": 0,
+   "f": "Os relatos permitem identificar necessidades, não uma intenção ou resultado universal.",
+   "fe": [
+    "",
+    "Lina refere conversas em português: o caso não demonstra recusa geral.",
+    "Ana relata dificuldades: não apagues essa experiência com uma garantia absoluta."
+   ],
+   "g": "m1-s09-c11",
+   "id": "m1-s09-c11"
+  },
+  {
+   "t": "vf",
+   "p": "O relato de Lina basta para concluir que ninguém se sente excluído das conversas.",
+   "p2": "O relato de Lina basta para concluir que ninguém se sente excluído das conversas.",
+   "v": false,
+   "f": "O relato de Ana mantém uma dificuldade concreta que precisa de ser ouvida.",
+   "fe": "Um caso que limita uma generalização não apaga os outros relatos.",
+   "g": "m1-s09-c12",
+   "id": "m1-s09-c12"
+  },
+  {
+   "t": "completar",
+   "p": "Completa a forma de ler os dois relatos.",
+   "p2": "Completa a forma de ler os dois relatos.",
+   "frase": "O relato de Ana descreve uma [1]; a recusa de participar atribuída a todo o grupo é uma [2].",
+   "lacunas": [
+    {
+     "o": [
+      "dificuldade",
+      "curiosidade",
+      "pontualidade"
+     ],
+     "c": 0
+    },
+    {
+     "o": [
+      "generalização",
+      "participação",
+      "identificação"
+     ],
+     "c": 0
+    }
+   ],
+   "f": "Ana descreve um obstáculo; a frase sobre todo o grupo acrescenta uma intenção comum sem prova.",
+   "fe": "Procura o que Ana relata e compara-o com a frase que começa por «quem fala outra língua».",
+   "g": "m1-s09-c13",
+   "id": "m1-s09-c13"
+  },
+  {
+   "t": "ler",
+   "rot": "Na aula",
+   "titulo": "Uma festa com condições por conhecer",
+   "html": "<p>Continuação inventada. A turma prepara uma festa. Alguns colegas dizem que estarão em jejum nesse dia. Ainda não explicaram de que condições precisam para participar; ninguém tem de identificar a sua religião para descrever uma necessidade.</p><p>A organização pode perguntar pelas condições de participação e comparar horários ou atividades. Não sabe ainda se mudar a hora resolve o problema. O caso não dá autorização para registar crenças pessoais.</p>",
+   "id": "m1-s09-c14",
+   "g": "m1-s09-c14"
+  },
+  {
+   "t": "escolha",
+   "p": "Que primeiro passo respeita a informação disponível?",
+   "p2": "Que primeiro passo respeita a informação disponível?",
+   "o": [
+    "Ouvir necessidades antes de escolher a alteração.",
+    "Mudar a hora e garantir que todos já participam.",
+    "Cancelar a festa sem ouvir mais nenhum dos colegas."
+   ],
+   "c": 0,
+   "f": "Falta conhecer as condições relevantes para comparar soluções.",
+   "fe": [
+    "",
+    "Mudar a hora pode ou não ajudar: o caso não fornece essa resposta.",
+    "Cancelar antes de ouvir não examina as necessidades nem as alternativas."
+   ],
+   "g": "m1-s09-c15",
+   "id": "m1-s09-c15"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada afirmação ao seu estatuto nesta continuação.",
+   "p2": "Liga cada afirmação ao seu estatuto nesta continuação.",
+   "pares": [
+    [
+     "Alguns colegas estarão em jejum",
+     "Informação comunicada"
+    ],
+    [
+     "Mudar a hora resolverá tudo",
+     "Resultado ainda não demonstrado"
+    ],
+    [
+     "Que condições permitem participar?",
+     "Pergunta para esclarecer"
+    ]
+   ],
+   "f": "Uma informação, uma previsão e uma pergunta têm funções diferentes.",
+   "fe": "Não trates uma previsão sobre a mudança como algo já observado.",
+   "g": "m1-s09-c16",
+   "id": "m1-s09-c16"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena a revisão da proposta de festa.",
+   "p2": "Ordena a revisão da proposta de festa.",
+   "passos": [
+    "Perguntar pelas condições de participação.",
+    "Comparar horários e atividades possíveis.",
+    "Combinar uma proposta com quem é afetado.",
+    "Verificar se a proposta responde às necessidades."
+   ],
+   "f": "A proposta é testada perante necessidades conhecidas, não imposta com garantia antecipada.",
+   "fe": "Não anuncies o resultado antes de ouvir e verificar as condições.",
+   "g": "m1-s09-c17",
+   "id": "m1-s09-c17"
+  },
+  {
+   "t": "escolha",
+   "p": "Que conclusão evita prometer o que ainda não se sabe?",
+   "p2": "Que conclusão evita prometer o que ainda não se sabe?",
+   "o": [
+    "A solução depende das condições ainda por esclarecer.",
+    "A solução está garantida se a maioria aprovar a hora.",
+    "A solução exige que todos revelem a sua religião."
+   ],
+   "c": 0,
+   "f": "O caso deixa as condições por esclarecer e não exige identificar crenças.",
+   "fe": [
+    "",
+    "Uma votação não demonstra que a hora permite participar: volta à informação em falta.",
+    "É possível explicar necessidades sem identificar a religião: relê a continuação."
+   ],
+   "g": "m1-s09-c18",
+   "id": "m1-s09-c18"
+  },
+  {
+   "t": "vf",
+   "p": "Ouvir quem é afetado permite comparar soluções sem exigir que todos concordem à partida.",
+   "p2": "Ouvir quem é afetado permite comparar soluções sem exigir que todos concordem à partida.",
+   "v": true,
+   "f": "Ouvir fornece informação para decidir e rever; não pressupõe unanimidade anterior.",
+   "fe": "Não confundas recolher necessidades com já ter acordo sobre a solução.",
+   "g": "m1-s09-c19",
+   "id": "m1-s09-c19"
+  },
+  {
+   "t": "ler",
+   "rot": "Para levar",
+   "titulo": "Três linhas para concluir",
+   "html": "<p>Escreve individualmente no caderno, uma linha para cada ponto:</p><ol><li>Que efeito da regra linguística ou da proposta de festa identificas?</li><li>Que relato ou dado sustenta a tua leitura?</li><li>Que pergunta farias antes de decidir uma alteração?</li></ol><p>Usa os dados apresentados. Se falta informação, identifica-a em vez de a inventares.</p>",
+   "escuro": true,
+   "id": "m1-s09-c20",
+   "g": "m1-s09-c20"
+  }
+ ],
+ "edicao": "20261103",
+ "guia": "../docente/",
+ "guiao": "../guiao/"
+}

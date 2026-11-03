@@ -1783,6 +1783,2466 @@
         }
       ],
       "sha256_main_json": "341a3cc58abacd476c103f8dd542d53127fbb2512d338a628b12fcf41cadf7cc"
+    },
+    {
+      "sessao": 5,
+      "original_main": "tools/licoes/cidadania-m1-s05.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "8e92c329e0d5d62b748b3fd7640265d3b9ca3d9ab196303910e62dfa2a2b25cf",
+      "referencia_110": {
+        "sha256": "d7a058a9036e4d5a4d9b9b7f9d8c26c738c89ccbcb2ecf0023c3a46dafd474c5",
+        "ficheiro": "tools/licoes/cidadania-m1-s05.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s05.json",
+      "chave_anterior": "epi-cid-m1-s05",
+      "chave_atual": "epi-cid-m1-s05-20261103",
+      "saida": "cidadania/m1/licoes/05/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Quem guarda os meus dados?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0c20182880613315c5d99fd092ccfefec945f17b991b00820373a7a123efdd3f"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Um formulário para examinar",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            7,
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "beb0f000223cf3210a8678ac45d8a59c26fe0c9e9ec42daf54e09205ad66d881"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que campo não responde às finalidades descritas?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            7,
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ec45500515aa43ac3dde812d9c79f3f41cfdb6004516a1950f64f88eed242929"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona a finalidade que explica a recolha das alergias relevantes.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            7
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f177abb7c4bf2b7dff749887b695cd69c7fc8905251502c9777c6310e1f882f9"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "O que pode a videovigilância abranger?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "lei58"
+          ],
+          "originais_referencia_110": [
+            4,
+            5,
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a6b56d6e3e070f81e1968514ca986503e48c3e846a7c8595d9d933fc8f1f4916"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada elemento à distinção que o apoio permite fazer.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "lei58"
+          ],
+          "originais_referencia_110": [
+            4,
+            5,
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "96a1e76e0f316c7d6a8c07d787308cf994746eff1ebe447e801bb707221e0623"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Com a escola aberta e sem autorização prévia da CNPD, a videovigilância pode gravar as conversas.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "lei58"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "524b02692c50e46f1ef990f0f65768fcab8ed600049acb2300b8d0079ba4cd70"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que afirmação respeita o alcance do apoio legal?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "lei58"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8081f626eb5c19d53a5fe6a8c817b9b181fe13f9611eda58fa4a999c016999fe"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Finalidade, acesso e conservação",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            12,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "78f84b8ce54886b551d2712a3479de308702f234cca39b3a99a25a9235bdb079"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena o procedimento proposto antes da recolha.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "57b5ee15a120661e0a54aaab3d60baedae5963be4ebf7c2b0a6aa7f425ad0f34"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Que organização de acesso respeita a necessidade descrita?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            9
+          ],
+          "provas": [
+            "caso",
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "04b81ddb74a6176be73c682547d79727c764b74a7f50da5c645dc33a9996c0ed"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Um prazo imposto por lei pode limitar o apagamento imediato de dados.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5,
+            9
+          ],
+          "provas": [
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            12,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "2aef15c1af35b951c44ebed6af88ffcefd37618d2a679b56bd9ef12148126a65"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa as duas perguntas sobre a organização da recolha.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5,
+            9
+          ],
+          "provas": [
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c24965aaaac76c6d117a726785397b218c81607d8432ac0372d5417304576132"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Uma pasta aberta a mais pessoas",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            10,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "104232d17a324745a476afcca9a8913d7c56fe1b1247d54cc73ca25c282ab8f4"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que alteração responde ao problema da pasta?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "fece2a5d565c6e0707daa885b47b8ee5ae4939837959a43f0aa5993d1b73d2d0"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada informação ao problema que ajuda a resolver.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            7,
+            10,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "50ed2124eb81d774770072363871d2fba60a439a881caa0a1f252cd7692fdb0e"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena esta justificação para eliminar a gravação da simulação.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "lei58",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "966108cc584eef5119175f02bb8e98d800099d5a5644c2a439e173a5e40823f8"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que conclusão se aplica à entrevista descrita?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "328368e50edae4e9833913748390b0a9ffb43badb2064df016b900ec52e82963"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "O desaparecimento dos telemóveis demonstra que filmar as salas comuns resolverá os furtos.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "caso",
+            "lei58"
+          ],
+          "originais_referencia_110": [
+            1,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d263614bb734b2217c39f8fb7f7458c641a62dfa10dbb2b919d63eb68c99c4cf"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s05-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0db88217439d771b444deea945abe8c0a0fecd88ad95499b104ba3af2fbaad52"
+        }
+      ]
+    },
+    {
+      "sessao": 6,
+      "original_main": "tools/licoes/cidadania-m1-s06.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "0b146f6dc80e69f27e54b773afde4740491845a5450f79380b9b95284c0a71b2",
+      "referencia_110": {
+        "sha256": "4d416a65a94acdb72884cdba5e5a6427e4fae3268a7042f9bb38b19bf20a2408",
+        "ficheiro": "tools/licoes/cidadania-m1-s06.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s06.json",
+      "chave_anterior": "epi-cid-m1-s06",
+      "chave_atual": "epi-cid-m1-s06-20261103",
+      "saida": "cidadania/m1/licoes/06/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Uma regra para quem perde",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "29a3cda25d458986b09db0678878ef9b87ab242391b1963eab2ac92bcd505bd8"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Olhar para a Justiça",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "met-justicia"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "6c57839a9ac217ce7250ce1fed91340fe12542772cff6141e7fab8dee41756a3"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que afirmação descreve um elemento da figura central?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "met-justicia"
+          ],
+          "originais_referencia_110": [
+            11
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1c287988fc5073b17d59a6c3164bb7b43ed4c98802256d6164cf6d867459c4e8"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona as palavras que ligam o delegado a um interesse no caso.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso",
+            "met-justicia"
+          ],
+          "originais_referencia_110": [
+            3
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8e018c7213ecb554f92f9cd0a19a51a37488f925c779fa5b96ebcba466d87eea"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Três propostas comparáveis",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4,
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5cf586f61ebc9097d23425c64efeaa37ccfc9541a8e06905cff88d5f1da17267"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada proposta ao critério que a orienta.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "587772b7be8c6b2a6c16cc91d1664d1a10a198db3937a0876b11a5cd7e87b576"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Na proposta de prioridade ao guião pronto, o grupo B recebe um dos seis turnos.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e2a7b6d6f13ba5d507cb2218763986897f654f654a76ae596bb4d83b72efbc4f"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que objeção identifica um efeito da prioridade ao guião pronto?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4,
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c6eb4b860f958a02acb2e5088fdba76214ffc5179f46fc6ee7b2b4a362206264"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Testar uma regra e afastar um conflito",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "cpa",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            10,
+            14,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f4cf3516c8c75f4e92ae010a187f23e89e1e8908c6cf3f583e73597867f62876"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena o procedimento de teste apresentado.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "cpa",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1de0ebb64b3c2e5c125c97b6f6ee1dd0f5a6864d5259e1799ddd097e042b5a3a"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Que medida reduz o conflito na decisão da simulação?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            9
+          ],
+          "provas": [
+            "caso",
+            "cpa",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            3,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "fd882e58c6706e727e340539cb0253f23811ab85f781fcad4b7c345c33d05add"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Explicar com clareza uma regra pode ajudar a discuti-la sem provar que ela é justa.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5,
+            9
+          ],
+          "provas": [
+            "caso",
+            "cpa",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            17,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c7f15121615fa25ed145d211713f7199eaed1e3b9d40c50f9b13585b839ff9e5"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa os nomes dos critérios a partir das distribuições.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "3001477c9ff2bdcfc7efb59716cb43574a04ef948adaf5a88d02589e73d44d34"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Uma objeção muda a proposta",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8ca154ecb97417b9be2021fc36c070879e53b6f371d91f38f9a08ea2881aef80"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que informação justifica reexaminar a exclusão de B?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            12,
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "acc7736b01b6881b4fe4a613b91c312b7e5b697b14efc679493adf204f03785d"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada dado da continuação à questão que esclarece.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            3,
+            12,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5f4acbe050a4b45603ccaacb21c0c051cb252d0ab8b403e660391c914b3633d4"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena a justificação da revisão proposta.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "cpa",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            10,
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9cba82bc88c71fbcb1e8e6d7d215e3c68dc84a0d12ec42c71aa20a43e3764999"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que conclusão respeita a proposta revista?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            12,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1d104474d7ff7f0fd670ec38d2ecd76f8da2e2ac9bed7e53b70b3d7a12bd4ecc"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "A aceitação provisória de C demonstra que já recebeu compensação pelo turno anterior.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c7a9df925553f9aae90fa8474c7adbf85d04979d4eaa796e92525ca165084717"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s06-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "cfee823a46a002ca19c96cc0defaee55b75e5525e8176c7ada2e26e17e5fb301"
+        }
+      ]
+    },
+    {
+      "sessao": 7,
+      "original_main": "tools/licoes/cidadania-m1-s07.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "ef9b2272716523b16f8be9c6b7550ee4e170e47bcf8cd35220542b89c31b7939",
+      "referencia_110": {
+        "sha256": "b83d5e55c5912a174510cd8a79694503c887a6e086c535f429477ce6f376cac8",
+        "ficheiro": "tools/licoes/cidadania-m1-s07.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s07.json",
+      "chave_anterior": "epi-cid-m1-s07",
+      "chave_atual": "epi-cid-m1-s07-20261103",
+      "saida": "cidadania/m1/licoes/07/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Nove contra dois",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "cd952e2c4b758fa18f0d827f84af2b321e4f65be9e6d1d21f7e5a9ba0ba012ab"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Uma cena e uma legenda",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "met-daumier"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1d66c1b3e7b911e72ae45cb778306cfb4d2e834ad697da760a10b775537bd019"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que informação vem da legenda, e não apenas da imagem?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "met-daumier"
+          ],
+          "originais_referencia_110": [
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1cfacfb1a19f856dabcf0944ce5a9612f99306a20ec4bd63fe6285799f813cfd"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona as duas palavras que introduzem a inferência.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso",
+            "met-daumier"
+          ],
+          "originais_referencia_110": [
+            4
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0761eac25f9d6bfedcb8fdc0bd09af8b74d593e2cb4d120cc3f765b1ccc172c7"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Três documentos da simulação",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            14
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1a583a32791590340942a1b2d12dec877850659cf3aa60cc0b36177605d50cf2"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada documento ao que nele está efetivamente registado.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            9,
+            14
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "83870401fd665164f6fc2d8985326a68c92949fa45fa5aebc9f87d847753776a"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "A declaração de Inês identifica a pessoa que publicou o vídeo.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "2d009a5f59b1333e9012ce2e5913c8d8c4cd9350ac3d5bda863dcd15ce20fca8"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que elemento falta para ligar uma pessoa à publicação?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8f617a9d031435782f57752019659fb24d7acb04dfcd8e9b476f3be830e4ec49"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Ouvir e rever",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "crp32",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            6,
+            7,
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "08d12450b0c0579e4d2474531afc3576fdbb7956f002a057a1b3d89f9a7a65d9"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena o procedimento de análise apresentado.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "crp32",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4c09e13e69474b7532a9a62c7da781450b0da21e26904df003a14f9dd0172004"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Que conclusão respeita os três documentos disponíveis?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            5,
+            12
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "048a3d6662d650a7ccc99c01c6bae8c2794315ea4483f8cbe726de151b58f91a"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Ouvir Tomás é compatível com proteger já a colega da circulação do vídeo.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            9
+          ],
+          "provas": [
+            "caso",
+            "crp32",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            7,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5d40935df2f41e7d5329ad224e899e5cc1cc514f1a0b4f050b0c6a63a23ce4d2"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa a distinção entre o que se vê e o que se conclui.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4,
+            5
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "cb37006fe220005678fdf6d9857cfc0e09a34b27c19af68ed29eb8be406c1bf8"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Uma informação nova, ainda limitada",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "94b3aa2e08adcd33d0be38d7fe0e3cc1c024e7db6e539d741bf00f0cedb2e4f7"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que passo responde à mensagem nova sem inventar uma conclusão?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "696c94d46e11f297830c3a1e2eadddf8d25402185b5af12d5cbc20c8b1eb7ccf"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada afirmação ao seu estatuto no caso.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            15,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "3a9962d86b88dcb3ca771bffed35446ad3e938207658617225315ea7288cfdaf"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena esta justificação para reexaminar a conclusão.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "crp32",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            15,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "23d341cde035858146a69289d46a24f1a633f6632c9c816265a6a0f507dc69b4"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que medida protege a colega sem atribuir já a autoria?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "crp32",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "1ff4705cfd35d4b8fdeb2201c48890807548c8f83d36670f2a6690e532d4355a"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "A mensagem de Leonor prova que Tomás não participou na montagem do vídeo.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ef97b573c659321604cb457bc32c50a5acb34e01cfc0f9f8447492839b9b7a13"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s07-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5e3f9ee9789c858dbdb4a844702920328ef8cec211761f4f786f02f5bb747787"
+        }
+      ]
+    },
+    {
+      "sessao": 8,
+      "original_main": "tools/licoes/cidadania-m1-s08.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "da8a2c330c532e952c4081eb5e0a036f03316edeb66f48293e8aa20e3669d857",
+      "referencia_110": {
+        "sha256": "674cd459c5883c44022382b29e9c0cbcd29577c8f956ae565c999bf1332d6749",
+        "ficheiro": "tools/licoes/cidadania-m1-s08.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s08.json",
+      "chave_anterior": "epi-cid-m1-s08",
+      "chave_atual": "epi-cid-m1-s08-20261103",
+      "saida": "cidadania/m1/licoes/08/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Quem decide o quê?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "afed2360dc2fca773abdcc1eed3a7cda8bf982b33ab5070ff2de7b0c779b1357"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "O que uma fotografia permite saber",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "kilburn"
+          ],
+          "originais_referencia_110": [
+            9
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9d04441f8c189232ce214a5990f528cf14269e774ff883d7ac5aa00e5ad74cee"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que informação exige outro documento além desta fotografia?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "kilburn"
+          ],
+          "originais_referencia_110": [
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "beb77ece84a50cb2e0285511fda9ca3d344c077cd6c9d495245df88e2fa70d33"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona as duas palavras que indicam o que a turma ainda desconhece.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso",
+            "kilburn"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "62324190a541f12f32579ea8dfcfa44a46570c71df7fedbd6f3cfeca2f1a8a74"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Pedir, fundamentar e receber resposta",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "peticao"
+          ],
+          "originais_referencia_110": [
+            4,
+            8,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "dfc4b2d59d5b6e8df8a66dd4ac552cffcdd2527522258e19f362cfc470d02965"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada parte do pedido à pergunta a que responde.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            5
+          ],
+          "provas": [
+            "caso",
+            "peticao"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "3fb3a06af43ece820e142d2f819c78b490dc89435c7caaebede5ee45ea493796"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Uma petição entregue a uma entidade incompetente fica necessariamente sem seguimento.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "peticao"
+          ],
+          "originais_referencia_110": [
+            8,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "058079d66f66e6ceddc6ff14acb24fd3074ca0de6062aafafbb62017fc2302c1"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que proposta respeita o apoio sobre a forma da petição?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "peticao"
+          ],
+          "originais_referencia_110": [
+            4
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "94cabe77ba36539e2467359bd327c07057fcf66f57f78d0690b42fccad55a977"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Confirmar antes de enviar",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "peticao",
+            "crp23",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            7,
+            8,
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "b89c92e7ce9f8110528b8f9485b2c0dc451db84b96ffed540e0e1a6d26f00028"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena o procedimento proposto para apresentar o pedido.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "crp23",
+            "peticao",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "34d0054e649cdcc24b24e447dfa8c27be1d788c73d59c27d5cf318c0a5a2e6a3"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Queres pedir à própria direção que reveja o horário do bar. Que meio corresponde a essa intenção?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "crp23",
+            "peticao",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "031972c56410ec5581aaa71039b86dc3093d818cd8e7c5447b1f6b5e0351960e"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "O Provedor pode recomendar uma correção sem anular ele próprio a decisão.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "crp23",
+            "peticao",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            7,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d820e732796e382ea1782fea3f8a0b5d50a241ed6226ea37c6a7ae725f21d604"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa o resumo do caminho descrito no apoio.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "crp23",
+            "peticao",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            7,
+            15
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "28fbac820ff63d5bb7a27ab0108e5da78615f1706a7456416f30694362a7d84e"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Um registo que pode ser conferido",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            14,
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8dd46c69721b32e8464b6f8918ec283a6b8053c0eaf9be385378ba9b9c8f0bba"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que afirmação respeita o alcance deste registo?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c580d03c7be88a6b4667376f4b362a21481829bd89caab55cb37f9f964379beb"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada elemento ao seu papel nesta continuação.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            14,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0a590b06748aeecbc86573b1af1b856a78d9b4ada103a48a7fb3c34065a101c1"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena esta justificação, do dado conhecido ao passo seguinte.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "crp23",
+            "peticao",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            8,
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "00ce1784f04ab5d6b007b3bb1dfaff6414288145c6e755e66daa43c73180243d"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que pedido evita afirmar mais do que os dados permitem?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17,
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "b7de525e2a3fc12d6ced593fab0281e4a5e0f1a9b4b42280f3a805acf7bbf5c0"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "As 140 travessias provam, por si, que a mudança tornará o percurso mais perigoso.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "411ffe5f220ae83ebd115a364be2f97a7cd4da48a60f17c72c90d2dda8a5f9b8"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s08-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0e387ccbea981c1da68d4d9d3ae5e21cd1a06bb82a69bc0236e7fa783cee8eae"
+        }
+      ]
+    },
+    {
+      "sessao": 9,
+      "original_main": "tools/licoes/cidadania-m1-s09.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "8d5ea5954966fa20cff24a39531fadf3e6771c474793e71d0007f6562db04324",
+      "referencia_110": {
+        "sha256": "e89ec5e86f629dc8cdd66b039ccc783269acc3b0a21f69b14fefb5cd23c06f97",
+        "ficheiro": "tools/licoes/cidadania-m1-s09.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s09.json",
+      "chave_anterior": "epi-cid-m1-s09",
+      "chave_atual": "epi-cid-m1-s09-20261103",
+      "saida": "cidadania/m1/licoes/09/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "Muitas vozes, uma escola",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1,
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "6435a377d4a93f9c69fcd0d9332be5871b15a93f8914cfdc8f1b9d03f81eb447"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Dois relatos não são a escola inteira",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "480a62e9a694cb69571d3b761b85c6b8a9e025dd32f382adcf1bf29f686592cd"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que afirmação é sustentada pelo relato de Lina?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            2
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "63bec9ceebdd22cd1a77a5f5f508a612f12913f3d8d93d13f32ee0f60b8e6f64"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona a expressão que limita a generalização dos relatos.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            5
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a5f670ae63048c7e7d555d371780d07a3d2fea17275e91878b1a72121231d31d"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Direitos e efeitos de uma regra",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "crp13",
+            "caso"
+          ],
+          "originais_referencia_110": [
+            4,
+            5,
+            14,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "299d8e1f9431a50ec31ba1278d1bd271994bc8d9fb4b9648c8196d057d207fa6"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada informação à questão que permite examinar.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            5
+          ],
+          "provas": [
+            "caso",
+            "crp13"
+          ],
+          "originais_referencia_110": [
+            5,
+            8
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "0a236d6a0ddb74f8071c5046795020b18a75a88eb25fae9a782398a56994050e"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "Uma regra escrita da mesma forma para todos tem necessariamente o mesmo efeito em cada pessoa.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso",
+            "crp13"
+          ],
+          "originais_referencia_110": [
+            14
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c350ff7d677e2449cbe31834b71aa31838c2e1aedc0f85c482c9ccd6538aee1e"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que pergunta procura informação sem atribuir uma intenção?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            5
+          ],
+          "provas": [
+            "caso",
+            "crp13"
+          ],
+          "originais_referencia_110": [
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c80a5ec7a6787cf6cfb9d981e9a52086cb0d54ad1094bbd8631ca20cef2c5b0a"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Responder a uma generalização",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            8,
+            10,
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "861595757928d683015b5f8fc7edbb246363690bbffeb365ed3c462a96a42073"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena o procedimento para examinar a generalização.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            13
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5ba014312aa5fda75fe6892deb366b1e594c0a13c02d6621fc8779de74784da3"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Que reformulação respeita os dois relatos?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            8,
+            10
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "fcdb5ca4b0719adce683788f656b4c647ec27407d399218ea9ae8024420998d6"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "O relato de Lina basta para concluir que ninguém se sente excluído das conversas.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            14
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9f16556ff5d068faa113bde87f165463c4ef6bd50e8c0f6f1bfb6ffe9e51ea95"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa a forma de ler os dois relatos.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            8
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7d48a46f8cc6d8c722c0d5c9d8340f8ce3b444ea8383c30992eeffc1c71d9e1d"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Uma festa com condições por conhecer",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "cafdfff497211b38b9c71784c21a63a3878494ed9115e189396c80c9071f5154"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que primeiro passo respeita a informação disponível?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "e78a4796e05f76920f488f952511243b11f68272271b73659bd8e22e7bb37ead"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada afirmação ao seu estatuto nesta continuação.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "7d66b04bbe430215207c6043213ec6db11f526d445dbecc55cb0c48cde22784b"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena a revisão da proposta de festa.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            13,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c882573aae8b4e2ae83a8ee18dc3e7802f24e85c1383af1d365806ec50a8163b"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que conclusão evita prometer o que ainda não se sabe?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "bfdaae5d1eb9e7e9feed723fbf69129093cbd3fb7a82285172faed69d96ee5aa"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "Ouvir quem é afetado permite comparar soluções sem exigir que todos concordem à partida.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            19
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f9da2569189c2a40f52b1df14ec7a2c86824bcc3b391cef14686624cd91b08d4"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s09-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "33bb145b4fb20ad2dfd1a94e01a08d821a74f1b3e235d754f6476d8ff53b1ee7"
+        }
+      ]
+    },
+    {
+      "sessao": 10,
+      "original_main": "tools/licoes/cidadania-m1-s10.json",
+      "versao_main": "2026-10-31-2",
+      "sha256_main_json": "898536aafe067f820c63a46d29b3669bc6888100bc2875bc995df6deb866344a",
+      "referencia_110": {
+        "sha256": "50a46b4e69aac5bc8939f463051d2e130cee77352194142603581f337fa4f1c2",
+        "ficheiro": "tools/licoes/cidadania-m1-s10.json"
+      },
+      "banco": "tools/cidadania-interativas/cidadania-m1-s10.json",
+      "chave_anterior": "epi-cid-m1-s10",
+      "chave_atual": "epi-cid-m1-s10-20261103",
+      "saida": "cidadania/m1/licoes/10/index.html",
+      "cartoes": [
+        {
+          "novo": 1,
+          "tipo": "ler",
+          "operacao": "O que conseguimos defender?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            1,
+            2,
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c01",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "3bfe12e8a81ade6ebfe15a16101d5af2159eb124f25129bede97ee33c6b9497e"
+        },
+        {
+          "novo": 2,
+          "tipo": "ler",
+          "operacao": "Um pedido e dois documentos",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c02",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "5e5bc1101f0908676721ba17dfcb85c67bbe4ee634a63c08266b737a54db3a7a"
+        },
+        {
+          "novo": 3,
+          "tipo": "escolha",
+          "operacao": "Que afirmação tem apoio direto no documento A?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c03",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "d15f90634bb804387781b0adeabf603cbe38bf8170cbfa8d1b0626756a20a45b"
+        },
+        {
+          "novo": 4,
+          "tipo": "sublinhar",
+          "operacao": "Seleciona as palavras que limitam a conclusão do inquérito.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            1,
+            2
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c04",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "b17c36fb4cab7697f06d69bfd0647d31ee2ef43244b6e7d331cf9fb203e3fb08"
+        },
+        {
+          "novo": 5,
+          "tipo": "ler",
+          "operacao": "Distinguir prova, proposta e limite",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17,
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c05",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9f75a5242c1544c9c195f69df927b30821a9463b884518b34e45933cc92f69d5"
+        },
+        {
+          "novo": 6,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada frase ao seu papel no caso.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c06",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4a5021e9d0b4e0338080d4d77bd7da8993c4bf7e47e696f0f552a34ddf902fb6"
+        },
+        {
+          "novo": 7,
+          "tipo": "vf",
+          "operacao": "As respostas de 20 alunos demonstram que toda a escola quer a biblioteca aberta mais cedo.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c07",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "48e3cbbb916c5d5b7b4fba0661389e1d63b01051df6ba1ff964b71a7e3f1ade1"
+        },
+        {
+          "novo": 8,
+          "tipo": "escolha",
+          "operacao": "Que pergunta procura informação que falta à proposta?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c08",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "8d28fbe2063a6c9b916f692c2a390c6154225e07cbce76c9b6e8e169e8e24b5e"
+        },
+        {
+          "novo": 9,
+          "tipo": "ler",
+          "operacao": "Responder a uma objeção",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c09",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9f3884e77d532eb8b4137853faeb2c9f6edcb08f68d28a55adb6ed2ca5972923"
+        },
+        {
+          "novo": 10,
+          "tipo": "ordenar",
+          "operacao": "Ordena os passos iniciais do procedimento apresentado.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c10",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "9efe2562685dd9093cf1bdd630ff243f5cf3a40297198d2c4dc6932bbdfaa330"
+        },
+        {
+          "novo": 11,
+          "tipo": "escolha",
+          "operacao": "Que resposta reconhece o alcance da objeção?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            16
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c11",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "f683a4f3efca045885c3df88ae728fb40ec0af1f8dc379d7cbf3b22b457cffcb"
+        },
+        {
+          "novo": 12,
+          "tipo": "vf",
+          "operacao": "Uma investigação pode ser útil mesmo quando a conclusão inicial se mantém.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            5,
+            9
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c12",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "4bf5ad6ac46c9cf0dc97be6b9ec197ec404a9ef4df54d524b75bf64fa56edd51"
+        },
+        {
+          "novo": 13,
+          "tipo": "completar",
+          "operacao": "Completa a distinção que evita uma generalização.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            2,
+            5
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c13",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "b653131e37f3742745668ad6d9d2260dd06bd9d88889e2561a8585a02fcd7315"
+        },
+        {
+          "novo": 14,
+          "tipo": "ler",
+          "operacao": "Uma resposta mais informada",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c14",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "299f06d6835ecb7ac883d8ac99ae5ddd01f4900a63b1a87f526996660e34e81a"
+        },
+        {
+          "novo": 15,
+          "tipo": "escolha",
+          "operacao": "Que condição continua por confirmar?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c15",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "15be8660dc17d0e32c1d6565a9e71e66a750704467f9451664f984a7dc7fe7eb"
+        },
+        {
+          "novo": 16,
+          "tipo": "emparelhar",
+          "operacao": "Liga cada elemento novo àquilo que acrescenta.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            18
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c16",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "17bb3173abee05e8b9cbe848f0b9f903481eab77f254b271dcef9690222e32a4"
+        },
+        {
+          "novo": 17,
+          "tipo": "ordenar",
+          "operacao": "Ordena a justificação da proposta revista.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            9,
+            14
+          ],
+          "provas": [
+            "caso",
+            "procedimento"
+          ],
+          "originais_referencia_110": [
+            20
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c17",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "701d018ae013ceaa3e95ea6c468f4aeee647187398720e20f4d4d4023090e536"
+        },
+        {
+          "novo": 18,
+          "tipo": "escolha",
+          "operacao": "Que conclusão pode Joana defender com estes dados?",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            16,
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c18",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "ec2e7b8d51f3f19e0f6601c45a93412ba9dfae62a4f63d88a89d825069a7f6ee"
+        },
+        {
+          "novo": 19,
+          "tipo": "vf",
+          "operacao": "As oito intenções de uso equivalem a oito utilizações já observadas.",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [
+            14
+          ],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            17
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c19",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "a6ecaad2184e5e176d21a32ff8db081a4c6877ac356ea447db6972a72cedcffc"
+        },
+        {
+          "novo": 20,
+          "tipo": "ler",
+          "operacao": "Três linhas para concluir",
+          "natureza": "Reescrita editorial; referências temáticas, não equivalência de respostas",
+          "apoios_anteriores": [],
+          "provas": [
+            "caso"
+          ],
+          "originais_referencia_110": [
+            21
+          ],
+          "originais_main": [],
+          "id": "m1-s10-c20",
+          "acao": "não migrar respostas",
+          "sha256_cartao": "c272a277c9dea17fd9cc7b3daa2015d4789c9a282989f74f35f7a8d324d18ac8"
+        }
+      ]
     }
   ]
 }

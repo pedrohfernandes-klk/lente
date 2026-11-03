@@ -1,0 +1,317 @@
+{
+ "id": "cidadania-m1-s10",
+ "chave": "epi-cid-m1-s10",
+ "versao": "2026-11-03-real-1",
+ "marca": "CD",
+ "titulo": "Sessão 10: O que conseguimos defender?",
+ "h1": "Humanos, sessão 10: O que conseguimos defender?",
+ "modulo": {
+  "n": 1,
+  "nome": "Humanos",
+  "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m1/"
+ },
+ "saida": "cidadania/m1/licoes/10/index.html",
+ "modelo": false,
+ "piloto": false,
+ "ampliar": false,
+ "seguinte": "../../",
+ "seguinteRotulo": "Voltar ao módulo",
+ "fontes": "Apoios com fontes identificadas nos cartões. Casos, documentos, dados numéricos e procedimentos são construções pedagógicas explicitamente inventadas. Sem vídeos não visionados. Fontes e limites indicados nos materiais de leitura.",
+ "cartoes": [
+  {
+   "t": "ler",
+   "rot": "Abre",
+   "titulo": "O que conseguimos defender?",
+   "html": "<p>Caso inventado. Numa apresentação, Joana afirma que a biblioteca deve abrir mais cedo. Alguém pergunta: «Que dados sustentam essa proposta?»</p><p>Defender uma resposta exige distinguir o que sabes, a origem e os limites. Vais examinar um pequeno conjunto de documentos inventados. O percurso não exige uma apresentação anterior nem um instrumento de avaliação. Só escreves três linhas no fim.</p>",
+   "id": "m1-s10-c01",
+   "g": "m1-s10-c01"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Um pedido e dois documentos",
+   "html": "<p><b>A:</b> o aviso da biblioteca indica abertura às 9h00.</p><p><b>B:</b> num inquérito inventado, 12 dos 20 alunos que responderam dizem chegar antes das 9h00. Não se perguntou se usariam a biblioteca.</p><p><b>Proposta de Joana:</b> experimentar abrir mais cedo, se houver condições.</p><p>O horário é informação do aviso; as chegadas são respostas ao inquérito; a experiência é uma proposta. Nenhum documento informa sobre os custos.</p>",
+   "id": "m1-s10-c02",
+   "g": "m1-s10-c02"
+  },
+  {
+   "t": "escolha",
+   "p": "Que afirmação tem apoio direto no documento A?",
+   "p2": "Que afirmação tem apoio direto no documento A?",
+   "o": [
+    "A biblioteca abre às nove, segundo o aviso.",
+    "A biblioteca tem leitores antes das nove.",
+    "A biblioteca pode abrir cedo sem custos."
+   ],
+   "c": 0,
+   "f": "O aviso informa sobre a abertura; não sobre procura ou custos.",
+   "fe": [
+    "",
+    "O documento B refere chegadas à escola, não leitores da biblioteca.",
+    "Não há dados de custos: relê o limite indicado no apoio."
+   ],
+   "g": "m1-s10-c03",
+   "id": "m1-s10-c03"
+  },
+  {
+   "t": "sublinhar",
+   "p": "Seleciona as palavras que limitam a conclusão do inquérito.",
+   "p2": "Seleciona as palavras que limitam a conclusão do inquérito.",
+   "frase": "Doze dos vinte alunos que responderam dizem chegar antes das nove.",
+   "certas": [
+    4,
+    5
+   ],
+   "f": "A frase refere os respondentes, não todos os alunos da escola.",
+   "fe": "O número não apaga o limite da amostra: procura quem foi efetivamente ouvido.",
+   "g": "m1-s10-c04",
+   "id": "m1-s10-c04"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Distinguir prova, proposta e limite",
+   "html": "<p>Uma fonte sustenta apenas aquilo que permite verificar. As respostas de 20 pessoas não representam automaticamente toda a escola. Chegar cedo não prova vontade de usar a biblioteca.</p><p>Uma objeção pode revelar uma pergunta ainda sem resposta. Investigar também pode confirmar a conclusão inicial; não é obrigatório mudar de opinião. O importante é mostrar que provas foram examinadas e que limites permanecem.</p><p>Estas são orientações de análise aplicadas aos documentos da simulação.</p>",
+   "id": "m1-s10-c05",
+   "g": "m1-s10-c05"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada frase ao seu papel no caso.",
+   "p2": "Liga cada frase ao seu papel no caso.",
+   "pares": [
+    [
+     "O aviso indica abertura às 9h00",
+     "Informação documental"
+    ],
+    [
+     "Experimentar abrir mais cedo",
+     "Proposta a avaliar"
+    ],
+    [
+     "Não sabemos se usariam a biblioteca",
+     "Limite do inquérito"
+    ]
+   ],
+   "f": "A proposta não se confunde com um resultado já observado.",
+   "fe": "Distingue o que o documento diz do que Joana quer experimentar.",
+   "g": "m1-s10-c06",
+   "id": "m1-s10-c06"
+  },
+  {
+   "t": "vf",
+   "p": "As respostas de 20 alunos demonstram que toda a escola quer a biblioteca aberta mais cedo.",
+   "p2": "As respostas de 20 alunos demonstram que toda a escola quer a biblioteca aberta mais cedo.",
+   "v": false,
+   "f": "A amostra não inclui toda a escola e a pergunta não tratava do uso da biblioteca.",
+   "fe": "Verifica quem respondeu e o que foi perguntado antes de generalizar.",
+   "g": "m1-s10-c07",
+   "id": "m1-s10-c07"
+  },
+  {
+   "t": "escolha",
+   "p": "Que pergunta procura informação que falta à proposta?",
+   "p2": "Que pergunta procura informação que falta à proposta?",
+   "o": [
+    "Os que chegam cedo usariam a biblioteca?",
+    "O aviso indica abertura às nove da manhã?",
+    "Responderam vinte alunos a este inquérito?"
+   ],
+   "c": 0,
+   "f": "O inquérito não perguntou pelo uso da biblioteca; os outros dados já estão nos documentos.",
+   "fe": [
+    "",
+    "A hora está no documento A: distingue confirmar uma informação de procurar a que falta.",
+    "O total está no documento B: a lacuna está no interesse em usar o espaço."
+   ],
+   "g": "m1-s10-c08",
+   "id": "m1-s10-c08"
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Responder a uma objeção",
+   "html": "<p>Procedimento proposto: escuta a objeção; identifica o dado que está a ser pedido; compara-o com as fontes disponíveis; responde com a prova e o limite; procura informação adicional se necessário.</p><p>Objeção inventada: «Chegar antes das nove não quer dizer querer ir à biblioteca.» Esta objeção questiona uma passagem entre dois factos, não prova que ninguém usaria a biblioteca.</p>",
+   "id": "m1-s10-c09",
+   "g": "m1-s10-c09"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena os passos iniciais do procedimento apresentado.",
+   "p2": "Ordena os passos iniciais do procedimento apresentado.",
+   "passos": [
+    "Escutar a objeção até ao fim.",
+    "Identificar o dado que é pedido.",
+    "Comparar o pedido com as fontes.",
+    "Responder com a prova e o limite."
+   ],
+   "f": "O procedimento procura compreender a objeção antes de responder.",
+   "fe": "Não respondas a uma pergunta diferente: identifica primeiro o dado em falta.",
+   "g": "m1-s10-c10",
+   "id": "m1-s10-c10"
+  },
+  {
+   "t": "escolha",
+   "p": "Que resposta reconhece o alcance da objeção?",
+   "p2": "Que resposta reconhece o alcance da objeção?",
+   "o": [
+    "O inquérito trata de chegadas, não de uso.",
+    "O inquérito basta para confirmar todo o uso.",
+    "O inquérito prova que ninguém quer esse uso."
+   ],
+   "c": 0,
+   "f": "A objeção expõe uma lacuna, sem demonstrar uma resposta positiva ou negativa.",
+   "fe": [
+    "",
+    "Chegar cedo não equivale a usar o espaço: relê a pergunta que não foi feita.",
+    "Ausência de prova de procura não prova ausência de procura."
+   ],
+   "g": "m1-s10-c11",
+   "id": "m1-s10-c11"
+  },
+  {
+   "t": "vf",
+   "p": "Uma investigação pode ser útil mesmo quando a conclusão inicial se mantém.",
+   "p2": "Uma investigação pode ser útil mesmo quando a conclusão inicial se mantém.",
+   "v": true,
+   "f": "Pode confirmar a hipótese, melhorar a prova e esclarecer limites.",
+   "fe": "Mudar de opinião não é uma obrigação: o apoio pede que examines as provas.",
+   "g": "m1-s10-c12",
+   "id": "m1-s10-c12"
+  },
+  {
+   "t": "completar",
+   "p": "Completa a distinção que evita uma generalização.",
+   "p2": "Completa a distinção que evita uma generalização.",
+   "frase": "O documento B regista [1] à escola; não mede o uso da [2].",
+   "lacunas": [
+    {
+     "o": [
+      "chegadas",
+      "partidas",
+      "atrasos"
+     ],
+     "c": 0
+    },
+    {
+     "o": [
+      "biblioteca",
+      "secretaria",
+      "enfermaria"
+     ],
+     "c": 0
+    }
+   ],
+   "f": "O apoio fala de chegar cedo, não de utilização de um serviço.",
+   "fe": "Relê a formulação do inquérito e o serviço sobre o qual Joana faz a proposta.",
+   "g": "m1-s10-c13",
+   "id": "m1-s10-c13"
+  },
+  {
+   "t": "ler",
+   "rot": "Na aula",
+   "titulo": "Uma resposta mais informada",
+   "html": "<p>Continuação inventada. Oito dos 12 respondentes que chegam cedo dizem agora que usariam a biblioteca. A responsável informa que a abertura antecipada depende de haver uma pessoa disponível para acompanhar o espaço.</p><p>A disponibilidade dessa pessoa ainda não está confirmada. Não há dados dos restantes alunos. A proposta passa a ser uma experiência limitada, sujeita a essa confirmação e a um registo de utilização.</p>",
+   "id": "m1-s10-c14",
+   "g": "m1-s10-c14"
+  },
+  {
+   "t": "escolha",
+   "p": "Que condição continua por confirmar?",
+   "p2": "Que condição continua por confirmar?",
+   "o": [
+    "A disponibilidade de quem acompanha o espaço.",
+    "A existência de oito respostas sobre o uso.",
+    "A abertura às nove indicada no aviso inicial."
+   ],
+   "c": 0,
+   "f": "O interesse de oito respondentes foi relatado; a disponibilidade de acompanhamento continua em aberto.",
+   "fe": [
+    "",
+    "As oito respostas constam da continuação: procura a condição ainda não confirmada.",
+    "O aviso inicial já dá essa hora: falta saber se há condições para a experiência."
+   ],
+   "g": "m1-s10-c15",
+   "id": "m1-s10-c15"
+  },
+  {
+   "t": "emparelhar",
+   "p": "Liga cada elemento novo àquilo que acrescenta.",
+   "p2": "Liga cada elemento novo àquilo que acrescenta.",
+   "pares": [
+    [
+     "Oito dizem que usariam o espaço",
+     "Interesse declarado"
+    ],
+    [
+     "Abertura depende de acompanhamento",
+     "Condição de funcionamento"
+    ],
+    [
+     "Registar a utilização na experiência",
+     "Forma de recolher novos dados"
+    ]
+   ],
+   "f": "Interesse declarado, condição e observação futura são elementos distintos.",
+   "fe": "Uma intenção de uso não é um registo de uso já ocorrido.",
+   "g": "m1-s10-c16",
+   "id": "m1-s10-c16"
+  },
+  {
+   "t": "ordenar",
+   "p": "Ordena a justificação da proposta revista.",
+   "p2": "Ordena a justificação da proposta revista.",
+   "passos": [
+    "Há interesse declarado por oito respondentes.",
+    "Esse interesse não representa toda a escola.",
+    "A abertura depende de acompanhamento ainda por confirmar.",
+    "Propõe-se uma experiência condicionada e observada."
+   ],
+   "f": "A proposta responde aos dados novos sem apagar os limites.",
+   "fe": "Coloca as condições antes da proposta que depende delas.",
+   "g": "m1-s10-c17",
+   "id": "m1-s10-c17"
+  },
+  {
+   "t": "escolha",
+   "p": "Que conclusão pode Joana defender com estes dados?",
+   "p2": "Que conclusão pode Joana defender com estes dados?",
+   "o": [
+    "Há interesse declarado; falta confirmar condições.",
+    "Há procura comprovada em toda a comunidade escolar.",
+    "Há recursos confirmados para manter sempre a abertura."
+   ],
+   "c": 0,
+   "f": "Os dados sustentam interesse de alguns respondentes, não procura geral nem recursos disponíveis.",
+   "fe": [
+    "",
+    "O conjunto ouvido é limitado: não o confundas com toda a comunidade.",
+    "A disponibilidade da pessoa está por confirmar: não a apresentes como garantida."
+   ],
+   "g": "m1-s10-c18",
+   "id": "m1-s10-c18"
+  },
+  {
+   "t": "vf",
+   "p": "As oito intenções de uso equivalem a oito utilizações já observadas.",
+   "p2": "As oito intenções de uso equivalem a oito utilizações já observadas.",
+   "v": false,
+   "f": "Oito pessoas dizem que usariam o espaço; a experiência ainda não aconteceu.",
+   "fe": "Confundiste intenção e comportamento observado: compara os tempos das duas afirmações.",
+   "g": "m1-s10-c19",
+   "id": "m1-s10-c19"
+  },
+  {
+   "t": "ler",
+   "rot": "Para levar",
+   "titulo": "Três linhas para concluir",
+   "html": "<p>Escreve individualmente no caderno, uma linha para cada ponto:</p><ol><li>Que resposta provisória dás à proposta de Joana?</li><li>Que documento a sustenta e que objeção consideraste?</li><li>Que condição ou informação ainda tens de verificar?</li></ol><p>Usa os dados apresentados. Se falta informação, identifica-a em vez de a inventares.</p>",
+   "escuro": true,
+   "id": "m1-s10-c20",
+   "g": "m1-s10-c20"
+  }
+ ],
+ "edicao": "20261103",
+ "guia": "../docente/",
+ "guiao": "../guiao/"
+}
