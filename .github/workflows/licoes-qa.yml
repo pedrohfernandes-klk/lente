@@ -12,6 +12,10 @@ on:
       - 'narrativas/ideias/**'
       - 'assets/laboratorio/ideias/**'
       - 'tools/ideias_piloto.py'
+      - 'tools/metodo.py'
+      - 'tools/laboratorio*.py'
+      - 'tests/*laboratorio*'
+      - 'narrativas/**'
       - 'tools/ideias_publico.py'
       - 'biblioteca/index.html'
       - 'biblioteca/young-tecnica-1940/**'
@@ -19,6 +23,8 @@ on:
       - 'tests/*ideias*'
       - 'tests/test_opcoes_equilibradas.py'
       - 'tests/test_lab_percursos.py'
+      - 'tests/*progresso_laboratorio*'
+      - 'tests/test_cidadania_base_motor.py'
       - '.github/workflows/licoes-qa.yml'
 permissions:
   contents: read
@@ -41,6 +47,9 @@ jobs:
         run: |
           node --check assets/licoes/jogo.js
           node --check assets/licoes/casca.js
+          node --test tests/progresso_laboratorio.test.cjs
+          python -m unittest discover -s tests -p 'test_cidadania_base_motor.py' -v
+          python -m unittest discover -s tests -p 'test_laboratorio_contratos.py' -v
           python tools/licoes_lente.py --verificar
           python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
           # 30/10/2026: coração do Laboratório (31/10)
@@ -55,7 +64,9 @@ jobs:
           npm install --no-save --package-lock=false playwright
           npx playwright install --with-deps chromium
       - name: Percurso completo de cada lição
-        run: node tests/browser_licoes_lente.cjs
+        run: |
+          node tests/browser_progresso_laboratorio.cjs
+          node tests/browser_licoes_lente.cjs
   # 01/11/2026: o teste de navegador de «Ideias» passa para um trabalho próprio, em paralelo. No mesmo trabalho que o
   # percurso das lições, o tempo total passava os 10 minutos do limite e o GitHub cancelava a execução.
   ideias:
@@ -88,3 +99,21 @@ jobs:
         with:
           name: ideias-publico-provas
           path: provas-ideias-publico
+
+  # 02/11/2026: motores incorporados em separado para não consumir o tempo das lições completas.
+  laboratorio-antigo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Pontos e progresso nos dois motores incorporados
+        run: |
+          node tests/browser_laboratorio_sem_pontos.cjs
+          node tests/browser_laboratorio_contratos.cjs
