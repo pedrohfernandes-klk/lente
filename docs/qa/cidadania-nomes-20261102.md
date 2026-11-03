@@ -1,5 +1,15 @@
 # Cidadania: Humanos, Algoritmos e Decisões
 
+## Integração de 03/11/2026
+
+Main publicado `349d2457e1f056b69c6dda550aace2a6f5377051` integrado por merge `86b61a5`. Os doze conflitos foram resolvidos conservando o main e reaplicando apenas os títulos autorizados. Menus, cabeçalho e fundos não entram nesta entrega.
+
+Comparação exata de 124 ficheiros com esse main, segundo manifesto fechado em `tests/fixtures/cidadania-nomes-20261103.json`. O contrato anterior de preservação mantém a base fixa, a comparação binária e a única normalização de cache; reconhece agora os títulos por ficheiro e contagem. O teste adicional compara todo o texto dos 124 ficheiros com o main mais essas trocas. URLs, identificadores, progresso e usos literários não mudam. No Windows, os ficheiros de texto da cópia de ensaio foram repostos em LF para a comparação binária; os PDFs conservam os bytes do Git.
+
+A pesquisa adicional encontrou uma referência no dossiê de Lu Xun: «Módulo 2: os algoritmos» passa a «Módulo 2: Algoritmos». A origem privada em `gigantes.json` recebe a mesma correção no fontes #16. As referências anteriores nas fontes e o bloqueio da regeneração privada mantêm-se documentados nesse pedido; nenhum conteúdo privado é copiado para o sítio.
+
+Navegador automático sem janela: 45 contextos aprovados, cinco entradas em 320/390/1366 px, claro/escuro/projeção, títulos conferidos, sem transbordos nem erros JavaScript. Provas externas em `outputs/cidadania-nomes-provas-20261103/`. Sem controlo interativo e sem declaração de aprovação do zoom real.
+
 02/11/2026. Renomeação separada do pedido #106. URLs, âncoras, identificadores e chaves de progresso preservados. Os usos comuns de «ser-se humano», títulos de obras, citações e os conteúdos de Justiça, Ética e Estética mantêm-se. Não se cria um módulo 3: Decisões é o nome da secção anteriormente chamada Ter juízo.
 
 Verificações: onze testes Python existentes e treze testes de resultados aprovados. Vinte contextos no navegador: cinco entradas, 390/1366 px, claro/escuro, sem deslocamento lateral ou erros JavaScript; nomes conferidos. Capturas e medidas em outputs/cidadania-nomes-provas-20261102, fora do repositório.
