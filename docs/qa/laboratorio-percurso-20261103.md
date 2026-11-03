@@ -79,3 +79,10 @@ A verificação encontrou uma tabela do guião com 19 px de transbordo a 320 px 
 Após o acerto: 27 percursos e 48 combinações de contraste passaram; mínimos 10,08:1 no texto e 3,82:1 nos símbolos. Os 15 testes da aparência passaram. A especificação comum foi atualizada e enviada ao GPT3 com autorização direta do docente. Não houve controlo interativo do computador nem publicação.
 
 A bateria integral Python passou: 275 testes, 172,682 s, sem falhas. Os menus passaram nos 72 contextos; o zoom 2 deste ensaio é CSS, não zoom nativo do navegador.
+
+
+### Correção após o primeiro CI da boia
+
+Na cabeça 27d3b99, o CI detetou que a boia interceptava «Cartão anterior» e «Nova tentativa» nos visores fixos. O espaço no corpo da página não chegava à `.casca`, que ocupa a janela inteira. O componente reserva agora 88 px também nesse visor, apenas em ecrã, sem alterar a impressão. A boia usa um botão com `aria-expanded` e `aria-controls`, evitando interferência com os `details` do conteúdo. Os testes existentes não foram modificados.
+
+Após a correção, `browser_formas.cjs` passou integralmente, incluindo o ponto exato da falha, e os 60 contextos da boia passaram novamente. Provas finais em `outputs/lente108-boia-final-20261103/`. A família Cartaz também passou antes deste acerto específico do visor. A execução local de `browser_reciclagem_lente.py` não arrancou porque o Python disponível não tem o módulo Playwright; a confirmação desse percurso fica no CI da nova cabeça.
