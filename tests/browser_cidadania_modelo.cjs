@@ -1,14 +1,10 @@
-// 03/11/2026: demonstração isolada, 20 cartões, visor e progresso publicado intacto.
-// 30/10/2026: lições do Lente no motor único (assets/licoes/), a começar pela sessão 01 do M1 de Cidadania (piloto).
-// 30/10/2026: cobre também as lições do coração do Laboratório («Ideias», narrativas/ideias/, 31/10), com os cartões «mapa»
-// sobre o quadro de La Tour (a lupa incluída) e o leitor do vídeo, que só se liga ao toque.
-// Percorre cada lição de tools/licoes/*.json a responder certo a todos os cartões, em 390 e 1366 px, e confirma: nenhum
-// erro, nenhum deslocamento horizontal, o fim com todas as certas, o progresso gravado na chave da lição, e a projeção a
-// não gravar nada.
+// 03/11/2026: sessão-modelo isolada, 20 cartões e 14 atividades.
+// Percurso completo em 320/390/1366, claro/escuro e modo de projeção.
+// Confere também o lançador real, visor por teclado, resultado privado e progresso original intacto.
 const {chromium}=require('playwright');const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert');
-const ROOT=path.resolve(__dirname,'..');
+const ROOT=path.resolve(__dirname,'..'),resultados=[];
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.webp':'image/webp','.svg':'image/svg+xml','.jpg':'image/jpeg'};
-const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
+const srv=http.createServer((q,r)=>{let u=decodeURIComponent(q.url.split('?')[0]).replace(/^\/lente(?=\/)/,'');if(u.endsWith('/'))u+='index.html';const f=path.join(ROOT,u);if(!f.startsWith(ROOT)||!fs.existsSync(f)){r.writeHead(404);r.end();return}r.writeHead(200,{'content-type':mime[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
 async function seguinte(p){const s=p.locator('.casca-folha:not([hidden]) button, .casca-acoes button',{hasText:/Seguinte|Continuar|Ver o resultado|Terminar/});await s.first().click();await p.waitForTimeout(250)}
 // 30/10/2026: o texto dos botões é o das opções sem as marcas de itálico e negrito (_…_ e **…**), que o motor converte
 // (coração do Laboratório, 31/10: «_Time Transfixed_, de René Magritte.»).
@@ -36,9 +32,9 @@ async function responder(p,x){
  for(const f of ['cidadania-m1-s01.json']){
   const d=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/modelos',f),'utf8'));const url=base+'/'+d.saida.replace(/index\.html$/,'');
   const fazer=d.cartoes.filter(x=>x.t!=='ler').length;
-  for(const [w,h] of [[320,900],[390,900],[1366,900]]){
-   const ctx=await b.newContext({viewport:{width:w,height:h}});const p=await ctx.newPage();const erros=[];p.on('pageerror',e=>erros.push(e.message));
-   await p.addInitScript(()=>localStorage.setItem('epi-cid-m1-s01',JSON.stringify({lida:true,versao:'original',t:123})));await p.goto(url);await p.waitForTimeout(500);
+  for(const [w,h] of [[320,900],[390,900],[1366,900]])for(const tema of ['light','dark'])for(const projecao of [false,true]){
+   const ctx=await b.newContext({viewport:{width:w,height:h},colorScheme:tema});const p=await ctx.newPage();const erros=[];p.on('pageerror',e=>erros.push(e.message));
+   await p.addInitScript(()=>localStorage.setItem('epi-cid-m1-s01',JSON.stringify({lida:true,versao:'original',t:123})));await p.goto(url+(projecao?'?projetar=1':''));await p.waitForTimeout(500);
    // o motor baralha os cartões de fazer do mesmo grupo «g» e alterna p/p2: o cartão do ecrã identifica-se pelo enunciado
    const norm=t=>String(t||'').replace(/<[^>]+>/g,' ').replace(/[*_]/g,'').replace(/\s+/g,' ').trim();
    async function atual(i){const txt=norm(await p.locator('#baralho').innerText());const c=d.cartoes.filter(x=>x.t!=='ler'&&[x.p,x.p2].some(q=>q&&txt.includes(norm(q).slice(0,60))));return c.length===1?c[0]:d.cartoes[i]}
@@ -46,22 +42,31 @@ async function responder(p,x){
     assert.equal(await p.locator('[data-c-num]').innerText(),(i+1)+'/'+d.cartoes.length,f+' cartão '+(i+1));
     assert(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'deslocamento horizontal no cartão '+(i+1)+' a '+w+' px');
     if(i===1){const img=p.locator('#baralho figure img');await img.focus();await p.keyboard.press('Enter');assert.equal(await p.locator('.amp-ov[role="dialog"]').count(),1);assert(await p.locator('.casca').evaluate(e=>e.inert));await p.locator('.amp-tools button',{hasText:/^Ampliar$/}).click();assert.equal(await p.locator('.amp-tools output').innerText(),'150 %');await p.keyboard.press('Escape');assert.equal(await p.locator('.amp-ov').count(),0);assert(await img.evaluate(e=>document.activeElement===e));}
-    if(process.env.MODELO_PROVAS&&[0,1,4,8,13,19].includes(i)){fs.mkdirSync(process.env.MODELO_PROVAS,{recursive:true});await p.screenshot({path:path.join(process.env.MODELO_PROVAS,`cartao-${i+1}-${w}.png`)});}
+    if(process.env.MODELO_PROVAS&&[0,1,4,8,13,19].includes(i)){fs.mkdirSync(process.env.MODELO_PROVAS,{recursive:true});await p.screenshot({path:path.join(process.env.MODELO_PROVAS,`cartao-${i+1}-${w}-${tema}-${projecao?"projecao":"normal"}.png`)});}
     if(x.t!=='ler'){await responder(p,x);assert.match(await p.locator('.casca-folha').innerText(),/Certo/,f+' cartão '+(i+1)+' ('+x.t+')')}
     if(i<d.cartoes.length-1)await seguinte(p);
    }
    await seguinte(p).catch(()=>{});await p.waitForTimeout(1400); // o «x de y» do fim anima durante cerca de 900 ms
-   const fim=await p.locator('#baralho').innerText();assert.match(fim,new RegExp(fazer+'\\s*de\\s*'+fazer),f+': o fim tem de mostrar '+fazer+' de '+fazer);
+   const fim=await p.locator('#baralho').innerText();if(projecao){assert.match(fim,/Fim da lição/);assert.doesNotMatch(fim,/\d+\s+de\s+\d+/,'a projeção não expõe o resultado individual');}else assert.match(fim,new RegExp(fazer+'\\s*de\\s*'+fazer),f+': o fim tem de mostrar '+fazer+' de '+fazer);
    assert.equal(await p.evaluate(()=>localStorage.getItem('epi-cid-m1-s01')),JSON.stringify({lida:true,versao:'original',t:123}));
-   const st=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),'ensaio-'+d.chave);assert(st&&st.melhor===fazer,f+': progresso gravado em '+d.chave);
+   const st=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),'ensaio-'+d.chave);if(projecao)assert.equal(st,null,f+': a projeção completa não grava progresso');else assert(st&&st.melhor===fazer,f+': progresso gravado em '+d.chave);
    if(w===390)await p.screenshot({path:path.join(require('os').tmpdir(),'licao-'+d.id+'-fim-390.png')});
    assert.deepEqual(erros,[],f+' a '+w+' px');await ctx.close();
-   // projeção (?projetar=1): começa do início e não grava nada neste aparelho
-   const c2=await b.newContext({viewport:{width:w,height:h}});const p2=await c2.newPage();await p2.goto(url+'?projetar=1');await p2.waitForTimeout(500);
-   assert.equal(await p2.locator('[data-c-num]').innerText(),'1/'+d.cartoes.length,f+': a projeção começa no primeiro cartão');
-   for(let i=0;i<4;i++){const s=p2.locator('.casca-acoes button',{hasText:/Seguinte/});if(await s.count()&&await s.first().isEnabled()){await s.first().click();await p2.waitForTimeout(200)}}
-   assert.equal(await p2.evaluate(k=>localStorage.getItem(k),'ensaio-'+d.chave),null,f+': a projeção não grava progresso');await c2.close();
-   console.log('PASS '+d.id+': '+d.cartoes.length+' cartões, '+fazer+' de fazer, todos certos, fim e progresso a '+w+' px');
+   resultados.push({largura:w,tema,projecao,cartoes:d.cartoes.length,atividades:fazer,todasCertas:true,originalIntacto:true,semErros:true});
+   console.log('PASS '+d.id+': '+d.cartoes.length+' cartões, '+fazer+' de fazer, todos certos, fim e progresso a '+w+' px, '+tema+', '+(projecao?'projeção':'normal'));
   }
  }
+ for(const w of [320,390,1366])for(const tema of ['light','dark']){
+  const ctx=await b.newContext({viewport:{width:w,height:900},colorScheme:tema}),p=await ctx.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
+  await ctx.addInitScript(()=>localStorage.setItem('epi-cid-m1-s01',JSON.stringify({lida:true,versao:'original',t:123})));
+  await p.goto(base+'/lente/projetar/?pagina=/lente/demonstracoes/cidadania-sessao-modelo/');await p.frameLocator('#lesson-frame').locator('html.epi-projection').waitFor();
+  const frame=p.frames().find(f=>f!==p.mainFrame()&&f.url().includes('/demonstracoes/cidadania-sessao-modelo/'));
+  assert.equal(await frame.locator('[data-c-num]').innerText(),'1/20');await seguinte(frame);
+  assert.equal(await frame.locator('[data-c-num]').innerText(),'2/20');assert(await frame.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  const img=frame.locator('#baralho figure img');await img.focus();await p.keyboard.press('Enter');assert.equal(await frame.locator('.amp-ov[role="dialog"]').count(),1);await p.keyboard.press('Escape');assert(await img.evaluate(e=>document.activeElement===e));
+  assert.equal(await frame.evaluate(()=>localStorage.getItem('ensaio-epi-cid-m1-s01')),null);assert.equal(await frame.evaluate(()=>localStorage.getItem('epi-cid-m1-s01')),JSON.stringify({lida:true,versao:'original',t:123}));assert.deepEqual(erros,[]);
+  if(process.env.MODELO_PROVAS)await p.screenshot({path:path.join(process.env.MODELO_PROVAS,`lancador-${w}-${tema}.png`)});
+  resultados.push({largura:w,tema,lancadorReal:true,visorTeclado:true,originalIntacto:true,semErros:true});await ctx.close();console.log('PASS lançador real '+w+' '+tema);
+ }
+ if(process.env.MODELO_PROVAS)fs.writeFileSync(path.join(process.env.MODELO_PROVAS,'resultado.json'),JSON.stringify(resultados,null,2));
  await b.close();srv.close();})().catch(e=>{console.error(e);process.exit(1)});
