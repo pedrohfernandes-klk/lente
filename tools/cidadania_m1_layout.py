@@ -28,7 +28,9 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   title,text,task=short_caps[key];sources=capsules[key]['sources']
   return '<aside class="c10-capsule"><p class="c10-eyebrow">História do teatro</p><h3>'+e(title)+'</h3><p>'+e(text)+'</p><p><b>Experimenta.</b> '+e(task)+'</p><details><summary>Fontes</summary><div><ul>'+''.join('<li><a href="'+(e(u,quote=True) if u.startswith('http') else rel(path,'cidadania/m1/passo-06/'))+'">'+e(t)+'</a></li>' for t,u in sources)+'</ul></div></details></aside>'
  (R/'cidadania/projeto/index.html').write_bytes(subprocess.check_output(['git','show',api['BASE']+':cidadania/projeto/index.html'],cwd=R))
- write('cidadania/m1/percurso-anterior.html',old('cidadania/m1/index.html'))
+ anterior=old('cidadania/m1/index.html')
+ assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'
+ write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))
  # Molde de 27/10/2026: abertura (imagem, pergunta curta, «Começar») e cinco passos,
  # Recupera, Vê, Decide, Faz, Leva; a sessão 03 realiza a tarefa já partilhada.
  from cidadania_m1_molde import LINHA,LINHA_TAREFA,MARCA,MOLDE,OBRAS
@@ -82,13 +84,13 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   body+=molde.SEM_JS+'<footer class="c10-support">'+link(path,'cidadania/m1/','Todas as sessões')+link(path,'cidadania/m1/biblioteca/','Biblioteca')+link(path,'cidadania/m1/sessoes/#sessao-'+ident,'Guia do docente')+'</footer>'
   write(path,document(path,s['title'],body,ident))
  path='cidadania/m1/index.html';hero=dict(image='hals.webp',caption='Frans Hals · As regentes do asilo de velhos, 1664')
- body='<header class="c10-hero c10-cover"><div class="c10-cover-text"><p class="c10-eyebrow">Cidadania · Módulo 1</p><h1>Ser-se humano</h1><p class="c10-deck">Quem conta como pessoa?</p><a class="c10-action" href="sessoes/03/" data-continue>Continuar · sessão 03</a></div>'+image(path,hero,'c10-cover-img')+'</header><div class="c10-sectionhead"><h2>Dez sessões</h2><p class="c10-small" data-count></p></div><ol class="c10-session-list">'
+ body='<header class="c10-hero c10-cover"><div class="c10-cover-text"><p class="c10-eyebrow">Cidadania · Módulo 1</p><h1>Humanos</h1><p class="c10-deck">Quem conta como pessoa?</p><a class="c10-action" href="sessoes/03/" data-continue>Continuar · sessão 03</a></div>'+image(path,hero,'c10-cover-img')+'</header><div class="c10-sectionhead"><h2>Dez sessões</h2><p class="c10-small" data-count></p></div><ol class="c10-session-list">'
  for n,s in enumerate(sessions,1):
   body+=molde.cartao_sessao(f'{n:02}','sessoes/'+f'{n:02}'+'/',s['theme'],s['title'],s['question'])
  body+='</ol><footer class="c10-support">'+link(path,'cidadania/m1/biblioteca/','Biblioteca')+link(path,'cidadania/m1/oficina-guiao/','Apoio à escrita')+link(path,'cidadania/m1/sessoes/','Guia do docente')+'</footer>'
  ids=list(dict.fromkeys(re.findall(r'\bid="([^"]+)"',old('cidadania/m1/index.html'))))
  body+='<div hidden>'+''.join('<span id="'+e(k,quote=True)+'"></span>' for k in ids)+''.join('<span id="unidade-'+str(n)+'"></span>' for n in range(1,7) if 'unidade-'+str(n) not in ids)+'</div>'
- write(path,document(path,'Ser-se humano · dez sessões',body))
+ write(path,document(path,'Humanos · dez sessões',body))
  # O planeamento é consultado separadamente da linha de ação do aluno.
  path='cidadania/m1/sessoes/index.html';body='<header class="c10-hero"><div><p class="c10-eyebrow">Para o docente</p><h1>Dez sessões</h1><p class="c10-deck">Tempos, materiais e condução.</p></div>'+image(path,hero)+'</header><p>A tarefa Pergunta Humana é realizada na sessão 03. A turma conhece a caverna, Sísifo, CHIROPTERA, Abramović, The Egg e Truman. Esse contexto informa a condução; não constitui um aviso a repetir aos alunos. O enunciado publicado permanece intacto.</p>'
  for n,s in enumerate(sessions,1):

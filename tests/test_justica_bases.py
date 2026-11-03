@@ -5,6 +5,7 @@ import json
 import re
 import sys
 import unittest
+from renomeacoes_cidadania import renomear
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -49,7 +50,8 @@ class BasesJustica(unittest.TestCase):
             gerada = molde.replace('@@ITENS@@', (T/f'bancos/licao-{n}.json').read_text('utf-8').rstrip('\n'))
             self.assertEqual(gerada, (R/f'olhar-e-decidir/justica/licao-{n}/index.html').read_text('utf-8'))
             # 02/11/2026: prova contra o main de partida, só com as duas trocas autorizadas.
-            original = gerada
+            # Conserva o hash histórico; desfaz só os títulos autorizados do #107.
+            original = renomear(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
             for troca in json.loads((T/'migracao.json').read_text('utf-8')):
                 if troca['licao'] == n:
                     self.assertEqual(original.count(troca['novo']), 1)

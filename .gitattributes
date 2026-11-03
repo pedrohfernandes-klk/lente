@@ -1,0 +1,16 @@
+# Saídas comparadas byte a byte com os objetos Git e regeneradas em Linux/Windows.
+/index.html text eol=lf
+/docente/index.html text eol=lf
+/cidadania/index.html text eol=lf
+/cidadania/projeto/index.html text eol=lf
+/cidadania/m1/**/*.html text eol=lf
+/cidadania/piloto/**/*.html text eol=lf
+/assets/cidadania-m1-sessoes.css text eol=lf
+/assets/cidadania-m1-sessoes.js text eol=lf
+/assets/licoes/cidadania.css text eol=lf
+/narrativas/index.html text eol=lf
+/narrativas/tudo/index.html text eol=lf
+/narrativas/ver/index.html text eol=lf
+/narrativas/treinar/index.html text eol=lf
+/narrativas/criar/index.html text eol=lf
+/narrativas/percursos/**/*.html text eol=lf

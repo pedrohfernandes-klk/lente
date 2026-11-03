@@ -1,0 +1,28 @@
+{
+  "tools/cidadania_m1_layout.py": [
+    [
+      " write('cidadania/m1/percurso-anterior.html',old('cidadania/m1/index.html'))",
+      " anterior=old('cidadania/m1/index.html')\n assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'\n write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))",
+      1
+    ]
+  ],
+  "index.html": [
+    [
+      "assets/cartaz-entrada.css?v=20261101-1",
+      "assets/cartaz-entrada.css?v=20261103.2",
+      1
+    ],
+    [
+      "assets/fundo-lente.css?v=20261102-3",
+      "assets/fundo-lente.css?v=20261103-1",
+      1
+    ]
+  ],
+  "tools/generate_cidadania_m1.py": [
+    [
+      "p.write_text(s,encoding='utf-8')",
+      "p.write_bytes(s.encode('utf-8'))",
+      1
+    ]
+  ]
+}

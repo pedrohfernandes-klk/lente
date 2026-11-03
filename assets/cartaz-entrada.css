@@ -113,3 +113,12 @@ html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-set
 [data-cartaz-entrada] .lente-nome i{color:var(--mostarda,#d9a520)}
 /* 02/11/2026: decisão 141. A nova ligação cabe no cartão móvel sem reduzir alvos nem texto. */
 @media(max-width:639px){[data-cartaz-entrada] #inicio-narrativas .ld-f{margin-bottom:8px}[data-cartaz-entrada] #inicio-narrativas .ld-corpo{padding-bottom:0}}
+
+/* 03/11/2026, L107-02: a moldura real aumenta a raiz até 28px.
+   Deixar o texto recompor-se, sem esconder excesso nem reduzir a escala. */
+html.epi-projection [data-cartaz-entrada] :is(h2,h3,p,small,.lab-set-copy,.sp-copy,.sp-kicker,.sp-image-label){min-width:0;overflow-wrap:anywhere}
+html.epi-projection [data-cartaz-entrada] .cz-credit a{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:639px){html.epi-projection [data-cartaz-entrada] .site-portal{grid-template-columns:minmax(0,1fr)}html.epi-projection [data-cartaz-entrada] .sp-image{min-height:160px}}
+
+html.epi-projection [data-cartaz-entrada] :is(.ld-rot,.cz-button,.cz-footer-links a){min-width:0;overflow-wrap:anywhere;white-space:normal}
+html.epi-projection [data-cartaz-entrada] .lab-sets a.cz-row{grid-template-columns:max-content minmax(0,1fr) 24px}

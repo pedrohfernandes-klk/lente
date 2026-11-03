@@ -1,25 +1,28 @@
-/* 02/11/2026: decisão 139 (docente: «maiores e mais bem feitos; a lupa tem de parecer melhor»). Por baixo do nome do Lente, uma
-   faixa larga com uma página de texto miúdo (assets/lupa-texto.svg, gerada por tools/gerar_lupa_texto.py: a epígrafe de
-   Ensaio sobre a Cegueira, de José Saramago, repetida) e uma lupa de vidro por cima: aro, virola a terracota, cabo e sombra
-   na página; dentro do vidro, o texto aparece 2,6 vezes maior e lê-se. Parada é o estado de partida: sem JavaScript, com
-   movimento reduzido e na projeção, a lupa fica sobre a página. Com o motor comum (assets/fundos.js), passeia devagar pela
-   página durante dois ciclos e pára; o botão «Parar o desenho» pára-a antes. Na impressão, a faixa não sai.
-   Contas: a lupa anda (dx, dy) em percentagem da faixa e o texto ampliado anda (-2,6·dx, -2,6·dy), com os mesmos tempos;
-   assim, o ponto da página que está debaixo do centro do vidro é sempre o que aparece ampliado no centro. */
-[data-cartaz-entrada] .lf-mesa{--lf-h:clamp(232px,64vw,300px);--lf-d:calc(var(--lf-h) * .78);--lf-x:30%;--lf-acento:#a84939;position:relative;height:var(--lf-h);margin:28px 0 0;overflow:hidden;background:var(--papel,#fbfaf6);color:var(--tinta);pointer-events:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+/* 03/11/2026: fundo integrado no cabeçalho. Conserva a página de texto e a lupa
+   da decisão 139, o crédito e o motor comum. O texto ampliado desloca-se -2,6
+   vezes o deslocamento da lupa. Movimento reduzido, projeção e ausência de
+   JavaScript conservam a composição estática; a impressão omite o desenho. */
+[data-cartaz-entrada] .lente-cab{isolation:isolate;container-type:inline-size;min-height:390px;align-content:start;padding-top:20px;padding-bottom:32px;border-bottom:0}
+[data-cartaz-entrada] .lente-cab>.lente-etq,[data-cartaz-entrada] .lente-cab>.lente-nome,[data-cartaz-entrada] .lente-cab>.lente-frase{position:relative;z-index:1}
+[data-cartaz-entrada] .lente-cab>.lente-nome{font-size:min(clamp(4.2rem,21vw,9.5rem),28cqi)}
+[data-cartaz-entrada] .lente-cab>.lente-etq{margin-bottom:28px}
+[data-cartaz-entrada] .lente-cab>.lente-frase{margin-top:32px;max-width:26ch}
+[data-cartaz-entrada] .lf-mesa{--lf-h:390px;--lf-d:260px;--lf-x:56%;--lf-acento:#a84939;position:absolute;inset:0 -16px;height:auto;margin:0;overflow:hidden;background:transparent;color:var(--tinta);pointer-events:none;opacity:.7;mask-image:linear-gradient(to bottom,transparent,rgba(0,0,0,.08) 14%,rgba(0,0,0,.08) 58%,#000 78%,#000 88%,transparent),linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);mask-composite:intersect}
 :root[data-theme=dark] [data-cartaz-entrada] .lf-mesa{--lf-acento:#e0876f}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) [data-cartaz-entrada] .lf-mesa{--lf-acento:#e0876f}}
-/* no telemóvel, a página vai de uma ponta à outra do ecrã */
-@media(max-width:639px){[data-cartaz-entrada] .lf-mesa{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-shadow:none}}
-@media(min-width:640px){[data-cartaz-entrada] .lf-mesa{--lf-h:340px;margin-top:32px}}
-@media(min-width:960px){[data-cartaz-entrada] .lf-mesa{--lf-h:clamp(360px,44vh,440px);margin-top:36px}}
+@media(min-width:640px){
+[data-cartaz-entrada] .lente-cab{min-height:400px;padding-top:36px}
+[data-cartaz-entrada] .lente-cab>.lente-frase{margin-top:40px}
+[data-cartaz-entrada] .lf-mesa{--lf-d:320px;--lf-x:60%;inset:-12px -24px;mask-image:linear-gradient(to right,transparent,rgba(0,0,0,.08) 15%,rgba(0,0,0,.08) 38%,#000 64%,#000 88%,transparent),linear-gradient(to bottom,transparent,#000 18%,#000 78%,transparent)}
+}
+@media(min-width:960px){[data-cartaz-entrada] .lf-mesa{--lf-d:380px;--lf-x:66%}}
 [data-cartaz-entrada] .lf-pagina{position:absolute;inset:0;background:url(lupa-texto.svg) no-repeat 6px 4px/1200px 480px}
 /* no escuro, a tinta da página fica clara (o fundo do desenho é transparente) */
 :root[data-theme=dark] [data-cartaz-entrada] .lf-pagina{filter:invert(.88)}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]) [data-cartaz-entrada] .lf-pagina{filter:invert(.88)}}
 [data-cartaz-entrada] .lf-lupa,[data-cartaz-entrada] .lf-zoom{position:absolute;inset:0}
 [data-cartaz-entrada] .lf-sombra{position:absolute;left:calc(var(--lf-x) - var(--lf-d) / 2 + 2.5%);top:calc(50% - var(--lf-d) / 2 + 7%);width:var(--lf-d);height:var(--lf-d);border-radius:50%;background:rgba(0,0,0,.2);filter:blur(12px)}
-[data-cartaz-entrada] .lf-vidro{position:absolute;inset:0;background:var(--papel,#fbfaf6);clip-path:circle(calc(var(--lf-d) / 2) at var(--lf-x) 50%)}
+[data-cartaz-entrada] .lf-vidro{position:absolute;inset:0;background:var(--fundo,#f3f2ee);clip-path:circle(calc(var(--lf-d) / 2) at var(--lf-x) 50%)}
 [data-cartaz-entrada] .lf-grande{transform-origin:var(--lf-x) 50%;transform:scale(2.6)}
 /* o vidro: escurece um pouco junto ao aro e tem um brilho largo em cima, à esquerda */
 [data-cartaz-entrada] .lf-reflexo{position:absolute;inset:0;background:radial-gradient(circle calc(var(--lf-d) / 2) at var(--lf-x) 50%,rgba(255,255,255,0) 72%,rgba(40,30,20,.16) 100%),radial-gradient(circle calc(var(--lf-d) / 3) at calc(var(--lf-x) - var(--lf-d) / 6) calc(50% - var(--lf-d) / 5),rgba(255,255,255,.34),rgba(255,255,255,0) 70%)}
