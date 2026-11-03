@@ -1,0 +1,44 @@
+/* 02/11/2026: proposta A, identidade Cartaz e controlos reais do Lente. */
+.ideias.entrada-a main{max-width:1200px;padding:0 24px 24px}
+.entrada-a .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;margin:40px 0 0}
+.entrada-a .hero h1{font:400 61px/.95 'Bebas Neue','Arial Narrow',sans-serif;margin:0 0 24px}
+.entrada-a .hero .rotulo{margin:0 0 12px}
+.entrada-a .hero .lead{font:25px/1.4 Georgia,serif;max-width:25ch;margin:0 0 24px}
+.entrada-a [data-proximo]{max-width:380px}
+.entrada-a .botao{display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:16px 24px;background:var(--tinta);color:var(--fundo);font:700 16px/1.4 Arial,sans-serif;text-decoration:none}
+.entrada-a .state{font:14px/1.4 Arial,sans-serif;color:var(--suave);margin:8px 0 0}
+.entrada-a .state:empty{display:none}
+.entrada-a .drawing{margin:0;min-width:0}.entrada-a .drawing svg{width:100%;height:304px;display:block;--ly-papel:var(--fundo)}
+.entrada-a .drawing figcaption{font:13px/1.4 Arial,sans-serif;color:var(--suave);margin-top:8px}
+.ideias.entrada-a details.metodo{display:block;max-width:none;margin:32px 0;border-top:1px solid var(--tinta);border-bottom:1px solid var(--tinta);padding:0}
+.entrada-a .metodo summary{display:list-item;cursor:pointer;min-height:56px;padding:16px 0;font:700 17px/1.4 Arial,sans-serif}
+.entrada-a .method-body{max-width:720px;padding:8px 0 24px;font:17px/1.6 Georgia,serif}
+.entrada-a .method-body p{margin:0 0 16px}.entrada-a .method-body a{display:inline-flex;align-items:center;min-height:44px}
+.entrada-a .method-body ol.passos-m{display:block;margin:0 0 16px;padding-left:24px;list-style:none}.entrada-a .method-body ol.passos-m li{display:list-item;margin:8px 0}.entrada-a .method-body ol.passos-m b{font:inherit;margin-right:8px}
+.ideias.entrada-a h2.sessoes-t{font:400 39px/1 'Bebas Neue','Arial Narrow',sans-serif;margin:24px 0 16px}
+.entrada-a .portas{display:grid;grid-template-columns:1fr;gap:24px}.entrada-a .porta{background:none;padding:0;border:0}
+.entrada-a .porta h3{font:700 18px/1.4 Arial,sans-serif;margin:0 0 12px;color:var(--suave)}
+.entrada-a ol.sessoes{list-style:none;margin:0;padding:0;display:grid;gap:8px}.entrada-a ol.sessoes li{border:0;padding:0;background:var(--papel)}
+.entrada-a .sessoes .linha{display:grid;grid-template-columns:32px minmax(0,1fr) 24px;gap:16px;align-items:center;min-height:96px;padding:16px 24px;border-left:4px solid transparent;text-decoration:none;color:var(--tinta)}
+.entrada-a .sessoes .seguir .linha{border-left-color:var(--vermelho)}.entrada-a .sessoes .n{font:400 31px 'Bebas Neue',sans-serif;color:inherit}
+.entrada-a .sessoes .tit{display:block}.entrada-a .sessoes strong{font:700 20px/1.3 Arial,sans-serif;display:block}
+.entrada-a .sessoes .estado{display:inline-flex;font:14px/1.4 Arial,sans-serif;margin-top:8px;color:var(--suave)}
+.entrada-a .saidas-sec{display:flex;flex-wrap:wrap;gap:12px 24px;border-top:1px solid var(--tinta);margin-top:32px;padding-top:16px}
+.entrada-a .saidas-sec a{display:inline-flex;align-items:center;min-height:44px;font:16px Arial,sans-serif}.entrada-a .saidas-sec .nota{flex-basis:100%;font-size:14px;margin:0}
+.entrada-a :is(a,summary):focus-visible{outline:3px solid var(--tinta);outline-offset:4px}
+@media(max-width:639px){.ideias.entrada-a main{padding:0 16px 24px}.entrada-a .hero{grid-template-columns:1fr;gap:24px;margin-top:24px}.entrada-a .hero h1{margin-bottom:16px}.entrada-a .hero .lead{font-size:20px;max-width:30ch}.entrada-a [data-proximo]{max-width:none}.entrada-a .drawing svg{height:232px}.ideias.entrada-a details.metodo{margin:24px 0}.ideias.entrada-a h2.sessoes-t{font-size:31px}.entrada-a .sessoes .linha{padding:16px;gap:8px;min-height:88px}}
+html.em-projecao .entrada-a .hero .lead{font-size:28px}html.em-projecao .entrada-a .method-body{font-size:22px}html.em-projecao .entrada-a .sessoes strong{font-size:24px}
+@media(prefers-reduced-motion:reduce){.entrada-a *,.entrada-a *:before,.entrada-a *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.entrada-a .drawing,.entrada-a .migalhas,.entrada-a .botao{display:none}.entrada-a details .method-body{display:block}}
+
+/* A composição A tem uma única seta e uma linha de grelha por sessão. */
+.ideias.entrada-a ol.sessoes a.linha::after{content:none}
+.entrada-a .sessoes .n{grid-column:1;grid-row:1}.entrada-a .sessoes .tit{grid-column:2;grid-row:1}.entrada-a .sessoes .linha>span:last-child{grid-column:3;grid-row:1}
+
+/* 02/11/2026: um acento retro no título principal. O I de Bebas recebe um sinal gráfico, não um pingo tipográfico original. */
+.entrada-a h1 .pingo-retro{position:relative;display:inline-block}
+.entrada-a h1 .pingo-retro::after{content:"";position:absolute;width:.12em;height:.12em;left:50%;top:-.10em;transform:translateX(-50%);background:var(--mostarda)}
+@media print{.entrada-a h1 .pingo-retro::after{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+/* 03/11/2026: um estado vazio não deixa marca gráfica nem reserva espaço. */
+.entrada-a .sessoes .estado:empty{display:none}

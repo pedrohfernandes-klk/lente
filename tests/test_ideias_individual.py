@@ -8,15 +8,24 @@ class ModalidadeIndividual(unittest.TestCase):
     def test_sessao_um_individual_e_verificavel(self):
         d=json.loads((R/'tools/licoes/ideias-s01.json').read_text('utf-8'))
         aula=next(c['html'] for c in d['cartoes'] if c.get('rot')=='Na aula')
-        for text in ['Com o docente','Regista dez factos','três inferências e uma pergunta','verifica individualmente','registados por um colega','O teu auto de observação','conferido por outra pessoa']:
+        for text in ['Com o docente','Regista dez factos','três inferências e uma pergunta','Verifica individualmente','factos de um colega','O teu auto de observação','outra pessoa confere os degraus']:
             self.assertIn(text,aula)
         self.assertNotRegex(aula,r'(?i)grupos?')
         self.assertEqual(I.SESSOES[0]['papel'],'o teu auto de observação.')
     def test_guiao_e_guia_concordam(self):
         guia=I.GUIA[1]
         self.assertEqual(guia['produto'],'o auto de observação, individual')
-        self.assertEqual([p for _,p in guia['grelha']],[6,5,2,4,3])
-        self.assertIn('Factos confirmados por outra pessoa',[t for t,_ in guia['grelha']])
+        # 02/11/2026: grelha /20 substituída por três critérios iguais no cartão, guia e guião.
+        self.assertNotIn('grelha', guia)
+        self.assertEqual(len(I.M.CRITERIOS[1]), 3)
+        for n in (1,2):
+            criterios = I.esta_bom(n)
+            for rel in ('guiao/index.html','docente/index.html'):
+                self.assertIn(I.LL.nq(criterios),(R/'narrativas/ideias'/rel).read_text('utf-8'))
+            d=json.loads((R/f'tools/licoes/ideias-s{n:02d}.json').read_text('utf-8'))
+            aula=next(c['html'] for c in d['cartoes'] if c.get('rot')=='Na aula')
+            self.assertIn(I.LL.nq(criterios),aula)
+            self.assertIn('Para a tua caixa',d['cartoes'][-1]['html'])
         self.assertNotRegex(json.dumps([guia,I.GUIAO[1]],ensure_ascii=False),r'(?i)\bgrupos?\b')
         guiao=(R/'narrativas/ideias/guiao/index.html').read_text('utf-8')
         self.assertIn('Nome: <i class="b"></i>',guiao)

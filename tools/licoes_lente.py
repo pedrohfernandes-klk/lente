@@ -13,12 +13,16 @@ escreve e a razão aparece no terminal.
 Laboratório), as migalhas e o texto do menu, a classe do <body>, o CSS da família (ao lado de assets/licoes/cidadania.css)
 e o <title>. Sem o campo, a família é a Cidadania: os .json da Cidadania não mudam e as páginas saem iguais byte a byte
 (tests/test_licoes_lente.py compara-as). Serve também a Cidadania M2 (decisão 40), que usará o mesmo «modulo»."""
-import html, json, pathlib, re, sys
+import html, json, pathlib, re, sys, importlib.util
 from urllib.parse import urljoin
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PASTA = ROOT / 'tools' / 'licoes'
+_contratos = importlib.util.spec_from_file_location('laboratorio_contratos', ROOT / 'tools/laboratorio_contratos.py')
+LC = importlib.util.module_from_spec(_contratos); _contratos.loader.exec_module(LC)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
+# 02/11/2026: cache do motor independente da versão pedagógica e do progresso.
+VERSAO_FICHEIROS = '20261102-1'
 
 PROIBIDAS = re.compile(r'(?<![\wÀ-ÿ])(?:professor(?:a|es|as)?|jog(?:ar|a[sm]?|o|ou|uei|ámos)|fichas?|folhas?)(?![\wÀ-ÿ])|[·—]', re.I)
 # a mesma lista de nomes de tests/test_lingua_perguntas.py (#76): «Qual das citações…», nunca «Qual citação…»
@@ -58,6 +62,8 @@ def textos(c):
     t += [visivel(x) for par in c.get('pares', []) for x in par]
     for L in c.get('lacunas', []):
         t += [visivel(x) for x in L.get('o', [])]
+    for imagem in c.get('imagens', []):
+        if isinstance(imagem, dict):t += [visivel(imagem.get('alt','')),visivel(imagem.get('credito',''))]
     if c.get('aula'):
         t += [visivel(v) for v in c['aula'].values()]
     # 31/10/2026: o texto de espera do cartão «mapa» e as ligações do retorno («liga») também se leem
@@ -69,7 +75,10 @@ def textos(c):
 
 def validar(d):
     erros = []
-    C = d.get('cartoes') or []
+    try:
+        C = LC.cartoes(d)
+    except ValueError as exc:
+        return [str(exc)]
     F = familia(d)
     if F is None:
         return [f'família desconhecida «{d.get("familia")}» (conhecidas: {", ".join(FAMILIAS)})']
@@ -79,13 +88,18 @@ def validar(d):
     # 01/11/2026: o passo do método na marca da casca (só no Laboratório): «Passo N de M» ou «Passos N e N+1 de M»
     if d.get('passo') and not re.fullmatch(r'Passos? \d+(?: e \d+)? de \d+', d['passo']):
         erros.append('«passo» tem de ser «Passo N de M» ou «Passos N e N+1 de M»')
-    if not re.fullmatch(F['chave'], d.get('chave', '')):
+    try:
+        antigo = LC.registo(d)
+    except ValueError as exc:
+        erros.append(str(exc));antigo = None
+    if not antigo and not re.fullmatch(F['chave'], d.get('chave', '')):
         erros.append(f'a chave tem de ser {F["chave_txt"]}')
     g = d.get(F['grupo']) or {}
     if g and (not g.get('nome') or not str(g.get('url', '')).startswith(LENTE)):
         erros.append(f'«{F["grupo"]}» precisa de «nome» e de um «url» no Lente')
     fazer = [c for c in C if c.get('t') in TIPOS_FAZER]
-    if not 12 <= len(fazer) <= 16:
+    erros += LC.regras63(d, C, TIPOS_FAZER)
+    if not d.get('regras63') and not 12 <= len(fazer) <= 16:
         erros.append(f'{len(fazer)} cartões de fazer (têm de ser 12 a 16)')
     if not C or C[0].get('rot') != 'Abre':
         erros.append('o primeiro cartão tem de ser o «Abre»')
@@ -105,13 +119,24 @@ def validar(d):
     for i, c in enumerate(C, 1):
         t = c.get('t')
         onde = f'cartão {i} ({t} {c.get("rot") or c.get("g") or ""})'
-        for x in textos(c):
+        linguistico = dict(c)
+        if d.get('familia') == 'laboratorio' and c.get('html'):
+            limpo, problemas = LC.texto_literal(c['html'])
+            erros += [f'{onde}: {e}' for e in problemas]
+            linguistico['html'] = limpo
+        for x in textos(linguistico):
             m = PROIBIDAS.search(x)
             if m:
                 erros.append(f'{onde}: «{m.group(0)}» não pode aparecer')
             m = QUAL_NOME.search(x)
             if m:
                 erros.append(f'{onde}: «{m.group(0)}» (escreve «Qual das…» ou «Que…»)')
+        if c.get('imagens') is not None:
+            imgs=c['imagens'];opcoes=c.get('o',[]) if t=='escolha' else c.get('passos',[])
+            if t not in ('escolha','ordenar') or not isinstance(imgs,list) or len(imgs)!=len(opcoes):
+                erros.append(f'{onde}: imagens exige uma imagem por opção ou passo')
+            elif any(not isinstance(f,dict) or not all(isinstance(f.get(k),str) and f[k].strip() for k in ('src','alt','credito')) or re.match(r'^(?:javascript:|data:)',f.get('src',''),re.I) for f in imgs):
+                erros.append(f'{onde}: cada imagem exige src, alt e credito válidos')
         if t == 'ler':
             n = len(visivel(c.get('html', '')).split())
             leitura += n
@@ -241,9 +266,12 @@ def pagina(d):
     lab = F['grupo'] == 'seccao'
     mod = d[F['grupo']]
     piloto = d.get('piloto')
-    dados = json.dumps(d['cartoes'], ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
+    dados = json.dumps(LC.cartoes(d), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
     menu = _menu_laboratorio(d, mod) if lab else _menu_cidadania(d, mod)
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
+    # 02/11/2026: o Laboratório conserva o feito antigo e deixa de mostrar pontuações.
+    if lab:
+        cfg.update({'semPontos': True, 'preservarAnterior': True})
     # 31/10/2026 (revisão do diretor de arte, sistema 6.11): o ecrã final leva «A seguir» (a sessão seguinte) e o módulo.
     # Verificação final: quando a seguinte já é o módulo (a s10 aponta para ../m1/), o módulo não se repete ao lado, como
     # ligação e como botão para o mesmo destino; fica só o botão.
@@ -253,6 +281,10 @@ def pagina(d):
         # 31/10/2026 (quarta correção, diretor de arte): espaço inseparável depois das palavras de uma letra, para o rótulo do
         # botão não acabar a linha em «A» («Sessão 02: A / imagem dos outros», a 320 px, com text-wrap:balance).
         cfg.update({'seguinte': d['seguinte'], 'seguinteRotulo': re.sub(r'(?<!\S)(\w) ', '\\1\u00a0', d.get('seguinteRotulo') or '') or None})
+    extra = ''
+    if lab and d.get('registo'):
+        nav, extra = LC.continuacao(d)
+        cfg.update(nav)
     # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
     tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
     # 31/10/2026: <title>, classe do <body>, CSS e marca da casca pela família (a Cidadania como estava; o Laboratório com o
@@ -280,7 +312,7 @@ def pagina(d):
         + f'<meta name="description" content="{esc(d["h1"])}">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
         '<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&display=swap" rel="stylesheet">'
-        f'<link rel="stylesheet" href="{base}assets/licoes/lesson.css?v={d["versao"]}"><link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={d["versao"]}">'
+        f'<link rel="stylesheet" href="{base}assets/licoes/lesson.css?v={VERSAO_FICHEIROS}"><link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={VERSAO_FICHEIROS}">'
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
         f'</head><body class="licao-lente {F["classe"]}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
@@ -291,13 +323,16 @@ def pagina(d):
         '<button type="button" class="c-ic" data-c-menu aria-label="Menu" aria-expanded="false" title="Menu"><span class="c-tres"></span></button></header>'
         f'<h1 class="c-sr">{esc(d["h1"])}</h1><main class="casca-corpo" id="casca-corpo" tabindex="-1"><div id="baralho" class="jogo-alvo"></div></main>'
         '<footer class="casca-acoes" data-c-acoes></footer><section class="casca-folha" data-c-folha role="status" aria-live="polite" hidden></section>'
-        + menu + '</div><div id="aviso" role="status"></div>'
-        f'<script src="{base}assets/licoes/casca.js?v={d["versao"]}"></script><script src="{base}assets/licoes/jogo.js?v={d["versao"]}"></script>'
-        + (f'<script defer src="{base}assets/licoes/video-youtube.js?v={d["versao"]}"></script>' if tem_video else '')
+        + menu + extra + '</div><div id="aviso" role="status"></div>'
+        + (f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>' if lab else '')
+        + (f'<script defer src="{base}assets/licoes/relogio.js?v={VERSAO_FICHEIROS}"></script>' if lab and any('data-relogio=' in c.get('html','') for c in LC.cartoes(d)) else '')
+        +f'<script src="{base}assets/licoes/casca.js?v={VERSAO_FICHEIROS}"></script><script src="{base}assets/licoes/jogo.js?v={VERSAO_FICHEIROS}"></script>'
+        + (f'<script defer src="{base}assets/licoes/video-youtube.js?v={VERSAO_FICHEIROS}"></script>' if tem_video else '')
         + f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
         '<script>(function(){"use strict";var CARTOES=' + dados + ',CFG=' + json.dumps(cfg, ensure_ascii=False) + ';'
         'var el=document.getElementById("baralho");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;'
-        'if(window.EPIJogo)EPIJogo.montar(CFG);})();</script></body></html>\n')
+        + (LC.fim_registo(d) if lab else '')
+        + 'if(window.EPIJogo)EPIJogo.montar(CFG);})();</script></body></html>\n')
 
 
 def carregar(p):
@@ -327,7 +362,7 @@ def main(argv):
                 print(f'{p.name}: ok')
         else:
             alvo.parent.mkdir(parents=True, exist_ok=True)
-            alvo.write_text(novo, 'utf-8')
+            alvo.write_bytes(novo.encode('utf-8'))
             print(f'{p.name}: escrito {d["saida"]}')
     return 1 if falhou else 0
 
