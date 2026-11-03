@@ -30,10 +30,14 @@ class CidadaniaBase(unittest.TestCase):
 
     def test_renomeacao_exata_sobre_main_publicado(self):
         base = '349d2457e1f056b69c6dda550aace2a6f5377051'
+        geracao = json.loads((ROOT / 'tests/fixtures/cidadania-geracao-20261103.json').read_text(encoding='utf-8'))
         for nome, trocas in RENOMEACOES.items():
             with self.subTest(ficheiro=nome):
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
+                    self.assertEqual(esperado.count(antigo), quantidade)
+                    esperado = esperado.replace(antigo, novo)
+                for antigo, novo, quantidade in geracao.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))

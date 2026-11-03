@@ -179,3 +179,5 @@ As fontes privadas correspondentes foram atualizadas em ramo separado. A regener
 | `tools/licoes/cidadania-m1-s10.py` | Ser-se humano | Humanos | 1 |
 | `vozes/25-de-abril/index.html` | Ser-se humano | Humanos | 1 |
 | `vozes/absurdo/index.html` | Ser-se humano | Humanos | 1 |
+
+Complemento L107-01: a bateria integral mostrou que `cidadania_m1_layout.py` voltava a copiar o título antigo do percurso anterior a partir de um commit histórico. O gerador aplica agora exatamente duas trocas Ser-se humano → Humanos, com contagem obrigatória. A regeneração do M1 não produz diferenças de conteúdo. A transformação técnica está fechada separadamente em `tests/fixtures/cidadania-geracao-20261103.json`; os 124 ficheiros continuam a ser comparados integralmente com o main e as alterações explicitadas.

@@ -28,7 +28,9 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   title,text,task=short_caps[key];sources=capsules[key]['sources']
   return '<aside class="c10-capsule"><p class="c10-eyebrow">História do teatro</p><h3>'+e(title)+'</h3><p>'+e(text)+'</p><p><b>Experimenta.</b> '+e(task)+'</p><details><summary>Fontes</summary><div><ul>'+''.join('<li><a href="'+(e(u,quote=True) if u.startswith('http') else rel(path,'cidadania/m1/passo-06/'))+'">'+e(t)+'</a></li>' for t,u in sources)+'</ul></div></details></aside>'
  (R/'cidadania/projeto/index.html').write_bytes(subprocess.check_output(['git','show',api['BASE']+':cidadania/projeto/index.html'],cwd=R))
- write('cidadania/m1/percurso-anterior.html',old('cidadania/m1/index.html'))
+ anterior=old('cidadania/m1/index.html')
+ assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'
+ write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))
  # Molde de 27/10/2026: abertura (imagem, pergunta curta, «Começar») e cinco passos,
  # Recupera, Vê, Decide, Faz, Leva; a sessão 03 realiza a tarefa já partilhada.
  from cidadania_m1_molde import LINHA,LINHA_TAREFA,MARCA,MOLDE,OBRAS
