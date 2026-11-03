@@ -5,8 +5,8 @@ def apresentar(base, body):
     # Sem JavaScript, conservar o conteúdo aberto; menus.js aplica a abertura progressiva.
     if base=='narrativas':
         # Uma ação principal; as sessões diretas continuam disponíveis por abertura.
-        body=re.sub(r'(<nav aria-label="Ideias">)(<a .*?</a>)(.*?)(</nav>)',
-                    lambda m:m[1]+m[2]+'<details class="menu-sessoes"><summary>As sessões publicadas</summary><div>'+m[3]+'</div></details>'+m[4],body,flags=re.S)
+        # 03/11/2026: a ação principal lê as sessões publicadas; o índice do curso
+        # reúne a lista, sem a repetir na entrada do Laboratório.
         body=re.sub(r'(<section class="bloco"[^>]*>)(<header>.*?</header>)(<figure.*?</figure>)(<details[^>]*>)(<summary>.*?</summary>)(.*?</details>)',
                     lambda m:m[1]+m[2]+m[4]+m[5]+m[3]+m[6],body,flags=re.S)
         body=re.sub(r'(<section class="bloco"[^>]*>)<header><h2>(.*?)</h2>(.*?)</header>(<details[^>]*>)<summary>.*?</summary>',
