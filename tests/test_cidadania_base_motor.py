@@ -48,6 +48,14 @@ class CidadaniaBase(unittest.TestCase):
                     carris = importlib.util.module_from_spec(spec)
                     spec.loader.exec_module(carris)
                     esperado = carris.instalar(esperado)
+                # 03/11/2026: manifesto fechado das cinco proteções e do cache.
+                # A comparação integral continua a rejeitar qualquer outra alteração.
+                if nome == 'cidadania/m2/index.html':
+                    privacidade = json.loads((ROOT / 'tests/fixtures/cidadania-m2-privacidade-20261103.json').read_text(encoding='utf-8'))
+                    self.assertEqual(len(privacidade), 6)
+                    for antigo, novo, quantidade in privacidade:
+                        self.assertEqual(esperado.count(antigo), quantidade)
+                        esperado = esperado.replace(antigo, novo)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

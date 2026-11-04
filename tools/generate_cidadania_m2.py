@@ -67,6 +67,30 @@ def etapas():
     write(p, bloco(ler(p), linha, antes='<h2>'))
 
 
+def privacidade_indice(s):
+    """03/11/2026: proteger também as chaves antigas, sem desligar os filtros."""
+    proj = '(self!==top||new URLSearchParams(location.search).get("projetar")==="1")'
+    trocas = [
+        ('(function(){var d=document.documentElement,K="epi-cidadania-m2";',
+         '(function(){if' + proj + 'return;var d=document.documentElement,K="epi-cidadania-m2";'),
+        ('try{S=JSON.parse(localStorage.getItem(window.EPI_CHAVE)',
+         'if(!' + proj + ')try{S=JSON.parse(localStorage.getItem(window.EPI_CHAVE)'),
+        ('(function(){function ls(k){try{return JSON.parse(localStorage.getItem(k)',
+         '(function(){function ls(k){if' + proj + 'return null;try{return JSON.parse(localStorage.getItem(k)'),
+        ('function(a){try{var x=JSON.parse(localStorage.getItem("epi-pt-"',
+         'function(a){if' + proj + 'return;try{var x=JSON.parse(localStorage.getItem("epi-pt-"'),
+        ('try{localStorage.setItem(K+":visto",',
+         'if(!' + proj + ')try{localStorage.setItem(K+":visto",'),
+    ]
+    for antigo, novo in trocas:
+        if novo in s:
+            assert s.count(novo) == 1
+        else:
+            assert s.count(antigo) == 1, 'o bloco de progresso antigo mudou'
+            s = s.replace(antigo, novo, 1)
+    return s
+
+
 def indice_m2():
     """O índice do módulo passa a abrir com as dez sessões (começar ou continuar); passos, casos, contador e
     tabelas ficam como estavam."""
@@ -86,7 +110,7 @@ def indice_m2():
         s = re.sub(re.escape(marca_i) + '.*?' + re.escape(marca_f), lambda m: marca_i + cabeca + marca_f, s, count=1, flags=re.S)
     else:
         s = s.replace('</head>', marca_i + cabeca + marca_f + '</head>', 1)
-    write(p, s)
+    write(p, privacidade_indice(s))
 
 
 def portal():
