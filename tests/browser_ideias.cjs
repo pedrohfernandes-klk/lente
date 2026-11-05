@@ -9,8 +9,11 @@ const PAGINAS=['narrativas/ideias/','narrativas/ideias/guiao/','narrativas/ideia
 // 01/11/2026: a versão da sessão 1 sobe com o cartão novo «O método» (2026-11-01-1); o progresso de teste lê-a da lição, para a
 // sessão feita continuar a contar como feita (com a versão antiga, o motor e a entrada recomeçam, e é isso que se quer)
 const FEITA1={lida:true,versao:JSON.parse(fs.readFileSync(path.join(ROOT,'tools/licoes/ideias-s01.json'),'utf8')).versao,t:Date.parse('2026-11-07T10:00:00'),melhor:13};
+// 05/11/2026: só o servidor local responde; os pedidos externos (letras do Google Fonts) abortam. No #119 a sessão 2 esperou
+// 30 s pelo «load» no CI por causa da rede, com o teste de resto a passar; a página tem de funcionar sem esses recursos.
+const soLocal=ctx=>ctx.route('**/*',r=>/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//.test(r.request().url())?r.continue():r.abort());
 const vis=s=>String(s).replace(/\*\*|_/g,'');
-async function abrir(b,url,w,h,tema,prep){const ctx=await b.newContext({viewport:{width:w,height:h},colorScheme:tema});const p=await ctx.newPage();const erros=[];
+async function abrir(b,url,w,h,tema,prep){const ctx=await b.newContext({viewport:{width:w,height:h},colorScheme:tema});await soLocal(ctx);const p=await ctx.newPage();const erros=[];
  p.on('pageerror',e=>erros.push(e.message));p.on('console',m=>{if(m.type()==='error'&&!/Failed to load resource|net::ERR/.test(m.text()))erros.push(m.text())});
  if(prep)await p.addInitScript(prep);await p.goto(url);await p.waitForTimeout(500);return {ctx,p,erros}}
 const largo=p=>p.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
@@ -30,7 +33,7 @@ async function responder(p,x){
 const rows=[],out=process.env.IDEIAS_PROVAS;if(out)fs.mkdirSync(out,{recursive:true});
 try{
 for(const width of [320,390,1366])for(const mode of ['light','dark','projection'])for(const estado of ['inicio','meio','feito']){
- const ctx=await b.newContext({viewport:{width,height:900},colorScheme:mode==='dark'?'dark':'light',reducedMotion:'reduce'}),p=await ctx.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
+ const ctx=await b.newContext({viewport:{width,height:900},colorScheme:mode==='dark'?'dark':'light',reducedMotion:'reduce'}),p=await ctx.newPage(),erros=[];await soLocal(ctx);p.on('pageerror',e=>erros.push(e.message));
  await p.addInitScript(({estado})=>{localStorage.setItem('epi-ultima','não alterar');if(estado!=='inicio')localStorage.setItem('epi-lab-ideias-s01',JSON.stringify({versao:'antiga',lida:true,t:Date.parse('2026-11-01T12:00:00Z'),melhor:10}));if(estado==='feito')localStorage.setItem('epi-lab-ideias-s02',JSON.stringify({versao:'nova',antes:{versao:'antiga',lida:true,data:Date.parse('2026-11-02T12:00:00Z')}}));},{estado});
  await p.goto(base+'narrativas/ideias/'+(mode==='projection'?'?projetar=1':''));await p.waitForTimeout(200);
  const armazenamento=await p.evaluate(()=>JSON.stringify(Object.entries(localStorage).sort()));
@@ -110,7 +113,7 @@ console.log('PASS documentos: 30 contextos e impressão A4 (4 e 9 páginas)');
    const alt=await p.evaluate(()=>document.documentElement.scrollHeight);assert(alt<2500,'entrada com '+alt+' px a 390');
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const [url,w,js,quem] of [['narrativas/ideias/',640,true,'a 640 px'],['narrativas/ideias/?projetar=1',390,true,'na projeção'],['narrativas/ideias/',390,false,'sem script']]){
-   const ctx=await b.newContext({viewport:{width:w,height:844},javaScriptEnabled:js});const p=await ctx.newPage();await p.goto(base+url);await p.waitForTimeout(400);
+   const ctx=await b.newContext({viewport:{width:w,height:844},javaScriptEnabled:js});await soLocal(ctx);const p=await ctx.newPage();await p.goto(base+url);await p.waitForTimeout(400);
    const r=await p.evaluate(()=>[...document.querySelectorAll('.porta ol.sessoes')].map(s=>s.offsetParent!==null));
    assert(r.length===1&&r.every(Boolean),'sessões publicadas acessíveis '+quem);assert.equal(await p.locator('ol.sessoes a').count(),2);await ctx.close()}
   for(const [w,tema] of [[320,'dark'],[1366,'light']]){const {ctx,p,erros}=await abrir(b,base+'biblioteca/young-tecnica-1940/',w,800,tema);
