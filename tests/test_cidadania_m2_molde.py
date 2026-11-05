@@ -320,6 +320,7 @@ class Molde(unittest.TestCase):
             for t in lingua:
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
+            # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
             self.assertEqual((R / f).read_bytes(), renomear(antes, f, base_ja_renomeada=True), f)
 
     def test_etapas_indice_portal_e_docente(self):

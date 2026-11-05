@@ -50,7 +50,7 @@ PASSOS, passos = M.PASSOS, M.passos
 ABRE = (
  '<p class="pergunta-c">Quantos degraus tem a escada que sobes todos os dias?</p>'
  '<p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. Guarda-o: antes do fim da aula, vais saber se acertaste.</p>'
- '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material.</b> Estas sete sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div>'
+ '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material.</b> Estas sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div>'
  + passos({1}) +
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>')
 # 01/11/2026 (método): a apresentação de Young, num cartão próprio e curto. Tudo vem do texto de trabalho (biblioteca-young/
@@ -114,7 +114,11 @@ MEDALHA = [('O par de mãos ao centro', (600, 615)), ('A mão mais baixa da velh
            ('A mão aberta do rapaz', (556, 486)), ('A moeda entre os dedos', (582, 418))]
 # 01/11/2026 (correção 5, revisor de pt-PT): «um por nota» e não «um de cada vez», que logo a seguir a «Cada um» se lia
 # também como «à vez»; o guia (um facto de cada vez) e a grelha (factos registados um a um) dizem o mesmo.
-NA_AULA = '<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola. Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega. Conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os factos e os degraus conferidos.</p>' + M.esta_bom(1)
+# 05/11/2026: revisão de 5/11 (lente-ideias-6): volta o texto inteiro do «Na aula» (o lugar com exemplos, o que se faz com os factos
+# do colega, «Pelo caminho» e o que fica escrito), que o #106 tinha encurtado sem pedido; ficam os critérios «Está bom quando…».
+NA_AULA = ('<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega e marca-os como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p>'
+           '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
+           '<p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p>' + M.esta_bom(1))
 LEVAR = (
  '<p class="levar">Ver não custa nada. Observar é contar os degraus.</p>'
  '<p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste factos de inferências. Acertaste nos degraus?</p>'
@@ -194,7 +198,7 @@ cartoes = [
 # (nq() de tools/licoes_lente.py; a regra .nq está em assets/licoes/laboratorio.css)
 _spec = importlib.util.spec_from_file_location('licoes_lente', pathlib.Path(__file__).resolve().parents[1] / 'licoes_lente.py')
 LL = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(LL)
-LEVAR_CAIXA = M.para_caixa('Guarda os teus dez factos e a pergunta por investigar. Um assunto por nota, para voltar a olhar.')
+LEVAR_CAIXA = M.para_caixa('Guarda os teus dez factos e a pergunta por investigar, um assunto por cartão, para voltar a olhar.')
 for c in cartoes:
     if c.get('rot') == 'Para levar':
         c['html'] += LEVAR_CAIXA
@@ -203,7 +207,7 @@ for c in cartoes:
 dados = {
  "id":"ideias-s01","familia":"laboratorio","chave":"epi-lab-ideias-s01","versao":"2026-11-01-1",
  "marca":"Ideias","passo":"Passo 1 de 5","titulo":"Sessão 1: Ver ou observar?","h1":"Laboratório, Ideias, sessão 1: Ver ou observar?",
- "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
+ "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sessões do Ideias"},
  "saida":"narrativas/ideias/sessao-01/index.html","piloto":False,
  "seguinte":"../sessao-02/","seguinteRotulo":"Sessão 2: O cocheiro",
  "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy\u00a0E.\u00a0Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",

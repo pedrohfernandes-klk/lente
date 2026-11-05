@@ -42,3 +42,9 @@ html.em-projecao .entrada-a .hero .lead{font-size:28px}html.em-projecao .entrada
 
 /* 03/11/2026: um estado vazio não deixa marca gráfica nem reserva espaço. */
 .entrada-a .sessoes .estado:empty{display:none}
+/* 05/11/2026: revisão de 5/11 (lente-ideias-2): o passo de cada porta e de cada sessão volta a ver-se na entrada. */
+.entrada-a .porta .apoio-porta{margin:8px 0 12px}
+.entrada-a .sessoes .tit .apoio{display:block;margin-top:4px}
+/* 05/11/2026: na colagem da entrada, a folha fotografada escurece no tema escuro, como uma folha pousada numa mesa escura. */
+:root[data-theme=dark] .entrada-a .ideias-foto{filter:brightness(.8)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .entrada-a .ideias-foto{filter:brightness(.8)}}

@@ -41,8 +41,10 @@ SESSOES = [
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
   'passo': 'Passos 1 e 2 de 5: juntar o material geral e começar a trabalhá-lo', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
- {'n': 4, 'porta': 'treinar', 'titulo': 'Três cachimbos', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
-  'passo': 'Passos 2 e 3 de 5: trabalhar o material e largá-lo', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
+ # 05/11/2026: revisão de 5/11 (lente-ideias-4): a sessão 4 passou a «O fio de água» (decisão 115); título e passo da fonte
+ # (_interno/laboratorio-fontes/ideias-sessoes-3-a-7/ideias-s04, nas fontes).
+ {'n': 4, 'porta': 'treinar', 'titulo': 'O fio de água', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
+  'passo': 'Passos 2 e 3 de 5: trabalhar até ao limite e largar', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
  {'n': 5, 'porta': 'criar', 'titulo': 'O estribo', 'pergunta': 'Quando a ideia aparece, sabes de onde veio?',
   'passo': 'Passo 4 de 5: a ideia aparece', 'peca': ('Construir uma ficção', 'Do conceito ao argumento', 'oficina-argumento/')},
  {'n': 6, 'porta': 'criar', 'titulo': 'A manhã seguinte', 'pergunta': 'Quem pode tornar a tua ideia melhor?',
@@ -59,6 +61,9 @@ SESSOES = [
 _metodo_spec = importlib.util.spec_from_file_location('metodo', ROOT / 'tools/metodo.py')
 M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_module(M)
 PASSOS = M.PASSOS
+# 05/11/2026: a entrada passa a colagem de fotografia e traço (docente, 5/11).
+_colagem_spec = importlib.util.spec_from_file_location('colagem', ROOT / 'tools/gerar_ideias_colagem.py')
+COLAGEM = importlib.util.module_from_spec(_colagem_spec); _colagem_spec.loader.exec_module(COLAGEM)
 # 01/11/2026 (correção 3, diretor de arte): a imagem voltou a ser tratada, porque o recife mal se separava do oceano (2,06:1
 # em claro e 1,80:1 em escuro). Em cinzento: a vinheta da fotografia original aplanada (fundo estimado pelo percentil 25 em
 # blocos de 40 px, alisado), depois níveis de entrada 110 a 235 levados a 0 a 255, com gama 1,0; a multiplicação sobre
@@ -116,7 +121,7 @@ GUIA = {
    ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (deslocação aos pares por segurança; trabalho individual; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
-   ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para a sessão 3.'),
+   ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para o passo 2.'),
   ],
   'materiais': ['O material de cada aluno, com espaço para quinze notas.', 'Cartão rígido ou pranchetas para escrever na rua.', 'O guião da sessão 2, impresso.', 'O percurso até ao lugar e o quadro da sala para a lista dos «cocheiros» (só o nome de cada um, sem a linha).'],
   'escrito': 'As quinze notas; a linha antes e depois da fila, com o resultado; as três colunas sobre a fotografia; as duas versões do conselho comparadas.',
@@ -188,7 +193,7 @@ GUIAO = {
    ('p', 'Resultado da fila: reconhecido por <i class="b"></i> de <i class="b"></i> colegas.'),
    ('p', 'A linha revista: <i class="b l"></i>'),
    ('linhas', 3),
-   ('nota', 'Para a sessão 3: dez notas de material geral (um desporto, uma receita, uma canção, um ofício da família), uma coisa por nota, com um pormenor que só tu sabes. Guarda-as onde guardas o material.'),
+   ('nota', 'Para o passo 2: dez notas de material geral (um desporto, uma receita, uma canção, um ofício da família), uma coisa por nota, com um pormenor que só tu sabes. Guarda-as onde guardas o material.'),
   ],
  },
 }
@@ -561,6 +566,10 @@ def cabeca(base, titulo, desc, robots=False):
             f'<style>{CSS}</style><link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script></head>')
 
 
+# 05/11/2026: revisão de 5/11 (lente-ideias-9): o número de sessões por extenso na prosa.
+POR_EXTENSO = {1: 'uma', 2: 'duas', 3: 'três', 4: 'quatro', 5: 'cinco', 6: 'seis', 7: 'sete'}
+
+
 def passo_n(s):
     """01/11/2026 (método): o passo da sessão só com o número, para o rótulo da região «A seguir» («passo 1 de 5», «passos 1 e
     2 de 5», «os cinco passos»); a forma longa, com o que a sessão faz nesse passo, fica na lista, no guião e no guia."""
@@ -593,9 +602,12 @@ def pagina_entrada(L):
                        f'data-titulo="{e(s["titulo"])}" data-papel="{e(s.get("papel", ""))}" data-href="sessao-{s["n"]:02d}/">'
                        f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
                        f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong>'
+                       # 05/11/2026: revisão de 5/11 (lente-ideias-2): o passo de cada sessão volta a ver-se na entrada.
+                       f'<span class="apoio">{e(s["passo"])}.</span>'
                        '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
+        # 05/11/2026: revisão de 5/11 (lente-ideias-2): cada porta volta a dizer que passo serve (pedido 1, ponto 4).
         portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
-                   f'<div id="pc-{pid}"><ol class="sessoes">{linhas}</ol></div></section>')
+                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol></div></section>')
     desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
     corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
              + '<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
@@ -603,16 +615,17 @@ def pagina_entrada(L):
              f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
              f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
              '<figure class="drawing"><div aria-hidden="true">' + desenho + '</div>'
-             '<figcaption>Grafismo gerado com recurso a IA<br>EPI, 2026. Notas e fios numa mesa.</figcaption></figure></header>'
-             '<details class="metodo" id="metodo"><summary id="metodo-t">Como funciona</summary><div class="method-body">'
+             # 05/11/2026: colagem (tools/gerar_ideias_colagem.py); o crédito diz a obra, o museu, a licença e o traço.
+             '<figcaption>' + COLAGEM.CREDITO + '</figcaption></figure></header>'
+             '<details class="metodo" id="metodo"><summary id="metodo-t">O método em cinco passos</summary><div class="method-body">'
              '<p>Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940). Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
-             + M.passos(set()) + f'<p>Nas {len(prontas)} sessões publicadas, começas por juntar material e observar melhor.</p>'
+             + M.passos(set()) + f'<p>Nas {POR_EXTENSO[len(prontas)]} sessões publicadas, começas por juntar material e observar melhor.</p>'
              f'<a href="../../biblioteca/{BIB_ID}/">Ler sobre o método de Young →</a></div></details>'
              '<h2 class="sessoes-t" id="sessoes">As sessões</h2><div class="portas">' + portas + '</div>'
              '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
-    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261103-1"></head>')
+    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1"></head>')
     return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{LL.nq(corpo)}</main>'
             f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
             f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
@@ -867,7 +880,9 @@ def pagina_biblioteca():
             '<p class="bib-passagem">James Webb Young, <i>Uma Técnica para Produzir Ideias</i> (<i lang="en">A Technique for Producing Ideas</i>), Advertising Publications, 1940; edição de 1960. Tradução nossa.</p>\n'
             '<div class="bib-lido"><button type="button" data-lido aria-pressed="false">Li este texto</button><small>Fica só no teu aparelho. Conta na Biblioteca como texto lido.</small></div>\n'
             f'<div class="bib-lido"><a class="bib-orig" href="{YOUNG_REGISTO}" target="_blank" rel="noopener">Abrir o registo do livro</a><small>Impressão de 1944, no Internet Archive, só em empréstimo controlado (com conta gratuita). Abre noutro separador.</small></div>\n'
-            f'<p class="bib-fonte"><a href="{LENTE}narrativas/ideias/sessao-01/">Ideias: sessão 1, Ver ou observar? →</a></p>\n'
+            # 05/11/2026: revisão de 5/11 (lente-ideias-5): a ponte para o método passa a bloco igual aos outros da página (margem,
+            # filete próprio e 48 px), em vez de nota cinzenta de 16 px colada ao bloco anterior.
+            f'<div class="bib-lido"><a class="bib-orig" href="{LENTE}narrativas/ideias/sessao-01/">Experimentar o método: Ideias, sessão 1 →</a><small>«Ver ou observar?», no Laboratório.</small></div>\n'
             f'<p class="bib-fonte" style="margin-top:24px;border-bottom:0"><a href="{LENTE}biblioteca/">Voltar à Biblioteca</a></p>\n'
             '</main><script>(function(){var K="epi-biblioteca",id=document.body.getAttribute("data-texto"),b=document.querySelector("[data-lido]");if(!b)return;\n'
             'function ler(){try{return JSON.parse(localStorage.getItem(K)||"null")||{}}catch(x){return{}}}\n'
