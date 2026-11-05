@@ -2,6 +2,8 @@
 """02/11/2026: decisão 125 (docente). 05/11/2026: decisão 142, colagem de fotografia (Rossio, entre 1906 e 1914) e traço.
  05/11/2026: pedido do docente (alavanca ao lado dos carris, elétrico que não vem de frente): a fotografia passa a ser a do
  elétrico 541 visto de lado no Largo do Corpo Santo (Philip Mallis, 2025, CC BY-SA 4.0); as exigências mantêm-se todas.
+ 05/11/2026: pedido do docente («o elétrico n pode virar numa das direções»): o elétrico passa a recorte, sobre uma via
+ desenhada, com a agulha à frente e as duas vias no sentido em que anda; as exigências continuam todas.
  Fundo animado a traço «Os carris» na entrada da Justiça.
 
 O desenho é decorativo (aria-hidden) e integra a abertura. A aproximação única termina antes da agulha.
@@ -110,7 +112,7 @@ class FundoCarris(unittest.TestCase):
         self.assertLess(len(svg.encode('utf-8')), 120_000)
         tree = ET.fromstring(svg)
         # 05/11/2026: decisão 142. A colagem tem uma fotografia: só uma <image>, local, a do Rossio registada no gerador
-        # 05/11/2026: pedido do docente: a fotografia registada passa a ser a do Corpo Santo (tools/tratar_corpo_santo.py).
+        # 05/11/2026: pedido do docente: a fotografia registada passa a ser o recorte do elétrico 541 (tools/tratar_corpo_santo.py).
         # (WebP, menos de 250 KB, SHA-256 conferido). Continuam proibidos scripts, foreignObject, ligações e eventos.
         imagens = []
         for node in tree.iter():
