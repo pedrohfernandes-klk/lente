@@ -20,7 +20,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_*.py'
-      - run: npm install --no-save playwright
+      # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+      - run: npm install --no-save playwright@1.64.1
       - run: npx playwright install --with-deps chromium
       - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
       # 03/11/2026: cabeçalhos compactos, contraste real, projeção e zoom nativo.
@@ -84,7 +85,8 @@ jobs:
       - name: Preparar navegador
         run: |
           pip install playwright
-          npm install --no-save --package-lock=false playwright
+          # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+          npm install --no-save --package-lock=false playwright@1.64.1
           python -m playwright install --with-deps chromium
       - name: Verificar molde completo
         run: ${{ matrix.command }}
