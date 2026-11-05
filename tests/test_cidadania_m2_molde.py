@@ -6,6 +6,7 @@ obra nas sessões 01 a 09; chave de progresso nova; escrita do Lente; ligações
 e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
+import lab147
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -321,7 +322,12 @@ class Molde(unittest.TestCase):
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
             # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
-            self.assertEqual((R / f).read_bytes(), renomear(antes, f, base_ja_renomeada=True), f)
+            # 05/11/2026: decisão 147 (Laboratório sem o Português): a sessão 5 deixa de ligar à cena retirada do Corta! e o cartaz do percurso anterior deixa de a anunciar;
+            # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
+            esperado = renomear(antes, f, base_ja_renomeada=True)
+            if f in lab147.TROCAS:
+                esperado = lab147.aplicar(esperado.decode('utf-8'), f).encode('utf-8')
+            self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):

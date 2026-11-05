@@ -10,7 +10,9 @@ class Formas(unittest.TestCase):
   self.assertEqual(len({x['id'] for x in data['items']}),10)
   for item in data['items']:
    self.assertTrue(item['source'].startswith('https://'))
-   for key in ('status','statusLabel','edition','language','locator','operation','modules','ptUse'):
+   # 05/11/2026: decisão 147 (Laboratório sem o Português): saem do corpus os campos de ponte para o Português (modules, ptUse); os outros mantêm-se.
+   for key in ('modules','ptUse'):self.assertNotIn(key,item)
+   for key in ('status','statusLabel','edition','language','locator','operation'):
     self.assertTrue(item[key],(item['id'],key))
    if item['status']=='excerto-consultado':
     self.assertLessEqual(len(item['quote'].split()),25)
@@ -273,7 +275,9 @@ class Prototipos(unittest.TestCase):
   # 30/10/2026: Laboratório simples (pedido do docente). Catálogo e fontes passam para destinos próprios.
   entrada=(ROOT/'narrativas/index.html').read_text('utf-8')
   # 01/11/2026: decisão 54, Observar; as três portas e os destinos mantêm-se.
-  for x in ('href="aula-forma/"','href="tudo/"','<h2>Observar</h2>','<h2>Treinar</h2>','<h2>Criar</h2>'):self.assertIn(x,entrada)
+  # 05/11/2026: decisão 147 (Laboratório sem o Português): «A forma da história» saiu; a entrada começa pela primeira peça dos percursos que ficam.
+  primeira=json.loads((ROOT/'assets/laboratorio/percursos.json').read_text('utf-8'))['routes'][0]['pieces'][0]
+  for x in ('href="'+primeira+'/"','href="tudo/"','<h2>Observar</h2>','<h2>Treinar</h2>','<h2>Criar</h2>'):self.assertIn(x,entrada)
   tudo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
   for nome in ('duchamp','anguissola','fontana','leonardo','cigoli','galileu','margens'):self.assertIn('href="../'+nome+'/"',tudo)
   # 30/10/2026: catálogo simples por percursos, com todas as peças.
@@ -282,7 +286,8 @@ class Prototipos(unittest.TestCase):
   for texto in ('Guia do docente e fontes','Versão em papel','fonteHtml()'):self.assertIn(texto,js)
   mesa=(ROOT/'narrativas/corta/mesa/index.html').read_text('utf-8')
   self.assertIn('href="../cena-que-falta/"',mesa);self.assertIn('href="../../formas/certa-manha/"',mesa)
-  self.assertIn('href="cena-que-falta/"',(ROOT/'narrativas/corta/index.html').read_text('utf-8'))
+  # 05/11/2026: decisão 147 (Laboratório sem o Português): o concentrador do Corta! saiu (redireciona para Criar); a mesa já não volta às «oito cenas literárias».
+  self.assertNotIn('href="../"',mesa)
   self.assertIn('href="certa-manha/"',(ROOT/'narrativas/formas/index.html').read_text('utf-8'))
   wf=(ROOT/'.github/workflows/formas-qa.yml').read_text('utf-8')
   for x in ('progresso.js','cartoes.js','certa-manha.js','cena-que-falta.js'):self.assertIn('node --check assets/formas/'+x,wf)
@@ -315,5 +320,10 @@ class PilotoSimples(unittest.TestCase):
   depois={urljoin('/lente/narrativas/tudo/',h) for h in re.findall(r'href="([^"#]+)"',novo) if not h.startswith(('https:','http:'))}
   # 30/10/2026: preservam-se destinos de conteúdo; CSS antigo e literais JS não são destinos.
   antes={u for u in antes if '/assets/' not in u and "'+esc" not in u}
-  self.assertTrue(antes<=depois,antes-depois)
+  # 05/11/2026: decisão 147 (Laboratório sem o Português): sai o filtro «Pontes para Português» da mesa de formas (?mesa=pt).
+  antes.discard('/lente/narrativas/formas/?mesa=pt')
+  # 05/11/2026: decisão 147. As peças retiradas saem do catálogo e o endereço passa a redirecionar para o Laboratório
+  # (tests/test_lab_retiradas.py confirma cada uma); todos os outros destinos continuam no catálogo.
+  ret={'/lente/'+x['url'] for x in json.loads((ROOT/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
+  self.assertTrue(antes-ret<=depois,antes-ret-depois)
 if __name__=='__main__':unittest.main()

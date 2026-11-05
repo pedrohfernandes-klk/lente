@@ -2,6 +2,10 @@ from pathlib import Path
 import json, re, unittest
 R = Path(__file__).resolve().parents[1]
 M = json.loads((R / 'tests/lab-manifesto.json').read_text('utf-8'))
+# 05/11/2026: decisão 147 (Laboratório sem o Português). As peças retiradas estão em assets/laboratorio/retiradas.json:
+# o endereço fica, como redirecionamento para o Laboratório, e a chave de progresso deixa de ter página que a escreva.
+# Por isso o catálogo (narrativas/) deixa de ler epi-corta em tests/lab-manifesto.json: já não tem cenas do Corta!.
+RET = {x['url']: x for x in json.loads((R / 'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
 
 
 class Manifesto(unittest.TestCase):
@@ -24,6 +28,10 @@ class Manifesto(unittest.TestCase):
             # 30/10/2026: Laboratório simples (pedido do docente). As âncoras e leituras de progresso vivem no catálogo.
             destino = 'narrativas/tudo' if rel.rstrip('/') == 'narrativas' else rel
             s = (R / destino / 'index.html').read_text('utf-8')
+            if rel in RET:
+                self.assertIn('<meta http-equiv="refresh" content="0; url=https://pedrohfernandes-klk.github.io/lente/' + RET[rel]['destino'] + '">', s, rel)
+                self.assertNotIn('localStorage', s, rel)
+                continue
             for k in chaves:
                 self.assertTrue(f'"{k}"' in s, (rel, k))
 

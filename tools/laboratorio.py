@@ -19,7 +19,9 @@ P={x['id']:x for x in D['pieces']}
 ALIAS=D['aliases']
 INROUTE={id for r in D['routes'] for id in r['pieces']}
 ABS='https://pedrohfernandes-klk.github.io/lente/'
-NUM={4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
+# 05/11/2026: decisão 147. Ids das peças retiradas, para a reposição de um ficheiro antigo as ignorar.
+RETIDS=json.dumps([x['peca'] for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas'] if x.get('peca')])
+NUM={2:'dois',3:'três',4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
 e=html.escape
 def it(s):return re.sub(r'_(.+?)_',r'<i>\1</i>',e(s))
 def link(base,path):return posixpath.relpath(path or '.',base)+('/' if not path or path.endswith('/') else '')
@@ -102,9 +104,9 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
          +''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])+'<span data-appearance-control></span>')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
-       '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
+       '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'?v=20261105-1"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
-       '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script></body></html>\n')
+       '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script><script type="application/json" id="lab-retiradas">'+RETIDS+'</script></body></html>\n')
     if migrated:
         s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
         s=s.replace('class="mais"','class="mais cz-footer"')
@@ -123,10 +125,10 @@ def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
 allids=[p for r in D['routes'] for p in r['pieces']]
 body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div class="lab-saiu"><p class="lead">Observa uma escolha, experimenta uma regra e cria uma peça tua.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos">'
 for b in D['blocks']:
-    rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
+    rs=routes_of(b);n='o percurso' if len(rs)==1 else 'os '+NUM.get(len(rs),str(len(rs)))+' percursos'
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
-           +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
+           +a('narrativas','narrativas/'+b['id']+'/',n[0].upper()+n[1:]+' do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +'<details class="dobra"><summary><span class="abrir">Mostrar '+n+'</span><span class="fechar">Esconder '+n+'</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')
@@ -163,7 +165,7 @@ for b in D['blocks']:
         body+='</ol>'
     body+='</section>'
 body+=''.join('<span id="'+id+'" hidden></span>' for id in D['ancoras'] if id not in used)
-body+='<nav class="mais" aria-label="Mais">'+a(base,'narrativas/fora-da-pagina/','Fora da página')+a(base,'narrativas/margens/','Margens')+a(base,'narrativas/formas/?mesa=pt','Pontes para Português')+a(base,'docente/','Área do docente')+'</nav>'
+body+='<nav class="mais" aria-label="Mais">'+a(base,'narrativas/fora-da-pagina/','Fora da página')+a(base,'narrativas/margens/','Margens')+a(base,'docente/','Área do docente')+'</nav>'
 page(base,'Tudo',body,'Todas as peças do Laboratório, por bloco e por percurso.',foot=False,cur={'lab':'true'})
 
 page('narrativas/percursos','Percursos','<header class="topo"><h1>Percursos</h1></header>'+''.join(routebox('narrativas/percursos',r) for r in D['routes']),'Os '+str(len(D['routes']))+' percursos do Laboratório.',cur={'lab':'true'})
@@ -220,8 +222,24 @@ def continuacao():
     return changed
 if '--cartaz-entradas' not in __import__('sys').argv:continuacao()
 
+# 05/11/2026: decisão 147. As peças que saíram por dependerem do Português ficam no endereço como redirecionamento
+# para o Laboratório (nada se parte); a lista está em assets/laboratorio/retiradas.json.
+RET=json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']
+def retiradas():
+    nomes={'narrativas/':'Laboratório',**{'narrativas/'+b['id']+'/':b['title'] for b in D['blocks']}}
+    for x in RET:
+        assert x['url'] not in {p['url'] for p in D['pieces']},x['url']
+        base=x['url'].rstrip('/');dest=ABS+x['destino'];rel=lambda u:link(base,u)
+        s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+           '<title>'+e(x['titulo'])+' | Laboratório | Lente</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url='+e(dest)+'"><link rel="canonical" href="'+e(dest)+'">'
+           '<link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script></head>'
+           '<body data-site="lente"><main><p>«'+e(x['titulo'])+'» já não faz parte do Laboratório. Continua em <a href="'+e(dest)+'">'+e(nomes[x['destino']])+'</a>.</p></main></body></html>\n')
+        f=R/x['url']/'index.html';f.parent.mkdir(parents=True,exist_ok=True)
+        if not f.exists() or f.read_text('utf-8')!=s:f.write_bytes(s.encode('utf-8'))
+if '--cartaz-entradas' not in __import__('sys').argv:retiradas()
+
 # Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
-# Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.
+# Ver, Treinar e Criar, com os percursos de percursos.json (10 desde a decisão 147, 05/11/2026) e as peças de cada um, pela ordem do Laboratório.
 def mapa():
     f=R/'mapa/index.html';s=f.read_text('utf-8')
     ini='<section class="map-section"><h2><a href="'+ABS+'narrativas/">';i=s.index(ini);j=s.index('</section>',i)+len('</section>')
@@ -236,7 +254,7 @@ def mapa():
         extra=('<p class="map-open"><a href="'+ABS+'narrativas/treinar/caderno/">O caderno de treino</a></p><p class="map-open"><a href="'+ABS+'narrativas/treinar/docente/">Como conduzir um treino (docente)</a></p>') if b['id']=='treinar' else ''
         rs=''.join(ramo(e(r['title']),ABS+'narrativas/percursos/'+r['id']+'/',''.join('<li class="map-leaf"><a href="'+ABS+P[id]['url']+'">'+e(P[id]['title'])+'</a></li>' for id in r['pieces'])) for r in routes_of(b))
         out+=ramo(b['title'],ABS+'narrativas/'+b['id']+'/',rs,extra)
-    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
+    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
     s2=s[:i]+out+s[j:]
     if s2!=s:f.write_text(s2,'utf-8')
