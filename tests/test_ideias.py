@@ -286,9 +286,24 @@ class Escrita(unittest.TestCase):
 
 
 class Imagens(unittest.TestCase):
+    def test_colagem_da_entrada(self):
+        # 05/11/2026: a entrada do «Ideias» é uma colagem de fotografia e traço (docente, 5/11: «colagem é sempre bem-vinda»):
+        # o desenho sai do gerador, tem uma só imagem (a folha de Cozens, com o SHA-256 conferido) e o crédito diz a obra, o
+        # museu, a licença e o traço.
+        import subprocess, sys
+        subprocess.run([sys.executable, str(ROOT / 'tools/gerar_ideias_colagem.py'), '--verificar'], check=True, capture_output=True)
+        svg = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
+        self.assertEqual(re.findall(r'<image [^>]*href="([^"]+)"', svg), ['../../assets/laboratorio/ideias/cozens-mancha-entrada.webp'])
+        self.assertNotRegex(svg, r'<script|<a\b|foreignObject|\son\w+=')
+        entrada = (PILOTO / 'index.html').read_text('utf-8')
+        self.assertIn('<figcaption>Alexander Cozens, <i>Uma mancha</i> (título nosso), 1750 a 1786, The Metropolitan Museum of Art, '
+                      'Nova Iorque (domínio público). Por cima, a traço, cartões e fios. Grafismo gerado com recurso a IA, EPI, 2026.'
+                      '</figcaption>', entrada)
+
     def test_imagens_vistas_com_tabela_e_licenca(self):
         pasta = ROOT / 'assets/laboratorio/ideias'
-        self.assertEqual(sorted(f.name for f in pasta.iterdir()), ['atget-quiosque-fiacres.webp', 'entrada.css', 'entrada.js', 'latour-leitora-da-sina.webp', 'manihi-atol.webp', 'notas-fios.svg'])
+        # 05/11/2026: a entrada passa a colagem (docente, 5/11): entra a folha de Cozens tratada; a lista continua fechada.
+        self.assertEqual(sorted(f.name for f in pasta.iterdir()), ['atget-quiosque-fiacres.webp', 'cozens-mancha-entrada.webp', 'entrada.css', 'entrada.js', 'latour-leitora-da-sina.webp', 'manihi-atol.webp', 'notas-fios.svg'])
         for f in pasta.iterdir():
             self.assertLess(f.stat().st_size, 200_000, f.name)
         tudo = ''.join(p.read_text('utf-8') for p in paginas_piloto())
@@ -420,7 +435,8 @@ class TerceiraRevisao(unittest.TestCase):
         # 02/11/2026: abertura progressiva nativa, sem portas fictícias nem o atol na entrada.
         self.assertIn('<details class="metodo"', s)
         self.assertNotRegex(s, r'<section[^>]*data-dobra')
-        self.assertRegex(s, re.compile(r'<figure class="drawing">.*?<figcaption>Grafismo gerado com recurso a IA', re.S))
+        # 05/11/2026: colagem da entrada: o crédito do traço continua na legenda do desenho, depois do da fotografia.
+        self.assertRegex(s, re.compile(r'<figure class="drawing">.*?<figcaption>(?:[^<]|<i>[^<]*</i>)*Grafismo gerado com recurso a IA, EPI, 2026\.</figcaption>', re.S))
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
         herman = re.search(r'O vídeo de Herman, em duas colunas</h3><table class="grelha-escrever">(.*?)</table>', g).group(1)
         self.assertEqual(herman.count('<tr><td></td><td></td></tr>'), 8)

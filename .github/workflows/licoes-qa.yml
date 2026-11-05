@@ -17,6 +17,7 @@ on:
       - 'tests/*laboratorio*'
       - 'narrativas/**'
       - 'tools/ideias_publico.py'
+      - 'tools/gerar_ideias_colagem.py'
       - 'biblioteca/index.html'
       - 'biblioteca/young-tecnica-1940/**'
       - 'tools/medir_opcoes.py'
@@ -54,6 +55,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
           # 30/10/2026: coração do Laboratório (31/10)
           python tools/ideias_piloto.py --verificar
+          python tools/gerar_ideias_colagem.py --verificar
           python tools/ideias_publico.py --verificar
           python tools/medir_opcoes.py --verificar
           python -m unittest discover -s tests -p 'test_ideias*.py' -v

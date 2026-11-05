@@ -61,6 +61,9 @@ SESSOES = [
 _metodo_spec = importlib.util.spec_from_file_location('metodo', ROOT / 'tools/metodo.py')
 M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_module(M)
 PASSOS = M.PASSOS
+# 05/11/2026: a entrada passa a colagem de fotografia e traço (docente, 5/11).
+_colagem_spec = importlib.util.spec_from_file_location('colagem', ROOT / 'tools/gerar_ideias_colagem.py')
+COLAGEM = importlib.util.module_from_spec(_colagem_spec); _colagem_spec.loader.exec_module(COLAGEM)
 # 01/11/2026 (correção 3, diretor de arte): a imagem voltou a ser tratada, porque o recife mal se separava do oceano (2,06:1
 # em claro e 1,80:1 em escuro). Em cinzento: a vinheta da fotografia original aplanada (fundo estimado pelo percentil 25 em
 # blocos de 40 px, alisado), depois níveis de entrada 110 a 235 levados a 0 a 255, com gama 1,0; a multiplicação sobre
@@ -612,7 +615,8 @@ def pagina_entrada(L):
              f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
              f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
              '<figure class="drawing"><div aria-hidden="true">' + desenho + '</div>'
-             '<figcaption>Grafismo gerado com recurso a IA<br>EPI, 2026. Notas e fios numa mesa.</figcaption></figure></header>'
+             # 05/11/2026: colagem (tools/gerar_ideias_colagem.py); o crédito diz a obra, o museu, a licença e o traço.
+             '<figcaption>' + COLAGEM.CREDITO + '</figcaption></figure></header>'
              '<details class="metodo" id="metodo"><summary id="metodo-t">O método em cinco passos</summary><div class="method-body">'
              '<p>Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940). Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
              + M.passos(set()) + f'<p>Nas {POR_EXTENSO[len(prontas)]} sessões publicadas, começas por juntar material e observar melhor.</p>'
