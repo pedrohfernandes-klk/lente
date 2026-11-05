@@ -44,8 +44,9 @@ VIDEO = (
  '<div class="yt" data-yt="tmwIhOCXLrQ" data-titulo="This could save lives, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «This could save lives» (título abreviado, 5 min 30 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Michael Vazquez e Sarah Stroud. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; a volta deixa de ser «com o docente» e pode ser à tua rua.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, sozinho, a auditoria do formulário da visita de estudo, inventado e em papel: riscar o que não é preciso, dizer quem vê cada dado e quando se apaga. Depois, uma volta de 20 minutos ao quarteirão da escola, com o docente, a contar câmaras e avisos de videovigilância e a anotar o que cada aviso diz. Não se fotografam pessoas nem matrículas.</p>'
+ '<p><b>O que se faz.</b> Primeiro, sozinho, a auditoria do formulário da visita de estudo, inventado e em papel: riscar o que não é preciso, dizer quem vê cada dado e quando se apaga. Depois, uma volta de 20 minutos ao quarteirão da escola (ou à tua rua), a contar câmaras e avisos de videovigilância e a anotar o que cada aviso diz. Não se fotografam pessoas nem matrículas.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> O formulário revisto, uma nota de privacidade em cinco linhas, o registo dos avisos e o plano de recolha das entrevistas da Pergunta Humana: o que se guarda, onde e até quando.</p>')
 LEVAR = (

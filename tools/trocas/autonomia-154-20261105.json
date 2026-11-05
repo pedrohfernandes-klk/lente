@@ -1,0 +1,227 @@
+{
+ "cidadania/piloto/m1-s05/index.html": [
+  [
+   "escola, com o docente,",
+   "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1/docente/index.html": [
+  [
+   "1rem/1.3",
+   "1.125rem/1.3",
+   1
+  ],
+  [
+   "escola, com o docente,",
+   "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1/index.html": [
+  [
+   "1rem/1.3",
+   "1.125rem/1.3",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1/ponto/index.html": [
+  [
+   "1rem/1.3",
+   "1.125rem/1.3",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/index.html": [
+  [
+   "nova observação combinada com o docente.",
+   "observação tua.",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/tese/lesson.js": [
+  [
+   "nova observação combinada com o docente.",
+   "observação tua.",
+   1
+  ]
+ ],
+ "narrativas/ideias/docente/index.html": [
+  [
+   "faz.</b> Com o docente, vais a ",
+   "faz.</b> Vai a ",
+   1
+  ],
+  [
+   "de um colega e <span class=\"nq\">",
+   "de um colega, ou os teus noutro dia, e <span class=\"nq\">",
+   1
+  ],
+  [
+   " responde fica registada.</li><li>Um colega confirma ou desmente os factos; outra pessoa confere os degraus.</li></ul></div></div>",
+   " responde fica registada.</li><li>Outra pessoa, ou tu noutro dia, confere os factos e os degraus.</li></ul></div></div>",
+   1
+  ],
+  [
+   " responde fica registada.</li><li>Um colega confirma ou desmente os factos; outra pessoa confere os degraus.</li></ul></div><h3>",
+   " responde fica registada.</li><li>Outra pessoa, ou tu noutro dia, confere os factos e os degraus.</li></ul></div><h3>",
+   1
+  ],
+  [
+   "Vais com o docente ao lugar escolhido, aos pares por segurança.",
+   "Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
+   1
+  ],
+  [
+   "Na sala, <span class=\"nq\">lê-a</span> sem dizer o que é: a turma tenta <span class=\"nq\">reconhecê-lo</span>. Se falhar, repete da janela.",
+   "<span class=\"nq\">Lê-a</span> a alguém sem dizer o que é (na aula, à turma). Se falhar, <span class=\"nq\">reescreve-a</span>.",
+   1
+  ]
+ ],
+ "narrativas/ideias/guiao/index.html": [
+  [
+   "Um colega confirma ou desmente os factos; outra pessoa confere",
+   "Outra pessoa, ou tu noutro dia, confere os factos e",
+   1
+  ],
+  [
+   "colegas.",
+   "pessoas.",
+   1
+  ]
+ ],
+ "narrativas/ideias/sessao-01/index.html": [
+  [
+   "Com o docente, vais",
+   "Vai",
+   1
+  ],
+  [
+   "um colega e",
+   "um colega, ou os teus noutro dia, e",
+   1
+  ],
+  [
+   "Um colega confirma ou desmente os factos; outra pessoa confere",
+   "Outra pessoa, ou tu noutro dia, confere os factos e",
+   1
+  ]
+ ],
+ "narrativas/ideias/sessao-02/index.html": [
+  [
+   "Vais com o docente ao lugar escolhido, aos pares por segurança.",
+   "Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
+   1
+  ],
+  [
+   "Na sala, <span class=\\\"nq\\\">lê-a<\\/span> sem dizer o que é: a turma tenta <span class=\\\"nq\\\">reconhecê-lo<\\/span>. Se falhar, repete da janela.",
+   "<span class=\\\"nq\\\">Lê-a<\\/span> a alguém sem dizer o que é (na aula, à turma). Se falhar, <span class=\\\"nq\\\">reescreve-a<\\/span>.",
+   1
+  ]
+ ],
+ "tools/cidadania_piloto.py": [
+  [
+   "'.cid-piloto h3{font:700 1rem/1.3",
+   "# 05/11/2026: os h3 passam de 16 para 18 px, acima do texto corrido (17 px); era o R5 da hierarquia dos títulos no guia.\n '.cid-piloto h3{font:700 1.125rem/1.3",
+   1
+  ]
+ ],
+ "tools/ideias_piloto.py": [
+  [
+   "('p', 'Resultado da fila: reconhecido por <i class=\"b\"></i> de <i class=\"b\"></i> colegas.'),",
+   "# 05/11/2026 (decisão 154): a prova da linha faz-se com quem estiver, não só com colegas.\n   ('p', 'Resultado da fila: reconhecido por <i class=\"b\"></i> de <i class=\"b\"></i> pessoas.'),",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s05.json": [
+  [
+   "escola, com o docente,",
+   "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s05.py": [
+  [
+   "\nNA_AULA",
+   "\n# 05/11/2026 (decisão 154): o exercício faz-se sozinho; a volta deixa de ser «com o docente» e pode ser à tua rua.\nNA_AULA",
+   1
+  ],
+  [
+   "escola, com o docente,",
+   "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s01.json": [
+  [
+   "Com o docente, vais",
+   "Vai",
+   1
+  ],
+  [
+   "um colega e",
+   "um colega, ou os teus noutro dia, e",
+   1
+  ],
+  [
+   "Um colega confirma ou desmente os factos; outra pessoa confere",
+   "Outra pessoa, ou tu noutro dia, confere os factos e",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s01.py": [
+  [
+   "NA_AULA = ('<p><b>O que se faz.</b> Com o docente, vais",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Com o docente», e fora da aula cada um verifica os seus factos noutro dia.\nNA_AULA = ('<p><b>O que se faz.</b> Vai",
+   1
+  ],
+  [
+   " colega ",
+   " colega, ou os teus noutro dia, ",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s02.json": [
+  [
+   "Vais com o docente ao lugar escolhido, aos pares por segurança.",
+   "Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
+   1
+  ],
+  [
+   "Na sala, <span class=\\\"nq\\\">lê-a</span> sem dizer o que é: a turma tenta <span class=\\\"nq\\\">reconhecê-lo</span>. Se falhar, repete da janela.",
+   "<span class=\\\"nq\\\">Lê-a</span> a alguém sem dizer o que é (na aula, à turma). Se falhar, <span class=\\\"nq\\\">reescreve-a</span>.",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s02.py": [
+  [
+   "NA_AULA = ('<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança.",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Vais com o docente … aos pares por segurança» (a segurança da saída em aula\n# fica no guia do docente), e a prova da linha faz-se com qualquer pessoa, ou com a turma na aula.\nNA_AULA = ('<p><b>O que se faz.</b> Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
+   1
+  ],
+  [
+   "Na sala, lê-a sem dizer o que é: a turma tenta reconhecê-lo. Se falhar, repete da janela.",
+   "Lê-a a alguém sem dizer o que é (na aula, à turma). Se falhar, reescreve-a.",
+   1
+  ]
+ ],
+ "tools/metodo.py": [
+  [
+   "'Um colega confirma ou desmente os factos; outra pessoa confere",
+   "# 05/11/2026 (decisão 154): sozinho também se cumpre; era «Um colega confirma ou desmente os factos; outra pessoa confere os degraus.»\n        'Outra pessoa, ou tu noutro dia, confere os factos e",
+   1
+  ]
+ ],
+ "ver-para-fazer/v26/index.html": [
+  [
+   "<meta name=\"description\" content=\"Distinguir representação, imaginação e evidência. O docente descreve um objeto oculto; desenha-o e assinala três decisões inferidas. Compara depois com o objeto.\">",
+   "<meta name=\"description\" content=\"Distinguir representação, imaginação e evidência. Pede a alguém que te descreva um objeto que não vês; desenha-o e assinala três decisões inferidas. Compara depois com o objeto.\">",
+   1
+  ],
+  [
+   "<p>O docente descreve um objeto oculto; ",
+   "<p>Pede a alguém que te descreva um objeto que não vês; ",
+   1
+  ]
+ ]
+}

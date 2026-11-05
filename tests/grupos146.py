@@ -5,32 +5,50 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TROCAS = json.loads((ROOT / 'tools/trocas/grupos-146-20261105.json').read_text(encoding='utf-8'))
+# 05/11/2026: decisão 154 (os exercícios fazem-se sozinho). Segunda camada, no mesmo pedido, por cima da 146: o seu manifesto
+# leva a versão da decisão 146 à da 154, com as mesmas regras (trocas literais, contagem exata, reversíveis). As funções
+# aplicam as camadas por ordem e desfazem-nas pela ordem inversa; TROCAS junta as duas, só para saber que ficheiros mudam.
+CAMADAS = [
+    ('decisão 146', json.loads((ROOT / 'tools/trocas/grupos-146-20261105.json').read_text(encoding='utf-8'))),
+    ('decisão 154', json.loads((ROOT / 'tools/trocas/autonomia-154-20261105.json').read_text(encoding='utf-8'))),
+]
+TROCAS = {}
+for _nome, _camada in CAMADAS:
+    for _ficheiro, _lista in _camada.items():
+        TROCAS.setdefault(_ficheiro, []).extend(_lista)
 
 
-def aplicar(texto, ficheiro):
-    for antigo, novo, n in TROCAS.get(ficheiro, []):
+def _aplicar(texto, ficheiro, nome, camada):
+    for antigo, novo, n in camada.get(ficheiro, []):
         if texto.count(antigo) != n:
-            raise AssertionError(('decisão 146', ficheiro, antigo[:80]))
+            raise AssertionError((nome, ficheiro, antigo[:80]))
         texto = texto.replace(antigo, novo)
     return texto
 
 
+def aplicar(texto, ficheiro):
+    for nome, camada in CAMADAS:
+        texto = _aplicar(texto, ficheiro, nome, camada)
+    return texto
+
+
 def desfazer(texto, ficheiro):
-    for antigo, novo, n in reversed(TROCAS.get(ficheiro, [])):
-        if texto.count(novo) != n:
-            raise AssertionError(('decisão 146 (desfazer)', ficheiro, novo[:80]))
-        texto = texto.replace(novo, antigo)
+    for nome, camada in reversed(CAMADAS):
+        for antigo, novo, n in reversed(camada.get(ficheiro, [])):
+            if texto.count(novo) != n:
+                raise AssertionError((nome + ' (desfazer)', ficheiro, novo[:80]))
+            texto = texto.replace(novo, antigo)
     return texto
 
 
 def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (origin/main, merge-base): antes da fusão a base ainda tem cada «antigo» com a
     contagem exata e recebe as trocas; depois da fusão já tem cada «novo» com a contagem exata e fica como está.
-    Qualquer outro estado falha."""
-    trocas = TROCAS.get(ficheiro, [])
-    if all(texto.count(antigo) == n for antigo, novo, n in trocas):
-        return aplicar(texto, ficheiro)
-    if all(texto.count(novo) == n for antigo, novo, n in trocas):
-        return texto
-    raise AssertionError(('decisão 146 (base em estado misto)', ficheiro))
+    Qualquer outro estado falha. Vale camada a camada."""
+    for nome, camada in CAMADAS:
+        trocas = camada.get(ficheiro, [])
+        if all(texto.count(antigo) == n for antigo, novo, n in trocas):
+            texto = _aplicar(texto, ficheiro, nome, camada)
+        elif not all(texto.count(novo) == n for antigo, novo, n in trocas):
+            raise AssertionError((nome + ' (base em estado misto)', ficheiro))
+    return texto

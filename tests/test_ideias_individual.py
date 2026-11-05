@@ -8,8 +8,11 @@ class ModalidadeIndividual(unittest.TestCase):
     def test_sessao_um_individual_e_verificavel(self):
         d=json.loads((R/'tools/licoes/ideias-s01.json').read_text('utf-8'))
         aula=next(c['html'] for c in d['cartoes'] if c.get('rot')=='Na aula')
-        for text in ['Com o docente','Regista dez factos','três inferências e uma pergunta','Verifica individualmente','factos de um colega','O teu auto de observação','outra pessoa confere os degraus']:
+        # 05/11/2026: decisão 154 (o exercício faz-se sozinho). Sai «Com o docente»; a verificação por um colega fica, com a
+        # alternativa de cada um conferir os seus factos noutro dia, e o critério diz o mesmo. Nenhuma frase do cartão fala do docente.
+        for text in ['Vai a um lugar da escola','Regista dez factos','três inferências e uma pergunta','Verifica individualmente','factos de um colega, ou os teus noutro dia','O teu auto de observação','Outra pessoa, ou tu noutro dia, confere os factos e os degraus']:
             self.assertIn(text,aula)
+        self.assertNotIn('docente',aula)
         self.assertNotRegex(aula,r'(?i)grupos?')
         self.assertEqual(I.SESSOES[0]['papel'],'o teu auto de observação.')
     def test_guiao_e_guia_concordam(self):
@@ -34,8 +37,12 @@ class ModalidadeIndividual(unittest.TestCase):
     def test_sessao_dois_preserva_seguranca(self):
         d=json.loads((R/'tools/licoes/ideias-s02.json').read_text('utf-8'))
         aula=next(c['html'] for c in d['cartoes'] if c.get('rot')=='Na aula')
-        self.assertIn('com o docente',aula)
-        self.assertIn('aos pares por segurança',aula)
+        # 05/11/2026: decisão 154 (o exercício faz-se sozinho). O cartão do aluno deixa de dizer «com o docente» e «aos pares
+        # por segurança»: a segurança da saída em aula fica no guia do docente (verificado abaixo, como antes); no cartão ficam
+        # as regras de quem observa sozinho (pessoas só de longe, sem fotografar caras) e a alternativa da janela.
+        self.assertNotIn('docente',aula)
+        self.assertIn('pessoas só de longe, sem fotografar caras',aula)
+        self.assertIn('ou fica à janela',aula)
         self.assertIn('Trabalhas individualmente',aula)
         self.assertIn('aos pares por segurança',I.GUIA[2]['antes'])
     def test_cartoes_respostas_versoes_e_chaves_conservados(self):

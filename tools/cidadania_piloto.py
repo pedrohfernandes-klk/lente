@@ -288,7 +288,8 @@ CSS = (TOKENS +
  '.cid-piloto h1,.cid-piloto h2,.cid-piloto h3{text-wrap:balance}'
  '.cid-piloto a{color:inherit;text-underline-offset:.15em}'
  '.cid-piloto h2{font:700 1.25rem/1.25 Arial,Helvetica,sans-serif;margin:32px 0 10px}'
- '.cid-piloto h3{font:700 1rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
+ # 05/11/2026: os h3 passam de 16 para 18 px, acima do texto corrido (17 px); era o R5 da hierarquia dos títulos no guia.
+ '.cid-piloto h3{font:700 1.125rem/1.3 Arial,Helvetica,sans-serif;margin:20px 0 6px}'
  '.cid-piloto .lead{font-size:1.05rem;margin:0 0 18px;max-width:38em}'
  '.cid-piloto .aviso-piloto{font-size:.9rem;color:var(--suave);margin:0 0 18px}'
  # 31/10/2026 (terceira correção, diretor de arte): na página do módulo, a linha do piloto passa para o rodapé (sistema, 6.10).
