@@ -16,7 +16,8 @@ FOTO='justica/eletrico-541-recorte.webp'
 # a esquerda), fica a agulha; depois dela, as duas vias seguem no mesmo sentido, uma a direito e a outra a curvar para o
 # primeiro plano. As duas são possíveis para o elétrico. A alavanca fica junto à agulha, ao lado da via, ligada por uma vara.
 # --verificar confere o SHA-256 do recorte.
-FOTO_SHA256='5231835e88691eca8bf0771b605a74f409bad73a5cdaf5a66152c3b63aa366b9'
+# 05/11/2026: recorte com as janelas desfocadas (o docente: «esta cara não pode ser visível»).
+FOTO_SHA256='98587e7bbc3ccf8d2396397ff2017f2046d68a06c78db5f17f2532f7ae23c32d'
 W,H=1340,600
 # Recorte: 962 x 634 px, desenhado a 0,598 por píxel; as rodas assentam no carril da frente (y 470).
 RECORTE=(592.8,100.8,575.3,379.1)
@@ -55,7 +56,8 @@ def cena(href='../../assets/'+FOTO):
        '<path class="jc-alvo" d="M598 254h564v194h-564z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".6"/>',
        '<g fill="none" stroke-linecap="round" stroke-linejoin="round">',
        # As duas vias possíveis, a pontilhado: nenhuma é escolhida.
-       '<path class="jc-via jc-via-a" d="M488 464H-180" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
+       # 05/11/2026: o docente, «os pontos vermelhos têm de ir até ao fim»: a via a direito vai até à ponta esquerda, como os carris.
+       '<path class="jc-via jc-via-a" d="M488 464H-660" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
        '<path class="jc-via jc-via-b" d="M492 466C446 468 400 494 354 536C322 564 300 590 288 610" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
        # A agulha: as duas lâminas, à frente do elétrico.
        '<path class="jc-agulha" d="M470 470l34-1M478 458l28 2" stroke="currentColor" stroke-width="3.5"/>',
@@ -73,7 +75,7 @@ PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
 # 05/11/2026: CC BY-SA 4.0: título, autor, fonte, licença e as alterações; a fotografia tratada fica com a mesma licença.
 CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
          '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
-         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco e sem a publicidade, com a mesma licença. '
+         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e com as janelas desfocadas, com a mesma licença. '
          'A via, a agulha, as duas vias possíveis e a alavanca ao lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
 
 def instalar(texto):
