@@ -25,19 +25,6 @@
   ],
   "routes": [
     {
-      "id": "voz",
-      "block": "ver",
-      "title": "Reconhecer quem conta",
-      "question": "Em quem confias quando alguém conta?",
-      "reason": "Da perspetiva narrativa à fronteira entre testemunho e ficção, e a quem assina uma obra.",
-      "pieces": [
-        "formas/certa-manha",
-        "margens/passo-01",
-        "margens/passo-02",
-        "duchamp"
-      ]
-    },
-    {
       "id": "olhar",
       "block": "ver",
       "title": "Observar para transformar",
@@ -49,6 +36,19 @@
         "cigoli",
         "anguissola",
         "fontana"
+      ]
+    },
+    {
+      "id": "voz",
+      "block": "ver",
+      "title": "Reconhecer quem conta",
+      "question": "Em quem confias quando alguém conta?",
+      "reason": "Da perspetiva narrativa à fronteira entre testemunho e ficção, e a quem assina uma obra.",
+      "pieces": [
+        "formas/certa-manha",
+        "margens/passo-01",
+        "margens/passo-02",
+        "duchamp"
       ]
     },
     {
