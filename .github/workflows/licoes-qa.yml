@@ -32,7 +32,8 @@ permissions:
 jobs:
   licoes:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 05/11/2026: no #119 a preparação demorou 8 minutos e o GitHub cancelou o percurso das lições ao fim de 10, com tudo a passar.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
