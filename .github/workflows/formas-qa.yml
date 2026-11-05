@@ -52,7 +52,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_texto_justificado.py' -v
       - name: Preparar navegador
         run: |
-          npm install --no-save --package-lock=false playwright
+          # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+          npm install --no-save --package-lock=false playwright@1.64.1
           npx playwright install --with-deps chromium
       - name: Percursos completos e conservação do existente
         run: |

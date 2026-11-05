@@ -23,7 +23,8 @@ jobs:
       # 02/11/2026: bateria inteira antes de instalar dependências que contêm HTML alheio.
       - run: python -m unittest discover -s tests -p 'test_*.py' -v
       - run: python tools/gerar_carris.py --verificar
-      - run: npm install --no-save playwright
+      # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+      - run: npm install --no-save playwright@1.64.1
       - run: npx playwright install --with-deps chromium
       - run: node tests/browser_fundo_carris.cjs
         env:

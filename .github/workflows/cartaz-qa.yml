@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -20,7 +20,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_*.py'
-      - run: npm install --no-save playwright
+      # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+      - run: npm install --no-save playwright@1.64.1
       - run: npx playwright install --with-deps chromium
       - run: node --test tests/*cartaz*.test.cjs tests/appearance.test.cjs
       # 03/11/2026: cabeçalhos compactos, contraste real, projeção e zoom nativo.
@@ -40,6 +41,8 @@ jobs:
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
       - run: node tests/browser_lente_projecao_entrada.cjs
+      # 05/11/2026: revisão de 5/11 (lente-cabecalho-2), nenhuma palavra partida a meio na moldura de projeção.
+      - run: node tests/browser_projecao_palavras.cjs
       # 01/11/2026: movimento, estado final, primeira ação e contrato do visor.
       - run: node tests/browser_cartaz_animacoes.cjs
       # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
@@ -82,7 +85,8 @@ jobs:
       - name: Preparar navegador
         run: |
           pip install playwright
-          npm install --no-save --package-lock=false playwright
+          # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
+          npm install --no-save --package-lock=false playwright@1.64.1
           python -m playwright install --with-deps chromium
       - name: Verificar molde completo
         run: ${{ matrix.command }}
