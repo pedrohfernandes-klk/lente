@@ -118,7 +118,36 @@ html.em-projecao [data-cartaz-entrada][data-cartaz="2"] :is(.ld-credito,.lab-set
    Deixar o texto recompor-se, sem esconder excesso nem reduzir a escala. */
 html.epi-projection [data-cartaz-entrada] :is(h2,h3,p,small,.lab-set-copy,.sp-copy,.sp-kicker,.sp-image-label){min-width:0;overflow-wrap:anywhere}
 html.epi-projection [data-cartaz-entrada] .cz-credit a{white-space:normal;overflow-wrap:anywhere}
-@media(max-width:639px){html.epi-projection [data-cartaz-entrada] .site-portal{grid-template-columns:minmax(0,1fr)}html.epi-projection [data-cartaz-entrada] .sp-image{min-height:160px}}
+/* 05/11/2026: revisão adversarial. Empilhado, o retrato fica numa faixa de 176 px, para não passar da altura da moldura. */
+@media(max-width:639px){html.epi-projection [data-cartaz-entrada] .site-portal{grid-template-columns:minmax(0,1fr)}html.epi-projection [data-cartaz-entrada] .sp-image{height:176px;min-height:0}}
 
 html.epi-projection [data-cartaz-entrada] :is(.ld-rot,.cz-button,.cz-footer-links a){min-width:0;overflow-wrap:anywhere;white-space:normal}
 html.epi-projection [data-cartaz-entrada] .lab-sets a.cz-row{grid-template-columns:max-content minmax(0,1fr) 24px}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2). Na moldura de projeção, os grupos das Ferramentas só ficam lado a lado
+   quando cada coluna leva a palavra mais longa do título inteira; senão passam a duas colunas ou a uma. */
+html.epi-projection [data-cartaz-entrada] .ferr-grupos{grid-template-columns:repeat(auto-fit,minmax(min(100%,calc(var(--cz-t31) * 7.5)),1fr))}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2), com a revisão adversarial. Na moldura de projeção, o nome de cada porta desce
+   de degrau na escala Cartaz (t39, t31, t25; decisão 61) pela largura do cartão medida em rem, que cresce com o tamanho da letra:
+   «Desenvolvimento.» cabe inteiro numa linha mesmo com a letra de reserva, e nunca fica fora da escala. */
+html.epi-projection [data-cartaz-entrada] .ld>.cz-fold .ld-n{font-size:var(--cz-t39)}
+@container (max-width:24rem){html.epi-projection [data-cartaz-entrada] .ld>.cz-fold .ld-n{font-size:var(--cz-t31)}}
+@container (max-width:19rem){html.epi-projection [data-cartaz-entrada] .ld>.cz-fold .ld-n{font-size:var(--cz-t25)}}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2). Na moldura de projeção, as duas portas só ficam lado a lado quando cada uma
+   leva 15 vezes a letra da raiz (330 px no tamanho médio, 420 px no grande) e pelo menos 345 px (abaixo disso, nos tamanhos pequeno
+   e médio, partiam-se «responsabilidade.» e «Laboratório»); senão ficam uma por baixo da outra. */
+@media(min-width:640px){html.epi-projection [data-cartaz-entrada] .lente-div{grid-template-columns:repeat(auto-fit,minmax(min(100%,max(15rem,345px)),1fr))}}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2). Na moldura de projeção, o cartão de Português põe o retrato por baixo do texto
+   quando a sua largura fica abaixo de 28 vezes a letra da raiz (616 px no tamanho médio, 784 px no grande); o retrato fica numa
+   faixa de 176 px, como acima de 760 px, e nunca maior do que a moldura. */
+html.epi-projection [data-cartaz-entrada] .site-portal-wrap{container-type:inline-size}
+@container (max-width:28rem){html.epi-projection [data-cartaz-entrada] .site-portal{grid-template-columns:minmax(0,1fr)}html.epi-projection [data-cartaz-entrada] .sp-image{height:176px;min-height:0}}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2). Moldura de projeção com menos de 640 px de largura (um telemóvel ou uma
+   janela estreita): a raiz da entrada volta a 100 %, como já faz o modo ?projetar=1 abaixo de 768 px, para nenhuma palavra
+   se partir a meio. Os botões de tamanho continuam a valer a partir de 640 px. */
+@media(max-width:639px){html.epi-projection:has([data-cartaz-entrada]){font-size:100%!important}}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-2). Na moldura de projeção, as ligações do rodapé ficam lado a lado só quando
+   cada uma tem 14 vezes a letra da raiz; senão descem para duas colunas ou uma, sem partir «progresso» a meio. */
+@media(min-width:640px){html.epi-projection [data-cartaz-entrada] .cz-footer-links{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}}
+/* 05/11/2026: revisão adversarial (lente-cabecalho-3). Na moldura de projeção entre 640 e 767 px, o cabeçalho cresce com a letra e o
+   vidro da lupa apanhava o sobretítulo longo; aí usa-se o curto («EPI, 2026/2027»), que fica à esquerda, longe do vidro. */
+@media(min-width:640px) and (max-width:767px){html.epi-projection [data-cartaz-entrada] .etq-longa{display:none}html.epi-projection [data-cartaz-entrada] .etq-curta{display:inline}}
