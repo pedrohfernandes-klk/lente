@@ -597,7 +597,9 @@ class Metodo(unittest.TestCase):
         s = (PILOTO / 'index.html').read_text('utf-8')
         bloco = re.search(r'<details class="metodo".*?</details>', s, re.S).group(0)
         self.assertNotRegex(bloco.split('>')[0], r'\bopen\b')
-        self.assertIn('<summary id="metodo-t">Como funciona</summary>', bloco)
+        # 05/11/2026: revisão de 5/11 (lente-ideias-2): o rótulo diz o que o bloco é (pedido 1, ponto 4: «O bloco «O método»
+        # fica»); antes, «Como funciona».
+        self.assertIn('<summary id="metodo-t">O método em cinco passos</summary>', bloco)
         texto = L.visivel(bloco)
         for frag in ('James Webb Young', 'publicitário norte-americano', 'A Technique for Producing Ideas (1940)', 'Seguimos, passo a passo, o método', 'Há outros métodos; escolhemos este por ser simples, claro e útil.'):
             self.assertIn(frag, texto)
@@ -612,6 +614,16 @@ class Metodo(unittest.TestCase):
         entrada = s = (PILOTO / 'index.html').read_text('utf-8')
         self.assertIn('<details class="metodo"', entrada)
         self.assertEqual(len(I.PASSOS), 5)
+        # 05/11/2026: revisão de 5/11 (lente-ideias-1 e 2): voltam as asserções sobre a entrada que o #106 tirou. Cada sessão
+        # publicada mostra o seu passo («Passo N de 5: …») e cada porta com sessões diz que passo serve.
+        apoios = re.findall(r'<span class="apoio">(.*?)</span>', entrada)
+        self.assertEqual(len(apoios), len(FONTES))
+        for n, a in enumerate(apoios, 1):
+            self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
+        self.assertEqual([x.split(':')[0] for x in apoios[:2]], ['Passo 1 de 5', 'Passo 1 de 5'])
+        portas = [(pid, re.sub(r'<[^>]+>', '', t)) for pid, t in re.findall(r'<div id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">', entrada)]
+        self.assertEqual(portas, [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.')])
+        self.assertEqual(len(re.findall(r'Nas duas sessões publicadas', entrada)), 1)
         for d in self.licoes():
             pag = (ROOT / d['saida']).read_text('utf-8')
             abre, ultimo = d['cartoes'][0]['html'], d['cartoes'][-1]['html']

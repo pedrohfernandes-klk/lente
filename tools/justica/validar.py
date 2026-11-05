@@ -35,7 +35,9 @@ class Visivel(HTMLParser):
         if tag in ('br', 'img', 'hr', 'input', 'meta', 'link', 'source', 'wbr'):
             return
         a = dict(attrs)
-        oculto = tag in ('svg', 'script', 'style') or a.get('class') in ('lado-c', 'mais-c')
+        # 05/11/2026: revisão de 5/11. O crédito dos desenhos (<span class="cred">) é crédito, não leitura: não conta para as 95
+        # palavras, como o próprio desenho.
+        oculto = tag in ('svg', 'script', 'style') or a.get('class') in ('lado-c', 'mais-c', 'cred')
         self.pilha.append((tag, oculto))
 
     def handle_endtag(self, tag):

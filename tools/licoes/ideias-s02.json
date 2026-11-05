@@ -12,12 +12,12 @@
   "subtitulo": "Como nasce uma ideia",
   "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/",
   "sessoes": 7,
-  "rotulo": "As sete sessões"
+  "rotulo": "As sessões do Ideias"
  },
  "saida": "narrativas/ideias/sessao-02/index.html",
  "piloto": false,
  "seguinte": "../",
- "seguinteRotulo": "As sete sessões",
+ "seguinteRotulo": "As sessões do Ideias",
  "fontes": "James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
  "cartoes": [
   {
@@ -181,7 +181,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O teu «cocheiro»",
-   "html": "<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente: pessoas só de longe, sem fotografar caras. Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que distingue o teu «cocheiro». No guião, escreve uma linha que só sirva para esse «cocheiro». Lê sem o identificar: a turma tenta <span class=\"nq\">reconhecê-lo</span>. Sem saída, usa a janela ou uma fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>As quinze notas distinguem observação de inferência e cobrem as três categorias.</li><li>A linha permite reconhecer o teu «cocheiro»; se não, é revista depois da prova.</li><li>As duas versões do conselho estão comparadas: o que mudou e o que ficou.</li></ul></div>"
+   "html": "<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro» (pessoas só de longe, sem fotografar caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue. No guião, escreve uma linha que só sirva para esse «cocheiro». Na sala, <span class=\"nq\">lê-a</span> sem dizer o que é: a turma tenta <span class=\"nq\">reconhecê-lo</span>. Se falhar, repete da janela.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As quinze notas; no guião, a linha e o resultado.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>As quinze notas distinguem observação de inferência e cobrem as três categorias.</li><li>A linha permite reconhecer o teu «cocheiro»; se não, é revista depois da prova.</li><li>As duas versões do conselho estão comparadas: o que mudou e o que ficou.</li></ul></div>"
   },
   {
    "t": "escolha",
@@ -234,7 +234,7 @@
      "c": 0
     }
    ],
-   "f": "**Específicas** (as do problema, como o teu «cocheiro») e **gerais** (tudo o que vais juntando sobre a vida). Hoje juntaste material específico; na sessão 3, juntas o geral.",
+   "f": "**Específicas** (as do problema, como o teu «cocheiro») e **gerais** (tudo o que vais juntando sobre a vida). Hoje juntaste material específico; depois, juntas o geral.",
    "fe": "O método opõe o material do problema concreto ao material que se junta a vida inteira."
   },
   {
@@ -272,7 +272,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação. Também puseste uma descrição à prova. Uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, <span class=\"nq\">junta-lo</span> e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola.</p><aside class=\"para-caixa\"><p><b>Para a tua caixa</b></p><p>Guarda as quinze notas, a linha antes e depois da prova e o resultado do reconhecimento.</p></aside>"
+   "html": "<p class=\"levar\">Olhar até a coisa deixar de ser igual às outras.</p><p>Foste à fonte de uma citação. Também puseste uma descrição à prova. Uma árvore da tua rua é só uma árvore?</p><p><b>As frases da sessão</b></p><ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li><li>A prova de uma descrição é alguém reconhecer a coisa.</li><li>Uma palavra exata vale mais do que três bonitas.</li></ul><p><b>No Laboratório:</b> <a href=\"../../personagem-faz/\">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p><p><b>Passo 1 de 5: falta o material geral.</b> Junta dez notas sobre o que sabes bem fora da escola: é com elas que começa o passo 2 de Young, trabalhar o material.</p><aside class=\"para-caixa\"><p><b>Para a tua caixa</b></p><p>Guarda as quinze notas, a linha antes e depois da prova e o resultado do reconhecimento.</p></aside>"
   }
  ]
 }

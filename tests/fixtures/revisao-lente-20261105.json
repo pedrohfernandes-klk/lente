@@ -1,0 +1,101 @@
+{
+ "index.html": [
+  [
+   "<span class=\"lab-set-number\" aria-hidden=\"true\">↗</span><span class=\"lab-set-copy\"><strong>Ideias</strong><small>O método em cinco passos</small>",
+   "<span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Ideias</strong><small>o método em cinco passos</small>",
+   1
+  ],
+  [
+   "Imagens em domínio público ou Creative Commons, com crédito; os textos protegidos descrevem-se, não se transcrevem.",
+   "Imagens em domínio público ou Creative Commons, com crédito; dos textos protegidos, só excertos curtos, com crédito e ligação.",
+   1
+  ]
+ ],
+ "mapa/index.html": [
+  [
+   "<p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\">Abrir Ética e estética <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li><details class=\"map-branch\"><summary><span>Decisões</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\">Abrir Decisões <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\">",
+   "<p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\">Abrir Decisões <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\">",
+   1
+  ],
+  [
+   "rimir</a></li></ul></div></details></li></ul></div></details></li>",
+   "rimir</a></li></ul></div></details></li>",
+   1
+  ]
+ ],
+ "cidadania/index.html": [
+  [
+   "<h3>Uma democracia, várias memórias</h3><ul class=\"lista\"><li><a href=\"25-de-abril/\"><b>25 de Abril: que data funda uma democracia?</b><small>Ouve, distingue factos e posições, cria um retângulo para um painel coletivo.</small></a></li></ul><h3>Ferramentas das explorações</h3>",
+   "<h3>Ferramentas das explorações</h3>",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/licao-1/index.html": [
+  [
+   "O condutor: em frente, cinco trabalhadores na via; no desvio, um.<\\/figcaption>",
+   "O condutor: em frente, cinco trabalhadores na via; no desvio, um. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O espectador na ponte: um empurrão faz cair o homem à frente do elétrico e poupa os cinco.<\\/figcaption>",
+   "O espectador na ponte: um empurrão faz cair o homem à frente do elétrico e poupa os cinco. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O alçapão: rodas um volante e o alçapão abre-se debaixo do homem, sem lhe tocares.<\\/figcaption>",
+   "O alçapão: rodas um volante e o alçapão abre-se debaixo do homem, sem lhe tocares. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O médico das urgências: cinco feridos moderados e um grave; não há tempo para todos.<\\/figcaption>",
+   "O médico das urgências: cinco feridos moderados e um grave; não há tempo para todos. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O cirurgião de transplantes: cinco doentes à espera de órgãos; na sala ao lado, um homem saudável a dormir.<\\/figcaption>",
+   "O cirurgião de transplantes: cinco doentes à espera de órgãos; na sala ao lado, um homem saudável a dormir. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O bote do Mignonette: quatro náufragos; Parker, doente, deitado a um canto.<\\/figcaption>",
+   "O bote do Mignonette: quatro náufragos; Parker, doente, deitado a um canto. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/licao-2/index.html": [
+  [
+   "Pôr um preço à vida: de um lado uma pessoa, do outro dinheiro.<\\/figcaption>",
+   "Pôr um preço à vida: de um lado uma pessoa, do outro dinheiro. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "O Ford Pinto: o depósito de combustível atrás; num choque por trás, podia explodir.<\\/figcaption>",
+   "O Ford Pinto: o depósito de combustível atrás; num choque por trás, podia explodir. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ],
+  [
+   "Três excertos: um monólogo de Hamlet, o concurso Fear Factor e Os Simpsons.<\\/figcaption>",
+   "Três excertos: um monólogo de Hamlet, o concurso Fear Factor e Os Simpsons. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>",
+   1
+  ]
+ ],
+ "tests/test_cidadania_casos.py": [
+  [
+   "   if x['module']=='m2':self.assertNotIn('Humanos',s);self.assertIn('Algoritmos',s)\n",
+   "   # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.\n   if x['module']=='m2':self.assertNotIn('Humanos',s);self.assertIn('Algoritmos',s)\n",
+   1
+  ]
+ ],
+ "tests/resultados_turma.test.cjs": [
+  [
+   "  assert.equal(t('Decisões: Justiça, Ética e Estética'), '1 lição concluída');\n",
+   "  // 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.\n  assert.equal(t('Decisões: Justiça, Ética e Estética'), '1 lição concluída');\n",
+   1
+  ],
+  [
+   "  const g = R.resumir(registos)['Decisões: Justiça, Ética e Estética'];\n",
+   "  // 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.\n  const g = R.resumir(registos)['Decisões: Justiça, Ética e Estética'];\n",
+   1
+  ]
+ ]
+}
