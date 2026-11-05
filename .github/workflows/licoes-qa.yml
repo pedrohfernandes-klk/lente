@@ -73,7 +73,9 @@ jobs:
   # percurso das lições, o tempo total passava os 10 minutos do limite e o GitHub cancelava a execução.
   ideias:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 05/11/2026: o teste de navegador do «Ideias» voltou a ter as verificações que o #106 tirou; a preparação do
+    # navegador chega a levar 10 minutos num executor lento.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
