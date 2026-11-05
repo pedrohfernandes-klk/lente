@@ -196,7 +196,7 @@ def faz(path, n, s):
     if f.get('apoio'):
         out += '<ul class="c10-apoio">' + ''.join('<li>' + liga(path, a, t) + '</li>' for t, a in f['apoio']) + '</ul>'
     out += para('c10-small', f.get('nota', ''))
-    out += '<div class="c10-review">' + label('Rever com outra pessoa') + '<p>' + e(f['revisao']) + '</p>' + (para('c10-small', REVISAO_COMUM) if f.get('comum', True) else '') + '</div>'
+    out += '<div class="c10-review">' + label('Rever') + '<p>' + e(f['revisao']) + '</p>' + (para('c10-small', REVISAO_COMUM) if f.get('comum', True) else '') + '</div>'
     titulo, conteudo = CASAS[n - 1]
     out += '<div class="c10-casa"><p class="c10-output"><b>Guardar</b><span>Casa ' + str(n) + ' do mapa do Contra-feed: ' + e(titulo) + '</span></p>'
     return out + para('c10-casa-c', conteudo) + mapa(n) + '</div>'

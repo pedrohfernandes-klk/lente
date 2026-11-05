@@ -49,10 +49,11 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Can stereotypes ever be good?» (5 min 52 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p>'
+ '<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> As notas dadas aos colegas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>')
+ '<p><b>O que fica escrito.</b> As tuas notas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>')
 LEVAR = (
  '<p class="levar">Ouvir outra voz não é concordar com ela: é saber sobre o que se decide.</p>'
  '<p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p>'

@@ -146,7 +146,8 @@ class Molde(unittest.TestCase):
             self.assertIn('data-mark="Sem ecrã"', p[2], n)
             self.assertIn('Primeiro, em silêncio', p[2])
             self.assertIn('data-feedback><summary>Comparar razões', p[2])
-            self.assertIn('Rever com outra pessoa', p[3], n)
+            # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho): o bloco de revisão chama-se «Rever» e faz-se sozinho (ou com um colega).
+            self.assertIn('<div class="c10-review"><p class="c10-label">Rever</p>', p[3], n)
             self.assertIn(f'<b>Guardar</b><span>Casa {n} do mapa do Contra-feed: ', p[3], n)
             self.assertIn('data-mark="Em papel"', p[4], n)
             self.assertEqual(p[4].count('class="c10-exit-q"'), 1, n)
@@ -359,7 +360,11 @@ class Molde(unittest.TestCase):
                   'reserva escrita', 'Naufrágio', 'v120', 'v108'):
             self.assertIn(t, g)
         s06 = sessao(6)
-        self.assertIn('lista aprovada pelo docente', s06)
+        # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho): a lista de casos aprovada fica no guia do docente; na página
+        # do aluno, escolhe-se o caso e conferem-se os critérios sem depender do docente.
+        self.assertIn('lista de casos reais aprovada para a sessão 06', g)
+        self.assertIn('Escolhe o caso que vais analisar e confere os critérios', s06)
+        self.assertNotIn('aprovada pelo docente', s06)
         self.assertIn('sem menores nem pessoas privadas', s06)
 
     def test_videos(self):

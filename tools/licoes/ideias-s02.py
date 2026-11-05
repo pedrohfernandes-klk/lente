@@ -37,9 +37,10 @@ M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_modu
 PASSOS, passos = M.PASSOS, M.passos
 
 
+# 05/11/2026 (decisão 154, em todo o sítio): no «Abre», o lugar é teu: «Hoje olhas…» (era «Hoje a turma olha…»).
 ABRE = (
  '<p class="pergunta-c">O que distingue uma coisa de todas as outras iguais a ela?</p>'
- '<p>Hoje a turma olha para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
+ '<p>Hoje olhas para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
  '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material, até ao fundo.</b> Na sessão 1, recolheste factos a olhar; hoje vais mais fundo, numa só coisa. Sem este material específico, os passos seguintes não têm em que trabalhar.</p></div>'
  + passos({1}) +
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')

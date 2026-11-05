@@ -45,6 +45,16 @@ def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (origin/main, merge-base): antes da fusão a base ainda tem cada «antigo» com a
     contagem exata e recebe as trocas; depois da fusão já tem cada «novo» com a contagem exata e fica como está.
     Qualquer outro estado falha. Vale camada a camada."""
+    # 05/11/2026: decisão 154, em todo o sítio. Depois da fusão deste pedido, a base já traz as duas camadas e, como a 154
+    # reescreve textos que a 146 já tinha trocado (por exemplo «Rever em turma» passa a «Rever»), o «novo» da 146 pode já
+    # não estar lá. Conta como fundida, e fica como está, só a base que, desfeitas as camadas pela ordem inversa (cada
+    # «novo» com a contagem exata), volta a dar o mesmo texto quando se reaplicam; qualquer outro estado segue as regras de
+    # cima, camada a camada.
+    try:
+        if aplicar(desfazer(texto, ficheiro), ficheiro) == texto:
+            return texto
+    except AssertionError:
+        pass
     for nome, camada in CAMADAS:
         trocas = camada.get(ficheiro, [])
         if all(texto.count(antigo) == n for antigo, novo, n in trocas):

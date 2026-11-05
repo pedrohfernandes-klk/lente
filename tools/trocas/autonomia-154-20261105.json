@@ -1,8 +1,430 @@
 {
+ "apresentar/passo-01/index.html": [
+  [
+   "um colega e pede-lhe que a repita sem olhar. Se ele",
+   "alguém e pede-lhe que a repita sem olhar. Se",
+   1
+  ]
+ ],
+ "assets/laboratorio/percursos.json": [
+  [
+   "voto do teu grupo.\",",
+   "teu voto.\",",
+   1
+  ]
+ ],
+ "cidadania/contra-feed/index.html": [
+  [
+   "pela turma,",
+   "por ti,",
+   1
+  ]
+ ],
+ "cidadania/m1/fichas/f15/index.html": [
+  [
+   "Pede à turma que resuma a cena: o que entendeu e onde precisou de",
+   "Resume a cena como um leitor novo: o que se entende e onde falta",
+   1
+  ],
+  [
+   "a turma não percebe o que mudou, examina a informação e a sequência antes de lhe explicar",
+   "o que mudou não se percebe, examina a informação e a sequência antes de explicares",
+   1
+  ]
+ ],
+ "cidadania/m1/fichas/f17/index.html": [
+  [
+   "estilo. A turma não",
+   "estilo. Quem lê não",
+   1
+  ],
+  [
+   "Mostra o guião à turma. A turma resume conflito, decisão e consequência sem pedir uma explicação inicial.</li><li>A turma aponta",
+   "Relê o guião como um leitor novo e resume conflito, decisão e consequência (na aula, mostra-o à turma).</li><li>Aponta",
+   1
+  ]
+ ],
+ "cidadania/m1/oficina-guiao/index.html": [
+  [
+   " em turma</h2><ol class=\"c10-tasks\"><li>A turma resume conflito, decisão e consequência sem a tua explicação.",
+   "</h2><ol class=\"c10-tasks\"><li>Resume conflito, decisão e consequência só com o que o texto diz.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-01/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-02/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-03/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-04/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-05/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-06/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-07/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-08/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-09/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/passo-10/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/01/index.html": [
+  [
+   " em turma</p><p>Lê a pergunta à turma. A turma verifica se",
+   "</p><p>Verifica se a pergunta",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/02/index.html": [
+  [
+   " em turma</p><p>A turma apresenta",
+   "</p><p>Formula",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/04/index.html": [
+  [
+   " em turma</p><p>A turma identifica os objetivos sem a tua explicação.",
+   "</p><p>Os objetivos percebem-se sem a tua explicação?",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/05/index.html": [
+  [
+   " em turma</p><p>A turma resume",
+   "</p><p>Resume",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/06/index.html": [
+  [
+   "Rever em turma</p>",
+   "Rever</p>",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/07/index.html": [
+  [
+   " em turma</p><p>Explica a diferença entre v1 e v2: regra, objeção e alteração. A turma aponta",
+   "</p><p>Explica a diferença entre v1 e v2: regra, objeção e alteração. Aponta",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/08/index.html": [
+  [
+   " em turma</p><p>A turma resume",
+   "</p><p>Resume",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/09/index.html": [
+  [
+   "Lê uma passagem à turma, sem a explicar. Pergunta quem age, o que muda e o que ficou por perceber.",
+   "Relê uma passagem como quem não a conhece: quem age, o que muda, o que fica por perceber?",
+   1
+  ],
+  [
+   " em turma</p><p>A turma resume",
+   "</p><p>Resume",
+   1
+  ]
+ ],
+ "cidadania/m2/aulas/03/index.html": [
+  [
+   "Em turma, defende",
+   "Defende",
+   1
+  ]
+ ],
+ "cidadania/m2/aulas/08/index.html": [
+  [
+   "um colega; não expliques antecipadamente a regra.</li><li>Quem observa descreve",
+   "alguém (na aula, a um colega), sem explicar antes a regra.</li><li>Descreve",
+   1
+  ]
+ ],
+ "cidadania/m2/aulas/09/index.html": [
+  [
+   "Em turma, propõe e discute regras concretas para o manifesto coletivo já previsto.",
+   "Propõe regras concretas para o manifesto (na aula, discute-as em turma).",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-01/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-02/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-03/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-04/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-05/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-06/index.html": [
+  [
+   "pela turma.",
+   "por ti.",
+   1
+  ],
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-07/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/passo-08/index.html": [
+  [
+   "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
+   "Propostas opcionais para a aula, oralmente e com o corpo.",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/01/index.html": [
+  [
+   "Em turma, corram o feed de papel nas duas versões:",
+   "Corre o feed nas duas versões (ecrã ou papel):",
+   1
+  ],
+  [
+   " com outra pessoa</p><p>Um colega põe a tua regra a correr só com as três linhas.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Põe a tua regra a correr só com as três linhas.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/02/index.html": [
+  [
+   " com outra pessoa</p><p>Um colega confere: a conclusão respeita os limites dos sete dias?</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Confere: a conclusão respeita os limites dos sete dias?</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/03/index.html": [
+  [
+   "Em turma, façam a cena das quatro cadeiras, em dois minutos: quem publicou, quem denunciou, quem modera; depois, a quarta cadeira, a do recurso.",
+   "Escreve a cena das quatro cadeiras, uma fala em cada: quem publicou, quem denunciou, quem modera e, depois, a do recurso (na aula, em turma).",
+   1
+  ],
+  [
+   " com outra pessoa</p><p>Outra pessoa lê a carta no papel da plataforma e tem de conseguir responder-lhe.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Relê a carta no papel da plataforma: consegues responder-lhe?</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/04/index.html": [
+  [
+   " com outra pessoa</p><p>Se a outra pessoa conseguir responder a uma pergunta só com «sim» ou «não», essa pergunta reescreve-se.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Se uma pergunta se responde só com «sim» ou «não», reescreve-a.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/05/index.html": [
+  [
+   " com outra pessoa</p><p>A outra pessoa lê a nota como público, diz se percebe o que é de quem e confere uma licença.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Lê a nota como público: percebe-se o que é de quem? Confere uma licença.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/06/index.html": [
+  [
+   "Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma",
+   "Escolhe o caso que vais analisar e",
+   1
+  ],
+  [
+   "individual, com revisão de um colega.",
+   "individual.",
+   1
+  ],
+  [
+   " com outra pessoa</p><p>Um colega revê e marca cada frase como facto com fonte, suposição ou opinião.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Marca cada frase como facto com fonte, suposição ou opinião.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/07/index.html": [
+  [
+   " com outra pessoa</p><p>Um colega diz em que momento perceberia a regra.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Marca onde o público perceberia a regra.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/08/index.html": [
+  [
+   "Ensaio cruzado: mostra uma versão curta a um colega, sem explicar antes a regra.</li><li>Quem observa regista",
+   "Ensaio: mostra uma versão curta a alguém (na aula, a um colega), sem explicar antes a regra.</li><li>Regista",
+   1
+  ],
+  [
+   " com outra pessoa</p><p>Aqui, a revisão com outra pessoa",
+   "</p><p>Aqui, a revisão",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/09/index.html": [
+  [
+   "escola; quem não puder ir lê o texto transcrito pelo docente.",
+   "escola ou na oficina «O manifesto na fachada».",
+   1
+  ],
+  [
+   "Em turma, passem o manifesto a versão para assinar. A assinatura é livre e pode levar uma",
+   "Passa as regras a versão para assinar (na aula, em turma). A assinatura é livre e admite",
+   1
+  ],
+  [
+   " com outra pessoa</p><p>Um colega faz a pergunta mais difícil à defesa e confere se cada regra do manifesto pode ser verificada.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
+   "</p><p>Faz à tua defesa a pergunta mais difícil e confere se cada regra do manifesto pode ser verificada.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   1
+  ]
+ ],
+ "cidadania/m2/sessoes/10/index.html": [
+  [
+   "Rever com outra pessoa</p>",
+   "Rever</p>",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s02/index.html": [
+  [
+   "Em turma, quatro situações em papel:",
+   "Quatro situações:",
+   1
+  ],
+  [
+   "a turma decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, cada um",
+   "decide, vê o que a decisão provoca e revê-a se um dado mudar (por exemplo, se a pessoa da fotografia for menor). No fim,",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s03/index.html": [
+  [
+   "orçamento. Em turma, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. A turma decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, cada um escolhe e delimita a sua",
+   "orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s04/index.html": [
+  [
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   1
+  ]
+ ],
  "cidadania/piloto/m1-s05/index.html": [
   [
    "escola, com o docente,",
    "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s06/index.html": [
+  [
+   "Cada aluno escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois tira uma carta com o lugar que lhe calha. Quem perde apresenta a objeção, em turma, e cada um revê a sua",
+   "Escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois sorteia o teu lugar: A, B ou C. Escreve a objeção de quem perde (na aula, ouve-a em turma) e revê a tua",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s07/index.html": [
+  [
+   "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   1
+  ],
+  [
+   "vosso júri decidiu pelas lágrimas ou pelas",
+   "teu voto pesou as lágrimas ou as",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s09/index.html": [
+  [
+   "Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As notas dadas aos colegas",
+   "Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As tuas notas",
    1
   ]
  ],
@@ -13,8 +435,43 @@
    1
   ],
   [
+   "Em turma, quatro situações em papel:",
+   "Quatro situações:",
+   1
+  ],
+  [
+   "a turma decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, cada um",
+   "decide, vê o que a decisão provoca e revê-a se um dado mudar (por exemplo, se a pessoa da fotografia for menor). No fim,",
+   1
+  ],
+  [
+   "orçamento. Em turma, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. A turma decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, cada um escolhe e delimita a sua",
+   "orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua",
+   1
+  ],
+  [
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   1
+  ],
+  [
    "escola, com o docente,",
    "escola (ou à tua rua),",
+   1
+  ],
+  [
+   "Cada aluno escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois tira uma carta com o lugar que lhe calha. Quem perde apresenta a objeção, em turma, e cada um revê a sua",
+   "Escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois sorteia o teu lugar: A, B ou C. Escreve a objeção de quem perde (na aula, ouve-a em turma) e revê a tua",
+   1
+  ],
+  [
+   "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   1
+  ],
+  [
+   "Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As notas dadas aos colegas",
+   "Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas",
    1
   ]
  ],
@@ -32,10 +489,127 @@
    1
   ]
  ],
+ "cidadania/projeto/index.html": [
+  [
+   "de forma consistente o modelo indicado pelo docente.",
+   "sempre o mesmo modelo.",
+   1
+  ]
+ ],
+ "cidade/m03/index.html": [
+  [
+   "um colega percebe",
+   "percebe-se",
+   1
+  ]
+ ],
+ "cidade/m05/index.html": [
+  [
+   "um colega diz",
+   "percebe-se",
+   1
+  ]
+ ],
+ "cidade/m12/index.html": [
+  [
+   "o recurso que o docente pedir (se não pedir, apóstrofe).",
+   "um destes recursos: apóstrofe, personificação ou metáfora.",
+   1
+  ]
+ ],
+ "cidade/m16/index.html": [
+  [
+   "um colega lê a tua lista e diz qual é o pedido que ele",
+   "quem lê a tua lista sabe que pedido",
+   1
+  ]
+ ],
+ "cidade/m17/index.html": [
+  [
+   "um colega olha para os três e diz, sem ler, qual é",
+   "sem ler, percebe-se",
+   1
+  ]
+ ],
+ "cidade/m18/index.html": [
+  [
+   "um colega lê as duas colunas e sabe se estavas perto dos carris ou perto",
+   "quem lê as duas colunas sabe se estavas perto dos carris ou",
+   1
+  ]
+ ],
+ "investigar/passo-09/index.html": [
+  [
+   "Em turma, pede",
+   "Procura",
+   1
+  ]
+ ],
+ "narrativas/criar/index.html": [
+  [
+   "voto do teu grupo.",
+   "teu voto.",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/escultura/lesson.js": [
+  [
+   "Pede a um colega uma hipótese e o detalhe que a sustenta; muda de lugar sem dar a resposta.",
+   "De cada lugar, escreve uma hipótese e o detalhe que a sustenta (na aula, pede-as a um colega, sem dar a resposta).",
+   1
+  ],
+  [
+   "O colega consegue discordar com base no que",
+   "Há lugar para discordar com base no que se",
+   1
+  ]
+ ],
  "narrativas/fora-da-pagina/index.html": [
+  [
+   "Pede a um colega uma hipótese e o detalhe que a sustenta; muda de lugar sem dar a resposta.",
+   "De cada lugar, escreve uma hipótese e o detalhe que a sustenta (na aula, pede-as a um colega, sem dar a resposta).",
+   1
+  ],
+  [
+   "Um colega propõe duas hipóteses e aponta os indícios. Não expliques a intenção antes desse teste.",
+   "Depois de uma pausa, propõe duas hipóteses só pelos indícios (na aula, pede-as a um colega, sem explicar a intenção).",
+   1
+  ],
+  [
+   " hipóteses do colega e",
+   " hipóteses e",
+   1
+  ],
   [
    "nova observação combinada com o docente.",
    "observação tua.",
+   1
+  ],
+  [
+   "colega tenta explicar as três relações sem a tua",
+   "colega, ou tu depois de uma pausa, explica as três relações sem",
+   1
+  ],
+  [
+   "recebida",
+   "que encontraste",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/intervalo/lesson.js": [
+  [
+   "estados\",\"Testar com um colega duas ",
+   "estados\",\"Testar duas ",
+   1
+  ],
+  [
+   "Um colega propõe duas hipóteses e aponta os indícios. Não expliques a intenção antes desse teste.",
+   "Depois de uma pausa, propõe duas hipóteses só pelos indícios (na aula, pede-as a um colega, sem explicar a intenção).",
+   1
+  ],
+  [
+   "as duas hipóteses do colega e o ",
+   "as duas hipóteses e o ",
    1
   ]
  ],
@@ -43,6 +617,16 @@
   [
    "nova observação combinada com o docente.",
    "observação tua.",
+   1
+  ],
+  [
+   "colega tenta explicar as três relações sem a tua",
+   "colega, ou tu depois de uma pausa, explica as três relações sem",
+   1
+  ],
+  [
+   "recebida",
+   "que encontraste",
    1
   ]
  ],
@@ -109,6 +693,11 @@
  ],
  "narrativas/ideias/sessao-02/index.html": [
   [
+   "a turma olha",
+   "olhas",
+   1
+  ],
+  [
    "Vais com o docente ao lugar escolhido, aos pares por segurança.",
    "Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
    1
@@ -116,6 +705,656 @@
   [
    "Na sala, <span class=\\\"nq\\\">lê-a<\\/span> sem dizer o que é: a turma tenta <span class=\\\"nq\\\">reconhecê-lo<\\/span>. Se falhar, repete da janela.",
    "<span class=\\\"nq\\\">Lê-a<\\/span> a alguém sem dizer o que é (na aula, à turma). Se falhar, <span class=\\\"nq\\\">reescreve-a<\\/span>.",
+   1
+  ]
+ ],
+ "narrativas/margens/passo-01/index.html": [
+  [
+   "burlas: linguagem e temas adultos; o docente decide se se lê nesta exploração.",
+   "burlas, com linguagem e temas adultos; esta exploração não precisa dele.",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco-imprimir/index.html": [
+  [
+   "Troca o papel com o colega e repete a lista no texto dele. Devolve",
+   "Se puderes, troca com um colega: passa a lista no texto dele e devolve-o",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco/index.html": [
+  [
+   "Troca o papel com o colega e repete a lista no texto dele. Devolve",
+   "Se puderes, troca com um colega: passa a lista no texto dele e devolve-o",
+   1
+  ]
+ ],
+ "narrativas/oficina-atelie-imprimir/index.html": [
+  [
+   "Mostra à turma o desenho, a hipótese e o resultado.",
+   "(Na aula, mostra à turma o desenho, a hipótese e o resultado.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-atelie/index.html": [
+  [
+   "Mostra à turma o desenho, a hipótese e o resultado.",
+   "(Na aula, mostra à turma o desenho, a hipótese e o resultado.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator-imprimir/index.html": [
+  [
+   "corrigida pela turma.",
+   "corrigida.",
+   1
+  ],
+  [
+   "a turma viu que tu",
+   "viste que",
+   1
+  ],
+  [
+   "Um colega executa a partitura em silêncio; a turma diz o que percebeu.",
+   "Executa a partitura em silêncio, ao espelho ou a filmar-te (na aula, um colega executa-a e a turma diz o que percebeu).",
+   1
+  ],
+  [
+   "a turma viu.",
+   "viste.",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator/index.html": [
+  [
+   "Um colega executa a partitura em silêncio; a turma diz o que percebeu.",
+   "Executa a partitura em silêncio, ao espelho ou a filmar-te (na aula, um colega executa-a e a turma diz o que percebeu).",
+   1
+  ],
+  [
+   "a turma viu.",
+   "viste.",
+   1
+  ],
+  [
+   "da leitura pela turma. Sucesso: a turma nomeia a situação sem a conhecer, só pelo corpo.",
+   "do teste. Sucesso: a situação lê-se só pelo corpo, sem a dizer.",
+   1
+  ]
+ ],
+ "narrativas/oficina-dilema-imprimir/index.html": [
+  [
+   "que o outro grupo não percebeu,",
+   "que não se percebeu,",
+   1
+  ],
+  [
+   "<li>Em grupo de três, desenha ",
+   "<li>Desenha ",
+   1
+  ],
+  [
+   "Troca o storyboard com outro grupo. Eles têm de dizer qual é o dilema, quem quer o quê e o que custa, só a partir dos desenhos. Anota o que não perceberam: é aí que o quadro falha.</li><li>Corrige um quadro (um só) e apresenta à turma: trinta segundos, sem ler as legendas.",
+   "Depois de uma pausa, olha só para os desenhos (ou troca com um colega): percebe-se o dilema, quem quer o quê e o que custa? Anota o que não se percebe: é aí que o quadro falha.</li><li>Corrige um quadro (um só). (Na aula, apresenta-o à turma em trinta segundos, sem ler as legendas.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-dilema/index.html": [
+  [
+   "Em grupo de três, desenha",
+   "Desenha",
+   1
+  ],
+  [
+   "Troca o storyboard com outro grupo. Eles têm de dizer qual é o dilema, quem quer o quê e o que custa, só a partir dos desenhos. Anota o que não perceberam: é aí que o quadro falha.</li><li>Corrige um quadro (um só) e apresenta à turma: trinta segundos, sem ler as legendas.",
+   "Depois de uma pausa, olha só para os desenhos (ou troca com um colega): percebe-se o dilema, quem quer o quê e o que custa? Anota o que não se percebe: é aí que o quadro falha.</li><li>Corrige um quadro (um só). (Na aula, apresenta-o à turma em trinta segundos, sem ler as legendas.)",
+   1
+  ],
+  [
+   "pelo grupo",
+   "por ti",
+   1
+  ],
+  [
+   "o outro grupo não percebeu. Sucesso: o outro grupo identificou o dilema e o custo sem que ninguém lho explicasse,",
+   "não se percebeu. Sucesso: quem vê os desenhos identifica o dilema e o custo sem explicação,",
+   1
+  ]
+ ],
+ "narrativas/oficina-epico-imprimir/index.html": [
+  [
+   "com dois colegas e um narrador. Pergunta ao público: julgaram, ou só sentiram?",
+   "em voz alta (na aula, com dois colegas e um narrador). Quem ouve julga, ou só sente?",
+   1
+  ]
+ ],
+ "narrativas/oficina-epico/index.html": [
+  [
+   "com dois colegas e um narrador. Pergunta ao público: julgaram, ou só sentiram?",
+   "em voz alta (na aula, com dois colegas e um narrador). Quem ouve julga, ou só sente?",
+   1
+  ],
+  [
+   "o público consegue dizer, no fim, quem tinha razão e porquê, e nem todos concordam.",
+   "quem lê ou ouve consegue dizer, no fim, quem tinha razão e porquê.",
+   1
+  ]
+ ],
+ "narrativas/oficina-espaco/index.html": [
+  [
+   "papel com um colega. Pede-lhe que explique o percurso; regista",
+   "papel: percorre-a como se fosses o público (ou pede a um colega que explique o percurso). Regista",
+   1
+  ],
+  [
+   "o colega compreendeu? Onde teve",
+   "se compreendeu? Onde houve",
+   1
+  ]
+ ],
+ "narrativas/oficina-manifesto-imprimir/index.html": [
+  [
+   " dez regras do teu grupo</p>",
+   " tuas dez regras</p>",
+   1
+  ],
+  [
+   "dez regras do grupo. Assinam todos",
+   "tuas dez regras. Assinas",
+   1
+  ],
+  [
+   " dez regras do grupo ",
+   " tuas dez regras ",
+   1
+  ],
+  [
+   "Em grupo, escolhe o",
+   "Escolhe o teu",
+   1
+  ],
+  [
+   "vos custe cumprir. Risca as que não se podem verificar.</li><li>Lê as dez regras em voz alta ao grupo, como um voto. Assinam todos. Durante o projeto, a lista fica à vista: no fim, contam quantas cumpriram.",
+   "te custe cumprir. Risca as que não se podem verificar.</li><li>Lê as dez regras em voz alta, como um voto, e assina. Durante o projeto, a lista fica à vista: no fim, conta quantas cumpriste.",
+   1
+  ]
+ ],
+ "narrativas/oficina-manifesto/index.html": [
+  [
+   "voto do teu grupo.",
+   "teu voto.",
+   1
+  ],
+  [
+   "Em grupo, escolhe o",
+   "Escolhe o teu",
+   1
+  ],
+  [
+   "vos custe cumprir. Risca as que não se podem verificar.</li><li>Lê as dez regras em voz alta ao grupo, como um voto. Assinam todos. Durante o projeto, a lista fica à vista: no fim, contam quantas cumpriram.",
+   "te custe cumprir. Risca as que não se podem verificar.</li><li>Lê as dez regras em voz alta, como um voto, e assina. Durante o projeto, a lista fica à vista: no fim, conta quantas cumpriste.",
+   1
+  ],
+  [
+   "parede do grupo",
+   "tua parede",
+   1
+  ],
+  [
+   "cada membro do grupo diz uma regra à câmara, sem cortes, e o último diz",
+   "dizes uma regra de cada vez à câmara, sem cortes, e acabas com",
+   1
+  ],
+  [
+   "dez regras do grupo assinadas. Sucesso: cada regra pode ser conferida no resultado por alguém de fora, e o grupo cumpriu",
+   "tuas dez regras assinadas. Sucesso: cada regra pode ser conferida no resultado por alguém de fora, e cumpriste",
+   1
+  ],
+  [
+   "as dez regras do teu grupo para",
+   "as tuas dez regras para",
+   1
+  ]
+ ],
+ "narrativas/oficina-matriz/index.html": [
+  [
+   " que o colega percebeu ",
+   " que se percebeu ",
+   1
+  ]
+ ],
+ "narrativas/oficina-pedacos-imprimir/index.html": [
+  [
+   "Lê em voz alta com três colegas, cada um a entrar quando quiser: o texto vira coro.",
+   "Lê-o em voz alta, mudando de voz quando quiseres: o texto vira coro (na aula, a quatro vozes).",
+   1
+  ]
+ ],
+ "narrativas/oficina-pedacos/index.html": [
+  [
+   "Lê em voz alta com três colegas, cada um a entrar quando quiser: o texto vira coro.",
+   "Lê-o em voz alta, mudando de voz quando quiseres: o texto vira coro (na aula, a quatro vozes).",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano-imprimir/index.html": [
+  [
+   "Lê a escaleta de planos a um colega sem lhe mostrar a cena original. Se perceber o conflito e o poder,",
+   "Depois de uma pausa, relê a escaleta sem a cena original (ou lê-a a um colega sem lhe mostrar a cena). Se o conflito e o poder se percebem,",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano/index.html": [
+  [
+   "Lê a escaleta de planos a um colega sem lhe mostrar a cena original. Se perceber o conflito e o poder,",
+   "Depois de uma pausa, relê a escaleta sem a cena original (ou lê-a a um colega sem lhe mostrar a cena). Se o conflito e o poder se percebem,",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade-imprimir/index.html": [
+  [
+   "que o colega disse que era o tema",
+   "tema que aparece (ou o que o colega disse)",
+   1
+  ],
+  [
+   "Lê a um colega sem explicar. Ele diz qual é o tema. Depois mostra-lhe a lista de origens: a surpresa dele é a medida do teu trabalho.",
+   "Depois de uma pausa, relê-o sem a lista de origens: o tema aparece? (Na aula, lê-o a um colega sem explicar: ele diz o tema.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade/index.html": [
+  [
+   "Lê a um colega sem explicar. Ele diz qual é o tema. Depois mostra-lhe a lista de origens: a surpresa dele é a medida do teu trabalho.",
+   "Depois de uma pausa, relê-o sem a lista de origens: o tema aparece? (Na aula, lê-o a um colega sem explicar: ele diz o tema.)",
+   1
+  ],
+  [
+   "colega adivinha o tema,",
+   "tema aparece sem explicação,",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao-imprimir/index.html": [
+  [
+   "em voz alta com um colega,",
+   "a cena em voz alta (ou com um colega),",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao/index.html": [
+  [
+   "em voz alta com um colega,",
+   "a cena em voz alta (ou com um colega),",
+   1
+  ]
+ ],
+ "narrativas/oficina-visivel/index.html": [
+  [
+   "um colega lê a rubrica e nomeia a mudança sem que lha digas.",
+   "a rubrica mostra a mudança sem a nomear (na aula, um colega nomeia-a sem que lha digas).",
+   1
+  ]
+ ],
+ "narrativas/percursos/transformar/index.html": [
+  [
+   "voto do teu grupo.",
+   "teu voto.",
+   1
+  ]
+ ],
+ "narrativas/proposta-subtexto/index.html": [
+  [
+   "um colega.</b> O colega",
+   "fora.</b> Outra pessoa, ou tu noutro dia,",
+   1
+  ],
+  [
+   " leitura dele for",
+   " leitura for",
+   1
+  ],
+  [
+   "do colega,",
+   "de fora,",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-entrevista/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-gaveta/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/comeca-mais-tarde/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/cortar-um-quinto/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/dicionario/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/frase-querida/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/interromper/index.html": [
+  [
+   "com um colega.",
+   "(ou com um colega).",
+   1
+  ],
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/lista-substantivos/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/o-contrario/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/sem-mente/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/so-gestos/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/teste-do-colega/index.html": [
+  [
+   "<p class=\\\"tr-txt\\\">Dá o teu texto a ler sem explicar nada. O colega marca com um traço onde se perdeu e com ",
+   "<p class=\\\"tr-txt\\\">Dá o teu texto a ler sem explicar nada. Quem lê (um colega, ou tu noutro dia) marca com um traço onde se perdeu e com ",
+   1
+  ],
+  [
+   "Troca de texto com um colega. Lê o dele em silêncio e marca: traço onde te perdes, círculo na frase que te fica. Nada de conversa até ao fim.",
+   "Relê em silêncio um texto teu de outro treino (ou troca com um colega) e marca: traço onde te perdes, círculo na frase que te fica.",
+   1
+  ],
+  [
+   "o colega se",
+   "o leitor se",
+   1
+  ],
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ],
+  [
+   "<p>Dá o teu texto a ler sem explicar nada. O colega marca com um traço onde se perdeu e com ",
+   "<p>Dá o teu texto a ler sem explicar nada. Quem lê (um colega, ou tu noutro dia) marca com um traço onde se perdeu e com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/tres-em-cinco/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/treinar/voz-alta/index.html": [
+  [
+   " \"Com ",
+   " \"Se puderes, com ",
+   1
+  ]
+ ],
+ "narrativas/variantes/index.html": [
+  [
+   "Mostra as duas versões a um colega. Pede-lhe que descreva o que mudou no significado.",
+   "Compara as duas versões: o que mudou no significado? (Na aula, pergunta-o a um colega.)",
+   1
+  ]
+ ],
+ "projetos/cidade/index.html": [
+  [
+   "voz alta, em roda com a turma, e",
+   "voz alta e",
+   1
+  ]
+ ],
+ "projetos/contra-feed/index.html": [
+  [
+   "pela turma.",
+   "por ti.",
+   1
+  ]
+ ],
+ "projetos/prancha/index.html": [
+  [
+   " caminhos, em turma, ",
+   " caminhos ",
+   1
+  ],
+  [
+   "à turma e perguntar a quem não leu o conto",
+   "a quem não leu o conto e perguntar",
+   1
+  ]
+ ],
+ "sidequests/vermeer/index.html": [
+  [
+   "Fotografa um colega com",
+   "Fotografa alguém com",
+   1
+  ]
+ ],
+ "tools/cidadania_m1_conteudos.py": [
+  [
+   "uma.','Pede à turma que resuma a cena: o que entendeu e onde precisou de",
+   "uma.','Resume a cena como um leitor novo: o que se entende e onde falta",
+   1
+  ],
+  [
+   "a turma não percebe o que mudou, examina a informação e a sequência antes de lhe explicar",
+   "o que mudou não se percebe, examina a informação e a sequência antes de explicares",
+   1
+  ],
+  [
+   "estilo. A turma não",
+   "estilo. Quem lê não",
+   1
+  ],
+  [
+   "tasks=['Mostra o guião à turma. A turma resume conflito, decisão e consequência sem pedir uma explicação inicial.','A turma aponta",
+   "tasks=['Relê o guião como um leitor novo e resume conflito, decisão e consequência (na aula, mostra-o à turma).','Aponta",
+   1
+  ]
+ ],
+ "tools/cidadania_m1_editorial.py": [
+  [
+   "close='Lê a pergunta à turma. A turma verifica se",
+   "close='Verifica se a pergunta",
+   1
+  ],
+  [
+   "close='A turma apresenta",
+   "close='Formula",
+   1
+  ],
+  [
+   "close='A turma identifica os objetivos sem a tua explicação.",
+   "close='Os objetivos percebem-se sem a tua explicação?",
+   1
+  ],
+  [
+   "formato.',\nclose='A turma resume a",
+   "formato.',\nclose='Resume a",
+   1
+  ],
+  [
+   "alteração. A turma aponta uma",
+   "alteração. Aponta uma",
+   1
+  ],
+  [
+   "rever.',\nclose='A turma resume a",
+   "rever.',\nclose='Resume a",
+   1
+  ],
+  [
+   "entry='Lê uma passagem à turma, sem a explicar. Pergunta quem age, o que muda e o que ficou por perceber.',",
+   "entry='Relê uma passagem como quem não a conhece: quem age, o que muda, o que fica por perceber?',",
+   1
+  ],
+  [
+   "fontes.',\nclose='A turma resume conflito,",
+   "fontes.',\nclose='Resume conflito,",
+   1
+  ]
+ ],
+ "tools/cidadania_m1_layout.py": [
+  [
+   "def com146(nome,texto):\n  for antigo,novo,n in g146.get(nome,[]):\n   ",
+   "# 05/11/2026: decisão 154 (os exercícios fazem-se sozinho). Por cima da 146, as trocas do manifesto fechado da 154, com a\n # mesma contagem exata (no enunciado da Pergunta Humana, o modelo das referências deixa de ser «o indicado pelo docente»).\n g154=json.loads((R/'tools/trocas/autonomia-154-20261105.json').read_text('utf-8'))\n def com146(nome,texto):\n  for camada in (g146,g154):\n   for antigo,novo,n in camada.get(nome,[]):\n    ",
+   1
+  ],
+  [
+   "'+label('Rever em turma')+'",
+   "'+label('Rever')+'",
+   1
+  ],
+  [
+   " em turma</h2><ol class=\"c10-tasks\"><li>A turma resume conflito, decisão e consequência sem a tua explicação.",
+   "</h2><ol class=\"c10-tasks\"><li>Resume conflito, decisão e consequência só com o que o texto diz.",
+   1
+  ]
+ ],
+ "tools/cidadania_m2_molde.py": [
+  [
+   "'Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.'",
+   "'Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).'",
+   1
+  ],
+  [
+   "faz=dict(tarefas=['Em turma, corram o feed de papel nas duas versões:",
+   "faz=dict(tarefas=['Corre o feed nas duas versões (ecrã ou papel):",
+   1
+  ],
+  [
+   "revisao='Um colega põe",
+   "revisao='Põe",
+   1
+  ],
+  [
+   "revisao='Um colega confere:",
+   "revisao='Confere:",
+   1
+  ],
+  [
+   "'Em turma, façam a cena das quatro cadeiras, em dois minutos: quem publicou, quem denunciou, quem modera; depois, a quarta cadeira, a do recurso.',",
+   "'Escreve a cena das quatro cadeiras, uma fala em cada: quem publicou, quem denunciou, quem modera e, depois, a do recurso (na aula, em turma).',",
+   1
+  ],
+  [
+   "revisao='Outra pessoa lê a carta no papel da plataforma e tem de conseguir responder-lhe.'),",
+   "revisao='Relê a carta no papel da plataforma: consegues responder-lhe?'),",
+   1
+  ],
+  [
+   "a outra pessoa conseguir responder a uma pergunta só com «sim» ou «não», essa pergunta reescreve-se.'),",
+   "uma pergunta se responde só com «sim» ou «não», reescreve-a.'),",
+   1
+  ],
+  [
+   "revisao='A outra pessoa lê a nota como público, diz se percebe o que é de quem e confere",
+   "revisao='Lê a nota como público: percebe-se o que é de quem? Confere",
+   1
+  ],
+  [
+   "'Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma",
+   "'Escolhe o caso que vais analisar e",
+   1
+  ],
+  [
+   "individual, com revisão de um colega.',",
+   "individual.',",
+   1
+  ],
+  [
+   "entrega.',\n          revisao='Um colega revê e marca cada",
+   "entrega.',\n          revisao='Marca cada",
+   1
+  ],
+  [
+   "revisao='Um colega diz em que momento",
+   "revisao='Marca onde o público",
+   1
+  ],
+  [
+   "faz=dict(tarefas=['Ensaio cruzado: mostra uma versão curta a um colega, sem explicar antes a regra.',\n                   'Quem observa regista",
+   "faz=dict(tarefas=['Ensaio: mostra uma versão curta a alguém (na aula, a um colega), sem explicar antes a regra.',\n                   'Regista",
+   1
+  ],
+  [
+   "a revisão com outra pessoa é ",
+   "a revisão é ",
+   1
+  ],
+  [
+   "escola; quem não puder ir lê o texto transcrito pelo docente.',",
+   "escola ou na oficina «O manifesto na fachada».',",
+   1
+  ],
+  [
+   "'Em turma, passem o manifesto a versão para assinar. A assinatura é livre e pode levar uma",
+   "'Passa as regras a versão para assinar (na aula, em turma). A assinatura é livre e admite",
+   1
+  ],
+  [
+   "revisao='Um colega faz a pergunta mais difícil à defesa",
+   "revisao='Faz à tua defesa a pergunta mais difícil",
+   1
+  ]
+ ],
+ "tools/cidadania_m2_sessoes.py": [
+  [
+   "label('Rever com outra pessoa')",
+   "label('Rever')",
    1
   ]
  ],
@@ -130,6 +1369,58 @@
   [
    "('p', 'Resultado da fila: reconhecido por <i class=\"b\"></i> de <i class=\"b\"></i> colegas.'),",
    "# 05/11/2026 (decisão 154): a prova da linha faz-se com quem estiver, não só com colegas.\n   ('p', 'Resultado da fila: reconhecido por <i class=\"b\"></i> de <i class=\"b\"></i> pessoas.'),",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s02.json": [
+  [
+   "Em turma, quatro situações em papel:",
+   "Quatro situações:",
+   1
+  ],
+  [
+   "a turma decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, cada um",
+   "decide, vê o que a decisão provoca e revê-a se um dado mudar (por exemplo, se a pessoa da fotografia for menor). No fim,",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s02.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> Em turma, quatro situações em papel:",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> Quatro situações:",
+   1
+  ],
+  [
+   "a turma decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, cada um",
+   "decide, vê o que a decisão provoca e revê-a se um dado mudar (por exemplo, se a pessoa da fotografia for menor). No fim,",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s03.json": [
+  [
+   "orçamento. Em turma, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. A turma decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, cada um escolhe e delimita a sua",
+   "orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s03.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em turma, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. A turma decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, cada um escolhe e delimita a sua",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s04.json": [
+  [
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s04.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
    1
   ]
  ],
@@ -149,6 +1440,68 @@
   [
    "escola, com o docente,",
    "escola (ou à tua rua),",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s06.json": [
+  [
+   "Cada aluno escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois tira uma carta com o lugar que lhe calha. Quem perde apresenta a objeção, em turma, e cada um revê a sua",
+   "Escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois sorteia o teu lugar: A, B ou C. Escreve a objeção de quem perde (na aula, ouve-a em turma) e revê a tua",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s06.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> Repartir os seis turnos de filmagem sem saber o lugar. Cada aluno escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois tira uma carta com o lugar que lhe calha. Quem perde apresenta a objeção, em turma, e cada um revê a sua",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> Repartir os seis turnos de filmagem sem saber o lugar. Escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois sorteia o teu lugar: A, B ou C. Escreve a objeção de quem perde (na aula, ouve-a em turma) e revê a tua",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s07.json": [
+  [
+   "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   1
+  ],
+  [
+   "vosso júri decidiu pelas lágrimas ou pelas",
+   "teu voto pesou as lágrimas ou as",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s07.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> O Tribunal de turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».",
+   1
+  ],
+  [
+   "acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
+   "teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   1
+  ],
+  [
+   "vosso júri decidiu pelas lágrimas ou pelas",
+   "teu voto pesou as lágrimas ou as",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s09.json": [
+  [
+   "Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As notas dadas aos colegas",
+   "Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s09.py": [
+  [
+   "NA_AULA = (\n '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).",
+   1
+  ],
+  [
+   "notas dadas aos colegas",
+   "tuas notas",
    1
   ]
  ],
@@ -183,6 +1536,11 @@
  ],
  "tools/licoes/ideias-s02.json": [
   [
+   "a turma olha",
+   "olhas",
+   1
+  ],
+  [
    "Vais com o docente ao lugar escolhido, aos pares por segurança.",
    "Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
    1
@@ -194,6 +1552,11 @@
   ]
  ],
  "tools/licoes/ideias-s02.py": [
+  [
+   "ABRE = (\n '<p class=\"pergunta-c\">O que distingue uma coisa de todas as outras iguais a ela?</p>'\n '<p>Hoje a turma olha",
+   "# 05/11/2026 (decisão 154, em todo o sítio): no «Abre», o lugar é teu: «Hoje olhas…» (era «Hoje a turma olha…»).\nABRE = (\n '<p class=\"pergunta-c\">O que distingue uma coisa de todas as outras iguais a ela?</p>'\n '<p>Hoje olhas",
+   1
+  ],
   [
    "NA_AULA = ('<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança.",
    "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Vais com o docente … aos pares por segurança» (a segurança da saída em aula\n# fica no guia do docente), e a prova da linha faz-se com qualquer pessoa, ou com a turma na aula.\nNA_AULA = ('<p><b>O que se faz.</b> Vai ao lugar que escolheste na sessão 1, ou fica à janela.",
@@ -212,6 +1575,114 @@
    1
   ]
  ],
+ "ver-para-fazer/oficina-cinema/index.html": [
+  [
+   "<meta name=\"description\" content=\"O que decide quem corta um filme? Enquadrar, mover, cortar e pôr som. Têm excertos de filmes: o docente escolhe antes.\">",
+   "<meta name=\"description\" content=\"O que decide quem corta um filme? Enquadrar, mover, cortar e pôr som, com excertos de filmes.\">",
+   1
+  ],
+  [
+   " som. Têm excertos de filmes: o docente escolhe antes.</p>",
+   " som, com excertos de filmes.</p>",
+   1
+  ]
+ ],
+ "ver-para-fazer/v102/index.html": [
+  [
+   "<meta name=\"description\" content=\"Ler uma roupa como símbolo e memória. No excerto escolhido, anota um símbolo ligado à roupa de Zuzu e o que significa para quem fala. Desenha-o num molde simples e escreve, numa frase, que memória guarda.\">",
+   "<meta name=\"description\" content=\"Ler uma roupa como símbolo e memória. No teu excerto, anota um símbolo ligado à roupa de Zuzu e o que significa para quem fala. Desenha-o num molde simples e escreve, numa frase, que memória guarda.\">",
+   1
+  ],
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ],
+  [
+   "<p>No excerto escolhido, anota ",
+   "<p>No teu excerto, anota ",
+   1
+  ]
+ ],
+ "ver-para-fazer/v103/index.html": [
+  [
+   "<meta name=\"description\" content=\"Relacionar uma decisão de moda com o seu contexto político. No excerto escolhido, encontra uma decisão de criação mencionada e relaciona-a com destinatário, matéria ou contexto. Explica numa frase o que essa roupa diz sem palavras.\">",
+   "<meta name=\"description\" content=\"Relacionar uma decisão de moda com o seu contexto político. No teu excerto, encontra uma decisão de criação mencionada e relaciona-a com destinatário, matéria ou contexto. Explica numa frase o que essa roupa diz sem palavras.\">",
+   1
+  ],
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ],
+  [
+   "<p>No excerto escolhido, encontra ",
+   "<p>No teu excerto, encontra ",
+   1
+  ]
+ ],
+ "ver-para-fazer/v111/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v116/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v122/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v124/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v125/index.html": [
+  [
+   "<meta name=\"description\" content=\"Ouvir como a voz e a imagem leem um poema. Segue o poema na edição da aula. Assinala uma pausa da leitura e explica o seu efeito; depois lê uma passagem de duas maneiras e justifica a que preferes.\">",
+   "<meta name=\"description\" content=\"Ouvir como a voz e a imagem leem um poema. Segue o poema impresso. Assinala uma pausa da leitura e explica o seu efeito; depois lê uma passagem de duas maneiras e justifica a que preferes.\">",
+   1
+  ],
+  [
+   "<p>Segue o poema na edição da aula. Assinala uma pausa ",
+   "<p>Segue o poema impresso. Assinala uma pausa ",
+   1
+  ],
+  [
+   "na edição da aula,",
+   "impresso,",
+   1
+  ]
+ ],
+ "ver-para-fazer/v126/index.html": [
+  [
+   "<meta name=\"description\" content=\"Perceber quem pede, a quem, e o que muda ao ouvir o poema em voz alta. Segue o poema na edição da aula. Identifica quem fala e a quem se dirige, com dois indícios do texto; depois prepara duas leituras de uma passagem, mudando uma pausa, e explica o efeito.\">",
+   "<meta name=\"description\" content=\"Perceber quem pede, a quem, e o que muda ao ouvir o poema em voz alta. Segue o poema impresso. Identifica quem fala e a quem se dirige, com dois indícios do texto; depois prepara duas leituras de uma passagem, mudando uma pausa, e explica o efeito.\">",
+   1
+  ],
+  [
+   "<p>Segue o poema na edição da aula. Identifica quem fala ",
+   "<p>Segue o poema impresso. Identifica quem fala ",
+   1
+  ],
+  [
+   "na edição da aula,",
+   "impresso,",
+   1
+  ]
+ ],
  "ver-para-fazer/v26/index.html": [
   [
    "<meta name=\"description\" content=\"Distinguir representação, imaginação e evidência. O docente descreve um objeto oculto; desenha-o e assinala três decisões inferidas. Compara depois com o objeto.\">",
@@ -221,6 +1692,198 @@
   [
    "<p>O docente descreve um objeto oculto; ",
    "<p>Pede a alguém que te descreva um objeto que não vês; ",
+   1
+  ]
+ ],
+ "ver-para-fazer/v44/index.html": [
+  [
+   "<meta name=\"description\" content=\"Criar colaborativamente com informação parcial. Em turma, com papel dobrado em partes, cada um acrescenta um desenho sem ver o anterior; no fim, uma história para o conjunto.\">",
+   "<meta name=\"description\" content=\"Criar colaborativamente com informação parcial. Com papel dobrado em partes, desenha à vez com alguém, sem ver o desenho anterior; no fim, uma história para o conjunto.\">",
+   1
+  ],
+  [
+   "<p>Em turma, com papel dobrado em partes, cada um acrescenta um desenho sem ver o ",
+   "<p>Com papel dobrado em partes, desenha à vez com alguém, sem ver o desenho ",
+   1
+  ]
+ ],
+ "ver-para-fazer/v47/index.html": [
+  [
+   "para aprofundamento ou excerto escolhido pelo docente.",
+   "vê-o todo ou só um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v54/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v55/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v56/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v57/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v58/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v60/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v63/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v64/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v65/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v68/index.html": [
+  [
+   "<meta name=\"description\" content=\"Escutar uma resposta e relatá-la com fidelidade. Em turma, faz três perguntas abertas sobre um objeto que um colega trouxe. Escuta sem completar as respostas e escreve uma apresentação fiel em 60 palavras.\">",
+   "<meta name=\"description\" content=\"Escutar uma resposta e relatá-la com fidelidade. Faz a alguém três perguntas abertas sobre um objeto dele. Escuta sem completar as respostas e escreve uma apresentação fiel em 60 palavras.\">",
+   1
+  ],
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ],
+  [
+   "<p>Em turma, faz três perguntas abertas sobre um objeto que um colega trouxe. ",
+   "<p>Faz a alguém três perguntas abertas sobre um objeto dele. ",
+   1
+  ]
+ ],
+ "ver-para-fazer/v74/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v76/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v89/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v90/index.html": [
+  [
+   "<meta name=\"description\" content=\"Ler um poema pela imagem e pela pergunta aberta. Ouve o poema escolhido para a turma. Escreve a imagem que te ficou e uma pergunta que o texto deixa em aberto; compara-as em turma.\">",
+   "<meta name=\"description\" content=\"Ler um poema pela imagem e pela pergunta aberta. Ouve um poema inteiro. Escreve a imagem que te ficou e uma pergunta que o texto deixa em aberto (na aula, compara-as em turma).\">",
+   1
+  ],
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ],
+  [
+   " o poema escolhido para a turma. Escreve a imagem que te ficou e uma pergunta que o texto deixa em aberto; compara-as em turma.</p>",
+   " um poema inteiro. Escreve a imagem que te ficou e uma pergunta que o texto deixa em aberto (na aula, compara-as em turma).</p>",
+   1
+  ]
+ ],
+ "ver-para-fazer/v91/index.html": [
+  [
+   "<meta name=\"description\" content=\"Ligar o que um escritor diz a um texto seu. Antes de ver, formula uma pergunta sobre o processo de escrita de Mia Couto. Depois, relaciona o que ouviste com um texto dele lido na aula.\">",
+   "<meta name=\"description\" content=\"Ligar o que um escritor diz a um texto seu. Antes de ver, formula uma pergunta sobre o processo de escrita de Mia Couto. Depois, relaciona o que ouviste com um texto dele.\">",
+   1
+  ],
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ],
+  [
+   " dele lido na aula.</p>",
+   " dele.</p>",
+   1
+  ]
+ ],
+ "ver-para-fazer/v92/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v93/index.html": [
+  [
+   "tem um tema que o docente prepara antes.",
+   "o tema pede contexto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v94/index.html": [
+  [
+   "O docente escolhe um excerto depois de a ver.",
+   "Escolhe um excerto.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v99/index.html": [
+  [
+   "<meta name=\"description\" content=\"Ler uma opinião sobre elegância como discurso do seu tempo. Vê um excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com a síntese que o docente preparou, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.\">",
+   "<meta name=\"description\" content=\"Ler uma opinião sobre elegância como discurso do seu tempo. Vê um excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.\">",
+   1
+  ],
+  [
+   " excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com a síntese que o docente preparou, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.</p>",
+   " excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.</p>",
+   1
+  ],
+  [
+   "Papel, caneta e uma síntese em português.",
+   "Papel e caneta.",
    1
   ]
  ]
