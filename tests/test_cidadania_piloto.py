@@ -62,7 +62,18 @@ class CidadaniaPiloto(unittest.TestCase):
         # o formato que o motor grava: «lida» no fim e «versao» da lição (assets/licoes/jogo.js)
         motor = ler(ROOT / 'assets/licoes/jogo.js')
         self.assertIn('st.lida=true', motor); self.assertIn('st.versao!==cfg.versao', motor)
-        self.assertIn('st.lida&&st.versao===li.getAttribute("data-versao")', s)
+        # 05/11/2026: plano do molde da Cidadania, pedido 1. «Feita» deixa de exigir a versão igual à da página (subir a versão
+        # apagava o «feita» de todos) e passa a contar com feita(st) do progresso comum (assets/licoes/progresso-licoes.js): a
+        # conclusão desta versão, ou de uma anterior que o motor guarda em «antes» com preservarAnterior. Exige-se o progresso
+        # comum carregado antes do script, a contagem por feita(st), a data da primeira conclusão, o motor a migrar com o
+        # progresso comum e nada lido na projeção. tests/browser_licoes_lente.cjs prova-o com um estado antigo semeado.
+        self.assertIn('<script src="../../../assets/licoes/progresso-licoes.js?v=', s)
+        self.assertLess(s.index('assets/licoes/progresso-licoes.js'), s.index('var P=window.EPILicoesProgresso'))
+        self.assertIn('var ok=!!(st&&P&&P.feita(st))', s)
+        self.assertIn('var t=P.data(st)', s)
+        self.assertIn('st=proj?null:JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))', s)
+        self.assertIn('PROG.migrar(st,cfg.versao)', motor)
+        self.assertNotIn('st.versao===li.getAttribute', s)
 
     def test_ligacoes_locais_resolvem(self):
         for p in (MOD, GUIA, PONTO):

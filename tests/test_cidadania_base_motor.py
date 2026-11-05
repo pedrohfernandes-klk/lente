@@ -12,6 +12,49 @@ RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json')
 REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').read_text(encoding='utf-8'))
 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
 import grupos146  # noqa: E402
+# 05/11/2026: plano do molde da Cidadania, pedido 1 (motor, casca e progresso, sem conteúdo novo). Manifesto fechado das trocas
+# literais, com contagem exata, por cima das decisões 146 e 154: nas dez sessões do piloto, só o cfg da família (as chaves novas
+# do CFG e o CFG.fim) e o progresso comum que esse cfg pede; na página do módulo e no seu gerador, «Feita» com feita(st) do
+# progresso comum. Em assets/licoes/cidadania.css, só um bloco no fim, marcado, em que todas as regras pertencem a
+# body.molde-cidadania (as páginas sem o molde não mudam). Nada mais se aceita.
+MOLDE_P1 = json.loads((ROOT / 'tools/trocas/molde-pedido1-20261105.json').read_text(encoding='utf-8'))
+MARCA_MOLDE = b'/* ==== molde cidadania-2026-11 ==== */'
+
+
+def desfazer_molde(texto, nome):
+    for antigo, novo, n in reversed(MOLDE_P1.get(nome, [])):
+        if texto.count(novo) != n:
+            raise AssertionError(('molde, pedido 1 (desfazer)', nome, novo[:80]))
+        texto = texto.replace(novo, antigo)
+    return texto
+
+
+def aplicar_molde(texto, nome):
+    for antigo, novo, n in MOLDE_P1.get(nome, []):
+        if texto.count(antigo) != n:
+            raise AssertionError(('molde, pedido 1', nome, antigo[:80]))
+        texto = texto.replace(antigo, novo)
+    return texto
+
+
+def seletores_fora_do_molde(css):
+    """Os seletores do bloco do molde que não pertencem a body.molde-cidadania (tem de dar lista vazia)."""
+    css = re.sub(r'/\*.*?\*/', '', css, flags=re.S)
+    fora = []
+    for sel in re.findall(r'([^{}]+)\{[^{}]*\}', re.sub(r'@media[^{]*\{', '', css)):
+        partes, nivel, atual = [], 0, ''
+        for ch in sel:  # só as vírgulas de fora dos parênteses separam seletores (:is(a,summary) é um só)
+            nivel += (ch == '(') - (ch == ')')
+            if ch == ',' and nivel == 0:
+                partes.append(atual)
+                atual = ''
+            else:
+                atual += ch
+        for s in partes + [atual]:
+            s = s.strip()
+            if s and not s.startswith('@') and 'body.molde-cidadania' not in s and not re.fullmatch(r'(?:from|to|\d+%)', s):
+                fora.append(s)
+    return fora
 
 
 class CidadaniaBase(unittest.TestCase):
@@ -29,6 +72,13 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
+                # 05/11/2026: plano do molde da Cidadania, pedido 1: desfaz-se primeiro a camada do molde (a mais recente).
+                if nome in MOLDE_P1:
+                    depois = desfazer_molde(depois.decode('utf-8'), nome).encode('utf-8')
+                if nome == 'assets/licoes/cidadania.css':
+                    self.assertEqual(depois.count(MARCA_MOLDE), 1)
+                    depois, bloco = depois.split(MARCA_MOLDE)
+                    self.assertEqual(seletores_fora_do_molde(bloco.decode('utf-8')), [])
                 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): só se desfazem as trocas do manifesto fechado, com contagem exata; o resto compara-se como antes.
                 if nome in grupos146.TROCAS:
                     depois = grupos146.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
@@ -55,6 +105,8 @@ class CidadaniaBase(unittest.TestCase):
                     esperado = esperado.replace(antigo, novo)
                 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): as trocas do manifesto fechado, com contagem exata.
                 esperado = grupos146.aplicar(esperado, nome)
+                # 05/11/2026: plano do molde da Cidadania, pedido 1: a camada do molde, com contagem exata, por cima.
+                esperado = aplicar_molde(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':

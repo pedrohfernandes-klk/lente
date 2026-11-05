@@ -1,6 +1,8 @@
 // 02/11/2026: decisões 115 e 141. Revisões dos cartões não apagam conclusões anteriores.
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const p=require('../assets/licoes/progresso-laboratorio.js');
+// 05/11/2026: plano do molde da Cidadania, pedido 1. O progresso comum passa de progresso-laboratorio.js a
+// progresso-licoes.js, com o mesmo código; as provas são as mesmas, e o nome antigo no navegador fica como sinónimo.
+const p=require('../assets/licoes/progresso-licoes.js');
 test('sessão concluída conserva a data e os resultados, mas não transfere respostas por índice',()=>{
  const old={versao:'2026-11-01-1',lida:true,t:100,melhor:12,totalMelhor:13,tentativas:2,exposicoes:{0:2},ult:'0,1'};
  const copy=JSON.stringify(old),n=p.migrar(old,'2026-11-02-1');
@@ -25,4 +27,11 @@ test('estado incompleto, vazio ou inválido não inventa uma conclusão',()=>{
 test('a entrada mantém a data mais antiga depois de concluir a nova versão',()=>{
  assert.equal(p.data({lida:true,t:400,antes:{lida:true,data:100}}),100);
  assert.equal(p.data({lida:true,t:50,antes:{lida:true,data:100}}),50);
+});
+
+test('05/11/2026: no navegador, o progresso comum responde pelos dois nomes (EPILicoesProgresso e EPILabProgresso)',()=>{
+ const vm=require('node:vm'),fs=require('node:fs'),path=require('node:path');
+ const caixa={window:{}};caixa.window.window=caixa.window;vm.createContext(caixa);
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../assets/licoes/progresso-licoes.js'),'utf8'),caixa);
+ assert.equal(typeof caixa.window.EPILicoesProgresso.migrar,'function');assert.strictEqual(caixa.window.EPILabProgresso,caixa.window.EPILicoesProgresso);
 });

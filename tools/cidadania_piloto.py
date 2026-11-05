@@ -428,13 +428,18 @@ def pagina_modulo(S):
                    # na linha acima de 600 px, numa linha com reticências (abaixo, só a da próxima sessão, na região «A seguir»).
                    f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado" data-estado></span></span>'
                    f'<span class="perg">{s["pergunta"]}</span></a></li>')
+    # 05/11/2026 (plano do molde da Cidadania, pedido 1): «Feita» conta com feita(st) do progresso comum
+    # (assets/licoes/progresso-licoes.js): a sessão concluída nesta versão ou numa anterior (st.antes, que o motor preenche ao
+    # subir a versão com preservarAnterior). Antes contava só st.lida com a versão igual à da página, e subir a versão apagava
+    # o «feita» de todos. A data é a da primeira conclusão. Na projeção, nada se lê.
     js = ('(function(){"use strict";var L=[].slice.call(document.querySelectorAll("[data-chave]")),feitas=0,prox=null;'
-          'L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
-          'var ok=!!(st&&st.lida&&st.versao===li.getAttribute("data-versao"));var el=li.querySelector("[data-estado]");'
+          'var P=window.EPILicoesProgresso,proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'
+          'L.forEach(function(li){var st=null;try{st=proj?null:JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
+          'var ok=!!(st&&P&&P.feita(st));var el=li.querySelector("[data-estado]");'
           # 31/10/2026 (revisão do diretor de arte): a sessão feita diz «Feita dd/mm» (o motor grava t=Date.now() no fim); a
           # próxima por fazer leva «A seguir» e o filete vermelho; «por fazer» não se escreve.
           'var dd=function(n){return(n<10?"0":"")+n};'
-          'if(ok){feitas++;li.classList.add("feita");var d=typeof st.t==="number"?new Date(st.t):null;el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
+          'if(ok){feitas++;li.classList.add("feita");var t=P.data(st),d=t===null?null:new Date(t);el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
           'else if(!prox){prox=li;li.classList.add("seguir");el.textContent="A seguir"}});'
           'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]"),pn=document.querySelector("[data-prox-n]"),pt=document.querySelector("[data-prox-t]"),pk=document.querySelector("[data-prox-k]"),pq=document.querySelector("[data-prox-q]");'
           'if(c)c.textContent=feitas+" de "+L.length+" sessões feitas";'
@@ -455,7 +460,7 @@ def pagina_modulo(S):
              '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Humanos: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
-            + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
+            + f'<main id="conteudo">{corpo}</main><script src="{base}assets/licoes/{LL.PROGRESSO}"></script><script>{js}</script></body></html>\n')
 
 
 def tabela_grelha(g):

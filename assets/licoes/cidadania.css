@@ -21,3 +21,86 @@ body.licao-cidadania .casca-folha .c-veredito .c-pts{color:var(--tinta)}
 @property --medida-ler{syntax:"<length>";inherits:true;initial-value:0px}
 .licao-cidadania .jogo .ler{--medida-ler:29em}
 .licao-cidadania .jogo .ler :is(p,ul,ol,details){max-width:var(--medida-ler)}
+/* ==== molde cidadania-2026-11 ==== */
+/* 05/11/2026 (plano do molde da Cidadania, pedido 1; decisões 145 e 153): a identidade das sessões no molde novo, só com
+   body.molde-cidadania (o gerador põe a classe quando o .json tem "molde": "cidadania-2026-11"). As páginas do piloto e do M1
+   publicado não têm a classe e não mudam. O token --cid (azul de carimbo, provisório até a direção de arte o fixar, tarefa 148)
+   só aparece no rótulo e no filete do Abre, no filete do «Em turma» e no fundo do Para levar; nunca na barra, onde a mostarda
+   volta a querer dizer «feito» e o vermelho «atual». Títulos e frase do Para levar em Bebas Neue; texto em Georgia; o documento
+   inteiro, sem filtro nem recorte. Ganchos: a raiz de cada cartão de ler leva a classe do seu tipo (.m-abre, .m-decide, .m-olha,
+   .m-le, .m-conceito, .m-volta, .m-turma, .m-papel, .m-levar), que tools/cidadania_molde.py escreve. */
+body.molde-cidadania{--cid:#1f4e79;--cid-sobre:#fff;--mostarda:#d9a520}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body.molde-cidadania{--cid:#9cc1e8;--cid-sobre:#121210;--mostarda:#e0b23a}}
+:root[data-theme="dark"] body.molde-cidadania{--cid:#9cc1e8;--cid-sobre:#121210;--mostarda:#e0b23a}
+:root[data-theme="light"] body.molde-cidadania{--cid:#1f4e79;--cid-sobre:#fff;--mostarda:#d9a520}
+body.molde-cidadania .jogo .tit{font:400 clamp(1.75rem,6.4vw,2.25rem)/1 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em;margin:0 0 14px;text-wrap:balance}
+body.molde-cidadania .jogo .tit.cartaz{font-size:clamp(2.5rem,10vw,3.4rem);line-height:.94;margin:2px 0 18px;padding-right:0}
+body.molde-cidadania .jogo .ler .tit{background:none;animation:none;padding-bottom:0}
+body.molde-cidadania .jogo .ler{font-family:var(--serif,Georgia,"Times New Roman",serif)}
+/* no computador, todos os blocos acabam na mesma vertical do texto (a medida dos cartões de ler) */
+body.molde-cidadania .jogo .ler :is(.posicao,.pos-lados,.campos,.papel-a6,table.tabela,.recolha,blockquote.lei){max-width:var(--medida-ler)}
+body.molde-cidadania .jogo .ler .pos-antes{margin:0 0 12px;font:italic 1rem/1.45 var(--serif,Georgia,serif);color:var(--suave)}
+/* o fim: «Sessão feita.» em letra de cartaz */
+body.molde-cidadania .jogo .fim .grande.lido{font:400 clamp(2.6rem,11vw,3.6rem)/.95 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em;padding:0}
+body.molde-cidadania .jogo .fim .fim-modulo{font:italic 1.05rem/1.4 var(--serif,Georgia,serif);margin:6px 0 0}
+/* o Abre: rótulo e filete no azul de carimbo, o carimbo do caso e a pergunta da sessão */
+body.molde-cidadania .jogo .cartao:has(.m-abre),body.molde-cidadania .jogo .cartao:has(.m-turma){border-top:4px solid var(--cid)}
+body.molde-cidadania .jogo .cartao:has(.m-abre) .rot{color:var(--cid)}
+body.molde-cidadania .jogo .ler .carimbo{display:inline-block;margin:0 0 14px;padding:6px 10px 5px;border:1.5px solid var(--cid);color:var(--cid);font:700 .7rem/1 Arial,Helvetica,sans-serif;letter-spacing:.18em;text-transform:uppercase;transform:rotate(-1.4deg);transform-origin:0 50%}
+body.molde-cidadania .jogo .ler .caso{font-size:1.18rem;line-height:1.55;margin:0 0 6px}
+body.molde-cidadania .jogo .ler .pergunta-sessao{margin:18px 0 0;padding:2px 0 2px 16px;border-left:3px solid currentColor;font:italic 1.24rem/1.38 var(--serif,Georgia,serif)}
+/* referências e licenças nunca partem a meio da linha (decisão 152) */
+body.molde-cidadania .jogo .nq,body.molde-cidadania .jogo .ref{white-space:nowrap}
+/* o Olha: o documento inteiro, sem filtro nem movimento, ampliável; acima de 1100 px, imagem à esquerda e legenda à direita */
+body.molde-cidadania .jogo .ler .fig img,body.molde-cidadania .jogo .ler .fig .moldura img{filter:none;animation:none;transform:none}
+body.molde-cidadania .jogo .ler .fig .moldura{position:relative}
+body.molde-cidadania .jogo .ler .fig.inteiro img{max-height:min(54vh,540px);max-height:min(54dvh,540px)}
+body.molde-cidadania .jogo .ler .fig figcaption{font:italic .98rem/1.45 var(--serif,Georgia,serif);color:var(--tinta);margin-top:10px}
+body.molde-cidadania .casca .jogo .ler .fig{display:block}
+@media (min-width:1100px){body.molde-cidadania .casca .jogo .ler .m-olha .fig{display:grid;grid-template-columns:minmax(0,max-content) minmax(12rem,15rem);gap:28px;align-items:end}
+ body.molde-cidadania .casca .jogo .ler .m-olha .fig figcaption{margin:0;padding-top:10px;border-top:2px solid var(--tinta);font-size:1.02rem}}
+body.molde-cidadania .jogo .ver-fig img{filter:none}
+/* o Lê: a lei em citação, com o artigo na margem e a fonte oficial por baixo */
+body.molde-cidadania .jogo .ler blockquote.lei{margin:14px 0 8px;padding:0 0 0 16px;border-left:2px solid var(--tinta)}
+body.molde-cidadania .jogo .ler blockquote.lei p{font-size:1.1rem;line-height:1.55;margin:0 0 8px}
+body.molde-cidadania .jogo .ler .lei .art{display:block;margin:0 0 4px;font:700 .7rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);white-space:nowrap}
+@media (min-width:720px){body.molde-cidadania .jogo .ler blockquote.lei{position:relative;margin-left:6.6rem}body.molde-cidadania .jogo .ler .lei .art{position:absolute;left:-6.6rem;top:.3em;width:5.6rem;text-align:right}}
+body.molde-cidadania .jogo .ler .fonte-lei{font:.82rem/1.45 Arial,Helvetica,sans-serif;color:var(--suave);margin:0 0 10px}
+body.molde-cidadania .jogo .ler .fonte-lei a{color:inherit}
+/* itens paralelos em tabela (decisão 152); no telemóvel, cada linha num bloco */
+body.molde-cidadania .jogo .ler table.tabela{width:100%;border-collapse:collapse;margin:12px 0 10px;font:.96rem/1.42 Arial,Helvetica,sans-serif}
+body.molde-cidadania .jogo .ler table.tabela th{text-align:left;font:700 .68rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);padding:6px 12px 7px 0;border-bottom:2px solid var(--tinta)}
+body.molde-cidadania .jogo .ler table.tabela td{padding:10px 12px 10px 0;border-bottom:1px solid var(--c-cinza,#d6d4ce);vertical-align:top}
+body.molde-cidadania .jogo .ler table.tabela td:first-child{font-weight:700}
+@media (max-width:560px){body.molde-cidadania .jogo .ler table.tabela thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ body.molde-cidadania .jogo .ler table.tabela tr{display:block;padding:10px 0;border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+ body.molde-cidadania .jogo .ler table.tabela td{display:block;padding:2px 0;border:0}
+ body.molde-cidadania .jogo .ler table.tabela td[data-th]::before{content:attr(data-th);display:block;font:700 .64rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}}
+/* a Volta ao caso abre a parte 2; o «Em turma» tem o filete azul e os quatro campos */
+body.molde-cidadania .jogo .ler .parte{margin:0 0 10px;font:700 .7rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .campos{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 16px;margin:16px 0 0;padding:12px 0;border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);font:.98rem/1.45 Arial,Helvetica,sans-serif}
+body.molde-cidadania .jogo .ler .campos dt{font:700 .68rem/2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .campos dd{margin:0}
+@media (max-width:480px){body.molde-cidadania .jogo .ler .campos{grid-template-columns:minmax(0,1fr);gap:0}body.molde-cidadania .jogo .ler .campos dd{margin:0 0 8px}}
+/* «Agora, em papel»: o papel A6, com código e data, e as três linhas */
+body.molde-cidadania .jogo .ler .papel-a6{margin:14px 0 12px;padding:14px 18px 8px;border:1.5px solid var(--tinta);background:var(--papel2,var(--papel));box-shadow:4px 4px 0 var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab{display:flex;justify-content:space-between;gap:12px;max-width:none;margin:0 0 8px;padding:0 0 8px;border-bottom:1.5px dashed var(--suave);font:700 .68rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab span{flex:1}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab span+span{text-align:right}
+body.molde-cidadania .jogo .ler .papel-a6 ol{max-width:none;margin:0;padding:0 0 0 1.3em}
+body.molde-cidadania .jogo .ler .papel-a6 li{padding:8px 0 22px;border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .papel-a6 li:last-child{border-bottom:0}
+/* o Para levar: fundo azul de carimbo, a frase em letra de cartaz, a aparecer letra a letra (parada na projeção) */
+body.molde-cidadania .jogo .cartao.escuro{background:var(--cid);color:var(--cid-sobre)}
+body.molde-cidadania .jogo .cartao.escuro .rot{color:var(--cid-sobre);opacity:.82}
+body.molde-cidadania .jogo .cartao.escuro .levar{font:400 clamp(2.05rem,8.6vw,3rem)/1.02 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.015em;font-style:normal;margin:6px 0 20px;text-wrap:balance}
+body.molde-cidadania .jogo .cartao.escuro .levar .cursor{border-bottom-width:4px}
+body.molde-cidadania .jogo .cartao.escuro :is(a,summary){color:inherit}
+body.molde-cidadania .jogo .cartao.escuro .recolha{--rc-fundo:var(--cid)}
+body.molde-cidadania .jogo .cartao.escuro details.mais{border-top-color:currentColor}
+/* projeção (1366 x 768): a imagem do Olha cabe acima da barra de ações com a legenda à vista; nada se anima */
+html.em-projecao body.molde-cidadania .jogo .ler .m-olha .fig img{max-height:calc(100vh - 330px);max-height:calc(100dvh - 330px)}
+html.em-projecao body.molde-cidadania .jogo .levar .ch{animation:none;opacity:1}
+html.em-projecao body.molde-cidadania .jogo .levar .cursor{display:none}
+html.em-projecao body.molde-cidadania .jogo .ler .carimbo{transform:none}
+@media print{body.molde-cidadania .jogo .cartao.escuro{background:none;color:#000;border-top:4px solid #000}}
