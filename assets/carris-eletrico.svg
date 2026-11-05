@@ -465,12 +465,12 @@
 <path d="M1988.3 595.2h30m-30 0v15"/>
 </g><path d="M-660 34H2000" stroke-width="1.4" opacity=".45"/></g>
 <g class="jc-eletrico">
-<image class="jc-foto" href="justica/rossio-eletrico-260.webp" width="1340" height="600"/>
+<image class="jc-foto" href="justica/corpo-santo-541.webp" width="1340" height="600"/>
 <rect width="1340" height="600" fill="url(#jc-esbate)"/>
-<path class="jc-alvo" d="M490 66h148v156h-148z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".75"/>
+<path class="jc-alvo" d="M604 12h642v258h-642z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".75"/>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path class="jc-via jc-via-a" d="M568 225C576 300 584 350 591 385C606 440 622 480 641 525C664 570 690 620 716 655" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
-<path class="jc-via jc-via-b" d="M581 225C606 280 628 320 656 355C700 402 748 440 796 465C860 500 920 540 976 565C1040 596 1100 620 1146 635" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
-<path class="jc-agulha" d="M586 352l14 16M604 350l12 14" stroke="currentColor" stroke-width="3"/>
-<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M712 368L770 368L784 382L726 382Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M748 368L730 276"/><circle cx="728" cy="266" r="11" fill="var(--jc-papel,#f3f2ee)"/><path d="M712 375L660 375" stroke-width="2.5" stroke-dasharray="4 6"/></g>
+<path class="jc-via jc-via-a" d="M263 598C330 552 392 510 430 483C470 452 500 420 523 397C552 368 573 348 590 330C612 306 630 288 642 270" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
+<path class="jc-via jc-via-b" d="M547 598C640 555 740 515 835 477C930 442 1020 420 1105 397C1190 375 1270 355 1340 340" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
+<path class="jc-agulha" d="M402 568l22 20M432 566l20 18" stroke="currentColor" stroke-width="3.5"/>
+<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M298 404H352L362 416H308Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M330 404L328 338"/><circle cx="328" cy="328" r="11" fill="var(--jc-papel,#f3f2ee)"/><path d="M362 412L406 564" stroke-width="2.5" stroke-dasharray="5 7"/></g>
 </g></g></svg>

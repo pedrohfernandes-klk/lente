@@ -1,21 +1,26 @@
 """02/11/2026: elétrico e agulha, desenho vetorial original. Semente fixa; --verificar confere SVG e integração.
 Não reconstitui uma rua nem um veículo com número de carreira. Não altera os textos, ligações ou progresso da página.
-05/11/2026: decisão 142 (docente). Passa a colagem de fotografia e traço: o elétrico 260 da Graça no Rossio
-(Eduardo Alexandre Cunha, entre 1906 e 1914, domínio público) e, por cima, as duas vias, a agulha e a alavanca.
+05/11/2026: decisão 142 (docente). Passa a colagem de fotografia e traço.
+05/11/2026: pedido do docente («a alavanca está em cima dos carris ... e o elétrico n devia vir na nossa direção»). Sai a
+fotografia do Rossio, com o elétrico de frente; entra o elétrico 541 visto de lado no Largo do Corpo Santo, com as duas vias
+a separarem-se no chão (Philip Mallis, 2025, CC BY-SA 4.0). A alavanca fica no passeio, ao lado da via, e liga-se à agulha
+por uma vara, como as alavancas de agulha a sério. A fotografia é tratada por tools/tratar_corpo_santo.py.
 """
 from pathlib import Path
 
-FOTO='justica/rossio-eletrico-260.webp'
-# 05/11/2026: decisão 142 (docente, proposta B). A fotografia é a do Commons «CCFL260(porAlexCunha).jpg», na miniatura
-# padrão de 1920 px: recorte (560, 780, 1900, 1380), cinzentos com autocontraste (1 %) e contraste ×1,08, depois tinta
-# (34, 30, 26) e papel (243, 242, 238), WebP qualidade 80. O ficheiro fica no repositório e --verificar confere-lhe o SHA-256.
-FOTO_SHA256='a4d78d9948874b581a3d53e89bbb6d854839f7b8d2df2ef8e9ae80eda858dc55'
+FOTO='justica/corpo-santo-541.webp'
+# 05/11/2026: a fotografia é a do Commons «Remodelados class tram no. 541 turning street corner in Largo do Corpo Santo in
+# Lisbon, Portugal (55127582736).jpg», na miniatura padrão de 1920 px (SHA-256 da miniatura em tools/tratar_corpo_santo.py):
+# publicidade da lateral do elétrico apagada, recorte (0, 580, 1920, 1440) reduzido a 1340 x 600, cinzentos com autocontraste
+# (1 %) e contraste x1,08, tinta (34, 30, 26) e papel (243, 242, 238), WebP qualidade 80. --verificar confere-lhe o SHA-256.
+FOTO_SHA256='e547cd191311d92071572587b302490a5a19ffe039d1ba07dce8d62402801e56'
 W,H=1340,600
 
 def cena(href='../../assets/'+FOTO):
-    """Colagem: a fotografia do Rossio (elétrico 260 a vir de frente e, no chão, a via que se divide em duas)
-    e, por cima, a traço, as duas vias que saem da agulha, a marca da agulha e a alavanca. Ninguém está na via.
-    As coordenadas são as da fotografia recortada (1340 × 600); a cena alarga-se 660 de cada lado."""
+    """Colagem: a fotografia do Largo do Corpo Santo (o elétrico 541 de lado, a seguir para a esquerda, e no chão a via
+    que se divide em duas) e, por cima, a traço, as duas vias que saem da agulha, a marca da agulha e a alavanca no passeio,
+    ao lado da via, ligada à agulha por uma vara. Ninguém está na via.
+    As coordenadas são as da fotografia recortada (1340 x 600); a cena alarga-se 660 de cada lado."""
     import random
     rng=random.Random(20261105)
     # A cena é mais larga do que a fotografia (de -660 a 2000): no telemóvel só se vê a fotografia; no computador,
@@ -34,16 +39,16 @@ def cena(href='../../assets/'+FOTO):
     a+=['<g class="jc-eletrico">',
        f'<image class="jc-foto" href="{href}" width="{W}" height="{H}"/>',
        f'<rect width="{W}" height="{H}" fill="url(#jc-esbate)"/>',
-       # O elétrico 260 da Graça, na fotografia, marcado a tracejado.
-       '<path class="jc-alvo" d="M490 66h148v156h-148z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".75"/>',
+       # O elétrico 541, na fotografia, marcado a tracejado.
+       '<path class="jc-alvo" d="M604 12h642v258h-642z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".75"/>',
        '<g fill="none" stroke-linecap="round" stroke-linejoin="round">',
-       # As duas vias possíveis, a pontilhado: nenhuma é escolhida.
-       '<path class="jc-via jc-via-a" d="M568 225C576 300 584 350 591 385C606 440 622 480 641 525C664 570 690 620 716 655" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
-       '<path class="jc-via jc-via-b" d="M581 225C606 280 628 320 656 355C700 402 748 440 796 465C860 500 920 540 976 565C1040 596 1100 620 1146 635" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
-       # A agulha: as duas lâminas onde a via se divide.
-       '<path class="jc-agulha" d="M586 352l14 16M604 350l12 14" stroke="currentColor" stroke-width="3"/>',
-       # A alavanca, neutra, ao lado da via.
-       '<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M712 368L770 368L784 382L726 382Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M748 368L730 276"/><circle cx="728" cy="266" r="11" fill="var(--jc-papel,#f3f2ee)"/><path d="M712 375L660 375" stroke-width="2.5" stroke-dasharray="4 6"/></g>',
+       # As duas vias possíveis, a pontilhado, por cima dos carris da fotografia: nenhuma é escolhida.
+       '<path class="jc-via jc-via-a" d="M263 598C330 552 392 510 430 483C470 452 500 420 523 397C552 368 573 348 590 330C612 306 630 288 642 270" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
+       '<path class="jc-via jc-via-b" d="M547 598C640 555 740 515 835 477C930 442 1020 420 1105 397C1190 375 1270 355 1340 340" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
+       # A agulha: as lâminas onde a via se divide, junto ao fundo da fotografia.
+       '<path class="jc-agulha" d="M402 568l22 20M432 566l20 18" stroke="currentColor" stroke-width="3.5"/>',
+       # A alavanca, neutra, no passeio à esquerda da via (também à vista no telemóvel); a vara tracejada leva-a até à agulha.
+       '<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M298 404H352L362 416H308Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M330 404L328 338"/><circle cx="328" cy="328" r="11" fill="var(--jc-papel,#f3f2ee)"/><path d="M362 412L406 564" stroke-width="2.5" stroke-dasharray="5 7"/></g>',
        '</g></g></svg>']
     return '\n'.join(a)+'\n'
 
@@ -53,9 +58,11 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 DESTINO=ROOT/'assets/carris-eletrico.svg'
 PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
-CREDITO=('Fotografia: elétrico 260 da Graça no Rossio, Lisboa, entre 1906 e 1914, de Eduardo Alexandre Cunha (Arquivo Municipal de Lisboa; domínio público, '
-         '<a href="https://commons.wikimedia.org/wiki/File:CCFL260(porAlexCunha).jpg">Wikimedia Commons</a>). '
-         'Por cima, a traço, as duas vias que saem da agulha e a alavanca. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
+# 05/11/2026: CC BY-SA 4.0: título, autor, fonte, licença e as alterações; a fotografia tratada fica com a mesma licença.
+CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
+         '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
+         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); recortada, a preto e branco e sem a publicidade, com a mesma licença. '
+         'Por cima, a traço, as duas vias que saem da agulha e a alavanca ao lado da via. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
 
 def instalar(texto):
     desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'
@@ -64,7 +71,7 @@ def instalar(texto):
     credito='<p class="jc-credito">'+CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>'
     texto,n=re.subn(r'<p class="jc-credito">.*?</p>',lambda _:credito,texto,flags=re.S)
     assert n==1, 'Esperava-se um só crédito'
-    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-2',texto)
+    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-3',texto)
     assert n==1, 'Esperava-se um só carregamento do CSS'
     # 03/11/2026: integra a gravura na abertura sem alterar os seus textos.
     if '<header class="jc-abertura">' not in texto:
