@@ -16,3 +16,7 @@ body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{
   body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{--lf-d:224px;--lf-x:66%;inset:-40px -24px auto;height:344px}
 }
 @media print{body[data-site="lente"] [data-cartaz-entrada] header.lente-cab{min-height:0;padding-block:16px}}
+/* 05/11/2026: revisão de 5/11 (lente-cabecalho-3). Na projeção, a letra do cabeçalho cresce e a lupa fica parada a aula inteira:
+   a partir de 640 px, a faixa prende-se ao fundo do cabeçalho, que tem pelo menos a altura da faixa, para o sobretítulo não
+   correr por cima do vidro. */
+@media(min-width:640px){html:is(.em-projecao,.epi-projection) body[data-site="lente"] [data-cartaz-entrada] header.lente-cab{min-height:344px}html:is(.em-projecao,.epi-projection) body[data-site="lente"] [data-cartaz-entrada] .lf-mesa{inset:auto -24px 0;height:344px}}

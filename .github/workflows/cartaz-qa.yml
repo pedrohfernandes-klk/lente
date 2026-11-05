@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -40,6 +40,8 @@ jobs:
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
       - run: node tests/browser_lente_projecao_entrada.cjs
+      # 05/11/2026: revisão de 5/11 (lente-cabecalho-2), nenhuma palavra partida a meio na moldura de projeção.
+      - run: node tests/browser_projecao_palavras.cjs
       # 01/11/2026: movimento, estado final, primeira ação e contrato do visor.
       - run: node tests/browser_cartaz_animacoes.cjs
       # 01/11/2026: decisão 61, hierarquia e escala nas páginas migradas.
