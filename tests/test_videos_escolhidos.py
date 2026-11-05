@@ -75,7 +75,8 @@ class VideosEscolhidos(unittest.TestCase):
             # 05/11/2026: decisão 147 (Laboratório sem o Português). Saem as ligações às peças retiradas do Laboratório,
             # só pelas trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
             import lab147
-            base = lab147.aplicar(base, p['pagina'])
+            # 05/11/2026: origin/main muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
+            base = lab147.alinhar(base, p['pagina'])
             a, b = ve.lista(base)
             # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
             self.assertEqual(antigos, [x for x in json.loads(base[a:b]) if 'pv' not in x], p['pagina'])
