@@ -10,6 +10,8 @@ BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
 RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json').read_text(encoding='utf-8'))
 # 05/11/2026: manifesto fechado das trocas da revisão de 5/11 no Lente.
 REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').read_text(encoding='utf-8'))
+# 05/11/2026: decisão 147 (Laboratório sem o Português), manifesto fechado das trocas na navegação do Laboratório.
+LAB_147 = json.loads((ROOT / 'tests/fixtures/lab-147-20261105.json').read_text(encoding='utf-8'))
 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
 import grupos146  # noqa: E402
 
@@ -26,6 +28,11 @@ class CidadaniaBase(unittest.TestCase):
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
+                    self.assertEqual(antes.count(antigo.encode()), quantidade)
+                    antes = antes.replace(antigo.encode(), novo.encode())
+                # 05/11/2026: decisão 147. O cartaz rotativo deixa de anunciar o Corta! e as peças do Laboratório
+                # (percurso-anterior); só as trocas do manifesto fechado, com contagem exata.
+                for antigo, novo, quantidade in LAB_147.get(nome, []):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
@@ -53,7 +60,13 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in REVISAO_0511.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
+                # 05/11/2026: decisão 147. O ramo do Laboratório no mapa segue percursos.json sem as peças retiradas;
+                # só as trocas deste manifesto, com contagem exata.
+                for antigo, novo, quantidade in LAB_147.get(nome, []):
+                    self.assertEqual(esperado.count(antigo), quantidade)
+                    esperado = esperado.replace(antigo, novo)
                 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): as trocas do manifesto fechado, com contagem exata.
+                # 05/11/2026: depois da fusão do #122, por cima da camada da decisão 147 (as camadas 146 e 154 partem do main com o #122).
                 esperado = grupos146.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.

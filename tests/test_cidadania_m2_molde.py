@@ -7,6 +7,7 @@ e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
 import grupos146  # 05/11/2026: decisão 146
+import lab147
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -322,8 +323,14 @@ class Molde(unittest.TestCase):
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
             # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
+            # 05/11/2026: decisão 147 (Laboratório sem o Português): a sessão 5 deixa de ligar à cena retirada do Corta! e o cartaz do percurso anterior deixa de a anunciar;
+            # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
             esperado = renomear(antes, f, base_ja_renomeada=True)
+            if f in lab147.TROCAS:
+                # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
+                esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
+            # 05/11/2026: por cima da camada da decisão 147 (as camadas 146 e 154 partem do main com o #122).
             if f in grupos146.TROCAS:
                 esperado = grupos146.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             self.assertEqual((R / f).read_bytes(), esperado, f)

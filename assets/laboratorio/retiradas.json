@@ -1,0 +1,318 @@
+{
+  "nota": "Decisão 147 (05/11/2026): peças que saíram do Laboratório por dependerem do Português. Cada endereço passa a redirecionar para o destino; tools/laboratorio.py escreve as páginas.",
+  "retiradas": [
+    {
+      "url": "narrativas/treinar/sem-olhos/",
+      "titulo": "Sem olhos",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/sem-olhos"
+    },
+    {
+      "url": "narrativas/treinar/objeto-banal/",
+      "titulo": "O objeto banal",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/objeto-banal"
+    },
+    {
+      "url": "narrativas/treinar/quarto-que-fala/",
+      "titulo": "O quarto que fala",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/quarto-que-fala"
+    },
+    {
+      "url": "narrativas/treinar/duas-horas/",
+      "titulo": "Duas horas, o mesmo lugar",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/duas-horas"
+    },
+    {
+      "url": "narrativas/treinar/sem-disse/",
+      "titulo": "Duas vozes, nenhum nome",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/sem-disse"
+    },
+    {
+      "url": "narrativas/treinar/pergunta-sem-resposta/",
+      "titulo": "A pergunta que fica",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pergunta-sem-resposta"
+    },
+    {
+      "url": "narrativas/treinar/pelo-que-faz/",
+      "titulo": "Pelo que faz",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pelo-que-faz"
+    },
+    {
+      "url": "narrativas/treinar/verdade-dificil/",
+      "titulo": "Uma verdade difícil",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/verdade-dificil"
+    },
+    {
+      "url": "narrativas/treinar/duas-vozes/",
+      "titulo": "A mesma coisa, duas vozes",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/duas-vozes"
+    },
+    {
+      "url": "narrativas/treinar/copia-lenta/",
+      "titulo": "Cópia lenta",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/copia-lenta"
+    },
+    {
+      "url": "narrativas/treinar/verbo-forte/",
+      "titulo": "Verbo forte",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/verbo-forte"
+    },
+    {
+      "url": "narrativas/treinar/acelerar-travar/",
+      "titulo": "Acelerar e travar",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/acelerar-travar"
+    },
+    {
+      "url": "narrativas/treinar/pelo-meio/",
+      "titulo": "A meio da ação",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pelo-meio"
+    },
+    {
+      "url": "narrativas/treinar/a-espingarda/",
+      "titulo": "A espingarda",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/a-espingarda"
+    },
+    {
+      "url": "narrativas/treinar/outro-ponto-de-vista/",
+      "titulo": "Outro ponto de vista",
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/outro-ponto-de-vista"
+    },
+    {
+      "url": "narrativas/percursos/sentidos/",
+      "titulo": "Descrever com os sentidos",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/percursos/dialogos/",
+      "titulo": "Fazer falar sem explicar",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/percursos/comeco/",
+      "titulo": "Escolher por onde começar",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/oficina-dramaturgista/",
+      "titulo": "O dramaturgista",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-dramaturgista"
+    },
+    {
+      "url": "narrativas/oficina-dramaturgista-imprimir/",
+      "titulo": "O dramaturgista (para imprimir)",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-espaco/",
+      "titulo": "Escrever ficção: o espaço",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-ficcao-espaco"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-espaco-imprimir/",
+      "titulo": "Escrever ficção: o espaço (para imprimir)",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-genero/",
+      "titulo": "Género e suspense",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-ficcao-genero"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-genero-imprimir/",
+      "titulo": "Género e suspense (para imprimir)",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/corta/ines/",
+      "titulo": "O desfecho de Inês Pereira",
+      "destino": "narrativas/ver/",
+      "peca": "corta/ines"
+    },
+    {
+      "url": "narrativas/corta/frei-luis/",
+      "titulo": "O incêndio e o Romeiro",
+      "destino": "narrativas/ver/",
+      "peca": "corta/frei-luis"
+    },
+    {
+      "url": "narrativas/corta/cesario/",
+      "titulo": "Quem filma Cesário",
+      "destino": "narrativas/ver/",
+      "peca": "corta/cesario"
+    },
+    {
+      "url": "narrativas/corta/chuva/",
+      "titulo": "Os dois planos de «Chuva Oblíqua»",
+      "destino": "narrativas/ver/",
+      "peca": "corta/chuva"
+    },
+    {
+      "url": "narrativas/corta/torneol/",
+      "titulo": "A madrugada de Torneol",
+      "destino": "narrativas/ver/",
+      "peca": "corta/torneol"
+    },
+    {
+      "url": "narrativas/corta/restelo/",
+      "titulo": "O Velho na praia",
+      "destino": "narrativas/ver/",
+      "peca": "corta/restelo"
+    },
+    {
+      "url": "narrativas/corta/maias/",
+      "titulo": "Do Ramalhete ao americano",
+      "destino": "narrativas/ver/",
+      "peca": "corta/maias"
+    },
+    {
+      "url": "narrativas/corta/bras-cubas/",
+      "titulo": "Onze amigos à chuva",
+      "destino": "narrativas/ver/",
+      "peca": "corta/bras-cubas"
+    },
+    {
+      "url": "narrativas/corta/",
+      "titulo": "Corta!",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/percursos/montagem/",
+      "titulo": "Passar das palavras à cena",
+      "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/aula-forma/",
+      "titulo": "A forma da história",
+      "destino": "narrativas/ver/",
+      "peca": "aula-forma"
+    },
+    {
+      "url": "narrativas/aula-lugar/",
+      "titulo": "O lugar",
+      "destino": "narrativas/ver/",
+      "peca": "aula-lugar"
+    },
+    {
+      "url": "narrativas/aula-nao-dito/",
+      "titulo": "O que não se diz",
+      "destino": "narrativas/ver/",
+      "peca": "aula-nao-dito"
+    },
+    {
+      "url": "narrativas/aula-personagem/",
+      "titulo": "A personagem",
+      "destino": "narrativas/ver/",
+      "peca": "aula-personagem"
+    },
+    {
+      "url": "narrativas/cenario-personagem/",
+      "titulo": "O cenário como personagem",
+      "destino": "narrativas/ver/",
+      "peca": "cenario-personagem"
+    },
+    {
+      "url": "narrativas/comecar-pelo-meio/",
+      "titulo": "Começar pelo meio",
+      "destino": "narrativas/ver/",
+      "peca": "comecar-pelo-meio"
+    },
+    {
+      "url": "narrativas/desenlace/",
+      "titulo": "O desenlace",
+      "destino": "narrativas/ver/",
+      "peca": "desenlace"
+    },
+    {
+      "url": "narrativas/dialogo/",
+      "titulo": "O diálogo que não explica",
+      "destino": "narrativas/ver/",
+      "peca": "dialogo"
+    },
+    {
+      "url": "narrativas/espingarda/",
+      "titulo": "A espingarda de Tchékhov",
+      "destino": "narrativas/ver/",
+      "peca": "espingarda"
+    },
+    {
+      "url": "narrativas/espinha/",
+      "titulo": "A espinha da história",
+      "destino": "narrativas/ver/",
+      "peca": "espinha"
+    },
+    {
+      "url": "narrativas/historia-enredo/",
+      "titulo": "História e enredo",
+      "destino": "narrativas/ver/",
+      "peca": "historia-enredo"
+    },
+    {
+      "url": "narrativas/linhas-de-enredo/",
+      "titulo": "Linhas de enredo",
+      "destino": "narrativas/ver/",
+      "peca": "linhas-de-enredo"
+    },
+    {
+      "url": "narrativas/personagem-faz/",
+      "titulo": "A personagem pelo que faz",
+      "destino": "narrativas/ver/",
+      "peca": "personagem-faz"
+    },
+    {
+      "url": "narrativas/piramide/",
+      "titulo": "A pirâmide de Freytag",
+      "destino": "narrativas/ver/",
+      "peca": "piramide"
+    },
+    {
+      "url": "narrativas/quem-conta/",
+      "titulo": "Quem conta?",
+      "destino": "narrativas/ver/",
+      "peca": "quem-conta"
+    },
+    {
+      "url": "narrativas/querer-agir/",
+      "titulo": "Querer, agir, responder",
+      "destino": "narrativas/ver/",
+      "peca": "querer-agir"
+    },
+    {
+      "url": "narrativas/subtexto/",
+      "titulo": "O subtexto",
+      "destino": "narrativas/ver/",
+      "peca": "subtexto"
+    },
+    {
+      "url": "narrativas/percursos/ordem/",
+      "titulo": "Dar forma a uma história",
+      "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/percursos/personagem/",
+      "titulo": "Conhecer uma personagem",
+      "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/percursos/nao-dito/",
+      "titulo": "Ler o que não se diz",
+      "destino": "narrativas/ver/"
+    }
+  ]
+}

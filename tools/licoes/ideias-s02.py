@@ -85,7 +85,8 @@ LEVAR = (
  '<ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li>'
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
  '<li>Uma palavra exata vale mais do que três bonitas.</li></ul>'
- '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
+ # 05/11/2026: decisão 147 (revisão). A porta do Laboratório é a mesma do guia do docente e da entrada do «Ideias»: Observar, «Leonardo».
+ '<p><b>No Laboratório:</b> <a href="../../leonardo/">Observar, «Observar para transformar», <i>Leonardo</i></a>: desenhar é olhar devagar.</p>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
  # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
  '<p><b>Passo 1 de 5: falta o material geral.</b> Junta dez notas sobre o que sabes bem fora da escola: é com elas que começa o passo 2 de Young, trabalhar o material.</p>')
