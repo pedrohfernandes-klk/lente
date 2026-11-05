@@ -23,7 +23,8 @@ class Percursos(unittest.TestCase):
   self.assertEqual(len(set(ids)),len(ids));self.assertEqual(len(assigned),len(set(assigned)))
   self.assertCountEqual([id for id in ids if id!='formas/tres-cartas'],assigned)
   for r in D['routes']:self.assertTrue(4<=len(r['pieces'])<=8,r['id'])
-  support={'','tudo','ver','treinar','criar','percursos','corta','margens','fora-da-pagina','treinar/caderno','treinar/docente'}
+  # 05/11/2026: decisão 147. O concentrador do Corta! (corta/) saiu e redireciona; deixa de ser página de apoio.
+  support={'','tudo','ver','treinar','criar','percursos','margens','fora-da-pagina','treinar/caderno','treinar/docente'}
   # 30/10/2026: coração do Laboratório em piloto escondido (decisão 39): fora de percursos.json, sem ligações de entrada
   # (tests/test_ideias.py confirma); as sessões entram aqui uma a uma, quando forem construídas.
   support|={'ideias','ideias/sessao-01','ideias/sessao-02','ideias/guiao','ideias/docente'}

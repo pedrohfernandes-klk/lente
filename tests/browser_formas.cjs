@@ -112,11 +112,12 @@ try{b=await chromium.launch({headless:true,...(process.env.PT_BROWSER_EXECUTABLE
   await c.locator('[data-write="reflection"]').fill('Mudei o ponto de vista.');assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.locator('#projection').click();assert(await c.locator('.lf-first').isHidden());assert(await c.locator('[data-write="draft"]').isHidden());await page.locator('#projection').click();
   await c.locator('.lf-levels [data-level="1"]').click();assert.equal(await c.locator('[data-write="reason"]').inputValue(),'Leio assim porque encontro esta expressão.');await c.locator('.lf-levels [data-level="3"]').click();assert.equal(await c.locator('[data-write="draft"]').inputValue(),'Versão revista');
  }
- await page.locator('[data-filter="all"]').click();assert.equal(await page.locator('.lf-case').count(),10);await page.locator('[data-filter="pt"]').click();assert.equal(await page.locator('.lf-case .lf-pt[open]').count(),10);assert.equal(await page.locator('#cesariny [data-write="draft"]').inputValue(),'Versão revista');
+ await page.locator('[data-filter="all"]').click();assert.equal(await page.locator('.lf-case').count(),10);/* 05/11/2026: decisão 147 (Laboratório sem o Português): sem o filtro de pontes para o Português. */assert.equal(await page.locator('[data-filter="pt"]').count(),0);assert.equal(await page.locator('.lf-pt').count(),0);assert.equal(await page.locator('#cesariny [data-write="draft"]').inputValue(),'Versão revista');
  console.log('PASS four interpretation levels, evidence, competing hypotheses, counter-reading and draft revision at '+width+'px');
  }
  await page.reload();await page.locator('#kafka').waitFor();assert.equal(await page.locator('[data-write="draft"]').count(),0);
- await page.goto(base+'/narrativas/formas/?mesa=pt');await page.locator('#gogol').waitFor();assert.equal(await page.locator('[data-filter="pt"]').getAttribute('aria-pressed'),'true');
+ // 05/11/2026: decisão 147 (Laboratório sem o Português): o endereço antigo ?mesa=pt abre a mesa normal, sem filtro nem caixas de ponte.
+ await page.goto(base+'/narrativas/formas/?mesa=pt');await page.locator('#kafka').waitFor();assert.equal(await page.locator('[data-filter="pt"]').count(),0);assert.equal(await page.locator('.lf-pt').count(),0);
  // 30/10/2026: Laboratório simples (pedido do docente). O catálogo mudou de página.
  await page.goto(base+'/narrativas/tudo/');assert.match(await page.locator('h1').innerText(),/Tudo o que há no Laboratório/);assert.equal(await page.locator('main > section').count(),3);await page.goto(base+'/narrativas/percursos/experimentar/');assert.equal(await page.locator('[data-estado="corta/mesa"]').textContent(),'feito'); // 30/10/2026: textContent, porque o estado se mostra em caixa alta por CSS.
  await page.goto(base+'/narrativas/corta/');assert.equal(await page.locator('.missoes a[data-id]').count(),8);

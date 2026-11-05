@@ -267,21 +267,18 @@ class LinguaEMarcacoes(unittest.TestCase):
      if '<br' not in v:sem_br.append((rel,v[:40]))
   self.assertEqual(sem_br,[('projetos/vozes/index.html','Postos estão, frente a frente, Os dois v')])
   # 30/10/2026: em Corta! Frei Luís, as quatro linhas de personagens depois de «SCENA» deixaram de ser falas (20 passam a 16)
-  falas={'apresentar/passo-04':8,'ler/passo-04':31,'ler/passo-07':6,'narrativas/corta/frei-luis':16,'projetos/vozes':6,'sidequests/cinema':6,'sidequests/retorica':7}
+  # 05/11/2026: decisão 147 (Laboratório sem o Português). A cena do Corta! sobre Frei Luís de Sousa saiu e redireciona;
+  # as falas e as linhas de personagens do texto continuam verificadas na Biblioteca (test_frei_luis_elenco_e_personagens).
+  falas={'apresentar/passo-04':8,'ler/passo-04':31,'ler/passo-07':6,'projetos/vozes':6,'sidequests/cinema':6,'sidequests/retorica':7}
   for rel,n in falas.items():
    with self.subTest(licao=rel):
     self.assertEqual(sum((x.get('html') or '').count('<p class="fala">') for x in self.itens(rel)),n)
-  h=''.join(x.get('html') or '' for x in self.itens('narrativas/corta/frei-luis'))
-  self.assertEqual(re.findall(r'</h2><p class="personagens">([^<]+)</p>',h),['MANUEL DE SOUSA, MAGDALENA, TELMO, MIRANDA e outros criados, entrando apressadamente.',
-   'MANUEL DE SOUSA, MAGDALENA, TELMO, MIRANDA e os outros criados; JORGE e MARIA entrando.','MANUEL DE SOUSA, MIRANDA e os outros criados.',
-   'MANUEL-DE-SOUSA e criados: MAGDALENA, MARIA, TELMO E JORGE accudindo.'])
 
  def test_bras_cubas_em_prosa_sem_as_quebras_da_transcricao(self):
   b=(R/'biblioteca/brascubas-ao-leitor/index.html').read_text('utf-8')
   self.assertRegex(b,r'<p>Com effeito, um dia de manhã, estando a passear na chacara, pendurou-se-me[^<]*</p>')
-  h=''.join(x.get('html') or '' for x in self.itens('narrativas/corta/bras-cubas'))
-  self.assertRegex(h,r'<p>Com effeito, um dia de manhã, estando a passear na chacara, pendurou-se-me[^<]*</p>')
-  self.assertNotIn('class="versos">Com effeito',b+h)
+  # 05/11/2026: decisão 147. A cena do Corta! sobre Brás Cubas saiu e redireciona; a prosa verifica-se na Biblioteca.
+  self.assertNotIn('class="versos">Com effeito',b)
 
  def test_frei_luis_elenco_e_personagens(self):
   # 30/10/2026 (revisão adversarial): o elenco era um só parágrafo com os nomes seguidos (uma lista); passa a um nome por

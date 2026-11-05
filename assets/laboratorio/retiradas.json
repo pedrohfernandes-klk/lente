@@ -138,6 +138,64 @@
       "url": "narrativas/oficina-ficcao-genero-imprimir/",
       "titulo": "Género e suspense (para imprimir)",
       "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/corta/ines/",
+      "titulo": "O desfecho de Inês Pereira",
+      "destino": "narrativas/ver/",
+      "peca": "corta/ines"
+    },
+    {
+      "url": "narrativas/corta/frei-luis/",
+      "titulo": "O incêndio e o Romeiro",
+      "destino": "narrativas/ver/",
+      "peca": "corta/frei-luis"
+    },
+    {
+      "url": "narrativas/corta/cesario/",
+      "titulo": "Quem filma Cesário",
+      "destino": "narrativas/ver/",
+      "peca": "corta/cesario"
+    },
+    {
+      "url": "narrativas/corta/chuva/",
+      "titulo": "Os dois planos de «Chuva Oblíqua»",
+      "destino": "narrativas/ver/",
+      "peca": "corta/chuva"
+    },
+    {
+      "url": "narrativas/corta/torneol/",
+      "titulo": "A madrugada de Torneol",
+      "destino": "narrativas/ver/",
+      "peca": "corta/torneol"
+    },
+    {
+      "url": "narrativas/corta/restelo/",
+      "titulo": "O Velho na praia",
+      "destino": "narrativas/ver/",
+      "peca": "corta/restelo"
+    },
+    {
+      "url": "narrativas/corta/maias/",
+      "titulo": "Do Ramalhete ao americano",
+      "destino": "narrativas/ver/",
+      "peca": "corta/maias"
+    },
+    {
+      "url": "narrativas/corta/bras-cubas/",
+      "titulo": "Onze amigos à chuva",
+      "destino": "narrativas/ver/",
+      "peca": "corta/bras-cubas"
+    },
+    {
+      "url": "narrativas/corta/",
+      "titulo": "Corta!",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/percursos/montagem/",
+      "titulo": "Passar das palavras à cena",
+      "destino": "narrativas/ver/"
     }
   ]
 }

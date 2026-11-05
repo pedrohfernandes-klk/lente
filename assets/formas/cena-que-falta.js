@@ -154,7 +154,6 @@ window.LenteCenaQueFalta={
  "texto":"Um plano no meio pode mudar o que um fim quer dizer, sem mudar o plano do fim. Vês o que um plano mostra; o resto supões. Um plano que dá apoio a uma hipótese não a prova.",
  "ligacoes":[
   {"t":"Certa manhã (Kafka) →","href":"../../formas/certa-manha/"},
-  {"t":"As oito cenas literárias →","href":"../"},
   {"t":"A mesa de montagem anterior →","href":"../mesa/"},
   {"t":"Voltar ao laboratório","href":"../../"}
  ]

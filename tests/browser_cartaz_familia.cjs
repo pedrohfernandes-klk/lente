@@ -62,10 +62,10 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  await ctx.close();
  if(lab){const ctx=await browser.newContext({viewport:{width:390,height:900}});const data=JSON.parse(fs.readFileSync(path.join(root,'assets/laboratorio/percursos.json'),'utf8')),item=data.pieces.find(p=>p.progress.kind==='feitas'),key=item.progress.key,id=item.progress.id;
  const value={feitas:{[id]:Date.UTC(2026,10,1,12)}};await ctx.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key,value});
- const p=await ctx.newPage();await p.goto(origin+'/lente/narrativas/ver/#montagem',{waitUntil:'networkidle'});
+ const p=await ctx.newPage();/* 05/11/2026: decisão 147 (Laboratório sem o Português): o percurso «montagem» saiu; usa-se o percurso «voz». */await p.goto(origin+'/lente/narrativas/ver/#voz',{waitUntil:'networkidle'});
  const label=p.locator('[data-estado="'+item.id+'"]');if(await label.count())assert.equal(await label.first().textContent(),'Feita 01/11');
  assert.equal(await p.evaluate(k=>localStorage.getItem(k),key),JSON.stringify(value));
- assert.equal(await p.locator('#montagem').count(),1);
+ assert.equal(await p.locator('#voz').count(),1);
  const closedAnchor=await p.evaluate(()=>{const target=document.getElementById(location.hash.slice(1));return target&&target.matches('details')&&!target.open;});assert.ok(!closedAnchor);
  await p.goto(origin+'/lente/narrativas/#criar',{waitUntil:'networkidle'});assert.ok(await p.locator('#criar .cz-fold').evaluate(e=>e.open));
  await ctx.close();}

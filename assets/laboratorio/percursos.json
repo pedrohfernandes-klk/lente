@@ -100,23 +100,6 @@
       ]
     },
     {
-      "id": "montagem",
-      "block": "ver",
-      "title": "Passar das palavras à cena",
-      "question": "Como se filma um texto?",
-      "reason": "Do desfecho e do gesto à sobreposição de planos e ao narrador.",
-      "pieces": [
-        "corta/ines",
-        "corta/frei-luis",
-        "corta/restelo",
-        "corta/torneol",
-        "corta/cesario",
-        "corta/maias",
-        "corta/chuva",
-        "corta/bras-cubas"
-      ]
-    },
-    {
       "id": "vozes",
       "block": "treinar",
       "title": "Dar uma voz à personagem",
@@ -767,167 +750,6 @@
         "ver-para-fazer/v57/index.html",
         "ver-para-fazer/v70/index.html",
         "vozes/index.html"
-      ]
-    },
-    {
-      "id": "corta/ines",
-      "url": "narrativas/corta/ines/",
-      "title": "O desfecho de Inês Pereira",
-      "type": "cena",
-      "time": "6 min",
-      "description": "No fim da farsa, Inês, viúva do Escudeiro que a prendia em casa, aceita Pêro Marques, o lavrador que antes recusara.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "ines"
-      },
-      "route": "montagem",
-      "incoming": [
-        "cidadania/m1/sessoes/05/index.html",
-        "mapa/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/corta/ines/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/frei-luis",
-      "url": "narrativas/corta/frei-luis/",
-      "title": "O incêndio e o Romeiro",
-      "type": "cena",
-      "time": "6 min",
-      "description": "No fim do ato I, Manuel de Sousa Coutinho deita fogo à própria casa para não a entregar aos governadores.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "frei-luis"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/frei-luis/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/restelo",
-      "url": "narrativas/corta/restelo/",
-      "title": "O Velho na praia",
-      "type": "cena",
-      "time": "7 min",
-      "description": "No canto IV, a armada do Gama parte de Belém.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "restelo"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/corta/restelo/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/torneol",
-      "url": "narrativas/corta/torneol/",
-      "title": "A madrugada de Torneol",
-      "type": "cena",
-      "time": "7 min",
-      "description": "Numa manhã fria, uma rapariga acorda o amigo que dorme.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "torneol"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/corta/torneol/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/cesario",
-      "url": "narrativas/corta/cesario/",
-      "title": "Quem filma Cesário",
-      "type": "cena",
-      "time": "6 min",
-      "description": "Um documentário sobre Cesário Verde tem de escolher: o poeta não deixou imagens de Lisboa, deixou versos.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "cesario"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/cesario/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/maias",
-      "url": "narrativas/corta/maias/",
-      "title": "Do Ramalhete ao americano",
-      "type": "cena",
-      "time": "7 min",
-      "description": "Dez anos depois, Carlos e Ega voltam ao Ramalhete.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "maias"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/corta/maias/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/chuva",
-      "url": "narrativas/corta/chuva/",
-      "title": "Os dois planos de «Chuva Oblíqua»",
-      "type": "cena",
-      "time": "6 min",
-      "description": "Em «Chuva Oblíqua», dois planos sobrepõem-se: uma paisagem com um porto e navios, e a chuva a bater numa vidraça.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "chuva"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/chuva/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "corta/bras-cubas",
-      "url": "narrativas/corta/bras-cubas/",
-      "title": "Onze amigos à chuva",
-      "type": "cena",
-      "time": "7 min",
-      "description": "Brás Cubas começa as memórias pela morte.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-corta",
-        "id": "bras-cubas"
-      },
-      "route": "montagem",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/corta/bras-cubas/index.html",
-        "narrativas/corta/index.html",
-        "narrativas/tudo/index.html"
       ]
     },
     {
@@ -1606,7 +1428,6 @@
       },
       "route": "experimentar",
       "incoming": [
-        "narrativas/corta/index.html",
         "narrativas/corta/mesa/index.html",
         "narrativas/formas/certa-manha/index.html",
         "narrativas/formas/index.html",
@@ -1632,7 +1453,6 @@
       },
       "route": "experimentar",
       "incoming": [
-        "narrativas/corta/index.html",
         "narrativas/corta/mesa/index.html",
         "narrativas/formas/index.html",
         "narrativas/tudo/index.html"
@@ -1861,7 +1681,7 @@
     "aulas": "ver",
     "aulas-narrativa": "ver",
     "experimentar-exercicios": "ver",
-    "corta": "montagem",
+    "corta": "experimentar",
     "treinar-titulo": "treinar",
     "treinar-colecao": "treinar",
     "treinar-sentidos": "treinar",

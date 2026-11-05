@@ -58,10 +58,9 @@ NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6
 # Kafka com botões, os cartões de rotas do docente, as explicações em itens de lista e o texto corrido dentro de details.
 # 30/10/2026 (verificação da revisão): a lista de fontes de Vidas e vozes (p.fontes-p) fica à esquerda.
 PLANO=[
+ # 05/11/2026: decisão 147 (Laboratório sem o Português): saem as cenas do Corta! «Chuva Oblíqua» e «Frei Luís de Sousa» (redirecionam para o Laboratório).
  ('L1a','narrativas/desenlace/',[('ate','.ler .excerto .trad:not(.poema) > p'),('J','.ler .excerto .trad > p')]),
- ('L1a','narrativas/corta/chuva/',[('ate','.ler .excerto .trad.poema'),('E','.ler .trad.poema > p',4),('ate','#baralho .ops button.op'),('E','#baralho .ops button.op',2),('ate','.casca-folha .c-expl'),('J','.casca-folha .c-expl')]),
  ('L1a','narrativas/margens/passo-02/',[('ate','.ler blockquote > p'),('J','.ler blockquote > p'),('E','.jogo .ler > p.ap-fonte',1)]),
- ('L1a','narrativas/corta/frei-luis/',[('ate','.ler .ap-texto > p.personagens'),('E','.ler .ap-texto > p.personagens',1),('J','.ler .ap-texto > p.fala')]),
  ('L1b','gigantes/triunfo-porcos/',[('ate','.ler details.orig-toque'),('abrir','.ler details.orig-toque'),('E','.ler .orig.lista > p',8),('J','.ler .relato')]),
  ('L1b','gigantes/diario-louco/',[('J','.jogo .ler > p:not([class])'),('ate','.ler .ap-texto > p:not([class])'),('J','.ler .ap-texto > p:not([class])'),('E','.jogo .ler > p.ap-fonte',1),('ate','.casca-folha .c-expl'),('J','.casca-folha .c-expl')]),
  ('L1c','vozes/prince/',[('ate','.ler dl.vz-vc > dd'),('E','.ler dl.vz-vc > dd',2),('E','.ler dl.vz-vc > dt',2),('ate','.ler .conceito > p:not([class])'),('J','.ler .conceito > p:not([class])'),
@@ -77,7 +76,8 @@ PLANO=[
  ('L2b','narrativas/formas/certa-manha/',[('E','.formas-cartoes .lf-prosa > p',1),('E','.formas-cartoes button',1)]),
  ('L2b','narrativas/formas/certa-manha/?guia=1',[('J','.formas-cartoes .lf-prosa > p')]),
  ('L3','narrativas/formas/',[('J','.lf-hero > p.lf-lead'),('J','.lf-level-body > p.lf-note'),('E','.lf-evidence-quote',1),('abrir','.lf-case details'),
-   ('J','.lf-case > details.lf-pt > p:not([class])'),('E','.lf-case > details.lf-source > p',2)]),
+   # 05/11/2026: decisão 147 (Laboratório sem o Português): sem as caixas de ponte para o Português (.lf-pt) na mesa de formas.
+   ('E','.lf-case > details.lf-source > p',2)]),
  ('P1','ver-para-fazer/v01/',[('J','.vpf .vpf-porque'),('J','.vpf .vpf-fazer > p'),('E','.vpf button',1)]),
  ('P2','biblioteca/garrett-frei-luis-sousa/',[('J','.bib-texto > p:not([class])'),('lang','.bib-texto','pt-PT'),('E','.bib-texto > p.personagens',10),('E','.bib-texto > p.elenco',2)]),
  ('P2','biblioteca/cesario-sentimento-ocidental/',[('E','.bib-texto > p.versos',3)]),
@@ -203,7 +203,8 @@ with sync_playwright() as pw:
    p.wait_for_timeout(300)
    ver(p,width,fam,pag,passos,res)
    assert not erros,(width,pag,erros)
-   if width==390 and pag in ('narrativas/corta/chuva/','narrativas/desenlace/','biblioteca/garrett-frei-luis-sousa/'):
+   # 05/11/2026: decisão 147 (Laboratório sem o Português): a cena «Chuva Oblíqua» saiu; ficam as capturas das outras duas páginas.
+   if width==390 and pag in ('narrativas/desenlace/','biblioteca/garrett-frei-luis-sousa/'):
     p.screenshot(path=str(O/(pag.strip('/').replace('/','_')+f'-{width}.png')))
    ctx.close()
  b.close()

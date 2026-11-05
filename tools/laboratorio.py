@@ -165,7 +165,7 @@ for b in D['blocks']:
         body+='</ol>'
     body+='</section>'
 body+=''.join('<span id="'+id+'" hidden></span>' for id in D['ancoras'] if id not in used)
-body+='<nav class="mais" aria-label="Mais">'+a(base,'narrativas/fora-da-pagina/','Fora da página')+a(base,'narrativas/margens/','Margens')+a(base,'narrativas/formas/?mesa=pt','Pontes para Português')+a(base,'docente/','Área do docente')+'</nav>'
+body+='<nav class="mais" aria-label="Mais">'+a(base,'narrativas/fora-da-pagina/','Fora da página')+a(base,'narrativas/margens/','Margens')+a(base,'docente/','Área do docente')+'</nav>'
 page(base,'Tudo',body,'Todas as peças do Laboratório, por bloco e por percurso.',foot=False,cur={'lab':'true'})
 
 page('narrativas/percursos','Percursos','<header class="topo"><h1>Percursos</h1></header>'+''.join(routebox('narrativas/percursos',r) for r in D['routes']),'Os '+str(len(D['routes']))+' percursos do Laboratório.',cur={'lab':'true'})
@@ -254,7 +254,7 @@ def mapa():
         extra=('<p class="map-open"><a href="'+ABS+'narrativas/treinar/caderno/">O caderno de treino</a></p><p class="map-open"><a href="'+ABS+'narrativas/treinar/docente/">Como conduzir um treino (docente)</a></p>') if b['id']=='treinar' else ''
         rs=''.join(ramo(e(r['title']),ABS+'narrativas/percursos/'+r['id']+'/',''.join('<li class="map-leaf"><a href="'+ABS+P[id]['url']+'">'+e(P[id]['title'])+'</a></li>' for id in r['pieces'])) for r in routes_of(b))
         out+=ramo(b['title'],ABS+'narrativas/'+b['id']+'/',rs,extra)
-    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('narrativas/formas/?mesa=pt','Pontes para Português'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
+    mais=[('narrativas/fora-da-pagina/','Fora da página'),('narrativas/margens/','Margens'),('dar-forma-as-palavras/','Dar forma às palavras'),('projetos/','Projetos'),('docente/','Área do docente')]
     out+='</ul>'+''.join('<p class="map-open"><a href="'+ABS+u+'">'+t+'</a></p>' for u,t in mais)+'</section>'
     s2=s[:i]+out+s[j:]
     if s2!=s:f.write_text(s2,'utf-8')

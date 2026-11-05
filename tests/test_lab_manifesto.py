@@ -4,6 +4,7 @@ R = Path(__file__).resolve().parents[1]
 M = json.loads((R / 'tests/lab-manifesto.json').read_text('utf-8'))
 # 05/11/2026: decisão 147 (Laboratório sem o Português). As peças retiradas estão em assets/laboratorio/retiradas.json:
 # o endereço fica, como redirecionamento para o Laboratório, e a chave de progresso deixa de ter página que a escreva.
+# Por isso o catálogo (narrativas/) deixa de ler epi-corta em tests/lab-manifesto.json: já não tem cenas do Corta!.
 RET = {x['url']: x for x in json.loads((R / 'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
 
 

@@ -1,6 +1,11 @@
 {
  "mapa/index.html": [
   [
+   "<li><details class=\"map-branch\"><summary><span>Passar das palavras à cena</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/montagem/\">Abrir Passar das palavras à cena <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/ines/\">O desfecho de Inês Pereira</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/frei-luis/\">O incêndio e o Romeiro</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/restelo/\">O Velho na praia</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/torneol/\">A madrugada de Torneol</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/cesario/\">Quem filma Cesário</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/maias/\">Do Ramalhete ao americano</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/chuva/\">Os dois planos de «Chuva Oblíqua»</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/bras-cubas/\">Onze amigos à chuva</a></li></ul></div></details></li>",
+   "",
+   1
+  ],
+  [
    "Descrever com os sentidos</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/sentidos/\">Abrir Descrever com os sentidos <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/sem-olhos/\">Sem olhos</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/objeto-banal/\">O objeto banal</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-gaveta/\">A gaveta</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/quarto-que-fala/\">O quarto que fala</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/duas-horas/\">Duas horas, o mesmo lugar</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>Fazer falar sem explicar</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/dialogos/\">Abrir Fazer falar sem explicar <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/sem-disse/\">Duas vozes, nenhum nome</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/so-gestos/\">Só gestos e uma palavra</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pergunta-sem-resposta/\">A pergunta que fica</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/interromper/\">Interromper</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/o-contrario/\">Uma fala, duas intenções</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>",
    "",
    1
@@ -38,6 +43,23 @@
   [
    "</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-dramaturgista/\">O dramaturgista",
    "",
+   1
+  ],
+  [
+   "</a></p><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/formas/?mesa=pt\">Pontes para Português",
+   "",
+   1
+  ]
+ ],
+ "narrativas/margens/index.html": [
+  [
+   "<div data-cartaz=\"raiz\"></div>\n",
+   "",
+   1
+  ],
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
    1
   ]
  ],
