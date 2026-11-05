@@ -10,8 +10,10 @@
 /* 05/11/2026: decisão 142 (docente, proposta B). Colagem: a fotografia do Rossio (elétrico 260 da Graça a vir de frente) e, por
    cima, as duas vias, a agulha e a alavanca a traço. Um movimento só: a fotografia aproxima-se devagar do elétrico, que nunca
    passa a agulha, e as duas vias acendem-se à vez; no fim ficam as duas iguais, sem desfecho. Parado, mostra logo a chegada. */
-/* 05/11/2026: revisão de 5/11 (lente-justica-4). A aproximação parte do estado parado (1,04), sem o salto ao recomeçar. */
-@keyframes jc-aproxima{0%{transform:scale(1.04)}10%{transform:scale(1)}60%,100%{transform:scale(1.04)}}
+/* 05/11/2026: revisão de 5/11 (lente-justica-4), com a revisão adversarial. Um movimento só, como na decisão 142: a fotografia
+   aproxima-se de 1 para 1,04. No primeiro segundo e meio entra a partir de transparente; ao recomeçar depois de «Parar o desenho»
+   (parado mostra 1,04), a troca de escala fica escondida por essa entrada e não se vê salto. */
+@keyframes jc-aproxima{0%{transform:scale(1);opacity:0}4%{opacity:1}10%{transform:scale(1)}60%,100%{transform:scale(1.04);opacity:1}}
 @keyframes jc-via-a{0%,100%{opacity:1}30%,45%{opacity:.25}}
 @keyframes jc-via-b{0%,100%{opacity:1}55%,70%{opacity:.25}}
 @media(prefers-reduced-motion:no-preference){

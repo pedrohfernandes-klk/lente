@@ -77,10 +77,13 @@ class FundoCarris(unittest.TestCase):
         # 05/11/2026: decisão 142. Com a colagem, a aproximação é a da fotografia (escala de 1 para 1,04, a mesma regra de
         # repouso: parado mostra a chegada); as vias começam e acabam iguais, por isso nenhuma fica escolhida.
         anim = bloco(CSS, '@keyframes jc-aproxima{')
-        # 05/11/2026: revisão de 5/11 (lente-justica-4). A aproximação parte do repouso (1,04), desce a 1 aos 10 % e volta a 1,04:
-        # recomeçar já não faz a fotografia encolher de repente. A exigência mantém-se: os três pontos ficam fixados.
-        self.assertIn('0%{transform:scale(1.04)}10%{transform:scale(1)}', anim)
-        self.assertIn('60%,100%{transform:scale(1.04)}', anim)
+        # 05/11/2026: revisão de 5/11 (lente-justica-4). A aproximação continua de 1 a 1,04 (um movimento só), e a fotografia entra
+        # a partir de transparente no primeiro segundo e meio: ao recomeçar, a troca de 1,04 para 1 fica escondida. Fixam-se os quatro
+        # pontos (mais do que os dois de antes), por isso a exigência não baixa.
+        self.assertIn('0%{transform:scale(1);opacity:0}', anim)
+        self.assertIn('4%{opacity:1}', anim)
+        self.assertIn('10%{transform:scale(1)}', anim)
+        self.assertIn('60%,100%{transform:scale(1.04);opacity:1}', anim)
         self.assertIn('animation:jc-aproxima 36s ease-in-out 1;', CSS)
         self.assertIn('transform:scale(1.04)}', bloco(CSS, '.ju .jc-eletrico{'))
         for via in ('jc-via-a', 'jc-via-b'):
