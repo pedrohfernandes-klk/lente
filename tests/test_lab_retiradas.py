@@ -69,6 +69,35 @@ class Retiradas(unittest.TestCase):
                     falhas.append((rel, href))
         self.assertEqual(falhas, [])
 
+    def test_cartaz_rotativo_nao_anuncia_pecas_retiradas(self):
+        # 05/11/2026: o cartaz rotativo (window.CARTAZ_DADOS) guarda as ligações em JSON, onde o teste anterior não as lê.
+        # Contam o "url" e o missoes[].url dos tipos que estão em "ordem", os que o cartaz mostra; os blocos "corta" e
+        # "narrativas" ficam como dados nas outras páginas, fora da ordem, e não se mostram.
+        falhas, cartazes = [], 0
+        for rel, s in paginas():
+            i = s.find('window.CARTAZ_DADOS=')
+            if i < 0:
+                continue
+            cartazes += 1
+            dados, _ = json.JSONDecoder().raw_decode(s, i + len('window.CARTAZ_DADOS='))
+            base = posixpath.dirname(rel)
+            for tipo in dados['ordem']:
+                bloco = dados[tipo]
+                for url in [bloco.get('url')] + [m.get('url') for m in bloco.get('missoes', [])]:
+                    if not url:
+                        continue
+                    u = urlsplit(url)
+                    if u.scheme in ('http', 'https'):
+                        if not url.startswith(ABS):
+                            continue
+                        caminho = u.path.removeprefix('/lente/')
+                    else:
+                        caminho = posixpath.normpath(posixpath.join(base, unquote(u.path))) + '/'
+                    if caminho in URLS:
+                        falhas.append((rel, tipo, url))
+        self.assertGreaterEqual(cartazes, 13)
+        self.assertEqual(falhas, [])
+
     def test_dados_e_geradores_sem_pecas_retiradas(self):
         fontes = [p for p in (R / 'assets/laboratorio').glob('*.json') if p.name != 'retiradas.json']
         fontes += list((R / 'tools/licoes').glob('*.json')) + [R / 'tools/ideias_piloto.py']

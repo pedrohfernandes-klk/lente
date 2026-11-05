@@ -13,6 +13,13 @@
    1
   ]
  ],
+ "cidadania/m1/percurso-anterior.html": [
+  [
+   "\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"]",
+   "\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"]",
+   1
+  ]
+ ],
  "cidadania/m1/sessoes/05/index.html": [
   [
    "<a href=\"../../../../narrativas/corta/ines/\">Corta! O desfecho de Inês Pereira",
@@ -31,6 +38,13 @@
   [
    "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
    "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "docente/index.html": [
+  [
+   "Comparar vozes ou versões: Português, M1/M7; em Narrativas, Quem conta ou a escultura de Fora da página.",
+   "Comparar vozes ou versões: Português, M1/M7; em Narrativas, a escultura de Fora da página.",
    1
   ]
  ],
@@ -163,6 +177,11 @@
    " · <a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f34/\\\">Português, Módulo 7: «Chuva Oblíqua», Orpheu 2, 1915</a> · <a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f06/\\\">Português, Módulo 7: a «Ode Triunfal», 1914</a>",
    "",
    1
+  ],
+  [
+   "É a ideia que atravessa este Laboratório: o leitor que preenche o subtexto, que ouve o que o diálogo não diz, que sente a espingarda antes de ela disparar. Duchamp pôs-lhe um nome e uma data.",
+   "É a ideia que atravessa este Laboratório: o leitor que preenche o subtexto e ouve o que uma fala não diz. Duchamp pôs-lhe um nome e uma data.",
+   1
   ]
  ],
  "narrativas/fontana/index.html": [
@@ -188,6 +207,11 @@
   [
    "percurso\",depois:\"",
    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\",seguinteRotulo:\"Seguinte\",depois:\"",
+   1
+  ],
+  [
+   "<p class=\\\"sub\\\">Chegaste ao fim dos estudos que já há. Os próximos chegam aqui: escolhe um dos produtos e mostra-o à turma.</p>",
+   "<p class=\\\"sub\\\">Passo seguinte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\\\">Duchamp</a>.</p>",
    1
   ]
  ],
@@ -315,6 +339,13 @@
    1
   ]
  ],
+ "narrativas/oficina-ficcao-comecar-imprimir/index.html": [
+  [
+   "Consultar a oficina e as referências literárias →",
+   "Consultar a oficina e as referências →",
+   1
+  ]
+ ],
  "narrativas/oficina-ficcao-comecar/index.html": [
   [
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-que-faz/\\\">Pelo que faz</a>, <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/comeca-mais-tarde/\\\">Começa mais tarde</a> e <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-espingarda/\\\">A espingarda",
@@ -329,6 +360,16 @@
   [
    "Os excertos literários são de obras portuguesas em domínio público;",
    "As microcenas desta experiência foram criadas para a Lente;",
+   1
+  ],
+  [
+   "Os cartões seguintes dão contexto e referências literárias.",
+   "Os cartões seguintes dão contexto.",
+   1
+  ],
+  [
+   "<small>Em inglês. O curso de que esta série adapta a estrutura: personagem, espaço, género. Licença CC BY-NC-SA 4.0.</small>",
+   "<small>Em inglês. O curso de onde vêm estas duas oficinas, o começo e a personagem. Licença CC BY-NC-SA 4.0.</small>",
    1
   ]
  ],
@@ -395,6 +436,11 @@
   [
    "</p><p class=\\\"sub\\\">Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Quem conta?</a>.",
    "",
+   1
+  ],
+  [
+   "A missão «A fachada que te fala», na cidade antes da exploração</a>",
+   "A missão «A fachada que te fala», em Ler a cidade</a>",
    1
   ]
  ],
@@ -709,6 +755,11 @@
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/dialogos/\\\">",
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/vozes/\\\">",
    1
+  ],
+  [
+   "</a>, a proposta que junta a leitura, o treino e uma cena tua.</p>",
+   "</a>, a proposta que junta este treino e uma cena tua.</p>",
+   1
   ]
  ],
  "narrativas/treinar/rascunho-mau/index.html": [
@@ -789,6 +840,11 @@
    "<p class=\\\"fonte\\\">A página de onde parte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/cenario-personagem/\\\">Laboratório, cenario personagem</a>.</p>",
    "",
    1
+  ],
+  [
+   "«O Sentimento dum Ocidental», 1880, em domínio público (o exercício 13 do Laboratório lê a quarta parte)</li>",
+   "«O Sentimento dum Ocidental», 1880, em domínio público</li>",
+   1
   ]
  ],
  "projetos/index.html": [
@@ -803,11 +859,31 @@
    "<p class=\\\"fonte\\\">A página de onde parte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">Laboratório, aula forma</a>.</p>",
    "",
    1
+  ],
+  [
+   "<li>A aula «A forma da história» e a aula «O não dito» do Laboratório</li>",
+   "",
+   1
+  ],
+  [
+   "«A Queda da Casa de Usher» (1839, excerto no exercício 13)",
+   "«A Queda da Casa de Usher» (1839)",
+   1
   ]
  ],
  "sidequests/bach/index.html": [
   [
    "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">A forma da história, a primeira aula do Laboratório</a>. Em Português, liga-se ao Módulo 3.</p>",
+   "",
+   1
+  ],
+  [
+   "sobe, chega a um pico, desce. É a mesma linha que desenhas na primeira aula do Laboratório.</p>",
+   "sobe, chega a um pico, desce.</p>",
+   1
+  ],
+  [
+   " e a aula «A forma da história» em _interno/02-fontes/explorações-lab.json",
    "",
    1
   ]
@@ -838,12 +914,29 @@
    "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/dialogo/\\\">O diálogo que não explica, no Laboratório</a>. Em Português, liga-se ao Módulo 4.</p>",
    "",
    1
+  ],
+  [
+   "É a forma de um diálogo entre duas personagens, como o que trabalhas na página «O diálogo que não explica».",
+   "É a forma de um diálogo entre duas personagens.",
+   1
+  ],
+  [
+   " e a página «O diálogo que não explica» em _interno/02-fontes/narrativas.json",
+   "",
+   1
   ]
  ],
  "sidequests/suspense/index.html": [
   [
    "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/espingarda/\\\">A espingarda de Tchékhov, no Laboratório</a>. Em Português, liga-se ao Módulo 4.</p>",
    "",
+   1
+  ]
+ ],
+ "tools/cidadania_m1_layout.py": [
+  [
+   " write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))",
+   " # 05/11/2026: decisão 147. O cartaz rotativo do percurso anterior deixa de anunciar o Corta! e as peças retiradas do Laboratório.\n ordem='\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"]'\n assert anterior.count(ordem)==1, 'ordem do cartaz do percurso anterior mudou na base'\n write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos').replace(ordem,'\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"]'))",
    1
   ]
  ],
@@ -970,6 +1063,11 @@
   [
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\\\">Laboratório: O que não se diz</a><small>«Conta menos. O leitor faz o resto»: o ecrã negro é a versão mais radical desta ideia.</small></li><li>",
    "",
+   1
+  ],
+  [
+   "\"p\":\"A aula «O que não se diz» ensina que o leitor faz o resto. Que escolha de _Branca de Neve_ leva essa ideia mais longe?\"",
+   "\"p\":\"Contar menos deixa o leitor fazer o resto. Que escolha de _Branca de Neve_ leva essa ideia mais longe?\"",
    1
   ]
  ],

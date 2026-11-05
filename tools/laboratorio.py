@@ -104,7 +104,7 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
          +''.join(a(base,'narrativas/'+b['id']+'/',b['title'],cur.get(b['id'],'')) for b in D['blocks'])+'<span data-appearance-control></span>')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
-       '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
+       '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'?v=20261105-1"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
        '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script><script type="application/json" id="lab-retiradas">'+RETIDS+'</script></body></html>\n')
     if migrated:
@@ -239,7 +239,7 @@ def retiradas():
 if '--cartaz-entradas' not in __import__('sys').argv:retiradas()
 
 # Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
-# Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.
+# Ver, Treinar e Criar, com os percursos de percursos.json (10 desde a decisão 147, 05/11/2026) e as peças de cada um, pela ordem do Laboratório.
 def mapa():
     f=R/'mapa/index.html';s=f.read_text('utf-8')
     ini='<section class="map-section"><h2><a href="'+ABS+'narrativas/">';i=s.index(ini);j=s.index('</section>',i)+len('</section>')

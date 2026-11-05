@@ -30,7 +30,10 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  (R/'cidadania/projeto/index.html').write_bytes(subprocess.check_output(['git','show',api['BASE']+':cidadania/projeto/index.html'],cwd=R))
  anterior=old('cidadania/m1/index.html')
  assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'
- write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos'))
+ # 05/11/2026: decisão 147. O cartaz rotativo do percurso anterior deixa de anunciar o Corta! e as peças retiradas do Laboratório.
+ ordem='"ordem":["atlas","cidade","gigantes","corta","narrativas"]'
+ assert anterior.count(ordem)==1, 'ordem do cartaz do percurso anterior mudou na base'
+ write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos').replace(ordem,'"ordem":["atlas","cidade","gigantes"]'))
  # Molde de 27/10/2026: abertura (imagem, pergunta curta, «Começar») e cinco passos,
  # Recupera, Vê, Decide, Faz, Leva; a sessão 03 realiza a tarefa já partilhada.
  from cidadania_m1_molde import LINHA,LINHA_TAREFA,MARCA,MOLDE,OBRAS

@@ -20,7 +20,16 @@ try{for(const width of [320,390,1366,1440]){const ctx=await b.newContext({viewpo
   await p.goto(base+'/narrativas/');const outro=await ctx.newPage();await outro.goto(base+'/narrativas/tudo/');await outro.evaluate(()=>{const s=JSON.parse(localStorage.getItem('epi-narrativas'));s.feitas.cigoli=456;localStorage.setItem('epi-narrativas',JSON.stringify(s));});await outro.close();
   await Promise.all([p.waitForEvent('load'),p.locator('[data-repor]').setInputFiles({name:'progresso.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({formato:'lente-laboratorio',versao:1,registos:[{id:'anguissola',estado:'feito'},{id:'treinar/sem-olhos',estado:'feito'}]}))})]);
   assert.deepEqual(await p.evaluate(()=>{const f=JSON.parse(localStorage.getItem('epi-narrativas')).feitas;return [f.cigoli,f['leonardo'],f.anguissola>0];}),[456,123,true]);
+  // 05/11/2026: decisão 147 (revisão). Depois de repor um ficheiro misto, o aviso diz o que entrou e o que já não faz parte do Laboratório.
+  assert.equal(await p.locator('[data-registos-aviso]').textContent(),'Reposta 1 peça; 1 já não faz parte do Laboratório.');
   const before=await p.evaluate(()=>JSON.stringify({...localStorage}));await p.locator('[data-repor]').setInputFiles({name:'incorreto.json',mimeType:'application/json',buffer:Buffer.from('{"formato":"outro"}')});await p.waitForFunction(()=>document.querySelector('[data-registos-aviso]').textContent.includes('Não foi'));assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),before);
+  // 05/11/2026: decisão 147 (revisão). Um id desconhecido continua recusado, mesmo ao lado de uma peça retirada: nada se repõe.
+  const repor=async(name,registos)=>{await p.evaluate(()=>{window.semRecarregar=true;document.querySelector('[data-registos-aviso]').textContent='';});await p.locator('[data-repor]').setInputFiles({name,mimeType:'application/json',buffer:Buffer.from(JSON.stringify({formato:'lente-laboratorio',versao:1,registos}))});};
+  await repor('desconhecido.json',[{id:'anguissola',estado:'feito'},{id:'treinar/sem-olhos',estado:'feito'},{id:'nao-existe',estado:'feito'}]);
+  await p.waitForFunction(()=>document.querySelector('[data-registos-aviso]').textContent.includes('Não foi'));assert(await p.evaluate(()=>window.semRecarregar));assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),before);
+  // 05/11/2026: decisão 147 (revisão). Um ficheiro só com peças retiradas não recarrega a página e diz porquê; o aparelho fica igual.
+  await repor('so-retiradas.json',[{id:'treinar/sem-olhos',estado:'feito'}]);
+  await p.waitForFunction(()=>document.querySelector('[data-registos-aviso]').textContent==='As peças deste ficheiro já não fazem parte do Laboratório; não havia nada para repor.');assert(await p.evaluate(()=>window.semRecarregar));assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),before);
  }
  await p.goto(base+'/narrativas/percursos/olhar/');assert.equal(await p.locator('[data-estado="leonardo"]').textContent(),'feito'); // 30/10/2026: textContent, porque o estado se mostra em caixa alta por CSS.
  // 30/10/2026: âncoras antigas levam ao percurso, no catálogo (revisão técnica).
