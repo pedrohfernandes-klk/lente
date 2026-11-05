@@ -18,13 +18,19 @@ def montar(p):
 
 
 def treinos():
-    return sorted(d for d in G.iterdir() if d.is_dir() and d.name not in ('caderno', 'docente'))
+    # 05/11/2026: decisão 147 (os 15 treinos feitos sobre textos do Português saíram e ficam como redirecionamento):
+    # os treinos são os de percursos.json; as pastas retiradas confirmam-se em tests/test_lab_retiradas.py.
+    ids = [p['id'] for p in json.loads((R / 'assets/laboratorio/percursos.json').read_text('utf-8'))['pieces'] if p['id'].startswith('treinar/')]
+    ds = sorted(G / i.split('/', 1)[1] for i in ids)
+    assert ds == sorted(d for d in G.iterdir() if d.is_dir() and d.name not in ('caderno', 'docente') and 'http-equiv="refresh"' not in (d / 'index.html').read_text('utf-8'))
+    return ds
 
 
 class Ginasio(unittest.TestCase):
     def test_trinta_treinos_com_o_mesmo_molde(self):
         ds = treinos()
-        self.assertEqual(len(ds), 30)
+        # 05/11/2026: decisão 147, ficam 15 dos 30 treinos.
+        self.assertEqual(len(ds), 15)
         for d in ds:
             s, itens, chave = montar(d / 'index.html')
             self.assertEqual(chave, 'epi-treinos-' + d.name)
@@ -63,13 +69,15 @@ class Ginasio(unittest.TestCase):
         self.assertIn('class="tr-leit"', por['Duas leituras']['html'])
         self.assertIn('.tr-leit{', s)
         self.assertIn(LENTE + 'narrativas/proposta-subtexto/', por['Transfere']['html'])
-        s2, _, chave2 = montar(G / 'sem-disse/index.html')
-        self.assertEqual(chave2, 'epi-treinos-sem-disse')
-        self.assertIn('titulo:"Duas vozes, nenhum nome"', s2)
-        self.assertNotIn('.tr-leit{', s2)  # o estilo das leituras só vai para o treino que as tem
+        # 05/11/2026: decisão 147. «Duas vozes, nenhum nome» (sem-disse) saiu com os treinos do Português; o estilo das
+        # leituras continua só no treino que as tem, e a proposta liga ao subtexto e ao treino piloto.
+        for d in treinos():
+            if d.name not in PILOTO:
+                self.assertNotIn('.tr-leit{', (d / 'index.html').read_text('utf-8'), d.name)
         prop = (R / 'narrativas/proposta-subtexto/index.html').read_text('utf-8')
-        for h in ('narrativas/subtexto/', 'narrativas/treinar/sem-disse/', 'narrativas/treinar/o-contrario/'):
+        for h in ('narrativas/subtexto/', 'narrativas/treinar/o-contrario/'):
             self.assertIn(LENTE + h, prop)
+        self.assertNotIn(LENTE + 'narrativas/treinar/sem-disse/', prop)
         for passo in ('Versão A', 'A leitura de um colega', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
             self.assertIn(passo, prop)
         # 30/10/2026: Laboratório simples (pedido do docente). A proposta continua no catálogo.
@@ -135,7 +143,8 @@ class Ginasio(unittest.TestCase):
             self.assertIn(nome, entrada)
         s = (R / 'narrativas/tudo/index.html').read_text('utf-8')
         self.assertEqual(re.findall(r'<section id="([^"]+)"', s), ['ler-como-quem-escreve', 'treinar', 'criar'])
-        self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s)) - {'caderno','docente'}), 30)
+        # 05/11/2026: decisão 147, 15 treinos no catálogo.
+        self.assertEqual(len(set(re.findall(r'href="../treinar/([a-z-]+)/"', s)) - {'caderno','docente'}), 15)
         for antiga in ('id="aulas"', 'id="experimentar"', 'id="vidas-e-ideias"'):
             self.assertIn(antiga, s)
         # 30/10/2026: a entrada já não guarda âncoras escondidas; uma âncora que lá não existe leva a tudo/.

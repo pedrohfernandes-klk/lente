@@ -40,11 +40,11 @@ SESSOES = [
   'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
-  'passo': 'Passos 1 e 2 de 5: juntar o material geral e começar a trabalhá-lo', 'peca': ('Escolher por onde começar', 'Lista de substantivos', 'treinar/lista-substantivos/')},
+  'passo': 'Passos 1 e 2 de 5: juntar o material geral e começar a trabalhá-lo', 'peca': ('Escolher a palavra', 'Lista de substantivos', 'treinar/lista-substantivos/')},
  # 05/11/2026: revisão de 5/11 (lente-ideias-4): a sessão 4 passou a «O fio de água» (decisão 115); título e passo da fonte
  # (_interno/laboratorio-fontes/ideias-sessoes-3-a-7/ideias-s04, nas fontes).
  {'n': 4, 'porta': 'treinar', 'titulo': 'O fio de água', 'pergunta': 'O que fazes com os factos quando ainda não fazem sentido?',
-  'passo': 'Passos 2 e 3 de 5: trabalhar até ao limite e largar', 'peca': ('Escolher a palavra e o ritmo', 'Cópia lenta', 'treinar/copia-lenta/')},
+  'passo': 'Passos 2 e 3 de 5: trabalhar até ao limite e largar', 'peca': ('Rever com uma intenção', 'Rascunho mau, de propósito', 'treinar/rascunho-mau/')},
  {'n': 5, 'porta': 'criar', 'titulo': 'O estribo', 'pergunta': 'Quando a ideia aparece, sabes de onde veio?',
   'passo': 'Passo 4 de 5: a ideia aparece', 'peca': ('Construir uma ficção', 'Do conceito ao argumento', 'oficina-argumento/')},
  {'n': 6, 'porta': 'criar', 'titulo': 'A manhã seguinte', 'pergunta': 'Quem pode tornar a tua ideia melhor?',

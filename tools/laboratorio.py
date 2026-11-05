@@ -19,7 +19,9 @@ P={x['id']:x for x in D['pieces']}
 ALIAS=D['aliases']
 INROUTE={id for r in D['routes'] for id in r['pieces']}
 ABS='https://pedrohfernandes-klk.github.io/lente/'
-NUM={4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
+# 05/11/2026: decisão 147. Ids das peças retiradas, para a reposição de um ficheiro antigo as ignorar.
+RETIDS=json.dumps([x['url'].removeprefix('narrativas/').rstrip('/') for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas'] if not x['url'].startswith('narrativas/percursos/')])
+NUM={2:'dois',3:'três',4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
 e=html.escape
 def it(s):return re.sub(r'_(.+?)_',r'<i>\1</i>',e(s))
 def link(base,path):return posixpath.relpath(path or '.',base)+('/' if not path or path.endswith('/') else '')
@@ -104,7 +106,7 @@ def page(base,title,body,desc,foot=True,treinar=False,cur=None):
        '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
        '<link rel="stylesheet" href="'+rel('assets/laboratorio/percursos.css')+'"><link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'"></script></head>'
        '<body data-site="lente"><a class="salta" href="#conteudo">Saltar para o conteúdo</a><nav class="barra-nav" aria-label="Navegação">'+nav+'</nav>'
-       '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script></body></html>\n')
+       '<main id="conteudo" data-raiz="'+rel('')+'">'+body+(extras(base,treinar) if foot else '')+'</main><script type="application/json" id="lab-dados">'+data+'</script><script type="application/json" id="lab-retiradas">'+RETIDS+'</script></body></html>\n')
     if migrated:
         s=s.replace('<main id="conteudo"','<main data-cartaz="2" data-cartaz-laboratorio id="conteudo"')
         s=s.replace('class="mais"','class="mais cz-footer"')
@@ -219,6 +221,22 @@ def continuacao():
         if depois!=antes:f.write_bytes(depois.encode('utf-8'));changed+=1
     return changed
 if '--cartaz-entradas' not in __import__('sys').argv:continuacao()
+
+# 05/11/2026: decisão 147. As peças que saíram por dependerem do Português ficam no endereço como redirecionamento
+# para o Laboratório (nada se parte); a lista está em assets/laboratorio/retiradas.json.
+RET=json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']
+def retiradas():
+    nomes={'narrativas/':'Laboratório',**{'narrativas/'+b['id']+'/':b['title'] for b in D['blocks']}}
+    for x in RET:
+        assert x['url'] not in {p['url'] for p in D['pieces']},x['url']
+        base=x['url'].rstrip('/');dest=ABS+x['destino'];rel=lambda u:link(base,u)
+        s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+           '<title>'+e(x['titulo'])+' | Laboratório | Lente</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url='+e(dest)+'"><link rel="canonical" href="'+e(dest)+'">'
+           '<link rel="stylesheet" href="'+rel('assets/appearance.css')+'"><script src="'+rel('assets/appearance.js')+'"></script></head>'
+           '<body data-site="lente"><main><p>«'+e(x['titulo'])+'» já não faz parte do Laboratório. Continua em <a href="'+e(dest)+'">'+e(nomes[x['destino']])+'</a>.</p></main></body></html>\n')
+        f=R/x['url']/'index.html';f.parent.mkdir(parents=True,exist_ok=True)
+        if not f.exists() or f.read_text('utf-8')!=s:f.write_bytes(s.encode('utf-8'))
+if '--cartaz-entradas' not in __import__('sys').argv:retiradas()
 
 # Mapa do Lente (31/10/2026, terceira correção): a secção do Laboratório sai de percursos.json, como narrativas/tudo/:
 # Ver, Treinar e Criar, com os 17 percursos e as peças de cada um, pela ordem do Laboratório.

@@ -117,73 +117,30 @@
       ]
     },
     {
-      "id": "sentidos",
+      "id": "vozes",
       "block": "treinar",
-      "title": "Descrever com os sentidos",
-      "question": "Como dás a sentir um lugar?",
-      "reason": "De um sentido e de um objeto ao espaço observado em dois momentos.",
+      "title": "Dar uma voz à personagem",
+      "question": "Como reconheces uma personagem sem a descrever?",
+      "reason": "Do esboço e das perguntas aos gestos, às falas cortadas e às que dizem uma coisa e querem outra.",
       "pieces": [
-        "treinar/sem-olhos",
-        "treinar/objeto-banal",
-        "treinar/a-gaveta",
-        "treinar/quarto-que-fala",
-        "treinar/duas-horas"
-      ]
-    },
-    {
-      "id": "dialogos",
-      "block": "treinar",
-      "title": "Fazer falar sem explicar",
-      "question": "O que fica por trás de uma fala?",
-      "reason": "Da distinção das vozes às interrupções e ao subtexto.",
-      "pieces": [
-        "treinar/sem-disse",
+        "treinar/tres-em-cinco",
+        "treinar/a-entrevista",
         "treinar/so-gestos",
-        "treinar/pergunta-sem-resposta",
         "treinar/interromper",
         "treinar/o-contrario"
       ]
     },
     {
-      "id": "vozes",
-      "block": "treinar",
-      "title": "Dar uma voz à personagem",
-      "question": "Como reconheces uma personagem sem a descrever?",
-      "reason": "Do esboço à ação, ao conflito e ao contraste entre vozes.",
-      "pieces": [
-        "treinar/tres-em-cinco",
-        "treinar/pelo-que-faz",
-        "treinar/a-entrevista",
-        "treinar/verdade-dificil",
-        "treinar/duas-vozes"
-      ]
-    },
-    {
       "id": "frase",
       "block": "treinar",
-      "title": "Escolher a palavra e o ritmo",
+      "title": "Escolher a palavra",
       "question": "Quanto pesa uma palavra?",
-      "reason": "Da observação de um modelo à precisão e ao ritmo.",
-      "pieces": [
-        "treinar/copia-lenta",
-        "treinar/dicionario",
-        "treinar/verbo-forte",
-        "treinar/sem-mente",
-        "treinar/acelerar-travar"
-      ]
-    },
-    {
-      "id": "comeco",
-      "block": "treinar",
-      "title": "Escolher por onde começar",
-      "question": "O que mostras primeiro, e pelos olhos de quem?",
-      "reason": "Do material inicial à ordem, à preparação do fim e ao ponto de vista.",
+      "reason": "Do substantivo concreto ao inventário de uma gaveta, à palavra exata e ao advérbio que se corta.",
       "pieces": [
         "treinar/lista-substantivos",
-        "treinar/comeca-mais-tarde",
-        "treinar/pelo-meio",
-        "treinar/a-espingarda",
-        "treinar/outro-ponto-de-vista"
+        "treinar/a-gaveta",
+        "treinar/dicionario",
+        "treinar/sem-mente"
       ]
     },
     {
@@ -191,9 +148,10 @@
       "block": "treinar",
       "title": "Rever com uma intenção",
       "question": "Onde tropeça o teu texto?",
-      "reason": "Do primeiro rascunho à escuta, ao corte e à leitura por outra pessoa.",
+      "reason": "Do primeiro rascunho a um começo mais tarde, à escuta, ao corte e à leitura por outra pessoa.",
       "pieces": [
         "treinar/rascunho-mau",
+        "treinar/comeca-mais-tarde",
         "treinar/voz-alta",
         "treinar/frase-querida",
         "treinar/cortar-um-quinto",
@@ -976,48 +934,6 @@
       ]
     },
     {
-      "id": "treinar/sem-olhos",
-      "url": "narrativas/treinar/sem-olhos/",
-      "title": "Sem olhos",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Escreve uma cena sem nenhuma palavra de ver: nada de «ver», «olhar», cores ou luz.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "sem-olhos"
-      },
-      "route": "sentidos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/sem-olhos/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/objeto-banal",
-      "url": "narrativas/treinar/objeto-banal/",
-      "title": "O objeto banal",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Pega num objeto banal ou feio e escreve sobre ele até o leitor o achar belo ou estranho.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "objeto-banal"
-      },
-      "route": "sentidos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/objeto-banal/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
       "id": "treinar/a-gaveta",
       "url": "narrativas/treinar/a-gaveta/",
       "title": "A gaveta",
@@ -1029,75 +945,11 @@
         "key": "epi-treinos",
         "id": "a-gaveta"
       },
-      "route": "sentidos",
+      "route": "frase",
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/a-gaveta/index.html",
         "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/quarto-que-fala",
-      "url": "narrativas/treinar/quarto-que-fala/",
-      "title": "O quarto que fala",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Descreve um quarto (ou uma casa) que revele quem lá vive, sem dizeres quem é nem o que sente.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "quarto-que-fala"
-      },
-      "route": "sentidos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/quarto-que-fala/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/duas-horas",
-      "url": "narrativas/treinar/duas-horas/",
-      "title": "Duas horas, o mesmo lugar",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Escreve o mesmo lugar duas vezes, de manhã e à noite.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "duas-horas"
-      },
-      "route": "sentidos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/duas-horas/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/sem-disse",
-      "url": "narrativas/treinar/sem-disse/",
-      "title": "Duas vozes, nenhum nome",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Escreve um diálogo de duas personagens sem dizer quem fala: nada de «disse», «perguntou», nem nomes antes das falas.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "sem-disse"
-      },
-      "route": "dialogos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/proposta-subtexto/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/sem-disse/index.html",
         "narrativas/tudo/index.html"
       ]
     },
@@ -1113,32 +965,11 @@
         "key": "epi-treinos",
         "id": "so-gestos"
       },
-      "route": "dialogos",
+      "route": "vozes",
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/index.html",
         "narrativas/treinar/so-gestos/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/pergunta-sem-resposta",
-      "url": "narrativas/treinar/pergunta-sem-resposta/",
-      "title": "A pergunta que fica",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Escreve um diálogo em que nenhuma pergunta recebe resposta direta.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "pergunta-sem-resposta"
-      },
-      "route": "dialogos",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/pergunta-sem-resposta/index.html",
         "narrativas/tudo/index.html"
       ]
     },
@@ -1154,7 +985,7 @@
         "key": "epi-treinos",
         "id": "interromper"
       },
-      "route": "dialogos",
+      "route": "vozes",
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/index.html",
@@ -1174,7 +1005,7 @@
         "key": "epi-treinos",
         "id": "o-contrario"
       },
-      "route": "dialogos",
+      "route": "vozes",
       "incoming": [
         "mapa/index.html",
         "narrativas/proposta-subtexto/index.html",
@@ -1204,27 +1035,6 @@
       ]
     },
     {
-      "id": "treinar/pelo-que-faz",
-      "url": "narrativas/treinar/pelo-que-faz/",
-      "title": "Pelo que faz",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Apresenta uma personagem só pelo que ela faz: nenhum adjetivo de carácter («corajosa», «tímida»), nenhum sentimento dito.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "pelo-que-faz"
-      },
-      "route": "vozes",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/pelo-que-faz/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
       "id": "treinar/a-entrevista",
       "url": "narrativas/treinar/a-entrevista/",
       "title": "A entrevista",
@@ -1240,69 +1050,6 @@
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/a-entrevista/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/verdade-dificil",
-      "url": "narrativas/treinar/verdade-dificil/",
-      "title": "Uma verdade difícil",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Dá à tua personagem um pensamento verdadeiro e desconfortável, que ela nunca diria em voz alta.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "verdade-dificil"
-      },
-      "route": "vozes",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/verdade-dificil/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/duas-vozes",
-      "url": "narrativas/treinar/duas-vozes/",
-      "title": "A mesma coisa, duas vozes",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Conta o mesmo acontecimento duas vezes, por duas pessoas muito diferentes (um avô e uma neta, uma vizinha e um polícia).",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "duas-vozes"
-      },
-      "route": "vozes",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/duas-vozes/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/copia-lenta",
-      "url": "narrativas/treinar/copia-lenta/",
-      "title": "Cópia lenta",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Copia à mão, devagar, um parágrafo de um grande escritor.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "copia-lenta"
-      },
-      "route": "frase",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/copia-lenta/index.html",
-        "narrativas/treinar/docente/index.html",
         "narrativas/treinar/index.html",
         "narrativas/tudo/index.html"
       ]
@@ -1328,27 +1075,6 @@
       ]
     },
     {
-      "id": "treinar/verbo-forte",
-      "url": "narrativas/treinar/verbo-forte/",
-      "title": "Verbo forte",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Troca cada verbo vago com complemento por um só verbo preciso: «andar depressa» por «apressar-se»; «dizer alto» por «bradar».",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "verbo-forte"
-      },
-      "route": "frase",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/verbo-forte/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
       "id": "treinar/sem-mente",
       "url": "narrativas/treinar/sem-mente/",
       "title": "Sem «-mente»",
@@ -1369,27 +1095,6 @@
       ]
     },
     {
-      "id": "treinar/acelerar-travar",
-      "url": "narrativas/treinar/acelerar-travar/",
-      "title": "Acelerar e travar",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Escreve uma cena em que o ritmo muda: frases curtas quando tudo acontece depressa, uma frase longa quando o tempo abranda.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "acelerar-travar"
-      },
-      "route": "frase",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/acelerar-travar/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
       "id": "treinar/lista-substantivos",
       "url": "narrativas/treinar/lista-substantivos/",
       "title": "Lista de substantivos",
@@ -1401,7 +1106,7 @@
         "key": "epi-treinos",
         "id": "lista-substantivos"
       },
-      "route": "comeco",
+      "route": "frase",
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/index.html",
@@ -1421,74 +1126,11 @@
         "key": "epi-treinos",
         "id": "comeca-mais-tarde"
       },
-      "route": "comeco",
+      "route": "rever",
       "incoming": [
         "mapa/index.html",
         "narrativas/treinar/comeca-mais-tarde/index.html",
         "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/pelo-meio",
-      "url": "narrativas/treinar/pelo-meio/",
-      "title": "A meio da ação",
-      "type": "treino",
-      "time": "10 min de escrita",
-      "description": "Começa uma história com a ação já a decorrer.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "pelo-meio"
-      },
-      "route": "comeco",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/pelo-meio/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/a-espingarda",
-      "url": "narrativas/treinar/a-espingarda/",
-      "title": "A espingarda",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Mostra no início um objeto que vai ser decisivo no fim.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "a-espingarda"
-      },
-      "route": "comeco",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/a-espingarda/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "treinar/outro-ponto-de-vista",
-      "url": "narrativas/treinar/outro-ponto-de-vista/",
-      "title": "Outro ponto de vista",
-      "type": "treino",
-      "time": "12 min de escrita",
-      "description": "Conta uma cena conhecida pela personagem que estava calada, ou de quem os outros falam sempre.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-treinos",
-        "id": "outro-ponto-de-vista"
-      },
-      "route": "comeco",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/treinar/docente/index.html",
-        "narrativas/treinar/index.html",
-        "narrativas/treinar/outro-ponto-de-vista/index.html",
         "narrativas/tudo/index.html"
       ]
     },
@@ -2285,11 +1927,11 @@
     "corta": "montagem",
     "treinar-titulo": "treinar",
     "treinar-colecao": "treinar",
-    "treinar-sentidos": "sentidos",
-    "treinar-dialogo": "dialogos",
+    "treinar-sentidos": "treinar",
+    "treinar-dialogo": "vozes",
     "treinar-voz": "vozes",
     "treinar-frase": "frase",
-    "treinar-estrutura": "comeco",
+    "treinar-estrutura": "treinar",
     "treinar-rever": "rever",
     "criar-titulo": "criar",
     "experimentar": "criar",

@@ -1,0 +1,95 @@
+{
+  "nota": "Decisão 147 (05/11/2026): peças que saíram do Laboratório por dependerem do Português. Cada endereço passa a redirecionar para o destino; tools/laboratorio.py escreve as páginas.",
+  "retiradas": [
+    {
+      "url": "narrativas/treinar/sem-olhos/",
+      "titulo": "Sem olhos",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/objeto-banal/",
+      "titulo": "O objeto banal",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/quarto-que-fala/",
+      "titulo": "O quarto que fala",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/duas-horas/",
+      "titulo": "Duas horas, o mesmo lugar",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/sem-disse/",
+      "titulo": "Duas vozes, nenhum nome",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/pergunta-sem-resposta/",
+      "titulo": "A pergunta que fica",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/pelo-que-faz/",
+      "titulo": "Pelo que faz",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/verdade-dificil/",
+      "titulo": "Uma verdade difícil",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/duas-vozes/",
+      "titulo": "A mesma coisa, duas vozes",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/copia-lenta/",
+      "titulo": "Cópia lenta",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/verbo-forte/",
+      "titulo": "Verbo forte",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/acelerar-travar/",
+      "titulo": "Acelerar e travar",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/pelo-meio/",
+      "titulo": "A meio da ação",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/a-espingarda/",
+      "titulo": "A espingarda",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/treinar/outro-ponto-de-vista/",
+      "titulo": "Outro ponto de vista",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/percursos/sentidos/",
+      "titulo": "Descrever com os sentidos",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/percursos/dialogos/",
+      "titulo": "Fazer falar sem explicar",
+      "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/percursos/comeco/",
+      "titulo": "Escolher por onde começar",
+      "destino": "narrativas/treinar/"
+    }
+  ]
+}

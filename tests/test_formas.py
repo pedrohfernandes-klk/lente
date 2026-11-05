@@ -315,5 +315,8 @@ class PilotoSimples(unittest.TestCase):
   depois={urljoin('/lente/narrativas/tudo/',h) for h in re.findall(r'href="([^"#]+)"',novo) if not h.startswith(('https:','http:'))}
   # 30/10/2026: preservam-se destinos de conteúdo; CSS antigo e literais JS não são destinos.
   antes={u for u in antes if '/assets/' not in u and "'+esc" not in u}
-  self.assertTrue(antes<=depois,antes-depois)
+  # 05/11/2026: decisão 147. As peças retiradas saem do catálogo e o endereço passa a redirecionar para o Laboratório
+  # (tests/test_lab_retiradas.py confirma cada uma); todos os outros destinos continuam no catálogo.
+  ret={'/lente/'+x['url'] for x in json.loads((ROOT/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
+  self.assertTrue(antes-ret<=depois,antes-ret-depois)
 if __name__=='__main__':unittest.main()
