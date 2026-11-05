@@ -1,9 +1,9 @@
 name: Desenhos de fundo
 on:
   pull_request:
-    paths: ['assets/fundo*', 'assets/carris-eletrico.svg', 'tools/gerar_carris.py', 'olhar-e-decidir/justica/index.html', 'tests/*fundo*', '.github/workflows/fundos-qa.yml']
+    paths: ['assets/fundo*', 'assets/carris-eletrico.svg', 'assets/justica/rossio-eletrico-260.webp', 'tools/gerar_carris.py', 'olhar-e-decidir/justica/index.html', 'tests/*fundo*', '.github/workflows/fundos-qa.yml']
   push:
-    paths: ['assets/fundo*', 'assets/carris-eletrico.svg', 'tools/gerar_carris.py', 'olhar-e-decidir/justica/index.html', 'tests/*fundo*', '.github/workflows/fundos-qa.yml']
+    paths: ['assets/fundo*', 'assets/carris-eletrico.svg', 'assets/justica/rossio-eletrico-260.webp', 'tools/gerar_carris.py', 'olhar-e-decidir/justica/index.html', 'tests/*fundo*', '.github/workflows/fundos-qa.yml']
 permissions:
   contents: read
 jobs:

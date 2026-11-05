@@ -2,7 +2,7 @@
 const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),out=process.env.FUNDO_PROVAS;
-const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(q.url,'http://x').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)){r.writeHead(403);return r.end()}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f))}catch{r.writeHead(404);r.end()}});
+const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(q.url,'http://x').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)){r.writeHead(403);return r.end()}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f))}catch{r.writeHead(404);r.end()}});
 const measure=()=>{const f=document.querySelector('.jc-fundo'),r=f.getBoundingClientRect();return {height:r.height,width:r.width,left:r.left,overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),animations:f.getAnimations({subtree:true}).map(a=>({name:a.animationName,duration:a.effect.getTiming().duration,iterations:a.effect.getTiming().iterations})),background:getComputedStyle(f).backgroundColor,ink:getComputedStyle(f).color}};
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port,b=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})}),rows=[];
 async function context(options){const ctx=await b.newContext(options);await ctx.route('**/*',async r=>{const u=new URL(r.request().url());if(u.origin===origin)return r.continue();if(u.hostname==='pedrohfernandes-klk.github.io'&&u.pathname.startsWith('/lente/'))return r.fulfill({response:await ctx.request.get(origin+u.pathname+u.search)});return r.abort()});return ctx}
@@ -17,12 +17,18 @@ try{
   const storage=await p.evaluate(()=>JSON.stringify({...localStorage}));
   if(mode==='projection'){assert.deepEqual(m.animations,[]);assert.ok(await button.isHidden());assert.ok(!await f.evaluate(e=>e.classList.contains('jc-anda')))}
   else{
-   assert.deepEqual(m.animations,[{name:'jc-aproxima',duration:36000,iterations:1}]);assert.equal(await button.textContent(),'Parar o desenho');
+   // 05/11/2026: decisão 142. A aproximação da fotografia e as duas vias, cada uma uma só vez, em 36 s.
+   assert.deepEqual([...m.animations].sort((x,y)=>x.name.localeCompare(y.name)),[{name:'jc-aproxima',duration:36000,iterations:1},{name:'jc-via-a',duration:36000,iterations:1},{name:'jc-via-b',duration:36000,iterations:1}]);assert.equal(await button.textContent(),'Parar o desenho');
    // O desenho não muda caixas nem atravessa a agulha em nenhum instante do movimento.
-   const samples=await f.evaluate(e=>{const anim=e.getAnimations({subtree:true})[0];anim.pause();const data=[];for(const t of [0,3600,12000,21600,30000,35999,36000,36001,71999]){anim.currentTime=t;const body=e.querySelector('.jc-eletrico>g>path'),switchPath=e.querySelector('.jc-agulha'),r=e.getBoundingClientRect();data.push({x:body.getBoundingClientRect().right,limit:switchPath.getBoundingClientRect().left,w:r.width,h:r.height})}anim.currentTime=0;anim.play();return data});
+   // 05/11/2026: decisão 142. Na colagem, o elétrico (marcado a tracejado na fotografia) fica sempre acima da agulha, e as
+   // duas vias acabam iguais: nenhuma fica escolhida.
+   // 05/11/2026: amostras sem pause()/play(): dentro da mesma tarefa o relógio do documento não anda, por isso cada leitura é a do
+   // instante pedido; com pause()/play(), o Chromium mantém as animações CSS vivas depois de a classe sair.
+   const samples=await f.evaluate(e=>{const anims=e.getAnimations({subtree:true});const data=[];for(const t of [0,3600,12000,21600,30000,35999,36000,36001,71999]){anims.forEach(a=>{a.currentTime=t});const alvo=e.querySelector('.jc-alvo').getBoundingClientRect(),ag=e.querySelector('.jc-agulha').getBoundingClientRect(),r=e.getBoundingClientRect();data.push({x:alvo.bottom,limit:ag.top,w:r.width,h:r.height,va:+getComputedStyle(e.querySelector('.jc-via-a')).opacity,vb:+getComputedStyle(e.querySelector('.jc-via-b')).opacity})}anims.forEach(a=>{a.currentTime=0});return data});
    // 03/11/2026: nos limites de 36 s e no repouso não há reinício nem salto.
    assert(samples.slice(-4).every(s=>Math.abs(s.x-samples[samples.length-1].x)<.01));
    for(const s of samples){assert.ok(s.x<s.limit);assert.equal(s.w,m.width);assert.equal(s.h,m.height)}
+   for(const s of samples.slice(-4)){assert.equal(s.va,1);assert.equal(s.vb,1)}
    await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.equal(await button.textContent(),'Pôr o desenho a andar');
    await button.click();await p.clock.fastForward(72001);assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0,'pára depois de dois ciclos');assert.equal(await button.textContent(),'Pôr o desenho a andar');
    await button.click();await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'))});assert.ok(await f.evaluate(e=>e.classList.contains('fundo-pausa')));assert.equal(await p.locator('.jc-eletrico').evaluate(e=>getComputedStyle(e).animationPlayState),'paused');
