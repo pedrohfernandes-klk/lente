@@ -33,39 +33,12 @@ class Conteudos(unittest.TestCase):
             self.assertEqual(sorted(oldlinks),sorted(newlinks))
 
     def test_piramide_variedade_e_limite(self):
+        # 05/11/2026: decisão 147 (Laboratório sem o Português): «A pirâmide de Freytag» (sobre a Farsa de Inês Pereira) saiu e redireciona; tests/test_lab_retiradas.py
+        # confere o redirecionamento.
+        ret=[x['url'] for x in json.loads((ROOT/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']]
+        self.assertIn('narrativas/piramide/',ret)
         s=(ROOT/'narrativas/piramide/index.html').read_text('utf-8')
-        cards=json.JSONDecoder().raw_decode(s.split('itens:',1)[1])[0]
-        self.assertEqual(len(cards),11)
-        self.assertEqual([c['t'] for c in cards[:4]], ['ler']*4)
-        self.assertNotIn('conteudos-contexto', cards[0]['html'])
-        self.assertNotIn('E que ande a meu mandar', cards[1]['html'])
-        self.assertIn('E que ande a meu mandar', cards[2]['html'])
-        # 02/11/2026: a revisão repõe as quatro leituras (C01 a C04); a variedade é exigida em todos os trios a partir de C03.
-        for a,b,c in zip(cards[2:],cards[3:],cards[4:]):
-            self.assertFalse(a['t']==b['t']==c['t'])
-        self.assertEqual(cards[6]['t'],'escolha')
-        self.assertIn('casamento', cards[6]['p'])
-        # 02/11/2026: interrogativa em pt-PT («porque é que»), não «por que» separado.
-        self.assertIn('porque é que', cards[6]['p'])
-        self.assertIn('não torna merecido',cards[6]['f'])
-        self.assertEqual(cards[7]['t'],'sublinhar')
-        self.assertEqual([cards[7]['frase'].split()[i] for i in cards[7]['certas']],
-                         ['Que','culpa','vos','tenho','eu?'])
-        self.assertNotIn(3, cards[7]['certas'])
-        # 02/11/2026: a pergunta e o retorno do C08 não dão a resposta pela palavra «culpa».
-        self.assertNotIn('culpa', cards[7]['p'])
-        self.assertNotIn('Que culpa', cards[7]['fe'])
-        self.assertIn('não uma regra',cards[10]['html'])
-        self.assertIn('Kafka',cards[10]['html'])
-        self.assertIn('class="caderno"',cards[10]['html'])
-        self.assertIn('Sucesso:',cards[10]['html'])
-        # 02/11/2026: a caixa «No caderno» começa por maiúscula logo a seguir ao rótulo, como as outras do Lente,
-        # e a pergunta sobre Kafka fica dentro dela, antes do critério de sucesso; nada fica depois da caixa.
-        h=cards[10]['html']
-        self.assertIn('<b>No caderno</b>Desenha',h)
-        self.assertTrue(h.endswith('</div>'))
-        self.assertLess(h.index('class="caderno"'),h.index('Kafka'))
-        self.assertLess(h.index('Kafka'),h.index('Sucesso:'))
+        self.assertIn('http-equiv="refresh"',s);self.assertNotIn('itens:',s)
 
 
 if __name__=='__main__':unittest.main()

@@ -124,7 +124,7 @@ OBRAS = {
  acesso=[('O texto integral no Wikisource', 'https://pt.wikisource.org/wiki/Farsa_de_In%C3%AAs_Pereira'),
          ('Teatro Nacional São João: obra de partida e reescrita contemporânea', 'https://www.tnsj.pt/pt/espetaculos/6786/a-farsa-de-ines-pereira')],
  pergunta='Escolher bem é escolher o que se deseja ou o que se conhece?',
- ligacoes=[('Corta! O desfecho de Inês Pereira', 'narrativas/corta/ines/'), ('Uma vida em direto', 'cidadania/m1/passo-01/')],
+ ligacoes=[('Querer, agir, responder', 'cidadania/m1/passo-04/'), ('Uma vida em direto', 'cidadania/m1/passo-01/')],
  discordante='Uma leitura discordante: o mote parece aconselhar a contentar-se com pouco. A farsa defende a liberdade de Inês, ou ensina-a a desistir do que desejava?'),
 6: dict(titulo='Justice: o caso do elétrico', autor='Michael Sandel, Universidade de Harvard', data='episódio 1 do curso', protegida=True,
  razao='Uma aula que pede uma decisão antes de oferecer uma teoria.',

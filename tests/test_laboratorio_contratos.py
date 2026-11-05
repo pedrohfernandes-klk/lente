@@ -1,6 +1,7 @@
 """02/11/2026: pedido 2, contratos opcionais e conservação dos motores antigos."""
 import importlib.util,json,re,subprocess,unittest
 from renomeacoes_cidadania import renomear
+import lab147
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def mod(nome):
@@ -57,10 +58,14 @@ class Contratos(unittest.TestCase):
    rel=p.relative_to(R).as_posix();antes=subprocess.check_output(['git','show',base+':'+rel],cwd=R).decode('utf-8').replace('\r\n','\n')
    with self.subTest(pagina=rel):
     # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
-    self.assertEqual(renomear(SP.aplicar(antes),rel),atual)
+    # 05/11/2026: decisão 147 (Laboratório sem o Português): navegação e limpezas pelo manifesto fechado
+    # tests/fixtures/lab-147-20261105.json, com contagem exata; a comparação continua integral.
+    self.assertEqual(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
     self.assertIn('if(cfg.fim&&!soErrados&&!PROJ)',atual)
    n+=1
-  self.assertEqual(n,86)
+  # 05/11/2026: decisão 147. As peças retiradas passam a redirecionamento; as 86 contam-se entre as que ficam e as retiradas.
+  ret=sum(1 for u in lab147.RETIRADAS if 'EPIJogo.montar(' in subprocess.check_output(['git','show',base+':'+u+'index.html'],cwd=R).decode('utf-8'))
+  self.assertEqual(n+ret,86)
 if __name__=='__main__':unittest.main()
