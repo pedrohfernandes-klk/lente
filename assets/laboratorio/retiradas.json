@@ -4,77 +4,92 @@
     {
       "url": "narrativas/treinar/sem-olhos/",
       "titulo": "Sem olhos",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/sem-olhos"
     },
     {
       "url": "narrativas/treinar/objeto-banal/",
       "titulo": "O objeto banal",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/objeto-banal"
     },
     {
       "url": "narrativas/treinar/quarto-que-fala/",
       "titulo": "O quarto que fala",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/quarto-que-fala"
     },
     {
       "url": "narrativas/treinar/duas-horas/",
       "titulo": "Duas horas, o mesmo lugar",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/duas-horas"
     },
     {
       "url": "narrativas/treinar/sem-disse/",
       "titulo": "Duas vozes, nenhum nome",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/sem-disse"
     },
     {
       "url": "narrativas/treinar/pergunta-sem-resposta/",
       "titulo": "A pergunta que fica",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pergunta-sem-resposta"
     },
     {
       "url": "narrativas/treinar/pelo-que-faz/",
       "titulo": "Pelo que faz",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pelo-que-faz"
     },
     {
       "url": "narrativas/treinar/verdade-dificil/",
       "titulo": "Uma verdade difícil",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/verdade-dificil"
     },
     {
       "url": "narrativas/treinar/duas-vozes/",
       "titulo": "A mesma coisa, duas vozes",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/duas-vozes"
     },
     {
       "url": "narrativas/treinar/copia-lenta/",
       "titulo": "Cópia lenta",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/copia-lenta"
     },
     {
       "url": "narrativas/treinar/verbo-forte/",
       "titulo": "Verbo forte",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/verbo-forte"
     },
     {
       "url": "narrativas/treinar/acelerar-travar/",
       "titulo": "Acelerar e travar",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/acelerar-travar"
     },
     {
       "url": "narrativas/treinar/pelo-meio/",
       "titulo": "A meio da ação",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/pelo-meio"
     },
     {
       "url": "narrativas/treinar/a-espingarda/",
       "titulo": "A espingarda",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/a-espingarda"
     },
     {
       "url": "narrativas/treinar/outro-ponto-de-vista/",
       "titulo": "Outro ponto de vista",
-      "destino": "narrativas/treinar/"
+      "destino": "narrativas/treinar/",
+      "peca": "treinar/outro-ponto-de-vista"
     },
     {
       "url": "narrativas/percursos/sentidos/",
@@ -90,6 +105,39 @@
       "url": "narrativas/percursos/comeco/",
       "titulo": "Escolher por onde começar",
       "destino": "narrativas/treinar/"
+    },
+    {
+      "url": "narrativas/oficina-dramaturgista/",
+      "titulo": "O dramaturgista",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-dramaturgista"
+    },
+    {
+      "url": "narrativas/oficina-dramaturgista-imprimir/",
+      "titulo": "O dramaturgista (para imprimir)",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-espaco/",
+      "titulo": "Escrever ficção: o espaço",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-ficcao-espaco"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-espaco-imprimir/",
+      "titulo": "Escrever ficção: o espaço (para imprimir)",
+      "destino": "narrativas/criar/"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-genero/",
+      "titulo": "Género e suspense",
+      "destino": "narrativas/criar/",
+      "peca": "oficina-ficcao-genero"
+    },
+    {
+      "url": "narrativas/oficina-ficcao-genero-imprimir/",
+      "titulo": "Género e suspense (para imprimir)",
+      "destino": "narrativas/criar/"
     }
   ]
 }

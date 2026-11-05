@@ -16,8 +16,9 @@ class Percursos(unittest.TestCase):
   # 30/10/2026: decisão 34: «Três cartas» sai do percurso e continua no endereço; 93 peças, 92 nos percursos.
   # 05/11/2026: decisão 147. As peças feitas sobre textos do Português saíram e ficam em assets/laboratorio/retiradas.json
   # como redirecionamento: as 93 continuam todas contadas, entre as que ficam e as retiradas.
-  RET=[x['url'].removeprefix('narrativas/').rstrip('/') for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']]
-  retp=[x for x in RET if not x.startswith('percursos/')]
+  RETL=json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']
+  RET=[x['url'].removeprefix('narrativas/').rstrip('/') for x in RETL];retp=[x['peca'] for x in RETL if x.get('peca')]
+  self.assertTrue(all(x['url']=='narrativas/'+x['peca']+'/' for x in RETL if x.get('peca')))
   self.assertFalse(set(ids)&set(RET));self.assertEqual(len(ids)+len(retp),93)
   self.assertEqual(len(set(ids)),len(ids));self.assertEqual(len(assigned),len(set(assigned)))
   self.assertCountEqual([id for id in ids if id!='formas/tres-cartas'],assigned)
@@ -27,7 +28,7 @@ class Percursos(unittest.TestCase):
   # (tests/test_ideias.py confirma); as sessões entram aqui uma a uma, quando forem construídas.
   support|={'ideias','ideias/sessao-01','ideias/sessao-02','ideias/guiao','ideias/docente'}
   actual={p.parent.relative_to(R/'narrativas').as_posix().replace('.','') for p in (R/'narrativas').rglob('index.html') if '-imprimir' not in str(p) and 'percursos' not in p.parts}
-  self.assertEqual(actual-set(ids)-set(retp),support-{'percursos'})
+  self.assertEqual(actual-set(ids)-set(RET),support-{'percursos'})
  def test_paginas_geradas_e_ligacoes(self):
   pages=[R/'narrativas/index.html',R/'narrativas/tudo/index.html']+[R/'narrativas'/b['id']/'index.html' for b in D['blocks']]+list((R/'narrativas/percursos').rglob('index.html'))
   before={p:p.read_bytes() for p in pages};subprocess.run([sys.executable,str(R/'tools/laboratorio.py')],check=True,capture_output=True)

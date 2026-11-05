@@ -168,8 +168,6 @@
         "oficina-ficcao-comecar",
         "oficina-ficcao-personagem",
         "proposta-subtexto",
-        "oficina-ficcao-espaco",
-        "oficina-ficcao-genero",
         "oficina-restricao",
         "oficina-arco",
         "oficina-argumento"
@@ -200,8 +198,7 @@
         "oficina-pedacos",
         "oficina-epico",
         "oficina-dilema",
-        "oficina-manifesto",
-        "oficina-dramaturgista"
+        "oficina-manifesto"
       ]
     },
     {
@@ -1295,26 +1292,6 @@
       ]
     },
     {
-      "id": "oficina-ficcao-espaco",
-      "url": "narrativas/oficina-ficcao-espaco/",
-      "title": "Escrever ficção: o espaço",
-      "type": "oficina",
-      "time": "60 a 90 min",
-      "description": "Eça precisa de duas frases para o Ramalhete ser uma personagem: um casarão «sombrio», de «paredes severas», com «aspecto tristonho».",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-narrativas",
-        "id": "oficina-ficcao-espaco"
-      },
-      "route": "ficcao",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/oficina-ficcao-espaco-imprimir/index.html",
-        "narrativas/oficina-ficcao-espaco/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
       "id": "oficina-arco",
       "url": "narrativas/oficina-arco/",
       "title": "Exposição, nó, desenlace",
@@ -1331,26 +1308,6 @@
         "mapa/index.html",
         "narrativas/oficina-arco-imprimir/index.html",
         "narrativas/oficina-arco/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "oficina-ficcao-genero",
-      "url": "narrativas/oficina-ficcao-genero/",
-      "title": "Género e suspense",
-      "type": "oficina",
-      "time": "60 a 90 min",
-      "description": "«Romeiro, romeiro, quem és tu?» «Ninguém.» Garrett segura a resposta durante uma cena inteira: o público já desconfia, Telmo já desconfia, e a palavra só cai quando o bordão aponta para o retrato.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-narrativas",
-        "id": "oficina-ficcao-genero"
-      },
-      "route": "ficcao",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/oficina-ficcao-genero-imprimir/index.html",
-        "narrativas/oficina-ficcao-genero/index.html",
         "narrativas/tudo/index.html"
       ]
     },
@@ -1611,26 +1568,6 @@
         "mapa/index.html",
         "narrativas/oficina-manifesto-imprimir/index.html",
         "narrativas/oficina-manifesto/index.html",
-        "narrativas/tudo/index.html"
-      ]
-    },
-    {
-      "id": "oficina-dramaturgista",
-      "url": "narrativas/oficina-dramaturgista/",
-      "title": "O dramaturgista",
-      "type": "oficina",
-      "time": "90 min",
-      "description": "Sê dramaturgista de um clássico: lê-o contra o presente, propõe os cortes e explica porquê.",
-      "progress": {
-        "kind": "feitas",
-        "key": "epi-narrativas",
-        "id": "oficina-dramaturgista"
-      },
-      "route": "transformar",
-      "incoming": [
-        "mapa/index.html",
-        "narrativas/oficina-dramaturgista-imprimir/index.html",
-        "narrativas/oficina-dramaturgista/index.html",
         "narrativas/tudo/index.html"
       ]
     },

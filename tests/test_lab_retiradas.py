@@ -81,7 +81,8 @@ class Retiradas(unittest.TestCase):
                     self.assertNotIn("'" + u.removeprefix('narrativas/'), s)
 
     def test_reposicao_ignora_so_as_retiradas(self):
-        ids = sorted(u.removeprefix('narrativas/').rstrip('/') for u in URLS if not u.startswith('narrativas/percursos/'))
+        ids = sorted(x['peca'] for x in RET if x.get('peca'))
+        self.assertTrue(all(x['url'] == 'narrativas/' + x['peca'] + '/' for x in RET if x.get('peca')))
         for rel in ('narrativas/index.html', 'narrativas/ver/index.html', 'narrativas/treinar/index.html', 'narrativas/criar/index.html'):
             s = (R / rel).read_text('utf-8')
             dados = json.loads(re.search(r'<script type="application/json" id="lab-retiradas">([^<]*)</script>', s).group(1))

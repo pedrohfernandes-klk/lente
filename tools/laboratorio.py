@@ -20,7 +20,7 @@ ALIAS=D['aliases']
 INROUTE={id for r in D['routes'] for id in r['pieces']}
 ABS='https://pedrohfernandes-klk.github.io/lente/'
 # 05/11/2026: decisão 147. Ids das peças retiradas, para a reposição de um ficheiro antigo as ignorar.
-RETIDS=json.dumps([x['url'].removeprefix('narrativas/').rstrip('/') for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas'] if not x['url'].startswith('narrativas/percursos/')])
+RETIDS=json.dumps([x['peca'] for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas'] if x.get('peca')])
 NUM={2:'dois',3:'três',4:'quatro',5:'cinco',6:'seis',7:'sete',8:'oito'}
 e=html.escape
 def it(s):return re.sub(r'_(.+?)_',r'<i>\1</i>',e(s))
