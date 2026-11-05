@@ -49,6 +49,10 @@ class LinguaDasPerguntas(unittest.TestCase):
   for t in trocas:
    self.assertEqual(set(t),{'ficheiro','antigo','novo','ocorrencias'})
    s=(ROOT/t['ficheiro']).read_text('utf-8')
+   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado,
+   # com contagem exata, antes de procurar o «novo» desta passagem.
+   import grupos146
+   if t['ficheiro'] in grupos146.TROCAS:s=grupos146.desfazer(s,t['ficheiro'])
    self.assertEqual(s.count(t['novo']),t['ocorrencias'],t['ficheiro']+': '+t['novo'])
    self.assertNotIn(t['antigo'],s,t['ficheiro'])
 if __name__=='__main__':unittest.main()

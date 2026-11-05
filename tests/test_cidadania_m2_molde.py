@@ -6,6 +6,7 @@ obra nas sessões 01 a 09; chave de progresso nova; escrita do Lente; ligações
 e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
+import grupos146  # 05/11/2026: decisão 146
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -321,7 +322,11 @@ class Molde(unittest.TestCase):
                 if t['ficheiro'] == f:
                     antes = antes.replace(t['antigo'].encode('utf-8'), t['novo'].encode('utf-8'))
             # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
-            self.assertEqual((R / f).read_bytes(), renomear(antes, f, base_ja_renomeada=True), f)
+            esperado = renomear(antes, f, base_ja_renomeada=True)
+            # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
+            if f in grupos146.TROCAS:
+                esperado = grupos146.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
+            self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):
         for n in range(1, 11):
@@ -340,7 +345,8 @@ class Molde(unittest.TestCase):
     def test_decisoes_provisorias_no_guia(self):
         g = ler(GUIA)
         self.assertEqual(g.count('Decisão provisória '), 5)
-        for t in ('individual, com revisão em pares', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20 minutos',
+        # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a revisão passa a ser de um colega; o trabalho continua individual.
+        for t in ('individual, com revisão de um colega', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20 minutos',
                   'reserva escrita', 'Naufrágio', 'v120', 'v108'):
             self.assertIn(t, g)
         s06 = sessao(6)

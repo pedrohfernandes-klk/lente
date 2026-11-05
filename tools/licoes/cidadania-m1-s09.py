@@ -21,7 +21,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p>'
  '<p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento com outro grupo.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento diante da turma.</p>')
 DECIDE = (
  '<p>A regra do português nos intervalos deve avançar?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -50,9 +50,9 @@ VIDEO = (
  '<p class="yt-cred">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada grupo mostra o teatro-documento em ensaio a outro grupo. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p>'
+ '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> As notas dadas ao outro grupo e duas mudanças que o vosso grupo decide fazer, uma delas para incluir uma voz que ainda não estava.</p>')
+ '<p><b>O que fica escrito.</b> As notas dadas aos colegas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>')
 LEVAR = (
  '<p class="levar">Ouvir outra voz não é concordar com ela: é saber sobre o que se decide.</p>'
  '<p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p>'
@@ -109,8 +109,8 @@ cartoes = [
   "lacunas":[{"o":["explicada","imposta","escondida"],"c":0},{"o":["cala","ouve","avisa"],"c":0}],
   "f":"Uma regra comum justa explica-se a quem a cumpre e não cala ninguém. Se calar sempre os mesmos, tem de ser revista.",
   "fe":"Volta ao caso do intervalo: a quem é que a regra tira a palavra?"},
- {"t":"vf","g":"discorda","p":"No teatro-documento, a fala de alguém que discorda do grupo pode entrar, desde que se diga de onde vem.","p2":"Uma voz contrária à do grupo pode entrar no teatro-documento, se tiver a sua fonte.","v":True,
-  "f":"O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que o grupo ouviu mais do que um lado.",
+ {"t":"vf","g":"discorda","p":"No teatro-documento, a fala de alguém que discorda de ti pode entrar, desde que se diga de onde vem.","p2":"Uma voz contrária à tua pode entrar no teatro-documento, se tiver a sua fonte.","v":True,
+  "f":"O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que ouviste mais do que um lado.",
   "fe":"Pôr em cena quem discorda não é dar-lhe razão: é mostrar o que se ouviu, com a fonte."},
  {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
 ]

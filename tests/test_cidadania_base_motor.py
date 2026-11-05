@@ -10,6 +10,8 @@ BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
 RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json').read_text(encoding='utf-8'))
 # 05/11/2026: manifesto fechado das trocas da revisão de 5/11 no Lente.
 REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').read_text(encoding='utf-8'))
+# 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
+import grupos146  # noqa: E402
 
 
 class CidadaniaBase(unittest.TestCase):
@@ -27,6 +29,9 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
+                # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): só se desfazem as trocas do manifesto fechado, com contagem exata; o resto compara-se como antes.
+                if nome in grupos146.TROCAS:
+                    depois = grupos146.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))
 
@@ -48,6 +53,8 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in REVISAO_0511.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
+                # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): as trocas do manifesto fechado, com contagem exata.
+                esperado = grupos146.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':

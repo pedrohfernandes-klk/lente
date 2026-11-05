@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 import videos_escolhidos as ve  # noqa: E402
+import grupos146  # noqa: E402  05/11/2026: decisão 146
 
 DADOS = json.loads((ROOT / 'tools' / 'videos-escolhidos.json').read_text('utf-8'))
 
@@ -72,6 +73,9 @@ class VideosEscolhidos(unittest.TestCase):
                     base = base.replace(troca['antigo'], troca['novo'])
                 else:
                     self.assertEqual(base.count(troca['novo']), troca['ocorrencias'], p['pagina'])
+            # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
+            if p['pagina'] in grupos146.TROCAS:
+                base = grupos146.alinhar(base, p['pagina'])
             a, b = ve.lista(base)
             # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
             self.assertEqual(antigos, [x for x in json.loads(base[a:b]) if 'pv' not in x], p['pagina'])
