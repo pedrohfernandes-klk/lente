@@ -16,8 +16,8 @@ FOTO='justica/eletrico-541-recorte.webp'
 # a esquerda), fica a agulha; depois dela, as duas vias seguem no mesmo sentido, uma a direito e a outra a curvar para o
 # primeiro plano. As duas são possíveis para o elétrico. A alavanca fica junto à agulha, ao lado da via, ligada por uma vara.
 # --verificar confere o SHA-256 do recorte.
-# 05/11/2026: recorte com as janelas desfocadas (o docente: «esta cara não pode ser visível»).
-FOTO_SHA256='98587e7bbc3ccf8d2396397ff2017f2046d68a06c78db5f17f2532f7ae23c32d'
+# 05/11/2026: recorte sem os passageiros (o docente: «esta cara não pode ser visível»; depois, sobre o desfoque, «mais classe nisso»).
+FOTO_SHA256='3e672269735b3f8fb983b58c165857fd212b56189214363e5a0a410eddb7f2e4'
 W,H=1340,600
 # Recorte: 962 x 634 px, desenhado a 0,598 por píxel; as rodas assentam no carril da frente (y 470).
 RECORTE=(592.8,100.8,575.3,379.1)
@@ -75,7 +75,7 @@ PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
 # 05/11/2026: CC BY-SA 4.0: título, autor, fonte, licença e as alterações; a fotografia tratada fica com a mesma licença.
 CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
          '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
-         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e com as janelas desfocadas, com a mesma licença. '
+         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e sem os passageiros, com a mesma licença. '
          'A via, a agulha, as duas vias possíveis e a alavanca ao lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
 
 def instalar(texto):

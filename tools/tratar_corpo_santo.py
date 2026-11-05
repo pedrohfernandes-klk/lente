@@ -18,8 +18,9 @@ CORPO = [(24,628),(24,592),(44,586),(44,340),(50,330),(64,321),(250,303),(252,26
          (905,652),(70,652),(46,640)]
 VARA = (((505,270),(322,158),15),((322,158),(552,48),11))
 CAIXA = (OX+10, OY+38, OX+972, OY+672)
-# 05/11/2026: vidraças com passageiros (e o vidro da porta da frente), em píxeis do recorte (origem em CAIXA).
-VIDRACAS = [(277,389,358,465),(374,389,453,465),(469,389,548,465),(562,389,640,465),(652,389,726,465),(740,389,813,465),(128,372,166,446)]
+# 05/11/2026: vidraças com passageiros, em píxeis do recorte (origem em CAIXA): (fonte, destino, espelhada).
+CLONES = [((652,389,725,463),(374,389,451,463),False),((742,389,813,463),(469,389,546,463),True),
+          ((652,389,725,463),(562,389,636,463),True),((191,362,219,438),(134,362,173,438),True)]
 
 def tratar(origem):
     assert hashlib.sha256(Path(origem).read_bytes()).hexdigest() == MINIATURA_SHA256, 'miniatura diferente da registada'
@@ -32,14 +33,16 @@ def tratar(origem):
         verm = reg[(reg[:, 0] > 120) & (reg[:, 1] < 80) & (reg[:, 2] < 80)]
         a[y0:y1, x0:x1] = np.median(verm, axis=0).astype(np.uint8)
     im = Image.fromarray(a)
-    # 05/11/2026: o docente, sobre a colagem: «esta cara não pode ser visível». As vidraças de baixo das seis janelas, onde vão
-    # os passageiros, e o vidro da porta da frente ficam desfocados (mosaico e desfoque): ninguém se reconhece.
-    for x0, y0, x1, y1 in VIDRACAS:
-        caixa = (x0 + CAIXA[0], y0 + CAIXA[1], x1 + CAIXA[0], y1 + CAIXA[1])
-        r = im.crop(caixa)
-        w, h = r.size
-        r = r.resize((max(1, w // 12), max(1, h // 12)), Image.BILINEAR).resize((w, h), Image.BILINEAR).filter(ImageFilter.GaussianBlur(4))
-        im.paste(r, caixa)
+    # 05/11/2026: o docente, sobre a colagem: «esta cara não pode ser visível»; e, sobre o desfoque, «fica feio, mais classe
+    # nisso». As vidraças de baixo com passageiros recebem o interior de uma janela vazia do mesmo elétrico (a quinta e a sexta,
+    # uma delas espelhada), e o vidro da folha esquerda da porta recebe o da folha direita, espelhado: o elétrico fica vazio.
+    for fonte, destino, espelho in CLONES:
+        fx0, fy0, fx1, fy1 = [v + d for v, d in zip(fonte, CAIXA[:2] * 2)]
+        dx0, dy0, dx1, dy1 = [v + d for v, d in zip(destino, CAIXA[:2] * 2)]
+        r = im.crop((fx0, fy0, fx1, fy1))
+        if espelho:
+            r = ImageOps.mirror(r)
+        im.paste(r.resize((dx1 - dx0, dy1 - dy0), Image.LANCZOS), (dx0, dy0))
     mascara = Image.new('L', im.size, 0)
     d = ImageDraw.Draw(mascara)
     d.polygon([(x + OX, y + OY) for x, y in CORPO], fill=255)
