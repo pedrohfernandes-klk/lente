@@ -3,7 +3,8 @@
 // 05/11/2026: revisão de 5/11 (lente-cabecalho-3). A partir de 640 px, na moldura e em ?projetar=1, o sobretítulo «EPI, Escola
 // Profissional de Imagem» não corre por cima do vidro da lupa, que fica parada a aula inteira.
 // 05/11/2026: revisão adversarial. Também 640, 660, 700, 912 e 960 px (molduras de 640 a 767 px), o nome das portas sempre num
-// degrau da escala Cartaz e o retrato de Pessoa nunca mais alto do que a moldura.
+// degrau da escala Cartaz e o retrato de Pessoa nunca mais alto do que a moldura. O sobretítulo mede-se quando a moldura
+// (e não a janela) tem 640 px ou mais: abaixo disso a entrada é a do telemóvel.
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),http=require('http');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..');
@@ -34,7 +35,7 @@ try{for(const [w,h,tamanhos] of CASOS)for(const t of tamanhos){
   await p.goto(base+'/lente/projetar/?pagina=/lente/');await p.frameLocator('#lesson-frame').locator('html.epi-projection').waitFor();
   await p.locator('[data-projection-size="'+t+'"]').click();await p.waitForFunction(t=>document.querySelector('[data-projection-size="'+t+'"]').getAttribute('aria-pressed')==='true',t);await p.waitForTimeout(400);
   const frame=await(await p.locator('#lesson-frame').elementHandle()).contentFrame();await frame.evaluate(()=>document.fonts.ready);
-  const m=await frame.evaluate(partidas);if(w>=640){m.etq=await frame.evaluate(etqNoVidro);if(m.etq!==0)falhas.push({w,h,t,etqNoVidro:m.etq})}m.raiz=await frame.evaluate(()=>getComputedStyle(document.documentElement).fontSize);if(m.partidas.length||m.desliza>0||m.foraDaEscala.length||m.retratoAlto>0)falhas.push({w,h,t,...m});console.log(w+'x'+h,t,m.raiz,m.partidas.length,'partidas; desliza',m.desliza);await ctx.close();
+  const m=await frame.evaluate(partidas);if(await frame.evaluate(()=>innerWidth>=640)){m.etq=await frame.evaluate(etqNoVidro);if(m.etq!==0)falhas.push({w,h,t,etqNoVidro:m.etq})}m.raiz=await frame.evaluate(()=>getComputedStyle(document.documentElement).fontSize);if(m.partidas.length||m.desliza>0||m.foraDaEscala.length||m.retratoAlto>0)falhas.push({w,h,t,...m});console.log(w+'x'+h,t,m.raiz,m.partidas.length,'partidas; desliza',m.desliza);await ctx.close();
  }
  for(const w of [768,1024,1366]){const ctx=await b.newContext({viewport:{width:w,height:900},reducedMotion:'reduce'});await ctx.route('**/*',r=>{const u=new URL(r.request().url());return u.origin===base?r.continue():r.abort()});const p=await ctx.newPage();await p.goto(base+'/lente/?projetar=1');await p.evaluate(()=>document.fonts.ready);const n=await p.evaluate(etqNoVidro);console.log('?projetar=1',w,'sobretítulo no vidro',n);if(n!==0)falhas.push({w,modo:'?projetar=1',etqNoVidro:n});await ctx.close()}
  assert.deepEqual(falhas,[],JSON.stringify(falhas));console.log('PASS projeção: nenhuma palavra partida sem hífen, nenhum deslize lateral e, a partir de 640 px, o sobretítulo fora do vidro da lupa');
