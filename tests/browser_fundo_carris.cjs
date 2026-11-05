@@ -41,6 +41,14 @@ try{
  for(const options of [{reducedMotion:'reduce'},{javaScriptEnabled:false}]){
   const ctx=await context({viewport:{width:390,height:844},...options}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');await p.locator('.jc-fundo').scrollIntoViewIfNeeded();assert.ok(await p.locator('.jc-fundo svg').isVisible());assert.ok(await p.locator('[data-fundo-botao="jc"]').isHidden());assert.equal(await p.locator('.jc-fundo').evaluate(e=>e.getAnimations({subtree:true}).length),0);await ctx.close();
  }
+ // 05/11/2026: revisão de 5/11 (lente-justica-4). Ao recomeçar, a colagem parte do estado parado: a t=0 a fotografia ocupa o
+ // mesmo retângulo que sem movimento (diferença < 0,01 px); antes encolhia de repente de 1,04 para 1.
+ {const caixa=async reducedMotion=>{const ctx=await context({viewport:{width:1366,height:900},reducedMotion}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/',{waitUntil:'load'});await p.locator('.jc-fundo').scrollIntoViewIfNeeded();await p.waitForTimeout(120);const r=await p.locator('.jc-fundo').evaluate(e=>{const anims=e.getAnimations({subtree:true});anims.forEach(a=>{a.currentTime=0});const q=e.querySelector('.jc-foto').getBoundingClientRect();return {n:anims.length,l:q.left,t:q.top,r:q.right,b:q.bottom}});await ctx.close();return r};
+  const parado=await caixa('reduce'),arranque=await caixa('no-preference');assert.equal(parado.n,0);assert.equal(arranque.n,3);
+  for(const k of ['l','t','r','b'])assert.ok(Math.abs(parado[k]-arranque[k])<.01,'salto ao recomeçar, '+k+': '+parado[k]+' contra '+arranque[k]);console.log('PASS recomeço sem salto')}
+ // 05/11/2026: revisão de 5/11 (lente-justica-5). Entre 406 e 639 px, a faixa (até 300 px) subia por baixo da apresentação.
+ for(const width of [420,480,600,639]){const ctx=await context({viewport:{width,height:900},reducedMotion:'reduce'}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');const g=await p.evaluate(()=>({lead:document.querySelector('.jc-abertura .lead').getBoundingClientRect().bottom,fundo:document.querySelector('.jc-fundo').getBoundingClientRect().top,sw:document.documentElement.scrollWidth-innerWidth}));assert.ok(g.lead<=g.fundo,'apresentação sobre a faixa a '+width+' px: '+JSON.stringify(g));assert.equal(g.sw,0);await ctx.close()}
+ console.log('PASS apresentação acima da faixa a 420, 480, 600 e 639 px')
  const ctx=await context({viewport:{width:768,height:900},reducedMotion:'reduce'}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');assert.equal((await p.locator('.jc-fundo').boundingBox()).height,340);await ctx.close();
  if(out)fs.writeFileSync(path.join(out,'medidas.json'),JSON.stringify(rows,null,2));console.log('PASS 9 cenários; teclado, aproximação única, repouso, pausa, estado parado, impressão e tablet.');
 }finally{await b.close();server.closeAllConnections();server.close()}})().catch(e=>{console.error(e);process.exitCode=1});

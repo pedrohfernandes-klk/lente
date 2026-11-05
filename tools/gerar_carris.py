@@ -64,7 +64,7 @@ def instalar(texto):
     credito='<p class="jc-credito">'+CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>'
     texto,n=re.subn(r'<p class="jc-credito">.*?</p>',lambda _:credito,texto,flags=re.S)
     assert n==1, 'Esperava-se um só crédito'
-    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-1',texto)
+    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-2',texto)
     assert n==1, 'Esperava-se um só carregamento do CSS'
     # 03/11/2026: integra a gravura na abertura sem alterar os seus textos.
     if '<header class="jc-abertura">' not in texto:
