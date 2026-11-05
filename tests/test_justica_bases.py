@@ -50,7 +50,7 @@ class BasesJustica(unittest.TestCase):
             gerada = molde.replace('@@ITENS@@', (T/f'bancos/licao-{n}.json').read_text('utf-8').rstrip('\n'))
             self.assertEqual(gerada, (R/f'olhar-e-decidir/justica/licao-{n}/index.html').read_text('utf-8'))
             # 02/11/2026: prova contra o main de partida, só com as duas trocas autorizadas.
-            # Conserva o hash histórico; desfaz só os títulos autorizados do #107.
+            # 03/11/2026 (#107; data posta a 05/11/2026): conserva o hash histórico; desfaz só os títulos autorizados do #107.
             original = renomear(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
             for troca in json.loads((T/'migracao.json').read_text('utf-8')):
                 if troca['licao'] == n:
@@ -68,8 +68,26 @@ class BasesJustica(unittest.TestCase):
                 if x['t'] == 'ler' and V.palavras_visiveis(x) > 95:
                     encontradas[n,k] = V.palavras_visiveis(x)
                     self.assertFalse(m['molde_novo'])
-                    self.assertEqual(hashlib.sha256(json.dumps(x,ensure_ascii=False,sort_keys=True).encode()).hexdigest(), LEITURAS_HASH.get((n,k)))
+                    # 05/11/2026: revisão de 5/11 (crédito dos desenhos). O hash histórico confere-se depois de desfazer só as trocas
+                    # dessa revisão registadas em migracao.json; qualquer outra mudança no cartão continua a falhar.
+                    x0 = dict(x)
+                    for t in json.loads((T/'migracao.json').read_text('utf-8')):
+                        if t['licao'] == n and t['origem'].startswith('revisão de 5/11'):
+                            antigo, novo = json.loads('"' + t['antigo'] + '"'), json.loads('"' + t['novo'] + '"')
+                            x0['html'] = x0['html'].replace(novo, antigo)
+                    self.assertEqual(hashlib.sha256(json.dumps(x0,ensure_ascii=False,sort_keys=True).encode()).hexdigest(), LEITURAS_HASH.get((n,k)))
         self.assertEqual(encontradas, {k: v for k,v in LEITURAS_PUBLICADAS.items() if k in encontradas})
+
+    def test_desenhos_das_licoes_com_credito(self):
+        # 05/11/2026: revisão de 5/11 (lente-cidadania-creditos-1): cada desenho das lições tem o crédito «Grafismo gerado com
+        # recurso a IA.» na legenda, como no guião; um desenho novo sem crédito falha.
+        total = 0
+        for m in MANIFESTO:
+            for x in banco(m['numero']):
+                for fig in re.findall(r'<figure class="desenho">.*?</figure>', x.get('html') or '', re.S):
+                    total += 1
+                    self.assertRegex(fig, r'<figcaption>[^<]+ <span class="cred">Grafismo gerado com recurso a IA\.</span></figcaption>', fig[-200:])
+        self.assertEqual(total, 9)
 
     def test_validador_recusa_regressoes(self):
         # 02/11/2026: provar que palavras proibidas e leitura longa nova falham.

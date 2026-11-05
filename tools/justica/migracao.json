@@ -1,6 +1,60 @@
 [
   {
     "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O condutor: em frente, cinco trabalhadores na via; no desvio, um.<\\/figcaption>",
+    "novo": "O condutor: em frente, cinco trabalhadores na via; no desvio, um. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O espectador na ponte: um empurrão faz cair o homem à frente do elétrico e poupa os cinco.<\\/figcaption>",
+    "novo": "O espectador na ponte: um empurrão faz cair o homem à frente do elétrico e poupa os cinco. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O alçapão: rodas um volante e o alçapão abre-se debaixo do homem, sem lhe tocares.<\\/figcaption>",
+    "novo": "O alçapão: rodas um volante e o alçapão abre-se debaixo do homem, sem lhe tocares. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O médico das urgências: cinco feridos moderados e um grave; não há tempo para todos.<\\/figcaption>",
+    "novo": "O médico das urgências: cinco feridos moderados e um grave; não há tempo para todos. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O cirurgião de transplantes: cinco doentes à espera de órgãos; na sala ao lado, um homem saudável a dormir.<\\/figcaption>",
+    "novo": "O cirurgião de transplantes: cinco doentes à espera de órgãos; na sala ao lado, um homem saudável a dormir. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O bote do Mignonette: quatro náufragos; Parker, doente, deitado a um canto.<\\/figcaption>",
+    "novo": "O bote do Mignonette: quatro náufragos; Parker, doente, deitado a um canto. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 2,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "Pôr um preço à vida: de um lado uma pessoa, do outro dinheiro.<\\/figcaption>",
+    "novo": "Pôr um preço à vida: de um lado uma pessoa, do outro dinheiro. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 2,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "O Ford Pinto: o depósito de combustível atrás; num choque por trás, podia explodir.<\\/figcaption>",
+    "novo": "O Ford Pinto: o depósito de combustível atrás; num choque por trás, podia explodir. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 2,
+    "origem": "revisão de 5/11/2026 (lente-cidadania-creditos-1): crédito dos desenhos nas lições",
+    "antigo": "Três excertos: um monólogo de Hamlet, o concurso Fear Factor e Os Simpsons.<\\/figcaption>",
+    "novo": "Três excertos: um monólogo de Hamlet, o concurso Fear Factor e Os Simpsons. <span class=\\\"cred\\\">Grafismo gerado com recurso a IA.<\\/span><\\/figcaption>"
+  },
+  {
+    "licao": 1,
     "origem": "lente #90, cabeça 5c9268c5",
     "antigo": "{\"t\": \"escolha\", \"rot\": \"Uma regra posta à prova\", \"p\": \"Andrew diz que, na ponte, matas com as tuas próprias mãos. Perante o alçapão, sem mãos, o que responde?\", \"o\": [\"Continua a parecer-lhe mais errado.\", \"Abria-o, porque já não toca no homem.\", \"Depende de quantas pessoas há na via.\", \"Não o abria, porque podia falhar.\"], \"c\": 0, \"f\": \"Andrew responde: «For some reason that still just seems more, more wrong.» (9:18) Por alguma razão, continua a parecer-lhe mais errado do que desviar. As mãos não explicam tudo: a regra dele precisa de outra razão.\", \"fe\": [null, \"Era o que a regra das mãos fazia esperar, mas não foi o que Andrew disse: mesmo com o volante, «that still just seems more, more wrong» (9:18), continua a parecer-lhe mais errado.\", \"Os números não mudam no alçapão: um contra cinco. Andrew não fala de números; diz que continua a parecer-lhe mais errado.\", \"Andrew não põe em causa o mecanismo. Diz que, por alguma razão, continua a parecer-lhe mais errado do que desviar o elétrico.\"]}",
     "novo": "{\"t\":\"escolha\",\"rot\":\"Uma regra posta à prova\",\"p\":\"No argumento de Andrew, que explicação é que o caso do alçapão põe em causa?\",\"f\":\"Andrew mantém a diferença de avaliação mesmo sem contacto das mãos. O alçapão retira a esse contacto a capacidade de explicar, sozinho, a distinção. Isso identifica um limite do argumento; não decide que ação é moralmente certa.\",\"fe\":[null,\"Confundes a mudança do mecanismo com a mudança dos números. Revê o caso do alçapão: mantém-se uma pessoa contra cinco.\",\"Introduzes uma incerteza que o caso não acrescenta. Revê a resposta de Andrew ao minuto 9:18: continua a parecer-lhe mais errado, apesar de não tocar no homem.\",\"Confundes ausência de contacto com ausência de uma vítima. Revê o alçapão: o homem continua sobre a via e cai quando o mecanismo é acionado.\"],\"o\":[\"O contacto das mãos explica, por si, a diferença entre as decisões.\",\"O número de pessoas permite distinguir os dois casos apresentados.\",\"A certeza de salvar pessoas desaparece quando se introduz o alçapão.\",\"A presença de uma pessoa deixa de integrar o mecanismo da escolha.\"],\"c\":0}"

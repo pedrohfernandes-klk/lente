@@ -17,6 +17,7 @@ on:
       - 'tests/*laboratorio*'
       - 'narrativas/**'
       - 'tools/ideias_publico.py'
+      - 'tools/gerar_ideias_colagem.py'
       - 'biblioteca/index.html'
       - 'biblioteca/young-tecnica-1940/**'
       - 'tools/medir_opcoes.py'
@@ -31,7 +32,8 @@ permissions:
 jobs:
   licoes:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 05/11/2026: no #119 a preparação demorou 8 minutos e o GitHub cancelou o percurso das lições ao fim de 10, com tudo a passar.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,6 +56,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_licoes_lente.py' -v
           # 30/10/2026: coração do Laboratório (31/10)
           python tools/ideias_piloto.py --verificar
+          python tools/gerar_ideias_colagem.py --verificar
           python tools/ideias_publico.py --verificar
           python tools/medir_opcoes.py --verificar
           python -m unittest discover -s tests -p 'test_ideias*.py' -v
@@ -71,7 +74,9 @@ jobs:
   # percurso das lições, o tempo total passava os 10 minutos do limite e o GitHub cancelava a execução.
   ideias:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    # 05/11/2026: o teste de navegador do «Ideias» voltou a ter as verificações que o #106 tirou; a preparação do
+    # navegador chega a levar 10 minutos num executor lento.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:

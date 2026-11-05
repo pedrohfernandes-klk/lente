@@ -9,15 +9,21 @@ ROOT_URL='https://pedrohfernandes-klk.github.io/lente/'
 def atualizar(rel,s):
     if rel=='index.html':
         marker='<ul class="lab-sets" aria-label="Entradas do Laboratório">'
-        link='<li><a class="cz-row" href="narrativas/ideias/"><span class="lab-set-number" aria-hidden="true">↗</span><span class="lab-set-copy"><strong>Ideias</strong><small>O método em cinco passos</small></span><span class="lab-set-arrow" aria-hidden="true">→</span></a></li>'
+        # 05/11/2026: revisão de 5/11 (lente-ideias-7): sem «↗», que no mesmo cartão marca as ligações externas, e com a descrição
+        # em minúscula, como as três de cima. A versão anterior sai antes de se pôr a nova.
+        antiga='<li><a class="cz-row" href="narrativas/ideias/"><span class="lab-set-number" aria-hidden="true">↗</span><span class="lab-set-copy"><strong>Ideias</strong><small>O método em cinco passos</small></span><span class="lab-set-arrow" aria-hidden="true">→</span></a></li>'
+        link='<li><a class="cz-row" href="narrativas/ideias/"><span class="lab-set-number" aria-hidden="true"></span><span class="lab-set-copy"><strong>Ideias</strong><small>o método em cinco passos</small></span><span class="lab-set-arrow" aria-hidden="true">→</span></a></li>'
         # 02/11/2026: a retoma associa os três primeiros itens às portas.
         # A ligação nova vem depois deles, preservando esse contrato sem mudar o motor.
-        s=s.replace(link,'')
+        s=s.replace(antiga,'').replace(link,'')
         assert s.count(marker)==1
         pos=s.index('</ul>',s.index(marker))
         s=s[:pos]+link+s[pos:]
     else:
-        link='<p class="ideias-publico-link"><a href="../../narrativas/ideias/">Ideias: o método em cinco passos →</a></p>'
+        # 05/11/2026: revisão de 5/11 (lente-ideias-8): a ligação usa o estilo das outras ligações da oficina (.vpf-liga, a negrito),
+        # em vez de uma classe sem CSS.
+        s=s.replace('<p class="ideias-publico-link"><a href="../../narrativas/ideias/">Ideias: o método em cinco passos →</a></p>','')
+        link='<p class="vpf-liga ideias-publico-link"><a href="../../narrativas/ideias/">Ideias: o método em cinco passos →</a></p>'
         if link not in s:
             assert s.count('</main>')==1
             s=s.replace('</main>',link+'</main>')

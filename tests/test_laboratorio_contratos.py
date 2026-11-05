@@ -56,6 +56,7 @@ class Contratos(unittest.TestCase):
    if 'EPIJogo.montar(' not in atual or 'assets/licoes/jogo.js' in atual:continue
    rel=p.relative_to(R).as_posix();antes=subprocess.check_output(['git','show',base+':'+rel],cwd=R).decode('utf-8').replace('\r\n','\n')
    with self.subTest(pagina=rel):
+    # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
     self.assertEqual(renomear(SP.aplicar(antes),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
