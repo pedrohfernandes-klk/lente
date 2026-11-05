@@ -326,7 +326,8 @@ class Molde(unittest.TestCase):
             # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
             esperado = renomear(antes, f, base_ja_renomeada=True)
             if f in lab147.TROCAS:
-                esperado = lab147.aplicar(esperado.decode('utf-8'), f).encode('utf-8')
+                # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
+                esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):
