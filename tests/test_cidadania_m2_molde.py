@@ -326,13 +326,15 @@ class Molde(unittest.TestCase):
             # 05/11/2026: decisão 147 (Laboratório sem o Português): a sessão 5 deixa de ligar à cena retirada do Corta! e o cartaz do percurso anterior deixa de a anunciar;
             # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
             esperado = renomear(antes, f, base_ja_renomeada=True)
+            # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
+            # 05/11/2026: as camadas compõem-se por ordem, 147 e depois 146 e 154 (que partem do main com o #122): a 147 alinha-se aqui
+            # primeiro e a passagem seguinte de lab147.alinhar (as linhas do #124, iguais byte a byte) encontra cada «novo» e deixa o
+            # texto como está; um estado misto continua a falhar.
+            if f in grupos146.TROCAS:
+                esperado = grupos146.alinhar(lab147.alinhar(esperado.decode('utf-8'), f), f).encode('utf-8')
             if f in lab147.TROCAS:
                 # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
                 esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
-            # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
-            # 05/11/2026: por cima da camada da decisão 147 (as camadas 146 e 154 partem do main com o #122).
-            if f in grupos146.TROCAS:
-                esperado = grupos146.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):
