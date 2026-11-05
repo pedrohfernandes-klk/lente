@@ -84,7 +84,8 @@ def familia(rel,s):
 # 30/10/2026: L1c deixa de ter 'vz-vc' (as biografias ficam à esquerda); E2 ganha 'entrada-fontes' e C6 'cid-route-step'
 # (texto corrido dentro de details, revisão adversarial).
 MARCADORES={
- 'L1a':['ler','c-expl','excerto','trad'],'L1b':['ler','c-expl','ap-texto'],'L1c':['ler','c-expl','conceito'],
+ # 05/11/2026: decisão 147 (Laboratório sem o Português): as peças do Laboratório com excertos do programa (.excerto, .trad) saíram; as classes continuam no seletor.
+ 'L1a':['ler','c-expl'],'L1b':['ler','c-expl','ap-texto'],'L1c':['ler','c-expl','conceito'],
  'L1d':['ler','c-expl','ap-texto'],'L1e':['ler','c-expl','ap-texto'],'L1f':['ler','c-expl','ap-texto'],
  'L1g':['ler','c-expl','termo'],'L1h':['ler','c-expl','lado-c'],'L2a':['ler'],'L2b':['formas-cartoes','lf-prosa'],
  'L3':['lf-hero','lf-lead'],'P1':['vpf','vpf-porque','vpf-fazer'],'P2':['bib-texto','bib-fonte'],'P3':['pg'],
@@ -243,17 +244,22 @@ class LinguaEMarcacoes(unittest.TestCase):
 
  def test_excertos_em_verso_marcados_como_poema(self):
   # versos um por <p> sem classe: sem a marca .poema o CSS não os distingue da prosa
+  # 05/11/2026: decisão 147 (Laboratório sem o Português): as treze peças com excertos em verso (aulas e exercícios de Observar, a espinha, a pirâmide e duas oficinas)
+  # eram feitas sobre textos do programa e saíram; o excerto da Farsa saiu de «Escrever ficção: a personagem». Confirma-se
+  # que nenhuma das que ficam tem verso sem a marca, e que as retiradas redirecionam.
+  ret={x['url'] for x in json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
   esperado={'narrativas/aula-forma':1,'narrativas/aula-lugar':1,'narrativas/aula-nao-dito':1,'narrativas/aula-personagem':1,
-   'narrativas/cenario-personagem':3,'narrativas/comecar-pelo-meio':3,'narrativas/corta/cesario':1,'narrativas/corta/chuva':1,
-   'narrativas/corta/ines':1,'narrativas/corta/restelo':1,'narrativas/corta/torneol':1,'narrativas/espinha':3,
-   'narrativas/oficina-ficcao-espaco':1,'narrativas/oficina-ficcao-personagem':1,'narrativas/piramide':2,'narrativas/quem-conta':1,
-   'narrativas/querer-agir':3,'narrativas/subtexto':1}
-  total=0
-  for rel,n in esperado.items():
-   h=''.join(x.get('html') or '' for x in self.itens(rel))
-   with self.subTest(licao=rel):self.assertEqual(h.count('<div class="trad poema">'),n)
-   total+=n
-  self.assertEqual(total,27)
+   'narrativas/cenario-personagem':3,'narrativas/comecar-pelo-meio':3,'narrativas/espinha':3,'narrativas/oficina-ficcao-espaco':1,
+   'narrativas/piramide':2,'narrativas/quem-conta':1,'narrativas/querer-agir':3,'narrativas/subtexto':1}
+  for rel in esperado:
+   with self.subTest(licao=rel):
+    self.assertIn(rel+'/',ret);self.assertIn('http-equiv="refresh"',(R/rel/'index.html').read_text('utf-8'))
+  h=''.join(x.get('html') or '' for x in self.itens('narrativas/oficina-ficcao-personagem'))
+  self.assertEqual(h.count('<div class="trad poema">'),0)
+  for rel,s in PAGINAS:
+   if not rel.startswith('narrativas/') or 'window.EPIJogo' not in s or not re.search(r'itens\s*:\s*\[',s):continue
+   h=''.join(x.get('html') or '' for x in self.itens(rel.removesuffix('/index.html')))
+   with self.subTest(pagina=rel):self.assertNotIn('<div class="trad">',h)
 
  def test_versos_com_classe_e_prosa_sem_ela(self):
   # p.versos sem <br> é prosa (falas de Frei Luís de Sousa passaram a p.fala); só um verso de romance fica numa linha

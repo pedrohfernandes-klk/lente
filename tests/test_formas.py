@@ -275,7 +275,9 @@ class Prototipos(unittest.TestCase):
   # 30/10/2026: Laboratório simples (pedido do docente). Catálogo e fontes passam para destinos próprios.
   entrada=(ROOT/'narrativas/index.html').read_text('utf-8')
   # 01/11/2026: decisão 54, Observar; as três portas e os destinos mantêm-se.
-  for x in ('href="aula-forma/"','href="tudo/"','<h2>Observar</h2>','<h2>Treinar</h2>','<h2>Criar</h2>'):self.assertIn(x,entrada)
+  # 05/11/2026: decisão 147 (Laboratório sem o Português): «A forma da história» saiu; a entrada começa pela primeira peça dos percursos que ficam.
+  primeira=json.loads((ROOT/'assets/laboratorio/percursos.json').read_text('utf-8'))['routes'][0]['pieces'][0]
+  for x in ('href="'+primeira+'/"','href="tudo/"','<h2>Observar</h2>','<h2>Treinar</h2>','<h2>Criar</h2>'):self.assertIn(x,entrada)
   tudo=(ROOT/'narrativas/tudo/index.html').read_text('utf-8')
   for nome in ('duchamp','anguissola','fontana','leonardo','cigoli','galileu','margens'):self.assertIn('href="../'+nome+'/"',tudo)
   # 30/10/2026: catálogo simples por percursos, com todas as peças.

@@ -125,10 +125,10 @@ def block_of(r):return next(b for b in D['blocks'] if b['id']==r['block'])
 allids=[p for r in D['routes'] for p in r['pieces']]
 body='<header class="topo"><p class="marca">Lente</p><h1>Laboratório</h1><div class="lab-saiu"><p class="lead">Observa uma escolha, experimenta uma regra e cria uma peça tua.</p></div></header>'+ideias_publicadas()+start('narrativas',allids)+'<div class="blocos">'
 for b in D['blocks']:
-    rs=routes_of(b);n=NUM.get(len(rs),str(len(rs)))
+    rs=routes_of(b);n='o percurso' if len(rs)==1 else 'os '+NUM.get(len(rs),str(len(rs)))+' percursos'
     body+=('<section class="bloco" id="'+b['anchor']+'"><header><h2>'+b['title']+'</h2><p class="subtitulo">'+b['subtitle']+'</p><p class="pergunta">'+b['question']+'</p>'
-           +a('narrativas','narrativas/'+b['id']+'/','Os '+n+' percursos do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
-           +'<details class="dobra"><summary><span class="abrir">Mostrar os '+n+' percursos</span><span class="fechar">Esconder os '+n+' percursos</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
+           +a('narrativas','narrativas/'+b['id']+'/',n[0].upper()+n[1:]+' do bloco '+b['title']+'\u00a0→')+'</header>'+pic('narrativas',b['id'])
+           +'<details class="dobra"><summary><span class="abrir">Mostrar '+n+'</span><span class="fechar">Esconder '+n+'</span></summary><div class="modulos">'+''.join(routebox('narrativas',r) for r in rs)+'</div></details></section>')
 body+=('</div><section class="progresso"><h2>O teu progresso</h2>'+count(allids)+'<p>O que fizeste fica só neste aparelho. Abrir uma peça não a marca como feita.</p>'
        '<div class="registos"><button type="button" data-guardar>Guardar num ficheiro</button><label class="repor"><input type="file" accept="application/json,.json" data-repor>Repor de um ficheiro</label></div>'
        '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></section>')

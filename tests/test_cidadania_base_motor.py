@@ -28,6 +28,11 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
+                # 05/11/2026: decisão 147. O cartaz rotativo deixa de anunciar o Corta! e as peças do Laboratório
+                # (percurso-anterior); só as trocas do manifesto fechado, com contagem exata.
+                for antigo, novo, quantidade in LAB_147.get(nome, []):
+                    self.assertEqual(antes.count(antigo.encode()), quantidade)
+                    antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
                 self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))

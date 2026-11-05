@@ -74,11 +74,22 @@ class Retiradas(unittest.TestCase):
         fontes += list((R / 'tools/licoes').glob('*.json')) + [R / 'tools/ideias_piloto.py']
         for p in fontes:
             s = p.read_text('utf-8')
+            if p.name == 'percursos.json':
+                # as âncoras antigas ficam de propósito: um endereço antigo com âncora continua a levar ao catálogo
+                d = json.loads(s)
+                self.assertTrue({x['peca'].rsplit('/', 1)[-1] for x in RET if x.get('peca')} <= set(d['ancoras']))
+                d.pop('ancoras')
+                # os nomes dos aliases também são âncoras antigas (tudo/#corta leva a «experimentar»); contam os destinos
+                d['aliases'] = sorted(set(d['aliases'].values()))
+                s = json.dumps(d, ensure_ascii=False)
             for u in URLS:
+                i = u.removeprefix('narrativas/').rstrip('/')
                 with self.subTest(ficheiro=p.relative_to(R).as_posix(), peca=u):
                     self.assertNotIn(ABS + u, s)
-                    self.assertNotIn('"' + u.removeprefix('narrativas/'), s)
-                    self.assertNotIn("'" + u.removeprefix('narrativas/'), s)
+                    for q in ('"', "'"):
+                        self.assertNotIn(q + i + q, s)
+                        self.assertNotIn(q + i + '/' + q, s)
+                        self.assertNotIn(q + u + q, s)
 
     def test_reposicao_ignora_so_as_retiradas(self):
         ids = sorted(x['peca'] for x in RET if x.get('peca'))

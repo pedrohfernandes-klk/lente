@@ -1,7 +1,104 @@
 {
+ "apresentar/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "biblioteca/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "cidadania/m1/sessoes/05/index.html": [
+  [
+   "<a href=\"../../../../narrativas/corta/ines/\">Corta! O desfecho de Inês Pereira",
+   "<a href=\"../../passo-04/\">Querer, agir, responder",
+   1
+  ]
+ ],
+ "cidadania/m2/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "direitos/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "gigantes/bras-cubas/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">Laboratório: a forma da história, a primeira aula</a></li><li>",
+   "",
+   1
+  ]
+ ],
+ "gigantes/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "gigantes/metamorfose/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">Laboratório: a forma da história, a primeira aula</a></li><li>",
+   "",
+   1
+  ]
+ ],
+ "gigantes/orgulho/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\\\">Laboratório: o que não se diz, a terceira aula</a></li><li>",
+   "",
+   1
+  ]
+ ],
+ "investigar/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "ler/index.html": [
+  [
+   "<a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\">Laboratório, o que não se diz →</a>",
+   "",
+   1
+  ],
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
  "mapa/index.html": [
   [
-   "<li><details class=\"map-branch\"><summary><span>Passar das palavras à cena</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/montagem/\">Abrir Passar das palavras à cena <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/ines/\">O desfecho de Inês Pereira</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/frei-luis/\">O incêndio e o Romeiro</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/restelo/\">O Velho na praia</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/torneol/\">A madrugada de Torneol</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/cesario/\">Quem filma Cesário</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/maias/\">Do Ramalhete ao americano</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/chuva/\">Os dois planos de «Chuva Oblíqua»</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/bras-cubas/\">Onze amigos à chuva</a></li></ul></div></details></li>",
+   "Dar forma a uma história</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/ordem/\">Abrir Dar forma a uma história <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\">A forma da história</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/piramide/\">A pirâmide de Freytag</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/historia-enredo/\">História e enredo</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/comecar-pelo-meio/\">Começar pelo meio</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/linhas-de-enredo/\">Linhas de enredo</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/desenlace/\">O desenlace</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/espinha/\">A espinha da história</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>Conhecer uma personagem</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/personagem/\">Abrir Conhecer uma personagem <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-personagem/\">A personagem</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/querer-agir/\">Querer, agir, responder</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/personagem-faz/\">A personagem pelo que faz</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/cenario-personagem/\">O cenário como personagem</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>Ler o que não se diz</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/nao-dito/\">Abrir Ler o que não se diz <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\">O que não se diz</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/subtexto/\">O subtexto</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/dialogo/\">O diálogo que não explica</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/espingarda/\">A espingarda de Tchékhov</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>",
+   "",
+   1
+  ],
+  [
+   "<li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\">Quem conta?</a></li>",
+   "",
+   1
+  ],
+  [
+   "dizer em nome próprio</a></li></ul></div></details></li><li>",
+   "dizer em nome próprio</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\">Duchamp</a></li></ul></div></details></li><li>",
+   1
+  ],
+  [
+   "<li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\">Duchamp</a></li></ul></div></details></li><li><details class=\"map-branch\"><summary><span>Passar das palavras à cena</span><b aria-hidden=\"true\">+</b></summary><div class=\"map-branch-body\"><p class=\"map-open\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/montagem/\">Abrir Passar das palavras à cena <span aria-hidden=\"true\">→</span></a></p><ul class=\"map-tree\"><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/ines/\">O desfecho de Inês Pereira</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/frei-luis/\">O incêndio e o Romeiro</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/restelo/\">O Velho na praia</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/torneol/\">A madrugada de Torneol</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/cesario/\">Quem filma Cesário</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/maias/\">Do Ramalhete ao americano</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/chuva/\">Os dois planos de «Chuva Oblíqua»</a></li><li class=\"map-leaf\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/bras-cubas/\">Onze amigos à chuva</a></li>",
    "",
    1
   ],
@@ -51,6 +148,40 @@
    1
   ]
  ],
+ "narrativas/duchamp/index.html": [
+  [
+   "<a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/olhar/\">",
+   "<a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/voz/\">",
+   1
+  ],
+  [
+   "Cidadania e ao modernismo português.",
+   "Cidadania.",
+   1
+  ],
+  [
+   "<p>E em Portugal? Em 1915 saiu em Lisboa a revista <i>Orpheu</i>, com Pessoa, Sá-Carneiro e Almada Negreiros, e no mesmo ano Almada publicou o <i>Manifesto Anti-Dantas</i>: a mesma vontade de escandalizar para abrir caminho. Álvaro de Campos queria ser máquina na «Ode Triunfal» (1914); Duchamp assinava uma. O modernismo português e o de Duchamp são contemporâneos e vizinhos, e é por isso que este dossier liga ao Módulo 7.</p>",
+   "",
+   1
+  ],
+  [
+   "<li><a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f34/\\\">Português, Módulo 7: «Chuva Oblíqua», Orpheu 2, 1915</a><small>O modernismo português, contemporâneo de Duchamp.</small></li><li><a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f06/\\\">Português, Módulo 7: a «Ode Triunfal», 1914</a><small>Campos quer ser máquina; Duchamp assina uma.</small></li></ul>\"}],chave:\"epi-narrativas-duchamp\",variar:false,mostrarAnterior:false,gestalt:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/olhar/\",percursoRotulo:\"Voltar",
+   "</ul>\"}],chave:\"epi-narrativas-duchamp\",variar:false,mostrarAnterior:false,gestalt:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/voz/\",percursoRotulo:\"Voltar",
+   1
+  ],
+  [
+   " · <a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f34/\\\">Português, Módulo 7: «Chuva Oblíqua», Orpheu 2, 1915</a> · <a href=\\\"https://pedrohfernandes-klk.github.io/pt/m7/licao-m7-f06/\\\">Português, Módulo 7: a «Ode Triunfal», 1914</a>",
+   "",
+   1
+  ]
+ ],
+ "narrativas/fontana/index.html": [
+  [
+   "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\",seguinteRotulo:\"Seguinte\",depois:\"",
+   "percurso\",depois:\"",
+   1
+  ]
+ ],
  "narrativas/margens/index.html": [
   [
    "<div data-cartaz=\"raiz\"></div>\n",
@@ -60,6 +191,13 @@
   [
    "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
    "window.CARTAZ_DADOS={\"ordem\":[],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "narrativas/margens/passo-02/index.html": [
+  [
+   "percurso\",depois:\"",
+   "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\",seguinteRotulo:\"Seguinte\",depois:\"",
    1
   ]
  ],
@@ -76,6 +214,11 @@
   ],
   [
    " <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-meio/\\\">Começar pelo meio</a>, <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-espingarda/\\\">A espingarda</a> e",
+   "",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/historia-enredo/\\\">História e enredo</a>.</p><p class=\\\"sub\\\">",
    "",
    1
   ]
@@ -105,11 +248,21 @@
    "Inês odeia costurar.\", \"Inês pensa no Escudeiro",
    "Marta odeia costurar.\", \"Marta pensa no vizinho",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/espinha/\\\">A espinha da história</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-atelie/index.html": [
   [
    "<p class=\\\"tr-liga-lab\\\"><b>Antes desta oficina, em Treinar:</b> <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/objeto-banal/\\\">O objeto banal</a>, <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/sem-olhos/\\\">Sem olhos</a> e <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/copia-lenta/\\\">Cópia lenta</a>. Quem treinou chega com a mão pronta.</p>",
+   "",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/cenario-personagem/\\\">O cenário como personagem</a>.</p><p class=\\\"sub\\\">",
    "",
    1
   ]
@@ -124,11 +277,21 @@
    "</a>, <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-que-faz/\\\">Pelo que faz",
    "",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/querer-agir/\\\">Querer, agir, responder</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-dilema/index.html": [
   [
    ", <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/verdade-dificil/\\\">Uma verdade difícil</a> e <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/outro-ponto-de-vista/\\\">Outro ponto de vista</a>",
+   "",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/querer-agir/\\\">Querer, agir, responder</a>.</p><p class=\\\"sub\\\">",
    "",
    1
   ]
@@ -143,11 +306,21 @@
    "</p><p class=\\\"fonte aquece\\\">Aquecimento, cinco minutos: <a href=\\\"https://pedrohfernandes-klk.github.io/pt/c/quinta-mandamentos/\\\">Mais iguais do que os outros</a>. Orwell reescreve as regras à frente de toda a gente: a política em cena, como em Brecht.",
    "",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Quem conta?</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-espaco/index.html": [
   [
    "<p class=\\\"tr-liga-lab\\\"><b>Antes desta oficina, em Treinar:</b> <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/sem-olhos/\\\">Sem olhos</a>, <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/duas-horas/\\\">Duas horas, o mesmo lugar</a> e <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/quarto-que-fala/\\\">O quarto que fala</a>. Quem treinou chega com a mão pronta.</p>",
+   "",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/comecar-pelo-meio/\\\">Começar pelo meio</a>.</p><p class=\\\"sub\\\">",
    "",
    1
   ]
@@ -198,13 +371,8 @@
    1
   ],
   [
-   "transformar um tipo vicentino numa pessoa com contradições, num monólogo passado hoje.",
-   "perceber que o contexto pode mudar a leitura de um gesto.",
-   1
-  ],
-  [
-   "</a> · <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-ficcao-personagem.pdf\\\">PDF",
-   "",
+   "transformar um tipo vicentino numa pessoa com contradições, num monólogo passado hoje.</p><p class=\\\"sub\\\">Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/querer-agir/\\\">Querer, agir, responder</a>.</p><p class=\\\"sub\\\"><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-ficcao-personagem-imprimir/\\\">A grelha para imprimir</a> · <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-ficcao-personagem.pdf\\\">PDF",
+   "perceber que o contexto pode mudar a leitura de um gesto.</p><p class=\\\"sub\\\"><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-ficcao-personagem-imprimir/\\\">A grelha para imprimir",
    1
   ],
   [
@@ -233,11 +401,21 @@
    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/oficina-dramaturgista/\",seguinteRotulo:\"Seguinte\",depois:\"",
    "percurso\",depois:\"",
    1
+  ],
+  [
+   "</p><p class=\\\"sub\\\">Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Quem conta?</a>.",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-matriz/index.html": [
   [
    ", <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/acelerar-travar/\\\">Acelerar e travar</a> e <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/duas-vozes/\\\">A mesma coisa, duas vozes</a>",
+   "",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/espinha/\\\">A espinha da história</a>.</p><p class=\\\"sub\\\">",
    "",
    1
   ]
@@ -262,6 +440,11 @@
    "ou do programa (a carta de Teresa em Amor de Perdição, a cena de Inês à janela, a tua cena da restrição antiga).",
    "(a tua cena da restrição antiga serve).",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/historia-enredo/\\\">História e enredo</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-plano/index.html": [
@@ -284,6 +467,11 @@
    "serve; ou o ato II, cena XV, de Frei Luís de Sousa).",
    "serve).",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/subtexto/\\\">O subtexto</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-readymade/index.html": [
@@ -295,6 +483,11 @@
   [
    "<a href=\\\"https://pedrohfernandes-klk.github.io/pt/narrativas/duchamp/\\\">",
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/duchamp/\\\">",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Quem conta?</a>.</p><p class=\\\"sub\\\">",
+   "",
    1
   ]
  ],
@@ -318,6 +511,11 @@
    " Em <i>Frei Luís de Sousa</i>, Garrett não cumpre as unidades (três atos, três cenários), mas cada ato é uma clausura: ninguém sai da sala antes de a verdade entrar.",
    "",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/piramide/\\\">A pirâmide de Freytag</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/oficina-texto-imagem/index.html": [
@@ -334,6 +532,11 @@
   [
    "(a capa de um módulo com o seu documento e a legenda).",
    "com imagem e legenda.",
+   1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/espingarda/\\\">A espingarda de Tchékhov</a>.</p><p class=\\\"sub\\\">",
+   "",
    1
   ]
  ],
@@ -357,9 +560,19 @@
    "tua, ou uma do programa):",
    "tua ou outra que conheças):",
    1
+  ],
+  [
+   "Prepara-se com a experiência <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/subtexto/\\\">O subtexto</a>.</p><p class=\\\"sub\\\">",
+   "",
+   1
   ]
  ],
  "narrativas/treinar/a-entrevista/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Lab, exercício 07: Quem conta? →</a></li><li>",
+   "",
+   1
+  ],
   [
    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/verdade-dificil/\",seguinteRotulo:\"Seguinte\",depois:\"",
    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/so-gestos/\",seguinteRotulo:\"Seguinte\",depois:\"",
@@ -405,7 +618,7 @@
    1
   ],
   [
-   "\"}],chave:\"epi-treinos-comeca-mais-tarde\",variar:false,mostrarAnterior:true,gestalt:true,semPontos:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/comeco/\",percursoRotulo:\"Voltar ao percurso\",voltarRotulo:\"Voltar ao percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-meio/\",seguinteRotulo:\"Seguinte\",depois:\"",
+   "<p class=\\\"tr-rot-l\\\"><b>Para ver mais:</b></p><ul class=\\\"tr-liga\\\"><li><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/comecar-pelo-meio/\\\">Lab, exercício 03: Começar pelo meio →</a></li></ul>\"}],chave:\"epi-treinos-comeca-mais-tarde\",variar:false,mostrarAnterior:true,gestalt:true,semPontos:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/comeco/\",percursoRotulo:\"Voltar ao percurso\",voltarRotulo:\"Voltar ao percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-meio/\",seguinteRotulo:\"Seguinte\",depois:\"",
    "\"}],chave:\"epi-treinos-comeca-mais-tarde\",variar:false,mostrarAnterior:true,gestalt:true,semPontos:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/rever/\",percursoRotulo:\"Voltar ao percurso\",voltarRotulo:\"Voltar ao percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/voz-alta/\",seguinteRotulo:\"Seguinte\",depois:\"",
    1
   ],
@@ -480,6 +693,11 @@
   [
    "Fazer falar sem explicar",
    "Dar uma voz à personagem",
+   1
+  ],
+  [
+   "<p class=\\\"tr-rot-l\\\"><b>Para ver mais:</b></p><ul class=\\\"tr-liga\\\"><li><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/subtexto/\\\">Lab, exercício 08: O subtexto →</a></li></ul>",
+   "",
    1
   ],
   [
@@ -566,13 +784,216 @@
  ],
  "narrativas/treinar/tres-em-cinco/index.html": [
   [
-   "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-que-faz/\",seguinteRotulo:\"Seguinte\",depois:\"",
-   "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-entrevista/\",seguinteRotulo:\"Seguinte\",depois:\"",
+   "<p class=\\\"tr-rot-l\\\"><b>Para ver mais:</b></p><ul class=\\\"tr-liga\\\"><li><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/querer-agir/\\\">Lab, exercício 04: Querer, agir, responder →</a></li></ul>\"}],chave:\"epi-treinos-tres-em-cinco\",variar:false,mostrarAnterior:true,gestalt:true,semPontos:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/vozes/\",percursoRotulo:\"Voltar ao percurso\",voltarRotulo:\"Voltar ao percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-que-faz/\",seguinteRotulo:\"Seguinte\",depois:\"",
+   "\"}],chave:\"epi-treinos-tres-em-cinco\",variar:false,mostrarAnterior:true,gestalt:true,semPontos:true,percurso:\"https://pedrohfernandes-klk.github.io/lente/narrativas/percursos/vozes/\",percursoRotulo:\"Voltar ao percurso\",voltarRotulo:\"Voltar ao percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-entrevista/\",seguinteRotulo:\"Seguinte\",depois:\"",
    1
   ],
   [
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/pelo-que-faz/\\\">Pelo que faz",
    "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/a-entrevista/\\\">A entrevista",
+   1
+  ]
+ ],
+ "projetos/cidade/index.html": [
+  [
+   "<p class=\\\"fonte\\\">A página de onde parte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/cenario-personagem/\\\">Laboratório, cenario personagem</a>.</p>",
+   "",
+   1
+  ]
+ ],
+ "projetos/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "projetos/prancha/index.html": [
+  [
+   "<p class=\\\"fonte\\\">A página de onde parte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">Laboratório, aula forma</a>.</p>",
+   "",
+   1
+  ]
+ ],
+ "sidequests/bach/index.html": [
+  [
+   "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">A forma da história, a primeira aula do Laboratório</a>. Em Português, liga-se ao Módulo 3.</p>",
+   "",
+   1
+  ]
+ ],
+ "sidequests/cesario/index.html": [
+  [
+   "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/cenario-personagem/\\\">O cenário como personagem, no Laboratório</a>. Em Português, liga-se ao Módulo 6.</p>",
+   "",
+   1
+  ]
+ ],
+ "sidequests/heroi/index.html": [
+  [
+   "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\\\">A forma da história, a primeira aula do Laboratório</a>. Em Português, liga-se ao Módulo 3.</p>",
+   "",
+   1
+  ]
+ ],
+ "sidequests/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "sidequests/mozart/index.html": [
+  [
+   "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/dialogo/\\\">O diálogo que não explica, no Laboratório</a>. Em Português, liga-se ao Módulo 4.</p>",
+   "",
+   1
+  ]
+ ],
+ "sidequests/suspense/index.html": [
+  [
+   "<p class=\\\"ponte\\\">A ponte: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/espingarda/\\\">A espingarda de Tchékhov, no Laboratório</a>. Em Português, liga-se ao Módulo 4.</p>",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "ver-para-fazer/v01/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\">A forma da história (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v02/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-personagem/\">A personagem (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v03/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\">A forma da história (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v05/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v06/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v07/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\">O que não se diz (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v17/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\">O que não se diz (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v27/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v51/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-forma/\">A forma da história (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v55/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v59/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-personagem/\">A personagem (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v63/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-lugar/\">O lugar (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "ver-para-fazer/v69/index.html": [
+  [
+   "Liga a: <a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\">O que não se diz (Laboratório de Narrativas)</a></p>\n<p class=\"vpf-liga\">",
+   "",
+   1
+  ]
+ ],
+ "vozes/absurdo/index.html": [
+  [
+   "<li><a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Laboratório de Narrativas: Quem conta?</a><small>Meursault conta na primeira pessoa e quase não explica o que sente: o que sabemos, e o que não sabemos, de quem conta?</small></li>",
+   "",
+   1
+  ]
+ ],
+ "vozes/foster-wallace/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/quem-conta/\\\">Laboratório: Quem conta?</a><small>As notas de rodapé de Wallace são uma segunda voz ao lado da primeira: quem fala nas notas, e porque lhe damos letra mais pequena?</small></li><li>",
+   "",
+   1
+  ]
+ ],
+ "vozes/index.html": [
+  [
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\",\"corta\",\"narrativas\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   "window.CARTAZ_DADOS={\"ordem\":[\"atlas\",\"cidade\",\"gigantes\"],\"atlas\":{\"url\":\"https://pedrohfernandes-klk.github.io/pt/atlas/\",\"paises\":[\"PT\",\"CV\",\"GW\",\"ST\",\"TL\",\"BR\",\"AO\",\"MZ\"],\"npessoas\":107,\"ligadas\":{\"M1\":[],\"M2\":[],\"M3\":[{\"id\":\"bocage\",\"nome\":\"Manuel",
+   1
+  ]
+ ],
+ "vozes/joao-cesar-monteiro/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/aula-nao-dito/\\\">Laboratório: O que não se diz</a><small>«Conta menos. O leitor faz o resto»: o ecrã negro é a versão mais radical desta ideia.</small></li><li>",
+   "",
+   1
+  ]
+ ],
+ "vozes/manoel-de-oliveira/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/restelo/\\\">Corta! O Velho na praia</a><small>A estância 94 lida como uma cena de cinema; Oliveira sentou Camões num banco de jardim do século XXI.</small></li><li>",
+   "",
+   1
+  ]
+ ],
+ "vozes/mario-viegas/index.html": [
+  [
+   "<a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/corta/cesario/\\\">Corta! Muda a cena: Quem filma Cesário</a><small>O episódio de 1991, realizado por Nuno Teixeira, é uma resposta real à pergunta: como se filma Cesário?</small></li><li>",
+   "",
    1
   ]
  ]

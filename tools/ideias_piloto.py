@@ -37,7 +37,7 @@ SESSOES = [
   'passo': 'Passo 1 de 5: juntar material, com os olhos', 'peca': ('Observar para transformar', 'Galileu', 'galileu/'),
   'linha': 'O detetive Sherlock Holmes, a historiadora de arte Amy\u00a0E.\u00a0Herman, um quadro do pintor Georges de La Tour e a escada da escola.', 'papel': 'o teu auto de observação.'},
  {'n': 2, 'porta': 'ver', 'titulo': 'O cocheiro', 'pergunta': 'O que distingue uma coisa de todas as outras iguais a ela?',
-  'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Conhecer uma personagem', 'A personagem pelo que faz', 'personagem-faz/'),
+  'passo': 'Passo 1 de 5: juntar material, até ao fundo', 'peca': ('Observar para transformar', 'Leonardo', 'leonardo/'),
   'linha': 'O escritor Guy de Maupassant e o seu mestre, Gustave Flaubert, uma fotografia de Paris e um lugar perto da escola.', 'papel': 'o teu «cocheiro», a linha que levaste à fila e o resultado.'},
  {'n': 3, 'porta': 'treinar', 'titulo': 'O caleidoscópio', 'pergunta': 'Uma ideia nova é feita de coisas velhas?',
   'passo': 'Passos 1 e 2 de 5: juntar o material geral e começar a trabalhá-lo', 'peca': ('Escolher a palavra', 'Lista de substantivos', 'treinar/lista-substantivos/')},

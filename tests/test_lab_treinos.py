@@ -75,8 +75,10 @@ class Ginasio(unittest.TestCase):
             if d.name not in PILOTO:
                 self.assertNotIn('.tr-leit{', (d / 'index.html').read_text('utf-8'), d.name)
         prop = (R / 'narrativas/proposta-subtexto/index.html').read_text('utf-8')
-        for h in ('narrativas/subtexto/', 'narrativas/treinar/o-contrario/'):
+        # 05/11/2026: decisão 147 (Laboratório sem o Português): «O subtexto» (exercício sobre Frei Luís de Sousa e a Farsa) saiu; a proposta parte do treino piloto.
+        for h in ('narrativas/treinar/o-contrario/',):
             self.assertIn(LENTE + h, prop)
+        self.assertNotIn(LENTE + 'narrativas/subtexto/', prop)
         self.assertNotIn(LENTE + 'narrativas/treinar/sem-disse/', prop)
         for passo in ('Versão A', 'A leitura de um colega', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
             self.assertIn(passo, prop)
@@ -153,7 +155,9 @@ class Ginasio(unittest.TestCase):
 
     def test_exercicios_e_oficinas_apontam_para_o_ginasio(self):
         n = sum('tr-liga-lab' in (R / 'narrativas' / d / 'index.html').read_text('utf-8') for d in [p.name for p in (R / 'narrativas').iterdir() if p.is_dir()])
-        self.assertGreaterEqual(n, 33)
+        # 05/11/2026: decisão 147 (Laboratório sem o Português): os exercícios de Observar que ligavam ao ginásio saíram com os textos do programa; ficam as 15 oficinas
+        # com «Antes desta oficina, em Treinar» (duas perderam os treinos todos, que eram do Português).
+        self.assertGreaterEqual(n, 15)
 
     def test_entrada_do_lente(self):
         s = (R / 'index.html').read_text('utf-8')

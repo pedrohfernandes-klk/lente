@@ -196,6 +196,123 @@
       "url": "narrativas/percursos/montagem/",
       "titulo": "Passar das palavras à cena",
       "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/aula-forma/",
+      "titulo": "A forma da história",
+      "destino": "narrativas/ver/",
+      "peca": "aula-forma"
+    },
+    {
+      "url": "narrativas/aula-lugar/",
+      "titulo": "O lugar",
+      "destino": "narrativas/ver/",
+      "peca": "aula-lugar"
+    },
+    {
+      "url": "narrativas/aula-nao-dito/",
+      "titulo": "O que não se diz",
+      "destino": "narrativas/ver/",
+      "peca": "aula-nao-dito"
+    },
+    {
+      "url": "narrativas/aula-personagem/",
+      "titulo": "A personagem",
+      "destino": "narrativas/ver/",
+      "peca": "aula-personagem"
+    },
+    {
+      "url": "narrativas/cenario-personagem/",
+      "titulo": "O cenário como personagem",
+      "destino": "narrativas/ver/",
+      "peca": "cenario-personagem"
+    },
+    {
+      "url": "narrativas/comecar-pelo-meio/",
+      "titulo": "Começar pelo meio",
+      "destino": "narrativas/ver/",
+      "peca": "comecar-pelo-meio"
+    },
+    {
+      "url": "narrativas/desenlace/",
+      "titulo": "O desenlace",
+      "destino": "narrativas/ver/",
+      "peca": "desenlace"
+    },
+    {
+      "url": "narrativas/dialogo/",
+      "titulo": "O diálogo que não explica",
+      "destino": "narrativas/ver/",
+      "peca": "dialogo"
+    },
+    {
+      "url": "narrativas/espingarda/",
+      "titulo": "A espingarda de Tchékhov",
+      "destino": "narrativas/ver/",
+      "peca": "espingarda"
+    },
+    {
+      "url": "narrativas/espinha/",
+      "titulo": "A espinha da história",
+      "destino": "narrativas/ver/",
+      "peca": "espinha"
+    },
+    {
+      "url": "narrativas/historia-enredo/",
+      "titulo": "História e enredo",
+      "destino": "narrativas/ver/",
+      "peca": "historia-enredo"
+    },
+    {
+      "url": "narrativas/linhas-de-enredo/",
+      "titulo": "Linhas de enredo",
+      "destino": "narrativas/ver/",
+      "peca": "linhas-de-enredo"
+    },
+    {
+      "url": "narrativas/personagem-faz/",
+      "titulo": "A personagem pelo que faz",
+      "destino": "narrativas/ver/",
+      "peca": "personagem-faz"
+    },
+    {
+      "url": "narrativas/piramide/",
+      "titulo": "A pirâmide de Freytag",
+      "destino": "narrativas/ver/",
+      "peca": "piramide"
+    },
+    {
+      "url": "narrativas/quem-conta/",
+      "titulo": "Quem conta?",
+      "destino": "narrativas/ver/",
+      "peca": "quem-conta"
+    },
+    {
+      "url": "narrativas/querer-agir/",
+      "titulo": "Querer, agir, responder",
+      "destino": "narrativas/ver/",
+      "peca": "querer-agir"
+    },
+    {
+      "url": "narrativas/subtexto/",
+      "titulo": "O subtexto",
+      "destino": "narrativas/ver/",
+      "peca": "subtexto"
+    },
+    {
+      "url": "narrativas/percursos/ordem/",
+      "titulo": "Dar forma a uma história",
+      "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/percursos/personagem/",
+      "titulo": "Conhecer uma personagem",
+      "destino": "narrativas/ver/"
+    },
+    {
+      "url": "narrativas/percursos/nao-dito/",
+      "titulo": "Ler o que não se diz",
+      "destino": "narrativas/ver/"
     }
   ]
 }

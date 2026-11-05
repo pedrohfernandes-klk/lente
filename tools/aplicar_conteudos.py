@@ -15,7 +15,11 @@ DATA = ROOT / 'tools/trocas/conteudos-lote1-20261101.json'
 
 def aplicar(verificar=False):
     pending = {}
+    # 05/11/2026: decisão 147. As páginas retiradas do Laboratório (assets/laboratorio/retiradas.json) já não têm o banco.
+    retiradas = {x['url'] + 'index.html' for x in json.loads((ROOT / 'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']}
     for e in json.loads(DATA.read_text('utf-8')):
+        if e['ficheiro'] in retiradas:
+            continue
         p = ROOT / e['ficheiro']
         s = pending.get(p, p.read_text('utf-8'))
         old, new, n = e['antigo'], e['novo'], e['ocorrencias']
