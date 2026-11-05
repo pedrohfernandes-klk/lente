@@ -12,7 +12,7 @@
   "subtitulo": "Como nasce uma ideia",
   "url": "https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/",
   "sessoes": 7,
-  "rotulo": "As sete sessões"
+  "rotulo": "As sessões do Ideias"
  },
  "saida": "narrativas/ideias/sessao-01/index.html",
  "piloto": false,
@@ -24,7 +24,7 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Dezassete degraus",
-   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><div class=\"metodo-linha\"><p><b>Passo 1 de 5: juntar material.</b> Estas sete sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div><ol class=\"passos-m\" aria-label=\"Os cinco passos do método\"><li class=\"hoje\" aria-current=\"step\"><b>1</b> Juntar material <span class=\"hoje-t\">hoje</span></li><li><b>2</b> Trabalhar o material</li><li><b>3</b> Largar</li><li><b>4</b> A ideia aparece</li><li><b>5</b> Dar forma e pôr à prova</li></ol><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>"
+   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><div class=\"metodo-linha\"><p><b>Passo 1 de 5: juntar material.</b> Estas sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div><ol class=\"passos-m\" aria-label=\"Os cinco passos do método\"><li class=\"hoje\" aria-current=\"step\"><b>1</b> Juntar material <span class=\"hoje-t\">hoje</span></li><li><b>2</b> Trabalhar o material</li><li><b>3</b> Largar</li><li><b>4</b> A ideia aparece</li><li><b>5</b> Dar forma e pôr à prova</li></ol><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>"
   },
   {
    "t": "ler",
@@ -264,7 +264,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola. Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega. Conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os factos e os degraus conferidos.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>Os dez factos são verificáveis, sem opinião, um por nota.</li><li>As três inferências <span class=\"nq\">apoiam-se</span> em dois factos cada. A pergunta a que o lugar não responde fica registada.</li><li>Um colega confirma ou desmente os factos; outra pessoa confere os degraus.</li></ul></div>"
+   "html": "<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega e <span class=\"nq\">marca-os</span> como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>Os dez factos são verificáveis, sem opinião, um por nota.</li><li>As três inferências <span class=\"nq\">apoiam-se</span> em dois factos cada. A pergunta a que o lugar não responde fica registada.</li><li>Um colega confirma ou desmente os factos; outra pessoa confere os degraus.</li></ul></div>"
   },
   {
    "t": "escolha",
@@ -350,7 +350,7 @@
    "t": "ler",
    "rot": "Para levar",
    "escuro": true,
-   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste factos de inferências. Acertaste nos degraus?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro observar, depois concluir.</li><li>Uma inferência junta factos; uma hipótese espera por eles.</li><li>Olha até encontrares diferenças.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: escolhe um lugar perto da escola e <span class=\"nq\">escreve-o</span> no guião.</p><aside class=\"para-caixa\"><p><b>Para a tua caixa</b></p><p>Guarda os teus dez factos e a pergunta por investigar. Um assunto por nota, para voltar a olhar.</p></aside>"
+   "html": "<p class=\"levar\">Ver não custa nada. Observar é contar os degraus.</p><p><b>Fizeste o passo 1 de 5, juntar material:</b> separaste factos de inferências. Acertaste nos degraus?</p><p><b>As frases da sessão</b></p><ul><li>Primeiro observar, depois concluir.</li><li>Uma inferência junta factos; uma hipótese espera por eles.</li><li>Olha até encontrares diferenças.</li></ul><p><b>No Laboratório:</b> <a href=\"../../galileu/\">Observar, «Observar para transformar», <i>Galileu</i></a>: em 1609, um telescópio mostrou que a Lua não é lisa.</p><p><b>Para aprofundar:</b> <a href=\"../../../investigar/passo-02/\">Como se investiga, passo 2, «Olhar e registar»</a>.</p><p><b>Para a sessão 2</b>, o mesmo passo, mais fundo: escolhe um lugar perto da escola e <span class=\"nq\">escreve-o</span> no guião.</p><aside class=\"para-caixa\"><p><b>Para a tua caixa</b></p><p>Guarda os teus dez factos e a pergunta por investigar, um assunto por cartão, para voltar a olhar.</p></aside>"
   }
  ]
 }

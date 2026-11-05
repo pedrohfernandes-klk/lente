@@ -101,6 +101,20 @@ class Justica(unittest.TestCase):
             self.assertIn('href="' + meta['anterior'] + '"', s)
             # 02/11/2026: a ligação seguinte também está no HTML do fecho, serializado em JSON.
             self.assertIn('href="' + meta['seguinte'] + '"', s.replace('\\"', '"'))
+        # 05/11/2026: revisão de 5/11 (lente-justica-1). Voltam as verificações que o #95 tirou sem equivalente: os rótulos
+        # do botão seguinte das lições 2 e 3, o menu de cada uma das lições 1 a 3 para as outras duas, e os vídeos das três
+        # escritos no próprio teste (o manifesto não se confere a si próprio).
+        s2 = (J / 'licao-2/index.html').read_text('utf-8')
+        self.assertIn('seguinte:"../licao-3/",seguinteRotulo:"Lição 3"', s2)
+        s3 = (J / 'licao-3/index.html').read_text('utf-8')
+        self.assertIn('seguinte:"../aplicar/",seguinteRotulo:"Aplicar"', s3)
+        YT = {1: 'kBdfcR-8hEY', 2: '0O2Rq4HJBxw', 3: 'Qw4l1w0rkjs'}
+        self.assertEqual({m['numero']: m['video'] for m in MANIFESTO if m['numero'] in YT}, YT)
+        for n in (1, 2, 3):
+            s = (J / f'licao-{n}/index.html').read_text('utf-8')
+            self.assertIn(YT[n], s, n)
+            for o in {1, 2, 3} - {n}:
+                self.assertIn(f'<a href="../licao-{o}/">Lição {o}:', s, (n, o))
         g = (J / 'guiao/index.html').read_text('utf-8')
         # 26/10: título aprovado pelo docente; conceitos e cadeia conservados.
         self.assertIn('Lição 3: Até onde vai a minha liberdade?', g)

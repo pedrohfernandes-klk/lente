@@ -21,6 +21,7 @@ class Casos(unittest.TestCase):
    for i in c:
     if i['t'] in ['decisao','revelar','posicoes','sintese']:self.assertTrue(i['reflexao'])
    key=re.search(r'chave:"([^"]+)"',s)[1];keys.append(key);self.assertNotIn('guia-docente',s)
+   # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
    if x['module']=='m2':self.assertNotIn('Humanos',s);self.assertIn('Algoritmos',s)
   self.assertEqual(len(set(keys)),6)
  def test_branch_state_is_transient_and_displayed(self):

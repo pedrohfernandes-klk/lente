@@ -1,34 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="260 0 680 440" preserveAspectRatio="xMidYMid slice" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-<g stroke-width=".7" opacity=".14">
-<path d="M0 15Q400 9 800 15T1200 17"/>
-<path d="M0 36Q400 40 800 36T1200 38"/>
-<path d="M0 57Q400 54 800 57T1200 59"/>
-<path d="M0 78Q400 73 800 78T1200 80"/>
-<path d="M0 99Q400 104 800 99T1200 101"/>
-<path d="M0 120Q400 113 800 120T1200 122"/>
-<path d="M0 141Q400 139 800 141T1200 143"/>
-<path d="M0 162Q400 166 800 162T1200 164"/>
-<path d="M0 183Q400 191 800 183T1200 185"/>
-<path d="M0 204Q400 210 800 204T1200 206"/>
-<path d="M0 225Q400 223 800 225T1200 227"/>
-<path d="M0 246Q400 243 800 246T1200 248"/>
-<path d="M0 267Q400 272 800 267T1200 269"/>
-<path d="M0 288Q400 294 800 288T1200 290"/>
-<path d="M0 309Q400 311 800 309T1200 311"/>
-<path d="M0 330Q400 328 800 330T1200 332"/>
-<path d="M0 351Q400 359 800 351T1200 353"/>
-<path d="M0 372Q400 365 800 372T1200 374"/>
-<path d="M0 393Q400 387 800 393T1200 395"/>
-<path d="M0 414Q400 409 800 414T1200 416"/>
-<path d="M0 435Q400 429 800 435T1200 437"/>
-</g><g class="ly-fios" stroke-width="1.8"><path d="M450 187Q520 220 547 147M653 163Q692 222 710 259M451 187Q420 325 710 259"/><path d="M442 180q8 -9 16 0t-16 7t16 -7M702 252q8 -9 16 0t-16 7t16 -7"/></g>
-<g class="ly-nota ly-nota-1"><g transform="translate(330 100) rotate(-9 90 65)"><path d="M0 0H180V125H0Z" fill="var(--ly-papel,#f3f2ee)" stroke-width="2"/><path d="M5 4H175M5 8H175M7 116H174" opacity=".25" stroke-width=".7"/>
-<path d="M17 31h58m-58 8h91M18 55h130m-130 8h119m-119 8h136m-136 8h104m-104 8h132" stroke-width="1.2"/><path d="M22 102q24 -18 41 -1t35 -3t31 2" stroke-width="1.5"/>
-</g></g>
-<g class="ly-nota ly-nota-2"><g transform="translate(535 65) rotate(6 90 65)"><path d="M0 0H180V125H0Z" fill="var(--ly-papel,#f3f2ee)" stroke-width="2"/><path d="M5 4H175M5 8H175M7 116H174" opacity=".25" stroke-width=".7"/>
-<circle cx="63" cy="49" r="22" stroke-width="1.4"/><path d="M59 28q-18 23 5 42M44 51h39M86 48h49l-6 -5m6 5 -6 5M18 89h145m-145 8h122m-122 8h138" stroke-width="1.1"/>
-</g></g>
-<g class="ly-nota ly-nota-3"><g transform="translate(670 235) rotate(-5 90 65)"><path d="M0 0H180V125H0Z" fill="var(--ly-papel,#f3f2ee)" stroke-width="2"/><path d="M5 4H175M5 8H175M7 116H174" opacity=".25" stroke-width=".7"/>
-<path d="M20 24h77m-77 8h132M20 55l19 -11 24 16 27 -19 23 13 28 -12M20 80h140m-140 8h117m-117 8h128" stroke-width="1.3"/>
-</g></g>
-<g transform="translate(520 335) rotate(-11)" stroke-width="1.5"><path d="M0 0H147L165 5 147 10H0Z" fill="var(--ly-papel,#f3f2ee)"/><path d="M147 0v10M153 3l12 2 -12 2M4 3h137M4 7h137"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" preserveAspectRatio="xMidYMid slice" focusable="false">
+<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+<g stroke-width=".7" opacity=".14"><path d="M0 18H680"/><path d="M0 39H680"/><path d="M0 60H680"/><path d="M0 81H680"/><path d="M0 102H680"/><path d="M0 123H680"/><path d="M0 144H680"/><path d="M0 165H680"/><path d="M0 186H680"/><path d="M0 207H680"/><path d="M0 228H680"/><path d="M0 249H680"/><path d="M0 270H680"/><path d="M0 291H680"/><path d="M0 312H680"/><path d="M0 333H680"/><path d="M0 354H680"/><path d="M0 375H680"/><path d="M0 396H680"/><path d="M0 417H680"/><path d="M0 438H680"/></g>
+<g transform="rotate(-3 340 192)">
+<path d="M196 86h300v227h-300z" fill="currentColor" stroke="none" opacity=".12"/>
+<image class="ideias-foto" href="../../assets/laboratorio/ideias/cozens-mancha-entrada.webp" x="190" y="78" width="300" height="227"/>
+<path d="M190 78h300v227h-300z" stroke-width=".8" opacity=".35"/>
+<path d="M310 69h60v18h-60z" fill="var(--ly-papel,#f3f2ee)" stroke-width="1" opacity=".85"/>
+<circle cx="365.0" cy="232.7" r="11" stroke="var(--vermelho,#b3261e)" stroke-width="2"/><circle cx="299.4" cy="140.5" r="15" stroke="var(--vermelho,#b3261e)" stroke-width="2"/><circle cx="382.2" cy="206.1" r="13" stroke="var(--vermelho,#b3261e)" stroke-width="2"/>
+</g>
+<g transform="rotate(-6 97 118)"><path d="M28 70h138v96h-138z" fill="var(--ly-papel,#f3f2ee)" stroke-width="1.6"/><path d="M28 86h138" stroke="var(--vermelho,#b3261e)" stroke-width="1" opacity=".55"/><path d="M40 100h114" stroke-width="1.1" opacity=".75"/><path d="M40 113h91" stroke-width="1.1" opacity=".75"/><path d="M40 126h103" stroke-width="1.1" opacity=".75"/><path d="M40 139h63" stroke-width="1.1" opacity=".75"/></g>
+<g transform="rotate(5 581 98)"><path d="M516 52h130v92h-130z" fill="var(--ly-papel,#f3f2ee)" stroke-width="1.6"/><path d="M516 68h130" stroke="var(--vermelho,#b3261e)" stroke-width="1" opacity=".55"/><path d="M528 82h95" stroke-width="1.1" opacity=".75"/><path d="M528 95h106" stroke-width="1.1" opacity=".75"/><path d="M528 108h64" stroke-width="1.1" opacity=".75"/><path d="M528 121h85" stroke-width="1.1" opacity=".75"/></g>
+<g transform="rotate(-3 575 342)"><path d="M500 292h150v100h-150z" fill="var(--ly-papel,#f3f2ee)" stroke-width="1.6"/><path d="M500 308h150" stroke="var(--vermelho,#b3261e)" stroke-width="1" opacity=".55"/><path d="M512 322h126" stroke-width="1.1" opacity=".75"/><path d="M512 335h88" stroke-width="1.1" opacity=".75"/><path d="M512 348h107" stroke-width="1.1" opacity=".75"/><path d="M512 361h63" stroke-width="1.1" opacity=".75"/><path d="M512 374h113" stroke-width="1.1" opacity=".75"/></g>
+<path d="M297 143C227 103 220 70 166 112" stroke="var(--vermelho,#b3261e)" stroke-width="1.6" stroke-dasharray="1 0"/>
+<path d="M383 204C443 134 470 100 520 96" stroke="var(--vermelho,#b3261e)" stroke-width="1.6" stroke-dasharray="1 0"/>
+<path d="M367 231C407 291 440 360 502 334" stroke="var(--vermelho,#b3261e)" stroke-width="1.6" stroke-dasharray="1 0"/>
+<circle cx="166" cy="112" r="3.5" fill="var(--vermelho,#b3261e)" stroke="none"/><circle cx="520" cy="96" r="3.5" fill="var(--vermelho,#b3261e)" stroke="none"/><circle cx="502" cy="334" r="3.5" fill="var(--vermelho,#b3261e)" stroke="none"/>
+<g stroke-width="1.4"><path d="M120 372L300 338l8 9-180 34z" fill="var(--ly-papel,#f3f2ee)"/><path d="M300 338l20 2-12 7"/><path d="M128 374l-4 8"/></g>
+</g></svg>

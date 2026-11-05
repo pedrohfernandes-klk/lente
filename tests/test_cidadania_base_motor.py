@@ -8,6 +8,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
 RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json').read_text(encoding='utf-8'))
+# 05/11/2026: manifesto fechado das trocas da revisão de 5/11 no Lente.
+REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').read_text(encoding='utf-8'))
 
 
 class CidadaniaBase(unittest.TestCase):
@@ -38,6 +40,12 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
                 for antigo, novo, quantidade in geracao.get(nome, []):
+                    self.assertEqual(esperado.count(antigo), quantidade)
+                    esperado = esperado.replace(antigo, novo)
+                # 05/11/2026: revisão de 5/11 (Lente). Só as trocas deste manifesto fechado (linha do «Ideias» no cartão do
+                # Laboratório, rodapé dos excertos, ramo «Decisões» do mapa, bloco repetido da Cidadania e crédito dos desenhos
+                # das lições 1 e 2 da Justiça), com contagem exata; a comparação continua integral.
+                for antigo, novo, quantidade in REVISAO_0511.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;

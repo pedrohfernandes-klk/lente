@@ -71,7 +71,11 @@ ATGET = (
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro a fotografia inteira, depois ampliada
  '<p>Vê primeiro a fotografia inteira; depois amplia-a e percorre-a de uma ponta à outra.</p>'
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
-NA_AULA = '<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente: pessoas só de longe, sem fotografar caras. Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que distingue o teu «cocheiro». No guião, escreve uma linha que só sirva para esse «cocheiro». Lê sem o identificar: a turma tenta reconhecê-lo. Sem saída, usa a janela ou uma fotografia de rua.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>' + M.esta_bom(2)
+# 05/11/2026: revisão de 5/11 (lente-ideias-6): volta o texto inteiro do «Na aula» (o que é um «cocheiro», a leitura da linha na sala
+# e o que fica escrito) dentro das 140 palavras do cartão (saem os exemplos de «cocheiro», que a sessão já deu); «Sem saída» lia-se como «beco sem saída».
+NA_AULA = ('<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro» (pessoas só de longe, sem fotografar caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue. No guião, escreve uma linha que só sirva para esse «cocheiro». Na sala, lê-a sem dizer o que é: a turma tenta reconhecê-lo. Se falhar, repete da janela.</p>'
+           '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
+           '<p><b>O que fica escrito.</b> As quinze notas; no guião, a linha e o resultado.</p>' + M.esta_bom(2))
 LEVAR = (
  '<p class="levar">Olhar até a coisa deixar de ser igual às outras.</p>'
  '<p>Foste à fonte de uma citação. Também puseste uma descrição à prova. Uma árvore da tua rua é só uma árvore?</p>'
@@ -82,7 +86,7 @@ LEVAR = (
  '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
  # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
- '<p><b>Passo 1 de 5: falta o material geral.</b> Na sessão 3, junta-lo e começas o passo 2 de Young, trabalhar o material. Traz dez notas sobre o que sabes bem fora da escola.</p>')
+ '<p><b>Passo 1 de 5: falta o material geral.</b> Junta dez notas sobre o que sabes bem fora da escola: é com elas que começa o passo 2 de Young, trabalhar o material.</p>')
 
 cartoes = [
  {"t":"ler","rot":"Abre","titulo":"Cinquenta cavalos","html":ABRE},
@@ -130,7 +134,7 @@ cartoes = [
  {"t":"completar","g":"materias","p":"Completa a frase do método sobre o que é preciso juntar.","p2":"Completa: de que tipos são as matérias-primas de uma ideia, segundo o método?",
   "frase":"«As matérias-primas que é necessário recolher são de dois tipos: [1] e [2].»",
   "lacunas":[{"o":["específicas","verdadeiras","escolhidas"],"c":0},{"o":["gerais","novas","raras"],"c":0}],
-  "f":"**Específicas** (as do problema, como o teu «cocheiro») e **gerais** (tudo o que vais juntando sobre a vida). Hoje juntaste material específico; na sessão 3, juntas o geral.",
+  "f":"**Específicas** (as do problema, como o teu «cocheiro») e **gerais** (tudo o que vais juntando sobre a vida). Hoje juntaste material específico; depois, juntas o geral.",
   "fe":"O método opõe o material do problema concreto ao material que se junta a vida inteira."},
  {"t":"escolha","g":"prova","p":"Porque é que a fila de reconhecimento prova mais do que a opinião de quem escreveu a linha?","p2":"O que torna a fila de reconhecimento uma prova melhor do que a opinião do autor?",
   "o":["Testa a linha em quem não sabe o que é.","Quem escreve gosta sempre do que escreveu.","Assim todas as descrições têm a mesma nota."],"c":0,
@@ -154,9 +158,9 @@ for c in cartoes:
 dados = {
  "id":"ideias-s02","familia":"laboratorio","chave":"epi-lab-ideias-s02","versao":"2026-10-31-1",
  "marca":"Ideias","passo":"Passo 1 de 5","titulo":"Sessão 2: O cocheiro","h1":"Laboratório, Ideias, sessão 2: O cocheiro",
- "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sete sessões"},
+ "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sessões do Ideias"},
  "saida":"narrativas/ideias/sessao-02/index.html","piloto":False,
- "seguinte":"../","seguinteRotulo":"As sete sessões",
+ "seguinte":"../","seguinteRotulo":"As sessões do Ideias",
  "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
  "cartoes":cartoes,
 }
