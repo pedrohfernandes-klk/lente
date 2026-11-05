@@ -9,7 +9,9 @@ src=(R/'tests/browser_cidadania_butler_singer.py').read_text('utf-8');node=next(
 class Quiet(SimpleHTTPRequestHandler):
  def log_message(self,*a):pass
 server=ThreadingHTTPServer(('127.0.0.1',0),partial(Quiet,directory=str(R.parent)));threading.Thread(target=server.serve_forever,daemon=True).start();host=f'http://127.0.0.1:{server.server_port}';results=[]
-AMOSTRA=['sem-olhos','sem-disse','tres-em-cinco','copia-lenta','pelo-meio','rascunho-mau']
+# 05/11/2026: decisão 147 (Laboratório sem o Português): sem-olhos, sem-disse, copia-lenta e pelo-meio saíram (redirecionam); a amostra passa a seis treinos que ficam,
+# um ou dois de cada percurso de Treinar.
+AMOSTRA=['a-gaveta','interromper','tres-em-cinco','dicionario','comeca-mais-tarde','rascunho-mau']
 with sync_playwright() as pw:
  b=pw.chromium.launch(headless=True)
  for width in [320,1440]:
@@ -49,7 +51,7 @@ with sync_playwright() as pw:
    assert not errors,(tid,errors);results.append({'treino':tid,'width':width});p.close()
   ctx.close()
  # Projeção: o relógio continua legível e funcional em letra grande.
- ctx=b.new_context(viewport={'width':1280,'height':800});p=ctx.new_page();p.goto(f'{host}/lente/narrativas/treinar/sem-olhos/?projetar=1')
+ ctx=b.new_context(viewport={'width':1280,'height':800});p=ctx.new_page();p.goto(f'{host}/lente/narrativas/treinar/a-gaveta/?projetar=1')
  for _ in range(10):
   if p.locator('#baralho .tr-relogio').count() and p.locator('#baralho .tr-relogio').first.is_visible():break
   act(p)

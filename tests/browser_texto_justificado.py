@@ -59,7 +59,7 @@ NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6
 # 30/10/2026 (verificação da revisão): a lista de fontes de Vidas e vozes (p.fontes-p) fica à esquerda.
 PLANO=[
  # 05/11/2026: decisão 147 (Laboratório sem o Português): saem as cenas do Corta! «Chuva Oblíqua» e «Frei Luís de Sousa» (redirecionam para o Laboratório).
- ('L1a','narrativas/desenlace/',[('ate','.ler .excerto .trad:not(.poema) > p'),('J','.ler .excerto .trad > p')]),
+ # 05/11/2026: decisão 147 (Laboratório sem o Português): «O desenlace» (Os Maias e Amor de Perdição) saiu; já nenhuma peça do Laboratório tem excertos .trad.
  ('L1a','narrativas/margens/passo-02/',[('ate','.ler blockquote > p'),('J','.ler blockquote > p'),('E','.jogo .ler > p.ap-fonte',1)]),
  ('L1b','gigantes/triunfo-porcos/',[('ate','.ler details.orig-toque'),('abrir','.ler details.orig-toque'),('E','.ler .orig.lista > p',8),('J','.ler .relato')]),
  ('L1b','gigantes/diario-louco/',[('J','.jogo .ler > p:not([class])'),('ate','.ler .ap-texto > p:not([class])'),('J','.ler .ap-texto > p:not([class])'),('E','.jogo .ler > p.ap-fonte',1),('ate','.casca-folha .c-expl'),('J','.casca-folha .c-expl')]),
@@ -87,7 +87,8 @@ PLANO=[
  # 30/10/2026: Laboratório simples (pedido do docente). A prosa longa passou para o catálogo.
  # 30/10/2026: o catálogo é uma lista; a prosa da entrada está em .lab-saiu.
  # 30/10/2026: no telemóvel os percursos de cada bloco ficam dobrados; abrem-se antes de medir.
- ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.modulo h3',17)]),
+ # 05/11/2026: decisão 147 (Laboratório sem o Português): ficam 10 dos 17 percursos (2 em Observar, 3 em Treinar, 5 em Criar).
+ ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.modulo h3',10)]),
  ('E1','',[('E','a',5)]),
  ('E2','gigantes/',[('J','.p-cab p.p-lead'),('E','a.missao .s',5),('abrir','details.entrada-fontes'),('J','.entrada-fontes > p:not([class])')]),
  ('G1','narrativas/treinar/docente/',[('J','main.pg > p:not([class])')]),
@@ -203,8 +204,8 @@ with sync_playwright() as pw:
    p.wait_for_timeout(300)
    ver(p,width,fam,pag,passos,res)
    assert not erros,(width,pag,erros)
-   # 05/11/2026: decisão 147 (Laboratório sem o Português): a cena «Chuva Oblíqua» saiu; ficam as capturas das outras duas páginas.
-   if width==390 and pag in ('narrativas/desenlace/','biblioteca/garrett-frei-luis-sousa/'):
+   # 05/11/2026: decisão 147 (Laboratório sem o Português): as cenas «Chuva Oblíqua» e «O desenlace» saíram; fica a captura da Biblioteca.
+   if width==390 and pag in ('biblioteca/garrett-frei-luis-sousa/',):
     p.screenshot(path=str(O/(pag.strip('/').replace('/','_')+f'-{width}.png')))
    ctx.close()
  b.close()
