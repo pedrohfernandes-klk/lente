@@ -653,10 +653,15 @@ class SessaoS04(unittest.TestCase):
         self.assertEqual(real[0]['tipo'], 'transferir')
         self.assertIn('o da Relação de Évora é real', self.D['fontes'])
         olha = next(c for c in C if c['rot'] == 'Olha')
-        self.assertIn('les-poires-1834.webp', olha['html'])
+        # 06/11/2026: revisão da s04. O Olha mostra a página inteira de Les Poires (secção 2 do plano: o documento sem cortes); os
+        # recortes dos cartões 6 e 7 dizem à vista que são pormenores (o crédito completo é o do «i» do Olha).
+        self.assertIn('les-poires-1834-pagina.webp', olha['html'])
         self.assertIn('https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg', olha['html'])
         self.assertIn('Domínio público', olha['html'])
-        for img in ('les-poires-1834.webp', 'caverna.webp'):
+        for c in (C[5], C[6]):
+            self.assertIn('<figcaption class="ver-leg">Pormenor de <i>Les Poires</i>, 1834.</figcaption>', c['ver'])
+        for img in ('les-poires-1834-pagina.webp', 'les-poires-1834.webp', 'les-poires-1834-baixo.webp', 'les-poires-1834-tira.webp',
+                    'caverna.webp'):
             self.assertTrue((ROOT / 'img/cidadania' / img).is_file(), img)
         self.assertNotIn('data-yt', json.dumps(self.D))
         self.assertNotIn('Na aula', [c.get('rot') for c in C])
@@ -672,6 +677,10 @@ class SessaoS04(unittest.TestCase):
                 self.assertNotIn(html_escape(c['f'])[:60], s)
         self.assertIn('Domínio público', s)
         self.assertIn('https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg', s)
+        # 06/11/2026: revisão da s04 (decisão 152). As referências também não se partem no papel: nas opções e nos pares, o espaço
+        # entre «artigo» ou «n.º» e o número é inseparável, como no ecrã.
+        texto = re.sub(r'<(script|style)[^>]*>.*?</\1>', ' ', s, flags=re.S)
+        self.assertNotRegex(texto, r'(?<![\w])(?:[Aa]rtigos?|n\.º|n\.os) \d')
 
 
 if __name__ == '__main__':

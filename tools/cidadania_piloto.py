@@ -270,7 +270,7 @@ GUIA = {
    2: 'Ver «Como conduzir o Decide».',
    3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 03.',
    4: 'O retorno nomeia a sessão 02: vale a pena lembrar, em voz alta, a frase «Aceitar ser filmado não é aceitar ser publicado».',
-   5: 'Projetado grande. Pedir que cada um procure, em silêncio, o desenho em que o rosto deixa de ser o do rei; só se discute depois dos cartões 6 e 7.',
+   5: 'Projetado grande (a página inteira; toca-se na imagem para a ampliar). Pedir que cada um veja, em silêncio, se há um desenho em que o rosto deixa de ser o do rei; só se discute depois dos cartões 6 e 7.',
    7: 'Depois do cartão, ler em voz alta a tradução das quatro legendas (nas notas, abaixo).',
    8: 'Ler em voz alta os três números do artigo 37.º, uma vez; o n.º 3 diz o que acontece depois de publicar.',
    12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
@@ -300,26 +300,27 @@ GUIA = {
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
   ],
   'charneiras': [
-   (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se não há censura, ninguém responde pelo que publica».',
+   (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se não há censura, ninguém responde pelo que escreve».',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acontece antes de publicar, e o que acontece depois?»'),
    (21, '«O comentário é falso, por isso a conta tem de fechar» (toma «sem prova» por «falso» e esquece a pera) ou «O comentário pode ficar: numa conta de memes, é humor» (confunde acusação de facto com sátira).',
-    'Se mais de um terço erra, projetar a tabela do Conceito e perguntar, para o comentário e para a pera: discute, exagera, acusa ou visa a origem? E o que se sabe sobre o Diogo?'),
+    'Se mais de um terço erra, projetar a tabela do Conceito e perguntar, para o comentário e para a pera: discute, exagera, acusa ou ataca pela origem? E o que se sabe sobre o Diogo?'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
             'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
   'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 05, com uma marca por critério: ✓ cumpre, '
                 '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
   'projeto': ('Duas fontes que não se copiam', '#metodo',
-              'Dez minutos: cada aluno verifica, em papel, as três afirmações que a página da sessão traz (quem o diz, duas fontes que não se '
-              'copiam, veredicto). Respostas, conferidas a 6/11/2026 no Diário da República: «A Constituição portuguesa proíbe a censura.» é '
-              'verdadeira (artigo 37.º, n.º 2); «Portugal assinou a Convenção sobre os Direitos da Criança em Lisboa.» é falsa (a Resolução da '
-              'Assembleia da República n.º 20/90 diz «assinada em Nova Iorque a 26 de Janeiro de 1990»); «A Assembleia da República aprovou essa '
-              'Convenção em 1990.» é verdadeira («Aprovada em 8 de Junho de 1990.», na mesma Resolução). Trinta minutos: cada aluno procura duas '
+              'Dez minutos: cada aluno verifica, em papel, as três afirmações que a página da sessão traz, escritas pela equipa para o treino '
+              '(onde a pode confirmar, duas fontes que não se copiam, veredicto). Respostas, conferidas a 6/11/2026 no Diário da República: «A '
+              'Constituição portuguesa proíbe a censura» é verdadeira (artigo 37.º, n.º 2); «Portugal assinou a Convenção sobre os Direitos da '
+              'Criança em Lisboa» é falsa (a Resolução da Assembleia da República n.º 20/90 diz «assinada em Nova Iorque a 26 de Janeiro de '
+              '1990»); «A Assembleia da República aprovou essa Convenção em 1990» é verdadeira («Aprovada em 8 de Junho de 1990.», na mesma '
+              'Resolução). Trinta minutos: cada aluno procura duas '
               'fontes independentes para a sua pergunta da Pergunta Humana, com leitura lateral, e escreve o que é preciso para as reencontrar; '
               'o docente faz cerca de dez conversas de 3 minutos. Cinco minutos: cada aluno relê com «O que conta» e corrige uma parte. Entra '
               'no dossiê; o registo das três afirmações conta para o laboratório de verificação.'),
   'produto': 'Laboratório de verificação e fontes',
-  'grelha': [('Origem de cada afirmação identificada (quem, onde)', 4), ('Duas fontes independentes, e porque o são', 5),
+  'grelha': [('Onde se confirma cada afirmação (página, data)', 4), ('Duas fontes independentes, e porque o são', 5),
              ('Veredicto proporcional à prova (verdadeira, falsa ou sem prova)', 4), ('Duas fontes da própria pergunta, localizáveis', 4),
              ('Nenhum assistente de inteligência artificial usado como fonte', 3)],
   'noventa': [
@@ -338,8 +339,8 @@ GUIA = {
                 'que a empresa se comprometeu a pagar-lhe 654,54 euros, mas manteve a condenação: provou o facto que lhe dizia respeito, não as '
                 'dívidas a fornecedores, e os juízos de valor não admitem prova da verdade. Cita-se só o comentário e o sumário. O acórdão é '
                 'anonimizado; não se procuram nomes.'),
-  'notas': ['O caso da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o da '
-            'reprografia são inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
+  'notas': ['O caso da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o das '
+            'notas de um colega são inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
             'Sem vídeo (decisão 155). O candidato do plano, «How false news can spread» (TED-Ed, lição de Noah Tavlin, 3 min 42 s), está '
             'no sítio oficial (ed.ted.com/lessons/how-false-news-can-spread-noah-tavlin, aberto a 6/11/2026), mas a equipa não o viu por '
             'inteiro. Se o docente o vir e o quiser, entra em «Para ir mais longe», com a alternativa escrita.',
@@ -356,13 +357,14 @@ GUIA = {
             'Olha: o registo do Wikimedia Commons diz «Design by Honoré Daumier (possibly) after Charles Philipon\'s lithograph published '
             'in La Caricature in 1831. Wood engraver unknown.», com data de 17 de janeiro de 1834 e a origem na Gallica (bpt6k3058046f, '
             'f. 3). A página da Gallica não abriu nesta passagem (bloqueio do servidor): a história do processo de Philipon fica por '
-            'confirmar e o cartão não a conta.',
+            'confirmar e o cartão não a conta. O Olha mostra a página inteira, com o título e os dois parágrafos em francês; os cartões 6 '
+            'e 7 mostram pormenores dos desenhos.',
             'Conceito, «Ataque pela origem»: a linha da tabela não cita lei; o «Ler mais» refere a Constituição, artigo 13.º, n.º 2 '
             '(ninguém pode ser prejudicado em razão, entre outras, do território de origem). O Código Penal (artigos 180.º e 240.º) fica '
             'fora dos cartões; o acórdão do cartão 15 aplica o artigo 180.º, mas o cartão cita só o sumário.',
             'Cartão 11: a Convenção, artigo 13.º, n.º 2, vai no próprio cartão, com a frase inteira (texto do Diário da República, '
-            'Resolução da Assembleia da República n.º 20/90). A Retificação n.º 8/91 mexe só no n.º 1 («sem consideração de fronteiras»), que '
-            'o cartão não cita.',
+            'Resolução da Assembleia da República n.º 20/90). A Retificação n.º 8/91 mexe só no n.º 1 (onde se lia «sem considerações de '
+            'fronteiras», passa a ler-se «sem consideração de fronteiras»), que o cartão não cita.',
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
@@ -846,7 +848,11 @@ GUIA_PASTA = MODULO + 'docente/'
 
 
 def _txt(s):
-    return LL.visivel(s)
+    # 06/11/2026 (revisão da s04; decisão 152): como LL.visivel, mas o espaço inseparável das referências («n.º 2», «37.º») fica;
+    # o resto dos espaços junta-se num só, como antes.
+    s = re.sub(r'<[^>]+>', ' ', str(s))
+    s = html.unescape(s).replace('**', '').replace('_', '')
+    return re.sub(r'[^\S\u00a0]+', ' ', s).strip()
 
 
 def _resposta(c):

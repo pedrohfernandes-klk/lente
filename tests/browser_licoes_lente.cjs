@@ -165,7 +165,7 @@ async function responder(p,x){
    assert.deepEqual(erros,[]);await c.close();console.log('PASS s04, estado antigo semeado: «Feita» na página do módulo'+(proj?' (projeção: nada lido nem gravado)':''));
   }}
  // 06/11/2026 (s04): na projeção a 1366 x 768, as quatro peras do Olha (640 x 626) e a legenda ficam acima da barra; o «i» abre-se
- // pelo teclado e mostra a licença.
+ // pelo teclado e mostra a licença. 06/11/2026 (revisão da s04): o Olha passa a mostrar a página inteira (1100 x 1818); a mesma conta.
  {const c=await b.newContext({viewport:{width:1366,height:768}}),p=await c.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
   await p.goto(base+'/cidadania/m1/sessoes/04/?projetar=1');await p.waitForTimeout(500);await seguinte(p);
   await p.locator('#baralho .pos-op',{hasText:'Não'}).click();await p.waitForTimeout(200);
