@@ -74,7 +74,9 @@ class LicoesLente(unittest.TestCase):
         self.assertEqual(rot[0], 'Abre'); self.assertEqual(rot[-1], 'Para levar'); self.assertEqual(rot.count('Na aula'), 0)
         self.assertEqual(rot[1], 'Decide'); self.assertEqual(rot.count('Em turma'), 1)
         self.assertIn('Caso inventado', d['cartoes'][0]['html'])
-        self.assertIn('O caso da Sara e o das mensagens são inventados', d['fontes'])
+        # 05/11/2026: correções da revisão da s01 (06/11/2026): o caso da voz gravada, no exemplo do papel, também é inventado e
+        # as fontes dizem-no
+        self.assertIn('O caso da Sara, o das mensagens e o da voz gravada são inventados', d['fontes'])
         self.assertIn('o da Relação de Évora é real', d['fontes'])
 
 

@@ -8,6 +8,8 @@ a raiz de cada cartão de ler leva a classe do seu tipo (.m-abre, .m-decide, .m-
 
 Regras que o ajudante garante sozinho:
 - referências sem quebra de linha: «artigo 12.º», «n.º 1», «art. 3» levam espaço inseparável (decisão 152), em todo o texto;
+  06/11/2026 (revisão da s01): também as datas («21 de setembro de 1990», «novembro de 1949») e os números com unidade ou
+  nome («12 anos», «60 min», «+1 min»), com as mesmas regras do validador (tools/licoes_lente.py, DATA_PARTIDA e NUMERO_PARTIDO);
 - cada excerto de lei ou declaração leva data-fonte com o identificador do registo tools/cidadania_fontes.json (o teste
   tests/test_molde_cidadania.py confere que o texto está lá, letra a letra, e confirmado);
 - a imagem leva o crédito atrás do «i» (decisão 153) e só a legenda que serve a pergunta fica à vista.
@@ -23,6 +25,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 NB = ' '
 FONTES = ROOT / 'tools' / 'cidadania_fontes.json'
 _REF = re.compile(r'(?<![\wÀ-ÿ])(n\.º|n\.os|[Aa]rtigos?|art\.|[Aa]línea|cap\.|p\.|pp\.) (?=\d)')
+_MESES = r'(?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)'
+_DATA = re.compile(r'(?<!\d)\d{1,2} de ' + _MESES + r'(?: de \d{4})?|' + _MESES + r' de \d{4}', re.I)
+_NUM = re.compile(r'(?<![\w.,/:])(\d+) (?!(?:que|com|por|sem|dos|das|nos|nas|não|mas|para|pela|pelo|como|mais|até|foi|era|são)(?![\wÀ-ÿ]))(?=[a-zà-ÿ]{3,})')
 
 
 def ref(s):
@@ -31,6 +36,8 @@ def ref(s):
     partes = re.split(r'(<[^>]+>)', str(s))
     for i in range(0, len(partes), 2):
         partes[i] = _REF.sub(lambda m: m.group(1) + NB, partes[i])
+        partes[i] = _DATA.sub(lambda m: m.group(0).replace(' ', NB), partes[i])
+        partes[i] = _NUM.sub(lambda m: m.group(1) + NB, partes[i])
     return ''.join(partes)
 
 
@@ -95,7 +102,7 @@ def lei(excertos, fonte_html=''):
 
 def figura(src, alt, credito, legenda, artefacto=None, largura=None, altura=None):
     """O documento inteiro, ampliável, com o crédito atrás do «i» (decisão 153) e só a legenda que serve a pergunta."""
-    art = (f' data-artefacto="imagem" data-rot="A imagem vista" data-texto="{esc(artefacto)}"' if artefacto else '')
+    art = (f' data-artefacto="imagem" data-rot="A imagem que viste" data-texto="{esc(artefacto)}"' if artefacto else '')
     dim = f' width="{largura}" height="{altura}"' if largura and altura else ''
     return (f'<figure class="fig inteiro"{art}><div class="moldura com-i"><img src="{esc(src)}" alt="{esc(alt)}"{dim} loading="lazy">'
             '<details class="info-i" name="info-i"><summary aria-label="Créditos da fotografia"><span aria-hidden="true">i</span></summary>'
@@ -149,7 +156,7 @@ def conceito(titulo, caso, perto, nome, definicao, nao_e, mais='', minutos=6, bo
     ficam nos artefactos quando o passo se abre."""
     passos = (f'<div class="cc-passo cc-caso"><p class="cc-r">O caso</p>{caso}</div>'
               f'<div class="cc-passo" hidden><p class="cc-r">Mais perto</p>{perto}</div>'
-              f'<div class="cc-passo" hidden data-artefacto="conceito" data-rot="O conceito" data-texto="{esc(nome)}: {esc(definicao)}">'
+              f'<div class="cc-passo" hidden data-artefacto="conceito" data-rot="O conceito" data-texto="{esc(nome)}: {esc(definicao[:1].lower() + definicao[1:])}">'
               f'<p class="cc-r">O nome</p><p class="cc-termo">{nome}</p><p class="cc-def">{definicao}</p></div>'
               f'<div class="cc-passo" hidden><p class="cc-r">O que não é</p>{nao_e}</div>')
     corpo = (f'<div class="m-conceito"><div class="cc" data-cc>{passos}'
@@ -159,9 +166,11 @@ def conceito(titulo, caso, perto, nome, definicao, nao_e, mais='', minutos=6, bo
     return _ler('Conceito', titulo, corpo + '</div>', minutos)
 
 
-def volta(titulo, caso, excertos=(), fonte_html='', minutos=4):
-    """Cartão 16. Abre a parte 2: a informação nova que cria o conflito (serve de reentrada numa segunda aula)."""
-    corpo = f'<div class="m-volta"><p class="parte">Parte 2</p><p class="caso">{caso}</p>'
+def volta(titulo, caso, excertos=(), fonte_html='', minutos=4, carimbo=None):
+    """Cartão 16. Abre a parte 2: a informação nova que cria o conflito (serve de reentrada numa segunda aula). 06/11/2026: com
+    «carimbo» («Caso inventado.»), quem entra aqui numa segunda aula sabe logo que o caso é inventado."""
+    corpo = (f'<div class="m-volta"><p class="parte">Parte 2</p>' + (f'<p class="carimbo">{carimbo}</p>' if carimbo else '')
+             + f'<p class="caso">{caso}</p>')
     if excertos:
         corpo += lei(excertos, fonte_html)
     return _ler('Volta ao caso', titulo, corpo + '</div>', minutos)
@@ -171,17 +180,20 @@ CAMPOS = ('O que se faz', 'Quanto tempo', 'O que fica escrito', 'Se estás sozin
 
 
 def em_turma(pergunta, itens, campos, prova=None, titulo='Depois dos materiais', minutos=13,
-             intro='Volta à pergunta do início com o que viste. Decide outra vez.'):
+             intro='Volta à pergunta do início com o que viste. Decide outra vez.', prova_rot='A prova que pesou',
+             nota='Não há resposta certa neste cartão.'):
     """Cartão 18. A posição depois (artefacto), os lados presos ao material, a prova que pesou (artefacto, opcional) e os
-    quatro campos. Acaba-se sozinho (decisão 154): o campo «Se estás sozinho» diz como."""
+    quatro campos. Acaba-se sozinho (decisão 154): o campo «Se estás sozinho» diz como. 06/11/2026: «prova_rot» dá o nome do
+    artefacto quando o que se escolhe não é uma prova (na s01, «O direito que pesou»); o identificador fica «prova». Sem «intro»
+    nem «nota», o cartão fica sem a linha de abertura e sem «Não há resposta certa» (o campo «O que se faz» já diz o que fazer)."""
     assert tuple(campos) == CAMPOS, 'os quatro campos, por esta ordem'
     dl = ''.join(f'<dt>{k}</dt><dd>{ref(v)}</dd>' for k, v in campos.items())
-    corpo = (f'<div class="m-turma"><p class="pos-intro">{intro}</p>'
-             '<p class="pos-antes" data-modelo="No início, escolheste «{posicao-inicio}»." hidden></p>'
-             + posicao('posicao-depois', 'A tua posição depois', pergunta) + lados('posicao-depois', itens))
+    corpo = ('<div class="m-turma">' + (f'<p class="pos-intro">{intro}</p>' if intro else '')
+             + '<p class="pos-antes" data-modelo="No início, escolheste «{posicao-inicio}»." hidden></p>'
+             + posicao('posicao-depois', 'A tua posição depois', pergunta, nota=nota) + lados('posicao-depois', itens))
     if prova:
         q, ops = prova
-        corpo += posicao('prova', 'A prova que pesou', q, ops, nota=None)
+        corpo += posicao('prova', prova_rot, q, ops, nota=None)
     return _ler('Em turma', titulo, corpo + f'<dl class="campos">{dl}</dl></div>', minutos)
 
 
@@ -197,7 +209,7 @@ def papel(pergunta, linhas, conta, exemplo, intro, minutos=15, relogio_min=12):
     return _ler('Agora, em papel', 'Agora, em papel', corpo, minutos)
 
 
-def levar(frase, frases, minutos=5, modelo='No início decidiste «{posicao-inicio}»; depois, «{posicao-depois}».'):
+def levar(frase, frases, minutos=5, modelo='No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».'):
     """Cartão 23 (escuro). A frase da sessão letra a letra (artefacto), as frases da sessão, a volta à posição e a lista
     dos artefactos com «Copiar para as notas» e «Partilhar»."""
     letras = ''.join(f'<span class="ch" style="--i:{i}">{esc(c)}</span>' for i, c in enumerate(frase))
@@ -227,11 +239,21 @@ def fazer(t, rot, p, p2, f, minutos, tipo, conceito, **extra):
             v = [ref(x) for x in v]
         elif k == 'pares':
             v = [[ref(a), ref(b)] for a, b in v]
-        elif k == 'cita':
+        elif k in ('cita', 'pista'):
             v = ref(v)
         c[k] = v
     if extra.get('fonte') and (extra.get('cita') or extra.get('frase')):
-        _excerto_ok(extra['fonte'], extra.get('cita') or extra.get('frase'))
+        fonte, texto = extra['fonte'], extra.get('cita') or extra.get('frase')
+        if isinstance(fonte, list):
+            # 06/11/2026: uma citação com passagens de várias entradas do registo (por exemplo a ordem e a fundamentação de um
+            # acórdão): os pedaços separados por «[…]» conferem-se, um a um e pela ordem, com a entrada respetiva.
+            pedacos = re.split(r'\s*\[…\]\s*', texto)
+            if len(pedacos) != len(fonte):
+                raise ValueError(f'citação com {len(pedacos)} pedaços para {len(fonte)} entradas do registo')
+            for ident, pedaco in zip(fonte, pedacos):
+                _excerto_ok(ident, pedaco)
+        else:
+            _excerto_ok(fonte, texto)
     for ident, texto in extra.get('citacoes', []):
         _excerto_ok(ident, texto)
     return c

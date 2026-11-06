@@ -42,6 +42,10 @@ class CfgDaFamilia(unittest.TestCase):
         self.assertEqual(cfg['retomar'], 12)           # recarregar a meio volta ao mesmo cartão durante 12 horas
         self.assertEqual(cfg['feita'], 'Sessão feita.')
         self.assertIn('O módulo já a marca.', L.FIM_CIDADANIA)
+        # 05/11/2026: correções da revisão da s01 (06/11/2026). Nas sessões no molde, a retoma dura oito dias (a segunda aula de
+        # 90 minutos, noutro dia, continua no cartão 16) e o fim diz onde fica marcada a sessão; as do piloto ficam como estavam.
+        self.assertEqual(L.RETOMAR_MOLDE, 192)
+        self.assertEqual(L.FIM_MOLDE, L.FIM_CIDADANIA.replace('O módulo já a marca.', 'A página do módulo já a marca como feita.'))
         # o Laboratório fica como estava
         self.assertEqual(L.FAMILIAS['laboratorio']['cfg'], {'semPontos': True, 'preservarAnterior': True})
 
@@ -51,10 +55,15 @@ class CfgDaFamilia(unittest.TestCase):
             d = carregar(p)
             s = (ROOT / d['saida']).read_text('utf-8')
             cfg = cfg_da_pagina(s)
-            for k, v in L.FAMILIAS['cidadania']['cfg'].items():
+            # 05/11/2026: correções da revisão da s01 (06/11/2026): no molde, a retoma é a de RETOMAR_MOLDE e o fim é FIM_MOLDE; o
+            # resto do cfg é o da família, chave a chave, como antes
+            esperado = dict(L.FAMILIAS['cidadania']['cfg'], **({'retomar': L.RETOMAR_MOLDE} if p.name in NO_MOLDE else {}))
+            for k, v in esperado.items():
                 self.assertEqual(cfg.get(k), v, p.name + ': ' + k)
             self.assertIs(cfg['variar'], False)
-            self.assertEqual(s.count(L.FIM_CIDADANIA), 1, p.name)
+            fim, outro = (L.FIM_MOLDE, L.FIM_CIDADANIA) if p.name in NO_MOLDE else (L.FIM_CIDADANIA, L.FIM_MOLDE)
+            self.assertEqual(s.count(fim), 1, p.name)
+            self.assertEqual(s.count(outro), 0, p.name)
             prog = s.index('assets/licoes/' + L.PROGRESSO)
             self.assertLess(prog, s.index('assets/licoes/jogo.js'), p.name)
             # sem molde, nenhuma peça nova entra na página; 05/11/2026 (pedido 2): com molde (a lista fechada NO_MOLDE),
@@ -126,6 +135,29 @@ class ContratoApanhaOsErros(unittest.TestCase):
         self.assertIn('da opção', self.com(lambda d: d['cartoes'][10].__setitem__('f', 'O texto da opção certa diz tudo.')))
         self.assertIn('«tipo»', self.com(lambda d: d['cartoes'][k].pop('tipo')))
         self.assertIn('nenhuma escrita', self.com(lambda d: d['cartoes'][k].__setitem__('prod', 'escrita')))
+        # 05/11/2026: correções da revisão da s01 (06/11/2026). Cada exercício tem a sua pista, que não dá a resposta: nem a opção
+        # certa, nem as palavras certas de um sublinhar, nem o lado direito de um par; e nenhum passo de um ordenar fica no seu
+        # lugar na ordem do ecrã (a semente do motor com a rotação de semNoLugar).
+        self.assertIn('falta a pista', self.com(lambda d: d['cartoes'][k].pop('pista')))
+        self.assertIn('a pista dá a resposta', self.com(lambda d: d['cartoes'][k].__setitem__('pista', 'Pensa: ' + d['cartoes'][k]['o'][d['cartoes'][k]['c']] + '?')))
+        sub = lambda d: next(c for c in d['cartoes'] if c['t'] == 'sublinhar')
+        self.assertIn('a pista dá a resposta', self.com(lambda d: sub(d).__setitem__('pista', 'Procura «vida privada».')))
+        par = lambda d: next(c for c in d['cartoes'] if c['t'] == 'emparelhar')
+        self.assertIn('a pista dá a resposta', self.com(lambda d: par(d).__setitem__('pista', 'Um deles é o Par de ensaio A.')))
+        self.assertEqual(L.sem_no_lugar([0, 3, 1, 2]), [2, 0, 3, 1])
+        self.assertEqual(L.sem_no_lugar([0, 1]), [1, 0])
+        for d in (E.licao(), carregar(ROOT / 'tools/licoes/cidadania-m1-s01.json')):
+            for i, c in enumerate(d['cartoes']):
+                if c['t'] == 'ordenar':
+                    ordem = L.ordem_ordenar(d, i)
+                    self.assertEqual(sorted(ordem), list(range(len(c['passos']))))
+                    self.assertFalse(any(j == q for q, j in enumerate(ordem)), (d['id'], i, ordem))
+        L_sem = L.sem_no_lugar
+        try:
+            L.sem_no_lugar = lambda a: list(range(len(a)))  # um motor que deixasse tudo no lugar seria apanhado
+            self.assertIn('fica no seu lugar', ' | '.join(L.validar(E.licao())))
+        finally:
+            L.sem_no_lugar = L_sem
 
     def test_contagens_e_ordem(self):
         self.assertIn('13 cartões de fazer', self.com(lambda d: d['cartoes'].pop(10)))
@@ -157,6 +189,12 @@ class ContratoApanhaOsErros(unittest.TestCase):
         self.assertIn('depende do docente', self.com(lambda d: d['cartoes'][k].__setitem__('p', 'Ensaio: espera que o docente explique.')))
         self.assertIn('espaço inseparável', self.com(lambda d: d['cartoes'][7].__setitem__('html', d['cartoes'][7]['html'].replace('artigo 12.º', 'artigo 12.º'))))
         self.assertIn('espaço inseparável', self.com(lambda d: d['cartoes'][7].__setitem__('html', d['cartoes'][7]['html'].replace('n.º 2', 'n.º 2'))))
+        # 05/11/2026: correções da revisão da s01 (06/11/2026; decisão 152): também as datas e os números com unidade ou nome
+        for partido in ('ratificada a 21 de setembro de 1990', 'em novembro de 1949', 'uma rapariga de 12 anos', 'mais 1 min', 'Os 180 minutos'):
+            self.assertIn('espaço inseparável', self.com(lambda d: d['cartoes'][k].__setitem__('f', 'Ensaio: ' + partido + '.')), partido)
+        self.assertIn('espaço inseparável', self.com(lambda d: d['cartoes'][k].__setitem__('pista', 'Ensaio: lê o artigo 12.º.')))
+        for inteiro in ('ratificada a 21\u00a0de\u00a0setembro\u00a0de\u00a01990', 'uma rapariga de 12\u00a0anos', 'em 2015, o tribunal'):
+            self.assertEqual(L.validar(E.copia(cartoes=[dict(c, f='Ensaio: ' + inteiro + '.') if i == k else c for i, c in enumerate(E.licao()['cartoes'])])), [], inteiro)
 
     def test_imagens_e_creditos(self):
         o = lambda d: d['cartoes'][4]
@@ -249,6 +287,7 @@ class PecasComuns(unittest.TestCase):
         cfg = cfg_da_pagina(s)
         self.assertEqual(cfg['pistas'], d['pistas'])
         self.assertEqual(cfg['depois'], d['depois'])
+        self.assertEqual(cfg['retomar'], L.RETOMAR_MOLDE)  # 05/11/2026: correções da revisão da s01 (06/11/2026)
 
     def test_css_da_cidadania_so_no_molde(self):
         css = self.ler('assets/licoes/cidadania.css')
@@ -290,6 +329,11 @@ class SessaoS01(unittest.TestCase):
         cfg = cfg_da_pagina((ROOT / self.D['saida']).read_text('utf-8'))
         for k in ('aula', 'semPontos', 'preservarAnterior'):
             self.assertIs(cfg[k], True, k)
+        # 05/11/2026: correções da revisão da s01 (06/11/2026): a retoma de oito dias e uma pista própria em cada exercício (as
+        # pistas escolhidas por palavras saíram)
+        self.assertEqual(cfg['retomar'], 192)
+        self.assertNotIn('pistas', cfg)
+        self.assertTrue(all(c.get('pista') for c in self.D['cartoes'] if c['t'] != 'ler'))
         C = self.D['cartoes']
         self.assertEqual(len(C), 23)
         self.assertEqual(sum(c['t'] == 'ler' for c in C), 9)
@@ -315,13 +359,31 @@ class SessaoS01(unittest.TestCase):
                 self.confere(ident, corpo, f'cartão {i}')
                 vistos += 1
             if c.get('fonte'):
-                self.confere(c['fonte'], c.get('cita') or c.get('frase'), f'cartão {i}')
+                # 05/11/2026: correções da revisão da s01 (06/11/2026). Uma citação pode juntar passagens de várias entradas do
+                # registo (o caso real: a ordem e a fundamentação do acórdão): «fonte» é então a lista, e cada pedaço entre «[…]»
+                # confere-se, letra a letra e pela ordem, com a sua entrada; o número de pedaços tem de ser o de entradas.
+                texto = c.get('cita') or c.get('frase')
+                if isinstance(c['fonte'], list):
+                    pedacos = re.split(r'\s*\[…\]\s*', texto)
+                    self.assertEqual(len(pedacos), len(c['fonte']), f'cartão {i}')
+                    for ident, pedaco in zip(c['fonte'], pedacos):
+                        self.confere(ident, pedaco, f'cartão {i}')
+                else:
+                    self.confere(c['fonte'], texto, f'cartão {i}')
                 vistos += 1
             texto = self.norm(' '.join([c.get('f', '')] + (c['fe'] if isinstance(c.get('fe'), list) else [c.get('fe') or ''])
                                        + [x for par in c.get('pares', []) for x in par]))
             for ident, frase in c.get('citacoes', []):
                 self.confere(ident, frase, f'cartão {i}')
                 self.assertIn(self.norm(frase), texto, f'cartão {i}: a citação registada está no cartão')
+                # 05/11/2026: correções da revisão da s01 (06/11/2026). Mais estrito: o «…» inteiro que contém a frase registada é
+                # texto exato do registo, com «[…]» em cada corte (apanha um ponto final que a fonte não tem)
+                aspas = [q for q in re.findall(r'«([^«»]*)»', texto) if self.norm(frase) in q]
+                self.assertTrue(aspas, f'cartão {i}: «{frase}» está entre aspas')
+                for q in aspas:
+                    for pedaco in re.split(r'\s*\[…\]\s*', q):
+                        if pedaco.strip():
+                            self.assertIn(pedaco.strip(), self.norm(self.REG[ident]['texto']), f'cartão {i}: «{q}» não é texto exato de {ident}')
                 vistos += 1
         self.assertGreaterEqual(vistos, 20)
         # os artigos que a tarefa pede: Declaração 1.º, 12.º (até «honra e reputação») e 19.º; Constituição 26.º, n.º 1, e 34.º

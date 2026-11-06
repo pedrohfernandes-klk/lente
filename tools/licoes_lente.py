@@ -65,8 +65,15 @@ FIM_CIDADANIA = ('CFG.fim=function(){var g=document.querySelector("#baralho .car
 # validador aplica o contrato do molde (validar_molde). Sem o campo, a lição valida e sai como até aqui.
 MOLDE = 'cidadania-2026-11'
 # 05/11/2026 (pedido 2, s01 do M1 na versão final): a chave sobe para -2 com os acabamentos do bloco do molde em cidadania.css.
-VERSAO_MOLDE = '20261105-2'
+# 06/11/2026 (correções da revisão da s01): sobe para 20261106-1 (pista de cada cartão e ordenar sem passos no lugar em jogo.js;
+# o Olha na projeção e o Abre a 320 px em cidadania.css).
+VERSAO_MOLDE = '20261106-1'
 COMO_LENTE = LENTE + 'como/'
+# 06/11/2026 (correções da revisão da s01): nas sessões no molde, o fim diz onde fica marcada a sessão (revisor de pt-PT) e a
+# retoma dura oito dias (192 horas), para a segunda aula de 90 minutos, noutro dia, continuar no cartão 16 (plano, secção 2,
+# «Duas aulas de 90»). As sessões do piloto ficam como estavam (FIM_CIDADANIA e as 12 horas do cfg da família).
+FIM_MOLDE = FIM_CIDADANIA.replace('O módulo já a marca.', 'A página do módulo já a marca como feita.')
+RETOMAR_MOLDE = 192
 
 
 def familia(d):
@@ -82,7 +89,8 @@ def visivel(s):
 def textos(c):
     """Todo o texto que o aluno vê num cartão (para as regras de escrita)."""
     t = []
-    for k in ('p', 'p2', 'f', 'titulo', 'html', 'frase'):
+    # 06/11/2026: a pista própria de cada cartão («pista», sessões no molde) também se lê
+    for k in ('p', 'p2', 'f', 'titulo', 'html', 'frase', 'pista'):
         if c.get(k):
             t.append(visivel(c[k]))
     fe = c.get('fe')
@@ -280,6 +288,30 @@ def ordem_opcoes(d):
     return out
 
 
+def sem_no_lugar(a):
+    """06/11/2026: o mesmo que semNoLugar() de assets/licoes/jogo.js (com cfg.aula): roda a ordem até nenhum passo ficar no seu
+    lugar, no máximo n vezes; se nenhuma rotação servir, troca os dois primeiros da ordem da semente."""
+    a = list(a)
+    fica = lambda v: any(k == q for q, k in enumerate(v))
+    if len(a) < 2:
+        return a
+    b, r = a[:], 0
+    while r < len(a) and fica(b):
+        b = b[1:] + b[:1]
+        r += 1
+    if fica(b):
+        b = a[:]
+        b[0], b[1] = b[1], b[0]
+    return b
+
+
+def ordem_ordenar(d, k):
+    """06/11/2026: a ordem dos passos de um ordenar no ecrã (semente do motor e sem_no_lugar), igual na projeção, em todos os
+    telemóveis e na versão para imprimir."""
+    c = LC.cartoes(d)[k]
+    return sem_no_lugar(_mist(_semente(d['chave'], k), list(range(len(c.get('passos') or [])))))
+
+
 def posicoes_certas(d):
     C = LC.cartoes(d)
     return [ordem.index(C[k]['c']) for k, ordem in ordem_opcoes(d)]
@@ -299,6 +331,11 @@ RET_PROIBIDO = re.compile(r'(?<![\wÀ-ÿ])(?:d?o\s+exercício|d?a\s+opção)(?![
 GRUPO = re.compile(r'(?<![\wÀ-ÿ])grupos?(?![\wÀ-ÿ])(?!\s+da\s+turma)', re.I)
 DOCENTE = re.compile(r'(?<![\wÀ-ÿ])docentes?(?![\wÀ-ÿ])', re.I)
 REF_PARTIDA = re.compile(r'(?<![\wÀ-ÿ])(?:n\.º|n\.os|artigos?|art\.|alínea)[ \t\r\n]+(?=\d)', re.I)
+# 06/11/2026 (decisão 152, revisão da s01): também as datas («21 de setembro de 1990», «novembro de 1949») e os números com
+# unidade ou nome («12 anos», «60 min») não partem; tools/cidadania_molde.py (ref) mete-lhes o espaço inseparável.
+MESES = r'(?:janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)'
+DATA_PARTIDA = re.compile(r'(?<!\d)\d{1,2}(?:[ \u00a0]+de){1}[ \u00a0]+' + MESES + r'(?:[ \u00a0]+de[ \u00a0]+\d{4})?|' + MESES + r'[ \u00a0]+de[ \u00a0]+\d{4}', re.I)
+NUMERO_PARTIDO = re.compile(r'(?<![\w.,/:])\d+ (?!(?:que|com|por|sem|dos|das|nos|nas|não|mas|para|pela|pelo|como|mais|até|foi|era|são)(?![\wÀ-ÿ]))(?=[a-zà-ÿ]{3,})')
 LICENCA = re.compile(r'Domínio público|CC0|CC BY(?:-SA)?(?: \d\.\d)?', re.I)
 LICENCA_NAO = re.compile(r'CC BY-N[CD]|BY-NC|BY-ND|NoDerivs|NonCommercial', re.I)
 CREDITO_A_VISTA = re.compile(r'Domínio público|CC0|CC BY|Wikimedia|Library of Congress|Metropolitan|Fotografia de|licença', re.I)
@@ -365,6 +402,24 @@ def validar_molde(d, C):
             erros.append(f'{onde}: nenhuma escrita no ecrã (a escrita é em papel)')
         if c.get('g') != 'recupera' and not (c.get('ver') or c.get('cita')) and not any(C[j].get('t') == 'ler' for j in range(2, i)):
             erros.append(f'{onde}: material antes, no mesmo bloco, ou «ver» ou «cita» no próprio cartão')
+        # 06/11/2026 (revisão da s01): cada exercício tem a sua pista, que não dá a resposta (a opção certa, as palavras certas
+        # de um sublinhar, o lado direito de um par)
+        pista = visivel(c.get('pista') or '')
+        if not pista:
+            erros.append(f'{onde}: falta a pista própria do cartão («pista»)')
+        else:
+            dar = []
+            if c.get('t') == 'escolha' and isinstance(c.get('c'), int) and c.get('o'):
+                dar.append(c['o'][c['c']])
+            if c.get('t') == 'sublinhar' and c.get('certas'):
+                w = (c.get('frase') or '').split()
+                dar.append(' '.join(w[j] for j in c['certas'] if 0 <= j < len(w)))
+            dar += [par[1] for par in c.get('pares') or []]
+            sem = lambda t: ' '.join(re.sub(r'[^\wÀ-ÿ]+', ' ', visivel(t).lower()).split())
+            if any(sem(x) and sem(x) in sem(pista) for x in dar):
+                erros.append(f'{onde}: a pista dá a resposta («{pista}»)')
+        if c.get('t') == 'ordenar' and any(k == q for q, k in enumerate(ordem_ordenar(d, i))):
+            erros.append(f'{onde}: um passo fica no seu lugar na ordem do ecrã {ordem_ordenar(d, i)}')
     alvo = 7 if sessao10 else 14
     if len(fazer) != alvo:
         erros.append(f'molde: {len(fazer)} cartões de fazer (têm de ser {alvo})')
@@ -422,7 +477,7 @@ def validar_molde(d, C):
     # turma, docente, imagens e referências
     for i, c in enumerate(C):
         onde = f'molde, cartão {i + 1} ({c.get("t")} {c.get("rot") or ""})'
-        partes = [sem_caso(c.get('html') or '')] + [c.get(k) or '' for k in ('p', 'p2', 'f', 'frase', 'cita')]
+        partes = [sem_caso(c.get('html') or '')] + [c.get(k) or '' for k in ('p', 'p2', 'f', 'frase', 'cita', 'pista')]
         fe = c.get('fe')
         partes += (fe if isinstance(fe, list) else [fe or '']) + list(c.get('o') or []) + list(c.get('passos') or [])
         partes += [x for par in c.get('pares') or [] for x in par] + [str(v) for v in (c.get('aula') or {}).values()]
@@ -432,8 +487,11 @@ def validar_molde(d, C):
                 erros.append(f'{onde}: «grupo» só no texto de um caso inventado (decisão 146)')
             if DOCENTE.search(v):
                 erros.append(f'{onde}: nenhuma instrução ao aluno depende do docente (decisão 154)')
-            if REF_PARTIDA.search(html.unescape(re.sub(r'<[^>]+>', ' ', str(txt)))):
+            sem_tags = html.unescape(re.sub(r'<[^>]+>', ' ', str(txt)))
+            if REF_PARTIDA.search(sem_tags):
                 erros.append(f'{onde}: referência com espaço que parte («n.º 2», «artigo 12.º»): usa o espaço inseparável (decisão 152)')
+            if any(' ' in m.group(0) for m in DATA_PARTIDA.finditer(sem_tags)) or NUMERO_PARTIDO.search(sem_tags):
+                erros.append(f'{onde}: data ou número com unidade com espaço que parte («21 de setembro de 1990», «12 anos»): usa o espaço inseparável (decisão 152)')
         for bloco in [c.get('html') or '', c.get('ver') or '']:
             for fig in re.findall(r'<figure\b.*?</figure>', bloco, flags=re.S):
                 if '<img' not in fig:
@@ -538,6 +596,8 @@ def pagina(d):
             if d.get(k):
                 cfg[k] = d[k]
     molde = d.get('molde') == MOLDE
+    if molde:
+        cfg['retomar'] = RETOMAR_MOLDE  # 06/11/2026: oito dias, ver RETOMAR_MOLDE
     # 31/10/2026 (revisão do diretor de arte, sistema 6.11): o ecrã final leva «A seguir» (a sessão seguinte) e o módulo.
     # Verificação final: quando a seguinte já é o módulo (a s10 aponta para ../m1/), o módulo não se repete ao lado, como
     # ligação e como botão para o mesmo destino; fica só o botão.
@@ -606,7 +666,7 @@ def pagina(d):
         + f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
         '<script>(function(){"use strict";var CARTOES=' + dados + ',CFG=' + json.dumps(cfg, ensure_ascii=False) + ';'
         'var el=document.getElementById("baralho");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;'
-        + (LC.fim_registo(d) if lab else FIM_CIDADANIA)
+        + (LC.fim_registo(d) if lab else FIM_MOLDE if molde else FIM_CIDADANIA)
         + (f'if(window.EPIRecolha)EPIRecolha.ligar({json.dumps(recolha_cfg(d), ensure_ascii=False)});' if molde else '')
         + 'if(window.EPIJogo)EPIJogo.montar(CFG);})();</script></body></html>\n')
 

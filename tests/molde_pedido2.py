@@ -6,7 +6,11 @@ para os testes que comparam com bases antigas, com as mesmas regras e sem aceita
   a página do módulo, em que só muda a linha da sessão 01; e o guia, em que só muda a secção da sessão 01 e uma frase).
   aplicar() e desfazer() exigem a contagem exata, como em grupos146.py.
 - INTEIROS: os ficheiros que o pedido 2 escreve inteiros. Não se comparam com a base: comparam-se, letra a letra, com o que o
-  seu gerador escreve hoje (inteiro_ok()), e a fonte da sessão tem de ser a do .json e cumprir o contrato do molde."""
+  seu gerador escreve hoje (inteiro_ok()), e a fonte da sessão tem de ser a do .json e cumprir o contrato do molde.
+
+06/11/2026 (correções da revisão da s01): as correções mudam texto dentro das trocas que o pedido 2 já tinha (a secção da sessão 01
+no guia e no seu gerador, a frase do guia sobre a s01, a versão para imprimir). O «novo» dessas seis trocas passou ao texto
+corrigido; o «antigo» e as contagens ficam iguais, e desfazer o ficheiro de hoje dá, letra a letra, a mesma base que antes."""
 import importlib.util
 import json
 from pathlib import Path

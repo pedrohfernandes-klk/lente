@@ -28,12 +28,17 @@ FIG = ('<figure class="fig inteiro" data-artefacto="imagem" data-rot="A imagem v
        '<div class="moldura com-i"><img src="../../../img/cidadania/eleanor-roosevelt-dudh-1949.webp" alt="Eleanor Roosevelt segura com as duas mãos '
        'um grande cartaz com o título «The Universal Declaration of Human Rights» e o símbolo das Nações Unidas." loading="lazy">'
        '<details class="info-i" name="info-i"><summary aria-label="Créditos da fotografia"><span aria-hidden="true">i</span></summary>'
-       '<p class="info-i-texto">Eleanor Roosevelt com a Declaração Universal, Lake Success, novembro de 1949. Fotógrafo não identificado. '
+       f'<p class="info-i-texto">Eleanor Roosevelt com a Declaração Universal, Lake Success, novembro{NB}de{NB}1949. Fotógrafo não identificado. '
        'FDR Presidential Library &amp; Museum, 64-165. <a href="https://www.flickr.com/photos/fdrlibrary/27758131387/">Registo de origem</a>. '
        '<a rel="license" href="https://creativecommons.org/licenses/by/2.0/deed.pt">CC BY 2.0</a>.</p></details></div>'
        '<figcaption>Lake Success, 1949: um ano depois de aprovada, a Declaração já circula em cartaz.</figcaption></figure>')
 VER = '<img src="../../../img/cidadania/eleanor-roosevelt-dudh-1949.webp" alt="Eleanor Roosevelt segura um grande cartaz com o título da Declaração.">'
 FRASE = 'Um molde serve quando se faz sozinho.'
+
+
+# 06/11/2026 (correções da revisão da s01): o contrato do molde passou a exigir uma pista própria em cada exercício, que não dê
+# a resposta; o ensaio leva uma pista de ensaio em todos.
+PISTA = 'Ensaio: volta ao material antes de responder.'
 
 
 def ler(rot, titulo, html, minutos, **extra):
@@ -43,13 +48,13 @@ def ler(rot, titulo, html, minutos, **extra):
 def escolha(rot, p, certa, erradas, minutos, tipo='aplicar', **extra):
     # a certa fica no índice que pedir «lugar» (preenchido em licao(), com a semente do motor)
     return dict({'t': 'escolha', 'rot': rot, 'p': p, 'p2': 'Outra redação: ' + p[0].lower() + p[1:], '_certa': certa, '_erradas': erradas,
-                 'f': 'A linha de ensaio certa é «' + certa + '».', 'min': minutos, 'tipo': tipo, 'conceito': 'ensaio'}, **extra)
+                 'f': 'A linha de ensaio certa é «' + certa + '».', 'min': minutos, 'tipo': tipo, 'conceito': 'ensaio', 'pista': PISTA}, **extra)
 
 
 def vf(rot, p, v, minutos, tipo='aplicar', **extra):
     return dict({'t': 'vf', 'rot': rot, 'p': p, 'p2': 'Outra redação: ' + p[0].lower() + p[1:], 'v': v,
                  'f': 'Volta ao cartão de ensaio e confere a frase.', 'fe': 'A frase de ensaio diz outra coisa: volta ao material.',
-                 'min': minutos, 'tipo': tipo, 'conceito': 'ensaio'}, **extra)
+                 'min': minutos, 'tipo': tipo, 'conceito': 'ensaio', 'pista': PISTA}, **extra)
 
 
 def licao(lugares=(0, 2, 1, 0, 1, 2)):
@@ -57,7 +62,8 @@ def licao(lugares=(0, 2, 1, 0, 1, 2)):
         ler('Abre', 'Ensaio do molde', '<div class="m-abre"><p class="carimbo">Caso inventado.</p><p class="caso">Página de ensaio do motor das '
             'sessões: não é uma sessão nem um caso real. Serve para ver os cartões, as posições, os artefactos e o crédito atrás do «i».</p>'
             '<p class="pergunta-sessao" data-artefacto="pergunta" data-rot="A pergunta da sessão">O molde novo funciona do princípio ao fim?</p></div>', 5,
-            aula={'linha': 'ensaio do motor (60 min), pausa, ensaio da parte 2 (50 min), o teu projeto (45 min).'}),
+            # 06/11/2026: datas e números com unidade com espaço inseparável, como o contrato passou a exigir (decisão 152)
+            aula={'linha': f'ensaio do motor (60{NB}min), pausa, ensaio da parte 2 (50{NB}min), o teu projeto (45{NB}min).'}),
         ler('Decide', 'Antes dos materiais', '<div class="m-decide">' + posicao('posicao-inicio', 'A tua posição no início', 'O molde novo funciona do princípio ao fim?') + '</div>', 8),
         escolha('A linha que fecha', 'Ensaio: qual das três linhas fecha a frase de ensaio?', 'Linha de ensaio certa', ['Linha de ensaio dois', 'Linha de ensaio três'], 3,
                 tipo='reconhecer', g='recupera'),
@@ -67,19 +73,19 @@ def licao(lugares=(0, 2, 1, 0, 1, 2)):
         dict({'t': 'emparelhar', 'rot': 'Ver e saber', 'p': 'Ensaio: liga cada linha ao seu par.', 'p2': 'Outra redação: liga as linhas de ensaio.',
               'pares': [['Lado de ensaio um', 'Par de ensaio A'], ['Lado de ensaio dois', 'Par de ensaio B'], ['Lado de ensaio três', 'Par de ensaio C']],
               'f': 'Cada lado tem o seu par de ensaio.', 'fe': 'A confusão mais provável é trocar os pares: volta à fotografia.', 'min': 3, 'tipo': 'distinguir',
-              'conceito': 'ensaio', 'ver': VER}),
+              'conceito': 'ensaio', 'ver': VER, 'pista': PISTA}),
         ler('Lê', 'Lê', '<div class="m-le"><p class="ex-antes"><b>Antes de ler</b> Procura a palavra que diz o que se protege.</p><blockquote class="lei"><p>'
             f'<span class="art">Ensaio</span>Texto de ensaio no lugar do excerto: a sessão real traz aqui o artigo copiado da fonte oficial, com a referência sem quebra, como no artigo{NB}12.º, n.º{NB}2.</p></blockquote>'
             '<p class="fonte-lei">Fonte de ensaio.</p></div>', 4),
         dict({'t': 'sublinhar', 'rot': 'A palavra que pesa', 'p': 'Ensaio: toca na palavra que diz o que se protege.', 'p2': 'Outra redação: toca na palavra protegida.',
               'frase': 'Texto de ensaio que protege a vida privada', 'certas': [5, 6], 'f': 'As palavras certas são «vida privada».',
               'fe': 'A confusão mais provável é tocar em «protege»: procura o que fica protegido.', 'min': 3, 'tipo': 'reconhecer', 'conceito': 'ensaio',
-              'cita': 'Texto de ensaio que protege a vida privada.'}),
+              'cita': 'Texto de ensaio que protege a vida privada.', 'pista': PISTA}),
         escolha('Ler com exatidão', 'Ensaio: o que diz, com exatidão, o texto de ensaio?', 'Protege a vida privada', ['Protege todas as fotos', 'Proíbe qualquer imagem'], 4),
         vf('Uma situação nova', 'Ensaio: o texto de ensaio vale para uma situação nova.', True, 3),
         dict({'t': 'ordenar', 'rot': 'Facto antes da regra', 'p': 'Ensaio: põe os passos por ordem.', 'p2': 'Outra redação: ordena os passos de ensaio.',
               'passos': ['Passo de ensaio um', 'Passo de ensaio dois', 'Passo de ensaio três'], 'f': 'Primeiro o facto, depois a regra.',
-              'fe': 'A confusão mais provável é começar pela regra: volta ao caso.', 'min': 4, 'tipo': 'aplicar', 'conceito': 'ensaio'}),
+              'fe': 'A confusão mais provável é começar pela regra: volta ao caso.', 'min': 4, 'tipo': 'aplicar', 'conceito': 'ensaio', 'pista': PISTA}),
         ler('Conceito', 'Conceito', '<div class="m-conceito"><table class="tabela"><thead><tr><th>Texto</th><th>O que é</th><th>Obriga?</th></tr></thead><tbody>'
             '<tr><td data-th="Texto">Ensaio A</td><td data-th="O que é">Linha de ensaio</td><td data-th="Obriga?">Não</td></tr>'
             '<tr><td data-th="Texto">Ensaio B</td><td data-th="O que é">Linha de ensaio</td><td data-th="Obriga?">Sim</td></tr>'
@@ -99,10 +105,10 @@ def licao(lugares=(0, 2, 1, 0, 1, 2)):
         dict({'t': 'emparelhar', 'rot': 'Relato ou princípio', 'p': 'Ensaio: liga cada frase ao que ela é.', 'p2': 'Outra redação: liga as frases de ensaio.',
               'pares': [['Frase de ensaio um', 'Um relato'], ['Frase de ensaio dois', 'Um princípio'], ['Frase de ensaio três', 'Uma dúvida']],
               'f': 'Cada frase de ensaio tem o seu lugar.', 'fe': 'A confusão mais provável é ler um relato como princípio.', 'min': 3, 'tipo': 'aplicar',
-              'conceito': 'ensaio'}),
+              'conceito': 'ensaio', 'pista': PISTA}),
         dict({'t': 'ordenar', 'rot': 'A cadeia', 'p': 'Ensaio: facto, fonte, aplicação, limite, por esta ordem.', 'p2': 'Outra redação: ordena a cadeia de ensaio.',
               'passos': ['Facto de ensaio', 'Fonte de ensaio', 'Aplicação de ensaio', 'Limite de ensaio'], 'f': 'Facto, fonte, aplicação, limite.',
-              'fe': 'A confusão mais provável é pôr o limite antes da aplicação.', 'min': 4, 'tipo': 'aplicar', 'conceito': 'ensaio'}),
+              'fe': 'A confusão mais provável é pôr o limite antes da aplicação.', 'min': 4, 'tipo': 'aplicar', 'conceito': 'ensaio', 'pista': PISTA}),
         escolha('O que as provas dão', 'Ensaio: que conclusão não vai além das provas?', 'Uma conclusão de ensaio prudente', ['Uma conclusão de ensaio exagerada', 'Uma conclusão de ensaio vazia'], 3),
         ler('Agora, em papel', 'Agora, em papel', '<div class="m-papel"><p class="papel-q">O molde novo funciona do princípio ao fim?</p><div class="papel-a6">'
             '<p class="papel-cab"><span>Código</span><span>Data</span></p><ol><li>Conclusão provisória.</li><li>Uma prova.</li><li>Uma dúvida.</li></ol></div>'

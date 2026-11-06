@@ -70,9 +70,8 @@ GUIA = {
   'molde': True,
   'dominio': 'Direitos Humanos: a Declaração Universal, a Constituição e a força de cada texto; vida privada, imagem e liberdade de expressão.',
   'ensina': 'Olhar antes de concluir, situar um caso em artigos concretos, ver quando dois direitos chocam e pesá-los no caso, sem ir além das provas.',
-  'antes': ('Recomendação: fazer o Ponto de partida em papel logo no início, antes do cartão 1, com os 10 minutos da folga (o plano põe-no na '
-            'folga, depois do cartão 15; mas os cartões 8 a 14 ensinam as respostas das perguntas 1 e 2, e o ponto de partida deixava de o ser). '
-            'O tempo total não muda.'),
+  'antes': ('Recomendação: fazer o Ponto de partida em papel logo no início, antes do cartão 1, com os 10 minutos da folga. Os cartões 8 a 14 '
+            'ensinam as respostas das perguntas 1 e 2: feito depois, o Ponto de partida deixava de o ser. O tempo total não muda.'),
   'na_aula': {
    1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
    2: 'Ver «Como conduzir o Decide».',
@@ -83,7 +82,7 @@ GUIA = {
    13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
    15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e mostrar onde está a frase citada.',
    16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
-   18: 'Ver «Como conduzir o Em turma».',
+   18: 'Ver «Como conduzir o “Em turma”».',
    21: 'Charneira 2 (ver abaixo).',
    22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
    23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
@@ -102,13 +101,13 @@ GUIA = {
    'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo).',
    'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
    'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
-   'No fim, «A prova que pesou»: quantos escolheram vida privada, imagem ou expressão.',
+   'No fim, «O direito que pesou»: quantos escolheram vida privada, imagem ou liberdade de expressão.',
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
   ],
   'charneiras': [
    (12, 'Verdadeiro, por ler o 19.º sozinho: «se tenho liberdade de expressão, posso publicar».',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o 12.º e o 19.º lado a lado. Pergunta: «O que diz o 12.º sobre a Sara?»'),
-   (21, '«A partilha é aceitável, porque a Sara estava num sítio público» (deixa de fora o 26.º e o pedido da Sara) ou «é um crime» (vai além das provas: nenhum material fala de crime).',
+   (21, '«A partilha atinge a imagem da Sara, e o colega quis humilhá-la» (toma uma suposição sobre o colega por prova: o que ele quis, nenhum texto da sessão mostra) ou «A partilha é aceitável, porque a Sara estava num sítio público» (deixa de fora o 26.º e o pedido da Sara).',
     'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
@@ -116,7 +115,7 @@ GUIA = {
   'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 02, com uma marca por critério: ✓ cumpre, '
                 '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto. A sessão 02 abre com o Recupera; é o momento de devolver.'),
   'projeto': ('Três perguntas candidatas', '#pergunta-resposta',
-              'Dez minutos para apresentar a Pergunta Humana na versão individual: um teatro-documento só de cada aluno, em que as falas vêm da '
+              'Dez minutos para apresentar a Pergunta Humana na versão individual: um teatro-documento individual, em que as falas vêm da '
               'investigação (entrevistas, documentos e dados). Mostrar «Uma boa pergunta» na página do projeto. Trinta minutos: cada aluno escreve, '
               'em papel, três perguntas candidatas e testa cada uma com os três critérios; o docente faz cerca de dez conversas de 3 minutos. '
               'Cinco minutos: cada aluno sublinha a pergunta de que mais gosta. A mostra da sessão 10 é de 3 minutos e 2 de defesa por aluno '
@@ -128,18 +127,20 @@ GUIA = {
   'noventa': [
    'Primeira aula: cartões 1 a 15 (60 minutos), 10 de Ponto de partida e 20 de projeto (a apresentação da Pergunta Humana e a primeira pergunta candidata).',
    'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
-   'Recarregar a página volta ao cartão onde cada aluno estava, durante 12 horas. Se a segunda aula for noutro dia, a sessão abre no cartão 1: '
-   'a projeção vai direta ao cartão 16 com a barra dos cartões, e cada aluno avança pelos cartões já feitos (os de ler passam com «Seguinte»).',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
   ],
   'imprimir': ['O Ponto de partida, um por aluno (ligação no fim deste guia).', 'Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
                'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
                'Nada mais: a lição projeta-se.'],
   'caso_real': ('O caso do cartão 15 é real: acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, em dgsi.pt. '
-                'Cita-se só o que o acórdão diz: a ordem aos pais (ponto 11 do regime provisório), o sumário e a fundamentação. A filha tinha 12 '
+                'Cita-se só o que o acórdão diz: a ordem aos pais (ponto 11 do regime provisório) e duas passagens da fundamentação. A filha tinha 12 '
                 'anos à data do acórdão (nascida em 2003, segundo o relatório). O acórdão é anonimizado; não se procuram nomes.'),
-  'notas': ['O caso da Sara e o das mensagens são inventados e assim se diz; ninguém escreve sobre um colega identificável.',
+  'notas': ['O caso da Sara, o das mensagens e o da voz gravada são inventados e assim se diz; ninguém escreve sobre um colega identificável.',
             'Sem vídeo: a decisão 155 deixa no máximo um, visto por inteiro, em «Para ir mais longe». O vídeo do TED-Ed de Benedetta Berti não foi visto por inteiro pela equipa e fica de fora.',
-            'Recupera 1, _Rhythm 0_: os factos vêm do registo da obra na Moderna galerija de Ljubljana (MG+MSUM), que a tem na coleção. Não se mostram imagens da performance: os relatos são fortes.',
+            'Recupera 1, _Rhythm 0_: os factos vêm do registo da obra na Moderna galerija de Ljubljana (MG+MSUM), que a tem na coleção, incluindo o objetivo da artista («testar os limites da relação entre a artista e o público»). Não se mostram imagens da performance: os relatos são fortes.',
+            'Olha: o cargo de Eleanor Roosevelt (presidiu à Comissão dos Direitos Humanos da ONU) confere com a página «Drafters of the Declaration» das Nações Unidas (un.org, consultada a 6/11/2026).',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Recupera 2: a distinção entre observar e interpretar vem da Etapa 1, «O que vemos» («demora a pagar» observa-se; «está a fazer-me perder tempo» interpreta-se).',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
@@ -577,7 +578,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">A sessão 01 já está no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. A sua secção tem a tabela dos 180 minutos, cartão a cartão; as outras nove seguem o quadro acima até passarem ao molde.</p>'
+             '<p class="pg">A sessão 01 já está no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. A secção da sessão 01, mais abaixo, tem a tabela dos 180 minutos, cartão a cartão; as outras nove seguem o quadro acima até passarem ao molde.</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -765,7 +766,9 @@ CSS_IMPRIMIR = (
  '.cid-piloto.imprimir .a6 .linhas{height:3.4em}'
  '.cid-piloto.imprimir table{font-size:.95rem}'
  '@media (max-width:599px){.cid-piloto.imprimir .cols{grid-template-columns:1fr}}'
- '@media print{.cid-piloto.imprimir h2{break-after:avoid}.cid-piloto.imprimir .material,.cid-piloto.imprimir .a6{break-inside:avoid}}')
+ '@media print{.cid-piloto.imprimir h2{break-after:avoid}.cid-piloto.imprimir .material,.cid-piloto.imprimir .a6{break-inside:avoid}}'
+ # 06/11/2026 (revisor de pt-PT; decisão 153 e atribuição CC BY): o crédito impresso leva os endereços por extenso
+ '.cid-piloto.imprimir .credito a[href]::after{content:" (" attr(href) ")";word-break:break-all}')
 
 
 def _ex_imprimir(num, c, d, k):
@@ -773,7 +776,10 @@ def _ex_imprimir(num, c, d, k):
     q = f'<div class="ex"><p class="rot">Exercício {num}: {e(c["rot"])}</p>'
     if c.get('cita'):
         q += f'<p class="cita"><i>«{e(_txt(c["cita"]))}»</i></p>'
-    q += f'<p><b>{LL.esc_it(html.unescape(re.sub(r"<[^>]+>", "", c["p"])))}</b></p>'
+    p = html.unescape(re.sub(r'<[^>]+>', '', c['p']))
+    if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
+        p = re.sub(r'\b([Tt])oca nas palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as palavras', p)
+    q += f'<p><b>{LL.esc_it(p)}</b></p>'
     t = c['t']
     if t == 'escolha':
         ordem = dict(LL.ordem_opcoes(d)).get(k) or list(range(len(c['o'])))
@@ -781,7 +787,7 @@ def _ex_imprimir(num, c, d, k):
     elif t == 'vf':
         q += '<p class="resp">☐ Verdadeiro &nbsp; ☐ Falso</p>'
     elif t == 'sublinhar':
-        q += f'<p class="material"><span>{e(c["frase"])}</span></p><p class="resp">Sublinha as palavras.</p>'
+        q += f'<p class="material"><span>{e(c["frase"])}</span></p>'
     elif t == 'emparelhar':
         sem = LL._semente(d['chave'], k)
         esq = LL._mist(sem, list(range(len(c['pares']))))
@@ -793,9 +799,7 @@ def _ex_imprimir(num, c, d, k):
               '<ol class="letras">' + ''.join(f'<li>{e(_txt(vals[j]))}</li>' for j in dto) + '</ol></div>'
               '<p class="resp">Liga: ' + ' &nbsp; '.join(f'{i + 1} ___' for i in range(len(esq))) + '</p>')
     elif t == 'ordenar':
-        ordem = LL._mist(LL._semente(d['chave'], k), list(range(len(c['passos']))))
-        if ordem == sorted(ordem):
-            ordem = ordem[1:] + ordem[:1]
+        ordem = LL.ordem_ordenar(d, k)  # 06/11/2026: a ordem do ecrã, sem nenhum passo no seu lugar
         q += ('<ol class="letras">' + ''.join(f'<li>{e(_txt(c["passos"][j]))}</li>' for j in ordem) + '</ol>'
               '<p class="resp">Ordem: ' + ' → '.join('___' for _ in ordem) + '</p>')
     return q + '</div>'
@@ -808,12 +812,20 @@ def _ler_imprimir(c):
     h = re.sub(r'<div class="pos-lados".*?</div></details></div>', '', h, flags=re.S)
     h = re.sub(r'<div class="tr-relogio".*?</div>', '', h, flags=re.S)
     h = re.sub(r'<details class="info-i"[^>]*><summary[^>]*>.*?</summary><p class="info-i-texto">(.*?)</p></details>', r'<p class="credito">\1</p>', h, flags=re.S)
-    h = re.sub(r'<details class="mais"><summary>(.*?)</summary><div>(.*?)</div></details>', r'<p><b>\1</b></p>\2', h, flags=re.S)
+    # 06/11/2026: «Ler mais» é um botão e no papel não diz nada; os outros títulos («O que conta», «Um exemplo…») ficam
+    h = re.sub(r'<details class="mais"><summary>(.*?)</summary><div>(.*?)</div></details>',
+               lambda m: ('' if m.group(1) == 'Ler mais' else f'<p><b>{m.group(1)}</b></p>') + m.group(2), h, flags=re.S)
     h = re.sub(r'<div class="cc-passo[^"]*"( hidden)?', '<div class="cc-passo"', h)
     h = re.sub(r'<p class="pos-antes"[^>]*></p>', '', h)
     h = re.sub(r'\s(?:data-[\w-]+="[^"]*"|hidden|role="[^"]*"|aria-[\w-]+="[^"]*")', '', h)
     h = h.replace('src="../../../../img/', 'src="../../../../../img/')
     return f'<div class="material">{h}</div>'
+
+
+def _opcoes_prova(c):
+    """06/11/2026: as opções da escolha que pesou no «Em turma» (data-valor), tiradas do cartão em vez de escritas à mão."""
+    m = re.search(r'<div class="posicao" data-artefacto="prova".*?</div></div>', c['html'], re.S)
+    return ' '.join(f'☐ {e(html.unescape(v))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
 
 
 def pagina_imprimir(s):
@@ -822,7 +834,7 @@ def pagina_imprimir(s):
     d, C = s['d'], s['d']['cartoes']
     base = '../' * (s['pasta'].count('/') + 1)
     corpo = (f'<header><p class="marca">Cidadania, módulo 1, sessão {s["n"]}</p><h1>{e(s["titulo"])}</h1>'
-             '<p class="lead">Versão para imprimir: o material, os 14 exercícios e o papel do fim. Faz-se sozinho, com uma caneta.</p>'
+             '<p class="lead">Versão para imprimir: o material, os 14 exercícios e o papel do fim. Fazes tudo sozinho, só com uma caneta.</p>'
              '<p><button type="button" class="imprimir" onclick="window.print()">Imprimir</button></p></header>'
              '<div class="campos"><span>O teu código: ____________</span><span>Data: ____ / ____</span></div>')
     num = 0
@@ -842,7 +854,7 @@ def pagina_imprimir(s):
             perg = re.findall(r'<p class="pos-q">(.*?)</p>', c['html'])
             corpo += (f'<div class="ex"><p class="rot">{e(rot)}</p><p><b>{perg[0]}</b></p><p class="resp">☐ Sim &nbsp; ☐ Não &nbsp; ☐ Depende</p>'
                       + ('<p>Escreve, numa linha, a razão que pesa mais para ti.</p><div class="linhas"></div>' if rot == 'Decide' else
-                         f'<p>Compara com a tua escolha do início. {perg[1] if len(perg) > 1 else ""} ☐ Vida privada (12.º) ☐ Imagem (26.º) ☐ Expressão (19.º)</p>')
+                         f'<p>Compara com a tua escolha do início. {perg[1] if len(perg) > 1 else ""} {_opcoes_prova(c)}</p>')
                       + '</div>')
             continue
         titulo = f'<p class="rot">{e(rot)}{": " + e(c["titulo"]) if c.get("titulo") and c["titulo"] != rot else ""}</p>'

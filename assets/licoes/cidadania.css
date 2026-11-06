@@ -154,3 +154,9 @@ body.molde-cidadania .jogo .cartao.escuro ul.frases li::before{content:"";positi
 /* o passo do projeto no fim: a ligação numa linha sua */
 body.molde-cidadania .jogo .depois .ir{margin:10px 0 0}
 body.molde-cidadania .jogo .depois .ir a{font-weight:700}
+/* 06/11/2026 (correções da revisão da s01, diretor de arte). Na projeção a 1366 x 768, a raiz a 22 px fazia a coluna da legenda
+   (15rem) passar a 330 px e a imagem do Olha ficava mais pequena do que no computador sem projeção: a legenda fica com 240 px e a
+   imagem volta ao tamanho do computador, acima da barra de ações. */
+html.em-projecao body.molde-cidadania .casca .jogo .ler .m-olha .fig{grid-template-columns:minmax(0,max-content) 240px}
+/* Abaixo de 360 px (320 x 640), a pergunta da sessão no Abre fica acima da barra de ações */
+@media (max-width:359px){body.molde-cidadania .jogo .tit.cartaz{font-size:2rem;margin-bottom:10px}body.molde-cidadania .jogo .ler .carimbo{margin-bottom:10px}body.molde-cidadania .jogo .ler .caso{font-size:1rem;line-height:1.42}body.molde-cidadania .jogo .ler .pergunta-sessao{margin-top:10px;font-size:1.05rem}}

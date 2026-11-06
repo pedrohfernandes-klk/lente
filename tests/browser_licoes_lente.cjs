@@ -62,6 +62,11 @@ async function responder(p,x){
     assert.equal(await p.locator('[data-c-num]').innerText(),(i+1)+'/'+d.cartoes.length,f+' cartão '+(i+1));
     assert(await p.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),'deslocamento horizontal no cartão '+(i+1)+' a '+w+' px');
     if(cid&&x.t==='escolha'){const j=await p.$$eval('#baralho .ops button.op',bs=>bs.map(b=>+b.dataset.j));assert.deepEqual(j,ORDEM.get(d.cartoes.indexOf(x)),f+' cartão '+(i+1)+': a ordem das opções é a da semente do motor')}
+    // 05/11/2026: correções da revisão da s01 (06/11/2026). No molde, cada exercício mostra a sua pista (nunca a escolhida por
+    // palavras) e nenhum passo de um ordenar aparece no seu lugar.
+    if(cid&&d.molde&&x.t!=='ler'&&w===390){const b=p.locator('.casca-acoes [data-pista-ess]');assert.equal(await b.count(),1,f+' cartão '+(i+1)+': botão «Pista»');await b.click();await p.waitForTimeout(150);
+     assert.equal(norm(await p.locator('#baralho .pista').innerText()),norm('Pista: '+vis(x.pista)),f+' cartão '+(i+1)+': a pista do cartão')}
+    if(cid&&d.molde&&x.t==='ordenar'){const j=await p.$$eval('#baralho .soltos button.op',bs=>bs.map(b=>+b.dataset.j));assert(j.length===x.passos.length&&j.every((v,q)=>v!==q),f+' cartão '+(i+1)+': nenhum passo no seu lugar '+j)}
     if(x.t!=='ler'){await responder(p,x);assert.match(await p.locator('.casca-folha').innerText(),/Certo/,f+' cartão '+(i+1)+' ('+x.t+')')}
     if(i<d.cartoes.length-1)await seguinte(p);
    }
@@ -72,7 +77,8 @@ async function responder(p,x){
    // 05/11/2026: plano do molde da Cidadania, pedido 1. A Cidadania também deixa de mostrar pontos (cfg.semPontos): o fim diz
    // «Sessão feita.» e «O módulo já a marca.»; a prova de que tudo ficou certo passa a ser só a contagem guardada, logo abaixo
    // (st.melhor igual ao número de cartões de fazer), que continua obrigatória.
-   else{assert.match(fim,/Sessão feita\./,f+': o fim diz «Sessão feita.»');assert.match(fim,/O módulo já a marca\./,f+': o fim diz que o módulo já a conta');assert.doesNotMatch(fim,/\d+\s+(?:pontos|de\s+\d+)/,f+': sem pontos')}
+   // 05/11/2026: correções da revisão da s01 (06/11/2026): nas sessões no molde, o fim diz «A página do módulo já a marca como feita.»
+   else{assert.match(fim,/Sessão feita\./,f+': o fim diz «Sessão feita.»');assert.match(fim,d.molde?/A página do módulo já a marca como feita\./:/O módulo já a marca\./,f+': o fim diz que o módulo já a conta');assert.doesNotMatch(fim,/\d+\s+(?:pontos|de\s+\d+)/,f+': sem pontos')}
    const st=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),d.chave);assert(st&&st.melhor===fazer,f+': progresso gravado em '+d.chave);
    if(cid)assert.equal(st.curso,undefined,f+': o fim apaga a retoma');
    if(w===390)await p.screenshot({path:path.join(require('os').tmpdir(),'licao-'+d.id+'-fim-390.png')});
@@ -154,7 +160,8 @@ async function responder(p,x){
     if(i<d.cartoes.length-1)await seguinte(p);
    }
    await seguinte(p).catch(()=>{});await p.waitForTimeout(600);
-   const fim=await p.locator('#baralho').innerText();assert.match(fim,/A aula acaba aqui/i);assert.match(fim,/Sessão feita\./);assert.match(fim,/O módulo já a marca\./);assert.match(fim,/Ensaio do passo/);
+   // 05/11/2026: correções da revisão da s01 (06/11/2026): o ensaio está no molde, e o fim do molde diz onde fica marcada a sessão
+   const fim=await p.locator('#baralho').innerText();assert.match(fim,/A aula acaba aqui/i);assert.match(fim,/Sessão feita\./);assert.match(fim,/A página do módulo já a marca como feita\./);assert.match(fim,/Ensaio do passo/);
    await cap('24-fim');
    const st=await p.evaluate(k=>JSON.parse(localStorage.getItem(k)),d.chave);assert.equal(st.lida,true);assert.equal(st.curso,undefined);
    assert.deepEqual(erros,[],'ensaio a '+w+' px');await c.close();console.log('PASS ensaio do molde a '+w+' px ('+tema+'): posições, artefactos, «i», ampliação, retoma e fim');
