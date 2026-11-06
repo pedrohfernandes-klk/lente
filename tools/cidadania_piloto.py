@@ -192,7 +192,7 @@ GUIA = {
   'charneiras': [
    (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se foi num lugar público, posso publicar».',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acrescenta o “porém” do n.º 3?»'),
-   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque os colegas se riram dela» (tira dos risos uma intenção que nenhum material mostra).',
+   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque os colegas se riram dela» (toma os risos por prova de que a queda prejudica o decoro da Marta, que ainda está em aberto).',
     'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',

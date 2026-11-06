@@ -240,8 +240,9 @@ CARTOES = [
          'Segundo esta passagem, porquê?',
          'Tinham-lhe dito que as fotografias eram para uma publicação.',
          [('A piscina era um lugar público, onde não é preciso pedir.',
-           'O tribunal não decidiu pelo lugar: o acórdão nem discute se a piscina era um lugar público. Decidiu pelo que se disse à '
-           'mãe antes das fotografias. Volta à passagem citada.'),
+           'O tribunal não decidiu pelo lugar: as fotografias foram tiradas numa sessão pública aberta a sócios e familiares, e o '
+           'acórdão não discute se isso dispensava o consentimento. Decidiu pelo que se disse à mãe antes das fotografias. Volta à '
+           'passagem citada.'),
           ('A revista tinha fins didáticos, por ser sobre o bem-estar.',
            'O tribunal não decidiu pelos fins da revista, e ficou provado que ela servia para captar clientes para o clube. Decidiu '
            'pelo que se disse à mãe. Volta à passagem citada.')],
@@ -320,8 +321,8 @@ CARTOES = [
            'É a razão do Duarte, não uma prova: a Marta aceitou um uso, rever a cena. Para expor o retrato, o n.º 1 pede «o '
            'consentimento dela». Esta conclusão deixa de fora o que ela aceitou.'),
           ('A escola não pode publicar, porque os colegas se riram dela.',
-           'Os risos dos colegas não mostram o que a escola quer: a direção diz que é para ensinar. Uma intenção não se supõe; '
-           'prova-se. Separa o que aconteceu do que alguém supõe.')],
+           'Os colegas riram-se porque a cena ficou ótima: isso não prova que a queda prejudique o decoro da Marta, que ainda está '
+           'em aberto. Esta conclusão vai além das provas. Separa o que aconteceu do que alguém supõe.')],
          'Diz o que as provas mostram (a Marta aceitou um uso: rever a cena) e deixa aberto o que falta provar: se o vídeo serve '
          'para ensinar.',
          3, 'aplicar', 'conclusão e provas', citacoes=[('cc-79-1', 'o consentimento dela')],
@@ -369,7 +370,7 @@ def sessao():
                         '58/2019, de 8 de agosto, artigo 16.º, n.º 1, no Diário da República. Declaração Universal dos Direitos Humanos, '
                         'artigo 12.º, na transcrição portuguesa do UNRIC. Acórdão do Supremo Tribunal de Justiça de 7 de junho de 2011, '
                         'processo 1581/07.3TVLSB.L1.S1, em dgsi.pt. Fotografia: Lewis Hine (atribuição), _Addie Card, 12 years. Spinner '
-                        'in North Pormal [i.e., Pownal] Cotton Mill. Vt._, fevereiro de 1910, National Child Labor Committee collection, '
+                        'in North Pormal [i.e., Pownal] Cotton Mill. Vt. […]_, fevereiro de 1910, National Child Labor Committee collection, '
                         'Library of Congress, Prints and Photographs Division (LC-DIG-nclc-05282), domínio público (o registo diz «No known '
                         'restrictions on publication»). '
                         '_The Truman Show_, filme de Peter Weir (1998). O caso da Marta, o da montagem, o da praça, o do rapaz na poça, '
