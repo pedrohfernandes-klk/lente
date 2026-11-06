@@ -68,6 +68,13 @@ DECIDE_Q = 'O Tomás deve sair já da peça?'
 FRASE = 'Um nome no ecrã não prova quem carregou no botão.'
 
 
+def fonte(ident, texto, referencia):
+    """06/11/2026 (revisão): uma opção que cita uma fonte. O ajudante confere o excerto no registo ao montar o cartão (como
+    M.citado), porque o teste das citações só lê os retornos."""
+    M._excerto_ok(ident, texto)
+    return f'«{texto}» ({referencia})'
+
+
 def escolha(rot, p, p2, certa, erradas, f, minutos, tipo, conceito, **extra):
     """Uma escolha de três opções; a certa vai para o lugar de LUGARES (preenchido em sessao())."""
     c = M.fazer('escolha', rot, p, p2, f, minutos, tipo, conceito, **extra)
@@ -93,19 +100,19 @@ CARTOES = [
  # registo da Library of Congress (ver acima); o retorno não ensina a charneira 1 (o que a captura prova).
  M.recupera(escolha(
      'O voto que ficou sozinho',
-     'No filme _Doze Homens em Fúria_, um júri decide se um rapaz matou o pai. Ao início, onze votam «culpado» e um vota «não '
+     'No filme _Doze Homens em Fúria_, um júri decide se um rapaz matou o pai. No início, onze votam «culpado» e um vota «não '
      'culpado». O que diz esse voto?',
      'Em _Doze Homens em Fúria_, de Sidney Lumet, um só jurado vota «não culpado» contra onze. O que quer dizer esse voto?',
      'Que, para ele, a culpa ainda não está provada.',
-     [('Que ele acredita que o rapaz está inocente.',
+     [('Que ele acredita que o rapaz é inocente.',
        '«Não culpado» não quer dizer «inocente»: quer dizer que a culpa não ficou provada. No filme, se houver uma dúvida razoável, '
        'o júri não condena. Repara no nome do voto.'),
       ('Que ele quer contrariar a opinião da maioria.',
-       'Nada indica que vote para contrariar: o jurado defende que a vida do rapaz merece mais do que um voto rápido. Repara no '
-       'nome do voto: diz alguma coisa sobre a culpa?')],
-     'Votar «não culpado» é dizer que a culpa não está provada, e não que o rapaz está inocente: com uma dúvida razoável, o júri não '
+       'Nada indica que vote para contrariar: o jurado defende que o destino de um rapaz que arrisca a pena de morte merece mais '
+       'ponderação. Repara no nome do voto: diz alguma coisa sobre a culpa?')],
+     'Votar «não culpado» é dizer que a culpa não está provada, e não que o rapaz é inocente: com uma dúvida razoável, o júri não '
      'condena. É a pergunta de hoje, com uma captura de ecrã no lugar das provas do filme.',
-     3, 'distinguir', 'não culpado e inocente', pista='Lê o nome do voto, palavra a palavra.')),
+     3, 'distinguir', 'não culpado e inocente', pista='Imagina que o jurado ainda não sabe se o rapaz matou o pai: como pode votar?')),
  # R2: acusação de facto (sessão 04), um item novo: a mesma acusação partilhada nove vezes. Falso; usa as palavras da sessão 04.
  M.recupera(M.fazer(
      'vf', 'Nove vezes a mesma frase',
@@ -125,8 +132,8 @@ CARTOES = [
                  rotulo_i='Créditos da litografia')),
  # Conceito espaçado (origem): a distinção da sessão 01 (cartão 7, «Imagem, legenda ou nenhuma»), seis sessões antes.
  M.fazer('emparelhar', 'O que se vê e o que se diz',
-         'Para cada frase: vê-se na litografia, só a legenda o diz, ou nenhuma das duas o prova?',
-         'De onde vem cada informação: da litografia, da legenda, ou de nenhuma das duas?',
+         'Para cada frase: vê-se na litografia, só a legenda o diz ou nenhuma das duas o prova?',
+         'De onde vem cada informação: da litografia, da legenda ou de nenhuma das duas?',
          'Os rostos quase encostados veem-se. O conselho de chorar, só a legenda o dá. Se alguém chorou, e se isso convenceu o tribunal, '
          'nem a litografia nem a legenda o mostram. É a distinção que fizeste na sessão 01.',
          3, 'distinguir', 'imagem e legenda', ver=VER, origem='cidadania/m1/sessoes/01/',
@@ -138,7 +145,7 @@ CARTOES = [
          pista='Tapa a legenda e vê o que ainda consegues dizer.'),
  # «Comove ou prova» (plano): o gesto que se aconselha e o efeito que se procura. Falso: umas lágrimas não mostram os factos.
  M.fazer('vf', 'Comover não é provar',
-         'Se o acusado chorar, como lhe aconselham, o tribunal fica com uma prova de que está inocente.',
+         'Se o acusado chorar, como lhe aconselham, o tribunal fica com uma prova de que é inocente.',
          'As lágrimas que a legenda aconselha dariam ao tribunal uma prova da inocência do acusado.',
          'É falso: as lágrimas podem comover quem julga, mas não mostram o que aconteceu. A legenda diz que chorar «fica sempre bem»: '
          'é um efeito em quem vê. Um tribunal decide pelo que se prova.',
@@ -147,13 +154,15 @@ CARTOES = [
             'tribunal ficaria a saber sobre os factos.',
          pista='Pergunta-te o que um tribunal precisa de saber para decidir.'),
  M.le('Quem prova, quem é ouvido', 'Quem prova a culpa? E quem é ouvido?',
-      # 06/11/2026: na margem só cabe um rótulo curto («Artigo 32.º», como na s01 e na s03); o documento e o número vão na linha da fonte.
-      [(f'Artigo{NB}32.º', 'Todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação […]', 'crp-32-2', 'n2'),
+      # 06/11/2026 (revisão): os dois excertos do artigo 32.º distinguiam-se mal só com «Artigo 32.º»; o rótulo leva o número. O
+      # rótulo com o documento («Constituição, artigo 32.º, n.º 2») não cabe na margem a partir de 720 px (cobria a citação): o
+      # documento fica na linha da fonte, que diz de onde é cada número (ver molde-s07/correcao.md).
+      [(f'32.º, n.º{NB}2', 'Todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação […]', 'crp-32-2', 'n2'),
        (f'Artigo{NB}11.º', 'Toda a pessoa acusada de um acto delituoso presume-se inocente até que a sua culpabilidade fique legalmente '
                           'provada […]', 'dudh-11-1', 'a11'),
-       (f'Artigo{NB}32.º', '[…] em quaisquer processos sancionatórios, são assegurados ao arguido os direitos de audiência e defesa.',
+       (f'32.º, n.º{NB}10', '[…] em quaisquer processos sancionatórios, são assegurados ao arguido os direitos de audiência e defesa.',
         'crp-32-10', 'n10')],
-      f'<a href="{DRE_CRP}">Constituição, artigo 32.º, n.os 2 e 10</a>; <a href="{UNRIC}">Declaração Universal, artigo 11.º</a>',
+      f'<a href="{DRE_CRP}">Constituição, artigo 32.º</a>; <a href="{UNRIC}">Declaração Universal, artigo 11.º</a>',
       # 06/11/2026: no «Ler mais», a ligação à fonte oficial vai no rótulo de cada excerto (cabem as 140 palavras do cartão).
       mais=('<p>«Trânsito em julgado»: já não há recurso.</p>'
             + M.lei([(f'<a href="{UNRIC}">Declaração Universal, artigo 10.º</a>', '[…] a que a sua causa seja equitativa e publicamente '
@@ -164,7 +173,7 @@ CARTOES = [
  M.fazer('sublinhar', 'Antes de ser culpado',
          'No artigo 11.º, sublinha as duas palavras que dizem o que tem de acontecer à culpa antes de alguém ser tratado como culpado.',
          'Segundo o artigo 11.º, até quando se presume inocente quem é acusado? Sublinha as duas palavras que o dizem.',
-         'Ninguém é tratado como culpado antes de a culpa ficar «legalmente provada». Até lá, presume-se inocente. Não basta que muitos '
+         'Ninguém pode ser tratado como culpado antes de a culpa ficar «legalmente provada». Até lá, presume-se inocente. Não basta que muitos '
          'acreditem: a prova faz-se num processo, com «garantias necessárias de defesa».',
          3, 'reconhecer', 'presunção de inocência',
          frase=('Toda a pessoa acusada de um acto delituoso presume-se inocente até que a sua culpabilidade fique legalmente provada no '
@@ -177,7 +186,8 @@ CARTOES = [
  # Aplicação ao caso: onde começa a conclusão, numa frase sobre o Tomás com «por isso» (piloto, cartão 3). A frase usa um dado novo
  # (estar online), para não ensinar aqui o que a captura prova (a charneira 1, no cartão 12).
  M.fazer('sublinhar', 'Onde começa a conclusão',
-         'Alguém escreve no grupo da turma esta frase. Sublinha as duas palavras onde deixa de dizer o que se sabe e passa a concluir.',
+         'Alguém escreve no grupo da turma esta frase. Sublinha as duas palavras em que a frase deixa de dizer o que se sabe e passa a '
+         'concluir.',
          'Nesta frase sobre o Tomás, onde termina o que se sabe e começa a conclusão? Sublinha as duas palavras.',
          'Até ao «por isso», a frase diz o que se sabe: o Tomás estava online. Depois, tira uma conclusão que esse dado não mostra: '
          'muitas pessoas podiam estar online à mesma hora. A conclusão começa no «por isso».',
@@ -215,11 +225,11 @@ CARTOES = [
  # Conceito: prova e inferência; «Votar conta posições; deliberar pesa razões» (plano). Itens paralelos em tabela (decisão 152).
  M.conceito('Prova e inferência',
             '<p>A conta tem o nome do Tomás. Nove dizem que foi ele.</p>',
-            '<table class="tabela"><thead><tr><th scope="col">Prova</th><th scope="col">Supõe-se</th>'
+            '<table class="tabela"><thead><tr><th scope="col">O que se sabe</th><th scope="col">Supõe-se</th>'
             '<th scope="col">O que falta</th></tr></thead><tbody>'
-            '<tr><td data-th="Prova">a conta com o nome</td><td data-th="Supõe-se">foi ele que publicou</td>'
+            '<tr><td data-th="O que se sabe">a conta com o nome</td><td data-th="Supõe-se">foi ele que publicou</td>'
             '<td data-th="O que falta">quem criou a conta</td></tr>'
-            '<tr><td data-th="Prova">nove mãos no ar</td><td data-th="Supõe-se">foi ele</td>'
+            '<tr><td data-th="O que se sabe">nove mãos no ar</td><td data-th="Supõe-se">foi ele</td>'
             '<td data-th="O que falta">quem viu</td></tr>'
             '</tbody></table>',
             'Inferência', 'Uma conclusão que vai além do que a prova mostra.',
@@ -229,13 +239,13 @@ CARTOES = [
          'Caso inventado, noutra escola: um aluno foi castigado por causa de uma captura. Põe por ordem o que aconteceu e o que daí se '
          'conclui.',
          'Noutra escola, um castigo assentou numa captura, e depois apareceu outra prova. Ordena os factos e a conclusão.',
-         'Uma decisão vale o que valem as provas em que assenta. Quando aparece uma prova que as desfaz, a decisão revê-se, e diz-se a '
-         'quem soube do castigo que mudou. Manter um erro conhecido é escolher o erro.',
+         'Uma decisão vale o que valem as provas em que assenta. Quando aparece uma prova que as desfaz, a decisão revê-se, e explica-se '
+         'a mudança a quem soube do castigo. Manter um erro conhecido é escolher o erro.',
          3, 'transferir', 'rever uma decisão',
          passos=['O castigo assentou numa captura com o nome do aluno.',
-                 'Depois, outro aluno confessa que foi ele que o fez.',
+                 'Outro aluno confessou que tinha sido ele.',
                  'A prova em que o castigo assentava deixou de chegar.',
-                 'A escola revê a decisão e diz à turma que mudou.'],
+                 'A escola reviu a decisão e explicou-a à turma.'],
          fe='A confusão mais provável é pôr a revisão antes de a prova nova aparecer. Começa pelo que aconteceu; a conclusão vem no fim, '
             'apoiada na prova nova.',
          pista='Pergunta-te o que tem de vir antes para o passo seguinte fazer sentido.'),
@@ -248,18 +258,19 @@ CARTOES = [
          [('Ficou provado que outra pessoa criou aquela conta.',
            'O tribunal não descobriu quem foi: a publicação ficou atribuída a «indivíduo não identificado». Absolveu porque ficou em dúvida, '
            'e não porque provou outra autoria. Volta à razão do tribunal.'),
-          ('Publicar o vídeo de uma detenção policial não é crime.',
+          ('Publicar o vídeo de uma detenção não é crime.',
            'O tribunal não decidiu isso: disse que não conseguia dar como provado que a conta era do jovem. Sem essa prova, a publicação '
            'não lhe pode ser imputada. Volta ao que ficou por provar.')],
          'O tribunal escreveu que, no Instagram, «qualquer pessoa pode criar um perfil de utilizador, sem verificação dos dados». A '
-         'consulta ao Facebook não deu resultado. «Admitimos que sim, mas não arriscamos afirmá-lo»: na dúvida, absolveu.',
+         'consulta ao Facebook não deu resultado. Era a conta dele? «Admitimos que sim, mas não arriscamos afirmá-lo»: na dúvida, '
+         'absolveu.',
          4, 'transferir', 'na dúvida, a favor do arguido',
          citacoes=[('tre-2023-instagram', 'qualquer pessoa pode criar um perfil de utilizador, sem verificação dos dados'),
                    ('tre-2023-admitimos', 'Admitimos que sim, mas não arriscamos afirmá-lo'),
                    ('tre-2023-nao-identificado', 'indivíduo não identificado')],
          # como na s01 a s03, a ligação nomeia o tribunal e a data (o número do processo está nas fontes e no guia)
          liga=[{'t': 'Ler o acórdão do Tribunal da Relação de Évora, 10/10/2023 (dgsi.pt)', 'href': DGSI}],
-         pista='Separa o que o tribunal provou do que ficou em dúvida.'),
+         pista='Relê o que a conta tinha: o nome e o dia de anos. Quem pode pôr esses dados numa conta?'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
  # Volta ao caso: o que o Tomás diz, a razão dos nove e o que a Sara está a passar: a proteção dela e a presunção de inocência dele
  # chocam (o «Somos nove» é o do M1 publicado, sessão 08).
@@ -305,33 +316,35 @@ CARTOES = [
  # O passo em falta (sessões 04 a 07): aqui, a fonte. Não diz a conclusão da charneira 2 (o vídeo e a autoria).
  escolha('A fonte que falta',
          'Facto: a direção vai decidir se castiga o Tomás. Aplicação: antes, tem de o ouvir. Limite: ouvi-lo não prova que diz a '
-         'verdade. Falta a fonte: onde se apoia?',
-         'Facto, aplicação e limite já estão: a direção vai decidir, tem de o ouvir, ouvi-lo não prova nada. Falta a fonte. Escolhe-a.',
-         'Quem pode ser castigado tem direito a ser ouvido e a defender-se.',
-         [('Toda a pessoa tem direito a exprimir livremente a sua opinião.',
-           'Exprimir a opinião é outro direito, o da sessão 01: não obriga ninguém a ouvir o Tomás antes de o castigar. Procura o texto que '
-           'fala de quem pode ser castigado.'),
-          ('Ninguém pode sofrer ataques à sua honra e à sua reputação.',
-           'A honra e a reputação protegem a Sara, que foi gozada no vídeo; não dizem o que a direção deve fazer antes de castigar. Procura '
-           'o texto que fala de quem pode ser castigado.')],
+         'verdade. Falta a fonte: em que se apoia?',
+         'Facto, aplicação e limite já estão: a direção vai decidir, tem de o ouvir, ouvi-lo não prova que diz a verdade. Falta a fonte. '
+         'Escolhe-a.',
+         # 06/11/2026 (revisão): as opções são as fontes, citadas e já registadas; antes, a certa repetia as palavras do enunciado.
+         fonte('crp-32-10', '[…] são assegurados ao arguido os direitos de audiência e defesa', 'Constituição, artigo 32.º, n.º 10'),
+         [(fonte('crp-32-2', 'Todo o arguido se presume inocente até ao trânsito em julgado […]', 'Constituição, artigo 32.º, n.º 2'),
+           'A presunção de inocência diz como se trata o Tomás até haver decisão; não obriga a ouvi-lo antes. Volta ao Lê e procura o '
+           'número do artigo 32.º que fala de defesa.'),
+          (fonte('dudh-12', '[…] toda a pessoa tem direito a protecção da lei', 'Declaração Universal, artigo 12.º'),
+           'A «protecção da lei» contra ataques à honra protege a Sara; não diz o que a direção deve fazer antes de castigar. Volta ao Lê.')],
          'A aplicação apoia-se no artigo 32.º, n.º 10: em «quaisquer processos sancionatórios», o arguido tem «os direitos de audiência e '
          'defesa». Com a fonte, a cadeia fica completa: facto, fonte, aplicação, limite.',
          4, 'aplicar', 'facto, fonte, aplicação, limite',
-         citacoes=[('crp-32-10', 'quaisquer processos sancionatórios'), ('crp-32-10', 'os direitos de audiência e defesa')],
-         pista='Procura, entre os textos que leste, o que fala do que vem antes de um castigo.'),
+         citacoes=[('crp-32-10', 'quaisquer processos sancionatórios'), ('crp-32-10', 'os direitos de audiência e defesa'),
+                   ('dudh-12', 'protecção da lei')],
+         pista='Para cada texto, pergunta-te se obriga a direção a fazer alguma coisa antes de decidir.'),
  # Charneira 2: a conclusão que não vai além das provas; os dois erros esperados vão além delas, cada um para seu lado.
  escolha('O que as provas permitem',
          'Escolhe a conclusão que fica dentro do que o caso e os textos mostram.',
          'Das três conclusões, escolhe a que diz o que as provas permitem, sem ir além delas.',
-         'O vídeo deve sair já; quem o fez ainda está por provar.',
+         'Por agora, não se pode dizer que foi o Tomás nem que não foi.',
          [('Foi o Tomás: a captura e os nove votos chegam para isso.',
            'A captura mostra uma conta com o nome dele, e os nove votos contam opiniões: nada disto mostra quem a criou. Separa o que se viu '
            'do que alguém concluiu.'),
-          ('Não foi o Tomás: ninguém o viu criar aquela conta.',
+          ('Não foi o Tomás: ninguém o viu a criar aquela conta.',
            'Também vai além das provas, no outro sentido: não se ter visto não prova que não foi ele. Por agora, sabe-se só que a autoria '
            'está por provar. Separa o que se sabe do que falta saber.')],
-         'Diz o que as provas permitem: o vídeo magoa a Sara e pode sair já; quem o fez está por provar, e até lá o Tomás presume-se '
-         'inocente e tem de ser ouvido.',
+         'Diz o que as provas permitem: a captura mostra uma conta, e os votos contam opiniões. Até se provar quem foi, o Tomás '
+         'presume-se inocente e tem de ser ouvido.',
          3, 'aplicar', 'conclusão e provas', pista='Para cada conclusão, procura a prova que a sustenta.'),
  M.papel(PERGUNTA,
          ['A tua conclusão, por agora.',
@@ -340,7 +353,7 @@ CARTOES = [
          ['A conclusão responde à pergunta sem ir além das provas.',
           'A prova junta um facto a uma expressão exata, com o artigo.',
           'A dúvida, respondida, podia mudar a conclusão.'],
-         '<p>Outro caso, inventado: a câmara do bar filma o Luís a guardar uma carteira do balcão.</p><ol>'
+         '<p>Caso inventado: a câmara do bar filma o Luís a guardar uma carteira do balcão.</p><ol>'
          '<li>Conclusão: a prova é forte, mas falta ouvir o Luís.</li>'
          f'<li>Prova: o vídeo mostra-o com a carteira; e o arguido tem '
          f'{M.citado("crp-32-10", "os direitos de audiência e defesa")} (artigo 32.º, n.º 10).</li>'

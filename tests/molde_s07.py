@@ -12,7 +12,11 @@ regras e sem aceitar mais nada:
 
 O manifesto parte do main 88c2cba (com a s03): é a camada mais recente, por cima de todas as outras, também da 163 e da 149 e da
 s03. Desfaz-se primeiro no ficheiro atual, ou aplica-se em último lugar ao lado esperado. As sessões 04 a 06, construídas noutros
-ramos, juntam-se depois com as suas camadas."""
+ramos, juntam-se depois com as suas camadas.
+
+06/11/2026: correções da revisão da s07. O manifesto foi refeito com o mesmo gerador e a mesma base (88c2cba): mudam só as trocas
+do guia (GUIA['07'], «a opinião de muitos» e a charneira 2) na página do docente e em tools/cidadania_piloto.py. As regras
+de aplicar(), desfazer() e inteiro_ok() não mudam."""
 import importlib.util
 import json
 from pathlib import Path

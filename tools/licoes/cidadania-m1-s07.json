@@ -43,24 +43,24 @@
   {
    "t": "escolha",
    "rot": "O voto que ficou sozinho",
-   "p": "No filme _Doze Homens em Fúria_, um júri decide se um rapaz matou o pai. Ao início, onze votam «culpado» e um vota «não culpado». O que diz esse voto?",
+   "p": "No filme _Doze Homens em Fúria_, um júri decide se um rapaz matou o pai. No início, onze votam «culpado» e um vota «não culpado». O que diz esse voto?",
    "p2": "Em _Doze Homens em Fúria_, de Sidney Lumet, um só jurado vota «não culpado» contra onze. O que quer dizer esse voto?",
-   "f": "Votar «não culpado» é dizer que a culpa não está provada, e não que o rapaz está inocente: com uma dúvida razoável, o júri não condena. É a pergunta de hoje, com uma captura de ecrã no lugar das provas do filme.",
+   "f": "Votar «não culpado» é dizer que a culpa não está provada, e não que o rapaz é inocente: com uma dúvida razoável, o júri não condena. É a pergunta de hoje, com uma captura de ecrã no lugar das provas do filme.",
    "min": 3,
    "tipo": "distinguir",
    "conceito": "não culpado e inocente",
-   "pista": "Lê o nome do voto, palavra a palavra.",
+   "pista": "Imagina que o jurado ainda não sabe se o rapaz matou o pai: como pode votar?",
    "g": "recupera",
    "o": [
     "Que, para ele, a culpa ainda não está provada.",
-    "Que ele acredita que o rapaz está inocente.",
+    "Que ele acredita que o rapaz é inocente.",
     "Que ele quer contrariar a opinião da maioria."
    ],
    "c": 0,
    "fe": [
     "",
     "«Não culpado» não quer dizer «inocente»: quer dizer que a culpa não ficou provada. No filme, se houver uma dúvida razoável, o júri não condena. Repara no nome do voto.",
-    "Nada indica que vote para contrariar: o jurado defende que a vida do rapaz merece mais do que um voto rápido. Repara no nome do voto: diz alguma coisa sobre a culpa?"
+    "Nada indica que vote para contrariar: o jurado defende que o destino de um rapaz que arrisca a pena de morte merece mais ponderação. Repara no nome do voto: diz alguma coisa sobre a culpa?"
    ]
   },
   {
@@ -88,8 +88,8 @@
   {
    "t": "emparelhar",
    "rot": "O que se vê e o que se diz",
-   "p": "Para cada frase: vê-se na litografia, só a legenda o diz, ou nenhuma das duas o prova?",
-   "p2": "De onde vem cada informação: da litografia, da legenda, ou de nenhuma das duas?",
+   "p": "Para cada frase: vê-se na litografia, só a legenda o diz ou nenhuma das duas o prova?",
+   "p2": "De onde vem cada informação: da litografia, da legenda ou de nenhuma das duas?",
    "f": "Os rostos quase encostados veem-se. O conselho de chorar, só a legenda o dá. Se alguém chorou, e se isso convenceu o tribunal, nem a litografia nem a legenda o mostram. É a distinção que fizeste na sessão 01.",
    "min": 3,
    "tipo": "distinguir",
@@ -116,7 +116,7 @@
   {
    "t": "vf",
    "rot": "Comover não é provar",
-   "p": "Se o acusado chorar, como lhe aconselham, o tribunal fica com uma prova de que está inocente.",
+   "p": "Se o acusado chorar, como lhe aconselham, o tribunal fica com uma prova de que é inocente.",
    "p2": "As lágrimas que a legenda aconselha dariam ao tribunal uma prova da inocência do acusado.",
    "f": "É falso: as lágrimas podem comover quem julga, mas não mostram o que aconteceu. A legenda diz que chorar «fica sempre bem»: é um efeito em quem vê. Um tribunal decide pelo que se prova.",
    "min": 3,
@@ -131,7 +131,7 @@
    "t": "ler",
    "rot": "Lê",
    "titulo": "Quem prova, quem é ouvido",
-   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> Quem prova a culpa? E quem é ouvido?</p><blockquote class=\"lei\"><p data-l=\"n2\" data-fonte=\"crp-32-2\"><span class=\"art\">Artigo 32.º</span>«Todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação […]»</p><p data-l=\"a11\" data-fonte=\"dudh-11-1\"><span class=\"art\">Artigo 11.º</span>«Toda a pessoa acusada de um acto delituoso presume-se inocente até que a sua culpabilidade fique legalmente provada […]»</p><p data-l=\"n10\" data-fonte=\"crp-32-10\"><span class=\"art\">Artigo 32.º</span>«[…] em quaisquer processos sancionatórios, são assegurados ao arguido os direitos de audiência e defesa.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição, artigo 32.º, n.os 2 e 10</a>; <a href=\"https://unric.org/pt/declaracao-universal-dos-direitos-humanos/\">Declaração Universal, artigo 11.º</a></p><details class=\"mais\"><summary>Ler mais</summary><div><p>«Trânsito em julgado»: já não há recurso.</p><blockquote class=\"lei\"><p data-fonte=\"dudh-10\"><span class=\"art\"><a href=\"https://unric.org/pt/declaracao-universal-dos-direitos-humanos/\">Declaração Universal, artigo 10.º</a></span>«[…] a que a sua causa seja equitativa e publicamente julgada por um tribunal independente e imparcial […]»</p><p data-fonte=\"cdc-12-2\"><span class=\"art\"><a href=\"https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390\">Convenção sobre os Direitos da Criança, artigo 12.º, n.º 2</a></span>«[…] é assegurada à criança a oportunidade de ser ouvida nos processos judiciais e administrativos que lhe respeitem […]»</p></blockquote></div></details></div>",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> Quem prova a culpa? E quem é ouvido?</p><blockquote class=\"lei\"><p data-l=\"n2\" data-fonte=\"crp-32-2\"><span class=\"art\">32.º, n.º 2</span>«Todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação […]»</p><p data-l=\"a11\" data-fonte=\"dudh-11-1\"><span class=\"art\">Artigo 11.º</span>«Toda a pessoa acusada de um acto delituoso presume-se inocente até que a sua culpabilidade fique legalmente provada […]»</p><p data-l=\"n10\" data-fonte=\"crp-32-10\"><span class=\"art\">32.º, n.º 10</span>«[…] em quaisquer processos sancionatórios, são assegurados ao arguido os direitos de audiência e defesa.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição, artigo 32.º</a>; <a href=\"https://unric.org/pt/declaracao-universal-dos-direitos-humanos/\">Declaração Universal, artigo 11.º</a></p><details class=\"mais\"><summary>Ler mais</summary><div><p>«Trânsito em julgado»: já não há recurso.</p><blockquote class=\"lei\"><p data-fonte=\"dudh-10\"><span class=\"art\"><a href=\"https://unric.org/pt/declaracao-universal-dos-direitos-humanos/\">Declaração Universal, artigo 10.º</a></span>«[…] a que a sua causa seja equitativa e publicamente julgada por um tribunal independente e imparcial […]»</p><p data-fonte=\"cdc-12-2\"><span class=\"art\"><a href=\"https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390\">Convenção sobre os Direitos da Criança, artigo 12.º, n.º 2</a></span>«[…] é assegurada à criança a oportunidade de ser ouvida nos processos judiciais e administrativos que lhe respeitem […]»</p></blockquote></div></details></div>",
    "min": 4
   },
   {
@@ -139,7 +139,7 @@
    "rot": "Antes de ser culpado",
    "p": "No artigo 11.º, sublinha as duas palavras que dizem o que tem de acontecer à culpa antes de alguém ser tratado como culpado.",
    "p2": "Segundo o artigo 11.º, até quando se presume inocente quem é acusado? Sublinha as duas palavras que o dizem.",
-   "f": "Ninguém é tratado como culpado antes de a culpa ficar «legalmente provada». Até lá, presume-se inocente. Não basta que muitos acreditem: a prova faz-se num processo, com «garantias necessárias de defesa».",
+   "f": "Ninguém pode ser tratado como culpado antes de a culpa ficar «legalmente provada». Até lá, presume-se inocente. Não basta que muitos acreditem: a prova faz-se num processo, com «garantias necessárias de defesa».",
    "min": 3,
    "tipo": "reconhecer",
    "conceito": "presunção de inocência",
@@ -166,7 +166,7 @@
   {
    "t": "sublinhar",
    "rot": "Onde começa a conclusão",
-   "p": "Alguém escreve no grupo da turma esta frase. Sublinha as duas palavras onde deixa de dizer o que se sabe e passa a concluir.",
+   "p": "Alguém escreve no grupo da turma esta frase. Sublinha as duas palavras em que a frase deixa de dizer o que se sabe e passa a concluir.",
    "p2": "Nesta frase sobre o Tomás, onde termina o que se sabe e começa a conclusão? Sublinha as duas palavras.",
    "f": "Até ao «por isso», a frase diz o que se sabe: o Tomás estava online. Depois, tira uma conclusão que esse dado não mostra: muitas pessoas podiam estar online à mesma hora. A conclusão começa no «por isso».",
    "min": 4,
@@ -229,7 +229,7 @@
    "t": "ler",
    "rot": "Conceito",
    "titulo": "Prova e inferência",
-   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>A conta tem o nome do Tomás. Nove dizem que foi ele.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">Prova</th><th scope=\"col\">Supõe-se</th><th scope=\"col\">O que falta</th></tr></thead><tbody><tr><td data-th=\"Prova\">a conta com o nome</td><td data-th=\"Supõe-se\">foi ele que publicou</td><td data-th=\"O que falta\">quem criou a conta</td></tr><tr><td data-th=\"Prova\">nove mãos no ar</td><td data-th=\"Supõe-se\">foi ele</td><td data-th=\"O que falta\">quem viu</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Inferência: uma conclusão que vai além do que a prova mostra.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Inferência</p><p class=\"cc-def\">Uma conclusão que vai além do que a prova mostra.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Não é mentira: pode estar certa, mas falta confirmá-la. Votar conta posições; deliberar pesa razões.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div></div>",
+   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>A conta tem o nome do Tomás. Nove dizem que foi ele.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">O que se sabe</th><th scope=\"col\">Supõe-se</th><th scope=\"col\">O que falta</th></tr></thead><tbody><tr><td data-th=\"O que se sabe\">a conta com o nome</td><td data-th=\"Supõe-se\">foi ele que publicou</td><td data-th=\"O que falta\">quem criou a conta</td></tr><tr><td data-th=\"O que se sabe\">nove mãos no ar</td><td data-th=\"Supõe-se\">foi ele</td><td data-th=\"O que falta\">quem viu</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Inferência: uma conclusão que vai além do que a prova mostra.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Inferência</p><p class=\"cc-def\">Uma conclusão que vai além do que a prova mostra.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Não é mentira: pode estar certa, mas falta confirmá-la. Votar conta posições; deliberar pesa razões.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div></div>",
    "min": 6
   },
   {
@@ -237,15 +237,15 @@
    "rot": "Quando a prova muda",
    "p": "Caso inventado, noutra escola: um aluno foi castigado por causa de uma captura. Põe por ordem o que aconteceu e o que daí se conclui.",
    "p2": "Noutra escola, um castigo assentou numa captura, e depois apareceu outra prova. Ordena os factos e a conclusão.",
-   "f": "Uma decisão vale o que valem as provas em que assenta. Quando aparece uma prova que as desfaz, a decisão revê-se, e diz-se a quem soube do castigo que mudou. Manter um erro conhecido é escolher o erro.",
+   "f": "Uma decisão vale o que valem as provas em que assenta. Quando aparece uma prova que as desfaz, a decisão revê-se, e explica-se a mudança a quem soube do castigo. Manter um erro conhecido é escolher o erro.",
    "min": 3,
    "tipo": "transferir",
    "conceito": "rever uma decisão",
    "passos": [
     "O castigo assentou numa captura com o nome do aluno.",
-    "Depois, outro aluno confessa que foi ele que o fez.",
+    "Outro aluno confessou que tinha sido ele.",
     "A prova em que o castigo assentava deixou de chegar.",
-    "A escola revê a decisão e diz à turma que mudou."
+    "A escola reviu a decisão e explicou-a à turma."
    ],
    "fe": "A confusão mais provável é pôr a revisão antes de a prova nova aparecer. Começa pelo que aconteceu; a conclusão vem no fim, apoiada na prova nova.",
    "pista": "Pergunta-te o que tem de vir antes para o passo seguinte fazer sentido."
@@ -255,7 +255,7 @@
    "rot": "Um caso real",
    "p": "Caso real (Relação de Évora, 2023): condenado por um vídeo publicado numa conta de Instagram com o seu nome e dia de anos, um jovem recorreu. Porque foi absolvido?",
    "p2": "Em 2023, a Relação de Évora absolveu um jovem condenado por um vídeo publicado numa conta com o nome dele. Porquê?",
-   "f": "O tribunal escreveu que, no Instagram, «qualquer pessoa pode criar um perfil de utilizador, sem verificação dos dados». A consulta ao Facebook não deu resultado. «Admitimos que sim, mas não arriscamos afirmá-lo»: na dúvida, absolveu.",
+   "f": "O tribunal escreveu que, no Instagram, «qualquer pessoa pode criar um perfil de utilizador, sem verificação dos dados». A consulta ao Facebook não deu resultado. Era a conta dele? «Admitimos que sim, mas não arriscamos afirmá-lo»: na dúvida, absolveu.",
    "min": 4,
    "tipo": "transferir",
    "conceito": "na dúvida, a favor do arguido",
@@ -279,11 +279,11 @@
      "href": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument"
     }
    ],
-   "pista": "Separa o que o tribunal provou do que ficou em dúvida.",
+   "pista": "Relê o que a conta tinha: o nome e o dia de anos. Quem pode pôr esses dados numa conta?",
    "o": [
     "Ficou provado que outra pessoa criou aquela conta.",
     "Não se provou que aquela conta era mesmo dele.",
-    "Publicar o vídeo de uma detenção policial não é crime."
+    "Publicar o vídeo de uma detenção não é crime."
    ],
    "c": 1,
    "fe": [
@@ -354,8 +354,8 @@
   {
    "t": "escolha",
    "rot": "A fonte que falta",
-   "p": "Facto: a direção vai decidir se castiga o Tomás. Aplicação: antes, tem de o ouvir. Limite: ouvi-lo não prova que diz a verdade. Falta a fonte: onde se apoia?",
-   "p2": "Facto, aplicação e limite já estão: a direção vai decidir, tem de o ouvir, ouvi-lo não prova nada. Falta a fonte. Escolhe-a.",
+   "p": "Facto: a direção vai decidir se castiga o Tomás. Aplicação: antes, tem de o ouvir. Limite: ouvi-lo não prova que diz a verdade. Falta a fonte: em que se apoia?",
+   "p2": "Facto, aplicação e limite já estão: a direção vai decidir, tem de o ouvir, ouvi-lo não prova que diz a verdade. Falta a fonte. Escolhe-a.",
    "f": "A aplicação apoia-se no artigo 32.º, n.º 10: em «quaisquer processos sancionatórios», o arguido tem «os direitos de audiência e defesa». Com a fonte, a cadeia fica completa: facto, fonte, aplicação, limite.",
    "min": 4,
    "tipo": "aplicar",
@@ -368,19 +368,23 @@
     [
      "crp-32-10",
      "os direitos de audiência e defesa"
+    ],
+    [
+     "dudh-12",
+     "protecção da lei"
     ]
    ],
-   "pista": "Procura, entre os textos que leste, o que fala do que vem antes de um castigo.",
+   "pista": "Para cada texto, pergunta-te se obriga a direção a fazer alguma coisa antes de decidir.",
    "o": [
-    "Quem pode ser castigado tem direito a ser ouvido e a defender-se.",
-    "Toda a pessoa tem direito a exprimir livremente a sua opinião.",
-    "Ninguém pode sofrer ataques à sua honra e à sua reputação."
+    "«[…] são assegurados ao arguido os direitos de audiência e defesa» (Constituição, artigo 32.º, n.º 10)",
+    "«Todo o arguido se presume inocente até ao trânsito em julgado […]» (Constituição, artigo 32.º, n.º 2)",
+    "«[…] toda a pessoa tem direito a protecção da lei» (Declaração Universal, artigo 12.º)"
    ],
    "c": 0,
    "fe": [
     "",
-    "Exprimir a opinião é outro direito, o da sessão 01: não obriga ninguém a ouvir o Tomás antes de o castigar. Procura o texto que fala de quem pode ser castigado.",
-    "A honra e a reputação protegem a Sara, que foi gozada no vídeo; não dizem o que a direção deve fazer antes de castigar. Procura o texto que fala de quem pode ser castigado."
+    "A presunção de inocência diz como se trata o Tomás até haver decisão; não obriga a ouvi-lo antes. Volta ao Lê e procura o número do artigo 32.º que fala de defesa.",
+    "A «protecção da lei» contra ataques à honra protege a Sara; não diz o que a direção deve fazer antes de castigar. Volta ao Lê."
    ]
   },
   {
@@ -388,15 +392,15 @@
    "rot": "O que as provas permitem",
    "p": "Escolhe a conclusão que fica dentro do que o caso e os textos mostram.",
    "p2": "Das três conclusões, escolhe a que diz o que as provas permitem, sem ir além delas.",
-   "f": "Diz o que as provas permitem: o vídeo magoa a Sara e pode sair já; quem o fez está por provar, e até lá o Tomás presume-se inocente e tem de ser ouvido.",
+   "f": "Diz o que as provas permitem: a captura mostra uma conta, e os votos contam opiniões. Até se provar quem foi, o Tomás presume-se inocente e tem de ser ouvido.",
    "min": 3,
    "tipo": "aplicar",
    "conceito": "conclusão e provas",
    "pista": "Para cada conclusão, procura a prova que a sustenta.",
    "o": [
     "Foi o Tomás: a captura e os nove votos chegam para isso.",
-    "Não foi o Tomás: ninguém o viu criar aquela conta.",
-    "O vídeo deve sair já; quem o fez ainda está por provar."
+    "Não foi o Tomás: ninguém o viu a criar aquela conta.",
+    "Por agora, não se pode dizer que foi o Tomás nem que não foi."
    ],
    "c": 2,
    "fe": [
@@ -409,7 +413,7 @@
    "t": "ler",
    "rot": "Agora, em papel",
    "titulo": "Agora, em papel",
-   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Uma captura de ecrã chega para culpar alguém?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão, por agora.</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Outro caso, inventado: a câmara do bar filma o Luís a guardar uma carteira do balcão.</p><ol><li>Conclusão: a prova é forte, mas falta ouvir o Luís.</li><li>Prova: o vídeo mostra-o com a carteira; e o arguido tem <span class=\"citado\" data-fonte=\"crp-32-10\">«os direitos de audiência e defesa»</span> (artigo 32.º, n.º 10).</li><li>Dúvida: a carteira era de quem?</li></ol></div></details></div>",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Uma captura de ecrã chega para culpar alguém?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão, por agora.</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Caso inventado: a câmara do bar filma o Luís a guardar uma carteira do balcão.</p><ol><li>Conclusão: a prova é forte, mas falta ouvir o Luís.</li><li>Prova: o vídeo mostra-o com a carteira; e o arguido tem <span class=\"citado\" data-fonte=\"crp-32-10\">«os direitos de audiência e defesa»</span> (artigo 32.º, n.º 10).</li><li>Dúvida: a carteira era de quem?</li></ol></div></details></div>",
    "min": 15
   },
   {

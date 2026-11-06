@@ -400,7 +400,7 @@ GUIA = {
  '07': {
   'molde': True,
   'dominio': 'Direitos Humanos: presunção de inocência (Constituição, artigo 32.º, n.º 2; Declaração Universal, artigo 11.º), direito a ser ouvido antes de um castigo (Constituição, artigo 32.º, n.º 10; Convenção sobre os Direitos da Criança, artigo 12.º) e a diferença entre prova e inferência.',
-  'ensina': 'Separar o que uma prova mostra do que se conclui a partir dela, ver que «não culpado» não é «inocente», que uma decisão de muitos não é uma prova, que quem pode ser castigado tem de ser ouvido e que uma decisão se revê quando as provas mudam.',
+  'ensina': 'Separar o que uma prova mostra do que se conclui a partir dela, ver que «não culpado» não é «inocente», que a opinião de muitos não é uma prova, que quem pode ser castigado tem de ser ouvido e que uma decisão se revê quando as provas mudam.',
   'antes': ('Devolver, no início, o papel da sessão 06 com a marca por critério. O caso é inventado: ninguém escreve nem fala sobre um colega '
             'identificável, e a Sara não entra em cena (nenhum aluno faz de vítima). Se a turma viveu um caso parecido, não se traz para a aula.'),
   'na_aula': {
@@ -438,7 +438,7 @@ GUIA = {
   'charneiras': [
    (12, '«Que foi ele quem montou e publicou o vídeo» (toma a conta com o nome pela autoria) ou «Que ele quis gozar com a Sara diante da turma» (dá-lhe uma intenção que a captura não mostra).',
     'Se mais de um terço erra, projetar a captura descrita no caso e o quadro do Conceito (cartão 13) e perguntar: «O que está escrito na captura, e só isso?»'),
-   (21, '«Foi o Tomás: a captura e os nove votos chegam para isso» (toma votos por provas) ou «Não foi o Tomás: ninguém o viu criar aquela conta» (vai além das provas no outro sentido: o que não se provou não fica provado ao contrário).',
+   (21, '«Foi o Tomás: a captura e os nove votos chegam para isso» (toma votos por provas) ou «Não foi o Tomás: ninguém o viu a criar aquela conta» (vai além das provas no outro sentido: o que não se provou não fica provado ao contrário).',
     'Se mais de um terço erra, voltar ao cartão 15 (o acórdão da Relação de Évora: absolveu por dúvida, sem dizer quem foi) e perguntar, conclusão a conclusão, em que prova se apoia.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
