@@ -390,7 +390,8 @@ def sessao():
         'titulo': 'Sessão 03: Quem tem lugar?', 'h1': 'Cidadania, módulo 1, sessão 03: Quem tem lugar?',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/03/index.html',
-        'seguinte': '../../../piloto/m1-s04/', 'seguinteRotulo': 'Sessão 04: Posso dizer tudo?',
+        # 06/11/2026: a sessão 04 também passou ao molde final (decisões 166 a 168); a s03 leva à s04 nova.
+        'seguinte': '../04/', 'seguinteRotulo': 'Sessão 04: Posso dizer tudo?',
         'fontes': M.ref('Constituição da República Portuguesa, artigos 13.º, n.os 1 e 2, 18.º, n.º 1, e 71.º, n.º 1, na versão consolidada do '
                         'Diário da República. Convenção sobre os Direitos da Criança, artigos 1.º e 23.º, n.º 1, na tradução portuguesa '
                         'anexa à Resolução da Assembleia da República n.º 20/90, no Diário da República. Lei n.º 46/2006, de 28 de agosto, '

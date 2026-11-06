@@ -160,3 +160,5 @@ body.molde-cidadania .jogo .depois .ir a{font-weight:700}
 html.em-projecao body.molde-cidadania .casca .jogo .ler .m-olha .fig{grid-template-columns:minmax(0,max-content) 240px}
 /* Abaixo de 360 px (320 x 640), a pergunta da sessão no Abre fica acima da barra de ações */
 @media (max-width:359px){body.molde-cidadania .jogo .tit.cartaz{font-size:2rem;margin-bottom:10px}body.molde-cidadania .jogo .ler .carimbo{margin-bottom:10px}body.molde-cidadania .jogo .ler .caso{font-size:1rem;line-height:1.42}body.molde-cidadania .jogo .ler .pergunta-sessao{margin-top:10px;font-size:1.05rem}}
+/* 06/11/2026 (s04 no molde): o cabeçalho das tabelas dos cartões de ler herdava o fundo escuro de lesson.css (th) e ficava cinzento sobre preto, ilegível acima de 560 px (no Conceito da s01 e da s04); o molde quer só o filete. */
+body.molde-cidadania .jogo .ler table.tabela th{background:none}

@@ -91,6 +91,14 @@ class FichasM1(unittest.TestCase):
    # tests/test_molde_cidadania.py, SessaoS03); os momentos continuam exigidos às sessões 04 a 10 publicadas.
    if n==3:continue
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
+   # 06/11/2026 (decisões 166 a 168): uma sessão cujo .json tem o campo «molde» passou à lição no molde final, no mesmo endereço
+   # (hoje, a 04); confere-se aqui que é essa lição, e o contrato do molde confere-se em tests/test_molde_cidadania.py. As outras
+   # continuam a ter de ter os cinco momentos e os controlos de sempre.
+   # 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): como a 03 acima, a sessão fica nomeada (a 04), e o seu .json
+   # tem de ter o campo «molde»; as 05 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   if n==4:
+    self.assertTrue(json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'),n)
+    self.assertIn('molde-cidadania',page,n);self.assertNotIn('data-stage',page,n);continue
    self.assertEqual(page.count(' data-stage data-label='),5)
    # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre
    # com «Começar» e avança com Anterior e Seguinte.

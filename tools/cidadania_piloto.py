@@ -342,22 +342,116 @@ GUIA = {
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 06/11/2026 (decisões 166 a 168): a sessão 04 passa ao molde final (cidadania-2026-11), como a 01 e a 02. O que só o docente faz
+ # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '04': {
-  'dominio': 'Direitos Humanos (liberdade de expressão, bom nome); Democracia (discurso de ódio); Media (fontes, verificação).',
-  'ensina': 'Separar opinião, sátira e acusação de facto, e verificar antes de repetir.',
-  'passos': [
-   (5, 'Cada aluno recebe as três afirmações reais e as três publicações inventadas sobre a escola.'),
-   (25, 'Verificar cada afirmação: origem (quem, onde, quando), duas fontes independentes e veredicto (verdadeiro, falso, enganador ou sem prova). Leitura lateral: abrir outros separadores antes de ler a página até ao fim.'),
-   (10, 'Pausa.'),
-   (15, 'As três publicações: manter, corrigir ou retirar, com o artigo (Constituição, 37.º e 26.º; Convenção, 13.º).'),
-   (10, 'O registo de fontes de cada aluno para a Pergunta Humana: duas fontes da sua pergunta, com o que é preciso para as reencontrar.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: liberdade de expressão (Constituição, artigo 37.º; Convenção sobre os Direitos da Criança, artigo 13.º) e bom nome (artigo 26.º); Media: verificar antes de repetir.',
+  'ensina': 'Separar crítica, sátira, acusação de facto e ataque pela origem; ver que não há censura antes e há responsabilidade depois; verificar uma acusação antes de a repetir, sem ir além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 03 com a marca por critério. Nenhuma publicação real de alunos da escola entra na '
+            'sessão; se a turma trouxer casos da escola, fala-se do que se publicou, nunca de quem.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 03.',
+   4: 'O retorno nomeia a sessão 02: vale a pena lembrar, em voz alta, a frase «Aceitar ser filmado não é aceitar ser publicado».',
+   5: 'Projetado grande (a página inteira; toca-se na imagem para a ampliar). Pedir que cada um veja, em silêncio, se há um desenho em que o rosto deixa de ser o do rei; só se discute depois dos cartões 6 e 7.',
+   7: 'Depois do cartão, ler em voz alta a tradução das quatro legendas (nas notas, abaixo).',
+   8: 'Ler em voz alta os três números do artigo 37.º, uma vez; o n.º 3 diz o que acontece depois de publicar.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e mostrar o sumário, de I a IV.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['As três afirmações reais: o docente escolhe-as e confirma-as num verificador de factos antes da aula (não vêm prontas aqui).', 'Três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.', 'O registo de verificação: origem, fonte 1, fonte 2, porque são independentes, veredicto.', 'Um computador ou telemóvel por aluno.'],
-  'escrito': 'O registo de verificação das três afirmações (é o laboratório de verificação do módulo) e o registo de fontes de cada aluno.',
-  'projeto': ('As fontes', '#metodo', 'O registo de fontes, localizável, e a leitura lateral; o laboratório de verificação do módulo faz-se nesta sessão.'),
-  'produto': 'Laboratório de verificação',
-  'grelha': [('Origem identificada (quem, onde, quando)', 4), ('Duas fontes independentes e porque o são', 5), ('Veredicto proporcional à prova', 4), ('Decisão sobre as três publicações, com o artigo', 4), ('Registo localizável', 3)],
-  'notas': ['Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão.',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê.',
+   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o número do artigo).',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'No fim, «A razão que pesou»: quantos escolheram o bom nome (26.º), a liberdade de expressão (37.º) ou a proibição da censura (37.º, n.º 2).',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se não há censura, ninguém responde pelo que escreve».',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acontece antes de publicar, e o que acontece depois?»'),
+   (21, '«O comentário é falso, por isso a conta tem de fechar» (toma «sem prova» por «falso» e esquece a pera) ou «O comentário pode ficar: numa conta de memes, é humor» (confunde acusação de facto com sátira).',
+    'Se mais de um terço erra, projetar a tabela do Conceito e perguntar, para o comentário e para a pera: discute, exagera, acusa ou ataca pela origem? E o que se sabe sobre o Diogo?'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 05, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('Duas fontes que não se copiam', '#metodo',
+              'Dez minutos: cada aluno verifica, em papel, as três afirmações que a página da sessão traz, escritas pela equipa para o treino '
+              '(onde a pode confirmar, duas fontes que não se copiam, veredicto). Respostas, conferidas a 6/11/2026 no Diário da República: «A '
+              'Constituição portuguesa proíbe a censura» é verdadeira (artigo 37.º, n.º 2); «Portugal assinou a Convenção sobre os Direitos da '
+              'Criança em Lisboa» é falsa (a Resolução da Assembleia da República n.º 20/90 diz «assinada em Nova Iorque a 26 de Janeiro de '
+              '1990»); «A Assembleia da República aprovou essa Convenção em 1990» é verdadeira («Aprovada em 8 de Junho de 1990.», na mesma '
+              'Resolução). Trinta minutos: cada aluno procura duas '
+              'fontes independentes para a sua pergunta da Pergunta Humana, com leitura lateral, e escreve o que é preciso para as reencontrar; '
+              'o docente faz cerca de dez conversas de 3 minutos. Cinco minutos: cada aluno relê com «O que conta» e corrige uma parte. Entra '
+              'no dossiê; o registo das três afirmações conta para o laboratório de verificação.'),
+  'produto': 'Laboratório de verificação e fontes',
+  'grelha': [('Onde se confirma cada afirmação (página, data)', 4), ('Duas fontes independentes, e porque o são', 5),
+             ('Veredicto proporcional à prova (verdadeira, falsa ou sem prova)', 4), ('Duas fontes da própria pergunta, localizáveis', 4),
+             ('Nenhum assistente de inteligência artificial usado como fonte', 3)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (as três afirmações).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: acórdão do Tribunal da Relação de Évora de 21/03/2017, processo 373/14.8T9STR.E1, em dgsi.pt. '
+                'Uma antiga funcionária de uma agência de viagens comentou, na página de Facebook da empresa, um anúncio para recrutar '
+                'funcionários, acusando o sócio-gerente de não pagar ordenados e dívidas a fornecedores. Foi condenada em primeira instância '
+                'por difamação (130 dias de multa a 6 euros e 600 euros de indemnização); a Relação juntou aos factos provados o acordo em '
+                'que a empresa se comprometeu a pagar-lhe 654,54 euros, mas manteve a condenação: provou o facto que lhe dizia respeito, não as '
+                'dívidas a fornecedores, e os juízos de valor não admitem prova da verdade. Cita-se só o comentário e o sumário. O acórdão é '
+                'anonimizado; não se procuram nomes.'),
+  'notas': ['O caso da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o das '
+            'notas de um colega são inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
+            'Sem vídeo (decisão 155). O candidato do plano, «How false news can spread» (TED-Ed, lição de Noah Tavlin, 3 min 42 s), está '
+            'no sítio oficial (ed.ted.com/lessons/how-false-news-can-spread-noah-tavlin, aberto a 6/11/2026), mas a equipa não o viu por '
+            'inteiro. Se o docente o vir e o quiser, entra em «Para ir mais longe», com a alternativa escrita.',
+            'Recupera 1, a caverna de Platão (_República_, livro VII): a turma já conhece a alegoria do percurso anterior; o cartão usa só a '
+            'premissa (os prisioneiros só conhecem as sombras e tomam-nas pela realidade). A gravura é de Jan Saenredam, segundo Cornelis '
+            'van Haarlem (1604), segundo o registo do Wikimedia Commons (British Museum, 1852,1211.120, domínio público); a página do '
+            'museu não abriu nesta passagem.',
+            'Olha, as quatro legendas em francês (lidas na imagem) e uma tradução nossa: 1. «Ce croquis ressemble à Louis-Philippe, vous '
+            'condamnerez donc?» (Este esboço parece-se com Luís Filipe: vão condená-lo, então?) 2. «Alors il faudra condamner celui-ci, '
+            'qui ressemble au premier.» (Então terão de condenar este, que se parece com o primeiro.) 3. «Puis condamner cet autre, qui '
+            'ressemble au second.» (Depois, condenar este outro, que se parece com o segundo.) 4. «Et enfin, si vous êtes conséquens, vous '
+            'ne sauriez absoudre cette poire, qui ressemble aux croquis précédens.» (E, por fim, se forem coerentes, não poderão absolver '
+            'esta pera, que se parece com os esboços anteriores.) A grafia «conséquens» e «précédens» é a de 1834.',
+            'Olha: o registo do Wikimedia Commons diz «Design by Honoré Daumier (possibly) after Charles Philipon\'s lithograph published '
+            'in La Caricature in 1831. Wood engraver unknown.», com data de 17 de janeiro de 1834 e a origem na Gallica (bpt6k3058046f, '
+            'f. 3). A página da Gallica não abriu nesta passagem (bloqueio do servidor): a história do processo de Philipon fica por '
+            'confirmar e o cartão não a conta. O Olha mostra a página inteira, com o título e os dois parágrafos em francês; os cartões 6 '
+            'e 7 mostram pormenores dos desenhos.',
+            'Conceito, «Ataque pela origem»: a linha da tabela não cita lei; o «Ler mais» refere a Constituição, artigo 13.º, n.º 2 '
+            '(ninguém pode ser prejudicado em razão, entre outras, do território de origem). O Código Penal (artigos 180.º e 240.º) fica '
+            'fora dos cartões; o acórdão do cartão 15 aplica o artigo 180.º, mas o cartão cita só o sumário.',
+            'Cartão 11: a Convenção, artigo 13.º, n.º 2, vai no próprio cartão, com a frase inteira (texto do Diário da República, '
+            'Resolução da Assembleia da República n.º 20/90). A Retificação n.º 8/91 mexe só no n.º 1 (onde se lia «sem considerações de '
+            'fronteiras», passa a ler-se «sem consideração de fronteiras»), que o cartão não cita.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '05': {
   'dominio': 'Direitos Humanos (reserva da vida privada, proteção de dados); Democracia (limites a quem vigia); Media.',
@@ -757,6 +851,21 @@ def ligacoes_no_guia(h, saida, pasta=MODULO + 'docente/'):
     return re.sub(r'href="([^"]+)"', troca, h)
 
 
+NUMEROS = {1: 'uma', 2: 'duas', 3: 'três', 4: 'quatro', 5: 'cinco', 6: 'seis', 7: 'sete', 8: 'oito', 9: 'nove'}
+
+
+def _frase_molde(S):
+    """06/11/2026 (sessão 04 no molde): a frase do guia sobre as sessões que já estão no molde final, tirada da lista das sessões."""
+    m = [s['n'] for s in S if s.get('molde')]
+    lista = m[0] if len(m) == 1 else ', '.join(m[:-1]) + ' e ' + m[-1]
+    resto = len(S) - len(m)
+    return ((f'A sessão {lista} já está' if len(m) == 1 else f'As sessões {lista} já estão')
+            + ' no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. '
+            + ('A secção dessa sessão' if len(m) == 1 else 'As secções dessas sessões')
+            + ', mais abaixo, ' + ('tem' if len(m) == 1 else 'têm') + ' a tabela dos 180 minutos, cartão a cartão; '
+            + (f'as outras {NUMEROS[resto]} seguem' if resto > 1 else 'a outra segue') + ' o quadro acima até passarem ao molde.')
+
+
 def pagina_guia(S):
     base = '../../../../'
     indice = ''.join(f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in S)
@@ -782,7 +891,8 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">As sessões 01, 02 e 03 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras sete seguem o quadro acima até passarem ao molde.</p>'
+             # 06/11/2026 (sessão 04 no molde): a frase das sessões no molde sai da lista das sessões (eram 01, 02 e 03, escritas à mão).
+             f'<p class="pg">{_frase_molde(S)}</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -851,7 +961,10 @@ def _txt(s, nb=False):
     """O texto visível de um campo. 06/11/2026 (decisão 152): com nb, o espaço inseparável que o cartão tem fica (LL.visivel
     troca-o por um espaço normal); sem nb, como antes.
     06/11/2026 (fusão do main com a sessão 2 final): «como antes» passa a ser o texto de LL.visivel() com ref() por cima, da
-    revisão da s02, para as sessões sem 'nb' (a s01 e a s02); a s03, com 'nb', fica como foi revista."""
+    revisão da s02, para as sessões sem 'nb' (a s01 e a s02); a s03, com 'nb', fica como foi revista.
+    06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): a s04 também fica sem 'nb'. O _txt() da revisão da s04
+    (o texto de LL.visivel() sem trocar o espaço inseparável do cartão) dava, na secção da s04 do guia e na sua versão para
+    imprimir, o mesmo texto que este, letra a letra; sai, e a s01, a s02 e a s03 ficam como foram publicadas."""
     if not nb:
         # 06/11/2026 (revisão da s02, decisão 152): LL.visivel() troca o U+00A0 por um espaço normal; ref() volta a pô-lo em «n.º 1»,
         # «13 anos», «artigo 79.º», para as referências não se partirem no papel nem no guia
@@ -1000,6 +1113,8 @@ def _ex_imprimir(num, c, d, k, nb=False):
     if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
         # 06/11/2026 (revisão da s02): também «toca nas duas/três palavras»
         p = re.sub(r'\b([Tt])oca nas ((?:duas |três )?)palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as ' + m.group(2) + 'palavras', p)
+        # 06/11/2026 (sessão 04): também no singular, quando a resposta é uma só palavra («toca na palavra»)
+        p = re.sub(r'\b([Tt])oca na palavra', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha a palavra', p)
     q += f'<p><b>{LL.esc_it(p)}</b></p>'
     t = c['t']
     if t == 'escolha':

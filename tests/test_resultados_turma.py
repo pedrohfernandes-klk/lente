@@ -319,7 +319,14 @@ class Listas(unittest.TestCase):
             # 06/11/2026 (decisões 166 a 168): a sessão 03 do M1 passou ao molde final, que não tem o registo do percurso publicado; os
             # registos antigos da 03 continuam a ler-se e a contar (as chaves do percurso publicado leem-se e nunca se apagam; plano do
             # molde, secção 5), por isso o total embutido fica de 03 a 10 e só a página da 03 deixa de ter o botão.
-            sem_registo = {3} if m == 'm1' else set()
+            # 06/11/2026 (decisões 166 a 168): o mesmo para a sessão 04 do M1, que também passou ao molde final; a página da 04 deixa de
+            # ter o botão e o total embutido continua de 03 a 10 (os totais de resultados-turma.js ficam como estão até ao pedido de
+            # fecho do plano do molde, secção 5, pedido 5). Fusão do main com as sessões 2 e 3 finais: o conjunto fica escrito, como o
+            # do main, e confere-se que são exatamente as sessões do M1 cujo .json tem o campo «molde» (a regra que a s04 trazia).
+            sem_registo = {3, 4} if m == 'm1' else set()
+            molde = {n for n in range(de, ate + 1) if m == 'm1' and (R / f'tools/licoes/cidadania-m1-s{n:02}.json').is_file()
+                     and json.loads(ler(f'tools/licoes/cidadania-m1-s{n:02}.json')).get('molde')}
+            self.assertEqual(molde, sem_registo, m)
             self.assertEqual(pastas, [n for n in range(de, ate + 1) if n not in sem_registo], m)
             self.assertIn("'%s': {de: %d, ate: %d}" % (m[1], de, ate), js)
             # 28/10/2026: «com registo», e no M1 diz que o total começa na sessão 03
