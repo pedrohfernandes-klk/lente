@@ -398,7 +398,8 @@ def sessao():
         'titulo': 'Sessão 04: Posso dizer tudo?', 'h1': 'Cidadania, módulo 1, sessão 04: Posso dizer tudo?',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/04/index.html',
-        'seguinte': '../../../piloto/m1-s05/', 'seguinteRotulo': 'Sessão 05: Quem guarda os meus dados?',
+        # 06/11/2026: a sessão 05 também passou ao molde final (decisões 166 a 168); a s04 leva à s05 nova.
+        'seguinte': '../05/', 'seguinteRotulo': 'Sessão 05: Quem guarda os meus dados?',
         'fontes': M.ref('Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.os 1 a 3, na versão consolidada do Diário da '
                         'República. Convenção sobre os Direitos da Criança, artigo 13.º, na tradução portuguesa anexa à Resolução da '
                         'Assembleia da República n.º 20/90, no Diário da República. Acórdão do Tribunal da Relação de Évora de 21 de março '

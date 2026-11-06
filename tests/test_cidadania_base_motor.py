@@ -45,6 +45,11 @@ import molde_s03  # noqa: E402
 # imprimir da s04, a sua fonte e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s04 tem de cumprir o
 # contrato do molde.
 import molde_s04  # noqa: E402
+# 06/11/2026: sessão 05 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s04, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s05-20261106.json nos ficheiros que a s05 muda em parte; os que escreve
+# inteiros (molde_s05.INTEIROS) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s05 tem de cumprir o contrato do
+# molde. 06/11/2026 (fusão do main com as sessões 2 a 4 finais e o elétrico): o manifesto parte do main (5b4a451), já com a s04.
+import molde_s05  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -108,6 +113,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s04.INTEIROS:
                     self.assertTrue(molde_s04.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 05 no molde): o mesmo para os ficheiros que a s05 escreve inteiros.
+                if nome in molde_s05.INTEIROS:
+                    self.assertTrue(molde_s05.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
@@ -129,6 +138,11 @@ class CidadaniaBase(unittest.TestCase):
                 # da s04 parte do main (ba5211f), já com a s03; a s04 é agora a camada mais recente e desfaz-se primeiro no ficheiro
                 # atual, com contagem exata de cada «novo»; depois desfaz-se a da s03, como antes, e só então se tiram as versões de
                 # cache; a comparação continua integral.
+                # 06/11/2026 (sessão 05 no molde, na fusão do main com as sessões 2 a 4 finais e o elétrico): o manifesto da s05 parte
+                # do main (5b4a451), já com a s04; a s05 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com
+                # contagem exata de cada «novo»; depois a da s04 e a da s03, como antes, e só então se tiram as versões de cache.
+                if nome in molde_s05.TROCAS:
+                    depois = molde_s05.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s04.TROCAS:
                     depois = molde_s04.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s03.TROCAS:
@@ -181,6 +195,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 04 no molde): o mesmo para os ficheiros que a s04 escreve inteiros.
                 if nome in molde_s04.INTEIROS:
                     self.assertTrue(molde_s04.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 05 no molde): o mesmo para os ficheiros que a s05 escreve inteiros.
+                if nome in molde_s05.INTEIROS:
+                    self.assertTrue(molde_s05.inteiro_ok(nome), nome)
                     continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
@@ -239,6 +257,10 @@ class CidadaniaBase(unittest.TestCase):
                 # sessões 2 e 3 finais, os menus e o «Dilemas»): o manifesto da s04 parte do main (ba5211f), por isso aplica-se depois
                 # da s03, em último lugar.
                 esperado = molde_s04.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 05 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 4 finais e o elétrico): o manifesto da s05 parte do main (5b4a451), por isso aplica-se depois da s04,
+                # em último lugar.
+                esperado = molde_s05.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

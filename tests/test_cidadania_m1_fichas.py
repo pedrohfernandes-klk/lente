@@ -96,7 +96,9 @@ class FichasM1(unittest.TestCase):
    # continuam a ter de ter os cinco momentos e os controlos de sempre.
    # 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): como a 03 acima, a sessão fica nomeada (a 04), e o seu .json
    # tem de ter o campo «molde»; as 05 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
-   if n==4:
+   # 06/11/2026 (fusão do main com as sessões 2 a 4 finais na sessão 5): a 05 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 06 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   if n in (4,5):
     self.assertTrue(json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'),n)
     self.assertIn('molde-cidadania',page,n);self.assertNotIn('data-stage',page,n);continue
    self.assertEqual(page.count(' data-stage data-label='),5)

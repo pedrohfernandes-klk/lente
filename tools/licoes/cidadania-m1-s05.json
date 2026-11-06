@@ -1,8 +1,9 @@
 {
  "id": "cidadania-m1-s05",
  "chave": "epi-cid-m1-s05",
- "versao": "2026-10-31-2",
+ "versao": "2026-11-06-molde",
  "marca": "CD",
+ "molde": "cidadania-2026-11",
  "titulo": "Sessão 05: Quem guarda os meus dados?",
  "h1": "Cidadania, módulo 1, sessão 05: Quem guarda os meus dados?",
  "modulo": {
@@ -10,74 +11,164 @@
   "nome": "Humanos",
   "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"
  },
- "saida": "cidadania/piloto/m1-s05/index.html",
- "piloto": true,
- "seguinte": "../m1-s06/",
+ "saida": "cidadania/m1/sessoes/05/index.html",
+ "seguinte": "../../../piloto/m1-s06/",
  "seguinteRotulo": "Sessão 06: Uma regra para quem perde",
- "fontes": "Lei n.º 58/2019, de 8 de agosto (Lei da Proteção de Dados Pessoais), artigos 3.º, 19.º e 21.º; Constituição da República Portuguesa, artigos 18.º, 26.º e 35.º; Convenção sobre os Direitos da Criança (1989), artigo 16.º; Declaração Universal dos Direitos Humanos (1948), artigo 12.º, no texto do Ministério Público (https://dcjri.ministeriopublico.pt/sites/default/files/documentos/pdf/declaracao_universal_dos_direitos_do_homem_5.pdf). Jeremy Bentham, _Panopticon; or, The Inspection-House_ (1791), cartas II e V. Imagem: Jeremy Bentham, _Panopticon; or, The Inspection-House_, página de título (pormenor), 1791 (Bayerische Staatsbibliothek, via Internet Archive, domínio público). Vídeo: TED-Ed, «This could save lives: but are you willing to do it?», lição de Michael Vazquez e Sarah Stroud. Os casos são inventados.",
+ "fontes": "Lei n.º 58/2019, de 8 de agosto, artigos 19.º, n.os 3 e 4, e 21.º, n.º 4, no Diário da República. Constituição da República Portuguesa, artigos 18.º, n.º 2, 26.º, n.º 1, e 35.º, n.º 1, no Diário da República. Acórdão do Supremo Tribunal de Justiça de 8 de fevereiro de 2006, processo 05S3139, em dgsi.pt. Gravura: _A General Idea of a Penitentiary Panopticon […]_ (1791), estampa de _The Works of Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), Biblioteca da Universidade de Sevilha, via Internet Archive, domínio público. O caso da sala 12, o do contacto dado para a visita, o do formulário, o da oficina, o do programa de presenças, o da entrevista gravada e o do torneio de xadrez são inventados; o do Supremo Tribunal de Justiça é real.",
+ "tempos": {
+  "folga": 10,
+  "pausa": 10,
+  "projeto": 45,
+  "entrega": 5
+ },
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">A nota de privacidade do teu projeto</p><p class=\"sub\">No teatro-documento, usas entrevistas, gravações e notas sobre pessoas reais. Escreve, em papel, a nota de privacidade do teu projeto em quatro linhas: os dados que recolhes; para quê; quem os vê; quando se apagam. O que conta: cada dado tem uma finalidade; nada se recolhe «para o caso de»; quem vê fica dito com clareza (só tu, ou também a pessoa entrevistada); o prazo é uma data ou um momento do trabalho. Nada de gravações, fotografias, moradas ou contactos publicados.</p><p class=\"ir\"><a href=\"../../../projeto/#metodo\">A ética das entrevistas, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Quem guarda os meus dados?",
-   "html": "<p class=\"pergunta-c\">Que dados sobre ti precisa a escola de ter, e quem os pode ver?</p><p>Caso inventado. Depois de desaparecerem três telemóveis, a associação de estudantes propõe câmaras nos corredores e nas salas. O cartaz diz: «Quem não deve não teme.»</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, rever um formulário e contar as câmaras à volta da escola.</p>"
+   "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">Num mês, desapareceram três telemóveis da sala 12. A associação de estudantes propõe câmaras em todas as salas de aula, a filmar durante as aulas, e afixa um cartaz: «Quem não deve não teme.» A direção decide na próxima semana.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Uma câmara na sala protege quem?</p></div>",
+   "min": 5,
+   "aula": {
+    "linha": "ver e ler (60 min), pausa (10 min), pesar e escrever (50 min) e o teu projeto (45 min)."
+   }
   },
   {
    "t": "ler",
    "rot": "Decide",
-   "titulo": "Câmaras nas salas",
-   "html": "<p>A escola deve pôr câmaras nas salas de aula?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão de quem propõe</summary><div><p>«Com câmaras, ninguém rouba. Quem não deve não teme.»</p></div></details><details class=\"lado\"><summary>A razão de quem discorda</summary><div><p>«Numa sala filmada o dia todo, ninguém fala à vontade. E quem vê as imagens?»</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se as câmaras ficassem só à entrada e as imagens se apagassem ao fim de uma semana? Resolvia o problema dos telemóveis?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>"
+   "titulo": "Antes dos materiais",
+   "html": "<div class=\"m-decide\"><p class=\"pos-intro\">Decide: sim, não ou depende. Escolhe antes de veres os materiais; no fim, voltas a esta pergunta.</p><div class=\"posicao\" data-artefacto=\"posicao-inicio\" data-rot=\"A tua posição no início\"><p class=\"pos-q\">A escola deve pôr câmaras nas salas de aula?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição no início\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div><p class=\"pos-nota\">Não há resposta certa neste cartão.</p></div><div class=\"pos-lados\" data-depois-de=\"posicao-inicio\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>«Com câmaras, ninguém rouba.» Desapareceram três telemóveis, e quem não deve não teme.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>Numa sala filmada o dia todo, ninguém fala à vontade. E não se sabe quem vê as imagens.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se só a direção visse as imagens, e só depois de um furto? Mudava a tua resposta?</p></div></details></div></div>",
+   "min": 8
   },
   {
    "t": "escolha",
-   "g": "direito",
-   "p": "No caso das câmaras nas salas, que direito dos alunos está em causa em primeiro lugar?",
-   "p2": "Câmaras a filmar as salas o dia todo: que direito pesa mais neste caso?",
+   "rot": "Prever não é provar",
+   "p": "Há quem diga: «Com câmaras, ninguém rouba.» Como se classifica esta frase?",
+   "p2": "A frase «Com câmaras, ninguém rouba» é um facto, uma opinião ou outra coisa?",
+   "f": "Na sessão 04 viste que uma opinião se discute e um facto se prova. «Ninguém rouba» fala do futuro: é uma previsão, que só os furtos contados depois das câmaras podem confirmar ou desmentir.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "facto, previsão e opinião",
+   "pista": "Pergunta-te o que seria preciso para saber se a frase é verdadeira.",
+   "g": "recupera",
    "o": [
-    "A reserva da vida privada e os dados pessoais.",
-    "A liberdade de circular entre salas no intervalo.",
-    "O direito a escolher a turma onde se fica."
+    "Uma previsão: só o futuro a confirma ou desmente.",
+    "Um facto: os três telemóveis desapareceram mesmo.",
+    "Uma opinião: diz só o que alguém acha melhor."
    ],
    "c": 0,
-   "f": "Uma câmara na sala grava cada aluno, a cada momento. A Constituição protege a imagem e a reserva da vida privada (artigo 26.º); a Convenção sobre os Direitos da Criança (artigo 16.º) e a Declaração Universal (artigo 12.º) protegem contra intromissões arbitrárias na vida privada.",
    "fe": [
     "",
-    "Ninguém fica impedido de circular. O que muda é que cada gesto fica gravado e alguém o pode ver.",
-    "As câmaras não mudam ninguém de turma. O que está em causa são as imagens de cada um e quem as vê."
+    "Os furtos são um facto, mas a frase não fala deles: diz o que vai acontecer com câmaras. Isso ainda ninguém viu. Repara no que a frase promete para depois das câmaras.",
+    "Uma opinião diz o que alguém acha bom ou mau, e discute-se. Esta frase diz o que vai acontecer, e isso pode contar-se depois. Repara no que a frase promete."
    ]
   },
   {
    "t": "vf",
-   "g": "lei",
-   "p": "Numa escola, as câmaras de videovigilância podem filmar o interior das salas de aula.",
-   "p2": "A lei deixa uma escola filmar as salas de aula com câmaras de videovigilância.",
+   "rot": "Dado para quê",
+   "p": "Caso inventado: deste o teu contacto à escola para a visita de estudo. Já que o deste, a escola pode passá-lo à agência de viagens, para publicidade.",
+   "p2": "O teu contacto foi dado à escola para a visita de estudo. Por isso, pode servir também para a agência de viagens te mandar publicidade.",
+   "f": "Falso. Deste o contacto para a visita: é para isso que serve. Na sessão 02, a regra era «O sim vale para o uso que se explicou»; com os dados chama-se finalidade.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "finalidade",
    "v": false,
-   "f": "A Lei n.º 58/2019 (artigo 19.º, n.º 3) diz que, nas escolas, as câmaras só podem incidir sobre os perímetros externos, os locais de acesso e os espaços com bens que precisem de especial proteção, como laboratórios ou salas de informática. A sala de aula comum não está na lista.",
-   "fe": "Volta à lista da lei: perímetros externos, acessos e espaços com equipamento que precisa de especial proteção. A sala de aula comum fica de fora."
-  },
-  {
-   "t": "sublinhar",
-   "g": "lei19",
-   "p": "Lei n.º 58/2019, artigo 19.º, n.º 3: toca nos dois nomes que dizem onde as câmaras podem estar, à volta da escola e por onde se entra.",
-   "p2": "Onde podem estar as câmaras numa escola, à volta e por onde se entra? Toca nas duas palavras.",
-   "frase": "Nos estabelecimentos de ensino, as câmaras de videovigilância só podem incidir sobre os perímetros externos e locais de acesso, e ainda sobre espaços cujos bens e equipamentos requeiram especial proteção, como laboratórios ou salas de informática.",
-   "certas": [
-    13,
-    18
-   ],
-   "f": "As câmaras podem incidir sobre os **perímetros** externos e os locais de **acesso**, e ainda sobre espaços com bens que precisem de especial proteção. Repara também no «só»: a lista é fechada."
+   "fe": "Dar um dado para uma coisa não o entrega para todas. Na sessão 02, com o vídeo da Marta: «O sim vale para o uso que se explicou.» Com os dados é igual: servem a finalidade para que os deste, a visita.",
+   "pista": "Lembra-te para que aceitou a Marta ser filmada, na sessão 02.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/02/"
   },
   {
    "t": "ler",
-   "rot": "Ver",
+   "rot": "Olha",
    "titulo": "Uma casa de inspeção",
-   "html": "<figure class=\"fig inteiro texto\"><span class=\"moldura\"><img src=\"../../../img/cidadania/panotico-bentham-1791.webp\" alt=\"Pormenor de uma página de título impressa: em maiúsculas, a lista dos edifícios onde o plano se pode usar, de «penitentiary-houses» e «prisons» até «hospitals», em duas colunas, e no fim «and schools».\" loading=\"lazy\"></span><figcaption>Jeremy Bentham, <i>Panopticon; or, The Inspection-House</i>, página de título (pormenor), Dublin e Londres, 1791. Bayerische Staatsbibliothek, via Internet Archive. Domínio público.</figcaption></figure><p>Num livro de 1791, o filósofo inglês Jeremy Bentham propôs um edifício circular, a que chamou panóptico: as celas à volta e, ao centro, o lugar de quem inspeciona. Lê a lista do título até ao fim:</p><p class=\"lista-en\" lang=\"en\">«penitentiary-houses, prisons, houses of industry, work-houses, poor-houses, manufactories, mad-houses, lazarettos, hospitals, and schools»</p><p class=\"pergunta-c\">Porque estará uma escola nesta lista?</p><p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>"
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro para a gravura inteira; só depois lê a legenda.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Uma prisão redonda de Jeremy Bentham, 1791\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/panotico-bentham-1791-planta.webp\" alt=\"Gravura de arquitetura: em cima, à esquerda, a fachada de um edifício redondo de seis pisos, com janelas em arco; à direita, o mesmo edifício cortado ao meio, com as celas, marcadas A, na parede de fora e, no centro, o alojamento do inspetor, H, e as galerias de inspeção, F; em baixo, metade da planta, um anel de celas à volta de um centro com círculos concêntricos; à direita, a legenda das letras, em inglês.\" width=\"1400\" height=\"1138\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da fotografia\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\"><i>A General Idea of a Penitentiary Panopticon […]</i>, 1791, estampa de <i>The Works of Jeremy Bentham</i>, vol. IV, Edimburgo, William Tait, 1843. Biblioteca da Universidade de Sevilha, digitalização no Internet Archive. <a href=\"https://archive.org/details/BRes092083\">Registo de origem</a>. Domínio público (Public Domain Mark 1.0).</p></details></div><figcaption>Uma prisão redonda proposta por Jeremy Bentham, numa gravura datada de 23 de janeiro de 1791: fachada e corte (em cima), metade da planta (em baixo). A: celas; F: galerias de inspeção; H: alojamento do inspetor.</figcaption></figure></div>",
+   "min": 3
+  },
+  {
+   "t": "escolha",
+   "rot": "Quem vê quem",
+   "p": "Pela gravura, de onde se pode ver o anel inteiro das celas?",
+   "p2": "Na gravura, há um sítio de onde se vê cada cela do anel. Onde fica?",
+   "f": "O inspetor (H) e as galerias de inspeção (F) ficam no meio, e as celas (A) dão a volta: do centro, o anel vê-se inteiro.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "quem vê quem",
+   "ver": "<img src=\"../../../../img/cidadania/panotico-bentham-1791-planta.webp\" alt=\"A mesma gravura: o edifício redondo em fachada e em corte, e por baixo metade da planta, com o anel de celas à volta do centro.\">",
+   "pista": "Compara a planta com o corte: onde fica cada letra?",
+   "o": [
+    "Da entrada, E, aberta na parede de fora.",
+    "Do meio do edifício, onde ficam H e F.",
+    "Das janelas da fachada, abertas para a rua."
+   ],
+   "c": 1,
+   "fe": [
+    "A entrada fica num ponto da parede de fora, por baixo das celas: dali não se vê o anel. Procura no corte e na planta o que fica no meio, com as celas à volta.",
+    "",
+    "As janelas abrem as celas para fora, para a luz; não dão para as outras celas. Procura o ponto de onde o anel se vê inteiro: o meio do edifício."
+   ]
   },
   {
    "t": "emparelhar",
-   "g": "finalidade",
-   "p": "No formulário da visita de estudo, liga cada dado à finalidade que o justifica.",
-   "p2": "Para que serve cada dado do formulário da visita de estudo?",
+   "rot": "Gravura, legenda ou nenhuma",
+   "p": "Liga cada frase ao que a sustenta: a gravura, a legenda ou nenhuma das duas.",
+   "p2": "Para cada frase: vê-se na gravura, só a legenda o diz, ou nenhuma das duas o prova?",
+   "f": "O anel de celas vê-se no desenho. O nome de Bentham não está na estampa: só a legenda o diz. Que alguém se porte melhor por poder ser visto é uma ideia sobre pessoas; um desenho de um edifício não a prova.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "imagem e legenda",
+   "pares": [
+    [
+     "As celas ficam em anel, à volta do centro.",
+     "A gravura mostra"
+    ],
+    [
+     "Foi Jeremy Bentham quem propôs este edifício.",
+     "Só a legenda diz"
+    ],
+    [
+     "Quem está numa cela porta-se melhor por poder ser visto.",
+     "Nenhuma das duas prova"
+    ]
+   ],
+   "ver": "<img src=\"../../../../img/cidadania/panotico-bentham-1791-planta.webp\" alt=\"A mesma gravura: o edifício redondo em fachada e em corte, e por baixo metade da planta, com o anel de celas à volta do centro.\">",
+   "fe": "A confusão mais provável é dar à gravura uma ideia sobre pessoas: o desenho mostra paredes e lugares, não o que alguém sente ou faz. E o nome de Bentham não está no desenho. Olha outra vez, sem a legenda.",
+   "pista": "Tapa a legenda e pergunta-te o que um desenho de paredes consegue mostrar."
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Onde, e para quê",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> Onde, e para quê?</p><blockquote class=\"lei\"><p data-l=\"n3\" data-fonte=\"lei58-19-3\"><span class=\"art\">19.º, n.º 3</span>«Nos estabelecimentos de ensino, as câmaras de videovigilância só podem incidir sobre os perímetros externos e locais de acesso, e ainda sobre espaços cujos bens e equipamentos requeiram especial proteção, como laboratórios ou salas de informática.»</p><p data-l=\"c1\" data-fonte=\"crp-35-1\"><span class=\"art\">35.º, n.º 1</span>«[…] o direito de acesso aos dados informatizados que lhes digam respeito […] e o direito de conhecer a finalidade a que se destinam […]»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982\">Lei n.º 58/2019</a>; <a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição</a>.</p><details class=\"mais\"><summary>Ler mais</summary><div><blockquote class=\"lei\"><p data-fonte=\"lei58-19-4\"><span class=\"art\">Lei n.º 58/2019, artigo 19.º, n.º 4</span>«Nos casos em que é admitida a videovigilância, é proibida a captação de som, exceto no período em que as instalações vigiadas estejam encerradas ou mediante autorização prévia da CNPD.»</p></blockquote><p class=\"glossa\"><b>Perímetro externo</b>: a zona à volta dos edifícios. <b>CNPD</b>: Comissão Nacional de Proteção de Dados.</p></div></details></div>",
+   "min": 4
+  },
+  {
+   "t": "sublinhar",
+   "rot": "Uma lista fechada",
+   "p": "No n.º 3, toca na palavra que fecha a lista: fora dos sítios que a lei nomeia, as câmaras não podem filmar.",
+   "p2": "No n.º 3, uma palavra impede as câmaras de filmar os sítios que a lista não nomeia. Toca nela.",
+   "f": "A palavra é «só»: as câmaras «só podem incidir» sobre os sítios da lista. Sem ela, a lista seria um exemplo; com ela, é o limite.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "lista fechada",
+   "frase": "Nos estabelecimentos de ensino, as câmaras de videovigilância só podem incidir sobre os perímetros externos e locais de acesso, e ainda sobre espaços cujos bens e equipamentos requeiram especial proteção, como laboratórios ou salas de informática.",
+   "certas": [
+    8
+   ],
+   "fonte": "lei58-19-3",
+   "l": "n3",
+   "fe": "A confusão mais provável é tocar em «podem»: sozinha, essa palavra deixa filmar. É outra palavra, antes dela, que limita os sítios. Lê o princípio da frase devagar.",
+   "pista": "Lê a frase e tira-lhe uma palavra de cada vez: quando é que os sítios deixam de ter limite?"
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Cada dado, para quê",
+   "p": "Caso inventado: o formulário da visita de estudo pede estes dados. Liga cada um à finalidade que o justifica.",
+   "p2": "Para que serve cada dado do formulário da visita de estudo? Liga cada um à sua finalidade.",
+   "f": "Cada dado tem uma razão concreta na visita. A profissão dos pais não serve para nada nela: um dado sem finalidade não se pede.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "finalidade",
    "pares": [
     [
      "Alergias alimentares",
@@ -88,186 +179,272 @@
      "Um acidente durante a saída"
     ],
     [
-     "Autorização do encarregado",
+     "Autorização do encarregado de educação",
      "Sair da escola em tempo de aula"
     ],
     [
-     "Turma e número",
-     "A lista de presenças no autocarro"
+     "Profissão dos pais",
+     "Nenhuma finalidade da visita"
     ]
    ],
-   "f": "Cada dado tem uma razão concreta. Um dado sem finalidade, como a profissão dos pais numa visita de estudo, não se pede.",
-   "fe": "Pergunta para quê antes de perguntar o quê: o dado vem depois da finalidade."
+   "fe": "A confusão mais provável é arranjar uma finalidade para todos os dados. A profissão dos pais não ajuda a almoçar, a sair nem a socorrer ninguém. Pergunta primeiro para quê, e só depois o quê.",
+   "pista": "Para cada dado, imagina o dia da visita: em que momento faz falta?"
   },
   {
    "t": "escolha",
-   "g": "art35",
-   "p": "O artigo 35.º da Constituição fala dos dados informatizados que te dizem respeito. O que te garante?",
-   "p2": "Que direitos te dá o artigo 35.º da Constituição sobre os teus dados?",
+   "rot": "Onde a lei deixa",
+   "p": "Situação nova: outra escola quer uma câmara virada para um espaço lá dentro. Para onde a lei a deixa virar?",
+   "p2": "Numa escola que não é a tua, para onde pode estar virada uma câmara, segundo o n.º 3?",
+   "f": "A oficina guarda equipamentos caros, como um laboratório ou uma sala de informática: cabe na terceira parte da lista do n.º 3. O pátio interior e a sala de convívio não estão nela.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "o que as câmaras podem filmar",
+   "pista": "Lê os exemplos do fim do n.º 3 e procura o lugar que se parece com eles.",
    "o": [
-    "Aceder a eles, corrigi-los e saber para que servem.",
-    "Apagar, quando quiseres, os dados de qualquer colega.",
-    "Escolher sozinho os dados que a escola recolhe."
+    "Para o pátio interior, onde os alunos passam o intervalo.",
+    "Para a oficina onde se guardam as máquinas de soldar.",
+    "Para a sala de convívio, com os sofás e as mesas."
    ],
-   "c": 0,
-   "f": "O artigo 35.º, n.º 1, garante o acesso aos dados informatizados que te digam respeito, o direito de exigir a sua retificação e atualização e o de conhecer a finalidade a que se destinam. O n.º 7 dá a mesma proteção aos dados em ficheiros manuais, como um formulário em papel.",
+   "c": 1,
    "fe": [
+    "O pátio interior não é perímetro externo nem um acesso, e não guarda equipamentos que peçam especial proteção. Com o «só», o que não está na lista fica de fora. Volta ao n.º 3.",
     "",
-    "O artigo protege os teus dados, não te dá poder sobre os dos outros. O n.º 4 proíbe o acesso a dados pessoais de terceiros, salvo exceções previstas na lei.",
-    "A escola pode pedir os dados que a lei exige ou que uma finalidade justifica. O que tens é o direito de os ver, corrigir e saber para quê."
-   ]
-  },
-  {
-   "t": "ler",
-   "rot": "Ver",
-   "titulo": "Câmaras em todos os carros",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição escrita por Michael Vazquez e Sarah Stroud. Num futuro com carros que flutuam, um governo quer dar uma pontuação a cada condutor e, para isso, pôr câmaras e microfones em todos os veículos. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Enquanto vês, anota uma razão a favor, uma contra e a pergunta que farias a quem guarda as gravações.</p><div class=\"yt\" data-yt=\"tmwIhOCXLrQ\" data-titulo=\"This could save lives, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «This could save lives» (título abreviado, 5 min 30 s)</button><p class=\"yt-cred\">TED-Ed, lição de Michael Vazquez e Sarah Stroud. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>"
-  },
-  {
-   "t": "vf",
-   "g": "guardar",
-   "p": "Uma pasta partilhada com a turma toda é um bom sítio para guardar as alergias dos colegas.",
-   "p2": "Guardar as alergias de todos numa pasta aberta à turma inteira é adequado.",
-   "v": false,
-   "f": "As alergias são dados de saúde. Quem precisa delas é quem organiza a refeição e quem acompanha a visita, não a turma toda. O artigo 35.º, n.º 4, da Constituição proíbe o acesso a dados pessoais de terceiros, salvo exceções previstas na lei.",
-   "fe": "Pergunta quem precisa de ver o dado. Se a resposta é duas pessoas, a pasta não pode estar aberta a trinta."
-  },
-  {
-   "t": "escolha",
-   "g": "panotico",
-   "p": "No panóptico de Bentham, o que faz o edifício funcionar mesmo quando ninguém está a vigiar?",
-   "p2": "Porque é que o panóptico pode funcionar sem ninguém no posto de vigia?",
-   "o": [
-    "Quem é vigiado nunca sabe se está a ser visto.",
-    "As celas ficam fechadas com grades muito fortes.",
-    "Os guardas trocam de turno de hora a hora."
-   ],
-   "c": 0,
-   "f": "Bentham escreveu que talvez o ponto mais importante fosse quem é inspecionado sentir-se sempre sob inspeção, ou com grande probabilidade de o estar. Quem nunca sabe porta-se como se estivesse sempre a ser visto.",
-   "fe": [
-    "",
-    "As grades fecham, mas não explicam a ideia do plano. O que conta é a dúvida: estarei a ser visto agora?",
-    "A troca de turno não muda nada para quem está na cela. O que conta é não saber se alguém está a ver."
-   ]
-  },
-  {
-   "t": "ordenar",
-   "g": "passos",
-   "p": "Põe por ordem os passos para recolher dados de alguém.",
-   "p2": "Qual é a ordem certa para recolher dados de uma pessoa?",
-   "passos": [
-    "Decidir para que servem os dados.",
-    "Riscar o que essa finalidade dispensa.",
-    "Pedir os dados, dizendo para quê e quem os vê.",
-    "Apagá-los quando a finalidade acaba."
-   ],
-   "f": "Primeiro a finalidade, depois só aquilo de que ela precisa. Ao pedir, diz-se para quê e quem vê. No fim, apaga-se: a Lei n.º 58/2019 (artigo 21.º) diz que, sem prazo fixado por norma, os dados se guardam o tempo necessário para a finalidade."
-  },
-  {
-   "t": "ler",
-   "rot": "Na aula",
-   "titulo": "O formulário e o quarteirão",
-   "html": "<p><b>O que se faz.</b> Primeiro, sozinho, a auditoria do formulário da visita de estudo, inventado e em papel: riscar o que não é preciso, dizer quem vê cada dado e quando se apaga. Depois, uma volta de 20 minutos ao quarteirão da escola (ou à tua rua), a contar câmaras e avisos de videovigilância e a anotar o que cada aviso diz. Não se fotografam pessoas nem matrículas.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O formulário revisto, uma nota de privacidade em cinco linhas, o registo dos avisos e o plano de recolha das entrevistas da Pergunta Humana: o que se guarda, onde e até quando.</p>"
-  },
-  {
-   "t": "escolha",
-   "g": "novo",
-   "p": "Caso inventado: uma aplicação de presenças passa a guardar a localização dos alunos o dia todo. Qual dos argumentos põe limites a esta medida?",
-   "p2": "Uma aplicação de presenças guarda onde está cada aluno, todo o dia. Que argumento lhe põe limites?",
-   "o": [
-    "Para marcar presenças, basta saber quem entrou na aula.",
-    "A aplicação é nova e ainda pode ter alguns erros graves.",
-    "Os alunos já usam outras aplicações com localização."
-   ],
-   "c": 0,
-   "f": "A finalidade é marcar presenças. Para isso não é preciso saber onde cada aluno está a cada minuto. Recolher mais do que a finalidade precisa é recolher dados a mais.",
-   "fe": [
-    "",
-    "Os erros podem corrigir-se. O problema continua: a aplicação recolhe muito mais do que a finalidade precisa.",
-    "Que outras aplicações o façam não torna esta recolha necessária. A pergunta é sempre: para quê?"
+    "A sala de convívio não cabe em nenhuma parte da lista: não é perímetro, nem acesso, nem um espaço como um laboratório. Volta ao n.º 3 e aos exemplos do fim."
    ]
   },
   {
    "t": "vf",
-   "g": "som",
-   "p": "Numa escola com videovigilância, as câmaras podem gravar o som das conversas durante as aulas.",
-   "p2": "Durante as aulas, as câmaras de videovigilância de uma escola podem captar o som.",
+   "rot": "Uma sala não é um laboratório",
+   "p": "Como desapareceram telemóveis, a escola pode filmar as salas de aula: são espaços com bens que pedem especial proteção.",
+   "p2": "Com os furtos de telemóveis, as salas de aula passam a ser espaços cujos bens pedem especial proteção, e podem ser filmadas.",
+   "f": "Falso. Os exemplos da lei são «laboratórios ou salas de informática»: espaços pelos equipamentos que guardam. Uma sala de aula comum não está na lista, e o «só» fecha-a.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "limite da lista",
    "v": false,
-   "f": "A Lei n.º 58/2019 (artigo 19.º, n.º 4) proíbe a captação de som onde há videovigilância, exceto quando as instalações vigiadas estão encerradas ou com autorização prévia da Comissão Nacional de Proteção de Dados.",
-   "fe": "Imagem e som são coisas diferentes. Mesmo onde a câmara é permitida, o som fica de fora enquanto as instalações estão abertas."
+   "citacoes": [
+    [
+     "lei58-19-3",
+     "laboratórios ou salas de informática"
+    ]
+   ],
+   "fe": "Os telemóveis andam com os alunos; não fazem da sala de aula um laboratório. A lei dá como exemplos «laboratórios ou salas de informática», e o «só» fecha a lista. Volta ao n.º 3.",
+   "pista": "Compara a sala de aula com os exemplos que a lei dá no fim do n.º 3."
+  },
+  {
+   "t": "ler",
+   "rot": "Conceito",
+   "titulo": "Para quê, e quanto",
+   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>Câmaras nas salas: podiam travar os furtos. Chega isso?</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">A pergunta</th><th scope=\"col\">Na sala 12</th></tr></thead><tbody><tr><td data-th=\"A pergunta\">Para quê?</td><td data-th=\"Na sala 12\">travar os furtos de telemóveis</td></tr><tr><td data-th=\"A pergunta\">Há outro meio?</td><td data-th=\"Na sala 12\">cacifos com chave, câmaras nas entradas</td></tr><tr><td data-th=\"A pergunta\">O que custa?</td><td data-th=\"Na sala 12\">uma turma filmada o dia todo</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Proporcionalidade: restringir um direito só no necessário para proteger outro.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Proporcionalidade</p><p class=\"cc-def\">Restringir um direito só no necessário para proteger outro.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Não é «quem não deve não teme»: não ter culpa não torna uma câmara necessária.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div><details class=\"mais\"><summary>Ler mais</summary><div><p>Na Constituição, as restrições a direitos devem <span class=\"citado\" data-fonte=\"crp-18-2\">«limitar-se ao necessário para salvaguardar outros direitos ou interesses constitucionalmente protegidos»</span> (artigo 18.º, n.º 2).</p></div></details></div>",
+   "min": 6
   },
   {
    "t": "completar",
-   "g": "medida",
-   "p": "Completa a ideia do artigo 18.º, n.º 2, da Constituição e a regra que dela se tira.",
-   "p2": "Que palavras completam a regra das restrições a direitos?",
-   "frase": "Uma lei só pode restringir um direito no que for [1] para salvaguardar outros direitos. Se duas medidas resolvem o problema, escolhe-se a [2].",
+   "rot": "O que a finalidade pede",
+   "p": "Caso inventado: para marcar presenças, um programa passa a guardar onde está cada aluno, o dia todo. Completa.",
+   "p2": "Um programa de presenças guarda a localização de cada aluno durante todo o dia. Completa o raciocínio.",
+   "f": "Marcar presenças pede saber quem está na aula. A localização o dia todo junta dados que essa finalidade dispensa: vai além do necessário, a medida que a Constituição põe às restrições.",
+   "min": 3,
+   "tipo": "transferir",
+   "conceito": "proporcionalidade",
+   "frase": "A finalidade é saber [1]. Guardar a localização o dia todo [2].",
    "lacunas": [
     {
      "o": [
-      "necessário",
-      "conveniente",
-      "possível"
+      "quem está na aula",
+      "por onde anda cada aluno",
+      "se os alunos estão seguros"
      ],
      "c": 0
     },
     {
      "o": [
-      "menos pesada",
-      "mais barata",
-      "mais rápida"
+      "junta dados que a finalidade dispensa",
+      "é o meio mais completo",
+      "fica justificado se ninguém se queixar"
      ],
      "c": 0
     }
    ],
-   "f": "A Constituição diz que as restrições a direitos devem «limitar-se ao necessário para salvaguardar outros direitos ou interesses constitucionalmente protegidos» (artigo 18.º, n.º 2). Daí a regra prática: se duas medidas resolvem o problema, fica a menos pesada.",
-   "fe": "Volta às câmaras: à entrada resolvem os furtos com menos peso do que nas salas."
+   "fe": "A confusão mais provável é tomar o que o programa faz pela sua finalidade. Pergunta primeiro para quê: para marcar presenças, basta saber quem está na aula. O resto vai além.",
+   "pista": "Separa o que o programa faz daquilo para que existe."
   },
   {
    "t": "escolha",
-   "g": "projeto",
-   "p": "No projeto, gravaste uma entrevista com uma funcionária da escola. O trabalho acabou. Que fazer à gravação?",
-   "p2": "O trabalho com a entrevista gravada terminou. O que se faz à gravação?",
-   "o": [
-    "Apagá-la no prazo combinado com a pessoa entrevistada.",
-    "Guardá-la no telemóvel, para o caso de vir a servir.",
-    "Pô-la na conta da turma, para que outros a possam ouvir."
+   "rot": "Um caso real",
+   "p": "Caso real (Supremo Tribunal de Justiça, 2006): depois de furtos de medicamentos, um armazenista filmava os trabalhadores sem parar. O tribunal mandou tirar as câmaras do armazém. Porquê?",
+   "p2": "Em 2006, o Supremo Tribunal de Justiça mandou um armazenista retirar do armazém as câmaras viradas para os trabalhadores. Segundo esta passagem, porquê?",
+   "f": "O tribunal não negou os furtos: disse que as câmaras transformavam os trabalhadores «indefinidamente em suspeitos». Na sessão 01 leste, no artigo 26.º, o direito «à reserva da intimidade da vida privada»: é esse que estava em causa.",
+   "min": 4,
+   "tipo": "transferir",
+   "conceito": "reserva da vida privada",
+   "cita": "[…] o empregador […] não pode sujeitar os seus trabalhadores a uma permanente medida de polícia, transformando-os indefinidamente em suspeitos de prática de ilícitos criminais […]",
+   "fonte": "stj-2006-suspeitos",
+   "citacoes": [
+    [
+     "stj-2006-suspeitos",
+     "indefinidamente em suspeitos"
+    ],
+    [
+     "stj-2006-autorizacao",
+     "independentemente da autorização concedida pela Comissão Nacional de Protecção de Dados"
+    ],
+    [
+     "stj-2006-furtos",
+     "a R. via-se confrontada com furtos de medicamentos"
+    ],
+    [
+     "crp-26-1",
+     "à reserva da intimidade da vida privada"
+    ]
    ],
-   "c": 0,
-   "f": "A gravação foi feita para o trabalho. Acabada a finalidade, apaga-se no prazo que se combinou com a pessoa. Guardar «para o caso de» é guardar sem finalidade.",
+   "origem": "cidadania/m1/sessoes/01/",
+   "liga": [
+    {
+     "t": "Ler o acórdão do Supremo Tribunal de Justiça, 08/02/2006 (dgsi.pt)",
+     "href": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument"
+    }
+   ],
+   "pista": "Lê a passagem citada até ao fim.",
+   "o": [
+    "Faltava à empresa a autorização para as câmaras.",
+    "Os furtos não tinham acontecido; eram só um receio.",
+    "Faziam de cada trabalhador um suspeito, sem prazo."
+   ],
+   "c": 2,
    "fe": [
-    "",
-    "«Para o caso de» não é uma finalidade. A pessoa aceitou ser gravada para o trabalho, não para sempre.",
-    "Publicar é outra finalidade, que a pessoa não aceitou. Teria de se lhe pedir de novo."
+    "Não foi por isso: o tribunal decidiu «independentemente da autorização concedida pela Comissão Nacional de Protecção de Dados». Volta à passagem: o que faziam as câmaras aos trabalhadores?",
+    "Os furtos aconteceram: nos factos provados lê-se que «a R. via-se confrontada com furtos de medicamentos» (a R. é a empresa). Mesmo assim, as câmaras saíram. Volta à passagem citada.",
+    ""
    ]
   },
   {
-   "t": "emparelhar",
-   "g": "papeis",
-   "p": "No formulário da visita, liga cada papel na proteção de dados a quem o tem.",
-   "p2": "No formulário da visita, quem é quem na proteção de dados?",
-   "pares": [
+   "t": "ler",
+   "rot": "Volta ao caso",
+   "titulo": "Câmaras nas entradas?",
+   "html": "<div class=\"m-volta\"><p class=\"parte\">Parte 2</p><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\">A direção propõe câmaras só nas entradas, com as imagens guardadas «para o caso de serem precisas». A associação responde: «Nas entradas, não se vê quem tira o telemóvel da mochila.» Uma aluna pergunta: «E quem vê as imagens? Quando se apagam?»</p><blockquote class=\"lei\"><p data-fonte=\"lei58-21-4\"><span class=\"art\">Lei n.º 58/2019, artigo 21.º, n.º 4</span>«Quando cesse a finalidade que motivou o tratamento […] de dados pessoais, o responsável pelo tratamento deve proceder à sua destruição ou anonimização.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982\">Diário da República</a>.</p></div>",
+   "min": 4
+  },
+  {
+   "t": "vf",
+   "rot": "Segura não é para sempre",
+   "p": "Caso inventado: gravaste uma entrevista para o projeto. Acabado o trabalho, podes guardá-la sem prazo, numa pasta com palavra-passe.",
+   "p2": "O trabalho acabou. A gravação da entrevista está numa pasta com palavra-passe; como está segura, pode ficar lá sem prazo.",
+   "f": "Falso. A palavra-passe protege a gravação, mas não lhe dá uma finalidade nova. Acabado o trabalho, a lei manda «proceder à sua destruição ou anonimização».",
+   "min": 3,
+   "tipo": "transferir",
+   "conceito": "prazo de conservação",
+   "v": false,
+   "citacoes": [
     [
-     "Titular dos dados",
-     "O aluno que preenche o formulário"
-    ],
-    [
-     "Responsável pelo tratamento",
-     "A escola que organiza a visita"
-    ],
-    [
-     "Autoridade de controlo",
-     "A Comissão Nacional de Proteção de Dados"
+     "lei58-21-4",
+     "proceder à sua destruição ou anonimização"
     ]
    ],
-   "f": "O titular é a pessoa a quem os dados dizem respeito. O responsável pelo tratamento decide para que servem e como se guardam. A Comissão Nacional de Proteção de Dados é a autoridade de controlo em Portugal (Lei n.º 58/2019, artigo 3.º).",
-   "fe": "Pergunta de quem são os dados, quem os usa e quem vigia quem os usa."
+   "fe": "Guardar bem não é o mesmo que poder guardar. Quando a finalidade acaba, a lei manda «proceder à sua destruição ou anonimização». Volta ao artigo 21.º.",
+   "pista": "Pergunta-te para que foi feita a gravação e se essa finalidade ainda existe."
+  },
+  {
+   "t": "ler",
+   "rot": "Em turma",
+   "titulo": "Depois dos materiais",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A escola deve pôr câmaras nas salas de aula?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>O lado da associação</summary><div><p>Os furtos aconteceram; nas entradas, «não se vê quem tira o telemóvel da mochila».</p></div></details><details class=\"lado\"><summary>O lado de quem discorda</summary><div><p>Numa escola, as câmaras <span class=\"citado\" data-fonte=\"lei58-19-3\">«só podem incidir sobre os perímetros externos e locais de acesso»</span> e espaços como laboratórios.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E as imagens das entradas? Acabada a finalidade, a lei manda <span class=\"citado\" data-fonte=\"lei58-21-4\">«proceder à sua destruição ou anonimização»</span>.</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"A razão que pesou\"><p class=\"pos-q\">A razão que pesou mais:</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A razão que pesou\"><button type=\"button\" class=\"pos-op\" data-valor=\"Os furtos\" data-frase=\"os furtos\">Os furtos</button><button type=\"button\" class=\"pos-op\" data-valor=\"O «só» (19.º, n.º 3)\" data-frase=\"O «só» (19.º, n.º 3)\">O «só» (19.º, n.º 3)</button><button type=\"button\" class=\"pos-op\" data-valor=\"O prazo (21.º, n.º 4)\" data-frase=\"O prazo (21.º, n.º 4)\">O prazo (21.º, n.º 4)</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e escolhes a razão que pesou.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
+   "min": 13
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Cada frase, o seu papel",
+   "p": "Caso inventado: o programa de presenças que guarda a localização. Liga cada frase ao seu papel numa justificação.",
+   "p2": "Numa justificação sobre o programa de presenças, o que faz cada frase?",
+   "f": "Que o programa guarda a localização é um facto; o direito de conhecer a finalidade vem da Constituição; dizer que a localização está a mais liga os dois; e o que ainda não se sabe é o limite.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "facto, fonte, aplicação, limite",
+   "pares": [
+    [
+     "O programa guarda onde está cada aluno, o dia todo.",
+     "O facto"
+    ],
+    [
+     "A Constituição dá o direito de conhecer a finalidade dos dados.",
+     "A fonte"
+    ],
+    [
+     "Para marcar presenças, a localização o dia todo está a mais.",
+     "A aplicação"
+    ],
+    [
+     "Falta saber quem consulta esses dados, e durante quanto tempo.",
+     "O limite"
+    ]
+   ],
+   "fe": "A confusão mais provável é trocar a aplicação pelo facto: o facto diz o que o programa guarda; a aplicação liga isso à finalidade e diz que está a mais. Pergunta a cada frase de onde vem.",
+   "pista": "Pergunta a cada frase: aconteceu, está escrito numa lei, liga as duas coisas, ou diz o que ainda não se sabe?"
+  },
+  {
+   "t": "escolha",
+   "rot": "O passo que falta",
+   "p": "Facto: a gravação da entrevista ficou guardada depois do trabalho. Aplicação: acabou a finalidade. Limite: falta saber se a pessoa aceitou outro uso. Escolhe a fonte que falta.",
+   "p2": "A gravação da entrevista ficou guardada depois do trabalho, e a finalidade acabou; falta saber se a pessoa aceitou outro uso. Falta a fonte: escolhe-a.",
+   "f": "A aplicação diz que a finalidade acabou; a fonte é o texto que diz o que isso obriga a fazer: a Lei n.º 58/2019, artigo 21.º, n.º 4.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "facto, fonte, aplicação, limite",
+   "pista": "A fonte é o texto de onde vem a regra que a aplicação usa.",
+   "o": [
+    "A Lei n.º 58/2019 manda destruir ou anonimizar esses dados.",
+    "A gravação ficou numa pasta protegida com palavra-passe.",
+    "Quase toda a gente acaba por apagar as gravações antigas."
+   ],
+   "c": 0,
+   "fe": [
+    "",
+    "Isto é outro facto do caso, não uma regra. A fonte é o texto que diz o que fazer aos dados quando a finalidade acaba. Volta ao artigo 21.º.",
+    "Isto é um hábito, não uma regra que obrigue. A fonte é o texto de onde vem a regra que a aplicação usa. Volta ao artigo 21.º."
+   ]
+  },
+  {
+   "t": "escolha",
+   "rot": "O que as provas permitem",
+   "p": "Escolhe a conclusão que não vai além do caso e da lei.",
+   "p2": "Escolhe a conclusão que fica dentro do que o caso e os artigos mostram.",
+   "f": "Diz o que as provas mostram (a lei não deixa filmar as salas de aula) e deixa aberto o que falta saber: se as câmaras nas entradas chegam para os furtos.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "conclusão e provas",
+   "citacoes": [
+    [
+     "lei58-19-3",
+     "só podem incidir sobre os perímetros externos e locais de acesso"
+    ]
+   ],
+   "pista": "Procura a conclusão que não acrescenta nada às provas.",
+   "o": [
+    "Nas salas, não; nas entradas, falta ver se chega.",
+    "Nas salas, sim, porque quem não deve não teme.",
+    "A escola tem de pôr câmaras nas entradas, já."
+   ],
+   "c": 0,
+   "fe": [
+    "",
+    "É a razão do cartaz, não uma prova. As câmaras «só podem incidir sobre os perímetros externos e locais de acesso» e espaços como laboratórios; a sala de aula não é nenhum deles. Separa o que se prova do que se repete.",
+    "A lei diz o que as câmaras podem filmar; não obriga a pô-las. E ninguém sabe ainda se as das entradas travam os furtos. Volta ao verbo do n.º 3."
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Agora, em papel",
+   "titulo": "Agora, em papel",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Uma câmara na sala protege quem?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão, por agora.</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Outro caso, inventado: um clube de xadrez pede o número do cartão de cidadão para uma inscrição.</p><ol><li>Conclusão: para uma inscrição, o número parece a mais.</li><li>Prova: pedem o número do cartão; a Constituição dá o direito <span class=\"citado\" data-fonte=\"crp-35-1\">«de conhecer a finalidade a que se destinam»</span> os dados (artigo 35.º, n.º 1).</li><li>Dúvida: o regulamento do torneio exige-o?</li></ol></div></details></div>",
+   "min": 15
   },
   {
    "t": "ler",
    "rot": "Para levar",
-   "escuro": true,
-   "html": "<p class=\"levar\">Os dados pedem-se para uma finalidade, e só aqueles de que essa finalidade precisa.</p><p>Nesta sessão pesaste segurança e privacidade e viste o que a lei deixa fazer numa escola. Volta ao panóptico: em que sítio da escola te sentes dentro dele? E volta à tua posição do início: as câmaras nas salas ficavam?</p><p><b>As frases da sessão</b></p><ul><li>Antes de dar um dado, pergunto para quê e quem o vê.</li><li>Na escola, as câmaras só podem estar nos acessos, no perímetro e onde há bens que pedem especial proteção (Lei n.º 58/2019, artigo 19.º).</li><li>Tenho direito a saber que dados há sobre mim e para quê (artigo 35.º).</li><li>Ganha a medida menos pesada que resolve o problema.</li></ul>"
+   "titulo": "",
+   "html": "<div class=\"m-levar\"><p class=\"levar\" data-artefacto=\"frase\" data-rot=\"A frase da sessão\" data-texto=\"Primeiro, para quê; depois, só o necessário.\"><span class=\"ch\" style=\"--i:0\">P</span><span class=\"ch\" style=\"--i:1\">r</span><span class=\"ch\" style=\"--i:2\">i</span><span class=\"ch\" style=\"--i:3\">m</span><span class=\"ch\" style=\"--i:4\">e</span><span class=\"ch\" style=\"--i:5\">i</span><span class=\"ch\" style=\"--i:6\">r</span><span class=\"ch\" style=\"--i:7\">o</span><span class=\"ch\" style=\"--i:8\">,</span><span class=\"ch\" style=\"--i:9\"> </span><span class=\"ch\" style=\"--i:10\">p</span><span class=\"ch\" style=\"--i:11\">a</span><span class=\"ch\" style=\"--i:12\">r</span><span class=\"ch\" style=\"--i:13\">a</span><span class=\"ch\" style=\"--i:14\"> </span><span class=\"ch\" style=\"--i:15\">q</span><span class=\"ch\" style=\"--i:16\">u</span><span class=\"ch\" style=\"--i:17\">ê</span><span class=\"ch\" style=\"--i:18\">;</span><span class=\"ch\" style=\"--i:19\"> </span><span class=\"ch\" style=\"--i:20\">d</span><span class=\"ch\" style=\"--i:21\">e</span><span class=\"ch\" style=\"--i:22\">p</span><span class=\"ch\" style=\"--i:23\">o</span><span class=\"ch\" style=\"--i:24\">i</span><span class=\"ch\" style=\"--i:25\">s</span><span class=\"ch\" style=\"--i:26\">,</span><span class=\"ch\" style=\"--i:27\"> </span><span class=\"ch\" style=\"--i:28\">s</span><span class=\"ch\" style=\"--i:29\">ó</span><span class=\"ch\" style=\"--i:30\"> </span><span class=\"ch\" style=\"--i:31\">o</span><span class=\"ch\" style=\"--i:32\"> </span><span class=\"ch\" style=\"--i:33\">n</span><span class=\"ch\" style=\"--i:34\">e</span><span class=\"ch\" style=\"--i:35\">c</span><span class=\"ch\" style=\"--i:36\">e</span><span class=\"ch\" style=\"--i:37\">s</span><span class=\"ch\" style=\"--i:38\">s</span><span class=\"ch\" style=\"--i:39\">á</span><span class=\"ch\" style=\"--i:40\">r</span><span class=\"ch\" style=\"--i:41\">i</span><span class=\"ch\" style=\"--i:42\">o</span><span class=\"ch\" style=\"--i:43\">.</span></p><p class=\"levar-volta\" data-modelo=\"No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».\" hidden></p><p class=\"frases-t\">As frases da sessão</p><ul class=\"frases\"><li>Numa escola, as câmaras só podem filmar os acessos, o perímetro externo e espaços como laboratórios.</li><li>Acabada a finalidade, os dados não ficam «para o caso de».</li></ul><div data-recolha-lista></div></div>",
+   "min": 5,
+   "escuro": true
   }
  ]
 }

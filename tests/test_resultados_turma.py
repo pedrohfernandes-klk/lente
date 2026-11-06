@@ -323,7 +323,9 @@ class Listas(unittest.TestCase):
             # ter o botão e o total embutido continua de 03 a 10 (os totais de resultados-turma.js ficam como estão até ao pedido de
             # fecho do plano do molde, secção 5, pedido 5). Fusão do main com as sessões 2 e 3 finais: o conjunto fica escrito, como o
             # do main, e confere-se que são exatamente as sessões do M1 cujo .json tem o campo «molde» (a regra que a s04 trazia).
-            sem_registo = {3, 4} if m == 'm1' else set()
+            # 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 4 finais na sessão 5): o mesmo para a sessão 05 do M1,
+            # que também passou ao molde final; a página da 05 deixa de ter o botão e o total embutido continua de 03 a 10.
+            sem_registo = {3, 4, 5} if m == 'm1' else set()
             molde = {n for n in range(de, ate + 1) if m == 'm1' and (R / f'tools/licoes/cidadania-m1-s{n:02}.json').is_file()
                      and json.loads(ler(f'tools/licoes/cidadania-m1-s{n:02}.json')).get('molde')}
             self.assertEqual(molde, sem_registo, m)
