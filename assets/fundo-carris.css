@@ -17,12 +17,37 @@
    aproxima-se de 1 para 1,04. No primeiro segundo e meio entra a partir de transparente; ao recomeçar depois de «Parar o desenho»
    (parado mostra 1,04), a troca de escala fica escondida por essa entrada e não se vê salto. */
 @keyframes jc-aproxima{0%{transform:scale(1);opacity:0}4%{opacity:1}10%{transform:scale(1)}60%,100%{transform:scale(1.04);opacity:1}}
-@keyframes jc-via-a{0%,100%{opacity:1}30%,45%{opacity:.25}}
-@keyframes jc-via-b{0%,100%{opacity:1}55%,70%{opacity:.25}}
+/* 06/11/2026: decisão 170 (docente: «o elétrico da ilustração de justiça deve ter animação, talvez os pontos vermelhos pisquem
+   e talvez surjam uns pontos de exclamação»; depois, «a alavanca move, claro»). Fica a aproximação do elétrico. Num só ciclo de
+   36 s (1 % = 0,36 s), com pausas calmas: aos 4,3 s surge um sinal de alerta à frente do elétrico; dos 6,5 aos 8 s a alavanca
+   vai para a direita (surge um sinal junto dela), a lâmina de longe abre e a via a direito pisca (cinco vezes, uma a cada 1,08 s,
+   de 1 a 0,4) enquanto a outra baixa para 0,25; a alavanca volta ao meio e fica lá um instante (14,8 a 16,2 s), e à frente do
+   elétrico surge outro sinal; depois vai para a esquerda (outro sinal junto dela), a lâmina de perto abre e pisca a via que curva;
+   aos 24,5 s a alavanca volta ao meio e os sinais apagam-se. Dos 25 aos 36 s fica a cena neutra: as duas vias iguais, sem
+   desfecho. A via que pisca nunca fica mais apagada do que a outra. Os sinais nunca ficam nas vias (ninguém está na via). Tudo
+   o que mexe fica entre x 470 e 660, dentro do recorte do telemóvel. Parado (sem script, movimento reduzido, projeção, impressão,
+   depois de «Parar o desenho» ou dos dois ciclos), o desenho é o do SVG: alavanca a direito, as duas vias, nenhum sinal. */
+@keyframes jc-via-a{0%,22%{opacity:1}23.5%{opacity:.4}25%{opacity:1}26.5%{opacity:.4}28%{opacity:1}29.5%{opacity:.4}31%{opacity:1}32.5%{opacity:.4}34%{opacity:1}35.5%{opacity:.4}37%,45%{opacity:1}49%,64%{opacity:.25}68%,100%{opacity:1}}
+@keyframes jc-via-b{0%,18%{opacity:1}22%,37%{opacity:.25}41%,49%{opacity:1}50.5%{opacity:.4}52%{opacity:1}53.5%{opacity:.4}55%{opacity:1}56.5%{opacity:.4}58%{opacity:1}59.5%{opacity:.4}61%{opacity:1}62.5%{opacity:.4}64%,100%{opacity:1}}
+@keyframes jc-alavanca{0%,18%{transform:rotate(0deg)}22%,37%{transform:rotate(26deg)}41%,45%{transform:rotate(0deg)}49%,64%{transform:rotate(-26deg)}68%,100%{transform:rotate(0deg)}}
+@keyframes jc-agulha-longe{0%,18%{transform:rotate(0deg)}22%,37%{transform:rotate(-12deg)}41%,100%{transform:rotate(0deg)}}
+@keyframes jc-agulha-perto{0%,45%{transform:rotate(0deg)}49%,64%{transform:rotate(10deg)}68%,100%{transform:rotate(0deg)}}
+@keyframes jc-sinal-1{0%,12%{opacity:0;transform:scale(.3)}13.2%{opacity:1;transform:scale(1.12)}14%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
+@keyframes jc-sinal-2{0%,41%{opacity:0;transform:scale(.3)}42.2%{opacity:1;transform:scale(1.12)}43%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
+@keyframes jc-sinal-3{0%,18%{opacity:0;transform:scale(.3)}19.2%{opacity:1;transform:scale(1.12)}20%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
+@keyframes jc-sinal-4{0%,45%{opacity:0;transform:scale(.3)}46.2%{opacity:1;transform:scale(1.12)}47%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
 @media(prefers-reduced-motion:no-preference){
 html:not(.em-projecao) .ju .jc-anda .jc-eletrico{animation:jc-aproxima 36s ease-in-out 1;animation-fill-mode:forwards}
 html:not(.em-projecao) .ju .jc-anda .jc-via-a{animation:jc-via-a 36s ease-in-out 1;animation-fill-mode:forwards}
 html:not(.em-projecao) .ju .jc-anda .jc-via-b{animation:jc-via-b 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-alavanca-braco{transform-box:view-box;transform-origin:563px 548px;animation:jc-alavanca 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-agulha-longe{transform-box:view-box;transform-origin:506px 460px;animation:jc-agulha-longe 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-agulha-perto{transform-box:view-box;transform-origin:504px 469px;animation:jc-agulha-perto 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-sinal{transform-box:fill-box;transform-origin:50% 100%}
+html:not(.em-projecao) .ju .jc-anda .jc-sinal-1{animation:jc-sinal-1 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-sinal-2{animation:jc-sinal-2 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-sinal-3{animation:jc-sinal-3 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-sinal-4{animation:jc-sinal-4 36s ease-in-out 1;animation-fill-mode:forwards}
 }
 @media print{.ju .jc-fundo{display:none}}
 @media print{.ju .jc-credito{display:none}}

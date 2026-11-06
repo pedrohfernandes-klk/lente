@@ -3,6 +3,8 @@ const fs=require('fs'),path=require('path'),http=require('http'),assert=require(
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),out=process.env.FUNDO_PROVAS;
 const server=http.createServer((q,r)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(q.url,'http://x').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)){r.writeHead(403);return r.end()}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f))}catch{r.writeHead(404);r.end()}});
+// 06/11/2026: decisão 170. A cena neutra (o desenho parado): alavanca a direito, lâminas encostadas, as duas vias acesas, nenhum sinal.
+const neutra=e=>({braco:getComputedStyle(e.querySelector('.jc-alavanca-braco')).transform,laminas:[...e.querySelectorAll('.jc-agulha>path')].map(n=>getComputedStyle(n).transform),vias:[...e.querySelectorAll('.jc-via')].map(n=>getComputedStyle(n).opacity),sinais:[...e.querySelectorAll('.jc-sinal')].map(n=>getComputedStyle(n).opacity)}),NEUTRA={braco:'none',laminas:['none','none'],vias:['1','1'],sinais:['0','0','0','0']};
 const measure=()=>{const f=document.querySelector('.jc-fundo'),r=f.getBoundingClientRect();return {height:r.height,width:r.width,left:r.left,overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),animations:f.getAnimations({subtree:true}).map(a=>({name:a.animationName,duration:a.effect.getTiming().duration,iterations:a.effect.getTiming().iterations})),background:getComputedStyle(f).backgroundColor,ink:getComputedStyle(f).color}};
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port,b=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})}),rows=[];
 async function context(options){const ctx=await b.newContext(options);await ctx.route('**/*',async r=>{const u=new URL(r.request().url());if(u.origin===origin)return r.continue();if(u.hostname==='pedrohfernandes-klk.github.io'&&u.pathname.startsWith('/lente/'))return r.fulfill({response:await ctx.request.get(origin+u.pathname+u.search)});return r.abort()});return ctx}
@@ -15,10 +17,11 @@ try{
   if(width<640){assert.ok(Math.abs(m.width-width)<1);assert.ok(Math.abs(m.left)<1)}
   if(mode==='dark'){assert.equal(m.background,'rgba(0, 0, 0, 0)','fundo transparente integrado no tema')}
   const storage=await p.evaluate(()=>JSON.stringify({...localStorage}));
-  if(mode==='projection'){assert.deepEqual(m.animations,[]);assert.ok(await button.isHidden());assert.ok(!await f.evaluate(e=>e.classList.contains('jc-anda')))}
+  if(mode==='projection'){assert.deepEqual(m.animations,[]);assert.ok(await button.isHidden());assert.ok(!await f.evaluate(e=>e.classList.contains('jc-anda')));assert.deepEqual(await f.evaluate(neutra),NEUTRA,'projeção: cena neutra')}
   else{
    // 05/11/2026: decisão 142. A aproximação da fotografia e as duas vias, cada uma uma só vez, em 36 s.
-   assert.deepEqual([...m.animations].sort((x,y)=>x.name.localeCompare(y.name)),[{name:'jc-aproxima',duration:36000,iterations:1},{name:'jc-via-a',duration:36000,iterations:1},{name:'jc-via-b',duration:36000,iterations:1}]);assert.equal(await button.textContent(),'Parar o desenho');
+   // 06/11/2026: decisão 170. Lista fechada: mais a alavanca, as duas lâminas e os quatro sinais de alerta, todos uma só vez em 36 s.
+   assert.deepEqual([...m.animations].sort((x,y)=>x.name.localeCompare(y.name)),['jc-agulha-longe','jc-agulha-perto','jc-alavanca','jc-aproxima','jc-sinal-1','jc-sinal-2','jc-sinal-3','jc-sinal-4','jc-via-a','jc-via-b'].map(name=>({name,duration:36000,iterations:1})));assert.equal(await button.textContent(),'Parar o desenho');
    // O desenho não muda caixas nem atravessa a agulha em nenhum instante do movimento.
    // 05/11/2026: decisão 142. Na colagem, o elétrico (marcado a tracejado na fotografia) fica sempre acima da agulha, e as
    // duas vias acabam iguais: nenhuma fica escolhida.
@@ -29,7 +32,22 @@ try{
    assert(samples.slice(-4).every(s=>Math.abs(s.x-samples[samples.length-1].x)<.01));
    for(const s of samples){assert.ok(s.x<s.limit);assert.equal(s.w,m.width);assert.equal(s.h,m.height)}
    for(const s of samples.slice(-4)){assert.equal(s.va,1);assert.equal(s.vb,1)}
-   await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.equal(await button.textContent(),'Pôr o desenho a andar');
+   // 06/11/2026: decisão 170. A alavanca vai à direita (a via a direito pisca, a outra fica a 0,25), volta ao meio, vai à esquerda
+   // (pisca a via que curva) e acaba ao meio; o pé da haste fica sempre em cima da base; os sinais surgem e apagam-se; tudo o que
+   // mexe fica dentro da faixa (no telemóvel, o recorte do meio da cena); no fim e no repouso, a cena neutra do desenho parado.
+   const passos=await f.evaluate(e=>{const anims=e.getAnimations({subtree:true}),svg=e.querySelector('svg'),braco=e.querySelector('.jc-alavanca-braco'),haste=braco.querySelector('path'),base=e.querySelector('.jc-alavanca>path');const ponto=(el,x,y)=>{const q=svg.createSVGPoint();q.x=x;q.y=y;return q.matrixTransform(el.getScreenCTM())};const data=[];for(const t of [0,5000,7200,9000,9540,12000,15500,18180,18720,21000,24500,30000,36000,71999]){anims.forEach(a=>{a.currentTime=t});const r=e.getBoundingClientRect(),tr=getComputedStyle(braco).transform,mm=new DOMMatrix(tr==='none'?undefined:tr),pe=ponto(haste,563,548),pb=ponto(base,563,548),fora=[...e.querySelectorAll('.jc-alavanca,.jc-agulha,.jc-sinal')].filter(n=>{const q=n.getBoundingClientRect();return q.left<r.left-.5||q.right>r.right+.5||q.top<r.top-.5||q.bottom>r.bottom+.5}).map(n=>n.getAttribute('class'));data.push({t,ang:Math.round(Math.atan2(mm.b,mm.a)*1800/Math.PI)/10,va:+getComputedStyle(e.querySelector('.jc-via-a')).opacity,vb:+getComputedStyle(e.querySelector('.jc-via-b')).opacity,sinais:[...e.querySelectorAll('.jc-sinal')].map(n=>Math.round(+getComputedStyle(n).opacity*100)/100),pe:Math.hypot(pe.x-pb.x,pe.y-pb.y),fora})}anims.forEach(a=>{a.currentTime=0});return data});
+   const em=t=>passos.find(x=>x.t===t),perto=(a,b,msg)=>assert.ok(Math.abs(a-b)<.02,msg+': '+a+' em vez de '+b);
+   for(const x of passos){assert.ok(x.pe<.5,'o pé da haste saiu da base aos '+x.t+' ms: '+x.pe);assert.deepEqual(x.fora,[],'fora da faixa aos '+x.t+' ms a '+width+' px')}
+   for(const t of [0,5000,15500,30000,36000,71999])perto(em(t).ang,0,'alavanca ao meio aos '+t);
+   assert.ok(em(7200).ang>2&&em(7200).ang<24,'a alavanca a meio do gesto aos 7,2 s: '+em(7200).ang);
+   for(const t of [9000,9540,12000]){perto(em(t).ang,26,'alavanca à direita aos '+t);perto(em(t).vb,.25,'via que curva a 0,25 aos '+t)}
+   for(const t of [18180,18720,21000]){perto(em(t).ang,-26,'alavanca à esquerda aos '+t);perto(em(t).va,.25,'via a direito a 0,25 aos '+t)}
+   perto(em(9000).va,1,'via a direito acesa');perto(em(9540).va,.4,'via a direito a piscar');perto(em(18180).vb,.4,'via que curva a piscar');perto(em(18720).vb,1,'via que curva acesa');
+   assert.deepEqual(em(0).sinais,[0,0,0,0]);assert.deepEqual(em(5000).sinais,[1,0,0,0]);assert.deepEqual(em(9000).sinais,[1,0,1,0]);assert.deepEqual(em(18720).sinais,[1,1,1,1]);
+   for(const t of [30000,36000,71999]){assert.deepEqual(em(t).sinais,[0,0,0,0]);perto(em(t).va,1,'via a direito no fim');perto(em(t).vb,1,'via que curva no fim')}
+   // 06/11/2026: decisão 170. «Parar o desenho» pára logo e volta à cena neutra, a meio do gesto da alavanca.
+   await f.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>{a.currentTime=9540}));
+   await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.deepEqual(await f.evaluate(neutra),NEUTRA,'parado: cena neutra');assert.equal(await button.textContent(),'Pôr o desenho a andar');
    await button.click();await p.clock.fastForward(72001);assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0,'pára depois de dois ciclos');assert.equal(await button.textContent(),'Pôr o desenho a andar');
    await button.click();await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'))});assert.ok(await f.evaluate(e=>e.classList.contains('fundo-pausa')));assert.equal(await p.locator('.jc-eletrico').evaluate(e=>getComputedStyle(e).animationPlayState),'paused');
    await p.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'))});await p.locator('main>nav').scrollIntoViewIfNeeded();await p.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await p.waitForTimeout(80);assert.ok(await f.evaluate(e=>e.classList.contains('fundo-pausa')),'pausa fora do ecrã');await f.scrollIntoViewIfNeeded();await p.waitForTimeout(80);await button.click();
@@ -39,13 +57,13 @@ try{
   await p.emulateMedia({media:'print'});assert.ok(await f.isHidden());assert.ok(await button.isHidden());rows.push({width,mode,...m,errors});await ctx.close();console.log('PASS',width,mode);
  }
  for(const options of [{reducedMotion:'reduce'},{javaScriptEnabled:false}]){
-  const ctx=await context({viewport:{width:390,height:844},...options}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');await p.locator('.jc-fundo').scrollIntoViewIfNeeded();assert.ok(await p.locator('.jc-fundo svg').isVisible());assert.ok(await p.locator('[data-fundo-botao="jc"]').isHidden());assert.equal(await p.locator('.jc-fundo').evaluate(e=>e.getAnimations({subtree:true}).length),0);await ctx.close();
+  const ctx=await context({viewport:{width:390,height:844},...options}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/');await p.locator('.jc-fundo').scrollIntoViewIfNeeded();assert.ok(await p.locator('.jc-fundo svg').isVisible());assert.ok(await p.locator('[data-fundo-botao="jc"]').isHidden());assert.equal(await p.locator('.jc-fundo').evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.deepEqual(await p.locator('.jc-fundo').evaluate(neutra),NEUTRA,'cena neutra sem movimento');await ctx.close();
  }
  // 05/11/2026: revisão de 5/11 (lente-justica-4), com a revisão adversarial. Ao recomeçar depois de «Parar o desenho», não se vê
  // salto: a t=0 a fotografia está transparente (a troca de 1,04 para 1 fica escondida), a 1,44 s já se vê toda, e no fim volta ao
  // retângulo do estado parado (diferença < 0,01 px).
  {const caixa=async reducedMotion=>{const ctx=await context({viewport:{width:1366,height:900},reducedMotion}),p=await ctx.newPage();await p.goto(origin+'/lente/olhar-e-decidir/justica/',{waitUntil:'load'});await p.locator('.jc-fundo').scrollIntoViewIfNeeded();await p.waitForTimeout(120);const r=await p.locator('.jc-fundo').evaluate(e=>{const anims=e.getAnimations({subtree:true}),el=e.querySelector('.jc-eletrico'),med=t=>{anims.forEach(a=>{a.currentTime=t});const q=e.querySelector('.jc-foto').getBoundingClientRect();return {op:+getComputedStyle(el).opacity,l:q.left,t:q.top,r:q.right,b:q.bottom}};const ini=med(0),entra=med(1440),fim=med(36000);anims.forEach(a=>{a.currentTime=0});return {n:anims.length,ini,entra,fim,op:+getComputedStyle(el).opacity,...fim}});await ctx.close();return r};
-  const parado=await caixa('reduce'),arranque=await caixa('no-preference');assert.equal(parado.n,0);assert.equal(arranque.n,3);
+  const parado=await caixa('reduce'),arranque=await caixa('no-preference');assert.equal(parado.n,0);assert.equal(arranque.n,10,'06/11/2026: decisão 170, dez animações');
   assert.equal(arranque.ini.op,0,'a t=0 a fotografia tem de estar transparente');assert.equal(arranque.entra.op,1,'a 1,44 s a fotografia já se vê toda');
   for(const k of ['l','t','r','b'])assert.ok(Math.abs(parado[k]-arranque.fim[k])<.01,'o fim da aproximação não coincide com o estado parado, '+k+': '+parado[k]+' contra '+arranque.fim[k]);console.log('PASS recomeço sem salto e uma só aproximação')}
  // 05/11/2026: revisão de 5/11 (lente-justica-5). Entre 406 e 639 px, a faixa (até 300 px) subia por baixo da apresentação.
