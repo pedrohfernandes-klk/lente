@@ -29,6 +29,9 @@ FORMAS_ANTIGAS = [
     '<strong>Decisões</strong>',
     'assinatura-orientacao">Decisões<',
     'Abrir Decisões',
+    # 06/11/2026: o nome ainda mais antigo da família, que o #107 não viu (escrito com escape unicode no último cartão).
+    'Voltar a Ter ju\\u00edzo',
+    'Voltar a Ter juízo',
 ]
 
 
@@ -40,7 +43,8 @@ def publicados():
 
 class Dilemas149(unittest.TestCase):
     def test_manifesto_aplicado_com_contagem_exata(self):
-        # 06/11/2026: 43 sítios em 21 ficheiros (o 44.º do #107, o ramo repetido do mapa, saiu com a revisão de 5/11).
+        # 06/11/2026: 43 sítios em 21 ficheiros (o 44.º do #107, o ramo repetido do mapa, saiu com a revisão de 5/11),
+        # mais o botão «Voltar a Ter juízo» do último cartão da lição 1 de Estética, o nome anterior da família.
         self.assertEqual(len(MANIFESTO), 21)
         for nome, trocas in MANIFESTO.items():
             texto = (ROOT / nome).read_text(encoding='utf-8')

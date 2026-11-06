@@ -58,9 +58,24 @@
       2
     ],
     [
-      "Voltar a Decisões",
-      "Voltar a Dilemas",
-      3
+      "olhar-e-decidir/\">Voltar a Decisões</a>",
+      "olhar-e-decidir/\">Voltar a Dilemas</a>",
+      1
+    ],
+    [
+      "voltarRotulo:\"Voltar a Decisões\"",
+      "voltarRotulo:\"Voltar a Dilemas\"",
+      1
+    ],
+    [
+      "olhar-e-decidir/\\\">Voltar a Decisões</a>",
+      "olhar-e-decidir/\\\">Voltar a Dilemas</a>",
+      1
+    ],
+    [
+      "seguinteRotulo:\"Voltar a Ter ju\\u00edzo\"",
+      "seguinteRotulo:\"Voltar a Dilemas\"",
+      1
     ],
     [
       "percursoRotulo:\"Decisões\"",
