@@ -34,11 +34,19 @@ def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('ut
 # 02 a 10 publicadas, até ao pedido 3.
 # 06/11/2026 (decisão 166): a sessão 02 também passa ao molde final, no mesmo endereço (test_sessao_02_no_molde, abaixo, e
 # tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 03 a 10.
-# 06/11/2026 (decisões 166 a 168): a sessão 06 também passa ao molde final, no mesmo endereço (test_sessao_06_no_molde, abaixo, e
-# tests/test_molde_cidadania.py conferem-na). A lista das sessões publicadas que seguem o molde antigo sai dos .json das sessões:
-# uma sessão sai dela só quando o seu .json tem o campo «molde» (o validador e o teste dessa sessão conferem-na então como lição no
-# molde); as regras do molde antigo continuam a valer, iguais, para todas as outras (hoje, as 03 a 05 e as 07 a 10).
-PUBLICADAS=[n for n in range(3,11) if not json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde')]
+# 06/11/2026 (decisões 166 a 168): a sessão 03 também passa ao molde final, no mesmo endereço (test_sessao_03_no_molde, abaixo, e
+# tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 04 a 10.
+# 06/11/2026 (decisões 166 a 168): a sessão 04 também passa ao molde final, no mesmo endereço (test_sessao_04_no_molde, abaixo, e
+# tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 05 a 10.
+# 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): a lista fica escrita, como a do main; que as sessões fora
+# dela são as que têm o campo «molde» no .json (a regra que a s04 trazia) confere-se em test_sessao_04_no_molde.
+# 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 4 finais na sessão 5): a sessão 05 também passa ao molde final,
+# no mesmo endereço (test_sessao_05_no_molde, abaixo, e tests/test_molde_cidadania.py conferem-na); a lista continua escrita, e as
+# regras do molde antigo continuam a valer, iguais, para as sessões 06 a 10.
+# 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 5 finais na sessão 6): a sessão 06 também passa ao molde final,
+# no mesmo endereço (test_sessao_06_no_molde, abaixo, e tests/test_molde_cidadania.py conferem-na); a lista continua escrita, e as
+# regras do molde antigo continuam a valer, iguais, para as sessões 07 a 10.
+PUBLICADAS=range(7,11)
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
@@ -116,10 +124,16 @@ class Molde(unittest.TestCase):
   self.assertIn('Não é preciso encenar, filmar ou gravar.',s)
 
  def test_registo_so_nas_sessoes_que_contam(self):
+  # 06/11/2026 (decisões 166 a 168): a sessão 03 passou ao molde final, que não tem registo de sessão (como a 01 e a 02); as 04 a
+  # 10 publicadas continuam com um registo cada.
   for n in range(1,11):
-   # 06/11/2026 (decisões 166 a 168): sem registo, as sessões que já são lições no molde (a 01, a 02 e a 06); com um registo,
-   # todas as publicadas que seguem o molde antigo (PUBLICADAS).
-   s=pagina(n);self.assertEqual(s.count('data-session-done'),1 if n in PUBLICADAS else 0,n)
+   # 06/11/2026 (decisões 166 a 168): a sessão 04 também passou ao molde final, sem registo de sessão; as 05 a 10 publicadas
+   # continuam com um registo cada.
+   # 06/11/2026 (fusão do main com as sessões 2 a 4 finais na sessão 5): a sessão 05 também passou ao molde final, sem registo de
+   # sessão; as 06 a 10 publicadas continuam com um registo cada.
+   # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a sessão 06 também passou ao molde final, sem registo de
+   # sessão; as 07 a 10 publicadas continuam com um registo cada.
+   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=6 else 1,n)
 
 
  def test_sessao_01_no_molde(self):
@@ -144,10 +158,64 @@ class Molde(unittest.TestCase):
   finally:sys.path.pop(0)
   self.assertTrue(molde_s02.inteiro_ok('cidadania/m1/sessoes/02/index.html'))
 
+ def test_sessao_03_no_molde(self):
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está a lição no molde final, com a chave do piloto e sem os cinco passos.
+  s=pagina(3)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s03"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s03
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s03.inteiro_ok('cidadania/m1/sessoes/03/index.html'))
+
+ def test_sessao_04_no_molde(self):
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 04 está a lição no molde final, com a chave do piloto e sem os cinco
+  # passos; as outras sessões publicadas (PUBLICADAS) continuam no molde antigo.
+  # 06/11/2026 (fusão do main com as sessões 2 a 4 finais na sessão 5): a 05 também saiu de PUBLICADAS (test_sessao_05_no_molde);
+  # a primeira sessão publicada no molde antigo, a seguir à 04, é agora a 06.
+  # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a 06 também saiu de PUBLICADAS (test_sessao_06_no_molde);
+  # a primeira sessão publicada no molde antigo, a seguir à 04, é agora a 07.
+  self.assertNotIn(4,PUBLICADAS);self.assertIn(7,PUBLICADAS)
+  # 06/11/2026 (fusão do main com as sessões 2 e 3 finais): as sessões 03 a 10 fora de PUBLICADAS são exatamente as que têm o campo
+  # «molde» no seu .json (hoje, a 03 e a 04). 06/11/2026 (fusão na sessão 5): hoje, a 03, a 04 e a 05.
+  # 06/11/2026 (fusão na sessão 6): hoje, as 03 a 06.
+  self.assertEqual([n for n in range(3,11) if json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde')],
+                   [n for n in range(3,11) if n not in PUBLICADAS])
+  s=pagina(4)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s04"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s04
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s04.inteiro_ok('cidadania/m1/sessoes/04/index.html'))
+
+ def test_sessao_05_no_molde(self):
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 05 está a lição no molde final, com a chave do piloto e sem os cinco
+  # passos; as outras sessões publicadas (PUBLICADAS) continuam no molde antigo.
+  # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a 06 também saiu de PUBLICADAS; a primeira sessão publicada
+  # no molde antigo, a seguir à 05, é agora a 07.
+  self.assertNotIn(5,PUBLICADAS);self.assertIn(7,PUBLICADAS)
+  # 06/11/2026 (fusão do main com as sessões 2 a 4 finais): a regra que a s05 trazia (fora de PUBLICADAS só as sessões com o campo
+  # «molde» no .json) confere-se, para a 05 também, em test_sessao_04_no_molde; aqui, que o .json da 05 o tem.
+  self.assertTrue(json.loads((R/'tools/licoes/cidadania-m1-s05.json').read_text('utf-8')).get('molde'))
+  s=pagina(5)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s05"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s05
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s05.inteiro_ok('cidadania/m1/sessoes/05/index.html'))
+
  def test_sessao_06_no_molde(self):
   # 06/11/2026 (decisões 166 a 168): no endereço da sessão 06 está a lição no molde final, com a chave do piloto e sem os cinco
   # passos; as outras sessões publicadas (PUBLICADAS) continuam no molde antigo.
   self.assertNotIn(6,PUBLICADAS);self.assertIn(7,PUBLICADAS)
+  # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): como na 05, a regra (fora de PUBLICADAS só as sessões com o
+  # campo «molde» no .json) confere-se, para a 06 também, em test_sessao_04_no_molde; aqui, que o .json da 06 o tem.
+  self.assertTrue(json.loads((R/'tools/licoes/cidadania-m1-s06.json').read_text('utf-8')).get('molde'))
   s=pagina(6)
   self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s06"',s);self.assertIn('"preservarAnterior": true',s)
   self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)

@@ -11,7 +11,14 @@ que comparam com bases antigas, com as mesmas regras e sem aceitar mais nada:
   comparam com a base: comparam-se, letra a letra, com o que o seu gerador escreve hoje (inteiro_ok()), e a s06 tem de cumprir o
   contrato do molde.
 
-É a camada mais recente: desfaz-se antes da da sessão 02 e aplica-se depois dela."""
+É a camada mais recente: desfaz-se antes da da sessão 02 e aplica-se depois dela.
+
+06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): o manifesto foi gerado de novo a partir do main (d04c20f), e
+leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o gerador confere que aplicar e desfazer
+dão a volta completa). A s06 fica por cima de todas as camadas, também das da s03, da s04 e da s05 (tests/molde_s03.py a
+tests/molde_s05.py): desfaz-se primeiro no ficheiro atual, antes da da s05, ou aplica-se em último lugar ao lado esperado. As
+referências das sessões 01 e 02 saem do manifesto: o guia fica com o _txt() do main, e a s06 leva 'nb' na sua entrada de GUIA
+(tools/cidadania_piloto.py), que dá o mesmo papel; as regras e as contagens exatas não mudam."""
 import importlib.util
 import json
 from pathlib import Path

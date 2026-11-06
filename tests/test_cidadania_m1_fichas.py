@@ -43,7 +43,11 @@ class FichasM1(unittest.TestCase):
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata.
    if path in grupos146.TROCAS:new=grupos146.desfazer(new,path)
    self.assertEqual(bank(old),bank(new))
-   self.assertEqual(re.findall(r'<script\b[^>]*>.*?</script>',old,re.S),re.findall(r'<script\b[^>]*>.*?</script>',new,re.S))
+   # 05/11/2026: decisão 163 (menus). Os scripts antigos ficam todos, iguais e pela mesma ordem; junta-se exatamente um,
+   # o do menu ≡ (assets/licoes/menu.js, com defer, no fim do corpo).
+   novos=re.findall(r'<script\b[^>]*>.*?</script>',new,re.S)
+   self.assertEqual(novos[-1],'<script defer src="../../../assets/licoes/menu.js?v=20261105-163"></script>')
+   self.assertEqual(re.findall(r'<script\b[^>]*>.*?</script>',old,re.S),novos[:-1])
    css=re.findall(r'<style\b[^>]*>(.*?)</style>',old,re.S)
    if blocks is None:blocks=css
    self.assertEqual(blocks,css)
@@ -61,9 +65,15 @@ class FichasM1(unittest.TestCase):
   for n in (1,2):
    s=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    self.assertNotIn('data-session-done',s);self.assertNotIn('Percurso já realizado',s)
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final (tools/licoes/cidadania-m1-s03.json),
+  # escrita inteira pelo seu gerador e conferida em tests/test_molde_cidadania.py (SessaoS03) e tests/test_cidadania_m1_molde.py; a
+  # obra _The Egg_ entra nela como «Recupera» (decisão 144). Continua sem registo pessoal, sem avisos sobre o que a turma já estudou
+  # e com a ligação ao enunciado da Pergunta Humana.
   s=(R/'cidadania/m1/sessoes/03/index.html').read_text('utf-8')
-  self.assertIn('5 a 8 minutos',s);self.assertIn('href="../../../projeto/"',s)
-  for text in ['Marina Abramović','The Egg','The Truman Show','conhecimentos prévios']:self.assertNotIn(text,s)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s03"',s);self.assertIn('href=\\"../../../projeto/#pergunta-resposta\\"',s)
+  self.assertNotIn('data-session-done',s);self.assertNotIn('conhecimentos prévios',s)
+  # 06/11/2026: só _The Egg_ entra na sessão 03 nova; as outras duas obras da sessão antiga continuam proibidas nela, como antes.
+  for text in ['Marina Abramović','The Truman Show']:self.assertNotIn(text,s)
   g=(R/'cidadania/m1/sessoes/index.html').read_text('utf-8')
   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais.
   for text in ['Mostras curtas individuais','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
@@ -77,11 +87,21 @@ class FichasM1(unittest.TestCase):
   for n,s in enumerate(m.SESSOES,1):
    if s.get('prior'):continue
    self.assertEqual(sum(s['times']),180,n)
+   # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final, sem os cinco momentos (conferida em
+   # tests/test_molde_cidadania.py, SessaoS03); os momentos continuam exigidos às sessões 04 a 10 publicadas.
+   if n==3:continue
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    # 06/11/2026 (decisões 166 a 168): uma sessão cujo .json tem o campo «molde» passou à lição no molde final, no mesmo endereço
-   # (hoje, a 06); confere-se aqui que é essa lição, e o contrato do molde confere-se em tests/test_molde_cidadania.py. As outras
+   # (hoje, a 04); confere-se aqui que é essa lição, e o contrato do molde confere-se em tests/test_molde_cidadania.py. As outras
    # continuam a ter de ter os cinco momentos e os controlos de sempre.
-   if json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'):
+   # 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): como a 03 acima, a sessão fica nomeada (a 04), e o seu .json
+   # tem de ter o campo «molde»; as 05 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 4 finais na sessão 5): a 05 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 06 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a 06 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 07 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   if n in (4,5,6):
+    self.assertTrue(json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'),n)
     self.assertIn('molde-cidadania',page,n);self.assertNotIn('data-stage',page,n);continue
    self.assertEqual(page.count(' data-stage data-label='),5)
    # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre

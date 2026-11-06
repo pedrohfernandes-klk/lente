@@ -1,8 +1,9 @@
 {
  "id": "cidadania-m1-s03",
  "chave": "epi-cid-m1-s03",
- "versao": "2026-10-31-2",
+ "versao": "2026-11-06-molde",
  "marca": "CD",
+ "molde": "cidadania-2026-11",
  "titulo": "Sessão 03: Quem tem lugar?",
  "h1": "Cidadania, módulo 1, sessão 03: Quem tem lugar?",
  "modulo": {
@@ -10,268 +11,459 @@
   "nome": "Humanos",
   "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"
  },
- "saida": "cidadania/piloto/m1-s03/index.html",
- "piloto": true,
- "seguinte": "../m1-s04/",
+ "saida": "cidadania/m1/sessoes/03/index.html",
+ "seguinte": "../04/",
  "seguinteRotulo": "Sessão 04: Posso dizer tudo?",
- "fontes": "Constituição da República Portuguesa, artigos 13.º e 41.º, n.ºs 2 e 3 (texto lido no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 23.º, no texto do Ministério Público. Fotografia: Esther Bubley, _Sign at bus station. Rome, Georgia_, setembro de 1943 (Library of Congress, Farm Security Administration/Office of War Information, domínio público). Vídeo: TED-Ed, «What does this symbol actually mean?», lição de Adrian Treharne. Os casos são inventados.",
+ "fontes": "Constituição da República Portuguesa, artigos 13.º, n.os 1 e 2, 18.º, n.º 1, e 71.º, n.º 1, na versão consolidada do Diário da República. Convenção sobre os Direitos da Criança, artigos 1.º e 23.º, n.º 1, na tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, no Diário da República. Lei n.º 46/2006, de 28 de agosto, artigo 3.º, alínea b), no Diário da República. Tribunal Europeu dos Direitos Humanos, _Enver Şahin c. Turquia_, queixa n.º 23065/12, acórdão de 30 de janeiro de 2018, no HUDOC (em inglês). Fotografia: Esther Bubley, placa numa estação de autocarros de Rome, na Geórgia, setembro de 1943, Library of Congress, domínio público. _The Egg_, conto de Andy Weir. O caso do Rui, o da direção e da Declaração, o das barreiras na escola, o da visita de estudo e o da reunião com os pais são inventados; o do Tribunal Europeu dos Direitos Humanos é real.",
+ "tempos": {
+  "folga": 10,
+  "pausa": 10,
+  "projeto": 45,
+  "entrega": 5
+ },
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">A tua pergunta</p><p class=\"sub\">No teatro-documento, tudo parte de uma pergunta que consegues investigar. Escolhe a tua e escreve-a, em papel, em três versões: a primeira que te ocorre, uma mais delimitada (que pessoas, que lugar, que tempo) e a final. O que conta: não se responde com «sim» ou «não»; não se resolve com cinco minutos de pesquisa; pode ser investigada aqui, na escola, no bairro, na família ou em fontes a que tens acesso.</p><p class=\"ir\"><a href=\"../../../projeto/#pergunta-resposta\">Uma boa pergunta, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Quem tem lugar?",
-   "html": "<p class=\"pergunta-c\">Uma regra igual para todos pode deixar alguém de fora?</p><p>Caso inventado. A mostra de fim de período vai ser no primeiro andar, sem elevador. O Rui usa cadeira de rodas. A turma diz-lhe que depois lhe manda o vídeo.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ler uma placa de 1943, encontrar barreiras e propor uma solução com orçamento; no fim, a tua pergunta.</p>"
+   "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">A turma prepara a mostra do período: cada aluno apresenta o seu trabalho e, no fim, há um debate. A sala marcada é a do primeiro andar, a de melhor luz, e não há elevador. O Rui, de 16 anos, usa cadeira de rodas. A organização propõe enviar-lhe o vídeo da mostra no próprio dia.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Uma regra igual para todos pode deixar alguém de fora?</p></div>",
+   "min": 5,
+   "aula": {
+    "linha": "ver e ler (60 min), pausa (10 min), pesar e escrever (50 min) e o teu projeto (45 min)."
+   }
   },
   {
    "t": "ler",
    "rot": "Decide",
-   "titulo": "A sala da mostra",
-   "html": "<p>A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão da organização</summary><div><p>«A sala do primeiro andar já está marcada e tem a melhor luz. O Rui vê tudo no vídeo.»</p></div></details><details class=\"lado\"><summary>A razão do Rui</summary><div><p>«Não quero ver a mostra: quero estar nela e falar no debate.»</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se a sala de baixo tiver menos lugares e ficarem outros de fora? Há outra solução?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>"
+   "titulo": "Antes dos materiais",
+   "html": "<div class=\"m-decide\"><p class=\"pos-intro\">Decide: sim, não ou depende. Escolhe antes de veres os materiais; no fim, voltas a esta pergunta.</p><div class=\"posicao\" data-artefacto=\"posicao-inicio\" data-rot=\"A tua posição no início\"><p class=\"pos-q\">A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição no início\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div><p class=\"pos-nota\">Não há resposta certa neste cartão.</p></div><div class=\"pos-lados\" data-depois-de=\"posicao-inicio\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>A mostra é de toda a turma. Uma sala onde um aluno não entra não serve, por melhor que seja a luz.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>A sala de cima está marcada e tem a melhor luz. Com o vídeo, o Rui vê a mostra inteira.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se a sala de baixo tiver menos lugares? Há outra solução?</p></div></details></div></div>",
+   "min": 8
   },
   {
    "t": "escolha",
-   "g": "caso",
-   "p": "No caso da mostra, o que está confirmado?",
-   "p2": "Do caso da mostra, que informação é um facto e não uma suposição?",
+   "rot": "Se pudesses ser qualquer um",
+   "p": "No conto _The Egg_, de Andy Weir, um homem morre e descobre que vai viver a vida de cada pessoa. Se pudesses ser qualquer colega, aceitavas a sala de cima?",
+   "p2": "Imagina, como no conto _The Egg_, que podes vir a ser qualquer pessoa da turma. A mostra no primeiro andar, sem elevador, continua a parecer-te justa?",
+   "f": "No conto, quem julga uma regra pode vir a ocupar qualquer lugar. Se pudesses ser o Rui, a sala de cima deixava-te à porta, por igual que a regra pareça. É a pergunta de hoje.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "pôr-se no lugar do outro",
+   "pista": "Pensa no que o conto faz a quem julga: que lugares pode vir a ocupar?",
+   "g": "recupera",
    "o": [
-    "Não há elevador e o Rui usa cadeira de rodas.",
-    "O Rui prefere ver a mostra pelo vídeo.",
-    "A turma não quer que o Rui vá à mostra."
+    "Não: podia ser eu a ficar à porta da sala de cima.",
+    "Sim, porque a regra é a mesma para toda a turma.",
+    "Sim: o Rui recebe o vídeo no próprio dia da mostra."
    ],
    "c": 0,
-   "f": "O caso diz que a sala é no primeiro andar, sem elevador, e que o Rui usa cadeira de rodas. O que o Rui prefere, ninguém lhe perguntou; e do que a turma pensa só sabemos o que lhe disse.",
    "fe": [
     "",
-    "Ninguém perguntou ao Rui o que prefere. Supor a preferência de alguém é decidir por essa pessoa.",
-    "O caso não diz o que a turma quer. Diz só o que ela propôs: mandar-lhe o vídeo."
+    "A regra é a mesma, mas não chega igual a todos: o Rui não sobe a escada. O conto pede-te que te ponhas no lugar de cada pessoa. Imagina que acordas na vida do Rui.",
+    "Imagina que acordas na vida do Rui, no dia da mostra: a turma está na sala de cima e tu não consegues subir. O conto pede-te que julgues a regra a partir desse lugar."
    ]
   },
   {
+   "t": "vf",
+   "rot": "Mais do que uma declaração",
+   "p": "Caso inventado: a direção lembra que a Declaração Universal não é lei. Conclui que nenhum texto a obriga a tratar o Rui como os outros alunos.",
+   "p2": "Como a Declaração Universal não é lei, nenhum texto obriga a escola a tratar o Rui como os outros alunos.",
+   "f": "É falso: a Constituição obriga a escola, porque os direitos, liberdades e garantias «vinculam as entidades públicas e privadas» (artigo 18.º, n.º 1). É a força jurídica que viste na sessão 01.",
+   "min": 4,
+   "tipo": "distinguir",
+   "conceito": "força jurídica",
+   "v": false,
+   "fe": "A Declaração não é o único texto. A Constituição diz que os direitos, liberdades e garantias «vinculam as entidades públicas e privadas» (artigo 18.º, n.º 1), e uma escola é uma delas. Volta à sessão 01, aos três textos e à força de cada um.",
+   "citacoes": [
+    [
+     "crp-18-1",
+     "vinculam as entidades públicas e privadas"
+    ]
+   ],
+   "pista": "Lembra-te dos três textos da sessão 01 e de quem cada um obriga.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/01/"
+  },
+  {
+   "t": "ler",
+   "rot": "Olha",
+   "titulo": "Uma placa de 1943",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro; só depois lê a legenda.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"A placa de uma sala de espera, Rome, 1943\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"Uma placa presa a uma barra de ferro, contra o céu. Em letras grandes, a palavra «COLORED»; por baixo, uma seta para a esquerda e as palavras «WAITING ROOM». Em baixo, o alto de uma parede de tijolo e fios elétricos.\" width=\"640\" height=\"671\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da fotografia\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Esther Bubley, placa numa estação de autocarros Greyhound, Rome, Geórgia, setembro de 1943. Library of Congress (cph.3b22541). <a href=\"https://hdl.loc.gov/loc.pnp/cph.3b22541\">Registo de origem</a>; <a href=\"https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg\">ficheiro no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Estação de autocarros de Rome, na Geórgia (Estados Unidos), em setembro de 1943. «Colored waiting room»: sala de espera para «pessoas de cor».</figcaption></figure></div>",
+   "min": 3
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Imagem, legenda ou nenhuma",
+   "p": "Para cada frase: vê-se na fotografia, só a legenda o diz, ou nenhuma das duas o prova?",
+   "p2": "De onde vem cada informação: da fotografia, da legenda, ou de nenhuma das duas?",
+   "f": "A seta vê-se. A estação e a data, só a legenda as dá. Que toda a gente fizesse o que a placa mandava, nem a fotografia nem a legenda o mostram. É a distinção que fizeste na sessão 01, com a fotografia de Eleanor Roosevelt.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "imagem e legenda",
+   "ver": "<img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"A mesma fotografia: a placa com «COLORED» e uma seta para a esquerda com «WAITING ROOM», contra o céu.\">",
+   "origem": "cidadania/m1/sessoes/01/",
+   "pares": [
+    [
+     "Uma seta indica de que lado fica a sala.",
+     "Vê-se na fotografia"
+    ],
+    [
+     "A placa estava numa estação de autocarros.",
+     "Só a legenda o diz"
+    ],
+    [
+     "Quem passava ali fazia o que a placa mandava.",
+     "Nenhuma das duas o prova"
+    ]
+   ],
+   "fe": "A confusão mais provável é tomar o que a placa manda pelo que as pessoas faziam: uma ordem escrita não prova que foi cumprida. Volta à fotografia e tapa a legenda.",
+   "pista": "Para cada frase, pergunta-te onde a leste ou viste."
+  },
+  {
+   "t": "escolha",
+   "rot": "Placa ou escada",
+   "p": "A placa de 1943 e a escada da mostra deixam pessoas de fora. Em que são diferentes?",
+   "p2": "A placa e a escada da mostra afastam pessoas. O que tem a placa que a escada não tem?",
+   "f": "A placa escreve na própria regra quem vai para onde, pela cor da pele. Na mostra, nenhuma regra diz que o Rui não entra: a regra é igual para todos, e é a escada que o deixa de fora.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "igual no papel e no efeito",
+   "ver": "<img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"A mesma fotografia: a placa com «COLORED» e uma seta para a esquerda com «WAITING ROOM», contra o céu.\">",
+   "pista": "Compara as duas: o que diz cada regra e o que faz?",
+   "o": [
+    "Na placa ninguém fica de fora: cada um tem a sua sala.",
+    "Na escada, alguém quis afastar o Rui da mostra.",
+    "Na placa, quem fica à parte está escrito na regra."
+   ],
+   "c": 2,
+   "fe": [
+    "Uma sala à parte, escolhida pela cor da pele, é pôr pessoas de lado: a placa manda uns para outro sítio só por serem quem são. Volta à legenda e à seta.",
+    "Nada no caso diz que a sala foi escolhida para afastar o Rui: foi pela luz. Uma barreira pode deixar alguém de fora sem que ninguém o queira. Volta ao caso.",
+    ""
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Igualdade na lei",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> De que protegem?</p><blockquote class=\"lei\"><p data-l=\"n2\" data-fonte=\"crp-13-2\"><span class=\"art\">Artigo 13.º</span>«Ninguém pode ser privilegiado, beneficiado, prejudicado, privado de qualquer direito ou isento de qualquer dever em razão de ascendência, sexo, raça, língua […]»</p><p data-l=\"c23\" data-fonte=\"cdc-23-1\"><span class=\"art\">Artigo 23.º</span>«[…] reconhecem à criança mental e fisicamente deficiente o direito a uma vida plena e decente em condições que […] facilitem a sua participação activa na vida da comunidade.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição, artigo 13.º, n.º 2</a>; <a href=\"https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390\">Convenção sobre os Direitos da Criança, artigo 23.º, n.º 1</a></p><details class=\"mais\"><summary>Ler mais</summary><div><blockquote class=\"lei\"><p data-fonte=\"crp-13-1\"><span class=\"art\">Constituição, artigo 13.º, n.º 1</span>«Todos os cidadãos têm a mesma dignidade social e são iguais perante a lei.»</p><p data-fonte=\"crp-71-1\"><span class=\"art\">Constituição, artigo 71.º, n.º 1</span>«Os cidadãos portadores de deficiência física ou mental gozam plenamente dos direitos […]»</p><p data-fonte=\"cdc-1\"><span class=\"art\">Convenção, artigo 1.º</span>«[…] criança é todo o ser humano menor de 18 anos […]»</p></blockquote></div></details></div>",
+   "min": 4
+  },
+  {
    "t": "sublinhar",
-   "g": "artigo13",
-   "p": "Constituição, artigo 13.º, n.º 2: toca nas duas palavras que dizem como alguém pode ficar a perder.",
-   "p2": "No artigo 13.º, n.º 2, que duas palavras descrevem uma perda? Toca nelas.",
+   "rot": "Como se fica a perder",
+   "p": "No artigo 13.º, n.º 2, sublinha as duas palavras que dizem como alguém pode ficar a perder.",
+   "p2": "No n.º 2 do artigo 13.º, que duas palavras descrevem uma perda para quem é tratado de forma diferente? Sublinha-as.",
+   "f": "Ninguém pode ser «prejudicado» nem «privado de qualquer direito» por causa da origem, do sexo, da língua ou da religião, entre outras razões. As outras três também são proibidas, mas dizem um ganho: «privilegiado», «beneficiado» e «isento» de um dever.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "princípio da igualdade",
    "frase": "Ninguém pode ser privilegiado, beneficiado, prejudicado, privado de qualquer direito ou isento de qualquer dever em razão de ascendência, sexo, raça, língua, território de origem, religião, convicções políticas ou ideológicas, instrução, situação económica, condição social ou orientação sexual.",
    "certas": [
     5,
     6
    ],
-   "f": "Ninguém pode ser **prejudicado** nem **privado** de qualquer direito por causa da origem, do sexo, da língua ou da religião, entre outras razões. Três outras palavras da lista proíbem o contrário: privilegiar, beneficiar ou dispensar alguém de um dever."
+   "fonte": "crp-13-2",
+   "l": "n2",
+   "citacoes": [
+    [
+     "crp-13-2",
+     "privado de qualquer direito"
+    ],
+    [
+     "crp-13-2",
+     "prejudicado"
+    ],
+    [
+     "crp-13-2",
+     "privilegiado"
+    ],
+    [
+     "crp-13-2",
+     "beneficiado"
+    ],
+    [
+     "crp-13-2",
+     "isento"
+    ]
+   ],
+   "fe": "A confusão mais provável é sublinhar «privilegiado» ou «beneficiado»: também são proibidos, mas dizem como alguém fica a ganhar. Procura as duas que dizem uma perda.",
+   "pista": "Separa as palavras que dizem ganhar das que dizem perder."
+  },
+  {
+   "t": "escolha",
+   "rot": "Fora da lista",
+   "p": "A lista do artigo 13.º, n.º 2, não diz «deficiência». Que conclusão podes tirar para o Rui?",
+   "p2": "A deficiência não aparece entre as razões do artigo 13.º, n.º 2. O que muda isso para o Rui?",
+   "f": "A lista do n.º 2 não esgota a proteção: a Convenção reconhece à criança com deficiência o direito a condições que «garantam a sua dignidade, favoreçam a sua autonomia». E a Constituição tem um artigo só para a deficiência, o 71.º.",
+   "min": 4,
+   "tipo": "distinguir",
+   "conceito": "o limite da lista",
+   "citacoes": [
+    [
+     "cdc-23-1",
+     "garantam a sua dignidade, favoreçam a sua autonomia"
+    ]
+   ],
+   "pista": "Antes de concluir, relê os dois textos até ao fim.",
+   "o": [
+    "A Constituição não o protege: a deficiência não vem nessa lista.",
+    "Há outro texto que o protege: a Convenção, artigo 23.º.",
+    "Fica protegido só se o regulamento da escola o disser."
+   ],
+   "c": 1,
+   "fe": [
+    "A lista do n.º 2 não é o único texto: a Constituição tem o artigo 71.º, e a Convenção reconhece à criança com deficiência direitos próprios. O Rui tem 16 anos. Volta ao artigo 23.º.",
+    "",
+    "Um regulamento tem de respeitar a Convenção, um tratado que obriga Portugal desde 1990 (sessão 01). A proteção não depende de a escola a pôr por escrito. Volta ao artigo 23.º."
+   ]
   },
   {
    "t": "emparelhar",
-   "g": "barreiras",
-   "p": "Liga cada barreira ao sítio onde ela está.",
-   "p2": "Onde está cada uma destas barreiras?",
+   "rot": "Onde está a barreira",
+   "p": "Situações novas, numa escola: onde está a barreira que deixa alguém de fora?",
+   "p2": "Liga cada situação ao sítio onde está o que impede alguém de participar.",
+   "f": "Uma barreira pode estar no espaço (os degraus), na informação (um aviso só dito em voz alta), na forma de decidir (sem ouvir quem é afetado) ou no horário (depois do último autocarro). Nenhuma está escrita como proibição, e todas deixam alguém de fora.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "barreiras",
    "pares": [
     [
-     "Três degraus à entrada da sala",
+     "Três degraus à porta do laboratório.",
      "No espaço"
     ],
     [
-     "Um debate só falado, sem nada escrito",
+     "O aviso da visita só é dito em voz alta; a Joana é surda.",
      "Na informação"
     ],
     [
-     "Uma reunião marcada sem ouvir ninguém",
+     "A direção muda as regras do bar sem ouvir os alunos.",
      "Na decisão"
     ],
     [
-     "Uma mostra à sexta-feira às 21 horas",
+     "O clube de teatro ensaia às 19h, depois do último autocarro.",
      "No horário"
     ]
    ],
-   "f": "Uma barreira pode estar no espaço (degraus), na informação (só falado), na forma de decidir (sem ouvir ninguém) ou no horário. Encontrá-la é o primeiro passo para a tirar.",
-   "fe": "Pergunta a cada caso: o que impede a pessoa de participar? O sítio, o que se diz, quem decide ou a hora?"
-  },
-  {
-   "t": "escolha",
-   "g": "genero",
-   "p": "Caso inventado: a equipa de câmara da mostra só aceita rapazes, «porque o material é pesado». O que está em causa?",
-   "p2": "A equipa de câmara recusa raparigas por causa do peso do material. Como se chama isto?",
-   "o": [
-    "Uma discriminação em razão do sexo.",
-    "Uma regra de segurança aceitável.",
-    "Uma escolha livre da equipa de câmara."
-   ],
-   "c": 0,
-   "f": "Excluir as raparigas à partida, sem ver quem consegue levar o material, é prejudicar alguém em razão do sexo, o que o artigo 13.º, n.º 2, da Constituição proíbe. Se o peso é o problema, a regra deve ser sobre o peso, para todos.",
-   "fe": [
-    "",
-    "Uma regra de segurança aplicava-se a quem não consegue levar o peso, rapaz ou rapariga. Esta exclui pelo sexo.",
-    "A equipa pode escolher quem entra, mas não pode excluir em razão do sexo: o artigo 13.º vale também na escola."
-   ]
+   "fe": "A confusão mais provável é ver barreiras só no espaço. Pergunta a cada situação o que impede a pessoa de participar: o sítio, o que se diz, quem decide ou a hora?",
+   "pista": "Imagina-te em cada situação: o que te falta para participar?"
   },
   {
    "t": "vf",
-   "g": "igual",
-   "p": "Uma regra que trata todos da mesma maneira nunca discrimina ninguém.",
-   "p2": "Se uma regra é igual para todos, não pode deixar ninguém de fora.",
+   "rot": "O que o vídeo dá",
+   "p": "Com o vídeo que recebe no próprio dia, o Rui participa na mostra e no debate como os colegas.",
+   "p2": "Se receber o vídeo no próprio dia, o Rui fica a participar na mostra da mesma forma que os colegas.",
+   "f": "É falso: pelo vídeo, o Rui vê; não apresenta o seu trabalho nem fala no debate. O artigo 23.º pede condições que «facilitem a sua participação activa na vida da comunidade»: participar é estar e intervir, não só ver.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "participar e assistir",
    "v": false,
-   "f": "Uma regra igual pode ter efeitos desiguais. Marcar a mostra num primeiro andar sem elevador vale para todos, mas só deixa de fora quem não pode subir escadas.",
-   "fe": "Pensa no Rui: a sala é a mesma para todos, mas não é igualmente acessível a todos."
+   "citacoes": [
+    [
+     "cdc-23-1",
+     "facilitem a sua participação activa na vida da comunidade"
+    ],
+    [
+     "cdc-23-1",
+     "participação activa"
+    ]
+   ],
+   "fe": "Ver não é o mesmo que participar: pelo vídeo, o Rui não apresenta o trabalho nem fala no debate. O artigo 23.º fala de «participação activa». Relê o caso: o que faz cada aluno na mostra?",
+   "pista": "Lista o que cada aluno faz na mostra."
   },
   {
    "t": "ler",
-   "rot": "Ver",
-   "titulo": "Uma placa de 1943",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"Uma placa suspensa por uma barra de ferro, contra o céu, por cima de um telhado de tijolo. Em letras grandes, a palavra «COLORED»; por baixo, uma seta e as palavras «WAITING ROOM».\" loading=\"lazy\"></span><figcaption>Esther Bubley, <i>Sign at bus station. Rome, Georgia</i>, setembro de 1943. Library of Congress, Farm Security Administration/Office of War Information. Domínio público.</figcaption></figure><p>Numa estação de autocarros dos Estados Unidos, a placa aponta a «sala de espera para pessoas de cor» (tradução nossa). A regra está escrita: separa as pessoas pela cor da pele.</p><p class=\"pergunta-c\">Esta regra estava escrita numa placa. Na tua escola, que barreira deixa alguém de fora sem estar escrita em lado nenhum?</p><p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>"
+   "rot": "Conceito",
+   "titulo": "Igual no papel, desigual no efeito",
+   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>A sala é igual para todos. Onde falha?</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">Regra</th><th scope=\"col\">No papel</th><th scope=\"col\">No efeito</th></tr></thead><tbody><tr><td data-th=\"Regra\">a placa de 1943</td><td data-th=\"No papel\">separa pela cor</td><td data-th=\"No efeito\">afasta quem nomeia</td></tr><tr><td data-th=\"Regra\">a sala de cima</td><td data-th=\"No papel\">igual para todos</td><td data-th=\"No efeito\">deixa o Rui à porta</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Discriminação indireta: uma regra que parece neutra e põe algumas pessoas em desvantagem.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Discriminação indireta</p><p class=\"cc-def\">Uma regra que parece neutra e põe algumas pessoas em desvantagem.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Não precisa de má intenção: conta o efeito.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div><details class=\"mais\"><summary>Ler mais</summary><div><p>A <a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2006-156233888\">Lei n.º 46/2006</a> (artigo 3.º, alínea b)) chama <span class=\"citado\" data-fonte=\"lei46-3b\">«Discriminação indirecta»</span> à que ocorre quando uma prática <span class=\"citado\" data-fonte=\"lei46-3b\">«aparentemente neutra seja susceptível de colocar pessoas com deficiência numa posição de desvantagem»</span>, salvo se for justificada <span class=\"citado\" data-fonte=\"lei46-3b\">«por um fim legítimo»</span>, com meios <span class=\"citado\" data-fonte=\"lei46-3b\">«adequados e necessários»</span>.</p></div></details></div>",
+   "min": 6
   },
   {
    "t": "escolha",
-   "g": "placa",
-   "p": "O que distingue a placa de 1943 da escada da mostra?",
-   "p2": "A placa de 1943 e a escada da mostra deixam pessoas de fora. Em que são diferentes?",
+   "rot": "O dia da visita",
+   "p": "Caso inventado: por maioria, a turma marca a visita de estudo para o dia de uma festa religiosa de duas colegas. Elas não podem ir. O que pesa?",
+   "p2": "A visita de estudo, votada pela turma, calha no dia de uma festa religiosa de duas colegas, que assim não podem ir. O que conta?",
+   "f": "Votar escolhe a data, mas não apaga o efeito: a regra é igual para todos e deixa duas colegas de fora por causa da «religião», uma das razões do artigo 13.º, n.º 2. É uma regra igual no papel e desigual no efeito.",
+   "min": 3,
+   "tipo": "transferir",
+   "conceito": "discriminação indireta",
+   "citacoes": [
+    [
+     "crp-13-2",
+     "religião"
+    ]
+   ],
+   "pista": "Pergunta-te quem fica de fora, e porquê.",
    "o": [
-    "Na placa, a exclusão está escrita na regra.",
-    "Na placa, a exclusão era só uma sugestão.",
-    "Na escada, a exclusão foi feita de propósito."
+    "A data é igual para todos, mas afasta as duas.",
+    "A maioria votou; quem perde a votação aceita.",
+    "Só há problema se alguém as quiser afastar."
    ],
    "c": 0,
-   "f": "A placa diz por escrito quem vai para onde: a discriminação está na própria regra. Na mostra, ninguém escreveu que o Rui não pode ir; a barreira está no espaço e na decisão de não mudar.",
    "fe": [
     "",
-    "A placa não sugere: aponta uma sala separada pela cor da pele.",
-    "Nada no caso diz que a turma escolheu o primeiro andar para afastar o Rui. Uma barreira pode deixar alguém de fora sem que ninguém o queira."
+    "Votar escolhe a data, mas não apaga o efeito: as duas ficam de fora por causa da religião, uma das razões do artigo 13.º, n.º 2. Volta ao efeito da regra, e não só à forma de a escolher.",
+    "Não é preciso querer afastar: a discriminação indireta vê-se no efeito de uma regra que parece neutra. Relê o que o conceito não exige."
    ]
-  },
-  {
-   "t": "ordenar",
-   "g": "solucao",
-   "p": "Põe por ordem os passos para chegar a uma solução acessível.",
-   "p2": "Que ordem seguir para tirar uma barreira na escola?",
-   "passos": [
-    "Descrever a barreira, sem culpar ninguém.",
-    "Ouvir quem é afetado por ela.",
-    "Comparar soluções e quanto custam.",
-    "Decidir e explicar a decisão a todos."
-   ],
-   "f": "Descrever, ouvir, comparar, decidir. Ouvir quem é afetado vem antes de escolher a solução: senão, decide-se por essa pessoa."
-  },
-  {
-   "t": "vf",
-   "g": "convencao",
-   "p": "A Convenção sobre os Direitos da Criança fala da participação ativa das crianças com deficiência na vida da comunidade.",
-   "p2": "Segundo a Convenção sobre os Direitos da Criança, uma criança com deficiência tem direito a participar ativamente na vida da comunidade.",
-   "v": true,
-   "f": "O artigo 23.º, n.º 1, da Convenção reconhece à criança com deficiência o direito a uma vida em condições que garantam a sua dignidade, favoreçam a sua autonomia e facilitem a sua participação ativa na vida da comunidade.",
-   "fe": "Está no artigo 23.º da Convenção: o objetivo é a participação ativa, não apenas assistir de fora."
-  },
-  {
-   "t": "ler",
-   "rot": "Na aula",
-   "titulo": "Cartas de perspetiva",
-   "html": "<p><b>O que se faz.</b> Cartas de perspetiva com orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua pergunta para a Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a tua pergunta.</p>"
-  },
-  {
-   "t": "ler",
-   "rot": "Ver",
-   "titulo": "Um símbolo para quê?",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Adrian Treharne, sobre o símbolo internacional de acesso, o da cadeira de rodas. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Enquanto vês, procura a resposta do vídeo a duas perguntas: o que quer dizer o símbolo? Para que serve?</p><div class=\"yt\" data-yt=\"ppNYZq-hYTw\" data-titulo=\"What does this symbol actually mean?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What does this symbol actually mean?» (4 min 11 s)</button><p class=\"yt-cred\">TED-Ed, lição de Adrian Treharne. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada uma, no caderno. Depois: quem mais precisa de acesso, mesmo sem cadeira de rodas?</p>"
   },
   {
    "t": "escolha",
-   "g": "religiao",
-   "p": "Caso inventado: a turma marca, por maioria, a visita de estudo para o dia de uma festa religiosa de duas colegas. O que fazer?",
-   "p2": "A visita de estudo calha no dia de uma festa religiosa de duas colegas. O que é mais justo?",
-   "o": [
-    "Falar com elas e procurar outro dia.",
-    "Manter o dia, porque a maioria votou.",
-    "Dispensá-las e fazer a visita sem elas."
-   ],
-   "c": 0,
-   "f": "A Constituição diz que ninguém pode ser prejudicado em razão da religião (artigo 13.º, n.º 2) nem privado de direitos por causa da sua prática religiosa (artigo 41.º, n.º 2). Votar não dispensa ouvir quem a decisão deixa de fora: muitas vezes há outro dia possível.",
-   "fe": [
-    "",
-    "A maioria pode decidir, mas uma decisão da maioria também pode deixar alguém de fora. Perguntar custa pouco.",
-    "Dispensá-las é deixá-las de fora da visita. O problema não fica resolvido: fica escondido."
-   ]
-  },
-  {
-   "t": "vf",
-   "g": "transmitir",
-   "p": "Transmitir a mostra por vídeo resolve sempre a participação de quem não pode subir as escadas.",
-   "p2": "Com uma transmissão em vídeo, quem não pode subir participa na mostra como os outros.",
-   "v": false,
-   "f": "Ver por vídeo é assistir. Participar inclui estar, intervir no debate e ser ouvido. Uma transmissão pode ajudar, mas não substitui uma sala acessível.",
-   "fe": "Lembra-te do que o Rui disse: não quer ver a mostra, quer estar nela e falar no debate."
-  },
-  {
-   "t": "completar",
-   "g": "efeito",
-   "p": "Completa a frase sobre a mostra no primeiro andar.",
-   "p2": "Completa: que efeito tem uma regra igual para todos em quem não pode subir escadas?",
-   "frase": "A regra é igual para todos, mas o efeito é [1]: quem usa cadeira de rodas fica [2].",
-   "lacunas": [
+   "rot": "Um caso real",
+   "p": "Caso real (Tribunal Europeu dos Direitos Humanos, 2018): um estudante paraplégico pediu obras na faculdade, num edifício de três pisos. Ofereceram-lhe um acompanhante. Para o Tribunal, porque não bastava?",
+   "p2": "Em 2018, o Tribunal Europeu dos Direitos Humanos deu razão a um estudante paraplégico a quem a faculdade ofereceu um acompanhante, em vez de obras. Porquê?",
+   "f": "Para o Tribunal, a ajuda de um acompanhante, oferecida sem avaliar a situação dele, não era razoável: ignorava a necessidade de viver da forma mais independente e autónoma possível. Concluiu que houve discriminação no direito à instrução.",
+   "min": 4,
+   "tipo": "transferir",
+   "conceito": "autonomia",
+   "liga": [
     {
-     "o": [
-      "desigual",
-      "igual",
-      "nenhum"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "de fora",
-      "à frente",
-      "na mesma"
-     ],
-     "c": 0
+     "t": "Ler o acórdão do Tribunal Europeu dos Direitos Humanos, 30/01/2018 (HUDOC, em inglês)",
+     "href": "https://hudoc.echr.coe.int/eng?i=001-180499"
     }
    ],
-   "f": "A regra é igual para todos, mas o efeito é **desigual**: quem usa cadeira de rodas fica **de fora**. Por isso se olha para o efeito de uma regra, não só para o que ela diz.",
-   "fe": "Pensa no que acontece ao Rui no dia da mostra."
+   "pista": "Separa o que a universidade alegou do que o Tribunal decidiu.",
+   "o": [
+    "Ignorava a necessidade dele de ser o mais autónomo possível.",
+    "A faculdade recusou logo o pedido de obras do estudante.",
+    "As aulas práticas eram dadas no rés do chão do próprio edifício."
+   ],
+   "c": 0,
+   "fe": [
+    "",
+    "O Tribunal nota que a faculdade não recusou logo os pedidos (§ 69): ofereceu um acompanhante. O problema foi oferecê-lo sem avaliar a situação dele. Volta ao que lhe ofereceram.",
+    "Era a administração que o lembrava; as aulas teóricas eram num edifício de três pisos. O Tribunal julgou a oferta do acompanhante. Volta ao que lhe ofereceram e ao que o Tribunal disse dessa oferta."
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Volta ao caso",
+   "titulo": "Cinco unidades",
+   "html": "<div class=\"m-volta\"><p class=\"parte\">Parte 2</p><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\">A direção dá cinco unidades. Mudar para o rés do chão custa três, e lá só cabe um convidado por aluno, em vez de dois. Legendar o debate, para a Joana, que é surda, custa duas. Transmitir para o átrio, para os outros convidados, custa duas. Alguns pais protestam: «Por causa de um, perdem todos.» O Rui: «Não quero ver a mostra; quero estar nela.»</p></div>",
+   "min": 4
   },
   {
    "t": "emparelhar",
-   "g": "artigos",
-   "p": "Liga cada ideia ao artigo onde está escrita.",
-   "p2": "Em que artigo está escrita cada uma destas ideias?",
+   "rot": "O que se sabe e o que falta",
+   "p": "Depois do que o Rui disse: o que já está no caso e o que ainda falta saber?",
+   "p2": "Em cada linha: está no caso ou ainda falta saber?",
+   "f": "Sabes o que custa cada medida e o que o Rui pede. Não sabes se a sala de baixo serve aos trabalhos, nem quantos convidados vêm: se vierem poucos, um lugar por aluno pode chegar. São estas as dúvidas que vão para o papel.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "facto e dúvida",
    "pares": [
     [
-     "Todos são iguais perante a lei",
-     "Constituição, artigo 13.º"
+     "O que custa mudar para o rés do chão",
+     "Já está no caso"
     ],
     [
-     "Nenhuma autoridade te pode perguntar a religião",
-     "Constituição, artigo 41.º"
+     "O que o Rui quer da mostra",
+     "Já está no caso"
     ],
     [
-     "A criança com deficiência participa na comunidade",
-     "Convenção, artigo 23.º"
+     "Se a sala de baixo serve aos trabalhos",
+     "Ainda está em aberto"
     ],
     [
-     "Os direitos valem para todas as crianças, sem discriminação",
-     "Convenção, artigo 2.º"
+     "Quantos convidados vêm de facto",
+     "Ainda está em aberto"
     ]
    ],
-   "f": "A Constituição diz que todos são iguais perante a lei (13.º, n.º 1) e que nenhuma autoridade te pode perguntar a religião, salvo para estatísticas sem identificação (41.º, n.º 3). A Convenção garante os direitos a todas as crianças sem discriminação (2.º) e a participação ativa da criança com deficiência (23.º).",
-   "fe": "Repara em quem é protegido: todos os cidadãos (Constituição) ou as crianças (Convenção)."
+   "fe": "A confusão mais provável é dar por sabido quantos convidados vêm, por causa do protesto dos pais: «perdem todos» é uma razão, não uma contagem. Volta ao caso e separa o que está nele do que alguém afirma.",
+   "pista": "Procura cada informação no texto do caso."
+  },
+  {
+   "t": "ler",
+   "rot": "Em turma",
+   "titulo": "Depois dos materiais",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>O lado do Rui</summary><div><p>A Convenção pede condições que <span class=\"citado\" data-fonte=\"cdc-23-1\">«facilitem a sua participação activa»</span>; pelo vídeo, só vê.</p></div></details><details class=\"lado\"><summary>O lado dos pais</summary><div><p>Uma regra pode justificar-se <span class=\"citado\" data-fonte=\"lei46-3b\">«por um fim legítimo»</span>, com meios <span class=\"citado\" data-fonte=\"lei46-3b\">«adequados e necessários»</span>: em cima cabem dois convidados.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E a Joana? Sem legendas, não acompanha o debate. Todos têm <span class=\"citado\" data-fonte=\"crp-13-1\">«a mesma dignidade social»</span>.</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"Como gastaste as cinco unidades\"><p class=\"pos-q\">Como gastas as cinco unidades?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"Como gastaste as cinco unidades\"><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e legendar\" data-frase=\"Mudar e legendar\">Mudar e legendar</button><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e transmitir\" data-frase=\"Mudar e transmitir\">Mudar e transmitir</button><button type=\"button\" class=\"pos-op\" data-valor=\"Legendar e transmitir\" data-frase=\"Legendar e transmitir\">Legendar e transmitir</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e gastas sozinho as cinco unidades.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
+   "min": 13
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Facto, regra ou razão",
+   "p": "Liga cada frase ao que ela é numa justificação.",
+   "p2": "Facto, regra ou razão de uma das partes: o que é cada frase?",
+   "f": "Que a sala fica num primeiro andar sem elevador é um facto do caso; o artigo 23.º é uma regra escrita num texto legal; «Por causa de um, perdem todos» é a razão de alguns pais, que ainda tem de ser pesada.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "relato e princípio",
+   "pares": [
+    [
+     "A sala de cima fica num primeiro andar sem elevador.",
+     "Um facto do caso"
+    ],
+    [
+     "«[…] facilitem a sua participação activa na vida da comunidade.»",
+     "Uma regra escrita num texto legal"
+    ],
+    [
+     "«Por causa de um, perdem todos.»",
+     "A razão de uma das partes"
+    ]
+   ],
+   "citacoes": [
+    [
+     "cdc-23-1",
+     "facilitem a sua participação activa na vida da comunidade"
+    ]
+   ],
+   "fe": "A confusão mais provável é tomar a razão de uma parte por regra: «Por causa de um, perdem todos» diz o que alguns pais pensam, mas não está em nenhuma lei. Volta ao artigo 23.º.",
+   "pista": "Pergunta a cada frase de onde vem e a quem se aplica."
+  },
+  {
+   "t": "ordenar",
+   "rot": "A justificação por ordem",
+   "p": "Põe a justificação por ordem: primeiro o facto, depois a fonte, a aplicação e, no fim, o limite.",
+   "p2": "Ordena: o que aconteceu, o texto que se aplica, a ligação entre os dois e o que ainda falta saber.",
+   "f": "Facto, fonte, aplicação, limite: cada passo apoia-se no anterior, e o limite diz até onde a conclusão pode ir.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "facto, fonte, aplicação, limite",
+   "passos": [
+    "A sala marcada fica num primeiro andar sem elevador, e o Rui usa cadeira de rodas.",
+    "A Convenção pede condições que facilitem a participação ativa da criança com deficiência.",
+    "Ver a mostra pelo vídeo não é participar nela: o Rui ficaria só a assistir.",
+    "Falta saber se a sala de baixo serve aos trabalhos."
+   ],
+   "fe": "A confusão mais provável é começar pela lei ou pôr o que falta saber antes da aplicação. Começa pelo que aconteceu; depois o texto; o que falta saber fecha a justificação.",
+   "pista": "Pergunta-te o que tem de vir primeiro para o resto se apoiar."
   },
   {
    "t": "escolha",
-   "g": "pergunta",
-   "p": "Qual das perguntas podes investigar na escola e no bairro, até ao fim do módulo?",
-   "p2": "Para a Pergunta Humana, que pergunta podes investigar com fontes e testemunhos?",
+   "rot": "O que as provas permitem",
+   "p": "Que conclusão fica dentro do que o caso e os textos mostram?",
+   "p2": "Que conclusão diz o que as provas permitem, sem ir além delas?",
+   "f": "Diz o que as provas mostram (pelo vídeo, o Rui só assiste, e o artigo 23.º pede participação) e deixa aberto o que ninguém contou: quantos convidados vêm.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "conclusão e provas",
+   "pista": "Para cada conclusão, pergunta-te que prova a sustenta.",
    "o": [
-    "Que barreiras encontram os alunos com cadeira de rodas na escola?",
-    "Porque é que existe discriminação em todas as sociedades humanas?",
-    "A nossa escola é acessível, sim ou não, para toda a gente?"
+    "Pelo vídeo, o Rui só assiste; ainda não se sabe quantos convidados vêm.",
+    "A mostra fica em cima, porque a maioria perderia os seus lugares.",
+    "A organização escolheu a sala de cima para afastar o Rui da mostra."
    ],
    "c": 0,
-   "f": "Uma boa pergunta é delimitada (um lugar, um grupo, um tempo) e pede uma resposta que se investiga com fontes e testemunhos. As outras são amplas demais ou respondem-se com sim ou não.",
    "fe": [
     "",
-    "É uma pergunta importante, mas grande demais para responderes num módulo, com fontes da escola e do bairro.",
-    "Responde-se com sim ou não e fecha a investigação. Que barreiras, para quem e onde?"
+    "É a razão de alguns pais, não uma prova: ninguém contou os convidados. E esta conclusão deixa de fora o que o Rui pede. Separa o que se sabe do que alguém afirma.",
+    "Nada no caso mostra que a organização queira afastar o Rui: escolheu a sala pela luz. Uma intenção não se supõe; prova-se. Separa o que aconteceu do que alguém supõe."
    ]
+  },
+  {
+   "t": "ler",
+   "rot": "Agora, em papel",
+   "titulo": "Agora, em papel",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Uma regra igual para todos pode deixar alguém de fora?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão, por agora.</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Outro caso, inventado: o aviso da reunião só sai em português, que a mãe da Ana não lê.</p><ol><li>Conclusão: o aviso igual para todos deixa-a de fora.</li><li>Prova: só sai em português; ninguém pode ser <span class=\"citado\" data-fonte=\"crp-13-2\">«prejudicado […] em razão de […] língua»</span> (artigo 13.º, n.º 2).</li><li>Dúvida: alguém lhe perguntou que língua lê?</li></ol></div></details></div>",
+   "min": 15
   },
   {
    "t": "ler",
    "rot": "Para levar",
-   "escuro": true,
-   "html": "<p class=\"levar\">Uma regra igual para todos pode ter efeitos desiguais.</p><p>Nesta sessão viste barreiras no espaço, na informação, na decisão e no horário, e que ouvir quem é afetado faz parte da solução. Volta à placa de 1943 e à barreira que encontraste na tua escola: o que mudavas primeiro?</p><p><b>As frases da sessão</b></p><ul><li>Antes de decidir por alguém, pergunto-lhe.</li><li>Uma barreira pode estar no espaço, na informação, na decisão ou no horário.</li><li>Ninguém pode ser prejudicado em razão do sexo, da língua, da origem ou da religião (artigo 13.º).</li><li>Assistir por vídeo não é o mesmo que participar.</li></ul>"
+   "titulo": "",
+   "html": "<div class=\"m-levar\"><p class=\"levar\" data-artefacto=\"frase\" data-rot=\"A frase da sessão\" data-texto=\"Uma regra igual para todos pode ter efeitos desiguais.\"><span class=\"ch\" style=\"--i:0\">U</span><span class=\"ch\" style=\"--i:1\">m</span><span class=\"ch\" style=\"--i:2\">a</span><span class=\"ch\" style=\"--i:3\"> </span><span class=\"ch\" style=\"--i:4\">r</span><span class=\"ch\" style=\"--i:5\">e</span><span class=\"ch\" style=\"--i:6\">g</span><span class=\"ch\" style=\"--i:7\">r</span><span class=\"ch\" style=\"--i:8\">a</span><span class=\"ch\" style=\"--i:9\"> </span><span class=\"ch\" style=\"--i:10\">i</span><span class=\"ch\" style=\"--i:11\">g</span><span class=\"ch\" style=\"--i:12\">u</span><span class=\"ch\" style=\"--i:13\">a</span><span class=\"ch\" style=\"--i:14\">l</span><span class=\"ch\" style=\"--i:15\"> </span><span class=\"ch\" style=\"--i:16\">p</span><span class=\"ch\" style=\"--i:17\">a</span><span class=\"ch\" style=\"--i:18\">r</span><span class=\"ch\" style=\"--i:19\">a</span><span class=\"ch\" style=\"--i:20\"> </span><span class=\"ch\" style=\"--i:21\">t</span><span class=\"ch\" style=\"--i:22\">o</span><span class=\"ch\" style=\"--i:23\">d</span><span class=\"ch\" style=\"--i:24\">o</span><span class=\"ch\" style=\"--i:25\">s</span><span class=\"ch\" style=\"--i:26\"> </span><span class=\"ch\" style=\"--i:27\">p</span><span class=\"ch\" style=\"--i:28\">o</span><span class=\"ch\" style=\"--i:29\">d</span><span class=\"ch\" style=\"--i:30\">e</span><span class=\"ch\" style=\"--i:31\"> </span><span class=\"ch\" style=\"--i:32\">t</span><span class=\"ch\" style=\"--i:33\">e</span><span class=\"ch\" style=\"--i:34\">r</span><span class=\"ch\" style=\"--i:35\"> </span><span class=\"ch\" style=\"--i:36\">e</span><span class=\"ch\" style=\"--i:37\">f</span><span class=\"ch\" style=\"--i:38\">e</span><span class=\"ch\" style=\"--i:39\">i</span><span class=\"ch\" style=\"--i:40\">t</span><span class=\"ch\" style=\"--i:41\">o</span><span class=\"ch\" style=\"--i:42\">s</span><span class=\"ch\" style=\"--i:43\"> </span><span class=\"ch\" style=\"--i:44\">d</span><span class=\"ch\" style=\"--i:45\">e</span><span class=\"ch\" style=\"--i:46\">s</span><span class=\"ch\" style=\"--i:47\">i</span><span class=\"ch\" style=\"--i:48\">g</span><span class=\"ch\" style=\"--i:49\">u</span><span class=\"ch\" style=\"--i:50\">a</span><span class=\"ch\" style=\"--i:51\">i</span><span class=\"ch\" style=\"--i:52\">s</span><span class=\"ch\" style=\"--i:53\">.</span></p><p class=\"levar-volta\" data-modelo=\"No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».\" hidden></p><p class=\"frases-t\">As frases da sessão</p><ul class=\"frases\"><li>Ver não é participar.</li><li>Antes de escolher por alguém, ouve essa pessoa.</li></ul><div data-recolha-lista></div></div>",
+   "min": 5,
+   "escuro": true
   }
  ]
 }

@@ -212,6 +212,286 @@
    "confirmado": true
   },
   {
+   "id": "stj-2011-indicacao",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Fundamentação",
+   "texto": "Dessa mencionada confissão, bem como se apura da justificação da resposta negativa ao quesito, extrai-se a conclusão de que à 1.ª A. foi dada indicação de que as fotografias se destinavam a figurar numa publicação.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 07/06/2011, processo 1581/07.3TVLSB.L1.S1, relator Gabriel Catarino, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/6190a514bc9d85cf802578aa003183d3?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-13-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 13.º, n.º 1",
+   "texto": "Todos os cidadãos têm a mesma dignidade social e são iguais perante a lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-13-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 13.º, n.º 2",
+   "texto": "Ninguém pode ser privilegiado, beneficiado, prejudicado, privado de qualquer direito ou isento de qualquer dever em razão de ascendência, sexo, raça, língua, território de origem, religião, convicções políticas ou ideológicas, instrução, situação económica, condição social ou orientação sexual.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-71-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 71.º, n.º 1",
+   "texto": "Os cidadãos portadores de deficiência física ou mental gozam plenamente dos direitos e estão sujeitos aos deveres consignados na Constituição, com ressalva do exercício ou do cumprimento daqueles para os quais se encontrem incapacitados.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-1",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 1.º",
+   "texto": "Nos termos da presente Convenção, criança é todo o ser humano menor de 18 anos, salvo se, nos termos da lei que lhe for aplicável, atingir a maioridade mais cedo.",
+   "fonte": "Convenção sobre os Direitos da Criança (Nova Iorque, 1989), tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º Suplemento, Série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91 não tocam nos artigos 1.º e 23.º)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-23-1",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 23.º, n.º 1",
+   "texto": "Os Estados Partes reconhecem à criança mental e fisicamente deficiente o direito a uma vida plena e decente em condições que garantam a sua dignidade, favoreçam a sua autonomia e facilitem a sua participação activa na vida da comunidade.",
+   "fonte": "Convenção sobre os Direitos da Criança (Nova Iorque, 1989), tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º Suplemento, Série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91 não tocam nos artigos 1.º e 23.º)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei46-3b",
+   "documento": "Lei n.º 46/2006",
+   "referencia": "Artigo 3.º, alínea b)",
+   "texto": "«Discriminação indirecta» a que ocorre sempre que uma disposição, critério ou prática aparentemente neutra seja susceptível de colocar pessoas com deficiência numa posição de desvantagem comparativamente com outras pessoas, a não ser que essa disposição, critério ou prática seja objectivamente justificado por um fim legítimo e que os meios utilizados para o alcançar sejam adequados e necessários;",
+   "fonte": "Lei n.º 46/2006, de 28 de agosto (proíbe e pune a discriminação em razão da deficiência), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2006-156233888",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei46-4e",
+   "documento": "Lei n.º 46/2006",
+   "referencia": "Artigo 4.º, alínea e)",
+   "texto": "A recusa ou a limitação de acesso ao meio edificado ou a locais públicos ou abertos ao público;",
+   "fonte": "Lei n.º 46/2006, de 28 de agosto (proíbe e pune a discriminação em razão da deficiência), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2006-156233888",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-37-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 37.º, n.º 2",
+   "texto": "O exercício destes direitos não pode ser impedido ou limitado por qualquer tipo ou forma de censura.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-37-3",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 37.º, n.º 3",
+   "texto": "As infracções cometidas no exercício destes direitos ficam submetidas aos princípios gerais de direito criminal ou do ilícito de mera ordenação social, sendo a sua apreciação respectivamente da competência dos tribunais judiciais ou de entidade administrativa independente, nos termos da lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-13-1",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 13.º, n.º 1, primeira frase",
+   "texto": "A criança tem direito à liberdade de expressão.",
+   "fonte": "Convenção sobre os Direitos da Criança, tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º suplemento, série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91, abertas no mesmo dia, não mexem nestes textos; a 8/91 corrige só «sem considerações de fronteiras», no n.º 1)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-13-2",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 13.º, n.º 2",
+   "texto": "O exercício deste direito só pode ser objecto de restrições previstas na lei e que sejam necessárias: a) Ao respeito dos direitos e da reputação de outrem; b) À salvaguarda da segurança nacional, da ordem pública, da saúde ou da moral públicas.",
+   "fonte": "Convenção sobre os Direitos da Criança, tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º suplemento, série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91, abertas no mesmo dia, não mexem nestes textos; a 8/91 corrige só «sem considerações de fronteiras», no n.º 1)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2017-i",
+   "documento": "Acórdão do Tribunal da Relação de Évora (2017)",
+   "referencia": "Sumário, I",
+   "texto": "Comete o crime de difamação, p. e p. pelos art.ºs 180.º, n.º 1 e 183.º, n.º 1, al. a) do CP, a arguida que, tendo a sociedade de quem havia sido trabalhadora publicado no facebook um anúncio para recrutar funcionário(a), aproveitando a liberdade de interacção que aquela página concede e com o intuito de ofender a honra e consideração do sócio-gerente da sociedade, dirigindo-se ao mesmo aí fez constar o seguinte comentário, acessível a qualquer utilizador de internet que aceda à página facebook da sociedade: “antes de contratar mais funcionários deve pagar os ordenados em atraso e a fornecedores! Faz constantemente o mesmo: os funcionários passam de bestial a besta em segundos, e não paga o que deve! Não tem vergonha”;",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 21/03/2017, processo 373/14.8T9STR.E1, relator Alberto Borges, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/abfc60d25966d946802581080032685a?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2017-ii",
+   "documento": "Acórdão do Tribunal da Relação de Évora (2017)",
+   "referencia": "Sumário, II",
+   "texto": "Para que a conduta não seja punível nos termos do n.º 2 do art.º 180.º do CP é necessário que se verifiquem dois requisitos cumulativos: (i) que a imputação seja feita para realizar interesses legítimos; (ii) que o agente prove a verdade da imputação;",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 21/03/2017, processo 373/14.8T9STR.E1, relator Alberto Borges, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/abfc60d25966d946802581080032685a?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2017-iii",
+   "documento": "Acórdão do Tribunal da Relação de Évora (2017)",
+   "referencia": "Sumário, III",
+   "texto": "Esta só é possível em relação a factos concretos, e não a formulação de juízos de valor ofensivos;",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 21/03/2017, processo 373/14.8T9STR.E1, relator Alberto Borges, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/abfc60d25966d946802581080032685a?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2017-iv",
+   "documento": "Acórdão do Tribunal da Relação de Évora (2017)",
+   "referencia": "Sumário, IV",
+   "texto": "Não se verifica o condicionalismo do referido n.º 2 do art.º 180.º se ainda que a arguida tenha provado um facto concreto no que a si diz respeito – não pagamento de retribuição – que permita concluir que a imputação era feita para realizar interesses legítimos, imputa também ao sócio-gerente da sociedade outros comportamentos genéricos, que não concretiza nem demonstra, como sejam as dívidas a fornecedores.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 21/03/2017, processo 373/14.8T9STR.E1, relator Alberto Borges, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/abfc60d25966d946802581080032685a?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-19-3",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 19.º, n.º 3",
+   "texto": "Nos estabelecimentos de ensino, as câmaras de videovigilância só podem incidir sobre os perímetros externos e locais de acesso, e ainda sobre espaços cujos bens e equipamentos requeiram especial proteção, como laboratórios ou salas de informática.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-19-4",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 19.º, n.º 4",
+   "texto": "Nos casos em que é admitida a videovigilância, é proibida a captação de som, exceto no período em que as instalações vigiadas estejam encerradas ou mediante autorização prévia da CNPD.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-21-1",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 21.º, n.º 1",
+   "texto": "O prazo de conservação de dados pessoais é o que estiver fixado por norma legal ou regulamentar ou, na falta desta, o que se revele necessário para a prossecução da finalidade.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-21-4",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 21.º, n.º 4",
+   "texto": "Quando cesse a finalidade que motivou o tratamento, inicial ou posterior, de dados pessoais, o responsável pelo tratamento deve proceder à sua destruição ou anonimização.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-18-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 18.º, n.º 2",
+   "texto": "A lei só pode restringir os direitos, liberdades e garantias nos casos expressamente previstos na Constituição, devendo as restrições limitar-se ao necessário para salvaguardar outros direitos ou interesses constitucionalmente protegidos.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-35-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 35.º, n.º 1",
+   "texto": "Todos os cidadãos têm o direito de acesso aos dados informatizados que lhes digam respeito, podendo exigir a sua rectificação e actualização, e o direito de conhecer a finalidade a que se destinam, nos termos da lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-35-4",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 35.º, n.º 4",
+   "texto": "É proibido o acesso a dados pessoais de terceiros, salvo em casos excepcionais previstos na lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-suspeitos",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Fundamentação",
+   "texto": "o empregador, ainda que com base num pretenso interesse público de segurança dos medicamentos, não pode sujeitar os seus trabalhadores a uma permanente medida de polícia, transformando-os indefinidamente em suspeitos de prática de ilícitos criminais, com clara violação dos seus direitos de personalidade.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-autorizacao",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Fundamentação",
+   "texto": "Assim, independentemente da autorização concedida pela Comissão Nacional de Protecção de Dados, cuja legalidade apenas poderia ser discutida no foro administrativo, a efectiva utilização de câmaras de vídeo nos termos descritos nos autos é ilícita, sendo que se encontra fixada em termos definitivos a competência dos tribunais de trabalho para conhecer do objecto da acção.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-furtos",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Matéria de facto, 8.)",
+   "texto": "Antes da implementação do sistema de videovigilância, a R. via-se confrontada com furtos de medicamentos e demais produtos que comercializa.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-v",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Sumário, V",
+   "texto": "Nos termos das precedentes proposições, é ilícita, por violação do direito de reserva da vida privada, a captação de imagem através de câmaras de vídeo instaladas no local de trabalho e direccionadas para os trabalhadores, de tal modo que a actividade laboral se encontre sujeita a uma contínua e permanente observação.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-decisao",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Decisão",
+   "texto": "Termos em que acordam em conceder a revista, revogar a decisão recorrida e julgar procedente a acção, condenando a Ré a retirar as câmaras de vídeo do local designado como armazém, onde os trabalhadores desempenham a sua actividade laboral.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
    "id": "cpa-9",
    "documento": "Código do Procedimento Administrativo",
    "referencia": "Artigo 9.º",
