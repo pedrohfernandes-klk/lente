@@ -65,10 +65,13 @@ on:
       - 'tests/molde_s05.py'
       - 'img/cidadania/panotico-bentham-1791-planta.webp'
       # 06/11/2026: a sessão 06 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, o manifesto
-      # fechado da sua camada e essa camada nos testes.
+      # fechado da sua camada, essa camada nos testes e os três recortes da gravura do Olha (como a s05).
       - 'tools/trocas/molde-s06-*'
       - 'cidadania/m1/sessoes/06/**'
       - 'tests/molde_s06.py'
+      - 'img/cidadania/justica-galle-bruegel-banco.webp'
+      - 'img/cidadania/justica-galle-bruegel-centro.webp'
+      - 'img/cidadania/justica-galle-bruegel-inteira.webp'
       - '.github/workflows/licoes-qa.yml'
       # 05/11/2026: decisão 163, o menu ≡ comum (tools/menu_casca.py) e as páginas estáticas da Cidadania que o usam.
       - 'tools/menu_casca.py'
