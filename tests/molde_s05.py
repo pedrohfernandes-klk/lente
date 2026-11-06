@@ -14,7 +14,13 @@ que comparam com bases antigas, com as mesmas regras e sem aceitar mais nada:
 É a camada mais recente: desfaz-se antes das da s02 e do pedido 2 e aplica-se depois delas.
 
 06/11/2026 (revisão da s05): o manifesto acompanha as correções da revisão (a secção da s05 no guia e o GUIA['05']) e ganha uma
-troca, a do «toca na palavra» / «toca nas três palavras» na versão para imprimir; as regras e as contagens exatas não mudam."""
+troca, a do «toca na palavra» / «toca nas três palavras» na versão para imprimir; as regras e as contagens exatas não mudam.
+
+06/11/2026 (fusão do main com as sessões 2 a 4 finais e o elétrico da Justiça): o manifesto foi gerado de novo a partir do main
+(5b4a451), e leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o gerador confere que
+aplicar e desfazer dão a volta completa). A s05 fica por cima de todas as camadas, também das da s03 e da s04 (tests/molde_s03.py,
+tests/molde_s04.py): desfaz-se primeiro no ficheiro atual, antes da da s04, ou aplica-se em último lugar ao lado esperado. A troca
+do «toca na palavra» sai: no papel fica a regra do main, que dá o mesmo texto."""
 import importlib.util
 import json
 from pathlib import Path

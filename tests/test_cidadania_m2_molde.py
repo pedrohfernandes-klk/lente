@@ -6,10 +6,14 @@ obra nas sessões 01 a 09; chave de progresso nova; escrita do Lente; ligações
 e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
+from renomeacoes_cidadania import TROCAS as TROCAS_107  # 06/11/2026: rótulos do #107, para as contagens da camada 163
 import grupos146  # 05/11/2026: decisão 146
 import lab147
+import menus163
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
+import molde_s03  # 06/11/2026: plano do molde da Cidadania, sessão 03 do M1 na versão final (decisões 166 a 168)
+import molde_s04  # 06/11/2026: plano do molde da Cidadania, sessão 04 do M1 na versão final (decisões 166 a 168)
 import molde_s05  # 06/11/2026: plano do molde da Cidadania, sessão 05 do M1 na versão final (decisões 166 a 168)
 from html.parser import HTMLParser
 from pathlib import Path
@@ -318,11 +322,22 @@ class Molde(unittest.TestCase):
         inteiros_s02 = [f for f in molde_s02.INTEIROS if f.startswith('cidadania/m1/')]
         for f in inteiros_s02:
             self.assertTrue(molde_s02.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s02
+        # 06/11/2026: o mesmo para a sessão 03, que passa ao molde final (decisões 166 a 168).
+        inteiros_s03 = [f for f in molde_s03.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s03:
+            self.assertTrue(molde_s03.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s03
+        # 06/11/2026: o mesmo para a sessão 04, que passa ao molde final (decisões 166 a 168).
+        inteiros_s04 = [f for f in molde_s04.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s04:
+            self.assertTrue(molde_s04.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s04
         # 06/11/2026: o mesmo para a sessão 05, que passa ao molde final (decisões 166 a 168).
         inteiros_s05 = [f for f in molde_s05.INTEIROS if f.startswith('cidadania/m1/')]
         for f in inteiros_s05:
             self.assertTrue(molde_s05.inteiro_ok(f), f)
-        inteiros = inteiros + inteiros_s02 + inteiros_s05
+        inteiros = inteiros + inteiros_s05
         lista = [f for f in lista if f not in inteiros]
         locais = [f for f in locais if f not in inteiros]
         self.assertEqual(sorted(lista), locais)
@@ -348,7 +363,11 @@ class Molde(unittest.TestCase):
             # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
             # 05/11/2026: decisão 147 (Laboratório sem o Português): a sessão 5 deixa de ligar à cena retirada do Corta! e o cartaz do percurso anterior deixa de a anunciar;
             # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
-            esperado = renomear(antes, f, base_ja_renomeada=True)
+            # 06/11/2026: depois da fusão do #125 a base comum (git merge-base HEAD origin/main) já traz o menu ≡ da decisão 163,
+            # que diz, por exemplo, «Módulo 1: Humanos.»; esses usos, contados no manifesto fechado da 163, somam-se à contagem
+            # exata do #107 (numa base anterior somam zero). Nada mais muda nesta exigência.
+            rotulos = [novo for _, novo, _ in TROCAS_107.get(f, [])]
+            esperado = renomear(antes, f, base_ja_renomeada=True, acrescentadas=menus163.acrescentadas(antes, f, rotulos))
             # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
             # 05/11/2026: as camadas compõem-se por ordem, 147 e depois 146 e 154 (que partem do main com o #122): a 147 alinha-se aqui
             # primeiro e a passagem seguinte de lab147.alinhar (as linhas do #124, iguais byte a byte) encontra cada «novo» e deixa o
@@ -358,6 +377,11 @@ class Molde(unittest.TestCase):
             if f in lab147.TROCAS:
                 # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
                 esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
+            # 05/11/2026: decisão 163 (menus): o menu ≡ novo, pelo manifesto fechado tests/fixtures/menus-163-20261105.json,
+            # com contagem exata; tudo o resto, byte a byte.
+            # 06/11/2026: a base comum muda com o tempo; depois da fusão do #125 já traz as trocas da 163 (cada «novo» com a
+            # contagem exata) e fica como está; antes recebe-as. Um estado misto continua a falhar (menus163.alinhar).
+            esperado = menus163.alinhar(esperado, f)
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):
