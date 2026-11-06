@@ -349,7 +349,8 @@ def sessao():
         'titulo': 'Sessão 01: Uma fotografia no grupo', 'h1': 'Cidadania, módulo 1, sessão 01: Uma fotografia no grupo',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/01/index.html',
-        'seguinte': '../../../piloto/m1-s02/', 'seguinteRotulo': 'Sessão 02: A imagem dos outros',
+        # 06/11/2026: a sessão 02 passou ao molde final, em cidadania/m1/sessoes/02/; a seguinte é essa.
+        'seguinte': '../02/', 'seguinteRotulo': 'Sessão 02: A imagem dos outros',
         'fontes': M.ref('Declaração Universal dos Direitos Humanos (Nações Unidas, 10 de dezembro de 1948), artigos 1.º, 12.º e 19.º, na '
                         'transcrição portuguesa do UNRIC. Constituição da República Portuguesa, artigos 16.º, n.º 2, 18.º, n.º 1, 26.º, '
                         'n.º 1, e 34.º, n.º 1, no Diário da República. Acórdão do Tribunal da Relação de Évora de 25 de junho de 2015, '

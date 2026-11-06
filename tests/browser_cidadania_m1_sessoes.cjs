@@ -41,7 +41,14 @@ try{
   assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
   assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
   for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
- for(let n=2;n<=10;n++){
+ /* 06/11/2026 (decisão 166): a sessão 02 passa também ao molde final, no mesmo endereço (tools/licoes/cidadania-m1-s02.json),
+    com a chave epi-cid-m1-s02; exige-se o mesmo que à 01. As sessões 03 a 10 publicadas continuam com tudo o que se exigia. */
+ {await p.goto(origin+'/lente/cidadania/m1/sessoes/02/');await p.waitForTimeout(300);
+  assert.equal(await p.locator('h1').count(),1);assert(await p.evaluate(()=>document.body.classList.contains('molde-cidadania')));
+  assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
+  assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
+  for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
+ for(let n=3;n<=10;n++){
   await p.goto(origin+'/lente/cidadania/m1/sessoes/'+String(n).padStart(2,'0')+'/');
   assert.equal(await p.locator('h1').count(),1);
   const links=await p.locator('.c10 a').evaluateAll(es=>es.map(e=>e.href).filter(h=>h.startsWith(location.origin)));

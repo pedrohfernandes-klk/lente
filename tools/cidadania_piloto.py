@@ -145,22 +145,99 @@ GUIA = {
             'Recupera 2: a distinção entre observar e interpretar vem da Etapa 1, «O que vemos» («demora a pagar» observa-se; «está a fazer-me perder tempo» interpreta-se).',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 06/11/2026 (decisão 166): a sessão 02 passa ao molde final (cidadania-2026-11), como a 01. O que só o docente faz vive aqui,
+ # nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '02': {
-  'dominio': 'Direitos Humanos (imagem, reserva da vida privada, consentimento); Media.',
-  'ensina': 'Separar filmar, guardar e publicar, e ver que o consentimento vale para um uso.',
-  'passos': [
-   (5, 'Em turma, com o docente. As quatro situações vêm num envelope, com a informação nova dobrada à parte.'),
-   (25, 'Uma situação de cada vez, cerca de 6 minutos cada: decidir, ler o efeito, abrir a informação nova e rever. Cada aluno regista a decisão do início e a revista.'),
-   (10, 'Pausa.'),
-   (20, 'O pedido de consentimento para as entrevistas da Pergunta Humana, nas quatro partes: para quê, que uso, onde fica e até quando, como se retira.'),
-   (5, 'Dois alunos leem o seu pedido em voz alta; a turma diz o que falta.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: o direito à imagem (Código Civil, artigo 79.º), o consentimento para um uso, as exceções e o seu limite.',
+  'ensina': 'Separar filmar, rever e publicar; ver que o sim vale para o uso que se explicou; reconhecer quando a lei dispensa o consentimento e o limite que fica, sem ir além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 01 com a marca por critério. Ninguém é filmado nem fotografado na aula; nenhum vídeo '
+            'real de alunos entra na sessão.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 01.',
+   4: 'O retorno nomeia a sessão 01: vale a pena lembrar, em voz alta, o artigo 12.º até «honra e reputação».',
+   5: 'Projetado grande. Os pormenores (o rosto de frente, os pés descalços, as bobinas) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta os três números do artigo 79.º, uma vez; o n.º 3 começa a mudar a conversa com «porém».',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e mostrar o sumário IV e a passagem citada.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['As quatro situações em papel: o ensaio da Marta; uma fotografia de rua com uma pessoa reconhecível em primeiro plano; uma captura de ecrã de uma conversa privada; a entrevista do projeto. Cada uma com o efeito da decisão e uma informação nova (por exemplo: a pessoa da fotografia de rua é menor).', 'O modelo do pedido de consentimento, em quatro partes.', 'Código Civil, artigo 79.º, projetado.'],
-  'escrito': 'O pedido de consentimento de cada aluno e a decisão revista de uma das situações.',
-  'projeto': ('Ética das entrevistas', '', 'O pedido de consentimento entra no dossiê da Pergunta Humana; a página do projeto diz o que fazer com menores (autorização do encarregado de educação), com o anonimato e com quem desiste.'),
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão.',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê.',
+   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o número do artigo 79.º).',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'No fim, «A razão que pesou»: quantos escolheram o uso aceite (n.º 1), os fins didáticos (n.º 2) ou o decoro (n.º 3).',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se foi num lugar público, posso publicar».',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acrescenta o “porém” do n.º 3?»'),
+   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque quer humilhar a Marta» (supõe uma intenção que nenhum material mostra).',
+    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 03, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('O teu pedido de consentimento', '#metodo',
+              'Cinco minutos para ler, na página do projeto, «Ética: as pessoas que entrevistas». Trinta minutos: cada aluno escreve, em papel, '
+              'o seu pedido de consentimento em quatro partes (para quê; que uso; onde fica e até quando; como se retira o sim), para uma '
+              'entrevista que queira fazer; o docente faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê o pedido com «O que '
+              'conta» e corrige uma parte. O pedido entra no dossiê da Pergunta Humana.'),
   'produto': 'Pedido de consentimento',
-  'grelha': [('Finalidade dita em palavras simples', 4), ('Uso, sítio e prazo', 4), ('Direito a recusar e a retirar, com contacto', 4), ('Cuidado com terceiros e com menores (encarregado de educação)', 4), ('Decisão revista de uma situação, com o artigo certo', 4)],
-  'notas': ['Ninguém é filmado na aula; nenhum vídeo real de alunos entra nas situações.', 'O vídeo é um excerto (0 a 47 s) de uma conferência do TED, candidato provisório: a decisão 18 manda perguntar ao docente quando não há escolha clara.', 'No cartão da fotografia de rua, a leitura do artigo 79.º, n.º 2 («enquadrada na de lugares públicos») é interpretação nossa: o docente confirma.', 'No cartão dos fins didáticos, a leitura do artigo 79.º, n.º 2 (finalidades didáticas, com o limite do n.º 3) também é para o docente confirmar: a escola precisa de base legal para publicar a imagem de uma aluna.', 'O excerto refere imagens sexuais falsificadas (entre os 25 e os 34 s): ver antes e decidir se se mostra.'],
+  'grelha': [('Para quê: a finalidade dita em palavras simples', 4), ('Que uso: voz, cara ou só as palavras', 4), ('Onde fica e até quando', 4),
+             ('Como se retira o sim, e a quem se diz', 4), ('Cuidado com menores: o pedido vai também ao encarregado de educação', 4)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura da ética das entrevistas e o início do pedido).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: acórdão do Supremo Tribunal de Justiça de 07/06/2011, processo 1581/07.3TVLSB.L1.S1, em dgsi.pt. '
+                'Uma mãe e a filha, sócias de um clube de Lisboa, foram fotografadas na piscina numa sessão aberta a sócios e familiares e '
+                'saíram na capa de uma revista distribuída com um jornal. O tribunal negou a revista: concluiu que a mãe consentira na captação '
+                'e na publicação «numa publicação», porque lho tinham dito; que as fotografias seriam só para os sócios, ela não o provou. '
+                'Cita-se só o que o acórdão diz: o sumário (IV) e a passagem da fundamentação sobre o que foi dito à mãe. O acórdão é '
+                'anonimizado; não se procuram nomes.'),
+  'notas': ['O caso da Marta, o da montagem, o da praça, o do rapaz na poça e o do cartão da biblioteca são inventados e assim se diz; a cena '
+            'da Lia foi escrita para a sessão 05 do M1 publicado (que a turma não fez). Ninguém escreve sobre um colega identificável.',
+            'Sem vídeo (decisão 155). O candidato do plano, «Be kind online: consent to share and cyberbullying», está no sítio oficial '
+            'Bullying. No Way! (bullyingnoway.gov.au, State of Queensland, em nome das autoridades de educação australianas, aberto a 6/11/2026), '
+            'mas trata de uma imagem íntima partilhada sem consentimento e a equipa não o viu por inteiro. Se o docente o vir e o quiser, '
+            'entra em «Para ir mais longe», com a alternativa escrita.',
+            'Recupera 1, _The Truman Show_ (Peter Weir, 1998): a turma já viu o filme no percurso anterior; não se volta a exibir. O cartão usa só '
+            'a premissa (a vida de Truman passa na televisão e todos à volta são atores, menos ele).',
+            'Olha: o registo da Library of Congress (loc.gov/item/2018675335, aberto a 6/11/2026) dá o título do cartão do National Child Labor '
+            'Committee, «1910 February», North Pownal, Vermont, a atribuição a Lewis Hine «based on provenance» e «No known restrictions on '
+            'publication». O cartão original diz ainda que as raparigas da fábrica diziam que ela tinha dez anos e que ela admitiu ao '
+            'fotógrafo ter doze: bom para a conversa depois do cartão 6.',
+            'Cartão 11 (a praça) e charneira 1 (o rapaz na poça): a leitura de «enquadrada na de lugares públicos» (as pessoas como parte do '
+            'lugar, não como assunto) e a de «simples decoro» aplicada a uma queda são leituras nossas do artigo 79.º; o docente confirma.',
+            'Conceito: «pode ser retirado» assenta no artigo 81.º, n.º 2, do Código Civil (a limitação voluntária dos direitos de personalidade '
+            '«é sempre revogável», ainda que com obrigação de indemnizar); ligar esse artigo ao direito à imagem é leitura nossa.',
+            'Lei n.º 58/2019, artigo 16.º: só aparece para separar os 13 anos dos serviços digitais do consentimento para publicar a imagem de alguém.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '03': {
   'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
@@ -595,7 +672,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">A sessão 01 já está no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. A secção da sessão 01, mais abaixo, tem a tabela dos 180 minutos, cartão a cartão; as outras nove seguem o quadro acima até passarem ao molde.</p>'
+             '<p class="pg">As sessões 01 e 02 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras oito seguem o quadro acima até passarem ao molde.</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -656,7 +733,7 @@ def pagina_guia(S):
 
 
 # 05/11/2026 (plano do molde da Cidadania, pedido 2): o guia, a versão para imprimir e o redirecionamento das sessões no molde
-# cidadania-2026-11 (por agora, só a s01 do M1). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
+# cidadania-2026-11 (por agora, só a s01 do M1; 06/11/2026: e a s02). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
 GUIA_PASTA = MODULO + 'docente/'
 
 

@@ -67,7 +67,8 @@ MOLDE = 'cidadania-2026-11'
 # 05/11/2026 (pedido 2, s01 do M1 na versão final): a chave sobe para -2 com os acabamentos do bloco do molde em cidadania.css.
 # 06/11/2026 (correções da revisão da s01): sobe para 20261106-1 (pista de cada cartão e ordenar sem passos no lugar em jogo.js;
 # o Olha na projeção e o Abre a 320 px em cidadania.css).
-VERSAO_MOLDE = '20261106-1'
+# 06/11/2026 (s02 no molde): sobe para 20261106-2 (o Olha na projeção com uma fotografia ao alto, em cidadania.css).
+VERSAO_MOLDE = '20261106-2'
 COMO_LENTE = LENTE + 'como/'
 # 06/11/2026 (correções da revisão da s01): nas sessões no molde, o fim diz onde fica marcada a sessão (revisor de pt-PT) e a
 # retoma dura oito dias (192 horas), para a segunda aula de 90 minutos, noutro dia, continuar no cartão 16 (plano, secção 2,

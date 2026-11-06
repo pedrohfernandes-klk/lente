@@ -32,7 +32,9 @@ def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('ut
 # passos e passa a ser a lição no molde final, no mesmo endereço, escrita por tools/licoes_lente.py (test_sessao_01_no_molde,
 # abaixo, e tests/test_molde_cidadania.py conferem-na). As regras deste molde antigo continuam a valer, iguais, para as sessões
 # 02 a 10 publicadas, até ao pedido 3.
-PUBLICADAS=range(2,11)
+# 06/11/2026 (decisão 166): a sessão 02 também passa ao molde final, no mesmo endereço (test_sessao_02_no_molde, abaixo, e
+# tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 03 a 10.
+PUBLICADAS=range(3,11)
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
@@ -124,5 +126,16 @@ class Molde(unittest.TestCase):
    import molde_pedido2
   finally:sys.path.pop(0)
   self.assertTrue(molde_pedido2.inteiro_ok('cidadania/m1/sessoes/01/index.html'))
+
+ def test_sessao_02_no_molde(self):
+  # 06/11/2026 (decisão 166): no endereço da sessão 02 está a lição no molde final, com a chave do piloto e sem os cinco passos.
+  s=pagina(2)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s02"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s02
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s02.inteiro_ok('cidadania/m1/sessoes/02/index.html'))
 
 if __name__=='__main__':unittest.main()

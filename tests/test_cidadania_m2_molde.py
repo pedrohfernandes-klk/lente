@@ -9,6 +9,7 @@ from renomeacoes_cidadania import renomear
 import grupos146  # 05/11/2026: decisão 146
 import lab147
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
+import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -311,6 +312,12 @@ class Molde(unittest.TestCase):
         inteiros = [f for f in molde_pedido2.INTEIROS if f.startswith('cidadania/m1/')]
         for f in inteiros:
             self.assertTrue(molde_pedido2.inteiro_ok(f), f)
+        # 06/11/2026: o mesmo para a sessão 02, que passa ao molde final (decisão 166): a página e a versão para imprimir
+        # (molde_s02.INTEIROS) têm de ser o que o seu gerador escreve; tudo o resto continua igual à base, byte a byte.
+        inteiros_s02 = [f for f in molde_s02.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s02:
+            self.assertTrue(molde_s02.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s02
         lista = [f for f in lista if f not in inteiros]
         locais = [f for f in locais if f not in inteiros]
         self.assertEqual(sorted(lista), locais)
