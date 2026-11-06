@@ -72,6 +72,8 @@ class FichasM1(unittest.TestCase):
   s=(R/'cidadania/m1/sessoes/03/index.html').read_text('utf-8')
   self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s03"',s);self.assertIn('href=\\"../../../projeto/#pergunta-resposta\\"',s)
   self.assertNotIn('data-session-done',s);self.assertNotIn('conhecimentos prévios',s)
+  # 06/11/2026: só _The Egg_ entra na sessão 03 nova; as outras duas obras da sessão antiga continuam proibidas nela, como antes.
+  for text in ['Marina Abramović','The Truman Show']:self.assertNotIn(text,s)
   g=(R/'cidadania/m1/sessoes/index.html').read_text('utf-8')
   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais.
   for text in ['Mostras curtas individuais','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
