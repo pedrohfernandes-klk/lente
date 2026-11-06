@@ -301,9 +301,10 @@ class Movimento170(unittest.TestCase):
                    'b': [t for t, v in alav if v.get('transform') == 'rotate(-26deg)']}
         self.assertEqual(janelas, {'a': [22.0, 37.0], 'b': [49.0, 64.0]})
         for t in (22, 30, 37):
-            self.assertEqual((graus(longe, t), graus(perto, t)), (-12, 0))
+            # 06/11/2026 (revisão): a ponta de cada lâmina, virada para o elétrico, é que se mexe; roda sobre o talão.
+            self.assertEqual((graus(longe, t), graus(perto, t)), (10, 0))
         for t in (49, 56, 64):
-            self.assertEqual((graus(longe, t), graus(perto, t)), (0, 10))
+            self.assertEqual((graus(longe, t), graus(perto, t)), (0, -10))
         for t in (0, 10, 41, 43, 45, 68, 80, 100):
             self.assertEqual((graus(alav, t), graus(longe, t), graus(perto, t)), (0, 0, 0), t)
         tempos = sorted({t for t, v in va + vb if 'opacity' in v})
@@ -316,7 +317,7 @@ class Movimento170(unittest.TestCase):
                     self.assertGreaterEqual(valor_em(pisca, 'opacity', t), valor_em(outra, 'opacity', t), t)
 
     def test_pivos_na_geometria_do_desenho(self):
-        # A haste roda sobre o seu pé, em cima da base; cada lâmina roda sobre o seu talão (a ponta direita).
+        # A haste roda sobre o seu pé, em cima da base; cada lâmina roda sobre o seu talão (a ponta esquerda; 06/11/2026, revisão).
         regra = lambda c: next(l for l in self.movimento.splitlines() if l.startswith('html:not(.em-projecao) .ju .jc-anda ' + c + '{'))
         haste = re.search(r'<g class="jc-alavanca-braco"><path d="M(\d+) (\d+)L', self.svg)
         base = re.search(r'<path d="M(\d+) (\d+)H(\d+)L', self.svg[self.svg.index('class="jc-alavanca"'):])
@@ -325,7 +326,8 @@ class Movimento170(unittest.TestCase):
         self.assertIn('transform-box:view-box;transform-origin:%spx %spx;' % haste.groups(), regra('.jc-alavanca-braco'))
         for lamina in ('jc-agulha-longe', 'jc-agulha-perto'):
             x, y, dx, dy = map(int, re.search(r'class="' + lamina + r'" d="M(\d+) (\d+)l(\d+) ?(-?\d+)"', self.svg).groups())
-            self.assertIn('transform-box:view-box;transform-origin:%dpx %dpx;' % (x + dx, y + dy), regra('.' + lamina))
+            # 06/11/2026 (revisão): cada lâmina roda sobre o seu talão (a ponta esquerda, onde começa o traço).
+            self.assertIn('transform-box:view-box;transform-origin:%dpx %dpx;' % (x, y), regra('.' + lamina))
         self.assertIn('transform-box:fill-box;transform-origin:50% 100%}', regra('.jc-sinal'))
 
     def test_tudo_o_que_mexe_no_recorte_do_telemovel_e_sinais_fora_das_vias(self):

@@ -85,7 +85,8 @@ def cena(href='../../assets/'+FOTO):
        '<path class="jc-via jc-via-b" d="M492 466C446 468 400 494 354 536C322 564 300 590 288 610" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
        # A agulha: as duas lâminas, à frente do elétrico.
        # 06/11/2026: decisão 170. Cada lâmina é uma peça, para se mexer com a alavanca: a de perto (no carril de perto) e a de
-       # longe (no carril de longe); o talão de cada uma fica à direita. O traço é o mesmo de antes.
+       # longe (no carril de longe); o talão de cada uma fica à esquerda e a ponta, que se mexe, à direita, virada para o elétrico,
+       # que vem da direita (revisão de 6/11/2026). O traço é o mesmo de antes.
        '<g class="jc-agulha" stroke="currentColor" stroke-width="3.5"><path class="jc-agulha-perto" d="M470 470l34-1"/><path class="jc-agulha-longe" d="M478 458l28 2"/></g>',
        # A alavanca, neutra, ao lado da via e junto à agulha; a vara tracejada liga-a às lâminas.
        # 06/11/2026: decisão 170. A haste e a pega num grupo, que roda sobre o pé da haste (563, 548), em cima da base.
