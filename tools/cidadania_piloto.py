@@ -239,23 +239,103 @@ GUIA = {
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 06/11/2026 (decisões 166 a 168): a sessão 03 passa ao molde final (cidadania-2026-11), como a 01 e a 02. O que só o docente faz
+ # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '03': {
-  'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
-  'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais e que ouvir quem é afetado faz parte da solução.',
-  'passos': [
-   (5, 'Em turma. Cada pessoa tira uma carta (o Rui, a organização, quem orienta a mostra, quem só pode ir à sexta-feira); a turma recebe cinco unidades.'),
-   (15, 'Uma pessoa por carta defende-a durante dois minutos; a turma gasta as cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma.'),
-   (5, 'O docente lê a informação nova (por exemplo: a sala do rés do chão tem menos lugares) e a turma revê.'),
-   (10, 'Pausa.'),
-   (10, 'A proposta à direção, em cinco linhas: barreira, quem afeta, medida, custo, quem foi ouvido.'),
-   (20, 'A pergunta de cada aluno para a Pergunta Humana: cada aluno escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: igualdade e não discriminação (Constituição, artigo 13.º), os direitos da criança com deficiência (Convenção, artigo 23.º) e a discriminação indireta (Lei n.º 46/2006).',
+  'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais, encontrar a barreira (no espaço, na informação, na decisão, no horário), separar ver de participar e pesar uma solução com orçamento sem ir além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 02 com a marca por critério. Antes de projetar a fotografia do cartão 5, uma frase de '
+            'enquadramento (decisão 30): a placa é de um tempo em que, em vários estados do sul dos Estados Unidos, a segregação racial '
+            'era imposta por lei. Se houver na turma alguém com deficiência, não se usa como exemplo: o Rui e a Joana são personagens.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 02.',
+   4: 'O retorno nomeia a sessão 01: vale a pena lembrar, em voz alta, a força de cada texto (declaração, tratado, Constituição).',
+   5: 'Projetado grande, depois da frase de enquadramento. Os pormenores (a seta, a palavra «COLORED») só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o artigo 13.º, n.º 2, e o artigo 23.º, n.º 1, uma vez cada; perguntar quem protege cada um.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno, em inglês) e mostrar o § 10 (a oferta do acompanhante) e o § 72 (a razão do Tribunal).',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['Cartas de perspetiva, uma por aluno.', 'Cinco unidades para a turma (clipes ou papéis) e a tabela dos custos.', 'O modelo da proposta à direção.', 'A secção «Uma boa pergunta» da página do projeto.'],
-  'escrito': 'A proposta à direção em cinco linhas e a pergunta de cada aluno.',
-  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada aluno escolhe e delimita a sua pergunta para a Pergunta Humana.'),
-  'produto': 'Proposta à direção e pergunta',
-  'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta delimitada e investigável', 4)],
-  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão e gasta, sozinho, as cinco unidades (a escolha «Como gastas as cinco unidades?»).',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem por opção das cinco unidades: mudar e legendar, mudar e transmitir, legendar e transmitir.',
+   'Seis minutos: duas vozes por opção, cada uma com uma prova do material (uma expressão entre aspas, com o artigo) e a dizer quem fica de fora com essa escolha.',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por pensar que ver tudo pelo vídeo é estar na mostra («ele vê tudo»).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 23.º até «participação activa». Pergunta: «O que fazem na mostra os colegas que estão na sala?»'),
+   (21, '«A mostra fica em cima, porque a maioria perderia os seus lugares» (toma a razão dos pais por prova; ninguém contou os convidados) ou «A organização quer afastar o Rui e, por isso, tem de ser castigada» (supõe uma intenção que nenhum material mostra).',
+    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 04, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('A tua pergunta', '#pergunta-resposta',
+              'Cinco minutos para ler, na página do projeto, «Uma boa pergunta». Trinta minutos: cada aluno escreve, em papel, a sua pergunta em '
+              'três versões (a primeira, uma mais delimitada, com que pessoas, que lugar e que tempo, e a final); o docente faz cerca de dez '
+              'conversas de 3 minutos. Dez minutos: cada aluno relê a versão final com «O que conta» e corrige-a. A pergunta entra no dossiê da '
+              'Pergunta Humana.'),
+  'produto': 'A pergunta da Pergunta Humana',
+  'grelha': [('Não se responde com «sim» ou «não»', 4), ('Delimitada: que pessoas, que lugar, que tempo', 4), ('Investigável com fontes a que o aluno tem acesso', 4),
+             ('As três versões mostram o caminho até à final', 4), ('A versão final é clara e cabe numa frase', 4)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura de «Uma boa pergunta» e a primeira versão).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, Enver Şahin c. Turquia, queixa n.º 23065/12, acórdão de 30 de '
+                'janeiro de 2018 (HUDOC, em inglês e em francês; sem tradução portuguesa). Um estudante de mecânica ficou paraplégico num acidente em '
+                '2005 e pediu à faculdade que adaptasse o edifício para voltar às aulas (§§ 6 e 7). A faculdade respondeu que o edifício, com vários '
+                'pisos, não se podia adaptar; a administração disse que as aulas teóricas, num edifício de três pisos, se podiam resolver com a ajuda '
+                'de um acompanhante, e que o orçamento era limitado (§§ 8 e 10). O Tribunal disse que essa oferta, feita sem avaliar a situação '
+                'concreta dele, não era razoável, porque ignorava a necessidade de viver da forma mais independente e autónoma possível (§§ 69 a 72), '
+                'e concluiu, por seis votos contra um, que houve violação do artigo 14.º da Convenção Europeia dos Direitos Humanos, com o artigo 2.º '
+                'do Protocolo n.º 1 (dispositivo, ponto 3). O cartão não cita o acórdão (não há texto português): conta-o por palavras nossas.'),
+  'notas': ['O caso do Rui, o da direção e da Declaração, o das barreiras na escola, o da visita de estudo e o da reunião com os pais são '
+            'inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato para esta sessão; o vídeo do piloto (TED-Ed, «What does this symbol actually '
+            'mean?», lição de Adrian Treharne) não foi visto por inteiro pela equipa e fica de fora.',
+            'Recupera 1, _The Egg_, de Andy Weir (#84, s03): o cartão usa só a premissa do conto, como o #84. A confirmar no sítio do autor '
+            '(galactanet.com), que não abriu nesta passagem.',
+            'Olha: o ficheiro é o do piloto, a versão do Wikimedia Commons com as margens cortadas (aberta a 6/11/2026: Esther Bubley, setembro de '
+            '1943, estação Greyhound de Rome, Geórgia; Library of Congress, cph.3b22541; domínio público). O registo da Library of Congress '
+            '(loc.gov/item/2017862110) foi lido pelo piloto a 31/10; a 6/11 não abriu (verificação contra robôs): a confirmar.',
+            'A legenda traduz «colored waiting room» por «sala de espera para “pessoas de cor”», a palavra da época, entre aspas.',
+            'Cartão 10 (fora da lista): o artigo 13.º, n.º 2, não diz «deficiência»; a resposta assenta no que os textos dizem (a Convenção, '
+            'artigo 23.º; a Constituição, artigo 71.º, no «Ler mais»), sem dizer se a lista do n.º 2 é ou não fechada. A Convenção vale para o Rui '
+            'porque tem 16 anos (artigo 1.º: «criança é todo o ser humano menor de 18 anos»).',
+            'A Convenção cita-se na tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, com a grafia e as palavras da fonte '
+            '(«criança mental e fisicamente deficiente», «activa»); hoje, a Lei n.º 46/2006 diz «pessoas com deficiência».',
+            'Conceito: o nome e a definição assentam na Lei n.º 46/2006, artigo 3.º, alínea b) («Discriminação indirecta»), que a lei define para a '
+            'deficiência; aplicá-lo à religião (cartão 14) é alargamento nosso, para o docente confirmar.',
+            'Volta ao caso: as cinco unidades vêm do guia do piloto (mudar de sala custa três); as legendas e a transmissão para o átrio custam duas '
+            'cada, para que as três medidas não caibam juntas no orçamento.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '04': {
   'dominio': 'Direitos Humanos (liberdade de expressão, bom nome); Democracia (discurso de ódio); Media (fontes, verificação).',
@@ -672,7 +752,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">As sessões 01 e 02 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras oito seguem o quadro acima até passarem ao molde.</p>'
+             '<p class="pg">As sessões 01, 02 e 03 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras sete seguem o quadro acima até passarem ao molde.</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -733,7 +813,7 @@ def pagina_guia(S):
 
 
 # 05/11/2026 (plano do molde da Cidadania, pedido 2): o guia, a versão para imprimir e o redirecionamento das sessões no molde
-# cidadania-2026-11 (por agora, só a s01 do M1; 06/11/2026: e a s02). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
+# cidadania-2026-11 (por agora, só a s01 do M1; 06/11/2026: e a s02 e a s03). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
 GUIA_PASTA = MODULO + 'docente/'
 
 

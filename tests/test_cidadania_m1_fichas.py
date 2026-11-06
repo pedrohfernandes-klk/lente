@@ -61,9 +61,13 @@ class FichasM1(unittest.TestCase):
   for n in (1,2):
    s=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    self.assertNotIn('data-session-done',s);self.assertNotIn('Percurso já realizado',s)
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final (tools/licoes/cidadania-m1-s03.json),
+  # escrita inteira pelo seu gerador e conferida em tests/test_molde_cidadania.py (SessaoS03) e tests/test_cidadania_m1_molde.py; a
+  # obra _The Egg_ entra nela como «Recupera» (decisão 144). Continua sem registo pessoal, sem avisos sobre o que a turma já estudou
+  # e com a ligação ao enunciado da Pergunta Humana.
   s=(R/'cidadania/m1/sessoes/03/index.html').read_text('utf-8')
-  self.assertIn('5 a 8 minutos',s);self.assertIn('href="../../../projeto/"',s)
-  for text in ['Marina Abramović','The Egg','The Truman Show','conhecimentos prévios']:self.assertNotIn(text,s)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s03"',s);self.assertIn('href=\\"../../../projeto/#pergunta-resposta\\"',s)
+  self.assertNotIn('data-session-done',s);self.assertNotIn('conhecimentos prévios',s)
   g=(R/'cidadania/m1/sessoes/index.html').read_text('utf-8')
   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais.
   for text in ['Mostras curtas individuais','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
@@ -77,6 +81,9 @@ class FichasM1(unittest.TestCase):
   for n,s in enumerate(m.SESSOES,1):
    if s.get('prior'):continue
    self.assertEqual(sum(s['times']),180,n)
+   # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final, sem os cinco momentos (conferida em
+   # tests/test_molde_cidadania.py, SessaoS03); os momentos continuam exigidos às sessões 04 a 10 publicadas.
+   if n==3:continue
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    self.assertEqual(page.count(' data-stage data-label='),5)
    # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre

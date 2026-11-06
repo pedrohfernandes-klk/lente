@@ -358,7 +358,8 @@ def sessao():
         'titulo': 'Sessão 02: A imagem dos outros', 'h1': 'Cidadania, módulo 1, sessão 02: A imagem dos outros',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/02/index.html',
-        'seguinte': '../../../piloto/m1-s03/', 'seguinteRotulo': 'Sessão 03: Quem tem lugar?',
+        # 06/11/2026: a sessão 03 também passou ao molde final (decisão 166); a s02 leva à s03 nova.
+        'seguinte': '../03/', 'seguinteRotulo': 'Sessão 03: Quem tem lugar?',
         'fontes': M.ref('Código Civil, artigos 79.º, n.os 1 a 3, e 81.º, n.º 2, na versão consolidada do Diário da República. Lei n.º '
                         '58/2019, de 8 de agosto, artigo 16.º, n.º 1, no Diário da República. Declaração Universal dos Direitos Humanos, '
                         'artigo 12.º, na transcrição portuguesa do UNRIC. Acórdão do Supremo Tribunal de Justiça de 7 de junho de 2011, '
