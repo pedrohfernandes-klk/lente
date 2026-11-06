@@ -34,3 +34,17 @@ def renomear(texto, ficheiro, inverter=False, base_ja_renomeada=False):
         assert texto.count(antigo) == quantidade, ficheiro
         texto = texto.replace(antigo, novo)
     return texto
+
+
+# 06/11/2026: decisão 149, volta «Dilemas» (decisão 15). Manifesto fechado por cima do #107, com contagem exata por troca;
+# as comparações com bases antigas desfazem ou aplicam só estas trocas e o resto compara-se como antes.
+TROCAS_149 = json.loads((Path(__file__).parent / 'fixtures/dilemas-149-20261106.json').read_text(encoding='utf-8'))
+
+
+def dilemas_149(texto, ficheiro, inverter=False):
+    for antigo, novo, quantidade in TROCAS_149.get(ficheiro, []):
+        if inverter:
+            antigo, novo = novo, antigo
+        assert texto.count(antigo) == quantidade, ficheiro
+        texto = texto.replace(antigo, novo)
+    return texto

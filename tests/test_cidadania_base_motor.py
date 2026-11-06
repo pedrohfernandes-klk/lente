@@ -14,6 +14,8 @@ REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').
 LAB_147 = json.loads((ROOT / 'tests/fixtures/lab-147-20261105.json').read_text(encoding='utf-8'))
 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
 import grupos146  # noqa: E402
+# 06/11/2026: decisão 149 (volta «Dilemas»): manifesto fechado tests/fixtures/dilemas-149-20261106.json.
+from renomeacoes_cidadania import dilemas_149  # noqa: E402
 
 
 class CidadaniaBase(unittest.TestCase):
@@ -76,6 +78,9 @@ class CidadaniaBase(unittest.TestCase):
                     carris = importlib.util.module_from_spec(spec)
                     spec.loader.exec_module(carris)
                     esperado = carris.instalar(esperado)
+                # 06/11/2026: decisão 149, volta «Dilemas» onde o #107 pôs «Decisões» como nome da família; só as trocas do
+                # manifesto fechado, com contagem exata. O sidequest «Decisões que parecem razoáveis» e endereços ficam.
+                esperado = dilemas_149(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 
