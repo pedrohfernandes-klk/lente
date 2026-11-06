@@ -104,3 +104,53 @@ html.em-projecao body.molde-cidadania .jogo .levar .ch{animation:none;opacity:1}
 html.em-projecao body.molde-cidadania .jogo .levar .cursor{display:none}
 html.em-projecao body.molde-cidadania .jogo .ler .carimbo{transform:none}
 @media print{body.molde-cidadania .jogo .cartao.escuro{background:none;color:#000;border-top:4px solid #000}}
+/* 05/11/2026 (plano do molde, pedido 2: a sessão 01 do M1 na versão final; «mais classe nisso»): os acabamentos que a primeira
+   sessão real pediu, vistos a 390 e 1366 px, claro e escuro, e na projeção. Tudo continua só em body.molde-cidadania. */
+/* a lei em citação: hifenizada (o texto corrido fica justificado, decisão de 30/10) e, quando há vários artigos, cada um com
+   o seu número na margem, à altura da sua primeira linha (com um só bloco posicionado, os números sobrepunham-se) */
+body.molde-cidadania .jogo .ler blockquote.lei p{hyphens:auto;-webkit-hyphens:auto}
+body.molde-cidadania .jogo .ler blockquote.lei p+p{margin-top:16px}
+@media (min-width:720px){body.molde-cidadania .jogo .ler blockquote.lei p{position:relative}
+ body.molde-cidadania .jogo .ler blockquote.lei p .art{left:calc(-6.6rem - 16px)}}
+/* na Volta ao caso e em «Ler mais», a referência é longa: vai por cima da citação, não na margem */
+body.molde-cidadania .jogo .ler :is(.m-volta,details) blockquote.lei{margin-left:0}
+body.molde-cidadania .jogo .ler :is(.m-volta,details) .lei .art{position:static;width:auto;text-align:left;display:block}
+/* «Antes de olhar» e «Antes de ler»: o rótulo no azul do carimbo */
+body.molde-cidadania .jogo .ler .ex-antes b{color:var(--cid)}
+body.molde-cidadania .jogo .ler .pos-intro{font:1rem/1.45 Arial,Helvetica,sans-serif;margin:0 0 4px}
+/* o Olha no computador: a legenda sobe para o alto da coluna, como a tabela de uma parede de museu */
+@media (min-width:1100px){body.molde-cidadania .casca .jogo .ler .m-olha .fig{align-items:start}
+ body.molde-cidadania .casca .jogo .ler .m-olha .fig figcaption{padding-top:12px}}
+/* as duas palavras difíceis do Lê */
+body.molde-cidadania .jogo .ler .glossa{font:.92rem/1.5 Arial,Helvetica,sans-serif;color:var(--suave);margin:12px 0 0}
+body.molde-cidadania .jogo .ler .glossa b{color:var(--tinta)}
+/* a tabela do conceito no telemóvel: o texto a título e os outros campos em duas colunas, sem repetir rótulos grandes */
+@media (max-width:560px){body.molde-cidadania .jogo .ler table.tabela tr{padding:12px 0 10px}
+ body.molde-cidadania .jogo .ler table.tabela td{display:flex;gap:12px;padding:3px 0;align-items:baseline}
+ body.molde-cidadania .jogo .ler table.tabela td[data-th]::before{flex:none;width:4.6rem;display:block}
+ body.molde-cidadania .jogo .ler table.tabela td:first-child{display:block;padding:0 0 4px;font-size:1.02rem}
+ body.molde-cidadania .jogo .ler table.tabela td:first-child::before{display:none}}
+/* «a prova que pesou»: opções mais longas, em lista no telemóvel */
+@media (max-width:560px){body.molde-cidadania .jogo .ler .posicao[data-artefacto="prova"] .pos-ops{grid-template-columns:minmax(0,1fr)}}
+/* o relógio do papel: discreto, começa parado e só avisa */
+body.molde-cidadania .jogo .ler .tr-relogio{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;max-width:var(--medida-ler);margin:2px 0 14px;padding:10px 0;border-top:1px solid var(--c-cinza,#d6d4ce);border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-tempo{margin:0 auto 0 0;font:400 2.2rem/1 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.05em;font-variant-numeric:tabular-nums}
+body.molde-cidadania .jogo .ler .tr-relogio button{min-height:44px;padding:0 18px;border:1.5px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:700 .9rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+body.molde-cidadania .jogo .ler .tr-relogio button[data-rl="ir"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+body.molde-cidadania .jogo .ler .tr-relogio button:focus-visible{outline:3px solid var(--cid);outline-offset:2px}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-aviso{flex-basis:100%;margin:0;font:.85rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave)}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-aviso:empty{display:none}
+body.molde-cidadania .jogo .ler .tr-relogio.acabou .tr-tempo{color:var(--vermelho,#c8232c)}
+html.em-projecao body.molde-cidadania .jogo .ler .tr-relogio .tr-tempo{font-size:3.6rem}
+/* o Para levar: a volta à posição, as frases da sessão com um traço curto, e a frase letra a letra sem letras por acender.
+   Com steps(1) (salto no fim), o Chromium acaba algumas letras em 0,9999 do percurso por arredondamento e elas ficam
+   invisíveis (visto na s01: «QU NDO», «PESA- E»); com o salto no início, cada letra acende-se logo que a sua vez chega. */
+body.molde-cidadania .jogo .levar .ch{animation-timing-function:steps(1,start)}
+body.molde-cidadania .jogo .cartao.escuro .levar-volta{font:italic 1.08rem/1.45 var(--serif,Georgia,serif);margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid color-mix(in srgb,currentColor 35%,transparent)}
+body.molde-cidadania .jogo .cartao.escuro .frases-t{font:700 .7rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.82;margin:0 0 10px}
+body.molde-cidadania .jogo .cartao.escuro ul.frases{list-style:none;margin:0 0 20px;padding:0;max-width:var(--medida-ler)}
+body.molde-cidadania .jogo .cartao.escuro ul.frases li{position:relative;padding:0 0 10px 24px;font:1.06rem/1.45 var(--serif,Georgia,serif)}
+body.molde-cidadania .jogo .cartao.escuro ul.frases li::before{content:"";position:absolute;left:2px;top:.68em;width:12px;height:2px;background:currentColor}
+/* o passo do projeto no fim: a ligação numa linha sua */
+body.molde-cidadania .jogo .depois .ir{margin:10px 0 0}
+body.molde-cidadania .jogo .depois .ir a{font-weight:700}

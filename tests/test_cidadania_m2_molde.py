@@ -7,6 +7,7 @@ e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
 import grupos146  # 05/11/2026: decisão 146
+import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -301,6 +302,15 @@ class Molde(unittest.TestCase):
         lista = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', base, 'cidadania/m1'], cwd=R).decode().split()
         # 30/10/2026: caminhos com barras normais, para correr também no Windows
         locais = sorted(p.relative_to(R).as_posix() for p in (R / 'cidadania/m1').rglob('*') if p.is_file())
+        # 05/11/2026: plano do molde da Cidadania, pedido 2. A sessão 01 do M1 passa a sair, inteira, do gerador das lições
+        # (cidadania/m1/sessoes/01/, com a versão para imprimir em imprimir/); esses dois ficheiros (molde_pedido2.INTEIROS)
+        # não se comparam com a base: têm de ser, letra a letra, o que o seu gerador escreve, e a s01 cumpre o contrato do molde.
+        # Todos os outros ficheiros do M1 continuam iguais à base, byte a byte, e nenhum outro pode aparecer ou desaparecer.
+        inteiros = [f for f in molde_pedido2.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros:
+            self.assertTrue(molde_pedido2.inteiro_ok(f), f)
+        lista = [f for f in lista if f not in inteiros]
+        locais = [f for f in locais if f not in inteiros]
         self.assertEqual(sorted(lista), locais)
         # 30/10/2026: pedido do docente (perguntas em português europeu, «Qual das perguntas…» e não «Qual pergunta…»): a
         # base passa pelas trocas de tools/trocas/lingua-perguntas-20261030.json antes de se comparar; depois da fusão a

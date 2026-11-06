@@ -41,12 +41,20 @@ class CidadaniaPiloto(unittest.TestCase):
         s = ler(MOD)
         chaves = re.findall(r'data-chave="(epi-cid-m1-s\d\d)"', s)
         self.assertEqual(chaves, [f'epi-cid-m1-s{n:02d}' for n in range(1, 11)])
-        self.assertEqual(re.findall(r'<a href="\.\./m1-s(\d\d)/">', s), [f'{n:02d}' for n in range(1, 11)])
+        # 05/11/2026 (plano do molde, pedido 2): uma sessão no molde final vive no endereço que a turma já usa
+        # (cidadania/m1/sessoes/NN/; a s01 primeiro) e tem a pergunta no Abre em .pergunta-sessao; as do piloto continuam em
+        # ../m1-sNN/ com .pergunta-c. Exige-se, para cada sessão, a ligação exata à pasta da sua página.
+        hrefs = re.findall(r'<li data-chave="epi-cid-m1-s\d\d"[^>]*><a href="([^"]+)">', s)
+        self.assertEqual(len(hrefs), 10)
         for n in range(1, 11):
             d = json.loads(ler(ROOT / f'tools/licoes/cidadania-m1-s{n:02d}.json'))
+            self.assertEqual(hrefs[n - 1], '../../m1/sessoes/01/' if d.get('molde') else f'../m1-s{n:02d}/', n)
+            if d.get('molde'):
+                self.assertEqual(d['saida'], f'cidadania/m1/sessoes/{n:02d}/index.html')
             self.assertIn(f'data-chave="{d["chave"]}" data-versao="{d["versao"]}"', s)  # a versão decide se conta como feita
             self.assertIn(html.escape(d['titulo'].split(': ', 1)[1]), s)
-            self.assertIn(re.search(r'<p class="pergunta-c">(.*?)</p>', d['cartoes'][0]['html']).group(1), s)
+            self.assertIn(re.search(r'<p class="pergunta-sessao"[^>]*>(.*?)</p>' if d.get('molde') else r'<p class="pergunta-c">(.*?)</p>',
+                                    d['cartoes'][0]['html']).group(1), s)
             self.assertEqual(d['modulo']['url'], G.LENTE + 'cidadania/piloto/m1/', 'a lição volta à página do módulo piloto')
         # só as sessões: o estado escreve-se por extenso (legível sem cor), Começar ou Continuar, e o guia do docente
         # 30/10/2026: revisão do diretor de arte (sistema «Cartaz»): «por fazer» nunca se escreve; o estado começa vazio e o
@@ -55,7 +63,8 @@ class CidadaniaPiloto(unittest.TestCase):
         self.assertNotIn('por fazer', re.sub(r'<script\b.*?</script>', '', s, flags=re.S))
         self.assertIn('"Feita"', s); self.assertIn('li.classList.add("seguir")', s); self.assertIn('"A seguir"', s)
         self.assertIn('<section class="proximo"', s)
-        self.assertIn('data-continuar href="../m1-s01/">Começar: Sessão 01', s)
+        # 05/11/2026 (pedido 2): a sessão 01 já está no molde final, em cidadania/m1/sessoes/01/.
+        self.assertIn('data-continuar href="../../m1/sessoes/01/">Começar: Sessão 01', s)
         self.assertIn('"Continuar: Sessão "', s)
         self.assertIn('<a href="docente/">Guia do docente</a>', s)
         self.assertNotIn('<img', s)
@@ -93,6 +102,14 @@ class CidadaniaPiloto(unittest.TestCase):
         self.assertEqual(s.count('<td class="num">20</td></tr></tfoot>'), 10)
         for n, g in G.GUIA.items():
             self.assertEqual(sum(p for _, p in g['grelha']), 20, n)
+            # 05/11/2026 (plano do molde, pedido 2): uma sessão no molde final não tem «Na aula» de 60 a 75 minutos; tem a tabela
+            # dos tempos cartão a cartão, que tem de somar 175 a 185 minutos, com a pausa e o passo do projeto.
+            if g.get('molde'):
+                d = json.loads(ler(ROOT / f'tools/licoes/cidadania-m1-s{n}.json'))
+                self.assertTrue(175 <= sum(c['min'] for c in d['cartoes']) + sum(d['tempos'].values()) <= 185, n)
+                self.assertIn(f'<section class="sessao" id="s{n}"><p class="marca">Sessão {n}, no molde final</p>', s)
+                self.assertIn('<table class="tempos">', s); self.assertIn('As duas charneiras', s); self.assertIn('Se só houver 90 minutos', s)
+                continue
             self.assertTrue(60 <= sum(m for m, _ in g['passos']) <= 75, n)
             self.assertIn('../../../projeto/', s)
         self.assertEqual(s.count('<h3>Pergunta Humana: '), 10)

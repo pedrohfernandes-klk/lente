@@ -19,6 +19,11 @@ import grupos146  # noqa: E402
 # body.molde-cidadania (as páginas sem o molde não mudam). Nada mais se aceita.
 MOLDE_P1 = json.loads((ROOT / 'tools/trocas/molde-pedido1-20261105.json').read_text(encoding='utf-8'))
 MARCA_MOLDE = b'/* ==== molde cidadania-2026-11 ==== */'
+# 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final). Mais uma camada, a mais recente, com as mesmas
+# regras: o manifesto fechado tools/trocas/molde-pedido2-20261105.json (trocas literais, contagem exata) nos ficheiros que o
+# pedido 2 muda em parte; os que escreve inteiros (molde_pedido2.INTEIROS: a página e a versão para imprimir da s01, a sua fonte
+# e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s01 tem de cumprir o contrato do molde.
+import molde_pedido2  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -66,12 +71,19 @@ class CidadaniaBase(unittest.TestCase):
         self.assertGreater(len(nomes), 50)
         for nome in nomes:
             with self.subTest(ficheiro=nome):
+                # 05/11/2026 (pedido 2): o ficheiro escrito inteiro tem de ser o do seu gerador; nada mais se aceita.
+                if nome in molde_pedido2.INTEIROS:
+                    self.assertTrue(molde_pedido2.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
+                # 05/11/2026 (pedido 2): desfaz-se primeiro a camada do pedido 2, que é agora a mais recente.
+                if nome in molde_pedido2.TROCAS:
+                    depois = molde_pedido2.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 # 05/11/2026: plano do molde da Cidadania, pedido 1: desfaz-se primeiro a camada do molde (a mais recente).
                 if nome in MOLDE_P1:
                     depois = desfazer_molde(depois.decode('utf-8'), nome).encode('utf-8')
@@ -90,6 +102,10 @@ class CidadaniaBase(unittest.TestCase):
         geracao = json.loads((ROOT / 'tests/fixtures/cidadania-geracao-20261103.json').read_text(encoding='utf-8'))
         for nome, trocas in RENOMEACOES.items():
             with self.subTest(ficheiro=nome):
+                # 05/11/2026 (pedido 2): o ficheiro escrito inteiro tem de ser o do seu gerador; nada mais se aceita.
+                if nome in molde_pedido2.INTEIROS:
+                    self.assertTrue(molde_pedido2.inteiro_ok(nome), nome)
+                    continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
                     self.assertEqual(esperado.count(antigo), quantidade)
@@ -107,6 +123,8 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = grupos146.aplicar(esperado, nome)
                 # 05/11/2026: plano do molde da Cidadania, pedido 1: a camada do molde, com contagem exata, por cima.
                 esperado = aplicar_molde(esperado, nome)
+                # 05/11/2026: plano do molde, pedido 2: a camada do pedido 2, com contagem exata, por cima de tudo.
+                esperado = molde_pedido2.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':

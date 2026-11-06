@@ -1,0 +1,125 @@
+{
+ "_sobre": "05/11/2026 (plano do molde da Cidadania, secção 5): o registo dos excertos de lei, declaração e decisão que as sessões citam. Cada texto foi copiado, letra a letra, da página oficial aberta na data de consulta (a grafia é a da fonte: a transcrição do UNRIC e o texto consolidado da Constituição estão na grafia anterior ao Acordo Ortográfico, e assim se citam). tests/test_molde_cidadania.py confere que cada excerto das sessões (data-fonte, «fonte» dos cartões de fazer e «citacoes») está aqui, confirmado, e que cada pedaço entre «[…]» é texto exato desta entrada. Uma entrada nova só entra com confirmado: true depois de aberta a fonte.",
+ "excertos": [
+  {
+   "id": "dudh-1",
+   "documento": "Declaração Universal dos Direitos Humanos",
+   "referencia": "Artigo 1.º",
+   "texto": "Todos os seres humanos nascem livres e iguais em dignidade e em direitos. Dotados de razão e de consciência, devem agir uns para com os outros em espírito de fraternidade.",
+   "fonte": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), transcrição portuguesa do UNRIC, Centro Regional de Informação das Nações Unidas",
+   "ligacao": "https://unric.org/pt/declaracao-universal-dos-direitos-humanos/",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "dudh-12",
+   "documento": "Declaração Universal dos Direitos Humanos",
+   "referencia": "Artigo 12.º",
+   "texto": "Ninguém sofrerá intromissões arbitrárias na sua vida privada, na sua família, no seu domicílio ou na sua correspondência, nem ataques à sua honra e reputação. Contra tais intromissões ou ataques toda a pessoa tem direito a protecção da lei.",
+   "fonte": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), transcrição portuguesa do UNRIC, Centro Regional de Informação das Nações Unidas",
+   "ligacao": "https://unric.org/pt/declaracao-universal-dos-direitos-humanos/",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "dudh-19",
+   "documento": "Declaração Universal dos Direitos Humanos",
+   "referencia": "Artigo 19.º",
+   "texto": "Todo o indivíduo tem direito à liberdade de opinião e de expressão, o que implica o direito de não ser inquietado pelas suas opiniões e o de procurar, receber e difundir, sem consideração de fronteiras, informações e ideias por qualquer meio de expressão.",
+   "fonte": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), transcrição portuguesa do UNRIC, Centro Regional de Informação das Nações Unidas",
+   "ligacao": "https://unric.org/pt/declaracao-universal-dos-direitos-humanos/",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "crp-16-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 16.º, n.º 2",
+   "texto": "Os preceitos constitucionais e legais relativos aos direitos fundamentais devem ser interpretados e integrados de harmonia com a Declaração Universal dos Direitos do Homem.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "crp-18-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 18.º, n.º 1",
+   "texto": "Os preceitos constitucionais respeitantes aos direitos, liberdades e garantias são directamente aplicáveis e vinculam as entidades públicas e privadas.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "crp-26-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 26.º, n.º 1",
+   "texto": "A todos são reconhecidos os direitos à identidade pessoal, ao desenvolvimento da personalidade, à capacidade civil, à cidadania, ao bom nome e reputação, à imagem, à palavra, à reserva da intimidade da vida privada e familiar e à protecção legal contra quaisquer formas de discriminação.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "crp-34-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 34.º, n.º 1",
+   "texto": "O domicílio e o sigilo da correspondência e dos outros meios de comunicação privada são invioláveis.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "crp-37-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 37.º, n.º 1",
+   "texto": "Todos têm o direito de exprimir e divulgar livremente o seu pensamento pela palavra, pela imagem ou por qualquer outro meio, bem como o direito de informar, de se informar e de ser informados, sem impedimentos nem discriminações.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2015-ordem",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Ponto 11 do regime provisório, transcrito no relatório",
+   "texto": "Os pais deverão abster-se de divulgar fotografias ou informações que permitam identificar a filha nas redes sociais.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, relator Bernardo Domingos, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/7c52769f1dfab8be80257e830052d374?OpenDocument",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2015-pessoas",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação",
+   "texto": "Na verdade, os filhos não são coisas ou objectos pertencentes aos pais e de que estes podem dispor a seu belo prazer. São pessoas e consequentemente titulares de direitos.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, relator Bernardo Domingos, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/7c52769f1dfab8be80257e830052d374?OpenDocument",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2015-natural",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação",
+   "texto": "Ela é uma obrigação dos pais, tão natural quanto a de garantir o sustento, a saúde e a educação dos filhos e o respeito pelos demais direitos designadamente o direito à imagem e à reserva da vida privada (art.º 79º e 80º do CC).",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, relator Bernardo Domingos, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/7c52769f1dfab8be80257e830052d374?OpenDocument",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2015-sumario",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Sumário",
+   "texto": "A imposição aos pais do dever de « abster-se de divulgar fotografias ou informações que permitam identificar a filha nas redes sociais» mostra-se adequada e proporcional à salvaguarda do direito à reserva da intimidade da vida privada e da protecção dos dados pessoais e, sobretudo, da segurança da menor no Ciberespaço.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, relator Bernardo Domingos, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/7c52769f1dfab8be80257e830052d374?OpenDocument",
+   "consultado": "2026-11-05",
+   "confirmado": true
+  }
+ ]
+}

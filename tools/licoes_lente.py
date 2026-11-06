@@ -64,7 +64,8 @@ FIM_CIDADANIA = ('CFG.fim=function(){var g=document.querySelector("#baralho .car
 # as figuras, o «i» dos créditos, a peça comum dos artefactos e a identidade da Cidadania em body.molde-cidadania) e o
 # validador aplica o contrato do molde (validar_molde). Sem o campo, a lição valida e sai como até aqui.
 MOLDE = 'cidadania-2026-11'
-VERSAO_MOLDE = '20261105-1'
+# 05/11/2026 (pedido 2, s01 do M1 na versão final): a chave sobe para -2 com os acabamentos do bloco do molde em cidadania.css.
+VERSAO_MOLDE = '20261105-2'
 COMO_LENTE = LENTE + 'como/'
 
 

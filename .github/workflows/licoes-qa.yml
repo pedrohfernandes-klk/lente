@@ -34,6 +34,15 @@ on:
       - 'tests/test_molde_cidadania.py'
       - 'tests/test_cidadania_piloto.py'
       - 'tests/fixtures/molde_ensaio.py'
+      # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final): o ajudante comum, o registo dos excertos,
+      # a página e a versão para imprimir da s01, o manifesto fechado do pedido e a sua camada nos testes.
+      - 'tools/cidadania_molde.py'
+      - 'tools/cidadania_fontes.json'
+      - 'tools/cidadania_m1_layout.py'
+      - 'tools/trocas/molde-pedido2-*'
+      - 'cidadania/m1/sessoes/01/**'
+      - 'tests/molde_pedido2.py'
+      - 'tests/test_cidadania_m1_molde.py'
       - '.github/workflows/licoes-qa.yml'
 permissions:
   contents: read
@@ -70,6 +79,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_molde_cidadania.py' -v
           python tools/cidadania_piloto.py --verificar
           python -m unittest discover -s tests -p 'test_cidadania_piloto.py' -v
+          # 05/11/2026: plano do molde da Cidadania, pedido 2
+          python -m unittest discover -s tests -p 'test_cidadania_m1_molde.py' -v
           # 30/10/2026: coração do Laboratório (31/10)
           python tools/ideias_piloto.py --verificar
           python tools/gerar_ideias_colagem.py --verificar

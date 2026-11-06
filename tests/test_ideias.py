@@ -113,7 +113,8 @@ class Licoes(unittest.TestCase):
             self.assertNotIn('familia', d, p.name)
             s = (ROOT / d['saida']).read_text('utf-8')
             self.assertEqual(s, L.pagina(d), p.name)
-            self.assertIn('class="licao-lente licao-cidadania"', s)
+            # 05/11/2026 (plano do molde, pedido 2): uma sessão no molde final leva também a classe molde-cidadania, e só essa
+            self.assertIn('class="licao-lente licao-cidadania molde-cidadania"' if d.get('molde') == L.MOLDE else 'class="licao-lente licao-cidadania"', s)
             self.assertNotIn('laboratorio.css', s)
             self.assertIn(' · Cidadania · Lente</title>', s)
 

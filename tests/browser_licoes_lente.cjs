@@ -97,7 +97,9 @@ async function responder(p,x){
    const estado=()=>p.locator('li[data-chave="'+K+'"] [data-estado]').textContent(); // o texto do DOM (o CSS põe-no em maiúsculas)
    if(proj)assert.equal(await estado(),'A seguir','projeção: a página do módulo não lê o progresso');
    else{assert.match(await estado(),/^Feita 14\/11$/,'estado antigo: «Feita» com a data da conclusão');assert.match(await p.locator('[data-contagem]').textContent(),/^1 de 10/)}
-   await p.goto(base+'/cidadania/piloto/m1-s01/'+q);await p.waitForTimeout(500);
+   // 05/11/2026 (plano do molde, pedido 2): a sessão 01 passou à versão final, no endereço que a turma já usa
+   // (cidadania/m1/sessoes/01/), com a mesma chave; é para lá que a página do módulo leva, e é lá que a migração se prova.
+   await p.goto(base+'/cidadania/m1/sessoes/01/'+q);await p.waitForTimeout(500);
    const st=await p.evaluate(K=>JSON.parse(localStorage.getItem(K)),K);
    if(proj)assert.deepEqual(st,antiga,'projeção: a sessão não grava');
    else{assert.equal(st.antes.lida,true);assert.equal(st.antes.data,antiga.t);assert.equal(st.exposicoes,undefined);assert.notEqual(st.versao,antiga.versao)}
