@@ -675,7 +675,9 @@ class SessaoS06(unittest.TestCase):
         self.assertIn('Domínio público', s)
         self.assertIn('https://www.metmuseum.org/art/collection/search/410925', s)
         self.assertNotIn('toca n', s.lower())  # em papel sublinha-se
-        self.assertIn('sublinha a palavra', s)
+        # 06/11/2026: correções da revisão da s06, cartão 9: o enunciado já não diz que a palavra «aparece duas vezes» (dava a
+        # resposta) e pede as palavras (as duas ocorrências de «isenção»); por isso o papel diz «sublinha as palavras»
+        self.assertIn('sublinha as palavras', s)
         self.assertIn('artigo 9.º', s)  # decisão 152: as referências não partem, também no papel
 
 

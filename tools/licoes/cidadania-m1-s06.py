@@ -66,10 +66,10 @@ CREDITO = ('Philips Galle, segundo Pieter Bruegel, o Velho, <i>Justice (Justicia
 ROTULO_I = 'Créditos da gravura'
 PORMENOR = 'Pormenor de <i>Justicia</i>, cerca de 1559 a 1560.'
 VER_CENTRO = ('<img src="../../../../img/cidadania/justica-galle-bruegel-centro.webp" alt="Pormenor: a figura do centro, uma mulher de '
-              'olhos vendados com uma espada na mão direita e uma balança na esquerda, entre homens com lanças." width="960" height="576">'
+              'olhos vendados com uma espada na mão esquerda e uma balança na direita, entre homens com lanças." width="960" height="576">'
               f'<figcaption class="ver-leg">{PORMENOR}</figcaption>')
 VER_BANCO = ('<img src="../../../../img/cidadania/justica-galle-bruegel-banco.webp" alt="Pormenor do canto de baixo, à esquerda: um '
-             'homem deitado e preso a um banco; outro deita-lhe água na boca com um jarro; à volta, homens de pé, e um deles escreve '
+             'homem deitado e preso a um banco; outro deita-lhe um líquido na boca com um jarro; à volta, homens de pé, e um deles escreve '
              'num livro." width="960" height="665">'
              f'<figcaption class="ver-leg">{PORMENOR}</figcaption>')
 DRE_CPA = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/2015-105602322'
@@ -94,30 +94,30 @@ CARTOES = [
  # O caso do delegado vem do piloto (s06, cartão 1), reescrito: turmas em vez de grupos (decisão 146) e sem a resposta no caso.
  M.abre('Uma regra para quem perde',
         f'ver e ler (60{NB}min), pausa (10{NB}min), pesar e escrever (50{NB}min) e o teu projeto (45{NB}min).',
-        f'A escola tem seis tardes no auditório para as turmas A, B e C do 10.º{NB}ano ensaiarem as suas peças. '
+        f'A escola tem seis tardes no auditório para as turmas A, B e C do 10.º{NB}ano ensaiarem as peças. '
         f'Na reunião de delegados, o Gonçalo, do 10.º{NB}A, propõe a regra: primeiro, a turma com o guião mais adiantado. É a dele. '
         'A regra passa com dois votos contra um.',
         PERGUNTA),
  M.decide(DECIDE_Q, [
-     ('Quem acha que sim', 'A regra é clara e premeia quem trabalhou. E foi votada: dois delegados em três disseram sim.'),
-     ('Quem acha que não', 'Quem propôs a regra é quem ganha com ela. As outras turmas podem duvidar de que o Gonçalo pensou nelas.'),
-     ('Uma objeção', 'E se a regra for boa, mesmo vinda de quem ganha? Mudava algo se outro delegado a propusesse?')]),
+     ('Quem acha que sim', 'A regra é clara e premeia quem trabalhou. E dois delegados em três votaram sim.'),
+     ('Quem acha que não', 'Quem propôs a regra é quem ganha com ela. As outras turmas podem duvidar de que o Gonçalo tenha pensado nelas.'),
+     ('Uma objeção', 'E se a regra for boa, mesmo vinda de quem ganha? Mudaria alguma coisa se outro delegado a propusesse?')]),
  # R1: a obra da sessão 03 (The Egg, de Andy Weir) outra vez, com um item novo: a regra julgada de cada lugar (plano, secção 3).
  M.recupera(escolha(
      'Se acordasses noutra turma',
-     'No conto _The Egg_, de Andy Weir, um homem descobre que vai viver a vida de cada pessoa. Se pudesses acordar em qualquer turma, '
-     'como julgavas a regra?',
-     'Imagina, como no conto _The Egg_, que vais viver a vida de cada aluno das três turmas. De que lugar julgas a regra do Gonçalo?',
-     'Do lugar de cada turma, também da que fica para o fim.',
+     f'No conto _The Egg_, de Andy Weir (sessão{NB}03), o homem descobre um segredo sobre as outras vidas. De onde julgarias a regra '
+     'do Gonçalo?',
+     f'Lembra-te do fim de _The Egg_, da sessão{NB}03. Se fosses o homem do conto, de onde julgarias a regra do Gonçalo?',
+     'Também do lugar da turma que fica para o fim.',
      [('Do lugar do Gonçalo, que teve o trabalho de a propor.',
-       'O conto não te põe só no lugar de quem propõe: põe-te em todas as vidas. Imagina que acordas na turma que ensaia em último. '
+       'O conto não te põe só no lugar de quem propõe: põe-te em todas as vidas. Imagina que acordas na turma que ensaia em último lugar. '
        'A regra ainda te parece boa?'),
       ('Pelo voto: se dois em três a aprovaram, está julgada.',
        'O voto diz quantos aceitam a regra; o conto pede outra coisa: que a julgues de cada lugar. Imagina que acordas na turma que '
        'votou contra.')],
-     'No conto, quem julga pode vir a viver qualquer vida. Se pudesses acordar na turma que ensaia em último, a regra teria de te '
+     'No conto, quem julga pode vir a viver qualquer vida. Se pudesses acordar na turma que ensaia em último lugar, a regra teria de te '
      'parecer aceitável também de lá. É a pergunta de hoje, vista de outro lugar.',
-     3, 'aplicar', 'pôr-se no lugar do outro', pista='Pensa em quantas vidas vai viver o homem do conto.')),
+     3, 'aplicar', 'pôr-se no lugar do outro', pista='Lembra-te do que o homem do conto descobre no fim.')),
  # R2: acusação de facto ou opinião (sessão 04), um item novo sobre o 10.º C. Falso (os V/F da sessão são F, F, V).
  M.recupera(M.fazer(
      'vf', 'Facto ou opinião',
@@ -139,18 +139,17 @@ CARTOES = [
          'Olha para a figura do centro. O que se vê nela, sem acrescentar nada?',
          'Descreve a figura do centro só com o que a gravura mostra.',
          'Olhos vendados, uma espada numa mão e uma balança na outra.',
-         [('Uma juíza a ler, em voz alta, a sentença de um condenado.',
-           'Nada na figura mostra que leia: as mãos seguram outras coisas, e os olhos estão tapados. «Juíza» é o que se supõe. Olha '
-           'outra vez para as mãos e para os olhos.'),
-          ('Uma rainha a dar ordens aos homens armados à sua volta.',
-           'Os homens armados estão à volta, mas nada mostra que ela dê ordens: não fala nem aponta. «Rainha» é o que se supõe. Olha '
-           'outra vez para os olhos e para as mãos.')],
-         'Vê-se uma mulher de olhos vendados, com uma espada e uma balança, entre homens com lanças. Juíza ou rainha é o que se '
-         'acrescenta: nada na figura mostra que leia ou que mande.',
-         3, 'distinguir', 'observar', ver=VER_CENTRO, pista='Descreve só o que a figura tem, sem dizer quem é.'),
+         [('Olhos vendados, que por isso não vê quem está a julgar.',
+           'A venda vê-se; «por isso não vê quem está a julgar» é uma leitura do símbolo, que a figura não mostra. Olha só para o que '
+           'ela tem.'),
+          ('Olhos vendados, uma espada numa mão e um livro na outra.',
+           'Olha outra vez para a mão que não segura a espada: o que pende dela tem dois pratos. Descreve só o que lá está.')],
+         'Vê-se uma mulher de olhos vendados, com uma espada numa mão e uma balança na outra, entre homens com lanças. O que a venda '
+         'quer dizer já é uma leitura do símbolo, que a figura não mostra.',
+         3, 'distinguir', 'observar', ver=VER_CENTRO, pista='Confere na figura cada parte da opção: vê-se tudo o que ela diz?'),
  M.fazer('emparelhar', 'Imagem, legenda ou nenhuma',
-         'Liga cada frase ao sítio onde se apoia: na gravura, na legenda, ou em nenhuma das duas.',
-         'Para cada frase: vê-se na gravura, só a legenda o diz, ou nenhuma das duas o prova?',
+         'Liga cada frase ao sítio onde se apoia: na gravura, na legenda ou em nenhuma das duas.',
+         'Para cada frase: vê-se na gravura, só a legenda o diz ou nenhuma das duas o prova?',
          'O homem preso ao banco vê-se; a série das virtudes, só a legenda o diz; o que pensava quem a desenhou, nem a imagem nem a '
          'legenda o mostram. Mostrar uma cena não é aprová-la.',
          3, 'distinguir', 'imagem e legenda', ver=VER_BANCO,
@@ -168,14 +167,14 @@ CARTOES = [
                     'linha colateral […]', 'cpa-69-1', None)], f'<a href="{DRE_CPA}">Diário da República</a>')
             + '<p class="glossa"><b>Segundo grau da linha colateral</b>: irmãos (Código Civil, artigo 1581.º).</p>')),
  M.fazer('sublinhar', 'Aquilo em que se confia',
-         'No artigo 9.º, toca na palavra que diz aquilo em que os outros têm de poder confiar (aparece duas vezes).',
-         'O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca na palavra que a nomeia, nas duas vezes.',
+         'No artigo 9.º, toca nas palavras que dizem o que a Administração tem de preservar e em que os outros têm de poder confiar.',
+         'O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca onde está escrita.',
          '«Isenção»: decidir sem se deixar levar por interesses próprios. O artigo 9.º pede que se preserve e que os outros possam '
          'confiar nela.',
          3, 'reconhecer', 'isenção', frase=ART9, certas=[39, 45], fonte='cpa-9', l='a9',
          fe='A confusão mais provável é tocar em «confiança» ou em «imparcial»: «confiança» é o que os outros sentem, não aquilo em que '
-            'confiam. Lê o fim do artigo: confiança em quê?',
-         pista='Lê o fim do artigo: os outros confiam em quê?'),
+            'confiam. Volta ao fim do artigo.',
+         pista='Pergunta-te o que a Administração tem de preservar.'),
  escolha('Quem decide e quem ganha',
          'O artigo 69.º afasta quem decide na Administração Pública em certos casos. O que tem a regra do Gonçalo em comum com eles?',
          'Nos casos do artigo 69.º, quem decide não pode intervir. Em que se parece com eles a regra do Gonçalo?',
@@ -192,8 +191,8 @@ CARTOES = [
          cita='[…] não podem intervir em procedimento administrativo […] nos seguintes casos: a) Quando nele tenham interesse, por si […]',
          fonte='cpa-69-1', pista='Lê a alínea a) e procura quem tem interesse.'),
  M.fazer('vf', 'Um júri com um irmão',
-         'Caso inventado: num concurso para um lugar na câmara municipal, um membro do júri é irmão de um candidato. Pode ficar no júri, '
-         'desde que não avalie o irmão.',
+         f'Caso inventado: um membro do júri de um concurso da câmara é irmão (2.º{NB}grau da linha colateral) de um candidato. Pode '
+         'ficar, desde que não avalie o irmão.',
          'Um jurado de um concurso da câmara é irmão de um dos candidatos. Basta-lhe não dar nota ao irmão para continuar no júri.',
          'Falso. Um irmão é parente no segundo grau da linha colateral, e nesse caso quem decide não pode intervir «em procedimento '
          'administrativo»: no concurso inteiro, não só na nota do irmão. Cada nota que dá aos outros também mexe no lugar dele.',
@@ -203,7 +202,7 @@ CARTOES = [
          fonte='cpa-69-1', citacoes=[('cpa-69-1', 'em procedimento administrativo')],
          fe='Não chega deixar de avaliar o irmão: num concurso, a nota de cada candidato mexe no lugar de todos. O artigo afasta quem '
             'decide do procedimento inteiro, não de uma nota. Relê a alínea b).',
-         pista='Pensa no que acontece ao lugar do irmão quando os outros recebem nota.'),
+         pista='Relê a alínea b): de onde afasta o artigo quem decide?'),
  # Charneira 1: o limite. Uma boa regra não apaga o problema de quem a propõe ganhar com ela (artigo 9.º, «confiança nessa isenção»).
  M.fazer('vf', 'Se a regra for a melhor',
          'Imagina que a regra do Gonçalo era mesmo a melhor para as três turmas. Mesmo assim, havia um problema em ter sido ele a '
@@ -214,7 +213,7 @@ CARTOES = [
          4, 'aplicar', 'conflito de interesses', v=True, citacoes=[('cpa-9', 'confiança nessa isenção')],
          fe='Uma boa regra não apaga a dúvida: o artigo 9.º pede também a «confiança nessa isenção». Quem ganha com a regra que propõe '
             'dá aos outros razões para duvidar. Relê o fim do artigo 9.º.',
-         pista='Lê o artigo 9.º até ao fim: pede só que se decida bem?'),
+         pista='Relê o artigo 9.º até ao fim e conta o que ele pede.'),
  # Conceito: escolher sem saber o lugar (Rawls, cartão de obra 7 do M1 publicado); Nozick em «Ler mais». As três posições
  # paralelas vão em tabela (decisão 152).
  M.conceito('Escolher sem saber o lugar',
@@ -225,10 +224,10 @@ CARTOES = [
             '<tr><td data-th="Se ficas">num lugar que não sabes</td><td data-th="Convém-te">uma regra boa em qualquer lugar</td></tr>'
             '</tbody></table>',
             'Escolher sem saber o lugar', 'Escolher a regra antes de saberes se ganhas ou perdes.',
-            '<p>Não é sorteio: aqui, escolhe-se às cegas a regra, não quem ganha.</p>',
+            '<p>Não é sorteio: escolhe-se às cegas a regra, não quem ganha.</p>',
             mais=('<p>A ideia é de John Rawls (<i>Uma Teoria da Justiça</i>, 1971): escolher as regras atrás de um véu de ignorância, '
-                  'sem saber que lugar nos calha. Robert Nozick respondeu (<i>Anarquia, Estado e Utopia</i>, 1974): uma repartição é '
-                  'justa se vier de trocas livres e legítimas, não de um padrão escolhido à partida.</p>')),
+                  'sem saber o lugar que nos calha. Robert Nozick respondeu (<i>Anarquia, Estado e Utopia</i>, 1974): uma repartição é '
+                  'justa se vier de aquisições e transferências legítimas, feitas livremente, não de um padrão escolhido à partida.</p>')),
  # Transferir 1: as seis sessões de câmara (M1 publicado, sessão 07, «Exemplo»), com os critérios do piloto (cartão 4).
  M.fazer('emparelhar', 'Cada regra, o seu efeito',
          'Caso inventado: seis sessões de câmara para três projetos. O A tem quatro cenas prontas; o C perdeu uma sessão porque faltou '
@@ -241,8 +240,8 @@ CARTOES = [
                 ['Mais sessões para quem perdeu material.', 'O C recupera o que lhe faltou.'],
                 ['Primeiro, quem tem mais cenas prontas.', 'O A filma antes dos outros.'],
                 ['A ordem tira-se à sorte.', 'Qualquer um pode ficar para o fim.']],
-         fe='A confusão mais provável é trocar a igualdade pela necessidade: dar o mesmo a todos não devolve ao C a sessão que perdeu. '
-            'Volta às regras e pergunta, em cada uma, quem fica à frente.',
+         fe='A confusão mais provável é achar que dar o mesmo a todos compensa a perda do C: com duas sessões para cada um, o C continua '
+            'com menos uma. Volta às regras e pergunta, em cada uma, quem fica à frente.',
          pista='Em cada regra, pergunta-te quem fica à frente e quem fica para trás.'),
  # Decisão 161: o caso real, com fonte oficial aberta (dgsi.pt). Cita-se só o que o acórdão diz: o sumário, e, no retorno, o que a
  # primeira sentença já reconhecera («situação de isenção e imparcialidade», «desde logo»). Os factos vêm da matéria de facto provada
@@ -254,13 +253,14 @@ CARTOES = [
          'tivessem concorrido ao concurso que ela abriu. Porquê?',
          'Não se provou que quisesse dar-lhes uma vantagem indevida.',
          [('Declarou-se impedida, embora só no fim do concurso.',
-           'Não foi isso que pesou: a sentença de Leiria até a censurou por não se ter declarado impedida «desde logo». Lê o que o '
-           'sumário diz que era necessário.'),
+           'Não foi isso que pesou: o tribunal de Leiria, na primeira sentença, até a censurou por não se ter declarado impedida «desde '
+           'logo». Lê o que o sumário diz que era necessário.'),
           ('Os familiares não chegaram a entrar para a câmara.',
            'Entraram: os três assinaram contrato com o município em janeiro de 2019. O tribunal decidiu por outra razão. Lê o que o '
            'sumário diz que era necessário.')],
-         'Para perder o mandato, não chegava ter intervindo num concurso a que concorriam familiares: era preciso provar que quis obter uma «vantagem '
-         'patrimonial indevida». A sentença de Leiria já reconhecera que ela não estava em «situação de isenção e imparcialidade»; '
+         'Para perder o mandato, não chegava intervir num concurso a que concorriam familiares: era preciso provar que quis obter uma «vantagem '
+         'patrimonial indevida». Na primeira sentença, o tribunal de Leiria já reconhecera que não estava em «situação de isenção e '
+         'imparcialidade»; '
          'faltou a outra prova.',
          4, 'transferir', 'conflito de interesses e prova',
          cita=SUMARIO, fonte='sta-2024-sumario',
@@ -270,18 +270,18 @@ CARTOES = [
          pista='Lê no sumário o que não basta e o que é necessário.'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
  M.volta(f'A delegada do 10.º{NB}C pede a palavra',
-         f'Na reunião seguinte, a Beatriz, delegada do 10.º{NB}C, lembra que a turma dela já perdeu duas tardes de ensaio com as '
-         f'obras no auditório. Propõe outra regra: mais tardes para o 10.º{NB}C. O Gonçalo responde: «A minha regra '
+         f'Na reunião seguinte, a Beatriz, delegada do 10.º{NB}C, lembra que a turma dela perdeu duas tardes com as obras no '
+         f'auditório. Propõe outra regra: mais tardes para o 10.º{NB}C. O Gonçalo responde: «A minha regra '
          'premeia quem trabalhou. Não a fiz para mim.»',
          carimbo='Caso inventado.'),
  M.fazer('ordenar', 'Sem saber o lugar',
          'A reunião vai decidir outra vez. Põe por ordem os passos para escolher a regra sem saber o lugar.',
-         'Ordena o que a reunião faz para escolher a regra das tardes sem que ninguém saiba que turma lhe calha.',
+         'Ordena o que a reunião faz para escolher a regra das tardes sem que ninguém saiba a turma que lhe calha.',
          'Primeiro as regras em cima da mesa; depois a escolha sem saber o lugar; depois a voz de quem perde; no fim, a revisão. Quem '
          'propôs uma regra também a escolhe às cegas.',
          3, 'aplicar', 'escolher sem saber o lugar',
          passos=['Juntar as regras propostas, a do Gonçalo e a da Beatriz.',
-                 'Escolher uma sem saber que turma te vai calhar.',
+                 'Escolher uma sem saber a turma que calha a cada um.',
                  'Ouvir a objeção da turma que fica a perder.',
                  'Rever a regra, se a objeção for boa.'],
          fe='A confusão mais provável é ouvir quem perde antes de escolher: só há quem perde depois de haver uma regra. Começa por juntar '
@@ -297,41 +297,40 @@ CARTOES = [
       'Quanto tempo': 'Três minutos; em turma, até treze.',
       'O que fica escrito': 'Nada em papel; a escolha fica nos artefactos.',
       'Se estás sozinho': 'Compara com a escolha do início e abre os três lados.'},
-     prova=('A razão que pesou mais:', ('O guião adiantado', f'As tardes perdidas do 10.º{NB}C', 'A confiança (artigo 9.º)')),
+     prova=('A razão que pesou mais:', ('O guião adiantado', f'As tardes perdidas do 10.º{NB}C', f'A confiança (artigo{NB}9.º)')),
      prova_rot='A razão que pesou', intro='', nota=None),
  # Conceito espaçado (origem): facto, regra ou razão, a distinção da sessão 01 («Facto, regra ou razão», cartão 19).
  M.fazer('emparelhar', 'Facto, regra ou razão',
          'Liga cada frase ao que ela é numa justificação.',
          'Facto, regra ou razão de uma das partes: o que é cada frase?',
-         f'As tardes perdidas são um facto do caso; o artigo 9.º é uma regra escrita numa lei, que vale para todos; «Não a fiz para mim» '
-         'é a razão de quem propôs a regra, que ainda tem de ser pesada.',
+         'As tardes perdidas são um facto do caso; o artigo 9.º é uma regra escrita numa lei, que obriga a Administração Pública; «Não a '
+         'fiz para mim» é a razão de quem propôs a regra, que ainda tem de ser pesada.',
          3, 'distinguir', 'relato e princípio',
          pares=[[f'O 10.º{NB}C perdeu duas tardes de ensaio com as obras.', 'Um facto do caso'],
                 ['«A Administração Pública deve tratar de forma imparcial aqueles que com ela entrem em relação»',
-                 'Uma regra que vale para todos'],
+                 'Uma regra escrita numa lei'],
                 ['«Não a fiz para mim.»', 'A razão de uma das partes']],
          citacoes=[('cpa-9', 'A Administração Pública deve tratar de forma imparcial aqueles que com ela entrem em relação')],
          origem='cidadania/m1/sessoes/01/',
          fe='A confusão mais provável é tomar a razão do Gonçalo por facto: «Não a fiz para mim» diz o que ele afirma, não o que se '
-            f'provou. É a distinção da sessão{NB}01: facto, regra que vale para todos, razão de alguém.',
-         pista='Uma regra vale para todos; uma razão é de alguém.'),
+            f'provou. É a distinção da sessão{NB}01: facto, regra escrita, razão de alguém.',
+         pista='Uma regra está escrita e obriga quem decide; uma razão é de alguém.'),
  # Cadeia com o passo em falta (plano, secção 2: nas sessões 04 a 07, o aluno encontra o passo que falta). Na s04 faltava a
- # aplicação; aqui falta o limite.
+ # aplicação; aqui falta o limite. 06/11/2026 (revisão, bloqueante): a justificação é a da Beatriz (as tardes perdidas), e não a da
+ # dúvida sobre quem propôs, que escrevia a resposta da charneira 2 no cartão de cima; «pesar» e «dúvida» ficam fora deste cartão.
  escolha('O passo que falta',
-         'Facto: o Gonçalo propôs a regra que põe a turma dele à frente. Fonte: o artigo 9.º. Aplicação: os outros podem duvidar. Falta '
-         'o limite.',
-         'Nesta justificação há facto, fonte e aplicação, mas falta o limite: a frase que diz até onde vai a conclusão. Escolhe-a.',
-         'Isto não prova que a regra seja má nem que ele tenha agido de má-fé.',
-         [(f'Por isso, o Gonçalo quis prejudicar o 10.º{NB}C de propósito.',
-           'Isto passa as provas: ninguém mostrou que ele quisesse prejudicar alguém. O limite diz o que as provas não mostram. Lembra-te '
-           'do caso real: até o tribunal pediu prova da intenção.'),
-          ('A regra foi aprovada na reunião por dois votos contra um.',
-           'Isso é mais um facto do caso, não um limite. O limite diz até onde vai a conclusão: o que ela ainda não prova. Volta à '
-           'justificação.')],
-         'O limite diz o que a justificação não prova: a dúvida sobre quem propôs não mostra que a regra seja má, nem que tenha havido '
-         'má-fé. Isso fica por pesar.',
+         f'Facto: o 10.º{NB}C perdeu duas tardes com as obras. Fonte: o artigo 9.º, «todos e apenas os interesses relevantes». '
+         'Aplicação: a perda conta. Falta o limite.',
+         'Nesta justificação há facto, fonte e aplicação; falta a frase que diz até onde vai a conclusão. Escolhe-a.',
+         'Isto não decide sozinho quem deve ensaiar primeiro.',
+         [('Por isso, a Beatriz tem razão e o Gonçalo está errado.',
+           'Isto vai além das provas: um interesse relevante entra na conta, não a fecha. O limite diz o que a justificação ainda não '
+           'prova. Volta à justificação.'),
+          (f'A Beatriz falou na reunião como delegada do 10.º{NB}C.',
+           'Isso é mais um facto do caso, não um limite. O limite diz até onde vai a conclusão. Volta à justificação.')],
+         'O limite diz até onde vai a conclusão: a perda das tardes conta, mas não decide sozinha quem ensaia primeiro.',
          4, 'aplicar', 'facto, fonte, aplicação, limite',
-         pista='O limite diz o que as provas não chegam a mostrar.'),
+         pista='Pergunta-te o que a justificação ainda deixa em aberto.'),
  # Charneira 2: a conclusão que não vai além das provas; os erros esperados são supor a intenção e tomar o voto por justiça.
  escolha('O que as provas permitem',
          'Escolhe a conclusão que diz o que as provas permitem, sem ir além delas.',
@@ -355,15 +354,15 @@ CARTOES = [
           'A prova junta um facto a uma expressão exata, com o artigo.',
           'A dúvida, respondida, podia mudar a conclusão.'],
          # o exemplo mostra só a forma, noutro caso e com outro texto (a Declaração, artigo 1.º), sem a conclusão nem a prova de hoje
-         f'<p>Outro caso, inventado: na cantina, os do 12.º{NB}ano passam sempre à frente na fila.</p><ol>'
+         f'<p>Caso inventado: na cantina, os do 12.º{NB}ano passam sempre à frente na fila.</p><ol>'
          '<li>Conclusão: ser mais velho não explica a vantagem a quem espera.</li>'
          f'<li>Prova: todos esperam pela mesma refeição; todos nascem {M.citado("dudh-1", "iguais em dignidade e em direitos")} '
          '(Declaração, artigo 1.º).</li>'
          '<li>Dúvida: há outra razão, como um horário mais curto?</li></ol>',
          'Num papel pequeno, sozinho e sem telemóvel.',
          relogio_min=12),
- M.levar(FRASE, ['Quem ganha com uma regra não a devia decidir sozinho.',
-                 'Escolher sem saber o lugar mostra quem perde.']),
+ M.levar(FRASE, ['Quem ganha com uma regra dá aos outros razões para duvidar dela.',
+                 'Escolher sem saber o lugar obriga a pensar em quem perde.']),
 ]
 
 # o lugar da certa em cada escolha (0, 1 ou 2), com a semente do motor: nunca o mesmo em mais de metade, nem três seguidos
@@ -393,8 +392,8 @@ def sessao():
                         'Imagem: Philips Galle, segundo Pieter Bruegel, o Velho, _Justice (Justicia) from The Virtues_, cerca de 1559 a '
                         '1560, The Metropolitan Museum of Art, domínio público (imagem CC0). John Rawls, _A Theory of Justice_ (1971), e '
                         'Robert Nozick, _Anarchy, State, and Utopia_ (1974), segundo a Stanford Encyclopedia of Philosophy. _The Egg_, '
-                        'conto de Andy Weir. O caso do Gonçalo e da Beatriz, o do 10.º C no corredor, o do júri da câmara, o das seis '
-                        'sessões de câmara (escrito para a sessão 07 do M1 publicado) e o da fila da cantina são inventados; o do Supremo '
+                        f'conto de Andy Weir. O caso do Gonçalo e da Beatriz, o do 10.º{NB}C no corredor, o do júri da câmara, o das seis '
+                        f'sessões de câmara (escrito para a sessão{NB}07 do M1 publicado) e o da fila da cantina são inventados; o do Supremo '
                         'Tribunal Administrativo é real.'),
         'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},
         'depois': DEPOIS,

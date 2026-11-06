@@ -296,8 +296,8 @@ GUIA = {
  # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '06': {
   'molde': True,
-  'dominio': 'Democracia e Instituições Políticas: regras coletivas, imparcialidade e conflito de interesses (Código do Procedimento Administrativo, artigos 9.º e 69.º); Direitos Humanos: igualdade.',
-  'ensina': 'Comparar critérios de repartir e o que cada um faz a quem perde; ver que quem ganha com uma regra não a devia decidir sozinho, mesmo que ela seja boa; escolher uma regra sem saber o lugar; não ir além das provas.',
+  'dominio': 'Democracia e Instituições Políticas: regras coletivas, imparcialidade e conflito de interesses (Código do Procedimento Administrativo, artigos\u00a09.º e 69.º); Direitos Humanos: igualdade.',
+  'ensina': 'Comparar critérios de repartir e o que cada um faz a quem perde; ver que quem ganha com uma regra dá aos outros razões para duvidar dela, mesmo que ela seja boa; escolher uma regra sem saber o lugar; não ir além das provas.',
   'antes': ('Devolver, no início, o papel da sessão 05 com a marca por critério. O caso é inventado: se a turma trouxer decisões reais da '
             'escola ou da associação de estudantes, fala-se da regra, nunca de quem a propôs.'),
   'na_aula': {
@@ -306,18 +306,18 @@ GUIA = {
    3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 05.',
    4: 'O retorno nomeia a sessão 04: vale a pena lembrar, em voz alta, a diferença entre uma opinião, que se discute, e uma acusação de facto, que tem de se provar.',
    5: 'Projetado grande (a gravura inteira; toca-se na imagem para a ampliar). Ler antes a nota de enquadramento (abaixo). Os pormenores (a venda, o homem preso ao banco) só se apontam depois dos cartões 6 e 7.',
-   8: 'Ler em voz alta o artigo 9.º, uma vez, devagar no fim («e à confiança nessa isenção»). O artigo 69.º fica em «Ler mais» e volta nos cartões 10 e 11.',
+   8: 'Ler em voz alta o artigo\u00a09.º, uma vez, devagar no fim («e à confiança nessa isenção»). O artigo\u00a069.º fica em «Ler mais» e volta nos cartões 10 e 11.',
    12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
-   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6\u00a0minutos.',
    15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e mostrar o sumário e o ponto IV, a decisão.',
-   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90\u00a0minutos, recomeça-se aqui.',
    18: 'Ver «Como conduzir o “Em turma”».',
    21: 'Charneira 2 (ver abaixo).',
-   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   22: 'Relógio projetado (12\u00a0minutos de escrita). O docente recolhe os papéis por código.',
    23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
   },
   'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
-  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3\u00a0minutos (em três sessões, o docente passa por toda a turma).',
   'entrega': 'Recolha do papel A6, por código.',
   'decide': [
    'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
@@ -326,16 +326,16 @@ GUIA = {
   ],
   'em_turma': [
    'Um minuto em silêncio: cada aluno escolhe, só para si, a regra das seis tardes que aceitaria (a do Gonçalo, a da Beatriz, duas para cada turma, sorteio ou outra).',
-   'Só depois se tiram os lugares à sorte: cada aluno fica, por um minuto, numa das três turmas do caso (por exemplo, pelo último algarismo do código: 1 a 3 é o 10.º A, 4 a 6 o 10.º B, 7 a 9 e 0 o 10.º C).',
+   'Só depois se tiram os lugares à sorte: cada aluno fica, por um minuto, numa das três turmas do caso (por exemplo, pelo último algarismo do código: 1 a 3 é o 10.º\u00a0A, 4 a 6 o 10.º\u00a0B, 7 a 9 e 0 o 10.º\u00a0C).',
    'Seis minutos: quem perde com a regra que escolheu diz a objeção, em voz alta e do lugar que lhe calhou; duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o número do artigo).',
    'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou de posição, e porquê. No quadro: o que sabemos, o que falta saber, o que pesa mais neste caso.',
    'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
-   'No fim, «A razão que pesou»: quantos escolheram o guião adiantado, as tardes perdidas do 10.º C ou a confiança (artigo 9.º).',
+   'No fim, «A razão que pesou»: quantos escolheram o guião adiantado, as tardes perdidas do 10.º\u00a0C ou a confiança (artigo\u00a09.º).',
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
   ],
   'charneiras': [
    (12, 'Falso, por julgar só o resultado: «se a regra é boa, não importa quem a propôs».',
-    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 9.º até ao fim. Pergunta: «O artigo pede só decisões certas, ou pede mais alguma coisa?»'),
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo\u00a09.º até ao fim. Pergunta: «O artigo pede só decisões certas, ou pede mais alguma coisa?»'),
    (21, '«A regra é injusta, porque o Gonçalo quis favorecer a turma» (supõe uma intenção que nenhum material mostra) ou «A regra é justa, porque a maioria dos delegados a aprovou» (toma o voto por justiça).',
     'Se mais de um terço erra, lembrar o caso real do cartão 15 (até o tribunal exigiu prova da intenção) e perguntar: o que mostra o voto, e o que não mostra?'),
   ],
@@ -347,15 +347,15 @@ GUIA = {
               'Cinco minutos para ler, na página do projeto, a frase das fases: «No guião e no dossiê, tornar localizáveis as fontes das falas, '
               'dados e documentos usados.» Trinta minutos: cada aluno escreve, em papel, as primeiras falas do seu teatro-documento, a partir '
               'do material que já tem, com a fonte de cada fala ao lado (quem o disse ou onde está escrito, e como se reencontra); o docente '
-              'faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê com «O que conta» e marca as falas sem fonte, que saem '
+              'faz cerca de dez conversas de 3\u00a0minutos. Dez minutos: cada aluno relê com «O que conta» e marca as falas sem fonte, que saem '
               'ou ficam como pergunta. O esboço entra no dossiê da Pergunta Humana.'),
   'produto': 'Esboço do guião, com fontes',
   'grelha': [('Falas que vêm do material investigado', 4), ('Uma fonte localizável ao lado de cada fala', 5),
              ('O que é do aluno distingue-se do que é citado', 4), ('Falas sem fonte retiradas ou marcadas como pergunta', 4),
              ('Mais de uma voz, incluindo quem discorda', 3)],
   'noventa': [
-   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura da frase das fases e as primeiras falas).',
-   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Primeira aula: cartões 1 a 15 (60\u00a0minutos), 10 de folga e 20 de projeto (a leitura da frase das fases e as primeiras falas).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50\u00a0minutos), 35 de projeto e 5 de entrega.',
    'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
    'A projeção vai direta ao cartão 16 com a barra dos cartões.',
   ],
@@ -366,7 +366,7 @@ GUIA = {
                 'Uma vereadora e vice-presidente de uma câmara municipal abriu, em 2018, um concurso para 53 lugares e nomeou o júri; a filha, '
                 'o irmão e a cunhada concorreram, ficaram aprovados e assinaram contrato em janeiro de 2019. Só se declarou impedida no fim. '
                 'O Ministério Público pediu a perda de mandato: o tribunal de Leiria disse que não, o Tribunal Central Administrativo do Sul '
-                'disse que sim, e o Supremo confirmou a primeira decisão. Para a perda de mandato (Lei n.º 27/96, artigo 8.º, n.º 2), não basta '
+                'disse que sim, e o Supremo confirmou a primeira decisão. Para a perda de mandato (Lei n.º\u00a027/96, artigo\u00a08.º, n.º\u00a02), não basta '
                 'a intervenção num procedimento com familiares interessados: é preciso provar a intenção de obter uma vantagem patrimonial '
                 'indevida, e essa prova não foi feita. A sentença de Leiria já reconhecera que ela não estava em situação de isenção e '
                 'imparcialidade. Cita-se só o sumário e essa passagem. O acórdão é anonimizado; não se procuram nomes nem o município.'),
@@ -378,19 +378,19 @@ GUIA = {
             'e «isPublicDomain»: true; o ficheiro do museu no Wikimedia Commons diz «CC0». A página do museu não abriu nesta passagem '
             '(verificação do navegador). As duas linhas em latim, por baixo da gravura, não se traduzem nos cartões: a tradução fica por '
             'confirmar.',
-            'O caso do Gonçalo e da Beatriz, o do 10.º C no corredor, o do júri da câmara, o das seis sessões de câmara (escrito para a sessão '
+            'O caso do Gonçalo e da Beatriz, o do 10.º\u00a0C no corredor, o do júri da câmara, o das seis sessões de câmara (escrito para a sessão\u00a0'
             '07 do M1 publicado) e o da fila da cantina são inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
             'O caso do piloto tinha três grupos (A, B e C); passou a três turmas, para que nenhum cartão fale de grupos (decisão 146).',
             'Sem vídeo (decisão 155). Os candidatos do plano (The Ethics Centre; CrashCourse, filosofia, episódio 40, sobre justiça '
             'distributiva) não foram vistos por inteiro pela equipa. Se o docente vir um deles e o quiser, entra em «Para ir mais longe», '
             'com a alternativa escrita.',
-            'Recupera 1, _The Egg_ (Andy Weir): a turma conhece o conto da sessão 03; o cartão usa só a premissa (o homem vai viver a vida de '
-            'cada pessoa).',
+            'Recupera 1, _The Egg_ (Andy Weir): a turma conhece o conto da sessão\u00a003; o cartão pede que o aluno se lembre do fim (o homem '
+            'vai viver a vida de cada pessoa).',
             'Cartões 10 a 12: o Código do Procedimento Administrativo vale para a Administração Pública; uma reunião de delegados não o é, e o '
-            'cartão 10 di-lo. A ideia que passa para a escola (quem ganha com a decisão não a devia tomar sozinho) é leitura nossa. No cartão '
+            'cartão 10 di-lo. A ideia que passa para a escola (quem ganha com a decisão não a devia tomar) é leitura nossa. No cartão '
             '11, que o membro do júri de um concurso público fica impedido em todo o concurso (e não só na nota do irmão) é a nossa leitura '
             'de «não podem intervir em procedimento administrativo»; os irmãos ficam no segundo grau da linha colateral pela conta do Código '
-            'Civil, artigo 1581.º, n.º 2.',
+            'Civil, artigo\u00a01581.º, n.º\u00a02.',
             'Conceito: a tabela e o «Ler mais» seguem o cartão de obra 7 do M1 publicado («Escolher sem saber o teu lugar»), conferido na '
             'Stanford Encyclopedia of Philosophy a 6/11/2026: _A Theory of Justice_ (1971) e o véu de ignorância; _Anarchy, State, and '
             'Utopia_ (1974) e a crítica de Nozick aos padrões de repartição.',
