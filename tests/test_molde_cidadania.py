@@ -661,7 +661,10 @@ class SessaoS03(unittest.TestCase):
         self.assertIn('o do Tribunal Europeu dos Direitos Humanos é real', self.D['fontes'])
         olha = next(c for c in C if c['rot'] == 'Olha')
         self.assertIn('bubley-sala-de-espera-1943.webp', olha['html'])
-        self.assertIn('https://www.loc.gov/item/2017862110/', olha['html'])
+        # 06/11/2026 (revisão da s03): o «Registo de origem» é o handle da Library of Congress do registo cph.3b22541, o que o
+        # crédito nomeia; o item 2017862110 é outro registo (o negativo LC-DIG-fsa-8d33365)
+        self.assertIn('https://hdl.loc.gov/loc.pnp/cph.3b22541', olha['html'])
+        self.assertNotIn('loc.gov/item/2017862110', olha['html'])
         self.assertIn('https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg', olha['html'])
         self.assertIn('Domínio público', olha['html'])
         self.assertTrue((ROOT / 'img/cidadania/bubley-sala-de-espera-1943.webp').is_file())
@@ -678,7 +681,8 @@ class SessaoS03(unittest.TestCase):
             if c['t'] != 'ler':
                 self.assertNotIn(html_escape(c['f'])[:60], s)
         self.assertIn('Domínio público', s)
-        self.assertIn('https://www.loc.gov/item/2017862110/', s)
+        # 06/11/2026 (revisão da s03): o handle do registo cph.3b22541 (ver test_caso_real_imagem_e_sem_video)
+        self.assertIn('https://hdl.loc.gov/loc.pnp/cph.3b22541', s)
 
 
 if __name__ == '__main__':

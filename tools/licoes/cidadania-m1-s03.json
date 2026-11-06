@@ -43,7 +43,7 @@
   {
    "t": "escolha",
    "rot": "Se pudesses ser qualquer um",
-   "p": "No conto _The Egg_, de Andy Weir, um homem morre e fica a saber que vai viver a vida de cada pessoa. Se pudesses ser qualquer colega, aceitavas a mostra no primeiro andar?",
+   "p": "No conto _The Egg_, de Andy Weir, um homem morre e descobre que vai viver a vida de cada pessoa. Se pudesses ser qualquer colega, aceitavas a sala de cima?",
    "p2": "Imagina, como no conto _The Egg_, que podes vir a ser qualquer pessoa da turma. A mostra no primeiro andar, sem elevador, continua a parecer-te justa?",
    "f": "No conto, quem julga uma regra pode vir a ocupar qualquer lugar. Se pudesses ser o Rui, a sala de cima deixava-te à porta, por igual que a regra pareça. É a pergunta de hoje.",
    "min": 3,
@@ -68,7 +68,7 @@
    "rot": "Mais do que uma declaração",
    "p": "Caso inventado: a direção lembra que a Declaração Universal não é lei. Conclui que nenhum texto a obriga a tratar o Rui como os outros alunos.",
    "p2": "Como a Declaração Universal não é lei, nenhum texto obriga a escola a tratar o Rui como os outros alunos.",
-   "f": "Falso. A Constituição obriga a escola: os direitos, liberdades e garantias «vinculam as entidades públicas e privadas» (artigo 18.º, n.º 1). É a força jurídica que viste na sessão 01.",
+   "f": "É falso: a Constituição obriga a escola, porque os direitos, liberdades e garantias «vinculam as entidades públicas e privadas» (artigo 18.º, n.º 1). É a força jurídica que viste na sessão 01.",
    "min": 4,
    "tipo": "distinguir",
    "conceito": "força jurídica",
@@ -88,7 +88,7 @@
    "t": "ler",
    "rot": "Olha",
    "titulo": "Uma placa de 1943",
-   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro; só depois lê a legenda.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"A placa de uma sala de espera, Rome, 1943\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"Uma placa presa a uma barra de ferro, contra o céu. Em letras grandes, a palavra «COLORED»; por baixo, uma seta para a esquerda e as palavras «WAITING ROOM». Em baixo, o alto de uma parede de tijolo e fios elétricos.\" width=\"640\" height=\"671\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da fotografia\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Esther Bubley, placa numa estação de autocarros Greyhound, Rome, Geórgia, setembro de 1943. Library of Congress (cph.3b22541). <a href=\"https://www.loc.gov/item/2017862110/\">Registo de origem</a>; <a href=\"https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg\">ficheiro no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Estação de autocarros de Rome, na Geórgia (Estados Unidos), em setembro de 1943. «Colored waiting room»: sala de espera para «pessoas de cor».</figcaption></figure></div>",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro; só depois lê a legenda.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"A placa de uma sala de espera, Rome, 1943\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"Uma placa presa a uma barra de ferro, contra o céu. Em letras grandes, a palavra «COLORED»; por baixo, uma seta para a esquerda e as palavras «WAITING ROOM». Em baixo, o alto de uma parede de tijolo e fios elétricos.\" width=\"640\" height=\"671\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da fotografia\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Esther Bubley, placa numa estação de autocarros Greyhound, Rome, Geórgia, setembro de 1943. Library of Congress (cph.3b22541). <a href=\"https://hdl.loc.gov/loc.pnp/cph.3b22541\">Registo de origem</a>; <a href=\"https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg\">ficheiro no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Estação de autocarros de Rome, na Geórgia (Estados Unidos), em setembro de 1943. «Colored waiting room»: sala de espera para «pessoas de cor».</figcaption></figure></div>",
    "min": 3
   },
   {
@@ -129,7 +129,7 @@
    "tipo": "distinguir",
    "conceito": "igual no papel e no efeito",
    "ver": "<img src=\"../../../../img/cidadania/bubley-sala-de-espera-1943.webp\" alt=\"A mesma fotografia: a placa com «COLORED» e uma seta para a esquerda com «WAITING ROOM», contra o céu.\">",
-   "pista": "Compara as duas: o que diz cada regra, e o que faz?",
+   "pista": "Compara as duas: o que diz cada regra e o que faz?",
    "o": [
     "Na placa ninguém fica de fora: cada um tem a sua sala.",
     "Na escada, alguém quis afastar o Rui da mostra.",
@@ -152,9 +152,9 @@
   {
    "t": "sublinhar",
    "rot": "Como se fica a perder",
-   "p": "No artigo 13.º, n.º 2, toca nas duas palavras que dizem como alguém pode ficar a perder.",
-   "p2": "No n.º 2 do artigo 13.º, que duas palavras descrevem uma perda para quem é tratado de forma diferente? Toca nelas.",
-   "f": "Ninguém pode ser «prejudicado» nem «privado de qualquer direito» por causa da origem, do sexo, da língua ou da religião, entre outras razões. Três outras palavras proíbem o contrário: privilegiar, beneficiar e dispensar de um dever.",
+   "p": "No artigo 13.º, n.º 2, sublinha as duas palavras que dizem como alguém pode ficar a perder.",
+   "p2": "No n.º 2 do artigo 13.º, que duas palavras descrevem uma perda para quem é tratado de forma diferente? Sublinha-as.",
+   "f": "Ninguém pode ser «prejudicado» nem «privado de qualquer direito» por causa da origem, do sexo, da língua ou da religião, entre outras razões. As outras três também são proibidas, mas dizem um ganho: «privilegiado», «beneficiado» e «isento» de um dever.",
    "min": 3,
    "tipo": "reconhecer",
    "conceito": "princípio da igualdade",
@@ -173,9 +173,21 @@
     [
      "crp-13-2",
      "prejudicado"
+    ],
+    [
+     "crp-13-2",
+     "privilegiado"
+    ],
+    [
+     "crp-13-2",
+     "beneficiado"
+    ],
+    [
+     "crp-13-2",
+     "isento"
     ]
    ],
-   "fe": "A confusão mais provável é tocar em «privilegiado» ou em «beneficiado»: também são proibidos, mas dizem como alguém fica a ganhar. Procura as duas que dizem uma perda.",
+   "fe": "A confusão mais provável é sublinhar «privilegiado» ou «beneficiado»: também são proibidos, mas dizem como alguém fica a ganhar. Procura as duas que dizem uma perda.",
    "pista": "Separa as palavras que dizem ganhar das que dizem perder."
   },
   {
@@ -195,15 +207,15 @@
    ],
    "pista": "Antes de concluir, relê os dois textos até ao fim.",
    "o": [
-    "Nenhum texto o protege, porque não vem nessa lista.",
+    "A Constituição não o protege: a deficiência não vem nessa lista.",
     "Há outro texto que o protege: a Convenção, artigo 23.º.",
     "Fica protegido só se o regulamento da escola o disser."
    ],
    "c": 1,
    "fe": [
-    "A lista do n.º 2 não é o único texto. A Convenção reconhece à criança com deficiência direitos próprios, e o Rui tem 16 anos. Volta ao artigo 23.º.",
+    "A lista do n.º 2 não é o único texto: a Constituição tem o artigo 71.º, e a Convenção reconhece à criança com deficiência direitos próprios. O Rui tem 16 anos. Volta ao artigo 23.º.",
     "",
-    "Um regulamento tem de respeitar a Convenção, um tratado que obriga Portugal desde 1990 (sessão 01). A proteção não depende da escola a escrever. Volta ao artigo 23.º."
+    "Um regulamento tem de respeitar a Convenção, um tratado que obriga Portugal desde 1990 (sessão 01). A proteção não depende de a escola a pôr por escrito. Volta ao artigo 23.º."
    ]
   },
   {
@@ -238,10 +250,10 @@
   },
   {
    "t": "vf",
-   "rot": "Ver ou participar",
-   "p": "Com a transmissão em vídeo, o Rui participa na mostra e no debate como os colegas.",
+   "rot": "O que o vídeo dá",
+   "p": "Com o vídeo que recebe no próprio dia, o Rui participa na mostra e no debate como os colegas.",
    "p2": "Se receber o vídeo no próprio dia, o Rui fica a participar na mostra da mesma forma que os colegas.",
-   "f": "Falso. Pelo vídeo, o Rui vê; não apresenta o seu trabalho nem fala no debate. O artigo 23.º pede condições que «facilitem a sua participação activa na vida da comunidade»: participar é estar e intervir, não só ver.",
+   "f": "É falso: pelo vídeo, o Rui vê; não apresenta o seu trabalho nem fala no debate. O artigo 23.º pede condições que «facilitem a sua participação activa na vida da comunidade»: participar é estar e intervir, não só ver.",
    "min": 4,
    "tipo": "aplicar",
    "conceito": "participar e assistir",
@@ -305,21 +317,21 @@
    "conceito": "autonomia",
    "liga": [
     {
-     "t": "Ler o acórdão Enver Şahin c. Turquia, 30/01/2018 (HUDOC, em inglês)",
+     "t": "Ler o acórdão do Tribunal Europeu dos Direitos Humanos, 30/01/2018 (HUDOC, em inglês)",
      "href": "https://hudoc.echr.coe.int/eng?i=001-180499"
     }
    ],
-   "pista": "Separa o que a faculdade alegou do que o Tribunal decidiu.",
+   "pista": "Separa o que a universidade alegou do que o Tribunal decidiu.",
    "o": [
     "Ignorava a necessidade dele de ser o mais autónomo possível.",
-    "O Estado tinha dinheiro de sobra para fazer as obras todas.",
+    "A faculdade recusou logo o pedido de obras do estudante.",
     "As aulas práticas eram dadas no rés do chão do próprio edifício."
    ],
    "c": 0,
    "fe": [
     "",
-    "O Tribunal não disse isso; foi a administração que alegou um orçamento limitado. O Tribunal julgou a oferta do acompanhante e o que ela deixava de fora. Volta ao que lhe ofereceram.",
-    "Era a administração que o lembrava; as aulas teóricas eram num edifício de três pisos. O Tribunal julgou a oferta do acompanhante. Volta ao que lhe ofereceram e ao que isso o obrigava a fazer."
+    "O Tribunal nota que a faculdade não recusou logo os pedidos (§ 69): ofereceu um acompanhante. O problema foi oferecê-lo sem avaliar o que ele precisava. Volta ao que lhe ofereceram.",
+    "Era a administração que o lembrava; as aulas teóricas eram num edifício de três pisos. O Tribunal julgou a oferta do acompanhante. Volta ao que lhe ofereceram e ao que o Tribunal disse dessa oferta."
    ]
   },
   {
@@ -332,7 +344,7 @@
   {
    "t": "emparelhar",
    "rot": "O que se sabe e o que falta",
-   "p": "Depois da resposta do Rui: o que já está no caso e o que ainda falta saber?",
+   "p": "Depois do que o Rui disse: o que já está no caso e o que ainda falta saber?",
    "p2": "Em cada linha: está no caso ou ainda falta saber?",
    "f": "Sabes o que custa cada medida e o que o Rui pede. Não sabes se a sala de baixo serve aos trabalhos, nem quantos convidados vêm: se vierem poucos, um lugar por aluno pode chegar. São estas as dúvidas que vão para o papel.",
    "min": 3,
@@ -356,14 +368,14 @@
      "Ainda está em aberto"
     ]
    ],
-   "fe": "A confusão mais provável é tomar o protesto dos pais por facto: «perdem todos» é uma razão, não uma contagem. Volta ao caso e separa o que está nele do que alguém afirma.",
+   "fe": "A confusão mais provável é dar por sabido quantos convidados vêm, por causa do protesto dos pais: «perdem todos» é uma razão, não uma contagem. Volta ao caso e separa o que está nele do que alguém afirma.",
    "pista": "Procura cada informação no texto do caso."
   },
   {
    "t": "ler",
    "rot": "Em turma",
    "titulo": "Depois dos materiais",
-   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>O lado do Rui</summary><div><p>A Convenção pede condições que <span class=\"citado\" data-fonte=\"cdc-23-1\">«facilitem a sua participação activa na vida da comunidade»</span>; pelo vídeo, só vê.</p></div></details><details class=\"lado\"><summary>O lado dos pais</summary><div><p>Uma regra pode justificar-se <span class=\"citado\" data-fonte=\"lei46-3b\">«por um fim legítimo»</span>: em cima cabem dois convidados.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E a Joana? Sem legendas, fica de fora do debate. Todos têm <span class=\"citado\" data-fonte=\"crp-13-1\">«a mesma dignidade social»</span>.</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"Como gastaste as cinco unidades\"><p class=\"pos-q\">Como gastas as cinco unidades?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"Como gastaste as cinco unidades\"><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e legendar\" data-frase=\"Mudar e legendar\">Mudar e legendar</button><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e transmitir\" data-frase=\"Mudar e transmitir\">Mudar e transmitir</button><button type=\"button\" class=\"pos-op\" data-valor=\"Legendar e transmitir\" data-frase=\"Legendar e transmitir\">Legendar e transmitir</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e gastas sozinho as cinco unidades.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A mostra deve mudar para o rés do chão, mesmo que a sala seja pior?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>O lado do Rui</summary><div><p>A Convenção pede condições que <span class=\"citado\" data-fonte=\"cdc-23-1\">«facilitem a sua participação activa»</span>; pelo vídeo, só vê.</p></div></details><details class=\"lado\"><summary>O lado dos pais</summary><div><p>Uma regra pode justificar-se <span class=\"citado\" data-fonte=\"lei46-3b\">«por um fim legítimo»</span>, com meios <span class=\"citado\" data-fonte=\"lei46-3b\">«adequados e necessários»</span>: em cima cabem dois convidados.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E a Joana? Sem legendas, não acompanha o debate. Todos têm <span class=\"citado\" data-fonte=\"crp-13-1\">«a mesma dignidade social»</span>.</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"Como gastaste as cinco unidades\"><p class=\"pos-q\">Como gastas as cinco unidades?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"Como gastaste as cinco unidades\"><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e legendar\" data-frase=\"Mudar e legendar\">Mudar e legendar</button><button type=\"button\" class=\"pos-op\" data-valor=\"Mudar e transmitir\" data-frase=\"Mudar e transmitir\">Mudar e transmitir</button><button type=\"button\" class=\"pos-op\" data-valor=\"Legendar e transmitir\" data-frase=\"Legendar e transmitir\">Legendar e transmitir</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e gastas sozinho as cinco unidades.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
    "min": 13
   },
   {
@@ -411,7 +423,7 @@
     "A sala marcada fica num primeiro andar sem elevador, e o Rui usa cadeira de rodas.",
     "A Convenção pede condições que facilitem a participação ativa da criança com deficiência.",
     "Ver a mostra pelo vídeo não é participar nela: o Rui ficaria só a assistir.",
-    "Falta saber se a sala de baixo serve aos trabalhos e quantos convidados vêm."
+    "Falta saber se a sala de baixo serve aos trabalhos."
    ],
    "fe": "A confusão mais provável é começar pela lei ou pôr o que falta saber antes da aplicação. Começa pelo que aconteceu; depois o texto; o que falta saber fecha a justificação.",
    "pista": "Pergunta-te o que tem de vir primeiro para o resto se apoiar."
@@ -421,15 +433,15 @@
    "rot": "O que as provas permitem",
    "p": "Que conclusão fica dentro do que o caso e os textos mostram?",
    "p2": "Que conclusão diz o que as provas permitem, sem ir além delas?",
-   "f": "Diz o que as provas mostram (pelo vídeo, o Rui só assiste, e o artigo 23.º pede participação) e deixa aberto o que falta saber: se a sala de baixo serve aos trabalhos e quantos convidados vêm.",
+   "f": "Diz o que as provas mostram (pelo vídeo, o Rui só assiste, e o artigo 23.º pede participação) e deixa aberto o que ninguém contou: quantos convidados vêm.",
    "min": 3,
    "tipo": "aplicar",
    "conceito": "conclusão e provas",
    "pista": "Para cada conclusão, pergunta-te que prova a sustenta.",
    "o": [
-    "Pelo vídeo, o Rui só assiste; falta saber se a sala de baixo serve.",
+    "Pelo vídeo, o Rui só assiste; ainda não se sabe quantos convidados vêm.",
     "A mostra fica em cima, porque a maioria perderia os seus lugares.",
-    "A organização quer afastar o Rui e, por isso, tem de ser castigada."
+    "A organização escolheu a sala de cima para afastar o Rui da mostra."
    ],
    "c": 0,
    "fe": [

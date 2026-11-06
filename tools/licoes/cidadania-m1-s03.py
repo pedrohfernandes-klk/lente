@@ -16,7 +16,7 @@
 #   n.º 20/90, no Diário da República Eletrónico (registo cdc-1, cdc-23-1; as Retificações n.º 1/91 e n.º 8/91 não tocam nestes
 #   artigos); a grafia é a da fonte («activa»);
 # - Lei n.º 46/2006, artigos 3.º, alínea b), e 4.º, alínea e), versão consolidada no Diário da República Eletrónico (registo
-#   lei46-3b, lei46-4e);
+#   lei46-3b, lei46-4e; a alínea e) do artigo 4.º só aparece numa nota do guia);
 # - O caso real (decisão 161): Tribunal Europeu dos Direitos Humanos, Enver Şahin c. Turquia, queixa n.º 23065/12, acórdão de 30 de
 #   janeiro de 2018, no HUDOC (https://hudoc.echr.coe.int/eng?i=001-180499, texto em inglês aberto a 6/11/2026). Não há tradução
 #   portuguesa no HUDOC; por isso o cartão não cita: conta os factos e a razão do Tribunal por palavras nossas, fiéis ao acórdão
@@ -24,11 +24,13 @@
 # - Fotografia: Esther Bubley, setembro de 1943, placa numa estação de autocarros de Rome, na Geórgia. O ficheiro
 #   img/cidadania/bubley-sala-de-espera-1943.webp (640 × 671) é o do piloto, a versão do Wikimedia Commons com as margens cortadas
 #   (https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg, aberto a 6/11/2026: Esther Bubley, setembro de
-#   1943, estação Greyhound de Rome, Geórgia, Library of Congress cph.3b22541, «Public domain», PD-US-no notice). O registo da
-#   Library of Congress (https://www.loc.gov/item/2017862110/) foi lido pelo piloto a 31/10; a 6/11 não abriu (verificação contra
-#   robôs), e fica «a confirmar» no guia e no s03.md;
-# - R1: _The Egg_, conto de Andy Weir, como no #84 (s03). O sítio do autor (galactanet.com) não abriu nesta sessão; o cartão só usa a
-#   premissa do conto, como o #84, e fica «a confirmar» no guia;
+#   1943, estação Greyhound de Rome, Geórgia, Library of Congress cph.3b22541, «Public domain», PD-US-no notice). 06/11/2026
+#   (revisão): o «Registo de origem» é o handle oficial da Library of Congress para cph.3b22541
+#   (https://hdl.loc.gov/loc.pnp/cph.3b22541, que resolve para loc.gov/pictures/resource/cph.3b22541/); o item 2017862110, que o
+#   crédito ligava, é outro registo (o negativo LC-DIG-fsa-8d33365);
+# - R1: _The Egg_, conto de Andy Weir, como no #84 (s03). 06/11/2026 (revisão): a premissa confere com o texto no sítio do autor
+#   (https://galactanet.com/oneoff/theegg_mod.html, aberto a 6/11/2026: «I'm every human being who ever lived?» «Or who will ever
+#   live, yes.»); o cartão só usa a premissa;
 # - Vídeo (decisão 155): nenhum. O plano não propõe candidato para esta sessão, e o vídeo do piloto (TED-Ed, o símbolo de acesso)
 #   não foi visto por inteiro.
 import importlib.util, json, pathlib
@@ -53,7 +55,7 @@ ALT = ('Uma placa presa a uma barra de ferro, contra o céu. Em letras grandes, 
        'esquerda e as palavras «WAITING ROOM». Em baixo, o alto de uma parede de tijolo e fios elétricos.')
 ALT_VER = 'A mesma fotografia: a placa com «COLORED» e uma seta para a esquerda com «WAITING ROOM», contra o céu.'
 VER = f'<img src="{IMG}" alt="{ALT_VER}">'
-LOC = 'https://www.loc.gov/item/2017862110/'
+LOC = 'https://hdl.loc.gov/loc.pnp/cph.3b22541'  # 06/11/2026 (revisão): o handle do registo cph.3b22541
 COMMONS = 'https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg'
 DRE_CRP = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775'
 DRE_CDC = 'https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390'
@@ -92,8 +94,8 @@ CARTOES = [
  # acertadas ao molde (comprimentos e um retorno por opção); o retorno não ensina a charneira 1 (ver não é participar).
  M.recupera(escolha(
      'Se pudesses ser qualquer um',
-     'No conto _The Egg_, de Andy Weir, um homem morre e fica a saber que vai viver a vida de cada pessoa. Se pudesses ser qualquer '
-     'colega, aceitavas a mostra no primeiro andar?',
+     'No conto _The Egg_, de Andy Weir, um homem morre e descobre que vai viver a vida de cada pessoa. Se pudesses ser qualquer '
+     'colega, aceitavas a sala de cima?',
      'Imagina, como no conto _The Egg_, que podes vir a ser qualquer pessoa da turma. A mostra no primeiro andar, sem elevador, '
      'continua a parecer-te justa?',
      'Não: podia ser eu a ficar à porta da sala de cima.',
@@ -112,8 +114,8 @@ CARTOES = [
      'Caso inventado: a direção lembra que a Declaração Universal não é lei. Conclui que nenhum texto a obriga a tratar o Rui como '
      'os outros alunos.',
      'Como a Declaração Universal não é lei, nenhum texto obriga a escola a tratar o Rui como os outros alunos.',
-     'Falso. A Constituição obriga a escola: os direitos, liberdades e garantias «vinculam as entidades públicas e privadas» '
-     '(artigo 18.º, n.º 1). É a força jurídica que viste na sessão 01.',
+     'É falso: a Constituição obriga a escola, porque os direitos, liberdades e garantias «vinculam as entidades públicas e '
+     'privadas» (artigo 18.º, n.º 1). É a força jurídica que viste na sessão 01.',
      4, 'distinguir', 'força jurídica', v=False,
      fe='A Declaração não é o único texto. A Constituição diz que os direitos, liberdades e garantias «vinculam as entidades públicas '
         'e privadas» (artigo 18.º, n.º 1), e uma escola é uma delas. Volta à sessão 01, aos três textos e à força de cada um.',
@@ -151,7 +153,7 @@ CARTOES = [
            'ninguém o queira. Volta ao caso.')],
          'A placa escreve na própria regra quem vai para onde, pela cor da pele. Na mostra, nenhuma regra diz que o Rui não entra: a '
          'regra é igual para todos, e é a escada que o deixa de fora.',
-         3, 'distinguir', 'igual no papel e no efeito', ver=VER, pista='Compara as duas: o que diz cada regra, e o que faz?'),
+         3, 'distinguir', 'igual no papel e no efeito', ver=VER, pista='Compara as duas: o que diz cada regra e o que faz?'),
  M.le('Igualdade na lei', 'De que protegem?',
       # 06/11/2026: na margem só cabe um rótulo curto («Artigo 13.º», como na s01); o documento e o número vão na linha da fonte.
       [(f'Artigo{NB}13.º', 'Ninguém pode ser privilegiado, beneficiado, prejudicado, privado de qualquer direito ou isento de qualquer '
@@ -167,17 +169,18 @@ CARTOES = [
                    ('Convenção, artigo 1.º', '[…] criança é todo o ser humano menor de 18 anos […]', 'cdc-1', None)]))),
  # Leitura exata: o que o n.º 2 proíbe, nas duas palavras que dizem uma perda (piloto, cartão 5 do Lê antigo).
  M.fazer('sublinhar', 'Como se fica a perder',
-         'No artigo 13.º, n.º 2, toca nas duas palavras que dizem como alguém pode ficar a perder.',
-         'No n.º 2 do artigo 13.º, que duas palavras descrevem uma perda para quem é tratado de forma diferente? Toca nelas.',
+         'No artigo 13.º, n.º 2, sublinha as duas palavras que dizem como alguém pode ficar a perder.',
+         'No n.º 2 do artigo 13.º, que duas palavras descrevem uma perda para quem é tratado de forma diferente? Sublinha-as.',
          'Ninguém pode ser «prejudicado» nem «privado de qualquer direito» por causa da origem, do sexo, da língua ou da religião, entre '
-         'outras razões. Três outras palavras proíbem o contrário: privilegiar, beneficiar e dispensar de um dever.',
+         'outras razões. As outras três também são proibidas, mas dizem um ganho: «privilegiado», «beneficiado» e «isento» de um dever.',
          3, 'reconhecer', 'princípio da igualdade',
          frase=('Ninguém pode ser privilegiado, beneficiado, prejudicado, privado de qualquer direito ou isento de qualquer dever em razão '
                 'de ascendência, sexo, raça, língua, território de origem, religião, convicções políticas ou ideológicas, instrução, '
                 'situação económica, condição social ou orientação sexual.'),
          certas=[5, 6], fonte='crp-13-2', l='n2',
-         citacoes=[('crp-13-2', 'privado de qualquer direito'), ('crp-13-2', 'prejudicado')],
-         fe='A confusão mais provável é tocar em «privilegiado» ou em «beneficiado»: também são proibidos, mas dizem como alguém fica a '
+         citacoes=[('crp-13-2', 'privado de qualquer direito'), ('crp-13-2', 'prejudicado'), ('crp-13-2', 'privilegiado'),
+                   ('crp-13-2', 'beneficiado'), ('crp-13-2', 'isento')],
+         fe='A confusão mais provável é sublinhar «privilegiado» ou «beneficiado»: também são proibidos, mas dizem como alguém fica a '
             'ganhar. Procura as duas que dizem uma perda.',
          pista='Separa as palavras que dizem ganhar das que dizem perder.'),
  # Um limite: a lista do n.º 2 não diz «deficiência»; outros textos protegem o Rui (a Convenção, artigo 23.º; a Constituição,
@@ -186,12 +189,12 @@ CARTOES = [
          'A lista do artigo 13.º, n.º 2, não diz «deficiência». Que conclusão podes tirar para o Rui?',
          'A deficiência não aparece entre as razões do artigo 13.º, n.º 2. O que muda isso para o Rui?',
          'Há outro texto que o protege: a Convenção, artigo 23.º.',
-         [('Nenhum texto o protege, porque não vem nessa lista.',
-           'A lista do n.º 2 não é o único texto. A Convenção reconhece à criança com deficiência direitos próprios, e o Rui tem 16 anos. '
-           'Volta ao artigo 23.º.'),
+         [('A Constituição não o protege: a deficiência não vem nessa lista.',
+           'A lista do n.º 2 não é o único texto: a Constituição tem o artigo 71.º, e a Convenção reconhece à criança com deficiência '
+           'direitos próprios. O Rui tem 16 anos. Volta ao artigo 23.º.'),
           ('Fica protegido só se o regulamento da escola o disser.',
            'Um regulamento tem de respeitar a Convenção, um tratado que obriga Portugal desde 1990 (sessão 01). A proteção não depende '
-           'da escola a escrever. Volta ao artigo 23.º.')],
+           'de a escola a pôr por escrito. Volta ao artigo 23.º.')],
          'A lista do n.º 2 não esgota a proteção: a Convenção reconhece à criança com deficiência o direito a condições que «garantam a '
          'sua dignidade, favoreçam a sua autonomia». E a Constituição tem um artigo só para a deficiência, o 71.º.',
          4, 'distinguir', 'o limite da lista',
@@ -212,10 +215,10 @@ CARTOES = [
             'sítio, o que se diz, quem decide ou a hora?',
          pista='Imagina-te em cada situação: o que te falta para participar?'),
  # Charneira 1: «assistir não é participar» (piloto, cartão 15), aplicada ao caso com a expressão do artigo 23.º.
- M.fazer('vf', 'Ver ou participar',
-         'Com a transmissão em vídeo, o Rui participa na mostra e no debate como os colegas.',
+ M.fazer('vf', 'O que o vídeo dá',
+         'Com o vídeo que recebe no próprio dia, o Rui participa na mostra e no debate como os colegas.',
          'Se receber o vídeo no próprio dia, o Rui fica a participar na mostra da mesma forma que os colegas.',
-         'Falso. Pelo vídeo, o Rui vê; não apresenta o seu trabalho nem fala no debate. O artigo 23.º pede condições que «facilitem a sua '
+         'É falso: pelo vídeo, o Rui vê; não apresenta o seu trabalho nem fala no debate. O artigo 23.º pede condições que «facilitem a sua '
          'participação activa na vida da comunidade»: participar é estar e intervir, não só ver.',
          4, 'aplicar', 'participar e assistir', v=False,
          citacoes=[('cdc-23-1', 'facilitem a sua participação activa na vida da comunidade'), ('cdc-23-1', 'participação activa')],
@@ -262,17 +265,19 @@ CARTOES = [
          'Em 2018, o Tribunal Europeu dos Direitos Humanos deu razão a um estudante paraplégico a quem a faculdade ofereceu um '
          'acompanhante, em vez de obras. Porquê?',
          'Ignorava a necessidade dele de ser o mais autónomo possível.',
-         [('O Estado tinha dinheiro de sobra para fazer as obras todas.',
-           'O Tribunal não disse isso; foi a administração que alegou um orçamento limitado. O Tribunal julgou a oferta do acompanhante '
-           'e o que ela deixava de fora. Volta ao que lhe ofereceram.'),
+         [('A faculdade recusou logo o pedido de obras do estudante.',
+           'O Tribunal nota que a faculdade não recusou logo os pedidos (§ 69): ofereceu um acompanhante. O problema foi oferecê-lo sem '
+           'avaliar o que ele precisava. Volta ao que lhe ofereceram.'),
           ('As aulas práticas eram dadas no rés do chão do próprio edifício.',
            'Era a administração que o lembrava; as aulas teóricas eram num edifício de três pisos. O Tribunal julgou a oferta do acompanhante. '
-           'Volta ao que lhe ofereceram e ao que isso o obrigava a fazer.')],
+           'Volta ao que lhe ofereceram e ao que o Tribunal disse dessa oferta.')],
          'Para o Tribunal, a ajuda de um acompanhante, oferecida sem avaliar a situação dele, não era razoável: ignorava a necessidade de '
          'viver da forma mais independente e autónoma possível. Concluiu que houve discriminação no direito à instrução.',
          4, 'transferir', 'autonomia',
-         liga=[{'t': 'Ler o acórdão Enver Şahin c. Turquia, 30/01/2018 (HUDOC, em inglês)', 'href': HUDOC}],
-         pista='Separa o que a faculdade alegou do que o Tribunal decidiu.'),
+         # 06/11/2026 (revisão): o nome do caso iria em itálico, mas a ligação é inline-flex (lesson.css) e o <i> parte-a em colunas;
+         # como na s01 e na s02, a ligação nomeia o tribunal e a data (o nome, em itálico, está nas fontes e no guia)
+         liga=[{'t': 'Ler o acórdão do Tribunal Europeu dos Direitos Humanos, 30/01/2018 (HUDOC, em inglês)', 'href': HUDOC}],
+         pista='Separa o que a universidade alegou do que o Tribunal decidiu.'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
  # Volta ao caso: o orçamento de cinco unidades (guia do piloto), com três medidas que não cabem todas: dois direitos e uma razão
  # que chocam (a participação do Rui, o debate da Joana e os lugares dos convidados).
@@ -282,7 +287,7 @@ CARTOES = [
          'Alguns pais protestam: «Por causa de um, perdem todos.» O Rui: «Não quero ver a mostra; quero estar nela.»',
          carimbo='Caso inventado.'),
  M.fazer('emparelhar', 'O que se sabe e o que falta',
-         'Depois da resposta do Rui: o que já está no caso e o que ainda falta saber?',
+         'Depois do que o Rui disse: o que já está no caso e o que ainda falta saber?',
          'Em cada linha: está no caso ou ainda falta saber?',
          'Sabes o que custa cada medida e o que o Rui pede. Não sabes se a sala de baixo serve aos trabalhos, nem quantos convidados vêm: '
          'se vierem poucos, um lugar por aluno pode chegar. São estas as dúvidas que vão para o papel.',
@@ -291,14 +296,17 @@ CARTOES = [
                 ['O que o Rui quer da mostra', 'Já está no caso'],
                 ['Se a sala de baixo serve aos trabalhos', 'Ainda está em aberto'],
                 ['Quantos convidados vêm de facto', 'Ainda está em aberto']],
-         fe='A confusão mais provável é tomar o protesto dos pais por facto: «perdem todos» é uma razão, não uma contagem. Volta ao caso '
-            'e separa o que está nele do que alguém afirma.',
+         fe='A confusão mais provável é dar por sabido quantos convidados vêm, por causa do protesto dos pais: «perdem todos» é uma razão, '
+            'não uma contagem. Volta ao caso e separa o que está nele do que alguém afirma.',
          pista='Procura cada informação no texto do caso.'),
  M.em_turma(DECIDE_Q, [
-     ('O lado do Rui', f'A Convenção pede condições que {M.citado("cdc-23-1", "facilitem a sua participação activa na vida da comunidade")}; '
+     # 06/11/2026 (revisão): o lado dos pais leva as duas condições da lei (o fim legítimo e os meios); para o cartão caber nas 140
+     # palavras, o lado do Rui cita até «participação activa» e a objeção diz «não acompanha».
+     ('O lado do Rui', f'A Convenção pede condições que {M.citado("cdc-23-1", "facilitem a sua participação activa")}; '
                        'pelo vídeo, só vê.'),
-     ('O lado dos pais', f'Uma regra pode justificar-se {M.citado("lei46-3b", "por um fim legítimo")}: em cima cabem dois convidados.'),
-     ('Uma objeção', f'E a Joana? Sem legendas, fica de fora do debate. Todos têm {M.citado("crp-13-1", "a mesma dignidade social")}.')],
+     ('O lado dos pais', f'Uma regra pode justificar-se {M.citado("lei46-3b", "por um fim legítimo")}, com meios '
+                         f'{M.citado("lei46-3b", "adequados e necessários")}: em cima cabem dois convidados.'),
+     ('Uma objeção', f'E a Joana? Sem legendas, não acompanha o debate. Todos têm {M.citado("crp-13-1", "a mesma dignidade social")}.')],
      {'O que se faz': 'Decides outra vez e gastas sozinho as cinco unidades.',
       'Quanto tempo': 'Três minutos; em turma, até treze.',
       'O que fica escrito': 'Nada em papel; a escolha fica nos artefactos.',
@@ -326,7 +334,7 @@ CARTOES = [
          passos=['A sala marcada fica num primeiro andar sem elevador, e o Rui usa cadeira de rodas.',
                  'A Convenção pede condições que facilitem a participação ativa da criança com deficiência.',
                  'Ver a mostra pelo vídeo não é participar nela: o Rui ficaria só a assistir.',
-                 'Falta saber se a sala de baixo serve aos trabalhos e quantos convidados vêm.'],
+                 'Falta saber se a sala de baixo serve aos trabalhos.'],
          fe='A confusão mais provável é começar pela lei ou pôr o que falta saber antes da aplicação. Começa pelo que aconteceu; depois o '
             'texto; o que falta saber fecha a justificação.',
          pista='Pergunta-te o que tem de vir primeiro para o resto se apoiar.'),
@@ -334,15 +342,15 @@ CARTOES = [
  escolha('O que as provas permitem',
          'Que conclusão fica dentro do que o caso e os textos mostram?',
          'Que conclusão diz o que as provas permitem, sem ir além delas?',
-         'Pelo vídeo, o Rui só assiste; falta saber se a sala de baixo serve.',
+         'Pelo vídeo, o Rui só assiste; ainda não se sabe quantos convidados vêm.',
          [('A mostra fica em cima, porque a maioria perderia os seus lugares.',
            'É a razão de alguns pais, não uma prova: ninguém contou os convidados. E esta conclusão deixa de fora o que o Rui pede. '
            'Separa o que se sabe do que alguém afirma.'),
-          ('A organização quer afastar o Rui e, por isso, tem de ser castigada.',
+          ('A organização escolheu a sala de cima para afastar o Rui da mostra.',
            'Nada no caso mostra que a organização queira afastar o Rui: escolheu a sala pela luz. Uma intenção não se supõe; prova-se. '
            'Separa o que aconteceu do que alguém supõe.')],
-         'Diz o que as provas mostram (pelo vídeo, o Rui só assiste, e o artigo 23.º pede participação) e deixa aberto o que falta saber: '
-         'se a sala de baixo serve aos trabalhos e quantos convidados vêm.',
+         'Diz o que as provas mostram (pelo vídeo, o Rui só assiste, e o artigo 23.º pede participação) e deixa aberto o que ninguém '
+         'contou: quantos convidados vêm.',
          3, 'aplicar', 'conclusão e provas', pista='Para cada conclusão, pergunta-te que prova a sustenta.'),
  M.papel(PERGUNTA,
          ['A tua conclusão, por agora.',
