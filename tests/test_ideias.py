@@ -187,9 +187,13 @@ class Paginas(unittest.TestCase):
             p=ROOT/rel
             targets={str(t.resolve()) for u in analisar(p.read_text('utf-8')).links if (t:=alvo(p,u)) is not None}
             for dest in required:self.assertIn(str((ROOT/dest).resolve()),targets,rel+' → '+dest)
+        # 05/11/2026: decisão 163 (menus do Laboratório). Sai a barra preta: na entrada, o Ideias tem a sua região («Começa
+        # aqui», com o título ligado ao Ideias); nas portas, o fio do método liga ao Ideias. A mesma exigência: uma ligação
+        # «Ideias» para narrativas/ideias/ em cada uma das quatro páginas.
         for rel in ['narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html']:
-            nav=re.search(r'<nav class="barra-nav".*?</nav>',(ROOT/rel).read_text('utf-8')).group()
-            self.assertIn('>Ideias</a>',nav,rel)
+            s=(ROOT/rel).read_text('utf-8')
+            nav=re.search(r'<section class="lab-ideias[^"]*".*?</section>' if rel=='narrativas/index.html' else r'<nav class="lab-fio".*?</nav>',s).group()
+            self.assertRegex(nav,r'<a [^>]*?href="(?:\.\./)?ideias/"[^>]*>(?:<span class="n">.*?</span><b>)?(?:Abrir )?Ideias(?:</b>|\u00a0→)?</a>',rel)
 
     def test_ligacoes_internas_e_ancoras_resolvem(self):
         falhas = []
@@ -359,10 +363,15 @@ class SegundaRevisao(unittest.TestCase):
         for p in FONTES:
             d = json.loads(p.read_text('utf-8'))
             # 01/11/2026: a marca leva também o passo do método, numa <span> própria, logo a seguir ao nome
-            self.assertIn('<span class="c-marca-t">Ideias</span><span class="c-marca-p">Passo 1 de 5</span></a>', (ROOT / d['saida']).read_text('utf-8'))
+            # 05/11/2026: decisão 163. O passo passa para o menu ≡ («Ideias, passo 1 de 5.»); a marca fica só com o nome.
+            self.assertIn('<span class="c-marca-t">Ideias</span></a>', (ROOT / d['saida']).read_text('utf-8'))
         for p in sorted((ROOT / 'tools/licoes').glob('cidadania-*.json')):
             d = json.loads(p.read_text('utf-8'))
-            self.assertNotIn('c-marca-t', (ROOT / d['saida']).read_text('utf-8'), p.name)
+            # 05/11/2026: decisão 163. Na Cidadania, «CD» passa a «Cidadania», no mesmo <span> do Laboratório (escondido abaixo de
+            # 400 px), e o nome acessível começa pelo texto visível.
+            pag = (ROOT / d['saida']).read_text('utf-8')
+            self.assertIn(f'aria-label="Cidadania, módulo {d["modulo"]["n"]}"><svg class="c-casa"', pag, p.name)
+            self.assertIn('<span class="c-marca-t">Cidadania</span></a>', pag, p.name)
         css = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
         self.assertIn('.licao-laboratorio .c-marca-t{position:absolute', css)
 
@@ -605,7 +614,8 @@ class Metodo(unittest.TestCase):
         # o nome em todo o texto que o aluno pode ver na sessão: os cartões (também o p2) e o menu, com as fontes
         cartoes = sum(len(re.findall(r'Young', ' '.join(L.textos(c)))) for c in d['cartoes'])
         s = (ROOT / d['saida']).read_text('utf-8')
-        menu = re.search(r'<div class="casca-menu".*?</div></div>', s, re.S).group(0)
+        # 05/11/2026: decisão 163. O menu ≡ novo (tools/menu_casca.py) leva a classe «m2»; o menu continua a ser lido inteiro.
+        menu = re.search(r'<div class="casca-menu(?: m2)?".*?</div></div>', s, re.S).group(0)
         return cartoes, len(re.findall(r'Young', L.visivel(menu)))
 
     def test_bloco_o_metodo_na_entrada(self):
@@ -655,7 +665,10 @@ class Metodo(unittest.TestCase):
             self.assertRegex(L.visivel(ultimo), r'(Fizeste o passo 1 de 5|Passo 1 de 5: falta o material geral)', d['id'])
             self.assertRegex(L.visivel(ultimo), r'(Para a sessão 2 , o mesmo passo|passo 2 de Young)', d['id'])
             # a marca da casca e o <title>
-            self.assertIn('<span class="c-marca-p">Passo 1 de 5</span>', pag)
+            # 05/11/2026: decisão 163. O passo sai da barra (ficava encostado ao contador «1/21» como um segundo contador) e passa
+            # para o menu ≡, logo em «Estás em»; continua no <title>.
+            self.assertNotIn('c-marca-p', pag)
+            self.assertIn('<p class="pos">Ideias, passo 1 de 5. <span data-c-pos></span></p>', pag)
             self.assertIn('(passo 1 de 5) | Ideias | Laboratório | Lente</title>', pag)
         css = (ROOT / 'assets/licoes/laboratorio.css').read_text('utf-8')
         self.assertIn('.licao-laboratorio .jogo .ler ol.passos-m li.hoje{', css)

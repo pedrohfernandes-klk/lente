@@ -2,6 +2,7 @@
 import importlib.util,json,re,subprocess,unittest
 from renomeacoes_cidadania import renomear
 import lab147
+import menus163
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def mod(nome):
@@ -60,7 +61,9 @@ class Contratos(unittest.TestCase):
     # 03/11/2026 (#107; data posta a 05/11/2026): títulos Humanos, Algoritmos e Decisões pelo manifesto tests/fixtures/cidadania-nomes-20261103.json; a exigência é a mesma.
     # 05/11/2026: decisão 147 (Laboratório sem o Português): navegação e limpezas pelo manifesto fechado
     # tests/fixtures/lab-147-20261105.json, com contagem exata; a comparação continua integral.
-    self.assertEqual(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),atual)
+    # 05/11/2026: decisão 163 (menus): o menu ≡ novo e a continuação no fim dos percursos, pelo manifesto fechado
+    # tests/fixtures/menus-163-20261105.json, com contagem exata; a comparação continua integral.
+    self.assertEqual(menus163.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
     self.assertIn('if(cfg.fim&&!soErrados&&!PROJ)',atual)

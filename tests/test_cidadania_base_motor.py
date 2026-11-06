@@ -4,6 +4,7 @@ import re
 import json
 import subprocess
 import unittest
+import menus163
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
@@ -34,7 +35,10 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
-                self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
+                # 05/11/2026: decisão 163 (menus do Laboratório e das lições). O menu ≡ novo, menu.css, menu.js, o aviso sem
+                # JavaScript e a marca «Cidadania» do piloto: só as trocas do manifesto fechado tests/fixtures/menus-163-20261105.json,
+                # com contagem exata, sobre o texto já sem as versões de cache (como a comparação); a comparação continua integral.
+                self.assertEqual(menus163.aplicar(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes), nome, sem_cache=True),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))
 
     def test_renomeacao_exata_sobre_main_publicado(self):
@@ -60,6 +64,9 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in LAB_147.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
+                # 05/11/2026: decisão 163. O menu ≡ novo e a ordem do Laboratório na entrada do Lente: só as trocas do manifesto
+                # fechado tests/fixtures/menus-163-20261105.json, com contagem exata; a comparação continua integral.
+                esperado = menus163.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':

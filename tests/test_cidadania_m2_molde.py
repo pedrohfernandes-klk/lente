@@ -7,6 +7,7 @@ e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
 import lab147
+import menus163
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -328,6 +329,9 @@ class Molde(unittest.TestCase):
             if f in lab147.TROCAS:
                 # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
                 esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
+            # 05/11/2026: decisão 163 (menus): o menu ≡ novo, pelo manifesto fechado tests/fixtures/menus-163-20261105.json,
+            # com contagem exata; tudo o resto, byte a byte.
+            esperado = menus163.aplicar(esperado, f)
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):

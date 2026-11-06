@@ -19,6 +19,9 @@ spec = importlib.util.spec_from_file_location('licoes_lente', ROOT / 'tools/lico
 LL = importlib.util.module_from_spec(spec); spec.loader.exec_module(LL)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 PASTA = 'narrativas/ideias/'
+# 05/11/2026: decisão 163. A barra única e o fio do Laboratório vêm de tools/lab_nav.py (os mesmos das portas e dos percursos).
+_nav_spec = importlib.util.spec_from_file_location('lab_nav', ROOT / 'tools/lab_nav.py')
+LN = importlib.util.module_from_spec(_nav_spec); _nav_spec.loader.exec_module(LN)
 e = html.escape
 
 # As sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
@@ -606,11 +609,13 @@ def pagina_entrada(L):
                        f'<span class="apoio">{e(s["passo"])}.</span>'
                        '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
         # 05/11/2026: revisão de 5/11 (lente-ideias-2): cada porta volta a dizer que passo serve (pedido 1, ponto 4).
+        # 05/11/2026: decisão 163. Depois da lista, a porta do Laboratório onde se treina este passo.
         portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
-                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol></div></section>')
+                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol>'
+                   f'<p class="liga-porta">Para treinar este passo: <a href="{e(_url)}">{nome}\u00a0→</a></p></div></section>')
     desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
-    corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
-             + '<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
+    # 05/11/2026: decisão 163. As migalhas soltas passam à barra única e ao fio (fora do main, antes dele).
+    corpo = ('<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
              '<p class="lead">Observa o que te rodeia e dá forma a uma ideia tua.</p>'
              f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
              f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
@@ -625,8 +630,9 @@ def pagina_entrada(L):
              '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
-    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1"></head>')
-    return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{LL.nq(corpo)}</main>'
+    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1">{LN.css("narrativas/ideias")}</head>')
+    return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a>{LN.barra("narrativas/ideias")}'
+            f'<div class="lab-fio-pg">{LN.fio("narrativas/ideias", "ideias", "page")}</div><main id="conteudo">{LL.nq(corpo)}</main>'
             f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
             f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
