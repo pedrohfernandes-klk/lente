@@ -5,7 +5,7 @@ import json
 import re
 import sys
 import unittest
-from renomeacoes_cidadania import renomear
+from renomeacoes_cidadania import renomear, dilemas_149
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -51,7 +51,10 @@ class BasesJustica(unittest.TestCase):
             self.assertEqual(gerada, (R/f'olhar-e-decidir/justica/licao-{n}/index.html').read_text('utf-8'))
             # 02/11/2026: prova contra o main de partida, só com as duas trocas autorizadas.
             # 03/11/2026 (#107; data posta a 05/11/2026): conserva o hash histórico; desfaz só os títulos autorizados do #107.
-            original = renomear(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
+            # 06/11/2026: decisão 149 (volta «Dilemas»): antes do #107, desfaz-se só a troca do manifesto fechado
+            # tests/fixtures/dilemas-149-20261106.json, com contagem exata; o hash histórico é o mesmo.
+            original = renomear(dilemas_149(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
+                                f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
             for troca in json.loads((T/'migracao.json').read_text('utf-8')):
                 if troca['licao'] == n:
                     self.assertEqual(original.count(troca['novo']), 1)

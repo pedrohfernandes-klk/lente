@@ -10,7 +10,12 @@ que comparam com bases antigas, com as mesmas regras e sem aceitar mais nada:
   comparam com a base: comparam-se, letra a letra, com o que o seu gerador escreve hoje (inteiro_ok()), e a s04 tem de cumprir o
   contrato do molde.
 
-É a camada mais recente: desfaz-se antes da da sessão 02 e aplica-se depois dela."""
+É a camada mais recente: desfaz-se antes da da sessão 02 e aplica-se depois dela.
+
+06/11/2026 (fusão do main com as sessões 2 e 3 finais, os menus da decisão 163 e o «Dilemas» da decisão 149): o manifesto foi gerado
+de novo a partir do main (ba5211f), e leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o
+gerador confere que aplicar e desfazer dão a volta completa). A s04 fica por cima de todas as camadas, também da da sessão 03
+(tests/molde_s03.py): desfaz-se primeiro no ficheiro atual, antes da da s03, ou aplica-se em último lugar ao lado esperado."""
 import importlib.util
 import json
 from pathlib import Path

@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -58,6 +58,8 @@ jobs:
         command:
           - node tests/browser_formas.cjs
           - node tests/browser_lab_percursos.cjs
+          # 05/11/2026: decisão 163, menus do Laboratório e menu ≡ das lições (as quatro famílias).
+          - node tests/browser_menus_lab.cjs
           - node tests/browser_tres_cartas.cjs
           - node tests/browser_licoes_lente.cjs
           - node tests/browser_ideias.cjs

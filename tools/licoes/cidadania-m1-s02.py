@@ -14,11 +14,14 @@
 # - Código Civil, artigos 79.º e 81.º, versão consolidada no Diário da República Eletrónico (registo cc-79-1 a cc-79-3, cc-81-2);
 # - Lei n.º 58/2019, artigo 16.º, no Diário da República Eletrónico (registo lei58-16-1);
 # - Acórdão do Supremo Tribunal de Justiça de 7/6/2011, processo 1581/07.3TVLSB.L1.S1, em dgsi.pt (registo stj-2011-*): o caso
-#   real da sessão (decisão 161);
+#   real da sessão (decisão 161); 06/11/2026 (revisão): cita-se a conclusão do tribunal (stj-2011-indicacao), não o depoimento;
 # - Fotografia: Library of Congress, registo https://www.loc.gov/item/2018675335/ (o endereço antigo ncl2004001725 leva lá):
 #   «Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt. […] Location: North Pownal, Vermont.»,
 #   «1910 February», «Hine, Lewis Wickes, 1874-1940, photographer» («Attribution to Hine based on provenance»), «No known
-#   restrictions on publication.». O ficheiro img/cidadania/hine-addie-card-1910.webp (640 × 811) é o do piloto.
+#   restrictions on publication.», «Credit line: National Child Labor Committee collection, Library of Congress, Prints and
+#   Photographs Division.». 06/11/2026 (revisão): o ficheiro img/cidadania/hine-addie-card-1910.webp (825 × 1024) passa a sair do
+#   LC-DIG-nclc-05282 (ficheiro preto e branco do negativo de vidro, tile.loc.gov/…/nclc/05200/05282v.jpg), inteiro, sem filtro
+#   nem corte; o do piloto era a impressão a cores (01830) dessaturada.
 # - Vídeo (decisão 155): nenhum. O candidato do plano, «Be kind online: consent to share and cyberbullying», está no sítio
 #   oficial (bullyingnoway.gov.au, © State of Queensland em nome das autoridades de educação australianas), mas trata de uma
 #   imagem íntima partilhada sem consentimento e a equipa não o viu por inteiro; fica para o docente ver e decidir (guia).
@@ -48,9 +51,9 @@ LOC = 'https://www.loc.gov/item/2018675335/'
 DRE_CC = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/1966-34509075'
 DRE_LEI = 'https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982'
 DGSI = 'https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/6190a514bc9d85cf802578aa003183d3?OpenDocument'
-CREDITO = ('Lewis Hine (atribuição), <i>Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt.</i>, 1910. '
-           'National Child Labor Committee collection, Library of Congress. '
-           f'<a href="{LOC}">Registo de origem</a>. Domínio público (sem restrições conhecidas de publicação).')
+CREDITO = ('Lewis Hine (atribuição), <i>Addie Card, 12 years. Spinner in North Pormal [i.e., Pownal] Cotton Mill. Vt. […]</i>, 1910. '
+           'National Child Labor Committee collection, Library of Congress, Prints and Photographs Division (LC-DIG-nclc-05282). '
+           f'<a href="{LOC}">Registo de origem</a>. Domínio público (o registo diz «No known restrictions on publication»).')
 PERGUNTA = 'Aceitar ser filmado é aceitar ser publicado?'
 DECIDE_Q = 'O vídeo do ensaio pode ir para a página da escola?'
 FRASE = 'Aceitar ser filmado não é aceitar ser publicado.'
@@ -88,11 +91,11 @@ CARTOES = [
      [('O sim dos atores que vivem à volta dele.',
        'Os atores trabalham no programa: sabem que são filmados. Quem nunca foi ouvido é o próprio Truman. Repara em quem é filmado '
        'sem saber.'),
-      ('Um público que queira ver o programa.',
-       'Público não falta: o programa é seguido por muita gente. O interesse de quem vê não substitui o sim de quem é filmado. '
-       'Repara em quem nunca foi ouvido.')],
-     'Só Truman pode dizer que sim ao uso da sua imagem; o sim dos atores e o interesse do público não o substituem. A pergunta '
-     'de hoje é parecida: a que disse a Marta que sim?',
+      ('O sim de quem cria e produz o programa.',
+       'Quem produz o programa é dono da gravação, não da imagem de Truman: o sim tinha de ser dele, e nunca lho pediram. Repara '
+       'em quem é filmado sem saber.')],
+     'Só Truman pode dizer que sim ao uso da sua imagem; nem o sim dos atores nem o de quem produz o programa o substituem. A '
+     'pergunta de hoje é parecida: a que disse a Marta que sim?',
      3, 'reconhecer', 'consentimento', pista='Pensa no que distingue Truman de todos os outros que aparecem no programa.')),
  # R2: «honra e reputação» (sessão 01), um item novo: a montagem. Falso, para a turma não aprender o padrão (os V/F são F, V, F).
  M.recupera(M.fazer(
@@ -110,21 +113,21 @@ CARTOES = [
      origem='cidadania/m1/sessoes/01/'),
  M.olha('Uma fotografia de 1910', 'Olha primeiro para a fotografia; só depois lê a legenda.',
         M.figura(IMG, ALT, CREDITO, 'Addie Card, 12 anos, fiandeira numa fábrica de algodão de North Pownal, no Vermont (Estados '
-                 'Unidos), em fevereiro de 1910.', artefacto='Addie Card numa fábrica de algodão, 1910', largura=640, altura=811)),
- # Conceito espaçado (origem): a distinção da Etapa 1, «O que vemos» (cidadania/aula-1/), entre o que se observa e o que outra
- # fonte diz.
+                 'Unidos), em fevereiro de 1910.', artefacto='Addie Card numa fábrica de algodão, 1910', largura=825, altura=1024)),
+ # Conceito espaçado (origem): a Etapa 1, «O que vemos» (cidadania/aula-1/), começa pelo que se observa. 06/11/2026 (revisão): o
+ # retorno já não atribui à Etapa 1 uma distinção que lá não está; o terceiro caso (o que nenhuma das duas prova) entra como distrator.
  escolha('O que só a legenda diz',
          'Sem a legenda, o que ficarias sem saber sobre esta rapariga?',
          'Tapa a legenda. O que deixa a fotografia sozinha por dizer?',
          'O nome, a idade e a fábrica onde trabalha.',
-         [('Que está descalça, de vestido e avental.',
-           'Os pés descalços, o vestido e o avental veem-se na fotografia; não precisas da legenda para isso. A legenda acrescenta '
-           'quem ela é. Tapa a legenda e olha outra vez.'),
+         [('Que trabalhava ali contra a vontade dela.',
+           'Nem a fotografia nem a legenda dizem o que ela queria: isso é supor. A legenda acrescenta o nome, a idade e a fábrica. '
+           'Tapa a legenda e olha outra vez.'),
           ('Que está entre máquinas cheias de bobinas.',
            'As máquinas e as bobinas veem-se na imagem. A legenda é que diz quem ela é, que idade tem e em que fábrica trabalha. '
            'Tapa a legenda e olha outra vez.')],
          'A legenda diz quem ela é: Addie Card, 12 anos, fiandeira numa fábrica de North Pownal. Os pés descalços e as máquinas vês '
-         'tu. É a distinção da Etapa 1, «O que vemos»: o que se observa e o que outra fonte diz.',
+         'tu. Como na Etapa 1, «O que vemos», começa-se pelo que se observa.',
          3, 'distinguir', 'imagem e legenda', ver=VER, origem='cidadania/aula-1/', pista='Tapa a legenda: o que continuas a ver?'),
  M.fazer('vf', 'Um rosto que se reconhece',
          'Mesmo sem a legenda, quem conhecesse a Addie podia reconhecê-la nesta fotografia.',
@@ -147,14 +150,14 @@ CARTOES = [
             + '<p class="glossa"><b>Decoro</b>: o respeito com que alguém se apresenta aos outros.</p>')),
  M.fazer('sublinhar', 'O que precisa de um sim',
          'No n.º 1, toca nas três palavras que dizem o que não se pode fazer ao retrato sem o sim da pessoa.',
-         'No n.º 1 do artigo 79.º, que três ações sobre o retrato precisam do consentimento de quem aparece? Toca numa palavra por ação.',
+         'No n.º 1 do artigo 79.º, o que não se pode fazer ao retrato sem o consentimento de quem aparece? Toca numa palavra por ação.',
          'As três ações são «exposto, reproduzido ou lançado no comércio»: mostrar, copiar ou vender o retrato. É para estes usos que '
          'a lei pede o sim de quem aparece.',
          3, 'reconhecer', 'direito à imagem',
          frase='O retrato de uma pessoa não pode ser exposto, reproduzido ou lançado no comércio sem o consentimento dela',
          certas=[8, 9, 11], fonte='cc-79-1', l='n1',
          fe='A confusão mais provável é tocar em «retrato» ou em «consentimento»: dizem o que se protege e o que falta, não o que se '
-            'faz ao retrato. Procura as três ações na primeira metade da frase.',
+            'faz ao retrato. Procura as três ações entre «pode ser» e «sem».',
          pista='Procura o que se pode fazer a um retrato.'),
  M.fazer('emparelhar', 'Filmar, rever, publicar',
          'Para cada uso do vídeo da Marta: o sim que ela deu já chega, ou falta perguntar-lhe?',
@@ -174,29 +177,30 @@ CARTOES = [
          'precisas do sim de cada uma?',
          'Numa fotografia da praça cheia, as pessoas aparecem ao longe. É preciso o consentimento de cada uma para a publicar?',
          'Não, porque as pessoas aparecem como parte do lugar.',
-         [('Sim, se alguém na praça tiver menos de 13 anos.',
+         [('Não, salvo se alguém na praça tiver menos de 13 anos.',
            'Os 13 anos vêm da Lei n.º 58/2019 e dizem quando uma criança pode aceitar sozinha que um serviço digital trate os seus '
            'dados; não falam de quem aparece numa fotografia da praça. Volta ao n.º 2.'),
-          ('Não, desde que não digas em que cidade foi tirada.',
-           'Esconder o lugar não muda nada: o que conta, no n.º 2, é a imagem vir «enquadrada na de lugares públicos». Aqui, as '
-           'pessoas fazem parte da praça. Volta ao n.º 2.')],
+          ('Sim: cada pessoa tem de autorizar o seu retrato.',
+           'É o n.º 1 lido sozinho. O n.º 2 dispensa o consentimento quando a imagem vem «enquadrada na de lugares públicos»: aqui, '
+           'as pessoas fazem parte da praça. Volta ao n.º 2.')],
          'O n.º 2 dispensa o consentimento quando a imagem vem «enquadrada na de lugares públicos»: a fotografia é da praça, e as '
          'pessoas aparecem nela como parte do lugar.',
          3, 'aplicar', 'exceções do n.º 2', citacoes=[('cc-79-2', 'enquadrada na de lugares públicos')],
          pista='Pergunta-te: quem é o assunto desta fotografia?'),
- # Charneira 1: o limite. O lugar público, sozinho, não decide; o n.º 3 vale também nos casos do n.º 2.
+ # Charneira 1: o limite. O lugar público, sozinho, não decide; o n.º 3 vale também nos casos do n.º 2. 06/11/2026 (revisão): uma
+ # só ideia (o n.º 3); o rapaz já não é filmado de perto, para a charneira não se resolver com o cartão 11.
  M.fazer('vf', 'Um lugar público não chega',
-         'Caso inventado: na mesma praça, alguém filma de perto um rapaz a escorregar e a cair numa poça. Como foi num lugar público, '
-         'pode publicar o vídeo sem lhe perguntar.',
-         'Um rapaz cai numa poça, na praça, filmado de perto. Por ter sido num lugar público, o vídeo pode ser publicado sem o '
-         'consentimento dele.',
+         'Caso inventado: na praça cheia, o vídeo do mercado apanha um rapaz a cair numa poça. Como foi num lugar público, pode '
+         'publicar-se sem lhe perguntar.',
+         'Um rapaz cai numa poça, no meio do mercado, e aparece no vídeo da praça. Por ter sido num lugar público, pode publicar-se '
+         'sem o consentimento dele.',
          'Falso. Mesmo nos casos do n.º 2, o n.º 3 põe um limite: o retrato não se expõe «se do facto resultar prejuízo para a honra, '
-         'reputação ou simples decoro». E, filmado de perto, o rapaz é o assunto, não parte da praça.',
+         'reputação ou simples decoro». Uma queda filmada pode prejudicá-lo.',
          4, 'aplicar', 'limite do n.º 3', v=False,
          citacoes=[('cc-79-3', 'se do facto resultar prejuízo para a honra, reputação ou simples decoro')],
-         fe='O lugar público não basta. O n.º 3 vale também para os casos do n.º 2: um vídeo de alguém a cair, filmado de perto, '
-            'pode prejudicar o seu «simples decoro». E aqui o rapaz não aparece como parte do lugar. Lê o n.º 3.',
-         pista='Lê o n.º 3 a seguir ao n.º 2.'),
+         fe='O lugar público não basta. O n.º 3 vale também para os casos do n.º 2: um vídeo de alguém a cair pode prejudicar o seu '
+            '«simples decoro». Lê o n.º 3.',
+         pista='Relê os três números do artigo 79.º até ao fim.'),
  # Conceito (uma vez, não três): consentimento informado, para um uso, retirável, antes de publicar. Os três traços paralelos vão
  # em tabela (decisão 152). Retirável: Código Civil, artigo 81.º, n.º 2, no «Ler mais» (leitura nossa: o artigo fala da limitação
  # voluntária dos direitos de personalidade, de que o direito à imagem é um).
@@ -207,8 +211,8 @@ CARTOES = [
             '<tr><td data-th="O sim">pode ser retirado</td><td data-th="No ensaio">se ela mudar de ideias</td></tr>'
             '<tr><td data-th="O sim">pede-se antes</td><td data-th="No ensaio">antes de o vídeo sair</td></tr></tbody></table>',
             'Consentimento informado', 'Um sim de quem sabe para que serve a imagem.',
-            '<p>Não é ter 13 anos: essa idade, na Lei n.º 58/2019, é a dos serviços digitais.</p>',
-            mais=(f'<p>No Código Civil, a limitação voluntária de um direito de personalidade {M.citado("cc-81-2", "é sempre revogável")}, '
+            '<p>Não depende de ter 13 anos: essa idade, na Lei n.º 58/2019, é a dos serviços digitais.</p>',
+            mais=(f'<p>No Código Civil, a limitação voluntária de um direito de personalidade, quando legal, {M.citado("cc-81-2", "é sempre revogável")}, '
                   'ainda que com obrigação de indemnizar (artigo 81.º, n.º 2).</p>')),
  # Transferir 1: a cena da Lia, escrita para a sessão 05 do M1 publicado («Exemplo escrito para esta sessão»), que a turma não fez.
  escolha('O que a Lia aceitou',
@@ -222,32 +226,34 @@ CARTOES = [
           ('Depende de a Lia ter assinado um papel a aceitar.',
            'Uma assinatura não muda o que a Lia sabia: assinaria o mesmo sem saber da transmissão. O sim vale para aquilo que se '
            'explicou. Volta à cena e procura o que lhe disseram.')],
-         'A Lia aceitou o que lhe explicaram: trabalhar ali. A transmissão ficou de fora, e um sim só vale para o que se sabe. Como ela '
-         'responde na cena: «Aceitei aquilo que me explicaram.»',
+         'A Lia aceitou o que lhe explicaram: trabalhar ali. A transmissão ficou de fora, e um sim só vale para o que se sabe. Na cena, '
+         'ela responde: «Aceitei aquilo que me explicaram.»',
          3, 'transferir', 'consentimento informado', pista='Pergunta-te o que sabia a Lia quando disse que sim.'),
- # Decisão 161: o caso real, com fonte oficial aberta (dgsi.pt). Cita-se só o que o acórdão diz: o que a representante do clube
- # declarou (citado pelo tribunal), a conclusão e o princípio do sumário (IV). A mãe perdeu: o tribunal concluiu que ela consentira
- # na publicação numa publicação; o que dizia (que as fotografias eram só para os sócios) não ficou provado.
+ # Decisão 161: o caso real, com fonte oficial aberta (dgsi.pt). Cita-se só o que o acórdão diz: a conclusão do próprio tribunal
+ # sobre o que foi dito à mãe (06/11/2026, revisão: antes citava-se o depoimento da representante do clube, que é uma das partes) e
+ # o princípio do sumário (IV). A mãe perdeu: o tribunal concluiu que ela consentira na publicação numa publicação; o que dizia (que
+ # as fotografias eram só para os sócios) não ficou provado. A sessão era «pública aberta a sócios e familiares» (facto 7).
  escolha('Um caso real',
          'Caso real (Supremo Tribunal de Justiça, 2011): uma mãe e a filha, fotografadas na piscina do clube, saíram na capa de uma '
-         'revista. A mãe (a «Autora») perdeu. Porquê?',
+         'revista. A mãe (a «1.ª A.») perdeu. Porquê?',
          'Em 2011, o Supremo Tribunal de Justiça não deu razão a uma mãe que se queixava de fotografias dela e da filha numa revista. '
          'Segundo esta passagem, porquê?',
          'Tinham-lhe dito que as fotografias eram para uma publicação.',
          [('A piscina era um lugar público, onde não é preciso pedir.',
-           'O tribunal não decidiu pelo lugar: a piscina era de um clube, numa sessão aberta a sócios e familiares. Decidiu pelo que '
-           'se disse à mãe antes das fotografias. Volta à passagem citada.'),
+           'O tribunal não decidiu pelo lugar: as fotografias foram tiradas numa sessão pública aberta a sócios e familiares, e o '
+           'acórdão não discute se isso dispensava o consentimento. Decidiu pelo que se disse à mãe antes das fotografias. Volta à '
+           'passagem citada.'),
           ('A revista tinha fins didáticos, por ser sobre o bem-estar.',
            'O tribunal não decidiu pelos fins da revista, e ficou provado que ela servia para captar clientes para o clube. Decidiu '
            'pelo que se disse à mãe. Volta à passagem citada.')],
          'Para o tribunal, quem aceita ser fotografado para um fim não autoriza, sem mais, outro: «não podem as imagens ser utilizadas '
          'para fim diverso». Aqui, disseram à mãe que era para uma publicação; que seria só para os sócios, ela não o provou.',
          4, 'transferir', 'consentimento para um uso',
-         cita=('[…] a 1.ª Autora não foi informada em concreto, dos propósitos a que se destinava […] as fotografias, tendo-lhe, no '
-               'entanto, sido dito que as mesmas se destinavam a figurar numa publicação'),
-         fonte='stj-2011-dito', citacoes=[('stj-2011-iv', 'não podem as imagens ser utilizadas para fim diverso')],
+         cita=('[…] extrai-se a conclusão de que à 1.ª A. foi dada indicação de que as fotografias se destinavam a figurar numa '
+               'publicação'),
+         fonte='stj-2011-indicacao', citacoes=[('stj-2011-iv', 'não podem as imagens ser utilizadas para fim diverso')],
          liga=[{'t': 'Ler o acórdão do Supremo Tribunal de Justiça, 07/06/2011 (dgsi.pt)', 'href': DGSI}],
-         pista='Lê a passagem citada até ao fim.'),
+         pista='Pergunta-te em que se apoiou o tribunal para decidir.'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
  M.volta('A direção diz que é para ensinar',
          'A direção gosta da ideia: diz que o vídeo tem fins didáticos, porque mostra como se prepara uma peça. A Marta '
@@ -261,10 +267,10 @@ CARTOES = [
          'Sabes para que a Marta aceitou e o que pede. Não sabes se o vídeo serve para ensinar, só que a direção o diz, nem se a '
          'queda a prejudica. São estas as dúvidas que vão para o papel.',
          3, 'aplicar', 'facto e dúvida',
-         pares=[['Para que aceitou a Marta ser filmada', 'Já está no caso'],
-                ['O que a Marta pede sobre a queda', 'Já está no caso'],
-                ['Se o vídeo serve mesmo para ensinar', 'Ainda está em aberto'],
-                ['Se a queda prejudica o decoro dela', 'Ainda está em aberto']],
+         pares=[['A razão por que a Marta aceitou ser filmada', 'Já está no caso'],
+                ['O pedido da Marta sobre a queda', 'Já está no caso'],
+                ['A utilidade do vídeo para ensinar', 'Ainda está em aberto'],
+                ['O efeito da queda no decoro da Marta', 'Ainda está em aberto']],
          fe='A confusão mais provável é tomar a palavra da direção por prova: dizer «fins didáticos» não mostra que o vídeo sirva para '
             'ensinar. Volta ao caso e separa o que está nele do que alguém afirma.',
          pista='Pergunta-te: isto está no caso, ou alguém só o afirma?'),
@@ -278,7 +284,7 @@ CARTOES = [
       'Quanto tempo': 'Três minutos; em turma, até treze.',
       'O que fica escrito': 'Nada em papel; a escolha fica nos artefactos.',
       'Se estás sozinho': 'Compara com a escolha do início e abre os três lados.'},
-     prova=('Que razão pesou mais?', ('O uso aceite (n.º 1)', 'Fins didáticos (n.º 2)', 'O decoro (n.º 3)')),
+     prova=('O que pesou mais na escolha?', ('O uso aceite (n.º 1)', 'Fins didáticos (n.º 2)', 'O decoro (n.º 3)')),
      prova_rot='A razão que pesou', intro='', nota=None),
  M.fazer('emparelhar', 'Facto, regra ou razão',
          'Liga cada frase ao que ela é numa justificação.',
@@ -305,17 +311,18 @@ CARTOES = [
          fe='A confusão mais provável é começar pela lei ou pôr o que falta saber antes da aplicação. Começa pelo que aconteceu; '
             'depois o texto; o que falta saber fecha a justificação.',
          pista='Começa pelo que aconteceu.'),
- # Charneira 2: a conclusão que não vai além das provas; o erro esperado é a razão do Duarte, ou uma intenção suposta.
+ # Charneira 2: a conclusão que não vai além das provas; o erro esperado é a razão do Duarte, ou uma intenção suposta (tirada, como
+ # no Abre, dos risos dos colegas).
  escolha('O que as provas permitem',
-         'Que conclusão fica dentro do que o caso e o artigo 79.º mostram?',
-         'Que conclusão diz o que as provas permitem, sem ir além delas?',
+         'O que se pode concluir sem ir além do que o caso e o artigo 79.º mostram?',
+         'O que permitem concluir as provas, sem ir além delas?',
          'O sim de rever não chega; os fins didáticos estão por provar.',
          [('A escola pode publicar, porque a Marta aceitou ser filmada.',
            'É a razão do Duarte, não uma prova: a Marta aceitou um uso, rever a cena. Para expor o retrato, o n.º 1 pede «o '
            'consentimento dela». Esta conclusão deixa de fora o que ela aceitou.'),
-          ('A escola não pode publicar, porque quer humilhar a Marta.',
-           'Nenhum material mostra que a direção queira humilhar a Marta: diz que é para ensinar. Uma intenção não se supõe; '
-           'prova-se. Separa o que aconteceu do que alguém supõe.')],
+          ('A escola não pode publicar, porque os colegas se riram dela.',
+           'Os colegas riram-se porque a cena ficou ótima: isso não prova que a queda prejudique o decoro da Marta, que ainda está '
+           'em aberto. Esta conclusão vai além das provas. Separa o que aconteceu do que alguém supõe.')],
          'Diz o que as provas mostram (a Marta aceitou um uso: rever a cena) e deixa aberto o que falta provar: se o vídeo serve '
          'para ensinar.',
          3, 'aplicar', 'conclusão e provas', citacoes=[('cc-79-1', 'o consentimento dela')],
@@ -327,11 +334,11 @@ CARTOES = [
          ['A conclusão responde à pergunta sem ir além das provas.',
           'A prova junta um facto a uma expressão exata, com o artigo.',
           'A dúvida, respondida, podia mudar a conclusão.'],
-         '<p>Outro caso, inventado: uma aluna deixa-se fotografar para o cartão da biblioteca; a fotografia aparece num cartaz.</p><ol>'
-         '<li>Conclusão: o sim era para o cartão, não para o cartaz.</li>'
-         f'<li>Prova: foi fotografada para o cartão; o retrato não pode ser {M.citado("cc-79-1", "exposto […] sem o consentimento dela")} '
-         '(artigo 79.º, n.º 1).</li>'
-         '<li>Dúvida: alguém lhe falou do cartaz?</li></ol>',
+         '<p>Outro caso, inventado: um jornal publica uma fotografia da praça em festa, com as pessoas ao longe.</p><ol>'
+         '<li>Conclusão: pode publicá-la sem pedir a cada pessoa.</li>'
+         '<li>Prova: a fotografia é da praça; o consentimento não é necessário quando a imagem vem '
+         f'{M.citado("cc-79-2", "enquadrada na de lugares públicos")} (artigo 79.º, n.º 2).</li>'
+         '<li>Dúvida: alguém aparece de perto, como assunto?</li></ol>',
          'Num papel pequeno, sozinho e sem telemóvel.',
          relogio_min=12),
  M.levar(FRASE, ['O sim vale para o uso que se explicou.',
@@ -345,7 +352,7 @@ LUGARES = (2, 0, 1, 1, 2, 0)
 # dos menores, do anonimato e da desistência é o que a página do projeto já diz (cidadania/projeto/, «Ética: as pessoas que
 # entrevistas»).
 DEPOIS = ('<article class="c"><p class="rot">O passo do teu projeto</p><p class="tit">O teu pedido de consentimento</p>'
-          '<p class="sub">No teatro-documento, as falas vêm do que investigas, também de entrevistas. Antes de gravar alguém, escreves, '
+          '<p class="sub">No teatro-documento, as falas vêm do que investigas, entrevistas incluídas. Antes de gravar alguém, escreves, '
           'em papel, o teu pedido de consentimento em quatro partes: para quê; que uso (a voz, a cara ou só as palavras); onde fica e '
           'até quando; como se retira o sim. O que conta: cada parte numa frase simples; o uso diz se a pessoa aparece ou não; a pessoa '
           'sabe que pode desistir a qualquer momento; se for menor, o pedido vai também ao encarregado de educação.</p>'
@@ -358,15 +365,18 @@ def sessao():
         'titulo': 'Sessão 02: A imagem dos outros', 'h1': 'Cidadania, módulo 1, sessão 02: A imagem dos outros',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/02/index.html',
-        'seguinte': '../../../piloto/m1-s03/', 'seguinteRotulo': 'Sessão 03: Quem tem lugar?',
+        # 06/11/2026: a sessão 03 também passou ao molde final (decisão 166); a s02 leva à s03 nova.
+        'seguinte': '../03/', 'seguinteRotulo': 'Sessão 03: Quem tem lugar?',
         'fontes': M.ref('Código Civil, artigos 79.º, n.os 1 a 3, e 81.º, n.º 2, na versão consolidada do Diário da República. Lei n.º '
                         '58/2019, de 8 de agosto, artigo 16.º, n.º 1, no Diário da República. Declaração Universal dos Direitos Humanos, '
                         'artigo 12.º, na transcrição portuguesa do UNRIC. Acórdão do Supremo Tribunal de Justiça de 7 de junho de 2011, '
                         'processo 1581/07.3TVLSB.L1.S1, em dgsi.pt. Fotografia: Lewis Hine (atribuição), _Addie Card, 12 years. Spinner '
-                        'in North Pormal [i.e., Pownal] Cotton Mill. Vt._, fevereiro de 1910, National Child Labor Committee collection, '
-                        'Library of Congress, domínio público. _The Truman Show_, filme de Peter Weir (1998). O caso da Marta, o da '
-                        'montagem, o da praça, o do rapaz na poça, o da Lia (escrito para a sessão 05 do M1 publicado) e o do cartão da '
-                        'biblioteca são inventados; o do Supremo Tribunal de Justiça é real.'),
+                        'in North Pormal [i.e., Pownal] Cotton Mill. Vt. […]_, fevereiro de 1910, National Child Labor Committee collection, '
+                        'Library of Congress, Prints and Photographs Division (LC-DIG-nclc-05282), domínio público (o registo diz «No known '
+                        'restrictions on publication»). '
+                        '_The Truman Show_, filme de Peter Weir (1998). O caso da Marta, o da montagem, o da praça, o do rapaz na poça, '
+                        'o da Lia (escrito para a sessão 05 do M1 publicado) e o do jornal são inventados; o do Supremo Tribunal '
+                        'de Justiça é real.'),
         'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},
         'depois': DEPOIS,
         'cartoes': CARTOES,

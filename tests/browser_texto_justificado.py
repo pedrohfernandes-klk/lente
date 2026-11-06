@@ -88,7 +88,9 @@ PLANO=[
  # 30/10/2026: o catálogo é uma lista; a prosa da entrada está em .lab-saiu.
  # 30/10/2026: no telemóvel os percursos de cada bloco ficam dobrados; abrem-se antes de medir.
  # 05/11/2026: decisão 147 (Laboratório sem o Português): ficam 10 dos 17 percursos (2 em Observar, 3 em Treinar, 5 em Criar).
- ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.modulo h3',10)]),
+ # 05/11/2026: decisão 163. Os títulos dos dez percursos passam das dobras da entrada para o índice do pé; continuam a ser
+ # dez e nenhum se justifica (a mesma exigência).
+ ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.lab-indice .ind > span:first-child',10)]),
  ('E1','',[('E','a',5)]),
  ('E2','gigantes/',[('J','.p-cab p.p-lead'),('E','a.missao .s',5),('abrir','details.entrada-fontes'),('J','.entrada-fontes > p:not([class])')]),
  ('G1','narrativas/treinar/docente/',[('J','main.pg > p:not([class])')]),
@@ -98,7 +100,11 @@ PLANO=[
  ('V1','vozes/25-de-abril/guiao/',[('J','.gu > p:not([class])')]),
  ('C1','cidadania/m1/fichas/f01/',[('J','.m1-v2 .m1-block > p:not([class])'),('E','.m1-v2 ol.m1-tasks li',2),('abrir','.m1-block details'),('J','.m1-v2 .m1-block > details > div > p:not([class])')]),
  ('C2','cidadania/m1/oficina-guiao/',[('E','.c10-document.c10-script',1)]),
- ('C2','cidadania/m1/sessoes/03/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
+ # 06/11/2026 (decisões 166 a 168): a sessão 03 do M1 passou ao molde final (lição em cartões, sem as etapas .c10); as etapas
+ # justificadas conferem-se na 04, a primeira que continua no molde publicado.
+ # 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): a 04 também passou ao molde final; as etapas conferem-se na
+ # 05, agora a primeira que continua no molde publicado.
+ ('C2','cidadania/m1/sessoes/05/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C3','cidadania/m2/sessoes/03/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C4','cidadania/m2/aulas/03/',[('J','main > section > p:not([class])'),('E','main ol > li',2)]),
  ('C5','cidadania/ferramentas/m1-aula-01-ficha/',[('J','main > blockquote.citacao'),('E','main label',3),('E','blockquote.citacao cite',1)]),

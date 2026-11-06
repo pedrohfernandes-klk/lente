@@ -18,6 +18,9 @@ from urllib.parse import urljoin
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('licoes_lente', ROOT / 'tools/licoes_lente.py')
 LL = importlib.util.module_from_spec(spec); spec.loader.exec_module(LL)
+# 06/11/2026 (revisão da s02): ref() do ajudante do molde, para o espaço inseparável das referências na versão para imprimir e no guia
+spec = importlib.util.spec_from_file_location('cidadania_molde', ROOT / 'tools/cidadania_molde.py')
+MOLDE = importlib.util.module_from_spec(spec); spec.loader.exec_module(MOLDE)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 MODULO = 'cidadania/piloto/m1/'
 NOMES = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10']
@@ -189,7 +192,7 @@ GUIA = {
   'charneiras': [
    (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se foi num lugar público, posso publicar».',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acrescenta o “porém” do n.º 3?»'),
-   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque quer humilhar a Marta» (supõe uma intenção que nenhum material mostra).',
+   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque os colegas se riram dela» (toma os risos por prova de que a queda prejudica o decoro da Marta, que ainda está em aberto).',
     'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
@@ -214,48 +217,130 @@ GUIA = {
                'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
                'Nada mais: a lição projeta-se.'],
   'caso_real': ('O caso do cartão 15 é real: acórdão do Supremo Tribunal de Justiça de 07/06/2011, processo 1581/07.3TVLSB.L1.S1, em dgsi.pt. '
-                'Uma mãe e a filha, sócias de um clube de Lisboa, foram fotografadas na piscina numa sessão aberta a sócios e familiares e '
+                'Uma mãe e a filha, sócias de um clube de Lisboa, foram fotografadas na piscina numa sessão pública aberta a sócios e familiares e '
                 'saíram na capa de uma revista distribuída com um jornal. O tribunal negou a revista: concluiu que a mãe consentira na captação '
                 'e na publicação «numa publicação», porque lho tinham dito; que as fotografias seriam só para os sócios, ela não o provou. '
-                'Cita-se só o que o acórdão diz: o sumário (IV) e a passagem da fundamentação sobre o que foi dito à mãe. O acórdão é '
+                'Cita-se só o que o acórdão diz: o sumário (IV) e a conclusão do tribunal sobre o que foi dito à mãe. O acórdão é '
                 'anonimizado; não se procuram nomes.'),
-  'notas': ['O caso da Marta, o da montagem, o da praça, o do rapaz na poça e o do cartão da biblioteca são inventados e assim se diz; a cena '
+  'notas': ['O caso da Marta, o da montagem, o da praça, o do rapaz na poça e o do jornal são inventados e assim se diz; a cena '
             'da Lia foi escrita para a sessão 05 do M1 publicado (que a turma não fez). Ninguém escreve sobre um colega identificável.',
             'Sem vídeo (decisão 155). O candidato do plano, «Be kind online: consent to share and cyberbullying», está no sítio oficial '
             'Bullying. No Way! (bullyingnoway.gov.au, State of Queensland, em nome das autoridades de educação australianas, aberto a 6/11/2026), '
             'mas trata de uma imagem íntima partilhada sem consentimento e a equipa não o viu por inteiro. Se o docente o vir e o quiser, '
             'entra em «Para ir mais longe», com a alternativa escrita.',
-            'Recupera 1, _The Truman Show_ (Peter Weir, 1998): a turma já viu o filme no percurso anterior; não se volta a exibir. O cartão usa só '
+            'Recupera 1, _The Truman Show_ (Peter Weir, 1998): a turma trabalhou o filme no Ensaio 1 do percurso anterior (cidadania/m1/ensaio-1/); não se exibe. O cartão usa só '
             'a premissa (a vida de Truman passa na televisão e todos à volta são atores, menos ele).',
             'Olha: o registo da Library of Congress (loc.gov/item/2018675335, aberto a 6/11/2026) dá o título do cartão do National Child Labor '
             'Committee, «1910 February», North Pownal, Vermont, a atribuição a Lewis Hine «based on provenance» e «No known restrictions on '
-            'publication». O cartão original diz ainda que as raparigas da fábrica diziam que ela tinha dez anos e que ela admitiu ao '
-            'fotógrafo ter doze: bom para a conversa depois do cartão 6.',
+            'publication». O cartão original diz ainda que as raparigas da fábrica diziam que ela tinha dez anos e que ela admitiu a quem '
+            'escreveu o cartão («She admitted to me she was twelve») ter doze: bom para a conversa depois do cartão 6.',
             'Cartão 11 (a praça) e charneira 1 (o rapaz na poça): a leitura de «enquadrada na de lugares públicos» (as pessoas como parte do '
             'lugar, não como assunto) e a de «simples decoro» aplicada a uma queda são leituras nossas do artigo 79.º; o docente confirma.',
-            'Conceito: «pode ser retirado» assenta no artigo 81.º, n.º 2, do Código Civil (a limitação voluntária dos direitos de personalidade '
-            '«é sempre revogável», ainda que com obrigação de indemnizar); ligar esse artigo ao direito à imagem é leitura nossa.',
+            'Conceito: «pode ser retirado» assenta no artigo 81.º, n.º 2, do Código Civil (a limitação voluntária dos direitos de personalidade, '
+            'quando legal, «é sempre revogável», ainda que com obrigação de indemnizar); ligar esse artigo ao direito à imagem é leitura nossa.',
             'Lei n.º 58/2019, artigo 16.º: só aparece para separar os 13 anos dos serviços digitais do consentimento para publicar a imagem de alguém.',
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 06/11/2026 (decisões 166 a 168): a sessão 03 passa ao molde final (cidadania-2026-11), como a 01 e a 02. O que só o docente faz
+ # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '03': {
-  'dominio': 'Direitos Humanos (igualdade e não discriminação, igualdade de género, deficiência); Pluralismo.',
-  'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais e que ouvir quem é afetado faz parte da solução.',
-  'passos': [
-   (5, 'Em turma. Cada pessoa tira uma carta (o Rui, a organização, quem orienta a mostra, quem só pode ir à sexta-feira); a turma recebe cinco unidades.'),
-   (15, 'Uma pessoa por carta defende-a durante dois minutos; a turma gasta as cinco unidades: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma.'),
-   (5, 'O docente lê a informação nova (por exemplo: a sala do rés do chão tem menos lugares) e a turma revê.'),
-   (10, 'Pausa.'),
-   (10, 'A proposta à direção, em cinco linhas: barreira, quem afeta, medida, custo, quem foi ouvido.'),
-   (20, 'A pergunta de cada aluno para a Pergunta Humana: cada aluno escolhe e delimita a sua, investigável na escola e no bairro até ao fim do módulo.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: igualdade e não discriminação (Constituição, artigo 13.º), os direitos da criança com deficiência (Convenção, artigo 23.º) e a discriminação indireta (Lei n.º 46/2006).',
+  'ensina': 'Ver que uma regra igual para todos pode ter efeitos desiguais, encontrar a barreira (no espaço, na informação, na decisão, no horário), separar ver de participar e pesar uma solução com orçamento sem ir além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 02 com a marca por critério. Antes de projetar a fotografia do cartão 5, uma frase de '
+            'enquadramento (decisão 30): a placa é de um tempo em que, em vários estados do sul dos Estados Unidos, a segregação racial '
+            'era imposta por lei. Se houver na turma alguém com deficiência, não se usa como exemplo: o Rui e a Joana são personagens.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 02.',
+   4: 'O retorno nomeia a sessão 01: vale a pena lembrar, em voz alta, a força de cada texto (declaração, tratado, Constituição).',
+   5: 'Projetado grande, depois da frase de enquadramento. Os pormenores (a seta, a palavra «COLORED») só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o artigo 13.º, n.º 2, e o artigo 23.º, n.º 1, uma vez cada; perguntar quem protege cada um.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno, em inglês) e mostrar o § 10 (a oferta do acompanhante) e o § 72 (a razão do Tribunal).',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['Cartas de perspetiva, uma por aluno.', 'Cinco unidades para a turma (clipes ou papéis) e a tabela dos custos.', 'O modelo da proposta à direção.', 'A secção «Uma boa pergunta» da página do projeto.'],
-  'escrito': 'A proposta à direção em cinco linhas e a pergunta de cada aluno.',
-  'projeto': ('A pergunta', '#fases', 'Nos últimos 20 minutos do «Na aula», cada aluno escolhe e delimita a sua pergunta para a Pergunta Humana.'),
-  'produto': 'Proposta à direção e pergunta',
-  'grelha': [('Barreira descrita sem juízo', 4), ('Quem é afetado e foi ouvido', 4), ('Medida possível, com custo dentro do orçamento', 4), ('Fundamento com o artigo certo', 4), ('Pergunta delimitada e investigável', 4)],
-  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): em vários estados do sul dos Estados Unidos, a segregação racial era imposta por lei no tempo desta fotografia (1943).', 'Se houver na turma alguém com deficiência, não se usa como exemplo: as cartas são personagens.', 'A Convenção sobre os Direitos das Pessoas com Deficiência, o Decreto-Lei n.º 163/2006 e a Lei n.º 46/2006 ficam fora dos cartões até se confirmarem no Diário da República.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão e gasta, sozinho, as cinco unidades (a escolha «Como gastas as cinco unidades?»).',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem por opção das cinco unidades: mudar e legendar, mudar e transmitir, legendar e transmitir.',
+   'Seis minutos: duas vozes por opção, cada uma com uma prova do material (uma expressão entre aspas, com o artigo) e a dizer quem fica de fora com essa escolha.',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por pensar que ver tudo pelo vídeo é estar na mostra («ele vê tudo»).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 23.º até «participação activa». Pergunta: «O que fazem na mostra os colegas que estão na sala?»'),
+   (21, '«A mostra fica em cima, porque a maioria perderia os seus lugares» (toma a razão dos pais por prova; ninguém contou os convidados) ou «A organização escolheu a sala de cima para afastar o Rui da mostra» (supõe uma intenção que nenhum material mostra).',
+    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 04, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('A tua pergunta', '#pergunta-resposta',
+              'Cinco minutos para ler, na página do projeto, «Uma boa pergunta». Trinta minutos: cada aluno escreve, em papel, a sua pergunta em '
+              'três versões (a primeira, uma mais delimitada, com que pessoas, que lugar e que tempo, e a final); o docente faz cerca de dez '
+              'conversas de 3 minutos. Dez minutos: cada aluno relê a versão final com «O que conta» e corrige-a. A pergunta entra no dossiê da '
+              'Pergunta Humana.'),
+  'produto': 'A pergunta da Pergunta Humana',
+  'grelha': [('Não se responde com «sim» ou «não»', 4), ('Delimitada: que pessoas, que lugar, que tempo', 4), ('Investigável com fontes a que o aluno tem acesso', 4),
+             ('As três versões mostram o caminho até à final', 4), ('A versão final é clara e cabe numa frase', 4)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura de «Uma boa pergunta» e a primeira versão).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, _Enver Şahin c. Turquia_, queixa n.º 23065/12, acórdão de 30 de '
+                'janeiro de 2018 (HUDOC, em inglês e em francês; sem tradução portuguesa). Um estudante de mecânica ficou paraplégico num acidente em '
+                '2005 e pediu à faculdade que adaptasse o edifício para voltar às aulas (§§ 6 e 7). A faculdade respondeu que o edifício, com vários '
+                'pisos, não se podia adaptar; a administração disse que as dificuldades em assistir às aulas teóricas, num edifício de três pisos, se '
+                'podiam resolver com a ajuda de um acompanhante, e que o orçamento era limitado (§§ 8 e 10). O Tribunal disse que essa oferta, feita sem avaliar a situação '
+                'concreta dele, não era razoável, porque ignorava a necessidade de viver da forma mais independente e autónoma possível (§§ 69 a 72), '
+                'e concluiu, por seis votos contra um, que houve violação do artigo 14.º da Convenção Europeia dos Direitos Humanos, com o artigo 2.º '
+                'do Protocolo n.º 1 (dispositivo, ponto 3). O cartão não cita o acórdão (não há texto português): conta-o por palavras nossas.'),
+  'notas': ['O caso do Rui, o da direção e da Declaração, o das barreiras na escola, o da visita de estudo e o da reunião com os pais são '
+            'inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato para esta sessão; o vídeo do piloto (TED-Ed, «What does this symbol actually '
+            'mean?», lição de Adrian Treharne) não foi visto por inteiro pela equipa e fica de fora.',
+            'Recupera 1, _The Egg_, de Andy Weir (#84, s03): a premissa confere com o texto no sítio do autor (galactanet.com/oneoff/theegg_mod.html, '
+            'aberto a 6/11/2026).',
+            'Olha: o ficheiro é o do piloto, a versão do Wikimedia Commons com as margens cortadas (aberta a 6/11/2026: Esther Bubley, setembro de '
+            '1943, estação Greyhound de Rome, Geórgia; Library of Congress, cph.3b22541; domínio público), registo cph.3b22541 pelo handle da '
+            'Library of Congress (hdl.loc.gov/loc.pnp/cph.3b22541).',
+            'A legenda traduz «colored waiting room» por «sala de espera para “pessoas de cor”», a palavra da época, entre aspas.',
+            'Cartão 10 (fora da lista): o artigo 13.º, n.º 2, não diz «deficiência»; a resposta assenta no que os textos dizem (a Convenção, '
+            'artigo 23.º; a Constituição, artigo 71.º, no «Ler mais»), sem dizer se a lista do n.º 2 é ou não fechada. A Convenção vale para o Rui '
+            'porque tem 16 anos (artigo 1.º: «criança é todo o ser humano menor de 18 anos»).',
+            'A Convenção cita-se na tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, com a grafia e as palavras da fonte '
+            '(«criança mental e fisicamente deficiente», «activa»); hoje, a Lei n.º 46/2006 diz «pessoas com deficiência».',
+            'Conceito: o nome e a definição assentam na Lei n.º 46/2006, artigo 3.º, alínea b) («Discriminação indirecta»), que a lei define para a '
+            'deficiência; aplicá-lo à religião (cartão 14) é alargamento nosso, para o docente confirmar.',
+            'Lei n.º 46/2006, artigo 4.º, alínea e): entre as práticas discriminatórias contra pessoas com deficiência, a lei conta «A recusa ou a '
+            'limitação de acesso ao meio edificado ou a locais públicos ou abertos ao público». Pode servir na conversa do «Em turma»; o cartão não a usa.',
+            'Volta ao caso: as cinco unidades vêm do guia do piloto (mudar de sala custa três); as legendas e a transmissão para o átrio custam duas '
+            'cada, para que as três medidas não caibam juntas no orçamento.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  # 06/11/2026 (decisões 166 a 168): a sessão 04 passa ao molde final (cidadania-2026-11), como a 01 e a 02. O que só o docente faz
  # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
@@ -478,6 +563,31 @@ GUIA = {
   'notas': ['Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
  },
 }
+
+# 06/11/2026 (revisão da s03; decisão 152): as referências não se partem no fim da linha. Espaço inseparável depois de «artigo»,
+# «artigos», «n.º», «n.os», «alínea», «§» e «§§», e nas datas, com a mesma regra do ecrã (tools/cidadania_molde.py, ref()).
+# Vale para as sessões cuja entrada em GUIA tem 'nb': True (por agora, a 03): no texto de GUIA e no que o guia e a versão para
+# imprimir tiram dos cartões (respostas, perguntas das charneiras, opções, pares e passos), que ficam com o espaço que o ecrã tem.
+# A s01 e a s02 ficam como foram revistas: a mesma correção, se a quiserem, é uma linha 'nb': True na entrada de cada uma.
+# 06/11/2026 (fusão do main com a sessão 2 final): a revisão da s02 pôs ref() em _txt() para as sessões sem 'nb' (abaixo) e já
+# carrega o ajudante do molde (MOLDE) no topo deste ficheiro; não se carrega duas vezes.
+_PARAGRAFO = re.compile(r'(?<![^\s(])(§§?) (?=\d)')
+
+
+def _nb(x):
+    """O espaço inseparável das referências e das datas em todo o texto de uma entrada de GUIA (listas, tuplos e dicionários)."""
+    if isinstance(x, str):
+        return _PARAGRAFO.sub(lambda m: m.group(1) + MOLDE.NB, MOLDE.ref(x))
+    if isinstance(x, list):
+        return [_nb(y) for y in x]
+    if isinstance(x, tuple):
+        return tuple(_nb(y) for y in x)
+    if isinstance(x, dict):
+        return {k: _nb(v) for k, v in x.items()}
+    return x
+
+
+GUIA['03'] = dict(_nb(GUIA['03']), nb=True)
 
 # Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta da equipa a partir do plano, para o docente rever).
 # 8 de escolha (1 ponto cada) e 2 curtas escritas (0 a 2): máximo 12.
@@ -781,7 +891,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             # 06/11/2026 (sessão 04 no molde): a frase das sessões no molde sai da lista das sessões (eram 01 e 02, escritas à mão).
+             # 06/11/2026 (sessão 04 no molde): a frase das sessões no molde sai da lista das sessões (eram 01, 02 e 03, escritas à mão).
              f'<p class="pg">{_frase_molde(S)}</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
@@ -843,32 +953,45 @@ def pagina_guia(S):
 
 
 # 05/11/2026 (plano do molde da Cidadania, pedido 2): o guia, a versão para imprimir e o redirecionamento das sessões no molde
-# cidadania-2026-11 (por agora, só a s01 do M1; 06/11/2026: e a s02). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
+# cidadania-2026-11 (por agora, só a s01 do M1; 06/11/2026: e a s02 e a s03). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
 GUIA_PASTA = MODULO + 'docente/'
 
 
-def _txt(s):
-    # 06/11/2026 (revisão da s04; decisão 152): como LL.visivel, mas o espaço inseparável das referências («n.º 2», «37.º») fica;
-    # o resto dos espaços junta-se num só, como antes.
-    s = re.sub(r'<[^>]+>', ' ', str(s))
-    s = html.unescape(s).replace('**', '').replace('_', '')
-    return re.sub(r'[^\S\u00a0]+', ' ', s).strip()
+def _txt(s, nb=False):
+    """O texto visível de um campo. 06/11/2026 (decisão 152): com nb, o espaço inseparável que o cartão tem fica (LL.visivel
+    troca-o por um espaço normal); sem nb, como antes.
+    06/11/2026 (fusão do main com a sessão 2 final): «como antes» passa a ser o texto de LL.visivel() com ref() por cima, da
+    revisão da s02, para as sessões sem 'nb' (a s01 e a s02); a s03, com 'nb', fica como foi revista.
+    06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): a s04 também fica sem 'nb'. O _txt() da revisão da s04
+    (o texto de LL.visivel() sem trocar o espaço inseparável do cartão) dava, na secção da s04 do guia e na sua versão para
+    imprimir, o mesmo texto que este, letra a letra; sai, e a s01, a s02 e a s03 ficam como foram publicadas."""
+    if not nb:
+        # 06/11/2026 (revisão da s02, decisão 152): LL.visivel() troca o U+00A0 por um espaço normal; ref() volta a pô-lo em «n.º 1»,
+        # «13 anos», «artigo 79.º», para as referências não se partirem no papel nem no guia
+        return MOLDE.ref(LL.visivel(s))
+    t = html.unescape(re.sub(r'<[^>]+>', ' ', str(s))).replace('**', '').replace('_', '')
+    return re.sub(r'[ \t\r\n\f\v]+', ' ', t).strip(' \t\r\n\f\v')
 
 
-def _resposta(c):
+def _resposta(c, nb=False):
     """A resposta de um cartão de fazer, em texto simples, para a chave do guia."""
     t = c['t']
     if t == 'escolha':
-        return _txt(c['o'][c['c']])
+        return _txt(c['o'][c['c']], nb)
     if t == 'vf':
         return 'Verdadeiro.' if c['v'] else 'Falso.'
     if t == 'emparelhar':
-        return '; '.join(f'{_txt(a)} → {_txt(b)}' for a, b in c['pares']) + '.'
-    if t == 'sublinhar':
-        w = c['frase'].split()
-        return '«' + ' '.join(w[j] for j in c['certas']).strip(',.') + '»'
+        return '; '.join(f'{_txt(a, nb)} → {_txt(b, nb)}' for a, b in c['pares']) + '.'
+    if t == 'sublinhar':  # 06/11/2026 (revisão da s02): as palavras seguidas num só «…» (sem passar uma vírgula ou um ponto), os grupos separados por vírgula
+        w, grupos = c['frase'].split(), []
+        for j in sorted(c['certas']):
+            if grupos and grupos[-1][-1] == j - 1 and not w[j - 1].endswith((',', '.', ';', ':')):
+                grupos[-1].append(j)
+            else:
+                grupos.append([j])
+        return ', '.join('«' + ' '.join(w[j] for j in g).strip(',.') + '»' for g in grupos)
     if t == 'ordenar':
-        return ' '.join(f'{k}. {_txt(x)}' for k, x in enumerate(c['passos'], 1))
+        return ' '.join(f'{k}. {_txt(x, nb)}' for k, x in enumerate(c['passos'], 1))
     return ''
 
 
@@ -911,11 +1034,12 @@ def secao_molde(s, g):
     d, C = s['d'], s['d']['cartoes']
     sessao = rel(GUIA_PASTA, s['pasta'])
     fazer = [(i, c) for i, c in enumerate(C) if c['t'] != 'ler']
+    nb = g.get('nb', False)
     charn = ''
     for n, erro, fazer_se in g['charneiras']:
         c = C[n - 1]
-        charn += (f'<tr><td class="num">{n}</td><td>{e(_txt(c["p"]))}</td><td>{e(_resposta(c))}</td><td>{e(erro)}</td><td>{e(fazer_se)}</td></tr>')
-    chave = ''.join(f'<tr><td class="num">{i + 1}</td><td>{e(c["rot"])}</td><td>{e(_resposta(c))}</td><td>{e(c.get("tipo", ""))}</td></tr>' for i, c in fazer)
+        charn += (f'<tr><td class="num">{n}</td><td>{e(_txt(c["p"], nb))}</td><td>{e(_resposta(c, nb))}</td><td>{e(erro)}</td><td>{e(fazer_se)}</td></tr>')
+    chave = ''.join(f'<tr><td class="num">{i + 1}</td><td>{e(c["rot"])}</td><td>{e(_resposta(c, nb))}</td><td>{e(c.get("tipo", ""))}</td></tr>' for i, c in fazer)
     img = next(c for c in C if c.get('rot') == 'Olha')
     credito = re.search(r'<p class="info-i-texto">(.*?)</p>', img['html'], re.S).group(1)
     return (f'<section class="sessao" id="s{s["n"]}"><p class="marca">Sessão {s["n"]}, no molde final</p><h2>{e(s["titulo"])}</h2>'
@@ -942,7 +1066,7 @@ def secao_molde(s, g):
             + '<h3>O que imprimir</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['imprimir']) + '</ul>'
             + '<h3>Respostas dos 14 exercícios</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Exercício</th>'
               f'<th scope="col">Resposta</th><th scope="col">Tipo</th></tr></thead><tbody>{chave}</tbody></table></div>'
-            + f'<h3>O caso real</h3><p class="pg">{e(g["caso_real"])}</p>'
+            + f'<h3>O caso real</h3><p class="pg">{LL.esc_it(g["caso_real"])}</p>'
             + f'<h3>Imagem</h3><p class="pg">{credito}</p>'
             + '<h3>Notas</h3><ul>' + ''.join(f'<li>{LL.esc_it(x)}</li>' for x in g['notas']) + '</ul>'
             + f'<h3>Fontes da lição</h3><p class="pg fontes">{LL.esc_it(d["fontes"])}</p></section>')
@@ -979,21 +1103,23 @@ CSS_IMPRIMIR = (
  '.cid-piloto.imprimir .credito a[href]::after{content:" (" attr(href) ")";word-break:break-all}')
 
 
-def _ex_imprimir(num, c, d, k):
+def _ex_imprimir(num, c, d, k, nb=False):
     """Um exercício na versão para imprimir, sem a resposta. A ordem das opções é a do ecrã (a semente do motor)."""
+    _t = lambda x: _txt(x, nb)  # 06/11/2026 (decisão 152): com nb, o espaço inseparável do ecrã também vai para o papel
     q = f'<div class="ex"><p class="rot">Exercício {num}: {e(c["rot"])}</p>'
     if c.get('cita'):
-        q += f'<p class="cita"><i>«{e(_txt(c["cita"]))}»</i></p>'
+        q += f'<p class="cita"><i>«{e(_t(c["cita"]))}»</i></p>'
     p = html.unescape(re.sub(r'<[^>]+>', '', c['p']))
     if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
-        p = re.sub(r'\b([Tt])oca nas palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as palavras', p)
+        # 06/11/2026 (revisão da s02): também «toca nas duas/três palavras»
+        p = re.sub(r'\b([Tt])oca nas ((?:duas |três )?)palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as ' + m.group(2) + 'palavras', p)
         # 06/11/2026 (sessão 04): também no singular, quando a resposta é uma só palavra («toca na palavra»)
         p = re.sub(r'\b([Tt])oca na palavra', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha a palavra', p)
     q += f'<p><b>{LL.esc_it(p)}</b></p>'
     t = c['t']
     if t == 'escolha':
         ordem = dict(LL.ordem_opcoes(d)).get(k) or list(range(len(c['o'])))
-        q += '<ol class="letras">' + ''.join(f'<li>{e(_txt(c["o"][j]))}</li>' for j in ordem) + '</ol><p class="resp">Resposta: ______</p>'
+        q += '<ol class="letras">' + ''.join(f'<li>{e(_t(c["o"][j]))}</li>' for j in ordem) + '</ol><p class="resp">Resposta: ______</p>'
     elif t == 'vf':
         q += '<p class="resp">☐ Verdadeiro &nbsp; ☐ Falso</p>'
     elif t == 'sublinhar':
@@ -1005,12 +1131,12 @@ def _ex_imprimir(num, c, d, k):
         dto = LL._mist(sem, list(range(len(vals))))
         if len(vals) == len(c['pares']) and all(c['pares'][esq[i]][1] == vals[dto[i]] for i in range(len(esq))):
             dto = dto[1:] + dto[:1]
-        q += ('<div class="cols"><ol>' + ''.join(f'<li>{e(_txt(c["pares"][j][0]))}</li>' for j in esq) + '</ol>'
-              '<ol class="letras">' + ''.join(f'<li>{e(_txt(vals[j]))}</li>' for j in dto) + '</ol></div>'
+        q += ('<div class="cols"><ol>' + ''.join(f'<li>{e(_t(c["pares"][j][0]))}</li>' for j in esq) + '</ol>'
+              '<ol class="letras">' + ''.join(f'<li>{e(_t(vals[j]))}</li>' for j in dto) + '</ol></div>'
               '<p class="resp">Liga: ' + ' &nbsp; '.join(f'{i + 1} ___' for i in range(len(esq))) + '</p>')
     elif t == 'ordenar':
         ordem = LL.ordem_ordenar(d, k)  # 06/11/2026: a ordem do ecrã, sem nenhum passo no seu lugar
-        q += ('<ol class="letras">' + ''.join(f'<li>{e(_txt(c["passos"][j]))}</li>' for j in ordem) + '</ol>'
+        q += ('<ol class="letras">' + ''.join(f'<li>{e(_t(c["passos"][j]))}</li>' for j in ordem) + '</ol>'
               '<p class="resp">Ordem: ' + ' → '.join('___' for _ in ordem) + '</p>')
     return q + '</div>'
 
@@ -1035,7 +1161,7 @@ def _ler_imprimir(c):
 def _opcoes_prova(c):
     """06/11/2026: as opções da escolha que pesou no «Em turma» (data-valor), tiradas do cartão em vez de escritas à mão."""
     m = re.search(r'<div class="posicao" data-artefacto="prova".*?</div></div>', c['html'], re.S)
-    return ' '.join(f'☐ {e(html.unescape(v))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
+    return ' '.join(f'☐ {e(MOLDE.ref(html.unescape(v)))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
 
 
 def pagina_imprimir(s):
@@ -1055,7 +1181,7 @@ def pagina_imprimir(s):
             corpo += '<h2>Parte 2, pesar e escrever</h2>'
         if c['t'] != 'ler':
             num += 1
-            corpo += _ex_imprimir(num, c, d, k)
+            corpo += _ex_imprimir(num, c, d, k, GUIA[s['n']].get('nb', False))
             continue
         rot = c.get('rot')
         if rot == 'Para levar':
@@ -1070,7 +1196,9 @@ def pagina_imprimir(s):
         titulo = f'<p class="rot">{e(rot)}{": " + e(c["titulo"]) if c.get("titulo") and c["titulo"] != rot else ""}</p>'
         corpo += titulo + _ler_imprimir(c)
     corpo += f'<footer class="mais"><a href="{base}{s["pasta"]}">Voltar à sessão</a></footer>'
-    return (cabeca(base, f'{s["titulo"]}, para imprimir · Cidadania · Lente', f'Sessão {s["n"]} do módulo 1 de Cidadania, para imprimir.')
+    # 06/11/2026 (revisão da s03): um título que acaba em «?» não leva vírgula a seguir («Quem tem lugar? Para imprimir»)
+    sufixo = ' Para imprimir' if s['titulo'].endswith('?') else ', para imprimir'
+    return (cabeca(base, f'{s["titulo"]}{sufixo} · Cidadania · Lente', f'Sessão {s["n"]} do módulo 1 de Cidadania, para imprimir.')
             + f'<body class="cid-piloto imprimir"><style>{CSS_IMPRIMIR}.c-sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}</style>'
             + f'<main id="conteudo">{corpo}</main></body></html>\n')
 

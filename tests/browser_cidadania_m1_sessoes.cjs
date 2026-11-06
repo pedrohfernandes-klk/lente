@@ -48,16 +48,23 @@ try{
   assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
   assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
   for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
+ /* 06/11/2026 (decisões 166 a 168): a sessão 03 passa também ao molde final, no mesmo endereço (tools/licoes/cidadania-m1-s03.json),
+    com a chave epi-cid-m1-s03; exige-se o mesmo que à 01 e à 02. As sessões 04 a 10 publicadas continuam com tudo o que se exigia. */
+ {await p.goto(origin+'/lente/cidadania/m1/sessoes/03/');await p.waitForTimeout(300);
+  assert.equal(await p.locator('h1').count(),1);assert(await p.evaluate(()=>document.body.classList.contains('molde-cidadania')));
+  assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
+  assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
+  for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
  /* 06/11/2026 (decisões 166 a 168): a sessão 04 passa também ao molde final, no mesmo endereço (tools/licoes/cidadania-m1-s04.json),
-    com a chave epi-cid-m1-s04; exige-se o mesmo que à 01 e à 02, e salta do ciclo abaixo. A 03 e as 05 a 10 publicadas continuam
+    com a chave epi-cid-m1-s04; exige-se o mesmo que à 01, à 02 e à 03, e salta do ciclo abaixo. As 05 a 10 publicadas continuam
     com tudo o que se exigia. */
  {await p.goto(origin+'/lente/cidadania/m1/sessoes/04/');await p.waitForTimeout(300);
   assert.equal(await p.locator('h1').count(),1);assert(await p.evaluate(()=>document.body.classList.contains('molde-cidadania')));
   assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
   assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
   for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
- for(let n=3;n<=10;n++){
-  if(n===4)continue;
+ /* 06/11/2026 (fusão do main com as sessões 2 e 3 finais): a 03 e a 04 passaram ao molde final; o ciclo começa na 05. */
+ for(let n=5;n<=10;n++){
   await p.goto(origin+'/lente/cidadania/m1/sessoes/'+String(n).padStart(2,'0')+'/');
   assert.equal(await p.locator('h1').count(),1);
   const links=await p.locator('.c10 a').evaluateAll(es=>es.map(e=>e.href).filter(h=>h.startsWith(location.origin)));
@@ -65,13 +72,21 @@ try{
   assert.equal(await p.locator('[data-stage]').count(),5);assert.equal(await p.locator('[data-session-done]').count(),n<=2?0:1);
  }
  await p.goto(origin+'/lente/cidadania/m1/sessoes/');/* 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais. */assert((await p.locator('.c10').innerText()).includes('Mostras curtas individuais'));
- await p.goto(origin+'/lente/cidadania/m1/sessoes/03/');assert.equal(await p.locator('[data-stage]:visible').count(),0);
+ /* 06/11/2026 (decisões 166 a 168): a condução por passos, o registo e a retoma provam-se na sessão 04, a primeira que continua no
+    molde publicado (a 03 passou ao molde final, sem passos nem registo). Para que o «Continuar» do módulo mostre o efeito do registo
+    como antes (passa à sessão seguinte), a 03 fica semeada como feita no registo do percurso publicado; a seguir à 04, «Continuar»
+    tem de levar à 05. */
+ /* 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): a 04 também passou ao molde final; o mesmo prova-se na 05,
+    agora a primeira que continua no molde publicado, com a 03 e a 04 semeadas como feitas; a seguir à 05, «Continuar» tem de
+    levar à 06. */
+ await p.evaluate(k=>{let d=null;try{d=JSON.parse(localStorage.getItem(k)||'null')}catch(e){}if(!d||d.version!==2||!d.sessions)d={version:2,sessions:{}};d.sessions['03']={done:true};d.sessions['04']={done:true};localStorage.setItem(k,JSON.stringify(d))},KEY);
+ await p.goto(origin+'/lente/cidadania/m1/sessoes/05/');assert.equal(await p.locator('[data-stage]:visible').count(),0);
  await p.locator('[data-start]').click();assert.equal(await p.locator('[data-stage]:visible').count(),1);
  await p.locator('[data-stage]:visible').focus();await p.keyboard.press('ArrowRight');assert.equal(await p.locator('[data-stage]:visible').getAttribute('id'),'momento-2');
  await p.locator('[data-stage-link]').nth(2).click();await p.locator('[data-feedback]>summary').focus();await p.keyboard.press('Enter');assert(await p.locator('[data-feedback]').evaluate(e=>e.open));
  await p.locator('[data-stage-link]').nth(4).click();await p.locator('[data-session-done]').check();await p.reload();assert(await p.locator('[data-session-done]').isChecked());
  assert.deepEqual(await p.evaluate(keys=>Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)])),Object.keys(legacy)),legacy);
- await p.goto(origin+'/lente/cidadania/m1/');assert((await p.locator('[data-continue]').getAttribute('href')).includes('04/'));
+ await p.goto(origin+'/lente/cidadania/m1/');assert((await p.locator('[data-continue]').getAttribute('href')).includes('06/'));/* 06/11/2026: a seguir à 05 (era a seguir à 04, «05/») */
  await p.goto(origin+'/lente/cidadania/m1/sessoes/06/');await p.locator('[data-start]').click();
  await p.evaluate(()=>dispatchEvent(new Event('beforeprint')));assert.equal(await p.locator('[data-stage]:visible').count(),5);
  await p.emulateMedia({media:'print'});await p.pdf({path:path.join(OUT,'sessao-06-impressao.pdf'),format:'A4',printBackground:true});await p.emulateMedia({media:'screen'});await p.evaluate(()=>dispatchEvent(new Event('afterprint')));assert.equal(await p.locator('[data-stage]:visible').count(),1);
@@ -82,8 +97,10 @@ try{
  await p.goto(origin+'/lente/cidadania/m1/#unidade-3');await p.waitForURL('**/sessoes/06/');
  assert.deepEqual(errors,[]);results.push({functions:'condução por momentos; teclado; impressão completa; retomada; estado legado intacto; projeção 3 tamanhos; âncoras antigas',passed:true});await ctx.close();
  for(const seed of ['{invalid','{"version":2,"sessions":[]}']){const c=await context(),q=await c.newPage();await q.goto(origin+'/lente/cidadania/m1/');await q.evaluate(([key,s])=>localStorage.setItem(key,s),[KEY,seed]);await q.reload();assert((await q.locator('[data-continue]').getAttribute('href')).includes('03/'));await c.close()}
- const c=await context(),q=await c.newPage();await c.addInitScript(()=>{Storage.prototype.getItem=function(){throw Error('blocked')};Storage.prototype.setItem=function(){throw Error('blocked')}});await q.goto(origin+'/lente/cidadania/m1/sessoes/03/');await q.locator('[data-start]').click();await q.locator('[data-stage-link]').nth(4).click();await q.locator('[data-session-done]').check();assert((await q.locator('[data-live]').textContent()).includes('não permite guardar'));await c.close();
- const no=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),np=await no.newPage();await np.goto(origin+'/lente/cidadania/m1/sessoes/03/');assert.equal(await np.locator('[data-stage]:visible').count(),5);await np.locator('[data-feedback]>summary').click();assert(await np.locator('[data-feedback] p').isVisible());await no.close();
+ /* 06/11/2026 (decisões 166 a 168): o armazenamento bloqueado e a página sem JavaScript provam-se na sessão 04, pela mesma razão. */
+ /* 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): e passam à 05, pela mesma razão. */
+ const c=await context(),q=await c.newPage();await c.addInitScript(()=>{Storage.prototype.getItem=function(){throw Error('blocked')};Storage.prototype.setItem=function(){throw Error('blocked')}});await q.goto(origin+'/lente/cidadania/m1/sessoes/05/');await q.locator('[data-start]').click();await q.locator('[data-stage-link]').nth(4).click();await q.locator('[data-session-done]').check();assert((await q.locator('[data-live]').textContent()).includes('não permite guardar'));await c.close();
+ const no=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),np=await no.newPage();await np.goto(origin+'/lente/cidadania/m1/sessoes/05/');assert.equal(await np.locator('[data-stage]:visible').count(),5);await np.locator('[data-feedback]>summary').click();assert(await np.locator('[data-feedback] p').isVisible());await no.close();
  results.push({fallbacks:'estado inválido; armazenamento bloqueado; sem JavaScript',passed:true});fs.writeFileSync(path.join(OUT,'qa-browser.json'),JSON.stringify(results,null,2));console.log(JSON.stringify({observations:results.length,passed:true,output:OUT}));
 }finally{await browser.close();server.close()}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1});

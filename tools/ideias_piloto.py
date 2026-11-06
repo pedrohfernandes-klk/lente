@@ -19,6 +19,9 @@ spec = importlib.util.spec_from_file_location('licoes_lente', ROOT / 'tools/lico
 LL = importlib.util.module_from_spec(spec); spec.loader.exec_module(LL)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 PASTA = 'narrativas/ideias/'
+# 05/11/2026: decisão 163. A barra única e o fio do Laboratório vêm de tools/lab_nav.py (os mesmos das portas e dos percursos).
+_nav_spec = importlib.util.spec_from_file_location('lab_nav', ROOT / 'tools/lab_nav.py')
+LN = importlib.util.module_from_spec(_nav_spec); _nav_spec.loader.exec_module(LN)
 e = html.escape
 
 # As sessões (plano final, secção 4.1). As que têm lição em tools/licoes/ideias-sNN.json ficam prontas e ligadas; as
@@ -607,11 +610,13 @@ def pagina_entrada(L):
                        f'<span class="apoio">{e(s["passo"])}.</span>'
                        '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
         # 05/11/2026: revisão de 5/11 (lente-ideias-2): cada porta volta a dizer que passo serve (pedido 1, ponto 4).
+        # 05/11/2026: decisão 163. Depois da lista, a porta do Laboratório onde se treina este passo.
         portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
-                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol></div></section>')
+                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol>'
+                   f'<p class="liga-porta">Para treinar este passo: <a href="{e(_url)}">{nome}\u00a0→</a></p></div></section>')
     desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
-    corpo = (migalhas(base, [('Lente', LENTE), ('Laboratório', '../'), ('Ideias', '')])
-             + '<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
+    # 05/11/2026: decisão 163. As migalhas soltas passam à barra única e ao fio (fora do main, antes dele).
+    corpo = ('<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
              '<p class="lead">Observa o que te rodeia e dá forma a uma ideia tua.</p>'
              f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
              f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
@@ -626,8 +631,11 @@ def pagina_entrada(L):
              '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
-    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1"></head>')
-    return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{LL.nq(corpo)}</main>'
+    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1">{LN.css("narrativas/ideias")}</head>')
+    # 05/11/2026 (revisão): a classe da projeção no <head>, antes das folhas de estilo (sem salto de layout ao abrir com ?projetar=1)
+    cab = cab.replace('<meta name="viewport" content="width=device-width,initial-scale=1">', '<meta name="viewport" content="width=device-width,initial-scale=1">' + LN.PROJ, 1)
+    return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a>{LN.barra("narrativas/ideias")}'
+            f'<div class="lab-fio-pg">{LN.fio("narrativas/ideias", "ideias", "page")}</div><main id="conteudo">{LL.nq(corpo)}</main>'
             # 05/11/2026 (plano do molde da Cidadania, pedido 1): o progresso comum passa a progresso-licoes.js; o código e o nome
             # EPILabProgresso ficam iguais.
             f'<script src="{base}assets/licoes/{LL.PROGRESSO}"></script>'
@@ -680,7 +688,7 @@ def pagina_guiao(L):
              f'<p class="lead">Para imprimir em A4: frente e verso de cada sessão pronta ({2 * n} páginas). No telemóvel só se toca; escreve-se no guião impresso e onde cada um guarda o material.</p></header>'
              '<p class="papel-cab"><button type="button" class="imprimir" onclick="window.print()">Imprimir</button><span class="pq">As sessões 3 a 7 entram quando estiverem prontas.</span></p>'
              + lados
-             + '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../docente/">Para o docente →</a></p>')
+             + '<p class="saidas-sec"><a href="../">Voltar ao Ideias</a><a href="../docente/">Para o docente →</a></p>')
     corpo = LL.nq(corpo)
     return (cabeca(base, 'Guião | Ideias | Laboratório | Lente', 'O guião em papel das sessões de Ideias, no Laboratório: frente e verso por sessão.')
             + f'<body class="ideias guiao"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
@@ -794,7 +802,7 @@ def pagina_guia(L):
                   + '<h3>Notas</h3><ul>' + ''.join(f'<li>{it(x)}</li>' for x in g['notas']) + '</ul>'
                   + '<h3>Ligações</h3><ul class="ligacoes">' + ''.join(f'<li><a href="{e(u)}">{it(t)}</a></li>' for t, u in g['ligacoes']) + '</ul>'
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{it(d["fontes"])}</p></section>')
-    corpo += '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../guiao/">O guião →</a></p>'
+    corpo += '<p class="saidas-sec"><a href="../">Voltar ao Ideias</a><a href="../guiao/">O guião →</a></p>'
     corpo = LL.nq(corpo)
     return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e critérios sem nota.')
             + f'<body class="ideias guia"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
