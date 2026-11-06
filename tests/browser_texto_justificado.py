@@ -106,7 +106,9 @@ PLANO=[
  # 05, agora a primeira que continua no molde publicado.
  # 06/11/2026 (fusão do main com as sessões 2 a 4 finais e o elétrico na sessão 5): a 05 também passou ao molde final; as etapas
  # conferem-se na 06, agora a primeira que continua no molde publicado.
- ('C2','cidadania/m1/sessoes/06/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
+ # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a 06 também passou ao molde final; as etapas conferem-se
+ # na 07, agora a primeira que continua no molde publicado.
+ ('C2','cidadania/m1/sessoes/07/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C3','cidadania/m2/sessoes/03/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C4','cidadania/m2/aulas/03/',[('J','main > section > p:not([class])'),('E','main ol > li',2)]),
  ('C5','cidadania/ferramentas/m1-aula-01-ficha/',[('J','main > blockquote.citacao'),('E','main label',3),('E','blockquote.citacao cite',1)]),
