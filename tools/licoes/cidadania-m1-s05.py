@@ -92,7 +92,7 @@ CARTOES = [
      'Uma previsão: só o futuro a confirma ou desmente.',
      [('Um facto: os três telemóveis desapareceram mesmo.',
        'Os furtos são um facto, mas a frase não fala deles: diz o que vai acontecer com câmaras. Isso ainda ninguém viu. Repara '
-       'no tempo do verbo e no que a frase promete.'),
+       'no que a frase promete para depois das câmaras.'),
       ('Uma opinião: diz só o que alguém acha melhor.',
        'Uma opinião diz o que alguém acha bom ou mau, e discute-se. Esta frase diz o que vai acontecer, e isso pode contar-se '
        'depois. Repara no que a frase promete.')],
@@ -282,7 +282,7 @@ CARTOES = [
  M.em_turma(DECIDE_Q, [
      ('O lado da associação', 'Os furtos aconteceram; nas entradas, «não se vê quem tira o telemóvel da mochila».'),
      ('O lado de quem discorda', f'Numa escola, as câmaras {M.citado("lei58-19-3", "só podem incidir sobre os perímetros externos e locais de acesso")} '
-                                 'e salas como laboratórios.'),
+                                 'e espaços como laboratórios.'),
      ('Uma objeção', f'E as imagens das entradas? Acabada a finalidade, a lei manda {M.citado("lei58-21-4", "proceder à sua destruição ou anonimização")}.')],
      {'O que se faz': 'Decides outra vez e escolhes a razão que pesou.',
       'Quanto tempo': 'Três minutos; em turma, até treze.',
@@ -329,7 +329,7 @@ CARTOES = [
          'Nas salas, não; nas entradas, falta ver se chega.',
          [('Nas salas, sim, porque quem não deve não teme.',
            'É a razão do cartaz, não uma prova. As câmaras «só podem incidir sobre os perímetros externos e locais de acesso» e '
-           'salas como laboratórios; a sala de aula não é nenhum deles. Separa o que se prova do que se repete.'),
+           'espaços como laboratórios; a sala de aula não é nenhum deles. Separa o que se prova do que se repete.'),
           ('A escola tem de pôr câmaras nas entradas, já.',
            'A lei diz o que as câmaras podem filmar; não obriga a pô-las. E ninguém sabe ainda se as das entradas travam os furtos. '
            'Volta ao verbo do n.º 3.')],
@@ -352,7 +352,7 @@ CARTOES = [
          '<li>Dúvida: o regulamento do torneio exige-o?</li></ol>',
          'Num papel pequeno, sozinho e sem telemóvel.',
          relogio_min=12),
- M.levar(FRASE, ['Numa escola, as câmaras só podem filmar os acessos, o perímetro externo e salas como laboratórios.',
+ M.levar(FRASE, ['Numa escola, as câmaras só podem filmar os acessos, o perímetro externo e espaços como laboratórios.',
                  'Acabada a finalidade, os dados não ficam «para o caso de».']),
 ]
 
