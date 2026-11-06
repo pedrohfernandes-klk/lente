@@ -199,6 +199,9 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = menus163.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
+                # 06/11/2026: decisão 170 (o elétrico mexe-se). O instalar() passa a escrever a faixa com a alavanca que roda, as
+                # duas lâminas e os quatro sinais de alerta escondidos, o crédito com «os sinais de alerta» e o CSS em
+                # ?v=20261106-1. Continua a ser a única coisa gerada nesta página; o resto continua a comparar-se letra a letra.
                 if nome == 'olhar-e-decidir/justica/index.html':
                     import importlib.util
                     spec = importlib.util.spec_from_file_location('carris', ROOT / 'tools/gerar_carris.py')
