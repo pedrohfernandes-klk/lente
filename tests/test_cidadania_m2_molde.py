@@ -6,6 +6,7 @@ obra nas sessões 01 a 09; chave de progresso nova; escrita do Lente; ligações
 e o M1 igual a origin/main, byte a byte.
 """
 from renomeacoes_cidadania import renomear
+import grupos146  # 05/11/2026: decisão 146
 import lab147
 from html.parser import HTMLParser
 from pathlib import Path
@@ -145,7 +146,8 @@ class Molde(unittest.TestCase):
             self.assertIn('data-mark="Sem ecrã"', p[2], n)
             self.assertIn('Primeiro, em silêncio', p[2])
             self.assertIn('data-feedback><summary>Comparar razões', p[2])
-            self.assertIn('Rever com outra pessoa', p[3], n)
+            # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho): o bloco de revisão chama-se «Rever» e faz-se sozinho (ou com um colega).
+            self.assertIn('<div class="c10-review"><p class="c10-label">Rever</p>', p[3], n)
             self.assertIn(f'<b>Guardar</b><span>Casa {n} do mapa do Contra-feed: ', p[3], n)
             self.assertIn('data-mark="Em papel"', p[4], n)
             self.assertEqual(p[4].count('class="c10-exit-q"'), 1, n)
@@ -325,6 +327,12 @@ class Molde(unittest.TestCase):
             # 05/11/2026: decisão 147 (Laboratório sem o Português): a sessão 5 deixa de ligar à cena retirada do Corta! e o cartaz do percurso anterior deixa de a anunciar;
             # só as trocas do manifesto fechado tests/fixtures/lab-147-20261105.json, com contagem exata.
             esperado = renomear(antes, f, base_ja_renomeada=True)
+            # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a base recebe as trocas do manifesto fechado (ou já as tem, depois da fusão), com contagem exata.
+            # 05/11/2026: as camadas compõem-se por ordem, 147 e depois 146 e 154 (que partem do main com o #122): a 147 alinha-se aqui
+            # primeiro e a passagem seguinte de lab147.alinhar (as linhas do #124, iguais byte a byte) encontra cada «novo» e deixa o
+            # texto como está; um estado misto continua a falhar.
+            if f in grupos146.TROCAS:
+                esperado = grupos146.alinhar(lab147.alinhar(esperado.decode('utf-8'), f), f).encode('utf-8')
             if f in lab147.TROCAS:
                 # 05/11/2026: a base comum muda com o tempo; depois da fusão do #122 já traz as trocas da decisão 147.
                 esperado = lab147.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
@@ -347,11 +355,16 @@ class Molde(unittest.TestCase):
     def test_decisoes_provisorias_no_guia(self):
         g = ler(GUIA)
         self.assertEqual(g.count('Decisão provisória '), 5)
-        for t in ('individual, com revisão em pares', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20 minutos',
+        # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a revisão passa a ser de um colega; o trabalho continua individual.
+        for t in ('individual, com revisão de um colega', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20 minutos',
                   'reserva escrita', 'Naufrágio', 'v120', 'v108'):
             self.assertIn(t, g)
         s06 = sessao(6)
-        self.assertIn('lista aprovada pelo docente', s06)
+        # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho): a lista de casos aprovada fica no guia do docente; na página
+        # do aluno, escolhe-se o caso e conferem-se os critérios sem depender do docente.
+        self.assertIn('lista de casos reais aprovada para a sessão 06', g)
+        self.assertIn('Escolhe o caso que vais analisar e confere os critérios', s06)
+        self.assertNotIn('aprovada pelo docente', s06)
         self.assertIn('sem menores nem pessoas privadas', s06)
 
     def test_videos(self):

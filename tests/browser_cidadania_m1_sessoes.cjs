@@ -39,7 +39,7 @@ try{
   for(const href of links)assert.equal((await ctx.request.get(href)).status(),200,href);
   assert.equal(await p.locator('[data-stage]').count(),5);assert.equal(await p.locator('[data-session-done]').count(),n<=2?0:1);
  }
- await p.goto(origin+'/lente/cidadania/m1/sessoes/');assert((await p.locator('.c10').innerText()).includes('Sete grupos'));
+ await p.goto(origin+'/lente/cidadania/m1/sessoes/');/* 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais. */assert((await p.locator('.c10').innerText()).includes('Mostras curtas individuais'));
  await p.goto(origin+'/lente/cidadania/m1/sessoes/03/');assert.equal(await p.locator('[data-stage]:visible').count(),0);
  await p.locator('[data-start]').click();assert.equal(await p.locator('[data-stage]:visible').count(),1);
  await p.locator('[data-stage]:visible').focus();await p.keyboard.press('ArrowRight');assert.equal(await p.locator('[data-stage]:visible').getAttribute('id'),'momento-2');

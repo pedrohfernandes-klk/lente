@@ -80,7 +80,9 @@ class Ginasio(unittest.TestCase):
             self.assertIn(LENTE + h, prop)
         self.assertNotIn(LENTE + 'narrativas/subtexto/', prop)
         self.assertNotIn(LENTE + 'narrativas/treinar/sem-disse/', prop)
-        for passo in ('Versão A', 'A leitura de um colega', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
+        # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho): o segundo passo é «A leitura de fora» (outra pessoa, ou tu
+        # noutro dia); os cinco passos continuam todos exigidos.
+        for passo in ('Versão A', 'A leitura de fora', 'Duas leituras defensáveis', 'Versão B', 'A razão da mudança'):
             self.assertIn(passo, prop)
         # 30/10/2026: Laboratório simples (pedido do docente). A proposta continua no catálogo.
         lab = (R / 'narrativas/tudo/index.html').read_text('utf-8')

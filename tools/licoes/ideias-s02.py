@@ -37,9 +37,10 @@ M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_modu
 PASSOS, passos = M.PASSOS, M.passos
 
 
+# 05/11/2026 (decisão 154, em todo o sítio): no «Abre», o lugar é teu: «Hoje olhas…» (era «Hoje a turma olha…»).
 ABRE = (
  '<p class="pergunta-c">O que distingue uma coisa de todas as outras iguais a ela?</p>'
- '<p>Hoje a turma olha para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
+ '<p>Hoje olhas para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
  '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material, até ao fundo.</b> Na sessão 1, recolheste factos a olhar; hoje vais mais fundo, numa só coisa. Sem este material específico, os passos seguintes não têm em que trabalhar.</p></div>'
  + passos({1}) +
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')
@@ -73,7 +74,9 @@ ATGET = (
  '<p class="pergunta-c">Faz três colunas no caderno: «vejo», «concluo» e «não sei». Escreve pelo menos três linhas em cada uma.</p>')
 # 05/11/2026: revisão de 5/11 (lente-ideias-6): volta o texto inteiro do «Na aula» (o que é um «cocheiro», a leitura da linha na sala
 # e o que fica escrito) dentro das 140 palavras do cartão (saem os exemplos de «cocheiro», que a sessão já deu); «Sem saída» lia-se como «beco sem saída».
-NA_AULA = ('<p><b>O que se faz.</b> Vais com o docente ao lugar escolhido, aos pares por segurança. Trabalhas individualmente. Escolhe o teu «cocheiro» (pessoas só de longe, sem fotografar caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue. No guião, escreve uma linha que só sirva para esse «cocheiro». Na sala, lê-a sem dizer o que é: a turma tenta reconhecê-lo. Se falhar, repete da janela.</p>'
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Vais com o docente … aos pares por segurança» (a segurança da saída em aula
+# fica no guia do docente), e a prova da linha faz-se com qualquer pessoa, ou com a turma na aula.
+NA_AULA = ('<p><b>O que se faz.</b> Vai ao lugar que escolheste na sessão 1, ou fica à janela. Trabalhas individualmente. Escolhe o teu «cocheiro» (pessoas só de longe, sem fotografar caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue. No guião, escreve uma linha que só sirva para esse «cocheiro». Lê-a a alguém sem dizer o que é (na aula, à turma). Se falhar, reescreve-a.</p>'
            '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
            '<p><b>O que fica escrito.</b> As quinze notas; no guião, a linha e o resultado.</p>' + M.esta_bom(2))
 LEVAR = (

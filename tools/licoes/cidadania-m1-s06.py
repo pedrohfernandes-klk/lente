@@ -32,10 +32,11 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Would you sacrifice one person to save five?» (4 min 56 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Eleanor Nelsen. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Escreve numa linha a diferença entre desviar e empurrar.</p>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
 NA_AULA = (
- '<p><b>O que se faz.</b> Repartir os seis turnos de filmagem sem saber o lugar. Cada grupo escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois tira uma carta com o lugar que lhe calha. Quem perde apresenta a objeção e o grupo revê. No fim, a mesma pergunta para o teatro-documento: como se repartem as falas e o tempo de cena?</p>'
+ '<p><b>O que se faz.</b> Repartir os seis turnos de filmagem sem saber o lugar. Escolhe primeiro a regra (igualdade, necessidade, ordem de inscrição, sorteio ou outra) e só depois sorteia o teu lugar: A, B ou C. Escreve a objeção de quem perde (na aula, ouve-a em turma) e revê a tua regra. No fim, a mesma pergunta para o teatro-documento: como se repartem as falas e o tempo de cena?</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> A regra final, quem perde com ela e porque a aceitaria mesmo assim; a regra do grupo para repartir as falas, com o primeiro esboço do guião.</p>')
+ '<p><b>O que fica escrito.</b> A regra final, quem perde com ela e porque a aceitaria mesmo assim; a tua regra para repartir as falas, com o primeiro esboço do guião.</p>')
 LEVAR = (
  '<p class="levar">Uma regra justa é a que consegues explicar a quem perde com ela.</p>'
  '<p>Nesta sessão comparaste critérios, separaste o resultado dos limites e viste o que muda quando quem decide ganha com a decisão. Volta à gravura: a venda chegava? E volta à tua posição do início: a regra do delegado ficava?</p>'

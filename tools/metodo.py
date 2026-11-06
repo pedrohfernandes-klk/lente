@@ -13,7 +13,8 @@ def passos(hoje):
 CRITERIOS = {
     1: ['Os dez factos são verificáveis, sem opinião, um por nota.',
         'As três inferências apoiam-se em dois factos cada. A pergunta a que o lugar não responde fica registada.',
-        'Um colega confirma ou desmente os factos; outra pessoa confere os degraus.'],
+        # 05/11/2026 (decisão 154): sozinho também se cumpre; era «Um colega confirma ou desmente os factos; outra pessoa confere os degraus.»
+        'Outra pessoa, ou tu noutro dia, confere os factos e os degraus.'],
     2: ['As quinze notas distinguem observação de inferência e cobrem as três categorias.',
         'A linha permite reconhecer o teu «cocheiro»; se não, é revista depois da prova.',
         'As duas versões do conselho estão comparadas: o que mudou e o que ficou.'],

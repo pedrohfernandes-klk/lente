@@ -20,15 +20,15 @@ PASSOS_TAREFA = ['Recupera', 'Vê', 'Investiga', 'Prepara', 'Apresenta']
 LINHA = {
  'Recupera': 'De memória, sem abrir o caderno.',
  'Vê': 'Observa primeiro. Lê depois.',
- 'Decide': 'Primeiro em silêncio, cada pessoa. Depois em grupo.',
- 'Faz': 'Em papel ou no ficheiro do grupo.',
+ 'Decide': 'Primeiro em silêncio, cada pessoa. Depois em turma.',
+ 'Faz': 'Em papel ou no teu ficheiro.',
  'Leva': 'Em papel, antes de sair.',
- 'Investiga': 'Em grupo. O ecrã serve para procurar e verificar fontes.',
- 'Prepara': 'Em papel ou no ficheiro do grupo.',
- 'Apresenta': 'Até oito minutos por grupo, seguidos de defesa.',
+ 'Investiga': 'Cada pessoa. O ecrã serve para procurar e verificar fontes.',
+ 'Prepara': 'Em papel ou no teu ficheiro.',
+ 'Apresenta': 'Uma mostra curta por pessoa, seguida de defesa.',
 }
 # Na sessão 03, os dois primeiros passos servem a tarefa já partilhada.
-LINHA_TAREFA = {'Recupera': 'O grupo reúne a pergunta e os materiais.', 'Vê': 'Confirmem o enunciado antes de investigar.'}
+LINHA_TAREFA = {'Recupera': 'Cada pessoa reúne a pergunta e os materiais.', 'Vê': 'Confirma o enunciado antes de investigar.'}
 # Marca visível no cabeçalho do passo.
 MARCA = {'Recupera': 'De memória', 'Decide': 'Sem ecrã', 'Faz': 'Em papel', 'Leva': 'Em papel', 'Prepara': 'Em papel'}
 
@@ -48,7 +48,7 @@ MOLDE = {
            ('O que precisa uma pessoa de saber para poder aceitar ou recusar o que lhe propõem?', 'Precisa de conhecer a situação e de poder dizer que não. Sem informação nem possibilidade de recusa, não há consentimento.')],
  tarefa=True),
 4: dict(
- recupera=[('Que fonte sustentou melhor a resposta do teu grupo? Porquê essa?', None),
+ recupera=[('Que fonte sustentou melhor a tua resposta? Porquê essa?', None),
            ('Que pergunta ou observação recebeste na defesa?', None),
            ('Duas páginas que repetem a mesma origem contam como duas confirmações?', 'Não. Se partem da mesma origem, valem como uma só confirmação.')],
  ve='Lê a cena. Repara no que cada pessoa faz antes de reparar no que diz.', material='document', faz_inicio=True,

@@ -116,7 +116,8 @@ MEDALHA = [('O par de mãos ao centro', (600, 615)), ('A mão mais baixa da velh
 # também como «à vez»; o guia (um facto de cada vez) e a grelha (factos registados um a um) dizem o mesmo.
 # 05/11/2026: revisão de 5/11 (lente-ideias-6): volta o texto inteiro do «Na aula» (o lugar com exemplos, o que se faz com os factos
 # do colega, «Pelo caminho» e o que fica escrito), que o #106 tinha encurtado sem pedido; ficam os critérios «Está bom quando…».
-NA_AULA = ('<p><b>O que se faz.</b> Com o docente, vais a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega e marca-os como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p>'
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Com o docente», e fora da aula cada um verifica os seus factos noutro dia.
+NA_AULA = ('<p><b>O que se faz.</b> Vai a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega, ou os teus noutro dia, e marca-os como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p>'
            '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
            '<p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p>' + M.esta_bom(1))
 LEVAR = (

@@ -20,7 +20,7 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Muitas vozes, uma escola",
-   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento com outro grupo.</p>"
+   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento (na aula, diante da turma).</p>"
   },
   {
    "t": "ler",
@@ -174,8 +174,8 @@
   {
    "t": "ler",
    "rot": "Na aula",
-   "titulo": "O ensaio cruzado",
-   "html": "<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada grupo mostra o teatro-documento em ensaio a outro grupo. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As notas dadas ao outro grupo e duas mudanças que o vosso grupo decide fazer, uma delas para incluir uma voz que ainda não estava.</p>"
+   "titulo": "O ensaio",
+   "html": "<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>"
   },
   {
    "t": "escolha",
@@ -247,10 +247,10 @@
   {
    "t": "vf",
    "g": "discorda",
-   "p": "No teatro-documento, a fala de alguém que discorda do grupo pode entrar, desde que se diga de onde vem.",
-   "p2": "Uma voz contrária à do grupo pode entrar no teatro-documento, se tiver a sua fonte.",
+   "p": "No teatro-documento, a fala de alguém que discorda de ti pode entrar, desde que se diga de onde vem.",
+   "p2": "Uma voz contrária à tua pode entrar no teatro-documento, se tiver a sua fonte.",
    "v": true,
-   "f": "O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que o grupo ouviu mais do que um lado.",
+   "f": "O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que ouviste mais do que um lado.",
    "fe": "Pôr em cena quem discorda não é dar-lhe razão: é mostrar o que se ouviu, com a fonte."
   },
   {

@@ -12,6 +12,8 @@ RENOMEACOES = json.loads((ROOT / 'tests/fixtures/cidadania-nomes-20261103.json')
 REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').read_text(encoding='utf-8'))
 # 05/11/2026: decisão 147 (Laboratório sem o Português), manifesto fechado das trocas na navegação do Laboratório.
 LAB_147 = json.loads((ROOT / 'tests/fixtures/lab-147-20261105.json').read_text(encoding='utf-8'))
+# 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
+import grupos146  # noqa: E402
 
 
 class CidadaniaBase(unittest.TestCase):
@@ -34,6 +36,9 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
+                # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): só se desfazem as trocas do manifesto fechado, com contagem exata; o resto compara-se como antes.
+                if nome in grupos146.TROCAS:
+                    depois = grupos146.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))
 
@@ -60,6 +65,9 @@ class CidadaniaBase(unittest.TestCase):
                 for antigo, novo, quantidade in LAB_147.get(nome, []):
                     self.assertEqual(esperado.count(antigo), quantidade)
                     esperado = esperado.replace(antigo, novo)
+                # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): as trocas do manifesto fechado, com contagem exata.
+                # 05/11/2026: depois da fusão do #122, por cima da camada da decisão 147 (as camadas 146 e 154 partem do main com o #122).
+                esperado = grupos146.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':

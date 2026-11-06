@@ -4,6 +4,7 @@ from urllib.parse import urlsplit,unquote
 import unittest,re,json,subprocess,sys
 
 R=Path(__file__).resolve().parents[1]
+import grupos146  # 05/11/2026: decisão 146
 BASE='66dc1b818e6f99ed1b0bddf7b5d4f7b5cca59f0d'
 class Page(HTMLParser):
  def __init__(self,s):super().__init__();self.ids=[];self.refs=[];self.feed(s)
@@ -39,6 +40,8 @@ class FichasM1(unittest.TestCase):
   blocks=None
   for n in range(11):
    path=f'cidadania/m1/passo-{n:02}/index.html';old=original(path);new=(R/path).read_text('utf-8')
+   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata.
+   if path in grupos146.TROCAS:new=grupos146.desfazer(new,path)
    self.assertEqual(bank(old),bank(new))
    self.assertEqual(re.findall(r'<script\b[^>]*>.*?</script>',old,re.S),re.findall(r'<script\b[^>]*>.*?</script>',new,re.S))
    css=re.findall(r'<style\b[^>]*>(.*?)</style>',old,re.S)
@@ -47,7 +50,8 @@ class FichasM1(unittest.TestCase):
    self.assertEqual(new.count('cidadania-m1-legado.css'),1)
   self.assertEqual((R/'assets/cidadania-m1-legado.css').read_text('utf-8'),'\n'.join(blocks))
  def test_published_task_is_untouched_and_only_session_three_runs_it(self):
-  self.assertEqual((R/'cidadania/projeto/index.html').read_bytes(),subprocess.check_output(['git','show',BASE+':cidadania/projeto/index.html'],cwd=R))
+  # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): o enunciado muda só pelas trocas do manifesto fechado (tarefa e entrega individuais), com contagem exata.
+  self.assertEqual(grupos146.desfazer((R/'cidadania/projeto/index.html').read_text('utf-8'),'cidadania/projeto/index.html').encode('utf-8'),subprocess.check_output(['git','show',BASE+':cidadania/projeto/index.html'],cwd=R))
   s=(R/'cidadania/m1/index.html').read_text('utf-8')
   self.assertEqual(len(re.findall(r'data-session-card="\d{2}"',s)),10)
   self.assertIn('href="sessoes/03/" data-continue',s);self.assertNotIn('data-m1-next',s)
@@ -61,7 +65,8 @@ class FichasM1(unittest.TestCase):
   self.assertIn('5 a 8 minutos',s);self.assertIn('href="../../../projeto/"',s)
   for text in ['Marina Abramović','The Egg','The Truman Show','conhecimentos prévios']:self.assertNotIn(text,s)
   g=(R/'cidadania/m1/sessoes/index.html').read_text('utf-8')
-  for text in ['Sete grupos','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
+  # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): os sete grupos da sessão 03 passam a mostras curtas individuais.
+  for text in ['Mostras curtas individuais','Abramović','The Egg','Truman','Recupera · 10 min','Vê · 5 min','Investiga · 60 min','Prepara · 35 min','Apresenta · 70 min']:self.assertIn(text,g)
  def test_sessions_are_complete_and_timed(self):
   import importlib.util
   spec=importlib.util.spec_from_file_location('sessions_content',R/'tools/cidadania_m1_sessoes.py');m=importlib.util.module_from_spec(spec)
