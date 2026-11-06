@@ -48,7 +48,9 @@ class CidadaniaPiloto(unittest.TestCase):
         self.assertEqual(len(hrefs), 10)
         for n in range(1, 11):
             d = json.loads(ler(ROOT / f'tools/licoes/cidadania-m1-s{n:02d}.json'))
-            self.assertEqual(hrefs[n - 1], '../../m1/sessoes/01/' if d.get('molde') else f'../m1-s{n:02d}/', n)
+            # 06/11/2026 (decisão 166): com a s02 no molde, a ligação de cada sessão no molde é a da sua própria pasta
+            # (cidadania/m1/sessoes/NN/); antes, a única sessão no molde era a 01 e o endereço vinha escrito por extenso.
+            self.assertEqual(hrefs[n - 1], f'../../m1/sessoes/{n:02d}/' if d.get('molde') else f'../m1-s{n:02d}/', n)
             if d.get('molde'):
                 self.assertEqual(d['saida'], f'cidadania/m1/sessoes/{n:02d}/index.html')
             self.assertIn(f'data-chave="{d["chave"]}" data-versao="{d["versao"]}"', s)  # a versão decide se conta como feita

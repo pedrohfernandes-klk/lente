@@ -99,7 +99,7 @@ body.molde-cidadania .jogo .cartao.escuro :is(a,summary){color:inherit}
 body.molde-cidadania .jogo .cartao.escuro .recolha{--rc-fundo:var(--cid)}
 body.molde-cidadania .jogo .cartao.escuro details.mais{border-top-color:currentColor}
 /* projeção (1366 x 768): a imagem do Olha cabe acima da barra de ações com a legenda à vista; nada se anima */
-html.em-projecao body.molde-cidadania .jogo .ler .m-olha .fig img{max-height:calc(100vh - 330px);max-height:calc(100dvh - 330px)}
+/* 06/11/2026 (s02): uma fotografia ao alto (Hine, 640 × 811) passava 55 px por baixo da barra na projeção a 1366 × 768; a imagem começa a 321 px e a barra a 704 px, por isso o máximo passa a 100vh - 390px (a da s01, deitada, fica igual) */html.em-projecao body.molde-cidadania .jogo .ler .m-olha .fig img{max-height:calc(100vh - 390px);max-height:calc(100dvh - 390px)}
 html.em-projecao body.molde-cidadania .jogo .levar .ch{animation:none;opacity:1}
 html.em-projecao body.molde-cidadania .jogo .levar .cursor{display:none}
 html.em-projecao body.molde-cidadania .jogo .ler .carimbo{transform:none}

@@ -5,7 +5,8 @@ import subprocess,re
 import cidadania_sessoes_molde as molde
 
 # 05/11/2026 (plano do molde da Cidadania, pedido 2): as sessões cujo endereço já é de uma lição no molde cidadania-2026-11.
-NO_MOLDE={'01'}
+# 06/11/2026: também a sessão 02 (tools/licoes/cidadania-m1-s02.json, decisão 166).
+NO_MOLDE={'01','02'}
 def render(api,sessions,capsules,short_caps,image_prompts):
  R,write,old,link,rel=api['R'],api['write'],api['old'],api['anchor'],api['rel']
  # 28/10/2026: vídeos escolhidos pelo docente (tools/videos-cidadania-m1.json), no componente «Para ver».
@@ -101,6 +102,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   # 05/11/2026 (plano do molde da Cidadania, pedido 2; decisões 157 e 158): a sessão 01 passa a sair, na versão final, de
   # tools/licoes/cidadania-m1-s01.json pelo gerador das lições (tools/licoes_lente.py), no mesmo endereço; este gerador deixa de
   # a escrever, para não a apagar. As sessões 02 a 10 publicadas ficam como estavam até ao pedido 3.
+  # 06/11/2026: a sessão 02 também passou ao molde final (NO_MOLDE); ficam como estavam as 03 a 10.
   if ident in NO_MOLDE:continue
   write(path,document(path,s['title'],body,ident))
  path='cidadania/m1/index.html';hero=dict(image='hals.webp',caption='Frans Hals · As regentes do asilo de velhos, 1664')

@@ -29,6 +29,11 @@ MARCA_MOLDE = b'/* ==== molde cidadania-2026-11 ==== */'
 # pedido 2 muda em parte; os que escreve inteiros (molde_pedido2.INTEIROS: a página e a versão para imprimir da s01, a sua fonte
 # e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s01 tem de cumprir o contrato do molde.
 import molde_pedido2  # noqa: E402
+# 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166). Mais uma camada, agora a mais recente,
+# com as mesmas regras: o manifesto fechado tools/trocas/molde-s02-20261106.json (trocas literais, contagem exata) nos ficheiros
+# que a s02 muda em parte; os que escreve inteiros (molde_s02.INTEIROS: a página e a versão para imprimir da s02, a sua fonte e o
+# seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s02 tem de cumprir o contrato do molde.
+import molde_s02  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -80,6 +85,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_pedido2.INTEIROS:
                     self.assertTrue(molde_pedido2.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 02 no molde): o mesmo para os ficheiros que a s02 escreve inteiros.
+                if nome in molde_s02.INTEIROS:
+                    self.assertTrue(molde_s02.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
@@ -112,6 +121,10 @@ class CidadaniaBase(unittest.TestCase):
                     antes = aplicar_molde(antes.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_pedido2.TROCAS:
                     antes = molde_pedido2.aplicar(antes.decode('utf-8'), nome).encode('utf-8')
+                # 06/11/2026 (sessão 02 no molde, na fusão do main com os menus): a camada da s02 aplica-se à base por cima do
+                # pedido 2 e antes da 163, com contagem exata de cada «antigo»; a comparação continua integral.
+                if nome in molde_s02.TROCAS:
+                    antes = molde_s02.aplicar(antes.decode('utf-8'), nome).encode('utf-8')
                 # 05/11/2026: decisão 163 (menus do Laboratório e das lições). O menu ≡ novo, menu.css, menu.js, o aviso sem
                 # JavaScript e a marca «Cidadania» do piloto: só as trocas do manifesto fechado tests/fixtures/menus-163-20261105.json,
                 # com contagem exata, sobre o texto já sem as versões de cache (como a comparação); a comparação continua integral.
@@ -126,6 +139,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 05/11/2026 (pedido 2): o ficheiro escrito inteiro tem de ser o do seu gerador; nada mais se aceita.
                 if nome in molde_pedido2.INTEIROS:
                     self.assertTrue(molde_pedido2.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 02 no molde): o mesmo para os ficheiros que a s02 escreve inteiros.
+                if nome in molde_s02.INTEIROS:
+                    self.assertTrue(molde_s02.inteiro_ok(nome), nome)
                     continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
@@ -152,6 +169,10 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = aplicar_molde(esperado, nome)
                 # 05/11/2026: plano do molde, pedido 2: a camada do pedido 2, com contagem exata, por cima de tudo.
                 esperado = molde_pedido2.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 02 no molde, com contagem exata, por cima do pedido 2.
+                # 06/11/2026: fusão do main (com os menus, #125, e o «Dilemas», #127): a s02 foi feita sobre fa6c6c2, antes da
+                # 163; aplica-se aqui e a 163 e a 149 vêm depois, pela ordem em que se sobrepõem.
+                esperado = molde_s02.aplicar(esperado, nome)
                 # 05/11/2026: decisão 163. O menu ≡ novo e a ordem do Laboratório na entrada do Lente: só as trocas do manifesto
                 # fechado tests/fixtures/menus-163-20261105.json, com contagem exata; a comparação continua integral.
                 # 06/11/2026: fusão do main (com o #123). A 163 aplica-se por último, por cima da 147, da 146 e da 154.

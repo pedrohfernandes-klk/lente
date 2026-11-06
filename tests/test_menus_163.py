@@ -27,6 +27,7 @@ SESSOES += MOLDE
 MOLDE_P1 = json.loads((R / 'tools/trocas/molde-pedido1-20261105.json').read_text('utf-8'))
 sys.path.insert(0, str(R / 'tests'))
 import grupos146, molde_pedido2  # noqa: E402
+import molde_s02  # noqa: E402  06/11/2026: fusão do main na sessão 02 do M1 (camada por cima do pedido 2)
 
 
 def com_molde(texto, rel):
@@ -35,7 +36,9 @@ def com_molde(texto, rel):
     for antigo, novo, n in MOLDE_P1.get(rel, []):
         assert texto.count(antigo) == n, ('molde, pedido 1', rel, antigo[:80])
         texto = texto.replace(antigo, novo)
-    return molde_pedido2.aplicar(texto, rel)
+    # 06/11/2026: fusão do main na sessão 02 do M1. A camada da s02 (manifesto fechado, contagem exata) aplica-se por cima do
+    # pedido 2, como no test_cidadania_base_motor.
+    return molde_s02.aplicar(molde_pedido2.aplicar(texto, rel), rel)
 
 
 def ler(rel):
@@ -269,7 +272,14 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_pedido2.inteiro_ok(rel), rel)
                 continue
-            if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS:
+            # 06/11/2026: fusão do main na sessão 02 do M1. O mesmo para os ficheiros que a s02 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde. Nenhuma outra
+            # página liga às âncoras da página antiga da s02 (#momento-1 a #momento-5, #abertura).
+            if rel in molde_s02.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s02.inteiro_ok(rel), rel)
+                continue
+            if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS or rel in molde_s02.TROCAS:  # 06/11/2026: também a camada da s02
                 antes = com_molde(antes, rel)
             agora = ler(rel)
             antes_d |= destinos(rel, antes); depois_d |= destinos(rel, agora)
