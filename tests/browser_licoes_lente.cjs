@@ -143,6 +143,41 @@ async function responder(p,x){
   const im=await p.locator('#baralho .fig img').boundingBox(),fc=await p.locator('#baralho .fig figcaption').boundingBox(),ac=await p.locator('.casca-acoes').boundingBox();
   assert(im.y+im.height<=ac.y+1&&fc.y+fc.height<=ac.y+1,'s02, projeção: imagem e legenda acima da barra '+JSON.stringify([im,fc,ac]));
   assert.deepEqual(erros,[]);await c.close();console.log('PASS s02 na projeção: o Olha acima da barra');}
+ // 06/11/2026 (decisões 166 a 168): o mesmo para a sessão 05, que passou à versão final em cidadania/m1/sessoes/05/ com a chave do
+ // piloto (epi-cid-m1-s05): um estado antigo concluído (a versão do piloto, 2026-10-31-2) continua «Feita» depois de abrir a
+ // sessão nova; na projeção, nada se lê nem se grava.
+ {const K='epi-cid-m1-s05',antiga={versao:'2026-10-31-2',lida:true,t:1700000000000,melhor:14,totalMelhor:16,tentativas:1,exposicoes:{3:1}};
+  for(const proj of [false,true]){
+   const c=await b.newContext({viewport:{width:390,height:844}}),p=await c.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
+   await c.addInitScript(([K,v])=>{if(!sessionStorage.getItem('semeado')){localStorage.setItem(K,JSON.stringify(v));sessionStorage.setItem('semeado','1')}},[K,antiga]);
+   const q=proj?'?projetar=1':'';
+   await p.goto(base+'/cidadania/piloto/m1/'+q);await p.waitForTimeout(300);
+   const estado=()=>p.locator('li[data-chave="'+K+'"] [data-estado]').textContent();
+   assert.equal(await p.locator('li[data-chave="'+K+'"] a').getAttribute('href'),'../../m1/sessoes/05/','a página do módulo leva à s05 nova');
+   if(proj)assert.equal(await estado(),'','projeção: a página do módulo não lê o progresso');
+   else assert.match(await estado(),/^Feita 14\/11$/,'s05, estado antigo: «Feita» com a data da conclusão');
+   await p.goto(base+'/cidadania/m1/sessoes/05/'+q);await p.waitForTimeout(500);
+   const st=await p.evaluate(K=>JSON.parse(localStorage.getItem(K)),K);
+   if(proj)assert.deepEqual(st,antiga,'projeção: a s05 não grava');
+   else{assert.equal(st.antes.lida,true);assert.equal(st.antes.data,antiga.t);assert.equal(st.exposicoes,undefined);assert.notEqual(st.versao,antiga.versao)}
+   await p.goto(base+'/cidadania/piloto/m1/'+q);await p.waitForTimeout(300);
+   if(!proj)assert.match(await estado(),/^Feita 14\/11$/,'s05: depois de abrir a sessão nova, continua «Feita»');
+   assert.deepEqual(erros,[]);await c.close();console.log('PASS s05, estado antigo semeado: «Feita» na página do módulo'+(proj?' (projeção: nada lido nem gravado)':''));
+  }}
+ // 06/11/2026 (s05): na projeção a 1366 x 768, a gravura deitada do Olha (1400 x 1138) e a legenda ficam acima da barra; o «i» abre
+ // e fecha com o teclado.
+ {const c=await b.newContext({viewport:{width:1366,height:768}}),p=await c.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
+  await p.goto(base+'/cidadania/m1/sessoes/05/?projetar=1');await p.waitForTimeout(500);await seguinte(p);
+  await p.locator('#baralho .pos-op',{hasText:'Não'}).click();await p.waitForTimeout(200);
+  for(let i=0;i<3;i++){const s=p.locator('.casca-acoes button',{hasText:/Seguinte|Mostrar resposta/}).first();await s.click();await p.waitForTimeout(250);const g=p.locator('.casca-folha [data-seguinte]');if(await g.count())await g.first().click();await p.waitForTimeout(200)}
+  assert.equal(await p.locator('[data-c-num]').innerText(),'5/23');
+  const im=await p.locator('#baralho .fig img').boundingBox(),fc=await p.locator('#baralho .fig figcaption').boundingBox(),ac=await p.locator('.casca-acoes').boundingBox();
+  assert(im.y+im.height<=ac.y+1&&fc.y+fc.height<=ac.y+1,'s05, projeção: imagem e legenda acima da barra '+JSON.stringify([im,fc,ac]));
+  const sm=p.locator('#baralho details.info-i > summary');await sm.focus();await p.keyboard.press('Enter');await p.waitForTimeout(200);
+  assert(await p.locator('#baralho details.info-i').evaluate(e=>e.open),'s05: o «i» abre com o teclado');
+  assert.match(await p.locator('#baralho .info-i-texto').innerText(),/Domínio público/);
+  await p.keyboard.press('Enter');await p.waitForTimeout(200);assert(!(await p.locator('#baralho details.info-i').evaluate(e=>e.open)),'s05: o «i» fecha com o teclado');
+  assert.deepEqual(erros,[]);await c.close();console.log('PASS s05 na projeção: o Olha acima da barra e o «i» pelo teclado');}
  // 05/11/2026: plano do molde da Cidadania, pedido 1. A lição de ensaio do molde, de ponta a ponta.
  {const d=ENSAIO.d,url=base+ENSAIO_URL,AK='epi-cid-m1-artefactos';
   const arte=p=>p.evaluate(k=>JSON.parse(localStorage.getItem(k)||'null'),AK);

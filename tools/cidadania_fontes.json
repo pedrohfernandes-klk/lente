@@ -210,6 +210,126 @@
    "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/6190a514bc9d85cf802578aa003183d3?OpenDocument",
    "consultado": "2026-11-06",
    "confirmado": true
+  },
+  {
+   "id": "lei58-19-3",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 19.º, n.º 3",
+   "texto": "Nos estabelecimentos de ensino, as câmaras de videovigilância só podem incidir sobre os perímetros externos e locais de acesso, e ainda sobre espaços cujos bens e equipamentos requeiram especial proteção, como laboratórios ou salas de informática.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-19-4",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 19.º, n.º 4",
+   "texto": "Nos casos em que é admitida a videovigilância, é proibida a captação de som, exceto no período em que as instalações vigiadas estejam encerradas ou mediante autorização prévia da CNPD.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-21-1",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 21.º, n.º 1",
+   "texto": "O prazo de conservação de dados pessoais é o que estiver fixado por norma legal ou regulamentar ou, na falta desta, o que se revele necessário para a prossecução da finalidade.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei58-21-4",
+   "documento": "Lei n.º 58/2019",
+   "referencia": "Artigo 21.º, n.º 4",
+   "texto": "Quando cesse a finalidade que motivou o tratamento, inicial ou posterior, de dados pessoais, o responsável pelo tratamento deve proceder à sua destruição ou anonimização.",
+   "fonte": "Lei n.º 58/2019, de 8 de agosto (execução do Regulamento Geral sobre a Proteção de Dados), texto do ato no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-18-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 18.º, n.º 2",
+   "texto": "A lei só pode restringir os direitos, liberdades e garantias nos casos expressamente previstos na Constituição, devendo as restrições limitar-se ao necessário para salvaguardar outros direitos ou interesses constitucionalmente protegidos.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-35-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 35.º, n.º 1",
+   "texto": "Todos os cidadãos têm o direito de acesso aos dados informatizados que lhes digam respeito, podendo exigir a sua rectificação e actualização, e o direito de conhecer a finalidade a que se destinam, nos termos da lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-35-4",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 35.º, n.º 4",
+   "texto": "É proibido o acesso a dados pessoais de terceiros, salvo em casos excepcionais previstos na lei.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-suspeitos",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Fundamentação",
+   "texto": "o empregador, ainda que com base num pretenso interesse público de segurança dos medicamentos, não pode sujeitar os seus trabalhadores a uma permanente medida de polícia, transformando-os indefinidamente em suspeitos de prática de ilícitos criminais, com clara violação dos seus direitos de personalidade.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-autorizacao",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Fundamentação",
+   "texto": "Assim, independentemente da autorização concedida pela Comissão Nacional de Protecção de Dados, cuja legalidade apenas poderia ser discutida no foro administrativo, a efectiva utilização de câmaras de vídeo nos termos descritos nos autos é ilícita, sendo que se encontra fixada em termos definitivos a competência dos tribunais de trabalho para conhecer do objecto da acção.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-furtos",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Matéria de facto, 8.)",
+   "texto": "Antes da implementação do sistema de videovigilância, a R. via-se confrontada com furtos de medicamentos e demais produtos que comercializa.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-v",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Sumário, V",
+   "texto": "Nos termos das precedentes proposições, é ilícita, por violação do direito de reserva da vida privada, a captação de imagem através de câmaras de vídeo instaladas no local de trabalho e direccionadas para os trabalhadores, de tal modo que a actividade laboral se encontre sujeita a uma contínua e permanente observação.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "stj-2006-decisao",
+   "documento": "Acórdão do Supremo Tribunal de Justiça",
+   "referencia": "Decisão",
+   "texto": "Termos em que acordam em conceder a revista, revogar a decisão recorrida e julgar procedente a acção, condenando a Ré a retirar as câmaras de vídeo do local designado como armazém, onde os trabalhadores desempenham a sua actividade laboral.",
+   "fonte": "Acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
   }
  ]
 }

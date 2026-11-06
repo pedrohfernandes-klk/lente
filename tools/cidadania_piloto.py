@@ -274,23 +274,102 @@ GUIA = {
   'grelha': [('Origem identificada (quem, onde, quando)', 4), ('Duas fontes independentes e porque o são', 5), ('Veredicto proporcional à prova', 4), ('Decisão sobre as três publicações, com o artigo', 4), ('Registo localizável', 3)],
   'notas': ['Casos reais só os que o docente escolhe e confirma (decisão 12).', 'Na imagem, o cartão diz só o que está impresso na página de 1834; a atribuição a Daumier e a história do julgamento de Philipon ficam por confirmar na Gallica.', 'A Convenção Europeia dos Direitos Humanos (artigo 10.º) e o Código Penal (artigo 240.º) ficam fora dos cartões até se confirmarem.'],
  },
+ # 06/11/2026 (decisões 166 a 168): a sessão 05 passa ao molde final (cidadania-2026-11), como a 01 e a 02. O que só o docente faz
+ # vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '05': {
-  'dominio': 'Direitos Humanos (reserva da vida privada, proteção de dados); Democracia (limites a quem vigia); Media.',
-  'ensina': 'Pesar segurança e privacidade e saber o que a lei deixa fazer numa escola.',
-  'passos': [
-   (5, 'Cada aluno recebe o formulário inventado da visita de estudo.'),
-   (15, 'Riscar o que não é preciso para a visita; ao lado de cada dado que fica, quem o vê e quando se apaga.'),
-   (5, 'As regras da volta: em aula, com o docente, sem fotografar pessoas nem matrículas; anota-se só o que o aviso diz.'),
-   (20, 'A volta ao quarteirão da escola, a contar câmaras e avisos de videovigilância: onde estão, quem é o responsável, que finalidade dizem.'),
-   (10, 'Pausa.'),
-   (10, 'Na sala, a nota de privacidade em cinco linhas e o plano de recolha das entrevistas: o que se guarda, onde, até quando, com que anonimato.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: reserva da vida privada e proteção de dados (Lei n.º 58/2019, artigos 19.º e 21.º; Constituição, artigos 18.º, n.º 2, e 35.º).',
+  'ensina': 'Ler o «só» de uma lista fechada; perguntar para quê antes de pedir um dado; pesar a medida pelo necessário (proporcionalidade); ver que um dado guardado tem prazo; não concluir além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 04 com a marca por critério. Nenhuma câmara, gravação ou fotografia de alunos entra '
+            'na sessão; a volta ao quarteirão do piloto saiu (decisão 154).'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 04.',
+   4: 'O retorno nomeia a sessão 02: vale a pena lembrar, em voz alta, o vídeo da Marta e «O sim vale para o uso que se explicou.».',
+   5: 'Projetado grande. As letras (A, F, H) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o n.º 3 do artigo 19.º, uma vez, com uma pausa no «só».',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e ler o sumário V e a passagem citada.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['O formulário inventado da visita de estudo (por exemplo: nome, turma, data de nascimento, morada, número do documento de identificação, alergias, contacto de emergência, profissão dos pais, religião, fotografia).', 'O registo dos avisos, em papel, e pranchetas.'],
-  'escrito': 'O formulário revisto, a nota de privacidade, o registo dos avisos e o plano de recolha das entrevistas.',
-  'projeto': ('A recolha', '#fases', 'O plano de entrevistas e de dados (anonimato, onde se guarda, quando se apaga) entra no dossiê.'),
-  'produto': 'Formulário revisto e registo',
-  'grelha': [('Dados riscados com razão', 4), ('Finalidade e quem vê', 4), ('Prazo e forma de apagar', 4), ('Registo dos avisos, factual e sem rostos', 4), ('Plano de recolha do projeto, com anonimato', 4)],
-  'notas': ['Saída só à volta da escola, em aula, sem autorização especial (decisão 10). Quem não pode sair regista as câmaras e os avisos visíveis do portão.', 'Imagem: a planta do panóptico desenhada pelo arquiteto Willey Reveley não se descarregou (o servidor recusou os pedidos três vezes e não se insistiu); entrou a página de título da edição de 1791.', 'O Regulamento Geral sobre a Proteção de Dados (artigos 5.º e 8.º) fica fora dos cartões até se confirmar no EUR-Lex.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão.',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê.',
+   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo 19.º ou o 21.º).',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Ninguém aponta colegas como suspeitos do furto. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'No fim, «A razão que pesou»: quantos escolheram os furtos, o «só» do artigo 19.º ou o prazo das imagens (artigo 21.º).',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por ler «espaços cujos bens e equipamentos requeiram especial proteção» como qualquer sala onde haja coisas de valor.',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 3 com os exemplos do fim. Pergunta: «O que têm em comum um laboratório e uma sala de informática que uma sala de aula não tem?»'),
+   (21, '«Nas salas, sim, porque quem não deve não teme» (toma a razão do cartaz por prova) ou «A escola tem de pôr câmaras nas entradas, já» (lê «podem» como «têm de»).',
+    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova e o que fica por saber.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 06, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('A nota de privacidade do teu projeto', '#metodo',
+              'Cinco minutos para ler, na página do projeto, «Ética: as pessoas que entrevistas» (sobretudo «Dados pessoais»). Trinta minutos: '
+              'cada aluno escreve, em papel, a nota de privacidade do seu projeto em quatro linhas (que dados recolhe; para quê; quem os vê; '
+              'quando se apagam); o docente faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê a nota com «O que conta» e '
+              'corrige uma linha. A nota entra no dossiê da Pergunta Humana.'),
+  'produto': 'Nota de privacidade',
+  'grelha': [('Que dados: a lista completa, sem dados a mais', 4), ('Para quê: uma finalidade por dado', 4), ('Quem vê: dito com clareza', 4),
+             ('Quando se apagam: uma data ou um momento do trabalho', 4), ('Nada publicado: gravações, fotografias, moradas e contactos ficam fora', 4)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura de «Dados pessoais» e o início da nota de privacidade).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: acórdão do Supremo Tribunal de Justiça de 08/02/2006, processo 05S3139, relator Fernandes Cadilha, '
+                'em dgsi.pt. Um sindicato pediu que um armazenista de produtos farmacêuticos retirasse as câmaras dos locais de trabalho. '
+                'Ficou provado que, antes das câmaras, a empresa «via-se confrontada com furtos de medicamentos», que as câmaras abrangiam '
+                '«todo o espaço onde os trabalhadores exercem as suas funções» e que as tarefas eram «permanentemente filmadas e gravadas». '
+                'A primeira instância e a Relação deram razão à empresa; o Supremo concedeu a revista e condenou-a «a retirar as câmaras de '
+                'vídeo do local designado como armazém». Cita-se só o que o acórdão diz: a passagem da fundamentação sobre os trabalhadores '
+                'tornados «indefinidamente» suspeitos, a frase sobre a autorização da CNPD e o facto provado dos furtos. O acórdão diz '
+                'ainda que a empresa podia «implementar mecanismos de controlo de entrada e saída de pessoas»: bom para a conversa do '
+                'Conceito. A lei aplicada era a de 2006 (Código do Trabalho, artigo 20.º; Lei n.º 67/98); a de hoje é a Lei n.º 58/2019.'),
+  'notas': ['O caso da sala 12, o do contacto dado para a visita, o do formulário, o da oficina, o do programa de presenças, o da entrevista '
+            'gravada e o do torneio de xadrez são inventados e assim se diz. Ninguém escreve sobre um colega identificável, e o furto da '
+            'sala 12 não tem suspeitos.',
+            'Sem vídeo (decisão 155): o plano tira o TED-Ed do piloto.',
+            'Recupera 1 (sessão 04): a frase «Com câmaras, ninguém rouba.» vem dos lados do Decide; o cartão recupera a distinção entre o '
+            'que se prova e o que se discute e junta-lhe a previsão.',
+            'Olha: a estampa desdobrável «A General Idea of a Penitentiary Panopticon in an Improved, but as yet (Jan.y 23.d 1791) Unfinished '
+            'State» de _The Works of Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da Universidade de '
+            'Sevilha digitalizado no Internet Archive (archive.org/details/BRes092083, imagem n36 da digitalização, com a marca de domínio público lida nos '
+            'metadados, a 6/11/2026). A estampa não nomeia o desenhador; a atribuição habitual ao arquiteto Willey Reveley fica a confirmar. '
+            'A legenda traduz as letras da explicação em inglês (A, celas; F, galerias de inspeção; H, alojamento do inspetor).',
+            'Cartões 11 e 12: ler a oficina como um espaço «cujos bens e equipamentos requeiram especial proteção» e excluir a sala de aula '
+            'comum (os exemplos são de espaços pelos equipamentos que guardam) são leituras nossas do artigo 19.º, n.º 3; o docente confirma.',
+            'Lei n.º 58/2019: o texto citado é o do ato no Diário da República (a página da versão consolidada não abriu a 6/11/2026); a '
+            'confirmar que os artigos 19.º e 21.º não mudaram depois.',
+            'Conceito: os três passos (para quê; há outro meio; o que custa) são uma leitura escolar da proporcionalidade; o acórdão de 2006 '
+            'cita as três condições (idoneidade, necessidade, proporcionalidade em sentido estrito).',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '06': {
   'dominio': 'Democracia e Instituições Políticas (regras coletivas, ética e integridade, conflito de interesses); Direitos Humanos (igualdade).',
@@ -672,7 +751,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">As sessões 01 e 02 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras oito seguem o quadro acima até passarem ao molde.</p>'
+             '<p class="pg">As sessões 01, 02 e 05 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras sete seguem o quadro acima até passarem ao molde.</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -755,11 +834,15 @@ def _resposta(c):
         return '«' + ' '.join(w[j] for j in c['certas']).strip(',.') + '»'
     if t == 'ordenar':
         return ' '.join(f'{k}. {_txt(x)}' for k, x in enumerate(c['passos'], 1))
+    # 06/11/2026 (s05 no molde): o completar, com a opção certa de cada lacuna, pela ordem da frase.
+    if t == 'completar':
+        return '; '.join(f'[{k}] {_txt(L["o"][L["c"]])}' for k, L in enumerate(c['lacunas'], 1)) + '.'
     return ''
 
 
 def _tipo_aluno(c):
-    nomes = {'escolha': 'escolha', 'vf': 'verdadeiro ou falso', 'emparelhar': 'emparelhar', 'sublinhar': 'tocar nas palavras', 'ordenar': 'ordenar'}
+    nomes = {'escolha': 'escolha', 'vf': 'verdadeiro ou falso', 'emparelhar': 'emparelhar', 'sublinhar': 'tocar nas palavras', 'ordenar': 'ordenar',
+             'completar': 'completar'}  # 06/11/2026: o completar entra com a s05
     return 'ler' if c['t'] == 'ler' else nomes.get(c['t'], c['t'])
 
 
@@ -896,6 +979,13 @@ def _ex_imprimir(num, c, d, k):
         ordem = LL.ordem_ordenar(d, k)  # 06/11/2026: a ordem do ecrã, sem nenhum passo no seu lugar
         q += ('<ol class="letras">' + ''.join(f'<li>{e(_txt(c["passos"][j]))}</li>' for j in ordem) + '</ol>'
               '<p class="resp">Ordem: ' + ' → '.join('___' for _ in ordem) + '</p>')
+    elif t == 'completar':
+        # 06/11/2026 (s05 no molde): a frase com cada lacuna em branco e, por baixo, as opções de cada lacuna por ordem alfabética
+        # (a ordem da fonte poria a certa sempre em primeiro).
+        frase = re.sub(r'\[(\d)\]', lambda m: f'[{m.group(1)}] ________', _txt(c['frase']))
+        q += (f'<p class="material"><span>{e(frase)}</span></p><ol class="lacunas">'
+              + ''.join(f'<li>[{n}] ' + ' &nbsp; '.join(f'☐ {e(_txt(o))}' for o in sorted(L['o'])) + '</li>'
+                        for n, L in enumerate(c['lacunas'], 1)) + '</ol>')
     return q + '</div>'
 
 

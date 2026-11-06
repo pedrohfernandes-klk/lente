@@ -7,7 +7,7 @@ ligações e uma leitura discordante. A sessão 03 realiza a tarefa partilhada.
 """
 from pathlib import Path
 from html.parser import HTMLParser
-import importlib.util,re,sys,unittest
+import importlib.util,json,re,sys,unittest
 
 R=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(R/'tools'))
@@ -34,7 +34,10 @@ def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('ut
 # 02 a 10 publicadas, até ao pedido 3.
 # 06/11/2026 (decisão 166): a sessão 02 também passa ao molde final, no mesmo endereço (test_sessao_02_no_molde, abaixo, e
 # tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 03 a 10.
-PUBLICADAS=range(3,11)
+# 06/11/2026 (decisões 166 a 168): a sessão 05 também passa ao molde final, no mesmo endereço (test_sessao_05_no_molde, abaixo, e
+# tests/test_molde_cidadania.py conferem-na). A lista sai dos .json: uma sessão deixa de ser «publicada no molde antigo» só quando
+# o seu .json tem o campo «molde»; as regras do molde antigo continuam a valer, iguais, para todas as outras (hoje, 03, 04 e 06 a 10).
+PUBLICADAS=[n for n in range(3,11) if not json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde')]
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
@@ -113,7 +116,9 @@ class Molde(unittest.TestCase):
 
  def test_registo_so_nas_sessoes_que_contam(self):
   for n in range(1,11):
-   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=2 else 1,n)
+   # 06/11/2026 (decisões 166 a 168): sem registo, as sessões que já são lições no molde (a 01, a 02 e a 05); com um registo, todas
+   # as publicadas que seguem o molde antigo (PUBLICADAS).
+   s=pagina(n);self.assertEqual(s.count('data-session-done'),1 if n in PUBLICADAS else 0,n)
 
 
  def test_sessao_01_no_molde(self):
@@ -137,5 +142,18 @@ class Molde(unittest.TestCase):
    import molde_s02
   finally:sys.path.pop(0)
   self.assertTrue(molde_s02.inteiro_ok('cidadania/m1/sessoes/02/index.html'))
+
+ def test_sessao_05_no_molde(self):
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 05 está a lição no molde final, com a chave do piloto e sem os cinco
+  # passos; as outras sessões publicadas (PUBLICADAS) continuam no molde antigo.
+  self.assertNotIn(5,PUBLICADAS);self.assertIn(6,PUBLICADAS)
+  s=pagina(5)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s05"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s05
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s05.inteiro_ok('cidadania/m1/sessoes/05/index.html'))
 
 if __name__=='__main__':unittest.main()
