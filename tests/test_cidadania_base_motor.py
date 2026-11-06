@@ -4,6 +4,7 @@ import re
 import json
 import subprocess
 import unittest
+import menus163
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
@@ -14,6 +15,8 @@ REVISAO_0511 = json.loads((ROOT / 'tests/fixtures/revisao-lente-20261105.json').
 LAB_147 = json.loads((ROOT / 'tests/fixtures/lab-147-20261105.json').read_text(encoding='utf-8'))
 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): manifesto fechado tools/trocas/grupos-146-20261105.json.
 import grupos146  # noqa: E402
+# 06/11/2026: decisão 149 (volta «Dilemas»): manifesto fechado tests/fixtures/dilemas-149-20261106.json.
+from renomeacoes_cidadania import dilemas_149  # noqa: E402
 # 05/11/2026: plano do molde da Cidadania, pedido 1 (motor, casca e progresso, sem conteúdo novo). Manifesto fechado das trocas
 # literais, com contagem exata, por cima das decisões 146 e 154: nas dez sessões do piloto, só o cfg da família (as chaves novas
 # do CFG e o CFG.fim) e o progresso comum que esse cfg pede; na página do módulo e no seu gerador, «Feita» com feita(st) do
@@ -106,26 +109,40 @@ class CidadaniaBase(unittest.TestCase):
                     self.assertEqual(antes.count(antigo.encode()), quantidade)
                     antes = antes.replace(antigo.encode(), novo.encode())
                 depois = (ROOT / nome).read_bytes()
-                # 06/11/2026 (sessão 03 no molde): desfaz-se primeiro a camada da s03, que é agora a mais recente.
+                # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126) nos menus do Laboratório (decisão 163). As camadas do
+                # molde (pedidos 1 e 2) deixam de se desfazer no ficheiro atual e passam a aplicar-se à base, pela ordem em que se
+                # sobrepõem (ver abaixo); aplicar exige a contagem exata de cada «antigo» como desfazer exigia a de cada «novo».
+                # 06/11/2026 (sessão 03 no molde, na fusão do main com a sessão 2 final, os menus e o «Dilemas»): o manifesto da s03
+                # parte agora do main (b29833d), já com a 163 e a 149; a s03 é a camada mais recente e desfaz-se no ficheiro atual,
+                # com contagem exata de cada «novo», antes de se tirarem as versões de cache; a comparação continua integral.
                 if nome in molde_s03.TROCAS:
                     depois = molde_s03.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
-                # 06/11/2026 (sessão 02 no molde): desfaz-se primeiro a camada da s02, que é agora a mais recente.
-                if nome in molde_s02.TROCAS:
-                    depois = molde_s02.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
-                # 05/11/2026 (pedido 2): desfaz-se primeiro a camada do pedido 2, que é agora a mais recente.
-                if nome in molde_pedido2.TROCAS:
-                    depois = molde_pedido2.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
-                # 05/11/2026: plano do molde da Cidadania, pedido 1: desfaz-se primeiro a camada do molde (a mais recente).
-                if nome in MOLDE_P1:
-                    depois = desfazer_molde(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome == 'assets/licoes/cidadania.css':
                     self.assertEqual(depois.count(MARCA_MOLDE), 1)
                     depois, bloco = depois.split(MARCA_MOLDE)
                     self.assertEqual(seletores_fora_do_molde(bloco.decode('utf-8')), [])
                 # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): só se desfazem as trocas do manifesto fechado, com contagem exata; o resto compara-se como antes.
+                # 06/11/2026: fusão do main (com o #123) nos menus do Laboratório (decisão 163). As camadas compõem-se pela ordem em que
+                # se sobrepõem, todas sobre a base: 147 (acima), 146 e 154 (tests/grupos146.py aplica-as por esta ordem) e, por último,
+                # a 163. Por isso a 146 e a 154 passam a aplicar-se à base, em vez de se desfazerem no ficheiro atual; aplicar exige a
+                # contagem exata de cada «antigo» como desfazer exigia a de cada «novo», e a comparação continua integral.
                 if nome in grupos146.TROCAS:
-                    depois = grupos146.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
-                self.assertEqual(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes),
+                    antes = grupos146.aplicar(antes.decode('utf-8'), nome).encode('utf-8')
+                # 05/11/2026: plano do molde da Cidadania, pedido 1, por cima da 146 e da 154; depois o pedido 2, por cima do 1.
+                # 06/11/2026: fusão com os menus (decisão 163). Aplicam-se à base, como a 146 e a 154, antes da 163; cada troca com
+                # contagem exata, e a comparação continua integral.
+                if nome in MOLDE_P1:
+                    antes = aplicar_molde(antes.decode('utf-8'), nome).encode('utf-8')
+                if nome in molde_pedido2.TROCAS:
+                    antes = molde_pedido2.aplicar(antes.decode('utf-8'), nome).encode('utf-8')
+                # 06/11/2026 (sessão 02 no molde, na fusão do main com os menus): a camada da s02 aplica-se à base por cima do
+                # pedido 2 e antes da 163, com contagem exata de cada «antigo»; a comparação continua integral.
+                if nome in molde_s02.TROCAS:
+                    antes = molde_s02.aplicar(antes.decode('utf-8'), nome).encode('utf-8')
+                # 05/11/2026: decisão 163 (menus do Laboratório e das lições). O menu ≡ novo, menu.css, menu.js, o aviso sem
+                # JavaScript e a marca «Cidadania» do piloto: só as trocas do manifesto fechado tests/fixtures/menus-163-20261105.json,
+                # com contagem exata, sobre o texto já sem as versões de cache (como a comparação); a comparação continua integral.
+                self.assertEqual(menus163.aplicar(re.sub(rb'\?v=[\w-]+', b'?v=CACHE', antes), nome, sem_cache=True),
                                  re.sub(rb'\?v=[\w-]+', b'?v=CACHE', depois))
 
     def test_renomeacao_exata_sobre_main_publicado(self):
@@ -170,10 +187,16 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = aplicar_molde(esperado, nome)
                 # 05/11/2026: plano do molde, pedido 2: a camada do pedido 2, com contagem exata, por cima de tudo.
                 esperado = molde_pedido2.aplicar(esperado, nome)
-                # 06/11/2026: a camada da sessão 02 no molde, com contagem exata, por cima de tudo.
+                # 06/11/2026: a camada da sessão 02 no molde, com contagem exata, por cima do pedido 2.
+                # 06/11/2026: fusão do main (com os menus, #125, e o «Dilemas», #127): a s02 foi feita sobre fa6c6c2, antes da
+                # 163; aplica-se aqui e a 163 e a 149 vêm depois, pela ordem em que se sobrepõem.
                 esperado = molde_s02.aplicar(esperado, nome)
-                # 06/11/2026: a camada da sessão 03 no molde, com contagem exata, por cima de tudo.
-                esperado = molde_s03.aplicar(esperado, nome)
+                # 05/11/2026: decisão 163. O menu ≡ novo e a ordem do Laboratório na entrada do Lente: só as trocas do manifesto
+                # fechado tests/fixtures/menus-163-20261105.json, com contagem exata; a comparação continua integral.
+                # 06/11/2026: fusão do main (com o #123). A 163 aplica-se por último, por cima da 147, da 146 e da 154.
+                # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). A 163 continua a ser a última, também por cima dos
+                # pedidos 1 e 2 do molde.
+                esperado = menus163.aplicar(esperado, nome)
                 # 03/11/2026: #103 gera apenas a abertura e o crédito da Justiça;
                 # conserva a comparação integral de todos os restantes conteúdos.
                 if nome == 'olhar-e-decidir/justica/index.html':
@@ -182,6 +205,13 @@ class CidadaniaBase(unittest.TestCase):
                     carris = importlib.util.module_from_spec(spec)
                     spec.loader.exec_module(carris)
                     esperado = carris.instalar(esperado)
+                # 06/11/2026: decisão 149, volta «Dilemas» onde o #107 pôs «Decisões» como nome da família; só as trocas do
+                # manifesto fechado, com contagem exata. O sidequest «Decisões que parecem razoáveis» e endereços ficam.
+                esperado = dilemas_149(esperado, nome)
+                # 06/11/2026: a camada da sessão 03 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com a
+                # sessão 2 final, os menus e o «Dilemas»): o manifesto da s03 parte do main (b29833d), por isso aplica-se depois da 163
+                # e da 149, em último lugar.
+                esperado = molde_s03.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

@@ -54,6 +54,13 @@ on:
       - 'cidadania/m1/sessoes/03/**'
       - 'tests/molde_s03.py'
       - '.github/workflows/licoes-qa.yml'
+      # 05/11/2026: decisão 163, o menu ≡ comum (tools/menu_casca.py) e as páginas estáticas da Cidadania que o usam.
+      - 'tools/menu_casca.py'
+      - 'tools/lab_nav.py'
+      - 'cidadania/m1/**'
+      - 'cidadania/m2/**'
+      - 'cidadania/25-de-abril/**'
+      - 'tests/*menus*'
 permissions:
   contents: read
 jobs:
@@ -99,6 +106,8 @@ jobs:
           python -m unittest discover -s tests -p 'test_ideias*.py' -v
           python -m unittest discover -s tests -p 'test_opcoes_equilibradas.py' -v
           python -m unittest discover -s tests -p 'test_lab_percursos.py' -v
+          python tools/menu_casca.py --estaticas --verificar
+          python -m unittest discover -s tests -p 'test_menus_163.py' -v
       - name: Preparar navegador
         run: |
           # 05/11/2026: playwright fixado em 1.64.1; a 1.65.0 saiu no npm sem o playwright-core 1.65.0 (ETARGET).
@@ -108,6 +117,7 @@ jobs:
         run: |
           node tests/browser_progresso_laboratorio.cjs
           node tests/browser_licoes_lente.cjs
+          node tests/browser_menus_lab.cjs
   # 01/11/2026: o teste de navegador de «Ideias» passa para um trabalho próprio, em paralelo. No mesmo trabalho que o
   # percurso das lições, o tempo total passava os 10 minutos do limite e o GitHub cancelava a execução.
   ideias:

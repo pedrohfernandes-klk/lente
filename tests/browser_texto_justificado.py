@@ -88,7 +88,9 @@ PLANO=[
  # 30/10/2026: o catálogo é uma lista; a prosa da entrada está em .lab-saiu.
  # 30/10/2026: no telemóvel os percursos de cada bloco ficam dobrados; abrem-se antes de medir.
  # 05/11/2026: decisão 147 (Laboratório sem o Português): ficam 10 dos 17 percursos (2 em Observar, 3 em Treinar, 5 em Criar).
- ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.modulo h3',10)]),
+ # 05/11/2026: decisão 163. Os títulos dos dez percursos passam das dobras da entrada para o índice do pé; continuam a ser
+ # dez e nenhum se justifica (a mesma exigência).
+ ('E1','narrativas/',[('J','.lab-saiu > p'),('abrir','details.dobra'),('E','.lab-indice .ind > span:first-child',10)]),
  ('E1','',[('E','a',5)]),
  ('E2','gigantes/',[('J','.p-cab p.p-lead'),('E','a.missao .s',5),('abrir','details.entrada-fontes'),('J','.entrada-fontes > p:not([class])')]),
  ('G1','narrativas/treinar/docente/',[('J','main.pg > p:not([class])')]),

@@ -73,18 +73,26 @@ class Continuacao(unittest.TestCase):
     self.assertNotIn('Seguinte',nav[0]);continue
    s=(R/p['url']/'index.html').read_text('utf-8');r=route[p['id']];ids=r['pieces'];i=ids.index(p['id'])
    nxt=P[ids[i+1]] if i+1<len(ids) else None;rurl=ABS+'narrativas/percursos/'+r['id']+'/'
+   # 05/11/2026: decisão 163 (menus do Laboratório). Nenhum beco no fim de um percurso: depois da última peça, o «a seguir» é o
+   # percurso seguinte da mesma porta, a porta seguinte ou, no fim de Criar, as sessões do Ideias. Cada destino confere-se
+   # por extenso, com a mesma exigência de antes (lista exata), a partir da ordem de percursos.json.
+   rs=[x for x in D['routes'] if x['block']==r['block']];bs=[b['id'] for b in D['blocks']];k=rs.index(r);j=bs.index(r['block'])
+   fim=None if nxt else ('narrativas/percursos/'+rs[k+1]['id']+'/' if k+1<len(rs) else 'narrativas/'+bs[j+1]+'/' if j+1<len(bs) else 'narrativas/ideias/')
    self.assertNotIn('Treino seguinte',s,p['id'])
    if 'EPIJogo.montar(' in s and 'percurso:"' in s:
     self.assertIn('percurso:"'+rurl+'"',s,p['id'])
-    self.assertEqual(re.findall(r',seguinte:"([^"]*)"',s),[ABS+nxt['url']] if nxt else [],p['id'])
+    self.assertEqual(re.findall(r',seguinte:"([^"]*)"',s),[ABS+nxt['url']] if nxt else [ABS+fim],p['id'])
    # 30/10/2026: o último treino diz «É o último treino deste percurso: regressa à lista» (revisor de pt-PT).
-   fim=re.findall(r'<p class=\\"sub\\">(?:Seguinte: |É o último treino deste percurso: )?<a href=\\"([^"\\]*)\\">[^<]*</a>\. Ou volta a este noutro dia',s)
-   if p['id'].startswith('treinar/'):self.assertEqual(fim,[ABS+nxt['url'] if nxt else rurl],p['id'])
+   # 05/11/2026: decisão 163. Passa a «É o último treino deste percurso. A seguir: …», para o mesmo destino do botão.
+   txt=re.findall(r'<p class=\\"sub\\">(?:Seguinte: |É o último treino deste percurso\. A seguir: )<a href=\\"([^"\\]*)\\">[^<]*</a>\. Ou volta a este noutro dia',s)
+   if p['id'].startswith('treinar/'):self.assertEqual(txt,[ABS+nxt['url'] if nxt else ABS+fim],p['id'])
    self.assertNotIn('Voltar ao ginásio',s,p['id'])
    for m in re.findall(r'</ol><a href="([^"]*)">Voltar ao percurso</a>',s):self.assertEqual(m,rurl,p['id'])
+   # 05/11/2026: decisão 163. No menu ≡ novo, a primeira ação é «Voltar ao percurso», para o percurso desta peça.
+   if 'class="casca-menu m2"' in s:self.assertRegex(s,r'<nav aria-label="Menu"><a class="principal" href="'+re.escape(rurl)+r'">',p['id'])
    nav=re.findall(r'<nav class="lab-fim-percurso"[^>]*>(.*?)</nav>',s)
    if nav:
     hrefs=[posixpath.normpath(posixpath.join(p['url'],h)) for h in re.findall(r'href="([^"]+)"',nav[0])]
-    want=['narrativas/percursos/'+r['id']]+([nxt['url'].rstrip('/')] if nxt else [])
+    want=['narrativas/percursos/'+r['id']]+([nxt['url'].rstrip('/')] if nxt else [fim.rstrip('/')])
     self.assertEqual(hrefs,want,p['id'])
 if __name__=='__main__':unittest.main()

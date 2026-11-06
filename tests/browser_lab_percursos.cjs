@@ -31,7 +31,9 @@ try{for(const width of [320,390,1366,1440]){const ctx=await b.newContext({viewpo
   await repor('so-retiradas.json',[{id:'treinar/sem-olhos',estado:'feito'}]);
   await p.waitForFunction(()=>document.querySelector('[data-registos-aviso]').textContent==='As peças deste ficheiro já não fazem parte do Laboratório; não havia nada para repor.');assert(await p.evaluate(()=>window.semRecarregar));assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),before);
  }
- await p.goto(base+'/narrativas/percursos/olhar/');assert.equal(await p.locator('[data-estado="leonardo"]').textContent(),'feito'); // 30/10/2026: textContent, porque o estado se mostra em caixa alta por CSS.
+ // 05/11/2026: decisão 163. As linhas dos percursos usam o mesmo estado das portas, «Feita» (com a data só quando há uma data
+// verdadeira; o 123 deste registo não é uma data), em vez de «feito»; a mesma exigência, valor exato.
+await p.goto(base+'/narrativas/percursos/olhar/');assert.equal(await p.locator('[data-estado="leonardo"]').textContent(),'Feita'); // 30/10/2026: textContent, porque o estado se mostra em caixa alta por CSS.
  // 30/10/2026: âncoras antigas levam ao percurso, no catálogo (revisão técnica).
  await p.goto(base+'/narrativas/#treinar-voz');await p.waitForURL('**/narrativas/tudo/#treinar-voz');assert(await p.locator('h3:has(#treinar-voz)').isVisible());assert(await p.evaluate(()=>{const r=document.getElementById('treinar-voz').parentElement.getBoundingClientRect();return r.top>=0&&r.top<innerHeight;}));
  await p.goto(base+'/narrativas/?projetar=1');assert(await p.locator('[data-continuar]').isHidden());assert((await p.locator('[data-continuar]').getAttribute('href')).includes('/narrativas/leonardo/'));assert(JSON.parse(await p.locator('[data-cz-route].current').getAttribute('data-cz-route')).includes('leonardo'));assert(!(await p.locator('body').innerText()).includes('RESPOSTA PRIVADA'));assert.equal(await p.evaluate(()=>JSON.parse(localStorage.getItem('epi-narrativas')).feitas['leonardo']),123);
@@ -39,7 +41,9 @@ try{for(const width of [320,390,1366,1440]){const ctx=await b.newContext({viewpo
  for(const url of ['/narrativas/','/narrativas/tudo/','/narrativas/ver/','/narrativas/treinar/','/narrativas/criar/',...D.routes.map(r=>'/narrativas/percursos/'+r.id+'/'),'/narrativas/percursos/'/* 30/10/2026: a 23.ª página gerada também entra. */]){
   await p.goto(base+url);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' '+url);
   // 02/11/2026: a porta inteira fecha no telemóvel; abrir pelo teclado antes de verificar a imagem, sem omitir nenhuma.
-  if(url==='/narrativas/')for(const im of await p.locator('main img').all()){
+  // 05/11/2026: decisão 163. As imagens das portas passam da entrada para cada porta: confere-se cada uma na sua porta (e a
+  // entrada continua incluída, para o caso de voltar a ter imagens).
+  if(['/narrativas/','/narrativas/ver/','/narrativas/treinar/','/narrativas/criar/'].includes(url))for(const im of await p.locator('main img').all()){
    const block=im.locator('xpath=ancestor::*[contains(concat(" ",normalize-space(@class)," ")," bloco ")]'),fold=block.locator('details.dobra');
    const closed=await fold.count()&&!await fold.evaluate(e=>e.open);
    if(closed){const summary=fold.locator('summary');await summary.focus();await p.keyboard.press('Enter');assert(await fold.evaluate(e=>e.open));}

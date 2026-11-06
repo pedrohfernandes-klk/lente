@@ -43,7 +43,11 @@ class FichasM1(unittest.TestCase):
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata.
    if path in grupos146.TROCAS:new=grupos146.desfazer(new,path)
    self.assertEqual(bank(old),bank(new))
-   self.assertEqual(re.findall(r'<script\b[^>]*>.*?</script>',old,re.S),re.findall(r'<script\b[^>]*>.*?</script>',new,re.S))
+   # 05/11/2026: decisão 163 (menus). Os scripts antigos ficam todos, iguais e pela mesma ordem; junta-se exatamente um,
+   # o do menu ≡ (assets/licoes/menu.js, com defer, no fim do corpo).
+   novos=re.findall(r'<script\b[^>]*>.*?</script>',new,re.S)
+   self.assertEqual(novos[-1],'<script defer src="../../../assets/licoes/menu.js?v=20261105-163"></script>')
+   self.assertEqual(re.findall(r'<script\b[^>]*>.*?</script>',old,re.S),novos[:-1])
    css=re.findall(r'<style\b[^>]*>(.*?)</style>',old,re.S)
    if blocks is None:blocks=css
    self.assertEqual(blocks,css)

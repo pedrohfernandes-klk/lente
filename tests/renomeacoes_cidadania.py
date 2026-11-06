@@ -20,7 +20,9 @@ def contagens_finais(ficheiro):
     return {novo: texto.count(novo) for _, novo, _ in TROCAS[ficheiro]}
 
 
-def renomear(texto, ficheiro, inverter=False, base_ja_renomeada=False):
+def renomear(texto, ficheiro, inverter=False, base_ja_renomeada=False, acrescentadas=None):
+    # 06/11/2026: «acrescentadas» (rótulo → vezes) são os usos que uma camada posterior, já fundida na base e com
+    # manifesto fechado, juntou ao rótulo (menus163.acrescentadas); a contagem continua exata, só soma esses.
     binario = isinstance(texto, bytes)
     for antigo, novo, quantidade in TROCAS.get(ficheiro, []):
         if inverter:
@@ -29,8 +31,22 @@ def renomear(texto, ficheiro, inverter=False, base_ja_renomeada=False):
             antigo, novo = antigo.encode(), novo.encode()
         if base_ja_renomeada and texto.count(antigo) == 0:
             rotulo = novo.decode('utf-8') if binario else novo
-            assert texto.count(novo) == contagens_finais(ficheiro)[rotulo], ficheiro
+            assert texto.count(novo) == contagens_finais(ficheiro)[rotulo] + (acrescentadas or {}).get(rotulo, 0), ficheiro
             continue
+        assert texto.count(antigo) == quantidade, ficheiro
+        texto = texto.replace(antigo, novo)
+    return texto
+
+
+# 06/11/2026: decisão 149, volta «Dilemas» (decisão 15). Manifesto fechado por cima do #107, com contagem exata por troca;
+# as comparações com bases antigas desfazem ou aplicam só estas trocas e o resto compara-se como antes.
+TROCAS_149 = json.loads((Path(__file__).parent / 'fixtures/dilemas-149-20261106.json').read_text(encoding='utf-8'))
+
+
+def dilemas_149(texto, ficheiro, inverter=False):
+    for antigo, novo, quantidade in TROCAS_149.get(ficheiro, []):
+        if inverter:
+            antigo, novo = novo, antigo
         assert texto.count(antigo) == quantidade, ficheiro
         texto = texto.replace(antigo, novo)
     return texto

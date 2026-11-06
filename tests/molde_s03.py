@@ -10,7 +10,12 @@ as mesmas regras e sem aceitar mais nada:
   comparam com a base: comparam-se, letra a letra, com o que o seu gerador escreve hoje (inteiro_ok()), e a s03 tem de cumprir o
   contrato do molde.
 
-É a camada mais recente: desfaz-se antes da da s02 e aplica-se depois dela."""
+É a camada mais recente: desfaz-se antes da da s02 e aplica-se depois dela.
+
+06/11/2026 (fusão do main com a sessão 2 final, os menus da decisão 163 e o «Dilemas» da decisão 149): o manifesto foi gerado de
+novo a partir do main (b29833d), e leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o
+gerador confere que aplicar e desfazer dão a volta completa). A s03 fica por cima de todas as camadas, também da 163 e da 149:
+desfaz-se primeiro no ficheiro atual, ou aplica-se em último lugar ao lado esperado."""
 import importlib.util
 import json
 from pathlib import Path

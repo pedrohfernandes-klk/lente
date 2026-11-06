@@ -283,7 +283,9 @@ class PecasComuns(unittest.TestCase):
             self.assertLess(s.index(f), s.index('assets/licoes/cidadania.css'), f)  # o CSS da família tem a última palavra
         for f in ('aula-clara.js', 'ampliar-documentos.js', 'assets/info-i.js', 'recolha.js', L.PROGRESSO):
             self.assertLess(s.index(f), s.index('assets/licoes/jogo.js'), f)
-        self.assertIn(f'<a href="{L.COMO_LENTE}">Como se faz (vídeos)</a>', s)
+        # 06/11/2026: fusão com os menus do Laboratório e das lições (decisão 163). O menu ≡ comum (tools/menu_casca.py) escreve o
+        # item com o ícone e a seta; continua a ir para os vídeos do Lente, e o item confere-se inteiro.
+        self.assertIn(f'<a href="{L.COMO_LENTE}">{L.MC.ic("como")}<span>Como se faz (vídeos)</span><span class="seta" aria-hidden="true">→</span></a>', s)
         self.assertIn('EPIRecolha.ligar({"chave": "epi-cid-m1-artefactos", "sessao": "epi-cid-m1-s99"', s)
         self.assertLess(s.index('EPIRecolha.ligar('), s.index('EPIJogo.montar(CFG)'))
         cfg = cfg_da_pagina(s)
@@ -495,7 +497,10 @@ class SessaoS02(unittest.TestCase):
         self.assertGreaterEqual(vistos, 18)  # a s02 cita 19 excertos (a s01, mais de 20)
         # os excertos que a tarefa pede: Código Civil, artigo 79.º, n.os 1 a 3, e Lei n.º 58/2019, artigo 16.º, todos do DRE
         tudo = json.dumps(self.D, ensure_ascii=False)
-        for ident in ('cc-79-1', 'cc-79-2', 'cc-79-3', 'cc-81-2', 'lei58-16-1', 'stj-2011-dito', 'stj-2011-iv', 'dudh-12'):
+        # 06/11/2026: revisão da s02; o cartão 15 cita a conclusão do tribunal (stj-2011-indicacao), não o depoimento de uma das
+        # partes (stj-2011-dito), e o depoimento já não pode aparecer como palavras do tribunal
+        self.assertNotIn('stj-2011-dito', tudo)
+        for ident in ('cc-79-1', 'cc-79-2', 'cc-79-3', 'cc-81-2', 'lei58-16-1', 'stj-2011-indicacao', 'stj-2011-iv', 'dudh-12'):
             self.assertIn(ident, tudo)
             self.assertIs(self.REG[ident]['confirmado'], True, ident)
         for ident in ('cc-79-1', 'cc-79-2', 'cc-79-3', 'cc-81-2', 'lei58-16-1', 'lei58-16-2'):
@@ -525,13 +530,17 @@ class SessaoS02(unittest.TestCase):
         real = [c for c in C if 'Caso real' in c.get('p', '')]
         self.assertEqual(len(real), 1)
         self.assertTrue(real[0]['liga'][0]['href'].startswith('https://www.dgsi.pt/'))
-        self.assertEqual(real[0]['liga'][0]['href'], self.REG['stj-2011-dito']['ligacao'])
+        self.assertEqual(real[0]['liga'][0]['href'], self.REG['stj-2011-indicacao']['ligacao'])  # 06/11/2026: revisão da s02
+        self.assertEqual(real[0]['fonte'], 'stj-2011-indicacao')
         self.assertEqual(real[0]['tipo'], 'transferir')
         self.assertIn('o do Supremo Tribunal de Justiça é real', self.D['fontes'])
         olha = next(c for c in C if c['rot'] == 'Olha')
         self.assertIn('hine-addie-card-1910.webp', olha['html'])
         self.assertIn('https://www.loc.gov/item/2018675335/', olha['html'])
         self.assertIn('Domínio público', olha['html'])
+        # 06/11/2026: revisão da s02; o «i» diz o número de reprodução usado e o que o registo diz, entre aspas
+        self.assertIn('LC-DIG-nclc-05282', olha['html'])
+        self.assertIn('«No known restrictions on publication»', olha['html'])
         self.assertTrue((ROOT / 'img/cidadania/hine-addie-card-1910.webp').is_file())
         self.assertNotIn('data-yt', json.dumps(self.D))
         self.assertNotIn('Na aula', [c.get('rot') for c in C])
@@ -547,6 +556,10 @@ class SessaoS02(unittest.TestCase):
                 self.assertNotIn(html_escape(c['f'])[:60], s)
         self.assertIn('Domínio público', s)
         self.assertIn('https://www.loc.gov/item/2018675335/', s)
+        # 06/11/2026: revisão da s02; em papel não se toca em nada, e as referências não se partem (decisão 152)
+        self.assertNotRegex(s, r'(?i)\btoca\b')
+        self.assertIn('n.º\u00a01', s)
+        self.assertIn('13\u00a0anos', s)
 
 
 
