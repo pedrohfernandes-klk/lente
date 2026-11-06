@@ -282,7 +282,9 @@ class PecasComuns(unittest.TestCase):
             self.assertLess(s.index(f), s.index('assets/licoes/cidadania.css'), f)  # o CSS da família tem a última palavra
         for f in ('aula-clara.js', 'ampliar-documentos.js', 'assets/info-i.js', 'recolha.js', L.PROGRESSO):
             self.assertLess(s.index(f), s.index('assets/licoes/jogo.js'), f)
-        self.assertIn(f'<a href="{L.COMO_LENTE}">Como se faz (vídeos)</a>', s)
+        # 06/11/2026: fusão com os menus do Laboratório e das lições (decisão 163). O menu ≡ comum (tools/menu_casca.py) escreve o
+        # item com o ícone e a seta; continua a ir para os vídeos do Lente, e o item confere-se inteiro.
+        self.assertIn(f'<a href="{L.COMO_LENTE}">{L.MC.ic("como")}<span>Como se faz (vídeos)</span><span class="seta" aria-hidden="true">→</span></a>', s)
         self.assertIn('EPIRecolha.ligar({"chave": "epi-cid-m1-artefactos", "sessao": "epi-cid-m1-s99"', s)
         self.assertLess(s.index('EPIRecolha.ligar('), s.index('EPIJogo.montar(CFG)'))
         cfg = cfg_da_pagina(s)

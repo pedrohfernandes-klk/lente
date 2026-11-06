@@ -1,0 +1,229 @@
+{
+  "assets/progresso-registos.js": [
+    [
+      "\"Decisões: Justiça, Ética e Estética\"",
+      "\"Dilemas: Justiça, Ética e Estética\"",
+      1
+    ]
+  ],
+  "cidadania/index.html": [
+    [
+      "<span class=\"pt-n\">Decisões · Justiça, ética e estética</span>",
+      "<span class=\"pt-n\">Dilemas · Justiça, ética e estética</span>",
+      1
+    ]
+  ],
+  "estetica/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "etica/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "index.html": [
+    [
+      "<span class=\"lab-set-copy\"><strong>Decisões</strong>",
+      "<span class=\"lab-set-copy\"><strong>Dilemas</strong>",
+      1
+    ]
+  ],
+  "mapa/index.html": [
+    [
+      "<summary><span>Decisões: justiça, ética e estética</span>",
+      "<summary><span>Dilemas: justiça, ética e estética</span>",
+      1
+    ],
+    [
+      "olhar-e-decidir/\">Abrir Decisões <span",
+      "olhar-e-decidir/\">Abrir Dilemas <span",
+      1
+    ]
+  ],
+  "olhar-e-decidir/estetica/licao-1/index.html": [
+    [
+      "· Decisões · Lente</title>",
+      "· Dilemas · Lente</title>",
+      1
+    ],
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      2
+    ],
+    [
+      "olhar-e-decidir/\">Voltar a Decisões</a>",
+      "olhar-e-decidir/\">Voltar a Dilemas</a>",
+      1
+    ],
+    [
+      "voltarRotulo:\"Voltar a Decisões\"",
+      "voltarRotulo:\"Voltar a Dilemas\"",
+      1
+    ],
+    [
+      "olhar-e-decidir/\\\">Voltar a Decisões</a>",
+      "olhar-e-decidir/\\\">Voltar a Dilemas</a>",
+      1
+    ],
+    [
+      "seguinteRotulo:\"Voltar a Ter ju\\u00edzo\"",
+      "seguinteRotulo:\"Voltar a Dilemas\"",
+      1
+    ],
+    [
+      "percursoRotulo:\"Decisões\"",
+      "percursoRotulo:\"Dilemas\"",
+      1
+    ]
+  ],
+  "olhar-e-decidir/etica/licao-1/index.html": [
+    [
+      "· Decisões · Lente</title>",
+      "· Dilemas · Lente</title>",
+      1
+    ],
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      2
+    ],
+    [
+      "Voltar a Decisões",
+      "Voltar a Dilemas",
+      3
+    ],
+    [
+      "percursoRotulo:\"Decisões\"",
+      "percursoRotulo:\"Dilemas\"",
+      1
+    ]
+  ],
+  "olhar-e-decidir/etica/licao-2/index.html": [
+    [
+      "· Decisões · Lente</title>",
+      "· Dilemas · Lente</title>",
+      1
+    ],
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      2
+    ],
+    [
+      "Voltar a Decisões",
+      "Voltar a Dilemas",
+      3
+    ],
+    [
+      "percursoRotulo:\"Decisões\"",
+      "percursoRotulo:\"Dilemas\"",
+      1
+    ]
+  ],
+  "olhar-e-decidir/index.html": [
+    [
+      "<title>Decisões · Lente</title>",
+      "<title>Dilemas · Lente</title>",
+      1
+    ],
+    [
+      "<h1>Decisões.</h1>",
+      "<h1>Dilemas.</h1>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/aplicar/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/docente/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/guiao/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ],
+    [
+      "<p class=\"orientacao assinatura-orientacao\">Decisões</p>",
+      "<p class=\"orientacao assinatura-orientacao\">Dilemas</p>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/licao-1/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/licao-2/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "olhar-e-decidir/justica/licao-3/index.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "tests/resultados_turma.test.cjs": [
+    [
+      "  assert.equal(t('Decisões: Justiça, Ética e Estética'), '1 lição concluída');\n",
+      "  // 06/11/2026: decisão 149, volta «Dilemas» (decisão 15); só o rótulo do grupo muda, as chaves do progresso ficam; manifesto tests/fixtures/dilemas-149-20261106.json.\n  assert.equal(t('Dilemas: Justiça, Ética e Estética'), '1 lição concluída');\n  assert.equal(g['Decisões: Justiça, Ética e Estética'], undefined);\n",
+      1
+    ],
+    [
+      "  const g = R.resumir(registos)['Decisões: Justiça, Ética e Estética'];\n",
+      "  // 06/11/2026: decisão 149, volta «Dilemas» (decisão 15); só o rótulo do grupo muda, as chaves do progresso ficam; manifesto tests/fixtures/dilemas-149-20261106.json.\n  const g = R.resumir(registos)['Dilemas: Justiça, Ética e Estética'];\n  assert.equal(R.resumir(registos)['Decisões: Justiça, Ética e Estética'], undefined);\n",
+      1
+    ]
+  ],
+  "tools/justica/moldes/licao-1.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "tools/justica/moldes/licao-2.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ],
+  "tools/justica/moldes/licao-3.html": [
+    [
+      "olhar-e-decidir/\">Decisões</a>",
+      "olhar-e-decidir/\">Dilemas</a>",
+      1
+    ]
+  ]
+}
