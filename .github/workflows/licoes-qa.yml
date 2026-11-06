@@ -48,6 +48,11 @@ on:
       - 'tools/trocas/molde-s02-*'
       - 'cidadania/m1/sessoes/02/**'
       - 'tests/molde_s02.py'
+      # 06/11/2026: a sessão 04 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, o manifesto
+      # fechado da sua camada e essa camada nos testes.
+      - 'tools/trocas/molde-s04-*'
+      - 'cidadania/m1/sessoes/04/**'
+      - 'tests/molde_s04.py'
       - '.github/workflows/licoes-qa.yml'
 permissions:
   contents: read

@@ -316,7 +316,12 @@ class Listas(unittest.TestCase):
         self.assertIn("'{n} de ' + APOIOS_M1 + ' apoios do M1", js)
         for m, de, ate in (('m1', 3, 10), ('m2', 1, 10)):
             pastas = sorted(int(p.parent.name) for p in (R / 'cidadania' / m / 'sessoes').glob('[0-9][0-9]/index.html') if 'data-session-done' in p.read_text('utf-8'))
-            self.assertEqual(pastas, list(range(de, ate + 1)), m)
+            # 06/11/2026 (decisões 166 a 168): uma sessão do M1 cujo .json tem o campo «molde» passou à lição no molde final, no
+            # mesmo endereço, e deixa de ter o registo da página publicada (hoje, a 04); as outras continuam todas a tê-lo. Os totais
+            # de resultados-turma.js ficam como estão até ao pedido de fecho do plano do molde (secção 5, pedido 5).
+            molde = {n for n in range(de, ate + 1) if m == 'm1' and (R / f'tools/licoes/cidadania-m1-s{n:02}.json').is_file()
+                     and json.loads(ler(f'tools/licoes/cidadania-m1-s{n:02}.json')).get('molde')}
+            self.assertEqual(pastas, [n for n in range(de, ate + 1) if n not in molde], m)
             self.assertIn("'%s': {de: %d, ate: %d}" % (m[1], de, ate), js)
             # 28/10/2026: «com registo», e no M1 diz que o total começa na sessão 03
             self.assertIn("'%s: {n} de %d sessões com registo%s'" % (m.upper(), ate - de + 1, ' (da %02d à %02d)' % (de, ate) if de > 1 else ''), js)
