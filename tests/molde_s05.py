@@ -11,7 +11,10 @@ que comparam com bases antigas, com as mesmas regras e sem aceitar mais nada:
   comparam com a base: comparam-se, letra a letra, com o que o seu gerador escreve hoje (inteiro_ok()), e a s05 tem de cumprir o
   contrato do molde.
 
-É a camada mais recente: desfaz-se antes das da s02 e do pedido 2 e aplica-se depois delas."""
+É a camada mais recente: desfaz-se antes das da s02 e do pedido 2 e aplica-se depois delas.
+
+06/11/2026 (revisão da s05): o manifesto acompanha as correções da revisão (a secção da s05 no guia e o GUIA['05']) e ganha uma
+troca, a do «toca na palavra» / «toca nas três palavras» na versão para imprimir; as regras e as contagens exatas não mudam."""
 import importlib.util
 import json
 from pathlib import Path

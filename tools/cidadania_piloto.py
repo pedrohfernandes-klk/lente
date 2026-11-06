@@ -286,7 +286,7 @@ GUIA = {
    1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
    2: 'Ver «Como conduzir o Decide».',
    3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 04.',
-   4: 'O retorno nomeia a sessão 02: vale a pena lembrar, em voz alta, o vídeo da Marta e «O sim vale para o uso que se explicou.».',
+   4: 'O retorno nomeia a sessão 02: vale a pena lembrar, em voz alta, o vídeo da Marta e «O sim vale para o uso que se explicou».',
    5: 'Projetado grande. As letras (A, F, H) só se apontam depois dos cartões 6 e 7.',
    8: 'Ler em voz alta o n.º 3 do artigo 19.º, uma vez, com uma pausa no «só».',
    12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
@@ -319,7 +319,7 @@ GUIA = {
    (12, 'Verdadeiro, por ler «espaços cujos bens e equipamentos requeiram especial proteção» como qualquer sala onde haja coisas de valor.',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 3 com os exemplos do fim. Pergunta: «O que têm em comum um laboratório e uma sala de informática que uma sala de aula não tem?»'),
    (21, '«Nas salas, sim, porque quem não deve não teme» (toma a razão do cartaz por prova) ou «A escola tem de pôr câmaras nas entradas, já» (lê «podem» como «têm de»).',
-    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova e o que fica por saber.'),
+    'Se mais de um terço erra, voltar ao n.º 3 do artigo 19.º na projeção e perguntar, frase a frase, de onde vem a prova e o que fica por saber.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
             'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
@@ -327,11 +327,11 @@ GUIA = {
                 '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
   'projeto': ('A nota de privacidade do teu projeto', '#metodo',
               'Cinco minutos para ler, na página do projeto, «Ética: as pessoas que entrevistas» (sobretudo «Dados pessoais»). Trinta minutos: '
-              'cada aluno escreve, em papel, a nota de privacidade do seu projeto em quatro linhas (que dados recolhe; para quê; quem os vê; '
+              'cada aluno escreve, em papel, a nota de privacidade do seu projeto em quatro linhas (os dados que recolhe; para quê; quem os vê; '
               'quando se apagam); o docente faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê a nota com «O que conta» e '
               'corrige uma linha. A nota entra no dossiê da Pergunta Humana.'),
   'produto': 'Nota de privacidade',
-  'grelha': [('Que dados: a lista completa, sem dados a mais', 4), ('Para quê: uma finalidade por dado', 4), ('Quem vê: dito com clareza', 4),
+  'grelha': [('Os dados: a lista completa, sem dados a mais', 4), ('Para quê: uma finalidade por dado', 4), ('Quem vê: dito com clareza', 4),
              ('Quando se apagam: uma data ou um momento do trabalho', 4), ('Nada publicado: gravações, fotografias, moradas e contactos ficam fora', 4)],
   'noventa': [
    'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura de «Dados pessoais» e o início da nota de privacidade).',
@@ -357,15 +357,14 @@ GUIA = {
             'Sem vídeo (decisão 155): o plano tira o TED-Ed do piloto.',
             'Recupera 1 (sessão 04): a frase «Com câmaras, ninguém rouba.» vem dos lados do Decide; o cartão recupera a distinção entre o '
             'que se prova e o que se discute e junta-lhe a previsão.',
-            'Olha: a estampa desdobrável «A General Idea of a Penitentiary Panopticon in an Improved, but as yet (Jan.y 23.d 1791) Unfinished '
-            'State» de _The Works of Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da Universidade de '
+            'Olha: a estampa desdobrável _A General Idea of a Penitentiary Panopticon […]_ (1791), de _The Works of Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da Universidade de '
             'Sevilha digitalizado no Internet Archive (archive.org/details/BRes092083, imagem n36 da digitalização, com a marca de domínio público lida nos '
             'metadados, a 6/11/2026). A estampa não nomeia o desenhador; a atribuição habitual ao arquiteto Willey Reveley fica a confirmar. '
             'A legenda traduz as letras da explicação em inglês (A, celas; F, galerias de inspeção; H, alojamento do inspetor).',
             'Cartões 11 e 12: ler a oficina como um espaço «cujos bens e equipamentos requeiram especial proteção» e excluir a sala de aula '
             'comum (os exemplos são de espaços pelos equipamentos que guardam) são leituras nossas do artigo 19.º, n.º 3; o docente confirma.',
-            'Lei n.º 58/2019: o texto citado é o do ato no Diário da República (a página da versão consolidada não abriu a 6/11/2026); a '
-            'confirmar que os artigos 19.º e 21.º não mudaram depois.',
+            'Lei n.º 58/2019: o texto citado é o do ato no Diário da República; na análise jurídica (separador Modificações, 6/11/2026) '
+            'a lei não tem alterações.',
             'Conceito: os três passos (para quê; há outro meio; o que custa) são uma leitura escolar da proporcionalidade; o acórdão de 2006 '
             'cita as três condições (idoneidade, necessidade, proporcionalidade em sentido estrito).',
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
@@ -955,7 +954,9 @@ def _ex_imprimir(num, c, d, k):
         q += f'<p class="cita"><i>«{e(_txt(c["cita"]))}»</i></p>'
     p = html.unescape(re.sub(r'<[^>]+>', '', c['p']))
     if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
-        p = re.sub(r'\b([Tt])oca nas palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as palavras', p)
+        # 06/11/2026 (revisão da s05): também «toca na palavra» e «toca nas três palavras», que a troca antiga (só «toca nas
+        # palavras») deixava no papel
+        p = re.sub(r'\b([Tt])oca n(as?)\b', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha ' + m.group(2), p)
     q += f'<p><b>{LL.esc_it(p)}</b></p>'
     t = c['t']
     if t == 'escolha':

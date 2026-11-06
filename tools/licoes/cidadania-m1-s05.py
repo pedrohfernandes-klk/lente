@@ -15,9 +15,10 @@
 # - Constituição, artigos 18.º, n.º 2, e 35.º, n.os 1 e 4, texto consolidado no Diário da República Eletrónico (crp-18-2, crp-35-*);
 #   e artigo 26.º, n.º 1 (crp-26-1, já no registo, da s01);
 # - Acórdão do Supremo Tribunal de Justiça de 8/2/2006, processo 05S3139, em dgsi.pt (registo stj-2006-*): o caso real da sessão
-#   (decisão 161). Um armazém de produtos farmacêuticos, depois de furtos de medicamentos, pôs câmaras viradas para os postos de
-#   trabalho; o tribunal mandou retirá-las do armazém.
-# - Gravura: «A General Idea of a Penitentiary Panopticon in an Improved, but as yet (Jan.y 23.d 1791) Unfinished State», a
+#   (decisão 161). Um armazenista de produtos farmacêuticos, depois de furtos de medicamentos, pôs câmaras viradas para os postos
+#   de trabalho; o tribunal mandou retirá-las do armazém.
+# - Gravura: «A General Idea of a Penitentiary Panopticon in an Improved, but as yet, Jan.y 23.d 1791) Unfinished State» (assim, com
+#   o parêntese só a fechar, na estampa; 06/11/2026, revisão: nas Fontes vai só o princípio do título, como no crédito), a
 #   estampa desdobrável de The Works of Jeremy Bentham, vol. IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da
 #   Universidade de Sevilha digitalizado no Internet Archive (BRes092083, imagem n36), com a marca de domínio público (Public Domain
 #   Mark 1.0) lida nos metadados do registo. Vista inteira; a estampa não nomeia o desenhador (a atribuição habitual ao arquiteto
@@ -86,9 +87,9 @@ CARTOES = [
  # acontecer e só se põe à prova depois. Os erros prováveis: tomá-la por facto (os furtos aconteceram) ou por mera opinião.
  M.recupera(escolha(
      'Prever não é provar',
-     'Há quem diga: «Com câmaras, ninguém rouba.» Como se trata esta frase?',
+     'Há quem diga: «Com câmaras, ninguém rouba.» Como se classifica esta frase?',
      'A frase «Com câmaras, ninguém rouba» é um facto, uma opinião ou outra coisa?',
-     'Uma previsão: só os furtos de depois a confirmam.',
+     'Uma previsão: só o futuro a confirma ou desmente.',
      [('Um facto: os três telemóveis desapareceram mesmo.',
        'Os furtos são um facto, mas a frase não fala deles: diz o que vai acontecer com câmaras. Isso ainda ninguém viu. Repara '
        'no tempo do verbo e no que a frase promete.'),
@@ -106,7 +107,7 @@ CARTOES = [
      'O teu contacto foi dado à escola para a visita de estudo. Por isso, pode servir também para a agência de viagens te mandar '
      'publicidade.',
      'Falso. Deste o contacto para a visita: é para isso que serve. Na sessão 02, a regra era «O sim vale para o uso que se '
-     'explicou.»; com os dados chama-se finalidade.',
+     'explicou»; com os dados chama-se finalidade.',
      4, 'aplicar', 'finalidade', v=False,
      fe='Dar um dado para uma coisa não o entrega para todas. Na sessão 02, com o vídeo da Marta: «O sim vale para o uso que se '
         'explicou.» Com os dados é igual: servem a finalidade para que os deste, a visita.',
@@ -154,14 +155,14 @@ CARTOES = [
             + '<p class="glossa"><b>Perímetro externo</b>: a zona à volta dos edifícios. <b>CNPD</b>: Comissão Nacional '
               'de Proteção de Dados.</p>')),
  M.fazer('sublinhar', 'Uma lista fechada',
-         'No n.º 3, toca na palavra que fecha a lista: fora dos sítios que a lei nomeia, não pode haver câmaras.',
-         'No n.º 3, uma palavra impede câmaras nos sítios que a lista não nomeia. Toca nela.',
+         'No n.º 3, toca na palavra que fecha a lista: fora dos sítios que a lei nomeia, as câmaras não podem filmar.',
+         'No n.º 3, uma palavra impede as câmaras de filmar os sítios que a lista não nomeia. Toca nela.',
          'A palavra é «só»: as câmaras «só podem incidir» sobre os sítios da lista. Sem ela, a lista seria um exemplo; com ela, é '
          'o limite.',
          3, 'reconhecer', 'lista fechada', frase=LEI_19_3, certas=[8], fonte='lei58-19-3', l='n3',
-         fe='A confusão mais provável é tocar em «podem»: sozinha, essa palavra deixa pôr câmaras. É outra palavra, antes dela, que '
+         fe='A confusão mais provável é tocar em «podem»: sozinha, essa palavra deixa filmar. É outra palavra, antes dela, que '
             'limita os sítios. Lê o princípio da frase devagar.',
-         pista='Lê a frase e imagina-a sem cada palavra: sem qual delas se podiam pôr câmaras noutros sítios?'),
+         pista='Lê a frase e tira-lhe uma palavra de cada vez: quando é que os sítios deixam de ter limite?'),
  M.fazer('emparelhar', 'Cada dado, para quê',
          'Caso inventado: o formulário da visita de estudo pede estes dados. Liga cada um à finalidade que o justifica.',
          'Para que serve cada dado do formulário da visita de estudo? Liga cada um à sua finalidade.',
@@ -176,18 +177,18 @@ CARTOES = [
             'nem a socorrer ninguém. Pergunta primeiro para quê, e só depois o quê.',
          pista='Para cada dado, imagina o dia da visita: em que momento faz falta?'),
  escolha('Onde a lei deixa',
-         'Situação nova: outra escola quer pôr uma câmara lá dentro. Onde a lei a deixa pôr?',
-         'Numa escola que não é a tua, onde pode ficar uma câmara, segundo o n.º 3?',
-         'Na oficina onde se guardam as máquinas de soldar.',
-         [('No pátio interior, onde os alunos passam o intervalo.',
+         'Situação nova: outra escola quer uma câmara virada para um espaço lá dentro. Para onde a lei a deixa virar?',
+         'Numa escola que não é a tua, para onde pode estar virada uma câmara, segundo o n.º 3?',
+         'Para a oficina onde se guardam as máquinas de soldar.',
+         [('Para o pátio interior, onde os alunos passam o intervalo.',
            'O pátio interior não é perímetro externo nem um acesso, e não guarda equipamentos que peçam especial proteção. Com o '
            '«só», o que não está na lista fica de fora. Volta ao n.º 3.'),
-          ('Na sala de convívio, virada para os sofás e as mesas.',
+          ('Para a sala de convívio, com os sofás e as mesas.',
            'A sala de convívio não cabe em nenhuma parte da lista: não é perímetro, nem acesso, nem um espaço como um laboratório. '
            'Volta ao n.º 3 e aos exemplos do fim.')],
-         'A oficina guarda equipamentos caros e perigosos, como um laboratório ou uma sala de informática: cabe na terceira parte da '
+         'A oficina guarda equipamentos caros, como um laboratório ou uma sala de informática: cabe na terceira parte da '
          'lista do n.º 3. O pátio interior e a sala de convívio não estão nela.',
-         3, 'aplicar', 'onde pode haver câmaras', pista='Lê os exemplos do fim do n.º 3 e procura o lugar que se parece com eles.'),
+         3, 'aplicar', 'o que as câmaras podem filmar', pista='Lê os exemplos do fim do n.º 3 e procura o lugar que se parece com eles.'),
  # Charneira 1: o limite da lista. O erro esperado é ler «espaços cujos bens… requeiram especial proteção» como qualquer sala
  # onde haja coisas de valor (os telemóveis dos alunos).
  M.fazer('vf', 'Uma sala não é um laboratório',
@@ -231,10 +232,10 @@ CARTOES = [
  # os trabalhadores tornados suspeitos; nos retornos, a autorização da CNPD (o tribunal decidiu «independentemente» dela) e o facto
  # provado dos furtos. Conceito espaçado (origem): o artigo 26.º da Constituição, que a turma leu na sessão 01 (Volta ao caso).
  escolha('Um caso real',
-         'Caso real (Supremo Tribunal de Justiça, 2006): depois de furtos de medicamentos, um armazém filmava os trabalhadores sem '
-         'parar. O tribunal mandou tirar as câmaras. Porquê?',
-         'Em 2006, o Supremo Tribunal de Justiça mandou um armazém retirar as câmaras viradas para os trabalhadores. Segundo esta '
-         'passagem, porquê?',
+         'Caso real (Supremo Tribunal de Justiça, 2006): depois de furtos de medicamentos, um armazenista filmava os trabalhadores sem '
+         'parar. O tribunal mandou tirar as câmaras do armazém. Porquê?',
+         'Em 2006, o Supremo Tribunal de Justiça mandou um armazenista retirar do armazém as câmaras viradas para os trabalhadores. '
+         'Segundo esta passagem, porquê?',
          'Faziam de cada trabalhador um suspeito, sem prazo.',
          [('Faltava à empresa a autorização para as câmaras.',
            'Não foi por isso: o tribunal decidiu «independentemente da autorização concedida pela Comissão Nacional de Protecção de '
@@ -265,17 +266,18 @@ CARTOES = [
          [('Lei n.º 58/2019, artigo 21.º, n.º 4', 'Quando cesse a finalidade que motivou o tratamento […] de dados pessoais, o '
                                                  'responsável pelo tratamento deve proceder à sua destruição ou anonimização.', 'lei58-21-4', None)],
          f'<a href="{DRE_LEI}">Diário da República</a>.', carimbo='Caso inventado.'),
- # A dúvida aberta, levada ao projeto (plano: «apagar no prazo combinado», piloto 17): uma palavra-passe não é um prazo.
+ # A dúvida aberta, levada ao projeto (plano: «apagar no prazo combinado», piloto 17): uma palavra-passe não é um prazo. 06/11/2026
+ # (revisão): o enunciado já não diz que se combinou apagar, para o «Falso» vir do artigo 21.º, n.º 4, e não da premissa.
  M.fazer('vf', 'Segura não é para sempre',
-         'Caso inventado: gravaste uma entrevista para o projeto e combinaste apagá-la no fim. Acabado o trabalho, podes guardá-la '
-         'sem prazo, numa pasta com palavra-passe.',
+         'Caso inventado: gravaste uma entrevista para o projeto. Acabado o trabalho, podes guardá-la sem prazo, numa pasta com '
+         'palavra-passe.',
          'O trabalho acabou. A gravação da entrevista está numa pasta com palavra-passe; como está segura, pode ficar lá sem prazo.',
          'Falso. A palavra-passe protege a gravação, mas não lhe dá uma finalidade nova. Acabado o trabalho, a lei manda «proceder '
-         'à sua destruição ou anonimização», e combinaste apagá-la.',
+         'à sua destruição ou anonimização».',
          3, 'transferir', 'prazo de conservação', v=False,
          citacoes=[('lei58-21-4', 'proceder à sua destruição ou anonimização')],
          fe='Guardar bem não é o mesmo que poder guardar. Quando a finalidade acaba, a lei manda «proceder à sua destruição ou '
-            'anonimização». E a pessoa só aceitou a gravação para o trabalho. Volta ao artigo 21.º.',
+            'anonimização». Volta ao artigo 21.º.',
          pista='Pergunta-te para que foi feita a gravação e se essa finalidade ainda existe.'),
  M.em_turma(DECIDE_Q, [
      ('O lado da associação', 'Os furtos aconteceram; nas entradas, «não se vê quem tira o telemóvel da mochila».'),
@@ -303,19 +305,22 @@ CARTOES = [
             'finalidade e diz que está a mais. Pergunta a cada frase de onde vem.',
          pista='Pergunta a cada frase: aconteceu, está escrito numa lei, liga as duas coisas, ou diz o que ainda não se sabe?'),
  # Cadeia com o passo em falta (plano, secção 2: nas sessões 04 a 07, o aluno encontra o passo que falta). Na s04 faltava a
- # aplicação; aqui falta a fonte.
+ # aplicação; aqui falta a fonte. 06/11/2026 (revisão): a cadeia passa à gravação da entrevista do cartão 17; a das salas dava a
+ # resposta da charneira 2, logo a seguir. O p2 repete a cadeia, porque é ele que aparece na segunda tentativa e em «Só os que errei».
  escolha('O passo que falta',
-         'Facto: querem câmaras nas salas. Aplicação: a sala não é entrada, perímetro nem laboratório. Limite: falta saber se as '
-         'entradas chegam. Escolhe a fonte que falta.',
-         'Nesta justificação há facto, aplicação e limite, mas falta a fonte: o texto de onde vem a regra. Escolhe-a.',
-         'A Lei n.º 58/2019 diz onde podem estar câmaras numa escola.',
-         [('O cartaz da associação diz «Quem não deve não teme».',
-           'Isto é a razão de uma das partes, não uma regra que valha para todos. A fonte é o texto que diz onde pode haver câmaras '
-           'numa escola. Volta à lei.'),
-          ('Na sala 12, desapareceram três telemóveis num mês.',
-           'Isto é outro facto do caso. A fonte é o texto que a aplicação usa: diz onde pode haver câmaras numa escola. Volta à lei.')],
-         'A aplicação compara a sala com uma regra; a fonte é o texto de onde ela vem: a Lei n.º 58/2019. Sem fonte, «não é entrada '
-         'nem laboratório» fica sem razão de ser.',
+         'Facto: a gravação da entrevista ficou guardada depois do trabalho. Aplicação: acabou a finalidade. Limite: falta saber se '
+         'a pessoa aceitou outro uso. Escolhe a fonte que falta.',
+         'A gravação da entrevista ficou guardada depois do trabalho, e a finalidade acabou; falta saber se a pessoa aceitou outro '
+         'uso. Falta a fonte: escolhe-a.',
+         f'A Lei n.º{NB}58/2019 manda destruir ou anonimizar esses dados.',
+         [('A gravação ficou numa pasta protegida com palavra-passe.',
+           'Isto é outro facto do caso, não uma regra. A fonte é o texto que diz o que fazer aos dados quando a finalidade acaba. '
+           'Volta ao artigo 21.º.'),
+          ('Quase toda a gente acaba por apagar as gravações antigas.',
+           'Isto é um hábito, não uma regra que obrigue. A fonte é o texto de onde vem a regra que a aplicação usa. Volta ao '
+           'artigo 21.º.')],
+         'A aplicação diz que a finalidade acabou; a fonte é o texto que diz o que isso obriga a fazer: a Lei n.º 58/2019, artigo '
+         '21.º, n.º 4.',
          4, 'aplicar', 'facto, fonte, aplicação, limite', pista='A fonte é o texto de onde vem a regra que a aplicação usa.'),
  # Charneira 2: a conclusão que não vai além das provas. Os erros esperados: a razão do cartaz, ou ler «podem» como «têm de».
  escolha('O que as provas permitem',
@@ -326,9 +331,9 @@ CARTOES = [
            'É a razão do cartaz, não uma prova. As câmaras «só podem incidir sobre os perímetros externos e locais de acesso» e '
            'salas como laboratórios; a sala de aula não é nenhum deles. Separa o que se prova do que se repete.'),
           ('A escola tem de pôr câmaras nas entradas, já.',
-           'A lei diz onde as câmaras podem estar; não obriga a pô-las. E ninguém sabe ainda se as das entradas travam os furtos. '
+           'A lei diz o que as câmaras podem filmar; não obriga a pô-las. E ninguém sabe ainda se as das entradas travam os furtos. '
            'Volta ao verbo do n.º 3.')],
-         'Diz o que as provas mostram (a lei não deixa câmaras nas salas de aula) e deixa aberto o que falta saber: se as câmaras '
+         'Diz o que as provas mostram (a lei não deixa filmar as salas de aula) e deixa aberto o que falta saber: se as câmaras '
          'nas entradas chegam para os furtos.',
          3, 'aplicar', 'conclusão e provas',
          citacoes=[('lei58-19-3', 'só podem incidir sobre os perímetros externos e locais de acesso')],
@@ -347,7 +352,7 @@ CARTOES = [
          '<li>Dúvida: o regulamento do torneio exige-o?</li></ol>',
          'Num papel pequeno, sozinho e sem telemóvel.',
          relogio_min=12),
- M.levar(FRASE, ['Numa escola, as câmaras só podem estar nos acessos, no perímetro exterior e em salas como laboratórios.',
+ M.levar(FRASE, ['Numa escola, as câmaras só podem filmar os acessos, o perímetro externo e salas como laboratórios.',
                  'Acabada a finalidade, os dados não ficam «para o caso de».']),
 ]
 
@@ -359,7 +364,7 @@ LUGARES = (2, 0, 1, 0, 2, 1)
 # entrevistas», «Dados pessoais»).
 DEPOIS = ('<article class="c"><p class="rot">O passo do teu projeto</p><p class="tit">A nota de privacidade do teu projeto</p>'
           '<p class="sub">No teatro-documento, usas entrevistas, gravações e notas sobre pessoas reais. Escreve, em papel, a nota de '
-          'privacidade do teu projeto em quatro linhas: que dados recolhes; para quê; quem os vê; quando se apagam. O que conta: cada '
+          'privacidade do teu projeto em quatro linhas: os dados que recolhes; para quê; quem os vê; quando se apagam. O que conta: cada '
           'dado tem uma finalidade; nada se recolhe «para o caso de»; quem vê fica dito com clareza (só tu, ou também a pessoa entrevistada); '
           'o prazo é uma data ou um momento do trabalho. Nada de gravações, fotografias, moradas ou contactos publicados.</p>'
           '<p class="ir"><a href="../../../projeto/#metodo">A ética das entrevistas, no enunciado da Pergunta Humana</a></p></article>')
@@ -373,11 +378,11 @@ def sessao():
         'saida': 'cidadania/m1/sessoes/05/index.html',
         'seguinte': '../../../piloto/m1-s06/', 'seguinteRotulo': 'Sessão 06: Uma regra para quem perde',
         'fontes': M.ref('Lei n.º 58/2019, de 8 de agosto, artigos 19.º, n.os 3 e 4, e 21.º, n.º 4, no Diário da República. Constituição '
-                        'da República Portuguesa, artigos 18.º, n.º 2, 26.º, n.º 1, e 35.º, n.os 1 e 4, no Diário da República. Acórdão do '
+                        'da República Portuguesa, artigos 18.º, n.º 2, 26.º, n.º 1, e 35.º, n.º 1, no Diário da República. Acórdão do '
                         'Supremo Tribunal de Justiça de 8 de fevereiro de 2006, processo 05S3139, em dgsi.pt. Gravura: _A General Idea of '
-                        'a Penitentiary Panopticon in an Improved, but as yet (Jan.y 23.d 1791) Unfinished State_, estampa de _The Works of '
+                        'a Penitentiary Panopticon […]_ (1791), estampa de _The Works of '
                         'Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), Biblioteca da Universidade de Sevilha, via Internet '
-                        'Archive, domínio público. O caso da sala 12, o do contacto dado para a visita, o do formulário, o da oficina, o da '
+                        'Archive, domínio público. O caso da sala 12, o do contacto dado para a visita, o do formulário, o da oficina, o do '
                         'programa de presenças, o da entrevista gravada e o do torneio de xadrez são inventados; o do Supremo Tribunal '
                         'de Justiça é real.'),
         'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},
