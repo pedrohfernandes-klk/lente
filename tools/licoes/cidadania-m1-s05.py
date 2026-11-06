@@ -376,7 +376,8 @@ def sessao():
         'titulo': 'Sessão 05: Quem guarda os meus dados?', 'h1': 'Cidadania, módulo 1, sessão 05: Quem guarda os meus dados?',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/05/index.html',
-        'seguinte': '../../../piloto/m1-s06/', 'seguinteRotulo': 'Sessão 06: Uma regra para quem perde',
+        # 06/11/2026: a sessão 06 também passou ao molde final (decisões 166 a 168); a s05 leva à s06 nova.
+        'seguinte': '../06/', 'seguinteRotulo': 'Sessão 06: Uma regra para quem perde',
         'fontes': M.ref('Lei n.º 58/2019, de 8 de agosto, artigos 19.º, n.os 3 e 4, e 21.º, n.º 4, no Diário da República. Constituição '
                         'da República Portuguesa, artigos 18.º, n.º 2, 26.º, n.º 1, e 35.º, n.º 1, no Diário da República. Acórdão do '
                         'Supremo Tribunal de Justiça de 8 de fevereiro de 2006, processo 05S3139, em dgsi.pt. Gravura: _A General Idea of '
