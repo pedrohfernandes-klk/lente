@@ -628,7 +628,9 @@ def pagina_entrada(L):
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
     cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1"></head>')
     return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{LL.nq(corpo)}</main>'
-            f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
+            # 05/11/2026 (plano do molde da Cidadania, pedido 1): o progresso comum passa a progresso-licoes.js; o código e o nome
+            # EPILabProgresso ficam iguais.
+            f'<script src="{base}assets/licoes/{LL.PROGRESSO}"></script>'
             f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
