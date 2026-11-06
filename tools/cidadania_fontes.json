@@ -290,6 +290,116 @@
    "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2006-156233888",
    "consultado": "2026-11-06",
    "confirmado": true
+  },
+  {
+   "id": "crp-32-2",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 32.º, n.º 2",
+   "texto": "Todo o arguido se presume inocente até ao trânsito em julgado da sentença de condenação, devendo ser julgado no mais curto prazo compatível com as garantias de defesa.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-32-10",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 32.º, n.º 10",
+   "texto": "Nos processos de contra-ordenação, bem como em quaisquer processos sancionatórios, são assegurados ao arguido os direitos de audiência e defesa.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "dudh-10",
+   "documento": "Declaração Universal dos Direitos Humanos",
+   "referencia": "Artigo 10.º",
+   "texto": "Toda a pessoa tem direito, em plena igualdade, a que a sua causa seja equitativa e publicamente julgada por um tribunal independente e imparcial que decida dos seus direitos e obrigações ou das razões de qualquer acusação em matéria penal que contra ela seja deduzida.",
+   "fonte": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), transcrição portuguesa do UNRIC, Centro Regional de Informação das Nações Unidas",
+   "ligacao": "https://unric.org/pt/declaracao-universal-dos-direitos-humanos/",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "dudh-11-1",
+   "documento": "Declaração Universal dos Direitos Humanos",
+   "referencia": "Artigo 11.º, primeiro parágrafo",
+   "texto": "Toda a pessoa acusada de um acto delituoso presume-se inocente até que a sua culpabilidade fique legalmente provada no decurso de um processo público em que todas as garantias necessárias de defesa lhe sejam asseguradas.",
+   "fonte": "Declaração Universal dos Direitos Humanos (Nações Unidas, 1948), transcrição portuguesa do UNRIC, Centro Regional de Informação das Nações Unidas",
+   "ligacao": "https://unric.org/pt/declaracao-universal-dos-direitos-humanos/",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-12-1",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 12.º, n.º 1",
+   "texto": "Os Estados Partes garantem à criança com capacidade de discernimento o direito de exprimir livremente a sua opinião sobre as questões que lhe respeitem, sendo devidamente tomadas em consideração as opiniões da criança, de acordo com a sua idade e maturidade.",
+   "fonte": "Convenção sobre os Direitos da Criança (Nova Iorque, 1989), tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º Suplemento, Série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91 não tocam no artigo 12.º)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-12-2",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 12.º, n.º 2",
+   "texto": "Para este fim, é assegurada à criança a oportunidade de ser ouvida nos processos judiciais e administrativos que lhe respeitem, seja directamente, seja através de representante ou de organismo adequado, segundo as modalidades previstas pelas regras de processo da legislação nacional.",
+   "fonte": "Convenção sobre os Direitos da Criança (Nova Iorque, 1989), tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º Suplemento, Série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91 não tocam no artigo 12.º)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2023-instagram",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação, sobre a impugnação da matéria de facto",
+   "texto": "No Instagram, qualquer pessoa pode criar um perfil de utilizador, sem verificação dos dados que, para tanto, utilize.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 10/10/2023, processo 320/20.8GBSSB.E1, relatora Ana Bacelar, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2023-admitimos",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação, sobre a impugnação da matéria de facto",
+   "texto": "Admitimos que sim, mas não arriscamos afirmá-lo.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 10/10/2023, processo 320/20.8GBSSB.E1, relatora Ana Bacelar, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2023-duvida",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação, sobre a impugnação da matéria de facto",
+   "texto": "E porque não conseguimos ultrapassar o estado de dúvida, não resta senão convocar a aplicação do princípio in dubio pro reo.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 10/10/2023, processo 320/20.8GBSSB.E1, relatora Ana Bacelar, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2023-decisao",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Decisão, alínea b)",
+   "texto": "absolver o Arguido da prática dos crime de gravação e fotografias ilícitas e de difamação, que lhe são imputados nos presentes autos.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 10/10/2023, processo 320/20.8GBSSB.E1, relatora Ana Bacelar, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "tre-2023-nao-identificado",
+   "documento": "Acórdão do Tribunal da Relação de Évora",
+   "referencia": "Fundamentação, sobre a impugnação da matéria de facto",
+   "texto": "E os acontecimentos em questão devem imputar-se a indivíduo não identificado.",
+   "fonte": "Acórdão do Tribunal da Relação de Évora de 10/10/2023, processo 320/20.8GBSSB.E1, relatora Ana Bacelar, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
   }
  ]
 }

@@ -39,6 +39,11 @@ import molde_s02  # noqa: E402
 # ficheiros que a s03 muda em parte; os que escreve inteiros (molde_s03.INTEIROS: a página e a versão para imprimir da s03, a sua
 # fonte e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s03 tem de cumprir o contrato do molde.
 import molde_s03  # noqa: E402
+# 06/11/2026: plano do molde da Cidadania, sessão 07 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais
+# recente, com as mesmas regras: o manifesto fechado tools/trocas/molde-s07-20261106.json (trocas literais, contagem exata) nos
+# ficheiros que a s07 muda em parte; os que escreve inteiros (molde_s07.INTEIROS: a página e a versão para imprimir da s07, a sua
+# fonte e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s07 tem de cumprir o contrato do molde.
+import molde_s07  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -98,6 +103,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s03.INTEIROS:
                     self.assertTrue(molde_s03.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
@@ -115,6 +124,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 03 no molde, na fusão do main com a sessão 2 final, os menus e o «Dilemas»): o manifesto da s03
                 # parte agora do main (b29833d), já com a 163 e a 149; a s03 é a camada mais recente e desfaz-se no ficheiro atual,
                 # com contagem exata de cada «novo», antes de se tirarem as versões de cache; a comparação continua integral.
+                # 06/11/2026 (sessão 07 no molde): o manifesto da s07 parte do main 88c2cba (com a s03); é a camada mais recente e
+                # desfaz-se primeiro, com contagem exata de cada «novo», antes da da s03.
+                if nome in molde_s07.TROCAS:
+                    depois = molde_s07.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s03.TROCAS:
                     depois = molde_s03.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome == 'assets/licoes/cidadania.css':
@@ -161,6 +174,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 03 no molde): o mesmo para os ficheiros que a s03 escreve inteiros.
                 if nome in molde_s03.INTEIROS:
                     self.assertTrue(molde_s03.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
                     continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
@@ -215,6 +232,9 @@ class CidadaniaBase(unittest.TestCase):
                 # sessão 2 final, os menus e o «Dilemas»): o manifesto da s03 parte do main (b29833d), por isso aplica-se depois da 163
                 # e da 149, em último lugar.
                 esperado = molde_s03.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 07 no molde, com contagem exata, por cima de tudo (o seu manifesto parte do main
+                # 88c2cba, já com a s03).
+                esperado = molde_s07.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

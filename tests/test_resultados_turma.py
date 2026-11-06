@@ -320,6 +320,8 @@ class Listas(unittest.TestCase):
             # registos antigos da 03 continuam a ler-se e a contar (as chaves do percurso publicado leem-se e nunca se apagam; plano do
             # molde, secção 5), por isso o total embutido fica de 03 a 10 e só a página da 03 deixa de ter o botão.
             sem_registo = {3} if m == 'm1' else set()
+            # 06/11/2026 (sessão 07 no molde): o mesmo para a sessão 07 do M1, pela mesma razão.
+            sem_registo = sem_registo | ({7} if m == 'm1' else set())
             self.assertEqual(pastas, [n for n in range(de, ate + 1) if n not in sem_registo], m)
             self.assertIn("'%s': {de: %d, ate: %d}" % (m[1], de, ate), js)
             # 28/10/2026: «com registo», e no M1 diz que o total começa na sessão 03
