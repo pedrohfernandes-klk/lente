@@ -14,15 +14,22 @@ class Percursos(unittest.TestCase):
  def test_inventario_completo_sem_duplicados(self):
   ids=[p['id'] for p in D['pieces']];assigned=[id for r in D['routes'] for id in r['pieces']]
   # 30/10/2026: decisão 34: «Três cartas» sai do percurso e continua no endereço; 93 peças, 92 nos percursos.
-  self.assertEqual(len(ids),93);self.assertEqual(len(set(ids)),len(ids));self.assertEqual(len(assigned),len(set(assigned)))
+  # 05/11/2026: decisão 147. As peças feitas sobre textos do Português saíram e ficam em assets/laboratorio/retiradas.json
+  # como redirecionamento: as 93 continuam todas contadas, entre as que ficam e as retiradas.
+  RETL=json.loads((R/'assets/laboratorio/retiradas.json').read_text('utf-8'))['retiradas']
+  RET=[x['url'].removeprefix('narrativas/').rstrip('/') for x in RETL];retp=[x['peca'] for x in RETL if x.get('peca')]
+  self.assertTrue(all(x['url']=='narrativas/'+x['peca']+'/' for x in RETL if x.get('peca')))
+  self.assertFalse(set(ids)&set(RET));self.assertEqual(len(ids)+len(retp),93)
+  self.assertEqual(len(set(ids)),len(ids));self.assertEqual(len(assigned),len(set(assigned)))
   self.assertCountEqual([id for id in ids if id!='formas/tres-cartas'],assigned)
   for r in D['routes']:self.assertTrue(4<=len(r['pieces'])<=8,r['id'])
-  support={'','tudo','ver','treinar','criar','percursos','corta','margens','fora-da-pagina','treinar/caderno','treinar/docente'}
+  # 05/11/2026: decisão 147. O concentrador do Corta! (corta/) saiu e redireciona; deixa de ser página de apoio.
+  support={'','tudo','ver','treinar','criar','percursos','margens','fora-da-pagina','treinar/caderno','treinar/docente'}
   # 30/10/2026: coração do Laboratório em piloto escondido (decisão 39): fora de percursos.json, sem ligações de entrada
   # (tests/test_ideias.py confirma); as sessões entram aqui uma a uma, quando forem construídas.
   support|={'ideias','ideias/sessao-01','ideias/sessao-02','ideias/guiao','ideias/docente'}
   actual={p.parent.relative_to(R/'narrativas').as_posix().replace('.','') for p in (R/'narrativas').rglob('index.html') if '-imprimir' not in str(p) and 'percursos' not in p.parts}
-  self.assertEqual(actual-set(ids),support-{'percursos'})
+  self.assertEqual(actual-set(ids)-set(RET),support-{'percursos'})
  def test_paginas_geradas_e_ligacoes(self):
   pages=[R/'narrativas/index.html',R/'narrativas/tudo/index.html']+[R/'narrativas'/b['id']/'index.html' for b in D['blocks']]+list((R/'narrativas/percursos').rglob('index.html'))
   before={p:p.read_bytes() for p in pages};subprocess.run([sys.executable,str(R/'tools/laboratorio.py')],check=True,capture_output=True)

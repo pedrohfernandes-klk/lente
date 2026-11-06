@@ -36,8 +36,9 @@ PLACA = (
  '<p>Numa estação de autocarros dos Estados Unidos, a placa aponta a «sala de espera para pessoas de cor» (tradução nossa). A regra está escrita: separa as pessoas pela cor da pele.</p>'
  '<p class="pergunta-c">Esta regra estava escrita numa placa. Na tua escola, que barreira deixa alguém de fora sem estar escrita em lado nenhum?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
 NA_AULA = (
- '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em turma, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. A turma decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, cada um escolhe e delimita a sua pergunta para a Pergunta Humana.</p>'
+ '<p><b>O que se faz.</b> Cartas de perspetiva com orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua pergunta para a Pergunta Humana.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a tua pergunta.</p>')
 VIDEO = (

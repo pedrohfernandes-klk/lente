@@ -37,8 +37,9 @@ FOTO = (
  '<p>Nos arquivos do National Child Labor Committee, a legenda desta fotografia dá o nome da rapariga, a idade e a fábrica onde trabalhava.</p>'
  '<p class="pergunta-c">A legenda dá o nome e a idade da Addie. Uma boa causa chega para tornar público o nome de uma criança?</p>'
  '<p>Responde no caderno, numa linha. Voltas a esta pergunta no fim da sessão.</p>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
 NA_AULA = (
- '<p><b>O que se faz.</b> Em turma, quatro situações em papel: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, a turma decide, lê o que essa decisão provoca, recebe uma informação nova e revê a decisão. No fim, cada um escreve o pedido de consentimento para as entrevistas da Pergunta Humana.</p>'
+ '<p><b>O que se faz.</b> Quatro situações: o ensaio da Marta, uma fotografia de rua com uma pessoa reconhecível, uma captura de ecrã e a entrevista do projeto. Em cada uma, decide, vê o que a decisão provoca e revê-a se um dado mudar (por exemplo, se a pessoa da fotografia for menor). No fim, escreve o pedido de consentimento para as entrevistas da Pergunta Humana.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
  '<p><b>O que fica escrito.</b> O teu pedido de consentimento (para quê, que uso, onde fica, como se retira) e a decisão revista de uma das situações. O pedido entra no dossiê da Pergunta Humana.</p>')
 VIDEO = (

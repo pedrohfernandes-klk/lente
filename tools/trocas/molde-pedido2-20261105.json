@@ -13,11 +13,6 @@
  ],
  "tools/cidadania_piloto.py": [
   [
-   "import html, importlib.util, json, pathlib, re, sys\n",
-   "import html, importlib.util, json, pathlib, posixpath, re, sys\n",
-   1
-  ],
-  [
    "        abre = d['cartoes'][0]['html']\n        cart = {c.get('rot'): c for c in d['cartoes'] if c['t'] == 'ler' and c.get('rot') in ('Na aula', 'Para levar')}\n",
    "        abre = d['cartoes'][0]['html']\n        # 05/11/2026 (plano do molde, pedido 2): uma sessão no molde cidadania-2026-11 não tem «Na aula», imagem com pergunta nem\n        # vídeo (decisões 154 e 155); a pergunta da sessão está no Abre (.pergunta-sessao) e a página pode viver fora do piloto\n        # (a s01 está em cidadania/m1/sessoes/01/). Antes, sessoes() exigia img, data-yt e pergunta-c e dava StopIteration.\n        if d.get('molde'):\n            out.append({'n': n, 'd': d, 'chave': d['chave'], 'versao': d['versao'], 'molde': True,\n                        'titulo': d['titulo'].split(': ', 1)[1],\n                        'pergunta': re.search(r'<p class=\"pergunta-sessao\"[^>]*>(.*?)</p>', abre).group(1),\n                        'pasta': d['saida'].rsplit('/', 1)[0] + '/'})\n            continue\n        cart = {c.get('rot'): c for c in d['cartoes'] if c['t'] == 'ler' and c.get('rot') in ('Na aula', 'Para levar')}\n",
    1

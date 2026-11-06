@@ -1,49 +1,68 @@
 """02/11/2026: elétrico e agulha, desenho vetorial original. Semente fixa; --verificar confere SVG e integração.
 Não reconstitui uma rua nem um veículo com número de carreira. Não altera os textos, ligações ou progresso da página.
-05/11/2026: decisão 142 (docente). Passa a colagem de fotografia e traço: o elétrico 260 da Graça no Rossio
-(Eduardo Alexandre Cunha, entre 1906 e 1914, domínio público) e, por cima, as duas vias, a agulha e a alavanca.
+05/11/2026: decisão 142 (docente). Passa a colagem de fotografia e traço.
+05/11/2026: pedido do docente («a alavanca está em cima dos carris ... e o elétrico n devia vir na nossa direção»; depois,
+«o elétrico n pode virar numa das direções, o q é lógico p um humano»). Sai a fotografia do Rossio, com o elétrico de frente.
+Entra o elétrico 541 visto de lado (Philip Mallis, 2025, CC BY-SA 4.0), recortado por tools/tratar_corpo_santo.py e posto
+sobre uma via desenhada: a agulha fica à frente dele e as duas vias seguem no sentido em que anda; a alavanca fica ao lado
+da via, junto à agulha, ligada por uma vara, como as alavancas de agulha a sério.
 """
 from pathlib import Path
 
-FOTO='justica/rossio-eletrico-260.webp'
-# 05/11/2026: decisão 142 (docente, proposta B). A fotografia é a do Commons «CCFL260(porAlexCunha).jpg», na miniatura
-# padrão de 1920 px: recorte (560, 780, 1900, 1380), cinzentos com autocontraste (1 %) e contraste ×1,08, depois tinta
-# (34, 30, 26) e papel (243, 242, 238), WebP qualidade 80. O ficheiro fica no repositório e --verificar confere-lhe o SHA-256.
-FOTO_SHA256='a4d78d9948874b581a3d53e89bbb6d854839f7b8d2df2ef8e9ae80eda858dc55'
+FOTO='justica/eletrico-541-recorte.webp'
+# 05/11/2026: pedido do docente («o elétrico n pode virar numa das direções, o q é lógico p um humano»). A colagem deixa de
+# usar a rua da fotografia: o elétrico 541 é recortado (tools/tratar_corpo_santo.py: publicidade apagada, só o elétrico e a
+# vara, a preto e branco, fundo transparente) e posto sobre uma via desenhada. À frente dele, no sentido em que anda (para
+# a esquerda), fica a agulha; depois dela, as duas vias seguem no mesmo sentido, uma a direito e a outra a curvar para o
+# primeiro plano. As duas são possíveis para o elétrico. A alavanca fica junto à agulha, ao lado da via, ligada por uma vara.
+# --verificar confere o SHA-256 do recorte.
+# 05/11/2026: recorte sem os passageiros (o docente: «esta cara não pode ser visível»; depois, sobre o desfoque, «mais classe nisso»).
+FOTO_SHA256='3e672269735b3f8fb983b58c165857fd212b56189214363e5a0a410eddb7f2e4'
 W,H=1340,600
+# Recorte: 962 x 634 px, desenhado a 0,598 por píxel; as rodas assentam no carril da frente (y 470).
+RECORTE=(592.8,100.8,575.3,379.1)
 
 def cena(href='../../assets/'+FOTO):
-    """Colagem: a fotografia do Rossio (elétrico 260 a vir de frente e, no chão, a via que se divide em duas)
-    e, por cima, a traço, as duas vias que saem da agulha, a marca da agulha e a alavanca. Ninguém está na via.
-    As coordenadas são as da fotografia recortada (1340 × 600); a cena alarga-se 660 de cada lado."""
+    """Colagem: o elétrico 541 de lado (fotografia recortada), a andar para a esquerda sobre uma via desenhada. À frente
+    dele, a agulha; depois dela, duas vias possíveis no mesmo sentido (a direito e a curvar para o primeiro plano), a
+    pontilhado, sem nenhuma escolhida. A alavanca, neutra, fica ao lado da via, junto à agulha, ligada a ela por uma vara.
+    Por cima, o fio aéreo onde toca a vara do troleio. Ninguém está na via. A cena vai de -660 a 2000; no telemóvel vê-se
+    a parte do meio (de 200 a 1140), com o elétrico, a agulha, a alavanca e o começo das duas vias."""
     import random
     rng=random.Random(20261105)
-    # A cena é mais larga do que a fotografia (de -660 a 2000): no telemóvel só se vê a fotografia; no computador,
-    # a fotografia fica ao centro e esbate-se para o papel, com a calçada e o fio do elétrico desenhados à volta.
+    x,y,w,h=RECORTE
     a=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="-660 0 {W+1320} {H}" preserveAspectRatio="xMidYMin slice" focusable="false">',
-       '<defs><linearGradient id="jc-esbate" x1="0" x2="1"><stop offset="0" stop-color="var(--jc-esbate,#f3f2ee)"/><stop offset=".12" stop-color="var(--jc-esbate,#f3f2ee)" stop-opacity="0"/><stop offset=".8" stop-color="var(--jc-esbate,#f3f2ee)" stop-opacity="0"/><stop offset="1" stop-color="var(--jc-esbate,#f3f2ee)"/></linearGradient></defs>',
        '<g class="jc-traco" fill="none" stroke="currentColor" stroke-linecap="round">']
-    # Calçada a traço nas margens, com semente fixa (pedras irregulares, só fora da fotografia).
-    a.append('<g stroke-width="1.1" opacity=".22">')
-    for y in range(330,600,22):
-        for x in range(-660,2000,36):
-            xx=x+(18 if (y//22)%2 else 0)+rng.uniform(-3,3)
-            if -40<xx<W+10: continue
-            a.append(f'<path d="M{xx:.1f} {y+rng.uniform(-2,2):.1f}h30m-30 0v15"/>')
-    a.append('</g><path d="M-660 34H2000" stroke-width="1.4" opacity=".45"/></g>')
+    # O chão: calçada a traço só abaixo da via, em perspetiva (as fiadas alargam-se para o primeiro plano), com semente fixa.
+    a.append('<g stroke-width="1.1" opacity=".26">')
+    for i,yy in enumerate((484,497,511,527,545,566,590)):
+        passo=14+i*4
+        for xx in range(-660,2000,passo):
+            px=xx+(passo//2 if i%2 else 0)+rng.uniform(-2,2)
+            a.append(f'<path d="M{px:.1f} {yy+rng.uniform(-1.5,1.5):.1f}h{passo-5}"/>')
+    # O fio aéreo, onde toca a vara do troleio.
+    a.append('</g><path d="M-660 107H2000" stroke-width="1.4" opacity=".55"/></g>')
     a+=['<g class="jc-eletrico">',
-       f'<image class="jc-foto" href="{href}" width="{W}" height="{H}"/>',
-       f'<rect width="{W}" height="{H}" fill="url(#jc-esbate)"/>',
-       # O elétrico 260 da Graça, na fotografia, marcado a tracejado.
-       '<path class="jc-alvo" d="M490 66h148v156h-148z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".75"/>',
+       '<g class="jc-carris" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".85">',
+       # A via do elétrico, até à agulha; depois, a via a direito continua para a esquerda.
+       '<path d="M2000 458H-660M2000 470H-660"/>',
+       # A via que curva para o primeiro plano, a sair da agulha no sentido em que o elétrico anda.
+       '<path d="M506 470C456 471 404 498 352 540C318 568 290 592 276 612M524 458C474 460 424 486 376 528C342 558 314 590 300 612"/>',
+       '</g>',
+       # A sombra do elétrico no chão.
+       f'<ellipse cx="{x+w/2:.1f}" cy="472" rx="{w/2:.1f}" ry="9" fill="currentColor" opacity=".12"/>',
+       f'<image class="jc-foto" href="{href}" x="{x}" y="{y}" width="{w}" height="{h}"/>',
+       # O elétrico, marcado a tracejado.
+       '<path class="jc-alvo" d="M598 254h564v194h-564z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".6"/>',
        '<g fill="none" stroke-linecap="round" stroke-linejoin="round">',
        # As duas vias possíveis, a pontilhado: nenhuma é escolhida.
-       '<path class="jc-via jc-via-a" d="M568 225C576 300 584 350 591 385C606 440 622 480 641 525C664 570 690 620 716 655" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
-       '<path class="jc-via jc-via-b" d="M581 225C606 280 628 320 656 355C700 402 748 440 796 465C860 500 920 540 976 565C1040 596 1100 620 1146 635" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
-       # A agulha: as duas lâminas onde a via se divide.
-       '<path class="jc-agulha" d="M586 352l14 16M604 350l12 14" stroke="currentColor" stroke-width="3"/>',
-       # A alavanca, neutra, ao lado da via.
-       '<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M712 368L770 368L784 382L726 382Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M748 368L730 276"/><circle cx="728" cy="266" r="11" fill="var(--jc-papel,#f3f2ee)"/><path d="M712 375L660 375" stroke-width="2.5" stroke-dasharray="4 6"/></g>',
+       # 05/11/2026: o docente, «os pontos vermelhos têm de ir até ao fim»: a via a direito vai até à ponta esquerda, como os carris.
+       '<path class="jc-via jc-via-a" d="M488 464H-660" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
+       '<path class="jc-via jc-via-b" d="M492 466C446 468 400 494 354 536C322 564 300 590 288 610" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>',
+       # A agulha: as duas lâminas, à frente do elétrico.
+       '<path class="jc-agulha" d="M470 470l34-1M478 458l28 2" stroke="currentColor" stroke-width="3.5"/>',
+       # A alavanca, neutra, ao lado da via e junto à agulha; a vara tracejada liga-a às lâminas.
+       '<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M532 548H584L594 560H542Z" fill="var(--jc-papel,#f3f2ee)"/><path d="M563 548L561 496"/><circle cx="561" cy="486" r="10" fill="var(--jc-papel,#f3f2ee)"/><path d="M546 552L496 476" stroke-width="2.5" stroke-dasharray="5 7"/></g>',
        '</g></g></svg>']
     return '\n'.join(a)+'\n'
 
@@ -53,9 +72,11 @@ import re
 ROOT=Path(__file__).resolve().parents[1]
 DESTINO=ROOT/'assets/carris-eletrico.svg'
 PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
-CREDITO=('Fotografia: elétrico 260 da Graça no Rossio, Lisboa, entre 1906 e 1914, de Eduardo Alexandre Cunha (Arquivo Municipal de Lisboa; domínio público, '
-         '<a href="https://commons.wikimedia.org/wiki/File:CCFL260(porAlexCunha).jpg">Wikimedia Commons</a>). '
-         'Por cima, a traço, as duas vias que saem da agulha e a alavanca. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
+# 05/11/2026: CC BY-SA 4.0: título, autor, fonte, licença e as alterações; a fotografia tratada fica com a mesma licença.
+CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
+         '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
+         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e sem os passageiros, com a mesma licença. '
+         'A via, a agulha, as duas vias possíveis e a alavanca ao lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
 
 def instalar(texto):
     desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'
@@ -64,7 +85,7 @@ def instalar(texto):
     credito='<p class="jc-credito">'+CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>'
     texto,n=re.subn(r'<p class="jc-credito">.*?</p>',lambda _:credito,texto,flags=re.S)
     assert n==1, 'Esperava-se um só crédito'
-    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-1',texto)
+    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261105-4',texto)
     assert n==1, 'Esperava-se um só carregamento do CSS'
     # 03/11/2026: integra a gravura na abertura sem alterar os seus textos.
     if '<header class="jc-abertura">' not in texto:

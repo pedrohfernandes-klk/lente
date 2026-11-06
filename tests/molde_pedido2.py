@@ -10,7 +10,12 @@ para os testes que comparam com bases antigas, com as mesmas regras e sem aceita
 
 06/11/2026 (correções da revisão da s01): as correções mudam texto dentro das trocas que o pedido 2 já tinha (a secção da sessão 01
 no guia e no seu gerador, a frase do guia sobre a s01, a versão para imprimir). O «novo» dessas seis trocas passou ao texto
-corrigido; o «antigo» e as contagens ficam iguais, e desfazer o ficheiro de hoje dá, letra a letra, a mesma base que antes."""
+corrigido; o «antigo» e as contagens ficam iguais, e desfazer o ficheiro de hoje dá, letra a letra, a mesma base que antes.
+
+06/11/2026: fusão da versão final do #123 (decisões 146 e 154). A camada da 154 já põe em tools/cidadania_piloto.py a linha
+«import html, importlib.util, json, pathlib, posixpath, re, sys» (com «from urllib.parse import urljoin» a seguir), que era o
+«novo» da primeira troca deste manifesto nesse ficheiro. Por cima da 154, essa troca já não tem «antigo» (contagem 0, não 1) nem
+muda nada; saiu do manifesto. As outras trocas, as contagens e a comparação integral do ficheiro ficam iguais."""
 import importlib.util
 import json
 from pathlib import Path

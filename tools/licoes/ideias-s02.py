@@ -37,9 +37,10 @@ M = importlib.util.module_from_spec(_metodo_spec); _metodo_spec.loader.exec_modu
 PASSOS, passos = M.PASSOS, M.passos
 
 
+# 05/11/2026 (decisão 154, em todo o sítio): no «Abre», o lugar é teu: «Hoje olhas…» (era «Hoje a turma olha…»).
 ABRE = (
  '<p class="pergunta-c">O que distingue uma coisa de todas as outras iguais a ela?</p>'
- '<p>Hoje a turma olha para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
+ '<p>Hoje olhas para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
  '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material, até ao fundo.</b> Na sessão 1, recolheste factos a olhar; hoje vais mais fundo, numa só coisa. Sem este material específico, os passos seguintes não têm em que trabalhar.</p></div>'
  + passos({1}) +
  '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')
@@ -85,7 +86,8 @@ LEVAR = (
  '<ul><li>Uma testemunha honesta também se engana: confirma na fonte.</li>'
  '<li>A prova de uma descrição é alguém reconhecer a coisa.</li>'
  '<li>Uma palavra exata vale mais do que três bonitas.</li></ul>'
- '<p><b>No Laboratório:</b> <a href="../../personagem-faz/">Observar, «Conhecer uma personagem», <i>A personagem pelo que faz</i></a>: o adjetivo afirma, o gesto prova.</p>'
+ # 05/11/2026: decisão 147 (revisão). A porta do Laboratório é a mesma do guia do docente e da entrada do «Ideias»: Observar, «Leonardo».
+ '<p><b>No Laboratório:</b> <a href="../../leonardo/">Observar, «Observar para transformar», <i>Leonardo</i></a>: desenhar é olhar devagar.</p>'
  # 01/11/2026 (correção 1 do método, revisor de pt-PT): «Passo 1 de 5: feito.» dava o passo por acabado e, na mesma frase, mandava
  # juntar o material geral, que ainda é passo 1 (entrada, sessão 3; guia, sessões 1 a 3; cartão 16 desta sessão)
  '<p><b>Passo 1 de 5: falta o material geral.</b> Junta dez notas sobre o que sabes bem fora da escola: é com elas que começa o passo 2 de Young, trabalhar o material.</p>')

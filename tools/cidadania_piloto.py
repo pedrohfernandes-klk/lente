@@ -13,6 +13,7 @@ O texto vem das lições; o que é só do docente (passos, tempos, materiais, gr
 Uso: python3 tools/cidadania_piloto.py              (escreve as três páginas)
      python3 tools/cidadania_piloto.py --verificar  (confirma que estão atualizadas e que cumprem as regras da casa)"""
 import html, importlib.util, json, pathlib, posixpath, re, sys
+from urllib.parse import urljoin
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('licoes_lente', ROOT / 'tools/licoes_lente.py')
@@ -553,6 +554,22 @@ def yt_link(s):
     return u + (f'&t={s["yt_ini"]}s' if s['yt_ini'] and s['yt_ini'] != '0' else '')
 
 
+# 05/11/2026 (revisão da decisão 154): o cartão «Na aula» pode ligar a outra página do Lente, com o endereço relativo à página
+# da lição (a sessão 07 liga ao caso «O júri»). O guia está noutra pasta: a ligação resolve-se a partir da lição e volta a
+# escrever-se relativa ao guia, para levar ao mesmo sítio. As ligações absolutas e as âncoras ficam como estão.
+def ligacoes_no_guia(h, saida, pasta=MODULO + 'docente/'):
+    def troca(m):
+        u = html.unescape(m.group(1))
+        if u.startswith(('http:', 'https:', '//', 'mailto:', '#')):
+            return m.group(0)
+        alvo = urljoin(LENTE + saida, u)
+        assert alvo.startswith(LENTE), (saida, u)
+        caminho, _, resto = alvo[len(LENTE):].partition('#')
+        rel = posixpath.relpath(caminho or '.', pasta) + ('/' if caminho.endswith('/') else '')
+        return 'href="' + e(rel + ('#' + resto if resto else ''), quote=True) + '"'
+    return re.sub(r'href="([^"]+)"', troca, h)
+
+
 def pagina_guia(S):
     base = '../../../../'
     indice = ''.join(f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in S)
@@ -605,7 +622,7 @@ def pagina_guia(S):
                   f'<p class="abrir"><a class="botao" href="../../m1-s{s["n"]}/">Abrir a sessão</a><a class="botao" href="../../m1-s{s["n"]}/?projetar=1">Projetar</a></p>'
                   + (f'<p class="pg"><b>Antes.</b> {e(g["antes"])}</p>' if g.get('antes') else '')
                   + '<h3>O que o aluno lê no cartão «Na aula»</h3>'
-                  f'<div class="caixa">{s["aula"]["html"]}</div>'
+                  f'<div class="caixa">{ligacoes_no_guia(s["aula"]["html"], s["d"]["saida"])}</div>'
                   f'<h3>O «Na aula» em pormenor ({total} minutos, com a pausa)</h3><ol class="passos">{passos}</ol>'
                   '<h3>Materiais</h3><ul>' + ''.join(f'<li>{e(m)}</li>' for m in g['materiais']) + '</ul>'
                   f'<h3>O que fica escrito</h3><p class="pg">{e(g["escrito"])}</p>'
