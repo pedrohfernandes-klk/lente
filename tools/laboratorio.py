@@ -92,7 +92,7 @@ def page(base,title,body,desc,foot=True,treinar=False,fio=None,abre=''):
     data=[{k:p[k] for k in ['id','url','title','progress']} for p in D['pieces'] if p['id'] in INROUTE]
     data=json.dumps(data,ensure_ascii=False).replace('<','\\u003c')
     s=('<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-       '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'
+       '<title>'+(e(title)+' | ' if title!='Laboratório' else '')+'Laboratório | Lente</title><meta name="description" content="'+e(desc)+'">'+LN.PROJ+
        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap" media="print" onload="this.media=\'all\'">'
        '<link rel="stylesheet" href="'+rel('assets/appearance.css')+'?v=20261101-1"><link rel="stylesheet" href="'+rel('assets/cartaz-components.css')+'?v=20261101-1">'+LN.css(base)
        +'<script src="'+rel('assets/appearance.js')+'"></script><script defer src="'+rel('assets/laboratorio/percursos.js')+'?v='+LN.V+'"></script>'+abre+'</head>'
@@ -120,7 +120,7 @@ def entrada():
           # o título da sessão seguinte e a última feita só aparecem com progresso (entrada.js)
           '<p class="estado-p" data-p-t></p><p class="estado-p" data-p-feito></p></div>'
           '<ol class="sessoes ideias-sessoes" data-seguir-com-feitas aria-label="Sessões publicadas">'+linhas_s+'</ol></section></header>')
-    body+='<section class="lab-portas" aria-labelledby="portas-t"><p class="lab-sec-t" id="portas-t">Três portas, uma por passo</p><ol class="portas3">'
+    body+='<section class="lab-portas" aria-labelledby="portas-t"><p class="lab-sec-t" id="portas-t">Três portas para os cinco passos</p><ol class="portas3">'
     for b in D['blocks']:
         rs=routes_of(b);ids=[id for r in rs for id in r['pieces']]
         body+=('<li id="'+b['anchor']+'"><a class="porta3" href="'+b['id']+'/" data-cz-ids="'+e(json.dumps(ids))+'"><span class="nums" aria-hidden="true">'+LN.cartaz(b['passos'])+'</span>'
@@ -140,7 +140,7 @@ def entrada():
            '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></div>'
            '<div class="lab-mais"><nav class="lab-indice" aria-labelledby="indice-t"><h2 id="indice-t">Os '+str(len(D['routes']))+' percursos</h2>'+indice+'</nav>'
            '<p class="lab-tudo"><a class="sec" href="tudo/">Tudo o que há no Laboratório →</a></p>'
-           '<p class="lab-creditos">Imagens das portas. '+creditos+'</p></div></footer>')
+           '<p class="lab-creditos">Créditos das imagens das portas Observar, Treinar e Criar: '+creditos+'</p></div></footer>')
     # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.
     body+='<script>(function(){function f(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!document.getElementById(h))location.replace("tudo/"+location.search+location.hash)}addEventListener("hashchange",f);f()})()</script>'
     abre=('<script src="'+link(base,'assets/licoes/progresso-laboratorio.js')+'?v=20261102-1"></script>'
@@ -270,6 +270,9 @@ def continuacao():
         s=re.sub(r'(<a class="c-marca" href="[^"]*" aria-label="Página inicial \()[^)"]*(\)">(?:<svg[^>]*>.*?</svg>)?)[^<]*(</a>)',r'\1Laboratório\2Laboratório\3',s)
         # 31/10/2026 (releitura): a marca «Laboratório» leva ao Laboratório e o nome acessível é o texto visível
         s=re.sub(r'(<a class="c-marca" href=")[^"]*(" aria-label=")[^"]*(")',r'\g<1>'+ABS+r'narrativas/\g<2>Laboratório\g<3>',s)
+        # 05/11/2026 (revisão): o nome da marca num <span class="c-marca-t">, como no Ideias e no piloto, para a barra ficar numa
+        # linha em todas as famílias (assets/licoes/menu.css esconde-o abaixo de 400 px; o nome acessível continua a dizê-lo)
+        s=re.sub(r'(<a class="c-marca" href="[^"]*" aria-label="Laboratório">(?:<svg[^>]*>.*?</svg>)?)Laboratório(</a>)',r'\1<span class="c-marca-t">Laboratório</span>\2',s)
         # rótulo dos treinos com o nome do percurso
         if r and p['id'].startswith('treinar/'):
             s=re.sub(r'(<p class=\\"etq-m\\">Treino · )[^·<]+?( · )',lambda m:m.group(1)+e(r['title'],quote=False)+m.group(2),s)

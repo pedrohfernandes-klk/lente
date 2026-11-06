@@ -5,6 +5,10 @@
    nem cantos redondos. O vermelho marca só o lugar atual. .lab-barra e .lab-fio servem também a página Ideias. */
 
 /* ---------- Barra única (decisão 44: papel, filete a tinta, o atual sublinhado a vermelho) ---------- */
+/* 05/11/2026 (revisão): o elemento focado nunca fica por baixo da barra fixa (WCAG 2.4.11), também com Shift+Tab; na projeção
+   a barra é estática e a margem sai. */
+html:has(.lab-barra){scroll-padding-top:72px}
+html.em-projecao:has(.lab-barra){scroll-padding-top:0}
 .lab-barra{position:sticky;top:0;z-index:20;background:var(--fundo,#f3f2ee);border-bottom:2px solid var(--tinta,#000);color:var(--tinta,#000)}
 .lab-barra .pg{display:flex;align-items:center;gap:8px;min-height:56px;max-width:1200px;margin:0 auto;padding:0 16px;box-sizing:border-box}
 .lab-barra .migalhas{display:flex;flex-wrap:nowrap;align-items:center;flex:1;min-width:0;gap:2px;margin:0;min-height:0;font-size:inherit}
@@ -57,7 +61,9 @@
 [data-lab="3"] .razao{font:1rem/1.5 Georgia,serif;color:var(--suave,#444);margin:8px 0 0;max-width:46ch}
 [data-lab="3"] .liga-ideias{font:1rem/1.6 Georgia,serif;margin:16px 0 0;max-width:46ch}
 [data-lab="3"] .liga-ideias a{text-underline-offset:.2em}
-@media(min-width:960px){[data-lab="3"] .lab-abre{grid-template-columns:7fr 5fr;align-items:end;gap:40px;padding:40px 0}[data-lab="3"] .lead{font-size:1.3125rem}[data-lab="3"] .lab-abre h1{font-size:3.8125rem}[data-lab="3"] .lab-abre-percurso h1{font-size:3.0625rem}}
+/* 05/11/2026 (revisão): abertura mais baixa e portas de 224 px, para o título, o Ideias e as três portas caberem no primeiro ecrã
+   de 768 px (a 1024 e a 1366). */
+@media(min-width:960px){[data-lab="3"] .lab-abre{grid-template-columns:7fr 5fr;align-items:end;gap:40px;padding:24px 0}[data-lab="3"] .lead{font-size:1.3125rem}[data-lab="3"] .lab-abre h1{font-size:3.8125rem}[data-lab="3"] .lab-abre-percurso h1{font-size:3.0625rem}}
 
 /* Ideias: começa aqui */
 [data-lab="3"] .lab-ideias{background:var(--papel,#fff);padding:24px}
@@ -98,8 +104,9 @@
 [data-lab="3"] .porta3:focus-visible{outline-offset:-3px}
 @media(min-width:900px){
  [data-lab="3"] .portas3{grid-template-columns:repeat(3,minmax(0,1fr))}
- [data-lab="3"] .porta3{grid-template-columns:minmax(0,1fr) 24px;grid-template-areas:"n n" "nome seta" "passo passo" "conta conta";align-content:start;min-height:272px;padding:24px}
- [data-lab="3"] .porta3 .nums{font-size:6rem;margin-bottom:16px}
+ [data-lab="3"] .porta3{grid-template-columns:minmax(0,1fr) 24px;grid-template-areas:"n n" "nome seta" "passo passo" "conta conta";align-content:start;min-height:224px;padding:16px 24px}
+ [data-lab="3"] .porta3 .nums{font-size:6rem;margin-bottom:8px}
+ [data-lab="3"] .lab-portas{margin-top:16px}
  [data-lab="3"] .porta3 .nome{font-size:3.0625rem}
  [data-lab="3"] .porta3 .seta{align-self:center}
 }
@@ -121,7 +128,9 @@
 [data-lab="3"] .lab-indice .cz-state::before{content:"";width:11px;height:11px;border:1.5px solid var(--tinta,#000)}
 [data-lab="3"] .lab-indice .cz-state.done::before{background:var(--mostarda,#d9a520)}
 [data-lab="3"] .lab-indice .cz-state.current::before{background:var(--vermelho,#c8232c);border-color:var(--vermelho,#c8232c)}
-html.lab-tem-feitas [data-lab="3"] .lab-indice .ind.current{border-left-color:var(--vermelho,#c8232c)}
+/* 05/11/2026 (revisão): uma só marca «A seguir» por página. O filete acompanha a palavra; quando o Ideias da entrada já marca a
+   sessão seguinte, entrada.js tira a do índice e o filete sai com ela. */
+html.lab-tem-feitas [data-lab="3"] .lab-indice .ind.current:has(.cz-state.current){border-left-color:var(--vermelho,#c8232c)}
 [data-lab="3"] .lab-tudo{margin-top:16px!important}
 [data-lab="3"] .lab-creditos{margin-top:24px!important}
 [data-lab="3"] .lab-creditos span{display:block;margin-top:4px}
@@ -138,6 +147,11 @@ html.lab-tem-feitas [data-lab="3"] .lab-indice .ind.current{border-left-color:va
 [data-lab="3"] .info-i summary:focus-visible{outline-offset:-6px}
 [data-lab="3"] .info-i-texto{position:absolute;right:0;bottom:44px;width:min(320px,80vw);margin:0;padding:12px;background:var(--papel,#fff);font:.8125rem/1.45 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
 [data-lab="3"] .info-i-texto a{color:var(--tinta,#000)}
+/* 05/11/2026 (revisão): aberto o «i», o crédito sai por cima da imagem sem ser cortado pela moldura (a imagem já preenche a
+   caixa, por isso nada mais transborda) e nunca passa a largura do ecrã. */
+[data-lab="3"] .moldura.com-i{overflow:visible}
+[data-lab="3"] .info-i{z-index:2}
+[data-lab="3"] .info-i-texto{max-width:calc(100vw - 32px)}
 [data-lab="3"] .legenda{font:.8125rem/1.45 Arial,Helvetica,sans-serif;color:var(--suave,#444);margin:8px 0 0;max-width:60ch}
 @media(min-width:960px){[data-lab="3"] .moldura{aspect-ratio:4/3;max-height:300px}}
 

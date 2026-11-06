@@ -18,7 +18,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\">",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\">",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\">",
 1
 ],
 [
@@ -34,6 +34,16 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"../\" aria-label=\"Entrada da Cidadania\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"../\" aria-label=\"Cidadania\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
+1
+],
+[
+"<div class=\"c-menu-cab\"><p>",
+"<div class=\"c-menu-cab\"><p id=\"m-cab\">",
 1
 ]
 ],
@@ -60,7 +70,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -76,6 +86,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -102,7 +117,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -118,6 +133,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -144,7 +164,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -160,6 +180,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -186,7 +211,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -202,6 +227,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -228,7 +258,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -244,6 +274,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -270,7 +305,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -286,6 +321,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -312,7 +352,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -328,6 +368,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -354,7 +399,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -370,6 +415,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -396,7 +446,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -412,6 +462,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -438,7 +493,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -454,6 +509,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -480,7 +540,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -496,6 +556,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -522,7 +587,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -538,6 +603,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -564,7 +634,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -580,6 +650,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -606,7 +681,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -622,6 +697,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -648,7 +728,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -664,6 +744,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -690,7 +775,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -706,6 +791,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -732,7 +822,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -748,6 +838,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -774,7 +869,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -790,6 +885,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -816,7 +916,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -832,6 +932,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -858,7 +963,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -874,6 +979,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -900,7 +1010,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -916,6 +1026,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -942,7 +1057,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -958,6 +1073,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -984,7 +1104,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1000,6 +1120,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1026,7 +1151,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1042,6 +1167,11 @@
 [
 "</script><script defer src=\"../../../assets/para-ver.js?v=20261028-2\">",
 "</script><script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script><script defer src=\"../../../assets/para-ver.js?v=20261028-2\">",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1068,7 +1198,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1084,6 +1214,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1110,7 +1245,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1126,6 +1261,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1152,7 +1292,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1168,6 +1308,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1194,7 +1339,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1210,6 +1355,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1236,7 +1386,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1252,6 +1402,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1278,7 +1433,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1294,6 +1449,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1320,7 +1480,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1336,6 +1496,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1362,7 +1527,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Algoritmos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 2",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 2",
 1
 ],
 [
@@ -1378,6 +1543,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" aria-label=\"Cidadania, módulo 2\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -1404,7 +1574,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1456,7 +1626,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1508,7 +1678,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1560,7 +1730,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1617,7 +1787,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1674,7 +1844,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1731,7 +1901,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1783,7 +1953,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1835,7 +2005,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1887,7 +2057,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -1961,7 +2131,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -1977,6 +2147,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2003,7 +2178,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2020,6 +2195,11 @@
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/corta/cena-que-falta/index.html": [
@@ -2035,7 +2215,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Estás em: Laboratório / A cena que falta",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2051,6 +2231,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2077,7 +2262,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2098,6 +2283,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2124,7 +2314,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2146,6 +2336,11 @@
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/fora-da-pagina/escultura/index.html": [
@@ -2161,7 +2356,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2178,6 +2373,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/fora-da-pagina/intervalo/index.html": [
@@ -2193,7 +2393,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2210,6 +2410,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/fora-da-pagina/tese/index.html": [
@@ -2225,7 +2430,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2242,6 +2447,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/formas/certa-manha/index.html": [
@@ -2257,7 +2467,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Estás em: Laboratório / Certa manhã",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2274,6 +2484,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/formas/tres-cartas/index.html": [
@@ -2289,7 +2504,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Estás em: Laboratório / Três cartas, dois textos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2300,6 +2515,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\">Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2326,7 +2546,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2342,6 +2562,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2368,7 +2593,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2384,6 +2609,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2410,7 +2640,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2426,6 +2656,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2452,7 +2687,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Observar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Observar",
 1
 ],
 [
@@ -2468,6 +2703,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2494,7 +2734,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2510,6 +2750,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2536,7 +2781,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2557,6 +2802,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2583,7 +2833,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2604,6 +2854,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2630,7 +2885,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2646,6 +2901,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2672,7 +2932,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2688,6 +2948,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2714,7 +2979,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2730,6 +2995,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2756,7 +3026,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2772,6 +3042,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2798,7 +3073,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2814,6 +3089,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2840,7 +3120,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2856,6 +3136,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2882,7 +3167,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2903,6 +3188,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2929,7 +3219,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2950,6 +3240,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -2976,7 +3271,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -2992,6 +3287,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3018,7 +3318,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -3034,6 +3334,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3060,7 +3365,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -3076,6 +3381,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3102,7 +3412,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -3118,6 +3428,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3144,7 +3459,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -3160,6 +3475,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3186,7 +3506,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Criar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Criar",
 1
 ],
 [
@@ -3202,6 +3522,11 @@
 [
 "</body>",
 "<script defer src=\"../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3228,7 +3553,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3249,6 +3574,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3275,7 +3605,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3296,6 +3626,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3322,7 +3657,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3343,6 +3678,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3369,7 +3709,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3390,6 +3730,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3416,7 +3761,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3437,6 +3782,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3463,7 +3813,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3484,6 +3834,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3510,7 +3865,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3531,6 +3886,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3557,7 +3917,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3578,6 +3938,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3604,7 +3969,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3636,6 +4001,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/treinar/rascunho-mau/index.html": [
@@ -3661,7 +4031,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3682,6 +4052,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3708,7 +4083,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3740,6 +4115,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/treinar/so-gestos/index.html": [
@@ -3765,7 +4145,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3786,6 +4166,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3812,7 +4197,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3844,6 +4229,11 @@
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
 1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
+1
 ]
 ],
 "narrativas/treinar/tres-em-cinco/index.html": [
@@ -3869,7 +4259,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3890,6 +4280,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3916,7 +4311,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Laboratório",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Laboratório, Treinar",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Laboratório, Treinar",
 1
 ],
 [
@@ -3937,6 +4332,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=20261105-163\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Laboratório</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\" aria-label=\"Laboratório\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Laboratório</span></a>",
 1
 ]
 ],
@@ -3972,7 +4372,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -3988,6 +4388,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4014,7 +4419,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4030,6 +4435,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4056,7 +4466,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4072,6 +4482,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4098,7 +4513,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4114,6 +4529,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4140,7 +4560,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4156,6 +4576,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4182,7 +4607,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4198,6 +4623,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4224,7 +4654,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4240,6 +4670,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4266,7 +4701,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4282,6 +4717,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4308,7 +4748,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4324,6 +4764,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4350,7 +4795,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4366,6 +4811,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4392,7 +4842,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4408,6 +4858,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4434,7 +4889,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4450,6 +4905,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4476,7 +4936,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4492,6 +4952,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4518,7 +4983,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4534,6 +4999,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4560,7 +5030,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4576,6 +5046,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4602,7 +5077,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4618,6 +5093,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4644,7 +5124,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4660,6 +5140,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4686,7 +5171,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania · Humanos",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1",
 1
 ],
 [
@@ -4702,6 +5187,11 @@
 [
 "</body>",
 "<script defer src=\"../../../assets/licoes/menu.js?v=CACHE\"></script></body>",
+1
+],
+[
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/\" aria-label=\"Página inicial (Cidadania)\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg>Cidadania</a>",
+"<a class=\"c-marca\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" aria-label=\"Cidadania, módulo 1\"><svg class=\"c-casa\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7\"/></svg><span class=\"c-marca-t\">Cidadania</span></a>",
 1
 ]
 ],
@@ -4728,7 +5218,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -4780,7 +5270,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -4832,7 +5322,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -4884,7 +5374,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -4941,7 +5431,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -4998,7 +5488,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -5055,7 +5545,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -5107,7 +5597,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -5159,7 +5649,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [
@@ -5211,7 +5701,7 @@
 ],
 [
 "<div class=\"casca-menu\" data-c-painel hidden><div class=\"c-menu-in\" role=\"dialog\" aria-label=\"Menu\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1<br>Humanos</p><span data-appearance-control></span>",
-"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-t\"><div class=\"c-menu-cab\"><p>Cidadania, módulo 1</p>",
+"<div class=\"casca-menu m2\" data-c-painel hidden><div class=\"c-menu-in\" id=\"c-menu\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"m-cab m-t\"><div class=\"c-menu-cab\"><p id=\"m-cab\">Cidadania, módulo 1</p>",
 1
 ],
 [

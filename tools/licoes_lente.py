@@ -304,7 +304,9 @@ def pagina(d):
         titulo = f'{esc(d["titulo"])} ({esc(d["passo"][0].lower() + d["passo"][1:])}) | {esc(mod["nome"])} | Laboratório | Lente'
     # 05/11/2026: decisão 163. Na Cidadania, «CD» passa a «Cidadania» (escondida abaixo de 400 px, como a do Laboratório) e o
     # nome acessível começa pelo texto visível; o «marca» dos JSON, que o motor usa, não muda.
-    marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar a {esc(mod["nome"])}">' if lab
+    # 05/11/2026 (revisão): no Laboratório, o nome acessível da marca passa a «Laboratório, Ideias» (paralelo a «Cidadania, módulo N»
+    # e ao cabeçalho do menu); «Voltar a Ideias» dava ao mesmo destino outro nome que o primeiro item do menu («Voltar ao Ideias»).
+    marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Laboratório, {esc(mod["nome"])}">' if lab
              else f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Cidadania, módulo {mod["n"]}">')
     # 01/11/2026 (correção 2 do coração do Laboratório, diretor de arte): no Laboratório, o nome da marca vai num <span>, que
     # assets/licoes/laboratorio.css esconde abaixo de 400 px («Ideias» tem 81 px e empurrava o botão Menu para fora do ecrã a

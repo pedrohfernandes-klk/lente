@@ -42,7 +42,9 @@ def item(href, icone, rotulo, apoio=None, cls='', seta=True, attrs=''):
 
 
 def menu(ctx):
-    """ctx: cab, titulo, onde, voltar=(href, rotulo, apoio), seguinte=(href, rotulo, apoio)|None, papel=(href, rotulo)|None,
+    """05/11/2026 (revisão): o nome acessível do diálogo junta o cabeçalho e o título («Laboratório, Criar Exposição, nó,
+    desenlace»), para o leitor de ecrã dizer que é o menu e onde se está.
+    ctx: cab, titulo, onde, voltar=(href, rotulo, apoio), seguinte=(href, rotulo, apoio)|None, papel=(href, rotulo)|None,
     projecao (bool), caminho=[(rotulo, href)], fontes (HTML)|None; opcionais: nota (HTML; a nota própria da página, em vez da
     nota do aparelho) e mais (uma <nav class="m-orig"> com as ligações e os botões de um motor próprio, que ficam como estão)."""
     v = ctx['voltar']
@@ -63,8 +65,8 @@ def menu(ctx):
     fontes = (f'<details class="m-fontes"><summary>Fontes e créditos</summary><p>{ctx["fontes"]}</p></details>'
               if ctx.get('fontes') else '')
     return ('<div class="casca-menu m2" data-c-painel hidden>'
-            '<div class="c-menu-in" id="c-menu" role="dialog" aria-modal="true" aria-labelledby="m-t">'
-            f'<div class="c-menu-cab"><p>{e(ctx["cab"])}</p>'
+            '<div class="c-menu-in" id="c-menu" role="dialog" aria-modal="true" aria-labelledby="m-cab m-t">'
+            f'<div class="c-menu-cab"><p id="m-cab">{e(ctx["cab"])}</p>'
             '<button type="button" class="c-ic" data-c-fecha-menu aria-label="Fechar o menu">✕</button></div>'
             f'<div class="m-aqui"><p class="k">Estás em</p><p class="t" id="m-t">{e(ctx["titulo"])}</p>'
             f'<p class="pos">{e(ctx["onde"])} <span data-c-pos></span></p></div>'
@@ -160,6 +162,31 @@ def titulo_de(url):
     return html.unescape(re.split(r' \| | · ', t[1])[0]) if t else None
 
 
+CASA = re.compile(r'<a class="c-marca" href="[^"]*" aria-label="[^"]*">(<svg class="c-casa"[^>]*>.*?</svg>)(?:<span class="c-marca-t">)?Cidadania(?:</span>)?</a>')
+
+
+def com_marca(s, ctx):
+    """05/11/2026 (revisão): a marca da barra das páginas estáticas, como no piloto. Nas M1 e M2 leva ao módulo e chama-se
+    «Cidadania, módulo N» (antes ia à entrada do Lente com «Página inicial (Cidadania)», o mesmo destino que o caminho do menu
+    chama «Lente»); no 25 de Abril continua a levar à Cidadania e chama-se «Cidadania». O nome visível vai num <span>, que
+    assets/licoes/menu.css esconde abaixo de 400 px (o nome acessível continua a dizê-lo). Idempotente."""
+    m = re.match(r'Cidadania, módulo (\d)$', ctx['cab'])
+    if m:
+        href, nome = f'{ABS}cidadania/m{m[1]}/', f'Cidadania, módulo {m[1]}'
+        assert ctx['voltar'][0] == href, (ctx['voltar'][0], href)
+    else:
+        href, nome = None, 'Cidadania'
+    i = s.find('<header class="casca-topo">')
+    j = s.find('</header>', i)
+    assert i >= 0 and j > i, 'casca-topo'
+    def nova(x):
+        destino = e(href) if href else re.search(r'href="([^"]*)"', x[0])[1]
+        return f'<a class="c-marca" href="{destino}" aria-label="{e(nome)}">{x[1]}<span class="c-marca-t">Cidadania</span></a>'
+    topo, n = CASA.subn(nova, s[i:j], count=1)
+    assert n == 1, 'marca da barra'
+    return s[:i] + topo + s[j:]
+
+
 def ctx_estatica(f, s):
     rel = posixpath.relpath('.', f.parent.relative_to(R).as_posix()) + '/'
     menu_html = s[s.find('<div class="casca-menu'):fim_div(s, s.find('<div class="casca-menu'))]
@@ -221,6 +248,7 @@ def main(argv):
         ctx, rel = ctx_estatica(f, s)
         t = trocar_menu(s, menu(ctx))
         t = com_controls(t)
+        t = com_marca(t, ctx)
         t = re.sub(r'<style id="mg-css">.*?</style>', '', t, count=1, flags=re.S)
         t = com_semjs(t, ctx, 'sessão' if ctx['cab'] != 'Cidadania' else 'página')
         t = ativos(t, rel)

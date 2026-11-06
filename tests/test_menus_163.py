@@ -165,7 +165,9 @@ class Menu(unittest.TestCase):
         for rel in paginas:
             s = ler(rel); m = menu_de(s)
             with self.subTest(rel=rel):
-                self.assertTrue(m.startswith('<div class="casca-menu m2" data-c-painel hidden><div class="c-menu-in" id="c-menu" role="dialog" aria-modal="true" aria-labelledby="m-t">'))
+                # 05/11/2026: revisão. O nome acessível do diálogo junta o cabeçalho e o título (aria-labelledby="m-cab m-t"); a
+                # exigência continua a ser o início exato do painel.
+                self.assertTrue(m.startswith('<div class="casca-menu m2" data-c-painel hidden><div class="c-menu-in" id="c-menu" role="dialog" aria-modal="true" aria-labelledby="m-cab m-t"><div class="c-menu-cab"><p id="m-cab">'))
                 self.assertEqual(s.count('data-appearance-control'), 1)
                 self.assertIn('data-appearance-control', m)
                 self.assertRegex(s, r'<button type="button" class="c-ic" data-c-menu aria-label="Menu" aria-expanded="false" aria-controls="c-menu"')
@@ -189,6 +191,28 @@ class Menu(unittest.TestCase):
                 self.assertNotIn('c-migalhas', m)
                 self.assertEqual(proibido.findall(visivel(m)), [])
                 self.assertIsNone(LL.QUAL_NOME.search(visivel(m)))
+                # 05/11/2026: revisão. Também nenhum nome acessível diz «Página inicial» (a marca das páginas estáticas dizia-o) e a
+                # marca da barra tem o nome visível num <span class="c-marca-t">, nas quatro famílias (as seis peças com motor próprio
+                # não têm a casa desenhada).
+                self.assertEqual(re.findall(r'aria-label="[^"]*Página inicial[^"]*"', s), [])
+                topo = re.search(r'<header class="casca-topo">(.*?)</header>', s, re.S).group(1)
+                self.assertRegex(topo, r'^<a class="c-marca" href="[^"]+" aria-label="[^"]+">(?:<svg class="c-casa"[^>]*>.*?</svg>)?<span class="c-marca-t">[^<]+</span></a>')
+
+    def test_marca_das_estaticas_como_no_piloto(self):
+        # 05/11/2026: revisão. O mesmo destino tem sempre o mesmo nome: nas M1 e M2 a marca leva ao módulo e chama-se «Cidadania,
+        # módulo N» (como no piloto); no 25 de Abril leva à Cidadania e chama-se «Cidadania». A entrada do Lente continua no
+        # caminho do menu («Lente»).
+        for d in ('cidadania/m1', 'cidadania/m2'):
+            n = d[-1]
+            for p in sorted((R / d).glob('*/index.html')):
+                s = p.read_text('utf-8')
+                if '<div class="casca-menu' not in s:
+                    continue
+                with self.subTest(rel=p.relative_to(R).as_posix()):
+                    self.assertIn(f'<header class="casca-topo"><a class="c-marca" href="{ABS}cidadania/m{n}/" aria-label="Cidadania, módulo {n}"><svg class="c-casa"', s)
+                    self.assertIn(f'<li><a href="{ABS}">Lente</a></li>', menu_de(s))
+        s = ler('cidadania/25-de-abril/index.html')
+        self.assertIn('<header class="casca-topo"><a class="c-marca" href="../" aria-label="Cidadania"><svg class="c-casa"', s)
 
     def test_sem_javascript_diz_para_onde_ir(self):
         for rel in SESSOES:

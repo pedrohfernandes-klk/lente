@@ -3,6 +3,9 @@
 // Laboratório), a 320, 390, 1024 e 1366 px, em claro, em escuro e na projeção: o caminho em frente à vista, sem deslocamento
 // horizontal, alvos de 44 px, o menu todo pelo teclado (foco preso, Escape fecha e devolve o foco ao ≡), contraste do painel,
 // «Sair da projeção» na projeção e o que se vê sem JavaScript. Com LENTE_SHOTS=<pasta>, guarda capturas pequenas.
+// 05/11/2026: revisão do commit 192c5e3 (secção 4, casos novos): foco nunca por baixo da barra fixa, créditos do «i» inteiros,
+// uma só «A seguir» na entrada, barra da casca numa linha nas quatro famílias, letra do menu na projeção, sem salto de layout
+// com ?projetar=1 e as três portas no primeiro ecrã de 768 px.
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http'),assert=require('node:assert/strict');
 const root=path.resolve(__dirname,'..'),out=process.env.LENTE_SHOTS||'';if(out)fs.mkdirSync(out,{recursive:true});
@@ -109,6 +112,39 @@ const contraste=(a,b)=>{const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return (x+.
    for(const u of ['/narrativas/ver/','/narrativas/treinar/','/narrativas/criar/','/narrativas/percursos/olhar/']){await p.goto(base+u);const n=await p.locator('li[data-peca]').count();assert.ok(n>=4);assert.equal(await p.locator('li[data-peca]:visible').count(),n,u);}
    for(const u of MENU){await p.goto(base+u);assert.ok(await p.locator('.c-semjs').isVisible(),u);assert.ok(await p.locator('.c-semjs a').first().getAttribute('href'));}
    await ctx.close();}
+  // 4. 05/11/2026: revisão do commit 192c5e3. Casos novos; nenhum dos de cima mudou.
+  // 4.1 Foco nunca escondido pela barra fixa (WCAG 2.4.11): Shift+Tab desde o fim da página, cada elemento focado inteiro abaixo da barra.
+  for(const [url,width] of [['/narrativas/ver/',1366],['/narrativas/ver/',390],['/narrativas/percursos/olhar/',390]]){const {ctx,p}=await novo({width});await p.goto(base+url,{waitUntil:'load'});
+   await p.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await p.locator('main a,main button,main summary').last().focus();let vistos=0;
+   for(let i=0;i<80;i++){await p.keyboard.press('Shift+Tab');await p.waitForTimeout(20);const r=await p.evaluate(()=>{const a=document.activeElement;if(!a||a===document.body||a.closest('.lab-barra')||a.matches('.salta'))return null;const q=a.getBoundingClientRect(),bar=document.querySelector('.lab-barra').getBoundingClientRect();return {t:(a.textContent||'').trim().slice(0,30),top:q.top,fim:bar.bottom};});
+    if(!r)break;vistos++;assert.ok(r.top>=r.fim-0.5,`${url} ${width}: «${r.t}» focado por baixo da barra (top ${Math.round(r.top)}, barra ${Math.round(r.fim)})`);}
+   assert.ok(vistos>=10,url+': poucos elementos focados');await ctx.close();}
+  // 4.2 Créditos do «i» (decisão 153) inteiros quando abertos, sem corte da moldura, a 320, 390 e 1366.
+  for(const url of ['/narrativas/ver/','/narrativas/treinar/','/narrativas/criar/'])for(const width of [320,390,1366]){const {ctx,p}=await novo({width});await p.goto(base+url,{waitUntil:'load'});
+   await p.locator('.info-i summary').click();const t=p.locator('.info-i-texto');await t.scrollIntoViewIfNeeded();await semDeslocar(p,url+' «i» aberto');
+   const r=await t.evaluate(e=>{const q=e.getBoundingClientRect();return {dentro:q.left>=0&&q.right<=innerWidth,cantos:[[q.left+2,q.top+2],[q.right-2,q.top+2],[q.left+2,q.bottom-2],[q.right-2,q.bottom-2]].every(([x,y])=>{const h=document.elementFromPoint(x,y);return !!h&&!!h.closest('.info-i-texto');})};});
+   assert.ok(r.dentro&&r.cantos,`${url} ${width}: crédito do «i» cortado`);await ctx.close();}
+  // 4.3 Uma só marca «A seguir» na entrada: com peças do Laboratório feitas (o percurso do índice) e com uma sessão do Ideias feita
+  // também (a sessão seguinte do Ideias; a do índice sai, com o filete).
+  for(const ideias of [false,true]){const {ctx,p}=await novo({width:390});await p.addInitScript(i=>{localStorage.setItem('epi-narrativas',JSON.stringify({feitas:{leonardo:Date.UTC(2026,10,1,12)}}));if(i)localStorage.setItem('epi-lab-ideias-s01',JSON.stringify({versao:'2026-11-01-1',lida:true,data:Date.UTC(2026,10,1,12)}));},ideias);
+   await p.goto(base+'/narrativas/',{waitUntil:'load'});const marcas=await p.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>!e.children.length&&e.textContent.trim()==='A seguir'&&e.getClientRects().length).map(e=>e.closest('.lab-indice')?'índice':e.closest('.ideias-sessoes')?'ideias':'outro'));
+   assert.deepEqual(marcas,[ideias?'ideias':'índice'],'«A seguir» na entrada');
+   const filetes=await p.locator('.lab-indice .ind').evaluateAll(es=>es.filter(e=>getComputedStyle(e).borderLeftColor!=='rgba(0, 0, 0, 0)').length);assert.equal(filetes,ideias?0:1,'filete do índice');await ctx.close();}
+  // 4.4 A barra da casca numa linha (48 px) a 320 e a 390 nas quatro famílias, com o ≡ em cima à direita.
+  for(const url of [...MENU,'/cidadania/25-de-abril/','/narrativas/formas/tres-cartas/'])for(const width of [320,390]){const {ctx,p}=await novo({width});await p.goto(base+url,{waitUntil:'load'});await p.waitForTimeout(200);await semDeslocar(p,url+' barra');
+   const r=await p.locator('.casca-topo').evaluate(t=>{const q=t.getBoundingClientRect(),m=t.querySelector('[data-c-menu]').getBoundingClientRect(),c=t.querySelector('.c-marca').getBoundingClientRect();return {h:q.height,mesmaLinha:Math.abs(m.top-c.top)<1,direita:innerWidth-m.right};});
+   assert.ok(r.h<=48.5,`${url} ${width}: barra com ${r.h} px`);assert.ok(r.mesmaLinha,url+': ≡ fora da linha da marca');assert.ok(r.direita<=12,url+': ≡ longe da direita');await ctx.close();}
+  // 4.5 Na projeção, a letra do menu ≡ nunca abaixo de 17,9 px, também onde a raiz não cresce (peças e páginas estáticas).
+  for(const url of MENU){const {ctx,p}=await novo({width:1366,height:768});await p.goto(base+url+'?projetar=1',{waitUntil:'load'});await p.locator('.casca-topo [data-c-menu]').click();await p.locator('.casca-menu.m2').waitFor({state:'visible'});
+   const min=await p.locator('#c-menu').evaluate(m=>Math.min(...[...m.querySelectorAll('*')].filter(e=>[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&e.getClientRects().length).map(e=>parseFloat(getComputedStyle(e).fontSize))));
+   assert.ok(min>=17.85,url+': letra do menu na projeção '+min);await ctx.close();}
+  // 4.6 Sem salto de layout ao abrir com ?projetar=1 (a classe da projeção entra no <head>), em duas cargas seguidas.
+  for(const [url,width] of [['/narrativas/',320],['/narrativas/',1366],['/narrativas/percursos/olhar/',1366],['/narrativas/percursos/',320],['/narrativas/ideias/',390]])for(let k=0;k<2;k++){const {ctx,p}=await novo({width});
+   await p.addInitScript(()=>{window.__cls=0;new PerformanceObserver(l=>{for(const e of l.getEntries())if(!e.hadRecentInput)window.__cls+=e.value;}).observe({type:'layout-shift',buffered:true});});
+   await p.goto(base+url+'?projetar=1',{waitUntil:'load'});await p.waitForTimeout(400);assert.equal(await p.evaluate(()=>window.__cls),0,url+' '+width+': salto de layout na projeção');await ctx.close();}
+  // 4.7 A 1024 e a 1366 com 768 px de altura, o título, o Ideias e as três portas inteiras no primeiro ecrã.
+  for(const width of [1024,1366]){const {ctx,p}=await novo({width,height:768});await p.goto(base+'/narrativas/',{waitUntil:'load'});
+   const fim=await p.locator('.porta3').evaluateAll(es=>Math.max(...es.map(e=>e.getBoundingClientRect().bottom)));assert.ok(fim<=768,width+': as portas acabam em '+fim);await ctx.close();}
   console.log('Menus do Laboratório e das lições: 320, 390, 1024 e 1366 px, claro, escuro, projeção, teclado e sem JavaScript.');
  }finally{await b.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

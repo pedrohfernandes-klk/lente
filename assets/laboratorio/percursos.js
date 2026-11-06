@@ -46,6 +46,8 @@
  document.querySelectorAll('[data-contagem]').forEach(el=>{const all=ids(el,'contagem'),n=all.filter(id=>states[id]!=='por fazer').length;el.textContent=n+' de '+all.length+(el.hasAttribute('data-curto')?' feitas':' peças feitas');if(el.hasAttribute('hidden')||el.dataset.escondida!==undefined){el.dataset.escondida='';el.hidden=n===0;}});
  // Índice dos percursos na entrada: o percurso da peça seguinte leva a classe «current» (sempre, para o progresso), mas a palavra
  // «A seguir» e o filete só se veem quando já há alguma peça feita; um percurso inteiro feito diz «Feita dd/mm».
+ // 05/11/2026 (revisão): quando o Ideias da entrada já marca a sessão seguinte, entrada.js (que corre depois) tira esta marca,
+ // para haver uma só «A seguir» na página.
  document.querySelectorAll('[data-cz-route]').forEach(row=>{const l=ids(row,'czRoute'),vs=l.map(id=>val(by[id])),completo=l.every(id=>states[id]!=='por fazer'),atual=!!proxima&&l.includes(proxima),lab=row.querySelector('.cz-state');
   row.classList.toggle('current',atual&&!completo);row.classList.toggle('done',completo);
   if(lab){const d=completo&&vs.every(v=>typeof v==='number'&&v>DESDE)?Math.max(...vs):null;lab.textContent=completo?feita(d):atual&&algo?'A seguir':'';lab.classList.toggle('done',completo);lab.classList.toggle('current',atual&&algo&&!completo);}});

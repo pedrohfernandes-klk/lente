@@ -631,6 +631,8 @@ def pagina_entrada(L):
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
     cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1">{LN.css("narrativas/ideias")}</head>')
+    # 05/11/2026 (revisão): a classe da projeção no <head>, antes das folhas de estilo (sem salto de layout ao abrir com ?projetar=1)
+    cab = cab.replace('<meta name="viewport" content="width=device-width,initial-scale=1">', '<meta name="viewport" content="width=device-width,initial-scale=1">' + LN.PROJ, 1)
     return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a>{LN.barra("narrativas/ideias")}'
             f'<div class="lab-fio-pg">{LN.fio("narrativas/ideias", "ideias", "page")}</div><main id="conteudo">{LL.nq(corpo)}</main>'
             f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
@@ -683,7 +685,7 @@ def pagina_guiao(L):
              f'<p class="lead">Para imprimir em A4: frente e verso de cada sessão pronta ({2 * n} páginas). No telemóvel só se toca; escreve-se no guião impresso e onde cada um guarda o material.</p></header>'
              '<p class="papel-cab"><button type="button" class="imprimir" onclick="window.print()">Imprimir</button><span class="pq">As sessões 3 a 7 entram quando estiverem prontas.</span></p>'
              + lados
-             + '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../docente/">Para o docente →</a></p>')
+             + '<p class="saidas-sec"><a href="../">Voltar ao Ideias</a><a href="../docente/">Para o docente →</a></p>')
     corpo = LL.nq(corpo)
     return (cabeca(base, 'Guião | Ideias | Laboratório | Lente', 'O guião em papel das sessões de Ideias, no Laboratório: frente e verso por sessão.')
             + f'<body class="ideias guiao"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')
@@ -797,7 +799,7 @@ def pagina_guia(L):
                   + '<h3>Notas</h3><ul>' + ''.join(f'<li>{it(x)}</li>' for x in g['notas']) + '</ul>'
                   + '<h3>Ligações</h3><ul class="ligacoes">' + ''.join(f'<li><a href="{e(u)}">{it(t)}</a></li>' for t, u in g['ligacoes']) + '</ul>'
                   f'<h3>Fontes da lição</h3><p class="pg fontes">{it(d["fontes"])}</p></section>')
-    corpo += '<p class="saidas-sec"><a href="../">Voltar a Ideias</a><a href="../guiao/">O guião →</a></p>'
+    corpo += '<p class="saidas-sec"><a href="../">Voltar ao Ideias</a><a href="../guiao/">O guião →</a></p>'
     corpo = LL.nq(corpo)
     return (cabeca(base, 'Guia do docente | Ideias | Laboratório | Lente', 'Guia do docente das sessões de Ideias, no Laboratório: tempos, materiais, o que fica escrito e critérios sem nota.')
             + f'<body class="ideias guia"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a><main id="conteudo">{corpo}</main></body></html>\n')

@@ -6,13 +6,16 @@
    2. Posição: ao abrir, «Cartão N de M.», lido do contador da barra («4/18»); vazio quando o contador está vazio.
    3. Cartões já feitos: o item aparece só quando a barra de progresso está ativa; fecha o menu e abre a mesma grelha de leitura
       da barra (nada se apaga nem se refaz).
-   4. Projeção: com ?projetar=1 (ou dentro da moldura de projeção), «Sair da projeção» à vista e «Projetar na aula» escondido. */
+   4. Projeção: com ?projetar=1 (ou dentro da moldura de projeção), «Sair da projeção» à vista e «Projetar na aula» escondido.
+   05/11/2026 (revisão): na projeção, o painel leva .m-proj, que põe a letra do painel em 22 px de base também nas famílias em
+   que a raiz não cresce (assets/licoes/menu.css); nenhuma classe nova no html. */
 (function(){'use strict';
  var painel=document.querySelector('.casca-menu.m2[data-c-painel]');if(!painel)return;
  var raiz=painel.closest('[data-casca]')||document.body,menuEl=raiz.querySelector('[data-c-menu]'),num=raiz.querySelector('[data-c-num]'),barra=raiz.querySelector('[data-c-barra]');
  var pos=painel.querySelector('[data-c-pos]'),rever=painel.querySelector('[data-c-rever]');
  var html=document.documentElement;
  var proj=/[?&]projetar=1(&|$)/.test(location.search)||html.classList.contains('epi-projection')||html.classList.contains('em-projecao')||window.self!==window.top;
+ if(proj)painel.classList.add('m-proj');
  painel.querySelectorAll('.so-normal').forEach(function(a){a.hidden=proj});
  painel.querySelectorAll('.so-aula').forEach(function(a){a.hidden=!proj});
  if(menuEl&&!menuEl.hasAttribute('aria-controls'))menuEl.setAttribute('aria-controls','c-menu');

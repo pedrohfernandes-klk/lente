@@ -88,5 +88,11 @@ def liga_ideias(base, passos, sessao=None):
     return f'<p class="liga-ideias">No Ideias, {suj} {lista}.</p>'
 
 
+# 05/11/2026 (revisão): a classe da projeção entra no <head>, antes das folhas de estilo, para a raiz crescer (22 px) antes da
+# primeira pintura, sem salto de layout; percursos.js e entrada.js continuam a pô-la (sem efeito).
+PROJ = ("<script>if(/[?&]projetar=1(&|$)/.test(location.search)||self!==top)"
+        "document.documentElement.classList.add('em-projecao')</script>")
+
+
 def css(base):
     return f'<link rel="stylesheet" href="{e(link(base, "assets/laboratorio/lab3.css"))}?v={V}">'
