@@ -677,7 +677,10 @@ class SessaoS06(unittest.TestCase):
         self.assertNotIn('toca n', s.lower())  # em papel sublinha-se
         # 06/11/2026: correções da revisão da s06, cartão 9: o enunciado já não diz que a palavra «aparece duas vezes» (dava a
         # resposta) e pede as palavras (as duas ocorrências de «isenção»); por isso o papel diz «sublinha as palavras»
-        self.assertIn('sublinha as palavras', s)
+        # 06/11/2026 (confirmação da s06): o cartão 9 pede agora uma palavra por oração do artigo 9.º («toca na palavra que diz o que
+        # a Administração tem de preservar; depois, toca na palavra que diz em que os outros têm de poder confiar»), para que
+        # «isenção administrativa» não seja uma leitura fiel dada como errada; no papel, as duas ocorrências são «sublinha a palavra».
+        self.assertEqual(s.count('sublinha a palavra'), 2)
         self.assertIn('artigo 9.º', s)  # decisão 152: as referências não partem, também no papel
 
 

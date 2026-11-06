@@ -82,7 +82,7 @@
    "t": "ler",
    "rot": "Olha",
    "titulo": "Uma gravura cheia de gente",
-   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro para a gravura inteira; só depois para a figura do centro.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"A Justiça, gravura de Philips Galle segundo Bruegel, cerca de 1559\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/justica-galle-bruegel-inteira.webp\" alt=\"Gravura a preto e branco, inteira, com a margem do papel. Ao centro, uma mulher de olhos vendados, de pé sobre uma base com uma palavra em latim, segura uma espada e uma balança, rodeada de homens com lanças. À direita, homens escrevem em livros, numa sala; à esquerda e ao fundo, castigos: um homem deitado e preso a um banco, um homem pendurado por uma corda, forcas, rodas no alto de postes e uma fogueira, com multidões a ver. Por baixo, duas linhas em latim.\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Philips Galle, segundo Pieter Bruegel, o Velho, <i>Justice (Justicia) from The Virtues</i>; editor: Hieronymus Cock. The Metropolitan Museum of Art, 28.4(29). <a href=\"https://www.metmuseum.org/art/collection/search/410925\">Registo de origem</a>. Domínio público; a imagem do museu é CC0.</p></details></div><figcaption><i>Justicia</i> (a Justiça), da série <i>As Virtudes</i>, gravura segundo Pieter Bruegel, o Velho, cerca de 1559 a 1560.</figcaption></figure></div>",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro para a gravura inteira; só depois para a figura do centro.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"A Justiça, gravura de Philips Galle segundo Bruegel, cerca de 1559\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/justica-galle-bruegel-inteira.webp\" alt=\"Gravura a preto e branco, inteira, com a margem do papel. Ao centro, uma mulher de olhos vendados, de pé sobre uma base com uma palavra em latim, segura uma espada e uma balança, rodeada de homens com alabardas. À direita, homens escrevem em livros, numa sala; à esquerda e ao fundo, castigos: um homem deitado e preso a um banco, um homem pendurado por uma corda, forcas, rodas no alto de postes e uma fogueira, com multidões a ver. Por baixo, duas linhas em latim.\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Philips Galle, segundo Pieter Bruegel, o Velho, <i>Justice (Justicia) from The Virtues</i>; editor: Hieronymus Cock. The Metropolitan Museum of Art, 28.4(29). <a href=\"https://www.metmuseum.org/art/collection/search/410925\">Registo de origem</a>. Domínio público; a imagem do museu é CC0.</p></details></div><figcaption><i>Justicia</i> (a Justiça), da série <i>As Virtudes</i>, gravura segundo Pieter Bruegel, o Velho, cerca de 1559 a 1560.</figcaption></figure></div>",
    "min": 3
   },
   {
@@ -90,20 +90,20 @@
    "rot": "O que a figura mostra",
    "p": "Olha para a figura do centro. O que se vê nela, sem acrescentar nada?",
    "p2": "Descreve a figura do centro só com o que a gravura mostra.",
-   "f": "Vê-se uma mulher de olhos vendados, com uma espada numa mão e uma balança na outra, entre homens com lanças. O que a venda quer dizer já é uma leitura do símbolo, que a figura não mostra.",
+   "f": "Vê-se uma mulher de olhos vendados, com uma espada numa mão e uma balança na outra, entre homens com alabardas. O que a venda quer dizer já é uma leitura do símbolo, que a figura não mostra.",
    "min": 3,
    "tipo": "distinguir",
    "conceito": "observar",
-   "ver": "<img src=\"../../../../img/cidadania/justica-galle-bruegel-centro.webp\" alt=\"Pormenor: a figura do centro, uma mulher de olhos vendados com uma espada na mão esquerda e uma balança na direita, entre homens com lanças.\" width=\"960\" height=\"576\"><figcaption class=\"ver-leg\">Pormenor de <i>Justicia</i>, cerca de 1559 a 1560.</figcaption>",
+   "ver": "<img src=\"../../../../img/cidadania/justica-galle-bruegel-centro.webp\" alt=\"Pormenor: a figura do centro, uma mulher de olhos vendados com uma espada na mão esquerda e uma balança na direita, entre homens com alabardas.\" width=\"960\" height=\"576\"><figcaption class=\"ver-leg\">Pormenor de <i>Justicia</i>, cerca de 1559 a 1560.</figcaption>",
    "pista": "Confere na figura cada parte da opção: vê-se tudo o que ela diz?",
    "o": [
-    "Olhos vendados, que por isso não vê quem está a julgar.",
+    "Olhos vendados: por isso, não vê quem está a julgar.",
     "Olhos vendados, uma espada numa mão e uma balança na outra.",
     "Olhos vendados, uma espada numa mão e um livro na outra."
    ],
    "c": 1,
    "fe": [
-    "A venda vê-se; «por isso não vê quem está a julgar» é uma leitura do símbolo, que a figura não mostra. Olha só para o que ela tem.",
+    "A venda vê-se; «por isso, não vê quem está a julgar» é uma leitura do símbolo, que a figura não mostra. Olha só para o que ela tem.",
     "",
     "Olha outra vez para a mão que não segura a espada: o que pende dela tem dois pratos. Descreve só o que lá está."
    ]
@@ -145,8 +145,8 @@
   {
    "t": "sublinhar",
    "rot": "Aquilo em que se confia",
-   "p": "No artigo 9.º, toca nas palavras que dizem o que a Administração tem de preservar e em que os outros têm de poder confiar.",
-   "p2": "O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca onde está escrita.",
+   "p": "No artigo 9.º, toca na palavra que diz o que a Administração tem de preservar; depois, toca na palavra que diz em que os outros têm de poder confiar.",
+   "p2": "O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca na palavra que a nomeia em cada um dos dois pedidos.",
    "f": "«Isenção»: decidir sem se deixar levar por interesses próprios. O artigo 9.º pede que se preserve e que os outros possam confiar nela.",
    "min": 3,
    "tipo": "reconhecer",

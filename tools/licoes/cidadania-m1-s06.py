@@ -56,7 +56,7 @@ ART9 = M.registo()['cpa-9']['texto']
 
 IMG = '../../../../img/cidadania/justica-galle-bruegel-inteira.webp'
 ALT = ('Gravura a preto e branco, inteira, com a margem do papel. Ao centro, uma mulher de olhos vendados, de pé sobre uma base com uma palavra '
-       'em latim, segura uma espada e uma balança, rodeada de homens com lanças. À direita, homens escrevem em livros, numa sala; à '
+       'em latim, segura uma espada e uma balança, rodeada de homens com alabardas. À direita, homens escrevem em livros, numa sala; à '
        'esquerda e ao fundo, castigos: um homem deitado e preso a um banco, um homem pendurado por uma corda, forcas, rodas no alto '
        'de postes e uma fogueira, com multidões a ver. Por baixo, duas linhas em latim.')
 MET = 'https://www.metmuseum.org/art/collection/search/410925'
@@ -66,7 +66,7 @@ CREDITO = ('Philips Galle, segundo Pieter Bruegel, o Velho, <i>Justice (Justicia
 ROTULO_I = 'Créditos da gravura'
 PORMENOR = 'Pormenor de <i>Justicia</i>, cerca de 1559 a 1560.'
 VER_CENTRO = ('<img src="../../../../img/cidadania/justica-galle-bruegel-centro.webp" alt="Pormenor: a figura do centro, uma mulher de '
-              'olhos vendados com uma espada na mão esquerda e uma balança na direita, entre homens com lanças." width="960" height="576">'
+              'olhos vendados com uma espada na mão esquerda e uma balança na direita, entre homens com alabardas." width="960" height="576">'
               f'<figcaption class="ver-leg">{PORMENOR}</figcaption>')
 VER_BANCO = ('<img src="../../../../img/cidadania/justica-galle-bruegel-banco.webp" alt="Pormenor do canto de baixo, à esquerda: um '
              'homem deitado e preso a um banco; outro deita-lhe um líquido na boca com um jarro; à volta, homens de pé, e um deles escreve '
@@ -139,12 +139,12 @@ CARTOES = [
          'Olha para a figura do centro. O que se vê nela, sem acrescentar nada?',
          'Descreve a figura do centro só com o que a gravura mostra.',
          'Olhos vendados, uma espada numa mão e uma balança na outra.',
-         [('Olhos vendados, que por isso não vê quem está a julgar.',
-           'A venda vê-se; «por isso não vê quem está a julgar» é uma leitura do símbolo, que a figura não mostra. Olha só para o que '
+         [('Olhos vendados: por isso, não vê quem está a julgar.',
+           'A venda vê-se; «por isso, não vê quem está a julgar» é uma leitura do símbolo, que a figura não mostra. Olha só para o que '
            'ela tem.'),
           ('Olhos vendados, uma espada numa mão e um livro na outra.',
            'Olha outra vez para a mão que não segura a espada: o que pende dela tem dois pratos. Descreve só o que lá está.')],
-         'Vê-se uma mulher de olhos vendados, com uma espada numa mão e uma balança na outra, entre homens com lanças. O que a venda '
+         'Vê-se uma mulher de olhos vendados, com uma espada numa mão e uma balança na outra, entre homens com alabardas. O que a venda '
          'quer dizer já é uma leitura do símbolo, que a figura não mostra.',
          3, 'distinguir', 'observar', ver=VER_CENTRO, pista='Confere na figura cada parte da opção: vê-se tudo o que ela diz?'),
  M.fazer('emparelhar', 'Imagem, legenda ou nenhuma',
@@ -167,8 +167,8 @@ CARTOES = [
                     'linha colateral […]', 'cpa-69-1', None)], f'<a href="{DRE_CPA}">Diário da República</a>')
             + '<p class="glossa"><b>Segundo grau da linha colateral</b>: irmãos (Código Civil, artigo 1581.º).</p>')),
  M.fazer('sublinhar', 'Aquilo em que se confia',
-         'No artigo 9.º, toca nas palavras que dizem o que a Administração tem de preservar e em que os outros têm de poder confiar.',
-         'O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca onde está escrita.',
+         'No artigo 9.º, toca na palavra que diz o que a Administração tem de preservar; depois, toca na palavra que diz em que os outros têm de poder confiar.',
+         'O artigo 9.º pede que se preserve uma coisa e que os outros confiem nela. Toca na palavra que a nomeia em cada um dos dois pedidos.',
          '«Isenção»: decidir sem se deixar levar por interesses próprios. O artigo 9.º pede que se preserve e que os outros possam '
          'confiar nela.',
          3, 'reconhecer', 'isenção', frase=ART9, certas=[39, 45], fonte='cpa-9', l='a9',
