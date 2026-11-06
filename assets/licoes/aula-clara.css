@@ -1,0 +1,85 @@
+/* Cópia de pt/assets/pt-lessons/aula-clara.css (main 10da5a83), 05/11/2026: as mesmas peças, para as sessões da Cidadania no molde novo (plano do molde, pedido 1). Corrige-se no Português e copia-se de novo. */
+/* 23/10/2026, aulas claras (piloto M4): o que se faz hoje no cartão de abertura, «Para ir mais longe» depois de «A aula acaba aqui» e a resposta mostrada na projeção */
+.jogo .aula-plano{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:0 0 var(--d2,20px);padding:12px 0;border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);font:1rem/1.45 Arial,Helvetica,sans-serif}
+.jogo .aula-plano dt{font:700 .72rem/1.95 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+.jogo .aula-plano dd{margin:0}
+.jogo .mais-longe{width:100%;text-align:left;margin:var(--d3,40px) 0 0;padding:16px 0 0;border-top:2px solid var(--tinta)}
+.jogo .mais-longe .ml-t{font:400 1.5rem/1 var(--cartaz,"Arial Black",Arial);letter-spacing:.02em;margin:0 0 6px}
+.jogo .mais-longe p{margin:0 0 10px;font-size:1rem;line-height:1.45}
+.jogo .mais-longe button{font:700 1rem Arial,Helvetica,sans-serif;min-height:44px;border:0;background:var(--tinta);color:var(--papel);padding:0 18px;cursor:pointer}
+.jogo .mais-longe button::after{content:" →"}
+.jogo .mais-longe button:focus-visible{outline:3px solid var(--vermelho,#c8232c);outline-offset:2px}
+.jogo .resp-proj{margin:0 0 8px;font-size:1.05rem;line-height:1.45}
+.jogo .resp-proj ol,.jogo .resp-proj ul{margin:6px 0 0;padding-left:1.4em}
+@media (max-width:480px){.jogo .aula-plano{grid-template-columns:1fr;gap:0}.jogo .aula-plano dd{margin:0 0 6px}}
+@media (min-width:1024px) and (min-height:560px){.casca .jogo .aula-plano{font-size:1.12rem}}
+@media print{.jogo .mais-longe button{display:none}}
+/* 23/10/2026, plano de melhoria (padrão da Justiça do Lente): o alvo antes do texto ou do vídeo, o vídeo que só carrega ao toque,
+   «Ler mais», decidir e depois abrir os lados, o cartão de conceito (do caso ao termo) e os dois rostos de «Em paralelo» */
+.jogo .ler .ex-antes,.jogo .ler .ex-depois{margin:0 0 12px;font:1.02rem/1.45 Arial,Helvetica,sans-serif}
+.jogo .ler .ex-antes b,.jogo .ler .ex-depois b{font:700 .74rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin-right:6px}
+.jogo .ler .ex-depois{margin:6px 0 12px;padding:8px 0 0;border-top:1px solid var(--linha,#d6d4ce)}
+.jogo .ler .ju-video{position:relative;aspect-ratio:16/9;width:100%;background:var(--tinta);color:var(--papel);display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center;padding:12px 14px;text-align:center;margin:12px 0 4px;overflow:hidden}
+.jogo .ler .ju-video p{margin:0;color:inherit;max-width:30rem}
+.jogo .ler .ju-video .ju-t{font:400 clamp(1.35rem,5.4vw,1.9rem)/1.05 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em}
+.jogo .ler .ju-video .ju-m{font:.8rem/1.35 Arial,Helvetica,sans-serif;opacity:.85}
+.jogo .ler .ju-video button{min-height:44px;padding:0 18px;margin-top:6px;font:700 .95rem/1 Arial,Helvetica,sans-serif;border:2px solid var(--papel);border-radius:999px;background:transparent;color:var(--papel);cursor:pointer;width:auto;max-width:100%}
+.jogo .ler .ju-video button span{font-weight:400;opacity:.85}
+.jogo .ler .ju-video button:hover{background:var(--papel);color:var(--tinta)}
+.jogo .ler .ju-video button:focus-visible{outline:3px solid var(--mostarda,#d9a520);outline-offset:3px}
+.jogo .ler .ju-video.tocado{padding:0;background:#000}
+.jogo .ler .ju-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.jogo .ler .ju-yt{margin:2px 0 12px;font:.85rem/1.4 Arial,Helvetica,sans-serif;text-align:right}.jogo .ler .ju-yt a{color:var(--tinta)}
+.jogo .ler details.mais,.jogo .ler details.lado{border:0;margin:0;padding:0}
+.jogo .ler details.mais{margin:14px 0 0;border-top:1px solid var(--linha,#d6d4ce)}
+.jogo .ler details.mais>summary{padding:6px 0;min-height:44px}
+.jogo .ler details.mais>div,.jogo .ler details.lado>div{border:0;padding:0 0 8px}
+.jogo .ler details.lado{border-top:1px solid currentColor}.jogo .ler details.lado:last-of-type{border-bottom:1px solid currentColor}
+.jogo .ler details.lado>summary{min-height:48px;padding:6px 0;font:700 1rem/1.3 Arial,Helvetica,sans-serif;gap:10px}
+.jogo .ler details.lado>summary::before{content:"+";flex:none;width:24px;height:24px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:700 1rem/1 Arial,Helvetica,sans-serif}
+.jogo .ler details.lado[open]>summary::before{content:"\2212"}
+.jogo .ler details.lado>div{padding:0 0 12px 34px}.jogo .ler details.lado>div p:last-child{margin-bottom:0}
+.jogo .ler .q-pensa{font:700 1.18rem/1.35 Arial,Helvetica,sans-serif;margin:12px 0 6px}
+.jogo .ler .nota-pensa{font:.92rem/1.45 Arial,Helvetica,sans-serif;color:var(--suave);margin:0 0 12px}
+.jogo .ler .fecho-o{font:italic 1rem/1.45 var(--serif,Georgia,serif);margin:12px 0 0}
+.jogo .ler .cc-passo{margin:0 0 14px}.jogo .ler .cc-passo.cc-novo{animation:ccEntra .28s ease-out}
+@keyframes ccEntra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.jogo .ler .cc-r{font:700 .72rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin:0 0 4px}
+.jogo .ler .cc-termo{font:400 clamp(2.2rem,9vw,3.2rem)/.95 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em;margin:2px 0 6px;padding:0 0 4px;border-bottom:3px solid var(--mostarda,#d9a520);display:inline-block}
+.jogo .ler .cc-def{font:1.12rem/1.42 var(--serif,Georgia,serif);margin:0}
+.jogo .ler .cc mark{background:linear-gradient(transparent 58%,color-mix(in srgb,var(--mostarda,#d9a520) 55%,transparent) 58%);color:inherit;padding:0 1px}
+.jogo .ler .cc-mais{min-height:44px;padding:0 16px;border:2px solid currentColor;background:transparent;color:inherit;font:700 .95rem/1 Arial,Helvetica,sans-serif;cursor:pointer;border-radius:999px}
+.jogo .ler .cc-mais:focus-visible{outline:3px solid var(--mostarda,#d9a520);outline-offset:3px}
+.jogo .ler .paralelo .rosto{display:block;width:76px;height:76px;object-fit:cover;border-radius:50%;filter:grayscale(1) contrast(1.05);margin:0 0 4px;background:var(--linha,#d6d4ce)}
+.jogo .ler .paralelo .rosto-c{font:.68rem/1.3 Arial,Helvetica,sans-serif;color:var(--suave);margin:0 0 4px}
+.jogo .ler .papel-q{font:700 1.2rem/1.4 var(--serif,Georgia,serif);margin:0 0 12px}
+@media print{.jogo .ler .ju-video,.jogo .ler .cc-mais{display:none}.jogo .ler .cc-passo[hidden]{display:block!important}}
+@media (min-width:1024px) and (min-height:560px){.casca .jogo .ler .ex-antes,.casca .jogo .ler .ex-depois{font-size:1.12rem}}
+.jogo .aula-linha{margin:0 0 14px;padding:8px 0;border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);font:1rem/1.45 Arial,Helvetica,sans-serif}
+.jogo .aula-linha b{font:700 .72rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);margin-right:8px}
+.jogo .ler .abre-gancho{font:1.2rem/1.42 var(--serif,Georgia,serif);margin:0 0 10px}
+.jogo .ler .abre-perg{font:700 1.12rem/1.35 Arial,Helvetica,sans-serif;margin:12px 0 0;padding:10px 0 0;border-top:2px solid currentColor}
+.jogo .ler .fig.inteiro img{max-height:min(46vh,420px);max-height:min(46dvh,420px)}
+.jogo .ler .fig.recorte .moldura{width:100%}.jogo .ler .fig.recorte img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;max-height:none}
+/* cartão de conceito no modelo de 23/10 (MODELO-CONCEITOS.md): marcas no caso, «Decide» sem pontos, contrastes e frase de bolso */
+.jogo .ler .cc-cx p{margin:0 0 6px;font:1.08rem/1.5 var(--serif,Georgia,serif)}
+.jogo .ler .cc-cx .fonte{font:.8rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave)}
+.jogo .ler .cc [data-c]{transition:background-color .3s ease}
+.jogo .ler .cc [data-c].acesa{background:linear-gradient(transparent 55%,color-mix(in srgb,var(--mostarda,#d9a520) 60%,transparent) 55%);text-decoration:underline;text-decoration-color:var(--mostarda,#d9a520);text-decoration-thickness:2px;text-underline-offset:3px}
+.jogo .ler .cc-q{font:700 1.05rem/1.35 Arial,Helvetica,sans-serif;margin:0 0 8px}
+.jogo .ler .cc-ops{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.jogo .ler .cc-op{min-height:44px;padding:6px 14px;border:2px solid currentColor;background:transparent;color:inherit;font:700 .95rem/1.25 Arial,Helvetica,sans-serif;cursor:pointer;border-radius:4px;text-align:left}
+.jogo .ler .cc-op[aria-pressed="true"]{background:var(--tinta);color:var(--papel)}
+.jogo .ler .cc-op:focus-visible{outline:3px solid var(--mostarda,#d9a520);outline-offset:2px}
+.jogo .ler .cc-resp{font:italic 1rem/1.4 var(--serif,Georgia,serif);margin:0;color:var(--suave)}
+.jogo .ler .cc-nao{margin:0 0 6px}.jogo .ler .cc-nao b{font-family:Arial,Helvetica,sans-serif}
+.jogo .ler .cc-leva{font:italic 1.08rem/1.4 var(--serif,Georgia,serif);margin:4px 0 0;padding:8px 0 0;border-top:1px solid var(--linha,#d6d4ce)}
+.jogo .ler .cc-traco svg{display:block;width:100%;height:auto;max-height:min(22vh,170px);color:var(--tinta);margin:0 0 6px}
+@media print{.jogo .ler .cc [data-c]{background:none;text-decoration:underline}}
+/* o caso fica à vista enquanto os passos se abrem (foco progressivo): cola-se ao topo e encolhe */
+.jogo .ler .cc.cc-andar .cc-caso:not(:has(img)){position:sticky;top:0;z-index:1;background:var(--papel);padding:6px 0 8px;margin:0 0 10px;border-bottom:1px solid var(--linha,#d6d4ce)}
+.jogo .ler .cc.cc-andar .cc-caso:not(:has(img)) .cc-cx p{font-size:.95rem;line-height:1.4;margin:0 0 3px}
+.jogo .ler .cc.cc-andar .cc-caso:not(:has(img)) .cc-r{display:none}
+@media print{.jogo .ler .cc .cc-caso{position:static!important}}
+/* as ligações dos cartões na cor do texto (Fase 0, pt#79), também nas lições refeitas, que têm o CSS próprio */
+.jogo .ler a:not([class]),.jogo .depois a:not([class]){color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}

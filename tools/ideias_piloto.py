@@ -636,7 +636,9 @@ def pagina_entrada(L):
     cab = cab.replace('<meta name="viewport" content="width=device-width,initial-scale=1">', '<meta name="viewport" content="width=device-width,initial-scale=1">' + LN.PROJ, 1)
     return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a>{LN.barra("narrativas/ideias")}'
             f'<div class="lab-fio-pg">{LN.fio("narrativas/ideias", "ideias", "page")}</div><main id="conteudo">{LL.nq(corpo)}</main>'
-            f'<script src="{base}assets/licoes/progresso-laboratorio.js?v=20261102-1"></script>'
+            # 05/11/2026 (plano do molde da Cidadania, pedido 1): o progresso comum passa a progresso-licoes.js; o código e o nome
+            # EPILabProgresso ficam iguais.
+            f'<script src="{base}assets/licoes/{LL.PROGRESSO}"></script>'
             f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 

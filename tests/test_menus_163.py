@@ -18,6 +18,24 @@ PORTAS = {b['id']: 'narrativas/' + b['id'] + '/index.html' for b in D['blocks']}
 PERCURSOS = {r['id']: 'narrativas/percursos/' + r['id'] + '/index.html' for r in D['routes']}
 LAB = ['narrativas/index.html', 'narrativas/tudo/index.html', 'narrativas/percursos/index.html', 'narrativas/ideias/index.html'] + list(PORTAS.values()) + list(PERCURSOS.values())
 SESSOES = ['narrativas/ideias/sessao-01/index.html', 'narrativas/ideias/sessao-02/index.html'] + sorted(p.relative_to(R).as_posix() for p in (R / 'cidadania/piloto').glob('m1-s*/index.html'))
+# 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). O gerador das lições escreve também as sessões da Cidadania no
+# molde novo (cidadania/m1/sessoes/01/), com o mesmo menu ≡ das do piloto; entram na lista e conferem-se como as outras.
+MOLDE = sorted(LL.carregar(p)['saida'] for p in LL.PASTA.glob('*.json') if LL.carregar(p).get('molde') == LL.MOLDE)
+SESSOES += MOLDE
+# 06/11/2026: as camadas do #126 sobre a base, para a preservação (abaixo): o manifesto fechado do pedido 1 e o do pedido 2
+# (tests/molde_pedido2.py), por cima da 146 e da 154 (tests/grupos146.py), cada troca com contagem exata.
+MOLDE_P1 = json.loads((R / 'tools/trocas/molde-pedido1-20261105.json').read_text('utf-8'))
+sys.path.insert(0, str(R / 'tests'))
+import grupos146, molde_pedido2  # noqa: E402
+
+
+def com_molde(texto, rel):
+    if rel in grupos146.TROCAS:
+        texto = grupos146.aplicar(texto, rel)
+    for antigo, novo, n in MOLDE_P1.get(rel, []):
+        assert texto.count(antigo) == n, ('molde, pedido 1', rel, antigo[:80])
+        texto = texto.replace(antigo, novo)
+    return molde_pedido2.aplicar(texto, rel)
 
 
 def ler(rel):
@@ -244,6 +262,15 @@ class Preservacao(unittest.TestCase):
             antes = base(rel)
             if antes is None or not (R / rel).exists():
                 continue
+            # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). Os ficheiros que o #126 escreve inteiros (a sessão 01 no
+            # molde) têm de ser, letra a letra, o que o seu gerador escreve, e a sessão cumpre o contrato do molde; os que muda em
+            # parte comparam-se com a base já com as camadas do #126 (com_molde), e tudo o resto continua a conferir-se.
+            if rel in molde_pedido2.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_pedido2.inteiro_ok(rel), rel)
+                continue
+            if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS:
+                antes = com_molde(antes, rel)
             agora = ler(rel)
             antes_d |= destinos(rel, antes); depois_d |= destinos(rel, agora)
             with self.subTest(rel=rel):

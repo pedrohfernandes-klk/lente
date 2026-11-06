@@ -29,6 +29,15 @@ def sessoes():
     for n in NOMES:
         d = json.loads((ROOT / f'tools/licoes/cidadania-m1-s{n}.json').read_text('utf-8'))
         abre = d['cartoes'][0]['html']
+        # 05/11/2026 (plano do molde, pedido 2): uma sessão no molde cidadania-2026-11 não tem «Na aula», imagem com pergunta nem
+        # vídeo (decisões 154 e 155); a pergunta da sessão está no Abre (.pergunta-sessao) e a página pode viver fora do piloto
+        # (a s01 está em cidadania/m1/sessoes/01/). Antes, sessoes() exigia img, data-yt e pergunta-c e dava StopIteration.
+        if d.get('molde'):
+            out.append({'n': n, 'd': d, 'chave': d['chave'], 'versao': d['versao'], 'molde': True,
+                        'titulo': d['titulo'].split(': ', 1)[1],
+                        'pergunta': re.search(r'<p class="pergunta-sessao"[^>]*>(.*?)</p>', abre).group(1),
+                        'pasta': d['saida'].rsplit('/', 1)[0] + '/'})
+            continue
         cart = {c.get('rot'): c for c in d['cartoes'] if c['t'] == 'ler' and c.get('rot') in ('Na aula', 'Para levar')}
         img = next(c for c in d['cartoes'] if '<img' in c.get('html', ''))
         vid = next(c for c in d['cartoes'] if 'data-yt=' in c.get('html', ''))
@@ -54,24 +63,87 @@ def sessoes():
 # O que só o docente lê. Tempos em minutos; o «Na aula» soma 60 a 75 minutos, com os 10 da pausa.
 # A grelha /20 de cada sessão é a do plano (proposta da equipa na sessão 01, que o plano não tinha); diz-se sempre indicativa (decisão 17).
 GUIA = {
+ # 05/11/2026 (plano do molde, pedido 2): a sessão 01 já está no molde final (cidadania-2026-11). O que só o docente faz vive
+ # aqui, nunca no texto do aluno (decisão 154): «Na aula» por cartão (a coluna do plano, secção 2), como conduzir o Decide e o
+ # «Em turma», as duas charneiras com o erro esperado, o papel e a devolução, o passo do projeto com a grelha /20, «se só houver
+ # 90 minutos» e o que imprimir. A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '01': {
-  'dominio': 'Direitos Humanos: a Declaração Universal, a Convenção sobre os Direitos da Criança e a Constituição.',
-  'ensina': 'Situar casos da escola em artigos concretos e distinguir uma declaração, um tratado e a Constituição.',
-  'antes': 'Antes de abrir a lição: o Ponto de partida, em papel, sem ajuda e sem consulta (10 a 15 minutos). Os cartões de fazer ensinam as respostas das perguntas 1 e 2; por isso o Ponto vem primeiro, ainda que o cartão «Na aula» o lembre mais tarde.',
-  'passos': [
-   (5, 'Pôr a planta da escola na parede e dar a regra: uma situação por post-it, descrita sem adjetivos e sem nomes de colegas, com o número do artigo.'),
-   (20, 'Cada aluno, dois post-its: situações reais ou possíveis, no sítio da planta onde acontecem.'),
-   (10, 'Pausa.'),
-   (15, 'Volta à parede, em turma: cada aluno lê um dos seus post-its; a turma confirma o artigo ou propõe outro.'),
-   (10, 'Onde dois direitos chocam, cada aluno desenha uma seta entre os post-its e escreve qual pesa mais naquele caso.'),
-   (5, 'Fotografar o mapa (volta na sessão 10) e recolher os Pontos de partida.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos: a Declaração Universal, a Constituição e a força de cada texto; vida privada, imagem e liberdade de expressão.',
+  'ensina': 'Olhar antes de concluir, situar um caso em artigos concretos, ver quando dois direitos chocam e pesá-los no caso, sem ir além das provas.',
+  'antes': ('Recomendação: fazer o Ponto de partida em papel logo no início, antes do cartão 1, com os 10 minutos da folga. Os cartões 8 a 14 '
+            'ensinam as respostas das perguntas 1 e 2: feito depois, o Ponto de partida deixava de o ser. O tempo total não muda.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Na sessão 01 não há papel anterior para devolver.',
+   5: 'Projetado grande. Os pormenores (o emblema, as mãos, o título) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta os três artigos, uma vez; o 12.º até «honra e reputação».',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   15: 'O caso é real: vale a pena abrir o acórdão na projeção (ligação no retorno) e mostrar onde está a frase citada.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Ponto de partida, se não se fez no início. Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['Ponto de partida impresso, um por aluno (ligação abaixo).', 'Planta da escola em A3, ou desenhada no quadro.', 'Post-its de duas cores e marcadores.', 'Os artigos da sessão, projetados: Declaração, 1.º, 2.º, 12.º, 19.º, 20.º e 26.º; Convenção, 12.º; Constituição, 16.º, 26.º, 34.º e 37.º.'],
-  'escrito': 'O Ponto de partida de cada aluno, com o código e sem o nome; dois post-its por aluno, com a situação e o artigo; a fotografia do mapa.',
-  'projeto': ('Apresentação', '#pergunta-resposta', 'Nos últimos cinco minutos, apresentar a Pergunta Humana: um teatro-documento de 5 a 8 minutos, feito por cada aluno a partir de uma pergunta sua, que se escolhe na sessão 03.'),
-  'produto': 'Mapa de direitos (individual)',
-  'grelha': [('Situações descritas sem adjetivos nem nomes de colegas', 4), ('Artigo certo para cada situação', 5), ('Um choque de direitos identificado e pesado no caso', 4), ('Variedade de sítios e de direitos (espaço, regras, redes, turma)', 3), ('Leitura à turma e resposta às perguntas', 4)],
-  'notas': ['Se a turma se dividir no «Decide», não se fecha a discussão: a posição volta no «Para levar».', 'Ninguém escreve sobre um colega identificável; uma situação vivida conta-se como possível.', 'Grelha desta sessão: proposta da equipa (o plano não a tinha), para o docente rever.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão.',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê.',
+   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo).',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'No fim, «O direito que pesou»: quantos escolheram vida privada, imagem ou liberdade de expressão.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por ler o 19.º sozinho: «se tenho liberdade de expressão, posso publicar».',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o 12.º e o 19.º lado a lado. Pergunta: «O que diz o 12.º sobre a Sara?»'),
+   (21, '«A partilha atinge a imagem da Sara, e o colega quis humilhá-la» (toma uma suposição sobre o colega por prova: o que ele quis, nenhum texto da sessão mostra) ou «A partilha é aceitável, porque a Sara estava num sítio público» (deixa de fora o 26.º e o pedido da Sara).',
+    'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 02, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto. A sessão 02 abre com o Recupera; é o momento de devolver.'),
+  'projeto': ('Três perguntas candidatas', '#pergunta-resposta',
+              'Dez minutos para apresentar a Pergunta Humana na versão individual: um teatro-documento individual, em que as falas vêm da '
+              'investigação (entrevistas, documentos e dados). Mostrar «Uma boa pergunta» na página do projeto. Trinta minutos: cada aluno escreve, '
+              'em papel, três perguntas candidatas e testa cada uma com os três critérios; o docente faz cerca de dez conversas de 3 minutos. '
+              'Cinco minutos: cada aluno sublinha a pergunta de que mais gosta. A mostra da sessão 10 é de 3 minutos e 2 de defesa por aluno '
+              '(decisão 159); a página do projeto ainda diz 5 a 8 minutos e muda no pedido 3.'),
+  'produto': 'Três perguntas candidatas',
+  'grelha': [('Três perguntas sobre o que é ser humano, cada uma numa frase', 4), ('Nenhuma se responde com «sim» ou «não»', 4),
+             ('Nenhuma se resolve com cinco minutos de pesquisa', 4), ('Cada uma pode investigar-se na escola, no bairro ou na família', 4),
+             ('Cada uma diz de quem ou de que situação fala, sem nomear colegas', 4)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de Ponto de partida e 20 de projeto (a apresentação da Pergunta Humana e a primeira pergunta candidata).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['O Ponto de partida, um por aluno (ligação no fim deste guia).', 'Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: acórdão do Tribunal da Relação de Évora de 25/06/2015, processo 789/13.7TMSTB-B.E1, em dgsi.pt. '
+                'Cita-se só o que o acórdão diz: a ordem aos pais (ponto 11 do regime provisório) e duas passagens da fundamentação. A filha tinha 12 '
+                'anos à data do acórdão (nascida em 2003, segundo o relatório). O acórdão é anonimizado; não se procuram nomes.'),
+  'notas': ['O caso da Sara, o das mensagens e o da voz gravada são inventados e assim se diz; ninguém escreve sobre um colega identificável.',
+            'Sem vídeo: a decisão 155 deixa no máximo um, visto por inteiro, em «Para ir mais longe». O vídeo do TED-Ed de Benedetta Berti não foi visto por inteiro pela equipa e fica de fora.',
+            'Recupera 1, _Rhythm 0_: os factos vêm do registo da obra na Moderna galerija de Ljubljana (MG+MSUM), que a tem na coleção, incluindo o objetivo da artista («testar os limites da relação entre a artista e o público»). Não se mostram imagens da performance: os relatos são fortes.',
+            'Olha: o cargo de Eleanor Roosevelt (presidiu à Comissão dos Direitos Humanos da ONU) confere com a página «Drafters of the Declaration» das Nações Unidas (un.org, consultada a 6/11/2026).',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Recupera 2: a distinção entre observar e interpretar vem da Etapa 1, «O que vemos» («demora a pagar» observa-se; «está a fazer-me perder tempo» interpreta-se).',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '02': {
   'dominio': 'Direitos Humanos (imagem, reserva da vida privada, consentimento); Media.',
@@ -419,23 +491,33 @@ def migalhas(base, itens):
     return out + '<span data-appearance-control></span></nav>'
 
 
+def rel(de, para):
+    """A ligação relativa de uma pasta para outra (ambas com «/» no fim), como no sítio publicado."""
+    return posixpath.relpath(para, de) + '/'
+
+
 def pagina_modulo(S):
     base = '../../../'
     linhas = ''
     for s in S:
         linhas += (f'<li data-chave="{e(s["chave"])}" data-versao="{e(s["versao"])}" data-n="{s["n"]}" data-titulo="{e(s["titulo"])}" data-pergunta="{e(LL.visivel(s["pergunta"]))}">'
-                   f'<a href="../m1-s{s["n"]}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
+                   f'<a href="{rel(MODULO, s["pasta"])}"><span class="n" aria-hidden="true">{s["n"]}</span>'
                    # 31/10/2026 (verificação final, decisão da equipa): o estado vai na linha do título; a pergunta só aparece
                    # na linha acima de 600 px, numa linha com reticências (abaixo, só a da próxima sessão, na região «A seguir»).
                    f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong> <span class="estado" data-estado></span></span>'
                    f'<span class="perg">{s["pergunta"]}</span></a></li>')
+    # 05/11/2026 (plano do molde da Cidadania, pedido 1): «Feita» conta com feita(st) do progresso comum
+    # (assets/licoes/progresso-licoes.js): a sessão concluída nesta versão ou numa anterior (st.antes, que o motor preenche ao
+    # subir a versão com preservarAnterior). Antes contava só st.lida com a versão igual à da página, e subir a versão apagava
+    # o «feita» de todos. A data é a da primeira conclusão. Na projeção, nada se lê.
     js = ('(function(){"use strict";var L=[].slice.call(document.querySelectorAll("[data-chave]")),feitas=0,prox=null;'
-          'L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
-          'var ok=!!(st&&st.lida&&st.versao===li.getAttribute("data-versao"));var el=li.querySelector("[data-estado]");'
+          'var P=window.EPILicoesProgresso,proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'
+          'L.forEach(function(li){var st=null;try{st=proj?null:JSON.parse(localStorage.getItem(li.getAttribute("data-chave"))||"null")}catch(x){st=null}'
+          'var ok=!!(st&&P&&P.feita(st));var el=li.querySelector("[data-estado]");'
           # 31/10/2026 (revisão do diretor de arte): a sessão feita diz «Feita dd/mm» (o motor grava t=Date.now() no fim); a
           # próxima por fazer leva «A seguir» e o filete vermelho; «por fazer» não se escreve.
           'var dd=function(n){return(n<10?"0":"")+n};'
-          'if(ok){feitas++;li.classList.add("feita");var d=typeof st.t==="number"?new Date(st.t):null;el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
+          'if(ok){feitas++;li.classList.add("feita");var t=P.data(st),d=t===null?null:new Date(t);el.textContent="Feita"+(d&&!isNaN(d)?" "+dd(d.getDate())+"/"+dd(d.getMonth()+1):"")}'
           'else if(!prox){prox=li;li.classList.add("seguir");el.textContent="A seguir"}});'
           'var b=document.querySelector("[data-continuar]"),c=document.querySelector("[data-contagem]"),pn=document.querySelector("[data-prox-n]"),pt=document.querySelector("[data-prox-t]"),pk=document.querySelector("[data-prox-k]"),pq=document.querySelector("[data-prox-q]");'
           'if(c)c.textContent=feitas+" de "+L.length+" sessões feitas";'
@@ -447,7 +529,7 @@ def pagina_modulo(S):
              '</header>'
              f'<section class="proximo" aria-label="A seguir"><p class="kicker" data-prox-k>A seguir</p>'
              f'<p class="prox-n" data-prox-n>01</p><p class="prox-t" data-prox-t>{e(S[0]["titulo"])}</p><p class="prox-q" data-prox-q>{S[0]["pergunta"]}</p>'
-             f'<a class="continuar" data-continuar href="../m1-s01/">Começar: Sessão 01, {e(S[0]["titulo"])} →</a></section>'
+             f'<a class="continuar" data-continuar href="{rel(MODULO, S[0]["pasta"])}">Começar: Sessão 01, {e(S[0]["titulo"])} →</a></section>'
              f'<p class="contagem" data-contagem>0 de {len(S)} sessões feitas</p>'
              f'<ol class="sessoes">{linhas}</ol>'
              # 31/10/2026 (terceira correção, diretor de arte): a linha do piloto vai para o rodapé (sistema, 6.10); no cabeçalho,
@@ -456,7 +538,7 @@ def pagina_modulo(S):
              '<footer class="mais"><a href="docente/">Guia do docente</a></footer>')
     return (cabeca(base, 'Módulo 1 (piloto) · Cidadania · Lente', 'Cidadania, módulo 1, Humanos: as 10 sessões em piloto.')
             + '<body class="cid-piloto"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
-            + f'<main id="conteudo">{corpo}</main><script>{js}</script></body></html>\n')
+            + f'<main id="conteudo">{corpo}</main><script src="{base}assets/licoes/{LL.PROGRESSO}"></script><script>{js}</script></body></html>\n')
 
 
 def tabela_grelha(g):
@@ -513,6 +595,7 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
+             '<p class="pg">A sessão 01 já está no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. A secção da sessão 01, mais abaixo, tem a tabela dos 180 minutos, cartão a cartão; as outras nove seguem o quadro acima até passarem ao molde.</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
@@ -521,6 +604,9 @@ def pagina_guia(S):
              + instr + '</section>')
     for s in S:
         g = GUIA[s['n']]
+        if s.get('molde'):
+            corpo += secao_molde(s, g)
+            continue
         passos = ''.join(f'<li><span class="min">{m} min.</span> {e(t)}</li>' for m, t in g['passos'])
         total = sum(m for m, _ in g['passos'])
         assert 60 <= total <= 75, (s['n'], total)
@@ -564,7 +650,235 @@ def pagina_guia(S):
               f'<tbody>{chave}</tbody></table></div></section>'
               '<footer class="mais"><a href="../">Voltar ao módulo</a><a href="../../../projeto/">Pergunta Humana</a></footer>')
     return (cabeca(base, 'Guia do docente, módulo 1 (piloto) · Cidadania · Lente', 'Guia do docente das 10 sessões do módulo 1 de Cidadania em piloto.')
-            + '<body class="cid-piloto guia"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>'
+            + '<body class="cid-piloto guia"><style>.c-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}'
+            + (CSS_GUIA_MOLDE if any(x.get('molde') for x in S) else '') + '</style>'
+            + f'<main id="conteudo">{corpo}</main></body></html>\n')
+
+
+# 05/11/2026 (plano do molde da Cidadania, pedido 2): o guia, a versão para imprimir e o redirecionamento das sessões no molde
+# cidadania-2026-11 (por agora, só a s01 do M1). Tudo sai dos cartões da lição e de GUIA; nada se escreve à mão nas páginas.
+GUIA_PASTA = MODULO + 'docente/'
+
+
+def _txt(s):
+    return LL.visivel(s)
+
+
+def _resposta(c):
+    """A resposta de um cartão de fazer, em texto simples, para a chave do guia."""
+    t = c['t']
+    if t == 'escolha':
+        return _txt(c['o'][c['c']])
+    if t == 'vf':
+        return 'Verdadeiro.' if c['v'] else 'Falso.'
+    if t == 'emparelhar':
+        return '; '.join(f'{_txt(a)} → {_txt(b)}' for a, b in c['pares']) + '.'
+    if t == 'sublinhar':
+        w = c['frase'].split()
+        return '«' + ' '.join(w[j] for j in c['certas']).strip(',.') + '»'
+    if t == 'ordenar':
+        return ' '.join(f'{k}. {_txt(x)}' for k, x in enumerate(c['passos'], 1))
+    return ''
+
+
+def _tipo_aluno(c):
+    nomes = {'escolha': 'escolha', 'vf': 'verdadeiro ou falso', 'emparelhar': 'emparelhar', 'sublinhar': 'tocar nas palavras', 'ordenar': 'ordenar'}
+    return 'ler' if c['t'] == 'ler' else nomes.get(c['t'], c['t'])
+
+
+def tabela_tempos(s, g):
+    d, C = s['d'], s['d']['cartoes']
+    T = d['tempos']
+    volta = next(i for i, c in enumerate(C) if c.get('rot') == 'Volta ao caso')
+    linhas, total = '', 0
+
+    def linha(n, nome, m, aluno, aula, cls=''):
+        return (f'<tr{cls}><td class="num">{n}</td><td>{nome}</td><td class="num">{m}</td><td>{aluno}</td><td>{aula}</td></tr>')
+
+    def parte(t):
+        return f'<tr class="parte"><th scope="rowgroup" colspan="5">{t}</th></tr>'
+    linhas += parte(f'Parte 1, ver antes de concluir ({sum(c["min"] for c in C[:volta])} minutos)')
+    for i, c in enumerate(C):
+        if i == volta:
+            linhas += linha('', 'Folga', T['folga'], 'Nada novo no ecrã.', e(g['folga']), ' class="pausa"')
+            linhas += linha('', 'Pausa', T['pausa'], '', '', ' class="pausa"')
+            linhas += parte(f'Parte 2, pesar e escrever ({sum(c["min"] for c in C[volta:])} minutos)')
+        nome = (f'<b>{e(c.get("rot") or "")}</b>' + (f'<br>{e(c["titulo"])}' if c['t'] == 'ler' and c.get('titulo') and c['titulo'] != c.get('rot') else ''))
+        linhas += linha(i + 1, nome, c['min'], _tipo_aluno(c), e(g['na_aula'].get(i + 1, '')))
+        total += c['min']
+    linhas += linha('', 'O passo do projeto', T['projeto'], e(GUIA[s['n']]['projeto'][0]), e(g['projeto_aula']), ' class="pausa"')
+    linhas += linha('', 'Entrega e arrumar', T['entrega'], '', e(g['entrega']), ' class="pausa"')
+    total += sum(T.values())
+    assert 175 <= total <= 185, total
+    return (f'<div class="tabela"><table class="tempos"><caption class="c-sr">Os tempos da sessão {s["n"]}, cartão a cartão</caption>'
+            '<thead><tr><th scope="col" class="num">N.º</th><th scope="col">Cartão</th><th scope="col" class="num">Min</th>'
+            '<th scope="col">O aluno</th><th scope="col">Na aula (só aqui)</th></tr></thead>'
+            f'<tbody>{linhas}</tbody><tfoot><tr><th scope="row" colspan="2">Total</th><td class="num">{total}</td><td colspan="2"></td></tr></tfoot></table></div>')
+
+
+def secao_molde(s, g):
+    d, C = s['d'], s['d']['cartoes']
+    sessao = rel(GUIA_PASTA, s['pasta'])
+    fazer = [(i, c) for i, c in enumerate(C) if c['t'] != 'ler']
+    charn = ''
+    for n, erro, fazer_se in g['charneiras']:
+        c = C[n - 1]
+        charn += (f'<tr><td class="num">{n}</td><td>{e(_txt(c["p"]))}</td><td>{e(_resposta(c))}</td><td>{e(erro)}</td><td>{e(fazer_se)}</td></tr>')
+    chave = ''.join(f'<tr><td class="num">{i + 1}</td><td>{e(c["rot"])}</td><td>{e(_resposta(c))}</td><td>{e(c.get("tipo", ""))}</td></tr>' for i, c in fazer)
+    img = next(c for c in C if c.get('rot') == 'Olha')
+    credito = re.search(r'<p class="info-i-texto">(.*?)</p>', img['html'], re.S).group(1)
+    return (f'<section class="sessao" id="s{s["n"]}"><p class="marca">Sessão {s["n"]}, no molde final</p><h2>{e(s["titulo"])}</h2>'
+            f'<p class="lead">{s["pergunta"]}</p>'
+            f'<p class="pg"><b>Domínio.</b> {e(g["dominio"])} <b>O que ensina.</b> {e(g["ensina"])}</p>'
+            f'<p class="abrir"><a class="botao" href="{sessao}">Abrir a sessão</a><a class="botao" href="{sessao}?projetar=1">Projetar</a>'
+            f'<a class="botao" href="{sessao}imprimir/">Versão para imprimir</a></p>'
+            f'<p class="pg"><b>Antes.</b> {e(g["antes"])}</p>'
+            '<h3>Os 180 minutos, cartão a cartão</h3>'
+            '<p class="pg">A ordem dos cartões e das opções é fixa e igual na projeção e em todos os telemóveis; não há pontos. Tudo o que o aluno lê faz-se sozinho; o que depende do docente está só nesta coluna.</p>'
+            + tabela_tempos(s, g)
+            + '<h3>Como conduzir o Decide (cartão 2)</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['decide']) + '</ol>'
+            + '<h3>Como conduzir o «Em turma» (cartão 18, 13 minutos)</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['em_turma']) + '</ol>'
+            + '<h3>As duas charneiras</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Pergunta</th>'
+              '<th scope="col">Certa</th><th scope="col">Erro esperado</th><th scope="col">Se a turma errar</th></tr></thead>'
+            f'<tbody>{charn}</tbody></table></div>'
+            + '<h3>Agora, em papel (cartão 22): o que conta e a devolução</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['papel']) + '</ol>'
+            + f'<p class="pg">{e(g["devolucao"])}</p>'
+            + f'<h3>Pergunta Humana: {e(g["projeto"][0])} (o passo do projeto, 45 minutos)</h3>'
+            f'<p class="pg">{e(g["projeto"][2])} <a href="../../../projeto/{g["projeto"][1]}">Ver na página do projeto</a>.</p>'
+            f'<h3>Grelha: {e(g["produto"])} (/20, indicativa)</h3>' + tabela_grelha(g)
+            + '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério.</p>'
+            + '<h3>Se só houver 90 minutos</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['noventa']) + '</ul>'
+            + '<h3>O que imprimir</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['imprimir']) + '</ul>'
+            + '<h3>Respostas dos 14 exercícios</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Exercício</th>'
+              f'<th scope="col">Resposta</th><th scope="col">Tipo</th></tr></thead><tbody>{chave}</tbody></table></div>'
+            + f'<h3>O caso real</h3><p class="pg">{e(g["caso_real"])}</p>'
+            + f'<h3>Imagem</h3><p class="pg">{credito}</p>'
+            + '<h3>Notas</h3><ul>' + ''.join(f'<li>{LL.esc_it(x)}</li>' for x in g['notas']) + '</ul>'
+            + f'<h3>Fontes da lição</h3><p class="pg fontes">{LL.esc_it(d["fontes"])}</p></section>')
+
+
+# as tabelas das secções no molde (tempos, charneiras, respostas) ocupam a largura da página; no papel, uma só coluna
+CSS_GUIA_MOLDE = (
+ '@media screen and (min-width:600px){.cid-piloto section.sessao:has(table.tempos) .tabela{max-width:54rem}}'
+ '.cid-piloto table.tempos td:nth-child(2){width:9.5rem}.cid-piloto table.tempos td:nth-child(4){width:6.5rem}.cid-piloto table.tempos td.num{width:2.6rem}'
+ '.cid-piloto table.tempos tr.parte th{background:var(--fundo);text-align:left;font-size:.95rem}'
+ '.cid-piloto table.tempos tr.pausa td{background:var(--fundo);font-style:italic}'
+ '@media print{.cid-piloto.guia section.sessao:has(table.tempos){column-count:1}.cid-piloto table.tempos{font-size:9.5pt}}')
+
+
+CSS_IMPRIMIR = (
+ '.cid-piloto.imprimir main{max-width:44rem}'
+ '.cid-piloto.imprimir h2{font:400 1.7rem/1 "Bebas Neue","Arial Narrow",Arial,sans-serif;margin:28px 0 8px;padding-top:6px;border-top:3px solid var(--tinta)}'
+ '.cid-piloto.imprimir .material{background:var(--papel);border:1.5px solid var(--tinta);padding:10px 16px;margin:12px 0}'
+ '.cid-piloto.imprimir .material p,.cid-piloto.imprimir .material li{font-family:Georgia,"Times New Roman",serif}'
+ '.cid-piloto.imprimir blockquote{margin:8px 0;padding-left:12px;border-left:2px solid var(--tinta)}'
+ '.cid-piloto.imprimir blockquote .art{display:block;font:700 .72rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.1em;text-transform:uppercase}'
+ '.cid-piloto.imprimir figure{margin:10px 0}.cid-piloto.imprimir figure img{max-width:100%;height:auto;display:block}'
+ '.cid-piloto.imprimir figcaption{font:italic .95rem/1.4 Georgia,serif;margin-top:6px}.cid-piloto.imprimir .credito{font-size:.82rem}'
+ '.cid-piloto.imprimir .ex{break-inside:avoid;margin:14px 0 18px}.cid-piloto.imprimir .ex .rot{font:700 .72rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 2px}'
+ '.cid-piloto.imprimir .ex ol{margin:6px 0 4px;padding-left:1.6em}.cid-piloto.imprimir .ex ol.letras{list-style:upper-latin}'
+ '.cid-piloto.imprimir .cols{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}'
+ '.cid-piloto.imprimir .resp{margin:4px 0 0;font-size:.95rem}'
+ '.cid-piloto.imprimir .a6{border:1.5px solid var(--tinta);padding:10px 14px;max-width:30rem;background:var(--papel)}'
+ '.cid-piloto.imprimir .a6 .linhas{height:3.4em}'
+ '.cid-piloto.imprimir table{font-size:.95rem}'
+ '@media (max-width:599px){.cid-piloto.imprimir .cols{grid-template-columns:1fr}}'
+ '@media print{.cid-piloto.imprimir h2{break-after:avoid}.cid-piloto.imprimir .material,.cid-piloto.imprimir .a6{break-inside:avoid}}'
+ # 06/11/2026 (revisor de pt-PT; decisão 153 e atribuição CC BY): o crédito impresso leva os endereços por extenso
+ '.cid-piloto.imprimir .credito a[href]::after{content:" (" attr(href) ")";word-break:break-all}')
+
+
+def _ex_imprimir(num, c, d, k):
+    """Um exercício na versão para imprimir, sem a resposta. A ordem das opções é a do ecrã (a semente do motor)."""
+    q = f'<div class="ex"><p class="rot">Exercício {num}: {e(c["rot"])}</p>'
+    if c.get('cita'):
+        q += f'<p class="cita"><i>«{e(_txt(c["cita"]))}»</i></p>'
+    p = html.unescape(re.sub(r'<[^>]+>', '', c['p']))
+    if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
+        p = re.sub(r'\b([Tt])oca nas palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as palavras', p)
+    q += f'<p><b>{LL.esc_it(p)}</b></p>'
+    t = c['t']
+    if t == 'escolha':
+        ordem = dict(LL.ordem_opcoes(d)).get(k) or list(range(len(c['o'])))
+        q += '<ol class="letras">' + ''.join(f'<li>{e(_txt(c["o"][j]))}</li>' for j in ordem) + '</ol><p class="resp">Resposta: ______</p>'
+    elif t == 'vf':
+        q += '<p class="resp">☐ Verdadeiro &nbsp; ☐ Falso</p>'
+    elif t == 'sublinhar':
+        q += f'<p class="material"><span>{e(c["frase"])}</span></p>'
+    elif t == 'emparelhar':
+        sem = LL._semente(d['chave'], k)
+        esq = LL._mist(sem, list(range(len(c['pares']))))
+        vals = list(dict.fromkeys(b for _, b in c['pares']))
+        dto = LL._mist(sem, list(range(len(vals))))
+        if len(vals) == len(c['pares']) and all(c['pares'][esq[i]][1] == vals[dto[i]] for i in range(len(esq))):
+            dto = dto[1:] + dto[:1]
+        q += ('<div class="cols"><ol>' + ''.join(f'<li>{e(_txt(c["pares"][j][0]))}</li>' for j in esq) + '</ol>'
+              '<ol class="letras">' + ''.join(f'<li>{e(_txt(vals[j]))}</li>' for j in dto) + '</ol></div>'
+              '<p class="resp">Liga: ' + ' &nbsp; '.join(f'{i + 1} ___' for i in range(len(esq))) + '</p>')
+    elif t == 'ordenar':
+        ordem = LL.ordem_ordenar(d, k)  # 06/11/2026: a ordem do ecrã, sem nenhum passo no seu lugar
+        q += ('<ol class="letras">' + ''.join(f'<li>{e(_txt(c["passos"][j]))}</li>' for j in ordem) + '</ol>'
+              '<p class="resp">Ordem: ' + ' → '.join('___' for _ in ordem) + '</p>')
+    return q + '</div>'
+
+
+def _ler_imprimir(c):
+    """O material de um cartão de ler, para o papel: sem botões, sem lados por abrir, com o crédito por extenso."""
+    h = c['html']
+    h = re.sub(r'<button\b.*?</button>', '', h, flags=re.S)
+    h = re.sub(r'<div class="pos-lados".*?</div></details></div>', '', h, flags=re.S)
+    h = re.sub(r'<div class="tr-relogio".*?</div>', '', h, flags=re.S)
+    h = re.sub(r'<details class="info-i"[^>]*><summary[^>]*>.*?</summary><p class="info-i-texto">(.*?)</p></details>', r'<p class="credito">\1</p>', h, flags=re.S)
+    # 06/11/2026: «Ler mais» é um botão e no papel não diz nada; os outros títulos («O que conta», «Um exemplo…») ficam
+    h = re.sub(r'<details class="mais"><summary>(.*?)</summary><div>(.*?)</div></details>',
+               lambda m: ('' if m.group(1) == 'Ler mais' else f'<p><b>{m.group(1)}</b></p>') + m.group(2), h, flags=re.S)
+    h = re.sub(r'<div class="cc-passo[^"]*"( hidden)?', '<div class="cc-passo"', h)
+    h = re.sub(r'<p class="pos-antes"[^>]*></p>', '', h)
+    h = re.sub(r'\s(?:data-[\w-]+="[^"]*"|hidden|role="[^"]*"|aria-[\w-]+="[^"]*")', '', h)
+    h = h.replace('src="../../../../img/', 'src="../../../../../img/')
+    return f'<div class="material">{h}</div>'
+
+
+def _opcoes_prova(c):
+    """06/11/2026: as opções da escolha que pesou no «Em turma» (data-valor), tiradas do cartão em vez de escritas à mão."""
+    m = re.search(r'<div class="posicao" data-artefacto="prova".*?</div></div>', c['html'], re.S)
+    return ' '.join(f'☐ {e(html.unescape(v))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
+
+
+def pagina_imprimir(s):
+    """A versão para imprimir da sessão (plano, secção 5): o material, os 14 exercícios sem retorno e o papel, para quem não tem
+    telemóvel, bateria ou rede. As respostas ficam no guia do docente."""
+    d, C = s['d'], s['d']['cartoes']
+    base = '../' * (s['pasta'].count('/') + 1)
+    corpo = (f'<header><p class="marca">Cidadania, módulo 1, sessão {s["n"]}</p><h1>{e(s["titulo"])}</h1>'
+             '<p class="lead">Versão para imprimir: o material, os 14 exercícios e o papel do fim. Fazes tudo sozinho, só com uma caneta.</p>'
+             '<p><button type="button" class="imprimir" onclick="window.print()">Imprimir</button></p></header>'
+             '<div class="campos"><span>O teu código: ____________</span><span>Data: ____ / ____</span></div>')
+    num = 0
+    volta = next(i for i, c in enumerate(C) if c.get('rot') == 'Volta ao caso')
+    corpo += '<h2>Parte 1, ver antes de concluir</h2>'
+    for k, c in enumerate(C):
+        if k == volta:
+            corpo += '<h2>Parte 2, pesar e escrever</h2>'
+        if c['t'] != 'ler':
+            num += 1
+            corpo += _ex_imprimir(num, c, d, k)
+            continue
+        rot = c.get('rot')
+        if rot == 'Para levar':
+            continue
+        if rot in ('Decide', 'Em turma'):
+            perg = re.findall(r'<p class="pos-q">(.*?)</p>', c['html'])
+            corpo += (f'<div class="ex"><p class="rot">{e(rot)}</p><p><b>{perg[0]}</b></p><p class="resp">☐ Sim &nbsp; ☐ Não &nbsp; ☐ Depende</p>'
+                      + ('<p>Escreve, numa linha, a razão que pesa mais para ti.</p><div class="linhas"></div>' if rot == 'Decide' else
+                         f'<p>Compara com a tua escolha do início. {perg[1] if len(perg) > 1 else ""} {_opcoes_prova(c)}</p>')
+                      + '</div>')
+            continue
+        titulo = f'<p class="rot">{e(rot)}{": " + e(c["titulo"]) if c.get("titulo") and c["titulo"] != rot else ""}</p>'
+        corpo += titulo + _ler_imprimir(c)
+    corpo += f'<footer class="mais"><a href="{base}{s["pasta"]}">Voltar à sessão</a></footer>'
+    return (cabeca(base, f'{s["titulo"]}, para imprimir · Cidadania · Lente', f'Sessão {s["n"]} do módulo 1 de Cidadania, para imprimir.')
+            + f'<body class="cid-piloto imprimir"><style>{CSS_IMPRIMIR}.c-sr{{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}</style>'
             + f'<main id="conteudo">{corpo}</main></body></html>\n')
 
 
@@ -600,7 +914,13 @@ def regras(nome, s):
 
 def paginas():
     S = sessoes()
-    return {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': pagina_guia(S), MODULO + 'ponto/index.html': pagina_ponto()}
+    out = {MODULO + 'index.html': pagina_modulo(S), MODULO + 'docente/index.html': pagina_guia(S), MODULO + 'ponto/index.html': pagina_ponto()}
+    # 05/11/2026 (plano do molde, pedido 2): cada sessão no molde tem a versão para imprimir. O endereço antigo do piloto
+    # (cidadania/piloto/m1-s01/) fica como está até ao pedido 3, que faz os redirecionamentos do piloto todos de uma vez.
+    for s in S:
+        if s.get('molde'):
+            out[s['pasta'] + 'imprimir/index.html'] = pagina_imprimir(s)
+    return out
 
 
 def main(argv):

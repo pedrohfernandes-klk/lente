@@ -1,0 +1,32 @@
+/* 05/11/2026: decisão 153. Peça «i» dos créditos, igual no Português e no Lente (plano-creditos-i-20261105.md, secção 1).
+   Uma <details class="info-i" name="info-i"> nativa dentro da moldura da imagem: funciona sem JavaScript, abre com toque,
+   clique, Enter e Espaço, e a pesquisa na página abre-a. Variante «canto» (imagens com 240 px ou mais: o «i» no canto
+   inferior direito, o crédito sobe por cima da imagem) e variante «linha» (info-i--linha: o «i» por baixo, à direita, e o
+   crédito no fluxo). Na impressão, o «i» não sai e o crédito sai por extenso, com o endereço da licença. */
+:root{--ii-papel:var(--cz-ground,var(--papel,#fff));--ii-tinta:var(--cz-ink,var(--tinta,#111))}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ii-papel:var(--cz-ground,var(--papel,#121210));--ii-tinta:var(--cz-ink,var(--tinta,#ecebe5))}}
+:root[data-theme="dark"]{--ii-papel:var(--cz-ground,var(--papel,#121210));--ii-tinta:var(--cz-ink,var(--tinta,#ecebe5))}
+.com-i{position:relative}
+.info-i{position:absolute;inset:0;margin:0;padding:0;border:0;pointer-events:none}
+.info-i>summary{position:absolute;inset-block-end:8px;inset-inline-end:8px;z-index:2;inline-size:44px;block-size:44px;display:grid;place-items:center;list-style:none;cursor:pointer;pointer-events:auto;touch-action:manipulation;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.info-i>summary::-webkit-details-marker{display:none}
+.info-i>summary::marker{content:""}
+/* as casas têm regras gerais para summary (padding, flex, um «+» antes): no «i» não se aplicam */
+.info-i>summary,.info-i[open]>summary{box-sizing:border-box;padding:0;margin:0;gap:0;min-height:0;border:0;background:none;font:inherit;text-align:center}
+.info-i>summary::before,.info-i>summary::after,.info-i[open]>summary::before,.info-i[open]>summary::after{content:none;display:none}
+.info-i>summary>span{inline-size:28px;block-size:28px;box-sizing:border-box;display:grid;place-items:center;border-radius:50%;background:var(--ii-papel);color:var(--ii-tinta);border:2px solid currentColor;box-shadow:0 0 0 2px var(--ii-papel);font:italic 700 17px/1 Georgia,"Times New Roman",serif;transition:background-color .16s,color .16s}
+.info-i[open]>summary>span{background:var(--ii-tinta);color:var(--ii-papel)}
+.info-i>summary:focus{outline:none}
+.info-i>summary:focus-visible{outline:3px solid var(--ii-tinta);outline-offset:-1px}
+.info-i-texto{position:absolute;inset-inline:8px;inset-block-end:8px;z-index:1;max-block-size:calc(100% - 16px);overflow:auto;box-sizing:border-box;margin:0;padding:12px 60px 12px 16px;background:var(--ii-papel);color:var(--ii-tinta);border:1px solid currentColor;font:400 .8125rem/1.45 Arial,Helvetica,sans-serif;text-align:start!important;hyphens:manual!important;-webkit-hyphens:manual!important;letter-spacing:normal;word-spacing:normal;pointer-events:auto}
+.info-i-texto a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
+.info-i-texto a[rel~=license]{white-space:nowrap}
+.info-i--linha{position:relative;inset:auto;inline-size:fit-content;margin-inline-start:auto;pointer-events:auto}
+.info-i--linha[open]{inline-size:auto}
+.info-i--linha>summary{position:relative;inset:auto;margin-inline-start:auto}
+.info-i--linha .info-i-texto{position:static;max-block-size:none;padding:4px 0 0;border:0;background:none}
+.fundo-acoes{display:flex;align-items:center;justify-content:space-between;gap:16px}
+:is(.em-projecao,.epi-projection,[data-cz-projection]) .info-i>summary>span{background:transparent;border-width:1px;box-shadow:none;inline-size:32px;block-size:32px;font-size:1.25rem}
+@media (prefers-reduced-motion:no-preference){.info-i[open] .info-i-texto{animation:ii-abre .16s ease-out}@keyframes ii-abre{from{opacity:0;transform:translateY(4px)}}}
+@media (forced-colors:active){.info-i>summary>span{forced-color-adjust:none;background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}.info-i[open]>summary>span{background:Highlight;color:HighlightText}.info-i-texto{border-color:CanvasText}}
+@media print{.info-i{position:static;inset:auto;pointer-events:auto}.info-i>summary{display:none}.info-i::details-content{content-visibility:visible;display:block}.info-i-texto{position:static;max-block-size:none;overflow:visible;margin:4pt 0 0;padding:0;border:0;background:none;color:#000;font:8pt/1.3 Arial,sans-serif;animation:none}.info-i-texto a[rel~=license]::after{content:" (" attr(href) ")"}.fundo-acoes{display:none}}

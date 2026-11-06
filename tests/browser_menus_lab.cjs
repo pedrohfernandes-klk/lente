@@ -14,6 +14,9 @@ const tipos={'.js':'application/javascript','.css':'text/css','.html':'text/html
 const server=http.createServer((req,res)=>{let f=path.join(root,decodeURIComponent(new URL(req.url,'http://x').pathname));if(!f.startsWith(root)){res.writeHead(403).end();return;}if(fs.existsSync(f)&&fs.statSync(f).isDirectory())f=path.join(f,'index.html');if(!fs.existsSync(f)){res.writeHead(404).end();return;}res.setHeader('Content-Type',tipos[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));});
 const LAB=['/narrativas/','/narrativas/ver/','/narrativas/percursos/olhar/','/narrativas/tudo/'];
 const MENU=['/narrativas/ideias/sessao-01/','/cidadania/piloto/m1-s01/','/cidadania/m1/passo-01/','/narrativas/oficina-arco/'];
+// 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). A sessão no molde novo sai do mesmo gerador das lições, com o
+// mesmo menu ≡; passa por todas as provas das outras quatro (e tem «Seguinte», a sessão 02).
+MENU.push('/cidadania/m1/sessoes/01/');
 const lum=c=>{const m=c.match(/[\d.]+/g).map(Number);const [r,g,b]=m.slice(0,3).map(v=>{v/=255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4});return .2126*r+.7152*g+.0722*b;};
 const contraste=(a,b)=>{const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return (x+.05)/(y+.05);};
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;const b=await chromium.launch();
@@ -75,7 +78,7 @@ const contraste=(a,b)=>{const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return (x+.
    const larg=await p.locator('#c-menu').evaluate(e=>e.getBoundingClientRect().width);assert.ok(Math.abs(larg-Math.min(360,width*.9))<=1,rot+': largura do painel '+larg);
    // «Estás em», depois «Voltar…» como primeira ação; o caminho em frente («Seguinte») quando existe
    assert.ok(await p.locator('#m-t').isVisible());assert.match(await p.locator('nav[aria-label="Menu"] a').first().innerText(),/^Voltar /);
-   if(url==='/narrativas/oficina-arco/'||url==='/narrativas/ideias/sessao-01/'||url==='/cidadania/m1/passo-01/')assert.match(await p.locator('nav[aria-label="Menu"] a').nth(1).innerText(),/^Seguinte/);
+   if(url==='/narrativas/oficina-arco/'||url==='/narrativas/ideias/sessao-01/'||url==='/cidadania/m1/passo-01/'||url==='/cidadania/m1/sessoes/01/')assert.match(await p.locator('nav[aria-label="Menu"] a').nth(1).innerText(),/^Seguinte/);
    assert.deepEqual(await pequenos(p,'#c-menu a,#c-menu button,#c-menu summary'),[],rot+': alvos do menu');
    // foco preso: 15 Tab e 5 Shift+Tab nunca saem do painel; cada item do menu recebe o foco
    const vistos=new Set();for(let i=0;i<15;i++){await p.keyboard.press('Tab');const r=await p.evaluate(()=>{const a=document.activeElement;return {dentro:!!a.closest('#c-menu'),t:(a.textContent||a.getAttribute('aria-label')||'').trim().slice(0,30)}});assert.ok(r.dentro,rot+': o foco saiu do menu');vistos.add(r.t);}

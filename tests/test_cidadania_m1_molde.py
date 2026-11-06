@@ -28,23 +28,28 @@ class Texto(HTMLParser):
  def __str__(self):return re.sub(r'\s+',' ',' '.join(self.out))
 
 def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
+# 05/11/2026 (plano do molde da Cidadania, pedido 2; decisões 157 e 158): a sessão 01 deixa de ser a página publicada em cinco
+# passos e passa a ser a lição no molde final, no mesmo endereço, escrita por tools/licoes_lente.py (test_sessao_01_no_molde,
+# abaixo, e tests/test_molde_cidadania.py conferem-na). As regras deste molde antigo continuam a valer, iguais, para as sessões
+# 02 a 10 publicadas, até ao pedido 3.
+PUBLICADAS=range(2,11)
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
-  for n in range(1,11):
+  for n in PUBLICADAS:
    s=pagina(n);capa=s[s.index('data-session-intro'):s.index('data-session-flow')]
    self.assertEqual(capa.count('<img '),1,n);self.assertIn('class="c10-deck"',capa);self.assertIn('data-start>Começar</a>',capa)
    self.assertNotIn('3 horas',capa,n);self.assertNotIn('momentos',capa,n)
 
  def test_cinco_passos_pela_ordem(self):
-  for n in range(1,11):
+  for n in PUBLICADAS:
    s=pagina(n);esperado=molde.PASSOS_TAREFA if n==3 else molde.PASSOS
    self.assertEqual(re.findall(r' data-stage data-label="([^"]+)"',s),esperado,n)
    self.assertEqual(re.findall(r'data-stage-link><b>\d\d</b><span>([^<]+)</span>',s),esperado,n)
    self.assertIn('data-prev hidden>← Anterior',s);self.assertIn('data-next hidden>Seguinte →',s)
 
  def test_decide_sem_ecra_e_leva_em_papel(self):
-  for n in range(1,11):
+  for n in PUBLICADAS:
    s=pagina(n);passos=re.split(r'<section class="c10-stage" id="momento-',s)[1:]
    self.assertEqual(len(passos),5)
    recall=passos[0].count('<li><p>');self.assertTrue(2<=recall<=3,(n,recall))
@@ -72,6 +77,7 @@ class Molde(unittest.TestCase):
    if o.get('protegida'):self.assertNotIn('citacao',o,n)
    for _,alvo in o['ligacoes']:
     alvo=R/alvo;self.assertTrue((alvo/'index.html').exists(),(n,alvo))
+   if n not in PUBLICADAS:continue
    s=pagina(n);self.assertEqual(s.count('class="c10-obra"'),1,n);self.assertIn('Outra leitura',s)
   for n in (3,10):self.assertNotIn('class="c10-obra"',pagina(n))
 
@@ -106,5 +112,17 @@ class Molde(unittest.TestCase):
  def test_registo_so_nas_sessoes_que_contam(self):
   for n in range(1,11):
    s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=2 else 1,n)
+
+
+ def test_sessao_01_no_molde(self):
+  # 05/11/2026 (pedido 2): no endereço da sessão 01 está a lição no molde final, com a chave do piloto e sem os cinco passos.
+  s=pagina(1)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s01"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_pedido2
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_pedido2.inteiro_ok('cidadania/m1/sessoes/01/index.html'))
 
 if __name__=='__main__':unittest.main()

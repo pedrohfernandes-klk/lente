@@ -4,6 +4,8 @@ from urllib.parse import quote
 import subprocess,re
 import cidadania_sessoes_molde as molde
 
+# 05/11/2026 (plano do molde da Cidadania, pedido 2): as sessões cujo endereço já é de uma lição no molde cidadania-2026-11.
+NO_MOLDE={'01'}
 def render(api,sessions,capsules,short_caps,image_prompts):
  R,write,old,link,rel=api['R'],api['write'],api['old'],api['anchor'],api['rel']
  # 28/10/2026: vídeos escolhidos pelo docente (tools/videos-cidadania-m1.json), no componente «Para ver».
@@ -96,6 +98,10 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   next_target=f'cidadania/m1/sessoes/{n+1:02}/' if n<10 else 'cidadania/m1/'
   body+=molde.controlos(rel(path,next_target),'Sessão seguinte' if n<10 else 'Voltar às sessões')
   body+=molde.SEM_JS+'<footer class="c10-support">'+link(path,'cidadania/m1/','Todas as sessões')+link(path,'cidadania/m1/biblioteca/','Biblioteca')+link(path,'cidadania/m1/sessoes/#sessao-'+ident,'Guia do docente')+'</footer>'
+  # 05/11/2026 (plano do molde da Cidadania, pedido 2; decisões 157 e 158): a sessão 01 passa a sair, na versão final, de
+  # tools/licoes/cidadania-m1-s01.json pelo gerador das lições (tools/licoes_lente.py), no mesmo endereço; este gerador deixa de
+  # a escrever, para não a apagar. As sessões 02 a 10 publicadas ficam como estavam até ao pedido 3.
+  if ident in NO_MOLDE:continue
   write(path,document(path,s['title'],body,ident))
  path='cidadania/m1/index.html';hero=dict(image='hals.webp',caption='Frans Hals · As regentes do asilo de velhos, 1664')
  body='<header class="c10-hero c10-cover"><div class="c10-cover-text"><p class="c10-eyebrow">Cidadania · Módulo 1</p><h1>Humanos</h1><p class="c10-deck">Quem conta como pessoa?</p><a class="c10-action" href="sessoes/03/" data-continue>Continuar · sessão 03</a></div>'+image(path,hero,'c10-cover-img')+'</header><div class="c10-sectionhead"><h2>Dez sessões</h2><p class="c10-small" data-count></p></div><ol class="c10-session-list">'

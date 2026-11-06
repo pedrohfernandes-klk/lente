@@ -143,7 +143,9 @@ def entrada():
            '<p class="lab-creditos">Créditos das imagens das portas Observar, Treinar e Criar: '+creditos+'</p></div></footer>')
     # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.
     body+='<script>(function(){function f(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!document.getElementById(h))location.replace("tudo/"+location.search+location.hash)}addEventListener("hashchange",f);f()})()</script>'
-    abre=('<script src="'+link(base,'assets/licoes/progresso-laboratorio.js')+'?v=20261102-1"></script>'
+    # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). O progresso comum passou de progresso-laboratorio.js a
+    # progresso-licoes.js (o mesmo código, que responde também pelo nome antigo EPILabProgresso); a entrada carrega o novo.
+    abre=('<script src="'+link(base,'assets/licoes/progresso-licoes.js')+'?v=20261105-1"></script>'
           '<script defer src="'+link(base,'assets/laboratorio/ideias/entrada.js')+'?v='+LN.V+'"></script>')
     page(base,'Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três portas (Observar, Treinar e Criar), depois do Ideias.',foot=False,abre=abre)
 entrada()

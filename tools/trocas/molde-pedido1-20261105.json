@@ -1,0 +1,141 @@
+{
+ "cidadania/piloto/m1-s01/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "tos\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s02/\", \"seguinteRotulo\": \"Sessão 02: A imagem dos outros\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "tos\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s02/\", \"seguinteRotulo\": \"Sessão 02: A imagem dos outros\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s02/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "ros\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s03/\", \"seguinteRotulo\": \"Sessão 03: Quem tem lugar?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "ros\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s03/\", \"seguinteRotulo\": \"Sessão 03: Quem tem lugar?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s03/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "ar?\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s04/\", \"seguinteRotulo\": \"Sessão 04: Posso dizer tudo?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "ar?\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s04/\", \"seguinteRotulo\": \"Sessão 04: Posso dizer tudo?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s04/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "do?\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s05/\", \"seguinteRotulo\": \"Sessão 05: Quem guarda os meus dados?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "do?\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s05/\", \"seguinteRotulo\": \"Sessão 05: Quem guarda os meus dados?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s05/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "os?\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s06/\", \"seguinteRotulo\": \"Sessão 06: Uma regra para quem perde\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "os?\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s06/\", \"seguinteRotulo\": \"Sessão 06: Uma regra para quem perde\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s06/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "rde\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s07/\", \"seguinteRotulo\": \"Sessão 07: Nove contra dois\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "rde\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s07/\", \"seguinteRotulo\": \"Sessão 07: Nove contra dois\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s07/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "ois\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s08/\", \"seguinteRotulo\": \"Sessão 08: Quem decide o quê?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "ois\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s08/\", \"seguinteRotulo\": \"Sessão 08: Quem decide o quê?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s08/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "uê?\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s09/\", \"seguinteRotulo\": \"Sessão 09: Muitas vozes, uma escola\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "uê?\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s09/\", \"seguinteRotulo\": \"Sessão 09: Muitas vozes, uma escola\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s09/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "ola\", \"variar\": false, \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s10/\", \"seguinteRotulo\": \"Sessão 10: O que conseguimos defender?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "ola\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"percurso\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/\", \"percursoRotulo\": \"As 10 sessões\", \"seguinte\": \"../m1-s10/\", \"seguinteRotulo\": \"Sessão 10: O que conseguimos defender?\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1-s10/index.html": [
+  [
+   "iso\" role=\"status\"></div><script src=\"../../../a",
+   "iso\" role=\"status\"></div><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script src=\"../../../a",
+   1
+  ],
+  [
+   "er?\", \"variar\": false, \"seguinte\": \"../m1/\", \"seguinteRotulo\": \"As 10 sessões\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;if(window.EPIJogo)EPIJog",
+   "er?\", \"variar\": false, \"aula\": true, \"semPontos\": true, \"preservarAnterior\": true, \"retomar\": 12, \"feita\": \"Sessão feita.\", \"seguinte\": \"../m1/\", \"seguinteRotulo\": \"As 10 sessões\"};var el=document.getElementById(\"baralho\");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;CFG.fim=function(){var g=document.querySelector(\"#baralho .cartao.fim .grande\");if(!g||document.querySelector(\"#baralho .fim-modulo\"))return;var q=document.createElement(\"p\");q.className=\"frase-fim fim-modulo\";q.setAttribute(\"role\",\"status\");q.textContent=\"O módulo já a marca.\";g.parentNode.insertBefore(q,g.nextSibling)};if(window.EPIJogo)EPIJog",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1/index.html": [
+  [
+   "></footer></main><script>(function(){\"use strict\";var L=[].slice.call(document.querySelectorAll(\"[data-chave]\")),feitas=0,prox=null;L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute(\"data-chave\"))||\"null\")}catch(x){st=null}var ok=!!(st&&st.lida&&st.versao===li.getAttribute(\"data-versao\"));var el=li.querySelector(\"[data-estado]\");var dd=function(n){return(n<10?\"0\":\"\")+n};if(ok){feitas++;li.classList.add(\"feita\");var d=typeof st.t===\"number\"?new Date(st.t):null;el.textContent=\"Feita\"+",
+   "></footer></main><script src=\"../../../assets/licoes/progresso-licoes.js?v=20261105-1\"></script><script>(function(){\"use strict\";var L=[].slice.call(document.querySelectorAll(\"[data-chave]\")),feitas=0,prox=null;var P=window.EPILicoesProgresso,proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;L.forEach(function(li){var st=null;try{st=proj?null:JSON.parse(localStorage.getItem(li.getAttribute(\"data-chave\"))||\"null\")}catch(x){st=null}var ok=!!(st&&P&&P.feita(st));var el=li.querySelector(\"[data-estado]\");var dd=function(n){return(n<10?\"0\":\"\")+n};if(ok){feitas++;li.classList.add(\"feita\");var t=P.data(st),d=t===null?null:new Date(t);el.textContent=\"Feita\"+",
+   1
+  ]
+ ],
+ "tools/cidadania_piloto.py": [
+  [
+   "}</span></a></li>')\n    js = ('(function(){\"use strict\";var L=[].slice.call(document.querySelectorAll(\"[data-chave]\")),feitas=0,prox=null;'\n          'L.forEach(function(li){var st=null;try{st=JSON.parse(localStorage.getItem(li.getAttribute(\"data-chave\"))||\"null\")}catch(x){st=null}'\n          'var ok=!!(st&&st.lida&&st.versao===li.getAttribute(\"data-versao\"));var el=li.querySelector(\"[data-estado]\");'\n          # 31/10/2026 (revisão do diretor de arte): a sessão feita diz «Feita dd/mm» (o motor grava t=Date.now() no fim); a\n          # próxima por fazer leva «A seguir» e o filete vermelho; «por fazer» não se escreve.\n          'var dd=function(n){return(n<10?\"0\":\"\")+n};'\n          'if(ok){feitas++;li.classList.add(\"feita\");var d=typeof st.t===\"number\"?new Date(st.t):null;el.textContent=\"Feita\"+",
+   "}</span></a></li>')\n    # 05/11/2026 (plano do molde da Cidadania, pedido 1): «Feita» conta com feita(st) do progresso comum\n    # (assets/licoes/progresso-licoes.js): a sessão concluída nesta versão ou numa anterior (st.antes, que o motor preenche ao\n    # subir a versão com preservarAnterior). Antes contava só st.lida com a versão igual à da página, e subir a versão apagava\n    # o «feita» de todos. A data é a da primeira conclusão. Na projeção, nada se lê.\n    js = ('(function(){\"use strict\";var L=[].slice.call(document.querySelectorAll(\"[data-chave]\")),feitas=0,prox=null;'\n          'var P=window.EPILicoesProgresso,proj=/[?&]projetar=1(&|$)/.test(location.search)||window.self!==window.top;'\n          'L.forEach(function(li){var st=null;try{st=proj?null:JSON.parse(localStorage.getItem(li.getAttribute(\"data-chave\"))||\"null\")}catch(x){st=null}'\n          'var ok=!!(st&&P&&P.feita(st));var el=li.querySelector(\"[data-estado]\");'\n          # 31/10/2026 (revisão do diretor de arte): a sessão feita diz «Feita dd/mm» (o motor grava t=Date.now() no fim); a\n          # próxima por fazer leva «A seguir» e o filete vermelho; «por fazer» não se escreve.\n          'var dd=function(n){return(n<10?\"0\":\"\")+n};'\n          'if(ok){feitas++;li.classList.add(\"feita\");var t=P.data(st),d=t===null?null:new Date(t);el.textContent=\"Feita\"+",
+   1
+  ],
+  [
+   "\"conteudo\">{corpo}</main><script>{js}</script></",
+   "\"conteudo\">{corpo}</main><script src=\"{base}assets/licoes/{LL.PROGRESSO}\"></script><script>{js}</script></",
+   1
+  ]
+ ]
+}
