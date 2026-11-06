@@ -5,7 +5,10 @@ def text(p):
  # O percurso anterior integral conserva recursos e estado; a entrada atual
  # passou a organizar dez sessões. A preservação compara esse documento.
  if p=='cidadania/m1/index.html':p='cidadania/m1/percurso-anterior.html'
- return (ROOT/p).read_text('utf-8')
+ # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata.
+ import grupos146
+ s=(ROOT/p).read_text('utf-8')
+ return grupos146.desfazer(s,p) if p in grupos146.TROCAS else s
 BASE=json.loads((ROOT/'tests/fixtures/cidadania-m1-baseline.json').read_text('utf-8'))
 class CidadaniaM1(unittest.TestCase):
  def test_old_destinations_and_images_preserved(self):

@@ -184,7 +184,7 @@ def decide(path, n, s):
     # 28/10/2026: «a tua resposta» serve todas as tarefas (um número, uma regra, uma classificação), não só escolhas.
     out += para('c10-small', d.get('protocolo', 'Três minutos. Escreve a tua resposta e uma razão no cartão de decisão. Depois, uma volta: cada pessoa lê o seu cartão, sem comentários.'))
     out += para('c10-small', d.get('silencio_mais', '')) + '</div>'
-    out += '<div class="c10-group">' + label(d.get('grupo_rotulo', 'Depois, em grupo')) + '<ol class="c10-tasks">' + ''.join('<li>' + e(t) + '</li>' for t in d['grupo']) + '</ol>'
+    out += '<div class="c10-group">' + label(d.get('grupo_rotulo', 'Depois, em turma')) + '<ol class="c10-tasks">' + ''.join('<li>' + e(t) + '</li>' for t in d['grupo']) + '</ol>'
     out += '<p class="c10-small">No fim, registem a decisão e uma razão que ficou vencida.</p></div></div>'
     return out + '<details data-feedback><summary>Comparar razões</summary><div><p>' + e(d['comparar']) + '</p></div></details>'
 
@@ -196,7 +196,7 @@ def faz(path, n, s):
     if f.get('apoio'):
         out += '<ul class="c10-apoio">' + ''.join('<li>' + liga(path, a, t) + '</li>' for t, a in f['apoio']) + '</ul>'
     out += para('c10-small', f.get('nota', ''))
-    out += '<div class="c10-review">' + label('Rever com outra pessoa') + '<p>' + e(f['revisao']) + '</p>' + (para('c10-small', REVISAO_COMUM) if f.get('comum', True) else '') + '</div>'
+    out += '<div class="c10-review">' + label('Rever') + '<p>' + e(f['revisao']) + '</p>' + (para('c10-small', REVISAO_COMUM) if f.get('comum', True) else '') + '</div>'
     titulo, conteudo = CASAS[n - 1]
     out += '<div class="c10-casa"><p class="c10-output"><b>Guardar</b><span>Casa ' + str(n) + ' do mapa do Contra-feed: ' + e(titulo) + '</span></p>'
     return out + para('c10-casa-c', conteudo) + mapa(n) + '</div>'
@@ -248,7 +248,7 @@ def guia():
     body += '<p>As páginas das sessões são para a turma; este guia é para conduzir. Na sessão seguinte, abrir o Recupera com uma resposta do Leva, lida em voz alta e sem nome.</p></section>'
     body += '<section class="c10-reference" id="decisoes"><h2>Decisões provisórias</h2><p>As cinco perguntas do plano ficaram com uma decisão provisória, a confirmar pelo docente.</p><ol class="c10-decisoes">'
     body += ''.join('<li><p class="c10-label">Decisão provisória ' + str(i) + ': ' + e(t) + '</p><p>' + e(txt) + '</p></li>' for i, (t, txt) in enumerate(DECISOES, 1)) + '</ol></section>'
-    body += '<section class="c10-reference" id="mapa"><h2>O mapa do Contra-feed</h2><p>Cada grupo tem um mapa com dez casas, num A3 ou numa página do ficheiro do grupo. O Faz de cada sessão preenche uma casa. O mapa só organiza o que o Contra-feed já pede: não cria entregas nem pesos.</p>'
+    body += '<section class="c10-reference" id="mapa"><h2>O mapa do Contra-feed</h2><p>Cada aluno tem um mapa com dez casas, num A3 ou numa página do seu ficheiro. O Faz de cada sessão preenche uma casa. O mapa só organiza o que o Contra-feed já pede: não cria entregas nem pesos.</p>'
     body += tabela(['Casa', 'Sessão', 'Conteúdo'], [(str(i) + '. ' + t, f'{i:02}', c) for i, (t, c) in enumerate(CASAS, 1)], 'As dez casas, uma por sessão')
     body += '<p><b>Recuperação espaçada.</b> O Recupera traz a sessão anterior. O Decide volta a casas antigas: a casa 1 regressa na sessão 07; a casa 4, na 07, na 08 e na 10; a casa 5, na 07. Na 10, o Vê usa as notas de autoria da casa 5. Os passos ficam para dois ou três dias depois.</p></section>'
     body += '<section class="c10-reference" id="avaliacao"><h2>Onde nasce cada evidência</h2><p>Os pesos são os do Contra-feed; nenhum é novo.</p>'
@@ -256,12 +256,12 @@ def guia():
     body += '<p>Os cartões do Leva e as respostas Vi, Situei e Fiz são evidência formativa, sem peso. Nenhuma posição moral é pontuada. O limite de faltas do módulo continua a ser de 6 horas.</p>' + liga(path, 'cidadania/contra-feed/', 'Projeto, requisitos e avaliação do Contra-feed') + '</section>'
     body += '<section class="c10-reference" id="tempos"><h2>Tempos</h2>'
     body += tabela(['Sessões'] + PASSOS, [('01 a 09',) + tuple(str(t) for t in TEMPOS), ('10',) + tuple(str(t) for t in TEMPOS_MOSTRA)], 'Minutos por passo')
-    body += '<p>O Faz inclui a pausa de 10 minutos e cerca de 20 minutos de revisão. Na sessão 10, 125 minutos dão para sete grupos com cerca de 8 minutos de mostra, 7 de defesa e 2 de transição.</p></section>'
+    body += '<p>O Faz inclui a pausa de 10 minutos e cerca de 20 minutos de revisão. Na sessão 10, os 125 minutos são para as mostras curtas individuais, cada uma seguida de defesa.</p></section>'
     body += '<section class="c10-reference" id="regras"><h2>Regras comuns</h2><ul class="c10-regras">'
     body += '<li><b>Recupera.</b> Duas perguntas conceptuais sobre a sessão anterior, com resposta em «Confirmar», e uma pergunta pessoal sobre o próprio trabalho, sem resposta.</li>'
     body += '<li><b>Vê.</b> Um material de cada vez, com a instrução junto dele. Primeiro observa, depois lê.</li>'
-    body += '<li><b>Decide.</b> Sem ecrã para a turma e sem pontuar posições. Três minutos em silêncio, com um cartão de decisão; uma volta, sem comentários; as três tarefas em grupo; o grupo regista a decisão e uma razão vencida. No fim, o docente projeta «Comparar razões».</li>'
-    body += '<li><b>Faz.</b> Em papel ou no ficheiro do grupo. Fecha com revisão por outra pessoa, que marca uma coisa que se percebe e uma que falta, e faz uma pergunta. A versão revista guarda-se na casa da sessão.</li>'
+    body += '<li><b>Decide.</b> Sem ecrã para a turma e sem pontuar posições. Três minutos em silêncio, com um cartão de decisão; uma volta, sem comentários; as três tarefas em turma; a turma regista a decisão e uma razão vencida. No fim, o docente projeta «Comparar razões».</li>'
+    body += '<li><b>Faz.</b> Em papel ou no ficheiro de cada aluno. Fecha com revisão por outra pessoa, que marca uma coisa que se percebe e uma que falta, e faz uma pergunta. A versão revista guarda-se na casa da sessão.</li>'
     body += '<li><b>Leva.</b> Uma pergunta de saída, em papel, com três critérios em «Confirma».</li>'
     body += '<li><b>Vídeos.</b> Pergunta antes, pergunta depois e alternativa escrita. Nenhum é obrigatório. Os vídeos «em revisão» de Ver para fazer não entram.</li></ul></section>'
     for n, s in enumerate(SESSOES, 1):

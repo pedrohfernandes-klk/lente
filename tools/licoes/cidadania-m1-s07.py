@@ -7,7 +7,7 @@ import json, pathlib
 ABRE = (
  '<p class="pergunta-c">Quando quase todos já decidiram, ainda vale a pena ouvir a defesa?</p>'
  '<p>Caso inventado. Um vídeo de um ensaio, montado para gozar com uma colega, circula no grupo do curso. Uma captura de ecrã mostra o nome do Tomás ao lado do vídeo. No primeiro voto, nove dizem que foi ele e dois pedem para ver as provas.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar prova de inferência e julgar um caso no Tribunal de turma.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar prova de inferência e julgar um caso (na aula, no Tribunal de turma).</p>')
 DECIDE = (
  '<p>O Tomás deve sair já do grupo de trabalho, antes de se decidir?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -35,13 +35,16 @@ VIDEO = (
  '<div class="yt" data-yt="0fivQUlC7-8" data-titulo="What did democracy really mean in Athens?, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What did democracy really mean in Athens?» (4 min 51 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Melissa Schwartzberg. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
+# 05/11/2026 (revisão da decisão 154): o caminho a sós liga ao caso «O júri» (relativo à página da lição; o guia do docente
+# volta a resolvê-lo a partir da sua pasta), e o «Abre» deixa o Tribunal de turma como momento da aula.
 NA_AULA = (
- '<p><b>O que se faz.</b> O Tribunal de turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p>'
+ '<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href="../../m1/cid-m1-o-juri/">«O júri»</a>.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.</p>')
+ '<p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.</p>')
 LEVAR = (
  '<p class="levar">Uma decisão de muitos vale o que valem as provas que a sustentam.</p>'
- '<p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o vosso júri decidiu pelas lágrimas ou pelas provas? E volta à tua posição do início: o Tomás saía já?</p>'
+ '<p>Nesta sessão separaste prova de inferência, ouviste a defesa e viste o voto mudar, ou não mudar, com as provas. Volta à litografia de Daumier: o teu voto pesou as lágrimas ou as provas? E volta à tua posição do início: o Tomás saía já?</p>'
  '<p><b>As frases da sessão</b></p>'
  '<ul><li>Votar conta posições; deliberar pesa razões.</li>'
  '<li>Todos se presumem inocentes até prova em contrário.</li>'

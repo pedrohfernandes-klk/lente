@@ -400,7 +400,11 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertNotIn('Uns dez anos', html2)
         # revisor: quem escolhe o lugar da saída é o docente
         # 02/11/2026: L104-01, deslocação segura aos pares, trabalho individual.
-        self.assertIn('ao lugar escolhido, aos pares por segurança.', html2)
+        # 05/11/2026: decisão 154 (o exercício faz-se sozinho). O cartão deixa de mandar ir «com o docente … aos pares por
+        # segurança» (a segurança da saída em aula fica no guia do docente, que test_ideias_individual confere); vai-se ao lugar
+        # escolhido na sessão 1, ou fica-se à janela, e nada no cartão depende do docente.
+        self.assertIn('Vai ao lugar que escolheste na sessão 1, ou fica à janela.', html2)
+        self.assertNotIn('docente', html2)
         self.assertNotIn('escolhido pela turma', html2)
         self.assertIn('O teu «cocheiro»', [c.get('titulo') for c in s2['cartoes']])
         guia, guiao, entrada = self.ler('docente/index.html'), self.ler('guiao/index.html'), (PILOTO / 'index.html').read_text('utf-8')

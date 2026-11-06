@@ -45,10 +45,13 @@ VIDEO = (
  '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «How false news can spread» (3 min 42 s)</button>'
  '<p class="yt-cred">TED-Ed, lição de Noah Tavlin. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
  '<p>Uma linha para cada passo, no caderno. Depois: que pergunta fazias antes de repetir o comentário sobre o Diogo?</p>')
+# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.
+# 05/11/2026 (revisão da decisão 154): as três publicações que só existiam em papel passam a ser as três desta sessão (a crítica
+# à cantina do emparelhar, a pera e a acusação ao Diogo do Abre e do Decide); na aula, recebem-se outras em papel.
 NA_AULA = (
- '<p><b>O que se faz.</b> O laboratório de verificação. Cada grupo de três recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova. Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p>'
+ '<p><b>O que se faz.</b> O laboratório de verificação. Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel). Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o registo de fontes do grupo para a Pergunta Humana.</p>')
+ '<p><b>O que fica escrito.</b> O registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o teu registo de fontes para a Pergunta Humana.</p>')
 LEVAR = (
  '<p class="levar">Criticar quem manda é um direito; acusar alguém sem prova é um dano.</p>'
  '<p>Nesta sessão separaste opinião, sátira e acusação de facto, e verificaste antes de repetir. Volta às quatro peras: em que desenho puseste a linha? E o comentário sobre o Diogo, mantinhas, corrigias ou retiravas?</p>'

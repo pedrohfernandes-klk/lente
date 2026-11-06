@@ -33,20 +33,8 @@ TIPOS={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascri
 
 # Casos por corrigir a 01/11/2026: chave -> (vezes a 390 px, vezes a 1366 px, nota). Só pode diminuir.
 PENDENTES_20261101={
- # R5 no guia do docente do piloto do M1: h3 a 16 px antes de texto a 17 px. Corrige-se no #84 (tools/cidadania_piloto.py).
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «O que fica escrito» antes de p.pg':(8,8,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Imagem» antes de p.pg':(10,10,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Vídeo» antes de p.pg':(10,10,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Fontes da lição» antes de p.pg.fontes':(10,10,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: Apresentação» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: Ética das entrevistas» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: A pergunta» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: As fontes» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: A recolha» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: O guião, em esboço» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: Nenhum passo novo em aula» antes de p.pg':(2,2,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: O ensaio» antes de p.pg':(1,1,'corrige-se no #84'),
- 'R5 | cidadania/piloto/m1/docente/index.html | h3 «Pergunta Humana: A apresentação e a defesa» antes de p.pg':(1,1,'corrige-se no #84'),
+ # 05/11/2026: os 13 casos R5 do guia do docente do piloto do M1 (h3 a 16 px antes de texto a 17 px) saem da lista:
+ # o h3 passa a 18 px em tools/cidadania_piloto.py (#123). A lista só diminui.
 }
 
 # Copiada sem alterações de medir-hierarquia.js (01/11/2026).

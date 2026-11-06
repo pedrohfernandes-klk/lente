@@ -27,13 +27,24 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  def capsule(path,key):
   title,text,task=short_caps[key];sources=capsules[key]['sources']
   return '<aside class="c10-capsule"><p class="c10-eyebrow">História do teatro</p><h3>'+e(title)+'</h3><p>'+e(text)+'</p><p><b>Experimenta.</b> '+e(task)+'</p><details><summary>Fontes</summary><div><ul>'+''.join('<li><a href="'+(e(u,quote=True) if u.startswith('http') else rel(path,'cidadania/m1/passo-06/'))+'">'+e(t)+'</a></li>' for t,u in sources)+'</ul></div></details></aside>'
- (R/'cidadania/projeto/index.html').write_bytes(subprocess.check_output(['git','show',api['BASE']+':cidadania/projeto/index.html'],cwd=R))
+ # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais). As duas páginas copiadas da base recebem as
+ # trocas literais do manifesto fechado, com contagem exata.
+ g146=json.loads((R/'tools/trocas/grupos-146-20261105.json').read_text('utf-8'))
+ # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho). Por cima da 146, as trocas do manifesto fechado da 154, com a
+ # mesma contagem exata (no enunciado da Pergunta Humana, o modelo das referências deixa de ser «o indicado pelo docente»).
+ g154=json.loads((R/'tools/trocas/autonomia-154-20261105.json').read_text('utf-8'))
+ def com146(nome,texto):
+  for camada in (g146,g154):
+   for antigo,novo,n in camada.get(nome,[]):
+    assert texto.count(antigo)==n,(nome,antigo[:60]);texto=texto.replace(antigo,novo)
+  return texto
+ (R/'cidadania/projeto/index.html').write_bytes(com146('cidadania/projeto/index.html',subprocess.check_output(['git','show',api['BASE']+':cidadania/projeto/index.html'],cwd=R).decode('utf-8')).encode('utf-8'))
  anterior=old('cidadania/m1/index.html')
  assert anterior.count('Ser-se humano')==2, 'títulos do percurso anterior mudaram na base'
  # 05/11/2026: decisão 147. O cartaz rotativo do percurso anterior deixa de anunciar o Corta! e as peças retiradas do Laboratório.
  ordem='"ordem":["atlas","cidade","gigantes","corta","narrativas"]'
  assert anterior.count(ordem)==1, 'ordem do cartaz do percurso anterior mudou na base'
- write('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos').replace(ordem,'"ordem":["atlas","cidade","gigantes"]'))
+ write('cidadania/m1/percurso-anterior.html',com146('cidadania/m1/percurso-anterior.html',anterior.replace('Ser-se humano','Humanos').replace(ordem,'"ordem":["atlas","cidade","gigantes"]')))
  # Molde de 27/10/2026: abertura (imagem, pergunta curta, «Começar») e cinco passos,
  # Recupera, Vê, Decide, Faz, Leva; a sessão 03 realiza a tarefa já partilhada.
  from cidadania_m1_molde import LINHA,LINHA_TAREFA,MARCA,MOLDE,OBRAS
@@ -65,13 +76,13 @@ def render(api,sessions,capsules,short_caps,image_prompts):
     if tarefa:body+='<ol class="c10-tasks">'+''.join('<li>'+e(t)+'</li>' for t in s['tasks'])+'</ol>'
     else:
      solo=entry(m['silencio']) if m.get('silencio') else s['tasks'][0];group=s['tasks'] if m.get('silencio') else s['tasks'][1:]
-     body+='<div class="c10-decide"><div class="c10-solo">'+label('Primeiro, em silêncio')+'<p class="c10-prompt">'+e(solo)+'</p></div><div class="c10-group">'+label('Depois, em grupo')+'<ol class="c10-tasks">'+''.join('<li>'+e(t)+'</li>' for t in group)+'</ol></div></div>'
+     body+='<div class="c10-decide"><div class="c10-solo">'+label('Primeiro, em silêncio')+'<p class="c10-prompt">'+e(solo)+'</p></div><div class="c10-group">'+label('Depois, em turma')+'<ol class="c10-tasks">'+''.join('<li>'+e(t)+'</li>' for t in group)+'</ol></div></div>'
     body+='<details data-feedback><summary>Comparar razões</summary><div><p>'+e(s['feedback'])+'</p></div></details>'
    elif i==3:
     if m.get('faz_inicio'):body+=para('c10-instruction',s['entry'])
     body+=para('c10-reading',s['work'])+'<p class="c10-output"><b>Guardar</b><span>'+e(s['product'])+'</span></p>'
     if s.get('capsule'):body+=capsule(path,s['capsule'])
-    if not tarefa and not m.get('fecho_leva'):body+='<div class="c10-review">'+label('Rever com outra pessoa')+'<p>'+e(s['close'])+'</p></div>'
+    if not tarefa and not m.get('fecho_leva'):body+='<div class="c10-review">'+label('Rever')+'<p>'+e(s['close'])+'</p></div>'
     if n>=4:body+='<p class="c10-aside-link">'+link(path,'cidadania/m1/oficina-guiao/','Apoio à escrita: argumento e guião')+'</p>'
    else:
     if tarefa:body+=para('c10-reading',s['close'])
@@ -128,7 +139,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  body+='</div><p class="c10-credit">Cena escrita para este apoio.</p></section>'
  body+='<section class="c10-reference"><h2>3. Da cena ao guião inteiro</h2><ul class="c10-checks"><li>Cada cena responde a três perguntas: quem quer o quê, o que impede, o que muda.</li><li>Há uma decisão contestada e as suas consequências veem-se em cena.</li><li>As indicações de ação, pausa ou som têm uma função.</li><li>As cenas ligam-se: ninguém aparece ou desaparece sem razão.</li><li>Duas passagens ficam assinaladas para rever.</li></ul></section>'
  body+='<section class="c10-reference"><h2>4. Citar e distinguir</h2><p>Identifica autor ou entidade, título, data, ligação e página, secção ou minuto. Distingue citação, paráfrase e criação. Não atribuas falas inventadas a autores ou pessoas reais.</p></section>'
- body+='<section class="c10-reference"><h2>5. Rever com outra pessoa</h2><ol class="c10-tasks"><li>O colega resume conflito, decisão e consequência sem a tua explicação.</li><li>Aponta uma passagem clara e uma que precisa de revisão.</li><li>Regista duas alterações: antes, depois e razão.</li></ol></section>'
- body+='<section class="c10-reference"><h2>6. Apresentar e comentar</h2><p>Na sessão 10, o guião fica à vista e o grupo explica as escolhas. Não é preciso encenar, filmar ou gravar.</p><div class="c10-document">'+e(api['FICHAS'][17]['sample'])+'</div><p>Cada pessoa identifica um contributo seu. Às perguntas dos colegas, responde com uma passagem ou uma razão.</p></section>'
+ body+='<section class="c10-reference"><h2>5. Rever</h2><ol class="c10-tasks"><li>Resume conflito, decisão e consequência só com o que o texto diz.</li><li>Aponta uma passagem clara e uma que precisa de revisão.</li><li>Regista duas alterações: antes, depois e razão.</li></ol></section>'
+ body+='<section class="c10-reference"><h2>6. Apresentar e comentar</h2><p>Na sessão 10, o guião fica à vista e explicas as tuas escolhas. Não é preciso encenar, filmar ou gravar.</p><div class="c10-document">'+e(api['FICHAS'][17]['sample'])+'</div><p>Às perguntas dos colegas, responde com uma passagem ou uma razão.</p></section>'
  body+='<footer class="c10-support">'+link(path,'cidadania/m1/','Voltar às sessões')+link(path,'cidadania/projeto/','Enunciado da Pergunta Humana')+'</footer>'
  write(path,document(path,'Argumento e guião',body))

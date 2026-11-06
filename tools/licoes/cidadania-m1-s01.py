@@ -19,9 +19,9 @@ CONCEITO = (
  '<li><b>Convenção sobre os Direitos da Criança</b> (1989): um tratado. Portugal ratificou-o em 1990, por isso obriga o Estado.</li>'
  '<li><b>Constituição da República Portuguesa</b>: a lei mais alta do país. O artigo 16.º manda ler os direitos fundamentais de acordo com a Declaração.</li></ul>')
 NA_AULA = (
- '<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, em grupos de três, o mapa de direitos: na planta da escola, colada na parede, cada grupo põe post-its com uma situação real ou possível e o número do artigo que a protege.</p>'
+ '<p><b>O que se faz.</b> Primeiro, o Ponto de partida, em papel e sozinho. Depois, o mapa de direitos: na planta da escola, colada na parede, cada aluno põe post-its com uma situação real ou possível e o número do artigo que a protege.</p>'
  '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O teu Ponto de partida e dois post-its do teu grupo, com a situação e o artigo. O mapa fica fotografado para a sessão 10.</p>')
+ '<p><b>O que fica escrito.</b> O teu Ponto de partida e dois post-its teus, com a situação e o artigo. O mapa fica fotografado para a sessão 10.</p>')
 # 30/10/2026 (pedido do docente: «falta imagem e vídeo»): a fotografia de 1949, com a tabela de museu colada a ela, e
 # o vídeo do TED-Ed, com uma tarefa tirada das três perguntas da descrição oficial do vídeo.
 CARTAZ = (

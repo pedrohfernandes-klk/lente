@@ -193,7 +193,8 @@ GUIAO = {
    ('linhas', 5),
    ('p', 'A linha que só serve para ele, antes da fila: <i class="b l"></i>'),
    ('linhas', 3),
-   ('p', 'Resultado da fila: reconhecido por <i class="b"></i> de <i class="b"></i> colegas.'),
+   # 05/11/2026 (decisão 154): a prova da linha faz-se com quem estiver, não só com colegas.
+   ('p', 'Resultado da fila: reconhecido por <i class="b"></i> de <i class="b"></i> pessoas.'),
    ('p', 'A linha revista: <i class="b l"></i>'),
    ('linhas', 3),
    ('nota', 'Para o passo 2: dez notas de material geral (um desporto, uma receita, uma canção, um ofício da família), uma coisa por nota, com um pormenor que só tu sabes. Guarda-as onde guardas o material.'),

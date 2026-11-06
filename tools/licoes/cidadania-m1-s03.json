@@ -20,7 +20,7 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Quem tem lugar?",
-   "html": "<p class=\"pergunta-c\">Uma regra igual para todos pode deixar alguém de fora?</p><p>Caso inventado. A mostra de fim de período vai ser no primeiro andar, sem elevador. O Rui usa cadeira de rodas. A turma diz-lhe que depois lhe manda o vídeo.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ler uma placa de 1943, encontrar barreiras e propor uma solução com orçamento; no fim, a pergunta do teu grupo.</p>"
+   "html": "<p class=\"pergunta-c\">Uma regra igual para todos pode deixar alguém de fora?</p><p>Caso inventado. A mostra de fim de período vai ser no primeiro andar, sem elevador. O Rui usa cadeira de rodas. A turma diz-lhe que depois lhe manda o vídeo.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, ler uma placa de 1943, encontrar barreiras e propor uma solução com orçamento; no fim, a tua pergunta.</p>"
   },
   {
    "t": "ler",
@@ -161,7 +161,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "Cartas de perspetiva",
-   "html": "<p><b>O que se faz.</b> Cartas de perspetiva com orçamento. Em grupos de quatro, com cinco unidades para gastar: mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma. Cada pessoa tira uma carta: o Rui, a organização, quem orienta a mostra ou quem só pode ir à sexta-feira. O grupo decide, recebe uma informação nova e revê a decisão. Nos últimos 20 minutos, escolhe e delimita a pergunta do grupo para a Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a pergunta do grupo.</p>"
+   "html": "<p><b>O que se faz.</b> Cartas de perspetiva com orçamento: cinco unidades para gastar (mudar de sala custa três, texto para quem acompanha por escrito custa uma, transmitir custa uma). Pesa cada carta: o Rui, a organização, quem orienta a mostra e quem só pode ir à sexta-feira. Decide e revê a decisão se a sala de baixo tiver menos lugares (na aula, em turma). Nos últimos 20 minutos, escolhe e delimita a tua pergunta para a Pergunta Humana.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> Uma proposta à direção em cinco linhas (barreira, quem afeta, medida, custo, quem foi ouvido) e a tua pergunta.</p>"
   },
   {
    "t": "ler",
@@ -252,8 +252,8 @@
   {
    "t": "escolha",
    "g": "pergunta",
-   "p": "Qual das perguntas pode o grupo investigar na escola e no bairro, até ao fim do módulo?",
-   "p2": "Para a Pergunta Humana, que pergunta pode o grupo investigar com fontes e testemunhos?",
+   "p": "Qual das perguntas podes investigar na escola e no bairro, até ao fim do módulo?",
+   "p2": "Para a Pergunta Humana, que pergunta podes investigar com fontes e testemunhos?",
    "o": [
     "Que barreiras encontram os alunos com cadeira de rodas na escola?",
     "Porque é que existe discriminação em todas as sociedades humanas?",
@@ -263,7 +263,7 @@
    "f": "Uma boa pergunta é delimitada (um lugar, um grupo, um tempo) e pede uma resposta que se investiga com fontes e testemunhos. As outras são amplas demais ou respondem-se com sim ou não.",
    "fe": [
     "",
-    "É uma pergunta importante, mas grande demais para um grupo responder num módulo, com fontes da escola e do bairro.",
+    "É uma pergunta importante, mas grande demais para responderes num módulo, com fontes da escola e do bairro.",
     "Responde-se com sim ou não e fecha a investigação. Que barreiras, para quem e onde?"
    ]
   },

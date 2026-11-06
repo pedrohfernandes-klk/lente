@@ -51,7 +51,8 @@ class Molde(unittest.TestCase):
    if n==3:
     self.assertIn('href="../../../projeto/"',passos[1]);continue
    self.assertIn('data-mark="Sem ecrã"',passos[2],n)
-   self.assertIn('Primeiro, em silêncio',passos[2]);self.assertIn('Depois, em grupo',passos[2])
+   # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a conversa do Decide passa a ser em turma.
+   self.assertIn('Primeiro, em silêncio',passos[2]);self.assertIn('Depois, em turma',passos[2])
    self.assertIn('data-mark="Em papel"',passos[3],n);self.assertIn('data-mark="Em papel"',passos[4],n)
    self.assertEqual(passos[4].count('class="c10-exit-q"'),1,n)
 
