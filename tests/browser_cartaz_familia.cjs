@@ -20,7 +20,9 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  for(const sel of ['.cz-next .cz-button','.cz-fold>summary'])for(const box of await page.locator(sel).all()){const r=await box.boundingBox();assert.ok(r.height>=(sel.includes('summary')?88:48),`${pagePath} ${sel}: ${r.height}`);}
  const clipped=await page.locator('.modulo h3').evaluateAll(es=>es.filter(e=>e.scrollWidth>e.clientWidth).map(e=>e.textContent));assert.deepEqual(clipped,[],'títulos dos percursos');
  if(entry&&pagePath===''&&width===390)assert.ok(await page.evaluate(()=>document.documentElement.scrollHeight)<3000,'entrada abaixo de 3000 px');
- if(pagePath.startsWith('narrativas/')){assert.ok(await page.locator('.cz-fold[open]').count()>=1,'banda do próximo passo aberta');assert.equal(await page.locator('.cz-state').filter({hasText:'por fazer'}).count(),0);}
+ // 05/11/2026: decisão 163 (menus do Laboratório). Já não há dobras no Laboratório: em vez de «a banda do próximo passo aberta»,
+ // nenhuma dobra e todas as portas (na entrada) e todas as linhas (nas portas) à vista, uma exigência maior.
+ if(pagePath.startsWith('narrativas/')){assert.equal(await page.locator('main details:not(.info-i)').count(),0,'sem dobras');const itens=page.locator(pagePath==='narrativas/'?'.porta3':'li[data-peca]');assert.ok(await itens.count()>=3,'portas ou linhas');for(const it of await itens.all())assert.ok(await it.isVisible(),'banda à vista');assert.equal(await page.locator('.cz-state,.etq').filter({hasText:/por fazer/i}).count(),0);}
  // 02/11/2026: regressões da confirmação, imagem sem caixa 3:2 e largura útil da legenda.
  if(pagePath==='narrativas/'&&width===390)assert.ok(await page.evaluate(()=>document.documentElement.scrollHeight)<3000,'Laboratório abaixo de 3000 px');
  if(pagePath.startsWith('narrativas/')&&width>=1024){
@@ -28,7 +30,8 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
   // 02/11/2026: decisão 134. Sem a caixa «A seguir», deixa de se medir a região ao lado da abertura; as dobras continuam à largura útil.
   for(const w of layout.folds)assert.ok(Math.abs(w-(layout.main-32))<=1,'dobras ocupam toda a largura útil');
   if(pagePath!=='narrativas/'){
-   const museum=await page.locator('main>.cz-museum').evaluate(e=>({height:e.getBoundingClientRect().height,caption:e.querySelector('figcaption').getBoundingClientRect().width,ratio:getComputedStyle(e.querySelector('img')).aspectRatio}));
+   // 05/11/2026: decisão 163. A imagem da porta passa para a abertura (figure.lab-figura, com o «i» da decisão 153); as mesmas medidas.
+   const museum=await page.locator('main .lab-abre .lab-figura').evaluate(e=>({height:e.getBoundingClientRect().height,caption:e.querySelector('figcaption').getBoundingClientRect().width,ratio:getComputedStyle(e.querySelector('img')).aspectRatio}));
    assert.ok(museum.caption>=240,JSON.stringify(museum));assert.ok(museum.height<=400,JSON.stringify(museum));assert.equal(museum.ratio,'auto');
   }
  }
@@ -67,11 +70,12 @@ try{for(const theme of ['light','dark'])for(const width of [320,390,1024,1366,14
  assert.equal(await p.evaluate(k=>localStorage.getItem(k),key),JSON.stringify(value));
  assert.equal(await p.locator('#voz').count(),1);
  const closedAnchor=await p.evaluate(()=>{const target=document.getElementById(location.hash.slice(1));return target&&target.matches('details')&&!target.open;});assert.ok(!closedAnchor);
- await p.goto(origin+'/lente/narrativas/#criar',{waitUntil:'networkidle'});assert.ok(await p.locator('#criar .cz-fold').evaluate(e=>e.open));
+ // 05/11/2026: decisão 163. Sem dobras: a âncora antiga #criar leva à porta Criar, inteira e à vista no ecrã.
+ await p.goto(origin+'/lente/narrativas/#criar',{waitUntil:'networkidle'});assert.ok(await p.locator('#criar a.porta3').isVisible());assert.ok(await p.locator('#criar a.porta3').evaluate(e=>{const r=e.getBoundingClientRect();return r.top>=0&&r.top<innerHeight;}));
  await ctx.close();}
  // 02/11/2026: o percurso atual recebe filete e quadrado, também na entrada geral.
  /* 05/11/2026: decisão 147 (Laboratório sem o Português): as peças de exemplo passam a ser Leonardo, Galileu e Cigoli, que ficam no Laboratório. */
- if(lab){for(const theme of ['light','dark']){const ctx=await browser.newContext({viewport:{width:1366,height:900},colorScheme:theme});await ctx.addInitScript(()=>localStorage.setItem('epi-narrativas',JSON.stringify({feitas:{leonardo:Date.UTC(2026,10,1,12),galileu:Date.UTC(2026,10,1,12)}})));const p=await ctx.newPage();await p.goto(origin+'/lente/narrativas/',{waitUntil:'networkidle'});const row=p.locator('.blocos .cz-row.current');assert.equal(await row.count(),1);assert.equal(await row.evaluate(e=>getComputedStyle(e).borderLeftWidth),'4px');assert.equal(await row.locator('.cz-state.current').textContent(),'A seguir');assert.equal(await row.locator('.cz-state').evaluate(e=>getComputedStyle(e,'::before').backgroundColor),await row.evaluate(e=>getComputedStyle(e).borderLeftColor));assert.deepEqual(await p.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('epi-narrativas')).feitas)),['leonardo','galileu']);await ctx.close();}}
+ if(lab){for(const theme of ['light','dark']){const ctx=await browser.newContext({viewport:{width:1366,height:900},colorScheme:theme});await ctx.addInitScript(()=>localStorage.setItem('epi-narrativas',JSON.stringify({feitas:{leonardo:Date.UTC(2026,10,1,12),galileu:Date.UTC(2026,10,1,12)}})));const p=await ctx.newPage();await p.goto(origin+'/lente/narrativas/',{waitUntil:'networkidle'});/* 05/11/2026: decisão 163. Os percursos da entrada passam ao índice do pé (uma linha por percurso); as mesmas exigências. */const row=p.locator('.lab-indice .ind.current');assert.equal(await row.count(),1);assert.equal(await row.evaluate(e=>getComputedStyle(e).borderLeftWidth),'4px');assert.equal(await row.locator('.cz-state.current').textContent(),'A seguir');assert.equal(await row.locator('.cz-state').evaluate(e=>getComputedStyle(e,'::before').backgroundColor),await row.evaluate(e=>getComputedStyle(e).borderLeftColor));assert.deepEqual(await p.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('epi-narrativas')).feitas)),['leonardo','galileu']);await ctx.close();}}
  if(entry){const ctx=await browser.newContext();await ctx.addInitScript(()=>localStorage.setItem('epi-narrativas',JSON.stringify({feitas:{leonardo:Date.UTC(2026,10,1,12)}})));const p=await ctx.newPage();await p.goto(origin+'/lente/',{waitUntil:'networkidle'});// 02/11/2026: decisão 131. Sem caixa: a retoma marca a divisão do Laboratório e não grava nada.
  await p.waitForFunction(()=>document.querySelectorAll('#inicio-narrativas .lab-sets a .cz-state').length>0);assert.equal(await p.locator('.cz-next,[data-cz-retoma]').count(),0);assert.equal(await p.locator('#inicio-narrativas .cz-fold>summary[data-cz-next]').count(),1);assert.equal(await p.locator('#inicio-cidadania .cz-fold>summary[data-cz-next]').count(),0);assert.deepEqual(await p.evaluate(()=>Object.keys(JSON.parse(localStorage.getItem('epi-narrativas')).feitas)),['leonardo']);await ctx.close();}
 

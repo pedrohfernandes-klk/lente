@@ -3,6 +3,7 @@ import importlib.util,json,re,subprocess,unittest
 from renomeacoes_cidadania import renomear
 import lab147
 import grupos146  # 05/11/2026: decisões 146 e 154
+import menus163
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def mod(nome):
@@ -64,7 +65,11 @@ class Contratos(unittest.TestCase):
     # 05/11/2026: decisões 146 e 154 (os exercícios fazem-se sozinho). Por cima da 147, só as trocas dos manifestos fechados
     # tools/trocas/grupos-146-20261105.json e tools/trocas/autonomia-154-20261105.json (tests/grupos146.py), com contagem
     # exata e por esta ordem; a comparação continua integral.
-    self.assertEqual(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),atual)
+    # 05/11/2026: decisão 163 (menus): o menu ≡ novo e a continuação no fim dos percursos, pelo manifesto fechado
+    # tests/fixtures/menus-163-20261105.json, com contagem exata; a comparação continua integral.
+    # 06/11/2026: fusão do main (com o #123). As quatro camadas compõem-se por ordem: 147, 146, 154 e, por último, a 163
+    # (o manifesto da 163 acerta, com as mesmas contagens, no texto que já traz a 146 e a 154).
+    self.assertEqual(menus163.aplicar(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
     self.assertIn('if(cfg.fim&&!soErrados&&!PROJ)',atual)

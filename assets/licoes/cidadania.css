@@ -21,3 +21,142 @@ body.licao-cidadania .casca-folha .c-veredito .c-pts{color:var(--tinta)}
 @property --medida-ler{syntax:"<length>";inherits:true;initial-value:0px}
 .licao-cidadania .jogo .ler{--medida-ler:29em}
 .licao-cidadania .jogo .ler :is(p,ul,ol,details){max-width:var(--medida-ler)}
+/* ==== molde cidadania-2026-11 ==== */
+/* 05/11/2026 (plano do molde da Cidadania, pedido 1; decisões 145 e 153): a identidade das sessões no molde novo, só com
+   body.molde-cidadania (o gerador põe a classe quando o .json tem "molde": "cidadania-2026-11"). As páginas do piloto e do M1
+   publicado não têm a classe e não mudam. O token --cid (azul de carimbo, provisório até a direção de arte o fixar, tarefa 148)
+   só aparece no rótulo e no filete do Abre, no filete do «Em turma» e no fundo do Para levar; nunca na barra, onde a mostarda
+   volta a querer dizer «feito» e o vermelho «atual». Títulos e frase do Para levar em Bebas Neue; texto em Georgia; o documento
+   inteiro, sem filtro nem recorte. Ganchos: a raiz de cada cartão de ler leva a classe do seu tipo (.m-abre, .m-decide, .m-olha,
+   .m-le, .m-conceito, .m-volta, .m-turma, .m-papel, .m-levar), que tools/cidadania_molde.py escreve. */
+body.molde-cidadania{--cid:#1f4e79;--cid-sobre:#fff;--mostarda:#d9a520}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body.molde-cidadania{--cid:#9cc1e8;--cid-sobre:#121210;--mostarda:#e0b23a}}
+:root[data-theme="dark"] body.molde-cidadania{--cid:#9cc1e8;--cid-sobre:#121210;--mostarda:#e0b23a}
+:root[data-theme="light"] body.molde-cidadania{--cid:#1f4e79;--cid-sobre:#fff;--mostarda:#d9a520}
+body.molde-cidadania .jogo .tit{font:400 clamp(1.75rem,6.4vw,2.25rem)/1 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em;margin:0 0 14px;text-wrap:balance}
+body.molde-cidadania .jogo .tit.cartaz{font-size:clamp(2.5rem,10vw,3.4rem);line-height:.94;margin:2px 0 18px;padding-right:0}
+body.molde-cidadania .jogo .ler .tit{background:none;animation:none;padding-bottom:0}
+body.molde-cidadania .jogo .ler{font-family:var(--serif,Georgia,"Times New Roman",serif)}
+/* no computador, todos os blocos acabam na mesma vertical do texto (a medida dos cartões de ler) */
+body.molde-cidadania .jogo .ler :is(.posicao,.pos-lados,.campos,.papel-a6,table.tabela,.recolha,blockquote.lei){max-width:var(--medida-ler)}
+body.molde-cidadania .jogo .ler .pos-antes{margin:0 0 12px;font:italic 1rem/1.45 var(--serif,Georgia,serif);color:var(--suave)}
+/* o fim: «Sessão feita.» em letra de cartaz */
+body.molde-cidadania .jogo .fim .grande.lido{font:400 clamp(2.6rem,11vw,3.6rem)/.95 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.02em;padding:0}
+body.molde-cidadania .jogo .fim .fim-modulo{font:italic 1.05rem/1.4 var(--serif,Georgia,serif);margin:6px 0 0}
+/* o Abre: rótulo e filete no azul de carimbo, o carimbo do caso e a pergunta da sessão */
+body.molde-cidadania .jogo .cartao:has(.m-abre),body.molde-cidadania .jogo .cartao:has(.m-turma){border-top:4px solid var(--cid)}
+body.molde-cidadania .jogo .cartao:has(.m-abre) .rot{color:var(--cid)}
+body.molde-cidadania .jogo .ler .carimbo{display:inline-block;margin:0 0 14px;padding:6px 10px 5px;border:1.5px solid var(--cid);color:var(--cid);font:700 .7rem/1 Arial,Helvetica,sans-serif;letter-spacing:.18em;text-transform:uppercase;transform:rotate(-1.4deg);transform-origin:0 50%}
+body.molde-cidadania .jogo .ler .caso{font-size:1.18rem;line-height:1.55;margin:0 0 6px}
+body.molde-cidadania .jogo .ler .pergunta-sessao{margin:18px 0 0;padding:2px 0 2px 16px;border-left:3px solid currentColor;font:italic 1.24rem/1.38 var(--serif,Georgia,serif)}
+/* referências e licenças nunca partem a meio da linha (decisão 152) */
+body.molde-cidadania .jogo .nq,body.molde-cidadania .jogo .ref{white-space:nowrap}
+/* o Olha: o documento inteiro, sem filtro nem movimento, ampliável; acima de 1100 px, imagem à esquerda e legenda à direita */
+body.molde-cidadania .jogo .ler .fig img,body.molde-cidadania .jogo .ler .fig .moldura img{filter:none;animation:none;transform:none}
+body.molde-cidadania .jogo .ler .fig .moldura{position:relative}
+body.molde-cidadania .jogo .ler .fig.inteiro img{max-height:min(54vh,540px);max-height:min(54dvh,540px)}
+body.molde-cidadania .jogo .ler .fig figcaption{font:italic .98rem/1.45 var(--serif,Georgia,serif);color:var(--tinta);margin-top:10px}
+body.molde-cidadania .casca .jogo .ler .fig{display:block}
+@media (min-width:1100px){body.molde-cidadania .casca .jogo .ler .m-olha .fig{display:grid;grid-template-columns:minmax(0,max-content) minmax(12rem,15rem);gap:28px;align-items:end}
+ body.molde-cidadania .casca .jogo .ler .m-olha .fig figcaption{margin:0;padding-top:10px;border-top:2px solid var(--tinta);font-size:1.02rem}}
+body.molde-cidadania .jogo .ver-fig img{filter:none}
+/* o Lê: a lei em citação, com o artigo na margem e a fonte oficial por baixo */
+body.molde-cidadania .jogo .ler blockquote.lei{margin:14px 0 8px;padding:0 0 0 16px;border-left:2px solid var(--tinta)}
+body.molde-cidadania .jogo .ler blockquote.lei p{font-size:1.1rem;line-height:1.55;margin:0 0 8px}
+body.molde-cidadania .jogo .ler .lei .art{display:block;margin:0 0 4px;font:700 .7rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);white-space:nowrap}
+@media (min-width:720px){body.molde-cidadania .jogo .ler blockquote.lei{position:relative;margin-left:6.6rem}body.molde-cidadania .jogo .ler .lei .art{position:absolute;left:-6.6rem;top:.3em;width:5.6rem;text-align:right}}
+body.molde-cidadania .jogo .ler .fonte-lei{font:.82rem/1.45 Arial,Helvetica,sans-serif;color:var(--suave);margin:0 0 10px}
+body.molde-cidadania .jogo .ler .fonte-lei a{color:inherit}
+/* itens paralelos em tabela (decisão 152); no telemóvel, cada linha num bloco */
+body.molde-cidadania .jogo .ler table.tabela{width:100%;border-collapse:collapse;margin:12px 0 10px;font:.96rem/1.42 Arial,Helvetica,sans-serif}
+body.molde-cidadania .jogo .ler table.tabela th{text-align:left;font:700 .68rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave);padding:6px 12px 7px 0;border-bottom:2px solid var(--tinta)}
+body.molde-cidadania .jogo .ler table.tabela td{padding:10px 12px 10px 0;border-bottom:1px solid var(--c-cinza,#d6d4ce);vertical-align:top}
+body.molde-cidadania .jogo .ler table.tabela td:first-child{font-weight:700}
+@media (max-width:560px){body.molde-cidadania .jogo .ler table.tabela thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+ body.molde-cidadania .jogo .ler table.tabela tr{display:block;padding:10px 0;border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+ body.molde-cidadania .jogo .ler table.tabela td{display:block;padding:2px 0;border:0}
+ body.molde-cidadania .jogo .ler table.tabela td[data-th]::before{content:attr(data-th);display:block;font:700 .64rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}}
+/* a Volta ao caso abre a parte 2; o «Em turma» tem o filete azul e os quatro campos */
+body.molde-cidadania .jogo .ler .parte{margin:0 0 10px;font:700 .7rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .campos{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 16px;margin:16px 0 0;padding:12px 0;border-top:2px solid var(--tinta);border-bottom:1px solid var(--tinta);font:.98rem/1.45 Arial,Helvetica,sans-serif}
+body.molde-cidadania .jogo .ler .campos dt{font:700 .68rem/2 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .campos dd{margin:0}
+@media (max-width:480px){body.molde-cidadania .jogo .ler .campos{grid-template-columns:minmax(0,1fr);gap:0}body.molde-cidadania .jogo .ler .campos dd{margin:0 0 8px}}
+/* «Agora, em papel»: o papel A6, com código e data, e as três linhas */
+body.molde-cidadania .jogo .ler .papel-a6{margin:14px 0 12px;padding:14px 18px 8px;border:1.5px solid var(--tinta);background:var(--papel2,var(--papel));box-shadow:4px 4px 0 var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab{display:flex;justify-content:space-between;gap:12px;max-width:none;margin:0 0 8px;padding:0 0 8px;border-bottom:1.5px dashed var(--suave);font:700 .68rem/1.4 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--suave)}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab span{flex:1}
+body.molde-cidadania .jogo .ler .papel-a6 .papel-cab span+span{text-align:right}
+body.molde-cidadania .jogo .ler .papel-a6 ol{max-width:none;margin:0;padding:0 0 0 1.3em}
+body.molde-cidadania .jogo .ler .papel-a6 li{padding:8px 0 22px;border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .papel-a6 li:last-child{border-bottom:0}
+/* o Para levar: fundo azul de carimbo, a frase em letra de cartaz, a aparecer letra a letra (parada na projeção) */
+body.molde-cidadania .jogo .cartao.escuro{background:var(--cid);color:var(--cid-sobre)}
+body.molde-cidadania .jogo .cartao.escuro .rot{color:var(--cid-sobre);opacity:.82}
+body.molde-cidadania .jogo .cartao.escuro .levar{font:400 clamp(2.05rem,8.6vw,3rem)/1.02 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.015em;font-style:normal;margin:6px 0 20px;text-wrap:balance}
+body.molde-cidadania .jogo .cartao.escuro .levar .cursor{border-bottom-width:4px}
+body.molde-cidadania .jogo .cartao.escuro :is(a,summary){color:inherit}
+body.molde-cidadania .jogo .cartao.escuro .recolha{--rc-fundo:var(--cid)}
+body.molde-cidadania .jogo .cartao.escuro details.mais{border-top-color:currentColor}
+/* projeção (1366 x 768): a imagem do Olha cabe acima da barra de ações com a legenda à vista; nada se anima */
+html.em-projecao body.molde-cidadania .jogo .ler .m-olha .fig img{max-height:calc(100vh - 330px);max-height:calc(100dvh - 330px)}
+html.em-projecao body.molde-cidadania .jogo .levar .ch{animation:none;opacity:1}
+html.em-projecao body.molde-cidadania .jogo .levar .cursor{display:none}
+html.em-projecao body.molde-cidadania .jogo .ler .carimbo{transform:none}
+@media print{body.molde-cidadania .jogo .cartao.escuro{background:none;color:#000;border-top:4px solid #000}}
+/* 05/11/2026 (plano do molde, pedido 2: a sessão 01 do M1 na versão final; «mais classe nisso»): os acabamentos que a primeira
+   sessão real pediu, vistos a 390 e 1366 px, claro e escuro, e na projeção. Tudo continua só em body.molde-cidadania. */
+/* a lei em citação: hifenizada (o texto corrido fica justificado, decisão de 30/10) e, quando há vários artigos, cada um com
+   o seu número na margem, à altura da sua primeira linha (com um só bloco posicionado, os números sobrepunham-se) */
+body.molde-cidadania .jogo .ler blockquote.lei p{hyphens:auto;-webkit-hyphens:auto}
+body.molde-cidadania .jogo .ler blockquote.lei p+p{margin-top:16px}
+@media (min-width:720px){body.molde-cidadania .jogo .ler blockquote.lei p{position:relative}
+ body.molde-cidadania .jogo .ler blockquote.lei p .art{left:calc(-6.6rem - 16px)}}
+/* na Volta ao caso e em «Ler mais», a referência é longa: vai por cima da citação, não na margem */
+body.molde-cidadania .jogo .ler :is(.m-volta,details) blockquote.lei{margin-left:0}
+body.molde-cidadania .jogo .ler :is(.m-volta,details) .lei .art{position:static;width:auto;text-align:left;display:block}
+/* «Antes de olhar» e «Antes de ler»: o rótulo no azul do carimbo */
+body.molde-cidadania .jogo .ler .ex-antes b{color:var(--cid)}
+body.molde-cidadania .jogo .ler .pos-intro{font:1rem/1.45 Arial,Helvetica,sans-serif;margin:0 0 4px}
+/* o Olha no computador: a legenda sobe para o alto da coluna, como a tabela de uma parede de museu */
+@media (min-width:1100px){body.molde-cidadania .casca .jogo .ler .m-olha .fig{align-items:start}
+ body.molde-cidadania .casca .jogo .ler .m-olha .fig figcaption{padding-top:12px}}
+/* as duas palavras difíceis do Lê */
+body.molde-cidadania .jogo .ler .glossa{font:.92rem/1.5 Arial,Helvetica,sans-serif;color:var(--suave);margin:12px 0 0}
+body.molde-cidadania .jogo .ler .glossa b{color:var(--tinta)}
+/* a tabela do conceito no telemóvel: o texto a título e os outros campos em duas colunas, sem repetir rótulos grandes */
+@media (max-width:560px){body.molde-cidadania .jogo .ler table.tabela tr{padding:12px 0 10px}
+ body.molde-cidadania .jogo .ler table.tabela td{display:flex;gap:12px;padding:3px 0;align-items:baseline}
+ body.molde-cidadania .jogo .ler table.tabela td[data-th]::before{flex:none;width:4.6rem;display:block}
+ body.molde-cidadania .jogo .ler table.tabela td:first-child{display:block;padding:0 0 4px;font-size:1.02rem}
+ body.molde-cidadania .jogo .ler table.tabela td:first-child::before{display:none}}
+/* «a prova que pesou»: opções mais longas, em lista no telemóvel */
+@media (max-width:560px){body.molde-cidadania .jogo .ler .posicao[data-artefacto="prova"] .pos-ops{grid-template-columns:minmax(0,1fr)}}
+/* o relógio do papel: discreto, começa parado e só avisa */
+body.molde-cidadania .jogo .ler .tr-relogio{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;max-width:var(--medida-ler);margin:2px 0 14px;padding:10px 0;border-top:1px solid var(--c-cinza,#d6d4ce);border-bottom:1px solid var(--c-cinza,#d6d4ce)}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-tempo{margin:0 auto 0 0;font:400 2.2rem/1 var(--cartaz,"Bebas Neue",Arial,sans-serif);letter-spacing:.05em;font-variant-numeric:tabular-nums}
+body.molde-cidadania .jogo .ler .tr-relogio button{min-height:44px;padding:0 18px;border:1.5px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:700 .9rem/1 Arial,Helvetica,sans-serif;cursor:pointer}
+body.molde-cidadania .jogo .ler .tr-relogio button[data-rl="ir"]{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+body.molde-cidadania .jogo .ler .tr-relogio button:focus-visible{outline:3px solid var(--cid);outline-offset:2px}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-aviso{flex-basis:100%;margin:0;font:.85rem/1.4 Arial,Helvetica,sans-serif;color:var(--suave)}
+body.molde-cidadania .jogo .ler .tr-relogio .tr-aviso:empty{display:none}
+body.molde-cidadania .jogo .ler .tr-relogio.acabou .tr-tempo{color:var(--vermelho,#c8232c)}
+html.em-projecao body.molde-cidadania .jogo .ler .tr-relogio .tr-tempo{font-size:3.6rem}
+/* o Para levar: a volta à posição, as frases da sessão com um traço curto, e a frase letra a letra sem letras por acender.
+   Com steps(1) (salto no fim), o Chromium acaba algumas letras em 0,9999 do percurso por arredondamento e elas ficam
+   invisíveis (visto na s01: «QU NDO», «PESA- E»); com o salto no início, cada letra acende-se logo que a sua vez chega. */
+body.molde-cidadania .jogo .levar .ch{animation-timing-function:steps(1,start)}
+body.molde-cidadania .jogo .cartao.escuro .levar-volta{font:italic 1.08rem/1.45 var(--serif,Georgia,serif);margin:0 0 18px;padding:0 0 14px;border-bottom:1px solid color-mix(in srgb,currentColor 35%,transparent)}
+body.molde-cidadania .jogo .cartao.escuro .frases-t{font:700 .7rem/1.2 Arial,Helvetica,sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.82;margin:0 0 10px}
+body.molde-cidadania .jogo .cartao.escuro ul.frases{list-style:none;margin:0 0 20px;padding:0;max-width:var(--medida-ler)}
+body.molde-cidadania .jogo .cartao.escuro ul.frases li{position:relative;padding:0 0 10px 24px;font:1.06rem/1.45 var(--serif,Georgia,serif)}
+body.molde-cidadania .jogo .cartao.escuro ul.frases li::before{content:"";position:absolute;left:2px;top:.68em;width:12px;height:2px;background:currentColor}
+/* o passo do projeto no fim: a ligação numa linha sua */
+body.molde-cidadania .jogo .depois .ir{margin:10px 0 0}
+body.molde-cidadania .jogo .depois .ir a{font-weight:700}
+/* 06/11/2026 (correções da revisão da s01, diretor de arte). Na projeção a 1366 x 768, a raiz a 22 px fazia a coluna da legenda
+   (15rem) passar a 330 px e a imagem do Olha ficava mais pequena do que no computador sem projeção: a legenda fica com 240 px e a
+   imagem volta ao tamanho do computador, acima da barra de ações. */
+html.em-projecao body.molde-cidadania .casca .jogo .ler .m-olha .fig{grid-template-columns:minmax(0,max-content) 240px}
+/* Abaixo de 360 px (320 x 640), a pergunta da sessão no Abre fica acima da barra de ações */
+@media (max-width:359px){body.molde-cidadania .jogo .tit.cartaz{font-size:2rem;margin-bottom:10px}body.molde-cidadania .jogo .ler .carimbo{margin-bottom:10px}body.molde-cidadania .jogo .ler .caso{font-size:1rem;line-height:1.42}body.molde-cidadania .jogo .ler .pergunta-sessao{margin-top:10px;font-size:1.05rem}}

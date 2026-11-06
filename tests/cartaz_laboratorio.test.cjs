@@ -12,7 +12,18 @@ for(const rel of ['narrativas/index.html','narrativas/ver/index.html','narrativa
  // 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas.
  // A barra mantém todos os destinos e recebe exatamente uma ligação, a seguir a Laboratório.
  const ideia='<a href="'+(rel==='narrativas/index.html'?'ideias/':'../ideias/')+'">Ideias</a>';
- assert.equal(now.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0],old.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0].replace('>Ver<','>Observar<').replace(/(<a[^>]*>Laboratório<\/a>)/,'$1'+ideia));
+ // 05/11/2026: decisão 163 (menus do Laboratório). Sai a barra preta: «Lente» e «Laboratório» passam à barra única (a mesma
+ // ligação, o mesmo atual); o Ideias e as portas passam ao fio do método (nas portas) ou à região do Ideias e às portas (na
+ // entrada). Cada ligação da barra antiga continua na página, com o mesmo destino, o mesmo nome e o mesmo «aria-current».
+ const antiga=old.match(/<nav class="barra-nav"[\s\S]*?<\/nav>/)[0].replace('>Ver<','>Observar<').replace(/(<a[^>]*>Laboratório<\/a>)/,'$1'+ideia);
+ const barra=now.match(/<header class="lab-barra">[\s\S]*?<\/header>/)[0],fio=(now.match(/<nav class="lab-fio"[\s\S]*?<\/nav>/)||[''])[0];
+ assert.equal(now.match(/<header class="lab-barra">/g).length,1);assert.ok(!now.includes('barra-nav'));
+ const links=[...antiga.matchAll(/<a href="([^"]+)"( aria-current="[^"]+")?>([^<]+)<\/a>/g)];assert.equal(links.length,6);
+ for(const [,href,cur='',nome] of links){
+  if(['Lente','Laboratório'].includes(nome)){assert.ok(barra.includes('<a href="'+href+'"'+cur+'>'+nome+'</a>'),nome);continue;}
+  if(rel==='narrativas/index.html'){assert.ok(new RegExp('<a [^>]*?href="'+href.replace(/[.]/g,'\\.')+'"[^>]*>(?:(?!</a>).)*'+nome).test(now),nome);continue;}
+  assert.ok(fio.includes('<a href="'+href+'"'+cur+'><span class="n">'),nome);assert.ok(new RegExp('<a href="'+href.replace(/[.]/g,'\\.')+'"'+cur+'><span class="n">(?:(?!</a>).)*<b>'+nome+'</b></a>').test(fio),nome);
+ }
  const dados=s=>JSON.parse(s.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1]);
  assert.deepEqual(dados(now),dados(old).filter(x=>!RET.has(x.url)));
 });

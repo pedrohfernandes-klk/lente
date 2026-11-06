@@ -8,6 +8,12 @@ var estado=li.querySelector('[data-estado]');if(window.EPILabProgresso.feita(st)
  var t=window.EPILabProgresso.data(st),d=t===null?null:new Date(t),data=d&&!isNaN(d)?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0'):'';
  li.classList.add('feita');estado.textContent='Feita'+(data?' '+data:'');feitas.push({li:li,data:data});
 }else if(!proxima){proxima=li;li.classList.add('seguir');li.querySelector('a').setAttribute('aria-current','step');estado.textContent='A seguir';}});
+// 05/11/2026: decisão 163. Na entrada do Laboratório (ol.sessoes[data-seguir-com-feitas]), «A seguir» só aparece quando já há
+// alguma sessão feita, como nas portas e nos percursos.
+var ol=document.querySelector('ol.sessoes[data-seguir-com-feitas]');if(ol&&proxima&&!feitas.length){proxima.classList.remove('seguir');proxima.querySelector('a').removeAttribute('aria-current');proxima.querySelector('[data-estado]').textContent='';}
+// 05/11/2026 (revisão): uma só marca «A seguir» por página. Quando o Ideias da entrada marca a sessão seguinte, a do índice dos
+// percursos (posta antes por percursos.js, que corre primeiro) sai; o filete do índice acompanha a palavra (lab3.css).
+if(ol&&proxima&&feitas.length)document.querySelectorAll('.lab-indice .cz-state.current').forEach(function(s){s.classList.remove('current');s.textContent='';});
 var botao=document.querySelector('[data-p-botao]'),titulo=document.querySelector('[data-p-t]'),feito=document.querySelector('[data-p-feito]');
 if(feitas.length){var ultima=feitas[feitas.length-1];feito.textContent='Feita: sessão '+ultima.li.dataset.n+(ultima.data?', '+ultima.data:'')+'.';
 var alvo=proxima||ultima.li;botao.href=alvo.dataset.href;botao.textContent=(proxima?'Continuar na sessão ':'Rever a sessão ')+alvo.dataset.n+' →';
