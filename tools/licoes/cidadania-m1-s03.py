@@ -26,8 +26,9 @@
 #   (https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg, aberto a 6/11/2026: Esther Bubley, setembro de
 #   1943, estação Greyhound de Rome, Geórgia, Library of Congress cph.3b22541, «Public domain», PD-US-no notice). 06/11/2026
 #   (revisão): o «Registo de origem» é o handle oficial da Library of Congress para cph.3b22541
-#   (https://hdl.loc.gov/loc.pnp/cph.3b22541, que resolve para loc.gov/pictures/resource/cph.3b22541/); o item 2017862110, que o
-#   crédito ligava, é outro registo (o negativo LC-DIG-fsa-8d33365);
+#   (https://hdl.loc.gov/loc.pnp/cph.3b22541, que resolve para loc.gov/pictures/resource/cph.3b22541/); o handle resolve para o
+#   registo 2017862110 da Library of Congress (o mesmo que loc.gov/item/2017862110; reproduções LC-DIG-fsa-8d33365 e
+#   LC-USZ62-75338); o crédito liga pelo handle, o número que nomeia (confirmação de 6/11/2026);
 # - R1: _The Egg_, conto de Andy Weir, como no #84 (s03). 06/11/2026 (revisão): a premissa confere com o texto no sítio do autor
 #   (https://galactanet.com/oneoff/theegg_mod.html, aberto a 6/11/2026: «I'm every human being who ever lived?» «Or who will ever
 #   live, yes.»); o cartão só usa a premissa;
@@ -267,7 +268,7 @@ CARTOES = [
          'Ignorava a necessidade dele de ser o mais autónomo possível.',
          [('A faculdade recusou logo o pedido de obras do estudante.',
            'O Tribunal nota que a faculdade não recusou logo os pedidos (§ 69): ofereceu um acompanhante. O problema foi oferecê-lo sem '
-           'avaliar o que ele precisava. Volta ao que lhe ofereceram.'),
+           'avaliar a situação dele. Volta ao que lhe ofereceram.'),
           ('As aulas práticas eram dadas no rés do chão do próprio edifício.',
            'Era a administração que o lembrava; as aulas teóricas eram num edifício de três pisos. O Tribunal julgou a oferta do acompanhante. '
            'Volta ao que lhe ofereceram e ao que o Tribunal disse dessa oferta.')],

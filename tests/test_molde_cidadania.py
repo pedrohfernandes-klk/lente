@@ -662,7 +662,8 @@ class SessaoS03(unittest.TestCase):
         olha = next(c for c in C if c['rot'] == 'Olha')
         self.assertIn('bubley-sala-de-espera-1943.webp', olha['html'])
         # 06/11/2026 (revisão da s03): o «Registo de origem» é o handle da Library of Congress do registo cph.3b22541, o que o
-        # crédito nomeia; o item 2017862110 é outro registo (o negativo LC-DIG-fsa-8d33365)
+        # crédito nomeia. 06/11/2026 (confirmação): o handle resolve para o registo 2017862110 (o mesmo que loc.gov/item/2017862110;
+        # reproduções LC-DIG-fsa-8d33365 e LC-USZ62-75338); o crédito liga pelo handle, o número que nomeia
         self.assertIn('https://hdl.loc.gov/loc.pnp/cph.3b22541', olha['html'])
         self.assertNotIn('loc.gov/item/2017862110', olha['html'])
         self.assertIn('https://commons.wikimedia.org/wiki/File:1943_Colored_Waiting_Room_Sign.jpg', olha['html'])
