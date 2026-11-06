@@ -290,6 +290,116 @@
    "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2006-156233888",
    "consultado": "2026-11-06",
    "confirmado": true
+  },
+  {
+   "id": "crp-52-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 52.º, n.º 1",
+   "texto": "Todos os cidadãos têm o direito de apresentar, individual ou colectivamente, aos órgãos de soberania, aos órgãos de governo próprio das regiões autónomas ou a quaisquer autoridades petições, representações, reclamações ou queixas para defesa dos seus direitos, da Constituição, das leis ou do interesse geral e, bem assim, o direito de serem informados, em prazo razoável, sobre o resultado da respectiva apreciação.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-23-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 23.º, n.º 1",
+   "texto": "Os cidadãos podem apresentar queixas por acções ou omissões dos poderes públicos ao Provedor de Justiça, que as apreciará sem poder decisório, dirigindo aos órgãos competentes as recomendações necessárias para prevenir e reparar injustiças.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-161",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 161.º (proémio)",
+   "texto": "Compete à Assembleia da República:",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-161-c",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 161.º, alínea c)",
+   "texto": "Fazer leis sobre todas as matérias, salvo as reservadas pela Constituição ao Governo;",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-182",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 182.º",
+   "texto": "O Governo é o órgão de condução da política geral do país e o órgão superior da administração pública.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "crp-202-1",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 202.º, n.º 1",
+   "texto": "Os tribunais são os órgãos de soberania com competência para administrar a justiça em nome do povo.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei43-2-3",
+   "documento": "Lei n.º 43/90",
+   "referencia": "Artigo 2.º, n.º 3",
+   "texto": "Entende-se por reclamação a impugnação de um acto perante o órgão, funcionário ou agente que o praticou ou perante o seu superior hierárquico.",
+   "fonte": "Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei43-8-1",
+   "documento": "Lei n.º 43/90",
+   "referencia": "Artigo 8.º, n.º 1",
+   "texto": "O exercício do direito de petição obriga a entidade destinatária a receber e examinar as petições, representações, reclamações ou queixas, bem como a comunicar as decisões que forem tomadas.",
+   "fonte": "Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei43-9-5",
+   "documento": "Lei n.º 43/90",
+   "referencia": "Artigo 9.º, n.º 5 (proémio)",
+   "texto": "A entidade destinatária convida o peticionário a completar o escrito apresentado quando:",
+   "fonte": "Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "lei43-9-5b",
+   "documento": "Lei n.º 43/90",
+   "referencia": "Artigo 9.º, n.º 5, alínea b)",
+   "texto": "O texto seja ininteligível ou não especifique o objecto de petição.",
+   "fonte": "Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "prov-2016-pdm",
+   "documento": "Provedor de Justiça, boletim informativo de novembro e dezembro de 2016",
+   "referencia": "«Plano Diretor Municipal de Lisboa – Recomendação n.º 5/A/2016», p. 1",
+   "texto": "Na apreciação efetuada detetou ilegalidade nas normas do Plano Diretor Municipal de Lisboa aplicáveis à zona ribeirinha e assinalou a incorreta interpretação de normas sobre estacionamento junto do Presidente da Câmara de Lisboa através da recomendação n.º 5/A/2016.",
+   "fonte": "Provedor de Justiça, Boletim informativo, novembro e dezembro de 2016 (PDF no sítio do Provedor de Justiça)",
+   "ligacao": "https://provedor-jus.pt/documentos/Boletim_informativo_Novembro_Dezembro_2016.pdf",
+   "consultado": "2026-11-06",
+   "confirmado": true
   }
  ]
 }

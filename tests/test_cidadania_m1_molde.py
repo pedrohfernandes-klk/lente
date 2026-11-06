@@ -37,6 +37,9 @@ def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('ut
 # 06/11/2026 (decisões 166 a 168): a sessão 03 também passa ao molde final, no mesmo endereço (test_sessao_03_no_molde, abaixo, e
 # tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais, para as sessões 04 a 10.
 PUBLICADAS=range(4,11)
+# 06/11/2026 (decisões 166 a 168): a sessão 08 também passa ao molde final, fora de ordem, no mesmo endereço (test_sessao_08_no_molde,
+# abaixo, e tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer para as outras publicadas.
+PUBLICADAS=[n for n in PUBLICADAS if n!=8]
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
@@ -117,7 +120,8 @@ class Molde(unittest.TestCase):
   # 06/11/2026 (decisões 166 a 168): a sessão 03 passou ao molde final, que não tem registo de sessão (como a 01 e a 02); as 04 a
   # 10 publicadas continuam com um registo cada.
   for n in range(1,11):
-   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=3 else 1,n)
+   # 06/11/2026 (decisões 166 a 168): a sessão 08 também passou ao molde final, sem registo de sessão.
+   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=3 or n==8 else 1,n)
 
 
  def test_sessao_01_no_molde(self):
@@ -152,5 +156,15 @@ class Molde(unittest.TestCase):
    import molde_s03
   finally:sys.path.pop(0)
   self.assertTrue(molde_s03.inteiro_ok('cidadania/m1/sessoes/03/index.html'))
+ def test_sessao_08_no_molde(self):
+  # 06/11/2026 (decisões 166 a 168): no endereço da sessão 08 está a lição no molde final, com a chave do piloto e sem os cinco passos.
+  s=pagina(8)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s08"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s08
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s08.inteiro_ok('cidadania/m1/sessoes/08/index.html'))
 
 if __name__=='__main__':unittest.main()

@@ -1,120 +1,406 @@
-# Fonte da sessão 08 do M1 de Cidadania (piloto de 31/10/2026, no molde da sessão 01). Corre-se para escrever o .json ao
-# lado; o .json é que o gerador (tools/licoes_lente.py) lê. Escreve-se em Python para não ter de escapar aspas à mão.
-# Leis lidas a 31/10/2026: Constituição (PGDL, nid=4, as três partes), Lei n.º 43/90 (texto consolidado da Assembleia da
-# República), Lei n.º 75/2013 (PGDL, nid=1990), direito de petição na UE (ficha temática do Parlamento Europeu, porque o
-# EUR-Lex respondeu com um desafio a robôs, que não se contornou).
-import json, pathlib
-ABRE = (
- '<p class="pergunta-c">Quando uma decisão te afeta, a quem te diriges e como a contestas?</p>'
- '<p>Caso inventado. A passadeira em frente ao portão da escola vai desaparecer: passa a haver só um semáforo na esquina, a duzentos metros. A turma soube por um cartaz na paragem.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, descobrir quem decide o que se faz na rua da escola e escrever um pedido à entidade certa.</p>')
-DECIDE = (
- '<p>A turma deve fazer uma petição contra a mudança?</p>'
- '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
- '<details class="lado"><summary>A razão de quem quer a petição</summary><div><p>«Fica escrita, tem assinaturas e obriga a uma resposta.»</p></div></details>'
- '<details class="lado"><summary>A razão de quem prefere a reunião pública da freguesia</summary><div><p>«Ser ouvido de viva voz conta mais do que um papel.»</p></div></details>'
- '<details class="lado"><summary>Uma objeção</summary><div><p>Sabem quem decidiu? Um pedido entregue à entidade errada perde semanas.</p></div></details>'
- '<p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>')
-CONCEITO = (
- '<p>Quem decide depende do assunto.</p>'
- '<ul><li><b>Órgãos de soberania</b> (Constituição, artigo 110.º): o Presidente da República, a Assembleia da República, que faz as leis, o Governo, que conduz a política geral do país, e os tribunais, que administram a justiça.</li>'
- '<li><b>Autarquias</b> (artigos 235.º e seguintes): o município, com a câmara e a assembleia municipal, e a freguesia, com a junta e a assembleia de freguesia. Decidem muito do que se passa na rua.</li>'
- '<li><b>União Europeia</b>: o Parlamento Europeu também recebe petições.</li></ul>'
- '<p>A petição (artigo 52.º) dirige-se a estes órgãos e a quaisquer autoridades. A Lei n.º 43/90 deixa de fora os tribunais, que têm os seus próprios caminhos.</p>')
-FOTO = (
- '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/kilburn-cartistas-1848.webp" '
- 'alt="Fotografia antiga de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, uma carroça e um cavalo; ao fundo, uma chaminé alta e um edifício grande." loading="lazy"></span>'
- '<figcaption>William Edward Kilburn, <i>View of the Great Chartist Meeting on Kennington Common</i>, Londres, 1848, daguerreótipo. Royal Collection (RCIN 2932484), domínio público.</figcaption></figure>'
- '<p>Um comício do movimento cartista, no sul de Londres, em 1848. Os cartistas pediam reformas políticas.</p>'
- '<p class="pergunta-c">O que tem de ter um pedido para ser levado a sério?</p>'
- '<p>Responde no caderno, numa linha.</p>')
-VIDEO = (
- '<p>Um vídeo curto do TED-Ed, numa lição de Alex Gendler: cem habitantes de Marte votam onde construir um porto espacial. É em inglês: liga as legendas no leitor.</p>'
- '<p class="pergunta-c">Enquanto vês, aponta as maneiras de contar os votos que o vídeo compara e o sítio que ganha com cada uma.</p>'
- '<div class="yt" data-yt="PaxVCsnox_4" data-titulo="Which voting system is the best?, TED-Ed">'
- '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «Which voting system is the best?» (5 min 33 s)</button>'
- '<p class="yt-cred">TED-Ed, lição de Alex Gendler. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p>Uma linha para cada maneira, no caderno. Os votos são os mesmos: o que muda?</p>')
-NA_AULA = (
- '<p><b>O que se faz.</b> O mapa de quem decide. Uma volta de 30 minutos ao quarteirão da escola: anota seis coisas (passadeira, semáforo, contentor, banco, sinal, paragem) e quem achas que decide cada uma. Não se fotografam pessoas nem matrículas. Na sala, confirmas nos sítios da junta de freguesia e da câmara municipal e escreves o pedido à entidade certa.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O mapa de quem decide e um pedido de uma página: destinatário, pedido, fundamento com o artigo 52.º e assinaturas.</p>')
-LEVAR = (
- '<p class="levar">Contestar bem começa por saber quem decidiu.</p>'
- '<p>Nesta sessão distinguiste quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escreveste um pedido com destinatário e fundamento. Volta à multidão de 1848: o que tem o teu pedido que um grito não tem?</p>'
- '<p><b>As frases da sessão</b></p>'
- '<ul><li>Uma petição tem destinatário, pedido e fundamento.</li>'
- '<li>A Assembleia da República faz leis; o Governo governa; os tribunais julgam; a câmara e a junta decidem o que se faz na rua.</li>'
- '<li>O Provedor de Justiça recomenda, não decide (artigo 23.º).</li>'
- '<li>A regra de contar os votos também decide quem ganha.</li></ul>')
+# Fonte da sessão 08 do M1 de Cidadania, «Quem decide o quê?», na versão final do molde cidadania-2026-11 (plano do molde, secção 3,
+# linha «08»; decisões 144 a 146, 152 a 155, 161 e 166 a 168). 06/11/2026: substitui a fonte do piloto de 31/10, que escrevia
+# cidadania/piloto/m1-s08/ (essa página fica como está até ao pedido 3, que faz os redirecionamentos do piloto de uma vez); a chave
+# epi-cid-m1-s08 é a mesma, e a versão sobe com preservarAnterior (cfg da família). Corre-se para escrever o .json ao lado; o .json
+# é que o gerador (tools/licoes_lente.py) lê, e nunca se edita à mão. Os cartões montam-se com o ajudante comum
+# tools/cidadania_molde.py; cada excerto vem do registo tools/cidadania_fontes.json (texto exato da fonte oficial, aberta a
+# 6/11/2026, confirmado) e o ajudante recusa escrever um excerto que lá não esteja.
+#
+# 23 cartões (9 de ler, 14 de fazer), pela ordem e com os tempos da secção 2 do plano, como a s01 a s03; a ordem é fixa (cfg.aula) e a
+# resposta certa de cada escolha fica no lugar pedido em LUGARES, calculado com a semente do motor. Cada exercício tem a sua pista,
+# que não dá a resposta. O que só o docente faz vive no guia (tools/cidadania_piloto.py, GUIA['08']), nunca aqui. Na cadeia (cartões
+# 19 a 21), o apoio retira-se como o plano pede para as sessões 08 a 10: a charneira 2 pede a conclusão que vai além das provas.
+#
+# Fontes abertas a 6/11/2026, uma de cada vez (nada citado de memória):
+# - Constituição, artigos 23.º, 52.º, 161.º (proémio e alínea c)), 182.º e 202.º, versão consolidada no Diário da República
+#   Eletrónico (registo crp-23-1, crp-52-1, crp-161, crp-161-c, crp-182, crp-202-1); a grafia é a da fonte («colectivamente»,
+#   «respectiva», «acções»);
+# - Lei n.º 43/90 (exercício do direito de petição), artigos 2.º, n.º 3, 8.º, n.º 1, e 9.º, n.º 5, alínea b), versão consolidada no
+#   Diário da República Eletrónico (https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175; registo lei43-2-3,
+#   lei43-8-1, lei43-9-5, lei43-9-5b);
+# - O caso real (decisão 161): Provedor de Justiça, boletim informativo de novembro e dezembro de 2016, «Plano Diretor Municipal de
+#   Lisboa – Recomendação n.º 5/A/2016» (PDF no sítio do Provedor, registo prov-2016-pdm). O cartão 12 conta só o que o boletim diz
+#   (uma queixa, ilegalidade em normas do plano, uma recomendação ao presidente da câmara); o que a câmara fez depois não se sabe e não
+#   se diz;
+# - Fotografia: William Edward Kilburn, _View of the Great Chartist Meeting on Kennington Common_, 1848, daguerreótipo, Royal
+#   Collection, RCIN 2932484. O ficheiro img/cidadania/kilburn-cartistas-1848.webp (640 × 456) é o do piloto, a versão do Wikimedia
+#   Commons (registo aberto a 6/11/2026: autor William Edward Kilburn, 1818 a 1891; data 1848; daguerreótipo, 107 × 147 mm; Royal
+#   Collection, RCIN 2932484; domínio público, autor morto em 1891, PD-Art). O registo da Royal Collection (rct.uk) não abriu nesta
+#   passagem (desafio a robôs, que não se contornou): por isso, como o plano manda, a legenda não liga o comício à petição cartista;
+# - Vídeo (decisão 155): nenhum. O plano não propõe candidato, e o vídeo do piloto (TED-Ed, sistemas de voto) sai com o método de Hondt.
+import importlib.util, json, pathlib
 
-cartoes = [
- {"t":"ler","rot":"Abre","titulo":"Quem decide o quê?","html":ABRE},
- {"t":"ler","rot":"Decide","titulo":"A passadeira do portão","html":DECIDE},
- {"t":"emparelhar","g":"orgaos","p":"Liga cada órgão de soberania ao que a Constituição lhe dá para fazer.","p2":"Que faz cada órgão de soberania, segundo a Constituição?",
-  "pares":[["Presidente da República","Representa a República e garante o funcionamento das instituições"],["Assembleia da República","Faz as leis do país"],["Governo","Conduz a política geral do país"],["Tribunais","Administram a justiça em nome do povo"]],
-  "f":"São os quatro órgãos de soberania do artigo 110.º. O Presidente representa a República (artigo 120.º), a Assembleia faz leis (artigo 161.º), o Governo conduz a política geral (artigo 182.º) e os tribunais administram a justiça (artigo 202.º).",
-  "fe":"Pensa no verbo de cada um: representar, legislar, governar, julgar."},
- {"t":"vf","g":"peticao","p":"Qualquer cidadão pode apresentar uma petição, sozinho ou com outros, e tem direito a saber o resultado.","p2":"Uma petição pode ser individual ou coletiva, e quem a apresenta tem direito a ser informado do resultado.","v":True,
-  "f":"O artigo 52.º da Constituição dá a todos os cidadãos o direito de apresentar petições, individual ou coletivamente, e de serem informados, em prazo razoável, sobre o resultado. A Lei n.º 43/90 (artigo 4.º) acrescenta que os estrangeiros que residem em Portugal também o podem fazer para defender os seus direitos.",
-  "fe":"Não é preciso ser um grupo nem ter muitas assinaturas para pedir. E a resposta não é um favor: quem recebe tem de examinar e comunicar o que decidiu (Lei n.º 43/90, artigo 8.º)."},
- {"t":"ler","rot":"Conceito","titulo":"Órgãos, autarquias e União Europeia","html":CONCEITO},
- {"t":"emparelhar","g":"quem","p":"Liga cada situação a quem tem de a tratar.","p2":"Em cada situação, a quem cabe decidir ou agir?",
-  "pares":[["Uma lei nova sobre o ensino","Assembleia da República"],["Um conflito entre dois vizinhos que ninguém resolve","Um tribunal"],["O orçamento do município para o próximo ano","Assembleia municipal"],["Uma placa de sinalização torta numa rua municipal","Junta de freguesia"]],
-  "f":"Fazer leis cabe à Assembleia da República (artigo 161.º). Resolver conflitos cabe aos tribunais (artigo 202.º). A assembleia da autarquia aprova o orçamento (artigo 237.º). A junta de freguesia conserva e repara a sinalização vertical não iluminada das vias municipais (Lei n.º 75/2013, anexo I, artigo 16.º).",
-  "fe":"Primeiro pergunta: é uma lei, um conflito ou um assunto da rua? Os assuntos da rua costumam ser das autarquias."},
- {"t":"escolha","g":"provedor","p":"Que pode fazer o Provedor de Justiça quando recebe uma queixa contra um serviço público?","p2":"O Provedor de Justiça recebe uma queixa contra um serviço público. O que lhe cabe fazer?",
-  "o":["Apreciar a queixa e fazer recomendações.","Anular a decisão e aplicar uma multa.","Julgar o caso e condenar o responsável."],"c":0,
-  "f":"O artigo 23.º da Constituição diz que o Provedor aprecia as queixas «sem poder decisório» e dirige aos órgãos competentes as recomendações necessárias. É independente e designado pela Assembleia da República.",
-  "fe":["","O Provedor não tem poder decisório: não anula decisões nem aplica multas. Recomenda a quem pode decidir.","Julgar é dos tribunais (artigo 202.º). O Provedor aprecia e recomenda."]},
- {"t":"ordenar","g":"passos","p":"Põe por ordem os passos para fazer uma petição.","p2":"Por que ordem se prepara uma petição?",
-  "passos":["Descobrir quem decide o assunto.","Escrever, em concreto, o que se pede.","Justificar esse pedido: os factos e o artigo.","Juntar os nomes e as assinaturas.","Entregar e esperar pela resposta."],
-  "f":"Sem destinatário certo, o pedido perde-se. Depois vem o pedido, a razão e as assinaturas: a Lei n.º 43/90 (artigo 9.º) pede que a petição seja escrita e assinada. Quem a recebe tem de a examinar e responder (artigo 8.º)."},
- {"t":"ler","rot":"Ver","titulo":"Uma multidão em 1848","html":FOTO},
- {"t":"escolha","g":"foto","p":"Olha outra vez para a fotografia de 1848. O que é que ela não te diz sobre o pedido daquela multidão?","p2":"Na fotografia de 1848 vê-se a multidão. Que informação sobre o pedido fica de fora?",
-  "o":["A quem se dirigia e o que pedia.","Que havia muita gente no comício.","Se havia bandeiras e palanque."],"c":0,
-  "f":"A fotografia mostra a força do número, mas não diz o destinatário nem o pedido. É isso que torna um pedido possível de examinar e de responder.",
-  "fe":["","Isso a fotografia mostra bem: a multidão enche o campo até ao fundo.","Vê-se um palanque ao centro e bandeiras por cima da multidão."]},
- {"t":"ler","rot":"Ver","titulo":"A regra muda","html":VIDEO},
- {"t":"escolha","g":"contagem","p":"Nove votos para a visita de estudo: 4 põem o Museu em primeiro lugar, 3 o Teatro e 2 o Jardim. Os 2 do Jardim põem o Teatro em segundo. Se o menos votado sai e os seus votos passam para a segunda escolha, quem ganha?","p2":"Com 4 votos no Museu, 3 no Teatro e 2 no Jardim, o Museu ganha por maioria simples. Se o Jardim sair e os seus votos passarem para o Teatro, quem fica à frente?",
-  "o":["O Teatro, com 5 votos contra 4.","O Museu, que continua com 4 votos.","Um empate entre os três lugares."],"c":0,
-  "f":"Por maioria simples, o Museu ganha com 4. Com voto ordenado, o Jardim sai e os seus 2 votos passam para o Teatro, que fica com 5. Os boletins são os mesmos; mudou a regra de contar.",
-  "fe":["","O Museu ganha por maioria simples, mas não fica com mais votos quando o Jardim sai: os 2 votos vão para o Teatro.","Não há empate: 5 contra 4 dá uma maioria clara, depois de o Jardim sair."]},
- {"t":"escolha","g":"hondt","p":"Há três lugares para repartir. A lista A tem 50 votos, a B tem 30 e a C tem 20. Pelo método de Hondt, com quantos lugares fica a lista A?","p2":"Método de Hondt, três lugares: A com 50 votos, B com 30, C com 20. Quantos lugares cabem à lista A?",
-  "o":["Dois dos três lugares.","Só um dos três lugares.","Os três lugares todos."],"c":0,
-  "f":"Divide-se o número de votos de cada lista por 1, 2, 3: A dá 50, 25 e 16,7; B dá 30 e 15; C dá 20 e 10. Os três números mais altos são 50 (A), 30 (B) e 25 (A). A lista A fica com dois lugares e a B com um. A Constituição manda usar este método nas eleições para a Assembleia da República (artigo 149.º).",
-  "fe":["","Com Hondt, a A não fica limitada a um lugar: o seu 25 (50 a dividir por 2) é maior do que o 20 da C.","A lista B, com 30 votos, tem um número maior do que o terceiro da A (16,7): fica com um lugar."]},
- {"t":"ler","rot":"Na aula","titulo":"O mapa de quem decide","html":NA_AULA},
- {"t":"escolha","g":"bar","p":"Caso inventado: a direção da escola muda o horário do bar sem ninguém ouvir os alunos. A quem se dirige primeiro a reclamação?","p2":"A direção da escola passa a fechar o bar mais cedo e ninguém ouviu os alunos. Por onde começa a reclamação?",
-  "o":["À direção da escola, que tomou a decisão.","À Assembleia da República, que faz as leis.","Ao Provedor de Justiça, antes de tudo o mais."],"c":0,
-  "f":"Uma reclamação dirige-se a quem praticou o ato ou ao seu superior (Lei n.º 43/90, artigo 2.º, n.º 3). Se a associação de estudantes a levar à direção, com o pedido e a razão, a decisão pode ser revista por quem a tomou.",
-  "fe":["","A Assembleia faz leis para o país inteiro, não decide o horário do bar de uma escola.","O Provedor aprecia queixas e recomenda, mas antes disso pede-se a quem decidiu que reveja a decisão."]},
- {"t":"vf","g":"anular","p":"O Provedor de Justiça pode anular uma decisão da câmara municipal.","p2":"Se discordar de uma decisão da câmara municipal, o Provedor de Justiça pode anulá-la.","v":False,
-  "f":"O Provedor aprecia queixas «sem poder decisório» (artigo 23.º): faz recomendações aos órgãos competentes, que decidem se as seguem. Para anular uma decisão, o caminho é outro, por exemplo um tribunal.",
-  "fe":"Recomendar não é decidir. O Provedor pode dizer à câmara o que deve corrigir, mas quem corrige é a câmara."},
- {"t":"completar","g":"pedido","p":"Completa a frase sobre o que tem de ter uma petição.","p2":"O que não pode faltar numa petição?",
-  "frase":"Uma petição bem feita tem um [1] certo, um [2] concreto e um [3] com factos e com o artigo.",
-  "lacunas":[{"o":["destinatário","remetente","formulário"],"c":0},{"o":["pedido","protesto","desabafo"],"c":0},{"o":["fundamento","lema","comentário"],"c":0}],
-  "f":"Destinatário, pedido e fundamento: a quem, o quê e porquê. Sem destinatário ninguém tem de responder; sem pedido não se sabe o que decidir; sem fundamento é só uma opinião.",
-  "fe":"Pensa nas três perguntas: a quem, o quê, porquê."},
- {"t":"vf","g":"europa","p":"Um cidadão da União Europeia pode apresentar uma petição ao Parlamento Europeu sobre um assunto da competência da União.","p2":"O Parlamento Europeu recebe petições de cidadãos da União sobre assuntos em que a União tem competência.","v":True,
-  "f":"O direito de petição ao Parlamento Europeu vem do artigo 227.º do Tratado sobre o Funcionamento da União Europeia. Pode usá-lo qualquer cidadão da União ou residente num Estado-Membro, sozinho ou com outros, sobre assuntos da competência da União que o afetem diretamente.",
-  "fe":"A petição não fica pela câmara ou pela Assembleia da República: na União Europeia também se pode pedir, desde que o assunto seja da competência da União."},
- {"t":"escolha","g":"fundamento","p":"Qual dos pedidos à câmara municipal tem fundamento que se pode verificar?","p2":"A turma escreve à câmara municipal. Que pedido traz um fundamento verificável?",
-  "o":["Contámos 140 alunos a atravessar ali às 8h15.","Toda a gente acha que a passadeira faz falta.","A passadeira sempre ali esteve e deve ficar."],"c":0,
-  "f":"Uma contagem com hora marcada é um facto observado: a câmara pode confirmá-lo. Junta-lhe o artigo 52.º e o pedido ganha peso.",
-  "fe":["","«Toda a gente acha» é uma opinião sem prova. Quantas pessoas? Quem as contou?","Que sempre ali esteve não prova que seja precisa. Precisas de um facto sobre o uso da passadeira."]},
- {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
+AQUI = pathlib.Path(__file__).resolve()
+ROOT = AQUI.parents[2]
+
+
+def _carregar(nome, rel):
+    spec = importlib.util.spec_from_file_location(nome, ROOT / rel)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+M = _carregar('cidadania_molde', 'tools/cidadania_molde.py')
+L = _carregar('licoes_lente', 'tools/licoes_lente.py')
+NB = M.NB
+
+IMG = '../../../../img/cidadania/kilburn-cartistas-1848.webp'
+ALT = ('Fotografia antiga de uma multidão enorme de homens de chapéu num campo aberto. Ao centro, um palanque com bandeiras; à frente, '
+       'uma carroça e um cavalo; ao fundo, uma chaminé alta e edifícios.')
+ALT_VER = 'A mesma fotografia: uma multidão de chapéu num campo, à volta de um palanque com bandeiras; ao fundo, uma chaminé.'
+VER = f'<img src="{IMG}" alt="{ALT_VER}">'
+COMMONS = ('https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_'
+           '-_Google_Art_Project.jpg')
+DRE_CRP = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775'
+DRE_L43 = 'https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1990-73102175'
+PROVEDOR = 'https://provedor-jus.pt/documentos/Boletim_informativo_Novembro_Dezembro_2016.pdf'
+CREDITO = ('William Edward Kilburn, <i>View of the Great Chartist Meeting on Kennington Common</i>, 1848, daguerreótipo. Royal Collection '
+           f'(RCIN 2932484). <a href="{COMMONS}">Registo no Wikimedia Commons</a>. Domínio público.')
+PERGUNTA = 'A quem se pede, e com que fundamento?'
+DECIDE_Q = 'A turma deve fazer um pedido escrito, com assinaturas, contra a mudança?'
+FRASE = 'Pede-se a quem decidiu, com factos que se podem confirmar.'
+ART52 = M.registo()['crp-52-1']['texto']
+
+
+def escolha(rot, p, p2, certa, erradas, f, minutos, tipo, conceito, **extra):
+    """Uma escolha de três opções; a certa vai para o lugar de LUGARES (preenchido em sessao())."""
+    c = M.fazer('escolha', rot, p, p2, f, minutos, tipo, conceito, **extra)
+    c['_certa'], c['_erradas'] = M.ref(certa), [(M.ref(o), M.ref(e)) for o, e in erradas]
+    return c
+
+
+def palavras(frase, alvo):
+    """Os índices das palavras de «alvo» na frase do sublinhar (sem a pontuação colada)."""
+    w = [x.strip('.,;:') for x in frase.split()]
+    return [w.index(a) for a in alvo]
+
+
+R1_FRASE = 'Às 8h15 atravessam ali muitos alunos e o semáforo fica a duzentos metros, por isso a passadeira deve ficar.'
+
+CARTOES = [
+ # ---------------------------------------------------------------- parte 1, ver antes de concluir (60 minutos)
+ # O caso da passadeira vem do piloto (s08, cartão 1), reescrito: o aviso é assinado pela câmara (o destinatário prova-se no caso) e a
+ # junta, ao lado da escola, fica como tentação; a razão da câmara e a contagem dos alunos ficam para a Volta ao caso.
+ M.abre('Quem decide o quê?',
+        f'ver e ler (60{NB}min), pausa (10{NB}min), pesar e escrever (50{NB}min) e o teu projeto (45{NB}min).',
+        'A passadeira em frente ao portão da escola vai desaparecer: passa a haver só um semáforo na esquina, a duzentos metros. A '
+        'turma soube por um aviso afixado na paragem, assinado pela câmara municipal. Há quem queira juntar assinaturas, quem prefira '
+        'falar com a junta de freguesia, ao lado da escola, e quem ache que reclamar não serve de nada.',
+        PERGUNTA),
+ M.decide(DECIDE_Q, [
+     ('Quem acha que sim', 'Um pedido escrito fica registado, e quem o recebe tem de o examinar. Com muitos nomes, mostra que não é a '
+                           'vontade de um só.'),
+     ('Quem acha que não', 'O aviso já está afixado: a decisão está tomada. Um papel com nomes não muda uma obra marcada.'),
+     ('Uma objeção', 'Sabem a quem escrever? E o que vão pedir: a passadeira de volta, ou outra travessia segura?')]),
+ # R1 (sem obra; plano: «onde começa a conclusão numa frase sobre a passadeira com “por isso”»): a marca da conclusão da sessão 07.
+ M.recupera(M.fazer(
+     'sublinhar', 'Onde começa a conclusão',
+     'Nesta frase sobre a passadeira, sublinha as duas palavras que anunciam a conclusão.',
+     'Que duas palavras, nesta frase, mostram que o que vem a seguir é a conclusão? Sublinha-as.',
+     'Antes de «por isso» estão as razões (quantos atravessam, a distância do semáforo); depois vem a conclusão: a passadeira deve '
+     'ficar. É a marca que procuraste na sessão 07.',
+     3, 'reconhecer', 'prova e conclusão', frase=R1_FRASE, certas=palavras(R1_FRASE, ['por', 'isso']),
+     fe='A confusão mais provável é sublinhar uma das razões, como «duzentos metros». As razões vêm primeiro; procura as duas palavras '
+        'que fazem a passagem para o que se pede.',
+     pista='Procura onde a frase passa do que se vê ao que se pede.')),
+ # R2: um item novo da finalidade (sessão 05): contar sem identificar. «finalidade» está na s05 do piloto e na do molde.
+ M.recupera(escolha(
+     'Contar sem identificar',
+     'Para mostrar que muita gente atravessa no portão, a turma vai registar quem passa entre as 8h e as 8h30. O que precisa de anotar?',
+     'A turma quer provar que a passagem do portão é muito usada de manhã. Que registo serve, sem dados a mais?',
+     'Quantas pessoas passam, e a que horas passam.',
+     [('O nome e a turma de cada aluno que passa.',
+       'Para contar, não precisas de saber quem é quem. Na sessão 05, viste que os dados servem a «finalidade» para que se recolhem: '
+       'aqui, mostrar quantos passam. Volta ao que a turma quer provar.'),
+      ('Uma fotografia de cada pessoa que atravessa.',
+       'Uma fotografia identifica as pessoas e não acrescenta nada à contagem. A «finalidade» é mostrar quantos passam, e a que horas. '
+       'Volta ao que a turma quer provar.')],
+     'A «finalidade» é mostrar quantos atravessam e quando: basta um traço por pessoa e a hora. Nomes e fotografias são dados a mais, '
+     'como viste na sessão 05.',
+     4, 'aplicar', 'finalidade', pista='Pergunta-te o que a turma quer provar, e o que basta para isso.'),
+     origem='cidadania/m1/sessoes/05/'),
+ M.olha('Uma multidão em 1848', 'Olha primeiro; só depois lê a legenda.',
+        M.figura(IMG, ALT, CREDITO, 'Kennington Common, Londres, 1848: um comício do movimento cartista.',
+                 artefacto='Uma multidão num comício, Londres, 1848', largura=640, altura=456)),
+ # O que a fotografia mostra (uma multidão): erros de observação reais (a chaminé ao fundo, o palanque tomado por palco). O retorno não
+ # fala do pedido, que é o cartão seguinte.
+ escolha('O que se vê',
+         'Sem ler a legenda: o que mostra a fotografia?',
+         'Olha só para a imagem. O que se vê nela?',
+         'Uma multidão de chapéu à volta de um palanque.',
+         [('Uma fila de pessoas à porta de uma fábrica.',
+           'Ao fundo há uma chaminé e edifícios, mas ninguém está em fila nem à porta: a multidão enche o campo e vira-se para o centro. '
+           'Volta à imagem e procura para onde olham.'),
+          ('Um público sentado a ver uma peça de teatro.',
+           'O palanque pode lembrar um palco, mas ninguém está sentado: a multidão está de pé, num campo aberto. Volta à imagem e olha '
+           'para a frente.')],
+         'Vê-se uma multidão de pé, quase toda de chapéu, num campo aberto, virada para um palanque com bandeiras. Ao fundo, uma chaminé '
+         'alta e edifícios.',
+         3, 'reconhecer', 'observação', ver=VER, pista='Olha para onde se vira a maior parte das pessoas.'),
+ # O que a fotografia não mostra (o pedido): a força do número não diz o destinatário nem o pedido.
+ M.fazer('vf', 'O que não se vê',
+         'Pela fotografia e pela legenda, sabes a quem se dirigia aquela multidão e o que pedia.',
+         'A imagem e a legenda dizem o que aquela multidão queria e a quem o queria pedir.',
+         'É falso: a fotografia mostra quantos eram, e a legenda diz o lugar, o ano e que era um comício cartista. Nenhuma das duas diz o '
+         'que pediam, nem a quem. Para isso, era preciso ler o próprio pedido.',
+         3, 'distinguir', 'número e pedido', v=False, ver=VER,
+         fe='Uma multidão mostra força, não um pedido. A legenda diz o lugar, o ano e o movimento; não diz o que se pedia, nem a quem. '
+            'Volta à legenda e procura um destinatário.',
+         pista='Separa o que vês e lês do que precisarias de saber.'),
+ M.le('Pedir é um direito', 'A quem se pede?',
+      [(f'Artigo{NB}52.º', 'Todos os cidadãos têm o direito de apresentar […] aos órgãos de soberania […] ou a quaisquer autoridades '
+                          'petições […] para defesa dos seus direitos, da Constituição, das leis ou do interesse geral […]', 'crp-52-1', 'a52'),
+       (f'Artigo{NB}23.º', 'Os cidadãos podem apresentar queixas […] ao Provedor de Justiça, que as apreciará sem poder decisório, '
+                          'dirigindo aos órgãos competentes as recomendações necessárias […]', 'crp-23-1', 'a23')],
+      f'<a href="{DRE_CRP}">Constituição, artigos 52.º e 23.º</a>',
+      mais=(M.lei([('Lei n.º 43/90, artigo 2.º, n.º 3', 'Entende-se por reclamação a impugnação de um acto perante o órgão, funcionário '
+                    'ou agente que o praticou ou perante o seu superior hierárquico.', 'lei43-2-3', None),
+                   ('Lei n.º 43/90, artigo 8.º, n.º 1', 'O exercício do direito de petição obriga a entidade destinatária a receber e '
+                    'examinar […] bem como a comunicar as decisões que forem tomadas.', 'lei43-8-1', None)]))),
+ # Leitura exata: em defesa de quê se pode pedir (o fundamento, que o Conceito vai nomear).
+ M.fazer('sublinhar', 'Em defesa de quê',
+         'No artigo 52.º, n.º 1, sublinha as palavras que dizem em defesa de quê se pode pedir.',
+         'Segundo o n.º 1 do artigo 52.º, um pedido pode defender o quê? Sublinha essas palavras.',
+         'Pede-se «para defesa dos seus direitos, da Constituição, das leis ou do interesse geral». É daí que um pedido tira o '
+         'fundamento: não basta querer.',
+         3, 'reconhecer', 'direito de petição', frase=ART52,
+         certas=palavras(ART52, ['direitos', 'Constituição', 'leis', 'interesse', 'geral']), fonte='crp-52-1', l='a52',
+         citacoes=[('crp-52-1', 'para defesa dos seus direitos, da Constituição, das leis ou do interesse geral'),
+                   ('crp-52-1', 'órgãos de soberania'), ('crp-52-1', 'autoridades'), ('crp-52-1', 'petições'), ('crp-52-1', 'queixas'),
+                   ('crp-52-1', 'para defesa')],
+         fe='A confusão mais provável é sublinhar a quem se pede («órgãos de soberania», «autoridades») ou as formas do pedido '
+            '(«petições», «queixas»). Procura o que vem logo depois de «para defesa».',
+         pista='Separa a quem se pede, como se pede e o que se defende.'),
+ # Órgãos e funções (piloto, cartão 3), agora depois do material: o texto da Constituição vai no próprio cartão.
+ M.fazer('emparelhar', 'Quem faz o quê',
+         'Situações novas: segundo a Constituição, a que órgão cabe cada uma?',
+         'Liga cada situação ao órgão que a Constituição encarrega disso.',
+         'A Assembleia faz leis, o Governo conduz a política geral do país e os tribunais administram a justiça. Antes de pedir, '
+         'pergunta: quem tem o poder de decidir isto?',
+         4, 'aplicar', 'órgãos de soberania',
+         cita=('Compete à Assembleia da República: […] Fazer leis sobre todas as matérias, salvo as reservadas pela Constituição ao '
+               'Governo […] O Governo é o órgão de condução da política geral do país […] Os tribunais são os órgãos de soberania com '
+               'competência para administrar a justiça em nome do povo.'),
+         fonte=['crp-161', 'crp-161-c', 'crp-182', 'crp-202-1'],
+         pares=[['Aprovar uma lei nova sobre o direito de petição', 'A Assembleia da República'],
+                ['Definir a política de transportes para todo o país', 'O Governo'],
+                ['Decidir, num processo, quem tem razão num conflito', 'Um tribunal']],
+         citacoes=[('crp-182', 'a política geral do país'), ('crp-161-c', 'Fazer leis sobre todas as matérias')],
+         fe='A confusão mais provável é trocar a Assembleia e o Governo. O Governo conduz «a política geral do país»; a Assembleia pode '
+            '«Fazer leis sobre todas as matérias», salvo as que a Constituição reserva ao Governo. Relê cada artigo e procura o verbo.',
+         pista='Para cada situação, procura o verbo que lhe corresponde no texto.'),
+ # A junta ou a câmara (plano): o destinatário prova-se no caso (o aviso é da câmara); o artigo 52.º deixa pedir a «quaisquer
+ # autoridades», mas quem pode rever a decisão é quem a tomou (Lei n.º 43/90, artigo 2.º, n.º 3, no «Ler mais»).
+ escolha('A junta ou a câmara',
+         'A junta de freguesia fica ao lado da escola, e a turma pensa escrever-lhe sobre a passadeira. É o melhor destinatário?',
+         'Escrever à junta de freguesia, que fica ao lado da escola, é a melhor maneira de pedir a passadeira de volta?',
+         'Não: o pedido deve ir a quem decidiu, a câmara.',
+         [('Sim: a junta é a autoridade mais perto da rua.',
+           'Perto não quer dizer que decida. O aviso da mudança é da câmara, e uma reclamação faz-se perante quem praticou o ato. Volta ao '
+           'caso: quem assinou o aviso?'),
+          ('Não: o pedido deve ir à Assembleia da República.',
+           'A Assembleia faz leis para o país; a passadeira é uma decisão sobre uma rua, e o aviso é da câmara. Volta ao caso e ao aviso.')],
+         'O artigo 52.º deixa pedir a «quaisquer autoridades», mas uma reclamação faz-se «perante o órgão, funcionário ou agente que o '
+         'praticou» (Lei n.º 43/90), e o aviso da mudança é da câmara.',
+         3, 'aplicar', 'destinatário',
+         citacoes=[('crp-52-1', 'quaisquer autoridades'), ('lei43-2-3', 'perante o órgão, funcionário ou agente que o praticou')],
+         pista='Volta ao caso: o que diz o aviso, além da mudança?'),
+ # Charneira 1 e caso real (decisão 161): o Provedor recomenda, não decide (piloto, cartões 7 e 16, agora uma vez só), num caso
+ # contado com as palavras do boletim do Provedor de Justiça (registo prov-2016-pdm).
+ M.fazer('vf', 'Recomendar não é anular',
+         'Caso real (Provedor de Justiça, Lisboa, 2016): após uma queixa, o Provedor detetou ilegalidade em normas do plano municipal e '
+         'fez uma recomendação ao presidente da câmara. A recomendação anulou-as.',
+         'Em 2016, depois de uma queixa, o Provedor de Justiça apontou ilegalidade em normas do plano municipal de Lisboa, numa '
+         'recomendação ao presidente da câmara. Essa recomendação anulou as normas.',
+         'É falso: o Provedor aprecia as queixas «sem poder decisório» e dirige «aos órgãos competentes as recomendações necessárias» '
+         '(artigo 23.º). A recomendação pesa, mas mudar as normas cabe ao município.',
+         4, 'transferir', 'recomendar e decidir', v=False,
+         citacoes=[('crp-23-1', 'sem poder decisório'), ('crp-23-1', 'aos órgãos competentes as recomendações necessárias')],
+         fe='Recomendar não é decidir. O Provedor aprecia as queixas «sem poder decisório» (artigo 23.º): aponta o problema a quem '
+            'decide, e quem decide se muda as normas é o município. Volta ao artigo 23.º.',
+         liga=[{'t': 'Ler o boletim do Provedor de Justiça, novembro e dezembro de 2016 (PDF)', 'href': PROVEDOR}],
+         pista='Relê o artigo 23.º: o que faz o Provedor com uma queixa?'),
+ # Conceito (uma vez): destinatário, pedido, fundamento verificável. Os três itens paralelos vão em tabela (decisão 152).
+ M.conceito('A quem, o quê, porquê',
+            '<p>A turma quer a passadeira de volta. Basta dizê-lo?</p>',
+            '<table class="tabela"><thead><tr><th scope="col">Parte</th><th scope="col">Pergunta</th><th scope="col">No caso</th></tr>'
+            '</thead><tbody>'
+            '<tr><td data-th="Parte">destinatário</td><td data-th="Pergunta">a quem?</td><td data-th="No caso">quem assinou o aviso</td></tr>'
+            '<tr><td data-th="Parte">pedido</td><td data-th="Pergunta">o quê?</td><td data-th="No caso">uma medida concreta</td></tr>'
+            '<tr><td data-th="Parte">fundamento</td><td data-th="Pergunta">porquê?</td><td data-th="No caso">um facto que se confirma e o artigo</td></tr>'
+            '</tbody></table>',
+            'Pedido fundamentado', 'Um pedido a quem pode decidir, que diz o que se quer e porquê, com factos que se confirmam.',
+            '<p>Não é juntar assinaturas: o número dá força, não fundamento.</p>',
+            mais=(f'<p>Se o escrito não diz o que se pede, a <a href="{DRE_L43}">Lei n.º 43/90</a> (artigo 9.º, n.º 5) manda: '
+                  f'{M.citado("lei43-9-5", "A entidade destinatária convida o peticionário a completar o escrito apresentado")} quando '
+                  f'{M.citado("lei43-9-5b", "não especifique o objecto de petição")}.</p>')),
+ # Transferir 1: um pedido novo, à diretora, sobre o bar; o aluno reconhece as partes do pedido fora do caso da passadeira.
+ M.fazer('emparelhar', 'As partes de um pedido',
+         'Caso inventado: um pedido à diretora sobre o horário do bar. Liga cada parte ao papel que tem no pedido.',
+         'Neste pedido sobre o horário do bar, que papel tem cada parte?',
+         'A diretora é a quem se dirige; abrir às 8h é a medida; o horário das aulas e do bar é o facto que a apoia; o '
+         'artigo 52.º é a norma invocada. Sem destinatário ou sem pedido, ninguém sabe o que decidir.',
+         3, 'transferir', 'pedido fundamentado',
+         pares=[['À diretora da escola,', 'A quem se dirige'],
+                ['solicitamos que o bar abra às 8h, e não às 8h30,', 'A medida que se quer'],
+                ['porque há aulas às 8h15 e o bar só abre às 8h30,', 'O facto que o apoia'],
+                ['ao abrigo do artigo 52.º da Constituição.', 'A norma invocada']],
+         fe='A confusão mais provável é tomar o horário pela medida que se quer. O que se quer é que o bar abra às 8h; o horário das '
+            'aulas e do bar é o facto que o apoia. Relê o pedido parte a parte.',
+         pista='Lê cada parte e pergunta: diz a quem, o quê ou porquê?'),
+ # Transferir 2 (conceito espaçado, sessão 04: o facto que se pode verificar, separado da opinião e da previsão). Plano: «Contámos
+ # 140 alunos às 8h15» (piloto, cartão 19), num caso novo; sem absolutos nos distratores.
+ escolha('Um fundamento que se confirma',
+         'Caso inventado: a turma pede mais um autocarro às 17h40. Que frase dá ao pedido um fundamento que se pode confirmar?',
+         'Num pedido de mais um autocarro às 17h40, que frase traz um fundamento que quem recebe o pedido pode conferir?',
+         'Na terça, 38 alunos ficaram à espera desse autocarro.',
+         [('Os alunos acham que um autocarro às 17h40 é pouco.',
+           'É uma opinião: diz o que os alunos pensam, e ninguém a pode conferir. Na sessão 04, separaste factos de opiniões. Procura a '
+           'frase que quem recebe o pedido pode confirmar.'),
+          ('Sem outro autocarro, vai haver alunos a faltar.',
+           'É uma previsão: diz o que pode vir a acontecer, não o que aconteceu. Procura o que já aconteceu e se pode contar.')],
+         'Uma contagem com dia e número é um facto: quem recebe o pedido pode confirmá-la. A opinião e a previsão podem acompanhar o '
+         'pedido, mas não o fundamentam.',
+         4, 'transferir', 'fundamento verificável', origem='cidadania/m1/sessoes/04/',
+         pista='Pergunta a cada frase: alguém a pode ir confirmar?'),
+ # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
+ # Volta ao caso: duas razões que chocam (a segurança que a câmara invoca e o uso real da passagem).
+ M.volta('A razão da câmara',
+         'Em letra pequena, o aviso dá a razão: quem sai da rotunda não vê quem atravessa junto ao portão, e o semáforo da esquina é mais '
+         'seguro. A turma contou, numa manhã: entre as 8h e as 8h30, 140 alunos atravessaram ali. Um vizinho avisa: «Ninguém vai andar '
+         'duzentos metros para trás.»',
+         carimbo='Caso inventado.'),
+ M.fazer('emparelhar', 'O que se sabe e o que falta',
+         'Depois da razão da câmara e da contagem: o que já está no caso e o que ainda falta saber?',
+         'Em cada linha: está no caso ou ainda falta saber?',
+         'Sabes quem decidiu e quantos atravessaram numa manhã. Não sabes se o semáforo é mesmo mais seguro, nem quantos vão até lá: a '
+         'câmara afirma uma coisa, o vizinho outra. São dúvidas para o papel.',
+         3, 'aplicar', 'facto e dúvida',
+         pares=[['Quem decidiu tirar a passadeira', 'Já está no caso'],
+                ['Quantos atravessaram numa manhã', 'Já está no caso'],
+                ['Se o semáforo é mais seguro do que a passadeira', 'Ainda está em aberto'],
+                ['Quantos alunos vão mesmo até ao semáforo', 'Ainda está em aberto']],
+         fe='A confusão mais provável é dar por provado que o semáforo é mais seguro, porque o aviso o diz: é a razão da câmara, que ainda '
+            'se pode pôr à prova. Separa o que está no caso do que alguém afirma.',
+         pista='Procura cada informação no caso e vê quem a afirma.'),
+ M.em_turma(DECIDE_Q, [
+     ('Quem acha que sim', f'Pode pedir-se a {M.citado("crp-52-1", "quaisquer autoridades")}, e a contagem é um facto que a câmara '
+                           'pode confirmar.'),
+     ('Quem acha que não', 'A câmara deu uma razão de segurança. Um pedido só pesa se responder a essa razão.'),
+     ('Uma objeção', 'E se o pedido for outra travessia segura, com a contagem como prova?')],
+     {'O que se faz': 'Decides outra vez e escolhes a prova que mais pesa.',
+      'Quanto tempo': 'Três minutos; em turma, até treze.',
+      'O que fica escrito': 'Nada em papel; a escolha fica nos artefactos.',
+      'Se estás sozinho': 'Compara com a escolha do início e abre os três lados.'},
+     prova=('Que prova pesa mais?', ('A contagem da manhã', 'O aviso da câmara', 'O artigo 52.º')),
+     intro='', nota=None),
+ M.fazer('emparelhar', 'Facto, regra ou razão',
+         'Liga cada frase ao que ela é numa justificação.',
+         'Facto, regra ou razão de uma das partes: o que é cada frase?',
+         'Que o aviso é da câmara é um facto do caso; o direito de ser informado está no artigo 52.º; «Ninguém vai andar duzentos metros '
+         'para trás» é a razão de um vizinho, que ainda tem de ser pesada.',
+         3, 'distinguir', 'relato e princípio',
+         pares=[['O aviso da mudança é assinado pela câmara municipal.', 'Um facto do caso'],
+                ['«[…] o direito de serem informados, em prazo razoável, sobre o resultado […]»', 'Uma regra escrita num texto legal'],
+                ['«Ninguém vai andar duzentos metros para trás.»', 'A razão de uma das partes']],
+         citacoes=[('crp-52-1', 'o direito de serem informados, em prazo razoável, sobre o resultado')],
+         fe='A confusão mais provável é tomar a razão do vizinho por facto: diz o que ele prevê, e ninguém o contou. Volta ao caso e '
+            'pergunta a cada frase de onde vem.',
+         pista='Pergunta a cada frase de onde vem e quem a diz.'),
+ M.fazer('ordenar', 'A justificação por ordem',
+         'Põe a justificação por ordem, do que aconteceu ao que ainda falta saber.',
+         'Ordena a justificação: começa no que se sabe e acaba no que ainda está por saber.',
+         'Facto, fonte, aplicação, limite: cada passo apoia-se no anterior, e o limite diz até onde o pedido pode ir.',
+         4, 'aplicar', 'facto, fonte, aplicação, limite',
+         passos=['O aviso é da câmara, e numa manhã atravessaram ali 140 alunos.',
+                 'A Constituição dá o direito de pedir a quaisquer autoridades, em defesa do interesse geral.',
+                 'A turma pode pedir à câmara que reveja a decisão, com a contagem como prova.',
+                 'Falta saber se o semáforo da esquina é mais seguro do que a passadeira.'],
+         fe='A confusão mais provável é começar pelo artigo ou pôr o que falta saber antes do pedido. Começa no que aconteceu; o que '
+            'falta saber fecha a justificação.',
+         pista='Pergunta-te o que tem de vir primeiro para o resto se apoiar.'),
+ # Charneira 2, no apoio que se retira (sessões 08 a 10): encontrar a conclusão que vai além das provas. O erro esperado é ficar
+ # com uma das duas que as provas sustentam, por parecerem fracas.
+ escolha('A conclusão que vai longe de mais',
+         'Só uma destas conclusões vai além do que o caso e a contagem mostram. Encontra-a.',
+         'Uma destas conclusões diz mais do que as provas permitem. Encontra-a.',
+         'A câmara decidiu sem ouvir ninguém antes.',
+         [('A contagem mostra que a passagem é muito usada.',
+           'A contagem diz quantos atravessaram numa manhã: mostra que a passagem é usada, e não vai além disso. Procura a conclusão que '
+           'afirma o que ninguém viu.'),
+          ('A câmara deu uma razão de segurança para mudar.',
+           'A razão de segurança está escrita no aviso: está provado que a câmara a deu. Procura a conclusão que afirma o que nenhum '
+           'material mostra.')],
+         'Que a turma soube por um aviso não prova que ninguém foi ouvido: pode ter havido consulta que a turma não viu. As outras duas '
+         'dizem só o que a contagem e o aviso mostram.',
+         3, 'aplicar', 'conclusão e provas', pista='Para cada conclusão, procura a prova que a sustenta.'),
+ M.papel(PERGUNTA,
+         ['A tua conclusão, por agora: a quem pedes e o quê.',
+          'Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.',
+          'Uma dúvida que ainda tens.'],
+         ['A conclusão diz a quem se pede e o quê, sem ir além das provas.',
+          'A prova junta um facto a uma expressão exata, com o artigo.',
+          'A dúvida, respondida, podia mudar o pedido.'],
+         '<p>Outro caso, inventado: o bebedouro do pavilhão está avariado desde outubro.</p><ol>'
+         '<li>Conclusão: pede-se à direção que o mande reparar.</li>'
+         f'<li>Prova: está avariado desde outubro; pede-se {M.citado("crp-52-1", "para defesa […] do interesse geral")} (artigo 52.º, '
+         'n.º 1).</li>'
+         '<li>Dúvida: a reparação cabe à escola ou a outra entidade?</li></ol>',
+         'Num papel pequeno, sozinho e sem telemóvel.',
+         relogio_min=12),
+ M.levar(FRASE, ['O Provedor de Justiça recomenda; não decide.',
+                 'Uma multidão mostra quantos são; o pedido diz o que querem.']),
 ]
-dados = {
- "id":"cidadania-m1-s08","chave":"epi-cid-m1-s08","versao":"2026-10-31-2",
- "marca":"CD","titulo":"Sessão 08: Quem decide o quê?","h1":"Cidadania, módulo 1, sessão 08: Quem decide o quê?",
- "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
- "saida":"cidadania/piloto/m1-s08/index.html","piloto":True,
- "seguinte":"../m1-s09/","seguinteRotulo":"Sessão 09: Muitas vozes, uma escola",
- "fontes":"Constituição da República Portuguesa, artigos 23.º, 52.º, 110.º, 120.º, 149.º, 161.º, 182.º, 202.º, 235.º a 237.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Lei n.º 43/90 (exercício do direito de petição), artigos 1.º, 2.º, 4.º, 8.º e 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Lei n.º 75/2013 (regime jurídico das autarquias locais, anexo I), artigo 16.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=1990&tabela=leis, lido a 31/10/2026). Tratado sobre o Funcionamento da União Europeia, artigo 227.º, segundo a página do Parlamento Europeu «O direito de petição» (https://www.europarl.europa.eu/factsheets/pt/sheet/148/o-direito-de-peticao, lida a 31/10/2026). Fotografia: William Edward Kilburn, _View of the Great Chartist Meeting on Kennington Common_, 1848 (Royal Collection, RCIN 2932484, domínio público; https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_Kennington_Common_-_Google_Art_Project.jpg). Vídeo: TED-Ed, «Which voting system is the best?», lição de Alex Gendler. Os casos são inventados.",
- "cartoes":cartoes,
-}
-p = pathlib.Path(__file__).with_suffix('.json')
-p.write_text(json.dumps(dados, ensure_ascii=False, indent=1) + '\n', 'utf-8')
-print(p, len(cartoes), 'cartões', sum(1 for c in cartoes if c['t'] != 'ler'), 'de fazer')
+
+# o lugar da certa em cada escolha (0, 1 ou 2), com a semente do motor: nunca o mesmo em mais de metade, nem três seguidos
+LUGARES = (2, 0, 1, 2, 0)
+
+# O passo do projeto (plano, secção 3: «guião, versão 1, com a fonte de cada fala»). O que se diz do guião é o que a página do projeto
+# já diz (cidadania/projeto/, «As fases»: no guião, tornar localizáveis as fontes das falas).
+DEPOIS = ('<article class="c"><p class="rot">O passo do teu projeto</p><p class="tit">O guião, versão 1</p>'
+          '<p class="sub">Escreve, em papel, a primeira versão do guião do teu teatro-documento. Ao lado de cada fala, anota de onde vem: '
+          'a entrevista, o documento ou a notícia, com o que é preciso para a reencontrar. O que conta: cada fala tem a sua fonte; '
+          'nenhuma fala atribui a alguém o que essa pessoa não disse; o que é teu (a ordem, as ligações) distingue-se do que é citado.</p>'
+          '<p class="ir"><a href="../../../projeto/#fases">As fases do teatro-documento, no enunciado da Pergunta Humana</a></p></article>')
+
+
+def sessao():
+    d = {
+        'id': 'cidadania-m1-s08', 'chave': 'epi-cid-m1-s08', 'versao': '2026-11-06-molde', 'marca': 'CD', 'molde': L.MOLDE,
+        'titulo': 'Sessão 08: Quem decide o quê?', 'h1': 'Cidadania, módulo 1, sessão 08: Quem decide o quê?',
+        'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
+        'saida': 'cidadania/m1/sessoes/08/index.html',
+        'seguinte': '../../../piloto/m1-s09/', 'seguinteRotulo': 'Sessão 09: Muitas vozes, uma escola',
+        'fontes': M.ref('Constituição da República Portuguesa, artigos 23.º, n.º 1, 52.º, n.º 1, 161.º, alínea c), 182.º e 202.º, n.º 1, na '
+                        'versão consolidada do Diário da República. Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), '
+                        'artigos 2.º, n.º 3, 8.º, n.º 1, e 9.º, n.º 5, na versão consolidada do Diário da República. Provedor de Justiça, '
+                        'boletim informativo de novembro e dezembro de 2016, «Plano Diretor Municipal de Lisboa – Recomendação n.º '
+                        '5/A/2016». Fotografia: William Edward Kilburn, _View of the Great Chartist Meeting on Kennington Common_, 1848, '
+                        'daguerreótipo, Royal Collection, domínio público. O caso da passadeira, o da contagem, o do bar, o do autocarro e '
+                        'o do bebedouro são inventados; o do Provedor de Justiça é real.'),
+        'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},
+        'depois': DEPOIS,
+        'cartoes': CARTOES,
+    }
+    esc = [k for k, c in enumerate(CARTOES) if c['t'] == 'escolha']
+    assert len(esc) == len(LUGARES), (len(esc), len(LUGARES))
+    for k, lugar in zip(esc, LUGARES):
+        c = CARTOES[k]
+        if '_certa' not in c:
+            continue
+        ordem = L._mist(L._semente(d['chave'], k), [0, 1, 2])
+        cc = ordem[lugar]
+        erradas = c.pop('_erradas')
+        o, fe = [x for x, _ in erradas], [y for _, y in erradas]
+        o.insert(cc, c.pop('_certa'))
+        fe.insert(cc, '')
+        c.update(o=o, c=cc, fe=fe)
+    return d
+
+
+if __name__ == '__main__':
+    d = sessao()
+    p = AQUI.with_suffix('.json')
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + '\n', 'utf-8')
+    print(p, len(d['cartoes']), 'cartões', sum(1 for c in d['cartoes'] if c['t'] != 'ler'), 'de fazer')

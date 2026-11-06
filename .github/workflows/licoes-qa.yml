@@ -53,6 +53,11 @@ on:
       - 'tools/trocas/molde-s03-*'
       - 'cidadania/m1/sessoes/03/**'
       - 'tests/molde_s03.py'
+      # 06/11/2026: a sessão 08 do M1 na versão final, feita fora de ordem (decisões 166 a 168): a sua página e versão para imprimir,
+      # o manifesto fechado da sua camada e essa camada nos testes.
+      - 'tools/trocas/molde-s08-*'
+      - 'cidadania/m1/sessoes/08/**'
+      - 'tests/molde_s08.py'
       - '.github/workflows/licoes-qa.yml'
       # 05/11/2026: decisão 163, o menu ≡ comum (tools/menu_casca.py) e as páginas estáticas da Cidadania que o usam.
       - 'tools/menu_casca.py'

@@ -90,6 +90,8 @@ class FichasM1(unittest.TestCase):
    # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final, sem os cinco momentos (conferida em
    # tests/test_molde_cidadania.py, SessaoS03); os momentos continuam exigidos às sessões 04 a 10 publicadas.
    if n==3:continue
+   # 06/11/2026 (decisões 166 a 168): o mesmo para a sessão 08, que passou ao molde final fora de ordem (SessaoS08).
+   if n==8:continue
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
    self.assertEqual(page.count(' data-stage data-label='),5)
    # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre

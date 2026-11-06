@@ -414,22 +414,99 @@ GUIA = {
   'grelha': [('Decisão clara', 3), ('Duas provas citadas, sem confundir prova com inferência', 5), ('Uma dúvida razoável', 4), ('Voto vencido com razão', 4), ('Papel cumprido, com notas próprias', 4)],
   'notas': ['Nenhum aluno faz de vítima: a colega do caso não entra em cena.', 'Imagem: a fotografia dos óstracos com o nome do general ateniense Temístocles não se descarregou (o servidor e o Flickr recusaram os pedidos, e não se insistiu); entrou uma litografia de Daumier do Metropolitan Museum of Art (CC0).', 'A Lei n.º 51/2012 (Estatuto do Aluno e Ética Escolar) fica fora dos cartões até se confirmar no Diário da República.'],
  },
+ # 06/11/2026 (decisões 166 a 168): a sessão 08 passa ao molde final (cidadania-2026-11), como a 01 a 03, fora de ordem (as 04 a 07
+ # fazem-se noutros ramos). O que só o docente faz vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas
+ # tiram-se dos cartões da lição.
  '08': {
-  'dominio': 'Democracia e Instituições Políticas (órgãos de soberania, autarquias, União Europeia, eleições, petição, Provedor de Justiça).',
-  'ensina': 'Distinguir quem faz as leis, quem governa, quem julga e quem decide o que se faz na rua, e escrever um pedido com destinatário e fundamento.',
-  'passos': [
-   (5, 'As regras da volta (em aula, com o docente, sem fotografar pessoas nem matrículas) e a grelha das seis coisas.'),
-   (30, 'A volta ao quarteirão: passadeira, semáforo, contentor, banco, sinal, paragem; ao lado de cada uma, quem acham que decide.'),
-   (10, 'Pausa.'),
-   (10, 'Na sala, confirmar nos sítios da junta de freguesia e da câmara municipal quem decide cada coisa.'),
-   (15, 'O pedido de uma página à entidade certa: destinatário, o que se pede, porquê (um facto observado e o artigo 52.º da Constituição), quem assina.'),
+  'molde': True,
+  'dominio': 'Democracia e Instituições Políticas: o direito de petição (Constituição, artigo 52.º; Lei n.º 43/90), os órgãos de soberania e o que cada um faz (artigos 161.º, 182.º e 202.º) e o Provedor de Justiça (artigo 23.º).',
+  'ensina': 'Dirigir um pedido a quem decide, dizer o que se pede e fundamentá-lo com factos que se podem confirmar; separar recomendar de decidir; encontrar a conclusão que vai além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 07 com a marca por critério. A fotografia do cartão 5 projeta-se só com a legenda: o '
+            'registo da Royal Collection não abriu nesta passagem, e o que aquele comício pedia fica por confirmar (ver as notas). Se a escola '
+            'tiver mesmo uma passadeira em discussão, não se usa como caso: a passadeira do cartão 1 é inventada.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 07.',
+   4: 'O retorno nomeia a sessão 05: vale a pena lembrar, em voz alta, a finalidade (os dados recolhem-se só para aquilo que se disse).',
+   5: 'Projetado grande, depois da frase de enquadramento. Os pormenores (o palanque, as bandeiras, a carroça) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o artigo 52.º e o artigo 23.º, uma vez cada; perguntar a quem se pode pedir e o que faz o Provedor com uma queixa.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um para verdadeiro e dois para falso. O caso é real: vale a pena abrir o boletim do Provedor na projeção (ligação no retorno).',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['A grelha das seis coisas e pranchetas.', 'Os endereços dos sítios da junta de freguesia e da câmara municipal (o docente confirma-os antes).', 'O modelo do pedido.'],
-  'escrito': 'O mapa de quem decide e o pedido de uma página.',
-  'projeto': ('Nenhum passo novo em aula', '#fases', 'O guião completo, com a fonte de cada fala, fica pronto para o ensaio da sessão 09.'),
-  'produto': 'Pedido à entidade certa',
-  'grelha': [('Entidade certa, com a razão', 4), ('Pedido claro e possível', 4), ('Fundamento com artigo e factos observados', 4), ('Mapa de quem decide, factual', 4), ('Forma: destinatário, data, assinaturas, linguagem', 4)],
-  'notas': ['Saída só à volta da escola, em aula, sem autorização especial (decisão 10). Quem não pode sair confirma no sítio da câmara.', 'Quem decide cada coisa da rua depende do concelho: as respostas do cartão de emparelhar confirmam-se no sítio da câmara da escola.', 'Alternativa ao vídeo, em português: «Como podes contactar o Parlamento Europeu?», no Centro Multimédia do Parlamento Europeu (leitor próprio, não YouTube; o motor só tem o do YouTube).'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão e escolhe a prova que mais pesa no seu pedido (a contagem da manhã, o aviso da câmara ou o artigo 52.º).',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem por prova.',
+   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo). Quem defende o pedido tem de responder à razão de segurança da câmara.',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, 'Verdadeiro, por pensar que o Provedor de Justiça resolve o caso («foi ao Provedor, ganhou»).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 23.º até «sem poder decisório». Pergunta: «Depois da recomendação, quem tem de decidir?»'),
+   (21, '«A contagem mostra que a passagem é muito usada» ou «A câmara deu uma razão de segurança para mudar» (parecem fracas ou parciais, mas as provas sustentam-nas: a contagem e o aviso). A certa, «A câmara decidiu sem ouvir ninguém antes», tira do aviso o que ele não prova.',
+    'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Saber de uma decisão por um aviso não prova que não houve consulta.'),
+  ],
+  'papel': ['A conclusão diz a quem se pede e o quê, sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar o pedido.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 09, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto: as três linhas são o rascunho de um pedido.'),
+  'projeto': ('O guião, versão 1', '#fases',
+              'Cinco minutos para ler, na página do projeto, «As fases» (no guião, as fontes das falas têm de poder ser reencontradas). Trinta '
+              'minutos: cada aluno escreve, em papel, a primeira versão do guião, com a fonte de cada fala ao lado; o docente faz cerca de dez '
+              'conversas de 3 minutos. Dez minutos: cada aluno relê com «O que conta» e marca as falas ainda sem fonte. O guião entra no dossiê '
+              'da Pergunta Humana.'),
+  'produto': 'Guião, versão 1, com a fonte de cada fala',
+  'grelha': [('Cada fala tem a sua fonte, que se pode reencontrar', 5), ('Nenhuma fala atribui a alguém o que não disse', 4), ('Distingue o que é citado do que é do aluno', 4),
+             ('O guião responde à pergunta do projeto', 4), ('As falas ainda sem fonte estão marcadas', 3)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a leitura de «As fases» e as primeiras falas).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 12 é real: Provedor de Justiça, boletim informativo de novembro e dezembro de 2016, «Plano Diretor Municipal de '
+                'Lisboa – Recomendação n.º 5/A/2016». O boletim diz que o Provedor analisou as normas do plano aplicáveis à zona ribeirinha e ao '
+                'estacionamento, «no âmbito da apreciação de uma queixa sobre o projeto de construção do Museu de Arte, Arquitetura e Tecnologia», e '
+                'que «detetou ilegalidade nas normas do Plano Diretor Municipal de Lisboa aplicáveis à zona ribeirinha e assinalou a incorreta '
+                'interpretação de normas sobre estacionamento junto do Presidente da Câmara de Lisboa através da recomendação n.º 5/A/2016». O cartão '
+                'não diz o que a câmara fez depois: o boletim não o diz. A resposta (falso) assenta na Constituição, artigo 23.º («sem poder decisório»).'),
+  'notas': ['O caso da passadeira, o da contagem, o do bar, o do autocarro e o do bebedouro são inventados e assim se diz. Ninguém escreve sobre um '
+            'colega identificável.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, «Which voting system is the best?») e o método de '
+            'Hondt saem do núcleo. O plano põe Hondt em «Para ir mais longe», com o método antes da conta: fica por fazer, num pedido próprio.',
+            'Recupera 1 (sem obra): a marca da conclusão («por isso») é a da sessão 07. Recupera 2: a finalidade, da sessão 05 (contar sem '
+            'identificar).',
+            'Olha: o ficheiro é o do piloto, a versão do Wikimedia Commons (aberta a 6/11/2026: William Edward Kilburn, 1848, daguerreótipo, '
+            'Royal Collection, RCIN 2932484; domínio público, autor morto em 1891). O registo da Royal Collection (rct.uk) não abriu nesta '
+            'passagem; por isso a legenda não liga o comício à petição cartista de 1848 (plano, secção 6). A confirmar antes de publicar.',
+            'Cartão 10: o texto da Constituição (artigos 161.º, alínea c), 182.º e 202.º, n.º 1) vai no próprio cartão. A lei sobre o direito de '
+            'petição cabe à Assembleia (direitos, liberdades e garantias, reserva relativa do artigo 165.º, n.º 1, alínea b)); o cartão diz só o '
+            'que os três artigos dizem.',
+            'Cartão 11: o destinatário prova-se no caso (o aviso é assinado pela câmara). Quem decide a passadeira numa rua real depende de quem '
+            'gere a via; o cartão não afirma competências da junta nem da câmara que não estejam no caso. A Lei n.º 75/2013 fica por confirmar.',
+            'Lei n.º 43/90: artigo 2.º, n.º 3 (a reclamação faz-se perante quem praticou o ato), artigo 8.º, n.º 1 (dever de examinar e '
+            'comunicar as decisões) e artigo 9.º, n.º 5 (convite a completar o escrito que não especifica o objeto), na versão consolidada '
+            'do Diário da República.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  '09': {
   'dominio': 'Pluralismo e Diversidade Cultural; Direitos Humanos (igualdade, liberdade religiosa, minorias).',
@@ -494,6 +571,8 @@ def _nb(x):
 
 
 GUIA['03'] = dict(_nb(GUIA['03']), nb=True)
+# 06/11/2026 (sessão 08 no molde): o mesmo espaço inseparável na entrada da s08.
+GUIA['08'] = dict(_nb(GUIA['08']), nb=True)
 
 # Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta da equipa a partir do plano, para o docente rever).
 # 8 de escolha (1 ponto cada) e 2 curtas escritas (0 a 2): máximo 12.
@@ -757,6 +836,21 @@ def ligacoes_no_guia(h, saida, pasta=MODULO + 'docente/'):
     return re.sub(r'href="([^"]+)"', troca, h)
 
 
+NUMEROS = {1: 'uma', 2: 'duas', 3: 'três', 4: 'quatro', 5: 'cinco', 6: 'seis', 7: 'sete', 8: 'oito', 9: 'nove'}
+
+
+def _frase_molde(S):
+    """06/11/2026 (sessão 04 no molde): a frase do guia sobre as sessões que já estão no molde final, tirada da lista das sessões."""
+    m = [s['n'] for s in S if s.get('molde')]
+    lista = m[0] if len(m) == 1 else ', '.join(m[:-1]) + ' e ' + m[-1]
+    resto = len(S) - len(m)
+    return ((f'A sessão {lista} já está' if len(m) == 1 else f'As sessões {lista} já estão')
+            + ' no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. '
+            + ('A secção dessa sessão' if len(m) == 1 else 'As secções dessas sessões')
+            + ', mais abaixo, ' + ('tem' if len(m) == 1 else 'têm') + ' a tabela dos 180 minutos, cartão a cartão; '
+            + (f'as outras {NUMEROS[resto]} seguem' if resto > 1 else 'a outra segue') + ' o quadro acima até passarem ao molde.')
+
+
 def pagina_guia(S):
     base = '../../../../'
     indice = ''.join(f'<li><a href="#s{s["n"]}">Sessão {s["n"]}: {e(s["titulo"])}</a></li>' for s in S)
@@ -782,7 +876,8 @@ def pagina_guia(S):
              '<section><h2>Antes de começar</h2>'
              '<p class="pg">Cada sessão tem 180 minutos, com uma pausa. A lição em cartões abre-se no ecrã de cada aluno ou projeta-se para a turma (ligação «Projetar» em cada sessão: a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              + tempos +
-             '<p class="pg">As sessões 01, 02 e 03 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras sete seguem o quadro acima até passarem ao molde.</p>'
+             # 06/11/2026 (sessão 04 no molde): a frase das sessões no molde sai da lista das sessões (eram 01, 02 e 03, escritas à mão).
+             f'<p class="pg">{_frase_molde(S)}</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
              '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
              '<h2>Avaliação</h2>'
