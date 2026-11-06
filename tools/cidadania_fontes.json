@@ -210,6 +210,46 @@
    "ligacao": "https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/6190a514bc9d85cf802578aa003183d3?OpenDocument",
    "consultado": "2026-11-06",
    "confirmado": true
+  },
+  {
+   "id": "cpa-9",
+   "documento": "Código do Procedimento Administrativo",
+   "referencia": "Artigo 9.º",
+   "texto": "A Administração Pública deve tratar de forma imparcial aqueles que com ela entrem em relação, designadamente, considerando com objetividade todos e apenas os interesses relevantes no contexto decisório e adotando as soluções organizatórias e procedimentais indispensáveis à preservação da isenção administrativa e à confiança nessa isenção.",
+   "fonte": "Código do Procedimento Administrativo (anexo ao Decreto-Lei n.º 4/2015, de 7 de janeiro), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/2015-105602322",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "cpa-69-1",
+   "documento": "Código do Procedimento Administrativo",
+   "referencia": "Artigo 69.º, n.º 1",
+   "texto": "Salvo o disposto no n.º 2, os titulares de órgãos da Administração Pública e os respetivos agentes, bem como quaisquer outras entidades que, independentemente da sua natureza, se encontrem no exercício de poderes públicos, não podem intervir em procedimento administrativo ou em ato ou contrato de direito público ou privado da Administração Pública, nos seguintes casos: a) Quando nele tenham interesse, por si, como representantes ou como gestores de negócios de outra pessoa; b) Quando, por si ou como representantes ou gestores de negócios de outra pessoa, nele tenham interesse o seu cônjuge ou pessoa com quem viva em condições análogas às dos cônjuges, algum parente ou afim em linha reta ou até ao segundo grau da linha colateral, bem como qualquer pessoa com quem vivam em economia comum ou com a qual tenham uma relação de adoção, tutela ou apadrinhamento civil; c) Quando, por si ou como representantes ou gestores de negócios de outra pessoa, tenham interesse em questão semelhante à que deva ser decidida, ou quando tal situação se verifique em relação a pessoa abrangida pela alínea anterior; d) Quanto tenham intervindo no procedimento como perito ou mandatário ou hajam dado parecer sobre questão a resolver; e) Quando tenha intervindo no procedimento como perito ou mandatário o seu cônjuge ou pessoa com quem viva em condições análogas às dos cônjuges, parente ou afim em linha reta ou até ao segundo grau da linha colateral, bem como qualquer pessoa com quem vivam em economia comum ou com a qual tenham uma relação de adoção, tutela ou apadrinhamento civil; f) Quando se trate de recurso de decisão proferida por si, ou com a sua intervenção, ou proferida por qualquer das pessoas referidas na alínea b) ou com intervenção destas.",
+   "fonte": "Código do Procedimento Administrativo (anexo ao Decreto-Lei n.º 4/2015, de 7 de janeiro), versão consolidada no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-lei/2015-105602322",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "sta-2024-sumario",
+   "documento": "Acórdão do Supremo Tribunal Administrativo",
+   "referencia": "Sumário",
+   "texto": "Para que se preencha o elemento subjetivo exigido pela parte final do número 2 do artigo 8.º da Lei n.º 27/96, de 1 de agosto, não basta que se demonstre a ilegalidade da intervenção do autarca num procedimento administrativo em que são interessados familiares seus, sendo necessário que se demonstre que essa intervenção foi determinada intencionalmente com o propósito de obter uma vantagem patrimonial indevida.",
+   "fonte": "Acórdão do Supremo Tribunal Administrativo de 24/10/2024, processo 0778/23.3BELRA, relator Cláudio Ramos Monteiro, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jsta.nsf/35fbbbf22e1bb1e680256f8e003ea931/dfbeca2f658ff52680258c1f00505dc4?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
+  },
+  {
+   "id": "sta-2024-isencao",
+   "documento": "Acórdão do Supremo Tribunal Administrativo",
+   "referencia": "Fundamentação, III, ponto 10",
+   "texto": "A sentença do TAF de Leiria já havia reconhecido que a Recorrente não se encontrava em situação de isenção e imparcialidade, quando censurou «o facto de a Ré não ter agido com diligência suficiente, no sentido de se declarar, desde logo, impedida para intervir no procedimento referido no ponto 7 do probatório e não apenas em momento posterior».",
+   "fonte": "Acórdão do Supremo Tribunal Administrativo de 24/10/2024, processo 0778/23.3BELRA, relator Cláudio Ramos Monteiro, na base de jurisprudência dgsi.pt",
+   "ligacao": "https://www.dgsi.pt/jsta.nsf/35fbbbf22e1bb1e680256f8e003ea931/dfbeca2f658ff52680258c1f00505dc4?OpenDocument",
+   "consultado": "2026-11-06",
+   "confirmado": true
   }
  ]
 }

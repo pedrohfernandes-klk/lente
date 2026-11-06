@@ -10,6 +10,7 @@ import grupos146  # 05/11/2026: decisão 146
 import lab147
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
+import molde_s06  # 06/11/2026: plano do molde da Cidadania, sessão 06 do M1 na versão final (decisões 166 a 168)
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -317,7 +318,11 @@ class Molde(unittest.TestCase):
         inteiros_s02 = [f for f in molde_s02.INTEIROS if f.startswith('cidadania/m1/')]
         for f in inteiros_s02:
             self.assertTrue(molde_s02.inteiro_ok(f), f)
-        inteiros = inteiros + inteiros_s02
+        # 06/11/2026: o mesmo para a sessão 06, que passa ao molde final (decisões 166 a 168).
+        inteiros_s06 = [f for f in molde_s06.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s06:
+            self.assertTrue(molde_s06.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s02 + inteiros_s06
         lista = [f for f in lista if f not in inteiros]
         locais = [f for f in locais if f not in inteiros]
         self.assertEqual(sorted(lista), locais)

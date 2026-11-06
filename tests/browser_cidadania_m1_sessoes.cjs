@@ -48,7 +48,16 @@ try{
   assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
   assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
   for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
+ /* 06/11/2026 (decisões 166 a 168): a sessão 06 passa também ao molde final, no mesmo endereço (tools/licoes/cidadania-m1-s06.json),
+    com a chave epi-cid-m1-s06; exige-se o mesmo que à 01 e à 02, e salta do ciclo abaixo. As outras publicadas continuam com tudo o
+    que se exigia. */
+ {await p.goto(origin+'/lente/cidadania/m1/sessoes/06/');await p.waitForTimeout(300);
+  assert.equal(await p.locator('h1').count(),1);assert(await p.evaluate(()=>document.body.classList.contains('molde-cidadania')));
+  assert.equal(await p.locator('[data-stage]').count(),0);assert.equal(await p.locator('[data-session-done]').count(),0);
+  assert.equal(await p.locator('[data-c-num]').innerText(),'1/23');
+  for(const [k,v] of Object.entries(legacy))assert.equal(await p.evaluate(k=>localStorage.getItem(k),k),v,k);}
  for(let n=3;n<=10;n++){
+  if(n===6)continue;
   await p.goto(origin+'/lente/cidadania/m1/sessoes/'+String(n).padStart(2,'0')+'/');
   assert.equal(await p.locator('h1').count(),1);
   const links=await p.locator('.c10 a').evaluateAll(es=>es.map(e=>e.href).filter(h=>h.startsWith(location.origin)));
@@ -63,11 +72,15 @@ try{
  await p.locator('[data-stage-link]').nth(4).click();await p.locator('[data-session-done]').check();await p.reload();assert(await p.locator('[data-session-done]').isChecked());
  assert.deepEqual(await p.evaluate(keys=>Object.fromEntries(keys.map(k=>[k,localStorage.getItem(k)])),Object.keys(legacy)),legacy);
  await p.goto(origin+'/lente/cidadania/m1/');assert((await p.locator('[data-continue]').getAttribute('href')).includes('04/'));
- await p.goto(origin+'/lente/cidadania/m1/sessoes/06/');await p.locator('[data-start]').click();
+ /* 06/11/2026 (decisões 166 a 168): a condução por momentos, a impressão e a projeção provavam-se na sessão 06 publicada, que passou
+    à lição no molde final (com o seu próprio percurso em tests/browser_licoes_lente.cjs). Provam-se agora na última sessão que ainda
+    segue o molde publicado (a que não tem o campo «molde» no .json), com as mesmas exigências; as capturas guardam o nome antigo. */
+ const VELHA=String([3,4,5,6,7,8,9,10].filter(n=>!JSON.parse(fs.readFileSync(path.join(R,'tools/licoes/cidadania-m1-s'+String(n).padStart(2,'0')+'.json'),'utf8')).molde).pop()).padStart(2,'0');
+ await p.goto(origin+'/lente/cidadania/m1/sessoes/'+VELHA+'/');await p.locator('[data-start]').click();
  await p.evaluate(()=>dispatchEvent(new Event('beforeprint')));assert.equal(await p.locator('[data-stage]:visible').count(),5);
  await p.emulateMedia({media:'print'});await p.pdf({path:path.join(OUT,'sessao-06-impressao.pdf'),format:'A4',printBackground:true});await p.emulateMedia({media:'screen'});await p.evaluate(()=>dispatchEvent(new Event('afterprint')));assert.equal(await p.locator('[data-stage]:visible').count(),1);
  const before=await p.evaluate(k=>localStorage.getItem(k),KEY);
- await p.goto(origin+'/lente/projetar/?pagina=/lente/cidadania/m1/sessoes/06/');const f=p.frameLocator('#lesson-frame');await f.locator('[data-session-done]').waitFor({state:'attached'});assert(await f.locator('[data-session-done]').isDisabled());
+ await p.goto(origin+'/lente/projetar/?pagina=/lente/cidadania/m1/sessoes/'+VELHA+'/');const f=p.frameLocator('#lesson-frame');await f.locator('[data-session-done]').waitFor({state:'attached'});assert(await f.locator('[data-session-done]').isDisabled());
  for(const size of ['small','medium','large']){await p.locator(`[data-projection-size="${size}"]`).click();assert(await f.locator('html').evaluate(e=>e.scrollWidth<=e.clientWidth));}
  await f.locator('[data-start]').click();await f.locator('[data-next]').click();assert.equal(await p.evaluate(k=>localStorage.getItem(k),KEY),before);await p.screenshot({path:path.join(OUT,'projecao.png')});
  await p.goto(origin+'/lente/cidadania/m1/#unidade-3');await p.waitForURL('**/sessoes/06/');
