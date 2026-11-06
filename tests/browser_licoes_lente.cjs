@@ -134,7 +134,7 @@ async function responder(p,x){
    if(!proj)assert.match(await estado(),/^Feita 14\/11$/,'s02: depois de abrir a sessão nova, continua «Feita»');
    assert.deepEqual(erros,[]);await c.close();console.log('PASS s02, estado antigo semeado: «Feita» na página do módulo'+(proj?' (projeção: nada lido nem gravado)':''));
   }}
- // 06/11/2026 (s02): na projeção a 1366 x 768, a fotografia ao alto do Olha (Hine, 640 x 811) e a legenda ficam acima da barra.
+ // 06/11/2026 (s02): na projeção a 1366 x 768, a fotografia ao alto do Olha (Hine, 640 x 811; 06/11/2026, revisão: 825 x 1024, do negativo de vidro) e a legenda ficam acima da barra.
  {const c=await b.newContext({viewport:{width:1366,height:768}}),p=await c.newPage(),erros=[];p.on('pageerror',e=>erros.push(e.message));
   await p.goto(base+'/cidadania/m1/sessoes/02/?projetar=1');await p.waitForTimeout(500);await seguinte(p);
   await p.locator('#baralho .pos-op',{hasText:'Não'}).click();await p.waitForTimeout(200);

@@ -18,6 +18,9 @@ from urllib.parse import urljoin
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('licoes_lente', ROOT / 'tools/licoes_lente.py')
 LL = importlib.util.module_from_spec(spec); spec.loader.exec_module(LL)
+# 06/11/2026 (revisão da s02): ref() do ajudante do molde, para o espaço inseparável das referências na versão para imprimir e no guia
+spec = importlib.util.spec_from_file_location('cidadania_molde', ROOT / 'tools/cidadania_molde.py')
+MOLDE = importlib.util.module_from_spec(spec); spec.loader.exec_module(MOLDE)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 MODULO = 'cidadania/piloto/m1/'
 NOMES = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10']
@@ -189,7 +192,7 @@ GUIA = {
   'charneiras': [
    (12, 'Verdadeiro, por ler o n.º 2 sozinho: «se foi num lugar público, posso publicar».',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o n.º 2 e o n.º 3 seguidos. Pergunta: «O que acrescenta o “porém” do n.º 3?»'),
-   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque quer humilhar a Marta» (supõe uma intenção que nenhum material mostra).',
+   (21, '«A escola pode publicar, porque a Marta aceitou ser filmada» (toma a razão do Duarte por prova e esquece o uso aceite) ou «A escola não pode publicar, porque os colegas se riram dela» (tira dos risos uma intenção que nenhum material mostra).',
     'Se mais de um terço erra, projetar a cadeia do cartão 20 e perguntar, frase a frase, de onde vem a prova.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
@@ -214,27 +217,27 @@ GUIA = {
                'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
                'Nada mais: a lição projeta-se.'],
   'caso_real': ('O caso do cartão 15 é real: acórdão do Supremo Tribunal de Justiça de 07/06/2011, processo 1581/07.3TVLSB.L1.S1, em dgsi.pt. '
-                'Uma mãe e a filha, sócias de um clube de Lisboa, foram fotografadas na piscina numa sessão aberta a sócios e familiares e '
+                'Uma mãe e a filha, sócias de um clube de Lisboa, foram fotografadas na piscina numa sessão pública aberta a sócios e familiares e '
                 'saíram na capa de uma revista distribuída com um jornal. O tribunal negou a revista: concluiu que a mãe consentira na captação '
                 'e na publicação «numa publicação», porque lho tinham dito; que as fotografias seriam só para os sócios, ela não o provou. '
-                'Cita-se só o que o acórdão diz: o sumário (IV) e a passagem da fundamentação sobre o que foi dito à mãe. O acórdão é '
+                'Cita-se só o que o acórdão diz: o sumário (IV) e a conclusão do tribunal sobre o que foi dito à mãe. O acórdão é '
                 'anonimizado; não se procuram nomes.'),
-  'notas': ['O caso da Marta, o da montagem, o da praça, o do rapaz na poça e o do cartão da biblioteca são inventados e assim se diz; a cena '
+  'notas': ['O caso da Marta, o da montagem, o da praça, o do rapaz na poça e o do jornal são inventados e assim se diz; a cena '
             'da Lia foi escrita para a sessão 05 do M1 publicado (que a turma não fez). Ninguém escreve sobre um colega identificável.',
             'Sem vídeo (decisão 155). O candidato do plano, «Be kind online: consent to share and cyberbullying», está no sítio oficial '
             'Bullying. No Way! (bullyingnoway.gov.au, State of Queensland, em nome das autoridades de educação australianas, aberto a 6/11/2026), '
             'mas trata de uma imagem íntima partilhada sem consentimento e a equipa não o viu por inteiro. Se o docente o vir e o quiser, '
             'entra em «Para ir mais longe», com a alternativa escrita.',
-            'Recupera 1, _The Truman Show_ (Peter Weir, 1998): a turma já viu o filme no percurso anterior; não se volta a exibir. O cartão usa só '
+            'Recupera 1, _The Truman Show_ (Peter Weir, 1998): a turma trabalhou o filme no Ensaio 1 do percurso anterior (cidadania/m1/ensaio-1/); não se exibe. O cartão usa só '
             'a premissa (a vida de Truman passa na televisão e todos à volta são atores, menos ele).',
             'Olha: o registo da Library of Congress (loc.gov/item/2018675335, aberto a 6/11/2026) dá o título do cartão do National Child Labor '
             'Committee, «1910 February», North Pownal, Vermont, a atribuição a Lewis Hine «based on provenance» e «No known restrictions on '
-            'publication». O cartão original diz ainda que as raparigas da fábrica diziam que ela tinha dez anos e que ela admitiu ao '
-            'fotógrafo ter doze: bom para a conversa depois do cartão 6.',
+            'publication». O cartão original diz ainda que as raparigas da fábrica diziam que ela tinha dez anos e que ela admitiu a quem '
+            'escreveu o cartão («She admitted to me she was twelve») ter doze: bom para a conversa depois do cartão 6.',
             'Cartão 11 (a praça) e charneira 1 (o rapaz na poça): a leitura de «enquadrada na de lugares públicos» (as pessoas como parte do '
             'lugar, não como assunto) e a de «simples decoro» aplicada a uma queda são leituras nossas do artigo 79.º; o docente confirma.',
-            'Conceito: «pode ser retirado» assenta no artigo 81.º, n.º 2, do Código Civil (a limitação voluntária dos direitos de personalidade '
-            '«é sempre revogável», ainda que com obrigação de indemnizar); ligar esse artigo ao direito à imagem é leitura nossa.',
+            'Conceito: «pode ser retirado» assenta no artigo 81.º, n.º 2, do Código Civil (a limitação voluntária dos direitos de personalidade, '
+            'quando legal, «é sempre revogável», ainda que com obrigação de indemnizar); ligar esse artigo ao direito à imagem é leitura nossa.',
             'Lei n.º 58/2019, artigo 16.º: só aparece para separar os 13 anos dos serviços digitais do consentimento para publicar a imagem de alguém.',
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
@@ -738,7 +741,9 @@ GUIA_PASTA = MODULO + 'docente/'
 
 
 def _txt(s):
-    return LL.visivel(s)
+    # 06/11/2026 (revisão da s02, decisão 152): LL.visivel() troca o U+00A0 por um espaço normal; ref() volta a pô-lo em «n.º 1»,
+    # «13 anos», «artigo 79.º», para as referências não se partirem no papel nem no guia
+    return MOLDE.ref(LL.visivel(s))
 
 
 def _resposta(c):
@@ -750,9 +755,14 @@ def _resposta(c):
         return 'Verdadeiro.' if c['v'] else 'Falso.'
     if t == 'emparelhar':
         return '; '.join(f'{_txt(a)} → {_txt(b)}' for a, b in c['pares']) + '.'
-    if t == 'sublinhar':
-        w = c['frase'].split()
-        return '«' + ' '.join(w[j] for j in c['certas']).strip(',.') + '»'
+    if t == 'sublinhar':  # 06/11/2026 (revisão da s02): as palavras seguidas num só «…» (sem passar uma vírgula ou um ponto), os grupos separados por vírgula
+        w, grupos = c['frase'].split(), []
+        for j in sorted(c['certas']):
+            if grupos and grupos[-1][-1] == j - 1 and not w[j - 1].endswith((',', '.', ';', ':')):
+                grupos[-1].append(j)
+            else:
+                grupos.append([j])
+        return ', '.join('«' + ' '.join(w[j] for j in g).strip(',.') + '»' for g in grupos)
     if t == 'ordenar':
         return ' '.join(f'{k}. {_txt(x)}' for k, x in enumerate(c['passos'], 1))
     return ''
@@ -872,7 +882,8 @@ def _ex_imprimir(num, c, d, k):
         q += f'<p class="cita"><i>«{e(_txt(c["cita"]))}»</i></p>'
     p = html.unescape(re.sub(r'<[^>]+>', '', c['p']))
     if c['t'] == 'sublinhar':  # 06/11/2026: em papel não se toca, sublinha-se
-        p = re.sub(r'\b([Tt])oca nas palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as palavras', p)
+        # 06/11/2026 (revisão da s02): também «toca nas duas/três palavras»
+        p = re.sub(r'\b([Tt])oca nas ((?:duas |três )?)palavras', lambda m: ('S' if m.group(1) == 'T' else 's') + 'ublinha as ' + m.group(2) + 'palavras', p)
     q += f'<p><b>{LL.esc_it(p)}</b></p>'
     t = c['t']
     if t == 'escolha':
@@ -919,7 +930,7 @@ def _ler_imprimir(c):
 def _opcoes_prova(c):
     """06/11/2026: as opções da escolha que pesou no «Em turma» (data-valor), tiradas do cartão em vez de escritas à mão."""
     m = re.search(r'<div class="posicao" data-artefacto="prova".*?</div></div>', c['html'], re.S)
-    return ' '.join(f'☐ {e(html.unescape(v))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
+    return ' '.join(f'☐ {e(MOLDE.ref(html.unescape(v)))}' for v in re.findall(r'data-valor="([^"]+)"', m.group(0))) if m else ''
 
 
 def pagina_imprimir(s):
