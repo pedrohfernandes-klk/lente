@@ -60,9 +60,9 @@
   },
   {
    "t": "escolha",
-   "rot": "Contar sem identificar",
+   "rot": "O registo da contagem",
    "p": "Para mostrar que muita gente atravessa no portão, a turma vai registar quem passa entre as 8h e as 8h30. O que precisa de anotar?",
-   "p2": "A turma quer provar que a passagem do portão é muito usada de manhã. Que registo serve, sem dados a mais?",
+   "p2": "A turma quer provar que a passagem do portão é muito usada de manhã. Que registo basta para isso?",
    "f": "A «finalidade» é mostrar quantos atravessam e quando: basta um traço por pessoa e a hora. Nomes e fotografias são dados a mais, como viste na sessão 05.",
    "min": 4,
    "tipo": "aplicar",
@@ -71,7 +71,7 @@
    "g": "recupera",
    "origem": "cidadania/m1/sessoes/05/",
    "o": [
-    "Quantas pessoas passam, e a que horas passam.",
+    "Quantas pessoas passam e a que horas.",
     "O nome e a turma de cada aluno que passa.",
     "Uma fotografia de cada pessoa que atravessa."
    ],
@@ -114,7 +114,7 @@
   },
   {
    "t": "vf",
-   "rot": "O que não se vê",
+   "rot": "Imagem e legenda",
    "p": "Pela fotografia e pela legenda, sabes a quem se dirigia aquela multidão e o que pedia.",
    "p2": "A imagem e a legenda dizem o que aquela multidão queria e a quem o queria pedir.",
    "f": "É falso: a fotografia mostra quantos eram, e a legenda diz o lugar, o ano e que era um comício cartista. Nenhuma das duas diz o que pediam, nem a quem. Para isso, era preciso ler o próprio pedido.",
@@ -186,29 +186,22 @@
    "rot": "Quem faz o quê",
    "p": "Situações novas: segundo a Constituição, a que órgão cabe cada uma?",
    "p2": "Liga cada situação ao órgão que a Constituição encarrega disso.",
-   "f": "A Assembleia faz leis, o Governo conduz a política geral do país e os tribunais administram a justiça. Antes de pedir, pergunta: quem tem o poder de decidir isto?",
+   "f": "A Assembleia faz leis, o Governo conduz a política geral do país e os tribunais administram a justiça. Relê o verbo de cada artigo.",
    "min": 4,
    "tipo": "aplicar",
    "conceito": "órgãos de soberania",
-   "cita": "Compete à Assembleia da República: […] Fazer leis sobre todas as matérias, salvo as reservadas pela Constituição ao Governo […] O Governo é o órgão de condução da política geral do país […] Os tribunais são os órgãos de soberania com competência para administrar a justiça em nome do povo.",
-   "fonte": [
-    "crp-161",
-    "crp-161-c",
-    "crp-182",
-    "crp-202-1"
-   ],
    "pares": [
     [
      "Aprovar uma lei nova sobre o direito de petição",
-     "A Assembleia da República"
+     "Artigo 161.º, alínea c): à Assembleia da República compete «Fazer leis sobre todas as matérias»"
     ],
     [
      "Definir a política de transportes para todo o país",
-     "O Governo"
+     "Artigo 182.º: o Governo é o «órgão de condução da política geral do país»"
     ],
     [
      "Decidir, num processo, quem tem razão num conflito",
-     "Um tribunal"
+     "Artigo 202.º, n.º 1: os tribunais têm competência para «administrar a justiça em nome do povo»"
     ]
    ],
    "citacoes": [
@@ -219,10 +212,18 @@
     [
      "crp-161-c",
      "Fazer leis sobre todas as matérias"
+    ],
+    [
+     "crp-182",
+     "órgão de condução da política geral do país"
+    ],
+    [
+     "crp-202-1",
+     "administrar a justiça em nome do povo"
     ]
    ],
    "fe": "A confusão mais provável é trocar a Assembleia e o Governo. O Governo conduz «a política geral do país»; a Assembleia pode «Fazer leis sobre todas as matérias», salvo as que a Constituição reserva ao Governo. Relê cada artigo e procura o verbo.",
-   "pista": "Para cada situação, procura o verbo que lhe corresponde no texto."
+   "pista": "Para cada situação, procura o verbo que lhe corresponde nos artigos."
   },
   {
    "t": "escolha",
@@ -258,10 +259,10 @@
   },
   {
    "t": "vf",
-   "rot": "Recomendar não é anular",
+   "rot": "Uma queixa ao Provedor",
    "p": "Caso real (Provedor de Justiça, Lisboa, 2016): após uma queixa, o Provedor detetou ilegalidade em normas do plano municipal e fez uma recomendação ao presidente da câmara. A recomendação anulou-as.",
-   "p2": "Em 2016, depois de uma queixa, o Provedor de Justiça apontou ilegalidade em normas do plano municipal de Lisboa, numa recomendação ao presidente da câmara. Essa recomendação anulou as normas.",
-   "f": "É falso: o Provedor aprecia as queixas «sem poder decisório» e dirige «aos órgãos competentes as recomendações necessárias» (artigo 23.º). A recomendação pesa, mas mudar as normas cabe ao município.",
+   "p2": "Em 2016, depois de uma queixa, o Provedor de Justiça detetou ilegalidade em normas do plano municipal de Lisboa e fez uma recomendação ao presidente da câmara. Essa recomendação anulou as normas.",
+   "f": "É falso: o Provedor aprecia as queixas «sem poder decisório» e dirige «aos órgãos competentes as recomendações necessárias» (artigo 23.º). A recomendação pesa, mas quem decide são os órgãos competentes.",
    "min": 4,
    "tipo": "transferir",
    "conceito": "recomendar e decidir",
@@ -276,7 +277,7 @@
      "aos órgãos competentes as recomendações necessárias"
     ]
    ],
-   "fe": "Recomendar não é decidir. O Provedor aprecia as queixas «sem poder decisório» (artigo 23.º): aponta o problema a quem decide, e quem decide se muda as normas é o município. Volta ao artigo 23.º.",
+   "fe": "Recomendar não é decidir. O Provedor aprecia as queixas «sem poder decisório» (artigo 23.º): aponta o problema aos órgãos competentes, e são eles que decidem. Volta ao artigo 23.º.",
    "liga": [
     {
      "t": "Ler o boletim do Provedor de Justiça, novembro e dezembro de 2016 (PDF)",
@@ -297,7 +298,7 @@
    "rot": "As partes de um pedido",
    "p": "Caso inventado: um pedido à diretora sobre o horário do bar. Liga cada parte ao papel que tem no pedido.",
    "p2": "Neste pedido sobre o horário do bar, que papel tem cada parte?",
-   "f": "A diretora é a quem se dirige; abrir às 8h é a medida; o horário das aulas e do bar é o facto que a apoia; o artigo 52.º é a norma invocada. Sem destinatário ou sem pedido, ninguém sabe o que decidir.",
+   "f": "A diretora é a quem se dirige; abrir às 8h é a medida; o horário das aulas e do bar é o facto que o apoia; o artigo 52.º é a norma invocada. Sem destinatário ou sem pedido, ninguém sabe o que decidir.",
    "min": 3,
    "tipo": "transferir",
    "conceito": "pedido fundamentado",
@@ -357,7 +358,7 @@
    "rot": "O que se sabe e o que falta",
    "p": "Depois da razão da câmara e da contagem: o que já está no caso e o que ainda falta saber?",
    "p2": "Em cada linha: está no caso ou ainda falta saber?",
-   "f": "Sabes quem decidiu e quantos atravessaram numa manhã. Não sabes se o semáforo é mesmo mais seguro, nem quantos vão até lá: a câmara afirma uma coisa, o vizinho outra. São dúvidas para o papel.",
+   "f": "Sabes quem decidiu e quantos atravessaram numa manhã. Não sabes se o semáforo é mesmo mais seguro, nem quantos vão até lá. São dúvidas para o papel.",
    "min": 3,
    "tipo": "aplicar",
    "conceito": "facto e dúvida",
@@ -450,13 +451,13 @@
    "conceito": "conclusão e provas",
    "pista": "Para cada conclusão, procura a prova que a sustenta.",
    "o": [
-    "A contagem mostra que a passagem é muito usada.",
+    "Numa manhã, muitos alunos atravessaram no portão.",
     "A câmara decidiu sem ouvir ninguém antes.",
     "A câmara deu uma razão de segurança para mudar."
    ],
    "c": 1,
    "fe": [
-    "A contagem diz quantos atravessaram numa manhã: mostra que a passagem é usada, e não vai além disso. Procura a conclusão que afirma o que ninguém viu.",
+    "A contagem diz quantos atravessaram nessa manhã, e a conclusão não vai além disso. Procura a conclusão que afirma o que ninguém viu.",
     "",
     "A razão de segurança está escrita no aviso: está provado que a câmara a deu. Procura a conclusão que afirma o que nenhum material mostra."
    ]

@@ -421,9 +421,9 @@ GUIA = {
   'molde': True,
   'dominio': 'Democracia e Instituições Políticas: o direito de petição (Constituição, artigo 52.º; Lei n.º 43/90), os órgãos de soberania e o que cada um faz (artigos 161.º, 182.º e 202.º) e o Provedor de Justiça (artigo 23.º).',
   'ensina': 'Dirigir um pedido a quem decide, dizer o que se pede e fundamentá-lo com factos que se podem confirmar; separar recomendar de decidir; encontrar a conclusão que vai além das provas.',
-  'antes': ('Devolver, no início, o papel da sessão 07 com a marca por critério. A fotografia do cartão 5 projeta-se só com a legenda: o '
-            'registo da Royal Collection não abriu nesta passagem, e o que aquele comício pedia fica por confirmar (ver as notas). Se a escola '
-            'tiver mesmo uma passadeira em discussão, não se usa como caso: a passadeira do cartão 1 é inventada.'),
+  'antes': ('Devolver, no início, o papel da sessão 07 com a marca por critério. A fotografia do cartão 5 projeta-se com a legenda do '
+            'cartão; a sessão não liga o comício à petição cartista de 1848 (ver as notas). Se a escola tiver mesmo uma passadeira em '
+            'discussão, não se usa como caso: a passadeira do cartão 1 é inventada.'),
   'na_aula': {
    1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
    2: 'Ver «Como conduzir o Decide».',
@@ -458,7 +458,7 @@ GUIA = {
   'charneiras': [
    (12, 'Verdadeiro, por pensar que o Provedor de Justiça resolve o caso («foi ao Provedor, ganhou»).',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 23.º até «sem poder decisório». Pergunta: «Depois da recomendação, quem tem de decidir?»'),
-   (21, '«A contagem mostra que a passagem é muito usada» ou «A câmara deu uma razão de segurança para mudar» (parecem fracas ou parciais, mas as provas sustentam-nas: a contagem e o aviso). A certa, «A câmara decidiu sem ouvir ninguém antes», tira do aviso o que ele não prova.',
+   (21, '«Numa manhã, muitos alunos atravessaram no portão» ou «A câmara deu uma razão de segurança para mudar» (parecem fracas ou parciais, mas as provas sustentam-nas: a contagem e o aviso). A certa, «A câmara decidiu sem ouvir ninguém antes», tira do aviso o que ele não prova.',
     'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Saber de uma decisão por um aviso não prova que não houve consulta.'),
   ],
   'papel': ['A conclusão diz a quem se pede e o quê, sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
@@ -496,12 +496,12 @@ GUIA = {
             'identificar).',
             'Olha: o ficheiro é o do piloto, a versão do Wikimedia Commons (aberta a 6/11/2026: William Edward Kilburn, 1848, daguerreótipo, '
             'Royal Collection, RCIN 2932484; domínio público, autor morto em 1891). O registo da Royal Collection (rct.uk) não abriu nesta '
-            'passagem; por isso a legenda não liga o comício à petição cartista de 1848 (plano, secção 6). A confirmar antes de publicar.',
-            'Cartão 10: o texto da Constituição (artigos 161.º, alínea c), 182.º e 202.º, n.º 1) vai no próprio cartão. A lei sobre o direito de '
+            'passagem; por isso a legenda não liga o comício à petição cartista de 1848 (plano, secção 6).',
+            'Cartão 10: o texto da Constituição (artigos 161.º, alínea c), 182.º e 202.º, n.º 1) vai no próprio cartão, um artigo em cada par. A lei sobre o direito de '
             'petição cabe à Assembleia (direitos, liberdades e garantias, reserva relativa do artigo 165.º, n.º 1, alínea b)); o cartão diz só o '
             'que os três artigos dizem.',
             'Cartão 11: o destinatário prova-se no caso (o aviso é assinado pela câmara). Quem decide a passadeira numa rua real depende de quem '
-            'gere a via; o cartão não afirma competências da junta nem da câmara que não estejam no caso. A Lei n.º 75/2013 fica por confirmar.',
+            'gere a via; o cartão não afirma competências da junta nem da câmara que não estejam no caso.',
             'Lei n.º 43/90: artigo 2.º, n.º 3 (a reclamação faz-se perante quem praticou o ato), artigo 8.º, n.º 1 (dever de examinar e '
             'comunicar as decisões) e artigo 9.º, n.º 5 (convite a completar o escrito que não especifica o objeto), na versão consolidada '
             'do Diário da República.',

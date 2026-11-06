@@ -106,10 +106,10 @@ CARTOES = [
      pista='Procura onde a frase passa do que se vê ao que se pede.')),
  # R2: um item novo da finalidade (sessão 05): contar sem identificar. «finalidade» está na s05 do piloto e na do molde.
  M.recupera(escolha(
-     'Contar sem identificar',
+     'O registo da contagem',
      'Para mostrar que muita gente atravessa no portão, a turma vai registar quem passa entre as 8h e as 8h30. O que precisa de anotar?',
-     'A turma quer provar que a passagem do portão é muito usada de manhã. Que registo serve, sem dados a mais?',
-     'Quantas pessoas passam, e a que horas passam.',
+     'A turma quer provar que a passagem do portão é muito usada de manhã. Que registo basta para isso?',
+     'Quantas pessoas passam e a que horas.',
      [('O nome e a turma de cada aluno que passa.',
        'Para contar, não precisas de saber quem é quem. Na sessão 05, viste que os dados servem a «finalidade» para que se recolhem: '
        'aqui, mostrar quantos passam. Volta ao que a turma quer provar.'),
@@ -139,7 +139,7 @@ CARTOES = [
          'alta e edifícios.',
          3, 'reconhecer', 'observação', ver=VER, pista='Olha para onde se vira a maior parte das pessoas.'),
  # O que a fotografia não mostra (o pedido): a força do número não diz o destinatário nem o pedido.
- M.fazer('vf', 'O que não se vê',
+ M.fazer('vf', 'Imagem e legenda',
          'Pela fotografia e pela legenda, sabes a quem se dirigia aquela multidão e o que pedia.',
          'A imagem e a legenda dizem o que aquela multidão queria e a quem o queria pedir.',
          'É falso: a fotografia mostra quantos eram, e a legenda diz o lugar, o ano e que era um comício cartista. Nenhuma das duas diz o '
@@ -172,24 +172,26 @@ CARTOES = [
          fe='A confusão mais provável é sublinhar a quem se pede («órgãos de soberania», «autoridades») ou as formas do pedido '
             '(«petições», «queixas»). Procura o que vem logo depois de «para defesa».',
          pista='Separa a quem se pede, como se pede e o que se defende.'),
- # Órgãos e funções (piloto, cartão 3), agora depois do material: o texto da Constituição vai no próprio cartão.
+ # Órgãos e funções (piloto, cartão 3), agora depois do material: o texto da Constituição vai no próprio cartão. 06/11/2026 (revisão):
+ # os três artigos são itens paralelos (decisão 152) e vão um em cada par, com a sua referência, em vez de fundidos numa só citação.
  M.fazer('emparelhar', 'Quem faz o quê',
          'Situações novas: segundo a Constituição, a que órgão cabe cada uma?',
          'Liga cada situação ao órgão que a Constituição encarrega disso.',
-         'A Assembleia faz leis, o Governo conduz a política geral do país e os tribunais administram a justiça. Antes de pedir, '
-         'pergunta: quem tem o poder de decidir isto?',
+         'A Assembleia faz leis, o Governo conduz a política geral do país e os tribunais administram a justiça. Relê o verbo de cada '
+         'artigo.',
          4, 'aplicar', 'órgãos de soberania',
-         cita=('Compete à Assembleia da República: […] Fazer leis sobre todas as matérias, salvo as reservadas pela Constituição ao '
-               'Governo […] O Governo é o órgão de condução da política geral do país […] Os tribunais são os órgãos de soberania com '
-               'competência para administrar a justiça em nome do povo.'),
-         fonte=['crp-161', 'crp-161-c', 'crp-182', 'crp-202-1'],
-         pares=[['Aprovar uma lei nova sobre o direito de petição', 'A Assembleia da República'],
-                ['Definir a política de transportes para todo o país', 'O Governo'],
-                ['Decidir, num processo, quem tem razão num conflito', 'Um tribunal']],
-         citacoes=[('crp-182', 'a política geral do país'), ('crp-161-c', 'Fazer leis sobre todas as matérias')],
+         pares=[['Aprovar uma lei nova sobre o direito de petição',
+                 f'Artigo{NB}161.º, alínea c): à Assembleia da República compete «Fazer leis sobre todas as matérias»'],
+                ['Definir a política de transportes para todo o país',
+                 f'Artigo{NB}182.º: o Governo é o «órgão de condução da política geral do país»'],
+                ['Decidir, num processo, quem tem razão num conflito',
+                 f'Artigo{NB}202.º, n.º{NB}1: os tribunais têm competência para «administrar a justiça em nome do povo»']],
+         citacoes=[('crp-182', 'a política geral do país'), ('crp-161-c', 'Fazer leis sobre todas as matérias'),
+                   ('crp-182', 'órgão de condução da política geral do país'),
+                   ('crp-202-1', 'administrar a justiça em nome do povo')],
          fe='A confusão mais provável é trocar a Assembleia e o Governo. O Governo conduz «a política geral do país»; a Assembleia pode '
             '«Fazer leis sobre todas as matérias», salvo as que a Constituição reserva ao Governo. Relê cada artigo e procura o verbo.',
-         pista='Para cada situação, procura o verbo que lhe corresponde no texto.'),
+         pista='Para cada situação, procura o verbo que lhe corresponde nos artigos.'),
  # A junta ou a câmara (plano): o destinatário prova-se no caso (o aviso é da câmara); o artigo 52.º deixa pedir a «quaisquer
  # autoridades», mas quem pode rever a decisão é quem a tomou (Lei n.º 43/90, artigo 2.º, n.º 3, no «Ler mais»).
  escolha('A junta ou a câmara',
@@ -208,17 +210,17 @@ CARTOES = [
          pista='Volta ao caso: o que diz o aviso, além da mudança?'),
  # Charneira 1 e caso real (decisão 161): o Provedor recomenda, não decide (piloto, cartões 7 e 16, agora uma vez só), num caso
  # contado com as palavras do boletim do Provedor de Justiça (registo prov-2016-pdm).
- M.fazer('vf', 'Recomendar não é anular',
+ M.fazer('vf', 'Uma queixa ao Provedor',
          'Caso real (Provedor de Justiça, Lisboa, 2016): após uma queixa, o Provedor detetou ilegalidade em normas do plano municipal e '
          'fez uma recomendação ao presidente da câmara. A recomendação anulou-as.',
-         'Em 2016, depois de uma queixa, o Provedor de Justiça apontou ilegalidade em normas do plano municipal de Lisboa, numa '
+         'Em 2016, depois de uma queixa, o Provedor de Justiça detetou ilegalidade em normas do plano municipal de Lisboa e fez uma '
          'recomendação ao presidente da câmara. Essa recomendação anulou as normas.',
          'É falso: o Provedor aprecia as queixas «sem poder decisório» e dirige «aos órgãos competentes as recomendações necessárias» '
-         '(artigo 23.º). A recomendação pesa, mas mudar as normas cabe ao município.',
+         '(artigo 23.º). A recomendação pesa, mas quem decide são os órgãos competentes.',
          4, 'transferir', 'recomendar e decidir', v=False,
          citacoes=[('crp-23-1', 'sem poder decisório'), ('crp-23-1', 'aos órgãos competentes as recomendações necessárias')],
-         fe='Recomendar não é decidir. O Provedor aprecia as queixas «sem poder decisório» (artigo 23.º): aponta o problema a quem '
-            'decide, e quem decide se muda as normas é o município. Volta ao artigo 23.º.',
+         fe='Recomendar não é decidir. O Provedor aprecia as queixas «sem poder decisório» (artigo 23.º): aponta o problema aos órgãos '
+            'competentes, e são eles que decidem. Volta ao artigo 23.º.',
          liga=[{'t': 'Ler o boletim do Provedor de Justiça, novembro e dezembro de 2016 (PDF)', 'href': PROVEDOR}],
          pista='Relê o artigo 23.º: o que faz o Provedor com uma queixa?'),
  # Conceito (uma vez): destinatário, pedido, fundamento verificável. Os três itens paralelos vão em tabela (decisão 152).
@@ -239,7 +241,7 @@ CARTOES = [
  M.fazer('emparelhar', 'As partes de um pedido',
          'Caso inventado: um pedido à diretora sobre o horário do bar. Liga cada parte ao papel que tem no pedido.',
          'Neste pedido sobre o horário do bar, que papel tem cada parte?',
-         'A diretora é a quem se dirige; abrir às 8h é a medida; o horário das aulas e do bar é o facto que a apoia; o '
+         'A diretora é a quem se dirige; abrir às 8h é a medida; o horário das aulas e do bar é o facto que o apoia; o '
          'artigo 52.º é a norma invocada. Sem destinatário ou sem pedido, ninguém sabe o que decidir.',
          3, 'transferir', 'pedido fundamentado',
          pares=[['À diretora da escola,', 'A quem se dirige'],
@@ -274,8 +276,8 @@ CARTOES = [
  M.fazer('emparelhar', 'O que se sabe e o que falta',
          'Depois da razão da câmara e da contagem: o que já está no caso e o que ainda falta saber?',
          'Em cada linha: está no caso ou ainda falta saber?',
-         'Sabes quem decidiu e quantos atravessaram numa manhã. Não sabes se o semáforo é mesmo mais seguro, nem quantos vão até lá: a '
-         'câmara afirma uma coisa, o vizinho outra. São dúvidas para o papel.',
+         'Sabes quem decidiu e quantos atravessaram numa manhã. Não sabes se o semáforo é mesmo mais seguro, nem quantos vão até lá. '
+         'São dúvidas para o papel.',
          3, 'aplicar', 'facto e dúvida',
          pares=[['Quem decidiu tirar a passadeira', 'Já está no caso'],
                 ['Quantos atravessaram numa manhã', 'Já está no caso'],
@@ -326,9 +328,9 @@ CARTOES = [
          'Só uma destas conclusões vai além do que o caso e a contagem mostram. Encontra-a.',
          'Uma destas conclusões diz mais do que as provas permitem. Encontra-a.',
          'A câmara decidiu sem ouvir ninguém antes.',
-         [('A contagem mostra que a passagem é muito usada.',
-           'A contagem diz quantos atravessaram numa manhã: mostra que a passagem é usada, e não vai além disso. Procura a conclusão que '
-           'afirma o que ninguém viu.'),
+         [('Numa manhã, muitos alunos atravessaram no portão.',
+           'A contagem diz quantos atravessaram nessa manhã, e a conclusão não vai além disso. Procura a conclusão que afirma o que '
+           'ninguém viu.'),
           ('A câmara deu uma razão de segurança para mudar.',
            'A razão de segurança está escrita no aviso: está provado que a câmara a deu. Procura a conclusão que afirma o que nenhum '
            'material mostra.')],
