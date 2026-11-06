@@ -28,3 +28,37 @@ def aplicar(texto, ficheiro, sem_cache=False):
         assert texto.count(antigo) == quantidade, ('decisão 163', ficheiro, antigo[:80])
         texto = texto.replace(antigo, novo)
     return texto.encode('utf-8') if binario else texto
+
+
+def _ja_fundido(texto, trocas):
+    # Uma troca que apaga (novo vazio) conta como feita quando o «antigo» já não aparece, como em lab147.alinhar.
+    return all((texto.count(novo) == n) if novo else (texto.count(antigo) == 0) for antigo, novo, n in trocas)
+
+
+def alinhar(texto, ficheiro, sem_cache=False):
+    """06/11/2026: para bases que mudam com o tempo (git merge-base HEAD origin/main). Antes da fusão do #125 a base ainda
+    tem cada «antigo» com a contagem exata e recebe as trocas; depois da fusão já tem cada «novo» com a contagem exata e
+    fica como está. Qualquer outro estado falha, como em lab147.alinhar."""
+    trocas = TROCAS['sem_cache' if sem_cache else 'exato'].get(ficheiro, [])
+    if not trocas:
+        return texto
+    s = texto.decode('utf-8') if isinstance(texto, bytes) else texto
+    if _ja_fundido(s, trocas):
+        return texto
+    if all(s.count(antigo) == n for antigo, novo, n in trocas):
+        return aplicar(texto, ficheiro, sem_cache)
+    raise AssertionError(('decisão 163 (base em estado misto)', ficheiro))
+
+
+def acrescentadas(texto, ficheiro, rotulos, sem_cache=False):
+    """06/11/2026: quantas vezes cada rótulo entrou pelas trocas deste manifesto numa base que já as traz (contagem exata,
+    tirada do próprio manifesto: por troca, as vezes no «novo» menos as vezes no «antigo», vezes a quantidade). Numa base
+    anterior à fusão do #125 é zero. Serve as contagens fechadas de renomeacoes_cidadania.renomear: o menu ≡ diz, por
+    exemplo, «Módulo 1: Humanos.» e isso não é um resto do nome antigo."""
+    trocas = TROCAS['sem_cache' if sem_cache else 'exato'].get(ficheiro, [])
+    if not trocas:  # sem trocas, nada a somar (também os binários)
+        return {r: 0 for r in rotulos}
+    s = texto.decode('utf-8') if isinstance(texto, bytes) else texto
+    if not _ja_fundido(s, trocas):
+        return {r: 0 for r in rotulos}
+    return {r: sum(n * (novo.count(r) - antigo.count(r)) for antigo, novo, n in trocas) for r in rotulos}
