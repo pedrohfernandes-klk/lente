@@ -25,6 +25,9 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PASTA = ROOT / 'tools' / 'licoes'
 _contratos = importlib.util.spec_from_file_location('laboratorio_contratos', ROOT / 'tools/laboratorio_contratos.py')
 LC = importlib.util.module_from_spec(_contratos); _contratos.loader.exec_module(LC)
+# 05/11/2026: decisão 163. O menu ≡ vem do construtor comum (tools/menu_casca.py), o mesmo das peças e da Cidadania estática.
+_menu = importlib.util.spec_from_file_location('menu_casca', ROOT / 'tools/menu_casca.py')
+MC = importlib.util.module_from_spec(_menu); _menu.loader.exec_module(MC)
 LENTE = 'https://pedrohfernandes-klk.github.io/lente/'
 # 02/11/2026: cache do motor independente da versão pedagógica e do progresso.
 VERSAO_FICHEIROS = '20261102-1'
@@ -549,31 +552,36 @@ def nq(s):
     return ''.join(partes)
 
 
-def _menu_cidadania(d, mod, molde=False):
-    # 05/11/2026 (plano do molde da Cidadania, pedido 1): no molde novo, «Como se faz» aponta para os vídeos do Lente.
-    como = COMO_LENTE if molde else 'https://pedrohfernandes-klk.github.io/pt/como/'
-    return (
-        f'<div class="casca-menu" data-c-painel hidden><div class="c-menu-in" role="dialog" aria-label="Menu"><div class="c-menu-cab"><p>Cidadania, módulo {mod["n"]}<br>{esc(mod["nome"])}</p>'
-        # 31/10/2026 (revisão do diretor de arte): o botão do tema vai para o menu (appearance.js usa este lugar); fora da barra,
-        # a casca deixa de passar a largura do ecrã a 320 e 360 px.
-        '<span data-appearance-control></span><button type="button" class="c-ic" data-c-fecha-menu aria-label="Fechar o menu">✕</button></div><nav><ol class="c-migalhas" aria-label="Onde estás">'
-        f'<li style="--k:0"><a href="{LENTE}">Lente</a></li><li style="--k:1"><a href="{LENTE}cidadania/">Cidadania</a></li>'
-        f'<li style="--k:2"><a href="{esc(mod["url"])}">Módulo {mod["n"]}: {esc(mod["nome"])}</a></li><li><span class="aqui" style="--k:3">Estás em: {esc(d["titulo"])}</span></li></ol>'
-        f'<a href="{esc(mod["url"])}">As sessões do módulo</a><a href="{como}">Como se faz (vídeos)</a></nav>'
-        f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
+def _ctx_cidadania(d, mod):
+    # 05/11/2026: decisão 163. «Lente» e «Cidadania» (decisão 150, nomes de uma palavra) em vez de «Página inicial» e
+    # «Cidadania e Desenvolvimento»; o mesmo destino tem sempre o mesmo nome; as fontes de hoje, inteiras, num details.
+    # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). O menu ≡ serve também as sessões no molde novo
+    # (cidadania/m1/sessoes/01/), que este gerador escreve como as do piloto. «Como se faz (vídeos)» vai para os vídeos do Lente
+    # (COMO_LENTE, que o molde pedia, é o mesmo endereço que menu_casca.COMO) em todas as sessões, no molde e fora dele.
+    modulo = f'Módulo {mod["n"]}: {mod["nome"]}'
+    return {'cab': f'Cidadania, módulo {mod["n"]}', 'titulo': d['titulo'], 'onde': modulo + '.',
+            'voltar': (mod['url'], 'Voltar ao módulo', modulo), 'seguinte': _seguinte(d, mod), 'papel': None, 'projecao': True,
+            'caminho': [('Lente', LENTE), ('Cidadania', LENTE + 'cidadania/'), (modulo, mod['url'])],
+            'fontes': f'EPI, Escola Profissional de Imagem. Cidadania e Desenvolvimento 2026/2027. {esc(d["titulo"])}. Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.'}
 
 
-def _menu_laboratorio(d, sec):
-    # 31/10/2026: o mesmo menu da casca, com as migalhas do Laboratório (Lente › Laboratório › secção) e a lista das sessões
+def _ctx_laboratorio(d, sec):
     # 31/10/2026 (revisão de pt-PT): o ponto final só se junta a um título que não acabe já em «?» ou «!» (era «observar?.»)
     tit = esc(d['titulo']) + ('' if d['titulo'].rstrip().endswith(('?', '!')) else '.')
-    return (
-        f'<div class="casca-menu" data-c-painel hidden><div class="c-menu-in" role="dialog" aria-label="Menu"><div class="c-menu-cab"><p>Laboratório<br>{esc(sec["nome"])}</p>'
-        '<span data-appearance-control></span><button type="button" class="c-ic" data-c-fecha-menu aria-label="Fechar o menu">✕</button></div><nav><ol class="c-migalhas" aria-label="Onde estás">'
-        f'<li style="--k:0"><a href="{LENTE}">Lente</a></li><li style="--k:1"><a href="{LENTE}narrativas/">Laboratório</a></li>'
-        f'<li style="--k:2"><a href="{esc(sec["url"])}">{esc(sec["nome"])}</a></li><li><span class="aqui" style="--k:3">Estás em: {esc(d["titulo"])}</span></li></ol>'
-        f'<a href="{esc(sec["url"])}">{esc(sec["rotulo"])}</a><a href="https://pedrohfernandes-klk.github.io/pt/como/">Como se faz (vídeos)</a></nav>'
-        f'<p class="c-menu-extra">EPI, Escola Profissional de Imagem. Laboratório, {esc(sec["nome"])}: {esc(sec["subtitulo"])}. {tit} Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.</p></div></div>')
+    passo = (d['passo'][0].lower() + d['passo'][1:]) if d.get('passo') else ''
+    return {'cab': f'Laboratório, {sec["nome"]}', 'titulo': d['titulo'], 'onde': f'{sec["nome"]}' + (f', {passo}.' if passo else '.'),
+            'voltar': (sec['url'], f'Voltar ao {sec["nome"]}', 'As sessões e o método'), 'seguinte': _seguinte(d, sec),
+            'papel': (sec['url'] + 'guiao/', 'Guião para imprimir'), 'projecao': True,
+            'caminho': [('Lente', LENTE), ('Laboratório', LENTE + 'narrativas/'), (sec['nome'], sec['url'])],
+            'fontes': f'EPI, Escola Profissional de Imagem. Laboratório, {esc(sec["nome"])}: {esc(sec["subtitulo"])}. {tit} Fontes: {esc_it(d["fontes"])} O que marcas fica só neste aparelho.'}
+
+
+def _seguinte(d, grupo):
+    """«Seguinte» no menu só quando o destino é diferente do de «Voltar»."""
+    if not d.get('seguinte') or urljoin(LENTE + d['saida'], d['seguinte']) == grupo['url']:
+        return None
+    rot = d.get('seguinteRotulo') or ''
+    return (d['seguinte'], 'Seguinte', rot)
 
 
 def pagina(d):
@@ -585,7 +593,8 @@ def pagina(d):
     mod = d[F['grupo']]
     piloto = d.get('piloto')
     dados = json.dumps(LC.cartoes(d), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
-    menu = _menu_laboratorio(d, mod) if lab else _menu_cidadania(d, mod, d.get('molde') == MOLDE)
+    ctx = _ctx_laboratorio(d, mod) if lab else _ctx_cidadania(d, mod)
+    menu = MC.menu(ctx)
     cfg = {'versao': d['versao'], 'marca': d['marca'], 'chave': d['chave'], 'titulo': d['titulo'], 'variar': False}
     # 02/11/2026: o Laboratório conserva o feito antigo e deixa de mostrar pontuações.
     # 05/11/2026 (plano do molde da Cidadania, pedido 1): o cfg vem da família (FAMILIAS[…]['cfg']); na Cidadania, as pistas e o
@@ -620,17 +629,21 @@ def pagina(d):
     # observar? (passo 1 de 5) | Ideias | Laboratório | Lente»), porque abaixo de 430 px a marca da casca não tem lugar para ele
     if lab and d.get('passo'):
         titulo = f'{esc(d["titulo"])} ({esc(d["passo"][0].lower() + d["passo"][1:])}) | {esc(mod["nome"])} | Laboratório | Lente'
-    marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar a {esc(mod["nome"])}">' if lab
-             else f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Voltar ao módulo {mod["n"]} de Cidadania">')
+    # 05/11/2026: decisão 163. Na Cidadania, «CD» passa a «Cidadania» (escondida abaixo de 400 px, como a do Laboratório) e o
+    # nome acessível começa pelo texto visível; o «marca» dos JSON, que o motor usa, não muda.
+    # 05/11/2026 (revisão): no Laboratório, o nome acessível da marca passa a «Laboratório, Ideias» (paralelo a «Cidadania, módulo N»
+    # e ao cabeçalho do menu); «Voltar a Ideias» dava ao mesmo destino outro nome que o primeiro item do menu («Voltar ao Ideias»).
+    marca = (f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Laboratório, {esc(mod["nome"])}">' if lab
+             else f'<a class="c-marca" href="{esc(mod["url"])}" aria-label="Cidadania, módulo {mod["n"]}">')
     # 01/11/2026 (correção 2 do coração do Laboratório, diretor de arte): no Laboratório, o nome da marca vai num <span>, que
     # assets/licoes/laboratorio.css esconde abaixo de 400 px («Ideias» tem 81 px e empurrava o botão Menu para fora do ecrã a
     # 320 e 360 px); o aria-label continua a dizer o nome. A Cidadania fica como estava, byte a byte.
-    marca_t = f'<span class="c-marca-t">{esc(d["marca"])}</span>' if lab else esc(d['marca'])
+    marca_t = f'<span class="c-marca-t">{esc(d["marca"])}</span>' if lab else '<span class="c-marca-t">Cidadania</span>'
     # 01/11/2026 (método do coração do Laboratório): no Laboratório, o passo do método («Passo 1 de 5») segue a marca numa
     # <span> própria, à vista em todos os cartões; assets/licoes/laboratorio.css junta-lhe a vírgula quando o nome se vê e
     # deixa-o sozinho abaixo de 400 px. Sem o campo «passo» (e na Cidadania) a barra fica como estava, byte a byte.
-    if lab and d.get('passo'):
-        marca_t += f'<span class="c-marca-p">{esc(d["passo"])}</span>'
+    # 05/11/2026: decisão 163. Sai: o passo ficava encostado ao contador «1/21» como um segundo contador; passa para o menu
+    # («Ideias, passo 1 de 5.») e continua no <title>.
     return (
         '<!doctype html><html lang="pt-PT" data-appearance-site="lente"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         f'<title>{titulo}</title>'
@@ -645,14 +658,14 @@ def pagina(d):
             'licoes/aula-clara.css', 'licoes/casca-pc.css', 'licoes/ampliar-documentos.css', 'licoes/recolha.css', 'info-i.css')) if molde else '')
         + f'<link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}">'
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
-        f'</head><body class="licao-lente {F["classe"]}{" molde-cidadania" if molde else ""}" data-licao="{esc(d["id"])}">'
+        f'<link rel="stylesheet" href="{base}assets/licoes/menu.css?v={MC.V}"></head><body class="licao-lente {F["classe"]}{" molde-cidadania" if molde else ""}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
         f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{marca_t}</a>'
         '<span class="c-num" data-c-num></span><button type="button" class="c-barra" data-c-barra aria-label="Ver os cartões já feitos" disabled><svg viewBox="0 0 1 10" preserveAspectRatio="none" aria-hidden="true"></svg></button>'
         '<span class="c-modo" data-c-modo hidden></span><button type="button" class="c-ic" data-c-como aria-label="Como se faz" title="Como se faz" hidden><span class="c-roda">?</span></button>'
         '<button type="button" class="c-ic" data-c-som aria-pressed="false" aria-label="Som" title="Som ligado ou desligado"><span class="c-roda">♪</span></button>'
-        '<button type="button" class="c-ic" data-c-menu aria-label="Menu" aria-expanded="false" title="Menu"><span class="c-tres"></span></button></header>'
-        f'<h1 class="c-sr">{esc(d["h1"])}</h1><main class="casca-corpo" id="casca-corpo" tabindex="-1"><div id="baralho" class="jogo-alvo"></div></main>'
+        '<button type="button" class="c-ic" data-c-menu aria-label="Menu" aria-expanded="false" aria-controls="c-menu" title="Menu"><span class="c-tres"></span></button></header>'
+        f'<h1 class="c-sr">{esc(d["h1"])}</h1><main class="casca-corpo" id="casca-corpo" tabindex="-1">{MC.semjs(ctx, "sessão")}<div id="baralho" class="jogo-alvo"></div></main>'
         '<footer class="casca-acoes" data-c-acoes></footer><section class="casca-folha" data-c-folha role="status" aria-live="polite" hidden></section>'
         + menu + extra + '</div><div id="aviso" role="status"></div>'
         # 05/11/2026 (plano do molde da Cidadania, pedido 1): o progresso comum entra onde o cfg pede preservarAnterior
@@ -662,6 +675,7 @@ def pagina(d):
             'licoes/aula-clara.js', 'licoes/ampliar-documentos.js', 'info-i.js', 'licoes/recolha.js')) if molde else '')
         # 05/11/2026: no molde, o motor e a casca (com a retoma e o COMO do Lente) entram com a chave de cache nova
         +f'<script src="{base}assets/licoes/casca.js?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}"></script><script src="{base}assets/licoes/jogo.js?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}"></script>'
+        + f'<script defer src="{base}assets/licoes/menu.js?v={MC.V}"></script>'
         + (f'<script defer src="{base}assets/licoes/video-youtube.js?v={VERSAO_FICHEIROS}"></script>' if tem_video else '')
         + f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
         '<script>(function(){"use strict";var CARTOES=' + dados + ',CFG=' + json.dumps(cfg, ensure_ascii=False) + ';'

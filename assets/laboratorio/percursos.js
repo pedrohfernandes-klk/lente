@@ -2,6 +2,7 @@
    Não lê respostas, não envia dados e não consulta progresso em projeção (?projetar=1 ou dentro da moldura /projetar/).
    31/10/2026: a reposição lê o aparelho no momento em que repõe; «a seguir» na primeira peça por fazer.
    31/10/2026 (segunda correção): uma só marca «a seguir» por página, a peça para onde leva «Começar» ou «Continuar».
+   05/11/2026: decisão 163. Rótulos «Feita dd/mm» e «A seguir» das linhas, das portas e do índice (antes em cartaz.js); sem dobras.
    05/11/2026: decisão 147 (revisão). Um ficheiro só com peças retiradas não recarrega e diz porquê; num ficheiro misto, a nota
    «Repostas N peças; M já não fazem parte do Laboratório.» passa o recarregamento em sessionStorage. Um id desconhecido continua recusado. */
 (function(){'use strict';
@@ -30,12 +31,32 @@
   }
  }
  function ids(el,key){return JSON.parse(el.dataset[key]);}
- document.querySelectorAll('[data-estado]').forEach(el=>{const s=states[el.dataset.estado];el.textContent=s;if(s!=='por fazer')el.closest('li').classList.add('feito');});
- const cont=document.querySelector('[data-continuar]');if(cont){const id=ids(cont,'continuar').find(i=>states[i]==='por fazer');const li=id&&document.querySelector('ol.passos li[data-peca="'+CSS.escape(id)+'"]');if(li){li.classList.add('seguir');const c=li.querySelector('[data-estado]');if(c)c.textContent='a seguir';}}
- document.querySelectorAll('[data-contagem]').forEach(el=>{const all=ids(el,'contagem'),n=all.filter(id=>states[id]!=='por fazer').length;el.textContent=n+' de '+all.length+' peças feitas';});
+ // 05/11/2026: decisão 163 (menus do Laboratório). O estado diz-se com quadrado e palavra: «Feita dd/mm» (a data só quando há
+ // uma data verdadeira; nunca se inventa) e «A seguir». «A seguir» só aparece quando já há alguma peça feita na lista da página
+ // (a porta, o percurso ou o Laboratório inteiro, na entrada). «Por fazer» nunca se escreve. Substitui o rótulo de cartaz.js.
+ function val(p){const q=p.progress,s=read(q.key);if(q.kind==='formas'){const it=s.version===1&&s.itens&&s.itens[q.id];return it&&(it.revi||it.experimentei);}if(q.kind==='montagem')return s.version===1&&Array.isArray(s.done)&&q.ids.every(id=>s.done.includes(id));return s.feitas&&s.feitas[q.id];}
+ const DESDE=Date.UTC(2020,0,1);
+ function dia(v){const d=typeof v==='number'&&v>DESDE?new Date(v):null;return d&&Number.isFinite(d.getTime())?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0'):'';}
+ function feita(v){const d=dia(v);return 'Feita'+(d?' '+d:'');}
+ const cont=document.querySelector('[data-continuar]'),lista=cont?ids(cont,'continuar'):[],algo=lista.some(id=>states[id]!=='por fazer'),proxima=lista.find(id=>states[id]==='por fazer');
+ // as linhas das sessões do Ideias na entrada também têm [data-estado] (vazio): são de entrada.js e ficam de fora
+ document.querySelectorAll('[data-estado]').forEach(el=>{const id=el.dataset.estado;if(!id||!Object.hasOwn(by,id))return;const s=states[id],li=el.closest('li');if(s!=='por fazer'){el.textContent=feita(val(by[id]));el.classList.add('feita');if(li)li.classList.add('feito');const a=el.closest('.linha');if(a)a.classList.add('feita');}else el.textContent='';});
+ if(proxima&&algo){document.querySelectorAll('li[data-peca="'+CSS.escape(proxima)+'"]').forEach(li=>{li.classList.add('seguir');const a=li.querySelector('.linha');if(a)a.classList.add('seguir');const c=li.querySelector('[data-estado]');if(c){c.textContent='A seguir';c.classList.add('seguir');}});}
+ // Contagens: «N de M peças feitas» (ou «N de M feitas» nas portas da entrada); as que começam escondidas só aparecem com algo feito.
+ document.querySelectorAll('[data-contagem]').forEach(el=>{const all=ids(el,'contagem'),n=all.filter(id=>states[id]!=='por fazer').length;el.textContent=n+' de '+all.length+(el.hasAttribute('data-curto')?' feitas':' peças feitas');if(el.hasAttribute('hidden')||el.dataset.escondida!==undefined){el.dataset.escondida='';el.hidden=n===0;}});
+ // Índice dos percursos na entrada: o percurso da peça seguinte leva a classe «current» (sempre, para o progresso), mas a palavra
+ // «A seguir» e o filete só se veem quando já há alguma peça feita; um percurso inteiro feito diz «Feita dd/mm».
+ // 05/11/2026 (revisão): quando o Ideias da entrada já marca a sessão seguinte, entrada.js (que corre depois) tira esta marca,
+ // para haver uma só «A seguir» na página.
+ document.querySelectorAll('[data-cz-route]').forEach(row=>{const l=ids(row,'czRoute'),vs=l.map(id=>val(by[id])),completo=l.every(id=>states[id]!=='por fazer'),atual=!!proxima&&l.includes(proxima),lab=row.querySelector('.cz-state');
+  row.classList.toggle('current',atual&&!completo);row.classList.toggle('done',completo);
+  if(lab){const d=completo&&vs.every(v=>typeof v==='number'&&v>DESDE)?Math.max(...vs):null;lab.textContent=completo?feita(d):atual&&algo?'A seguir':'';lab.classList.toggle('done',completo);lab.classList.toggle('current',atual&&algo&&!completo);}});
+ if(algo)document.documentElement.classList.add('lab-tem-feitas');
  const root=new URL(document.querySelector('[data-raiz]').dataset.raiz,location.href);
- document.querySelectorAll('[data-continuar]').forEach(el=>{const all=ids(el,'continuar'),done=all.some(id=>states[id]!=='por fazer'),id=all.find(id=>states[id]==='por fazer')||all[0],p=by[id];el.textContent=(all.every(id=>states[id]!=='por fazer')?'Percurso feito. Recomeçar: ':done?'Continuar: ':'Começar: ')+p.title+'\u00a0→';const u=new URL(p.url,root);if(projected)u.searchParams.set('projetar','1');el.href=u.href;});
+ document.querySelectorAll('[data-continuar]').forEach(el=>{const all=ids(el,'continuar'),done=all.some(id=>states[id]!=='por fazer'),id=all.find(id=>states[id]==='por fazer')||all[0],p=by[id];el.textContent=(all.every(id=>states[id]!=='por fazer')?'Percurso feito. Recomeçar: ':done?'Continuar: ':'Começar: ')+p.title+' →';const u=new URL(p.url,root);if(projected)u.searchParams.set('projetar','1');el.href=u.href;});
  if(projected)document.querySelectorAll('a[href]').forEach(a=>{const u=new URL(a.href);if(u.origin===location.origin){u.searchParams.set('projetar','1');a.href=u.href;}});
- const wide=matchMedia('(min-width:640px)');function dobras(){if(wide.matches)document.querySelectorAll('details.dobra').forEach(d=>{d.open=true;});}dobras();if(wide.addEventListener)wide.addEventListener('change',dobras);
+ // Na impressão, os créditos do «i» abrem-se por extenso (decisão 153) e voltam a fechar depois.
+ addEventListener('beforeprint',()=>document.querySelectorAll('details.info-i:not([open])').forEach(d=>{d.open=true;d.dataset.impressao='';}));
+ addEventListener('afterprint',()=>document.querySelectorAll('details.info-i[data-impressao]').forEach(d=>{d.open=false;delete d.dataset.impressao;}));
  addEventListener('pageshow',e=>{if(e.persisted)location.reload();});
 })();
