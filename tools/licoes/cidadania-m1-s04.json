@@ -21,7 +21,7 @@
   "projeto": 45,
   "entrega": 5
  },
- "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">Duas fontes que não se copiam</p><p class=\"sub\">Antes de pores uma fala no teu teatro-documento, verificas de onde ela vem. Primeiro, treina com três afirmações escritas para este treino e conferidas a 6 de novembro de 2026 em páginas oficiais: «A Constituição portuguesa proíbe a censura»; «Portugal assinou a Convenção sobre os Direitos da Criança em Lisboa»; «A Assembleia da República aprovou essa Convenção em 1990». Para cada uma, escreve em papel: onde a podes confirmar, duas fontes que não se copiam (abre outros separadores antes de ler uma página até ao fim) e o teu veredicto: verdadeira, falsa ou sem prova. Depois, faz o mesmo para a tua pergunta: duas fontes independentes, com o que é preciso para as reencontrar. O que conta: as duas fontes chegaram à informação cada uma pelo seu lado; uma página que copia outra conta como uma só; o que um assistente de inteligência artificial responde é mais uma afirmação a verificar, não uma fonte.</p><p class=\"ir\"><a href=\"../../../projeto/#metodo\">As fontes, no enunciado da Pergunta Humana</a></p></article>",
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">Duas fontes que não se copiam</p><p class=\"sub\">Antes de pores uma fala no teu teatro-documento, verificas de onde ela vem. Primeiro, treina com três afirmações escritas para isso e conferidas a 6 de novembro de 2026 em páginas oficiais: «A Constituição portuguesa proíbe a censura»; «Portugal assinou a Convenção sobre os Direitos da Criança em Lisboa»; «A Assembleia da República aprovou essa Convenção em 1990». Para cada uma, escreve em papel: onde a podes confirmar, duas fontes que não se copiam (abre outros separadores antes de ler uma página até ao fim) e o teu veredicto: verdadeira, falsa ou sem prova. Depois, faz o mesmo para a tua pergunta: duas fontes independentes, com o que é preciso para as reencontrar. O que conta: as duas fontes chegaram à informação cada uma pelo seu lado; uma página que copia outra conta como uma só; o que um assistente de inteligência artificial responde é mais uma afirmação a verificar, não uma fonte.</p><p class=\"ir\"><a href=\"../../../projeto/#metodo\">As fontes, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
@@ -74,7 +74,7 @@
    "tipo": "aplicar",
    "conceito": "consentimento para um uso",
    "v": false,
-   "fe": "Um sim não passa de um uso para outro: a Inês aceitou mostrá-la à turma, não publicá-la. É o que viste na sessão 02: «Aceitar ser filmado não é aceitar ser publicado.» Volta ao caso e vê para que uso foi o sim.",
+   "fe": "Um sim não passa de um uso para outro: a Inês aceitou que ele a mostrasse à turma, não que a publicasse. É o que viste na sessão 02: «Aceitar ser filmado não é aceitar ser publicado.» Volta ao caso e vê para que uso foi o sim.",
    "pista": "Pergunta-te para que uso a Inês disse que sim.",
    "g": "recupera",
    "origem": "cidadania/m1/sessoes/02/"
@@ -83,7 +83,7 @@
    "t": "ler",
    "rot": "Olha",
    "titulo": "Um rei que se torna pera",
-   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Vê se há um desenho em que o rosto deixa de ser o do rei.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Quatro desenhos de 1834: o rei que se torna pera\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/les-poires-1834-pagina.webp\" alt=\"Página de jornal de 1834. No alto, o título «LES POIRES» e duas linhas em francês; por baixo, um parágrafo e quatro desenhos a traço, dois em cima e dois em baixo, cada um com uma legenda em francês; no fim, outro parágrafo e uma margem de papel em branco. O rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera; no último, é uma pera com folhas, com marcas no lugar dos olhos e da boca.\" width=\"1100\" height=\"1818\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\"><i>Les Poires</i>, gravura em madeira publicada em <i>Le Charivari</i>, 17 de janeiro de 1834. Desenho talvez de Honoré Daumier, a partir de uma litografia de Charles Philipon (<i>La Caricature</i>, 1831); gravador desconhecido. Gallica, Biblioteca Nacional de França, bpt6k3058046f, f. 3. <a href=\"https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg\">Registo de origem</a>. Domínio público.</p></details></div><figcaption>Uma página do jornal francês <i>Le Charivari</i>, 17 de janeiro de 1834, com quatro desenhos. O primeiro rosto é o do rei Luís Filipe.</figcaption></figure></div>",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Vê se há um desenho em que o rosto deixa de ser o do rei.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Quatro desenhos de 1834: o rei que se torna pera\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/les-poires-1834-pagina.webp\" alt=\"Página de jornal de 1834. No alto, o título «LES POIRES» e duas linhas em francês; por baixo, um parágrafo e quatro desenhos a traço, dois em cima e dois em baixo, cada um com uma legenda em francês; no fim, outro parágrafo e uma margem de papel em branco. O rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera; no último, é uma pera, com marcas no lugar dos olhos e da boca.\" width=\"1100\" height=\"1818\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\"><i>Les Poires</i>, gravura em madeira publicada em <i>Le Charivari</i>, 17 de janeiro de 1834. Desenho talvez de Honoré Daumier, a partir de uma litografia de Charles Philipon (<i>La Caricature</i>, 1831); gravador desconhecido. Gallica, Biblioteca Nacional de França, bpt6k3058046f, f. 3. <a href=\"https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg\">Registo de origem</a>. Domínio público.</p></details></div><figcaption>Uma página do jornal francês <i>Le Charivari</i>, 17 de janeiro de 1834, com quatro desenhos. O primeiro rosto é o do rei Luís Filipe.</figcaption></figure></div>",
    "min": 3
   },
   {
@@ -242,7 +242,7 @@
    "t": "emparelhar",
    "rot": "Quatro publicações, quatro tipos",
    "p": "Caso inventado: quatro publicações na página de outra escola. Liga cada uma ao seu tipo.",
-   "p2": "Liga cada publicação, inventada, de outra escola ao tipo a que pertence.",
+   "p2": "As publicações de outra escola são inventadas: liga cada uma ao tipo a que pertence.",
    "f": "Pôr em causa uma regra é crítica; o semáforo exagera quem manda; dizer que o treinador fica com o dinheiro acusa uma pessoa concreta de uma coisa que se prova ou não; visar colegas pelo país de onde vêm é atacá-los pela origem.",
    "min": 3,
    "tipo": "transferir",
@@ -294,7 +294,7 @@
     ],
     [
      "tre-2017-ii",
-     "interesses legítimos"
+     "que a imputação seja feita para realizar interesses legítimos"
     ],
     [
      "tre-2017-ii",
@@ -317,7 +317,7 @@
    "fe": [
     "A página estava aberta: o tribunal fala da «liberdade de interacção» que a página concedia. O problema foi o que ela escreveu. Volta ao comentário: de que mais acusa o gerente?",
     "",
-    "O tribunal exige dois requisitos para a conduta não ser punível: que a imputação sirva «interesses legítimos» e «que o agente prove a verdade da imputação». Ela provou que não lhe pagaram o ordenado; o resto, não. Volta ao comentário."
+    "O tribunal exige dois requisitos para a conduta não ser punível: «que a imputação seja feita para realizar interesses legítimos» e «que o agente prove a verdade da imputação». Ela provou que não lhe pagaram o ordenado; o resto, não. Volta ao comentário."
    ]
   },
   {

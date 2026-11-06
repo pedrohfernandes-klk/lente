@@ -49,7 +49,7 @@ IMG = '../../../../img/cidadania/les-poires-1834-pagina.webp'
 ALT = ('Página de jornal de 1834. No alto, o título «LES POIRES» e duas linhas em francês; por baixo, um parágrafo e quatro desenhos '
        'a traço, dois em cima e dois em baixo, cada um com uma legenda em francês; no fim, outro parágrafo e uma margem de papel em '
        'branco. O rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera; no '
-       'último, é uma pera com folhas, com marcas no lugar dos olhos e da boca.')
+       'último, é uma pera, com marcas no lugar dos olhos e da boca.')
 ROTULO_I = 'Créditos da gravura'  # 06/11/2026 (revisão): as duas imagens da sessão são gravuras, não fotografias
 # 06/11/2026: no cartão, o motor mostra a imagem em miniatura, recortada a 210 px de altura (lesson.css, .ver-fig); para que nada
 # importante fique de fora, os cartões 6 e 7 levam recortes do mesmo documento (domínio público, como o original), feitos de
@@ -133,7 +133,7 @@ CARTOES = [
      'Falso. A Inês disse que sim a mostrar a caricatura à turma, não a publicá-la numa conta que toda a escola vê. É a ideia da '
      f'sessão{NB}02: «O sim vale para o uso que se explicou.»',
      4, 'aplicar', 'consentimento para um uso', v=False,
-     fe=f'Um sim não passa de um uso para outro: a Inês aceitou mostrá-la à turma, não publicá-la. É o que viste na sessão{NB}02: '
+     fe=f'Um sim não passa de um uso para outro: a Inês aceitou que ele a mostrasse à turma, não que a publicasse. É o que viste na sessão{NB}02: '
         '«Aceitar ser filmado não é aceitar ser publicado.» Volta ao caso e vê para que uso foi o sim.',
      pista='Pergunta-te para que uso a Inês disse que sim.'),
      origem='cidadania/m1/sessoes/02/'),
@@ -242,7 +242,7 @@ CARTOES = [
                  'da língua ou da religião (artigo 13.º, n.º 2).</p>'),
  M.fazer('emparelhar', 'Quatro publicações, quatro tipos',
          'Caso inventado: quatro publicações na página de outra escola. Liga cada uma ao seu tipo.',
-         'Liga cada publicação, inventada, de outra escola ao tipo a que pertence.',
+         'As publicações de outra escola são inventadas: liga cada uma ao tipo a que pertence.',
          'Pôr em causa uma regra é crítica; o semáforo exagera quem manda; dizer que o treinador fica com o dinheiro acusa uma pessoa '
          'concreta de uma coisa que se prova ou não; visar colegas pelo país de onde vêm é atacá-los pela origem.',
          3, 'transferir', 'quatro tipos de publicação',
@@ -265,15 +265,16 @@ CARTOES = [
            'A página estava aberta: o tribunal fala da «liberdade de interacção» que a página concedia. O problema foi o que ela escreveu. '
            'Volta ao comentário: de que mais acusa o gerente?'),
           ('Ficar calada: dizer em público que alguém deve dinheiro é crime.',
-           'O tribunal exige dois requisitos para a conduta não ser punível: que a imputação sirva «interesses legítimos» e «que o '
-           'agente prove a verdade da imputação». Ela provou que não lhe pagaram o ordenado; o resto, não. Volta ao comentário.')],
+           'O tribunal exige dois requisitos para a conduta não ser punível: «que a imputação seja feita para realizar interesses '
+           'legítimos» e «que o agente prove a verdade da imputação». Ela provou que não lhe pagaram o ordenado; o resto, não. Volta '
+           'ao comentário.')],
          'O tribunal escreveu que ela imputou ao gerente «outros comportamentos genéricos, que não concretiza nem demonstra, como sejam '
          'as dívidas a fornecedores». Provar um facto não prova os outros. E «Não tem vergonha» é um juízo de valor, que não se prova.',
          4, 'transferir', 'acusação de facto e prova',
          cita=COMENTARIO, fonte='tre-2017-i',
          citacoes=[('tre-2017-iv', 'outros comportamentos genéricos, que não concretiza nem demonstra, como sejam as dívidas a fornecedores'),
                    ('tre-2017-i', 'Não tem vergonha'), ('tre-2017-i', 'liberdade de interacção'),
-                   ('tre-2017-ii', 'interesses legítimos'), ('tre-2017-ii', 'que o agente prove a verdade da imputação')],
+                   ('tre-2017-ii', 'que a imputação seja feita para realizar interesses legítimos'), ('tre-2017-ii', 'que o agente prove a verdade da imputação')],
          liga=[{'t': 'Ler o acórdão da Relação de Évora, 21/03/2017 (dgsi.pt)', 'href': DGSI}],
          pista='Repara em tudo aquilo de que o comentário acusa o gerente.'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
@@ -381,7 +382,7 @@ LUGARES = (1, 2, 0, 2, 0, 1)
 # terceira é verdadeira). As respostas ficam no guia (GUIA['04']).
 DEPOIS = ('<article class="c"><p class="rot">O passo do teu projeto</p><p class="tit">Duas fontes que não se copiam</p>'
           '<p class="sub">Antes de pores uma fala no teu teatro-documento, verificas de onde ela vem. Primeiro, treina com três afirmações '
-          f'escritas para este treino e conferidas a 6{NB}de{NB}novembro{NB}de{NB}2026 em páginas oficiais: «A Constituição portuguesa '
+          f'escritas para isso e conferidas a 6{NB}de{NB}novembro{NB}de{NB}2026 em páginas oficiais: «A Constituição portuguesa '
           'proíbe a censura»; «Portugal assinou a Convenção sobre os Direitos da Criança em Lisboa»; «A Assembleia da República aprovou '
           'essa Convenção em 1990». Para cada uma, escreve em papel: onde a podes confirmar, duas fontes que não se copiam (abre outros '
           'separadores antes de ler uma página até ao fim) e o teu veredicto: verdadeira, falsa ou sem prova. Depois, faz o mesmo para a tua pergunta: duas '
