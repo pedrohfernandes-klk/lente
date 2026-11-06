@@ -316,7 +316,11 @@ class Listas(unittest.TestCase):
         self.assertIn("'{n} de ' + APOIOS_M1 + ' apoios do M1", js)
         for m, de, ate in (('m1', 3, 10), ('m2', 1, 10)):
             pastas = sorted(int(p.parent.name) for p in (R / 'cidadania' / m / 'sessoes').glob('[0-9][0-9]/index.html') if 'data-session-done' in p.read_text('utf-8'))
-            self.assertEqual(pastas, list(range(de, ate + 1)), m)
+            # 06/11/2026 (decisões 166 a 168): a sessão 03 do M1 passou ao molde final, que não tem o registo do percurso publicado; os
+            # registos antigos da 03 continuam a ler-se e a contar (as chaves do percurso publicado leem-se e nunca se apagam; plano do
+            # molde, secção 5), por isso o total embutido fica de 03 a 10 e só a página da 03 deixa de ter o botão.
+            sem_registo = {3} if m == 'm1' else set()
+            self.assertEqual(pastas, [n for n in range(de, ate + 1) if n not in sem_registo], m)
             self.assertIn("'%s': {de: %d, ate: %d}" % (m[1], de, ate), js)
             # 28/10/2026: «com registo», e no M1 diz que o total começa na sessão 03
             self.assertIn("'%s: {n} de %d sessões com registo%s'" % (m.upper(), ate - de + 1, ' (da %02d à %02d)' % (de, ate) if de > 1 else ''), js)

@@ -28,6 +28,9 @@ MOLDE_P1 = json.loads((R / 'tools/trocas/molde-pedido1-20261105.json').read_text
 sys.path.insert(0, str(R / 'tests'))
 import grupos146, molde_pedido2  # noqa: E402
 import molde_s02  # noqa: E402  06/11/2026: fusão do main na sessão 02 do M1 (camada por cima do pedido 2)
+# 06/11/2026: fusão do main (com a sessão 2 final, os menus e o «Dilemas») na sessão 03 do M1. O manifesto fechado da s03
+# (tests/molde_s03.py) parte do main b29833d, já com a 163: é a camada mais recente e desfaz-se no ficheiro atual (abaixo).
+import molde_s03  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -279,9 +282,19 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s02.inteiro_ok(rel), rel)
                 continue
+            # 06/11/2026: fusão do main na sessão 03 do M1. O mesmo para os ficheiros que a s03 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
+            if rel in molde_s03.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s03.inteiro_ok(rel), rel)
+                continue
             if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS or rel in molde_s02.TROCAS:  # 06/11/2026: também a camada da s02
                 antes = com_molde(antes, rel)
             agora = ler(rel)
+            # 06/11/2026: fusão do main na sessão 03 do M1. Nos ficheiros que a s03 muda em parte, desfaz-se primeiro a sua camada
+            # no ficheiro atual (manifesto fechado, contagem exata de cada «novo»); o que fica, o ficheiro do main, confere-se como antes.
+            if rel in molde_s03.TROCAS:
+                agora = molde_s03.desfazer(agora, rel)
             antes_d |= destinos(rel, antes); depois_d |= destinos(rel, agora)
             with self.subTest(rel=rel):
                 a, b = Ligacoes(), Ligacoes(); a.feed(antes); b.feed(agora)
