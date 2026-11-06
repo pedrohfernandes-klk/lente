@@ -20,7 +20,7 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Muitas vozes, uma escola",
-   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento diante da turma.</p>"
+   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento (na aula, diante da turma).</p>"
   },
   {
    "t": "ler",
@@ -174,7 +174,7 @@
   {
    "t": "ler",
    "rot": "Na aula",
-   "titulo": "O ensaio cruzado",
+   "titulo": "O ensaio",
    "html": "<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>"
   },
   {

@@ -18,6 +18,11 @@
    "pela turma,",
    "por ti,",
    1
+  ],
+  [
+   "regras de uso das redes que a turma escolhe para si: verbos concretos, cumpríveis, assinadas.",
+   "tuas regras de uso das redes: verbos concretos, cumpríveis, assinadas (na aula, juntam-se num manifesto da turma).",
+   1
   ]
  ],
  "cidadania/m1/fichas/f15/index.html": [
@@ -119,6 +124,11 @@
    "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
    "Propostas opcionais para a aula, oralmente e com o corpo.",
    1
+  ],
+  [
+   "formato indicado pelo docente.",
+   "teu ficheiro.",
+   1
   ]
  ],
  "cidadania/m1/sessoes/01/index.html": [
@@ -203,6 +213,13 @@
    1
   ]
  ],
+ "cidadania/m2/glossario/index.html": [
+  [
+   "<dd>As regras que a turma escolhe ",
+   "<dd>Regras ",
+   1
+  ]
+ ],
  "cidadania/m2/passo-01/index.html": [
   [
    "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
@@ -233,6 +250,16 @@
  ],
  "cidadania/m2/passo-05/index.html": [
   [
+   "para o docente decidir",
+   "adulto",
+   1
+  ],
+  [
+   "É leitura adulta; o docente decide se entra nesta exploração e como.",
+   "Esta exploração não precisa dele.",
+   1
+  ],
+  [
    "As propostas seguintes fazem-se oralmente e com o corpo. O docente escolhe a sequência adequada à exploração.",
    "Propostas opcionais para a aula, oralmente e com o corpo.",
    1
@@ -242,6 +269,11 @@
   [
    "pela turma.",
    "por ti.",
+   1
+  ],
+  [
+   "<dd>As regras que a turma escolhe ",
+   "<dd>Regras ",
    1
   ],
   [
@@ -311,8 +343,8 @@
  ],
  "cidadania/m2/sessoes/06/index.html": [
   [
-   "Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma",
-   "Escolhe o caso que vais analisar e",
+   "Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma confere os critérios: real, datado, com duas fontes independentes, sem menores nem pessoas privadas.",
+   "Escolhe o caso que vais analisar e confere os critérios: real, datado, com duas fontes independentes, sem menores nem pessoas privadas (na aula, escolhe-o da lista apresentada na sessão 05).",
    1
   ],
   [
@@ -322,18 +354,23 @@
   ],
   [
    " com outra pessoa</p><p>Um colega revê e marca cada frase como facto com fonte, suposição ou opinião.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
-   "</p><p>Marca cada frase como facto com fonte, suposição ou opinião.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   "</p><p>Classifica cada frase: facto com fonte, suposição ou opinião.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
    1
   ]
  ],
  "cidadania/m2/sessoes/07/index.html": [
   [
    " com outra pessoa</p><p>Um colega diz em que momento perceberia a regra.</p><p class=\"c10-small\">Quem revê marca uma coisa que se percebe e uma que falta, e faz uma pergunta.",
-   "</p><p>Marca onde o público perceberia a regra.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
+   "</p><p>Assinala onde o público perceberia a regra.</p><p class=\"c10-small\">Marca uma coisa que se percebe e uma que falta; escreve uma pergunta (ou troca com um colega).",
    1
   ]
  ],
  "cidadania/m2/sessoes/08/index.html": [
+  [
+   "Distribuam os papéis no ensaio cruzado: quem mostra primeiro e quem observa e regista.",
+   "Combinem a ordem do ensaio: quem mostra primeiro e a quem.",
+   1
+  ],
   [
    "Ensaio cruzado: mostra uma versão curta a um colega, sem explicar antes a regra.</li><li>Quem observa regista",
    "Ensaio: mostra uma versão curta a alguém (na aula, a um colega), sem explicar antes a regra.</li><li>Regista",
@@ -341,7 +378,7 @@
   ],
   [
    " com outra pessoa</p><p>Aqui, a revisão com outra pessoa",
-   "</p><p>Aqui, a revisão",
+   "</p><p>Aqui, quem revê",
    1
   ]
  ],
@@ -390,8 +427,8 @@
  ],
  "cidadania/piloto/m1-s04/index.html": [
   [
-   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
-   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel).",
    1
   ]
  ],
@@ -411,8 +448,13 @@
  ],
  "cidadania/piloto/m1-s07/index.html": [
   [
+   " no Tribunal de turma.<\\/p>",
+   " (na aula, no Tribunal de turma).<\\/p>",
+   1
+  ],
+  [
    "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
-   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href=\\\"../../m1/cid-m1-o-juri/\\\">«O júri»<\\/a>.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
    1
   ],
   [
@@ -423,8 +465,13 @@
  ],
  "cidadania/piloto/m1-s09/index.html": [
   [
-   "Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As notas dadas aos colegas",
-   "Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As tuas notas",
+   "diante da turma.",
+   "(na aula, diante da turma).",
+   1
+  ],
+  [
+   "ensaio cruzado\",\"html\":\"<p><b>O que se faz.<\\/b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As notas dadas aos colegas",
+   "ensaio\",\"html\":\"<p><b>O que se faz.<\\/b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).<\\/p><p><b>Quanto tempo.<\\/b> 60 a 75 minutos, com a pausa.<\\/p><p><b>O que fica escrito.<\\/b> As tuas notas",
    1
   ]
  ],
@@ -450,8 +497,8 @@
    1
   ],
   [
-   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
-   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel).",
    1
   ],
   [
@@ -466,7 +513,7 @@
   ],
   [
    "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
-   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href=\"../../../m1/cid-m1-o-juri/\">«O júri»</a>.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
    1
   ],
   [
@@ -713,6 +760,11 @@
    "burlas: linguagem e temas adultos; o docente decide se se lê nesta exploração.",
    "burlas, com linguagem e temas adultos; esta exploração não precisa dele.",
    1
+  ],
+  [
+   "conselho vosso a",
+   "conselho teu a",
+   1
   ]
  ],
  "narrativas/oficina-arco-imprimir/index.html": [
@@ -864,8 +916,8 @@
    1
   ],
   [
-   " dez regras do grupo ",
-   " tuas dez regras ",
+   "dez regras do grupo (verificáveis no resultado)</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div><div class=\"campo\"><b>Juramos cumpri-las durante o projeto: assinaturas",
+   "tuas dez regras (verificáveis no resultado)</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div><div class=\"campo\"><b>Juro cumpri-las durante o projeto: assinatura",
    1
   ],
   [
@@ -901,8 +953,13 @@
    1
   ],
   [
-   "cada membro do grupo diz uma regra à câmara, sem cortes, e o último diz",
-   "dizes uma regra de cada vez à câmara, sem cortes, e acabas com",
+   "de caderno da turma. <b>Ou um vídeo de um minuto</b> em que cada membro do grupo diz uma regra à câmara, sem cortes, e o último diz",
+   "do teu caderno. <b>Ou um vídeo de um minuto</b> em que dizes uma regra de cada vez à câmara, sem cortes, e acabas com",
+   1
+  ],
+  [
+   "pela turma.",
+   "por ti.",
    1
   ],
   [
@@ -1306,8 +1363,13 @@
    1
   ],
   [
-   "'Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma",
-   "'Escolhe o caso que vais analisar e",
+   "06 ------------------------------------------------------------------------------------------------------\ndict(\n ",
+   "06 ------------------------------------------------------------------------------------------------------\n# 05/11/2026 (revisão da decisão 154): na 06, a escolha do caso faz-se sozinho, com os critérios, e a lista do docente fica\n# como momento da aula (a lista apresentada na sessão 05, decisão provisória 2). As revisões da 06 e da 07 deixam de começar\n# por «Marca», como a REVISAO_COMUM que se lhes segue; na 08, o Decide combina a ordem do ensaio, como o Faz.\ndict(\n ",
+   1
+  ],
+  [
+   "'Cada pessoa escolhe o caso que vai analisar, da lista aprovada pelo docente. A turma confere os critérios: real, datado, com duas fontes independentes, sem menores nem pessoas privadas.'],",
+   "'Escolhe o caso que vais analisar e confere os critérios: real, datado, com duas fontes independentes, sem menores nem pessoas privadas (na aula, escolhe-o da lista apresentada na sessão 05).'],",
    1
   ],
   [
@@ -1316,13 +1378,18 @@
    1
   ],
   [
-   "entrega.',\n          revisao='Um colega revê e marca cada",
-   "entrega.',\n          revisao='Marca cada",
+   "revisao='Um colega revê e marca cada frase como",
+   "revisao='Classifica cada frase:",
    1
   ],
   [
    "revisao='Um colega diz em que momento",
-   "revisao='Marca onde o público",
+   "revisao='Assinala onde o público",
+   1
+  ],
+  [
+   "'Distribuam os papéis no ensaio cruzado: quem mostra primeiro e quem observa e regista.',",
+   "'Combinem a ordem do ensaio: quem mostra primeiro e a quem.',",
    1
   ],
   [
@@ -1331,8 +1398,8 @@
    1
   ],
   [
-   "a revisão com outra pessoa é ",
-   "a revisão é ",
+   "a revisão com outra pessoa",
+   "quem revê",
    1
   ],
   [
@@ -1360,8 +1427,23 @@
  ],
  "tools/cidadania_piloto.py": [
   [
+   "re, sys",
+   "posixpath, re, sys\nfrom urllib.parse import urljoin",
+   1
+  ],
+  [
    "'.cid-piloto h3{font:700 1rem/1.3",
    "# 05/11/2026: os h3 passam de 16 para 18 px, acima do texto corrido (17 px); era o R5 da hierarquia dos títulos no guia.\n '.cid-piloto h3{font:700 1.125rem/1.3",
+   1
+  ],
+  [
+   "'')\n\n\ndef ",
+   "'')\n\n\n# 05/11/2026 (revisão da decisão 154): o cartão «Na aula» pode ligar a outra página do Lente, com o endereço relativo à página\n# da lição (a sessão 07 liga ao caso «O júri»). O guia está noutra pasta: a ligação resolve-se a partir da lição e volta a\n# escrever-se relativa ao guia, para levar ao mesmo sítio. As ligações absolutas e as âncoras ficam como estão.\ndef ligacoes_no_guia(h, saida, pasta=MODULO + 'docente/'):\n    def troca(m):\n        u = html.unescape(m.group(1))\n        if u.startswith(('http:', 'https:', '//', 'mailto:', '#')):\n            return m.group(0)\n        alvo = urljoin(LENTE + saida, u)\n        assert alvo.startswith(LENTE), (saida, u)\n        caminho, _, resto = alvo[len(LENTE):].partition('#')\n        rel = posixpath.relpath(caminho or '.', pasta) + ('/' if caminho.endswith('/') else '')\n        return 'href=\"' + e(rel + ('#' + resto if resto else ''), quote=True) + '\"'\n    return re.sub(r'href=\"([^\"]+)\"', troca, h)\n\n\ndef ",
+   1
+  ],
+  [
+   "{s[\"aula\"][\"html\"]}",
+   "{ligacoes_no_guia(s[\"aula\"][\"html\"], s[\"d\"][\"saida\"])}",
    1
   ]
  ],
@@ -1412,15 +1494,15 @@
  ],
  "tools/licoes/cidadania-m1-s04.json": [
   [
-   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
-   "Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   "Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.",
+   "Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel).",
    1
   ]
  ],
  "tools/licoes/cidadania-m1-s04.py": [
   [
-   "NA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e",
-   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Escolhe três afirmações reais já tratadas num verificador de factos e lê as",
+   "NA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Cada aluno recebe três afirmações reais, escolhidas e confirmadas pelo docente num verificador de factos, e três publicações inventadas sobre a escola: uma crítica, uma sátira e uma acusação sem prova.",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\n# 05/11/2026 (revisão da decisão 154): as três publicações que só existiam em papel passam a ser as três desta sessão (a crítica\n# à cantina do emparelhar, a pera e a acusação ao Diogo do Abre e do Decide); na aula, recebem-se outras em papel.\nNA_AULA = (\n '<p><b>O que se faz.</b> O laboratório de verificação. Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel).",
    1
   ]
  ],
@@ -1459,8 +1541,13 @@
  ],
  "tools/licoes/cidadania-m1-s07.json": [
   [
+   " no Tribunal de turma.</p>",
+   " (na aula, no Tribunal de turma).</p>",
+   1
+  ],
+  [
    "turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O acórdão da turma (a decisão, duas provas citadas, uma dúvida razoável e um voto vencido) e as notas de cada papel, com o nome de quem as escreveu.",
-   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
+   "turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href=\\\"../../m1/cid-m1-o-juri/\\\">«O júri»</a>.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.",
    1
   ],
   [
@@ -1471,8 +1558,13 @@
  ],
  "tools/licoes/cidadania-m1-s07.py": [
   [
+   " no Tribunal de turma.</p>",
+   " (na aula, no Tribunal de turma).</p>",
+   1
+  ],
+  [
    "NA_AULA = (\n '<p><b>O que se faz.</b> O Tribunal de turma. Os papéis saem em cartas: acusação, defesa, três testemunhas, júri, relator e quem guarda o tempo. Cada intervenção tem dois minutos, com o relógio. O júri vota em boletim, com uma razão obrigatória, antes e depois de deliberar, e o relator conta quantos votos citam uma prova.",
-   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».",
+   "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\n# 05/11/2026 (revisão da decisão 154): o caminho a sós liga ao caso «O júri» (relativo à página da lição; o guia do docente\n# volta a resolvê-lo a partir da sua pasta), e o «Abre» deixa o Tribunal de turma como momento da aula.\nNA_AULA = (\n '<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href=\"../../m1/cid-m1-o-juri/\">«O júri»</a>.",
    1
   ],
   [
@@ -1488,12 +1580,27 @@
  ],
  "tools/licoes/cidadania-m1-s09.json": [
   [
-   "Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As notas dadas aos colegas",
-   "Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas",
+   "diante da turma.",
+   "(na aula, diante da turma).",
+   1
+  ],
+  [
+   "ensaio cruzado\",\n   \"html\": \"<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As notas dadas aos colegas",
+   "ensaio\",\n   \"html\": \"<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas",
    1
   ]
  ],
  "tools/licoes/cidadania-m1-s09.py": [
+  [
+   "\nABRE",
+   "\n# 05/11/2026 (revisão da decisão 154): o «Abre» deixa o ensaio diante da turma como momento da aula, e o cartão «Na aula»\n# passa a chamar-se «O ensaio» (o ensaio cruzado só se fazia com a turma).\nABRE",
+   1
+  ],
+  [
+   "diante da turma.",
+   "(na aula, diante da turma).",
+   1
+  ],
   [
    "NA_AULA = (\n '<p><b>O que se faz.</b> Primeiro, o aquecimento «O outro lado»: 10 minutos de improvisação com posições sorteadas. Depois, cada aluno mostra o teatro-documento em ensaio à turma. Quem observa toma notas em três colunas (o que se ouviu, de quem é a voz, de que fonte vem) e procura a voz que falta.",
    "# 05/11/2026 (decisão 154): o exercício faz-se sozinho; o que precisa da turma passa a momento opcional da aula, entre parênteses.\nNA_AULA = (\n '<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).",
@@ -1502,6 +1609,11 @@
   [
    "notas dadas aos colegas",
    "tuas notas",
+   1
+  ],
+  [
+   "ensaio cruzado\",\"html\":NA_AULA},",
+   "ensaio\",\"html\":NA_AULA},",
    1
   ]
  ],
@@ -1644,8 +1756,18 @@
  ],
  "ver-para-fazer/v124/index.html": [
   [
+   "<meta name=\"description\" content=\"Distinguir uma razão pelas consequências de uma razão pelos deveres. Com o guião da página Justiça, aponta por caso quem fala, que argumento dá e que objeção recebe. Depois escolhe uma frase de regra, encontra o caso de Sandel que a põe em sarilhos e leva-a para o debate oral.\">",
+   "<meta name=\"description\" content=\"Distinguir uma razão pelas consequências de uma razão pelos deveres. Com o guião da página Justiça, aponta por caso quem fala, que argumento dá e que objeção recebe. Depois escolhe uma frase de regra, encontra o caso de Sandel que a põe em sarilhos (na aula, leva-a para o debate oral).\">",
+   1
+  ],
+  [
    "O docente escolhe um excerto depois de a ver.",
    "Escolhe um excerto.",
+   1
+  ],
+  [
+   " e leva-a para o debate oral.</p>",
+   " (na aula, leva-a para o debate oral).</p>",
    1
   ]
  ],
@@ -1873,12 +1995,12 @@
  "ver-para-fazer/v99/index.html": [
   [
    "<meta name=\"description\" content=\"Ler uma opinião sobre elegância como discurso do seu tempo. Vê um excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com a síntese que o docente preparou, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.\">",
-   "<meta name=\"description\" content=\"Ler uma opinião sobre elegância como discurso do seu tempo. Vê um excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.\">",
+   "<meta name=\"description\" content=\"Ler uma opinião sobre elegância como discurso do seu tempo. Vê um excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas (ou a tradução automática do leitor), escolhe uma opinião de Chanel e diz se descreve, infere ou julga.\">",
    1
   ],
   [
    " excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com a síntese que o docente preparou, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.</p>",
-   " excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas, escolhe uma opinião de Chanel e diz se descreve, infere ou julga.</p>",
+   " excerto sem som e descreve três coisas visíveis, sem julgar. Depois, com as legendas ligadas (ou a tradução automática do leitor), escolhe uma opinião de Chanel e diz se descreve, infere ou julga.</p>",
    1
   ],
   [

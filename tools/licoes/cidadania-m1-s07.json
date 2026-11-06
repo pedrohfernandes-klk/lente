@@ -20,7 +20,7 @@
    "t": "ler",
    "rot": "Abre",
    "titulo": "Nove contra dois",
-   "html": "<p class=\"pergunta-c\">Quando quase todos já decidiram, ainda vale a pena ouvir a defesa?</p><p>Caso inventado. Um vídeo de um ensaio, montado para gozar com uma colega, circula no grupo do curso. Uma captura de ecrã mostra o nome do Tomás ao lado do vídeo. No primeiro voto, nove dizem que foi ele e dois pedem para ver as provas.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar prova de inferência e julgar um caso no Tribunal de turma.</p>"
+   "html": "<p class=\"pergunta-c\">Quando quase todos já decidiram, ainda vale a pena ouvir a defesa?</p><p>Caso inventado. Um vídeo de um ensaio, montado para gozar com uma colega, circula no grupo do curso. Uma captura de ecrã mostra o nome do Tomás ao lado do vídeo. No primeiro voto, nove dizem que foi ele e dois pedem para ver as provas.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar prova de inferência e julgar um caso (na aula, no Tribunal de turma).</p>"
   },
   {
    "t": "ler",
@@ -171,7 +171,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O Tribunal de turma",
-   "html": "<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso «O júri».</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.</p>"
+   "html": "<p><b>O que se faz.</b> O Tribunal de turma: acusação, defesa, três testemunhas e júri, dois minutos por intervenção (na aula, os papéis saem em cartas). Vota com uma razão, antes e depois de pesar as provas. Sem a turma, faz o caso <a href=\"../../m1/cid-m1-o-juri/\">«O júri»</a>.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu acórdão: a decisão, duas provas citadas, uma dúvida razoável e um voto vencido.</p>"
   },
   {
    "t": "escolha",

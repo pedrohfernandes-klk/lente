@@ -18,10 +18,12 @@
 # 429 quatro vezes (Retry-After de 600 s, respeitado, um pedido de cada vez). Tratamento igual ao da sessão 02 (Hine, Addie Card):
 # tons de cinzento, níveis de 0,5 % a 99,5 %, margens aparadas (4, 2, 2 e 3 px), 640 × 811, webp.
 import json, pathlib
+# 05/11/2026 (revisão da decisão 154): o «Abre» deixa o ensaio diante da turma como momento da aula, e o cartão «Na aula»
+# passa a chamar-se «O ensaio» (o ensaio cruzado só se fazia com a turma).
 ABRE = (
  '<p class="pergunta-c">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p>'
  '<p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento diante da turma.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento (na aula, diante da turma).</p>')
 DECIDE = (
  '<p>A regra do português nos intervalos deve avançar?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -96,7 +98,7 @@ cartoes = [
  {"t":"vf","g":"neutra","p":"Uma regra que vale para todos é sempre neutra para todos.","p2":"Se uma regra se aplica a toda a gente, nunca pesa mais sobre uns do que sobre outros.","v":False,
   "f":"A regra do português vale para todos, mas só pesa a quem fala outra língua com os seus. Por isso a Constituição proíbe prejudicar alguém em razão da língua (artigo 13.º, n.º 2), mesmo com regras iguais.",
   "fe":"Para saber se uma regra é neutra, pergunta quem perde com ela. Se perde sempre o mesmo grupo, não é neutra."},
- {"t":"ler","rot":"Na aula","titulo":"O ensaio cruzado","html":NA_AULA},
+ {"t":"ler","rot":"Na aula","titulo":"O ensaio","html":NA_AULA},
  {"t":"escolha","g":"festa","p":"Caso inventado: a festa de fim de período calha num dia de jejum de alguns colegas. Que decisão ouve todos?","p2":"Alguns colegas jejuam no dia marcado para a festa da turma. Que solução ouve toda a gente?",
   "o":["Perguntar a quem jejua e ajustar a hora.","Manter tudo: a maioria não está de jejum.","Cancelar a festa para a turma inteira."],"c":0,
   "f":"Perguntar a quem é afetado e ajustar a hora ou a comida deixa a festa para todos. Ninguém tem de explicar a sua religião: basta dizer aquilo de que precisa.",
