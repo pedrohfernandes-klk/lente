@@ -331,7 +331,9 @@ class Listas(unittest.TestCase):
             # que também passou ao molde final; a página da 07 deixa de ter o botão e o total embutido continua de 03 a 10.
             # 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 7 finais na sessão 8): o mesmo para a sessão 08 do M1,
             # que também passou ao molde final; a página da 08 deixa de ter o botão e o total embutido continua de 03 a 10.
-            sem_registo = {3, 4, 5, 6, 7, 8} if m == 'm1' else set()
+            # 07/11/2026 (decisões 166 a 168 e 174): o mesmo para a sessão 09 do M1, que também passou ao molde final; a página da 09
+            # deixa de ter o botão e o total embutido continua de 03 a 10.
+            sem_registo = {3, 4, 5, 6, 7, 8, 9} if m == 'm1' else set()
             molde = {n for n in range(de, ate + 1) if m == 'm1' and (R / f'tools/licoes/cidadania-m1-s{n:02}.json').is_file()
                      and json.loads(ler(f'tools/licoes/cidadania-m1-s{n:02}.json')).get('molde')}
             self.assertEqual(molde, sem_registo, m)

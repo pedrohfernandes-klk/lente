@@ -48,6 +48,9 @@ import molde_s07  # noqa: E402
 # 06/11/2026: fusão do main (com as sessões 2 a 7 finais) na sessão 08 do M1. O manifesto fechado da s08 (tests/molde_s08.py)
 # parte do main 3c774cb, já com a s07: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s07 (abaixo).
 import molde_s08  # noqa: E402
+# 07/11/2026: a sessão 09 do M1 (tests/molde_s09.py). O manifesto fechado parte do main dc01487, já com a s08: é agora a camada
+# mais recente e desfaz-se no ficheiro atual antes da da s08 (abaixo).
+import molde_s09  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -335,6 +338,11 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s08.inteiro_ok(rel), rel)
                 continue
+            # 07/11/2026: sessão 09 do M1 no molde. O mesmo para os ficheiros que a s09 escreve inteiros.
+            if rel in molde_s09.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s09.inteiro_ok(rel), rel)
+                continue
             if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS or rel in molde_s02.TROCAS:  # 06/11/2026: também a camada da s02
                 antes = com_molde(antes, rel)
             agora = ler(rel)
@@ -351,6 +359,9 @@ class Preservacao(unittest.TestCase):
             # 06/11/2026: fusão do main na sessão 08 do M1. Nos ficheiros que a s08 muda em parte, desfaz-se primeiro a sua camada,
             # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s07, a da s06, a da s05, a da s04 e a
             # da s03.
+            # 07/11/2026: sessão 09 do M1 no molde. A sua camada, a mais recente, desfaz-se antes da da s08.
+            if rel in molde_s09.TROCAS:
+                agora = molde_s09.desfazer(agora, rel)
             if rel in molde_s08.TROCAS:
                 agora = molde_s08.desfazer(agora, rel)
             if rel in molde_s07.TROCAS:

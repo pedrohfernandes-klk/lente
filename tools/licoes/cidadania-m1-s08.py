@@ -373,7 +373,8 @@ def sessao():
         'titulo': 'Sessão 08: Quem decide o quê?', 'h1': 'Cidadania, módulo 1, sessão 08: Quem decide o quê?',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/08/index.html',
-        'seguinte': '../../../piloto/m1-s09/', 'seguinteRotulo': 'Sessão 09: Muitas vozes, uma escola',
+        # 07/11/2026 (sessão 09 no molde): a seguinte passa a ser a s09 nova, no mesmo endereço das sessões (era a do piloto).
+        'seguinte': '../09/', 'seguinteRotulo': 'Sessão 09: Muitas vozes, uma escola',
         'fontes': M.ref('Constituição da República Portuguesa, artigos 23.º, n.º 1, 52.º, n.º 1, 161.º, alínea c), 182.º e 202.º, n.º 1, na '
                         'versão consolidada do Diário da República. Lei n.º 43/90, de 10 de agosto (exercício do direito de petição), '
                         'artigos 2.º, n.º 3, 8.º, n.º 1, e 9.º, n.º 5, na versão consolidada do Diário da República. Provedor de Justiça, '

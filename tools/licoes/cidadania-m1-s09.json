@@ -1,8 +1,9 @@
 {
  "id": "cidadania-m1-s09",
  "chave": "epi-cid-m1-s09",
- "versao": "2026-10-31-2",
+ "versao": "2026-11-07-molde",
  "marca": "CD",
+ "molde": "cidadania-2026-11",
  "titulo": "Sessão 09: Muitas vozes, uma escola",
  "h1": "Cidadania, módulo 1, sessão 09: Muitas vozes, uma escola",
  "modulo": {
@@ -10,254 +11,426 @@
   "nome": "Humanos",
   "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"
  },
- "saida": "cidadania/piloto/m1-s09/index.html",
- "piloto": true,
- "seguinte": "../m1-s10/",
+ "saida": "cidadania/m1/sessoes/09/index.html",
+ "seguinte": "../../../piloto/m1-s10/",
  "seguinteRotulo": "Sessão 10: O que conseguimos defender?",
- "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3 (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 30.º (texto do Ministério Público, https://dcjri.ministeriopublico.pt/sites/default/files/documentos/instrumentos/convencao_sobre_direitos_da_crianca.pdf, lido a 31/10/2026). Pergunta Humana: requisitos do teatro-documento (cidadania/projeto/). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, prova de 1939 (Museum of Fine Arts, Houston; domínio público segundo o Wikimedia Commons, https://commons.wikimedia.org/w/index.php?curid=29801440; página e reprodução no Google Arts & Culture, https://artsandculture.google.com/asset/hwEWiyJnUAWQ5g, consultadas a 31/10/2026). Vídeo: TED-Ed, «Can stereotypes ever be good?», lição de Sheila Marie Orfano e Densho. Os casos são inventados.",
+ "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3, na versão consolidada do Diário da República. Convenção sobre os Direitos da Criança, artigo 30.º, na tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, no Diário da República. Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão de 10 de janeiro de 2017 (HUDOC, texto inglês). Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, Museum of Fine Arts, Houston, domínio público. David Foster Wallace, _This Is Water_, discurso aos finalistas do Kenyon College, 2005, no texto publicado pelo Kenyon College. O caso do intervalo, o da visita de estudo, o do inquérito da câmara, o da visita à empresa, o da Leonor e do Rui e o do clube de teatro são inventados; o da natação em Basileia é real.",
+ "tempos": {
+  "folga": 10,
+  "pausa": 10,
+  "projeto": 45,
+  "entrega": 5
+ },
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">O guião, versão 2</p><p class=\"sub\">Volta, em papel, ao guião do teu teatro-documento e junta-lhe a voz de alguém que discorda da tua resposta à pergunta. Essa fala também tem fonte: a entrevista, o documento ou a notícia, com o que é preciso para a reencontrar. O que conta: a voz que discorda diz o que essa pessoa disse, sem a tornar ridícula; tem a sua fonte; o guião mostra o que responde a essa voz, ou deixa a dúvida à vista.</p><p class=\"ir\"><a href=\"../../../projeto/#fases\">As fases do teatro-documento, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Muitas vozes, uma escola",
-   "html": "<p class=\"pergunta-c\">Uma escola com muitas línguas e crenças precisa de regras iguais ou de regras que ouçam todos?</p><p>Caso inventado. Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem».</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, desmontar um estereótipo e ensaiar o teatro-documento (na aula, diante da turma).</p>"
+   "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">Nos intervalos ouvem-se português, crioulo cabo-verdiano, romeno e nepalês. A direção propõe uma regra: nos intervalos, só português, «para todos se entenderem». A proposta está afixada no átrio, com espaço para comentários. Os que lá estão são todos de alunos que só falam português. A Mariana, que fala nepalês com a irmã no intervalo, ainda não escreveu nada.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Quando uma regra parece servir todos, de quem é a voz que falta?</p></div>",
+   "min": 5,
+   "aula": {
+    "linha": "ver e ler (60 min), pausa (10 min), pesar e escrever (50 min) e o teu projeto (45 min)."
+   }
   },
   {
    "t": "ler",
    "rot": "Decide",
-   "titulo": "Só português no intervalo?",
-   "html": "<p>A regra do português nos intervalos deve avançar?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão da direção</summary><div><p>«Uma língua comum junta a turma e ajuda quem está a aprender português.»</p></div></details><details class=\"lado\"><summary>A razão de uma aluna</summary><div><p>«No intervalo falo com a minha irmã na nossa língua. Proibir isso é dizer que a minha língua não cabe aqui.»</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se alguém usar outra língua para gozar com um colega que não percebe? Isso pede uma regra para todos ou uma conversa?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>"
+   "titulo": "Antes dos materiais",
+   "html": "<div class=\"m-decide\"><p class=\"pos-intro\">Decide: sim, não ou depende. Escolhe antes de veres os materiais; no fim, voltas a esta pergunta.</p><div class=\"posicao\" data-artefacto=\"posicao-inicio\" data-rot=\"A tua posição no início\"><p class=\"pos-q\">A regra «só português nos intervalos» deve avançar?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição no início\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div><p class=\"pos-nota\">Não há resposta certa neste cartão.</p></div><div class=\"pos-lados\" data-depois-de=\"posicao-inicio\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>Uma língua comum junta a escola e ajuda quem está a aprender português.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>Falar com um irmão na língua de casa não tira nada a ninguém. Proibi-lo é dizer que essa língua não cabe na escola.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se alguém usar outra língua para gozar com um colega que não a percebe? Isso pede esta regra ou outra resposta?</p></div></details></div></div>",
+   "min": 8
   },
   {
    "t": "escolha",
-   "g": "direito",
-   "p": "Segundo a Constituição, que direito pode ser tocado pela regra «só português nos intervalos»?",
-   "p2": "A regra do português nos intervalos pode chocar com que direito da Constituição?",
+   "rot": "A pergunta do peixe mais velho",
+   "p": "Em 2005, David Foster Wallace contou: um peixe mais velho pergunta a dois novos como está a água; um deles pergunta o que é a água. O que mostra isto?",
+   "p2": "Na história dos peixes que David Foster Wallace contou em 2005, os peixes novos não sabem o que é a água. O que mostra isto?",
+   "f": "A água é o que está sempre à volta e, por isso, deixa de se ver. Para quem fala português em casa, uma regra só em português pode parecer a água: normal, sem nada para explicar.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "o que não se vê",
+   "pista": "Pensa porque é que os peixes novos não sabem responder.",
+   "g": "recupera",
    "o": [
-    "Não ser prejudicado por causa da língua.",
-    "Escolher a escola que se quer frequentar.",
-    "Ter um intervalo com a duração certa."
+    "Que os peixes velhos sabem mais do que os peixes novos.",
+    "Que o mais habitual é, muitas vezes, o mais difícil de ver.",
+    "Que os peixes novos não ouviram bem a pergunta do mais velho."
+   ],
+   "c": 1,
+   "fe": [
+    "A história não mede quem sabe mais: os peixes novos vivem na água e não a veem, por estar sempre lá. Volta à pergunta que um faz ao outro.",
+    "",
+    "Ouviram: seguem a nadar e só depois um pergunta ao outro o que é a água. A dúvida não vem de ouvir mal. Volta ao que um pergunta ao outro."
+   ]
+  },
+  {
+   "t": "vf",
+   "rot": "O mesmo preço para todos",
+   "p": "Caso inventado: a visita de estudo custa 25 euros a cada aluno. Como o preço é igual, pesa o mesmo em cada família.",
+   "p2": "Se a visita de estudo custa 25 euros a cada aluno, o mesmo preço pesa o mesmo em todas as casas.",
+   "f": "É falso: o preço é o mesmo, mas 25 euros pesam mais a quem tem menos dinheiro em casa. Na sessão 03, viste que numa regra igual «conta o efeito», e não só o que está escrito.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "discriminação indireta",
+   "v": false,
+   "fe": "Um preço igual não é um peso igual: depende do dinheiro de cada família. Na sessão 03, viste que «conta o efeito» de uma regra. Pergunta-te a quem custa mais pagar.",
+   "pista": "Imagina duas famílias, com rendimentos diferentes, a pagar a mesma visita.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/03/"
+  },
+  {
+   "t": "ler",
+   "rot": "Olha",
+   "titulo": "Uma família à chegada",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro para as pessoas e para o que trazem; só depois lê a legenda.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Uma família de imigrantes, ilha de Ellis, 1905\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/hine-familia-bagagens-1905.webp\" alt=\"Fotografia a preto e branco. Uma mulher de lenço na cabeça tem um bebé ao colo; ao lado, um rapaz de boné leva ao ombro um grande saco às riscas e dá a mão a uma menina pequena de touca. Atrás, malas e baús empilhados; à frente, no chão, uma caixa atada com cordas, com palavras escritas à mão.\" width=\"640\" height=\"811\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da fotografia\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Lewis Hine, <i>Immigrant Family in the Baggage Room of Ellis Island</i>, 1905, prova em gelatina e prata. Museum of Fine Arts, Houston. <a href=\"https://commons.wikimedia.org/wiki/File:Lewis_W._Hine_-_Immigrant_Family_in_the_Baggage_Room_of_Ellis_Island_-_Google_Art_Project.jpg\">Registo no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Ilha de Ellis, 1905: uma família de imigrantes na sala das bagagens.</figcaption></figure></div>",
+   "min": 3
+  },
+  {
+   "t": "escolha",
+   "rot": "O que se vê",
+   "p": "Só a olhar para a imagem, sem a legenda: o que podes afirmar?",
+   "p2": "Sem ler a legenda, o que se pode dizer desta fotografia com segurança?",
+   "f": "Vê-se o saco às riscas ao ombro do rapaz. O cansaço e a língua não se veem: são hipóteses sobre as pessoas, que a imagem não confirma.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "observação",
+   "ver": "<img src=\"../../../../img/cidadania/hine-familia-bagagens-1905.webp\" alt=\"A mesma fotografia: uma mulher com um bebé ao colo, um rapaz com um saco às riscas ao ombro e uma menina de touca, entre malas.\">",
+   "pista": "Para cada frase, pergunta-te se a podias apontar com o dedo na imagem.",
+   "o": [
+    "A família está cansada da longa viagem.",
+    "O rapaz leva um grande saco ao ombro.",
+    "Esta família não sabe falar inglês."
+   ],
+   "c": 1,
+   "fe": [
+    "Os rostos sérios podem ser cansaço, medo ou só a pose diante da câmara: a imagem não decide entre eles. Volta à imagem e fica com o que se vê sem adivinhar.",
+    "",
+    "Uma fotografia não tem som: nada nela mostra a língua desta família. Volta à imagem e procura o que se pode confirmar só a olhar."
+   ]
+  },
+  {
+   "t": "vf",
+   "rot": "Imagem e legenda",
+   "p": "Só pela fotografia, sem a legenda, sabes que esta família acabava de chegar de outro país.",
+   "p2": "Tapa a legenda: a imagem, sozinha, mostra que esta família vinha de outro país.",
+   "f": "É falso: a imagem mostra uma mulher, três crianças e bagagem, como numa viagem qualquer. Que são imigrantes, na ilha de Ellis, di-lo a legenda; e nem a legenda diz o país de onde vinham.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "imagem e legenda",
+   "v": false,
+   "ver": "<img src=\"../../../../img/cidadania/hine-familia-bagagens-1905.webp\" alt=\"A mesma fotografia: uma mulher com um bebé ao colo, um rapaz com um saco às riscas ao ombro e uma menina de touca, entre malas.\">",
+   "fe": "Bagagem e roupa não dizem de onde se vem: quem diz que são imigrantes é a legenda. Separa o que vês do que lês por baixo.",
+   "pista": "Pergunta-te o que sabias sem as palavras por baixo da imagem."
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "O que uma regra não pode tirar",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> O que diz cada texto sobre a língua?</p><blockquote class=\"lei\"><p data-l=\"a13\" data-fonte=\"crp-13-2\"><span class=\"art\">13.º, n.º 2</span>«Ninguém pode ser privilegiado, beneficiado, prejudicado […] em razão de […] língua, território de origem, religião […]»</p><p data-l=\"c30\" data-fonte=\"cdc-30\"><span class=\"art\">Artigo 30.º</span>«[…] nenhuma criança indígena ou que pertença a uma dessas minorias poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição</a> e <a href=\"https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390\">Convenção</a></p><details class=\"mais\"><summary>Ler mais</summary><div><blockquote class=\"lei\"><p data-fonte=\"cdc-30\"><span class=\"art\">30.º, início</span>«Nos Estados em que existam minorias étnicas, religiosas ou linguísticas ou pessoas de origem indígena, […]»</p><p data-fonte=\"crp-41-3\"><span class=\"art\">41.º, n.º 3</span>«Ninguém pode ser perguntado por qualquer autoridade acerca das suas convicções ou prática religiosa, salvo para recolha de dados estatísticos não individualmente identificáveis, nem ser prejudicado por se recusar a responder.»</p></blockquote><p class=\"fonte-lei\"><a href=\"https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390\">Convenção</a>, 30.º; <a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Constituição</a>, 41.º</p></div></details></div>",
+   "min": 4
+  },
+  {
+   "t": "sublinhar",
+   "rot": "O que a regra tira",
+   "p": "No artigo 30.º, sublinha as duas palavras que dizem o que a regra do intervalo tira à Mariana.",
+   "p2": "No artigo 30.º, onde está o que a Mariana deixa de poder fazer no intervalo? Sublinha as duas palavras.",
+   "f": "A regra não tira à Mariana a língua que tem: tira-lhe o direito de a «utilizar» no intervalo. É essa a parte do artigo 30.º que fica em causa.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "direitos das minorias",
+   "frase": "ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.",
+   "certas": [
+    14,
+    18
+   ],
+   "fonte": "cdc-30",
+   "l": "c30",
+   "citacoes": [
+    [
+     "cdc-30",
+     "utilizar"
+    ],
+    [
+     "cdc-30",
+     "vida cultural"
+    ]
+   ],
+   "fe": "A confusão mais provável é sublinhar «vida cultural»: a regra não toca em festas nem costumes, só no que se fala. Procura o verbo do que se faz e a palavra que o completa.",
+   "pista": "Lê a frase até ao fim e procura a parte que toca no que a Mariana faz no intervalo."
+  },
+  {
+   "t": "vf",
+   "rot": "A regra e o artigo 13.º",
+   "p": "A regra do intervalo não pergunta de onde vem cada aluno. Por isso, fica fora do artigo 13.º, n.º 2.",
+   "p2": "Como a regra não fala do país de onde vem ninguém, o artigo 13.º, n.º 2, não tem a ver com ela.",
+   "f": "É falso: a lista do artigo 13.º, n.º 2, tem a «língua», além do «território de origem». Uma regra sobre a língua que se fala pode prejudicar alguém em razão dela, sem perguntar de onde vem.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "igualdade",
+   "v": false,
+   "l": "a13",
+   "citacoes": [
+    [
+     "crp-13-2",
+     "língua"
+    ],
+    [
+     "crp-13-2",
+     "território de origem"
+    ]
+   ],
+   "fe": "O artigo 13.º, n.º 2, não fala só da origem: na mesma lista está a «língua». Volta à lista e procura o que a regra do intervalo toca.",
+   "pista": "Relê a lista do artigo, palavra a palavra."
+  },
+  {
+   "t": "escolha",
+   "rot": "Perguntar pela religião",
+   "p": "Caso inventado: um inquérito da câmara pede a religião de cada pessoa, com o nome e a morada, «para estatística». O artigo 41.º, n.º 3, permite-o?",
+   "p2": "Uma câmara municipal quer saber a religião de cada pessoa, com o nome e a morada, para fazer estatística. O artigo 41.º, n.º 3, permite-o?",
+   "f": "A exceção vale só para «dados estatísticos não individualmente identificáveis». Com o nome e a morada, as respostas identificam cada pessoa: assim, a câmara não pode perguntar.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "liberdade religiosa",
+   "cita": "Ninguém pode ser perguntado por qualquer autoridade acerca das suas convicções ou prática religiosa, salvo para recolha de dados estatísticos não individualmente identificáveis, nem ser prejudicado por se recusar a responder.",
+   "fonte": "crp-41-3",
+   "citacoes": [
+    [
+     "crp-41-3",
+     "não individualmente identificáveis"
+    ],
+    [
+     "crp-41-3",
+     "prejudicado por se recusar a responder"
+    ],
+    [
+     "crp-41-3",
+     "dados estatísticos não individualmente identificáveis"
+    ]
+   ],
+   "pista": "Relê a exceção até ao fim e compara-a com o que o inquérito pede.",
+   "o": [
+    "Não: com nome e morada, cada resposta identifica alguém.",
+    "Sim: sendo para estatística, a pergunta é permitida.",
+    "Sim: basta que quem não responder não fique prejudicado."
    ],
    "c": 0,
-   "f": "O artigo 13.º, n.º 2, diz que ninguém pode ser prejudicado ou privado de qualquer direito em razão da língua. A regra não proíbe ninguém de estar na escola, mas pode prejudicar quem fala outra língua com os seus.",
    "fe": [
     "",
-    "A regra não muda a escola de ninguém. O que toca é a língua em que se pode falar.",
-    "A duração do intervalo não está em causa. A regra mexe na língua, não no tempo."
+    "A exceção não é só ser para estatística: os dados têm de ser «não individualmente identificáveis». Com o nome e a morada, cada resposta diz quem é quem. Relê o fim da exceção.",
+    "Não ser «prejudicado por se recusar a responder» é outra proteção, que se junta à primeira; não torna a pergunta permitida. Relê a exceção até ao fim."
+   ]
+  },
+  {
+   "t": "escolha",
+   "rot": "Um elogio pela origem",
+   "p": "Caso inventado: para uma visita a uma empresa, a escola escolhe só alunos vindos de fora, «porque são mais trabalhadores». É um elogio. Pelo artigo 13.º, n.º 2, há problema?",
+   "p2": "A escola leva à visita só os alunos vindos de fora, por serem «mais trabalhadores». Por ser um elogio, o artigo 13.º, n.º 2, permite-o?",
+   "f": "O artigo 13.º, n.º 2, proíbe prejudicar e também beneficiar alguém em razão do «território de origem». Escolher pela origem, mesmo com um elogio, trata cada aluno pelo sítio de onde vem.",
+   "min": 4,
+   "tipo": "transferir",
+   "conceito": "estereótipo",
+   "citacoes": [
+    [
+     "crp-13-2",
+     "privilegiado, beneficiado"
+    ],
+    [
+     "crp-13-2",
+     "território de origem"
+    ]
+   ],
+   "pista": "Relê o artigo 13.º, n.º 2, desde a primeira palavra, e volta à escolha da escola.",
+   "o": [
+    "Não: o artigo só proíbe prejudicar, e ninguém perde.",
+    "Sim: ninguém pode ser beneficiado em razão da origem.",
+    "Não: é um elogio a esses alunos, não uma ofensa."
+   ],
+   "c": 1,
+   "fe": [
+    "A lista do artigo 13.º, n.º 2, abre com «privilegiado, beneficiado»: favorecer pela origem também conta. E quem fica sem a visita perde. Relê o início do artigo.",
+    "",
+    "Um elogio pela origem continua a tratar cada aluno pelo sítio de onde vem, e não pelo que faz. Relê o artigo 13.º, n.º 2, desde a primeira linha."
    ]
   },
   {
    "t": "ler",
    "rot": "Conceito",
-   "titulo": "O que uma regra não apaga",
-   "html": "<p>Dois textos dizem o que uma regra da escola não pode apagar:</p><ul><li><b>Constituição, artigo 13.º, n.º 2</b>: ninguém pode ser privilegiado, beneficiado, prejudicado ou privado de qualquer direito em razão, entre outras coisas, da língua, do território de origem ou da religião.</li><li><b>Convenção sobre os Direitos da Criança, artigo 30.º</b>: a criança de uma minoria não pode ser privada do direito de ter a sua própria vida cultural, professar e praticar a sua religião ou utilizar a sua própria língua, com os membros do seu grupo.</li></ul><p>Uma regra pode ser igual para todos e, mesmo assim, pesar mais sobre alguns.</p>"
-  },
-  {
-   "t": "sublinhar",
-   "g": "cdc30",
-   "p": "Artigo 30.º da Convenção (a parte final): a criança de uma minoria não pode ser privada do direito de… Toca nas quatro palavras que dizem o que a criança tem o direito de fazer.",
-   "p2": "No final do artigo 30.º da Convenção, que quatro verbos dizem o que a criança pode fazer? Toca neles.",
-   "frase": "ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.",
-   "certas": [
-    0,
-    6,
-    8,
-    14
-   ],
-   "f": "A Convenção protege quatro ações: **ter** a sua vida cultural, **professar** e **praticar** a sua religião e **utilizar** a sua própria língua. Não basta ter uma língua: é preciso poder usá-la."
-  },
-  {
-   "t": "vf",
-   "g": "religiao",
-   "p": "Uma autoridade não pode perguntar-te pela tua religião, salvo para estatísticas que não te identifiquem.",
-   "p2": "A Constituição só deixa uma autoridade perguntar a religião de alguém para recolher estatísticas sem identificação.",
-   "v": true,
-   "f": "O artigo 41.º, n.º 3, diz que ninguém pode ser perguntado por qualquer autoridade sobre as suas convicções ou prática religiosa, salvo para dados estatísticos não individualmente identificáveis, nem ser prejudicado por se recusar a responder.",
-   "fe": "A tua religião não tem de ser dita a nenhuma autoridade: a única exceção é a estatística sem nomes."
+   "titulo": "Facto, dado, opinião, estereótipo",
+   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>«Quem vem de fora não quer aprender português.» Soa a facto. É?</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">Tipo de frase</th><th scope=\"col\">Como se confere</th></tr></thead><tbody><tr><td data-th=\"Tipo de frase\">facto</td><td data-th=\"Como se confere\">vendo ou ouvindo</td></tr><tr><td data-th=\"Tipo de frase\">dado</td><td data-th=\"Como se confere\">na fonte do número</td></tr><tr><td data-th=\"Tipo de frase\">opinião</td><td data-th=\"Como se confere\">não se confere: discute-se</td></tr><tr><td data-th=\"Tipo de frase\">estereótipo</td><td data-th=\"Como se confere\">não se confere: generaliza sem provas</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Estereótipo: uma ideia feita, igual para todos os de uma origem, língua ou religião.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Estereótipo</p><p class=\"cc-def\">Uma ideia feita, igual para todos os de uma origem, língua ou religião.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Mesmo um elogio: «quem vem de fora é trabalhador» também é um estereótipo.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div></div>",
+   "min": 6
   },
   {
    "t": "emparelhar",
-   "g": "tipos",
-   "p": "Liga cada frase ao que ela é.",
-   "p2": "Que tipo de frase é cada uma destas?",
+   "rot": "Um momento ou um traço",
+   "p": "Caso inventado: à porta, a Leonor guarda um envelope ao ver os colegas e pede para falar depois. O Rui: «Nunca queres participar.» O que é cada frase?",
+   "p2": "A Leonor guarda um envelope e pede para falar depois; o Rui diz «Nunca queres participar». Liga cada frase ao que ela é.",
+   "f": "Guardar o envelope e pedir para falar depois vê-se na cena. «Nunca» faz de um momento um traço de carácter, como o estereótipo faz com quem vem de fora. Que ela prefira falar a sós é uma hipótese, que se confirma perguntando.",
+   "min": 3,
+   "tipo": "transferir",
+   "conceito": "observação e interpretação",
+   "origem": "cidadania/m1/sessoes/01/",
    "pares": [
     [
-     "Nos intervalos ouvem-se quatro línguas.",
-     "Facto que se pode observar"
+     "A Leonor guarda o envelope e pede para falar depois.",
+     "O que a cena mostra"
     ],
     [
-     "Quem vem de fora não quer aprender português.",
-     "Estereótipo sobre um grupo"
+     "«Nunca queres participar.»",
+     "Um momento tornado traço de carácter"
     ],
     [
-     "Acho que o intervalo devia ser mais longo.",
-     "Opinião de quem fala"
-    ],
-    [
-     "No inquérito da turma, 12 em 25 falam outra língua em casa.",
-     "Dado com a fonte indicada"
+     "Ela prefere falar sem os colegas por perto.",
+     "Uma hipótese, que se pode pôr à prova"
     ]
    ],
-   "f": "Um facto pode ser observado por qualquer um. Um dado diz de onde vem. Uma opinião é de quem fala. Um estereótipo diz o mesmo de todas as pessoas de um grupo, sem prova.",
-   "fe": "Procura as marcas: «acho» é opinião; «quem vem de fora» fala de um grupo inteiro; um número com a origem é um dado."
-  },
-  {
-   "t": "ler",
-   "rot": "Ver",
-   "titulo": "Um elogio que faz mal?",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Sheila Marie Orfano e Densho: um estereótipo que parece um elogio também pode fazer mal. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Escreve o estereótipo de que o vídeo fala, o dano que aponta e um exemplo da tua escola.</p><div class=\"yt\" data-yt=\"aFXmyNUaXFo\" data-titulo=\"Can stereotypes ever be good?, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «Can stereotypes ever be good?» (5 min 52 s)</button><p class=\"yt-cred\">TED-Ed, lição de Sheila Marie Orfano e Densho. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Três linhas no caderno. No exemplo, não nomeies colegas.</p>"
+   "fe": "A confusão mais provável é tomar «Nunca queres participar» pelo que se viu. O Rui viu um momento; «nunca» fala de todos. Na sessão 01, viste que isso já é uma interpretação.",
+   "pista": "Pergunta a cada frase: viu-se, ou alguém o concluiu?"
   },
   {
    "t": "escolha",
-   "g": "positivo",
-   "p": "Dizer «os alunos daquele país são todos ótimos a matemática» parece um elogio. Porque é que também faz mal?",
-   "p2": "Um estereótipo «positivo» também pode magoar. Porquê?",
+   "rot": "A natação obrigatória",
+   "p": "Caso real (Tribunal Europeu dos Direitos Humanos, 2017): sem dispensa da natação mista, duas alunas de família muçulmana podiam nadar de burkini. O Tribunal não viu violação. Porquê?",
+   "p2": "Caso real (Tribunal Europeu dos Direitos Humanos, 2017): duas alunas não foram dispensadas da natação mista, mas podiam usar burkini. O Tribunal não viu violação. Porquê?",
+   "f": "O Tribunal aceitou a interferência, mas pesou aprender em conjunto e as adaptações, o burkini e o balneário sem rapazes. Um efeito desigual obriga a pesar; não decide sozinho.",
+   "min": 4,
+   "tipo": "transferir",
+   "conceito": "regra comum e adaptação",
+   "liga": [
+    {
+     "t": "Ler o acórdão no HUDOC (10/01/2017, em inglês)",
+     "href": "https://hudoc.echr.coe.int/eng?i=001-170436"
+    }
+   ],
+   "pista": "Lê cada razão e pergunta-te se o caso, como o cartão o conta, a sustenta.",
    "o": [
-    "Trata cada pessoa pelo grupo, não por ela.",
-    "Os elogios nunca devem ser feitos na escola.",
-    "Só faz mal quando é dito por um adulto."
+    "Pesou aprender em conjunto, e a escola adaptou a aula sem dispensar ninguém.",
+    "Uma regra que é igual para todos não se pode contestar num tribunal.",
+    "A liberdade de religião não protege o que os pais ensinam aos filhos."
    ],
    "c": 0,
-   "f": "Mesmo quando parece bom, o estereótipo apaga a pessoa: quem não é «ótimo a matemática» fica de fora, e quem é deixa de ter mérito próprio. É o dano de que fala o vídeo.",
    "fe": [
     "",
-    "Elogiar o trabalho de alguém é bom. O problema é atribuir uma qualidade a todos os de um grupo.",
-    "Quem diz a frase não muda o problema: a frase trata as pessoas pelo grupo."
+    "Pode: os pais contestaram-na até ao Tribunal, que pesou as razões dos dois lados. Uma regra igual também se discute. Volta ao que pesou contra a dispensa.",
+    "Protege: o Tribunal aceitou que a recusa da dispensa interferia na liberdade de religião dos pais (§ 42). Mesmo assim, pesou outras razões. Volta às adaptações."
    ]
   },
   {
    "t": "ler",
-   "rot": "Ver",
-   "titulo": "Uma fotografia à chegada",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/hine-familia-bagagens-1905.webp\" alt=\"Fotografia a preto e branco. Uma mulher de lenço na cabeça tem um bebé ao colo; ao lado, um rapaz de boné leva ao ombro um grande saco às riscas; à frente, uma menina pequena de touca. Atrás, malas e baús empilhados; no chão, à esquerda, uma caixa com palavras escritas à mão.\" loading=\"lazy\"></span><figcaption>Lewis Hine, <i>Immigrant Family in the Baggage Room of Ellis Island</i>, 1905 (prova de 1939). Museum of Fine Arts, Houston, via Google Arts &amp; Culture. Domínio público.</figcaption></figure><p>Uma família na sala das bagagens da ilha de Ellis, por onde entravam os imigrantes nos Estados Unidos. Fotografou-a em 1905 o norte-americano Lewis Hine.</p><p class=\"pergunta-c\">Se esta fosse a única imagem que conhecesses dos imigrantes que chegavam aos Estados Unidos, que ideia farias deles? O que é que a fotografia não mostra?</p><p>Responde no caderno, numa linha para cada pergunta.</p>"
+   "rot": "Volta ao caso",
+   "titulo": "A razão da direção",
+   "html": "<div class=\"m-volta\"><p class=\"parte\">Parte 2</p><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\">A diretora explica: na semana passada, um aluno queixou-se de que dois colegas se riam dele em romeno; e ela acha que uma língua comum junta a escola. A Mariana escreve no átrio: a irmã chegou há dois meses e ainda não percebe português. Por baixo, alguém acrescenta: «Quem fala outra língua no intervalo está a esconder alguma coisa.»</p></div>",
+   "min": 4
   },
   {
-   "t": "escolha",
-   "g": "foto",
-   "p": "Na fotografia da ilha de Ellis, uma mulher e três crianças na sala das bagagens. O que é que esta imagem não pode mostrar?",
-   "p2": "A fotografia da ilha de Ellis mostra uma família à chegada. Que coisa fica, de certeza, fora dela?",
-   "o": [
-    "Como eram as outras famílias à chegada.",
-    "O saco às riscas que o rapaz leva ao ombro.",
-    "O bebé que a mulher de lenço tem ao colo."
+   "t": "vf",
+   "rot": "O que a queixa prova",
+   "p": "Pela queixa do aluno, já se sabe que só falar português no intervalo acaba com o gozo.",
+   "p2": "A queixa do aluno prova que, com a regra do português, deixa de haver gozo no intervalo.",
+   "f": "É falso: a queixa conta um episódio, em romeno. Se a regra o evitaria, ainda não se sabe: também se pode gozar em português. É uma dúvida para o papel.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "facto e dúvida",
+   "v": false,
+   "fe": "A queixa diz o que aconteceu uma vez; não diz o que a regra mudaria. Separa o que está no caso do que se espera da regra.",
+   "pista": "Relê a queixa na Volta ao caso: o que conta ela, e quantas vezes aconteceu?"
+  },
+  {
+   "t": "ler",
+   "rot": "Em turma",
+   "titulo": "Depois dos materiais",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A regra «só português nos intervalos» deve avançar?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>Um aluno foi gozado numa língua que não percebia. Uma língua comum pode evitar que se repita.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>A irmã da Mariana não percebe português, e o artigo 30.º fala de <span class=\"citado\" data-fonte=\"cdc-30\">«utilizar a sua própria língua»</span>.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>O gozo trava-se com uma regra sobre a língua, ou com uma regra sobre o gozo?</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"A prova que pesou\"><p class=\"pos-q\">O que pesa mais?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A prova que pesou\"><button type=\"button\" class=\"pos-op\" data-valor=\"A queixa do aluno\" data-frase=\"A queixa do aluno\">A queixa do aluno</button><button type=\"button\" class=\"pos-op\" data-valor=\"A irmã da Mariana\" data-frase=\"A irmã da Mariana\">A irmã da Mariana</button><button type=\"button\" class=\"pos-op\" data-valor=\"O artigo 30.º\" data-frase=\"O artigo 30.º\">O artigo 30.º</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e escolhes a prova que mais pesa.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
+   "min": 13
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Facto, princípio, opinião ou estereótipo",
+   "p": "Liga cada frase ao que ela é numa justificação.",
+   "p2": "Facto do caso, princípio de um texto, opinião de uma das partes ou estereótipo: o que é cada frase?",
+   "f": "A chegada da irmã é um facto do caso; «utilizar a sua própria língua» é um princípio da Convenção; a frase da diretora é a opinião dela; a frase do átrio é um estereótipo: não prova nada sobre ninguém.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "relato e princípio",
+   "pares": [
+    [
+     "A irmã da Mariana chegou há dois meses.",
+     "Um facto do caso"
+    ],
+    [
+     "«[…] utilizar a sua própria língua.»",
+     "Um princípio escrito num texto"
+    ],
+    [
+     "A diretora acha que uma língua comum junta a escola.",
+     "A opinião de uma das partes"
+    ],
+    [
+     "«Quem fala outra língua no intervalo está a esconder alguma coisa.»",
+     "Um estereótipo"
+    ]
    ],
-   "c": 0,
-   "f": "Uma fotografia mostra quatro pessoas num momento. Tomá-la pelo retrato de todos os imigrantes é o primeiro passo de um estereótipo.",
-   "fe": [
-    "",
-    "O saco vê-se bem, ao ombro do rapaz: é das coisas que a fotografia mostra com certeza.",
-    "O bebé está à vista, ao colo da mulher. É o que a fotografia mostra."
-   ]
+   "citacoes": [
+    [
+     "cdc-30",
+     "utilizar a sua própria língua"
+    ]
+   ],
+   "fe": "A confusão mais provável é tomar a frase do átrio por facto: põe a mesma ideia em todos os que falam outra língua, sem olhar para ninguém. Pergunta a cada frase de onde vem e como se confere.",
+   "pista": "Pergunta a cada frase de onde vem e quem a diz."
   },
   {
    "t": "ordenar",
-   "g": "responder",
-   "p": "Alguém diz uma frase que generaliza sobre um grupo. Põe por ordem os passos para responder.",
-   "p2": "Por que ordem respondes a um comentário que generaliza?",
+   "rot": "A justificação por ordem",
+   "p": "Põe a justificação por ordem: cada passo tem de se apoiar no que vem antes.",
+   "p2": "Ordena os quatro passos, de modo que cada um se apoie no anterior.",
+   "f": "Facto, fonte, aplicação, limite: cada passo apoia-se no anterior, e o limite diz até onde a conclusão pode ir.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "facto, fonte, aplicação, limite",
    "passos": [
-    "Perguntar de onde vem essa ideia.",
-    "Ouvir a resposta até ao fim.",
-    "Dar um facto que se possa verificar.",
-    "Propor outra pergunta para a conversa."
+    "A irmã da Mariana chegou há dois meses e ainda não percebe português.",
+    "A Convenção diz que nenhuma criança de uma minoria pode ser privada do direito de utilizar a sua própria língua.",
+    "Com a regra, a Mariana deixa de poder falar com a irmã no intervalo.",
+    "Falta saber se só falar português no intervalo evitaria o gozo."
    ],
-   "f": "Perguntar primeiro abre a conversa em vez de a fechar. Depois ouve-se a resposta até ao fim, e só então se traz um facto. No fim, uma pergunta nova evita voltar ao mesmo."
-  },
-  {
-   "t": "vf",
-   "g": "neutra",
-   "p": "Uma regra que vale para todos é sempre neutra para todos.",
-   "p2": "Se uma regra se aplica a toda a gente, nunca pesa mais sobre uns do que sobre outros.",
-   "v": false,
-   "f": "A regra do português vale para todos, mas só pesa a quem fala outra língua com os seus. Por isso a Constituição proíbe prejudicar alguém em razão da língua (artigo 13.º, n.º 2), mesmo com regras iguais.",
-   "fe": "Para saber se uma regra é neutra, pergunta quem perde com ela. Se perde sempre o mesmo grupo, não é neutra."
-  },
-  {
-   "t": "ler",
-   "rot": "Na aula",
-   "titulo": "O ensaio",
-   "html": "<p><b>O que se faz.</b> Ensaia o teatro-documento e regista em três colunas o que se ouviu, de quem é a voz e de que fonte vem; procura a voz que falta (na aula, mostra-o à turma, depois do aquecimento «O outro lado»).</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> As tuas notas e duas mudanças que decides fazer, uma delas para incluir uma voz que ainda não estava.</p>"
+   "fe": "A confusão mais provável é começar pelo artigo ou pôr o que falta saber antes da aplicação. Começa no que aconteceu; o que falta saber fecha a justificação.",
+   "pista": "Pergunta-te o que tem de vir primeiro para o resto se apoiar."
   },
   {
    "t": "escolha",
-   "g": "festa",
-   "p": "Caso inventado: a festa de fim de período calha num dia de jejum de alguns colegas. Que decisão ouve todos?",
-   "p2": "Alguns colegas jejuam no dia marcado para a festa da turma. Que solução ouve toda a gente?",
+   "rot": "A conclusão que vai longe de mais",
+   "p": "Só uma destas conclusões vai além do que o caso mostra. Encontra-a.",
+   "p2": "Uma destas conclusões diz mais do que as provas do caso permitem. Encontra-a.",
+   "f": "Ninguém no caso diz que falar nepalês atrasa o português da irmã: é uma ideia feita com ar de conclusão. As outras duas estão no caso.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "conclusão e provas",
+   "pista": "Para cada conclusão, procura no caso a frase que a sustenta.",
    "o": [
-    "Perguntar a quem jejua e ajustar a hora.",
-    "Manter tudo: a maioria não está de jejum.",
-    "Cancelar a festa para a turma inteira."
+    "A irmã da Mariana chegou à escola há pouco tempo.",
+    "A diretora propõe a regra a pensar na queixa de um aluno.",
+    "Falar nepalês no intervalo atrasa o português da irmã."
    ],
-   "c": 0,
-   "f": "Perguntar a quem é afetado e ajustar a hora ou a comida deixa a festa para todos. Ninguém tem de explicar a sua religião: basta dizer aquilo de que precisa.",
+   "c": 2,
    "fe": [
-    "",
-    "A maioria não decide sozinha sobre quem fica de fora. Uma pequena mudança pode bastar.",
-    "Cancelar tira a festa a todos, e ninguém o pediu. Há soluções menos pesadas."
+    "Está no caso: a Mariana escreveu que a irmã chegou há dois meses. Procura a conclusão que junta ao caso uma ideia que ninguém provou.",
+    "Está no caso: a diretora explica a regra com a queixa da semana passada. Procura a conclusão que nenhuma frase do caso sustenta.",
+    ""
    ]
   },
   {
-   "t": "emparelhar",
-   "g": "colunas",
-   "p": "Notas de um ensaio: liga cada nota à coluna onde fica.",
-   "p2": "Em que coluna das notas do ensaio fica cada uma?",
-   "pares": [
-    [
-     "«A escola não ouve os pais», diz a personagem da mãe.",
-     "O que se ouviu"
-    ],
-    [
-     "Quem fala é a mãe, não a direção.",
-     "De quem é a voz"
-    ],
-    [
-     "Vem da entrevista à associação de pais.",
-     "De que fonte vem"
-    ]
-   ],
-   "f": "Separar o que se ouviu, de quem é a voz e de onde vem ajuda a encontrar a voz que falta: neste exemplo, a da direção.",
-   "fe": "Pergunta a cada nota: é uma fala, uma pessoa ou uma origem?"
-  },
-  {
-   "t": "completar",
-   "g": "regra",
-   "p": "Completa a frase sobre uma regra comum justa.",
-   "p2": "Quando é que uma regra comum é justa?",
-   "frase": "Uma regra comum é justa quando é [1] a todos e não [2] ninguém.",
-   "lacunas": [
-    {
-     "o": [
-      "explicada",
-      "imposta",
-      "escondida"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "cala",
-      "ouve",
-      "avisa"
-     ],
-     "c": 0
-    }
-   ],
-   "f": "Uma regra comum justa explica-se a quem a cumpre e não cala ninguém. Se calar sempre os mesmos, tem de ser revista.",
-   "fe": "Volta ao caso do intervalo: a quem é que a regra tira a palavra?"
-  },
-  {
-   "t": "vf",
-   "g": "discorda",
-   "p": "No teatro-documento, a fala de alguém que discorda de ti pode entrar, desde que se diga de onde vem.",
-   "p2": "Uma voz contrária à tua pode entrar no teatro-documento, se tiver a sua fonte.",
-   "v": true,
-   "f": "O teatro-documento é feito do que se investigou. Uma voz que discorda, com fonte, mostra que ouviste mais do que um lado.",
-   "fe": "Pôr em cena quem discorda não é dar-lhe razão: é mostrar o que se ouviu, com a fonte."
+   "t": "ler",
+   "rot": "Agora, em papel",
+   "titulo": "Agora, em papel",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho, sem telemóvel.</p><p class=\"papel-q\">Quando uma regra parece servir todos, de quem é a voz que falta?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão: a regra deve avançar, mudar ou cair?</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Caso inventado: o clube de teatro só aceita inscrições pelo telemóvel.</p><ol><li>Conclusão: deve haver também inscrição em papel.</li><li>Prova: dois alunos não têm telemóvel, por falta de dinheiro; ninguém pode ser <span class=\"citado\" data-fonte=\"crp-13-2\">«prejudicado»</span> em razão da <span class=\"citado\" data-fonte=\"crp-13-2\">«situação económica»</span> (artigo 13.º, n.º 2).</li><li>Dúvida: quantos ficam de fora?</li></ol></div></details></div>",
+   "min": 15
   },
   {
    "t": "ler",
    "rot": "Para levar",
-   "escuro": true,
-   "html": "<p class=\"levar\">Ouvir outra voz não é concordar com ela: é saber sobre o que se decide.</p><p>Nesta sessão viste como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos. No ensaio, procuraste a voz que faltava. Volta à fotografia da ilha de Ellis: o que ficou de fora?</p><p><b>As frases da sessão</b></p><ul><li>Ninguém pode ser prejudicado pela língua ou pela religião (artigo 13.º).</li><li>Um estereótipo diz o mesmo de todos; uma pessoa é sempre mais.</li><li>Uma regra para todos tem de ser explicada a quem ela cala.</li><li>Na cena, a voz de quem discorda também tem fonte.</li></ul>"
+   "titulo": "",
+   "html": "<div class=\"m-levar\"><p class=\"levar\" data-artefacto=\"frase\" data-rot=\"A frase da sessão\" data-texto=\"Antes de decidir por todos, ouve quem a regra cala.\"><span class=\"ch\" style=\"--i:0\">A</span><span class=\"ch\" style=\"--i:1\">n</span><span class=\"ch\" style=\"--i:2\">t</span><span class=\"ch\" style=\"--i:3\">e</span><span class=\"ch\" style=\"--i:4\">s</span><span class=\"ch\" style=\"--i:5\"> </span><span class=\"ch\" style=\"--i:6\">d</span><span class=\"ch\" style=\"--i:7\">e</span><span class=\"ch\" style=\"--i:8\"> </span><span class=\"ch\" style=\"--i:9\">d</span><span class=\"ch\" style=\"--i:10\">e</span><span class=\"ch\" style=\"--i:11\">c</span><span class=\"ch\" style=\"--i:12\">i</span><span class=\"ch\" style=\"--i:13\">d</span><span class=\"ch\" style=\"--i:14\">i</span><span class=\"ch\" style=\"--i:15\">r</span><span class=\"ch\" style=\"--i:16\"> </span><span class=\"ch\" style=\"--i:17\">p</span><span class=\"ch\" style=\"--i:18\">o</span><span class=\"ch\" style=\"--i:19\">r</span><span class=\"ch\" style=\"--i:20\"> </span><span class=\"ch\" style=\"--i:21\">t</span><span class=\"ch\" style=\"--i:22\">o</span><span class=\"ch\" style=\"--i:23\">d</span><span class=\"ch\" style=\"--i:24\">o</span><span class=\"ch\" style=\"--i:25\">s</span><span class=\"ch\" style=\"--i:26\">,</span><span class=\"ch\" style=\"--i:27\"> </span><span class=\"ch\" style=\"--i:28\">o</span><span class=\"ch\" style=\"--i:29\">u</span><span class=\"ch\" style=\"--i:30\">v</span><span class=\"ch\" style=\"--i:31\">e</span><span class=\"ch\" style=\"--i:32\"> </span><span class=\"ch\" style=\"--i:33\">q</span><span class=\"ch\" style=\"--i:34\">u</span><span class=\"ch\" style=\"--i:35\">e</span><span class=\"ch\" style=\"--i:36\">m</span><span class=\"ch\" style=\"--i:37\"> </span><span class=\"ch\" style=\"--i:38\">a</span><span class=\"ch\" style=\"--i:39\"> </span><span class=\"ch\" style=\"--i:40\">r</span><span class=\"ch\" style=\"--i:41\">e</span><span class=\"ch\" style=\"--i:42\">g</span><span class=\"ch\" style=\"--i:43\">r</span><span class=\"ch\" style=\"--i:44\">a</span><span class=\"ch\" style=\"--i:45\"> </span><span class=\"ch\" style=\"--i:46\">c</span><span class=\"ch\" style=\"--i:47\">a</span><span class=\"ch\" style=\"--i:48\">l</span><span class=\"ch\" style=\"--i:49\">a</span><span class=\"ch\" style=\"--i:50\">.</span></p><p class=\"levar-volta\" data-modelo=\"No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».\" hidden></p><p class=\"frases-t\">As frases da sessão</p><ul class=\"frases\"><li>Um estereótipo diz o mesmo de todos; cada pessoa é mais.</li><li>Uma regra que pesa mais sobre alguns obriga a pesar razões; não cai só por isso.</li></ul><div data-recolha-lista></div></div>",
+   "min": 5,
+   "escuro": true
   }
  ]
 }
