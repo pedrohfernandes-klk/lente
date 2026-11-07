@@ -7,7 +7,7 @@
 # nenhum cartão cita um texto legal (nada a acrescentar ao registo tools/cidadania_fontes.json).
 #
 # Sessão de mostra («variante»: «mostra», só das sessões 10; o validador aplica-lhe o contrato da variante e nenhuma outra sessão o
-# usa): núcleo curto com 7 de fazer, o Ponto de chegada em papel antes do cartão 1 (15 minutos, as mesmas dez perguntas do Ponto de
+# usa): núcleo curto com 7 de fazer, o Ponto de chegada em papel antes do cartão 1 (10 minutos, decisão 179, as mesmas dez perguntas do Ponto de
 # partida, como na sessão 01), a mostra individual de 3 minutos com 2 de defesa por aluno (decisão 159) no «Em turma», com a pausa a
 # meio, e três linhas em papel no fim. 14 cartões (7 de ler, 7 de fazer): Abre, Decide, quatro Recupera (R1 a obra, Camus; R2 a R4
 # um item novo das sessões 01 a 03, 04 a 06 e 07 a 09), Olha, um exercício com o cartaz, Lê, a charneira 1, a mostra, a charneira 2,
@@ -110,7 +110,8 @@ CARTOES = [
  # ---------------------------------------------------------------- antes da mostra (30 minutos, depois do Ponto de chegada)
  # O caso do piloto («Isso é só a vossa opinião», cartão 2) passa ao singular e ganha o limite que a pergunta da sessão pede.
  M.abre('O que consegues defender?',
-        f'o Ponto de chegada em papel (15{NB}min), recuperar e ler (20{NB}min), a mostra (130{NB}min, com a pausa a meio) e o fecho '
+        # 07/11/2026: decisão 179 (docente). Ponto de chegada em 10 minutos e mostra em 125 (135 com a pausa); o total fica em 180.
+        f'o Ponto de chegada em papel (10{NB}min), recuperar e ler (20{NB}min), a mostra (135{NB}min, com a pausa a meio) e o fecho '
         f'(15{NB}min).',
         'Na mostra, a Inês apresenta o seu teatro-documento sobre a falta de lugares na cantina, feito com uma contagem dos lugares e '
         'duas entrevistas. Na defesa, um colega diz: «Isso é só a tua opinião.» A Inês sabe de onde vem cada fala da peça, mas também '
@@ -223,8 +224,9 @@ CARTOES = [
          'Uma contagem com dias e números mostra de onde vem a resposta, e quem objetou pode confirmá-la. É o que faz o arranque «Esta '
          'fonte ajudou-me a compreender…».',
          2, 'aplicar', 'opinião e prova', pista='Relê, no Lê, a linha sobre de onde vem o que dizes.'),
- # ---------------------------------------------------------------- a mostra (120 minutos, com a pausa a meio) e o fecho
- # 07/11/2026 (revisão): 120 minutos, 24 alunos a 5 minutos (decisão 159: cerca de 125; os 5 que faltam são pergunta ao docente).
+ # ---------------------------------------------------------------- a mostra (125 minutos, com a pausa a meio) e o fecho
+ # 07/11/2026 (revisão): 120 minutos, 24 alunos a 5 minutos (decisão 159: cerca de 125; os 5 que faltam eram pergunta ao docente).
+ # 07/11/2026: decisão 179 (docente). O Ponto de chegada passa a 10 minutos e a mostra fica com os 125 da decisão 159 (25 alunos).
  M.em_turma(DECIDE_Q, [
      ('Quem acha que sim', 'Um dos arranques é «Ainda reconheço este limite…»: dizer o que falta também é responder.'),
      ('Quem acha que não', 'Em dois minutos de defesa, o limite pode ficar como a única coisa que o público ouve.'),
@@ -233,7 +235,7 @@ CARTOES = [
       'Quanto tempo': 'Três minutos de mostra e dois de defesa.',
       'O que fica escrito': 'Nada no ecrã; a escolha fica nos artefactos.',
       'Se estás sozinho': 'Mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.'},
-     titulo='A mostra', minutos=120, intro='', nota=None),
+     titulo='A mostra', minutos=125, intro='', nota=None),
  # Charneira 2 («reconhecer um limite não enfraquece», piloto, cartão 16, sem o absoluto do piloto): o limite das entrevistas não
  # apaga a contagem. O erro esperado é achar que admitir uma fraqueza estraga tudo.
  M.fazer('vf', 'O limite e a contagem',
@@ -291,7 +293,7 @@ def sessao():
                         'na Library of Congress não se abriu, só a sua cópia no Wikimedia Commons.'),
         # 07/11/2026 (variante «mostra»): o Ponto de chegada em papel antes do cartão 1, a pausa a meio da mostra e a entrega; não há
         # folga nem passo do projeto à parte (a mostra é o projeto).
-        'tempos': {'ponto': 15, 'pausa': 10, 'entrega': 5},
+        'tempos': {'ponto': 10, 'pausa': 10, 'entrega': 5},  # 07/11/2026: decisão 179, o Ponto de chegada em 10 minutos
         'depois': DEPOIS,
         'cartoes': CARTOES,
     }

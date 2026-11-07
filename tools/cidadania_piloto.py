@@ -871,7 +871,7 @@ GUIA = {
   'molde': True,
   'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada e mostra individual do teatro-documento.',
   'ensina': 'Defender uma resposta com a fonte de onde vem, responder a uma objeção e dizer o limite sem enfraquecer o que está provado.',
-  'antes': ('Antes do cartão 1: o Ponto de chegada, em papel, sem ajuda e sem consulta (15 minutos), com as mesmas 10 perguntas do Ponto de '
+  'antes': ('Antes do cartão 1: o Ponto de chegada, em papel, sem ajuda e sem consulta (10 minutos, decisão 179), com as mesmas 10 perguntas do Ponto de '
             'partida (ligação no fim deste guia). Os cartões de recuperação vêm depois, para não ensinarem as respostas antes. Devolver, no '
             'início, o papel da sessão 09 com a marca por critério. Ter a ordem das mostras afixada antes da primeira.'),
   'ponto': 'O Ponto de chegada, em papel, sem ajuda e sem consulta; recolhe-se por código.',
@@ -902,7 +902,8 @@ GUIA = {
    'Cada aluno mostra a sua peça em três minutos. Na defesa, uma objeção do público ou, se não houver, a do Abre («Isso é só a tua opinião»); o aluno responde em dois minutos, com uma prova e um limite.',
    'Regra: fala-se do que se viu, nunca de quem. Uma objeção diz o que falta à peça, não o que falta à pessoa.',
    # 07/11/2026 (revisão): 120 minutos para a mostra (decisão 159: cerca de 125 minutos para a turma).
-   'A mostra ocupa as duas metades da sessão, com a pausa a meio: 120 minutos dão 24 alunos a 5 minutos cada (decisão 159).',
+   # 07/11/2026: decisão 179 (docente). O Ponto de chegada passa a 10 minutos e a mostra fica com 125.
+   'A mostra ocupa as duas metades da sessão, com a pausa a meio: 125 minutos dão 25 alunos a 5 minutos cada (decisão 159).',
    'Depois da última mostra, um minuto em silêncio: cada aluno decide outra vez no cartão. Nova contagem de braço no ar, ao lado dos números do Decide: quem mudou, e porquê.',
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa mostra a peça em voz alta, com o relógio, e responde em dois minutos à objeção do início.',
   ],
@@ -925,7 +926,8 @@ GUIA = {
              ('Defesa: resposta à objeção com uma prova', 5), ('Defesa: o limite dito com clareza', 3)],
   'noventa': [
    # 07/11/2026 (revisão): os tempos novos (cartões 1 a 10 em 20 minutos, a mostra em 120).
-   'Primeira aula: Ponto de chegada (15 minutos), cartões 1 a 10 (20 minutos) e a primeira metade da mostra (55 minutos).',
+   # 07/11/2026: decisão 179. Ponto de chegada em 10 minutos; a primeira metade da mostra ganha os 5.
+   'Primeira aula: Ponto de chegada (10 minutos), cartões 1 a 10 (20 minutos) e a primeira metade da mostra (60 minutos).',
    'Segunda aula: a segunda metade da mostra (65 minutos), depois a decisão do «Em turma» e os cartões 12 a 14 (10 minutos) e a entrega.',
    'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 11.',
   ],

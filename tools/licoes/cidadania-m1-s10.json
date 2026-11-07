@@ -17,7 +17,7 @@
  "seguinteRotulo": "As 10 sessões",
  "fontes": "Cartaz: _Federal Theatre presents «… one-third of a nation»_, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia do WPA Federal Art Project, Library of Congress (LCCN 95509661), domínio público. Pintura: Ticiano, _Sísifo_, entre 1548 e 1549, Museo Nacional del Prado, domínio público. Albert Camus, _O Mito de Sísifo_ (1942). Os arranques de frase da defesa vêm da sessão 10 do percurso anterior. O caso da Inês, o da Joana, o da ordem das mostras, o da Rita e o da fila do bar são inventados. A sessão não tem caso real confirmado: o registo do cartaz na Library of Congress não se abriu, só a sua cópia no Wikimedia Commons.",
  "tempos": {
-  "ponto": 15,
+  "ponto": 10,
   "pausa": 10,
   "entrega": 5
  },
@@ -30,7 +30,7 @@
    "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">Na mostra, a Inês apresenta o seu teatro-documento sobre a falta de lugares na cantina, feito com uma contagem dos lugares e duas entrevistas. Na defesa, um colega diz: «Isso é só a tua opinião.» A Inês sabe de onde vem cada fala da peça, mas também sabe que só entrevistou duas pessoas. Tem dois minutos para responder.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Uma resposta que admite um limite fica mais fraca?</p></div>",
    "min": 2,
    "aula": {
-    "linha": "o Ponto de chegada em papel (15 min), recuperar e ler (20 min), a mostra (130 min, com a pausa a meio) e o fecho (15 min)."
+    "linha": "o Ponto de chegada em papel (10 min), recuperar e ler (20 min), a mostra (135 min, com a pausa a meio) e o fecho (15 min)."
    }
   },
   {
@@ -200,7 +200,7 @@
    "rot": "Em turma",
    "titulo": "A mostra",
    "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A Inês deve dizer, na defesa, que só entrevistou duas pessoas?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>Um dos arranques é «Ainda reconheço este limite…»: dizer o que falta também é responder.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>Em dois minutos de defesa, o limite pode ficar como a única coisa que o público ouve.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se a Inês começar por «Esta fonte ajudou-me a compreender…» e deixar o limite para o fim?</p></div></details></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Mostras a peça, respondes a uma objeção e decides outra vez.</dd><dt>Quanto tempo</dt><dd>Três minutos de mostra e dois de defesa.</dd><dt>O que fica escrito</dt><dd>Nada no ecrã; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.</dd></dl></div>",
-   "min": 120
+   "min": 125
   },
   {
    "t": "vf",

@@ -1534,7 +1534,8 @@ class SessaoS10(unittest.TestCase):
         self.assertEqual([c['rot'] for c in C if c['t'] == 'ler'],
                          ['Abre', 'Decide', 'Olha', 'Lê', 'Em turma', 'Agora, em papel', 'Para levar'])
         # o Ponto de chegada antes do cartão 1, a mostra com a pausa a meio, 180 minutos
-        self.assertEqual(self.D['tempos'], {'ponto': 15, 'pausa': 10, 'entrega': 5})
+        # 07/11/2026: decisão 179 (docente): Ponto de chegada em 10 minutos e mostra em 125
+        self.assertEqual(self.D['tempos'], {'ponto': 10, 'pausa': 10, 'entrega': 5})
         self.assertEqual(sum(c['min'] for c in C) + sum(self.D['tempos'].values()), 180)
         turma = next(c for c in C if c['rot'] == 'Em turma')
         self.assertGreaterEqual(turma['min'], 90)
@@ -1647,8 +1648,9 @@ class SessaoS10(unittest.TestCase):
         sec = sec[:sec.index('</section>')]
         self.assertIn('Ponto de chegada', sec)
         # 07/11/2026 (revisão da s10): a mostra passa a 120 minutos (decisão 159: cerca de 125), sem «a confirmar» na secção
-        self.assertIn('Como conduzir a mostra (cartão 11, 120', sec)
-        self.assertIn('120\u00a0minutos dão 24\u00a0alunos a 5\u00a0minutos cada (decisão 159)', sec)
+        # 07/11/2026: decisão 179 (docente): Ponto de chegada em 10 minutos e mostra em 125
+        self.assertIn('Como conduzir a mostra (cartão 11, 125', sec)
+        self.assertIn('125\u00a0minutos dão 25\u00a0alunos a 5\u00a0minutos cada (decisão 159)', sec)
         self.assertNotIn('a confirmar', sec)
         self.assertIn('A sessão 10 não tem caso real confirmado', sec)
         # 07/11/2026 (revisão da s10): a concordância da frase das sessões no molde quando só falta uma, e o «Se estás sozinho» da mostra
