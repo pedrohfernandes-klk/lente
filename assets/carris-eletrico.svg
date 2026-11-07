@@ -807,16 +807,13 @@
 <path d="M2000 458H-660M2000 470H-660"/>
 <path d="M506 470C456 471 404 498 352 540C318 568 290 592 276 612M524 458C474 460 424 486 376 528C342 558 314 590 300 612"/>
 </g>
+<g class="jc-carro">
 <ellipse cx="880.4" cy="472" rx="287.6" ry="9" fill="currentColor" opacity=".12"/>
 <image class="jc-foto" href="justica/eletrico-541-recorte.webp" x="592.8" y="100.8" width="575.3" height="379.1"/>
-<path class="jc-alvo" d="M598 254h564v194h-564z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".6"/>
+</g>
 <g fill="none" stroke-linecap="round" stroke-linejoin="round">
 <path class="jc-via jc-via-a" d="M488 464H-660" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
 <path class="jc-via jc-via-b" d="M492 466C446 468 400 494 354 536C322 564 300 590 288 610" stroke="var(--jc-terra,#a84939)" stroke-width="7" stroke-dasharray="1 17"/>
 <g class="jc-agulha" stroke="currentColor" stroke-width="3.5"><path class="jc-agulha-perto" d="M470 470l34-1"/><path class="jc-agulha-longe" d="M478 458l28 2"/></g>
 <g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M532 548H584L594 560H542Z" fill="var(--jc-papel,#f3f2ee)"/><g class="jc-alavanca-braco"><path d="M563 548L561 496"/><circle cx="561" cy="486" r="10" fill="var(--jc-papel,#f3f2ee)"/></g><path d="M546 552L496 476" stroke-width="2.5" stroke-dasharray="5 7"/></g>
-<g class="jc-sinal jc-sinal-1" stroke="var(--jc-terra,#a84939)" stroke-width="4.5" opacity="0"><path d="M553.8 338.2Q553.6 325.1 550.2 312.4"/><circle cx="555.5" cy="350.5" r="3.5" fill="var(--jc-terra,#a84939)" stroke="none"/></g>
-<g class="jc-sinal jc-sinal-2" stroke="var(--jc-terra,#a84939)" stroke-width="4" opacity="0"><path d="M514.9 372.3Q513.8 362.3 509.7 353.1"/><circle cx="517.2" cy="381.0" r="3.1" fill="var(--jc-terra,#a84939)" stroke="none"/></g>
-<g class="jc-sinal jc-sinal-3" stroke="var(--jc-terra,#a84939)" stroke-width="4.1" opacity="0"><path d="M624.0 529.2Q627.3 519.1 627.3 508.4"/><circle cx="622.5" cy="538.8" r="3.2" fill="var(--jc-terra,#a84939)" stroke="none"/></g>
-<g class="jc-sinal jc-sinal-4" stroke="var(--jc-terra,#a84939)" stroke-width="3.7" opacity="0"><path d="M650.9 522.6Q654.8 515.3 655.6 507.1"/><circle cx="648.8" cy="529.2" r="2.9" fill="var(--jc-terra,#a84939)" stroke="none"/></g>
 </g></g></svg>
