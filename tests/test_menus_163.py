@@ -48,8 +48,11 @@ import molde_s07  # noqa: E402
 # 06/11/2026: fusão do main (com as sessões 2 a 7 finais) na sessão 08 do M1. O manifesto fechado da s08 (tests/molde_s08.py)
 # parte do main 3c774cb, já com a s07: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s07 (abaixo).
 import molde_s08  # noqa: E402
-# 07/11/2026: a sessão 10 do M1 (tests/molde_s10.py), a sessão de mostra: o manifesto parte do main dc01487 e é a camada mais
-# recente; desfaz-se no ficheiro atual antes da da s08 (abaixo).
+# 07/11/2026: a sessão 09 do M1 (tests/molde_s09.py). O manifesto fechado parte do main dc01487, já com a s08: é agora a camada
+# mais recente e desfaz-se no ficheiro atual antes da da s08 (abaixo).
+import molde_s09  # noqa: E402
+# 07/11/2026: a sessão 10 do M1 (tests/molde_s10.py), a sessão de mostra. Na fusão do main com a s09 (#138) e as portas (#137), o
+# manifesto passa a partir do main a258b6c, com a s09: é a camada mais recente e desfaz-se antes da da s09 (abaixo).
 import molde_s10  # noqa: E402
 
 
@@ -143,7 +146,9 @@ class BarraEFio(unittest.TestCase):
                     continue
                 self.assertIsNotNone(fio)
                 self.assertEqual(re.findall(r'<b>([^<]+)</b>', fio.group(0)), ['Ideias', 'Observar', 'Treinar', 'Criar'])
-                atuais = re.findall(r'aria-current="(page|true)"><span class="n">(?:(?!</a>).)*<b>([^<]+)</b>', fio.group(0))
+                # 07/11/2026: decisão 180 (docente). O fio diz só os nomes, sem o <span class="n"> dos passos.
+                self.assertNotIn('class="n"', fio.group(0))
+                atuais = re.findall(r'aria-current="(page|true)"><b>([^<]+)</b>', fio.group(0))
                 porta = next((b['title'] for b in D['blocks'] if rel == PORTAS[b['id']]), None)
                 rota = next((r for r in D['routes'] if rel == PERCURSOS[r['id']]), None)
                 if porta:
@@ -156,33 +161,52 @@ class BarraEFio(unittest.TestCase):
                     self.assertEqual(atuais, [])
 
     def test_portas_percursos_e_passos(self):
+        # 07/11/2026: decisão 180 (docente). As três portas não são passos de um método com ordem. Antes, este teste exigia o
+        # «Passo N: …» como rótulo de cada porta, os números 1, 2–3 e 4–5 na entrada, «Observar, passo 1» nos percursos e a frase
+        # «No Ideias, este passo faz-se na sessão…»; passa a exigir o contrário, com as mesmas ligações e o mesmo «Daqui segues para».
         entrada = ler('narrativas/index.html')
+        self.assertIn('<p class="lab-sec-t" id="portas-t">Três portas</p>', entrada)
+        self.assertNotIn('cinco passos</p>', entrada)
+        self.assertNotIn('class="nums"', entrada)
         for b in D['blocks']:
+            self.assertNotIn('passos', b)
+            self.assertNotIn('passoTexto', b)
             s = ler(PORTAS[b['id']])
-            self.assertIn('<p class="rotulo">' + b['passoTexto'].rstrip('.') + '</p>', s)
-            self.assertIn('<span class="passo">' + b['passoTexto'] + '</span>', entrada)
-            n = str(b['passos'][0]) if len(b['passos']) == 1 else f'{b["passos"][0]}–{b["passos"][-1]}'
-            self.assertIn('<span class="nums" aria-hidden="true">' + n + '</span>', entrada)
+            sub = b['subtitle'][0].upper() + b['subtitle'][1:] + '.'
+            self.assertIn('<div class="nome"><h2>' + b['title'] + '</h2></div><span class="passo">' + sub + '</span>', entrada)
+            cab = re.search(r'<header class="lab-abre lab-abre-porta">.*?</header>', s, re.S).group(0)
+            self.assertNotIn('<p class="rotulo">', cab)
+            self.assertNotIn('liga-ideias', s)
+            self.assertIsNone(re.search(r'[Pp]assos? \d', visivel(s)), b['id'])
             # uma só ligação por porta na entrada, com o id antigo do bloco no item
             self.assertEqual(len(re.findall(r'<li id="' + re.escape(b['anchor']) + r'"><a class="porta3" href="' + b['id'] + r'/"', entrada)), 1)
             for r in D['routes']:
                 if r['block'] != b['id']:
                     continue
                 p = ler(PERCURSOS[r['id']])
-                palavra, nums = ('passo', str(b['passos'][0])) if len(b['passos']) == 1 else ('passos', ', '.join(map(str, b['passos'][:-1])) + ' e ' + str(b['passos'][-1]))
-                self.assertIn(f'<p class="rotulo">{b["title"]}, {palavra} {nums}</p>', p)
-                # nenhum beco: «Daqui segues para» com o seguinte e o regresso à porta
+                self.assertIn(f'<p class="rotulo">{b["title"]}</p>', p)
+                self.assertNotIn('liga-ideias', p)
+                self.assertIsNone(re.search(r'[Pp]assos? \d|Passo seguinte', visivel(p)), r['id'])
+                # nenhum beco: «Daqui segues para» com o seguinte e o regresso à porta; no último percurso de uma porta, as outras
+                # duas portas (nota do docente à decisão 180) e o regresso à porta
                 depois = re.search(r'<nav class="depois" aria-label="Daqui segues para">(.*?)</nav>', p).group(1)
-                self.assertEqual(len(re.findall(r'<a href=', depois)), 2)
+                ultimo = r['id'] == [x['id'] for x in D['routes'] if x['block'] == b['id']][-1]
+                self.assertEqual(len(re.findall(r'<a href=', depois)), 3 if ultimo else 2)
                 self.assertIn('<small>Voltar a</small><b>' + b['title'] + '</b>', depois)
-        # os dois percursos de Observar ligam às sessões 1 e 2 do Ideias (pelo campo «passo» das sessões publicadas)
-        for r in ('olhar', 'voz'):
-            p = ler(PERCURSOS[r])
-            self.assertIn('No Ideias, este passo faz-se na sessão 1, «<a href="../../ideias/sessao-01/">Ver ou observar?</a>», e na sessão 2, «<a href="../../ideias/sessao-02/">O cocheiro</a>».', p)
-        for r in D['routes']:
-            if r['block'] != 'ver':
-                self.assertNotIn('liga-ideias', ler(PERCURSOS[r['id']]), r['id'])
-        self.assertIn('Para treinar este passo: <a href="../ver/">Observar →</a>', ler('narrativas/ideias/index.html'))
+                self.assertNotIn('Porta seguinte', depois)
+            # no fim de cada porta, as outras duas portas lado a lado e o regresso ao Laboratório, sem «seguinte» entre portas
+            fim = re.search(r'<nav class="depois" aria-label="Daqui segues para">(.*?)</nav>', s).group(1)
+            outras = [o['title'] for o in D['blocks'] if o is not b]
+            self.assertEqual(re.findall(r'<small>([^<]+)</small><b>([^<]+)</b>', fim), [('Outra porta', outras[0]), ('Outra porta', outras[1]), ('Voltar ao', 'Laboratório')])
+            self.assertNotIn('Porta seguinte', s)
+        # nota do docente à decisão 180: o Ideias com as sessões numa lista única, cada uma com a peça e a porta a que leva
+        ideias = ler('narrativas/ideias/index.html')
+        self.assertNotIn('Para treinar este passo', ideias)
+        self.assertNotIn('<section class="porta"', ideias)
+        self.assertIn('<span class="peca">Leva a <i>Galileu</i>, na porta Observar.</span>', ideias)
+        # o fio: o Ideias à cabeça e as três portas juntas num grupo
+        fio = re.search(r'<nav class="lab-fio".*?</nav>', ideias).group(0)
+        self.assertRegex(fio, r'^<nav class="lab-fio" aria-label="Partes do Laboratório"><a href="\./" aria-current="page"><b>Ideias</b></a><span class="fio-portas" role="group" aria-label="As três portas">')
 
     def test_sem_dobras_e_texto_da_casa(self):
         proibido = re.compile(r'por fazer|Página inicial|Abrir o percurso|[·—]', re.I)
@@ -277,7 +301,8 @@ class Menu(unittest.TestCase):
                 self.assertTrue(cfg or (nav and len(re.findall(r'href=', nav[0])) == 2), p['id'])
                 m = menu_de(s)
                 if m:
-                    self.assertRegex(m, r'</span></a><a href="[^"]+"><svg[^>]*>.*?</svg><span>(?:Seguinte|Percurso seguinte|Passo seguinte|No Ideias)<small>')
+                    # 07/11/2026: decisão 180 (docente). «As outras portas» no lugar de «Passo seguinte» e de «No Ideias»; a exigência é a mesma.
+                    self.assertRegex(m, r'</span></a><a href="[^"]+"><svg[^>]*>.*?</svg><span>(?:Seguinte|Percurso seguinte|As outras portas)<small>')
 
 
 class Preservacao(unittest.TestCase):
@@ -338,6 +363,11 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s08.inteiro_ok(rel), rel)
                 continue
+            # 07/11/2026: sessão 09 do M1 no molde. O mesmo para os ficheiros que a s09 escreve inteiros.
+            if rel in molde_s09.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s09.inteiro_ok(rel), rel)
+                continue
             # 07/11/2026: o mesmo para os ficheiros que a s10 escreve inteiros.
             if rel in molde_s10.INTEIROS:
                 with self.subTest(rel=rel):
@@ -359,9 +389,12 @@ class Preservacao(unittest.TestCase):
             # 06/11/2026: fusão do main na sessão 08 do M1. Nos ficheiros que a s08 muda em parte, desfaz-se primeiro a sua camada,
             # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s07, a da s06, a da s05, a da s04 e a
             # da s03.
-            # 07/11/2026: a camada da s10 (a mais recente) desfaz-se antes da da s08.
+            # 07/11/2026: a camada da s10 (a mais recente) desfaz-se antes da da s09.
             if rel in molde_s10.TROCAS:
                 agora = molde_s10.desfazer(agora, rel)
+            # 07/11/2026: sessão 09 do M1 no molde. A sua camada, a mais recente, desfaz-se antes da da s08.
+            if rel in molde_s09.TROCAS:
+                agora = molde_s09.desfazer(agora, rel)
             if rel in molde_s08.TROCAS:
                 agora = molde_s08.desfazer(agora, rel)
             if rel in molde_s07.TROCAS:

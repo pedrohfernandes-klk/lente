@@ -5,6 +5,7 @@ import json
 import subprocess
 import unittest
 import menus163
+import portas180
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
@@ -68,10 +69,16 @@ import molde_s07  # noqa: E402
 # .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s08 tem de cumprir o contrato do molde. 06/11/2026
 # (fusão do main com as sessões 2 a 7 finais na sessão 8): o manifesto parte do main (3c774cb), já com a s07.
 import molde_s08  # noqa: E402
+# 07/11/2026: sessão 09 do M1 na versão final (decisões 166 a 168 e 174). Mais uma camada, agora a mais recente, por cima da da s08,
+# com as mesmas regras: o manifesto fechado tools/trocas/molde-s09-20261107.json (parte do main dc01487) nos ficheiros que a s09 muda
+# em parte; os que escreve inteiros (molde_s09.INTEIROS) comparam-se, letra a letra, com o que o gerador escreve hoje.
+import molde_s09  # noqa: E402
 # 07/11/2026: plano do molde da Cidadania, sessão 10 do M1 na versão final, a sessão de mostra (decisões 166 a 168). Mais uma camada,
 # a mais recente, com as mesmas regras: o manifesto fechado tools/trocas/molde-s10-20261107.json (parte do main dc01487) nos
 # ficheiros que a s10 muda em parte; os que escreve inteiros (molde_s10.INTEIROS) comparam-se com o que o gerador escreve hoje.
 import molde_s10  # noqa: E402
+# 07/11/2026 (fusão do main com a s09, #138, e as portas, #137): o manifesto da s10 passa a partir do main a258b6c, já com a s09:
+# é a camada mais recente da Cidadania, por cima da da s09.
 
 
 def desfazer_molde(texto, nome):
@@ -151,6 +158,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s08.INTEIROS:
                     self.assertTrue(molde_s08.inteiro_ok(nome), nome)
                     continue
+                # 07/11/2026 (sessão 09 no molde): o mesmo para os ficheiros que a s09 escreve inteiros.
+                if nome in molde_s09.INTEIROS:
+                    self.assertTrue(molde_s09.inteiro_ok(nome), nome)
+                    continue
                 # 07/11/2026 (sessão 10 no molde): o mesmo para os ficheiros que a s10 escreve inteiros.
                 if nome in molde_s10.INTEIROS:
                     self.assertTrue(molde_s10.inteiro_ok(nome), nome)
@@ -190,9 +201,12 @@ class CidadaniaBase(unittest.TestCase):
                 # (3c774cb), já com a s07; a s08 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
                 # exata de cada «novo»; depois a da s07, a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as
                 # versões de cache.
-                # 07/11/2026 (sessão 10 no molde): a camada da s10 parte do main dc01487, por cima da da s08: desfaz-se primeiro.
+                # 07/11/2026 (sessão 10 no molde): a camada da s10 parte do main com a s09 (a258b6c), por cima da da s09: desfaz-se primeiro.
                 if nome in molde_s10.TROCAS:
                     depois = molde_s10.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
+                # 07/11/2026 (sessão 09 no molde): a camada da s09 parte do main dc01487, por cima da da s08: desfaz-se primeiro.
+                if nome in molde_s09.TROCAS:
+                    depois = molde_s09.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s08.TROCAS:
                     depois = molde_s08.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s07.TROCAS:
@@ -270,6 +284,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s08.INTEIROS:
                     self.assertTrue(molde_s08.inteiro_ok(nome), nome)
                     continue
+                # 07/11/2026 (sessão 09 no molde): o mesmo para os ficheiros que a s09 escreve inteiros.
+                if nome in molde_s09.INTEIROS:
+                    self.assertTrue(molde_s09.inteiro_ok(nome), nome)
+                    continue
                 # 07/11/2026 (sessão 10 no molde): o mesmo para os ficheiros que a s10 escreve inteiros.
                 if nome in molde_s10.INTEIROS:
                     self.assertTrue(molde_s10.inteiro_ok(nome), nome)
@@ -344,8 +362,15 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026: a camada da sessão 08 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
                 # sessões 2 a 7 finais): o manifesto da s08 parte do main (3c774cb), por isso aplica-se depois da s07, em último lugar.
                 esperado = molde_s08.aplicar(esperado, nome)
-                # 07/11/2026: a camada da sessão 10 no molde (manifesto a partir do main dc01487), em último lugar.
+                # 07/11/2026: a camada da sessão 09 no molde (manifesto a partir do main dc01487), em último lugar.
+                esperado = molde_s09.aplicar(esperado, nome)
+                # 07/11/2026: a camada da sessão 10 no molde (manifesto a partir do main a258b6c, com a s09), em último lugar.
                 esperado = molde_s10.aplicar(esperado, nome)
+                # 07/11/2026: decisão 180 (docente). As portas do Laboratório no cartão da entrada sem número nem «passo»: só as
+                # trocas do manifesto fechado tests/fixtures/portas-180-20261107.json, com contagem exata, por cima de tudo (parte do
+                # main fa0ac9f). 07/11/2026 (fusão do main com a sessão 09, #138): a s09 e a 180 mexem em ficheiros diferentes;
+                # a 180 fica em último lugar.
+                esperado = portas180.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

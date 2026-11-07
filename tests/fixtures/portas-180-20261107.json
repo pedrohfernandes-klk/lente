@@ -1,0 +1,92 @@
+{
+ "exato": {
+  "index.html": [
+   [
+    "em-escreve\"><span class=\"lab-set-number\" aria-hidden=\"true\">01</span><span class=\"lab-set-copy\"><strong>Observar</strong><",
+    "em-escreve\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Observar</strong><",
+    1
+   ],
+   [
+    "rvar</strong><small>passo 1: juntar material</small></span><span",
+    "rvar</strong><small>como os outros fizeram</small></span><span",
+    1
+   ],
+   [
+    "o/#treinar\"><span class=\"lab-set-number\" aria-hidden=\"true\">02</span><span class=\"lab-set-copy\"><strong>Treinar</strong><s",
+    "o/#treinar\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Treinar</strong><s",
+    1
+   ],
+   [
+    "inar</strong><small>passos 2 e 3: trabalhar o material e largar</small></span><span",
+    "inar</strong><small>uma regra de cada vez</small></span><span",
+    1
+   ],
+   [
+    "udo/#criar\"><span class=\"lab-set-number\" aria-hidden=\"true\">03</span><span class=\"lab-set-copy\"><strong>Criar</strong><sma",
+    "udo/#criar\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Criar</strong><sma",
+    1
+   ],
+   [
+    "riar</strong><small>passos 4 e 5: a ideia aparece, dar forma e pôr à prova</small></span><span",
+    "riar</strong><small>uma peça, com palavras e imagens</small></span><span",
+    1
+   ]
+  ],
+  "narrativas/duchamp/index.html": [
+   [
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
+    1
+   ],
+   [
+    "th=\"2\"/></svg><span>Passo seguinte<small>Treinar</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/\",seguinteRotulo:\"Passo seguinte: Treinar\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
+    1
+   ]
+  ],
+  "narrativas/treinar/teste-do-colega/index.html": [
+   [
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
+    1
+   ],
+   [
+    "th=\"2\"/></svg><span>Passo seguinte<small>Criar</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\",seguinteRotulo:\"Passo seguinte: Criar\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
+    1
+   ],
+   [
+    "percurso. A seguir: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\\\">Criar</a>. Ou volta a est",
+    "percurso. A seguir: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\\\">Laboratório</a>. Ou volta a est",
+    1
+   ]
+  ],
+  "narrativas/oficina-atelie/index.html": [
+   [
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
+    1
+   ],
+   [
+    "th=\"2\"/></svg><span>No Ideias<small>As sessões</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/\",seguinteRotulo:\"As sessões do Ideias\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
+    1
+   ]
+  ]
+ }
+}

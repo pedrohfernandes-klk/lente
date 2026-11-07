@@ -31,6 +31,8 @@ NO_MOLDE = {'cidadania-m1-s01.json', 'cidadania-m1-s02.json', 'cidadania-m1-s03.
 NO_MOLDE = NO_MOLDE | {'cidadania-m1-s07.json'}
 # 06/11/2026 (decisões 166 a 168): e a s08 do M1, feita fora de ordem (as s04 a s07 entram pelos seus ramos).
 NO_MOLDE |= {'cidadania-m1-s08.json'}
+# 07/11/2026 (decisões 166 a 168 e 174): e a s09 do M1, pelo mesmo molde, a partir do main com as s01 a s08 finais.
+NO_MOLDE |= {'cidadania-m1-s09.json'}
 # 07/11/2026 (decisões 166 a 168): e a s10 do M1, a sessão de mostra (variante «mostra»).
 NO_MOLDE |= {'cidadania-m1-s10.json'}
 PILOTO = [p for p in CIDADANIA if p.name not in NO_MOLDE]
@@ -110,7 +112,14 @@ class ContratoOpcional(unittest.TestCase):
 
     def test_com_molde_o_contrato_aplica_se(self):
         # 05/11/2026 (pedido 2): a primeira sessão ainda sem molde (a s01 já o tem e cumpre-o)
-        d = carregar(PILOTO[0])
+        # 07/11/2026 (sessão 10 no molde, fusão do main com a s09): já não há sessão do M1 sem molde; a prova faz-se com a sessão 10
+        # tal como estava antes do molde (no main dc01487), que continua a ser uma lição do piloto, sem o campo «molde».
+        if PILOTO:
+            d = carregar(PILOTO[0])
+        else:
+            import subprocess
+            d = json.loads(subprocess.check_output(['git', 'show', 'dc01487:tools/licoes/cidadania-m1-s10.json'], cwd=ROOT).decode('utf-8'))
+            self.assertNotIn('molde', d)
         erros = L.validar(dict(d, molde=L.MOLDE))
         self.assertTrue(any(e.startswith('molde') for e in erros), erros)
         self.assertFalse(any(e.startswith('molde') for e in L.validar(d)))
@@ -1327,7 +1336,8 @@ class SessaoS08(unittest.TestCase):
         self.assertEqual([c['min'] for c in C], [c['min'] for c in SessaoS01.D['cartoes']])
         self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
         self.assertIn('A quem se pede, e com que fundamento?', C[0]['html'])
-        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s09/')
+        # 07/11/2026 (sessão 09 no molde): a s09 também passou ao molde final; a s08 leva à s09 nova (era a do piloto).
+        self.assertEqual(self.D['seguinte'], '../09/')
         # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
         for i, c in enumerate(C, 1):
             if c['t'] == 'ler':
@@ -1457,6 +1467,189 @@ class SessaoS08(unittest.TestCase):
 
 
 
+class SessaoS09(unittest.TestCase):
+    """07/11/2026 (decisões 166 a 168 e 174): a sessão 09 do M1, «Muitas vozes, uma escola», na versão final, pelo mesmo molde e com as
+    mesmas exigências da s01 a s08: o contrato e o cfg, cada excerto (Constituição, artigos 13.º, n.º 2, e 41.º, n.º 3; Convenção sobre
+    os Direitos da Criança, artigo 30.º) no registo, confirmado e letra a letra, o R2 com palavras da sessão de origem, o conceito
+    espaçado, as duas charneiras (a 2 pede a conclusão que vai além das provas, o apoio que se retira nas sessões 08 a 10), o caso real
+    com fonte oficial e sem citação (decisão 161: o acórdão do Tribunal Europeu dos Direitos Humanos no HUDOC), a fotografia com o
+    crédito atrás do «i» (decisão 153), nenhum vídeo (decisão 155), nenhum «grupo» (decisão 146) e a versão para imprimir sem
+    respostas."""
+    D = carregar(ROOT / 'tools/licoes/cidadania-m1-s09.json')
+    REG = SessaoS01.REG
+    norm = staticmethod(SessaoS01.norm)
+    confere = SessaoS01.confere
+
+    def test_contrato_e_cfg(self):
+        self.assertEqual(self.D['molde'], L.MOLDE)
+        self.assertEqual(L.validar(self.D), [])
+        self.assertEqual(self.D['saida'], 'cidadania/m1/sessoes/09/index.html')
+        self.assertEqual(self.D['chave'], 'epi-cid-m1-s09')
+        self.assertNotEqual(self.D['versao'], '2026-10-31-2')  # a versão do piloto sobe (preservarAnterior guarda o «feita»)
+        cfg = cfg_da_pagina((ROOT / self.D['saida']).read_text('utf-8'))
+        for k in ('aula', 'semPontos', 'preservarAnterior'):
+            self.assertIs(cfg[k], True, k)
+        self.assertEqual(cfg['retomar'], 192)
+        self.assertNotIn('pistas', cfg)
+        C = self.D['cartoes']
+        self.assertTrue(all(c.get('pista') for c in C if c['t'] != 'ler'))
+        self.assertEqual(len(C), 23)
+        self.assertEqual([c['rot'] for c in C if c['t'] == 'ler'],
+                         ['Abre', 'Decide', 'Olha', 'Lê', 'Conceito', 'Volta ao caso', 'Em turma', 'Agora, em papel', 'Para levar'])
+        # os mesmos minutos da s01, cartão a cartão (a secção 2 do plano)
+        self.assertEqual([c['min'] for c in C], [c['min'] for c in SessaoS01.D['cartoes']])
+        self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
+        self.assertIn('Quando uma regra parece servir todos, de quem é a voz que falta?', C[0]['html'])
+        # a s10 ainda está no piloto: a s09 leva à página do piloto
+        # 07/11/2026 (sessão 10 no molde): a seguinte passa a ser a s10 nova, no mesmo endereço das sessões (era a do piloto).
+        self.assertEqual(self.D['seguinte'], '../10/')
+        # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
+        for i, c in enumerate(C, 1):
+            if c['t'] == 'ler':
+                continue
+            for x in [c['f']] + (c['fe'] if isinstance(c['fe'], list) else [c['fe']]):
+                self.assertLessEqual(len(L.visivel(x).split()), 45, f'cartão {i}')
+            self.assertLessEqual(len(L.visivel(c['p']).split()), 30, f'cartão {i}')
+        # regras da casa: nenhum «Qual», nenhum ponto médio nem travessão no texto da sessão
+        tudo = L.visivel(json.dumps(C, ensure_ascii=False))
+        self.assertNotRegex(tudo, r'\bQual\b')
+        self.assertNotIn('\u00b7', tudo)
+        self.assertNotIn('\u2014', tudo)
+
+    def test_cada_excerto_esta_no_registo_e_confirmado(self):
+        vistos = 0
+        for i, c in enumerate(self.D['cartoes'], 1):
+            h = c.get('html') or ''
+            for bq in re.findall(r'<blockquote class="lei">(.*?)</blockquote>', h, re.S):
+                self.assertEqual(len(re.findall(r'<p\b', bq)), len(re.findall(r'<p\b[^>]*data-fonte=', bq)), f'cartão {i}')
+            for tag, ident, corpo in re.findall(r'<(p|span)\b[^>]*data-fonte="([^"]+)"[^>]*>(.*?)</\1>', h, re.S):
+                corpo = re.sub(r'<span class="art">.*?</span>', '', corpo)
+                self.confere(ident, corpo, f'cartão {i}')
+                vistos += 1
+            if c.get('fonte'):
+                self.confere(c['fonte'], c.get('cita') or c.get('frase'), f'cartão {i}')
+                vistos += 1
+            texto = self.norm(' '.join([c.get('f', '')] + (c['fe'] if isinstance(c.get('fe'), list) else [c.get('fe') or ''])
+                                       + [x for par in c.get('pares', []) for x in par]))
+            for ident, frase in c.get('citacoes', []):
+                self.confere(ident, frase, f'cartão {i}')
+                self.assertIn(self.norm(frase), texto, f'cartão {i}: a citação registada está no cartão')
+                aspas = [q for q in re.findall(r'«([^«»]*)»', texto) if self.norm(frase) in q]
+                self.assertTrue(aspas, f'cartão {i}: «{frase}» está entre aspas')
+                for q in aspas:
+                    for pedaco in re.split(r'\s*\[…\]\s*', q):
+                        if pedaco.strip():
+                            self.assertIn(pedaco.strip(), self.norm(self.REG[ident]['texto']), f'cartão {i}: «{q}» não é texto exato de {ident}')
+                vistos += 1
+        self.assertGreaterEqual(vistos, 15)
+        tudo = json.dumps(self.D, ensure_ascii=False)
+        # a Constituição e a Convenção vêm do Diário da República (texto consolidado e Resolução da Assembleia da República n.º 20/90)
+        for ident in ('crp-13-2', 'crp-41-3', 'cdc-30'):
+            self.assertIn(ident, tudo)
+            self.assertIs(self.REG[ident]['confirmado'], True, ident)
+            self.assertTrue(self.REG[ident]['ligacao'].startswith('https://diariodarepublica.pt/'), ident)
+        # 07/11/2026: decisão 179 (docente). Já não se corta «conjuntamente com membros do seu grupo»: o artigo 30.º está à vista
+        # com a expressão, e o início do artigo fica no «Ler mais»; o texto à vista tem de ser letra a letra o do registo.
+        self.assertIn('conjuntamente com membros do seu grupo', self.REG['cdc-30']['texto'])
+        le = next(c for c in self.D['cartoes'] if c['rot'] == 'Lê')
+        vista = self.norm(L.sem_details(le['html']))
+        self.assertIn('poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural', vista)
+        self.assertIn('poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural',
+                      self.REG['cdc-30']['texto'])
+        self.assertIn('Nos Estados em que existam minorias étnicas, religiosas ou linguísticas', self.norm(le['html']))
+        self.assertIn('Ninguém pode ser privilegiado, beneficiado, prejudicado', vista)
+        # o sublinhar do Lê é o fim do artigo 30.º, e as palavras certas dizem o que a regra tira à Mariana
+        sub = [c for c in self.D['cartoes'] if c['t'] == 'sublinhar' and c.get('fonte')]
+        self.assertEqual(len(sub), 1)
+        self.assertTrue(self.REG['cdc-30']['texto'].endswith(sub[0]['frase']))
+        self.assertEqual([sub[0]['frase'].split()[j].strip('.,') for j in sub[0]['certas']], ['utilizar', 'língua'])
+        # o artigo 41.º, n.º 3, vai inteiro no próprio cartão da escolha
+        rel = next(c for c in self.D['cartoes'] if c.get('fonte') == 'crp-41-3')
+        self.assertEqual(rel['cita'], self.REG['crp-41-3']['texto'])
+
+    def test_recupera_e_conceito_espacado(self):
+        C = self.D['cartoes']
+        # R1: a obra do #84 s09 (This Is Water, 2005)
+        self.assertEqual((C[2]['t'], C[2]['g']), ('escolha', 'recupera'))
+        self.assertIn('David Foster Wallace', C[2]['p'])
+        r2 = C[3]
+        self.assertEqual(r2['g'], 'recupera')
+        self.assertEqual(r2['origem'], 'cidadania/m1/sessoes/03/')
+        self.assertTrue((ROOT / r2['origem'] / 'index.html').is_file())
+        # o R2 usa palavras da sessão de origem (a fonte da s03 no molde, que escreve a página publicada em cidadania/m1/sessoes/03/)
+        origem = json.dumps(carregar(ROOT / 'tools/licoes/cidadania-m1-s03.json'), ensure_ascii=False)
+        citadas = re.findall(r'«([^»]{8,})»', ' '.join([r2['f'], r2['fe']]))
+        self.assertTrue(citadas and all(self.norm(q) in self.norm(origem) for q in citadas), 'o R2 usa palavras da sessão de origem')
+        espacado = [c for c in C if c.get('origem') and c.get('g') != 'recupera']
+        self.assertEqual([c['origem'] for c in espacado], ['cidadania/m1/sessoes/01/'])
+        for c in espacado:
+            self.assertTrue((ROOT / c['origem'] / 'index.html').is_file(), c['origem'])
+        # duas charneiras: a 1 no cartão 12 (o estereótipo que parece elogio, pelo artigo 13.º, n.º 2), a 2 no cartão 21 (a conclusão
+        # que vai além das provas)
+        self.assertEqual(C[11]['t'], 'escolha')
+        self.assertIn('elogio', C[11]['p'])
+        self.assertIn('beneficiado', C[11]['o'][C[11]['c']])
+        self.assertEqual(C[20]['t'], 'escolha')
+        self.assertIn('vai além', C[20]['p'])
+        certa = C[20]['o'][C[20]['c']]
+        # 07/11/2026 (revisão): a certa da charneira 2 passa a ser a ideia feita que nenhuma frase do caso sustenta (falar nepalês
+        # atrasa o português da irmã); as outras duas estão no caso. Confere-se o mesmo: nenhum cartão antes a escreve.
+        self.assertIn('atrasa o português', certa)
+        # nenhum cartão antes da charneira 2 escreve a sua resposta
+        for c in C[:20]:
+            t = json.dumps(c, ensure_ascii=False)
+            self.assertNotIn('atrasa', t)
+            self.assertNotIn('nepalês atrasa', t)
+        # nenhum cartão antes da charneira 1 escreve a sua resposta (beneficiar em razão da origem)
+        for c in C[:11]:
+            self.assertNotIn('beneficiado em razão', json.dumps(c, ensure_ascii=False))
+
+    def test_caso_real_imagem_e_sem_video(self):
+        C = self.D['cartoes']
+        real = [c for c in C if 'Caso real' in c.get('p', '')]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]['liga'][0]['href'], 'https://hudoc.echr.coe.int/eng?i=001-170436')
+        self.assertEqual(real[0]['tipo'], 'transferir')
+        # 07/11/2026 (revisão): o caso real passa de V/F a escolha, como na s06 e na s07: o cartão dá a decisão e pergunta porquê, e a
+        # certa é a que o acórdão sustenta (aprender em conjunto e as adaptações oferecidas, §§ 96 a 101).
+        self.assertEqual(real[0]['t'], 'escolha')
+        self.assertIn('não viu violação', real[0]['p'])
+        self.assertIn('adaptou a aula', real[0]['o'][real[0]['c']])
+        # o acórdão só existe em francês e inglês: o cartão conta por palavras nossas, sem citar
+        self.assertNotIn('«', real[0]['p'] + real[0]['f'] + ' '.join(real[0]['fe']) + ' '.join(real[0]['o']))
+        self.assertIn('o da natação em Basileia é real', self.D['fontes'])
+        olha = next(c for c in C if c['rot'] == 'Olha')
+        self.assertIn('hine-familia-bagagens-1905.webp', olha['html'])
+        self.assertIn('Museum of Fine Arts, Houston', olha['html'])
+        self.assertIn('https://commons.wikimedia.org/wiki/File:Lewis_W._Hine_-_Immigrant_Family_in_the_Baggage_Room_of_Ellis_Island_-_'
+                      'Google_Art_Project.jpg', olha['html'])
+        self.assertIn('Domínio público', olha['html'])
+        # a legenda não diz de que país vinha a família (o título do museu também não o diz)
+        cap = re.search(r'<figcaption>(.*?)</figcaption>', olha['html']).group(1)
+        self.assertNotRegex(cap, r'(?i)itália|italian')
+        self.assertTrue((ROOT / 'img/cidadania/hine-familia-bagagens-1905.webp').is_file())
+        self.assertNotIn('data-yt', json.dumps(self.D))
+        self.assertNotIn('Na aula', [c.get('rot') for c in C])
+        # decisão 146: nenhum «grupo» em toda a sessão (o validador também o confere). 07/11/2026: decisão 179, a única exceção é o
+        # excerto de lei registado e conferido (o artigo 30.º, no Lê): fora dele, nenhum «grupo»; dentro, exatamente um.
+        fora = [L.visivel(L.sem_lei_registada(c.get('html') or '')) for c in C] + [L.visivel(json.dumps({k: v for k, v in c.items()
+                if k != 'html'}, ensure_ascii=False)) for c in C]
+        for t in fora:
+            self.assertNotRegex(t, r'(?i)\bgrupos?\b')
+        todo = L.visivel(json.dumps(C, ensure_ascii=False))
+        self.assertEqual(len(re.findall(r'(?i)\bgrupos?\b', todo)), 1)
+
+    def test_versao_para_imprimir(self):
+        s = (ROOT / 'cidadania/m1/sessoes/09/imprimir/index.html').read_text('utf-8')
+        self.assertEqual(len(re.findall(r'<p class="rot">Exercício \d+:', s)), 14)
+        self.assertIn('Código', s); self.assertIn('O que conta', s)
+        for c in self.D['cartoes']:
+            if c['t'] != 'ler':
+                self.assertNotIn(html_escape(c['f'])[:60], s)
+        self.assertIn('Domínio público', s)
+        self.assertIn('Museum of Fine Arts', s)
+
+
 class ContratoMostra(unittest.TestCase):
     """07/11/2026 (sessão 10 do M1 no molde): a variante «mostra» do plano (secção 2, «Variantes»), com nome no .json («variante»:
     «mostra»): só as sessões 10 a podem usar; tem 7 de fazer, R1 a R4 nos cartões 3 a 6 (R2 a R4 com a sessão de origem), o «Em turma»
@@ -1500,7 +1693,8 @@ class ContratoMostra(unittest.TestCase):
 
     def test_as_outras_sessoes_nao_mudam(self):
         self.assertEqual(L.validar(E.licao()), [])
-        for n in ('01', '02', '03', '04', '05', '06', '07', '08'):
+        # 07/11/2026 (fusão do main com a s09): a s09 também valida sem a variante.
+        for n in ('01', '02', '03', '04', '05', '06', '07', '08', '09'):
             d = carregar(ROOT / f'tools/licoes/cidadania-m1-s{n}.json')
             self.assertNotIn('variante', d, n)
             self.assertEqual(L.validar(d), [], n)

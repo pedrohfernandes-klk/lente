@@ -22,8 +22,12 @@ def atualizar(rel,s):
         fim=s.index('</ul>',pos)
         lista=link+s[pos:fim]
         for b in json.loads((R/'assets/laboratorio/percursos.json').read_text('utf-8'))['blocks']:
-            t=b['passoTexto'].rstrip('.');t=t[0].lower()+t[1:]
+            # 07/11/2026: decisão 180 (docente). Cada porta diz o seu subtítulo, e não um «passo» do método.
+            t=b['subtitle']
             lista,n=re.subn(r'(<a class="cz-row" href="narrativas/tudo/#'+re.escape(b['anchor'])+r'">(?:(?!</li>).)*?<small>)[^<]*(</small>)',lambda m:m.group(1)+t+m.group(2),lista,count=1)
+            assert n==1,b['id']
+            # 07/11/2026: decisão 180 (docente). As portas também deixam de ter número (antes 01, 02 e 03), como a linha do Ideias.
+            lista,n=re.subn(r'(<a class="cz-row" href="narrativas/tudo/#'+re.escape(b['anchor'])+r'"><span class="lab-set-number" aria-hidden="true">)\d*(</span>)',r'\1\2',lista,count=1)
             assert n==1,b['id']
         s=s[:pos]+lista+s[fim:]
     else:

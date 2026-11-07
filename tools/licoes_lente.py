@@ -362,6 +362,32 @@ def sem_caso(s):
     return re.sub(r'<(\w+)\b[^>]*\bclass="[^"]*\bcaso\b[^"]*"[^>]*>.*?</\1>', ' ', str(s or ''), flags=re.S)
 
 
+# 07/11/2026: decisão 179 (docente, no cartão de opções). A regra da decisão 146 («grupo» só no texto de um caso inventado)
+# não se aplica ao texto de um excerto de lei registado em tools/cidadania_fontes.json e copiado letra a letra (o artigo 30.º da
+# Convenção diz «conjuntamente com membros do seu grupo»). Só sai da verificação o excerto cujo identificador existe no registo e
+# cujos pedaços, entre «[…]», estão todos no texto registado; tudo o resto do cartão continua a ser verificado.
+_REGISTO_FONTES = None
+
+
+def sem_lei_registada(s):
+    """O HTML sem os excertos de lei registados e conferidos com o registo (data-fonte), só para a regra de «grupo»."""
+    global _REGISTO_FONTES
+    if _REGISTO_FONTES is None:
+        dados = json.loads((ROOT / 'tools' / 'cidadania_fontes.json').read_text(encoding='utf-8'))
+        lista = dados if isinstance(dados, list) else dados.get('excertos', [])
+        _REGISTO_FONTES = {e.get('id'): html.unescape(e.get('texto') or '') for e in lista}
+
+    def tirar(m):
+        texto = _REGISTO_FONTES.get(m.group(2))
+        corpo = html.unescape(re.sub(r'<[^>]+>', '', m.group(3))).replace('\u00a0', ' ')
+        corpo = re.sub(r'^.*?«|»\s*$', '', corpo, flags=re.S) if '«' in corpo else corpo
+        pedacos = [x.strip(' .,;:') for x in corpo.split('[…]') if x.strip(' .,;:')]
+        if texto and pedacos and all(x in texto.replace('\u00a0', ' ') for x in pedacos):
+            return ' '
+        return m.group(0)
+    return re.sub(r'<(p|span)\b[^>]*\bdata-fonte="([^"]+)"[^>]*>(.*?)</\1>', tirar, str(s or ''), flags=re.S)
+
+
 def validar_molde(d, C):
     """O contrato do validador do molde cidadania-2026-11 (plano do molde, secção 5): só para os .json com o campo «molde»."""
     erros = []
@@ -515,7 +541,7 @@ def validar_molde(d, C):
         partes += [x for par in c.get('pares') or [] for x in par] + [str(v) for v in (c.get('aula') or {}).values()]
         for txt in partes:
             v = visivel(txt)
-            if GRUPO.search(v):
+            if GRUPO.search(visivel(sem_lei_registada(txt))):
                 erros.append(f'{onde}: «grupo» só no texto de um caso inventado (decisão 146)')
             if DOCENTE.search(v):
                 erros.append(f'{onde}: nenhuma instrução ao aluno depende do docente (decisão 154)')

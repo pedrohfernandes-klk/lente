@@ -846,24 +846,106 @@ GUIA = {
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 07/11/2026 (decisões 166 a 168 e 174): a sessão 09 passa ao molde final (cidadania-2026-11), como a 01 a 08. O que só o docente
+ # faz vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '09': {
-  'dominio': 'Pluralismo e Diversidade Cultural; Direitos Humanos (igualdade, liberdade religiosa, minorias).',
-  'ensina': 'Ver como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos; no ensaio, procurar a voz que falta.',
-  'passos': [
-   (10, 'Aquecimento «O outro lado»: cada pessoa tira uma posição e defende-a durante um minuto, mesmo sem concordar; depois troca.'),
-   (5, 'Entregar a cada aluno a grelha de três colunas.'),
-   (15, 'Metade dos alunos mostra o ensaio (5 a 8 minutos) a um colega e recebe as notas dele: o que se ouviu, de quem é a voz, de que fonte vem, que voz falta.'),
-   (10, 'Pausa.'),
-   (15, 'Trocam-se os papéis: quem observou mostra o ensaio e recebe as notas.'),
-   (10, 'Cada aluno decide duas mudanças, uma delas para incluir uma voz que ainda não estava. Cada aluno prepara também uma objeção para um colega, para a sessão 10.'),
+  'molde': True,
+  'dominio': 'Pluralismo e Diversidade Cultural; Direitos Humanos: a igualdade (Constituição, artigo 13.º, n.º 2), a liberdade religiosa (artigo 41.º, n.º 3) e os direitos das crianças de minorias (Convenção sobre os Direitos da Criança, artigo 30.º).',
+  'ensina': 'Separar facto, dado, opinião e estereótipo; reconhecer o estereótipo que parece elogio; ver de quem é a voz que falta numa regra que parece servir todos; encontrar a conclusão que vai além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 08 com a marca por critério. A fotografia do cartão 5 projeta-se com a legenda do '
+            'cartão; o título do museu não diz de que país vinha a família, e a sessão também não o diz. Se houver na turma alunos que '
+            'falam outras línguas em casa, ninguém é chamado a falar da sua: o caso do intervalo é inventado.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 08.',
+   4: 'O retorno nomeia a sessão 03: vale a pena lembrar, em voz alta, que numa regra igual conta o efeito, e não só o que está escrito.',
+   5: 'Projetado grande, depois da frase de enquadramento. Os pormenores (o saco às riscas, a touca, a caixa com palavras à mão) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o artigo 13.º, n.º 2, e o artigo 30.º da Convenção, uma vez cada; perguntar o que cada um diz sobre a língua.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um, dois ou três, pela ordem das opções no ecrã.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   # 07/11/2026 (revisão): o cartão 15 passa a escolha (dá a decisão e pergunta porquê).
+   15: 'O caso é real: vale a pena abrir o acórdão no HUDOC na projeção (ligação no retorno) e mostrar a data e o dispositivo. O cartão dá a decisão e pergunta porquê.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['Cartões de posição para «O outro lado» (a regra do português nos intervalos e outras posições do módulo).', 'A grelha de observação em três colunas.', 'Um relógio visível.'],
-  'escrito': 'As notas dadas aos colegas e duas mudanças decididas por cada aluno.',
-  'projeto': ('O ensaio', '#av-teatro', 'O ensaio cruzado do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
-  'produto': 'Ensaio',
-  'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas aos colegas', 4), ('Duas mudanças decididas e justificadas', 5)],
-  # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão e escolhe o que mais pesa (a queixa do aluno, a irmã da Mariana ou o artigo 30.º).',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem do que pesa mais.',
+   # 07/11/2026 (revisão): o «Em turma» cabe nos 13 minutos; os voluntários ficam como momento opcional.
+   'Quatro minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo). Quem defende a regra tem de responder à irmã da Mariana; quem a recusa tem de responder à queixa do aluno gozado.',
+   'Se houver tempo (opcional): dois voluntários mostram dois minutos do seu guião; a turma diz de quem é a voz que se ouve e quem fica sem voz. Ninguém é obrigado a mostrar.',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Ninguém fala da língua ou da religião de um colega. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, '«Não: o artigo só proíbe prejudicar, e ninguém perde» ou «Não: é um elogio a esses alunos, não uma ofensa» (o estereótipo que parece elogio).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 13.º, n.º 2, desde «privilegiado, beneficiado». Pergunta: «Quem fica sem a visita, e porquê?»'),
+   # 07/11/2026 (revisão): a charneira 2 troca as opções (a certa é a ideia feita que nenhuma frase do caso sustenta).
+   (21, '«A irmã da Mariana chegou à escola há pouco tempo» ou «A diretora propõe a regra a pensar na queixa de um aluno» (parecem pouco, mas o caso sustenta-as). A certa, «Falar nepalês no intervalo atrasa o português da irmã», junta ao caso uma ideia que ninguém provou: é uma ideia feita com ar de conclusão.',
+    'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Ninguém no caso diz o que falar nepalês faz ao português da irmã.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 10, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('O guião, versão 2', '#fases',
+              'Cinco minutos para reler, na página do projeto, «As fases» (no guião, as fontes das falas têm de poder ser reencontradas). Trinta '
+              'minutos: cada aluno junta, em papel, ao guião da sessão 08 a voz de alguém que discorda da sua resposta, com a fonte dessa fala; o '
+              'docente faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê com «O que conta» e marca o que ainda responde mal a '
+              'essa voz. O guião entra no dossiê da Pergunta Humana.'),
+  'produto': 'Guião, versão 2, com a voz de quem discorda e a sua fonte',
+  'grelha': [('A voz que discorda está no guião, com fonte que se pode reencontrar', 5), ('Diz o que essa pessoa disse, sem a tornar ridícula', 4),
+             ('O guião responde a essa voz, ou deixa a dúvida à vista', 4), ('Cada fala continua com a sua fonte', 4), ('Distingue o que é citado do que é do aluno', 3)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a releitura de «As fases» e a procura da voz que discorda).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão '
+                'de 10 de janeiro de 2017 (HUDOC, texto inglês; não há versão portuguesa). O acórdão diz que a natação era parte obrigatória do '
+                'currículo da escola primária em Basileia, sem dispensa até à puberdade (§ 9); que os pais, muçulmanos devotos, recusaram mandar '
+                'as duas filhas às aulas mistas (§ 9); que a recusa da dispensa interferia na liberdade de religião dos pais (§ 42); que as '
+                'autoridades ofereceram o burkini e balneários sem rapazes (§ 101); que pesaram o '
+                'papel da escola na integração e o valor de aprender em conjunto (§§ 96 a 100); e conclui, por unanimidade, que não houve '
+                'violação do artigo 9.º (liberdade de religião). O cartão conta isto por palavras nossas, sem citar.'),
+  'notas': ['O caso do intervalo, o da visita de estudo, o do inquérito da câmara, o da visita à empresa, o da Leonor e do Rui e o do clube de '
+            'teatro são inventados e assim se diz. Ninguém escreve nem fala sobre um colega identificável, nem sobre a língua ou a religião de '
+            'um colega.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, _Can stereotypes ever be good?_) não foi visto '
+            'por inteiro e sai.',
+            # 07/11/2026 (revisão): o R1 confere com o texto publicado pelo Kenyon College.
+            'Recupera 1: _This Is Water_, o discurso de David Foster Wallace aos finalistas do Kenyon College, em 2005 (#84, s09), contado por '
+            'palavras nossas; a história confere com o texto publicado pelo Kenyon College (kenyon.edu/news/archive/this-is-water, aberto a '
+            '7/11/2026). '
+            'Recupera 2: a regra igual com efeito desigual, da sessão 03 (conta o efeito).',
+            'Olha: o ficheiro é o do piloto, que o plano nomeia (Lewis Hine, 1905, Museum of Fine Arts, Houston; domínio público, registo do '
+            'Wikimedia Commons aberto a 7/11/2026). O título do museu não diz de que país vinha a família.',
+            # 07/11/2026: decisão 179. O artigo 30.º passa a estar inteiro no cartão 8.
+            'Cartão 8: o artigo 30.º da Convenção está inteiro (o início no «Ler mais»), com «conjuntamente com membros do seu grupo». Vale a pena sublinhá-lo na '
+            'leitura: o direito exerce-se com os da mesma comunidade, como a Mariana com a irmã.',
+            'Cartão 11: a câmara municipal é uma autoridade; o cartão fica no texto do artigo 41.º, n.º 3 (só dados estatísticos «não '
+            'individualmente identificáveis»), sem dizer o que uma escola pode ou não perguntar.',
+            'Cartão 12: o artigo 13.º, n.º 2, fala de privilegiar, beneficiar, prejudicar ou privar de direitos; o cartão aplica-o a uma escolha '
+            'da escola, e não ao que um colega diz.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
  # 07/11/2026 (sessão 10 do M1 no molde, a sessão de mostra): a entrada do piloto dá lugar à da versão final, na variante «mostra»
  # (plano, secção 2, «Variantes»): o Ponto de chegada antes do cartão 1, os 14 cartões, a mostra no «Em turma» e a pausa a meio.
@@ -993,6 +1075,8 @@ GUIA['06'] = dict(_nb(GUIA['06']), nb=True)
 GUIA['07'] = dict(_nb(GUIA['07']), nb=True)
 # 06/11/2026 (sessão 08 no molde): o mesmo espaço inseparável na entrada da s08.
 GUIA['08'] = dict(_nb(GUIA['08']), nb=True)
+# 07/11/2026 (sessão 09 no molde): o mesmo espaço inseparável na entrada da s09.
+GUIA['09'] = dict(_nb(GUIA['09']), nb=True)
 # 07/11/2026 (sessão 10 no molde, a sessão de mostra): o mesmo espaço inseparável na entrada da s10.
 GUIA['10'] = dict(_nb(GUIA['10']), nb=True)
 

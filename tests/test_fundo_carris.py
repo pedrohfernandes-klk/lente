@@ -8,10 +8,16 @@
  talvez surjam uns pontos de exclamação»; depois, «a alavanca move, claro»). A alavanca passa a mexer-se (vai a um lado, volta ao
  meio, vai ao outro e acaba ao meio), com as lâminas; a via indicada pisca devagar; surgem sinais de alerta a traço à frente do
  elétrico e junto à alavanca, nunca nas vias. O desenho parado continua neutro e as outras exigências continuam todas.
+ 07/11/2026: decisão 175 (docente: «um dos casos em que o botão i faz mesmo falta»; «n gosto do grafismo dos pontos de
+ exclamação, e o elétrico dee mover-se lentamente tb»). O crédito passa para trás do «i» (a peça comum da decisão 153), com
+ «Parar o desenho» ao lado e fora dele; «Duas vias possíveis, sem desfecho.» passa a texto alternativo do desenho; os quatro
+ sinais de alerta saem (os testes passam a exigir que não existam); sai o retângulo tracejado à volta do elétrico; o elétrico
+ (fotografia, vara e sombra numa só peça) avança devagar para a agulha, sem nunca lá chegar. As outras exigências ficam todas.
  Fundo animado a traço «Os carris» na entrada da Justiça.
 
 O desenho é decorativo (aria-hidden) e integra a abertura. A aproximação única termina antes da agulha.
 Sem JavaScript, com movimento reduzido e em projeção, mostra logo esse estado final. Não sai na impressão.
+07/11/2026: decisão 175. O desenho continua a não sair na impressão; o crédito sai, por extenso.
 A alavanca fica neutra, nenhum ramo é escolhido e nunca há pessoas nos carris.
 """
 from pathlib import Path
@@ -70,7 +76,14 @@ class FundoCarris(unittest.TestCase):
         # 02/11/2026: decisão 137. O fundo leva a marca do motor comum e o crédito o botão «Parar o desenho», escondido sem script.
         self.assertIn(lead + '\n<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36"><svg ', HTML)
         # 02/11/2026: encargo das 20h, crédito descreve a nova cena, não afirma uma reconstituição histórica.
-        self.assertIn('<p class="jc-credito">'+GERADOR.CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>', HTML)
+        # 07/11/2026: decisão 175, o crédito passa do parágrafo para trás do «i» (a peça comum da decisão 153): logo a seguir à
+        # abertura, que acaba no texto alternativo do desenho, vem a linha dos fundos, com o botão fora do «i» e o crédito dentro.
+        self.assertIn('</svg></div><span class="jc-alt" role="img" aria-label="Duas vias possíveis, sem desfecho."></span></header>'
+                      # 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão passa a «Parar a animação».
+                      '<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar a animação</button>'
+                      '<details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary>'
+                      '<p class="info-i-texto">' + GERADOR.CREDITO + '</p></details></div>\n<h2>Quem é</h2>', HTML)
+        self.assertNotIn('jc-credito', HTML)  # 07/11/2026: decisão 175, o parágrafo do crédito saiu.
         # 02/11/2026: atribuição editorial expressa do docente, também nos grafismos vetoriais.
         self.assertIn('Grafismo gerado com recurso a IA, EPI, 2026.', HTML)
         self.assertNotIn('Desenho nosso', HTML)
@@ -84,11 +97,19 @@ class FundoCarris(unittest.TestCase):
         # 06/11/2026: decisão 170. As peças que mexem, uma de cada: o braço da alavanca, as duas lâminas e os quatro sinais.
         for classe in ('jc-alavanca-braco', 'jc-agulha-perto', 'jc-agulha-longe'):
             self.assertEqual(HTML.count('class="' + classe + '"'), 1, classe)
-        self.assertEqual(re.findall(r'class="jc-sinal (jc-sinal-\d)"', HTML), ['jc-sinal-1', 'jc-sinal-2', 'jc-sinal-3', 'jc-sinal-4'])
+        # 07/11/2026: decisão 175, os quatro sinais de alerta saem: nenhum fica na página.
+        self.assertEqual(re.findall(r'class="jc-sinal (jc-sinal-\d)"', HTML), [])
+        self.assertNotIn('jc-sinal', HTML)  # 07/11/2026: decisão 175, nem a classe.
+        # 07/11/2026: decisão 175. O elétrico e a sombra numa só peça, que avança; o retângulo tracejado saiu.
+        self.assertEqual(HTML.count('<g class="jc-carro">'), 1)
+        self.assertNotIn('jc-alvo', HTML)
         self.assertIn('../../assets/fundo-carris.css?v=', HTML)
         self.assertIn('../../assets/fundos.css?v=', HTML)
         self.assertIn('<script defer src="../../assets/fundos.js?v=', HTML)
         self.assertNotIn('fundo-carris.js', HTML)
+        # 07/11/2026: decisão 175. A peça comum do «i», CSS e JS, uma vez cada, na versão das outras páginas do Lente.
+        self.assertEqual(HTML.count('<link rel="stylesheet" href="../../assets/info-i.css?v=20261106-3">'), 1)
+        self.assertEqual(HTML.count('<script defer src="../../assets/info-i.js?v=20261106-3"></script>'), 1)
 
     def test_animacoes_so_no_bloco_de_movimento(self):
         movimento = bloco(CSS, '@media(prefers-reduced-motion:no-preference){')
@@ -97,8 +118,9 @@ class FundoCarris(unittest.TestCase):
         # 05/11/2026: decisão 142. A aproximação da fotografia e as duas vias que se acendem à vez; a alavanca e a agulha não mexem.
         # 06/11/2026: decisão 170. Lista fechada, por esta ordem: a aproximação, as duas vias (agora a piscar à vez), a alavanca,
         # as duas lâminas e os quatro sinais de alerta. Uma animação a mais ou a menos falha.
+        # 07/11/2026: decisão 175, saem os quatro sinais de alerta e entra, no fim, o elétrico que avança (jc-avanca).
         self.assertEqual([x.group(1) for x in usos], ['jc-aproxima', 'jc-via-a', 'jc-via-b', 'jc-alavanca', 'jc-agulha-longe',
-                                                      'jc-agulha-perto', 'jc-sinal-1', 'jc-sinal-2', 'jc-sinal-3', 'jc-sinal-4'])
+                                                      'jc-agulha-perto', 'jc-avanca'])
         for uso in usos:
             self.assertIn(uso.group(0), movimento)
         for linha in movimento.splitlines()[1:-1]:
@@ -136,7 +158,8 @@ class FundoCarris(unittest.TestCase):
         # lâminas encostadas, sem desfecho. Fora do bloco, continua a não haver nenhuma regra para elas; «jc-ramo» continua proibido.
         fora = CSS.replace(bloco(CSS, '@media(prefers-reduced-motion:no-preference){'), '')
         fora = re.sub(r'@keyframes [\w-]+\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}', '', fora)
-        self.assertNotRegex(fora, r'jc-(?:alavanca|agulha|ramo|sinal)[^{]*\{')
+        # 07/11/2026: decisão 175. O elétrico que avança (jc-carro) entra na mesma regra: fora do bloco, nada o move.
+        self.assertNotRegex(fora, r'jc-(?:alavanca|agulha|ramo|sinal|carro)[^{]*\{')
         self.assertNotIn('jc-ramo', CSS)
         for nome in ('jc-alavanca', 'jc-agulha-longe', 'jc-agulha-perto'):
             quadros = passos(bloco(CSS, '@keyframes ' + nome + '{'))
@@ -144,11 +167,17 @@ class FundoCarris(unittest.TestCase):
             self.assertEqual((quadros[-1][0], quadros[-1][1]), (100.0, {'transform': 'rotate(0deg)'}), nome)
         # O elétrico (marcado a tracejado) fica acima da agulha: nunca a passa.
         # 06/11/2026: decisão 170. A agulha passa a um grupo com as duas lâminas; confere-se a mais alta (a de longe) e a outra.
-        alvo = re.search(r'class="jc-alvo" d="M(\d+) (\d+)h(\d+)v(\d+)', HTML)
+        # 07/11/2026: decisão 175. Sem o tracejado (jc-alvo), confere-se a própria fotografia do elétrico, no sentido em que ele
+        # anda (para a esquerda): o lado esquerdo da imagem (antes da frente opaca, por isso mais perto da agulha do que ela)
+        # fica à direita da ponta de cada lâmina, com folga. Parado está no sítio onde descansa; a andar, só está mais atrás
+        # (ver Movimento175), por isso nunca chega à agulha.
+        foto = re.search(r'<image class="jc-foto" href="[^"]+" x="([\d.]+)" y="([\d.]+)" width="([\d.]+)"', HTML)
         self.assertEqual(HTML.count('<g class="jc-agulha" '), 1)
         for lamina in ('jc-agulha-longe', 'jc-agulha-perto'):
-            agulha = re.search(r'class="' + lamina + r'" d="M(\d+) (\d+)', HTML)
-            self.assertLess(int(alvo.group(2)) + int(alvo.group(4)), int(agulha.group(2)), 'o elétrico pára antes da agulha')
+            x, y, dx, dy = map(int, re.search(r'class="' + lamina + r'" d="M(\d+) (\d+)l(\d+) ?(-?\d+)"', HTML).groups())
+            self.assertGreater(float(foto.group(1)), max(x, x + dx) + 80, 'o elétrico pára antes da agulha')
+        self.assertLessEqual(float(foto.group(1)), GERADOR.FRENTE)
+        self.assertEqual(GERADOR.FRENTE - GERADOR.PONTAS_AGULHA, 94)
 
     def test_svg_deterministico_seguro_e_integracao_reproduzivel(self):
         # 02/11/2026: ficheiro, integração e duas execuções coincidem, sem dispensar nenhuma conferência anterior.
@@ -209,8 +238,8 @@ class Movimento170(unittest.TestCase):
     """06/11/2026: decisão 170. A alavanca move-se, a via indicada pisca devagar e surgem sinais de alerta; tudo só com o motor
     comum ligado (jc-anda) e fora da projeção; parado, é a cena neutra do SVG."""
     CICLO = 36.0
-    NOMES = ('jc-via-a', 'jc-via-b', 'jc-alavanca', 'jc-agulha-longe', 'jc-agulha-perto',
-             'jc-sinal-1', 'jc-sinal-2', 'jc-sinal-3', 'jc-sinal-4')
+    # 07/11/2026: decisão 175, saem os quatro sinais de alerta (jc-sinal-1 a 4) e entra o elétrico que avança (jc-avanca).
+    NOMES = ('jc-via-a', 'jc-via-b', 'jc-alavanca', 'jc-agulha-longe', 'jc-agulha-perto', 'jc-avanca')
 
     def setUp(self):
         self.movimento = bloco(CSS, '@media(prefers-reduced-motion:no-preference){')
@@ -239,6 +268,8 @@ class Movimento170(unittest.TestCase):
     def test_movimento_reduzido_e_desenho_parado_neutros(self):
         # Com movimento reduzido o bloco não se aplica (e o motor não liga jc-anda): fica o SVG, que é a cena neutra. No SVG,
         # nenhuma peça que mexe tem transform; os sinais têm opacity="0"; não há texto nenhum (nem letra de fonte nem emoji).
+        # 07/11/2026: decisão 175. Os sinais saíram (ver test_sem_sinais_de_alerta); o elétrico que avança (jc-carro) entra na
+        # lista das peças que, paradas, não têm transform nem opacidade própria.
         self.assertTrue(CSS.count('@media(prefers-reduced-motion:no-preference){') == 1)
         self.assertNotIn('prefers-reduced-motion:reduce', CSS)
         self.assertIn("matchMedia('(prefers-reduced-motion: no-preference)')", JS)
@@ -246,28 +277,26 @@ class Movimento170(unittest.TestCase):
         classes = lambda n: (n.get('class') or '').split()
         for node in arvore.iter():
             self.assertNotIn(node.tag.split('}')[-1], ('text', 'tspan', 'textPath', 'use'))
-            if set(classes(node)) & {'jc-alavanca', 'jc-alavanca-braco', 'jc-agulha', 'jc-agulha-longe', 'jc-agulha-perto', 'jc-via'}:
+            if set(classes(node)) & {'jc-alavanca', 'jc-alavanca-braco', 'jc-agulha', 'jc-agulha-longe', 'jc-agulha-perto', 'jc-via', 'jc-carro'}:
                 self.assertIsNone(node.get('transform'), classes(node))
                 self.assertIsNone(node.get('opacity'), classes(node))
         self.assertNotRegex(self.svg, r'[^\x00-\x7f]')
 
-    def test_sinais_escondidos_no_desenho_parado(self):
+    def test_sem_sinais_de_alerta(self):
+        # 07/11/2026: decisão 175 (docente: «n gosto do grafismo dos pontos de exclamação»). Antes exigia os quatro sinais,
+        # escondidos no desenho parado; agora exige que não haja nenhum: nem no SVG, nem na página, nem no CSS, nem no gerador.
         arvore = ET.fromstring(self.svg)
-        sinais = [n for n in arvore.iter() if 'jc-sinal' in (n.get('class') or '').split()]
-        self.assertEqual([n.get('class') for n in sinais], ['jc-sinal jc-sinal-%d' % i for i in (1, 2, 3, 4)])
-        for g in sinais:
-            self.assertEqual(g.tag.split('}')[-1], 'g')
-            self.assertEqual(g.get('opacity'), '0')
-            self.assertEqual(g.get('stroke'), 'var(--jc-terra,#a84939)')
-            filhos = [f.tag.split('}')[-1] for f in g]
-            self.assertEqual(filhos, ['path', 'circle'], 'uma haste e um ponto, a traço')
-            for f in g.iter():
-                self.assertIn(f.get('opacity'), (None, '0'))
-        # Os sinais começam e acabam escondidos no ciclo.
-        for i in (1, 2, 3, 4):
-            q = self.quadros('jc-sinal-%d' % i)
-            self.assertEqual((q[0][0], q[0][1]['opacity']), (0.0, '0'))
-            self.assertEqual((q[-1][0], q[-1][1]['opacity']), (100.0, '0'))
+        sinais = [n for n in arvore.iter() if 'jc-sinal' in (n.get('class') or '')]
+        self.assertEqual(sinais, [])  # 07/11/2026: decisão 175, nenhum sinal no desenho.
+        # 07/11/2026: decisão 175. Nenhum ponto cheio na cor das vias (o ponto dos sinais) e nenhum grupo escondido.
+        self.assertEqual([n for n in arvore.iter() if n.tag.split('}')[-1] == 'circle' and 'jc-terra' in (n.get('fill') or '')], [])
+        self.assertEqual([n.get('class') for n in arvore.iter() if n.get('opacity') == '0'], [])
+        for texto in (self.svg, HTML, CSS):
+            self.assertNotIn('jc-sinal', texto)  # 07/11/2026: decisão 175, nem a classe nem as animações.
+        self.assertEqual(re.findall(r'@keyframes (jc-sinal[\w-]*)', CSS), [])
+        fonte = (R / 'tools/gerar_carris.py').read_text('utf-8')
+        self.assertNotRegex(fonte, r'(?m)^SINAIS=|def sinal\(')  # 07/11/2026: decisão 175, nem no gerador.
+        self.assertNotIn('sinais de alerta', GERADOR.CREDITO)  # 07/11/2026: decisão 175, nem no crédito.
 
     def test_nenhum_piscar_acima_de_tres_por_segundo(self):
         # WCAG 2.3.1: em todas as animações do ficheiro, entre dois mínimos (ou dois máximos) seguidos de opacidade passa pelo
@@ -328,7 +357,10 @@ class Movimento170(unittest.TestCase):
             x, y, dx, dy = map(int, re.search(r'class="' + lamina + r'" d="M(\d+) (\d+)l(\d+) ?(-?\d+)"', self.svg).groups())
             # 06/11/2026 (revisão): cada lâmina roda sobre o seu talão (a ponta esquerda, onde começa o traço).
             self.assertIn('transform-box:view-box;transform-origin:%dpx %dpx;' % (x, y), regra('.' + lamina))
-        self.assertIn('transform-box:fill-box;transform-origin:50% 100%}', regra('.jc-sinal'))
+        # 07/11/2026: decisão 175, os sinais saíram: já não há regra para eles no bloco do movimento.
+        self.assertNotIn('.jc-sinal', self.movimento)
+        # 07/11/2026: decisão 175. O elétrico avança só a deslizar (translateX), por isso não precisa de pivô.
+        self.assertEqual(regra('.jc-carro'), 'html:not(.em-projecao) .ju .jc-anda .jc-carro{transform-box:view-box;animation:jc-avanca 36s ease-in-out 1;animation-fill-mode:forwards}')
 
     def test_tudo_o_que_mexe_no_recorte_do_telemovel_e_sinais_fora_das_vias(self):
         # O recorte mais estreito é a 320 px: a faixa tem 232 px de altura e 600 unidades, logo vê-se 320*600/232 unidades à
@@ -345,6 +377,10 @@ class Movimento170(unittest.TestCase):
             cx, cy = hx + (561 - hx) * math.cos(a) - (486 - hy) * math.sin(a), hy + (561 - hx) * math.sin(a) + (486 - hy) * math.cos(a)
             pontos += [(cx - 12, cy - 12), (cx + 12, cy + 12)]
         pontos += [(468, 456), (508, 472), (530, 546), (596, 562)]
+        # 07/11/2026: decisão 175. A frente do elétrico, onde descansa e onde começa (AVANCO unidades mais atrás), à altura
+        # das janelas e das rodas: tem de se ver também no telemóvel (o resto do elétrico pode sair pela direita).
+        for d in (0, GERADOR.AVANCO):
+            pontos += [(GERADOR.FRENTE + d, 300), (GERADOR.FRENTE + d, 460)]
         caixas = {}
         for i, g in enumerate(re.findall(r'<g class="jc-sinal jc-sinal-\d".*?</g>', self.svg), 1):
             # A haste (M x y Q x y x y) e o ponto (cx, cy, r), com meia largura de traço de folga.
@@ -360,13 +396,127 @@ class Movimento170(unittest.TestCase):
             pontos += [(x0, y0), (x1, y1)]
             # Nunca nas vias: ou no ar, acima dos carris (y < 440), ou no chão à direita da alavanca, longe da via que curva.
             self.assertTrue(y1 < 440 or (y0 > 482 and x0 > 600), (i, caixas[i]))
-        self.assertEqual(len(caixas), 4)
-        self.assertEqual(sum(1 for c in caixas.values() if c[3] < 440), 2, 'dois à frente do elétrico')
-        self.assertTrue(all(c[2] < 598 for c in caixas.values() if c[3] < 440), 'à frente do elétrico (a frente está em x 598)')
+        # 07/11/2026: decisão 175, os sinais saíram: não há caixa de sinal nenhuma (antes, exigiam-se quatro, dois à frente
+        # do elétrico).
+        self.assertEqual(caixas, {})
         for escala in (1, 1.04):
             for x, y in pontos:
                 xe = 500 + (x - 500) * escala
                 self.assertTrue(meio - meia <= xe <= meio + meia, (x, y, escala))
+
+
+class Movimento175(unittest.TestCase):
+    """07/11/2026: decisão 175 (docente: «um dos casos em que o botão i faz mesmo falta»; «n gosto do grafismo dos pontos de
+    exclamação, e o elétrico dee mover-se lentamente tb»). O elétrico avança devagar para a agulha sem lá chegar; o crédito fica
+    atrás do «i», com «Parar o desenho» sempre à vista e fora dele; sai o retângulo tracejado; na impressão, o crédito sai."""
+    CICLO = 36.0
+
+    def setUp(self):
+        self.movimento = bloco(CSS, '@media(prefers-reduced-motion:no-preference){')
+        self.svg = (R / 'assets/carris-eletrico.svg').read_text('utf-8')
+
+    def test_o_eletrico_e_a_sombra_numa_so_peca(self):
+        # A fotografia recortada (o elétrico com a vara do troleio) e a sombra, por esta ordem, e nada mais, num grupo sem
+        # transform nem opacidade próprios; dentro da cena que se aproxima (jc-eletrico), como antes.
+        arvore = ET.fromstring(self.svg)
+        carros = [n for n in arvore.iter() if n.get('class') == 'jc-carro']
+        self.assertEqual(len(carros), 1)
+        filhos = [(f.tag.split('}')[-1], f.get('class')) for f in carros[0]]
+        self.assertEqual(filhos, [('ellipse', None), ('image', 'jc-foto')])
+        self.assertEqual(dict(carros[0].attrib), {'class': 'jc-carro'})
+        cena = next(n for n in arvore.iter() if n.get('class') == 'jc-eletrico')
+        self.assertIn(carros[0], list(cena.iter()))
+
+    def test_avanca_devagar_e_nunca_chega_a_agulha(self):
+        quadros = passos(bloco(CSS, '@keyframes jc-avanca{'))
+        # Só desliza na horizontal (translateX), nada mais: nem rodar, nem crescer, nem apagar.
+        for pct, props in quadros:
+            self.assertEqual(set(props), {'transform'}, pct)
+            self.assertRegex(props['transform'], r'^translateX\((\d+(?:\.\d+)?)(?:px)?\)$', pct)
+        dx = [(pct, float(re.search(r'\(([\d.]+)', v['transform']).group(1))) for pct, v in quadros]
+        # Começa AVANCO unidades atrás (à direita) do sítio onde o desenho parado o mostra e acaba nesse sítio (0): o fim do
+        # ciclo é o desenho parado, sem salto aos 36 s nem aos 72 s.
+        self.assertEqual(GERADOR.AVANCO, 80)
+        self.assertEqual(dx[0], (0.0, GERADOR.AVANCO))
+        self.assertEqual(dx[-1], (100.0, 0.0))
+        # Só anda para a frente (para a esquerda, para a agulha): o deslocamento nunca volta a crescer.
+        for (t0, v0), (t1, v1) in zip(dx, dx[1:]):
+            self.assertLessEqual(v1, v0, (t0, t1))
+        # Nunca passa o sítio onde descansa: a frente fica sempre a 94 unidades ou mais das pontas das lâminas.
+        self.assertTrue(all(v >= 0 for _, v in dx))
+        self.assertGreaterEqual(GERADOR.FRENTE + min(v for _, v in dx) - GERADOR.PONTAS_AGULHA, 94)
+        # Fica quieto enquanto o desenho entra a partir de transparente (jc-aproxima, até aos 4 %): a troca de lugar no começo
+        # de cada arranque fica escondida.
+        inicio = max(t for t, v in dx if v == GERADOR.AVANCO)
+        aproxima = passos(bloco(CSS, '@keyframes jc-aproxima{'))
+        self.assertEqual(valor_em(aproxima, 'opacity', 0), 0)
+        entra = min(t for t, v in aproxima if v.get('opacity') == '1')
+        self.assertGreaterEqual(inicio, entra)
+        # Chega ao sítio onde descansa quando a alavanca volta ao meio de vez (68 %), em passo com ela e com as vias.
+        chegada = min(t for t, v in dx if v == 0)
+        alavanca = passos(bloco(CSS, '@keyframes jc-alavanca{'))
+        volta = min(t for t, v in alavanca if t > 50 and v['transform'] == 'rotate(0deg)')
+        self.assertEqual((inicio, chegada, volta), (6.0, 68.0, 68.0))
+        # Devagar: mais de 20 s para 80 unidades (cerca de 53 px a 1366 px), a começar e a acabar devagar (ease-in-out).
+        segundos = (chegada - inicio) * self.CICLO / 100
+        self.assertGreater(segundos, 20)
+        self.assertLess(GERADOR.AVANCO / segundos, 4)
+        self.assertEqual(self.movimento.count('animation:jc-avanca 36s ease-in-out 1;animation-fill-mode:forwards}'), 1)
+
+    def test_sem_retangulo_tracejado(self):
+        # O retângulo tracejado à volta do elétrico (jc-alvo) era a marca que, na colagem do Rossio (decisão 142), apontava o
+        # elétrico 260 na fotografia da rua; com o recorte ficou sem função. Os únicos traços interrompidos são as duas vias
+        # possíveis (pontilhado) e a vara da alavanca.
+        arvore = ET.fromstring(self.svg)
+        tracejados = [(n.get('class'), n.get('stroke-dasharray')) for n in arvore.iter() if n.get('stroke-dasharray')]
+        self.assertEqual(tracejados, [('jc-via jc-via-a', '1 17'), ('jc-via jc-via-b', '1 17'), (None, '5 7')])
+        self.assertNotIn('jc-alvo', self.svg + HTML + CSS)
+        self.assertNotIn('<rect', self.svg)
+
+    def test_credito_atras_do_i_e_parar_sempre_a_vista(self):
+        # O crédito, letra a letra: a fotografia, o autor, a data, o Commons e a licença (com as mesmas ligações), o que foi
+        # mudado na fotografia, o que é desenho e «Grafismo gerado com recurso a IA, EPI, 2026.». Sem os sinais de alerta.
+        self.assertEqual(GERADOR.CREDITO,
+            'Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
+            '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
+            '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, '
+            'sem a publicidade e sem os passageiros, com a mesma licença. A via, a agulha, as duas vias possíveis e a alavanca ao '
+            'lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026.')
+        linha = re.search(r'<div class="fundo-acoes jc-acoes">(.*?)</details></div>', HTML, re.S).group(1)
+        botao, resto = linha.split('<details', 1)
+        # «Parar o desenho» antes do «i» e fora dele (WCAG 2.2.2); escondido sem script, como os outros fundos.
+        # 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão passa a «Parar a animação».
+        self.assertEqual(botao, '<button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar a animação</button>')
+        self.assertNotIn('fundo-botao', resto)
+        self.assertEqual(HTML.count('data-fundo-botao="jc"'), 1)
+        # O «i» fechado ao carregar (sem open), com nome para quem usa leitor de ecrã, e só a letra à vista no summary.
+        self.assertTrue(resto.startswith(' class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary><p class="info-i-texto">'))
+        self.assertNotRegex(HTML, r'<details[^>]*\bopen\b')
+        # Fora do «i», nada do crédito fica à vista.
+        fora = HTML.replace(GERADOR.CREDITO, '')
+        for palavra in ('Philip Mallis', 'Corpo Santo', 'Grafismo gerado', 'CC BY-SA'):
+            self.assertNotIn(palavra, fora)
+
+    def test_texto_alternativo_do_desenho(self):
+        # O desenho continua decorativo (aria-hidden, porque mexe); logo a seguir, dentro da abertura, uma imagem com nome
+        # diz o que ele mostra, só para leitores de ecrã.
+        self.assertEqual(GERADOR.ALT, 'Duas vias possíveis, sem desfecho.')
+        self.assertEqual(HTML.count('aria-label="Duas vias possíveis, sem desfecho."'), 1)
+        self.assertIn('</svg></div><span class="jc-alt" role="img" aria-label="Duas vias possíveis, sem desfecho."></span></header>', HTML)
+        self.assertNotIn('Duas vias possíveis, sem desfecho.', GERADOR.CREDITO)
+        self.assertIn('.ju .jc-alt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}', CSS)
+
+    def test_impressao_com_o_credito_por_extenso(self):
+        # O desenho não sai na impressão (como antes); o crédito sai, por extenso: a linha dos fundos volta a sair, a peça do
+        # «i» esconde o «i», mostra o texto da <details> fechada e junta o endereço da licença.
+        self.assertIn('@media print{.ju .jc-fundo{display:none}}', CSS)
+        self.assertIn('@media print{.ju .jc-acoes{display:block;margin:8pt 0 0}.ju .jc-acoes .info-i{inline-size:auto;margin:0}}', CSS)
+        peca = (R / 'assets/info-i.css').read_text('utf-8')
+        impressao = bloco(peca, '@media print{')
+        for regra in ('.info-i>summary{display:none}', '.info-i::details-content{content-visibility:visible;display:block}',
+                      '.info-i-texto a[rel~=license]::after{content:" (" attr(href) ")"}'):
+            self.assertIn(regra, impressao)
+        self.assertIn('@media print{.fundo-botao{display:none}}', MOTOR_CSS)
 
 
 

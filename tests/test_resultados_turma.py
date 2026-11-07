@@ -331,7 +331,9 @@ class Listas(unittest.TestCase):
             # que também passou ao molde final; a página da 07 deixa de ter o botão e o total embutido continua de 03 a 10.
             # 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 7 finais na sessão 8): o mesmo para a sessão 08 do M1,
             # que também passou ao molde final; a página da 08 deixa de ter o botão e o total embutido continua de 03 a 10.
-            sem_registo = {3, 4, 5, 6, 7, 8} if m == 'm1' else set()
+            # 07/11/2026 (decisões 166 a 168 e 174): o mesmo para a sessão 09 do M1, que também passou ao molde final; a página da 09
+            # deixa de ter o botão e o total embutido continua de 03 a 10.
+            sem_registo = {3, 4, 5, 6, 7, 8, 9} if m == 'm1' else set()
             # 07/11/2026 (decisões 166 a 168): o mesmo para a sessão 10 do M1, a sessão de mostra, que também passou ao molde final; a
             # página da 10 deixa de ter o botão e o total embutido continua de 03 a 10.
             sem_registo |= {10} if m == 'm1' else set()

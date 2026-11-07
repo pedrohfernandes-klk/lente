@@ -43,7 +43,10 @@ const contraste=(a,b)=>{const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return (x+.
     assert.equal(await p.locator('nav.lab-fio a').count(),4);
     if(url!=='/narrativas/tudo/'){const primeira=p.locator('.linha').first();assert.ok(await primeira.isVisible());if(width===390)assert.ok(await primeira.evaluate(e=>e.getBoundingClientRect().top<844),rot+': primeira peça no primeiro ecrã');
      // nenhum beco: «Daqui segues para» com o seguinte e o regresso
-     assert.equal(await p.locator('nav.depois a').count(),2);}
+     // 07/11/2026: nota do docente à decisão 180. No fim de uma porta (e do seu último percurso), as duas outras portas e o regresso:
+     // três ligações, as duas primeiras «Outra porta»; nos outros percursos, o seguinte e o regresso, como antes.
+     const nd=await p.locator('nav.depois a').count();assert.ok(nd===2||nd===3,rot+': '+nd+' ligações no fim');
+     if(nd===3)assert.deepEqual((await p.locator('nav.depois small').allTextContents()).slice(0,2),['Outra porta','Outra porta']);}
    }
    if(out&&tema==='light'&&[390,1366].includes(width)&&url!=='/narrativas/tudo/')await p.screenshot({path:path.join(out,'lab'+url.replace(/\//g,'-')+width+'.jpg'),type:'jpeg',quality:50});
    assert.deepEqual(erros,[]);await ctx.close();
