@@ -846,42 +846,199 @@ GUIA = {
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
             'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 07/11/2026 (decisões 166 a 168 e 174): a sessão 09 passa ao molde final (cidadania-2026-11), como a 01 a 08. O que só o docente
+ # faz vive aqui, nunca no texto do aluno (decisão 154). A tabela dos tempos e as respostas tiram-se dos cartões da lição.
  '09': {
-  'dominio': 'Pluralismo e Diversidade Cultural; Direitos Humanos (igualdade, liberdade religiosa, minorias).',
-  'ensina': 'Ver como uma regra igual pode calar alguém e como um estereótipo diz o mesmo de todos; no ensaio, procurar a voz que falta.',
-  'passos': [
-   (10, 'Aquecimento «O outro lado»: cada pessoa tira uma posição e defende-a durante um minuto, mesmo sem concordar; depois troca.'),
-   (5, 'Entregar a cada aluno a grelha de três colunas.'),
-   (15, 'Metade dos alunos mostra o ensaio (5 a 8 minutos) a um colega e recebe as notas dele: o que se ouviu, de quem é a voz, de que fonte vem, que voz falta.'),
-   (10, 'Pausa.'),
-   (15, 'Trocam-se os papéis: quem observou mostra o ensaio e recebe as notas.'),
-   (10, 'Cada aluno decide duas mudanças, uma delas para incluir uma voz que ainda não estava. Cada aluno prepara também uma objeção para um colega, para a sessão 10.'),
+  'molde': True,
+  'dominio': 'Pluralismo e Diversidade Cultural; Direitos Humanos: a igualdade (Constituição, artigo 13.º, n.º 2), a liberdade religiosa (artigo 41.º, n.º 3) e os direitos das crianças de minorias (Convenção sobre os Direitos da Criança, artigo 30.º).',
+  'ensina': 'Separar facto, dado, opinião e estereótipo; reconhecer o estereótipo que parece elogio; ver de quem é a voz que falta numa regra que parece servir todos; encontrar a conclusão que vai além das provas.',
+  'antes': ('Devolver, no início, o papel da sessão 08 com a marca por critério. A fotografia do cartão 5 projeta-se com a legenda do '
+            'cartão; o título do museu não diz de que país vinha a família, e a sessão também não o diz. Se houver na turma alunos que '
+            'falam outras línguas em casa, ninguém é chamado a falar da sua: o caso do intervalo é inventado.'),
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 08.',
+   4: 'O retorno nomeia a sessão 03: vale a pena lembrar, em voz alta, que numa regra igual conta o efeito, e não só o que está escrito.',
+   5: 'Projetado grande, depois da frase de enquadramento. Os pormenores (o saco às riscas, a touca, a caixa com palavras à mão) só se apontam depois dos cartões 6 e 7.',
+   8: 'Ler em voz alta o artigo 13.º, n.º 2, e o artigo 30.º da Convenção, uma vez cada; perguntar o que cada um diz sobre a língua.',
+   12: 'Charneira 1 (ver abaixo): dedos no ar, um, dois ou três, pela ordem das opções no ecrã.',
+   13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
+   # 07/11/2026 (revisão): o cartão 15 passa a escolha (dá a decisão e pergunta porquê).
+   15: 'O caso é real: vale a pena abrir o acórdão no HUDOC na projeção (ligação no retorno) e mostrar a data e o dispositivo. O cartão dá a decisão e pergunta porquê.',
+   16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
+   18: 'Ver «Como conduzir o “Em turma”».',
+   21: 'Charneira 2 (ver abaixo).',
+   22: 'Relógio projetado (12 minutos de escrita). O docente recolhe os papéis por código.',
+   23: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'folga': 'Quem acaba relê o Lê ou abre os lados do Decide; o docente circula.',
+  'projeto_aula': 'Lista do passo e relógio projetados; cerca de dez conversas de 3 minutos (em três sessões, o docente passa por toda a turma).',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar no «Em turma». Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['Cartões de posição para «O outro lado» (a regra do português nos intervalos e outras posições do módulo).', 'A grelha de observação em três colunas.', 'Um relógio visível.'],
-  'escrito': 'As notas dadas aos colegas e duas mudanças decididas por cada aluno.',
-  'projeto': ('O ensaio', '#av-teatro', 'O ensaio cruzado do teatro-documento, com a voz de quem discorda e a fonte de cada fala.'),
-  'produto': 'Ensaio',
-  'grelha': [('Voz que discorda presente e com fonte', 4), ('Ligação reconhecível às fontes', 4), ('Duração dentro dos 5 a 8 minutos', 3), ('Notas concretas aos colegas', 4), ('Duas mudanças decididas e justificadas', 5)],
-  # 31/10/2026 (verificação final, decisão 39): a fotografia da Library of Congress saiu e a nota «Para rever» também.
-  'notas': ['No exemplo de estereótipo, ninguém nomeia colegas.', 'Imagem: a fotografia prevista no plano, _Pipers_, tirada na ilha de Ellis por Augustus Sherman, não se descarregou (o servidor recusou os pedidos e a Biblioteca Pública de Nova Iorque bloqueia robôs). A da Library of Congress (LC-D6-87) também saiu: a biblioteca não diz quem a tirou nem a declara em domínio público.', 'A fotografia nova é de Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_ (1905), do Museum of Fine Arts, Houston, e está em domínio público segundo o Wikimedia Commons. O título do museu não diz de onde vem a família: o cartão fala de imigrantes, não de um país.', 'A Declaração Universal (artigos 2.º e 18.º) e a Resolução do Conselho de Ministros n.º 127/2025 ficam fora dos cartões até se confirmarem.'],
+  'em_turma': [
+   'Um minuto em silêncio: cada aluno decide outra vez no cartão e escolhe o que mais pesa (a queixa do aluno, a irmã da Mariana ou o artigo 30.º).',
+   'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem do que pesa mais.',
+   # 07/11/2026 (revisão): o «Em turma» cabe nos 13 minutos; os voluntários ficam como momento opcional.
+   'Quatro minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo). Quem defende a regra tem de responder à irmã da Mariana; quem a recusa tem de responder à queixa do aluno gozado.',
+   'Se houver tempo (opcional): dois voluntários mostram dois minutos do seu guião; a turma diz de quem é a voz que se ouve e quem fica sem voz. Ninguém é obrigado a mostrar.',
+   'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
+   'Regra: fala-se do que se viu, nunca de quem. Ninguém fala da língua ou da religião de um colega. Se a turma se dividir, não se fecha: a posição vai para o papel.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
+  ],
+  'charneiras': [
+   (12, '«Não: o artigo só proíbe prejudicar, e ninguém perde» ou «Não: é um elogio a esses alunos, não uma ofensa» (o estereótipo que parece elogio).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 13.º, n.º 2, desde «privilegiado, beneficiado». Pergunta: «Quem fica sem a visita, e porquê?»'),
+   # 07/11/2026 (revisão): a charneira 2 troca as opções (a certa é a ideia feita que nenhuma frase do caso sustenta).
+   (21, '«A irmã da Mariana chegou à escola há pouco tempo» ou «A diretora propõe a regra a pensar na queixa de um aluno» (parecem pouco, mas o caso sustenta-as). A certa, «Falar nepalês no intervalo atrasa o português da irmã», junta ao caso uma ideia que ninguém provou: é uma ideia feita com ar de conclusão.',
+    'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Ninguém no caso diz o que falar nepalês faz ao português da irmã.'),
+  ],
+  'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
+            'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os no início da sessão 10, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('O guião, versão 2', '#fases',
+              'Cinco minutos para reler, na página do projeto, «As fases» (no guião, as fontes das falas têm de poder ser reencontradas). Trinta '
+              'minutos: cada aluno junta, em papel, ao guião da sessão 08 a voz de alguém que discorda da sua resposta, com a fonte dessa fala; o '
+              'docente faz cerca de dez conversas de 3 minutos. Dez minutos: cada aluno relê com «O que conta» e marca o que ainda responde mal a '
+              'essa voz. O guião entra no dossiê da Pergunta Humana.'),
+  'produto': 'Guião, versão 2, com a voz de quem discorda e a sua fonte',
+  'grelha': [('A voz que discorda está no guião, com fonte que se pode reencontrar', 5), ('Diz o que essa pessoa disse, sem a tornar ridícula', 4),
+             ('O guião responde a essa voz, ou deixa a dúvida à vista', 4), ('Cada fala continua com a sua fonte', 4), ('Distingue o que é citado do que é do aluno', 3)],
+  'noventa': [
+   'Primeira aula: cartões 1 a 15 (60 minutos), 10 de folga e 20 de projeto (a releitura de «As fases» e a procura da voz que discorda).',
+   'Segunda aula: reentrada no cartão 16, a Volta ao caso, escrita para isso; cartões 16 a 23 (50 minutos), 35 de projeto e 5 de entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 16. '
+   'A projeção vai direta ao cartão 16 com a barra dos cartões.',
+  ],
+  'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
+               'Nada mais: a lição projeta-se.'],
+  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão '
+                'de 10 de janeiro de 2017 (HUDOC, texto inglês; não há versão portuguesa). O acórdão diz que a natação era parte obrigatória do '
+                'currículo da escola primária em Basileia, sem dispensa até à puberdade (§ 9); que os pais, muçulmanos devotos, recusaram mandar '
+                'as duas filhas às aulas mistas (§ 9); que a recusa da dispensa interferia na liberdade de religião dos pais (§ 42); que as '
+                'autoridades ofereceram o burkini e balneários sem rapazes (§ 101); que pesaram o '
+                'papel da escola na integração e o valor de aprender em conjunto (§§ 96 a 100); e conclui, por unanimidade, que não houve '
+                'violação do artigo 9.º (liberdade de religião). O cartão conta isto por palavras nossas, sem citar.'),
+  'notas': ['O caso do intervalo, o da visita de estudo, o do inquérito da câmara, o da visita à empresa, o da Leonor e do Rui e o do clube de '
+            'teatro são inventados e assim se diz. Ninguém escreve nem fala sobre um colega identificável, nem sobre a língua ou a religião de '
+            'um colega.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, _Can stereotypes ever be good?_) não foi visto '
+            'por inteiro e sai.',
+            # 07/11/2026 (revisão): o R1 confere com o texto publicado pelo Kenyon College.
+            'Recupera 1: _This Is Water_, o discurso de David Foster Wallace aos finalistas do Kenyon College, em 2005 (#84, s09), contado por '
+            'palavras nossas; a história confere com o texto publicado pelo Kenyon College (kenyon.edu/news/archive/this-is-water, aberto a '
+            '7/11/2026). '
+            'Recupera 2: a regra igual com efeito desigual, da sessão 03 (conta o efeito).',
+            'Olha: o ficheiro é o do piloto, que o plano nomeia (Lewis Hine, 1905, Museum of Fine Arts, Houston; domínio público, registo do '
+            'Wikimedia Commons aberto a 7/11/2026). O título do museu não diz de que país vinha a família.',
+            # 07/11/2026: decisão 179. O artigo 30.º passa a estar inteiro no cartão 8.
+            'Cartão 8: o artigo 30.º da Convenção está inteiro (o início no «Ler mais»), com «conjuntamente com membros do seu grupo». Vale a pena sublinhá-lo na '
+            'leitura: o direito exerce-se com os da mesma comunidade, como a Mariana com a irmã.',
+            'Cartão 11: a câmara municipal é uma autoridade; o cartão fica no texto do artigo 41.º, n.º 3 (só dados estatísticos «não '
+            'individualmente identificáveis»), sem dizer o que uma escola pode ou não perguntar.',
+            'Cartão 12: o artigo 13.º, n.º 2, fala de privilegiar, beneficiar, prejudicar ou privar de direitos; o cartão aplica-o a uma escolha '
+            'da escola, e não ao que um colega diz.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha do passo do projeto: proposta da equipa, para o docente rever (indicativa).'],
  },
+ # 07/11/2026 (sessão 10 do M1 no molde, a sessão de mostra): a entrada do piloto dá lugar à da versão final, na variante «mostra»
+ # (plano, secção 2, «Variantes»): o Ponto de chegada antes do cartão 1, os 14 cartões, a mostra no «Em turma» e a pausa a meio.
  '10': {
-  'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada.',
-  'ensina': 'Defender uma resposta com fontes e responder a uma objeção.',
-  'antes': 'Antes de abrir a lição: o Ponto de chegada, em papel, sem ajuda e sem consulta (10 a 15 minutos), com as mesmas 10 perguntas do Ponto de partida. Os cartões de recuperação vêm depois, para não ensinarem as respostas antes.',
-  'passos': [
-   (5, 'A ordem das apresentações e as regras da defesa: uma pergunta do público e a objeção preparada por um colega na sessão 09.'),
-   (30, 'As primeiras apresentações: 5 a 8 minutos cada, seguidos de três minutos de defesa.'),
-   (10, 'Pausa.'),
-   (25, 'As restantes apresentações. O docente decide o que fazer com as que não couberem nestes 25 minutos.'),
-   (5, 'A autoavaliação «Vi, Situei, Fiz», em três linhas, e o mapa de direitos da sessão 01 revisto: o que mudou.'),
+  'molde': True,
+  'dominio': 'Direitos Humanos e Democracia e Instituições Políticas (síntese do módulo); Media (fontes). Ponto de chegada e mostra individual do teatro-documento.',
+  'ensina': 'Defender uma resposta com a fonte de onde vem, responder a uma objeção e dizer o limite sem enfraquecer o que está provado.',
+  'antes': ('Antes do cartão 1: o Ponto de chegada, em papel, sem ajuda e sem consulta (10 minutos, decisão 179), com as mesmas 10 perguntas do Ponto de '
+            'partida (ligação no fim deste guia). Os cartões de recuperação vêm depois, para não ensinarem as respostas antes. Devolver, no '
+            'início, o papel da sessão 09 com a marca por critério. Ter a ordem das mostras afixada antes da primeira.'),
+  'ponto': 'O Ponto de chegada, em papel, sem ajuda e sem consulta; recolhe-se por código.',
+  'na_aula': {
+   1: 'O docente lê o caso em voz alta; a ligação «Projetar» abre a sessão na projeção e cada aluno abre-a no telemóvel.',
+   2: 'Ver «Como conduzir o Decide».',
+   3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 09.',
+   4: 'Os cartões 4 a 6 recuperam as sessões 02, 06 e 09; cada retorno nomeia a sessão de origem.',
+   7: 'Projetado grande. Os pormenores (o desenho dos prédios, as palavras do cartaz) só se apontam depois do cartão 8.',
+   # 07/11/2026 (revisão): o registo da Library of Congress não se abriu; o cartão 8 deixa de se apresentar como caso real.
+   8: 'O registo do cartaz na Library of Congress não se conferiu: a sessão não tem caso real confirmado (ver «O caso real», abaixo).',
+   9: 'Ler a tabela em voz alta, uma linha de cada vez; cada aluno escolhe dois arranques para a sua defesa.',
+   10: 'Charneira 1 (ver abaixo): dedos no ar, um, dois ou três, pela ordem das respostas no ecrã.',
+   11: 'Ver «Como conduzir a mostra». A pausa fica a meio da mostra.',
+   12: 'Charneira 2 (ver abaixo).',
+   13: 'Relógio projetado (6 minutos de escrita). O docente recolhe os papéis por código.',
+   14: 'Volta oral à pergunta do Abre e aos números do quadro: quantos mudaram de posição, e porquê.',
+  },
+  'pausa': 'A meio da mostra, entre os dois blocos de mostras.',
+  'entrega': 'Recolha do papel A6, por código.',
+  'decide': [
+   'Antes de abrir os lados: braço no ar, uma vez, sem justificar. No quadro: Sim, Não, Depende, com os três números.',
+   'Só depois se abrem os três lados na projeção, um a um, lidos em voz alta. Ninguém tem de dizer porquê nesta altura.',
+   'Não há resposta certa. O que importa é ficar um registo para comparar depois da mostra. Quem não quiser levantar o braço escolhe no telemóvel: a escolha fica só no aparelho.',
   ],
-  'materiais': ['O Ponto de chegada impresso, um por aluno (ligação abaixo).', 'A ordem das apresentações e as objeções preparadas na sessão 09.', 'Um relógio visível.', 'A fotografia do mapa de direitos da sessão 01.'],
-  'escrito': 'O Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» e o mapa de direitos revisto.',
-  'projeto': ('A apresentação e a defesa', '#av-teatro', 'A apresentação pública do teatro-documento e a defesa das escolhas de cada aluno.'),
-  'produto': 'Apresentação e defesa',
-  'grelha': [('Guião e cena fundamentados na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Duração de 5 a 8 minutos e clareza', 3), ('Defesa: resposta à objeção com fonte e limite', 5), ('Contributo próprio identificado', 3)],
-  'notas': ['Ganho de cada aluno: Ponto de chegada menos Ponto de partida, por código, numa tabela fora do sítio.'],
+  'em_turma': [
+   'Antes da primeira mostra: a ordem afixada e o relógio projetado, com 3 minutos de mostra e 2 de defesa por aluno (decisão 159).',
+   'Cada aluno mostra a sua peça em três minutos. Na defesa, uma objeção do público ou, se não houver, a do Abre («Isso é só a tua opinião»); o aluno responde em dois minutos, com uma prova e um limite.',
+   'Regra: fala-se do que se viu, nunca de quem. Uma objeção diz o que falta à peça, não o que falta à pessoa.',
+   # 07/11/2026 (revisão): 120 minutos para a mostra (decisão 159: cerca de 125 minutos para a turma).
+   # 07/11/2026: decisão 179 (docente). O Ponto de chegada passa a 10 minutos e a mostra fica com 125.
+   'A mostra ocupa as duas metades da sessão, com a pausa a meio: 125 minutos dão 25 alunos a 5 minutos cada (decisão 159).',
+   'Depois da última mostra, um minuto em silêncio: cada aluno decide outra vez no cartão. Nova contagem de braço no ar, ao lado dos números do Decide: quem mudou, e porquê.',
+   'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa mostra a peça em voz alta, com o relógio, e responde em dois minutos à objeção do início.',
+  ],
+  'charneiras': [
+   (10, '«Tenho direito à minha opinião, como toda a gente» (parece defender, mas aceita a objeção) ou «Acredito mesmo nisto e defendi-o com convicção» (a convicção não é prova).',
+    'Se mais de um terço erra, voltar ao Lê na projeção e ler a linha «Esta fonte ajudou-me a compreender…». Pergunta: «O que pode confirmar quem objetou?»'),
+   (12, 'Verdadeiro, por achar que admitir um limite estraga a defesa toda.',
+    'Se mais de um terço erra, escrever no quadro as duas provas da Inês (a contagem e as entrevistas) e perguntar se o limite fala da contagem ou das entrevistas.'),
+  ],
+  'papel': ['A resposta diz o que o aluno defende depois da objeção, sem ir além das provas.', 'A prova junta um facto à sua fonte, com uma expressão exata entre aspas.',
+            'O limite é verdadeiro: se tivesse resposta, podia mudar o que o aluno defende.'],
+  'devolucao': ('O docente recolhe os papéis (código e data, nunca o nome) e devolve-os na aula seguinte, com uma marca por critério: ✓ cumpre, '
+                '~ em parte, ○ falta. O aluno guarda o papel no dossiê do projeto.'),
+  'projeto': ('A mostra e a defesa', '#av-teatro',
+              'A mostra individual do teatro-documento (3 minutos) e a defesa (2 minutos), no «Em turma», em vez do passo do projeto das outras '
+              'sessões. O passo do fim («Depois da mostra») escreve-se no dossiê: o que o aluno mudaria depois da objeção, porquê, e o limite '
+              'que ficou.'),
+  'produto': 'Mostra e defesa',
+  'grelha': [('Peça fundamentada na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Três minutos, com clareza', 3),
+             ('Defesa: resposta à objeção com uma prova', 5), ('Defesa: o limite dito com clareza', 3)],
+  'noventa': [
+   # 07/11/2026 (revisão): os tempos novos (cartões 1 a 10 em 20 minutos, a mostra em 120).
+   # 07/11/2026: decisão 179. Ponto de chegada em 10 minutos; a primeira metade da mostra ganha os 5.
+   'Primeira aula: Ponto de chegada (10 minutos), cartões 1 a 10 (20 minutos) e a primeira metade da mostra (60 minutos).',
+   'Segunda aula: a segunda metade da mostra (65 minutos), depois a decisão do «Em turma» e os cartões 12 a 14 (10 minutos) e a entrega.',
+   'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 11.',
+  ],
+  'imprimir': ['O Ponto de chegada, um por aluno (ligação no fim deste guia).', 'Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
+               'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 7 exercícios sem as respostas e o papel.',
+               'A ordem das mostras, para afixar.'],
+  # 07/11/2026 (revisão): sem caso real confirmado (decisão 161: os inventados ficam até haver um caso conferido).
+  'caso_real': ('A sessão 10 não tem caso real confirmado (decisão 161: os casos inventados ficam até haver um caso conferido). O cartão 8 usa o cartaz '
+                '_Federal Theatre presents «… one-third of a nation»_ (Federal Theatre Project, Adelphi Theatre, Nova Iorque, entre 1936 e 1939; Library '
+                'of Congress, LCCN 95509661) e diz só o que o cartaz diz: a peça é «a living newspaper about housing». O registo da Library of Congress '
+                'não abriu (a 7/11/2026, www.loc.gov com desafio a robôs; lccn.loc.gov/95509661 leva ao catálogo, que não mostrou o registo). Leu-se só '
+                'a cópia do registo no Wikimedia Commons, que não é fonte oficial; por isso o cartão não se apresenta como caso real.'),
+  'notas': ['Sessão de mostra (plano, secção 2, «Variantes»): núcleo curto, com 7 exercícios, e a mostra individual no «Em turma». O validador conhece a '
+            'variante pelo nome («variante»: «mostra»), que só as sessões 10 podem usar.',
+            'O caso da Inês, o da Joana, o da ordem das mostras, o da Rita e o da fila do bar são inventados e assim se diz. Ninguém escreve sobre um '
+            'colega identificável.',
+            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, Aristóteles e Joshua Bell) sai.',
+            'Recupera 1: Albert Camus, _O Mito de Sísifo_ (1942), com o _Sísifo_ de Ticiano (entre 1548 e 1549, Museo Nacional del Prado, domínio '
+            'público). O cartão diz só que o livro acaba com a ideia de que é preciso imaginar Sísifo feliz; não cita a tradução. Recupera 2 a 4: o '
+            'consentimento para um uso (sessão 02), escolher a regra sem saber o lugar (sessão 06) e o estereótipo (sessão 09).',
+            'Lê: os arranques de frase da defesa vêm da sessão 10 do percurso anterior («Mostrar o guião, explicar as escolhas»), já no singular; sai '
+            '«Escolhi áudio porque…», que falava de um formato.',
+            'O enunciado publicado da Pergunta Humana diz «duração de 5–8 minutos»; a mostra de 3 minutos com 2 de defesa segue a decisão 159. O '
+            'enunciado não muda aqui.',
+            'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
+            'Grelha da mostra: proposta da equipa, para o docente rever (indicativa).',
+            # 07/11/2026 (revisão): o registo do Prado não abriu.
+            'O registo do Prado do _Sísifo_ (P00426, museodelprado.es) não abriu a 7/11/2026 (o servidor recusou o pedido). O crédito tem os dados do '
+            'registo do Wikimedia Commons; o domínio público é certo (Ticiano morreu em 1576).'],
  },
 }
 
@@ -918,6 +1075,10 @@ GUIA['06'] = dict(_nb(GUIA['06']), nb=True)
 GUIA['07'] = dict(_nb(GUIA['07']), nb=True)
 # 06/11/2026 (sessão 08 no molde): o mesmo espaço inseparável na entrada da s08.
 GUIA['08'] = dict(_nb(GUIA['08']), nb=True)
+# 07/11/2026 (sessão 09 no molde): o mesmo espaço inseparável na entrada da s09.
+GUIA['09'] = dict(_nb(GUIA['09']), nb=True)
+# 07/11/2026 (sessão 10 no molde, a sessão de mostra): o mesmo espaço inseparável na entrada da s10.
+GUIA['10'] = dict(_nb(GUIA['10']), nb=True)
 
 # Ponto de partida e de chegada: as mesmas 10 perguntas, pela mesma ordem (proposta da equipa a partir do plano, para o docente rever).
 # 8 de escolha (1 ponto cada) e 2 curtas escritas (0 a 2): máximo 12.
@@ -1193,7 +1354,11 @@ def _frase_molde(S):
             + ' no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. '
             + ('A secção dessa sessão' if len(m) == 1 else 'As secções dessas sessões')
             + ', mais abaixo, ' + ('tem' if len(m) == 1 else 'têm') + ' a tabela dos 180 minutos, cartão a cartão; '
-            + (f'as outras {NUMEROS[resto]} seguem' if resto > 1 else 'a outra segue') + ' o quadro acima até passarem ao molde.')
+            # 07/11/2026 (revisão da s10): com uma só sessão fora do molde, «a outra segue […] até passar ao molde».
+            + (f'as outras {NUMEROS[resto]} seguem o quadro acima até passarem ao molde.' if resto > 1 else 'a outra segue o quadro acima até passar ao molde.')
+            # 07/11/2026 (sessão 10 no molde): a sessão de mostra tem menos cartões; a frase di-lo só quando ela já está no molde.
+            + (' A sessão 10 é a sessão de mostra: 14 cartões, e o «Em turma» é a mostra individual.'
+               if any(x['d'].get('variante') == 'mostra' for x in S if x.get('molde')) else ''))
 
 
 def pagina_guia(S):
@@ -1345,6 +1510,9 @@ def _tipo_aluno(c):
 def tabela_tempos(s, g):
     d, C = s['d'], s['d']['cartoes']
     T = d['tempos']
+    # 07/11/2026 (sessão 10 no molde): a variante «mostra» não tem «Volta ao caso»; a tabela tem a sua forma (tabela_tempos_mostra).
+    if d.get('variante') == 'mostra':
+        return tabela_tempos_mostra(s, g)
     volta = next(i for i, c in enumerate(C) if c.get('rot') == 'Volta ao caso')
     linhas, total = '', 0
 
@@ -1372,6 +1540,39 @@ def tabela_tempos(s, g):
             f'<tbody>{linhas}</tbody><tfoot><tr><th scope="row" colspan="2">Total</th><td class="num">{total}</td><td colspan="2"></td></tr></tfoot></table></div>')
 
 
+def tabela_tempos_mostra(s, g):
+    """07/11/2026 (sessão 10 no molde, variante «mostra»): os 180 minutos da sessão de mostra, cartão a cartão. O Ponto de chegada
+    vem antes do cartão 1; a pausa fica a meio da mostra («Em turma»); depois da mostra, o fecho e a entrega. Não há folga nem passo do
+    projeto à parte: a mostra é o projeto."""
+    d, C = s['d'], s['d']['cartoes']
+    T = d['tempos']
+    t = next(i for i, c in enumerate(C) if c.get('rot') == 'Em turma')
+    linhas, total = '', 0
+
+    def linha(n, nome, m, aluno, aula, cls=''):
+        return (f'<tr{cls}><td class="num">{n}</td><td>{nome}</td><td class="num">{m}</td><td>{aluno}</td><td>{aula}</td></tr>')
+
+    def parte(x):
+        return f'<tr class="parte"><th scope="rowgroup" colspan="5">{x}</th></tr>'
+    linhas += linha('', 'Ponto de chegada', T['ponto'], 'Em papel.', e(g['ponto']), ' class="pausa"')
+    linhas += parte(f'Antes da mostra, recuperar e ler ({sum(c["min"] for c in C[:t])} minutos)')
+    for i, c in enumerate(C):
+        if i == t:
+            linhas += parte(f'A mostra e o fecho ({sum(c["min"] for c in C[t:])} minutos, mais a pausa)')
+        nome = (f'<b>{e(c.get("rot") or "")}</b>' + (f'<br>{e(c["titulo"])}' if c['t'] == 'ler' and c.get('titulo') and c['titulo'] != c.get('rot') else ''))
+        linhas += linha(i + 1, nome, c['min'], _tipo_aluno(c), e(g['na_aula'].get(i + 1, '')))
+        if i == t:
+            linhas += linha('', 'Pausa', T['pausa'], '', e(g['pausa']), ' class="pausa"')
+        total += c['min']
+    linhas += linha('', 'Entrega e arrumar', T['entrega'], '', e(g['entrega']), ' class="pausa"')
+    total += sum(T.values())
+    assert 175 <= total <= 185, total
+    return (f'<div class="tabela"><table class="tempos"><caption class="c-sr">Os tempos da sessão {s["n"]}, cartão a cartão</caption>'
+            '<thead><tr><th scope="col" class="num">N.º</th><th scope="col">Cartão</th><th scope="col" class="num">Min</th>'
+            '<th scope="col">O aluno</th><th scope="col">Na aula (só aqui)</th></tr></thead>'
+            f'<tbody>{linhas}</tbody><tfoot><tr><th scope="row" colspan="2">Total</th><td class="num">{total}</td><td colspan="2"></td></tr></tfoot></table></div>')
+
+
 def secao_molde(s, g):
     d, C = s['d'], s['d']['cartoes']
     sessao = rel(GUIA_PASTA, s['pasta'])
@@ -1384,6 +1585,19 @@ def secao_molde(s, g):
     chave = ''.join(f'<tr><td class="num">{i + 1}</td><td>{e(c["rot"])}</td><td>{e(_resposta(c, nb))}</td><td>{e(c.get("tipo", ""))}</td></tr>' for i, c in fazer)
     img = next(c for c in C if c.get('rot') == 'Olha')
     credito = re.search(r'<p class="info-i-texto">(.*?)</p>', img['html'], re.S).group(1)
+    # 07/11/2026 (sessão 10 no molde, variante «mostra»): os títulos que nas outras sessões têm números fixos (o «Em turma» no cartão
+    # 18, o papel no 22, 14 exercícios, 45 minutos de projeto) saem dos cartões da sessão de mostra; nas outras, ficam como estavam.
+    if d.get('variante') == 'mostra':
+        t = next(i for i, c in enumerate(C) if c.get('rot') == 'Em turma')
+        h_turma = f'Como conduzir a mostra (cartão {t + 1}, {C[t]["min"]} minutos, com a pausa a meio)'
+        h_papel = f'Agora, em papel (cartão {len(C) - 1}): o que conta e a devolução'
+        h_projeto = f'Pergunta Humana: {e(g["projeto"][0])} (no «Em turma»)'
+        h_resp = f'Respostas dos {len(fazer)} exercícios'
+    else:
+        h_turma = 'Como conduzir o «Em turma» (cartão 18, 13 minutos)'
+        h_papel = 'Agora, em papel (cartão 22): o que conta e a devolução'
+        h_projeto = f'Pergunta Humana: {e(g["projeto"][0])} (o passo do projeto, 45 minutos)'
+        h_resp = 'Respostas dos 14 exercícios'
     return (f'<section class="sessao" id="s{s["n"]}"><p class="marca">Sessão {s["n"]}, no molde final</p><h2>{e(s["titulo"])}</h2>'
             f'<p class="lead">{s["pergunta"]}</p>'
             f'<p class="pg"><b>Domínio.</b> {e(g["dominio"])} <b>O que ensina.</b> {e(g["ensina"])}</p>'
@@ -1394,19 +1608,19 @@ def secao_molde(s, g):
             '<p class="pg">A ordem dos cartões e das opções é fixa e igual na projeção e em todos os telemóveis; não há pontos. Tudo o que o aluno lê faz-se sozinho; o que depende do docente está só nesta coluna.</p>'
             + tabela_tempos(s, g)
             + '<h3>Como conduzir o Decide (cartão 2)</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['decide']) + '</ol>'
-            + '<h3>Como conduzir o «Em turma» (cartão 18, 13 minutos)</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['em_turma']) + '</ol>'
+            + f'<h3>{h_turma}</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['em_turma']) + '</ol>'
             + '<h3>As duas charneiras</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Pergunta</th>'
               '<th scope="col">Certa</th><th scope="col">Erro esperado</th><th scope="col">Se a turma errar</th></tr></thead>'
             f'<tbody>{charn}</tbody></table></div>'
-            + '<h3>Agora, em papel (cartão 22): o que conta e a devolução</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['papel']) + '</ol>'
+            + f'<h3>{h_papel}</h3><ol class="passos">' + ''.join(f'<li>{e(x)}</li>' for x in g['papel']) + '</ol>'
             + f'<p class="pg">{e(g["devolucao"])}</p>'
-            + f'<h3>Pergunta Humana: {e(g["projeto"][0])} (o passo do projeto, 45 minutos)</h3>'
+            + f'<h3>{h_projeto}</h3>'
             f'<p class="pg">{e(g["projeto"][2])} <a href="../../../projeto/{g["projeto"][1]}">Ver na página do projeto</a>.</p>'
             f'<h3>Grelha: {e(g["produto"])} (/20, indicativa)</h3>' + tabela_grelha(g)
             + '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério.</p>'
             + '<h3>Se só houver 90 minutos</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['noventa']) + '</ul>'
             + '<h3>O que imprimir</h3><ul>' + ''.join(f'<li>{e(x)}</li>' for x in g['imprimir']) + '</ul>'
-            + '<h3>Respostas dos 14 exercícios</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Exercício</th>'
+            + f'<h3>{h_resp}</h3><div class="tabela"><table><thead><tr><th scope="col" class="num">Cartão</th><th scope="col">Exercício</th>'
               f'<th scope="col">Resposta</th><th scope="col">Tipo</th></tr></thead><tbody>{chave}</tbody></table></div>'
             + f'<h3>O caso real</h3><p class="pg">{LL.esc_it(g["caso_real"])}</p>'
             + f'<h3>Imagem</h3><p class="pg">{credito}</p>'
@@ -1521,16 +1735,19 @@ def pagina_imprimir(s):
     telemóvel, bateria ou rede. As respostas ficam no guia do docente."""
     d, C = s['d'], s['d']['cartoes']
     base = '../' * (s['pasta'].count('/') + 1)
+    # 07/11/2026 (sessão 10 no molde, variante «mostra»): 7 exercícios, e a parte 2 começa na mostra (não há «Volta ao caso»).
+    mostra = d.get('variante') == 'mostra'
+    n_ex = sum(1 for c in C if c['t'] != 'ler')
     corpo = (f'<header><p class="marca">Cidadania, módulo 1, sessão {s["n"]}</p><h1>{e(s["titulo"])}</h1>'
-             '<p class="lead">Versão para imprimir: o material, os 14 exercícios e o papel do fim. Fazes tudo sozinho, só com uma caneta.</p>'
+             f'<p class="lead">Versão para imprimir: o material, os {n_ex} exercícios e o papel do fim. Fazes tudo sozinho, só com uma caneta.</p>'
              '<p><button type="button" class="imprimir" onclick="window.print()">Imprimir</button></p></header>'
              '<div class="campos"><span>O teu código: ____________</span><span>Data: ____ / ____</span></div>')
     num = 0
-    volta = next(i for i, c in enumerate(C) if c.get('rot') == 'Volta ao caso')
-    corpo += '<h2>Parte 1, ver antes de concluir</h2>'
+    volta = next(i for i, c in enumerate(C) if c.get('rot') == ('Em turma' if mostra else 'Volta ao caso'))
+    corpo += '<h2>Parte 1, recuperar e ler</h2>' if mostra else '<h2>Parte 1, ver antes de concluir</h2>'
     for k, c in enumerate(C):
         if k == volta:
-            corpo += '<h2>Parte 2, pesar e escrever</h2>'
+            corpo += '<h2>Parte 2, a mostra e o fecho</h2>' if mostra else '<h2>Parte 2, pesar e escrever</h2>'
         if c['t'] != 'ler':
             num += 1
             corpo += _ex_imprimir(num, c, d, k, GUIA[s['n']].get('nb', False))
@@ -1543,6 +1760,9 @@ def pagina_imprimir(s):
             corpo += (f'<div class="ex"><p class="rot">{e(rot)}</p><p><b>{perg[0]}</b></p><p class="resp">☐ Sim &nbsp; ☐ Não &nbsp; ☐ Depende</p>'
                       + ('<p>Escreve, numa linha, a razão que pesa mais para ti.</p><div class="linhas"></div>' if rot == 'Decide' else
                          f'<p>Compara com a tua escolha do início. {perg[1] if len(perg) > 1 else ""} {_opcoes_prova(c)}</p>')
+                      # 07/11/2026 (revisão da s10, decisão 154): na sessão de mostra, o papel diz como se faz a mostra sozinho.
+                      + (''.join(f'<p>Se estás sozinho: {x[:1].lower() + x[1:]}</p>' for x in re.findall(r'<dt>Se estás sozinho</dt><dd>(.*?)</dd>', c['html']))
+                         if mostra and rot == 'Em turma' else '')
                       + '</div>')
             continue
         titulo = f'<p class="rot">{e(rot)}{": " + e(c["titulo"]) if c.get("titulo") and c["titulo"] != rot else ""}</p>'

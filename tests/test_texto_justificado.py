@@ -90,8 +90,10 @@ MARCADORES={
  'L1g':['ler','c-expl','termo'],'L1h':['ler','c-expl','lado-c'],'L2a':['ler'],'L2b':['formas-cartoes','lf-prosa'],
  'L3':['lf-hero','lf-lead'],'P1':['vpf','vpf-porque','vpf-fazer'],'P2':['bib-texto','bib-fonte'],'P3':['pg'],
  'P3b':['comum'],'E1':['p-lead','lab-saiu'],'E2':['p-cab','p-lead','entrada-fontes'],'G1':['pg'],'J1':['comum','lado','caso-im'],
- 'V1':['gu'],'C1':['m1-v2','m1-block','m1-sample'],'C2':['c10','c10-reading','c10-instruction'],
- 'C3':['c10','c10-document'],'C4':[],'C5':['citacao','nota'],'C6':['p-lead','rodape','cid-route-step'],
+ 'V1':['gu'],'C1':['m1-v2','m1-block','m1-sample'],'C2':['c10'],
+ # 07/11/2026 (sessão 10 no molde): já não há sessão do M1 no molde publicado (c10-reading, c10-instruction); as duas classes
+ # passam a exigir-se nas sessões do M2 (C3), que usam o mesmo motor. A regra continua a visar as mesmas classes.
+ 'C3':['c10','c10-document','c10-reading','c10-instruction'],'C4':[],'C5':['citacao','nota'],'C6':['p-lead','rodape','cid-route-step'],
  'C7':['pg','termo','citacao'],'D1':['atelier-lead','guide-block','rt-antes'],'X':['pg'],
 }
 # Páginas sem texto corrido a justificar (carregam a regra, mas nada nelas é texto corrido):

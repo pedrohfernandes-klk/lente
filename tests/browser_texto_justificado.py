@@ -112,7 +112,11 @@ PLANO=[
  # na 08, agora a primeira que continua no molde publicado.
  # 06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): a 08 também passou ao molde final; as etapas conferem-se
  # na 09, agora a primeira que continua no molde publicado.
- ('C2','cidadania/m1/sessoes/09/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
+ # 07/11/2026 (sessão 09 no molde): a 09 também passou ao molde final; as etapas conferem-se na 10, a última que continua no molde
+ # publicado.
+ # 07/11/2026 (sessão 10 no molde): a 10 também passou ao molde final e já não há sessão do M1 no molde publicado; as etapas
+ # conferem-se numa segunda sessão do M2 (a 02), com o mesmo motor e o mesmo seletor, além da 03 (abaixo).
+ ('C3','cidadania/m2/sessoes/02/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C3','cidadania/m2/sessoes/03/',[('etapas','.c10 :is(.c10-reading,.c10-instruction,.c10-document,.c10-obra-razao), .c10 details[open]:not(.c10-check) > div > p:not([class])')]),
  ('C4','cidadania/m2/aulas/03/',[('J','main > section > p:not([class])'),('E','main ol > li',2)]),
  ('C5','cidadania/ferramentas/m1-aula-01-ficha/',[('J','main > blockquote.citacao'),('E','main label',3),('E','blockquote.citacao cite',1)]),

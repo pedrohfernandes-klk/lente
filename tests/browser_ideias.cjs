@@ -103,18 +103,19 @@ console.log('PASS documentos: 30 contextos e impressão A4 (4 e 9 páginas)');
    assert(x.esc.every(v=>v===0),'guia: tabela com '+x.esc.join('/')+' px escondidos a '+w+' px');assert(x.rotulos,'guia: célula da sequência sem data-r');
    assert.equal(x.seq,w<640?'block':'table','guia: a sequência a '+w+' px em '+x.seq);assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   {const {ctx,p,erros}=await abrir(b,base+'narrativas/ideias/',390,844,'light');
-   assert.equal(await p.locator('.porta').count(),1);assert.equal(await p.locator('#pt-ver').textContent(),'Observar');
+   // 07/11/2026: nota do docente à decisão 180. As sessões numa lista única, sem portas por cima; cada sessão diz a peça e a porta.
+   assert.equal(await p.locator('.porta').count(),0);assert.equal(await p.locator('ol.sessoes.lista-unica').count(),1);
    assert.equal(await p.locator('ol.sessoes li').count(),2);
    assert.deepEqual(await p.locator('ol.sessoes a').evaluateAll(es=>es.map(e=>e.getAttribute('href'))),['sessao-01/','sessao-02/']);
    assert(!/Em preparação|piloto/i.test(await p.locator('body').innerText()));
    assert.equal(await p.locator('summary#metodo-t').textContent(),'O método em cinco passos');
-   const apoio=p.locator('#pc-ver .apoio-porta');assert(await apoio.isVisible());assert.match(await apoio.innerText(),/^Passo 1: juntar material/);
+   assert.deepEqual(await p.locator('ol.sessoes .peca').evaluateAll(es=>es.map(e=>e.offsetParent!==null&&e.textContent)),['Leva a Galileu, na porta Observar.','Leva a Leonardo, na porta Observar.']);
    assert.deepEqual(await p.locator('ol.sessoes .apoio').evaluateAll(es=>es.map(e=>e.offsetParent!==null&&e.textContent.slice(0,12))),['Passo 1 de 5','Passo 1 de 5']);
    const alt=await p.evaluate(()=>document.documentElement.scrollHeight);assert(alt<2500,'entrada com '+alt+' px a 390');
    assert.equal(await largo(p),0);assert.deepEqual(erros,[]);await ctx.close()}
   for(const [url,w,js,quem] of [['narrativas/ideias/',640,true,'a 640 px'],['narrativas/ideias/?projetar=1',390,true,'na projeção'],['narrativas/ideias/',390,false,'sem script']]){
    const ctx=await b.newContext({viewport:{width:w,height:844},javaScriptEnabled:js});await soLocal(ctx);const p=await ctx.newPage();await p.goto(base+url);await p.waitForTimeout(400);
-   const r=await p.evaluate(()=>[...document.querySelectorAll('.porta ol.sessoes')].map(s=>s.offsetParent!==null));
+   const r=await p.evaluate(()=>[...document.querySelectorAll('ol.sessoes.lista-unica')].map(s=>s.offsetParent!==null));
    assert(r.length===1&&r.every(Boolean),'sessões publicadas acessíveis '+quem);assert.equal(await p.locator('ol.sessoes a').count(),2);await ctx.close()}
   for(const [w,tema] of [[320,'dark'],[1366,'light']]){const {ctx,p,erros}=await abrir(b,base+'biblioteca/young-tecnica-1940/',w,800,tema);
    const r=await p.evaluate(()=>{const em=e=>+(e.clientWidth/parseFloat(getComputedStyle(e).fontSize)).toFixed(2);

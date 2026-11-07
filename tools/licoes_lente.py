@@ -362,6 +362,32 @@ def sem_caso(s):
     return re.sub(r'<(\w+)\b[^>]*\bclass="[^"]*\bcaso\b[^"]*"[^>]*>.*?</\1>', ' ', str(s or ''), flags=re.S)
 
 
+# 07/11/2026: decisão 179 (docente, no cartão de opções). A regra da decisão 146 («grupo» só no texto de um caso inventado)
+# não se aplica ao texto de um excerto de lei registado em tools/cidadania_fontes.json e copiado letra a letra (o artigo 30.º da
+# Convenção diz «conjuntamente com membros do seu grupo»). Só sai da verificação o excerto cujo identificador existe no registo e
+# cujos pedaços, entre «[…]», estão todos no texto registado; tudo o resto do cartão continua a ser verificado.
+_REGISTO_FONTES = None
+
+
+def sem_lei_registada(s):
+    """O HTML sem os excertos de lei registados e conferidos com o registo (data-fonte), só para a regra de «grupo»."""
+    global _REGISTO_FONTES
+    if _REGISTO_FONTES is None:
+        dados = json.loads((ROOT / 'tools' / 'cidadania_fontes.json').read_text(encoding='utf-8'))
+        lista = dados if isinstance(dados, list) else dados.get('excertos', [])
+        _REGISTO_FONTES = {e.get('id'): html.unescape(e.get('texto') or '') for e in lista}
+
+    def tirar(m):
+        texto = _REGISTO_FONTES.get(m.group(2))
+        corpo = html.unescape(re.sub(r'<[^>]+>', '', m.group(3))).replace('\u00a0', ' ')
+        corpo = re.sub(r'^.*?«|»\s*$', '', corpo, flags=re.S) if '«' in corpo else corpo
+        pedacos = [x.strip(' .,;:') for x in corpo.split('[…]') if x.strip(' .,;:')]
+        if texto and pedacos and all(x in texto.replace('\u00a0', ' ') for x in pedacos):
+            return ' '
+        return m.group(0)
+    return re.sub(r'<(p|span)\b[^>]*\bdata-fonte="([^"]+)"[^>]*>(.*?)</\1>', tirar, str(s or ''), flags=re.S)
+
+
 def validar_molde(d, C):
     """O contrato do validador do molde cidadania-2026-11 (plano do molde, secção 5): só para os .json com o campo «molde»."""
     erros = []
@@ -369,6 +395,16 @@ def validar_molde(d, C):
     if n < 6:
         return ['molde: cartões a menos para o contrato']
     sessao10 = bool(re.search(r'-s10$', d.get('id', '')))
+    # 07/11/2026 (sessão 10 do M1 no molde): a variante do plano para as sessões 10 (secção 2, «Variantes»: sessão de mostra, núcleo
+    # curto com 7 de fazer) passa a ter nome, «variante»: «mostra», e só as sessões 10 a podem usar. Sem o campo, uma sessão 10 cumpre
+    # o contrato inteiro, como as outras (antes, o id bastava para pedir 7 de fazer). As regras das outras sessões não mudam.
+    variante = d.get('variante')
+    if variante is not None and variante != 'mostra':
+        erros.append(f'molde: variante desconhecida «{variante}» (conhecida: mostra)')
+    mostra = variante == 'mostra'
+    if mostra and not sessao10:
+        erros.append('molde: a variante «mostra» é só das sessões 10 (plano, secção 2, «Variantes»)')
+    sessao10 = mostra
     eh_fazer = [c.get('t') in TIPOS_FAZER for c in C]
     # Abre, Decide e os dois Recupera
     a = C[0]
@@ -387,6 +423,12 @@ def validar_molde(d, C):
             erros.append(f'molde: o cartão {k + 1} é um «Recupera» (g «recupera»)')
     if eh_fazer[3] and not C[3].get('origem'):
         erros.append('molde: o 2.º «Recupera» diz a sessão de origem («origem»)')
+    # 07/11/2026 (variante «mostra»): R1 a R4 (plano, secção 3, linha «10»): os cartões 3 a 6 são «Recupera», e o 2.º, o 3.º e o 4.º
+    # dizem a sessão de origem.
+    if mostra:
+        for k in (4, 5):
+            if k >= n or not eh_fazer[k] or C[k].get('g') != 'recupera' or not C[k].get('origem'):
+                erros.append(f'molde (mostra): o cartão {k + 1} é um «Recupera» com a sessão de origem («origem»)')
     # cada exercício
     fazer = [(i, c) for i, c in enumerate(C) if eh_fazer[i]]
     for i, c in fazer:
@@ -446,14 +488,25 @@ def validar_molde(d, C):
         erros.append(f'molde: {len(turma)} cartões «Em turma» (tem de haver exatamente um)')
     else:
         t, ht = turma[0], visivel(C[turma[0]].get('html') or '')
-        if C[t].get('t') != 'ler' or not volta or volta[0] > t:
+        if mostra:
+            # 07/11/2026 (variante «mostra»): o «Em turma» é a mostra individual (3 minutos e 2 de defesa por aluno, decisão 159),
+            # com pelo menos 90 minutos, depois do Lê e de pelo menos cinco exercícios; não há «Volta ao caso» (a segunda aula
+            # reentra na mostra).
+            le = [i for i, c in enumerate(C) if c.get('rot') == 'Lê']
+            if C[t].get('t') != 'ler' or not le or le[0] > t or sum(eh_fazer[:t]) < 5:
+                erros.append('molde (mostra): o «Em turma» é um cartão de ler, depois do «Lê» e de pelo menos cinco exercícios')
+            if not isinstance(C[t].get('min'), int) or C[t]['min'] < 90:
+                erros.append('molde (mostra): o «Em turma» é a mostra individual, com pelo menos 90 minutos')
+        elif C[t].get('t') != 'ler' or not volta or volta[0] > t:
             erros.append('molde: o «Em turma» é um cartão de ler, na parte 2, depois da «Volta ao caso»')
         if not all(x in ht for x in QUATRO_CAMPOS):
             erros.append('molde: o «Em turma» tem os quatro campos (O que se faz, Quanto tempo, O que fica escrito, Se estás sozinho)')
         if 'class="posicao"' not in (C[t].get('html') or ''):
             erros.append('molde: o «Em turma» tem a posição depois do material (.posicao)')
-        if sum(eh_fazer[t + 1:]) < 3:
-            erros.append('molde: pelo menos três cartões de fazer depois do «Em turma»')
+        # 07/11/2026 (variante «mostra»): depois da mostra, pelo menos um exercício (nas outras sessões, três, como até aqui).
+        if sum(eh_fazer[t + 1:]) < (1 if mostra else 3):
+            erros.append('molde (mostra): pelo menos um cartão de fazer depois do «Em turma»' if mostra else
+                         'molde: pelo menos três cartões de fazer depois do «Em turma»')
     papel = C[-2]
     hp = visivel(papel.get('html') or '')
     if papel.get('rot') != 'Agora, em papel' or 'O que conta' not in hp or 'código' not in hp.lower():
@@ -488,7 +541,7 @@ def validar_molde(d, C):
         partes += [x for par in c.get('pares') or [] for x in par] + [str(v) for v in (c.get('aula') or {}).values()]
         for txt in partes:
             v = visivel(txt)
-            if GRUPO.search(v):
+            if GRUPO.search(visivel(sem_lei_registada(txt))):
                 erros.append(f'{onde}: «grupo» só no texto de um caso inventado (decisão 146)')
             if DOCENTE.search(v):
                 erros.append(f'{onde}: nenhuma instrução ao aluno depende do docente (decisão 154)')
