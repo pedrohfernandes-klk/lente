@@ -7,9 +7,12 @@ import cidadania_sessoes_molde as molde
 # 05/11/2026 (plano do molde da Cidadania, pedido 2): as sessões cujo endereço já é de uma lição no molde cidadania-2026-11.
 # 06/11/2026: também a sessão 02 (tools/licoes/cidadania-m1-s02.json, decisão 166).
 # 06/11/2026: e a sessão 03 (tools/licoes/cidadania-m1-s03.json, decisões 166 a 168).
-NO_MOLDE={'01','02','03'}
-# 06/11/2026: e a sessão 08 (tools/licoes/cidadania-m1-s08.json, decisões 166 a 168), feita fora de ordem: as 04 a 07 vêm dos seus ramos.
-NO_MOLDE|={'08'}
+# 06/11/2026: e a sessão 04 (tools/licoes/cidadania-m1-s04.json, decisões 166 a 168).
+# 06/11/2026: e a sessão 05 (tools/licoes/cidadania-m1-s05.json, decisões 166 a 168).
+# 06/11/2026: e a sessão 06 (tools/licoes/cidadania-m1-s06.json, decisões 166 a 168).
+# 06/11/2026: e a sessão 07 (tools/licoes/cidadania-m1-s07.json, decisões 166 a 168).
+# 06/11/2026: e a sessão 08 (tools/licoes/cidadania-m1-s08.json, decisões 166 a 168).
+NO_MOLDE={'01','02','03','04','05','06','07','08'}
 def render(api,sessions,capsules,short_caps,image_prompts):
  R,write,old,link,rel=api['R'],api['write'],api['old'],api['anchor'],api['rel']
  # 28/10/2026: vídeos escolhidos pelo docente (tools/videos-cidadania-m1.json), no componente «Para ver».
@@ -107,7 +110,11 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   # a escrever, para não a apagar. As sessões 02 a 10 publicadas ficam como estavam até ao pedido 3.
   # 06/11/2026: a sessão 02 também passou ao molde final (NO_MOLDE); ficam como estavam as 03 a 10.
   # 06/11/2026: e a sessão 03; ficam como estavam as 04 a 10.
-  # 06/11/2026: e a sessão 08 (NO_MOLDE, acima).
+  # 06/11/2026: e a sessão 04 (NO_MOLDE); ficam como estavam as 05 a 10.
+  # 06/11/2026: e a sessão 05 (NO_MOLDE); ficam como estavam as 06 a 10.
+  # 06/11/2026: e a sessão 06 (NO_MOLDE); ficam como estavam as 07 a 10.
+  # 06/11/2026: e a sessão 07 (NO_MOLDE); ficam como estavam as 08 a 10.
+  # 06/11/2026: e a sessão 08 (NO_MOLDE); ficam como estavam as 09 e 10.
   if ident in NO_MOLDE:continue
   write(path,document(path,s['title'],body,ident))
  path='cidadania/m1/index.html';hero=dict(image='hals.webp',caption='Frans Hals · As regentes do asilo de velhos, 1664')

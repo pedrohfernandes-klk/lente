@@ -90,9 +90,24 @@ class FichasM1(unittest.TestCase):
    # 06/11/2026 (decisões 166 a 168): no endereço da sessão 03 está agora a lição no molde final, sem os cinco momentos (conferida em
    # tests/test_molde_cidadania.py, SessaoS03); os momentos continuam exigidos às sessões 04 a 10 publicadas.
    if n==3:continue
-   # 06/11/2026 (decisões 166 a 168): o mesmo para a sessão 08, que passou ao molde final fora de ordem (SessaoS08).
-   if n==8:continue
    page=(R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
+   # 06/11/2026 (decisões 166 a 168): uma sessão cujo .json tem o campo «molde» passou à lição no molde final, no mesmo endereço
+   # (hoje, a 04); confere-se aqui que é essa lição, e o contrato do molde confere-se em tests/test_molde_cidadania.py. As outras
+   # continuam a ter de ter os cinco momentos e os controlos de sempre.
+   # 06/11/2026 (fusão do main com as sessões 2 e 3 finais na sessão 4): como a 03 acima, a sessão fica nomeada (a 04), e o seu .json
+   # tem de ter o campo «molde»; as 05 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 4 finais na sessão 5): a 05 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 06 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 5 finais na sessão 6): a 06 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 07 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 6 finais na sessão 7): a 07 também passou ao molde final, nomeada como a 04 e com
+   # o campo «molde» no .json; as 08 a 10 continuam a ter de ter os cinco momentos, tenha o .json o que tiver.
+   # 06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): a 08 também passou ao molde final; em vez de a saltar (como
+   # fazia o ramo da s08), fica nomeada como a 04, com o campo «molde» no .json e a lição no molde na página; as 09 e 10 continuam a
+   # ter de ter os cinco momentos, tenha o .json o que tiver.
+   if n in (4,5,6,7,8):
+    self.assertTrue(json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'),n)
+    self.assertIn('molde-cidadania',page,n);self.assertNotIn('data-stage',page,n);continue
    self.assertEqual(page.count(' data-stage data-label='),5)
    # 27/10/2026: o modo «um momento de cada vez» deixa de ser opcional (data-focus-mode); a sessão abre
    # com «Começar» e avança com Anterior e Seguinte.

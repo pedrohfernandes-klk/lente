@@ -39,9 +39,34 @@ import molde_s02  # noqa: E402
 # ficheiros que a s03 muda em parte; os que escreve inteiros (molde_s03.INTEIROS: a página e a versão para imprimir da s03, a sua
 # fonte e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s03 tem de cumprir o contrato do molde.
 import molde_s03  # noqa: E402
-# 06/11/2026: plano do molde da Cidadania, sessão 08 do M1 na versão final (decisões 166 a 168), feita fora de ordem. Mais uma
-# camada, a mais recente, com as mesmas regras: o manifesto fechado tools/trocas/molde-s08-20261106.json (parte do main 88c2cba) nos
-# ficheiros que a s08 muda em parte; os que escreve inteiros (molde_s08.INTEIROS) comparam-se com o que o gerador escreve hoje.
+# 06/11/2026: plano do molde da Cidadania, sessão 04 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais
+# recente, por cima da da s03, com as mesmas regras: o manifesto fechado tools/trocas/molde-s04-20261106.json (trocas literais,
+# contagem exata) nos ficheiros que a s04 muda em parte; os que escreve inteiros (molde_s04.INTEIROS: a página e a versão para
+# imprimir da s04, a sua fonte e o seu .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s04 tem de cumprir o
+# contrato do molde.
+import molde_s04  # noqa: E402
+# 06/11/2026: sessão 05 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s04, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s05-20261106.json nos ficheiros que a s05 muda em parte; os que escreve
+# inteiros (molde_s05.INTEIROS) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s05 tem de cumprir o contrato do
+# molde. 06/11/2026 (fusão do main com as sessões 2 a 4 finais e o elétrico): o manifesto parte do main (5b4a451), já com a s04.
+import molde_s05  # noqa: E402
+# 06/11/2026: sessão 06 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s05, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s06-20261106.json (trocas literais, contagem exata) nos ficheiros que a
+# s06 muda em parte; os que escreve inteiros (molde_s06.INTEIROS: a página e a versão para imprimir da s06, a sua fonte e o seu
+# .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s06 tem de cumprir o contrato do molde. 06/11/2026
+# (fusão do main com as sessões 2 a 5 finais na sessão 6): o manifesto parte do main (d04c20f), já com a s05.
+import molde_s06  # noqa: E402
+# 06/11/2026: sessão 07 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s06, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s07-20261106.json (trocas literais, contagem exata) nos ficheiros que a
+# s07 muda em parte; os que escreve inteiros (molde_s07.INTEIROS: a página e a versão para imprimir da s07, a sua fonte e o seu
+# .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s07 tem de cumprir o contrato do molde. 06/11/2026
+# (fusão do main com as sessões 2 a 6 finais na sessão 7): o manifesto parte do main (8731fb9), já com a s06.
+import molde_s07  # noqa: E402
+# 06/11/2026: sessão 08 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s07, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s08-20261106.json (trocas literais, contagem exata) nos ficheiros que a
+# s08 muda em parte; os que escreve inteiros (molde_s08.INTEIROS: a página e a versão para imprimir da s08, a sua fonte e o seu
+# .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s08 tem de cumprir o contrato do molde. 06/11/2026
+# (fusão do main com as sessões 2 a 7 finais na sessão 8): o manifesto parte do main (3c774cb), já com a s07.
 import molde_s08  # noqa: E402
 
 
@@ -102,6 +127,22 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s03.INTEIROS:
                     self.assertTrue(molde_s03.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 04 no molde): o mesmo para os ficheiros que a s04 escreve inteiros.
+                if nome in molde_s04.INTEIROS:
+                    self.assertTrue(molde_s04.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 05 no molde): o mesmo para os ficheiros que a s05 escreve inteiros.
+                if nome in molde_s05.INTEIROS:
+                    self.assertTrue(molde_s05.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 06 no molde): o mesmo para os ficheiros que a s06 escreve inteiros.
+                if nome in molde_s06.INTEIROS:
+                    self.assertTrue(molde_s06.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
+                    continue
                 # 06/11/2026 (sessão 08 no molde): o mesmo para os ficheiros que a s08 escreve inteiros.
                 if nome in molde_s08.INTEIROS:
                     self.assertTrue(molde_s08.inteiro_ok(nome), nome)
@@ -123,9 +164,34 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 03 no molde, na fusão do main com a sessão 2 final, os menus e o «Dilemas»): o manifesto da s03
                 # parte agora do main (b29833d), já com a 163 e a 149; a s03 é a camada mais recente e desfaz-se no ficheiro atual,
                 # com contagem exata de cada «novo», antes de se tirarem as versões de cache; a comparação continua integral.
-                # 06/11/2026 (sessão 08 no molde): a camada da s08 parte do main 88c2cba, por cima da da s03: desfaz-se primeiro.
+                # 06/11/2026 (sessão 04 no molde, na fusão do main com as sessões 2 e 3 finais, os menus e o «Dilemas»): o manifesto
+                # da s04 parte do main (ba5211f), já com a s03; a s04 é agora a camada mais recente e desfaz-se primeiro no ficheiro
+                # atual, com contagem exata de cada «novo»; depois desfaz-se a da s03, como antes, e só então se tiram as versões de
+                # cache; a comparação continua integral.
+                # 06/11/2026 (sessão 05 no molde, na fusão do main com as sessões 2 a 4 finais e o elétrico): o manifesto da s05 parte
+                # do main (5b4a451), já com a s04; a s05 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com
+                # contagem exata de cada «novo»; depois a da s04 e a da s03, como antes, e só então se tiram as versões de cache.
+                # 06/11/2026 (sessão 06 no molde, na fusão do main com as sessões 2 a 5 finais): o manifesto da s06 parte do main
+                # (d04c20f), já com a s05; a s06 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
+                # exata de cada «novo»; depois a da s05, a da s04 e a da s03, como antes, e só então se tiram as versões de cache.
+                # 06/11/2026 (sessão 07 no molde, na fusão do main com as sessões 2 a 6 finais): o manifesto da s07 parte do main
+                # (8731fb9), já com a s06; a s07 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
+                # exata de cada «novo»; depois a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as versões de
+                # cache.
+                # 06/11/2026 (sessão 08 no molde, na fusão do main com as sessões 2 a 7 finais): o manifesto da s08 parte do main
+                # (3c774cb), já com a s07; a s08 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
+                # exata de cada «novo»; depois a da s07, a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as
+                # versões de cache.
                 if nome in molde_s08.TROCAS:
                     depois = molde_s08.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
+                if nome in molde_s07.TROCAS:
+                    depois = molde_s07.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
+                if nome in molde_s06.TROCAS:
+                    depois = molde_s06.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
+                if nome in molde_s05.TROCAS:
+                    depois = molde_s05.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
+                if nome in molde_s04.TROCAS:
+                    depois = molde_s04.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s03.TROCAS:
                     depois = molde_s03.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome == 'assets/licoes/cidadania.css':
@@ -172,6 +238,22 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 03 no molde): o mesmo para os ficheiros que a s03 escreve inteiros.
                 if nome in molde_s03.INTEIROS:
                     self.assertTrue(molde_s03.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 04 no molde): o mesmo para os ficheiros que a s04 escreve inteiros.
+                if nome in molde_s04.INTEIROS:
+                    self.assertTrue(molde_s04.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 05 no molde): o mesmo para os ficheiros que a s05 escreve inteiros.
+                if nome in molde_s05.INTEIROS:
+                    self.assertTrue(molde_s05.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 06 no molde): o mesmo para os ficheiros que a s06 escreve inteiros.
+                if nome in molde_s06.INTEIROS:
+                    self.assertTrue(molde_s06.inteiro_ok(nome), nome)
+                    continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
                     continue
                 # 06/11/2026 (sessão 08 no molde): o mesmo para os ficheiros que a s08 escreve inteiros.
                 if nome in molde_s08.INTEIROS:
@@ -230,7 +312,22 @@ class CidadaniaBase(unittest.TestCase):
                 # sessão 2 final, os menus e o «Dilemas»): o manifesto da s03 parte do main (b29833d), por isso aplica-se depois da 163
                 # e da 149, em último lugar.
                 esperado = molde_s03.aplicar(esperado, nome)
-                # 06/11/2026: a camada da sessão 08 no molde (manifesto a partir do main 88c2cba), em último lugar.
+                # 06/11/2026: a camada da sessão 04 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 e 3 finais, os menus e o «Dilemas»): o manifesto da s04 parte do main (ba5211f), por isso aplica-se depois
+                # da s03, em último lugar.
+                esperado = molde_s04.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 05 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 4 finais e o elétrico): o manifesto da s05 parte do main (5b4a451), por isso aplica-se depois da s04,
+                # em último lugar.
+                esperado = molde_s05.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 06 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 5 finais): o manifesto da s06 parte do main (d04c20f), por isso aplica-se depois da s05, em último lugar.
+                esperado = molde_s06.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 07 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 6 finais): o manifesto da s07 parte do main (8731fb9), por isso aplica-se depois da s06, em último lugar.
+                esperado = molde_s07.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 08 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 7 finais): o manifesto da s08 parte do main (3c774cb), por isso aplica-se depois da s07, em último lugar.
                 esperado = molde_s08.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 

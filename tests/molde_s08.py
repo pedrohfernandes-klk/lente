@@ -13,7 +13,14 @@ sessão 03 (tests/molde_s03.py), para os testes que comparam com bases antigas, 
 O manifesto parte do main 88c2cba (com as sessões 01 a 03 finais, os menus da decisão 163, o «Dilemas» da decisão 149 e o elétrico da
 Justiça) e leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o gerador confere que aplicar e
 desfazer dão a volta completa). É a camada mais recente: desfaz-se primeiro no ficheiro atual, ou aplica-se em último lugar ao lado
-esperado. Quando as sessões 04 a 07 entrarem no main, o manifesto gera-se de novo a partir desse main."""
+esperado. Quando as sessões 04 a 07 entrarem no main, o manifesto gera-se de novo a partir desse main.
+
+06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): o manifesto foi gerado de novo a partir do main (3c774cb), e
+leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o gerador confere que aplicar e desfazer
+dão a volta completa). A s08 fica por cima de todas as camadas, também das da s04 à s07 (tests/molde_s04.py a tests/molde_s07.py):
+desfaz-se primeiro no ficheiro atual, antes da da s07, ou aplica-se em último lugar ao lado esperado. A frase das sessões no molde e
+os seus ajudantes (_frase_molde() e NUMEROS, que o main já tem, iguais) saem do manifesto; no guia, a frase passa a nomear as sessões
+01 a 08. Fica também no guia a frase da decisão 172 na nota sobre Hondt. As regras e as contagens exatas não mudam."""
 import importlib.util
 import json
 from pathlib import Path

@@ -53,11 +53,39 @@ on:
       - 'tools/trocas/molde-s03-*'
       - 'cidadania/m1/sessoes/03/**'
       - 'tests/molde_s03.py'
+      # 06/11/2026: a sessão 04 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, o manifesto
+      # fechado da sua camada e essa camada nos testes.
+      - 'tools/trocas/molde-s04-*'
+      - 'cidadania/m1/sessoes/04/**'
+      - 'tests/molde_s04.py'
+      # 06/11/2026: a sessão 05 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, o manifesto fechado
+      # da sua camada, essa camada nos testes e a gravura do Olha.
+      - 'tools/trocas/molde-s05-*'
+      - 'cidadania/m1/sessoes/05/**'
+      - 'tests/molde_s05.py'
+      - 'img/cidadania/panotico-bentham-1791-planta.webp'
+      # 06/11/2026: a sessão 06 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, o manifesto
+      # fechado da sua camada, essa camada nos testes e os três recortes da gravura do Olha (como a s05).
+      - 'tools/trocas/molde-s06-*'
+      - 'cidadania/m1/sessoes/06/**'
+      - 'tests/molde_s06.py'
+      - 'img/cidadania/justica-galle-bruegel-banco.webp'
+      - 'img/cidadania/justica-galle-bruegel-centro.webp'
+      - 'img/cidadania/justica-galle-bruegel-inteira.webp'
+      # 06/11/2026: a sessão 07 do M1 na versão final (decisões 166 a 168): a sua página e versão para imprimir, a litografia inteira,
+      # o manifesto fechado da sua camada e essa camada nos testes.
+      - 'tools/trocas/molde-s07-*'
+      - 'cidadania/m1/sessoes/07/**'
+      - 'img/cidadania/daumier-gens-de-justice-21-inteira.webp'
+      - 'tests/molde_s07.py'
       # 06/11/2026: a sessão 08 do M1 na versão final, feita fora de ordem (decisões 166 a 168): a sua página e versão para imprimir,
       # o manifesto fechado da sua camada e essa camada nos testes.
       - 'tools/trocas/molde-s08-*'
       - 'cidadania/m1/sessoes/08/**'
       - 'tests/molde_s08.py'
+      # 06/11/2026: fusão do main (com as sessões 04 a 07 finais) na sessão 08: também a fotografia do Olha da s08, como o main
+      # lista as imagens das s05, s06 e s07.
+      - 'img/cidadania/kilburn-cartistas-1848.webp'
       - '.github/workflows/licoes-qa.yml'
       # 05/11/2026: decisão 163, o menu ≡ comum (tools/menu_casca.py) e as páginas estáticas da Cidadania que o usam.
       - 'tools/menu_casca.py'

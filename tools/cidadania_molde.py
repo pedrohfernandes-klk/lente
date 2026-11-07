@@ -100,12 +100,14 @@ def lei(excertos, fonte_html=''):
     return f'<blockquote class="lei">{ps}</blockquote>' + (f'<p class="fonte-lei">{ref(fonte_html)}</p>' if fonte_html else '')
 
 
-def figura(src, alt, credito, legenda, artefacto=None, largura=None, altura=None):
-    """O documento inteiro, ampliável, com o crédito atrás do «i» (decisão 153) e só a legenda que serve a pergunta."""
+def figura(src, alt, credito, legenda, artefacto=None, largura=None, altura=None, rotulo_i='Créditos da fotografia'):
+    """O documento inteiro, ampliável, com o crédito atrás do «i» (decisão 153) e só a legenda que serve a pergunta. 06/11/2026
+    (revisão da s04): «rotulo_i» dá o nome do «i» para quem usa leitor de ecrã quando a imagem não é uma fotografia (por exemplo,
+    «Créditos da gravura»); sem ele, fica o de antes."""
     art = (f' data-artefacto="imagem" data-rot="A imagem que viste" data-texto="{esc(artefacto)}"' if artefacto else '')
     dim = f' width="{largura}" height="{altura}"' if largura and altura else ''
     return (f'<figure class="fig inteiro"{art}><div class="moldura com-i"><img src="{esc(src)}" alt="{esc(alt)}"{dim} loading="lazy">'
-            '<details class="info-i" name="info-i"><summary aria-label="Créditos da fotografia"><span aria-hidden="true">i</span></summary>'
+            f'<details class="info-i" name="info-i"><summary aria-label="{esc(rotulo_i)}"><span aria-hidden="true">i</span></summary>'
             f'<p class="info-i-texto">{credito}</p></details></div><figcaption>{ref(legenda)}</figcaption></figure>')
 
 

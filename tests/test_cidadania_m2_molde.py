@@ -13,6 +13,10 @@ import menus163
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
 import molde_s03  # 06/11/2026: plano do molde da Cidadania, sessão 03 do M1 na versão final (decisões 166 a 168)
+import molde_s04  # 06/11/2026: plano do molde da Cidadania, sessão 04 do M1 na versão final (decisões 166 a 168)
+import molde_s05  # 06/11/2026: plano do molde da Cidadania, sessão 05 do M1 na versão final (decisões 166 a 168)
+import molde_s06  # 06/11/2026: plano do molde da Cidadania, sessão 06 do M1 na versão final (decisões 166 a 168)
+import molde_s07  # 06/11/2026: plano do molde da Cidadania, sessão 07 do M1 na versão final (decisões 166 a 168)
 import molde_s08  # 06/11/2026: plano do molde da Cidadania, sessão 08 do M1 na versão final (decisões 166 a 168)
 from html.parser import HTMLParser
 from pathlib import Path
@@ -327,6 +331,26 @@ class Molde(unittest.TestCase):
         for f in inteiros_s03:
             self.assertTrue(molde_s03.inteiro_ok(f), f)
         inteiros = inteiros + inteiros_s03
+        # 06/11/2026: o mesmo para a sessão 04, que passa ao molde final (decisões 166 a 168).
+        inteiros_s04 = [f for f in molde_s04.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s04:
+            self.assertTrue(molde_s04.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s04
+        # 06/11/2026: o mesmo para a sessão 05, que passa ao molde final (decisões 166 a 168).
+        inteiros_s05 = [f for f in molde_s05.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s05:
+            self.assertTrue(molde_s05.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s05
+        # 06/11/2026: o mesmo para a sessão 06, que passa ao molde final (decisões 166 a 168).
+        inteiros_s06 = [f for f in molde_s06.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s06:
+            self.assertTrue(molde_s06.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s06
+        # 06/11/2026: o mesmo para a sessão 07, que passa ao molde final (decisões 166 a 168).
+        inteiros_s07 = [f for f in molde_s07.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s07:
+            self.assertTrue(molde_s07.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s07
         # 06/11/2026: o mesmo para a sessão 08, que passa ao molde final fora de ordem (decisões 166 a 168).
         inteiros_s08 = [f for f in molde_s08.INTEIROS if f.startswith('cidadania/m1/')]
         for f in inteiros_s08:

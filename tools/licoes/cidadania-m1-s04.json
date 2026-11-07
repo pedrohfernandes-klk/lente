@@ -1,8 +1,9 @@
 {
  "id": "cidadania-m1-s04",
  "chave": "epi-cid-m1-s04",
- "versao": "2026-10-31-2",
+ "versao": "2026-11-06-molde",
  "marca": "CD",
+ "molde": "cidadania-2026-11",
  "titulo": "Sessão 04: Posso dizer tudo?",
  "h1": "Cidadania, módulo 1, sessão 04: Posso dizer tudo?",
  "modulo": {
@@ -10,260 +11,438 @@
   "nome": "Humanos",
   "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"
  },
- "saida": "cidadania/piloto/m1-s04/index.html",
- "piloto": true,
- "seguinte": "../m1-s05/",
+ "saida": "cidadania/m1/sessoes/04/index.html",
+ "seguinte": "../05/",
  "seguinteRotulo": "Sessão 05: Quem guarda os meus dados?",
- "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.ºs 2 e 3; Código Penal, artigo 180.º (textos lidos no sítio da Procuradoria-Geral Distrital de Lisboa a 31/10/2026). Convenção sobre os Direitos da Criança (1989), artigos 2.º e 13.º, n.º 2, no texto do Ministério Público. Imagem: _Les Poires_, em _Le Charivari_, 17 de janeiro de 1834, desenho atribuído a Honoré Daumier a partir de Charles Philipon (Gallica, Biblioteca Nacional de França, domínio público). Vídeo: TED-Ed, «How false news can spread», lição de Noah Tavlin. Os casos são inventados.",
+ "fontes": "Constituição da República Portuguesa, artigos 13.º, n.º 2, 26.º, n.º 1, e 37.º, n.os 1 a 3, na versão consolidada do Diário da República. Convenção sobre os Direitos da Criança, artigo 13.º, na tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, no Diário da República. Acórdão do Tribunal da Relação de Évora de 21 de março de 2017, processo 373/14.8T9STR.E1, em dgsi.pt. Imagem: _Les Poires_, _Le Charivari_, 17 de janeiro de 1834, desenho talvez de Honoré Daumier a partir de Charles Philipon, Gallica (Biblioteca Nacional de França), domínio público, segundo o registo do Wikimedia Commons. Gravura: Jan Saenredam, segundo Cornelis van Haarlem, _Antrum Platonicum_, 1604, British Museum, domínio público. Platão, _República_, livro VII (a alegoria da caverna). O caso da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o das notas de um colega são inventados; o da Relação de Évora é real.",
+ "tempos": {
+  "folga": 10,
+  "pausa": 10,
+  "projeto": 45,
+  "entrega": 5
+ },
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">Duas fontes que não se copiam</p><p class=\"sub\">Antes de pores uma fala no teu teatro-documento, verificas de onde ela vem. Primeiro, treina com três afirmações escritas para isso e conferidas a 6 de novembro de 2026 em páginas oficiais: «A Constituição portuguesa proíbe a censura»; «Portugal assinou a Convenção sobre os Direitos da Criança em Lisboa»; «A Assembleia da República aprovou essa Convenção em 1990». Para cada uma, escreve em papel: onde a podes confirmar, duas fontes que não se copiam (abre outros separadores antes de ler uma página até ao fim) e o teu veredicto: verdadeira, falsa ou sem prova. Depois, faz o mesmo para a tua pergunta: duas fontes independentes, com o que é preciso para as reencontrar. O que conta: as duas fontes chegaram à informação cada uma pelo seu lado; uma página que copia outra conta como uma só; o que um assistente de inteligência artificial responde é mais uma afirmação a verificar, não uma fonte.</p><p class=\"ir\"><a href=\"../../../projeto/#metodo\">As fontes, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Posso dizer tudo?",
-   "html": "<p class=\"pergunta-c\">Onde acaba a liberdade de dizer e começa o dano a outra pessoa?</p><p>Caso inventado. A conta anónima de memes da turma publica uma caricatura do diretor com cara de pera. Por baixo, alguém comenta que o Diogo, do 10.º B, rouba na cantina. Ninguém viu nada.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: decidir, separar opinião de acusação e verificar três afirmações reais.</p>"
+   "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">A conta anónima de memes da escola publica um desenho do diretor com cara de pera, por causa das regras novas do bar. Num comentário, alguém escreve: «E o Diogo, do 10.º B, rouba na cantina.» Em dois dias, o comentário corre a escola. O Diogo diz que é mentira. Ninguém diz que viu.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Onde acaba a crítica e começa o ataque?</p></div>",
+   "min": 5,
+   "aula": {
+    "linha": "ver e ler (60 min), pausa (10 min), pesar e escrever (50 min) e o teu projeto (45 min)."
+   }
   },
   {
    "t": "ler",
    "rot": "Decide",
-   "titulo": "A conta de memes",
-   "html": "<p>A conta deve ser apagada?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão de quem gere a conta</summary><div><p>«É humor. Quem manda tem de aguentar críticas. Apagar a conta é censura.»</p></div></details><details class=\"lado\"><summary>A razão do Diogo</summary><div><p>«A pera é uma piada. Dizer que eu roubo é uma acusação, com o meu nome, e é falsa.»</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>Apagar tudo ou só o comentário? E quem decide o que é piada?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>"
+   "titulo": "Antes dos materiais",
+   "html": "<div class=\"m-decide\"><p class=\"pos-intro\">Decide: sim, não ou depende. Escolhe antes de veres os materiais; no fim, voltas a esta pergunta.</p><div class=\"posicao\" data-artefacto=\"posicao-inicio\" data-rot=\"A tua posição no início\"><p class=\"pos-q\">A conta de memes deve ser apagada?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição no início\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div><p class=\"pos-nota\">Não há resposta certa neste cartão.</p></div><div class=\"pos-lados\" data-depois-de=\"posicao-inicio\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>A conta espalhou uma acusação contra um colega. Apagar a conta é a maneira mais rápida de parar o dano.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>A pera critica as regras do diretor, e criticar quem manda é um direito. Apagar a conta cala também isso.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se saísse só o comentário sobre o Diogo? Quem decidiria o que fica e o que sai?</p></div></details></div></div>",
+   "min": 8
   },
   {
    "t": "escolha",
-   "g": "facto",
-   "p": "No caso da conta de memes, que frase afirma um facto que se pode verificar?",
-   "p2": "Destas frases, que afirmação é sobre um facto, verdadeiro ou falso, e não uma opinião?",
+   "rot": "Sombras na parede",
+   "p": "Na alegoria da caverna, de Platão, os prisioneiros passam a vida a olhar para sombras numa parede. Porque as tomam pela realidade?",
+   "p2": "Os prisioneiros da caverna de Platão olham para sombras numa parede. O que os faz tomá-las pelas próprias coisas?",
+   "f": "Só conhecem as sombras, por isso tomam-nas pela verdade. Com um comentário que corre a escola, passa-se o mesmo: quem só o viu repetido não sabe de onde vem. Para saber, vai-se à origem.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "aparência e realidade",
+   "ver": "<figure class=\"fig inteiro\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/caverna.webp\" alt=\"Gravura antiga: à direita, uma multidão virada para um muro alto, onde se veem figuras; à esquerda, uma abertura deixa entrar a luz de fora.\" width=\"1100\" height=\"802\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Jan Saenredam, segundo Cornelis van Haarlem, <i>Antrum Platonicum</i>, gravura, 1604. British Museum, 1852,1211.120. <a href=\"https://commons.wikimedia.org/wiki/File:Platon_Cave_Sanraedam_1604.jpg\">Registo de origem</a>. Domínio público.</p></details></div><figcaption>Jan Saenredam, <i>A caverna de Platão</i>, 1604.</figcaption></figure>",
+   "pista": "Pensa no que os prisioneiros têm, ou não têm, para comparar.",
+   "g": "recupera",
    "o": [
-    "O Diogo rouba na cantina.",
-    "O diretor parece uma pera.",
-    "Esta escola é uma seca."
+    "Alguém os convenceu de que as sombras eram reais.",
+    "Nunca viram as coisas que fazem as sombras.",
+    "As sombras são mais nítidas do que as coisas."
    ],
-   "c": 0,
-   "f": "Dizer que o Diogo rouba na cantina é afirmar que aconteceu uma coisa concreta: pode ser verdade ou mentira, e tem de ser provado. A pera é uma sátira e «uma seca» é uma opinião: discutem-se, não se provam.",
+   "c": 1,
    "fe": [
+    "Na alegoria, ninguém precisa de os convencer: presos desde sempre, só conhecem as sombras e não têm com que as comparar. Repara, na gravura, para onde está virada a multidão.",
     "",
-    "Ninguém acha que o diretor é mesmo uma pera. É um exagero, uma sátira: não se verifica.",
-    "É uma opinião sobre a escola. Pode discutir-se, mas não há facto para verificar."
+    "Não é uma questão de nitidez. Quem só viu sombras não tem com que as comparar. Repara, na gravura, para onde está virada a multidão e por onde entra a luz."
    ]
   },
   {
-   "t": "emparelhar",
-   "g": "tipos",
-   "p": "Liga cada exemplo ao seu tipo.",
-   "p2": "De que tipo é cada um destes exemplos?",
-   "pares": [
-    [
-     "A cantina devia ter mais opções.",
-     "Crítica"
-    ],
-    [
-     "Um desenho do diretor com cara de pera",
-     "Sátira"
-    ],
-    [
-     "O Diogo tirou dinheiro do bar.",
-     "Acusação de facto"
-    ],
-    [
-     "Os alunos daquele país não deviam cá estar.",
-     "Ataque a um grupo"
-    ]
-   ],
-   "f": "Uma crítica diz o que está mal e discute-se; uma sátira exagera para fazer pensar; uma acusação de facto diz que alguém fez uma coisa e tem de ser provada; um ataque a um grupo visa pessoas pela origem, e a origem nunca pode ser razão para prejudicar alguém (Constituição, artigo 13.º, n.º 2).",
-   "fe": "Pergunta a cada exemplo: discute-se, exagera, afirma um facto sobre alguém ou ataca pessoas por serem de um grupo?"
-  },
-  {
    "t": "vf",
-   "g": "censura",
-   "p": "A Constituição proíbe qualquer tipo ou forma de censura à liberdade de expressão.",
-   "p2": "Segundo a Constituição, a liberdade de expressão não pode ser limitada por nenhuma forma de censura.",
-   "v": true,
-   "f": "Artigo 37.º, n.º 2, da Constituição: o exercício destes direitos «não pode ser impedido ou limitado por qualquer tipo ou forma de censura».",
-   "fe": "Está no artigo 37.º, n.º 2, da Constituição: nenhuma forma de censura."
-  },
-  {
-   "t": "vf",
-   "g": "responder",
-   "p": "Como não há censura, quem publica não responde por nada do que diz.",
-   "p2": "Sem censura, ninguém pode ser responsabilizado pelo que publica.",
+   "rot": "Um sim para um uso",
+   "p": "Caso inventado: a Inês deixa o Tiago mostrar à turma uma caricatura dela, bem reconhecível. Com esse sim, ele pode publicá-la também na conta de memes.",
+   "p2": "A Inês aceitou que a caricatura dela fosse mostrada à turma. Então, o Tiago também a pode pôr na conta de memes.",
+   "f": "Falso. A Inês disse que sim a mostrar a caricatura à turma, não a publicá-la numa conta que toda a escola vê. É a ideia da sessão 02: «O sim vale para o uso que se explicou.»",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "consentimento para um uso",
    "v": false,
-   "f": "O artigo 37.º, n.º 3, da Constituição diz que as infrações cometidas no exercício destes direitos ficam sujeitas à lei e são apreciadas pelos tribunais ou por uma entidade administrativa independente. Sem censura antes; com responsabilidade depois.",
-   "fe": "Não haver censura quer dizer que ninguém te cala antes de falares. Depois, respondes pelo que disseste (artigo 37.º, n.º 3)."
+   "fe": "Um sim não passa de um uso para outro: a Inês aceitou que ele a mostrasse à turma, não que a publicasse. É o que viste na sessão 02: «Aceitar ser filmado não é aceitar ser publicado.» Volta ao caso e vê para que uso foi o sim.",
+   "pista": "Pergunta-te para que uso a Inês disse que sim.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/02/"
+  },
+  {
+   "t": "ler",
+   "rot": "Olha",
+   "titulo": "Um rei que se torna pera",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Vê se há um desenho em que o rosto deixa de ser o do rei.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Quatro desenhos de 1834: o rei que se torna pera\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/les-poires-1834-pagina.webp\" alt=\"Página de jornal de 1834. No alto, o título «LES POIRES» e duas linhas em francês; por baixo, um parágrafo e quatro desenhos a traço, dois em cima e dois em baixo, cada um com uma legenda em francês; no fim, outro parágrafo e uma margem de papel em branco. O rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera; no último, é uma pera, com marcas no lugar dos olhos e da boca.\" width=\"1100\" height=\"1818\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da gravura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\"><i>Les Poires</i>, gravura em madeira publicada em <i>Le Charivari</i>, 17 de janeiro de 1834. Desenho talvez de Honoré Daumier, a partir de uma litografia de Charles Philipon (<i>La Caricature</i>, 1831); gravador desconhecido. Gallica, Biblioteca Nacional de França, bpt6k3058046f, f. 3. <a href=\"https://commons.wikimedia.org/wiki/File:Les_Poires_(1834).jpg\">Registo de origem</a>. Domínio público.</p></details></div><figcaption>Uma página do jornal francês <i>Le Charivari</i>, 17 de janeiro de 1834, com quatro desenhos. O primeiro rosto é o do rei Luís Filipe.</figcaption></figure></div>",
+   "min": 3
+  },
+  {
+   "t": "vf",
+   "rot": "O que resta do rosto",
+   "p": "Na pera do último desenho, ainda se veem marcas do rosto dos desenhos anteriores.",
+   "p2": "O último desenho já é uma pera, mas guarda alguma coisa do rosto que vinha de trás.",
+   "f": "Verdadeiro. No meio da pera há marcas no lugar dos olhos e da boca, onde estavam no terceiro desenho.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "observar",
+   "v": true,
+   "ver": "<img src=\"../../../../img/cidadania/les-poires-1834-baixo.webp\" alt=\"Pormenor: o terceiro desenho, um rosto já quase em forma de pera, e o quarto, a pera, lado a lado.\" width=\"640\" height=\"284\"><figcaption class=\"ver-leg\">Pormenor de <i>Les Poires</i>, 1834.</figcaption>",
+   "fe": "Olha para o meio da pera: há marcas onde estavam os olhos e a boca. Compara-a com o terceiro desenho, ao lado.",
+   "pista": "Compara o meio da pera com o terceiro desenho."
+  },
+  {
+   "t": "escolha",
+   "rot": "Onde passa a linha",
+   "p": "Onde deixa o rosto de ser o do rei?",
+   "p2": "De desenho para desenho, o rosto do rei passa a pera. Onde se pode dizer «aqui já não é o rei»?",
+   "f": "Não há um desenho em que se possa traçar a linha. Diz a última legenda, em francês, que, por coerência, não se poderia absolver a pera, parecida com os esboços anteriores. Proibir um desenho por se parecer com o rei não tem onde parar.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "proibir uma forma",
+   "ver": "<img src=\"../../../../img/cidadania/les-poires-1834-tira.webp\" alt=\"Pormenor: os quatro desenhos numa linha, pela ordem da página, do rosto com patilhas à pera.\" width=\"1280\" height=\"280\"><figcaption class=\"ver-leg\">Pormenor de <i>Les Poires</i>, 1834.</figcaption>",
+   "pista": "Tenta justificar uma linha entre dois desenhos seguidos.",
+   "o": [
+    "No último, porque aí já não há rosto, só uma pera.",
+    "No terceiro, porque aí a cara já tem forma de pera.",
+    "Não dá para apontar um: cada um parece-se com o anterior."
+   ],
+   "c": 2,
+   "fe": [
+    "A pera ainda tem as marcas dos olhos e da boca do terceiro desenho. Se o terceiro é o rei, a pera parece-se com ele. Volta à imagem e compara os dois.",
+    "Esse desenho ainda tem o cabelo, as patilhas e os olhos do segundo. Se o segundo é o rei, o terceiro parece-se com ele. Volta à imagem e compara os dois.",
+    ""
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Antes e depois de publicar",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> Procura o que vem antes de publicar e o que vem depois.</p><blockquote class=\"lei\"><p data-l=\"n1\" data-fonte=\"crp-37-1\"><span class=\"art\">N.º 1</span>«Todos têm o direito de exprimir e divulgar livremente o seu pensamento pela palavra, pela imagem […]»</p><p data-l=\"n2\" data-fonte=\"crp-37-2\"><span class=\"art\">N.º 2</span>«O exercício destes direitos não pode ser impedido ou limitado por qualquer tipo ou forma de censura.»</p><p data-l=\"n3\" data-fonte=\"crp-37-3\"><span class=\"art\">N.º 3</span>«As infracções cometidas no exercício destes direitos ficam submetidas aos princípios gerais de direito criminal […]»</p></blockquote><p class=\"fonte-lei\">Constituição, artigo 37.º, no <a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Diário da República</a>.</p><details class=\"mais\"><summary>Ler mais</summary><div><p class=\"glossa\"><b>Infracções</b>: o que se faz contra a lei. O n.º 3 continua: quem as julga são os tribunais ou uma entidade administrativa independente.</p></div></details></div>",
+   "min": 4
   },
   {
    "t": "sublinhar",
-   "g": "outrem",
-   "p": "Convenção sobre os Direitos da Criança, artigo 13.º, n.º 2: toca nas três palavras que dizem o que a liberdade de expressão tem de respeitar, e de quem.",
-   "p2": "Na Convenção, artigo 13.º, n.º 2, que três palavras dizem o que a tua liberdade de expressão tem de respeitar, e de quem? Toca nelas.",
-   "frase": "(…) restrições previstas na lei e que sejam necessárias: a) Ao respeito dos direitos e da reputação de outrem; (…)",
+   "rot": "A palavra que corta antes",
+   "p": "No n.º 2, toca na palavra que nomeia o corte feito por outros ao que vais dizer, antes de chegar a quem lê.",
+   "p2": "No n.º 2 do artigo 37.º, toca na palavra que nomeia o controlo do que se publica, feito antes de sair.",
+   "f": "«Censura»: rever e cortar o que se vai publicar, antes de sair. O n.º 2 diz que nenhum tipo ou forma dela pode impedir ou limitar a liberdade de expressão.",
+   "min": 3,
+   "tipo": "reconhecer",
+   "conceito": "censura",
+   "frase": "O exercício destes direitos não pode ser impedido ou limitado por qualquer tipo ou forma de censura.",
    "certas": [
-    13,
-    16,
-    18
+    16
    ],
-   "f": "A liberdade de expressão de uma criança só pode ter as restrições que a lei prevê e que sejam necessárias, por exemplo para respeitar os **direitos** e a **reputação** de **outrem**, isto é, de outras pessoas. Como o Diogo."
+   "fonte": "crp-37-2",
+   "l": "n2",
+   "fe": "A confusão mais provável é tocar em «impedido» ou «limitado»: dizem o que não pode acontecer à liberdade, não o nome do corte. Volta ao n.º 2 e procura o nome do corte.",
+   "pista": "Separa as palavras que dizem o que não pode acontecer da palavra que diz o que é proibido."
   },
   {
-   "t": "ler",
-   "rot": "Ver",
-   "titulo": "Quatro peras",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/les-poires-1834.webp\" alt=\"Quatro desenhos a traço, dois em cima e dois em baixo, com legendas em francês: o rosto de um homem de patilhas e cabelo encaracolado vai ganhando, de desenho para desenho, a forma de uma pera, até ser só uma pera.\" loading=\"lazy\"></span><figcaption><i>Les Poires</i>, em <i>Le Charivari</i>, 17 de janeiro de 1834; desenho atribuído a Honoré Daumier, a partir de Charles Philipon. Gallica, Biblioteca Nacional de França. Domínio público.</figcaption></figure><p>O rosto é o de Luís Filipe, rei dos Franceses. A página impressa diz que os desenhos foram feitos num tribunal de Paris e vendidos para pagar uma multa do jornal. As legendas perguntam: se condenam o primeiro desenho por se parecer com o rei, não terão de condenar também a pera?</p><p class=\"pergunta-c\">Em que desenho deixa o rosto de ser o do rei?</p><p>Responde no caderno, numa linha.</p>"
+   "t": "emparelhar",
+   "rot": "Cada situação, o seu número",
+   "p": "Três situações novas: liga cada uma ao número do artigo 37.º que se aplica.",
+   "p2": "Liga cada situação ao número do artigo 37.º que está em causa.",
+   "f": "Fazer uma caricatura é exprimir-se pela imagem (n.º 1); cortar notícias antes de saírem é controlo prévio (n.º 2); julgar o que já saiu é a resposta depois (n.º 3).",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "censura e responsabilidade",
+   "pares": [
+    [
+     "Um aluno publica a caricatura de um ministro.",
+     "Artigo 37.º, n.º 1"
+    ],
+    [
+     "Um funcionário do Governo corta notícias antes de saírem no jornal.",
+     "Artigo 37.º, n.º 2"
+    ],
+    [
+     "Um tribunal julga um texto já publicado num jornal.",
+     "Artigo 37.º, n.º 3"
+    ]
+   ],
+   "fe": "A confusão mais provável é trocar o n.º 2 pelo n.º 3: o n.º 2 trata do que se corta antes de sair; o n.º 3, do que se responde depois. Volta aos dois números e vê quando acontece cada situação.",
+   "pista": "Pergunta-te, em cada situação, se o texto já saiu."
   },
   {
    "t": "escolha",
-   "g": "peras",
-   "p": "Que mostram as quatro peras de 1834 sobre proibir uma caricatura?",
-   "p2": "Nas quatro peras, o rosto do rei passa a pera aos poucos. Que ideia defendem os desenhos?",
-   "o": [
-    "Proibir uma forma é proibir tudo o que se lhe parece.",
-    "Uma caricatura de quem manda é sempre um crime.",
-    "Um rei só pode ser desenhado com o seu acordo."
+   "rot": "A razão que não está lá",
+   "p": "Caso inventado: uma aluna de 15 anos publica um vídeo a pedir comida vegetariana na cantina. A escola manda apagá-lo, por ela ser menor. A Convenção aceita essa razão?",
+   "p2": "Uma aluna de 15 anos pede, num vídeo, comida vegetariana na cantina. Mandam-na apagá-lo por ser menor. O artigo 13.º, n.º 2, aceita isso?",
+   "f": "O n.º 2 só admite restrições «previstas na lei e que sejam necessárias» para duas coisas: os direitos e a reputação dos outros, ou a segurança nacional, a ordem, a saúde e a moral públicas. A idade não está lá.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "restrições à liberdade de expressão",
+   "cita": "O exercício deste direito só pode ser objecto de restrições previstas na lei e que sejam necessárias: a) Ao respeito dos direitos e da reputação de outrem; b) À salvaguarda da segurança nacional, da ordem pública, da saúde ou da moral públicas.",
+   "fonte": "cdc-13-2",
+   "citacoes": [
+    [
+     "cdc-13-1",
+     "A criança tem direito à liberdade de expressão"
+    ],
+    [
+     "cdc-13-2",
+     "direitos e da reputação de outrem"
+    ],
+    [
+     "cdc-13-2",
+     "previstas na lei e que sejam necessárias"
+    ]
    ],
-   "c": 0,
-   "f": "Cada desenho parece-se com o anterior. Se o primeiro é proibido por se parecer com o rei, o seguinte também, e assim até à pera. Proibir uma forma acaba por proibir tudo o que se lhe parece.",
+   "pista": "Lê as duas alíneas do n.º 2 e vê se alguma serve para este vídeo.",
+   "o": [
+    "Sim: até aos 18 anos, quem decide é a escola.",
+    "Sim: o vídeo atinge a reputação de outrem.",
+    "Não: ser menor não é uma das razões do n.º 2."
+   ],
+   "c": 2,
    "fe": [
-    "",
-    "Os desenhos defendem o contrário: que não se pode condenar uma caricatura só por se parecer com quem manda.",
-    "Os desenhos não pedem licença ao rei. Mostram que proibir um rosto leva a proibir uma pera."
+    "A Convenção diz o contrário: «A criança tem direito à liberdade de expressão». Só se pode restringir com uma lei e por uma das razões do n.º 2. Volta ao artigo e procura a idade.",
+    "Pedir comida vegetariana não acusa ninguém de nada. O n.º 2 fala dos «direitos e da reputação de outrem», isto é, de outras pessoas. Volta ao artigo: quem é atingido pelo vídeo?",
+    ""
    ]
+  },
+  {
+   "t": "vf",
+   "rot": "Sem censura não é sem resposta",
+   "p": "Como a Constituição proíbe a censura, quem escreveu o comentário sobre o Diogo não tem de responder por ele.",
+   "p2": "Sem censura prévia, quem escreveu o comentário sobre o Diogo fica livre de responder por ele.",
+   "f": "Falso. O n.º 2 impede que alguém corte antes; o n.º 3 diz que as infrações ficam submetidas aos princípios do direito criminal. Sem censura antes, com responsabilidade depois.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "censura e responsabilidade",
+   "v": false,
+   "citacoes": [
+    [
+     "crp-37-3",
+     "princípios gerais de direito criminal"
+    ]
+   ],
+   "fe": "O n.º 2 não está sozinho: o n.º 3 diz que as infrações ficam submetidas aos «princípios gerais de direito criminal». Não haver corte antes não apaga a resposta depois. Volta ao artigo e lê o n.º 3 a seguir ao n.º 2.",
+   "pista": "Lê o n.º 3 logo a seguir ao n.º 2."
+  },
+  {
+   "t": "ler",
+   "rot": "Conceito",
+   "titulo": "Quatro maneiras de falar de alguém",
+   "html": "<div class=\"m-conceito\"><div class=\"cc\" data-cc><div class=\"cc-passo cc-caso\"><p class=\"cc-r\">O caso</p><p>A pera e o comentário: são a mesma coisa?</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">Mais perto</p><table class=\"tabela\"><thead><tr><th scope=\"col\">Tipo</th><th scope=\"col\">O que faz</th></tr></thead><tbody><tr><td data-th=\"Tipo\">Crítica</td><td data-th=\"O que faz\">discute uma decisão</td></tr><tr><td data-th=\"Tipo\">Sátira</td><td data-th=\"O que faz\">exagera quem manda</td></tr><tr><td data-th=\"Tipo\">Acusação de facto</td><td data-th=\"O que faz\">afirma um facto sobre alguém</td></tr><tr><td data-th=\"Tipo\">Ataque pela origem</td><td data-th=\"O que faz\">ataca pessoas pela terra de onde vêm</td></tr></tbody></table></div><div class=\"cc-passo\" hidden data-artefacto=\"conceito\" data-rot=\"O conceito\" data-texto=\"Acusação de facto: dizer que alguém fez uma coisa concreta, verdadeira ou falsa.\"><p class=\"cc-r\">O nome</p><p class=\"cc-termo\">Acusação de facto</p><p class=\"cc-def\">Dizer que alguém fez uma coisa concreta, verdadeira ou falsa.</p></div><div class=\"cc-passo\" hidden><p class=\"cc-r\">O que não é</p><p>Não é opinião: «o diretor manda mal» discute-se; «o Diogo rouba» tem de se provar.</p></div><button type=\"button\" class=\"cc-mais\" data-cc-mais>Mais perto <span aria-hidden=\"true\">→</span></button></div><details class=\"mais\"><summary>Ler mais</summary><div><p>Sobre a origem, a Constituição diz que ninguém pode ser prejudicado em razão, entre outras, do território de origem, da língua ou da religião (artigo 13.º, n.º 2).</p></div></details></div>",
+   "min": 6
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Quatro publicações, quatro tipos",
+   "p": "Caso inventado: quatro publicações na página de outra escola. Liga cada uma ao seu tipo.",
+   "p2": "As publicações de outra escola são inventadas: liga cada uma ao tipo a que pertence.",
+   "f": "Pôr em causa uma regra é crítica; o semáforo exagera quem manda; dizer que o treinador fica com o dinheiro acusa uma pessoa concreta de uma coisa que se prova ou não; visar colegas pelo país de onde vêm é atacá-los pela origem.",
+   "min": 3,
+   "tipo": "transferir",
+   "conceito": "quatro tipos de publicação",
+   "pares": [
+    [
+     "As regras novas do bar são injustas para quem chega cedo.",
+     "Crítica"
+    ],
+    [
+     "A diretora desenhada como um semáforo a dar ordens.",
+     "Sátira"
+    ],
+    [
+     "O treinador fica com o dinheiro das quotas.",
+     "Acusação de facto"
+    ],
+    [
+     "Os alunos que vieram de outro país não deviam estar aqui.",
+     "Ataque pela origem"
+    ]
+   ],
+   "fe": "A confusão mais provável é ler a acusação como crítica: «fica com o dinheiro» diz que uma pessoa concreta fez uma coisa concreta. Isso prova-se ou não; uma crítica discute-se. Volta aos quatro tipos.",
+   "pista": "Pergunta a cada publicação se discute uma decisão ou fala de uma pessoa, e de que maneira."
+  },
+  {
+   "t": "escolha",
+   "rot": "Um caso real",
+   "p": "Caso real: em 2017, a Relação de Évora confirmou a condenação de uma antiga funcionária por este comentário. Ela provou que não lhe pagaram o ordenado. O que lhe faltou?",
+   "p2": "Este comentário, escrito no Facebook de uma empresa por uma antiga funcionária, valeu-lhe uma condenação, confirmada em 2017. Segundo o tribunal, o que lhe faltou?",
+   "f": "O tribunal escreveu que ela imputou ao gerente «outros comportamentos genéricos, que não concretiza nem demonstra, como sejam as dívidas a fornecedores». Provar um facto não prova os outros. E «Não tem vergonha» é um juízo de valor, que não se prova.",
+   "min": 4,
+   "tipo": "transferir",
+   "conceito": "acusação de facto e prova",
+   "cita": "antes de contratar mais funcionários deve pagar os ordenados em atraso e a fornecedores! Faz constantemente o mesmo: os funcionários passam de bestial a besta em segundos, e não paga o que deve! Não tem vergonha",
+   "fonte": "tre-2017-i",
+   "citacoes": [
+    [
+     "tre-2017-iv",
+     "outros comportamentos genéricos, que não concretiza nem demonstra, como sejam as dívidas a fornecedores"
+    ],
+    [
+     "tre-2017-i",
+     "Não tem vergonha"
+    ],
+    [
+     "tre-2017-i",
+     "liberdade de interacção"
+    ],
+    [
+     "tre-2017-ii",
+     "que a imputação seja feita para realizar interesses legítimos"
+    ],
+    [
+     "tre-2017-ii",
+     "que o agente prove a verdade da imputação"
+    ]
+   ],
+   "liga": [
+    {
+     "t": "Ler o acórdão da Relação de Évora, 21/03/2017 (dgsi.pt)",
+     "href": "https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/abfc60d25966d946802581080032685a?OpenDocument"
+    }
+   ],
+   "pista": "Repara em tudo aquilo de que o comentário acusa o gerente.",
+   "o": [
+    "Uma licença da empresa para poder comentar na sua página.",
+    "Provar também as dívidas a fornecedores, de que acusou o gerente.",
+    "Ficar calada: dizer em público que alguém deve dinheiro é crime."
+   ],
+   "c": 1,
+   "fe": [
+    "A página estava aberta: o tribunal fala da «liberdade de interacção» que a página concedia. O problema foi o que ela escreveu. Volta ao comentário: de que mais acusa o gerente?",
+    "",
+    "O tribunal exige dois requisitos para a conduta não ser punível: «que a imputação seja feita para realizar interesses legítimos» e «que o agente prove a verdade da imputação». Ela provou que não lhe pagaram o ordenado; o resto, não. Volta ao comentário."
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Volta ao caso",
+   "titulo": "O Diogo pede que apaguem",
+   "html": "<div class=\"m-volta\"><p class=\"parte\">Parte 2</p><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\">Na segunda aula, o Diogo pede à conta que apague o comentário. A conta responde: «Aqui cada um escreve o que quer. Apagar é censura.» O comentário já tem 40 partilhas.</p><blockquote class=\"lei\"><p data-fonte=\"crp-26-1\"><span class=\"art\">Constituição, artigo 26.º, n.º 1</span>«A todos são reconhecidos os direitos […] ao bom nome e reputação […]»</p></blockquote><p class=\"fonte-lei\">Constituição da República Portuguesa, <a href=\"https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775\">Diário da República</a>.</p></div>",
+   "min": 4
   },
   {
    "t": "ordenar",
-   "g": "repetir",
-   "p": "Põe por ordem os passos antes de repetir uma acusação que leste.",
-   "p2": "Que ordem seguir antes de repetir uma acusação sobre alguém?",
+   "rot": "Antes de repetir",
+   "p": "Antes de repetires o comentário sobre o Diogo, põe por ordem o que fazes.",
+   "p2": "Chega-te uma acusação contra um colega. Põe por ordem o que fazes antes de a passar a outros.",
+   "f": "Primeiro a origem, depois como se sabe, depois uma fonte que não dependa da primeira. Só então se decide. Quarenta partilhas do mesmo comentário contam como uma fonte só.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "verificar antes de repetir",
    "passos": [
-    "Perguntar quem disse primeiro.",
+    "Procurar quem escreveu primeiro o comentário.",
     "Perguntar como é que essa pessoa sabe.",
-    "Procurar uma fonte independente.",
-    "Decidir: repetir, corrigir ou calar."
+    "Procurar quem tenha visto, sem ser pelo comentário.",
+    "Decidir: repetir, corrigir ou não dizer nada."
    ],
-   "f": "Primeiro a origem, depois como se sabe, depois uma fonte que não dependa da primeira. Só então se decide: repetir, corrigir ou não dizer nada. No caso do Diogo, ninguém viu nada: a cadeia para logo no início."
+   "fe": "A confusão mais provável é procurar outra fonte antes de saber qual é a primeira: sem a origem, não sabes se a segunda a copiou. Volta ao caso: de onde veio o comentário que corre a escola?",
+   "pista": "Pensa no que precisas de saber para perceber se duas fontes se copiam."
   },
   {
    "t": "ler",
-   "rot": "Ver",
-   "titulo": "Como se espalha uma notícia falsa",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Noah Tavlin, sobre o que o vídeo chama <i>circular reporting</i>: notícias que parecem confirmadas por muitas fontes. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">Segue o caminho de uma notícia falsa: onde nasce, quem a repete, porque parece verdadeira.</p><div class=\"yt\" data-yt=\"cSKGa_7XJkg\" data-titulo=\"How false news can spread, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «How false news can spread» (3 min 42 s)</button><p class=\"yt-cred\">TED-Ed, lição de Noah Tavlin. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Uma linha para cada passo, no caderno. Depois: que pergunta fazias antes de repetir o comentário sobre o Diogo?</p>"
+   "rot": "Em turma",
+   "titulo": "Depois dos materiais",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A conta de memes deve ser apagada?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>O lado da conta</summary><div><p>A Constituição protege o direito de <span class=\"citado\" data-fonte=\"crp-37-1\">«exprimir e divulgar livremente o seu pensamento»</span>. Para a conta, apagar é censurar.</p></div></details><details class=\"lado\"><summary>O lado do Diogo</summary><div><p>A todos se reconhece o direito <span class=\"citado\" data-fonte=\"crp-26-1\">«ao bom nome e reputação»</span>. E ele diz que é mentira.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>A censura corta antes de publicar. Apagar depois, a pedido do acusado, é o mesmo?</p></div></details></div><div class=\"posicao\" data-artefacto=\"prova\" data-rot=\"A razão que pesou\"><p class=\"pos-q\">A razão que pesou mais:</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A razão que pesou\"><button type=\"button\" class=\"pos-op\" data-valor=\"O bom nome (26.º)\" data-frase=\"O bom nome (26.º)\">O bom nome (26.º)</button><button type=\"button\" class=\"pos-op\" data-valor=\"A liberdade de expressão (37.º)\" data-frase=\"A liberdade de expressão (37.º)\">A liberdade de expressão (37.º)</button><button type=\"button\" class=\"pos-op\" data-valor=\"Nada de censura (37.º, n.º 2)\" data-frase=\"Nada de censura (37.º, n.º 2)\">Nada de censura (37.º, n.º 2)</button></div></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Decides outra vez e escolhes a razão que pesou.</dd><dt>Quanto tempo</dt><dd>Três minutos; em turma, até treze.</dd><dt>O que fica escrito</dt><dd>Nada em papel; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Compara com a escolha do início e abre os três lados.</dd></dl></div>",
+   "min": 13
+  },
+  {
+   "t": "emparelhar",
+   "rot": "Facto, regra ou razão",
+   "p": "Liga cada frase ao que ela é numa justificação.",
+   "p2": "Facto, regra ou razão de uma das partes: o que é cada frase?",
+   "f": "As partilhas são um facto do caso; o n.º 2 é uma regra escrita na Constituição, que vale para todos; «Apagar é censura» é a razão de quem gere a conta, que ainda tem de ser pesada.",
+   "min": 3,
+   "tipo": "distinguir",
+   "conceito": "relato e princípio",
+   "pares": [
+    [
+     "O comentário sobre o Diogo já tem 40 partilhas.",
+     "Um facto do caso"
+    ],
+    [
+     "«O exercício destes direitos não pode ser impedido ou limitado por qualquer tipo ou forma de censura.»",
+     "Uma regra que vale para todos"
+    ],
+    [
+     "«Apagar é censura.»",
+     "A razão de uma das partes"
+    ]
+   ],
+   "citacoes": [
+    [
+     "crp-37-2",
+     "O exercício destes direitos não pode ser impedido ou limitado por qualquer tipo ou forma de censura."
+    ]
+   ],
+   "origem": "cidadania/m1/sessoes/01/",
+   "fe": "A confusão mais provável é tomar a razão da conta por regra: usa a palavra «censura», mas é a leitura de uma das partes. É a distinção da sessão 01: um facto, uma regra que vale para todos, a razão de alguém. Volta ao artigo.",
+   "pista": "Uma regra vale para todos; uma razão é de alguém."
   },
   {
    "t": "escolha",
-   "g": "circular",
-   "p": "O vídeo fala de _circular reporting_. Porque é que uma notícia falsa pode parecer confirmada?",
-   "p2": "Muitos sítios dizem a mesma coisa. Porque é que isso não chega para a confirmar?",
+   "rot": "O passo que falta",
+   "p": "Facto: acusam o Diogo, pelo nome, de roubar. Fonte: a Constituição protege o bom nome. Limite: ninguém disse que viu. Escolhe a aplicação que falta.",
+   "p2": "Nesta justificação há facto, fonte e limite, mas falta a aplicação: a frase que liga o facto à fonte. Qual é?",
+   "f": "A aplicação liga o facto (a acusação com o nome dele) à fonte (o direito ao bom nome): uma acusação sem prova atinge esse direito. O limite diz o que falta saber.",
+   "min": 4,
+   "tipo": "aplicar",
+   "conceito": "facto, fonte, aplicação, limite",
+   "pista": "A aplicação junta o facto e a fonte.",
    "o": [
-    "Porque todos podem repetir a mesma origem.",
-    "Porque os sítios grandes nunca se enganam.",
-    "Porque uma notícia repetida passa a verdade."
+    "A conta pode manter o comentário, porque não há censura.",
+    "Acusá-lo de roubar, sem prova, atinge o seu bom nome.",
+    "Muitos partilharam o comentário, por isso o Diogo roubou."
    ],
-   "c": 0,
-   "f": "Quando vários sítios repetem a mesma origem, sem a verificar, a notícia parece confirmada muitas vezes, mas foi confirmada zero vezes. Conta as origens, não as repetições.",
+   "c": 1,
    "fe": [
+    "Isto liga o facto a outra regra, o n.º 2 do artigo 37.º, e deixa de fora a fonte dada. A aplicação diz o que a acusação faz ao bom nome do Diogo. Volta ao artigo 26.º.",
     "",
-    "Os sítios grandes também se enganam, e também copiam. O que conta é de onde vem a informação.",
-    "Repetir não torna verdadeiro: só dá essa impressão. É por isso que uma notícia falsa repetida engana."
+    "Isto é uma conclusão e passa o limite: partilhas não são prova, e ninguém disse que viu. A aplicação liga o facto à fonte. Volta ao bom nome."
+   ]
+  },
+  {
+   "t": "escolha",
+   "rot": "O que as provas permitem",
+   "p": "Escolhe a conclusão que diz o que as provas permitem, sem ir além delas.",
+   "p2": "Escolhe a conclusão que fica dentro do que o caso e os artigos mostram.",
+   "f": "Diz o que se sabe (a acusação não tem prova; a pera exagera o diretor) e deixa aberto o que ninguém sabe: se o Diogo roubou.",
+   "min": 3,
+   "tipo": "aplicar",
+   "conceito": "conclusão e provas",
+   "pista": "Procura a conclusão que não acrescenta nada às provas.",
+   "o": [
+    "O comentário é falso, por isso a conta tem de fechar.",
+    "O comentário acusa sem prova; a pera é sátira de quem manda.",
+    "O comentário pode ficar: numa conta de memes, é humor."
+   ],
+   "c": 1,
+   "fe": [
+    "Ninguém provou que é falso: só se sabe que não tem prova. E fechar a conta cala também a pera. Volta ao caso: o que se sabe sobre o Diogo?",
+    "",
+    "A pera exagera um traço de quem manda; o comentário diz que um colega concreto roubou. Uma acusação não passa a humor por estar numa conta de memes. Volta aos quatro tipos."
    ]
   },
   {
    "t": "ler",
-   "rot": "Na aula",
-   "titulo": "O laboratório de verificação",
-   "html": "<p><b>O que se faz.</b> O laboratório de verificação. Escolhe três afirmações reais já tratadas num verificador de factos e retoma as três publicações inventadas desta sessão: a crítica à cantina, a pera do diretor e a acusação ao Diogo (na aula, recebes outras em papel). Para cada afirmação: origem, duas fontes independentes e veredicto. Para cada publicação: manter, corrigir ou retirar, com o artigo.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O registo de verificação das três afirmações, que conta como o laboratório de verificação do módulo, e o teu registo de fontes para a Pergunta Humana.</p>"
-  },
-  {
-   "t": "escolha",
-   "g": "grupo",
-   "p": "Caso inventado: um comentário na conta diz que os alunos de uma certa nacionalidade não deviam estar na escola. O que o distingue da pera?",
-   "p2": "Um comentário ataca os alunos de uma nacionalidade. Em que é diferente da caricatura do diretor?",
-   "o": [
-    "Ataca pessoas pela origem, não critica quem manda.",
-    "É só mais uma opinião, como a da caricatura.",
-    "É mais engraçado do que a caricatura do diretor."
-   ],
-   "c": 0,
-   "f": "A caricatura exagera quem tem poder. O comentário visa colegas por serem de um país: a Constituição diz que ninguém pode ser prejudicado em razão do território de origem (artigo 13.º, n.º 2) e a Convenção garante os direitos a todas as crianças, seja qual for a origem nacional (artigo 2.º).",
-   "fe": [
-    "",
-    "Uma opinião sobre o diretor discute-se. Dizer que um grupo de colegas não devia estar na escola ataca pessoas pela origem.",
-    "A graça não é o critério. A caricatura visa quem tem poder; este comentário visa colegas por serem de um país."
-   ]
-  },
-  {
-   "t": "vf",
-   "g": "satira",
-   "p": "Exagerar um traço de quem tem poder é diferente de atribuir um facto falso a um colega.",
-   "p2": "Fazer do diretor uma pera não é o mesmo que dizer, sem prova, que o Diogo rouba.",
-   "v": true,
-   "f": "A sátira exagera e toda a gente percebe que é exagero. Atribuir a alguém um facto que ofende a sua honra, mesmo sob a forma de suspeita, pode ser crime: o Código Penal chama-lhe difamação (artigo 180.º).",
-   "fe": "Pensa no que cada frase faz: uma exagera o rosto de quem manda; a outra diz que um colega concreto cometeu um furto."
-  },
-  {
-   "t": "completar",
-   "g": "verifica",
-   "p": "Completa a frase sobre o que se faz com cada tipo de afirmação.",
-   "p2": "Completa: o que se faz com uma opinião, com um facto e com uma acusação sem prova?",
-   "frase": "Uma opinião [1]; um facto [2]; uma acusação sem prova ofende o [3].",
-   "lacunas": [
-    {
-     "o": [
-      "discute-se",
-      "prova-se",
-      "esconde-se"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "verifica-se",
-      "esquece-se",
-      "vota-se"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "bom nome",
-      "bom gosto",
-      "bom senso"
-     ],
-     "c": 0
-    }
-   ],
-   "f": "Uma opinião **discute-se**; um facto **verifica-se**; uma acusação sem prova ofende o **bom nome**, que a Constituição protege (artigo 26.º, n.º 1).",
-   "fe": "Uma opinião não se prova, um facto sim. E o bom nome é um direito, não uma questão de gosto."
-  },
-  {
-   "t": "escolha",
-   "g": "fontes",
-   "p": "Duas páginas dizem o mesmo, mas uma copiou a outra. Quantas fontes tens?",
-   "p2": "Encontraste a acusação em dois sítios, mas o segundo cita o primeiro. O que tens?",
-   "o": [
-    "Uma fonte, repetida em dois sítios.",
-    "Duas fontes, porque são dois sítios.",
-    "Nenhuma, porque a internet não conta."
-   ],
-   "c": 0,
-   "f": "Duas páginas que se copiam contam como uma só fonte. Duas fontes são independentes quando cada uma chegou à informação pelo seu lado, por exemplo uma testemunha e um documento.",
-   "fe": [
-    "",
-    "Contam as origens, não os sítios. Se uma página copiou a outra, a informação só foi encontrada uma vez.",
-    "A internet pode ter boas fontes. O problema aqui é outro: as duas páginas são, na verdade, uma."
-   ]
-  },
-  {
-   "t": "vf",
-   "g": "assistente",
-   "p": "Um assistente de inteligência artificial é uma fonte independente para confirmar uma acusação.",
-   "p2": "Se um assistente de inteligência artificial confirma a acusação, já tens uma fonte independente.",
-   "v": false,
-   "f": "O que um assistente de inteligência artificial responde é mais uma afirmação a verificar: não viu nada e muitas vezes não diz de onde vem. Uma fonte independente tem uma origem que se pode reencontrar.",
-   "fe": "Pergunta de onde vem a resposta. Se não há uma origem que se possa reencontrar, não há fonte."
+   "rot": "Agora, em papel",
+   "titulo": "Agora, em papel",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Onde acaba a crítica e começa o ataque?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>A tua conclusão, por agora.</li><li>Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.</li><li>Uma dúvida que ainda tens.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"720\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">12:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A conclusão responde à pergunta sem ir além das provas.</li><li>A prova junta um facto a uma expressão exata, com o artigo.</li><li>A dúvida, respondida, podia mudar a conclusão.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Outro caso, inventado: numa página, alguém publica as notas de um colega sem lhe perguntar.</p><ol><li>Conclusão: não é crítica; expõe a vida de alguém.</li><li>Prova: publica dados de uma pessoa; a Constituição reconhece a todos o direito <span class=\"citado\" data-fonte=\"crp-26-1\">«à reserva da intimidade da vida privada e familiar»</span> (artigo 26.º, n.º 1).</li><li>Dúvida: o colega deu autorização?</li></ol></div></details></div>",
+   "min": 15
   },
   {
    "t": "ler",
    "rot": "Para levar",
-   "escuro": true,
-   "html": "<p class=\"levar\">Criticar quem manda é um direito; acusar alguém sem prova é um dano.</p><p>Nesta sessão separaste opinião, sátira e acusação de facto, e verificaste antes de repetir. Volta às quatro peras: em que desenho puseste a linha? E o comentário sobre o Diogo, mantinhas, corrigias ou retiravas?</p><p><b>As frases da sessão</b></p><ul><li>Sem censura não quer dizer sem responsabilidade.</li><li>Uma opinião discute-se; um facto verifica-se.</li><li>Antes de repetir, procuro a fonte original.</li><li>O bom nome de uma pessoa também é um direito (artigo 26.º).</li></ul>"
+   "titulo": "",
+   "html": "<div class=\"m-levar\"><p class=\"levar\" data-artefacto=\"frase\" data-rot=\"A frase da sessão\" data-texto=\"Sem censura antes, com responsabilidade depois.\"><span class=\"ch\" style=\"--i:0\">S</span><span class=\"ch\" style=\"--i:1\">e</span><span class=\"ch\" style=\"--i:2\">m</span><span class=\"ch\" style=\"--i:3\"> </span><span class=\"ch\" style=\"--i:4\">c</span><span class=\"ch\" style=\"--i:5\">e</span><span class=\"ch\" style=\"--i:6\">n</span><span class=\"ch\" style=\"--i:7\">s</span><span class=\"ch\" style=\"--i:8\">u</span><span class=\"ch\" style=\"--i:9\">r</span><span class=\"ch\" style=\"--i:10\">a</span><span class=\"ch\" style=\"--i:11\"> </span><span class=\"ch\" style=\"--i:12\">a</span><span class=\"ch\" style=\"--i:13\">n</span><span class=\"ch\" style=\"--i:14\">t</span><span class=\"ch\" style=\"--i:15\">e</span><span class=\"ch\" style=\"--i:16\">s</span><span class=\"ch\" style=\"--i:17\">,</span><span class=\"ch\" style=\"--i:18\"> </span><span class=\"ch\" style=\"--i:19\">c</span><span class=\"ch\" style=\"--i:20\">o</span><span class=\"ch\" style=\"--i:21\">m</span><span class=\"ch\" style=\"--i:22\"> </span><span class=\"ch\" style=\"--i:23\">r</span><span class=\"ch\" style=\"--i:24\">e</span><span class=\"ch\" style=\"--i:25\">s</span><span class=\"ch\" style=\"--i:26\">p</span><span class=\"ch\" style=\"--i:27\">o</span><span class=\"ch\" style=\"--i:28\">n</span><span class=\"ch\" style=\"--i:29\">s</span><span class=\"ch\" style=\"--i:30\">a</span><span class=\"ch\" style=\"--i:31\">b</span><span class=\"ch\" style=\"--i:32\">i</span><span class=\"ch\" style=\"--i:33\">l</span><span class=\"ch\" style=\"--i:34\">i</span><span class=\"ch\" style=\"--i:35\">d</span><span class=\"ch\" style=\"--i:36\">a</span><span class=\"ch\" style=\"--i:37\">d</span><span class=\"ch\" style=\"--i:38\">e</span><span class=\"ch\" style=\"--i:39\"> </span><span class=\"ch\" style=\"--i:40\">d</span><span class=\"ch\" style=\"--i:41\">e</span><span class=\"ch\" style=\"--i:42\">p</span><span class=\"ch\" style=\"--i:43\">o</span><span class=\"ch\" style=\"--i:44\">i</span><span class=\"ch\" style=\"--i:45\">s</span><span class=\"ch\" style=\"--i:46\">.</span></p><p class=\"levar-volta\" data-modelo=\"No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».\" hidden></p><p class=\"frases-t\">As frases da sessão</p><ul class=\"frases\"><li>Uma opinião discute-se; uma acusação de facto tem de se provar.</li><li>Muitas partilhas do mesmo comentário contam como uma fonte só.</li></ul><div data-recolha-lista></div></div>",
+   "min": 5,
+   "escuro": true
   }
  ]
 }
