@@ -750,6 +750,26 @@
    "ligacao": "https://provedor-jus.pt/documentos/Boletim_informativo_Novembro_Dezembro_2016.pdf",
    "consultado": "2026-11-06",
    "confirmado": true
+  },
+  {
+   "id": "crp-41-3",
+   "documento": "Constituição da República Portuguesa",
+   "referencia": "Artigo 41.º, n.º 3",
+   "texto": "Ninguém pode ser perguntado por qualquer autoridade acerca das suas convicções ou prática religiosa, salvo para recolha de dados estatísticos não individualmente identificáveis, nem ser prejudicado por se recusar a responder.",
+   "fonte": "Constituição da República Portuguesa, texto consolidado no Diário da República Eletrónico",
+   "ligacao": "https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775",
+   "consultado": "2026-11-07",
+   "confirmado": true
+  },
+  {
+   "id": "cdc-30",
+   "documento": "Convenção sobre os Direitos da Criança",
+   "referencia": "Artigo 30.º",
+   "texto": "Nos Estados em que existam minorias étnicas, religiosas ou linguísticas ou pessoas de origem indígena, nenhuma criança indígena ou que pertença a uma dessas minorias poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural, professar e praticar a sua própria religião ou utilizar a sua própria língua.",
+   "fonte": "Convenção sobre os Direitos da Criança (Nova Iorque, 1989), tradução portuguesa anexa à Resolução da Assembleia da República n.º 20/90, Diário da República n.º 211/1990, 1.º Suplemento, Série I, de 12 de setembro de 1990, no Diário da República Eletrónico (as Retificações n.º 1/91 e n.º 8/91 não tocam no artigo 30.º)",
+   "ligacao": "https://diariodarepublica.pt/dr/detalhe/resolucao-assembleia-republica/20-1990-222390",
+   "consultado": "2026-11-07",
+   "confirmado": true
   }
  ]
 }
