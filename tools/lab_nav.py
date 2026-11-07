@@ -2,9 +2,10 @@
 tools/laboratorio.py e tools/ideias_piloto.py:
 
 - barra(): a barra única «Lente › Laboratório» (decisão 44: papel, filete a tinta, o atual sublinhado a vermelho);
-- fio(): as quatro partes do Laboratório (Ideias, Observar, Treinar, Criar) com os passos do método (decisão 97);
-- sessoes_publicadas() e liga_ideias(): a ligação de uma porta ou de um percurso às sessões do Ideias, calculada pelo
-  campo «passo» das sessões publicadas (nada se inventa; quando saírem as sessões 3 a 7, as ligações aparecem sozinhas).
+- fio(): as quatro partes do Laboratório (Ideias, Observar, Treinar, Criar), só com os nomes;
+- sessoes_publicadas(): as sessões do Ideias publicadas, para a entrada do Laboratório.
+07/11/2026: decisão 180 (docente). As três portas não são passos de um método com ordem. Saem cartaz(), extenso(),
+rotulo_porta() e liga_ideias(), que davam a cada porta e a cada percurso os «passos» do Ideias.
 
 Quando a barra comum do Lente (decisão 44, tarefa 156) entrar, troca-se a barra só aqui."""
 from pathlib import Path
@@ -26,24 +27,6 @@ def bloco(bid):
     return next(b for b in D['blocks'] if b['id'] == bid)
 
 
-def cartaz(passos):
-    """O número do método em cartaz: «1», «2–3», «4–5» (meia-risca de intervalo)."""
-    return str(passos[0]) if len(passos) == 1 else f'{passos[0]}–{passos[-1]}'
-
-
-def extenso(passos):
-    """«Passo 1», «Passos 2 e 3»: (palavra, números)."""
-    if len(passos) == 1:
-        return 'Passo ', str(passos[0])
-    return 'Passos ', ', '.join(map(str, passos[:-1])) + ' e ' + str(passos[-1])
-
-
-def rotulo_porta(b):
-    """«Observar, passo 1» / «Treinar, passos 2 e 3» (rótulo das páginas de percurso)."""
-    p, n = extenso(b['passos'])
-    return f'{b["title"]}, {p.strip().lower()} {n}'
-
-
 def barra(base, entrada=False):
     lab = link(base, 'narrativas/')
     atual = ' aria-current="page"' if entrada else ''
@@ -54,12 +37,13 @@ def barra(base, entrada=False):
 
 def fio(base, atual=None, modo='page'):
     """atual: 'ideias', 'ver', 'treinar', 'criar' ou None; modo: 'page' na própria página, 'true' dentro de uma porta."""
-    itens = [('ideias', 'Ideias', 'Passos ', '1 a 5')] + [(b['id'], b['title'], *extenso(b['passos'])) for b in D['blocks']]
+    # 07/11/2026: decisão 180 (docente). As portas não são passos de um método com ordem: o fio diz só os nomes das quatro
+    # partes. Antes, cada parte levava os seus «passos» (Ideias 1 a 5, Observar 1, Treinar 2 e 3, Criar 4 e 5).
+    itens = [('ideias', 'Ideias')] + [(b['id'], b['title']) for b in D['blocks']]
     out = '<nav class="lab-fio" aria-label="Partes do Laboratório">'
-    for bid, nome, pl, n in itens:
+    for bid, nome in itens:
         cur = f' aria-current="{modo}"' if bid == atual else ''
-        out += (f'<a href="{e(link(base, "narrativas/" + bid + "/"))}"{cur}><span class="n"><span class="pl">{pl}</span>{n}</span>'
-                f'<b>{nome}</b></a>')
+        out += f'<a href="{e(link(base, "narrativas/" + bid + "/"))}"{cur}><b>{nome}</b></a>'
     return out + '</nav>'
 
 
@@ -75,17 +59,6 @@ def sessoes_publicadas():
         out.append({'n': int(m[1]), 'titulo': m[2], 'chave': d['chave'], 'versao': d['versao'],
                     'url': d['saida'].removesuffix('index.html'), 'passo': int(passo[1]) if passo else None})
     return out
-
-
-def liga_ideias(base, passos, sessao=None):
-    """«No Ideias, este passo faz-se na sessão 1, «Ver ou observar?», e na sessão 2, «O cocheiro».» Só com sessões."""
-    ss = [s for s in sessoes_publicadas() if (s['n'] == sessao if sessao else s['passo'] in passos)]
-    if not ss:
-        return ''
-    partes = [f'na sessão {s["n"]}, «<a href="{e(link(base, s["url"]))}">{e(s["titulo"])}</a>»' for s in ss]
-    lista = partes[0] if len(partes) == 1 else ', '.join(partes[:-1]) + ', e ' + partes[-1]
-    suj = 'este passo faz-se' if len(passos) == 1 else 'estes passos fazem-se'
-    return f'<p class="liga-ideias">No Ideias, {suj} {lista}.</p>'
 
 
 # 05/11/2026 (revisão): a classe da projeção entra no <head>, antes das folhas de estilo, para a raiz crescer (22 px) antes da

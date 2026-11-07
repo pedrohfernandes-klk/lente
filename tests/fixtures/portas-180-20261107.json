@@ -1,0 +1,60 @@
+{
+ "exato": {
+  "index.html": [
+   [
+    "em-escreve\"><span class=\"lab-set-number\" aria-hidden=\"true\">01</span><span class=\"lab-set-copy\"><strong>Observar</strong><",
+    "em-escreve\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Observar</strong><",
+    1
+   ],
+   [
+    "rvar</strong><small>passo 1: juntar material</small></span><span",
+    "rvar</strong><small>como os outros fizeram</small></span><span",
+    1
+   ],
+   [
+    "o/#treinar\"><span class=\"lab-set-number\" aria-hidden=\"true\">02</span><span class=\"lab-set-copy\"><strong>Treinar</strong><s",
+    "o/#treinar\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Treinar</strong><s",
+    1
+   ],
+   [
+    "inar</strong><small>passos 2 e 3: trabalhar o material e largar</small></span><span",
+    "inar</strong><small>uma regra de cada vez</small></span><span",
+    1
+   ],
+   [
+    "udo/#criar\"><span class=\"lab-set-number\" aria-hidden=\"true\">03</span><span class=\"lab-set-copy\"><strong>Criar</strong><sma",
+    "udo/#criar\"><span class=\"lab-set-number\" aria-hidden=\"true\"></span><span class=\"lab-set-copy\"><strong>Criar</strong><sma",
+    1
+   ],
+   [
+    "riar</strong><small>passos 4 e 5: a ideia aparece, dar forma e pôr à prova</small></span><span",
+    "riar</strong><small>uma peça, com palavras e imagens</small></span><span",
+    1
+   ]
+  ],
+  "narrativas/duchamp/index.html": [
+   [
+    "th=\"2\"/></svg><span>Passo seguinte<small>Treinar</smal",
+    "th=\"2\"/></svg><span>Porta seguinte<small>Treinar</smal",
+    1
+   ],
+   [
+    "r/\",seguinteRotulo:\"Passo seguinte: Treinar\",depois:\"<",
+    "r/\",seguinteRotulo:\"Porta seguinte: Treinar\",depois:\"<",
+    1
+   ]
+  ],
+  "narrativas/treinar/teste-do-colega/index.html": [
+   [
+    "th=\"2\"/></svg><span>Passo seguinte<small>Criar</small>",
+    "th=\"2\"/></svg><span>Porta seguinte<small>Criar</small>",
+    1
+   ],
+   [
+    "r/\",seguinteRotulo:\"Passo seguinte: Criar\",depois:\"<di",
+    "r/\",seguinteRotulo:\"Porta seguinte: Criar\",depois:\"<di",
+    1
+   ]
+  ]
+ }
+}

@@ -30,10 +30,12 @@ e = html.escape
 # 1 e 2: passo 1; Treinar, sessões 3 e 4: passos 1 a 3); antes, Ver dizia «Passos 1 e 2» e Treinar «Passos 2 e 3»
 # 01/11/2026 (correção 3 do método, revisor de pt-PT): na porta Treinar, «juntar o material geral», para os três elementos
 # serem infinitivos paralelos (antes, «o material geral» ficava sem a ação do passo 1)
+# 07/11/2026: decisão 180 (docente). As portas não são passos de um método com ordem: cada uma diz o que tem, com o
+# subtítulo que tem no Laboratório (assets/laboratorio/percursos.json). Antes, «Passo 1: …», «Passos 1 a 3: …», «Passos 4 e 5: …».
 PORTAS = [
- ('ver', 'Observar', 'Passo 1: juntar material, com os olhos e até ao fundo.', '../ver/'),
- ('treinar', 'Treinar', 'Passos 1 a 3: juntar o material geral, trabalhá-lo na cabeça e, depois, largá-lo.', '../treinar/'),
- ('criar', 'Criar', 'Passos 4 e 5: a ideia aparece, ganha forma e vai a quem a pode criticar.', '../criar/'),
+ ('ver', 'Observar', 'Como os outros fizeram.', '../ver/'),
+ ('treinar', 'Treinar', 'Uma regra de cada vez.', '../treinar/'),
+ ('criar', 'Criar', 'Uma peça, com palavras e imagens.', '../criar/'),
 ]
 SESSOES = [
  {'n': 1, 'porta': 'ver', 'titulo': 'Ver ou observar?', 'pergunta': 'Quantos degraus tem a escada que sobes todos os dias?',
@@ -613,7 +615,8 @@ def pagina_entrada(L):
         # 05/11/2026: decisão 163. Depois da lista, a porta do Laboratório onde se treina este passo.
         portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
                    f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol>'
-                   f'<p class="liga-porta">Para treinar este passo: <a href="{e(_url)}">{nome}\u00a0→</a></p></div></section>')
+                   # 07/11/2026: decisão 180 (docente). A porta não é um passo: «No Laboratório», em vez de «Para treinar este passo».
+                   f'<p class="liga-porta">No Laboratório: <a href="{e(_url)}">{nome}\u00a0→</a></p></div></section>')
     desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
     # 05/11/2026: decisão 163. As migalhas soltas passam à barra única e ao fio (fora do main, antes dele).
     corpo = ('<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
@@ -759,8 +762,9 @@ def pagina_guia(L):
              '<p class="indicativa">O Laboratório não tem avaliação nem pontos. Os três critérios ajudam a rever o trabalho.</p></section>'
              # 01/11/2026 (correção 3 do método, verificador e revisor): a sequência diz os passos de cada porta como a entrada (PORTAS)
              # e o quadro abaixo; antes, ficara com o mapa antigo («Os passos 1 e 2 do método levam a Ver; os passos 2 e 3, a Treinar»)
+             # 07/11/2026: decisão 180 (docente). Sai a correspondência entre passos e portas, que não tinha base.
              '<section class="sessao" id="sequencia"><h2>A sequência</h2>'
-             '<p class="pg">O passo 1 do método leva a Observar; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar. Cada sessão leva a uma peça concreta da sua porta. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
+             '<p class="pg">Cada sessão leva a uma peça concreta de uma das três portas do Laboratório. As portas não são passos do método: abrem-se por qualquer ordem. A semana entre a sessão 4 e a 5 é, de propósito, a incubação.</p>'
              '<div class="tabela"><table class="seq" role="table"><thead role="rowgroup"><tr role="row">'
              + ''.join('<th role="columnheader" scope="col"' + (' class="num"' if k == 0 else '') + f'>{c}</th>' for k, c in enumerate(SEQ_COLS)) + '</tr></thead>'
              f'<tbody role="rowgroup">{seq}</tbody></table></div></section>')

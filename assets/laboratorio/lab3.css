@@ -87,13 +87,12 @@ html.em-projecao:has(.lab-barra){scroll-padding-top:0}
 [data-lab="3"] .ideias-sessoes li.seguir .etq::before{background:var(--vermelho,#c8232c);border-color:var(--vermelho,#c8232c)}
 [data-lab="3"] .ideias-sessoes .n{font:400 1.5rem/1 'Bebas Neue','Arial Narrow',Arial,sans-serif}
 
-/* Três portas, uma por passo */
+/* Três portas (decisão 180: sem números, não são passos de um método com ordem) */
 [data-lab="3"] .lab-portas{margin:24px 0 0}
 [data-lab="3"] .lab-sec-t{font:400 1.9375rem/1 'Bebas Neue','Arial Narrow',Arial,sans-serif;margin:0 0 16px}
 [data-lab="3"] .lab-saiu>p{margin:0}
 [data-lab="3"] .portas3{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-[data-lab="3"] .porta3{display:grid;grid-template-columns:72px minmax(0,1fr) 24px;grid-template-areas:"n nome seta" "n passo seta" "n conta seta";column-gap:16px;align-items:center;min-height:112px;padding:16px;background:var(--papel,#fff);text-decoration:none;color:var(--tinta,#000)}
-[data-lab="3"] .porta3 .nums{grid-area:n;font:400 3.25rem/.85 'Bebas Neue','Arial Narrow',Arial,sans-serif;align-self:start;padding-top:2px;white-space:nowrap}
+[data-lab="3"] .porta3{display:grid;grid-template-columns:minmax(0,1fr) 24px;grid-template-areas:"nome seta" "passo seta" "conta seta";column-gap:16px;align-items:center;min-height:112px;padding:16px;background:var(--papel,#fff);text-decoration:none;color:var(--tinta,#000)}
 [data-lab="3"] .porta3 .nome{grid-area:nome;font:400 1.9375rem/1 'Bebas Neue','Arial Narrow',Arial,sans-serif}
 [data-lab="3"] .porta3 .nome h2{font:inherit;margin:0}
 [data-lab="3"] .porta3 .passo{grid-area:passo;font:1rem/1.35 Georgia,serif;margin-top:4px}
@@ -104,8 +103,7 @@ html.em-projecao:has(.lab-barra){scroll-padding-top:0}
 [data-lab="3"] .porta3:focus-visible{outline-offset:-3px}
 @media(min-width:900px){
  [data-lab="3"] .portas3{grid-template-columns:repeat(3,minmax(0,1fr))}
- [data-lab="3"] .porta3{grid-template-columns:minmax(0,1fr) 24px;grid-template-areas:"n n" "nome seta" "passo passo" "conta conta";align-content:start;min-height:224px;padding:16px 24px}
- [data-lab="3"] .porta3 .nums{font-size:6rem;margin-bottom:8px}
+ [data-lab="3"] .porta3{grid-template-columns:minmax(0,1fr) 24px;grid-template-areas:"nome seta" "passo passo" "conta conta";align-content:start;min-height:160px;padding:24px}
  [data-lab="3"] .lab-portas{margin-top:16px}
  [data-lab="3"] .porta3 .nome{font-size:3.0625rem}
  [data-lab="3"] .porta3 .seta{align-self:center}
