@@ -29,6 +29,8 @@ NO_MOLDE = {'cidadania-m1-s01.json', 'cidadania-m1-s02.json', 'cidadania-m1-s03.
             'cidadania-m1-s06.json'}
 # 06/11/2026 (decisões 166 a 168): e a s07 do M1, pelo mesmo molde, uma de cada vez.
 NO_MOLDE = NO_MOLDE | {'cidadania-m1-s07.json'}
+# 06/11/2026 (decisões 166 a 168): e a s08 do M1, feita fora de ordem (as s04 a s07 entram pelos seus ramos).
+NO_MOLDE |= {'cidadania-m1-s08.json'}
 PILOTO = [p for p in CIDADANIA if p.name not in NO_MOLDE]
 
 
@@ -355,7 +357,10 @@ class SessaoS01(unittest.TestCase):
             self.assertTrue(r['texto'] and r['fonte'] and r['ligacao'].startswith('https://'), r['id'])
             self.assertRegex(r['consultado'], r'^\d{4}-\d{2}-\d{2}$')
             self.assertIs(r['confirmado'], True, r['id'])
-            self.assertTrue(any(d in r['ligacao'] for d in ('unric.org', 'diariodarepublica.pt', 'dgsi.pt')), r['id'])
+            # 06/11/2026 (sessão 08): também o sítio do Provedor de Justiça, um órgão do Estado (decisão 161: o caso real vem de um
+            # tribunal ou de um organismo público); só esse domínio entra, e só para o boletim registado em prov-2016-pdm.
+            self.assertTrue(any(d in r['ligacao'] for d in ('unric.org', 'diariodarepublica.pt', 'dgsi.pt'))
+                            or (r['id'] == 'prov-2016-pdm' and r['ligacao'].startswith('https://provedor-jus.pt/')), r['id'])
 
     def test_cada_excerto_esta_no_registo_e_confirmado(self):
         vistos = 0
@@ -1158,7 +1163,9 @@ class SessaoS07(unittest.TestCase):
         self.assertEqual([c['min'] for c in C], [c['min'] for c in SessaoS01.D['cartoes']])
         self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
         self.assertIn('Uma captura de ecrã chega para culpar alguém?', C[0]['html'])
-        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s08/')
+        # a s07 leva à s08 do piloto
+        # 06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): a s08 também passou ao molde final; a s07 leva à s08 nova
+        self.assertEqual(self.D['seguinte'], '../08/')
         # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
         for i, c in enumerate(C, 1):
             if c['t'] == 'ler':
@@ -1284,6 +1291,167 @@ class SessaoS07(unittest.TestCase):
         self.assertIn('https://www.metmuseum.org/art/collection/search/625296', s)
         # decisão 152: nenhuma referência partida no papel
         self.assertNotRegex(s, r'(?:[Aa]rtigos?|n\.º|n\.os) \d')
+
+
+class SessaoS08(unittest.TestCase):
+    """06/11/2026 (decisões 166 a 168): a sessão 08 do M1, «Quem decide o quê?», na versão final, pelo mesmo molde e com as mesmas
+    exigências da s01 a s03, feita fora de ordem: o contrato e o cfg, cada excerto (Constituição, artigos 23.º, 52.º, 161.º, 182.º e
+    202.º; Lei n.º 43/90, artigos 2.º, 8.º e 9.º; o boletim do Provedor de Justiça de 2016) no registo, confirmado e letra a letra, o R2
+    com palavras da sessão de origem, o conceito espaçado, as duas charneiras (a 2 pede a conclusão que vai além das provas, o apoio
+    que se retira nas sessões 08 a 10), o caso real com fonte oficial (decisão 161), a fotografia com o crédito atrás do «i» (decisão
+    153), nenhum vídeo (decisão 155) e a versão para imprimir sem respostas."""
+    D = carregar(ROOT / 'tools/licoes/cidadania-m1-s08.json')
+    REG = SessaoS01.REG
+    norm = staticmethod(SessaoS01.norm)
+    confere = SessaoS01.confere
+
+    def test_contrato_e_cfg(self):
+        self.assertEqual(self.D['molde'], L.MOLDE)
+        self.assertEqual(L.validar(self.D), [])
+        self.assertEqual(self.D['saida'], 'cidadania/m1/sessoes/08/index.html')
+        self.assertEqual(self.D['chave'], 'epi-cid-m1-s08')
+        self.assertNotEqual(self.D['versao'], '2026-10-31-2')  # a versão do piloto sobe (preservarAnterior guarda o «feita»)
+        cfg = cfg_da_pagina((ROOT / self.D['saida']).read_text('utf-8'))
+        for k in ('aula', 'semPontos', 'preservarAnterior'):
+            self.assertIs(cfg[k], True, k)
+        self.assertEqual(cfg['retomar'], 192)
+        self.assertNotIn('pistas', cfg)
+        C = self.D['cartoes']
+        self.assertTrue(all(c.get('pista') for c in C if c['t'] != 'ler'))
+        self.assertEqual(len(C), 23)
+        self.assertEqual([c['rot'] for c in C if c['t'] == 'ler'],
+                         ['Abre', 'Decide', 'Olha', 'Lê', 'Conceito', 'Volta ao caso', 'Em turma', 'Agora, em papel', 'Para levar'])
+        # os mesmos minutos da s01, cartão a cartão (a secção 2 do plano)
+        self.assertEqual([c['min'] for c in C], [c['min'] for c in SessaoS01.D['cartoes']])
+        self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
+        self.assertIn('A quem se pede, e com que fundamento?', C[0]['html'])
+        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s09/')
+        # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
+        for i, c in enumerate(C, 1):
+            if c['t'] == 'ler':
+                continue
+            for x in [c['f']] + (c['fe'] if isinstance(c['fe'], list) else [c['fe']]):
+                self.assertLessEqual(len(L.visivel(x).split()), 45, f'cartão {i}')
+            self.assertLessEqual(len(L.visivel(c['p']).split()), 30, f'cartão {i}')
+
+    def test_cada_excerto_esta_no_registo_e_confirmado(self):
+        vistos = 0
+        for i, c in enumerate(self.D['cartoes'], 1):
+            h = c.get('html') or ''
+            for bq in re.findall(r'<blockquote class="lei">(.*?)</blockquote>', h, re.S):
+                self.assertEqual(len(re.findall(r'<p\b', bq)), len(re.findall(r'<p\b[^>]*data-fonte=', bq)), f'cartão {i}')
+            for tag, ident, corpo in re.findall(r'<(p|span)\b[^>]*data-fonte="([^"]+)"[^>]*>(.*?)</\1>', h, re.S):
+                corpo = re.sub(r'<span class="art">.*?</span>', '', corpo)
+                self.confere(ident, corpo, f'cartão {i}')
+                vistos += 1
+            if c.get('fonte'):
+                texto = c.get('cita') or c.get('frase')
+                if isinstance(c['fonte'], list):
+                    # uma citação com passagens de várias entradas: cada pedaço confere-se com a sua, pela ordem
+                    pedacos = re.split(r'\s*\[…\]\s*', texto)
+                    self.assertEqual(len(pedacos), len(c['fonte']), f'cartão {i}')
+                    for ident, pedaco in zip(c['fonte'], pedacos):
+                        self.confere(ident, pedaco, f'cartão {i}')
+                else:
+                    self.confere(c['fonte'], texto, f'cartão {i}')
+                vistos += 1
+            texto = self.norm(' '.join([c.get('f', '')] + (c['fe'] if isinstance(c.get('fe'), list) else [c.get('fe') or ''])
+                                       + [x for par in c.get('pares', []) for x in par]))
+            for ident, frase in c.get('citacoes', []):
+                self.confere(ident, frase, f'cartão {i}')
+                self.assertIn(self.norm(frase), texto, f'cartão {i}: a citação registada está no cartão')
+                aspas = [q for q in re.findall(r'«([^«»]*)»', texto) if self.norm(frase) in q]
+                self.assertTrue(aspas, f'cartão {i}: «{frase}» está entre aspas')
+                for q in aspas:
+                    for pedaco in re.split(r'\s*\[…\]\s*', q):
+                        if pedaco.strip():
+                            self.assertIn(pedaco.strip(), self.norm(self.REG[ident]['texto']), f'cartão {i}: «{q}» não é texto exato de {ident}')
+                vistos += 1
+        self.assertGreaterEqual(vistos, 20)
+        tudo = json.dumps(self.D, ensure_ascii=False)
+        # a Constituição e a Lei n.º 43/90 vêm do Diário da República; o caso real, do sítio do Provedor de Justiça
+        for ident in ('crp-23-1', 'crp-52-1', 'crp-161', 'crp-161-c', 'crp-182', 'crp-202-1', 'lei43-2-3', 'lei43-8-1', 'lei43-9-5',
+                      'lei43-9-5b'):
+            self.assertIn(ident, tudo)
+            self.assertIs(self.REG[ident]['confirmado'], True, ident)
+            self.assertTrue(self.REG[ident]['ligacao'].startswith('https://diariodarepublica.pt/'), ident)
+        self.assertIs(self.REG['prov-2016-pdm']['confirmado'], True)
+        self.assertTrue(self.REG['prov-2016-pdm']['ligacao'].startswith('https://provedor-jus.pt/'))
+        # a grafia é a da fonte (o texto consolidado, anterior ao Acordo Ortográfico)
+        self.assertIn('colectivamente', self.REG['crp-52-1']['texto'])
+        le = next(c for c in self.D['cartoes'] if c['rot'] == 'Lê')
+        vista = self.norm(L.sem_details(le['html']))
+        self.assertIn('para defesa dos seus direitos, da Constituição, das leis ou do interesse geral', vista)
+        self.assertIn('que as apreciará sem poder decisório', vista)
+        # o sublinhar do Lê é o artigo 52.º, n.º 1, inteiro, e as palavras certas dizem em defesa de quê se pede
+        sub = [c for c in self.D['cartoes'] if c['t'] == 'sublinhar' and c.get('fonte')]
+        self.assertEqual(len(sub), 1)
+        self.assertEqual(sub[0]['frase'], self.REG['crp-52-1']['texto'])
+        self.assertEqual([sub[0]['frase'].split()[j].strip(',') for j in sub[0]['certas']],
+                         ['direitos', 'Constituição', 'leis', 'interesse', 'geral'])
+
+    def test_recupera_e_conceito_espacado(self):
+        C = self.D['cartoes']
+        # R1 (sem obra): a marca da conclusão da sessão 07
+        self.assertEqual((C[2]['t'], C[2]['g']), ('sublinhar', 'recupera'))
+        self.assertEqual([C[2]['frase'].split()[j].strip(',') for j in C[2]['certas']], ['por', 'isso'])
+        self.assertNotIn('por isso', C[2]['pista'])
+        r2 = C[3]
+        self.assertEqual(r2['g'], 'recupera')
+        self.assertEqual(r2['origem'], 'cidadania/m1/sessoes/05/')
+        self.assertTrue((ROOT / r2['origem'] / 'index.html').is_file())
+        # o R2 usa palavras da sessão de origem. Confere-se na fonte da sessão 05 (tools/licoes/cidadania-m1-s05.json): a página
+        # publicada em cidadania/m1/sessoes/05/ é ainda a do percurso anterior, com outro tema; «finalidade» está na s05 do piloto e na
+        # do molde (ramo claude/cidadania-m1-s05-20261106).
+        # 06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): a s05 do molde está agora no main, e a página publicada
+        # em cidadania/m1/sessoes/05/ é a que essa mesma fonte escreve; a conferência continua na fonte.
+        origem = json.dumps(carregar(ROOT / 'tools/licoes/cidadania-m1-s05.json'), ensure_ascii=False)
+        citadas = re.findall(r'«([^»]{8,})»', ' '.join([r2['f']] + [x for x in r2['fe'] if x]))
+        self.assertTrue(any(self.norm(q) in self.norm(origem) for q in citadas), 'o R2 usa palavras da sessão de origem')
+        espacado = [c for c in C if c.get('origem') and c.get('g') != 'recupera']
+        self.assertEqual([c['origem'] for c in espacado], ['cidadania/m1/sessoes/04/'])
+        for c in espacado:
+            self.assertTrue((ROOT / c['origem'] / 'index.html').is_file(), c['origem'])
+        # duas charneiras: a 1 no cartão 12 (recomendar não é decidir), a 2 no cartão 21 (a conclusão que vai além das provas)
+        self.assertEqual((C[11]['t'], C[11]['v']), ('vf', False))
+        self.assertEqual(C[20]['t'], 'escolha')
+        self.assertIn('vai além', C[20]['p'])
+        certa = C[20]['o'][C[20]['c']]
+        self.assertIn('sem ouvir ninguém', certa)
+        # nenhum cartão antes da charneira 2 escreve a sua resposta (a consulta que ninguém provou)
+        for c in C[:20]:
+            self.assertNotIn('ouvir ninguém', json.dumps(c, ensure_ascii=False))
+
+    def test_caso_real_imagem_e_sem_video(self):
+        C = self.D['cartoes']
+        real = [c for c in C if 'Caso real' in c.get('p', '')]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]['liga'][0]['href'], self.REG['prov-2016-pdm']['ligacao'])
+        self.assertEqual(real[0]['tipo'], 'transferir')
+        self.assertIn('o do Provedor de Justiça é real', self.D['fontes'])
+        olha = next(c for c in C if c['rot'] == 'Olha')
+        self.assertIn('kilburn-cartistas-1848.webp', olha['html'])
+        self.assertIn('RCIN 2932484', olha['html'])
+        self.assertIn('https://commons.wikimedia.org/wiki/File:William_Edward_Kilburn_-_View_of_the_Great_Chartist_Meeting_on_'
+                      'Kennington_Common_-_Google_Art_Project.jpg', olha['html'])
+        self.assertIn('Domínio público', olha['html'])
+        # o registo da Royal Collection não abriu: a legenda não liga o comício à petição cartista (plano, secção 6)
+        self.assertNotIn('petição', re.search(r'<figcaption>(.*?)</figcaption>', olha['html']).group(1))
+        self.assertTrue((ROOT / 'img/cidadania/kilburn-cartistas-1848.webp').is_file())
+        self.assertNotIn('data-yt', json.dumps(self.D))
+        self.assertNotIn('Na aula', [c.get('rot') for c in C])
+        # decisão 146: «grupo» só no caso inventado ou como «grupo da turma» (o validador também o confere)
+        self.assertNotRegex(json.dumps([c for c in C if c['t'] != 'ler'], ensure_ascii=False), r'(?i)\bgrupos?\b(?! da turma)')
+
+    def test_versao_para_imprimir(self):
+        s = (ROOT / 'cidadania/m1/sessoes/08/imprimir/index.html').read_text('utf-8')
+        self.assertEqual(len(re.findall(r'<p class="rot">Exercício \d+:', s)), 14)
+        self.assertIn('Código', s); self.assertIn('O que conta', s)
+        for c in self.D['cartoes']:
+            if c['t'] != 'ler':
+                self.assertNotIn(html_escape(c['f'])[:60], s)
+        self.assertIn('Domínio público', s)
+        self.assertIn('RCIN\u00a02932484', s.replace('RCIN 2932484', 'RCIN\u00a02932484'))
 
 
 if __name__ == '__main__':

@@ -382,7 +382,8 @@ def sessao():
         'titulo': 'Sessão 07: Nove contra dois', 'h1': 'Cidadania, módulo 1, sessão 07: Nove contra dois',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/07/index.html',
-        'seguinte': '../../../piloto/m1-s08/', 'seguinteRotulo': 'Sessão 08: Quem decide o quê?',
+        # 06/11/2026: a sessão 08 também passou ao molde final (decisões 166 a 168); a s07 leva à s08 nova.
+        'seguinte': '../08/', 'seguinteRotulo': 'Sessão 08: Quem decide o quê?',
         'fontes': M.ref('Constituição da República Portuguesa, artigo 32.º, n.os 2 e 10, na versão consolidada do Diário da República. '
                         'Declaração Universal dos Direitos Humanos, artigos 10.º, 11.º e 12.º, na transcrição do UNRIC. Convenção sobre os '
                         'Direitos da Criança, artigo 12.º, n.º 2, na tradução portuguesa anexa à Resolução da Assembleia da República '
