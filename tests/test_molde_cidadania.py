@@ -1538,11 +1538,15 @@ class SessaoS09(unittest.TestCase):
             self.assertIn(ident, tudo)
             self.assertIs(self.REG[ident]['confirmado'], True, ident)
             self.assertTrue(self.REG[ident]['ligacao'].startswith('https://diariodarepublica.pt/'), ident)
-        # decisão 146: o corte de «conjuntamente com membros do seu grupo» no artigo 30.º faz-se com «[…]», e a palavra não aparece
+        # 07/11/2026: decisão 179 (docente). Já não se corta «conjuntamente com membros do seu grupo»: o artigo 30.º está à vista
+        # com a expressão, e o início do artigo fica no «Ler mais»; o texto à vista tem de ser letra a letra o do registo.
         self.assertIn('conjuntamente com membros do seu grupo', self.REG['cdc-30']['texto'])
         le = next(c for c in self.D['cartoes'] if c['rot'] == 'Lê')
         vista = self.norm(L.sem_details(le['html']))
-        self.assertIn('poderá ser privada do direito de […] ter a sua própria vida cultural', vista)
+        self.assertIn('poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural', vista)
+        self.assertIn('poderá ser privada do direito de, conjuntamente com membros do seu grupo, ter a sua própria vida cultural',
+                      self.REG['cdc-30']['texto'])
+        self.assertIn('Nos Estados em que existam minorias étnicas, religiosas ou linguísticas', self.norm(le['html']))
         self.assertIn('Ninguém pode ser privilegiado, beneficiado, prejudicado', vista)
         # o sublinhar do Lê é o fim do artigo 30.º, e as palavras certas dizem o que a regra tira à Mariana
         sub = [c for c in self.D['cartoes'] if c['t'] == 'sublinhar' and c.get('fonte')]
@@ -1616,8 +1620,14 @@ class SessaoS09(unittest.TestCase):
         self.assertTrue((ROOT / 'img/cidadania/hine-familia-bagagens-1905.webp').is_file())
         self.assertNotIn('data-yt', json.dumps(self.D))
         self.assertNotIn('Na aula', [c.get('rot') for c in C])
-        # decisão 146: nenhum «grupo» em toda a sessão (o validador também o confere)
-        self.assertNotRegex(L.visivel(json.dumps(C, ensure_ascii=False)), r'(?i)\bgrupos?\b')
+        # decisão 146: nenhum «grupo» em toda a sessão (o validador também o confere). 07/11/2026: decisão 179, a única exceção é o
+        # excerto de lei registado e conferido (o artigo 30.º, no Lê): fora dele, nenhum «grupo»; dentro, exatamente um.
+        fora = [L.visivel(L.sem_lei_registada(c.get('html') or '')) for c in C] + [L.visivel(json.dumps({k: v for k, v in c.items()
+                if k != 'html'}, ensure_ascii=False)) for c in C]
+        for t in fora:
+            self.assertNotRegex(t, r'(?i)\bgrupos?\b')
+        todo = L.visivel(json.dumps(C, ensure_ascii=False))
+        self.assertEqual(len(re.findall(r'(?i)\bgrupos?\b', todo)), 1)
 
     def test_versao_para_imprimir(self):
         s = (ROOT / 'cidadania/m1/sessoes/09/imprimir/index.html').read_text('utf-8')

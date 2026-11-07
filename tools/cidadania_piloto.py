@@ -937,9 +937,9 @@ GUIA = {
             'Recupera 2: a regra igual com efeito desigual, da sessão 03 (conta o efeito).',
             'Olha: o ficheiro é o do piloto, que o plano nomeia (Lewis Hine, 1905, Museum of Fine Arts, Houston; domínio público, registo do '
             'Wikimedia Commons aberto a 7/11/2026). O título do museu não diz de que país vinha a família.',
-            'Cartão 8: o artigo 30.º da Convenção corta, com «[…]», a expressão «conjuntamente com membros do seu grupo» (a palavra fica fora '
-            'das páginas dos alunos pela decisão 146). Vale a pena dizê-lo na leitura: o direito exerce-se com os da mesma comunidade, como a '
-            'Mariana com a irmã.',
+            # 07/11/2026: decisão 179. O artigo 30.º passa a estar inteiro no cartão 8.
+            'Cartão 8: o artigo 30.º da Convenção está inteiro (o início no «Ler mais»), com «conjuntamente com membros do seu grupo». Vale a pena sublinhá-lo na '
+            'leitura: o direito exerce-se com os da mesma comunidade, como a Mariana com a irmã.',
             'Cartão 11: a câmara municipal é uma autoridade; o cartão fica no texto do artigo 41.º, n.º 3 (só dados estatísticos «não '
             'individualmente identificáveis»), sem dizer o que uma escola pode ou não perguntar.',
             'Cartão 12: o artigo 13.º, n.º 2, fala de privilegiar, beneficiar, prejudicar ou privar de direitos; o cartão aplica-o a uma escolha '

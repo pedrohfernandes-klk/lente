@@ -19,8 +19,9 @@
 #   conferido na s03 e igual hoje, e crp-41-3); a grafia é a da fonte;
 # - Convenção sobre os Direitos da Criança, artigo 30.º, na tradução portuguesa anexa à Resolução da Assembleia da República
 #   n.º 20/90, no Diário da República Eletrónico (registo cdc-30); as Retificações n.º 1/91 e n.º 8/91 não tocam no artigo 30.º. O
-#   cartão 8 corta, com «[…]», «conjuntamente com membros do seu grupo»: a palavra fica fora das páginas pela decisão 146 (o
-#   validador só a aceita no texto de um caso inventado); o guia diz o corte;
+#   cartão 8 traz o artigo inteiro, o início no «Ler mais» e o resto à vista (07/11/2026, decisão 179: o validador aceita «grupo»
+#   nos excertos de lei registados e copiados letra a letra; antes cortava-se «conjuntamente com membros do seu grupo», pela
+#   decisão 146);
 # - O caso real (decisão 161): Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão
 #   de 10/01/2017, no HUDOC (texto inglês, 001-170436). O cartão 15 conta, por palavras nossas e sem citar (não há versão portuguesa),
 #   só o que o acórdão diz: aulas de natação mistas obrigatórias na escola primária (§ 9), pais muçulmanos que recusaram mandar as
@@ -161,11 +162,14 @@ CARTOES = [
          pista='Pergunta-te o que sabias sem as palavras por baixo da imagem.'),
  # 07/11/2026: as referências na margem são curtas (a margem tem 5,6 rem e não parte a linha); o documento de cada uma diz-se no
  # «Antes de ler», pela mesma ordem, e no «Ler mais».
- M.le('O que uma regra não pode tirar', 'Primeiro a Constituição, depois a Convenção: o que diz cada uma sobre a língua?',
+ M.le('O que uma regra não pode tirar', 'O que diz cada texto sobre a língua?',  # 07/11/2026: decisão 179, mais curta para caber o artigo 30.º
       [(f'13.º, n.º{NB}2', 'Ninguém pode ser privilegiado, beneficiado, prejudicado […] em razão de […] língua, território de '
                           'origem, religião […]', 'crp-13-2', 'a13'),
+       # 07/11/2026: decisão 179. Já não se corta «conjuntamente com membros do seu grupo»: o validador aceita a palavra só nos
+       # excertos de lei registados e copiados letra a letra. O início do artigo («Nos Estados em que existam minorias…») fica no
+       # «Ler mais», como antes, para o cartão caber nas 80 palavras à vista; entre os dois, o artigo 30.º está inteiro no cartão.
        (f'Artigo{NB}30.º', '[…] nenhuma criança indígena ou que pertença a uma dessas minorias poderá ser privada do direito '
-                          'de […] ' + CDC30_FIM, 'cdc-30', 'c30')],
+                          'de, conjuntamente com membros do seu grupo, ' + CDC30_FIM, 'cdc-30', 'c30')],
       f'<a href="{DRE_CRP}">Constituição</a> e <a href="{DRE_CDC}">Convenção</a>',
       mais=M.lei([('30.º, início', 'Nos Estados em que existam minorias étnicas, religiosas ou linguísticas ou '
                    'pessoas de origem indígena, […]', 'cdc-30', None),
