@@ -3,7 +3,18 @@
    sem pessoas nos carris e sem escolher uma via. Motor comum, sem dados guardados. */
 .ju .jc-fundo{--jc-papel:var(--fundo,#f3f2ee);position:relative;overflow:hidden;height:clamp(232px,64vw,300px);margin:28px 0 0;color:var(--tinta,#161616);background:var(--jc-papel);pointer-events:none}
 .ju .jc-fundo>svg{display:block;width:100%;height:100%;max-width:none}
-.ju .jc-credito{margin:8px 0 0;font:400 .8125rem/1.5 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
+/* 07/11/2026: decisão 175 («um dos casos em que o botão i faz mesmo falta»). O parágrafo do crédito dá lugar à linha dos fundos
+   da peça comum do «i» (decisão 153, assets/info-i.css): «Parar o desenho» à esquerda, com a letra que o crédito tinha, e o «i»
+   à direita, fechado. Aberto, o «i» passa para a linha de baixo e o crédito ocupa a largura toda (como no Português); o botão
+   fica onde estava, sempre à vista e fora do «i» (WCAG 2.2.2). */
+.ju .jc-acoes{flex-wrap:wrap;gap:0 16px;margin:8px 0 0;font:400 .8125rem/1.5 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
+.ju .jc-acoes .fundo-botao{margin-left:0}
+.ju .jc-acoes>.info-i--linha[open]{flex:1 1 100%;margin-inline-start:0}
+/* Aberto, o «i» continua à direita (a regra geral da peça põe a margem do summary aberto a 0). */
+.ju .jc-acoes>.info-i--linha>summary{margin-inline-start:auto}
+.ju .jc-acoes .info-i-texto{max-width:65ch}
+/* 07/11/2026: decisão 175. O texto alternativo do desenho («Duas vias possíveis, sem desfecho.») é só para leitores de ecrã. */
+.ju .jc-alt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
 @media(max-width:639px){.ju .jc-fundo{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}}
 @media(min-width:640px){.ju .jc-fundo{height:340px;margin-top:32px}}
 @media(min-width:960px){.ju .jc-fundo{height:clamp(360px,44vh,440px);margin-top:36px}}
@@ -32,10 +43,15 @@
 @keyframes jc-alavanca{0%,18%{transform:rotate(0deg)}22%,37%{transform:rotate(26deg)}41%,45%{transform:rotate(0deg)}49%,64%{transform:rotate(-26deg)}68%,100%{transform:rotate(0deg)}}
 @keyframes jc-agulha-longe{0%,18%{transform:rotate(0deg)}22%,37%{transform:rotate(10deg)}41%,100%{transform:rotate(0deg)}}
 @keyframes jc-agulha-perto{0%,45%{transform:rotate(0deg)}49%,64%{transform:rotate(-10deg)}68%,100%{transform:rotate(0deg)}}
-@keyframes jc-sinal-1{0%,12%{opacity:0;transform:scale(.3)}13.2%{opacity:1;transform:scale(1.12)}14%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
-@keyframes jc-sinal-2{0%,41%{opacity:0;transform:scale(.3)}42.2%{opacity:1;transform:scale(1.12)}43%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
-@keyframes jc-sinal-3{0%,18%{opacity:0;transform:scale(.3)}19.2%{opacity:1;transform:scale(1.12)}20%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
-@keyframes jc-sinal-4{0%,45%{opacity:0;transform:scale(.3)}46.2%{opacity:1;transform:scale(1.12)}47%,66%{opacity:1;transform:scale(1)}70%,100%{opacity:0;transform:scale(1)}}
+/* 07/11/2026: decisão 175 (docente: «n gosto do grafismo dos pontos de exclamação, e o elétrico dee mover-se lentamente tb»).
+   Saem os quatro sinais de alerta. O elétrico (a fotografia recortada, com a vara do troleio, e a sombra, numa só peça) avança
+   devagar para a agulha, no sentido em que anda (para a esquerda): começa 80 unidades atrás do sítio onde o desenho parado o
+   mostra e chega lá aos 68 % (24,5 s), quando a alavanca volta ao meio de vez. São cerca de 53 px a 1366 px e 33 px a 390 px,
+   em 22 s, a começar e a acabar devagar. Nunca passa esse sítio: a frente fica a 94 unidades das pontas das lâminas, sem
+   chegar à agulha nem escolher via. No começo de cada arranque, a troca de lugar fica escondida pela entrada do desenho a
+   partir de transparente (jc-aproxima, 0 a 4 %); no fim, o elétrico já está no sítio do desenho parado, por isso não há salto
+   aos 36 s, aos 72 s, nem quando o motor desliga a classe. Só transform. */
+@keyframes jc-avanca{0%,6%{transform:translateX(80px)}68%,100%{transform:translateX(0)}}
 @media(prefers-reduced-motion:no-preference){
 html:not(.em-projecao) .ju .jc-anda .jc-eletrico{animation:jc-aproxima 36s ease-in-out 1;animation-fill-mode:forwards}
 html:not(.em-projecao) .ju .jc-anda .jc-via-a{animation:jc-via-a 36s ease-in-out 1;animation-fill-mode:forwards}
@@ -43,14 +59,13 @@ html:not(.em-projecao) .ju .jc-anda .jc-via-b{animation:jc-via-b 36s ease-in-out
 html:not(.em-projecao) .ju .jc-anda .jc-alavanca-braco{transform-box:view-box;transform-origin:563px 548px;animation:jc-alavanca 36s ease-in-out 1;animation-fill-mode:forwards}
 html:not(.em-projecao) .ju .jc-anda .jc-agulha-longe{transform-box:view-box;transform-origin:478px 458px;animation:jc-agulha-longe 36s ease-in-out 1;animation-fill-mode:forwards}
 html:not(.em-projecao) .ju .jc-anda .jc-agulha-perto{transform-box:view-box;transform-origin:470px 470px;animation:jc-agulha-perto 36s ease-in-out 1;animation-fill-mode:forwards}
-html:not(.em-projecao) .ju .jc-anda .jc-sinal{transform-box:fill-box;transform-origin:50% 100%}
-html:not(.em-projecao) .ju .jc-anda .jc-sinal-1{animation:jc-sinal-1 36s ease-in-out 1;animation-fill-mode:forwards}
-html:not(.em-projecao) .ju .jc-anda .jc-sinal-2{animation:jc-sinal-2 36s ease-in-out 1;animation-fill-mode:forwards}
-html:not(.em-projecao) .ju .jc-anda .jc-sinal-3{animation:jc-sinal-3 36s ease-in-out 1;animation-fill-mode:forwards}
-html:not(.em-projecao) .ju .jc-anda .jc-sinal-4{animation:jc-sinal-4 36s ease-in-out 1;animation-fill-mode:forwards}
+html:not(.em-projecao) .ju .jc-anda .jc-carro{transform-box:view-box;animation:jc-avanca 36s ease-in-out 1;animation-fill-mode:forwards}
 }
 @media print{.ju .jc-fundo{display:none}}
-@media print{.ju .jc-credito{display:none}}
+/* 07/11/2026: decisão 175. Na impressão, o desenho continua a não sair, mas o crédito sai por extenso (como no Laboratório):
+   a peça do «i» esconde o «i», mostra o texto da <details> fechada e junta o endereço da licença; aqui, a linha dos fundos
+   (que a peça esconde na impressão) volta a sair, sem o botão. */
+@media print{.ju .jc-acoes{display:block;margin:8pt 0 0}.ju .jc-acoes .info-i{inline-size:auto;margin:0}}
 
 /* 03/11/2026: abertura integrada; o estado parado coincide com a chegada, sem salto aos 36/72 s. */
 /* 05/11/2026: revisão de 5/11 (lente-justica-5). Abaixo de 640 px, a abertura reserva a altura real da faixa (até 300 px) e uma folga,

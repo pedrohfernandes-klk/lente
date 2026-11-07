@@ -11,6 +11,14 @@ e talvez surjam uns pontos de exclamação»; depois, «a alavanca move, claro»
 que roda sobre o pé (563, 548); as duas lâminas da agulha passam a peças separadas, cada uma com o seu talão; quatro sinais
 de alerta a traço (uma haste e um ponto, nunca letra de fonte nem emoji), dois à frente do elétrico e dois junto à alavanca,
 fora das vias, ficam escondidos (opacity="0"). O desenho parado continua a ser a cena neutra: o movimento é todo do CSS.
+07/11/2026: decisão 175 (docente: «um dos casos em que o botão i faz mesmo falta»; «n gosto do grafismo dos pontos de
+exclamação, e o elétrico dee mover-se lentamente tb»). O crédito passa para trás do «i» (a peça comum da decisão 153,
+assets/info-i.css e assets/info-i.js, variante «linha», na linha dos fundos com «Parar o desenho» ao lado e sempre fora do «i»);
+«Duas vias possíveis, sem desfecho.» passa a ser o texto alternativo do desenho, para quem usa leitor de ecrã. Saem os quatro
+sinais de alerta da decisão 170 (SINAIS e sinal()). Sai também o retângulo tracejado à volta do elétrico (jc-alvo): era a
+marca que, na colagem do Rossio (decisão 142), apontava o elétrico 260 no meio da fotografia da rua; com o elétrico recortado
+sobre a via desenhada ficou sem função, e nenhuma decisão a pede. O elétrico (a fotografia recortada, com a vara do troleio,
+e a sombra) passa a um grupo só, jc-carro, que o CSS faz avançar devagar para a agulha, sem nunca lá chegar.
 """
 from pathlib import Path
 
@@ -27,22 +35,12 @@ W,H=1340,600
 # Recorte: 962 x 634 px, desenhado a 0,598 por píxel; as rodas assentam no carril da frente (y 470).
 RECORTE=(592.8,100.8,575.3,379.1)
 
-# 06/11/2026: decisão 170. Os sinais de alerta: (x, y) é o fundo do ponto, alto a altura toda, graus a inclinação (positiva
-# para a direita). Dois à frente do elétrico, no ar, longe das vias; dois junto à alavanca, à direita dela, no chão, abaixo
-# da sombra do elétrico. Todos dentro do recorte do telemóvel (de 200 a 1140, e de 256 a 1084 a 320 px).
-SINAIS=((1,556,354,42,-8),(2,518,384,32,-15),(3,622,542,34,9),(4,648,532,26,17))
-
-def sinal(n,x,y,alto,graus):
-    """Um ponto de exclamação a traço: a haste (com uma ligeira curva, como à mão) e o ponto. Escondido no desenho parado."""
-    import math
-    a=math.radians(graus);ux,uy=math.sin(a),-math.cos(a);vx,vy=math.cos(a),math.sin(a)
-    def p(d,lado=0.0):
-        return f'{x+ux*d+vx*lado:.1f} {y+uy*d+vy*lado:.1f}'
-    # O traço engrossa um pouco com o tamanho (3,7 a 4,5, como a alavanca e as lâminas); o ponto é um pouco mais largo do que a haste.
-    traco=round(2.4+alto*.05,1);r=round(traco*.78,1)
-    return (f'<g class="jc-sinal jc-sinal-{n}" stroke="var(--jc-terra,#a84939)" stroke-width="{traco:g}" opacity="0">'
-            f'<path d="M{p(alto*.38)}Q{p(alto*.69,1.6)} {p(alto)}"/>'
-            f'<circle cx="{x+ux*r:.1f}" cy="{y+uy*r:.1f}" r="{r}" fill="var(--jc-terra,#a84939)" stroke="none"/></g>')
+# 07/11/2026: decisão 175, saem os sinais de alerta da decisão 170 (SINAIS e sinal()): o docente não gosta do grafismo.
+# 07/11/2026: decisão 175 («o elétrico deve mover-se lentamente»). No desenho parado, a frente do elétrico (a primeira coluna
+# opaca do recorte) fica em x 600, a 94 unidades das pontas das lâminas (x 506): é aí que ele descansa, antes da agulha. Com o
+# desenho a andar, começa AVANCO unidades mais atrás (à direita) e avança devagar até esse sítio; nunca o passa, nunca chega à
+# agulha nem escolhe uma via. O valor é o mesmo do @keyframes jc-avanca de assets/fundo-carris.css (os testes conferem-no).
+FRENTE,PONTAS_AGULHA,AVANCO=600,506,80
 
 def cena(href='../../assets/'+FOTO):
     """Colagem: o elétrico 541 de lado (fotografia recortada), a andar para a esquerda sobre uma via desenhada. À frente
@@ -51,7 +49,9 @@ def cena(href='../../assets/'+FOTO):
     Por cima, o fio aéreo onde toca a vara do troleio. Ninguém está na via. A cena vai de -660 a 2000; no telemóvel vê-se
     a parte do meio (de 200 a 1140), com o elétrico, a agulha, a alavanca e o começo das duas vias.
     06/11/2026: decisão 170. A alavanca, as lâminas e os sinais de alerta têm classes para o movimento (assets/fundo-carris.css);
-    parados, a alavanca fica a direito, as lâminas encostadas e os sinais escondidos: a mesma cena neutra."""
+    parados, a alavanca fica a direito, as lâminas encostadas e os sinais escondidos: a mesma cena neutra.
+    07/11/2026: decisão 175. Saem os sinais e o retângulo tracejado; o elétrico e a sombra ficam no grupo jc-carro, sem
+    transform: parado, o elétrico está no sítio onde descansa, antes da agulha."""
     import random
     rng=random.Random(20261105)
     x,y,w,h=RECORTE
@@ -73,11 +73,13 @@ def cena(href='../../assets/'+FOTO):
        # A via que curva para o primeiro plano, a sair da agulha no sentido em que o elétrico anda.
        '<path d="M506 470C456 471 404 498 352 540C318 568 290 592 276 612M524 458C474 460 424 486 376 528C342 558 314 590 300 612"/>',
        '</g>',
+       # 07/11/2026: decisão 175. O elétrico e a sua sombra numa só peça (jc-carro), que avança devagar com o desenho a andar.
+       '<g class="jc-carro">',
        # A sombra do elétrico no chão.
        f'<ellipse cx="{x+w/2:.1f}" cy="472" rx="{w/2:.1f}" ry="9" fill="currentColor" opacity=".12"/>',
        f'<image class="jc-foto" href="{href}" x="{x}" y="{y}" width="{w}" height="{h}"/>',
-       # O elétrico, marcado a tracejado.
-       '<path class="jc-alvo" d="M598 254h564v194h-564z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 7" opacity=".6"/>',
+       # 07/11/2026: decisão 175, sai o retângulo tracejado à volta do elétrico (jc-alvo), resto da colagem do Rossio.
+       '</g>',
        '<g fill="none" stroke-linecap="round" stroke-linejoin="round">',
        # As duas vias possíveis, a pontilhado: nenhuma é escolhida.
        # 05/11/2026: o docente, «os pontos vermelhos têm de ir até ao fim»: a via a direito vai até à ponta esquerda, como os carris.
@@ -91,8 +93,6 @@ def cena(href='../../assets/'+FOTO):
        # A alavanca, neutra, ao lado da via e junto à agulha; a vara tracejada liga-a às lâminas.
        # 06/11/2026: decisão 170. A haste e a pega num grupo, que roda sobre o pé da haste (563, 548), em cima da base.
        '<g class="jc-alavanca" stroke="currentColor" stroke-width="4"><path d="M532 548H584L594 560H542Z" fill="var(--jc-papel,#f3f2ee)"/><g class="jc-alavanca-braco"><path d="M563 548L561 496"/><circle cx="561" cy="486" r="10" fill="var(--jc-papel,#f3f2ee)"/></g><path d="M546 552L496 476" stroke-width="2.5" stroke-dasharray="5 7"/></g>']
-    # 06/11/2026: decisão 170. Os sinais de alerta, escondidos no desenho parado.
-    a+=[sinal(*s) for s in SINAIS]
     a+=['</g></g></svg>']
     return '\n'.join(a)+'\n'
 
@@ -104,27 +104,53 @@ DESTINO=ROOT/'assets/carris-eletrico.svg'
 PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
 # 05/11/2026: CC BY-SA 4.0: título, autor, fonte, licença e as alterações; a fotografia tratada fica com a mesma licença.
 # 06/11/2026: decisão 170. A lista do que é desenho passa a incluir «os sinais de alerta».
+# 07/11/2026: decisão 175. Saem «os sinais de alerta» (a frase volta à forma de antes da decisão 170) e «Duas vias possíveis,
+# sem desfecho.», que passa a ALT, o texto alternativo do desenho. O resto fica letra a letra, com as mesmas ligações; a da
+# licença leva rel="license", a regra da peça do «i» (não parte a meio da linha e, na impressão, sai com o endereço).
 CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
          '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
-         '<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e sem os passageiros, com a mesma licença. '
-         'A via, a agulha, as duas vias possíveis, a alavanca ao lado da via e os sinais de alerta são desenho. Grafismo gerado com recurso a IA, EPI, 2026. Duas vias possíveis, sem desfecho.')
+         '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e sem os passageiros, com a mesma licença. '
+         'A via, a agulha, as duas vias possíveis e a alavanca ao lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026.')
+# 07/11/2026: decisão 175. O desenho continua decorativo (aria-hidden, porque mexe); a frase sobre o que ele mostra fica
+# logo a seguir, como imagem com nome, para quem usa leitor de ecrã. Não se vê: quem vê tem o desenho.
+ALT='Duas vias possíveis, sem desfecho.'
+ALT_HTML='<span class="jc-alt" role="img" aria-label="'+ALT+'"></span>'
+# 07/11/2026: decisão 175 («um dos casos em que o botão i faz mesmo falta»). A linha dos fundos da peça comum (decisão 153,
+# plano-creditos-i-20261105.md, 1.1): «Parar o desenho» à esquerda, sempre à vista e fora do «i»; o «i» à direita, fechado,
+# com o crédito inteiro dentro. A <details> funciona sem JavaScript; o assets/info-i.js fecha-a com Escape, com um toque fora
+# e na projeção.
+ACOES=('<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button>'
+       '<details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary>'
+       '<p class="info-i-texto">'+CREDITO+'</p></details></div>')
+# A peça comum, na versão que as outras páginas do Lente já carregam.
+INFO_I_CSS='<link rel="stylesheet" href="../../assets/info-i.css?v=20261106-3">'
+INFO_I_JS='<script defer src="../../assets/info-i.js?v=20261106-3"></script>'
 
 def instalar(texto):
-    desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'
-    texto,n=re.subn(r'<div class="jc-fundo"[^>]*>.*?</svg></div>',lambda _:desenho,texto,flags=re.S)
-    assert n==1, 'Esperava-se uma só faixa da Justiça'
-    credito='<p class="jc-credito">'+CREDITO+' <button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button></p>'
-    texto,n=re.subn(r'<p class="jc-credito">.*?</p>',lambda _:credito,texto,flags=re.S)
-    assert n==1, 'Esperava-se um só crédito'
-    # 06/11/2026: decisão 170. Nova versão do CSS (o movimento da alavanca, das vias e dos sinais), para o navegador o recarregar.
-    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261106-1',texto)
-    assert n==1, 'Esperava-se um só carregamento do CSS'
     # 03/11/2026: integra a gravura na abertura sem alterar os seus textos.
+    # 07/11/2026: decisão 175. Passa a ser o primeiro passo, para o texto alternativo (ALT_HTML) ficar dentro da abertura.
     if '<header class="jc-abertura">' not in texto:
         texto,n=re.subn(
             r'(<h1>Justiça.*?</h1>\s*<p class="lead">.*?</p>)\s*(<div class="jc-fundo".*?</svg></div>)',
             r'<header class="jc-abertura">\1\n\2</header>', texto, flags=re.S)
         assert n==1, 'Esperava-se uma abertura da Justiça'
+    # 07/11/2026: decisão 175. A faixa e, logo a seguir, o texto alternativo do desenho.
+    desenho='<div class="jc-fundo" aria-hidden="true" data-fundo="jc" data-fundo-ciclo="36">'+cena().rstrip()+'</div>'+ALT_HTML
+    texto,n=re.subn(r'<div class="jc-fundo"[^>]*>.*?</svg></div>(?:<span class="jc-alt"[^>]*></span>)?',lambda _:desenho,texto,flags=re.S)
+    assert n==1, 'Esperava-se uma só faixa da Justiça'
+    # 07/11/2026: decisão 175. O parágrafo do crédito (com o botão dentro) dá lugar à linha dos fundos com o «i».
+    texto,n=re.subn(r'<p class="jc-credito">.*?</p>|<div class="fundo-acoes jc-acoes">.*?</details></div>',lambda _:ACOES,texto,flags=re.S)
+    assert n==1, 'Esperava-se um só crédito'
+    # 06/11/2026: decisão 170. Nova versão do CSS (o movimento da alavanca, das vias e dos sinais), para o navegador o recarregar.
+    # 07/11/2026: decisão 175. Nova versão (o elétrico que avança, sem os sinais, a linha do «i» e a impressão do crédito).
+    texto,n=re.subn(r'assets/fundo-carris.css[?]v=[^" ]+', 'assets/fundo-carris.css?v=20261107-1',texto)
+    assert n==1, 'Esperava-se um só carregamento do CSS'
+    # 07/11/2026: decisão 175. A peça comum do «i» (CSS e JS), logo a seguir às do motor dos fundos, uma vez cada.
+    texto=texto.replace(INFO_I_CSS,'').replace(INFO_I_JS,'')
+    texto,n=re.subn(r'(<link rel="stylesheet" href="\.\./\.\./assets/fundos\.css[?]v=[^"]+">)',lambda m:m.group(1)+INFO_I_CSS,texto)
+    assert n==1, 'Esperava-se um só carregamento do CSS dos fundos'
+    texto,n=re.subn(r'(<script defer src="\.\./\.\./assets/fundos\.js[?]v=[^"]+"></script>)',lambda m:m.group(1)+INFO_I_JS,texto)
+    assert n==1, 'Esperava-se um só carregamento do motor dos fundos'
     return texto
 
 def main():
