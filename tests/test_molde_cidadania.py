@@ -1578,12 +1578,14 @@ class SessaoS09(unittest.TestCase):
         self.assertEqual(C[20]['t'], 'escolha')
         self.assertIn('vai além', C[20]['p'])
         certa = C[20]['o'][C[20]['c']]
-        self.assertIn('costuma gozar', certa)
-        # nenhum cartão antes da charneira 2 escreve a sua resposta (o salto de dois colegas para todos os que falam romeno)
+        # 07/11/2026 (revisão): a certa da charneira 2 passa a ser a ideia feita que nenhuma frase do caso sustenta (falar nepalês
+        # atrasa o português da irmã); as outras duas estão no caso. Confere-se o mesmo: nenhum cartão antes a escreve.
+        self.assertIn('atrasa o português', certa)
+        # nenhum cartão antes da charneira 2 escreve a sua resposta
         for c in C[:20]:
             t = json.dumps(c, ensure_ascii=False)
-            self.assertNotIn('costuma gozar', t)
-            self.assertNotIn('fala romeno', t)
+            self.assertNotIn('atrasa', t)
+            self.assertNotIn('nepalês atrasa', t)
         # nenhum cartão antes da charneira 1 escreve a sua resposta (beneficiar em razão da origem)
         for c in C[:11]:
             self.assertNotIn('beneficiado em razão', json.dumps(c, ensure_ascii=False))
@@ -1594,9 +1596,13 @@ class SessaoS09(unittest.TestCase):
         self.assertEqual(len(real), 1)
         self.assertEqual(real[0]['liga'][0]['href'], 'https://hudoc.echr.coe.int/eng?i=001-170436')
         self.assertEqual(real[0]['tipo'], 'transferir')
-        self.assertIs(real[0]['v'], False)
+        # 07/11/2026 (revisão): o caso real passa de V/F a escolha, como na s06 e na s07: o cartão dá a decisão e pergunta porquê, e a
+        # certa é a que o acórdão sustenta (aprender em conjunto e as adaptações oferecidas, §§ 96 a 101).
+        self.assertEqual(real[0]['t'], 'escolha')
+        self.assertIn('não viu violação', real[0]['p'])
+        self.assertIn('adaptou a aula', real[0]['o'][real[0]['c']])
         # o acórdão só existe em francês e inglês: o cartão conta por palavras nossas, sem citar
-        self.assertNotIn('«', real[0]['p'] + real[0]['f'] + real[0]['fe'])
+        self.assertNotIn('«', real[0]['p'] + real[0]['f'] + ' '.join(real[0]['fe']) + ' '.join(real[0]['o']))
         self.assertIn('o da natação em Basileia é real', self.D['fontes'])
         olha = next(c for c in C if c['rot'] == 'Olha')
         self.assertIn('hine-familia-bagagens-1905.webp', olha['html'])

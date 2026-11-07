@@ -25,15 +25,18 @@
 #   de 10/01/2017, no HUDOC (texto inglês, 001-170436). O cartão 15 conta, por palavras nossas e sem citar (não há versão portuguesa),
 #   só o que o acórdão diz: aulas de natação mistas obrigatórias na escola primária (§ 9), pais muçulmanos que recusaram mandar as
 #   filhas (§ 9), as autoridades ofereceram o burkini e balneários sem rapazes (§ 101), e o Tribunal concluiu, por unanimidade, que
-#   não houve violação do artigo 9.º (dispositivo, ponto 2);
+#   não houve violação do artigo 9.º (dispositivo, ponto 2). 07/11/2026 (revisão): passa a escolha, como na s06 e na s07 (o cartão dá
+#   a decisão e pergunta porquê); a interferência na liberdade de religião dos pais é o § 42;
 # - Fotografia: Lewis Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, Museum of Fine Arts, Houston. O ficheiro
 #   img/cidadania/hine-familia-bagagens-1905.webp (640 × 811) é o do piloto, que o plano nomeia; o registo do Wikimedia Commons
 #   (aberto a 7/11/2026: Lewis Hine, 1874 a 1940; 1905; prova em gelatina e prata, 19,1 × 24,1 cm; Museum of Fine Arts, Houston;
 #   domínio público nos Estados Unidos por publicação antes de 1931, PD-Art) confirma a licença. O título do museu não diz de que país
 #   vinha a família, e a legenda também não o diz;
-# - R1: o discurso de David Foster Wallace a finalistas do Kenyon College, 21 de maio de 2005 (#84, s09), contado por palavras nossas e
-#   sem citar; a história dos dois peixes novos e do peixe mais velho fica «a confirmar» numa fonte oficial do Kenyon College (ver
-#   /home/user/bordo/cidadania-v3/molde-s09/s09.md);
+# - R1: _This Is Water_, o discurso de David Foster Wallace aos finalistas do Kenyon College em 2005 (#84, s09), contado por palavras
+#   nossas e sem citar. 07/11/2026 (revisão): a história confere com o texto publicado pelo Kenyon College
+#   (https://www.kenyon.edu/news/archive/this-is-water/, aberto a 7/11/2026): «two young fish» encontram «an older fish», que pergunta
+#   «how's the water?»; seguem a nadar e um pergunta ao outro «What the hell is water?»; a leitura certa é a do próprio texto (as
+#   realidades mais óbvias são muitas vezes as mais difíceis de ver). A página não dá o dia do discurso, e a sessão não o diz;
 # - Vídeo (decisão 155): nenhum. O plano não propõe candidato, e o do piloto (TED-Ed) não foi visto por inteiro.
 import importlib.util, json, pathlib
 
@@ -103,16 +106,17 @@ CARTOES = [
  # R1: a obra do #84 s09 (This Is Water, 2005), por palavras nossas. O retorno liga a história à regra que parece neutra para quem fala
  # português em casa; não fala de efeitos desiguais (o R2) nem da Mariana (os cartões do Lê).
  M.recupera(escolha(
-     'A água que não se vê',
-     'Em 2005, David Foster Wallace contou: um peixe velho pergunta a dois novos como está a água; um deles pergunta o que é a água. '
-     'O que mostra a história?',
+     'A pergunta do peixe mais velho',
+     'Em 2005, David Foster Wallace contou: um peixe mais velho pergunta a dois novos como está a água; um deles pergunta o que é a água. '
+     'O que mostra isto?',
      'Na história dos peixes que David Foster Wallace contou em 2005, os peixes novos não sabem o que é a água. O que mostra isto?',
      'Que o mais habitual é, muitas vezes, o mais difícil de ver.',
      [('Que os peixes velhos sabem mais do que os peixes novos.',
        'A história não mede quem sabe mais: os peixes novos vivem na água e não a veem, por estar sempre lá. Volta à pergunta que um '
        'faz ao outro.'),
-      ('Que os peixes novos não ouviram bem a pergunta do velho.',
-       'Ouviram, e um deles repete-a ao outro: não sabem o que é a água, porque nunca viveram sem ela. Volta ao que perguntam.')],
+      ('Que os peixes novos não ouviram bem a pergunta do mais velho.',
+       'Ouviram: seguem a nadar e só depois um pergunta ao outro o que é a água. A dúvida não vem de ouvir mal. Volta ao que um '
+       'pergunta ao outro.')],
      'A água é o que está sempre à volta e, por isso, deixa de se ver. Para quem fala português em casa, uma regra só em português '
      'pode parecer a água: normal, sem nada para explicar.',
      3, 'distinguir', 'o que não se vê', pista='Pensa porque é que os peixes novos não sabem responder.')),
@@ -126,7 +130,7 @@ CARTOES = [
      4, 'aplicar', 'discriminação indireta', v=False,
      fe='Um preço igual não é um peso igual: depende do dinheiro de cada família. Na sessão 03, viste que «conta o efeito» de uma regra. '
         'Pergunta-te a quem custa mais pagar.',
-     pista='Imagina duas famílias, com dinheiros diferentes, a pagar a mesma visita.'),
+     pista='Imagina duas famílias, com rendimentos diferentes, a pagar a mesma visita.'),
      origem='cidadania/m1/sessoes/03/'),
  M.olha('Uma família à chegada', 'Olha primeiro para as pessoas e para o que trazem; só depois lê a legenda.',
         M.figura(IMG, ALT, CREDITO, 'Ilha de Ellis, 1905: uma família de imigrantes na sala das bagagens.',
@@ -145,7 +149,7 @@ CARTOES = [
            'a olhar.')],
          'Vê-se o saco às riscas ao ombro do rapaz. O cansaço e a língua não se veem: são hipóteses sobre as pessoas, que a imagem não '
          'confirma.',
-         3, 'reconhecer', 'observação', ver=VER, pista='Separa o que se vê do que se adivinha a partir dos rostos.'),
+         3, 'reconhecer', 'observação', ver=VER, pista='Para cada frase, pergunta-te se a podias apontar com o dedo na imagem.'),
  # O que só a legenda diz (plano: V/F «a fotografia mostra de onde vem a família»; di-lo a legenda, e só em parte).
  M.fazer('vf', 'Imagem e legenda',
          'Só pela fotografia, sem a legenda, sabes que esta família acabava de chegar de outro país.',
@@ -168,21 +172,21 @@ CARTOES = [
                   ('41.º, n.º 3', ART41_3, 'crp-41-3', None)],
                  f'<a href="{DRE_CDC}">Convenção</a>, 30.º; <a href="{DRE_CRP}">Constituição</a>, 41.º')),
  # Leitura exata: o que a regra tira à Mariana, no artigo 30.º (o verbo e o que ele rege).
- M.fazer('sublinhar', 'Ter ou usar',
+ M.fazer('sublinhar', 'O que a regra tira',
          'No artigo 30.º, sublinha as duas palavras que dizem o que a regra do intervalo tira à Mariana.',
          'No artigo 30.º, onde está o que a Mariana deixa de poder fazer no intervalo? Sublinha as duas palavras.',
-         'A regra não tira a ninguém a língua que tem: tira-lhe o direito de a «utilizar» no intervalo. É essa a parte do artigo 30.º que '
+         'A regra não tira à Mariana a língua que tem: tira-lhe o direito de a «utilizar» no intervalo. É essa a parte do artigo 30.º que '
          'fica em causa.',
          3, 'reconhecer', 'direitos das minorias', frase=CDC30_FIM, certas=palavras(CDC30_FIM, ['utilizar', 'língua']),
          fonte='cdc-30', l='c30', citacoes=[('cdc-30', 'utilizar'), ('cdc-30', 'vida cultural')],
          fe='A confusão mais provável é sublinhar «vida cultural»: a regra não toca em festas nem costumes, só no que se fala. Procura o '
             'verbo do que se faz e a palavra que o completa.',
-         pista='Procura o verbo que diz o que se faz, e não o que se tem.'),
+         pista='Lê a frase até ao fim e procura a parte que toca no que a Mariana faz no intervalo.'),
  # Aplicação ao caso: o artigo 13.º, n.º 2, também nomeia a língua (o erro: só ver a origem).
- M.fazer('vf', 'Não só a origem',
+ M.fazer('vf', f'A regra e o artigo{NB}13.º',
          'A regra do intervalo não pergunta de onde vem cada aluno. Por isso, fica fora do artigo 13.º, n.º 2.',
          'Como a regra não fala do país de onde vem ninguém, o artigo 13.º, n.º 2, não tem a ver com ela.',
-         'É falso: na lista do artigo 13.º, n.º 2, a «língua» vem antes do «território de origem». Uma regra sobre a língua que se fala '
+         'É falso: a lista do artigo 13.º, n.º 2, tem a «língua», além do «território de origem». Uma regra sobre a língua que se fala '
          'pode prejudicar alguém em razão dela, sem perguntar de onde vem.',
          4, 'aplicar', 'igualdade', v=False, l='a13',
          citacoes=[('crp-13-2', 'língua'), ('crp-13-2', 'território de origem')],
@@ -195,12 +199,12 @@ CARTOES = [
          'Caso inventado: um inquérito da câmara pede a religião de cada pessoa, com o nome e a morada, «para estatística». O artigo '
          '41.º, n.º 3, permite-o?',
          'Uma câmara municipal quer saber a religião de cada pessoa, com o nome e a morada, para fazer estatística. O artigo 41.º, n.º 3, '
-         'deixa?',
+         'permite-o?',
          'Não: com nome e morada, cada resposta identifica alguém.',
          [('Sim: sendo para estatística, a pergunta é permitida.',
            'A exceção não é só ser para estatística: os dados têm de ser «não individualmente identificáveis». Com o nome e a morada, '
            'cada resposta diz quem é quem. Relê o fim da exceção.'),
-          ('Sim, se quem não responder não ficar prejudicado.',
+          ('Sim: basta que quem não responder não fique prejudicado.',
            'Não ser «prejudicado por se recusar a responder» é outra proteção, que se junta à primeira; não torna a pergunta permitida. '
            'Relê a exceção até ao fim.')],
          'A exceção vale só para «dados estatísticos não individualmente identificáveis». Com o nome e a morada, as respostas identificam '
@@ -215,10 +219,10 @@ CARTOES = [
          'Caso inventado: para uma visita a uma empresa, a escola escolhe só alunos vindos de fora, «porque são mais trabalhadores». É '
          'um elogio. Pelo artigo 13.º, n.º 2, há problema?',
          'A escola leva à visita só os alunos vindos de fora, por serem «mais trabalhadores». Por ser um elogio, o artigo 13.º, n.º 2, '
-         'deixa?',
+         'permite-o?',
          'Sim: ninguém pode ser beneficiado em razão da origem.',
          [('Não: o artigo só proíbe prejudicar, e ninguém perde.',
-           'O artigo 13.º, n.º 2, começa por «privilegiado, beneficiado»: favorecer pela origem também conta. E quem fica sem a visita '
+           'A lista do artigo 13.º, n.º 2, abre com «privilegiado, beneficiado»: favorecer pela origem também conta. E quem fica sem a visita '
            'perde. Relê o início do artigo.'),
           ('Não: é um elogio a esses alunos, não uma ofensa.',
            'Um elogio pela origem continua a tratar cada aluno pelo sítio de onde vem, e não pelo que faz. Relê o artigo 13.º, n.º 2, '
@@ -227,15 +231,15 @@ CARTOES = [
          'mesmo com um elogio, trata cada aluno pelo sítio de onde vem.',
          4, 'transferir', 'estereótipo',
          citacoes=[('crp-13-2', 'privilegiado, beneficiado'), ('crp-13-2', 'território de origem')],
-         pista='Relê o artigo inteiro e conta as maneiras de tratar alguém de forma diferente.'),
+         pista=f'Relê o artigo{NB}13.º, n.º{NB}2, desde a primeira palavra, e volta à escolha da escola.'),
  # Conceito (uma vez): facto, dado, opinião e estereótipo, em tabela (decisão 152). Os exemplos não são os dos cartões 17 e 19.
  M.conceito('Facto, dado, opinião, estereótipo',
             '<p>«Quem vem de fora não quer aprender português.» Soa a facto. É?</p>',
-            '<table class="tabela"><thead><tr><th scope="col">Frase</th><th scope="col">Como se confere</th></tr></thead><tbody>'
-            '<tr><td data-th="Frase">facto</td><td data-th="Como se confere">vendo ou ouvindo</td></tr>'
-            '<tr><td data-th="Frase">dado</td><td data-th="Como se confere">na fonte do número</td></tr>'
-            '<tr><td data-th="Frase">opinião</td><td data-th="Como se confere">não se confere: discute-se</td></tr>'
-            '<tr><td data-th="Frase">estereótipo</td><td data-th="Como se confere">não se confere: põe todos na mesma ideia</td></tr>'
+            '<table class="tabela"><thead><tr><th scope="col">Tipo de frase</th><th scope="col">Como se confere</th></tr></thead><tbody>'
+            '<tr><td data-th="Tipo de frase">facto</td><td data-th="Como se confere">vendo ou ouvindo</td></tr>'
+            '<tr><td data-th="Tipo de frase">dado</td><td data-th="Como se confere">na fonte do número</td></tr>'
+            '<tr><td data-th="Tipo de frase">opinião</td><td data-th="Como se confere">não se confere: discute-se</td></tr>'
+            '<tr><td data-th="Tipo de frase">estereótipo</td><td data-th="Como se confere">não se confere: generaliza sem provas</td></tr>'
             '</tbody></table>',
             'Estereótipo', 'Uma ideia feita, igual para todos os de uma origem, língua ou religião.',
             '<p>Mesmo um elogio: «quem vem de fora é trabalhador» também é um estereótipo.</p>'),
@@ -244,30 +248,38 @@ CARTOES = [
  M.fazer('emparelhar', 'Um momento ou um traço',
          'Caso inventado: à porta, a Leonor guarda um envelope ao ver os colegas e pede para falar depois. O Rui: «Nunca queres '
          'participar.» O que é cada frase?',
-         'A Leonor esconde um envelope e pede para falar depois; o Rui diz «Nunca queres participar». Liga cada frase ao que ela é.',
+         'A Leonor guarda um envelope e pede para falar depois; o Rui diz «Nunca queres participar». Liga cada frase ao que ela é.',
          'Guardar o envelope e pedir para falar depois vê-se na cena. «Nunca» faz de um momento um traço de carácter, como o estereótipo '
-         'faz com quem vem de fora. «Talvez» abre uma hipótese, que se confirma perguntando.',
+         'faz com quem vem de fora. Que ela prefira falar a sós é uma hipótese, que se confirma perguntando.',
          3, 'transferir', 'observação e interpretação', origem='cidadania/m1/sessoes/01/',
          pares=[['A Leonor guarda o envelope e pede para falar depois.', 'O que a cena mostra'],
                 ['«Nunca queres participar.»', 'Um momento tornado traço de carácter'],
-                ['Talvez ela queira falar a sós.', 'Uma hipótese, que se pode pôr à prova']],
+                ['Ela prefere falar sem os colegas por perto.', 'Uma hipótese, que se pode pôr à prova']],
          fe='A confusão mais provável é tomar «Nunca queres participar» pelo que se viu. O Rui viu um momento; «nunca» fala de todos. Na '
             'sessão 01, viste que isso já é uma interpretação.',
          pista='Pergunta a cada frase: viu-se, ou alguém o concluiu?'),
- # Transferir 2 e caso real (decisão 161): Osmanoğlu e Kocabaş c. Suíça (TEDH, 2017), contado por palavras nossas, sem citar. O erro
- # que se trata: uma regra que pesa mais sobre alguns cai sempre (a s03 levada longe de mais); o Tribunal pesou e decidiu o contrário.
- M.fazer('vf', 'Uma regra com adaptações',
-         'Caso real (Tribunal Europeu dos Direitos Humanos, 2017): a natação mista era obrigatória; a escola deixou duas alunas de família '
-         'muçulmana nadar de burkini. O Tribunal deu razão aos pais.',
-         'Caso real (Tribunal Europeu dos Direitos Humanos, 2017): uma escola suíça manteve a natação mista obrigatória, com burkini. Os '
-         'pais pediram dispensa para as filhas, e o Tribunal deu-lhes razão.',
-         'É falso: o Tribunal decidiu, por unanimidade, que não houve violação da liberdade de religião. Pesou aprender em conjunto, e '
-         'pesaram as adaptações: o burkini e o balneário sem rapazes. Um efeito desigual obriga a pesar; não decide sozinho.',
-         4, 'transferir', 'regra comum e adaptação', v=False,
-         fe='Uma regra que pesa mais sobre alguns não cai só por isso: pesa-se. Aqui, as autoridades ouviram os pais e adaptaram a aula '
-            'sem dispensar as alunas. Volta ao que a escola ofereceu.',
-         liga=[{'t': 'Ler o acórdão no HUDOC, Osmanoğlu e Kocabaş c. Suíça, 10/01/2017 (em inglês)', 'href': HUDOC}],
-         pista='Pensa no que a escola fez antes de o caso chegar ao Tribunal.'),
+ # Transferir 2 e caso real (decisão 161): Osmanoğlu e Kocabaş c. Suíça (TEDH, 2017), contado por palavras nossas, sem citar.
+ # 07/11/2026 (revisão): passa de V/F a escolha, como na s06 e na s07: o cartão dá a decisão e pergunta porquê (o V/F pedia para
+ # adivinhar o veredicto). Os erros que se tratam: uma regra igual não se discute (os pais levaram-na ao Tribunal) e a liberdade de
+ # religião não protege o que os pais ensinam (o Tribunal aceitou a interferência, § 42). As adaptações são as que o § 101 diz
+ # «oferecidas», sem lhes dar causa.
+ escolha('A natação obrigatória',
+         'Caso real (Tribunal Europeu dos Direitos Humanos, 2017): sem dispensa da natação mista, duas alunas de família muçulmana podiam '
+         'nadar de burkini. O Tribunal não viu violação. Porquê?',
+         'Caso real (Tribunal Europeu dos Direitos Humanos, 2017): duas alunas não foram dispensadas da natação mista, mas podiam usar '
+         'burkini. O Tribunal não viu violação. Porquê?',
+         'Pesou aprender em conjunto, e a escola adaptou a aula sem dispensar ninguém.',
+         [('Uma regra que é igual para todos não se pode contestar num tribunal.',
+           'Pode: os pais contestaram-na até ao Tribunal, que pesou as razões dos dois lados. Uma regra igual também se discute. Volta ao '
+           'que pesou contra a dispensa.'),
+          ('A liberdade de religião não protege o que os pais ensinam aos filhos.',
+           'Protege: o Tribunal aceitou que a recusa da dispensa interferia na liberdade de religião dos pais (§ 42). Mesmo assim, pesou '
+           'outras razões. Volta às adaptações.')],
+         'O Tribunal aceitou a interferência, mas pesou aprender em conjunto e as adaptações, o burkini e o balneário sem rapazes. Um '
+         'efeito desigual obriga a pesar; não decide sozinho.',
+         4, 'transferir', 'regra comum e adaptação',
+         liga=[{'t': 'Ler o acórdão no HUDOC (10/01/2017, em inglês)', 'href': HUDOC}],
+         pista='Lê cada razão e pergunta-te se o caso, como o cartão o conta, a sustenta.'),
  # ---------------------------------------------------------------- parte 2, pesar e escrever (50 minutos)
  # Volta ao caso: duas razões que chocam (proteger quem foi gozado e deixar a Mariana falar com a irmã).
  M.volta('A razão da direção',
@@ -283,7 +295,7 @@ CARTOES = [
          'É uma dúvida para o papel.',
          3, 'aplicar', 'facto e dúvida', v=False,
          fe='A queixa diz o que aconteceu uma vez; não diz o que a regra mudaria. Separa o que está no caso do que se espera da regra.',
-         pista='Separa o que a queixa conta do que a regra promete.'),
+         pista='Relê a queixa na Volta ao caso: o que conta ela, e quantas vezes aconteceu?'),
  M.em_turma(DECIDE_Q, [
      ('Quem acha que sim', 'Um aluno foi gozado numa língua que não percebia. Uma língua comum pode evitar que se repita.'),
      ('Quem acha que não', f'A irmã da Mariana não percebe português, e o artigo 30.º fala de '
@@ -293,7 +305,7 @@ CARTOES = [
       'Quanto tempo': 'Três minutos; em turma, até treze.',
       'O que fica escrito': 'Nada em papel; a escolha fica nos artefactos.',
       'Se estás sozinho': 'Compara com a escolha do início e abre os três lados.'},
-     prova=('O que pesa mais?', ('A queixa do aluno', 'A irmã da Mariana', 'O artigo 30.º')),
+     prova=('O que pesa mais?', ('A queixa do aluno', 'A irmã da Mariana', f'O artigo{NB}30.º')),
      intro='', nota=None),
  M.fazer('emparelhar', 'Facto, princípio, opinião ou estereótipo',
          'Liga cada frase ao que ela é numa justificação.',
@@ -310,51 +322,54 @@ CARTOES = [
             'para ninguém. Pergunta a cada frase de onde vem e como se confere.',
          pista='Pergunta a cada frase de onde vem e quem a diz.'),
  M.fazer('ordenar', 'A justificação por ordem',
-         'Põe a justificação por ordem, do que aconteceu ao que ainda falta saber.',
-         'Ordena a justificação: começa no que se sabe e acaba no que ainda está por saber.',
+         'Põe a justificação por ordem: cada passo tem de se apoiar no que vem antes.',
+         'Ordena os quatro passos, de modo que cada um se apoie no anterior.',
          'Facto, fonte, aplicação, limite: cada passo apoia-se no anterior, e o limite diz até onde a conclusão pode ir.',
          4, 'aplicar', 'facto, fonte, aplicação, limite',
          passos=['A irmã da Mariana chegou há dois meses e ainda não percebe português.',
-                 'A Convenção protege o direito de cada criança de uma minoria utilizar a sua própria língua.',
+                 'A Convenção diz que nenhuma criança de uma minoria pode ser privada do direito de utilizar a sua própria língua.',
                  'Com a regra, a Mariana deixa de poder falar com a irmã no intervalo.',
                  'Falta saber se só falar português no intervalo evitaria o gozo.'],
          fe='A confusão mais provável é começar pelo artigo ou pôr o que falta saber antes da aplicação. Começa no que aconteceu; o que '
             'falta saber fecha a justificação.',
          pista='Pergunta-te o que tem de vir primeiro para o resto se apoiar.'),
- # Charneira 2, no apoio que se retira (sessões 08 a 10): encontrar a conclusão que vai além das provas. A que excede é um estereótipo
- # tirado de um episódio; o erro esperado é escolher uma das que o caso sustenta.
+ # Charneira 2, no apoio que se retira (sessões 08 a 10): encontrar a conclusão que vai além das provas. 07/11/2026 (revisão): a que
+ # excede é uma ideia feita ligada ao lado «sim» do Decide (falar nepalês atrasa o português da irmã), que nenhuma frase do caso
+ # sustenta; as outras duas estão no caso, por outras palavras. O erro esperado é escolher uma das que o caso sustenta.
  escolha('A conclusão que vai longe de mais',
          'Só uma destas conclusões vai além do que o caso mostra. Encontra-a.',
          'Uma destas conclusões diz mais do que as provas do caso permitem. Encontra-a.',
-         'Quem fala romeno na escola costuma gozar com os outros.',
-         [('A irmã da Mariana ainda não percebe português.',
-           'Está no caso: a Mariana escreveu-o no átrio. Procura a conclusão que fala de mais pessoas do que aquelas de quem o caso fala.'),
-          ('A diretora explica a regra com a queixa de um aluno.',
-           'Está no caso: a diretora fala da queixa da semana passada para explicar a regra. Procura a conclusão que passa de um episódio '
-           'para muitas pessoas.')],
-         'Uma queixa sobre dois colegas não diz nada de todos os que falam romeno: é um estereótipo com ar de conclusão. As outras duas '
-         'dizem só o que o caso conta.',
+         'Falar nepalês no intervalo atrasa o português da irmã.',
+         [('A irmã da Mariana chegou à escola há pouco tempo.',
+           'Está no caso: a Mariana escreveu que a irmã chegou há dois meses. Procura a conclusão que junta ao caso uma ideia que ninguém '
+           'provou.'),
+          ('A diretora propõe a regra a pensar na queixa de um aluno.',
+           'Está no caso: a diretora explica a regra com a queixa da semana passada. Procura a conclusão que nenhuma frase do caso '
+           'sustenta.')],
+         'Ninguém no caso diz que falar nepalês atrasa o português da irmã: é uma ideia feita com ar de conclusão. As outras duas estão '
+         'no caso.',
          3, 'aplicar', 'conclusão e provas', pista='Para cada conclusão, procura no caso a frase que a sustenta.'),
  M.papel(PERGUNTA,
-         ['A tua conclusão, por agora: a regra deve avançar, mudar ou cair?',
+         ['A tua conclusão: a regra deve avançar, mudar ou cair?',
           'Uma prova: um facto do caso e uma expressão exata, entre aspas, com o artigo.',
           'Uma dúvida que ainda tens.'],
          ['A conclusão responde à pergunta sem ir além das provas.',
           'A prova junta um facto a uma expressão exata, com o artigo.',
           'A dúvida, respondida, podia mudar a conclusão.'],
-         '<p>Outro caso, inventado: o clube de teatro só aceita inscrições pelo telemóvel.</p><ol>'
+         '<p>Caso inventado: o clube de teatro só aceita inscrições pelo telemóvel.</p><ol>'
          '<li>Conclusão: deve haver também inscrição em papel.</li>'
-         f'<li>Prova: dois alunos não têm telemóvel; ninguém pode ser {M.citado("crp-13-2", "prejudicado")} em razão da '
+         f'<li>Prova: dois alunos não têm telemóvel, por falta de dinheiro; ninguém pode ser '
+         f'{M.citado("crp-13-2", "prejudicado")} em razão da '
          f'{M.citado("crp-13-2", "situação económica")} (artigo 13.º, n.º 2).</li>'
          '<li>Dúvida: quantos ficam de fora?</li></ol>',
-         'Num papel pequeno, sozinho e sem telemóvel.',
+         'Num papel pequeno, sozinho, sem telemóvel.',
          relogio_min=12),
  M.levar(FRASE, ['Um estereótipo diz o mesmo de todos; cada pessoa é mais.',
                  'Uma regra que pesa mais sobre alguns obriga a pesar razões; não cai só por isso.']),
 ]
 
 # o lugar da certa em cada escolha (0, 1 ou 2), com a semente do motor: nunca o mesmo em mais de metade, nem três seguidos
-LUGARES = (1, 2, 0, 2, 1)
+LUGARES = (1, 2, 0, 2, 0, 1)  # 07/11/2026 (revisão): o cartão 15 passa a escolha (a 5.ª)
 
 # O passo do projeto (plano, secção 3: «guião, versão 2, com a voz de quem discorda e a fonte», piloto 18). O que se diz do guião é o
 # que a página do projeto já diz (cidadania/projeto/, «As fases»: no guião, tornar localizáveis as fontes das falas).
@@ -378,7 +393,8 @@ def sessao():
                         'Assembleia da República n.º 20/90, no Diário da República. Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e '
                         'Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão de 10 de janeiro de 2017 (HUDOC, texto inglês). Fotografia: Lewis '
                         'Hine, _Immigrant Family in the Baggage Room of Ellis Island_, 1905, Museum of Fine Arts, Houston, domínio público. '
-                        'David Foster Wallace, discurso no Kenyon College, 2005 (#84, s09). O caso do intervalo, o da visita de estudo, o do '
+                        'David Foster Wallace, _This Is Water_, discurso aos finalistas do Kenyon College, 2005, no texto publicado pelo Kenyon '
+                        'College. O caso do intervalo, o da visita de estudo, o do '
                         'inquérito da câmara, o da visita à empresa, o da Leonor e do Rui e o do clube de teatro são inventados; o da '
                         'natação em Basileia é real.'),
         'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},

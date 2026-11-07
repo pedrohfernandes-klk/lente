@@ -864,7 +864,8 @@ GUIA = {
    8: 'Ler em voz alta o artigo 13.º, n.º 2, e o artigo 30.º da Convenção, uma vez cada; perguntar o que cada um diz sobre a língua.',
    12: 'Charneira 1 (ver abaixo): dedos no ar, um, dois ou três, pela ordem das opções no ecrã.',
    13: 'O docente explica com a projeção, passo a passo, no máximo 6 minutos.',
-   15: 'O caso é real: vale a pena abrir o acórdão no HUDOC na projeção (ligação no retorno) e mostrar a data e o dispositivo.',
+   # 07/11/2026 (revisão): o cartão 15 passa a escolha (dá a decisão e pergunta porquê).
+   15: 'O caso é real: vale a pena abrir o acórdão no HUDOC na projeção (ligação no retorno) e mostrar a data e o dispositivo. O cartão dá a decisão e pergunta porquê.',
    16: 'Projetado e lido em voz alta. Numa segunda aula de 90 minutos, recomeça-se aqui.',
    18: 'Ver «Como conduzir o “Em turma”».',
    21: 'Charneira 2 (ver abaixo).',
@@ -882,8 +883,9 @@ GUIA = {
   'em_turma': [
    'Um minuto em silêncio: cada aluno decide outra vez no cartão e escolhe o que mais pesa (a queixa do aluno, a irmã da Mariana ou o artigo 30.º).',
    'Nova contagem de braço no ar, escrita ao lado dos números do Decide: quem mudou, e porquê. Depois, a contagem do que pesa mais.',
-   'Seis minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo). Quem defende a regra tem de responder à irmã da Mariana; quem a recusa tem de responder à queixa do aluno gozado.',
-   'Três voluntários mostram dois minutos do seu guião (plano, secção 3); a turma diz de quem é a voz e que voz falta. Ninguém é obrigado a mostrar.',
+   # 07/11/2026 (revisão): o «Em turma» cabe nos 13 minutos; os voluntários ficam como momento opcional.
+   'Quatro minutos: duas vozes por lado, cada uma com uma prova do material (uma expressão entre aspas, com o artigo). Quem defende a regra tem de responder à irmã da Mariana; quem a recusa tem de responder à queixa do aluno gozado.',
+   'Se houver tempo (opcional): dois voluntários mostram dois minutos do seu guião; a turma diz de quem é a voz que se ouve e quem fica sem voz. Ninguém é obrigado a mostrar.',
    'No quadro, três colunas: o que sabemos, o que falta saber, o que pesa mais neste caso.',
    'Regra: fala-se do que se viu, nunca de quem. Ninguém fala da língua ou da religião de um colega. Se a turma se dividir, não se fecha: a posição vai para o papel.',
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa compara com a escolha do início e abre os três lados.',
@@ -891,8 +893,9 @@ GUIA = {
   'charneiras': [
    (12, '«Não: o artigo só proíbe prejudicar, e ninguém perde» ou «Não: é um elogio a esses alunos, não uma ofensa» (o estereótipo que parece elogio).',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler o artigo 13.º, n.º 2, desde «privilegiado, beneficiado». Pergunta: «Quem fica sem a visita, e porquê?»'),
-   (21, '«A irmã da Mariana ainda não percebe português» ou «A diretora explica a regra com a queixa de um aluno» (parecem pouco, mas o caso sustenta-as). A certa, «Quem fala romeno na escola costuma gozar com os outros», passa de dois colegas para todos os que falam romeno: é um estereótipo com ar de conclusão.',
-    'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Uma queixa sobre dois colegas não diz nada dos outros.'),
+   # 07/11/2026 (revisão): a charneira 2 troca as opções (a certa é a ideia feita que nenhuma frase do caso sustenta).
+   (21, '«A irmã da Mariana chegou à escola há pouco tempo» ou «A diretora propõe a regra a pensar na queixa de um aluno» (parecem pouco, mas o caso sustenta-as). A certa, «Falar nepalês no intervalo atrasa o português da irmã», junta ao caso uma ideia que ninguém provou: é uma ideia feita com ar de conclusão.',
+    'Se mais de um terço erra, perguntar, frase a frase, de onde vem a prova: «Onde está escrito isto?» Ninguém no caso diz o que falar nepalês faz ao português da irmã.'),
   ],
   'papel': ['A conclusão responde à pergunta sem ir além das provas.', 'A prova junta um facto do caso a uma expressão exata, entre aspas, com o artigo.',
             'A dúvida é verdadeira: se tivesse resposta, podia mudar a conclusão.'],
@@ -915,18 +918,22 @@ GUIA = {
   'imprimir': ['Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
                'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 14 exercícios sem as respostas e o papel.',
                'Nada mais: a lição projeta-se.'],
-  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, Osmanoğlu e Kocabaş c. Suíça, queixa n.º 29086/12, acórdão '
+  'caso_real': ('O caso do cartão 15 é real: Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e Kocabaş c. Suíça_, queixa n.º 29086/12, acórdão '
                 'de 10 de janeiro de 2017 (HUDOC, texto inglês; não há versão portuguesa). O acórdão diz que a natação era parte obrigatória do '
                 'currículo da escola primária em Basileia, sem dispensa até à puberdade (§ 9); que os pais, muçulmanos devotos, recusaram mandar '
-                'as duas filhas às aulas mistas (§ 9); que as autoridades ofereceram o burkini e balneários sem rapazes (§ 101); que pesaram o '
+                'as duas filhas às aulas mistas (§ 9); que a recusa da dispensa interferia na liberdade de religião dos pais (§ 42); que as '
+                'autoridades ofereceram o burkini e balneários sem rapazes (§ 101); que pesaram o '
                 'papel da escola na integração e o valor de aprender em conjunto (§§ 96 a 100); e conclui, por unanimidade, que não houve '
                 'violação do artigo 9.º (liberdade de religião). O cartão conta isto por palavras nossas, sem citar.'),
   'notas': ['O caso do intervalo, o da visita de estudo, o do inquérito da câmara, o da visita à empresa, o da Leonor e do Rui e o do clube de '
             'teatro são inventados e assim se diz. Ninguém escreve nem fala sobre um colega identificável, nem sobre a língua ou a religião de '
             'um colega.',
-            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, «Can stereotypes ever be good?») não foi visto '
+            'Sem vídeo (decisão 155). O plano não propõe candidato; o vídeo do piloto (TED-Ed, _Can stereotypes ever be good?_) não foi visto '
             'por inteiro e sai.',
-            'Recupera 1: This Is Water, o discurso de David Foster Wallace no Kenyon College, em 2005 (#84, s09), contado por palavras nossas. '
+            # 07/11/2026 (revisão): o R1 confere com o texto publicado pelo Kenyon College.
+            'Recupera 1: _This Is Water_, o discurso de David Foster Wallace aos finalistas do Kenyon College, em 2005 (#84, s09), contado por '
+            'palavras nossas; a história confere com o texto publicado pelo Kenyon College (kenyon.edu/news/archive/this-is-water, aberto a '
+            '7/11/2026). '
             'Recupera 2: a regra igual com efeito desigual, da sessão 03 (conta o efeito).',
             'Olha: o ficheiro é o do piloto, que o plano nomeia (Lewis Hine, 1905, Museum of Fine Arts, Houston; domínio público, registo do '
             'Wikimedia Commons aberto a 7/11/2026). O título do museu não diz de que país vinha a família.',
