@@ -2,7 +2,7 @@
 // (propostas F2 e F4 de melhorias-ngg/fundos.md). Cada fundo é um elemento com data-fundo="<prefixo>" e
 // data-fundo-ciclo="<segundos de um ciclo>"; o desenho parado está escrito no SVG e o movimento é a classe <prefixo>-anda.
 // Pára: fora do ecrã e com o separador escondido (em pausa), ao fim de dois ciclos e quando o aluno carrega em
-// «Parar o desenho» (vale para esta visita: o motor não grava nada no aparelho).
+// «Parar a animação» (vale para esta visita: o motor não grava nada no aparelho). 07/11/2026: decisão 177, era «Parar o desenho».
 // Nunca anda: com movimento reduzido, na projeção (mesmo que a marca chegue depois de carregar), com poupança de dados
 // ou com pouca memória. Sem este script, fica o desenho parado e o botão escondido.
 (function () {
@@ -20,7 +20,7 @@
     var p = f.getAttribute('data-fundo'), ciclo = (+f.getAttribute('data-fundo-ciclo') || 40) * 1000;
     var botao = document.querySelector('[data-fundo-botao="' + p + '"]'), relogio = null, visivel = true;
     function anda() { return f.classList.contains(p + '-anda'); }
-    function texto() { if (botao) botao.textContent = anda() ? 'Parar o desenho' : 'Pôr o desenho a andar'; }
+    function texto() { if (botao) botao.textContent = anda() ? 'Parar a animação' : 'Retomar a animação'; }
     function parar() { clearTimeout(relogio); f.classList.remove(p + '-anda'); texto(); }
     function arrancar() {
       if (projetada()) return desligar();

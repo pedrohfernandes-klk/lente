@@ -79,7 +79,8 @@ class FundoCarris(unittest.TestCase):
         # 07/11/2026: decisão 175, o crédito passa do parágrafo para trás do «i» (a peça comum da decisão 153): logo a seguir à
         # abertura, que acaba no texto alternativo do desenho, vem a linha dos fundos, com o botão fora do «i» e o crédito dentro.
         self.assertIn('</svg></div><span class="jc-alt" role="img" aria-label="Duas vias possíveis, sem desfecho."></span></header>'
-                      '<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button>'
+                      # 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão passa a «Parar a animação».
+                      '<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar a animação</button>'
                       '<details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary>'
                       '<p class="info-i-texto">' + GERADOR.CREDITO + '</p></details></div>\n<h2>Quem é</h2>', HTML)
         self.assertNotIn('jc-credito', HTML)  # 07/11/2026: decisão 175, o parágrafo do crédito saiu.
@@ -484,7 +485,8 @@ class Movimento175(unittest.TestCase):
         linha = re.search(r'<div class="fundo-acoes jc-acoes">(.*?)</details></div>', HTML, re.S).group(1)
         botao, resto = linha.split('<details', 1)
         # «Parar o desenho» antes do «i» e fora dele (WCAG 2.2.2); escondido sem script, como os outros fundos.
-        self.assertEqual(botao, '<button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button>')
+        # 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão passa a «Parar a animação».
+        self.assertEqual(botao, '<button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar a animação</button>')
         self.assertNotIn('fundo-botao', resto)
         self.assertEqual(HTML.count('data-fundo-botao="jc"'), 1)
         # O «i» fechado ao carregar (sem open), com nome para quem usa leitor de ecrã, e só a letra à vista no summary.

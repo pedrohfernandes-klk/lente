@@ -119,7 +119,7 @@ ALT_HTML='<span class="jc-alt" role="img" aria-label="'+ALT+'"></span>'
 # plano-creditos-i-20261105.md, 1.1): «Parar o desenho» à esquerda, sempre à vista e fora do «i»; o «i» à direita, fechado,
 # com o crédito inteiro dentro. A <details> funciona sem JavaScript; o assets/info-i.js fecha-a com Escape, com um toque fora
 # e na projeção.
-ACOES=('<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar o desenho</button>'
+ACOES=('<div class="fundo-acoes jc-acoes"><button type="button" class="fundo-botao" data-fundo-botao="jc" hidden>Parar a animação</button>'
        '<details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary>'
        '<p class="info-i-texto">'+CREDITO+'</p></details></div>')
 # A peça comum, na versão que as outras páginas do Lente já carregam.

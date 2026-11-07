@@ -25,7 +25,8 @@ try{
    // 05/11/2026: decisão 142. A aproximação da fotografia e as duas vias, cada uma uma só vez, em 36 s.
    // 06/11/2026: decisão 170. Lista fechada: mais a alavanca, as duas lâminas e os quatro sinais de alerta, todos uma só vez em 36 s.
    // 07/11/2026: decisão 175, saem os quatro sinais de alerta e entra o elétrico que avança (jc-avanca), também uma só vez em 36 s.
-   assert.deepEqual([...m.animations].sort((x,y)=>x.name.localeCompare(y.name)),['jc-agulha-longe','jc-agulha-perto','jc-alavanca','jc-aproxima','jc-avanca','jc-via-a','jc-via-b'].map(name=>({name,duration:36000,iterations:1})));assert.equal(await button.textContent(),'Parar o desenho');
+   // 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão diz «Parar a animação» e, parado, «Retomar a animação».
+   assert.deepEqual([...m.animations].sort((x,y)=>x.name.localeCompare(y.name)),['jc-agulha-longe','jc-agulha-perto','jc-alavanca','jc-aproxima','jc-avanca','jc-via-a','jc-via-b'].map(name=>({name,duration:36000,iterations:1})));assert.equal(await button.textContent(),'Parar a animação');
    // 07/11/2026: decisão 175. O «i» fechado ao carregar; «Parar o desenho» à vista e fora dele enquanto o desenho anda; o «i»
    // abre com o teclado (Enter) e mostra o crédito inteiro; o botão continua à vista; Escape fecha e devolve o foco ao «i».
    {const c0=await p.evaluate(credito);assert.equal(c0.aberto,false,'o «i» fechado ao carregar');assert.equal(c0.textoVisivel,false);assert.equal(c0.nome,'Créditos da colagem');assert.ok(c0.botaoFora&&c0.botaoVisivel&&c0.iVisivel,'botão e «i» à vista, o botão fora do «i»: '+JSON.stringify(c0));
@@ -67,8 +68,10 @@ try{
    for(const t of [30000,36000,71999]){perto(em(t).va,1,'via a direito no fim');perto(em(t).vb,1,'via que curva no fim')}
    // 06/11/2026: decisão 170. «Parar o desenho» pára logo e volta à cena neutra, a meio do gesto da alavanca.
    await f.evaluate(e=>e.getAnimations({subtree:true}).forEach(a=>{a.currentTime=9540}));
-   await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.deepEqual(await f.evaluate(neutra),NEUTRA,'parado: cena neutra');assert.equal(await button.textContent(),'Pôr o desenho a andar');
-   await button.click();await p.clock.fastForward(72001);assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0,'pára depois de dois ciclos');assert.equal(await button.textContent(),'Pôr o desenho a andar');
+   // 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão diz «Parar a animação» e, parado, «Retomar a animação».
+   await button.focus();await p.keyboard.press('Enter');assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0);assert.deepEqual(await f.evaluate(neutra),NEUTRA,'parado: cena neutra');assert.equal(await button.textContent(),'Retomar a animação');
+   // 07/11/2026: decisão 177 (docente: «parar desenho» soa muito mal). O botão diz «Parar a animação» e, parado, «Retomar a animação».
+   await button.click();await p.clock.fastForward(72001);assert.equal(await f.evaluate(e=>e.getAnimations({subtree:true}).length),0,'pára depois de dois ciclos');assert.equal(await button.textContent(),'Retomar a animação');
    await button.click();await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'))});assert.ok(await f.evaluate(e=>e.classList.contains('fundo-pausa')));assert.equal(await p.locator('.jc-eletrico').evaluate(e=>getComputedStyle(e).animationPlayState),'paused');
    await p.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'))});await p.locator('main>nav').scrollIntoViewIfNeeded();await p.evaluate(()=>scrollTo(0,document.documentElement.scrollHeight));await p.waitForTimeout(80);assert.ok(await f.evaluate(e=>e.classList.contains('fundo-pausa')),'pausa fora do ecrã');await f.scrollIntoViewIfNeeded();await p.waitForTimeout(80);await button.click();
   }
