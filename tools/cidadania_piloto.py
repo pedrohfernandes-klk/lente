@@ -881,7 +881,8 @@ GUIA = {
    3: 'Quando todos acabam, projeta-se e toca-se em «Mostrar resposta». Devolve-se o papel da sessão 09.',
    4: 'Os cartões 4 a 6 recuperam as sessões 02, 06 e 09; cada retorno nomeia a sessão de origem.',
    7: 'Projetado grande. Os pormenores (o desenho dos prédios, as palavras do cartaz) só se apontam depois do cartão 8.',
-   8: 'O caso é real: vale a pena abrir na projeção o registo da Library of Congress (ligação no retorno).',
+   # 07/11/2026 (revisão): o registo da Library of Congress não se abriu; o cartão 8 deixa de se apresentar como caso real.
+   8: 'O registo do cartaz na Library of Congress não se conferiu: a sessão não tem caso real confirmado (ver «O caso real», abaixo).',
    9: 'Ler a tabela em voz alta, uma linha de cada vez; cada aluno escolhe dois arranques para a sua defesa.',
    10: 'Charneira 1 (ver abaixo): dedos no ar, um, dois ou três, pela ordem das respostas no ecrã.',
    11: 'Ver «Como conduzir a mostra». A pausa fica a meio da mostra.',
@@ -900,7 +901,8 @@ GUIA = {
    'Antes da primeira mostra: a ordem afixada e o relógio projetado, com 3 minutos de mostra e 2 de defesa por aluno (decisão 159).',
    'Cada aluno mostra a sua peça em três minutos. Na defesa, uma objeção do público ou, se não houver, a do Abre («Isso é só a tua opinião»); o aluno responde em dois minutos, com uma prova e um limite.',
    'Regra: fala-se do que se viu, nunca de quem. Uma objeção diz o que falta à peça, não o que falta à pessoa.',
-   'A mostra ocupa as duas metades da sessão, com a pausa a meio: 105 minutos dão 21 alunos a 5 minutos cada. Numa turma maior, o que fazer com as mostras que não couberem fica a confirmar (plano, secção 3: cerca de 125 minutos).',
+   # 07/11/2026 (revisão): 120 minutos para a mostra (decisão 159: cerca de 125 minutos para a turma).
+   'A mostra ocupa as duas metades da sessão, com a pausa a meio: 120 minutos dão 24 alunos a 5 minutos cada (decisão 159).',
    'Depois da última mostra, um minuto em silêncio: cada aluno decide outra vez no cartão. Nova contagem de braço no ar, ao lado dos números do Decide: quem mudou, e porquê.',
    'O cartão acaba-se sozinho (decisão 154): quem faltou ou faz a sessão em casa mostra a peça em voz alta, com o relógio, e responde em dois minutos à objeção do início.',
   ],
@@ -908,7 +910,7 @@ GUIA = {
    (10, '«Tenho direito à minha opinião, como toda a gente» (parece defender, mas aceita a objeção) ou «Acredito mesmo nisto e defendi-o com convicção» (a convicção não é prova).',
     'Se mais de um terço erra, voltar ao Lê na projeção e ler a linha «Esta fonte ajudou-me a compreender…». Pergunta: «O que pode confirmar quem objetou?»'),
    (12, 'Verdadeiro, por achar que admitir um limite estraga a defesa toda.',
-    'Se mais de um terço erra, escrever no quadro as duas provas da Inês (a contagem e as entrevistas) e perguntar de que prova fala o limite.'),
+    'Se mais de um terço erra, escrever no quadro as duas provas da Inês (a contagem e as entrevistas) e perguntar se o limite fala da contagem ou das entrevistas.'),
   ],
   'papel': ['A resposta diz o que o aluno defende depois da objeção, sem ir além das provas.', 'A prova junta um facto à sua fonte, com uma expressão exata entre aspas.',
             'O limite é verdadeiro: se tivesse resposta, podia mudar o que o aluno defende.'],
@@ -922,18 +924,20 @@ GUIA = {
   'grelha': [('Peça fundamentada na investigação', 5), ('Ligação reconhecível às fontes', 4), ('Três minutos, com clareza', 3),
              ('Defesa: resposta à objeção com uma prova', 5), ('Defesa: o limite dito com clareza', 3)],
   'noventa': [
-   'Primeira aula: Ponto de chegada (15 minutos), cartões 1 a 10 (30 minutos) e a primeira metade da mostra (45 minutos).',
-   'Segunda aula: a segunda metade da mostra (60 minutos), depois a decisão do «Em turma» e os cartões 12 a 14 (15 minutos) e a entrega.',
+   # 07/11/2026 (revisão): os tempos novos (cartões 1 a 10 em 20 minutos, a mostra em 120).
+   'Primeira aula: Ponto de chegada (15 minutos), cartões 1 a 10 (20 minutos) e a primeira metade da mostra (55 minutos).',
+   'Segunda aula: a segunda metade da mostra (65 minutos), depois a decisão do «Em turma» e os cartões 12 a 14 (10 minutos) e a entrega.',
    'Durante oito dias, cada telemóvel volta ao cartão onde ficou: na segunda aula, cada aluno abre a sessão e continua no cartão 11.',
   ],
   'imprimir': ['O Ponto de chegada, um por aluno (ligação no fim deste guia).', 'Papéis A6 para «Agora, em papel»: um A4 dá quatro.',
                'A versão para imprimir da sessão, para quem não tem telemóvel, bateria ou rede: os 7 exercícios sem as respostas e o papel.',
                'A ordem das mostras, para afixar.'],
-  'caso_real': ('O caso do cartão 8 é real: o cartaz _Federal Theatre presents «… one-third of a nation»_ (Federal Theatre Project, Adelphi Theatre, '
-                'Nova Iorque, entre 1936 e 1939; Library of Congress, LCCN 95509661). O cartão diz só o que o cartaz diz: a peça é «a living newspaper '
-                'about housing». O registo da Library of Congress não abriu nesta passagem (desafio a robôs, que não se contornou); leu-se a cópia do '
-                'registo no Wikimedia Commons, com o resumo «Poster for Federal Theatre Project presentation of "...one-third of a nation" at the '
-                'Adelphi Theatre, showing drawing of urban row houses» e «No known restrictions on publication». Fica a confirmar no próprio registo.'),
+  # 07/11/2026 (revisão): sem caso real confirmado (decisão 161: os inventados ficam até haver um caso conferido).
+  'caso_real': ('A sessão 10 não tem caso real confirmado (decisão 161: os casos inventados ficam até haver um caso conferido). O cartão 8 usa o cartaz '
+                '_Federal Theatre presents «… one-third of a nation»_ (Federal Theatre Project, Adelphi Theatre, Nova Iorque, entre 1936 e 1939; Library '
+                'of Congress, LCCN 95509661) e diz só o que o cartaz diz: a peça é «a living newspaper about housing». O registo da Library of Congress '
+                'não abriu (a 7/11/2026, www.loc.gov com desafio a robôs; lccn.loc.gov/95509661 leva ao catálogo, que não mostrou o registo). Leu-se só '
+                'a cópia do registo no Wikimedia Commons, que não é fonte oficial; por isso o cartão não se apresenta como caso real.'),
   'notas': ['Sessão de mostra (plano, secção 2, «Variantes»): núcleo curto, com 7 exercícios, e a mostra individual no «Em turma». O validador conhece a '
             'variante pelo nome («variante»: «mostra»), que só as sessões 10 podem usar.',
             'O caso da Inês, o da Joana, o da ordem das mostras, o da Rita e o da fila do bar são inventados e assim se diz. Ninguém escreve sobre um '
@@ -947,7 +951,10 @@ GUIA = {
             'O enunciado publicado da Pergunta Humana diz «duração de 5–8 minutos»; a mostra de 3 minutos com 2 de defesa segue a decisão 159. O '
             'enunciado não muda aqui.',
             'Cada exercício tem a sua pista (botão «Pista»), escrita para o cartão e conferida pelo validador: nunca dá a resposta.',
-            'Grelha da mostra: proposta da equipa, para o docente rever (indicativa).'],
+            'Grelha da mostra: proposta da equipa, para o docente rever (indicativa).',
+            # 07/11/2026 (revisão): o registo do Prado não abriu.
+            'O registo do Prado do _Sísifo_ (P00426, museodelprado.es) não abriu a 7/11/2026 (o servidor recusou o pedido). O crédito tem os dados do '
+            'registo do Wikimedia Commons; o domínio público é certo (Ticiano morreu em 1576).'],
  },
 }
 
@@ -1261,7 +1268,8 @@ def _frase_molde(S):
             + ' no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. '
             + ('A secção dessa sessão' if len(m) == 1 else 'As secções dessas sessões')
             + ', mais abaixo, ' + ('tem' if len(m) == 1 else 'têm') + ' a tabela dos 180 minutos, cartão a cartão; '
-            + (f'as outras {NUMEROS[resto]} seguem' if resto > 1 else 'a outra segue') + ' o quadro acima até passarem ao molde.'
+            # 07/11/2026 (revisão da s10): com uma só sessão fora do molde, «a outra segue […] até passar ao molde».
+            + (f'as outras {NUMEROS[resto]} seguem o quadro acima até passarem ao molde.' if resto > 1 else 'a outra segue o quadro acima até passar ao molde.')
             # 07/11/2026 (sessão 10 no molde): a sessão de mostra tem menos cartões; a frase di-lo só quando ela já está no molde.
             + (' A sessão 10 é a sessão de mostra: 14 cartões, e o «Em turma» é a mostra individual.'
                if any(x['d'].get('variante') == 'mostra' for x in S if x.get('molde')) else ''))
@@ -1666,6 +1674,9 @@ def pagina_imprimir(s):
             corpo += (f'<div class="ex"><p class="rot">{e(rot)}</p><p><b>{perg[0]}</b></p><p class="resp">☐ Sim &nbsp; ☐ Não &nbsp; ☐ Depende</p>'
                       + ('<p>Escreve, numa linha, a razão que pesa mais para ti.</p><div class="linhas"></div>' if rot == 'Decide' else
                          f'<p>Compara com a tua escolha do início. {perg[1] if len(perg) > 1 else ""} {_opcoes_prova(c)}</p>')
+                      # 07/11/2026 (revisão da s10, decisão 154): na sessão de mostra, o papel diz como se faz a mostra sozinho.
+                      + (''.join(f'<p>Se estás sozinho: {x[:1].lower() + x[1:]}</p>' for x in re.findall(r'<dt>Se estás sozinho</dt><dd>(.*?)</dd>', c['html']))
+                         if mostra and rot == 'Em turma' else '')
                       + '</div>')
             continue
         titulo = f'<p class="rot">{e(rot)}{": " + e(c["titulo"]) if c.get("titulo") and c["titulo"] != rot else ""}</p>'

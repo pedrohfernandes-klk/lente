@@ -1589,15 +1589,32 @@ class SessaoS10(unittest.TestCase):
         # nem a charneira 1 vem escrita no Lê: o Lê dá os arranques, não a resposta à Inês
         le = next(c for c in C if c['rot'] == 'Lê')
         self.assertNotIn('Contei', le['html'])
+        # 07/11/2026 (revisão da s10): nem «Que palavra» nem «qual das» no texto do aluno (regras da casa), e o enunciado da charneira 2
+        # sem o absoluto «nada»
+        txt = L.visivel(json.dumps(C, ensure_ascii=False))
+        self.assertNotRegex(txt, r'(?i)\bque palavra\b|\bqual das\b')
+        self.assertNotIn('nada', C[11]['p2'])
+        # 07/11/2026 (revisão da s10): no ordenar do R3, o passo de tirar os números existe (o retorno trata o erro de o pôr antes da
+        # escolha) e não fica o passo copiado da sessão 06
+        r3 = C[4]
+        self.assertIn('Tirar à sorte o número de cada um na lista.', r3['passos'])
+        self.assertIn('tirar os números antes de escolher a regra', r3['fe'])
+        self.assertNotIn('Rever a regra, se a objeção for boa.', r3['passos'])
 
     def test_caso_real_imagens_e_sem_video(self):
         C = self.D['cartoes']
-        real = [c for c in C if 'Caso real' in c.get('p', '')]
+        # 07/11/2026 (revisão da s10): o registo da Library of Congress não se abriu, por isso nenhum cartão se apresenta como caso real
+        # (decisão 161: os inventados ficam até haver um caso conferido) e as «fontes» e o guia dizem-no. O cartão 8 continua a
+        # transferência com o cartaz, com a ligação ao endereço permanente do registo que a cópia do Commons dá (lccn.loc.gov).
+        self.assertEqual([c for c in C if 'Caso real' in c.get('p', '')], [])
+        real = [c for c in C if 'a living newspaper about housing' in c.get('p', '')]
         self.assertEqual(len(real), 1)
-        self.assertEqual(real[0]['liga'][0]['href'], 'https://www.loc.gov/item/95509661/')
+        self.assertEqual(real[0]['liga'][0]['href'], 'https://lccn.loc.gov/95509661')
         self.assertEqual(real[0]['tipo'], 'transferir')
-        self.assertIn('a living newspaper about housing', real[0]['p'])
-        self.assertIn('o do cartaz é real', self.D['fontes'])
+        self.assertIn('A sessão não tem caso real confirmado', self.D['fontes'])
+        self.assertNotIn('o do cartaz é real', self.D['fontes'])
+        # 07/11/2026 (revisão da s10): o título do Olha não dá uma data que o registo não dá (entre 1936 e 1939)
+        self.assertNotIn('1938', json.dumps(self.D, ensure_ascii=False))
         olha = next(c for c in C if c['rot'] == 'Olha')
         self.assertIn('one-third-of-a-nation-cartaz.webp', olha['html'])
         self.assertIn('LCCN', olha['html'])
@@ -1629,7 +1646,15 @@ class SessaoS10(unittest.TestCase):
         sec = g[g.index('<section class="sessao" id="s10">'):]
         sec = sec[:sec.index('</section>')]
         self.assertIn('Ponto de chegada', sec)
-        self.assertIn('Como conduzir a mostra (cartão 11, 105', sec)
+        # 07/11/2026 (revisão da s10): a mostra passa a 120 minutos (decisão 159: cerca de 125), sem «a confirmar» na secção
+        self.assertIn('Como conduzir a mostra (cartão 11, 120', sec)
+        self.assertIn('120\u00a0minutos dão 24\u00a0alunos a 5\u00a0minutos cada (decisão 159)', sec)
+        self.assertNotIn('a confirmar', sec)
+        self.assertIn('A sessão 10 não tem caso real confirmado', sec)
+        # 07/11/2026 (revisão da s10): a concordância da frase das sessões no molde quando só falta uma, e o «Se estás sozinho» da mostra
+        # na versão para imprimir (decisão 154)
+        self.assertNotIn('a outra segue o quadro acima até passarem', g)
+        self.assertIn('<p>Se estás sozinho: mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.</p>', s)
         self.assertIn('Respostas dos 7 exercícios', sec)
         self.assertIn('<td class="num">180</td>', sec)
         self.assertIn('A sessão 10 é a sessão de mostra', g)
