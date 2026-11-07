@@ -31,8 +31,19 @@ import molde_s02  # noqa: E402  06/11/2026: fusão do main na sessão 02 do M1 (
 # 06/11/2026: fusão do main (com a sessão 2 final, os menus e o «Dilemas») na sessão 03 do M1. O manifesto fechado da s03
 # (tests/molde_s03.py) parte do main b29833d, já com a 163: é a camada mais recente e desfaz-se no ficheiro atual (abaixo).
 import molde_s03  # noqa: E402
-# 06/11/2026: sessão 07 do M1 no molde. O manifesto fechado da s07 (tests/molde_s07.py) parte do main 88c2cba, já com a 163 e a
-# s03: é a camada mais recente e desfaz-se no ficheiro atual antes da da s03 (abaixo).
+# 06/11/2026: fusão do main (com as sessões 2 e 3 finais, os menus e o «Dilemas») na sessão 04 do M1. O manifesto fechado da s04
+# (tests/molde_s04.py) parte do main ba5211f, já com a s03: é agora a camada mais recente e desfaz-se no ficheiro atual antes da
+# da s03 (abaixo).
+import molde_s04  # noqa: E402
+# 06/11/2026: fusão do main (com as sessões 2 a 4 finais e o elétrico) na sessão 05 do M1. O manifesto fechado da s05
+# (tests/molde_s05.py) parte do main 5b4a451, já com a s04: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da
+# s04 (abaixo).
+import molde_s05  # noqa: E402
+# 06/11/2026: fusão do main (com as sessões 2 a 5 finais) na sessão 06 do M1. O manifesto fechado da s06 (tests/molde_s06.py)
+# parte do main d04c20f, já com a s05: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s05 (abaixo).
+import molde_s06  # noqa: E402
+# 06/11/2026: fusão do main (com as sessões 2 a 6 finais) na sessão 07 do M1. O manifesto fechado da s07 (tests/molde_s07.py)
+# parte do main 8731fb9, já com a s06: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s06 (abaixo).
 import molde_s07  # noqa: E402
 
 
@@ -291,7 +302,26 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s03.inteiro_ok(rel), rel)
                 continue
-            # 06/11/2026: sessão 07 do M1 no molde. O mesmo para os ficheiros que a s07 escreve inteiros.
+            # 06/11/2026: fusão do main na sessão 04 do M1. O mesmo para os ficheiros que a s04 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
+            if rel in molde_s04.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s04.inteiro_ok(rel), rel)
+                continue
+            # 06/11/2026: fusão do main na sessão 05 do M1. O mesmo para os ficheiros que a s05 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
+            if rel in molde_s05.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s05.inteiro_ok(rel), rel)
+                continue
+            # 06/11/2026: fusão do main na sessão 06 do M1. O mesmo para os ficheiros que a s06 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
+            if rel in molde_s06.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s06.inteiro_ok(rel), rel)
+                continue
+            # 06/11/2026: fusão do main na sessão 07 do M1. O mesmo para os ficheiros que a s07 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
             if rel in molde_s07.INTEIROS:
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s07.inteiro_ok(rel), rel)
@@ -301,9 +331,22 @@ class Preservacao(unittest.TestCase):
             agora = ler(rel)
             # 06/11/2026: fusão do main na sessão 03 do M1. Nos ficheiros que a s03 muda em parte, desfaz-se primeiro a sua camada
             # no ficheiro atual (manifesto fechado, contagem exata de cada «novo»); o que fica, o ficheiro do main, confere-se como antes.
-            # 06/11/2026: sessão 07 do M1 no molde, a camada mais recente: desfaz-se primeiro, com contagem exata de cada «novo».
+            # 06/11/2026: fusão do main na sessão 04 do M1. Nos ficheiros que a s04 muda em parte, desfaz-se antes a sua camada, a
+            # mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s03, como acima.
+            # 06/11/2026: fusão do main na sessão 05 do M1. Nos ficheiros que a s05 muda em parte, desfaz-se primeiro a sua camada,
+            # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s04 e a da s03, como acima.
+            # 06/11/2026: fusão do main na sessão 06 do M1. Nos ficheiros que a s06 muda em parte, desfaz-se primeiro a sua camada,
+            # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s05, a da s04 e a da s03, como acima.
+            # 06/11/2026: fusão do main na sessão 07 do M1. Nos ficheiros que a s07 muda em parte, desfaz-se primeiro a sua camada,
+            # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s06, a da s05, a da s04 e a da s03.
             if rel in molde_s07.TROCAS:
                 agora = molde_s07.desfazer(agora, rel)
+            if rel in molde_s06.TROCAS:
+                agora = molde_s06.desfazer(agora, rel)
+            if rel in molde_s05.TROCAS:
+                agora = molde_s05.desfazer(agora, rel)
+            if rel in molde_s04.TROCAS:
+                agora = molde_s04.desfazer(agora, rel)
             if rel in molde_s03.TROCAS:
                 agora = molde_s03.desfazer(agora, rel)
             antes_d |= destinos(rel, antes); depois_d |= destinos(rel, agora)

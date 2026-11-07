@@ -51,8 +51,12 @@ class LinguaDasPerguntas(unittest.TestCase):
    # 06/11/2026 (sessão 07 no molde, decisões 166 a 168): a página de uma sessão do M1 cujo .json tem o campo «molde» passou a ser
    # escrita inteira pelo gerador das lições (agora a 07); confere-se letra a letra em tests/molde_s07.py (inteiro_ok) e o contrato
    # em tests/test_molde_cidadania.py. As trocas desta passagem continuam a exigir-se em todos os outros ficheiros.
-   m=re.fullmatch(r'cidadania/m1/sessoes/(\d\d)/index\.html',t['ficheiro'])
-   if m and json.loads((ROOT/f'tools/licoes/cidadania-m1-s{m.group(1)}.json').read_text('utf-8')).get('molde'):continue
+   # 06/11/2026 (fusão do main com as sessões 2 a 6 finais na sessão 7): a sessão fica nomeada (a 07, a única do M1 com trocas
+   # neste manifesto), como as listas do main, e o seu .json tem de ter o campo «molde». Na página nova o «antigo» continua proibido
+   # (a forma com «qual» não pode voltar); só o «novo» não se conta, porque a pergunta da sessão antiga já não está na nova.
+   if t['ficheiro']=='cidadania/m1/sessoes/07/index.html':
+    self.assertTrue(json.loads((ROOT/'tools/licoes/cidadania-m1-s07.json').read_text('utf-8')).get('molde'))
+    self.assertNotIn(t['antigo'],(ROOT/t['ficheiro']).read_text('utf-8'),t['ficheiro']);continue
    s=(ROOT/t['ficheiro']).read_text('utf-8')
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado,
    # com contagem exata, antes de procurar o «novo» desta passagem.

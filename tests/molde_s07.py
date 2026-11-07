@@ -16,7 +16,14 @@ ramos, juntam-se depois com as suas camadas.
 
 06/11/2026: correções da revisão da s07. O manifesto foi refeito com o mesmo gerador e a mesma base (88c2cba): mudam só as trocas
 do guia (GUIA['07'], «a opinião de muitos» e a charneira 2) na página do docente e em tools/cidadania_piloto.py. As regras
-de aplicar(), desfazer() e inteiro_ok() não mudam."""
+de aplicar(), desfazer() e inteiro_ok() não mudam.
+
+06/11/2026 (fusão do main com as sessões 2 a 6 finais na sessão 7): o manifesto foi gerado de novo a partir do main (8731fb9), e
+leva a versão do main de cada ficheiro mudado em parte ao ficheiro de hoje, letra a letra (o gerador confere que aplicar e desfazer
+dão a volta completa). A s07 fica por cima de todas as camadas, também das da s04, da s05 e da s06 (tests/molde_s04.py a
+tests/molde_s06.py): desfaz-se primeiro no ficheiro atual, antes da da s06, ou aplica-se em último lugar ao lado esperado. A frase
+das sessões no molde já sai da lista das sessões no main (_frase_molde(), da s04), e sai do manifesto; no guia, a frase passa a
+nomear as sessões 01 a 07. As regras e as contagens exatas não mudam."""
 import importlib.util
 import json
 from pathlib import Path

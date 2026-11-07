@@ -25,15 +25,15 @@ class VideosCidadaniaM1(unittest.TestCase):
     def test_cada_bloco_no_passo_certo(self):
         for n in range(1, 11):
             s = (R / f'cidadania/m1/sessoes/{n:02}/index.html').read_text('utf-8')
-            blocos = D['sessoes'].get(str(n), [])
             # 06/11/2026 (decisões 155 e 166 a 168): uma sessão cujo .json tem o campo «molde» passou à lição no molde final, no
-            # mesmo endereço (agora a 07, que tinha o bloco «Para ver» do TED-Ed no passo Leva). No molde não há vídeo no núcleo
+            # mesmo endereço (hoje, a 06, que tinha o bloco «Para ver» do TED-Ed no passo Leva). No molde não há vídeo no núcleo
             # (no máximo um, em «Para ir mais longe», depois de visto por inteiro): confere-se que a página não traz nenhum bloco nem
             # leitor. As outras sessões publicadas continuam a ter de ter os blocos de tools/videos-cidadania-m1.json.
             if json.loads((R / f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde'):
                 self.assertNotIn('data-pv=', s, n)
                 self.assertNotIn('data-yt=', s, n)
                 continue
+            blocos = D['sessoes'].get(str(n), [])
             self.assertEqual(s.count('data-pv='), len(blocos), n)
             self.assertEqual('assets/para-ver.js?v=' + D['versao'] in s, bool(blocos), n)
             for c in blocos:
