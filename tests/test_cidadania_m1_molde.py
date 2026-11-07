@@ -52,7 +52,10 @@ def pagina(n):return (R/f'cidadania/m1/sessoes/{n:02}/index.html').read_text('ut
 # 06/11/2026 (decisões 166 a 168; fusão do main com as sessões 2 a 7 finais na sessão 8): a sessão 08 também passa ao molde final,
 # no mesmo endereço (test_sessao_08_no_molde, abaixo, e tests/test_molde_cidadania.py conferem-na); a lista continua escrita, e as
 # regras do molde antigo continuam a valer, iguais, para as sessões 09 e 10.
-PUBLICADAS=range(9,11)
+# 07/11/2026 (decisões 166 a 168): a sessão 10, a sessão de mostra, também passa ao molde final, no mesmo endereço
+# (test_sessao_10_no_molde, abaixo, e tests/test_molde_cidadania.py conferem-na); as regras do molde antigo continuam a valer, iguais,
+# para a sessão 09.
+PUBLICADAS=range(9,10)
 
 class Molde(unittest.TestCase):
  def test_abertura_imagem_pergunta_comecar(self):
@@ -143,7 +146,9 @@ class Molde(unittest.TestCase):
    # sessão; as 08 a 10 publicadas continuam com um registo cada.
    # 06/11/2026 (fusão do main com as sessões 2 a 7 finais na sessão 8): a sessão 08 também passou ao molde final, sem registo de
    # sessão; as 09 e 10 publicadas continuam com um registo cada.
-   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=8 else 1,n)
+   # 07/11/2026 (sessão 10 no molde): a sessão 10 também passou ao molde final, sem registo de sessão; a 09 publicada continua com
+   # um registo.
+   s=pagina(n);self.assertEqual(s.count('data-session-done'),0 if n<=8 or n==10 else 1,n)
 
 
  def test_sessao_01_no_molde(self):
@@ -198,6 +203,7 @@ class Molde(unittest.TestCase):
   # 06/11/2026 (fusão na sessão 8): hoje, as 03 a 08.
   self.assertEqual([n for n in range(3,11) if json.loads((R/f'tools/licoes/cidadania-m1-s{n:02}.json').read_text('utf-8')).get('molde')],
                    [n for n in range(3,11) if n not in PUBLICADAS])
+  # 07/11/2026 (sessão 10 no molde): hoje, as 03 a 08 e a 10 (a lista acima confere-o, sem mudar).
   s=pagina(4)
   self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s04"',s);self.assertIn('"preservarAnterior": true',s)
   self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
@@ -282,5 +288,20 @@ class Molde(unittest.TestCase):
    import molde_s08
   finally:sys.path.pop(0)
   self.assertTrue(molde_s08.inteiro_ok('cidadania/m1/sessoes/08/index.html'))
+
+ def test_sessao_10_no_molde(self):
+  # 07/11/2026 (decisões 166 a 168): no endereço da sessão 10 está a lição no molde final, a sessão de mostra (variante «mostra»),
+  # com a chave do piloto e sem os cinco passos; a 09 continua no molde antigo (PUBLICADAS).
+  self.assertNotIn(10,PUBLICADAS);self.assertIn(9,PUBLICADAS)
+  d=json.loads((R/'tools/licoes/cidadania-m1-s10.json').read_text('utf-8'))
+  self.assertTrue(d.get('molde'));self.assertEqual(d.get('variante'),'mostra')
+  s=pagina(10)
+  self.assertIn('molde-cidadania',s);self.assertIn('"chave": "epi-cid-m1-s10"',s);self.assertIn('"preservarAnterior": true',s)
+  self.assertNotIn('data-stage',s);self.assertNotIn('data-session-done',s)
+  sys.path.insert(0,str(R/'tests'))
+  try:
+   import molde_s10
+  finally:sys.path.pop(0)
+  self.assertTrue(molde_s10.inteiro_ok('cidadania/m1/sessoes/10/index.html'))
 
 if __name__=='__main__':unittest.main()

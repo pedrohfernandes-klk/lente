@@ -18,6 +18,7 @@ import molde_s05  # 06/11/2026: plano do molde da Cidadania, sessão 05 do M1 na
 import molde_s06  # 06/11/2026: plano do molde da Cidadania, sessão 06 do M1 na versão final (decisões 166 a 168)
 import molde_s07  # 06/11/2026: plano do molde da Cidadania, sessão 07 do M1 na versão final (decisões 166 a 168)
 import molde_s08  # 06/11/2026: plano do molde da Cidadania, sessão 08 do M1 na versão final (decisões 166 a 168)
+import molde_s10  # 07/11/2026: plano do molde da Cidadania, sessão 10 do M1 na versão final, a sessão de mostra
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -356,6 +357,11 @@ class Molde(unittest.TestCase):
         for f in inteiros_s08:
             self.assertTrue(molde_s08.inteiro_ok(f), f)
         inteiros = inteiros + inteiros_s08
+        # 07/11/2026: o mesmo para a sessão 10, a sessão de mostra (decisões 166 a 168).
+        inteiros_s10 = [f for f in molde_s10.INTEIROS if f.startswith('cidadania/m1/')]
+        for f in inteiros_s10:
+            self.assertTrue(molde_s10.inteiro_ok(f), f)
+        inteiros = inteiros + inteiros_s10
         lista = [f for f in lista if f not in inteiros]
         locais = [f for f in locais if f not in inteiros]
         self.assertEqual(sorted(lista), locais)

@@ -1,117 +1,306 @@
-# Fonte da sessão 10 do M1 de Cidadania (piloto de 31/10/2026, no molde da sessão 01). Corre-se para escrever o .json ao
-# lado; o .json é que o gerador (tools/licoes_lente.py) lê. Escreve-se em Python para não ter de escapar aspas à mão.
-# O Ponto de chegada faz-se em papel, logo ao início, antes de abrir a lição: os cartões de recuperação vêm sempre depois.
-# Leis lidas a 31/10/2026 na Procuradoria-Geral Distrital de Lisboa: Constituição (nid=4), Código Civil (nid=775) e
-# Lei n.º 58/2019 (nid=3118). O cartaz: registo da Library of Congress (LCCN 95509661), lido a 31/10/2026.
-import json, pathlib
-ABRE = (
- '<p class="pergunta-c">Depois de investigar, que resposta consegues defender diante de quem discorda?</p>'
- '<p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem três minutos para responder.</p>'
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o Ponto de chegada em papel, logo ao início; depois recuperar o módulo, apresentar e defender o teatro-documento.</p>')
-DECIDE = (
- '<p>Mudar a resposta diante de uma objeção é perder?</p>'
- '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
- '<details class="lado"><summary>A razão do grupo</summary><div><p>«Investigámos e temos fontes. Se mudarmos agora, parece que não sabíamos.»</p></div></details>'
- '<details class="lado"><summary>A razão de quem pergunta</summary><div><p>«Não quero que mudem. Quero saber de onde vem o que disseram.»</p></div></details>'
- '<details class="lado"><summary>Uma objeção</summary><div><p>E se a objeção estiver certa? O que se faz com uma resposta que tem limites?</p></div></details>'
- '<p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>')
-RECUPERA = (
- '<p>Já fizeste o Ponto de chegada, em papel e sozinho? Só depois disso segues.</p>'
- '<p>Os oito cartões seguintes voltam às sessões 01 a 08, um por sessão: os artigos, a imagem dos outros, quem tem lugar, o que se pode dizer, os dados, as regras, as provas e a petição.</p>'
- '<p class="pergunta-c">Antes de cada um, lembra-te do caso dessa sessão. Depois responde.</p>')
-CARTAZ = (
- '<figure class="fig inteiro"><span class="moldura"><img src="../../../img/cidadania/one-third-of-a-nation-cartaz.webp" '
- 'alt="Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «… one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre»." loading="lazy"></span>'
- '<figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>… one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure>'
- '<p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p>'
- '<p class="pergunta-c">Que pergunta fazia esta peça? E a tua?</p>'
- '<p>Responde no caderno, numa linha para cada peça.</p>')
-VIDEO = (
- '<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p>'
- '<p class="pergunta-c">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à tua defesa?</p>'
- '<div class="yt" data-yt="O2dEuMFR8kw" data-titulo="What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed">'
- '<button type="button" class="yt-abrir" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button>'
- '<p class="yt-cred">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>'
- '<p>Duas linhas no caderno, antes de apresentares.</p>')
-NA_AULA = (
- '<p><b>O que se faz.</b> A apresentação pública dos teatros-documento, 5 a 8 minutos cada, seguida de três minutos de defesa: uma pergunta do público e uma objeção preparada por um colega. O Ponto de chegada já foi feito ao início, em papel e sozinho.</p>'
- '<p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p>'
- '<p><b>O que fica escrito.</b> O teu Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» em três linhas e o mapa de direitos da sessão 01 revisto: o que mudou?</p>')
-LEVAR = (
- '<p class="levar">Uma boa resposta diz o que sabe, de onde o sabe e o que ainda não sabe.</p>'
- '<p>Nesta sessão defendeste uma resposta com fontes e respondeste a uma objeção. Volta ao mapa de direitos da sessão 01 e ao teu Ponto de partida: o que mudou na tua maneira de ver a escola?</p>'
- '<p><b>As frases da sessão</b></p>'
- '<ul><li>Mudar de posição por uma boa razão faz parte de investigar.</li>'
- '<li>Cada fala do teatro-documento tem uma fonte que se pode reencontrar.</li>'
- '<li>Um direito protege também quem não conheço.</li>'
- '<li>A pergunta continua: o que ficou por saber?</li></ul>')
-INFERENCIA = 'A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o publicou.'
+# Fonte da sessão 10 do M1 de Cidadania, «O que consegues defender?», na versão final do molde cidadania-2026-11 (plano do molde,
+# secção 2, «Variantes», e secção 3, linha «10»; decisões 144 a 146, 152 a 155, 159, 161 e 166 a 168). 07/11/2026: substitui a fonte
+# do piloto de 31/10, que escrevia cidadania/piloto/m1-s10/ (essa página fica como está até ao pedido 3, que faz os redirecionamentos
+# do piloto de uma vez); a chave epi-cid-m1-s10 é a mesma, e a versão sobe com preservarAnterior (cfg da família). Corre-se para
+# escrever o .json ao lado; o .json é que o gerador (tools/licoes_lente.py) lê, e nunca se edita à mão. Os cartões montam-se com o
+# ajudante comum tools/cidadania_molde.py. A sessão de mostra não tem excertos de lei: o Lê são os arranques de frase da defesa, e
+# nenhum cartão cita um texto legal (nada a acrescentar ao registo tools/cidadania_fontes.json).
+#
+# Sessão de mostra («variante»: «mostra», só das sessões 10; o validador aplica-lhe o contrato da variante e nenhuma outra sessão o
+# usa): núcleo curto com 7 de fazer, o Ponto de chegada em papel antes do cartão 1 (15 minutos, as mesmas dez perguntas do Ponto de
+# partida, como na sessão 01), a mostra individual de 3 minutos com 2 de defesa por aluno (decisão 159) no «Em turma», com a pausa a
+# meio, e três linhas em papel no fim. 14 cartões (7 de ler, 7 de fazer): Abre, Decide, quatro Recupera (R1 a obra, Camus; R2 a R4
+# um item novo das sessões 01 a 03, 04 a 06 e 07 a 09), Olha, um exercício com o cartaz, Lê, a charneira 1, a mostra, a charneira 2,
+# «Agora, em papel» e Para levar. A ordem é fixa (cfg.aula) e a resposta certa de cada escolha fica no lugar pedido em LUGARES,
+# calculado com a semente do motor. Cada exercício tem a sua pista, que não dá a resposta. O que só o docente faz vive no guia
+# (tools/cidadania_piloto.py, GUIA['10']), nunca aqui.
+#
+# Fontes abertas a 7/11/2026, uma de cada vez (nada citado de memória):
+# - Cartaz: _Federal Theatre presents «… one-third of a nation»_, Federal Theatre Project, Adelphi Theatre, Nova Iorque, entre 1936 e
+#   1939, serigrafia, «made by WPA Federal Art Project, N.Y.C.», Library of Congress, Work Projects Administration Poster Collection,
+#   LCCN 95509661. O registo da Library of Congress (loc.gov) não abriu nesta passagem (desafio a robôs, que não se contornou); leu-se a
+#   cópia do registo no Wikimedia Commons (File:Federal_Theatre_presents_"..._one-third_of_a_nation"_LCCN95509661.jpg): título,
+#   resumo («Poster for Federal Theatre Project presentation of "...one-third of a nation" at the Adelphi Theatre, showing drawing of
+#   urban row houses»), «No known restrictions on publication» e domínio público (obra de um funcionário da WPA). O ficheiro
+#   img/cidadania/one-third-of-a-nation-cartaz.webp (640 × 996) é o do piloto, visto: o mesmo cartaz. O nome do desenhador que o piloto
+#   dava não está no registo e sai.
+# - Ticiano, _Sísifo_, entre 1548 e 1549, óleo sobre tela, 237 × 216 cm, Museo Nacional del Prado, P00426: registo do Wikimedia
+#   Commons (File:Punishment_sisyph.jpg), domínio público (autor morto em 1576, PD-Art). O ficheiro img/cidadania/sisifo.webp
+#   (881 × 1000), visto, é essa pintura.
+# - Albert Camus, _O Mito de Sísifo_ (1942): o cartão diz só que o livro acaba com a ideia de que é preciso imaginar Sísifo feliz (a
+#   frase final do livro); não se cita a tradução, protegida.
+# - Os arranques de frase do Lê vêm da sessão 10 publicada do percurso anterior (cidadania/m1/sessoes/10/, «Mostrar o guião, explicar
+#   as escolhas»), já no singular.
+# - Caso real (decisão 161): o cartaz e o seu registo na Library of Congress, no cartão 8, como transferência para o teatro-documento
+#   de cada aluno. O caso da Inês, o da Joana, o da ordem das mostras, o da Rita e o da fila do bar são inventados.
+# - Vídeo (decisão 155): nenhum. O plano não propõe candidato, e o vídeo do piloto (TED-Ed, Aristóteles e Joshua Bell) sai.
+import importlib.util, json, pathlib
 
-cartoes = [
- {"t":"ler","rot":"Abre","titulo":"O que conseguimos defender?","html":ABRE},
- {"t":"ler","rot":"Decide","titulo":"Isso é só a vossa opinião","html":DECIDE},
- {"t":"ler","rot":"Recupera","titulo":"Depois do Ponto de chegada","html":RECUPERA},
- {"t":"emparelhar","g":"artigos","p":"Liga cada situação ao direito da Constituição que está em causa.","p2":"Que direito da Constituição pesa em cada uma destas situações?",
-  "pares":[["Uma fotografia publicada sem perguntar","Imagem e vida privada (artigo 26.º)"],["Um colega posto de parte pela língua que fala","Igualdade (artigo 13.º)"],["Uma crítica à cantina no jornal da escola","Liberdade de expressão (artigo 37.º)"],["Um pedido à câmara para manter a passadeira","Direito de petição (artigo 52.º)"]],
-  "f":"O artigo 26.º protege a imagem e a reserva da vida privada; o 13.º proíbe prejudicar alguém em razão da língua; o 37.º garante a liberdade de exprimir o pensamento; o 52.º dá a todos o direito de petição.",
-  "fe":"Pergunta primeiro o que a pessoa perdeu ou quer fazer. O artigo vem depois."},
- {"t":"escolha","g":"s02","p":"Caso da sessão 02: a Marta aceitou ser filmada para o grupo rever o ensaio. Para pôr o vídeo na conta da escola, o que falta?","p2":"A Marta deixou filmar o ensaio para o grupo o rever. Que falta para o publicar na conta da escola?",
-  "o":["Pedir-lhe consentimento para esse uso.","Nada: ela já aceitou ser filmada.","Cortar as partes em que ela cai."],"c":0,
-  "f":"O retrato de uma pessoa não pode ser exposto sem o consentimento dela (Código Civil, artigo 79.º, n.º 1). A Marta aceitou um uso, rever o ensaio, e não outro.",
-  "fe":["","Aceitar ser filmada para o grupo ver não é aceitar a publicação. O consentimento vale para um uso.","Cortar a queda ajuda, mas não substitui o consentimento da Marta para publicar."]},
- {"t":"vf","g":"s03","p":"Caso da sessão 03: uma mostra aberta a todos, num primeiro andar sem elevador, trata todos por igual.","p2":"Se a mostra é aberta a todos mas fica num primeiro andar sem elevador, a regra trata todos da mesma maneira.","v":False,
-  "f":"A regra é igual no papel, mas quem usa cadeira de rodas fica de fora. Para julgar uma regra, olha-se também para o efeito que tem em cada pessoa.",
-  "fe":"Igual no papel não quer dizer igual no efeito. Quem não consegue subir as escadas não tem o mesmo acesso."},
- {"t":"escolha","g":"s04","p":"Sessão 04: que frase é uma acusação de facto, que tem de ser provada por quem a faz?","p2":"Destas frases, que acusação precisa de prova antes de ser dita em público?",
-  "o":["O Diogo tirou dinheiro do bar.","A comida da cantina sabe-me mal.","O cartaz da festa é muito feio."],"c":0,
-  "f":"Dizer que alguém tirou dinheiro atribui-lhe um ato concreto. Se não for verdade, atinge o bom nome e a reputação dessa pessoa, que a Constituição protege (artigo 26.º).",
-  "fe":["","É uma opinião sobre o gosto da comida, de quem a diz. Não acusa ninguém de nada.","É uma opinião sobre um cartaz. Pode magoar quem o fez, mas não lhe atribui um ato."]},
- {"t":"vf","g":"s05","p":"Sessão 05: numa escola, as câmaras de videovigilância podem filmar as salas de aula.","p2":"A lei deixa uma escola pôr câmaras de videovigilância dentro das salas de aula.","v":False,
-  "f":"Nos estabelecimentos de ensino, as câmaras só podem incidir sobre os perímetros externos e os locais de acesso, e sobre espaços com bens que precisam de especial proteção, como laboratórios ou salas de informática (Lei n.º 58/2019, artigo 19.º, n.º 3).",
-  "fe":"A lei diz onde as câmaras podem estar numa escola, e as salas de aula não estão na lista."},
- {"t":"escolha","g":"s06","p":"Sessão 06: o júri do concurso de curtas inclui o irmão de um dos concorrentes. Que problema há aqui?","p2":"Um dos membros do júri é irmão de um concorrente. Que nome tem este problema?",
-  "o":["Um conflito de interesses no júri.","Um júri com gente a mais na sala.","Uma regra que favorece os mais novos."],"c":0,
-  "f":"Quem decide não deve ter um interesse pessoal no resultado. A saída habitual é o irmão não votar nesse concurso e dizê-lo às claras.",
-  "fe":["","O número de pessoas não é o problema. O problema é o laço entre quem julga e quem é julgado.","Nada no caso fala de idades. O que pesa é o laço de família com um concorrente."]},
- {"t":"sublinhar","g":"s07","p":"Sessão 07: toca nas duas palavras onde a frase deixa de descrever e passa a concluir.","p2":"Onde é que esta frase salta do que se vê para uma conclusão? Toca nas duas palavras.","frase":INFERENCIA,"certas":[11,12],
-  "f":"Até à vírgula, a frase descreve o que a captura mostra. A expressão **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura: é uma inferência."},
- {"t":"ordenar","g":"s08","p":"Sessão 08: põe por ordem os passos de uma petição.","p2":"Por que ordem se faz uma petição à entidade certa?",
-  "passos":["Descobrir quem decide.","Escrever o pedido.","Juntar o fundamento.","Recolher as assinaturas."],
-  "f":"Primeiro o destinatário, depois o pedido, o fundamento e as assinaturas. Uma petição é escrita e assinada (Lei n.º 43/90, artigo 9.º)."},
- {"t":"ler","rot":"Ver","titulo":"Um jornal vivo","html":CARTAZ},
- {"t":"ler","rot":"Ver","titulo":"Como se convence","html":VIDEO},
- {"t":"ler","rot":"Na aula","titulo":"Apresentar e defender","html":NA_AULA},
- {"t":"escolha","g":"opiniao","p":"Alguém do público diz: «Isso é só a vossa opinião.» Qual das respostas defende melhor o trabalho do grupo?","p2":"«Isso é só a vossa opinião.» Que resposta mostra que o grupo investigou?",
-  "o":["Dizer de onde vem e o que ainda não sabemos.","Repetir a ideia com mais força e convicção.","Dizer que cada um tem direito à sua opinião."],"c":0,
-  "f":"Mostrar a fonte separa a resposta de uma opinião solta. Dizer o limite mostra que o grupo sabe até onde a prova chega.",
-  "fe":["","Falar mais alto não acrescenta prova. Quem perguntou continua sem saber de onde vem a ideia.","Assim o grupo aceita que é só opinião e deita fora a investigação que fez."]},
- {"t":"vf","g":"limite","p":"Reconhecer um limite da resposta enfraquece sempre a defesa.","p2":"Quando um grupo admite o que ainda não sabe, a defesa fica sempre mais fraca.","v":False,
-  "f":"Dizer o que não se sabe mostra rigor: quem ouve percebe até onde a prova chega e confia mais no resto.",
-  "fe":"Uma resposta sem limites promete mais do que as fontes dão. Dizer o limite protege a parte que está provada."},
- {"t":"completar","g":"provisoria","p":"Completa a frase que o grupo pode dizer na defesa.","p2":"Como se descreve uma resposta investigada?",
-  "frase":"A nossa resposta é [1]: assenta em [2] e muda se aparecer [3] em contrário.",
-  "lacunas":[{"o":["provisória","definitiva","secreta"],"c":0},{"o":["fontes","gostos","rumores"],"c":0},{"o":["prova","pressão","barulho"],"c":0}],
-  "f":"Uma resposta investigada é provisória: assenta em fontes e muda perante prova em contrário. É assim no teatro-documento e em qualquer investigação.",
-  "fe":"Pensa no que faz uma resposta mudar: uma prova nova, não a pressão de quem discorda."},
- {"t":"escolha","g":"cartaz","p":"O cartaz chama à peça «a living newspaper about housing». Que tem isto em comum com o teu teatro-documento?","p2":"Um «jornal vivo» sobre a habitação: que liga essa peça ao teu teatro-documento?",
-  "o":["Trata um tema real, como faz um jornal.","Conta a vida de um herói inventado.","Mostra só a opinião de quem a escreveu."],"c":0,
-  "f":"O subtítulo diz «a living newspaper about housing», um jornal vivo sobre a habitação: um tema real, posto em cena. O teu teatro-documento também parte do que se investigou.",
-  "fe":["","«Newspaper» quer dizer jornal: fala de assuntos reais, não de heróis inventados.","Um jornal junta factos e vozes diferentes, não só a opinião de quem escreve."]},
- {"t":"escolha","g":"caminho","p":"Qual das respostas a uma objeção mostra o caminho da investigação?","p2":"Diante de uma objeção, que resposta conta como o grupo chegou à conclusão?",
-  "o":["Pensávamos outra coisa até à entrevista.","Sempre soubemos isto, desde o primeiro dia.","Toda a gente concorda connosco, perguntem."],"c":0,
-  "f":"Contar o que se pensava antes e o que fez mudar mostra o caminho: houve uma fonte, e a resposta seguiu a prova.",
-  "fe":["","Se nunca mudou nada, a investigação não serviu para nada. O que é que as fontes acrescentaram?","Concordar não é provar. Uma maioria pode estar enganada."]},
- {"t":"ler","rot":"Para levar","escuro":True,"html":LEVAR},
+AQUI = pathlib.Path(__file__).resolve()
+ROOT = AQUI.parents[2]
+
+
+def _carregar(nome, rel):
+    spec = importlib.util.spec_from_file_location(nome, ROOT / rel)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+M = _carregar('cidadania_molde', 'tools/cidadania_molde.py')
+L = _carregar('licoes_lente', 'tools/licoes_lente.py')
+NB = M.NB
+
+CARTAZ = '../../../../img/cidadania/one-third-of-a-nation-cartaz.webp'
+CARTAZ_ALT = ('Cartaz de fundo escuro. Ao centro, um desenho de prédios apertados, vistos de cima, com roupa estendida; por cima, em letras '
+              'grandes e inclinadas, «… one-third of a nation». Em cima, «Federal Theatre presents»; em baixo, «A living newspaper about '
+              'housing» e «Adelphi Theatre».')
+CARTAZ_ALT_VER = 'O mesmo cartaz: prédios apertados vistos de cima, o título «… one-third of a nation» e, em baixo, «A living newspaper about housing».'
+LOC = 'https://www.loc.gov/item/95509661/'
+COMMONS_CARTAZ = ('https://commons.wikimedia.org/wiki/File:Federal_Theatre_presents_%22..._one-third_of_a_nation%22_LCCN95509661.jpg')
+CARTAZ_CREDITO = ('<i>Federal Theatre presents «… one-third of a nation»</i>, cartaz do Federal Theatre Project para o Adelphi Theatre, Nova '
+                  'Iorque, entre 1936 e 1939, serigrafia feita pelo WPA Federal Art Project. Library of Congress, Work Projects Administration '
+                  f'Poster Collection (LCCN 95509661). <a href="{LOC}">Registo na Library of Congress</a>. '
+                  f'<a href="{COMMONS_CARTAZ}">Registo no Wikimedia Commons</a>. Domínio público.')
+SISIFO = '../../../../img/cidadania/sisifo.webp'
+SISIFO_ALT = ('Pintura escura: um homem musculado, de pano branco e faixa à cintura, curvado sob um rochedo enorme que segura sobre a '
+              'cabeça e os ombros, a subir uma encosta; à direita, chamas.')
+SISIFO_CREDITO = ('Ticiano, <i>Sísifo</i>, entre 1548 e 1549, óleo sobre tela, 237 × 216 cm. Museo Nacional del Prado, Madrid (P00426). '
+                  '<a href="https://commons.wikimedia.org/wiki/File:Punishment_sisyph.jpg">Registo no Wikimedia Commons</a>. Domínio público.')
+VER_SISIFO = M.figura(SISIFO, SISIFO_ALT, SISIFO_CREDITO, 'Ticiano, <i>Sísifo</i>, entre 1548 e 1549.', largura=881, altura=1000,
+                      rotulo_i='Créditos da pintura')
+VER_CARTAZ = f'<img src="{CARTAZ}" alt="{CARTAZ_ALT_VER}">'
+PERGUNTA = 'Uma resposta que admite um limite fica mais fraca?'
+DECIDE_Q = 'A Inês deve dizer, na defesa, que só entrevistou duas pessoas?'
+FRASE = 'Uma boa resposta diz o que sabe, de onde o sabe e o que ainda não sabe.'
+R4_FRASE = 'Os alunos de informática percebem todos de computadores, por isso a Rita vai arranjar o projetor.'
+
+# Os arranques de frase da defesa (sessão 10 publicada do percurso anterior), em tabela (decisão 152): o arranque e o que mostra.
+ARRANQUES = [('Parti desta pergunta…', 'a pergunta que investigaste'),
+             ('Esta fonte ajudou-me a compreender…', 'de onde vem o que dizes'),
+             ('Na cena central, a personagem escolhe…', 'o que a peça põe em cena'),
+             ('Depois da leitura dos colegas, mudei…', 'o que a revisão mudou'),
+             ('Ainda reconheço este limite…', 'o que a tua resposta ainda não sabe')]
+TABELA = ('<table class="tabela"><thead><tr><th scope="col">Arranque</th><th scope="col">O que mostra</th></tr></thead><tbody>'
+          + ''.join(f'<tr><td data-th="Arranque">«{a}»</td><td data-th="O que mostra">{b}</td></tr>' for a, b in ARRANQUES)
+          + '</tbody></table>')
+
+
+def escolha(rot, p, p2, certa, erradas, f, minutos, tipo, conceito, **extra):
+    """Uma escolha de três opções; a certa vai para o lugar de LUGARES (preenchido em sessao())."""
+    c = M.fazer('escolha', rot, p, p2, f, minutos, tipo, conceito, **extra)
+    c['_certa'], c['_erradas'] = M.ref(certa), [(M.ref(o), M.ref(e)) for o, e in erradas]
+    return c
+
+
+def palavras(frase, alvo):
+    """Os índices das palavras de «alvo» na frase do sublinhar (sem a pontuação colada)."""
+    w = [x.strip('.,;:') for x in frase.split()]
+    return [w.index(a) for a in alvo]
+
+
+CARTOES = [
+ # ---------------------------------------------------------------- antes da mostra (30 minutos, depois do Ponto de chegada)
+ # O caso do piloto («Isso é só a vossa opinião», cartão 2) passa ao singular e ganha o limite que a pergunta da sessão pede.
+ M.abre('O que consegues defender?',
+        f'o Ponto de chegada em papel (15{NB}min), recuperar e ler (30{NB}min), a mostra, com a pausa a meio (115{NB}min), e o fecho '
+        f'(20{NB}min).',
+        'Na mostra, a Inês apresenta o seu teatro-documento sobre a falta de lugares na cantina, feito com uma contagem dos lugares e '
+        'duas entrevistas. Na defesa, um colega diz: «Isso é só a tua opinião.» A Inês sabe de onde vem cada fala da peça, mas também '
+        'sabe que só entrevistou duas pessoas. Tem dois minutos para responder.',
+        PERGUNTA, minutos=4),
+ M.decide(DECIDE_Q, [
+     ('Quem acha que sim', 'Se for ela a dizê-lo, ninguém a apanha em falta. Esconder o que falta é pior do que o admitir.'),
+     ('Quem acha que não', 'Dois minutos são pouco. Se falar do que falta, o público pode lembrar-se só da fraqueza.'),
+     ('Uma objeção', 'E se ela mostrar primeiro de onde vem a resposta, e só depois o que ainda não sabe?')], minutos=4),
+ # R1, a obra do #84 s10: Camus e Sísifo, com o Sísifo de Ticiano em miniatura. A obra apresentada numa linha; a pergunta liga-a à
+ # revisão depois da mostra. Os distratores são os dois erros reais diante de uma objeção: não mexer em nada ou deitar tudo fora.
+ M.recupera(escolha(
+     'A pedra outra vez',
+     'Camus acaba _O Mito de Sísifo_ (1942) com a ideia de que é preciso imaginar Sísifo feliz, a recomeçar com a mesma pedra. '
+     'Depois da mostra, o que recomeça?',
+     'Para Camus, é preciso imaginar Sísifo feliz, a recomeçar com a mesma pedra. Depois de defenderes a tua resposta, o que recomeças?',
+     'Revê-la com as objeções que ouviste.',
+     [('Guardá-la tal como a apresentaste.',
+       'Sísifo não deixa a pedra lá em cima: recomeça. Guardar a resposta como estava é fazer de conta que a objeção não aconteceu. '
+       'Volta à pedra: o que faz Sísifo com ela?'),
+      ('Trocar de pergunta e começar do zero.',
+       'Sísifo recomeça com a mesma pedra, não com outra. Uma objeção pede uma segunda versão da tua resposta, não uma pergunta nova. '
+       'Volta à pedra: é a mesma ou outra?')],
+     'Sísifo recomeça com a mesma pedra. Na tua resposta, recomeçar é revê-la com as objeções que ouviste, sem deitar fora o que já '
+     'provaste.',
+     3, 'aplicar', 'rever depois da objeção', ver=VER_SISIFO,
+     pista='Pensa no que Sísifo faz com a pedra, e se é a mesma.')),
+ # R2 (sessões 01 a 03): um item novo do consentimento para um uso (sessão 02), sobre as entrevistas do projeto.
+ M.recupera(M.fazer(
+     'emparelhar', 'O sim da Joana',
+     'Sessão 02: a Joana deixou gravar a voz dela para o podcast da turma. Liga cada situação ao que o sim dela permite.',
+     'A Joana disse que sim à gravação da voz para o podcast da turma. Em cada situação, o que vale esse sim?',
+     'Na sessão 02, viste que o «consentimento» vale para o uso que se explicou: aqui, o podcast. Para a tua peça, pede-se outra vez; '
+     'e, se a Joana o retirar, respeita-se.',
+     2, 'aplicar', 'consentimento para um uso',
+     pares=[['Pôr a gravação no podcast da turma', 'Cabe no sim que deu'],
+            ['Usar um excerto no teu teatro-documento', 'Pede um sim novo'],
+            ['A Joana pede que a voz saia do podcast', 'Respeita-se: o sim pode ser retirado']],
+     fe='A confusão mais provável é achar que o sim para o podcast serve para tudo. Vale para o uso que se explicou, e pode ser '
+        'retirado. Relê o que a Joana autorizou.',
+     pista='Pergunta, em cada linha, se é o mesmo uso que a Joana autorizou.'),
+     origem='cidadania/m1/sessoes/02/'),
+ # R3 (sessões 04 a 06): escolher a regra sem saber o lugar (sessão 06), num caso novo: a ordem das mostras de hoje.
+ M.recupera(M.fazer(
+     'ordenar', 'A ordem das mostras',
+     'Sessão 06: é preciso decidir a ordem das mostras. Põe por ordem os passos para escolher a regra sem saber o teu lugar.',
+     'Para decidir quem mostra primeiro, por que ordem se escolhe a regra sem saber o lugar de cada um?',
+     'Primeiro as regras em cima da mesa; depois a escolha «sem saber o lugar», como na sessão 06; depois a voz de quem perde; no '
+     'fim, a revisão.',
+     2, 'aplicar', 'escolher sem saber o lugar',
+     passos=['Juntar as regras propostas para a ordem das mostras.',
+             'Escolher uma, antes de se saber quem fica em primeiro.',
+             'Ouvir a objeção de quem fica a perder com ela.',
+             'Rever a regra, se a objeção for boa.'],
+     fe='A confusão mais provável é escolher depois de saber o lugar: quem já sabe que fica em primeiro escolhe a pensar em si. Relê '
+        'os passos pela ordem do tempo.',
+     pista='Pergunta-te o que tem de acontecer antes de cada um saber o seu lugar.'),
+     origem='cidadania/m1/sessoes/06/'),
+ # R4 (sessões 07 a 09; a s09 deixa de ficar de fora): um item novo do estereótipo (sessão 09).
+ M.recupera(M.fazer(
+     'sublinhar', 'Onde está o estereótipo',
+     'Sessão 09: nesta frase, toca na palavra que faz dela um estereótipo.',
+     'Que palavra, nesta frase, transforma uma ideia sobre um curso num estereótipo? Toca nela.',
+     'A palavra «todos» diz o mesmo de toda a gente de um curso, sem prova: é o que faz um «estereótipo», como viste na sessão 09. A '
+     'Rita pode perceber de computadores ou não; a frase não o prova.',
+     2, 'reconhecer', 'estereótipo', frase=R4_FRASE, certas=palavras(R4_FRASE, ['todos']),
+     fe='A confusão mais provável é tocar em «computadores» ou em «Rita»: são o assunto e a pessoa. Procura a palavra que estende a '
+        'ideia a toda a gente do curso.',
+     pista='Procura a palavra que fala de muitas pessoas como se fossem uma só.'),
+     origem='cidadania/m1/sessoes/09/'),
+ M.olha('Um cartaz de 1938', 'Olha primeiro para o desenho; só depois lê as palavras.',
+        M.figura(CARTAZ, CARTAZ_ALT, CARTAZ_CREDITO, 'Cartaz de uma peça do Federal Theatre, em Nova Iorque, entre 1936 e 1939.',
+                 artefacto='Um cartaz do Federal Theatre, Nova Iorque', largura=640, altura=996, rotulo_i='Créditos do cartaz'),
+        minutos=3),
+ # Caso real (decisão 161), como transferência: o cartaz e o seu registo; o que o cartaz diz da peça, levado ao teu teatro-documento.
+ escolha('Um jornal em palco',
+         'Caso real: o cartaz chama à peça «a living newspaper about housing», um jornal vivo sobre a habitação. Em que se parece com o '
+         'teu teatro-documento?',
+         'Um «jornal vivo» sobre a habitação, num teatro de Nova Iorque: em que se parece essa peça com o teu teatro-documento?',
+         'Leva para o palco um assunto real.',
+         [('Conta a vida de uma pessoa inventada.',
+           'Um jornal não inventa personagens: dá notícias de assuntos reais. O cartaz anuncia um jornal sobre a habitação, não a história '
+           'de alguém. Volta às palavras do cartaz.'),
+          ('Diz só a opinião de quem a escreveu.',
+           'O cartaz não fala de opiniões: diz que a peça é um jornal sobre a habitação. Um jornal trata de assuntos reais. Volta às '
+           'palavras do cartaz.')],
+         'O cartaz chama à peça um jornal vivo sobre a habitação: um assunto real, posto em cena. O teu teatro-documento também leva para '
+         'o palco um assunto real, com as fontes que investigaste.',
+         3, 'transferir', 'teatro-documento', ver=VER_CARTAZ,
+         liga=[{'t': 'Ver o registo do cartaz na Library of Congress', 'href': LOC}],
+         pista='Pergunta-te de que fala um jornal.'),
+ M._ler('Lê', 'Para responder a uma objeção',
+        '<div class="m-le"><p class="ex-antes"><b>Antes de ler</b> Cinco maneiras de começar uma frase na defesa. Cada uma mostra uma '
+        f'parte do teu trabalho.</p>{TABELA}</div>', 4),
+ # Charneira 1 (piloto, cartão 15, no singular): a resposta que mostra de onde vem. Os distratores são as respostas reais a uma
+ # objeção: o direito à opinião (que aceita a objeção) e a convicção (que não mostra prova).
+ escolha('Mais do que opinião',
+         'A Inês ouve: «Isso é só a tua opinião.» Encontra a resposta que mostra que não é.',
+         'Depois da peça, alguém diz à Inês que aquilo é só opinião. Encontra a resposta que desfaz a objeção.',
+         'Contei os lugares numa semana: faltaram em quatro dias.',
+         [('Tenho direito à minha opinião, como toda a gente.',
+           'Assim, a Inês aceita que é só opinião e põe de lado a contagem e as entrevistas. A objeção pede de onde vem a resposta. Volta '
+           'ao caso: o que tem a Inês, além da opinião?'),
+          ('Acredito mesmo nisto e defendi-o com convicção.',
+           'A convicção mostra o que a Inês sente, não de onde vem o que diz. Quem objetou continua sem saber em que se apoia a resposta. '
+           'Volta ao caso: em que se apoia a Inês?')],
+         'Uma contagem com dias e números mostra de onde vem a resposta, e quem objetou pode confirmá-la. É o que faz o arranque «Esta '
+         'fonte ajudou-me a compreender…».',
+         3, 'aplicar', 'opinião e prova', pista='Pergunta a cada resposta: alguém a pode ir confirmar?'),
+ # ---------------------------------------------------------------- a mostra (105 minutos, com a pausa a meio) e o fecho
+ M.em_turma(DECIDE_Q, [
+     ('Quem acha que sim', 'Um dos arranques é «Ainda reconheço este limite…»: dizer o que falta também é responder.'),
+     ('Quem acha que não', 'Em dois minutos de defesa, o limite pode ficar como a única coisa que o público ouve.'),
+     ('Uma objeção', 'E se a Inês começar por «Esta fonte ajudou-me a compreender…» e deixar o limite para o fim?')],
+     {'O que se faz': 'Mostras a peça, respondes a uma objeção e decides outra vez.',
+      'Quanto tempo': 'Três minutos de mostra e dois de defesa.',
+      'O que fica escrito': 'Nada no ecrã; a escolha fica nos artefactos.',
+      'Se estás sozinho': 'Mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.'},
+     titulo='A mostra', minutos=105, intro='', nota=None),
+ # Charneira 2 («reconhecer um limite não enfraquece», piloto, cartão 16, sem o absoluto do piloto): o limite das entrevistas não
+ # apaga a contagem. O erro esperado é achar que admitir uma fraqueza estraga tudo.
+ M.fazer('vf', 'O limite e a contagem',
+         'A Inês diz na defesa: «Ainda reconheço este limite: só entrevistei duas pessoas.» Com isso, a contagem dos lugares deixa de '
+         'valer como prova.',
+         'Depois de a Inês admitir que só entrevistou duas pessoas, a contagem dos lugares já não prova nada.',
+         'É falso: o limite fala das entrevistas, não da contagem, que continua a provar o que provava. Dizer o limite mostra até onde '
+         'chega uma das provas e deixa a outra como estava.',
+         3, 'aplicar', 'limite e prova', v=False,
+         fe='Admitir que entrevistou poucas pessoas não apaga a contagem: são duas provas diferentes. O limite diz até onde chega uma '
+            'delas. Volta à frase da Inês e vê de qual das duas fala.',
+         pista='Separa as duas provas da Inês e vê de qual fala o limite.'),
+ M.papel(PERGUNTA,
+         ['O que defendes, depois da objeção que ouviste.',
+          'A tua prova mais forte: um facto e a fonte, com uma expressão exata entre aspas.',
+          'O limite: o que a tua resposta ainda não sabe.'],
+         ['A resposta diz o que defendes, sem ir além das provas.',
+          'A prova junta um facto à sua fonte, com uma expressão exata entre aspas.',
+          'O limite é verdadeiro: se tivesse resposta, podia mudar o que defendes.'],
+         '<p>Outro caso, inventado: uma peça sobre a fila do bar.</p><ol>'
+         '<li>Defendo: o bar devia abrir mais cedo.</li>'
+         '<li>Prova: contei 31 alunos na fila às 10h15; a funcionária disse «não dá tempo».</li>'
+         '<li>Limite: só contei numa semana.</li></ol>',
+         'Num papel pequeno, sozinho e sem telemóvel.', minutos=8, relogio_min=6),
+ M.levar(FRASE, ['Dizer o limite protege a parte que está provada.',
+                 'Mudar a resposta por uma boa razão faz parte de investigar.'], minutos=4),
 ]
-dados = {
- "id":"cidadania-m1-s10","chave":"epi-cid-m1-s10","versao":"2026-10-31-2",
- "marca":"CD","titulo":"Sessão 10: O que conseguimos defender?","h1":"Cidadania, módulo 1, sessão 10: O que conseguimos defender?",
- "modulo":{"n":1,"nome":"Humanos","url":"https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"},
- "saida":"cidadania/piloto/m1-s10/index.html","piloto":True,
- "seguinte":"../m1/","seguinteRotulo":"As 10 sessões",
- "fontes":"Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
- "cartoes":cartoes,
-}
-p = pathlib.Path(__file__).with_suffix('.json')
-p.write_text(json.dumps(dados, ensure_ascii=False, indent=1) + '\n', 'utf-8')
-print(p, len(cartoes), 'cartões', sum(1 for c in cartoes if c['t'] != 'ler'), 'de fazer')
+
+# o lugar da certa em cada escolha (0, 1 ou 2), com a semente do motor: com três escolhas, um lugar diferente em cada uma
+LUGARES = (1, 2, 0)
+
+# O passo do projeto: na sessão de mostra, o projeto é a própria mostra; o passo do fim é a revisão depois da objeção (o enunciado
+# da Pergunta Humana, «Teatro-documento e defesa»: «capacidade de explicar e defender as próprias escolhas»).
+DEPOIS = ('<article class="c"><p class="rot">O passo do teu projeto</p><p class="tit">Depois da mostra</p>'
+          '<p class="sub">No dossiê, escreve o que mudarias na peça depois da objeção que ouviste, porquê, e o limite que ficou por '
+          'resolver. O que conta: a mudança responde à objeção; a razão aponta para uma fonte; o limite é dito com clareza.</p>'
+          '<p class="ir"><a href="../../../projeto/#av-teatro">O teatro-documento e a defesa, no enunciado da Pergunta Humana</a></p></article>')
+
+
+def sessao():
+    d = {
+        'id': 'cidadania-m1-s10', 'chave': 'epi-cid-m1-s10', 'versao': '2026-11-07-molde', 'marca': 'CD', 'molde': L.MOLDE,
+        # 07/11/2026: a variante do plano para as sessões 10 (secção 2, «Variantes»), com nome, para o validador lhe aplicar o seu
+        # contrato (tools/licoes_lente.py, validar_molde) sem mexer nas regras das outras sessões.
+        'variante': 'mostra',
+        'titulo': 'Sessão 10: O que consegues defender?', 'h1': 'Cidadania, módulo 1, sessão 10: O que consegues defender?',
+        'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
+        'saida': 'cidadania/m1/sessoes/10/index.html',
+        'seguinte': '../../../piloto/m1/', 'seguinteRotulo': 'As 10 sessões',
+        'fontes': M.ref('Cartaz: _Federal Theatre presents «… one-third of a nation»_, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, '
+                        'serigrafia do WPA Federal Art Project, Library of Congress (LCCN 95509661), domínio público. Pintura: Ticiano, '
+                        '_Sísifo_, entre 1548 e 1549, Museo Nacional del Prado, domínio público. Albert Camus, _O Mito de Sísifo_ (1942). '
+                        'Os arranques de frase da defesa vêm da sessão 10 do percurso anterior. O caso da Inês, o da Joana, o da ordem das '
+                        'mostras, o da Rita e o da fila do bar são inventados; o do cartaz é real.'),
+        # 07/11/2026 (variante «mostra»): o Ponto de chegada em papel antes do cartão 1, a pausa a meio da mostra e a entrega; não há
+        # folga nem passo do projeto à parte (a mostra é o projeto).
+        'tempos': {'ponto': 15, 'pausa': 10, 'entrega': 5},
+        'depois': DEPOIS,
+        'cartoes': CARTOES,
+    }
+    esc = [k for k, c in enumerate(CARTOES) if c['t'] == 'escolha']
+    assert len(esc) == len(LUGARES), (len(esc), len(LUGARES))
+    for k, lugar in zip(esc, LUGARES):
+        c = CARTOES[k]
+        if '_certa' not in c:
+            continue
+        ordem = L._mist(L._semente(d['chave'], k), [0, 1, 2])
+        cc = ordem[lugar]
+        erradas = c.pop('_erradas')
+        o, fe = [x for x, _ in erradas], [y for _, y in erradas]
+        o.insert(cc, c.pop('_certa'))
+        fe.insert(cc, '')
+        c.update(o=o, c=cc, fe=fe)
+    return d
+
+
+if __name__ == '__main__':
+    d = sessao()
+    p = AQUI.with_suffix('.json')
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + '\n', 'utf-8')
+    print(p, len(d['cartoes']), 'cartões', sum(1 for c in d['cartoes'] if c['t'] != 'ler'), 'de fazer')
