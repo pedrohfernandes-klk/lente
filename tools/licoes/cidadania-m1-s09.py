@@ -33,6 +33,9 @@
 #   (aberto a 7/11/2026: Lewis Hine, 1874 a 1940; 1905; prova em gelatina e prata, 19,1 × 24,1 cm; Museum of Fine Arts, Houston;
 #   domínio público nos Estados Unidos por publicação antes de 1931, PD-Art) confirma a licença. O título do museu não diz de que país
 #   vinha a família, e a legenda também não o diz;
+#   07/11/2026 (decisão 179): o ficheiro passa a ser o do Commons, sem filtros nem cortes (a prova inteira, com o seu tom), descarregado
+#   a 1280 × 1618 por Special:FilePath e guardado a 960 × 1214; o HTML continua com width="640" height="811" (a mesma proporção,
+#   a menos de 0,3 %), por isso as páginas geradas não mudam;
 # - R1: _This Is Water_, o discurso de David Foster Wallace aos finalistas do Kenyon College em 2005 (#84, s09), contado por palavras
 #   nossas e sem citar. 07/11/2026 (revisão): a história confere com o texto publicado pelo Kenyon College
 #   (https://www.kenyon.edu/news/archive/this-is-water/, aberto a 7/11/2026): «two young fish» encontram «an older fish», que pergunta
