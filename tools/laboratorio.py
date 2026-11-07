@@ -69,23 +69,18 @@ def extras(base,treinar=False):
 def depois(base,itens):
     # 05/11/2026: decisão 163. «Daqui segues para»: o passo seguinte (ou o Ideias) e o regresso, nunca um beco.
     return ('<nav class="depois" aria-label="Daqui segues para">'+''.join('<a href="'+e(link(base,h))+'"><span><small>'+k+'</small><b>'+t+'</b></span><span class="seta" aria-hidden="true">→</span></a>' for k,h,t in itens)+'</nav>')
-# 07/11/2026: decisão 180 (docente). As portas não são passos de um método com ordem: «Porta seguinte», só com o nome da
-# porta. Antes, «Passo seguinte» e o nome com os passos («Treinar: passos 2 e 3»).
+# 07/11/2026: decisão 180 (docente, no cartão de opções). As portas não têm ordem: no fim de uma porta (e do seu último
+# percurso) aparecem as outras duas, lado a lado. Antes, «Passo seguinte» (e, num primeiro acerto, «Porta seguinte»).
 def sub(b):return b['subtitle'][0].upper()+b['subtitle'][1:]+'.'
-def passo_seguinte(b):
-    i=D['blocks'].index(b)
-    if i+1<len(D['blocks']):
-        nb=D['blocks'][i+1]
-        return ('Porta seguinte','narrativas/'+nb['id']+'/',nb['title'])
-    return ('No Ideias','narrativas/ideias/','As sessões')
+def outras_portas(b):
+    return [('Outra porta','narrativas/'+o['id']+'/',o['title']) for o in D['blocks'] if o is not b]
 def fim_percurso(r):
     """05/11/2026: decisão 163. Depois da última peça de um percurso: o percurso seguinte da mesma porta, a porta seguinte ou,
     no fim de Criar, as sessões do Ideias. Devolve (caminho, rótulo do botão, título)."""
     b=block_of(r);rs=routes_of(b);i=rs.index(r)
     if i+1<len(rs):nr=rs[i+1];return ('narrativas/percursos/'+nr['id']+'/','Percurso seguinte: '+nr['title'],nr['title'])
-    j=D['blocks'].index(b)
-    if j+1<len(D['blocks']):nb=D['blocks'][j+1];return ('narrativas/'+nb['id']+'/','Porta seguinte: '+nb['title'],nb['title'])
-    return ('narrativas/ideias/','As sessões do Ideias','As sessões do Ideias')
+    # 07/11/2026: decisão 180. Na última peça de uma porta, «As outras portas»: a entrada do Laboratório, onde estão as três.
+    return ('narrativas/#portas','As outras portas','Laboratório')
 
 def page(base,title,body,desc,foot=True,treinar=False,fio=None,abre=''):
     """fio: None na entrada; (atual, modo) nas outras páginas."""
@@ -124,7 +119,7 @@ def entrada():
           '<ol class="sessoes ideias-sessoes" data-seguir-com-feitas aria-label="Sessões publicadas">'+linhas_s+'</ol></section></header>')
     # 07/11/2026: decisão 180 (docente). As três portas não são passos de um método com ordem: saem os números (1, 2–3, 4–5),
     # o «Passo N:» e o título «para os cinco passos». Cada porta diz o que tem, com o subtítulo que já era seu.
-    body+='<section class="lab-portas" aria-labelledby="portas-t"><p class="lab-sec-t" id="portas-t">Três portas</p><ol class="portas3">'
+    body+='<section class="lab-portas" id="portas" aria-labelledby="portas-t"><p class="lab-sec-t" id="portas-t">Três portas</p><ol class="portas3">'
     for b in D['blocks']:
         rs=routes_of(b);ids=[id for r in rs for id in r['pieces']]
         body+=('<li id="'+b['anchor']+'"><a class="porta3" href="'+b['id']+'/" data-cz-ids="'+e(json.dumps(ids))+'">'
@@ -164,7 +159,7 @@ for b in D['blocks']:
     for i,r in enumerate(rs,1):
         body+=('<section class="percurso" id="'+r['id']+'" aria-labelledby="'+r['id']+'-t"><p class="rotulo">Percurso '+str(i)+' de '+str(len(rs))+'</p>'
                '<h2 id="'+r['id']+'-t">'+a(base,'narrativas/percursos/'+r['id']+'/',e(r['title']))+'</h2><p class="q">'+e(r['question'])+'</p>'+count(r['pieces'])+linhas(base,r['pieces'])+'</section>')
-    body+=depois(base,[passo_seguinte(b),('Voltar ao','narrativas/','Laboratório')])
+    body+=depois(base,outras_portas(b)+[('Voltar ao','narrativas/','Laboratório')])
     page(base,b['title'],body,b['title']+' '+b['subtitle']+'. '+b['question'],treinar=b['id']=='treinar',fio=(b['id'],'page'))
 
 # Percursos
@@ -176,8 +171,8 @@ for r in D['routes']:
     body=('<header class="lab-abre lab-abre-percurso"><div class="abre-t"><p class="rotulo">'+e(b['title'])+'</p><h1>'+e(r['title'])+'</h1><p class="lead">'+e(r['question'])+'</p>'
           +('<p class="razao">'+e(r['reason'])+'</p>' if r.get('reason') else '')+'</div></header>'
           +start(base,r['pieces'])+'<section class="percurso">'+antes+count(r['pieces'])+linhas(base,r['pieces'])+'</section>')
-    seg=('Percurso seguinte','narrativas/percursos/'+rs[i+1]['id']+'/',e(rs[i+1]['title'])) if i+1<len(rs) else passo_seguinte(b)
-    body+=depois(base,[seg,('Voltar a','narrativas/'+b['id']+'/',b['title'])])
+    seg=[('Percurso seguinte','narrativas/percursos/'+rs[i+1]['id']+'/',e(rs[i+1]['title']))] if i+1<len(rs) else outras_portas(b)
+    body+=depois(base,seg+[('Voltar a','narrativas/'+b['id']+'/',b['title'])])
     page(base,r['title'],body,r['question']+' '+NUM[len(r['pieces'])].capitalize()+' peças, por ordem.',treinar=b['id']=='treinar',fio=(b['id'],'true'))
 
 # Tudo
@@ -220,7 +215,8 @@ def menu_peca(p,s,r,b,nxt):
         voltar=(ABS+'narrativas/percursos/'+r['id']+'/','Voltar ao percurso',r['title']);onde=r['title']+', peça '+str(k+1)+' de '+str(len(ids))+'.'
         if nxt:seguinte=(ABS+nxt['url'],'Seguinte',nxt['title'])
         else:
-            dest,rot,tit=fim_percurso(r);seguinte=(ABS+dest,rot.split(':')[0] if ':' in rot else 'No Ideias',tit if ':' in rot else 'As sessões')
+            # 07/11/2026: decisão 180. «As outras portas» (sem dois pontos) leva o rótulo inteiro e «Laboratório» por baixo.
+            dest,rot,tit=fim_percurso(r);seguinte=(ABS+dest,rot.split(':')[0],tit)
     else:
         voltar=(porta,'Voltar a '+b['title'],b['title']);onde='Fora dos percursos.';seguinte=None
     imp=p['url'].rstrip('/')+'-imprimir/'

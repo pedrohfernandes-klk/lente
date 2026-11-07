@@ -24,14 +24,17 @@ html.em-projecao:has(.lab-barra){scroll-padding-top:0}
 /* ---------- O fio: as quatro partes do Laboratório, com os passos do método (decisão 97) ---------- */
 .lab-fio-pg{max-width:1200px;margin:0 auto;padding:16px 16px 0;box-sizing:border-box}
 @media(min-width:768px){.lab-fio-pg{padding:16px 24px 0}}
-.lab-fio{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin:0;padding:0}
+.lab-fio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:12px;margin:0;padding:0}
+/* 07/11/2026: decisão 180. O Ideias à cabeça, com o filete grosso por cima (a base de tudo); as três portas juntas, sem sequência. */
+.lab-fio .fio-portas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;min-width:0}
+.lab-fio>a:first-child{border-top:4px solid var(--tinta,#000)}
 .lab-fio a{display:flex;flex-direction:column;justify-content:center;min-height:64px;padding:8px 12px;background:var(--papel,#fff);text-decoration:none;color:var(--tinta,#000);box-shadow:inset 0 -4px transparent;min-width:0}
 .lab-fio a:hover{box-shadow:inset 0 -4px var(--suave,#444)}
 .lab-fio a[aria-current]{box-shadow:inset 0 -4px var(--vermelho,#c8232c)}
 .lab-fio a:focus-visible{outline:3px solid var(--tinta,#000);outline-offset:-3px}
 .lab-fio .n{font:700 .8125rem/1.2 Arial,Helvetica,sans-serif;color:var(--suave,#444)}
 .lab-fio b{font:400 clamp(1rem,5.2vw,1.5rem)/1 'Bebas Neue','Arial Narrow',Arial,sans-serif;letter-spacing:.01em;margin-top:4px;overflow-wrap:anywhere}
-@media(max-width:479px){.lab-fio a{padding:8px 6px}.lab-fio .pl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+@media(max-width:479px){.lab-fio{grid-template-columns:minmax(0,1fr);gap:2px}.lab-fio a{padding:8px 6px}}
 
 /* ---------- Página ---------- */
 [data-lab="3"]{margin:0;background:var(--fundo,#f3f2ee);color:var(--tinta,#000);font:1rem/1.5 Arial,Helvetica,sans-serif}
@@ -185,7 +188,9 @@ html.lab-tem-feitas [data-lab="3"] .lab-indice .ind.current:has(.cz-state.curren
 [data-lab="3"] .depois b{display:block;font:400 1.75rem/1.05 'Bebas Neue','Arial Narrow',Arial,sans-serif;margin-top:4px}
 [data-lab="3"] .depois a:hover b{text-decoration:underline;text-decoration-thickness:2px}
 [data-lab="3"] .depois a:focus-visible{outline-offset:-3px}
-@media(min-width:900px){[data-lab="3"] .depois{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){[data-lab="3"] .depois{grid-template-columns:1fr 1fr}
+ /* 07/11/2026: decisão 180. No fim de uma porta, as duas outras portas lado a lado e o regresso numa linha inteira por baixo. */
+ [data-lab="3"] .depois a:nth-child(3):last-child{grid-column:1/-1}}
 
 /* Pé das portas e dos percursos */
 [data-lab="3"] .mais{display:flex;flex-wrap:wrap;gap:0 24px;margin:40px 0 0;padding-top:16px;border-top:2px solid var(--tinta,#000)}

@@ -34,25 +34,57 @@
   ],
   "narrativas/duchamp/index.html": [
    [
-    "th=\"2\"/></svg><span>Passo seguinte<small>Treinar</smal",
-    "th=\"2\"/></svg><span>Porta seguinte<small>Treinar</smal",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
     1
    ],
    [
-    "r/\",seguinteRotulo:\"Passo seguinte: Treinar\",depois:\"<",
-    "r/\",seguinteRotulo:\"Porta seguinte: Treinar\",depois:\"<",
+    "th=\"2\"/></svg><span>Passo seguinte<small>Treinar</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/treinar/\",seguinteRotulo:\"Passo seguinte: Treinar\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
     1
    ]
   ],
   "narrativas/treinar/teste-do-colega/index.html": [
    [
-    "th=\"2\"/></svg><span>Passo seguinte<small>Criar</small>",
-    "th=\"2\"/></svg><span>Porta seguinte<small>Criar</small>",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
     1
    ],
    [
-    "r/\",seguinteRotulo:\"Passo seguinte: Criar\",depois:\"<di",
-    "r/\",seguinteRotulo:\"Porta seguinte: Criar\",depois:\"<di",
+    "th=\"2\"/></svg><span>Passo seguinte<small>Criar</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\",seguinteRotulo:\"Passo seguinte: Criar\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
+    1
+   ],
+   [
+    "percurso. A seguir: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/criar/\\\">Criar</a>. Ou volta a est",
+    "percurso. A seguir: <a href=\\\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\\\">Laboratório</a>. Ou volta a est",
+    1
+   ]
+  ],
+  "narrativas/oficina-atelie/index.html": [
+   [
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/\"><svg class=\"ic\" view",
+    "n=\"true\"></span></a><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\"><svg class=\"ic\" view",
+    1
+   ],
+   [
+    "th=\"2\"/></svg><span>No Ideias<small>As sessões</small></span><span",
+    "th=\"2\"/></svg><span>As outras portas<small>Laboratório</small></span><span",
+    1
+   ],
+   [
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/ideias/\",seguinteRotulo:\"As sessões do Ideias\",depois:\"<div class",
+    "percurso\",seguinte:\"https://pedrohfernandes-klk.github.io/lente/narrativas/#portas\",seguinteRotulo:\"As outras portas\",depois:\"<div class",
     1
    ]
   ]

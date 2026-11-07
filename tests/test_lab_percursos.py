@@ -77,7 +77,9 @@ class Continuacao(unittest.TestCase):
    # percurso seguinte da mesma porta, a porta seguinte ou, no fim de Criar, as sessões do Ideias. Cada destino confere-se
    # por extenso, com a mesma exigência de antes (lista exata), a partir da ordem de percursos.json.
    rs=[x for x in D['routes'] if x['block']==r['block']];bs=[b['id'] for b in D['blocks']];k=rs.index(r);j=bs.index(r['block'])
-   fim=None if nxt else ('narrativas/percursos/'+rs[k+1]['id']+'/' if k+1<len(rs) else 'narrativas/'+bs[j+1]+'/' if j+1<len(bs) else 'narrativas/ideias/')
+   # 07/11/2026: decisão 180 (docente). As portas não têm ordem: depois do último percurso de uma porta, o «a seguir» é a
+   # entrada do Laboratório, onde estão as três portas (antes, a porta seguinte ou, no fim de Criar, as sessões do Ideias).
+   fim=None if nxt else ('narrativas/percursos/'+rs[k+1]['id']+'/' if k+1<len(rs) else 'narrativas/#portas')
    self.assertNotIn('Treino seguinte',s,p['id'])
    if 'EPIJogo.montar(' in s and 'percurso:"' in s:
     self.assertIn('percurso:"'+rurl+'"',s,p['id'])

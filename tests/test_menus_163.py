@@ -181,13 +181,26 @@ class BarraEFio(unittest.TestCase):
                 self.assertIn(f'<p class="rotulo">{b["title"]}</p>', p)
                 self.assertNotIn('liga-ideias', p)
                 self.assertIsNone(re.search(r'[Pp]assos? \d|Passo seguinte', visivel(p)), r['id'])
-                # nenhum beco: «Daqui segues para» com o seguinte e o regresso à porta
+                # nenhum beco: «Daqui segues para» com o seguinte e o regresso à porta; no último percurso de uma porta, as outras
+                # duas portas (nota do docente à decisão 180) e o regresso à porta
                 depois = re.search(r'<nav class="depois" aria-label="Daqui segues para">(.*?)</nav>', p).group(1)
-                self.assertEqual(len(re.findall(r'<a href=', depois)), 2)
+                ultimo = r['id'] == [x['id'] for x in D['routes'] if x['block'] == b['id']][-1]
+                self.assertEqual(len(re.findall(r'<a href=', depois)), 3 if ultimo else 2)
                 self.assertIn('<small>Voltar a</small><b>' + b['title'] + '</b>', depois)
-        self.assertIn('<small>Porta seguinte</small><b>Treinar</b>', ler(PORTAS['ver']))
-        self.assertIn('No Laboratório: <a href="../ver/">Observar\u00a0→</a>', ler('narrativas/ideias/index.html'))
-        self.assertNotIn('Para treinar este passo', ler('narrativas/ideias/index.html'))
+                self.assertNotIn('Porta seguinte', depois)
+            # no fim de cada porta, as outras duas portas lado a lado e o regresso ao Laboratório, sem «seguinte» entre portas
+            fim = re.search(r'<nav class="depois" aria-label="Daqui segues para">(.*?)</nav>', s).group(1)
+            outras = [o['title'] for o in D['blocks'] if o is not b]
+            self.assertEqual(re.findall(r'<small>([^<]+)</small><b>([^<]+)</b>', fim), [('Outra porta', outras[0]), ('Outra porta', outras[1]), ('Voltar ao', 'Laboratório')])
+            self.assertNotIn('Porta seguinte', s)
+        # nota do docente à decisão 180: o Ideias com as sessões numa lista única, cada uma com a peça e a porta a que leva
+        ideias = ler('narrativas/ideias/index.html')
+        self.assertNotIn('Para treinar este passo', ideias)
+        self.assertNotIn('<section class="porta"', ideias)
+        self.assertIn('<span class="peca">Leva a <i>Galileu</i>, na porta Observar.</span>', ideias)
+        # o fio: o Ideias à cabeça e as três portas juntas num grupo
+        fio = re.search(r'<nav class="lab-fio".*?</nav>', ideias).group(0)
+        self.assertRegex(fio, r'^<nav class="lab-fio" aria-label="Partes do Laboratório"><a href="\./" aria-current="page"><b>Ideias</b></a><span class="fio-portas" role="group" aria-label="As três portas">')
 
     def test_sem_dobras_e_texto_da_casa(self):
         proibido = re.compile(r'por fazer|Página inicial|Abrir o percurso|[·—]', re.I)
@@ -282,8 +295,8 @@ class Menu(unittest.TestCase):
                 self.assertTrue(cfg or (nav and len(re.findall(r'href=', nav[0])) == 2), p['id'])
                 m = menu_de(s)
                 if m:
-                    # 07/11/2026: decisão 180 (docente). «Porta seguinte» no lugar de «Passo seguinte»; a exigência é a mesma.
-                    self.assertRegex(m, r'</span></a><a href="[^"]+"><svg[^>]*>.*?</svg><span>(?:Seguinte|Percurso seguinte|Porta seguinte|No Ideias)<small>')
+                    # 07/11/2026: decisão 180 (docente). «As outras portas» no lugar de «Passo seguinte» e de «No Ideias»; a exigência é a mesma.
+                    self.assertRegex(m, r'</span></a><a href="[^"]+"><svg[^>]*>.*?</svg><span>(?:Seguinte|Percurso seguinte|As outras portas)<small>')
 
 
 class Preservacao(unittest.TestCase):

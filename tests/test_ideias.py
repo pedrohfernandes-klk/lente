@@ -446,7 +446,11 @@ class TerceiraRevisao(unittest.TestCase):
         for pid in ['treinar','criar']:
             for prefix in ['porta','pt','pc']:self.assertIn(f'id="{prefix}-{pid}"',s)
             self.assertNotIn(f'id="porta-{pid}" aria-labelledby',s)
-        self.assertIn('<h3 id="pt-ver">Observar</h3>',s)
+        # 07/11/2026: nota do docente à decisão 180. As sessões numa lista única, sem a porta Observar como título por cima
+        # delas; os ids antigos das três portas ficam escondidos, para as ligações antigas não se perderem.
+        self.assertNotIn('<h3 id="pt-ver">', s)
+        for prefix in ['porta','pt','pc']:self.assertIn(f'<span id="{prefix}-ver" hidden></span>',s)
+        self.assertIn('<ol class="sessoes lista-unica">', s)
         # 02/11/2026: abertura progressiva nativa, sem portas fictícias nem o atol na entrada.
         self.assertIn('<details class="metodo"', s)
         self.assertNotRegex(s, r'<section[^>]*data-dobra')
@@ -653,9 +657,11 @@ class Metodo(unittest.TestCase):
         for n, a in enumerate(apoios, 1):
             self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
         self.assertEqual([x.split(':')[0] for x in apoios[:2]], ['Passo 1 de 5', 'Passo 1 de 5'])
-        portas = [(pid, re.sub(r'<[^>]+>', '', t)) for pid, t in re.findall(r'<div id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">', entrada)]
-        # 07/11/2026: decisão 180 (docente). A porta diz o seu subtítulo do Laboratório, e não um «passo» do método.
-        self.assertEqual(portas, [('ver', 'Como os outros fizeram.')])
+        # 07/11/2026: decisão 180 (docente) e a sua nota. As portas deixam de arrumar as sessões: cada sessão diz a peça e a
+        # porta a que leva (antes, a porta Observar por cima das duas sessões, com o seu «passo»).
+        self.assertNotIn('class="apoio-porta"', entrada)
+        self.assertEqual(re.findall(r'<span class="peca">(.*?)</span>', entrada),
+                         ['Leva a <i>Galileu</i>, na porta Observar.', 'Leva a <i>Leonardo</i>, na porta Observar.'])
         self.assertEqual(len(re.findall(r'Nas duas sessões publicadas', entrada)), 1)
         for d in self.licoes():
             pag = (ROOT / d['saida']).read_text('utf-8')

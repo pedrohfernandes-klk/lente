@@ -375,6 +375,8 @@ CSS = (TOKENS +
  '.ideias ol.sessoes .tit{grid-column:2;line-height:1.25}'
  '.ideias ol.sessoes strong{font-size:1.0625rem}'
  '.ideias ol.sessoes .apoio{grid-column:2;color:var(--suave);font:.9375rem/1.4 Georgia,"Times New Roman",serif;margin-top:2px}'
+# 07/11/2026: decisão 180. Na lista única, a peça e a porta a que cada sessão leva, por baixo do passo.
+'.ideias ol.sessoes .peca{display:block;grid-column:2;color:var(--suave);font:.875rem/1.4 Arial,Helvetica,sans-serif;margin-top:2px}'
  '.ideias li.seguir .linha{box-shadow:inset 4px 0 0 var(--vermelho)}'
  '.ideias li.prep .n,.ideias li.prep strong{color:var(--suave)}'
  '.ideias .estado{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;line-height:1;font-weight:700;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap;margin-left:2px}'
@@ -595,28 +597,22 @@ def pagina_entrada(L):
     base = '../../'
     prontas = [s for s in SESSOES if s['n'] in L]
     primeira = prontas[0]
-    portas = ''
-    for pid, nome, apoio, _url in PORTAS:
-        ss = [s for s in prontas if s['porta'] == pid]
-        if not ss:
-            portas += ''.join(f'<span id="{prefix}-{pid}" hidden></span>' for prefix in ('porta', 'pt', 'pc'))
-            continue
-        linhas = ''
-        for s in ss:
-            d = L[s['n']]
-            linhas += (f'<li data-chave="{e(d["chave"])}" data-versao="{e(d["versao"])}" data-n="{s["n"]}" '
-                       f'data-titulo="{e(s["titulo"])}" data-papel="{e(s.get("papel", ""))}" data-href="sessao-{s["n"]:02d}/">'
-                       f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
-                       f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong>'
-                       # 05/11/2026: revisão de 5/11 (lente-ideias-2): o passo de cada sessão volta a ver-se na entrada.
-                       f'<span class="apoio">{e(s["passo"])}.</span>'
-                       '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
-        # 05/11/2026: revisão de 5/11 (lente-ideias-2): cada porta volta a dizer que passo serve (pedido 1, ponto 4).
-        # 05/11/2026: decisão 163. Depois da lista, a porta do Laboratório onde se treina este passo.
-        portas += (f'<section class="porta" id="porta-{pid}" aria-labelledby="pt-{pid}"><h3 id="pt-{pid}">{nome}</h3>'
-                   f'<div id="pc-{pid}"><p class="apoio-porta">{LL.nq(e(apoio))}</p><ol class="sessoes">{linhas}</ol>'
-                   # 07/11/2026: decisão 180 (docente). A porta não é um passo: «No Laboratório», em vez de «Para treinar este passo».
-                   f'<p class="liga-porta">No Laboratório: <a href="{e(_url)}">{nome}\u00a0→</a></p></div></section>')
+    # 07/11/2026: nota do docente à decisão 180 (no cartão de opções): as sessões numa lista única, pela ordem do método de
+    # Young, e não arrumadas por porta (o arrumo dava a ideia de fases). Cada sessão diz a peça do Laboratório a que leva e em
+    # que porta está. Os ids antigos das portas (porta-, pt-, pc-) ficam escondidos, para as ligações antigas não se perderem.
+    linhas = ''
+    for s in prontas:
+        d = L[s['n']]
+        nome_porta = next(n for p, n, _a, _u in PORTAS if p == s['porta'])
+        linhas += (f'<li data-chave="{e(d["chave"])}" data-versao="{e(d["versao"])}" data-n="{s["n"]}" '
+                   f'data-titulo="{e(s["titulo"])}" data-papel="{e(s.get("papel", ""))}" data-href="sessao-{s["n"]:02d}/">'
+                   f'<a class="linha" href="sessao-{s["n"]:02d}/"><span class="n" aria-hidden="true">{s["n"]}</span>'
+                   f'<span class="tit"><strong><span class="c-sr">Sessão {s["n"]}: </span>{e(s["titulo"])}</strong>'
+                   f'<span class="apoio">{e(s["passo"])}.</span>'
+                   f'<span class="peca">Leva a <i>{e(s["peca"][1])}</i>, na porta {nome_porta}.</span>'
+                   '<span class="estado" data-estado></span></span><span aria-hidden="true">→</span></a></li>')
+    portas = (f'<ol class="sessoes lista-unica">{linhas}</ol>'
+              + ''.join(f'<span id="{prefix}-{pid}" hidden></span>' for pid, _n, _a, _u in PORTAS for prefix in ('porta', 'pt', 'pc')))
     desenho = (ROOT / 'assets/laboratorio/ideias/notas-fios.svg').read_text('utf-8')
     # 05/11/2026: decisão 163. As migalhas soltas passam à barra única e ao fio (fora do main, antes dele).
     corpo = ('<header class="hero"><div><p class="rotulo">Laboratório</p><h1 aria-label="Ideias">Ide<span class="pingo-retro" aria-hidden="true">i</span>as</h1>'
@@ -630,7 +626,7 @@ def pagina_entrada(L):
              '<p>Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940). Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
              + M.passos(set()) + f'<p>Nas {POR_EXTENSO[len(prontas)]} sessões publicadas, começas por juntar material e observar melhor.</p>'
              f'<a href="../../biblioteca/{BIB_ID}/">Ler sobre o método de Young →</a></div></details>'
-             '<h2 class="sessoes-t" id="sessoes">As sessões</h2><div class="portas">' + portas + '</div>'
+             '<h2 class="sessoes-t" id="sessoes">As sessões</h2>' + portas +
              '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')

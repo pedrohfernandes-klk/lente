@@ -15,7 +15,8 @@ R = Path(__file__).resolve().parents[1]
 D = json.loads((R / 'assets/laboratorio/percursos.json').read_text('utf-8'))
 ABS = 'https://pedrohfernandes-klk.github.io/lente/'
 # versão dos ficheiros novos (lab3.css, percursos.js), para a cache do navegador
-V = '20261105-163'
+# 07/11/2026: decisão 180, o fio novo muda lab3.css: versão nova para não servir a folha antiga em cache.
+V = '20261107-180'
 e = html.escape
 
 
@@ -39,12 +40,14 @@ def fio(base, atual=None, modo='page'):
     """atual: 'ideias', 'ver', 'treinar', 'criar' ou None; modo: 'page' na própria página, 'true' dentro de uma porta."""
     # 07/11/2026: decisão 180 (docente). As portas não são passos de um método com ordem: o fio diz só os nomes das quatro
     # partes. Antes, cada parte levava os seus «passos» (Ideias 1 a 5, Observar 1, Treinar 2 e 3, Criar 4 e 5).
-    itens = [('ideias', 'Ideias')] + [(b['id'], b['title']) for b in D['blocks']]
-    out = '<nav class="lab-fio" aria-label="Partes do Laboratório">'
-    for bid, nome in itens:
+    # 07/11/2026: nota do docente à decisão 180: «Ideias é a primeira de todas as coisas, com ou sem ordem, é a espinha dorsal».
+    # O Ideias vem à cabeça, destacado; as três portas vêm juntas a seguir, num grupo sem sequência (lab3.css).
+    def item(bid, nome):
         cur = f' aria-current="{modo}"' if bid == atual else ''
-        out += f'<a href="{e(link(base, "narrativas/" + bid + "/"))}"{cur}><b>{nome}</b></a>'
-    return out + '</nav>'
+        return f'<a href="{e(link(base, "narrativas/" + bid + "/"))}"{cur}><b>{nome}</b></a>'
+    return ('<nav class="lab-fio" aria-label="Partes do Laboratório">' + item('ideias', 'Ideias')
+            + '<span class="fio-portas" role="group" aria-label="As três portas">' + ''.join(item(b['id'], b['title']) for b in D['blocks'])
+            + '</span></nav>')
 
 
 def sessoes_publicadas():
