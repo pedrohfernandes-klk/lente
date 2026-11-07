@@ -33,6 +33,8 @@ NO_MOLDE = NO_MOLDE | {'cidadania-m1-s07.json'}
 NO_MOLDE |= {'cidadania-m1-s08.json'}
 # 07/11/2026 (decisões 166 a 168 e 174): e a s09 do M1, pelo mesmo molde, a partir do main com as s01 a s08 finais.
 NO_MOLDE |= {'cidadania-m1-s09.json'}
+# 07/11/2026 (decisões 166 a 168): e a s10 do M1, a sessão de mostra (variante «mostra»).
+NO_MOLDE |= {'cidadania-m1-s10.json'}
 PILOTO = [p for p in CIDADANIA if p.name not in NO_MOLDE]
 
 
@@ -110,7 +112,14 @@ class ContratoOpcional(unittest.TestCase):
 
     def test_com_molde_o_contrato_aplica_se(self):
         # 05/11/2026 (pedido 2): a primeira sessão ainda sem molde (a s01 já o tem e cumpre-o)
-        d = carregar(PILOTO[0])
+        # 07/11/2026 (sessão 10 no molde, fusão do main com a s09): já não há sessão do M1 sem molde; a prova faz-se com a sessão 10
+        # tal como estava antes do molde (no main dc01487), que continua a ser uma lição do piloto, sem o campo «molde».
+        if PILOTO:
+            d = carregar(PILOTO[0])
+        else:
+            import subprocess
+            d = json.loads(subprocess.check_output(['git', 'show', 'dc01487:tools/licoes/cidadania-m1-s10.json'], cwd=ROOT).decode('utf-8'))
+            self.assertNotIn('molde', d)
         erros = L.validar(dict(d, molde=L.MOLDE))
         self.assertTrue(any(e.startswith('molde') for e in erros), erros)
         self.assertFalse(any(e.startswith('molde') for e in L.validar(d)))
@@ -1492,7 +1501,8 @@ class SessaoS09(unittest.TestCase):
         self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
         self.assertIn('Quando uma regra parece servir todos, de quem é a voz que falta?', C[0]['html'])
         # a s10 ainda está no piloto: a s09 leva à página do piloto
-        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s10/')
+        # 07/11/2026 (sessão 10 no molde): a seguinte passa a ser a s10 nova, no mesmo endereço das sessões (era a do piloto).
+        self.assertEqual(self.D['seguinte'], '../10/')
         # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
         for i, c in enumerate(C, 1):
             if c['t'] == 'ler':
@@ -1638,6 +1648,212 @@ class SessaoS09(unittest.TestCase):
                 self.assertNotIn(html_escape(c['f'])[:60], s)
         self.assertIn('Domínio público', s)
         self.assertIn('Museum of Fine Arts', s)
+
+
+class ContratoMostra(unittest.TestCase):
+    """07/11/2026 (sessão 10 do M1 no molde): a variante «mostra» do plano (secção 2, «Variantes»), com nome no .json («variante»:
+    «mostra»): só as sessões 10 a podem usar; tem 7 de fazer, R1 a R4 nos cartões 3 a 6 (R2 a R4 com a sessão de origem), o «Em turma»
+    é a mostra (pelo menos 90 minutos, depois do Lê e de cinco exercícios, sem «Volta ao caso») e há pelo menos um exercício depois
+    dele. As outras sessões continuam com o contrato inteiro: o ensaio e as sessões 01 a 08 validam como antes."""
+    D = carregar(ROOT / 'tools/licoes/cidadania-m1-s10.json')
+
+    def com(self, f, d=None):
+        d = copy.deepcopy(d or self.D)
+        f(d)
+        return ' | '.join(L.validar(d))
+
+    def test_a_s10_cumpre_a_variante(self):
+        self.assertEqual(self.D['variante'], 'mostra')
+        self.assertEqual(L.validar(self.D), [])
+
+    def test_sem_a_variante_vale_o_contrato_inteiro(self):
+        erros = self.com(lambda d: d.pop('variante'))
+        self.assertIn('7 cartões de fazer (têm de ser 14)', erros)
+        self.assertIn('depois da «Volta ao caso»', erros)
+
+    def test_so_as_sessoes_10(self):
+        self.assertIn('só das sessões 10', ' | '.join(L.validar(dict(E.licao(), variante='mostra'))))
+        s08 = carregar(ROOT / 'tools/licoes/cidadania-m1-s08.json')
+        self.assertIn('só das sessões 10', ' | '.join(L.validar(dict(s08, variante='mostra'))))
+        self.assertIn('variante desconhecida', self.com(lambda d: d.__setitem__('variante', 'curta')))
+
+    def test_cada_regra_da_variante(self):
+        self.assertIn('o cartão 5 é um «Recupera»', self.com(lambda d: d['cartoes'][4].pop('origem')))
+        self.assertIn('o cartão 6 é um «Recupera»', self.com(lambda d: d['cartoes'][5].pop('g')))
+        t = next(i for i, c in enumerate(self.D['cartoes']) if c.get('rot') == 'Em turma')
+        self.assertIn('pelo menos 90 minutos', self.com(lambda d: d['cartoes'][t].__setitem__('min', 60)))
+
+        def troca(d):
+            d['cartoes'][t], d['cartoes'][t + 1] = d['cartoes'][t + 1], d['cartoes'][t]
+        self.assertIn('pelo menos um cartão de fazer depois do «Em turma»', self.com(troca))
+
+        def cedo(d):
+            d['cartoes'].insert(4, d['cartoes'].pop(t))
+        self.assertIn('depois do «Lê» e de pelo menos cinco exercícios', self.com(cedo))
+
+    def test_as_outras_sessoes_nao_mudam(self):
+        self.assertEqual(L.validar(E.licao()), [])
+        # 07/11/2026 (fusão do main com a s09): a s09 também valida sem a variante.
+        for n in ('01', '02', '03', '04', '05', '06', '07', '08', '09'):
+            d = carregar(ROOT / f'tools/licoes/cidadania-m1-s{n}.json')
+            self.assertNotIn('variante', d, n)
+            self.assertEqual(L.validar(d), [], n)
+
+
+class SessaoS10(unittest.TestCase):
+    """07/11/2026 (decisões 166 a 168): a sessão 10 do M1, «O que consegues defender?», na versão final, a sessão de mostra: o contrato
+    da variante e o cfg, R1 a R4 (Camus e as sessões 02, 06 e 09, cada uma com palavras da sessão de origem), as duas charneiras (a 2,
+    logo depois da mostra, sem a resposta escrita antes), o caso real com fonte oficial (o cartaz e o seu registo; decisão 161), as duas
+    imagens com o crédito atrás do «i» (decisão 153), nenhum vídeo (decisão 155), nenhum excerto de lei e a versão para imprimir sem
+    respostas."""
+    D = carregar(ROOT / 'tools/licoes/cidadania-m1-s10.json')
+    norm = staticmethod(SessaoS01.norm)
+
+    def test_contrato_e_cfg(self):
+        self.assertEqual(self.D['molde'], L.MOLDE)
+        self.assertEqual(self.D['variante'], 'mostra')
+        self.assertEqual(L.validar(self.D), [])
+        self.assertEqual(self.D['saida'], 'cidadania/m1/sessoes/10/index.html')
+        self.assertEqual(self.D['chave'], 'epi-cid-m1-s10')
+        self.assertNotEqual(self.D['versao'], '2026-10-31-2')  # a versão do piloto sobe (preservarAnterior guarda o «feita»)
+        cfg = cfg_da_pagina((ROOT / self.D['saida']).read_text('utf-8'))
+        for k in ('aula', 'semPontos', 'preservarAnterior'):
+            self.assertIs(cfg[k], True, k)
+        self.assertEqual(cfg['retomar'], 192)
+        self.assertNotIn('pistas', cfg)
+        C = self.D['cartoes']
+        self.assertTrue(all(c.get('pista') for c in C if c['t'] != 'ler'))
+        self.assertEqual(len(C), 14)
+        self.assertEqual(sum(c['t'] != 'ler' for c in C), 7)
+        self.assertEqual([c['rot'] for c in C if c['t'] == 'ler'],
+                         ['Abre', 'Decide', 'Olha', 'Lê', 'Em turma', 'Agora, em papel', 'Para levar'])
+        # o Ponto de chegada antes do cartão 1, a mostra com a pausa a meio, 180 minutos
+        # 07/11/2026: decisão 179 (docente): Ponto de chegada em 10 minutos e mostra em 125
+        self.assertEqual(self.D['tempos'], {'ponto': 10, 'pausa': 10, 'entrega': 5})
+        self.assertEqual(sum(c['min'] for c in C) + sum(self.D['tempos'].values()), 180)
+        turma = next(c for c in C if c['rot'] == 'Em turma')
+        self.assertGreaterEqual(turma['min'], 90)
+        self.assertIn('Três minutos de mostra e dois de defesa.', turma['html'])
+        self.assertIn('Uma resposta que admite um limite fica mais fraca?', C[0]['html'])
+        self.assertEqual(self.D['seguinte'], '../../../piloto/m1/')
+        # cada retorno até 45 palavras, cada enunciado até 30 e cada opção até 15 (molde, secção 2)
+        for i, c in enumerate(C, 1):
+            if c['t'] == 'ler':
+                continue
+            for x in [c['f']] + (c['fe'] if isinstance(c['fe'], list) else [c['fe']]):
+                self.assertLessEqual(len(L.visivel(x).split()), 45, f'cartão {i}')
+            self.assertLessEqual(len(L.visivel(c['p']).split()), 30, f'cartão {i}')
+            for o in c.get('o') or []:
+                self.assertLessEqual(len(L.visivel(o).split()), 15, f'cartão {i}')
+
+    def test_recupera_r1_a_r4(self):
+        C = self.D['cartoes']
+        self.assertEqual([C[k]['g'] for k in range(2, 6)], ['recupera'] * 4)
+        # R1, a obra: Camus, com o Sísifo de Ticiano em miniatura e o crédito atrás do «i»
+        self.assertIn('Sísifo', C[2]['p'])
+        self.assertIn('sisifo.webp', C[2]['ver'])
+        self.assertIn('https://commons.wikimedia.org/wiki/File:Punishment_sisyph.jpg', C[2]['ver'])
+        self.assertIn('Domínio público', C[2]['ver'])
+        # R2 a R4: uma de cada bloco de sessões (01 a 03, 04 a 06, 07 a 09), e o retorno usa palavras da sessão de origem. Confere-se na
+        # fonte de cada sessão (tools/licoes/cidadania-m1-sNN.json).
+        self.assertEqual([C[k]['origem'] for k in range(3, 6)],
+                         ['cidadania/m1/sessoes/02/', 'cidadania/m1/sessoes/06/', 'cidadania/m1/sessoes/09/'])
+        for k in range(3, 6):
+            r = C[k]
+            self.assertTrue((ROOT / r['origem'] / 'index.html').is_file(), r['origem'])
+            n = r['origem'].rstrip('/')[-2:]
+            origem = self.norm(json.dumps(carregar(ROOT / f'tools/licoes/cidadania-m1-s{n}.json'), ensure_ascii=False))
+            fe = r['fe'] if isinstance(r['fe'], list) else [r['fe']]
+            citadas = re.findall(r'«([^»]{8,})»', ' '.join([r['f']] + [x for x in fe if x]))
+            self.assertTrue(any(self.norm(q) in origem for q in citadas), f'cartão {k + 1}: o retorno usa palavras da sessão {n}')
+        # a pista do R4 não tem a palavra certa
+        self.assertNotIn('todos', C[5]['pista'])
+
+    def test_charneiras(self):
+        C = self.D['cartoes']
+        # charneira 1 no cartão 10 (a resposta que mostra de onde vem), charneira 2 no cartão 12 (o limite não apaga a contagem)
+        self.assertEqual(C[9]['t'], 'escolha')
+        self.assertIn('Contei os lugares', C[9]['o'][C[9]['c']])
+        self.assertEqual(C[10]['rot'], 'Em turma')
+        self.assertEqual((C[11]['t'], C[11]['v']), ('vf', False))
+        # nenhum cartão antes da charneira 2 escreve a sua resposta (o limite fala das entrevistas; a contagem continua a provar)
+        for c in C[:11]:
+            t = json.dumps(c, ensure_ascii=False)
+            for x in ('continua a provar', 'deixa a outra', 'não apaga a contagem', 'duas provas diferentes'):
+                self.assertNotIn(x, t)
+        # nem a charneira 1 vem escrita no Lê: o Lê dá os arranques, não a resposta à Inês
+        le = next(c for c in C if c['rot'] == 'Lê')
+        self.assertNotIn('Contei', le['html'])
+        # 07/11/2026 (revisão da s10): nem «Que palavra» nem «qual das» no texto do aluno (regras da casa), e o enunciado da charneira 2
+        # sem o absoluto «nada»
+        txt = L.visivel(json.dumps(C, ensure_ascii=False))
+        self.assertNotRegex(txt, r'(?i)\bque palavra\b|\bqual das\b')
+        self.assertNotIn('nada', C[11]['p2'])
+        # 07/11/2026 (revisão da s10): no ordenar do R3, o passo de tirar os números existe (o retorno trata o erro de o pôr antes da
+        # escolha) e não fica o passo copiado da sessão 06
+        r3 = C[4]
+        self.assertIn('Tirar à sorte o número de cada um na lista.', r3['passos'])
+        self.assertIn('tirar os números antes de escolher a regra', r3['fe'])
+        self.assertNotIn('Rever a regra, se a objeção for boa.', r3['passos'])
+
+    def test_caso_real_imagens_e_sem_video(self):
+        C = self.D['cartoes']
+        # 07/11/2026 (revisão da s10): o registo da Library of Congress não se abriu, por isso nenhum cartão se apresenta como caso real
+        # (decisão 161: os inventados ficam até haver um caso conferido) e as «fontes» e o guia dizem-no. O cartão 8 continua a
+        # transferência com o cartaz, com a ligação ao endereço permanente do registo que a cópia do Commons dá (lccn.loc.gov).
+        self.assertEqual([c for c in C if 'Caso real' in c.get('p', '')], [])
+        real = [c for c in C if 'a living newspaper about housing' in c.get('p', '')]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]['liga'][0]['href'], 'https://lccn.loc.gov/95509661')
+        self.assertEqual(real[0]['tipo'], 'transferir')
+        self.assertIn('A sessão não tem caso real confirmado', self.D['fontes'])
+        self.assertNotIn('o do cartaz é real', self.D['fontes'])
+        # 07/11/2026 (revisão da s10): o título do Olha não dá uma data que o registo não dá (entre 1936 e 1939)
+        self.assertNotIn('1938', json.dumps(self.D, ensure_ascii=False))
+        olha = next(c for c in C if c['rot'] == 'Olha')
+        self.assertIn('one-third-of-a-nation-cartaz.webp', olha['html'])
+        self.assertIn('LCCN', olha['html'])
+        self.assertIn('Domínio público', olha['html'])
+        cap = re.search(r'<figcaption>(.*?)</figcaption>', olha['html']).group(1)
+        self.assertNotIn('Library of Congress', cap)
+        # o nome do desenhador que o piloto dava não está no registo e sai
+        self.assertNotIn('Spellens', json.dumps(self.D, ensure_ascii=False))
+        for f in ('one-third-of-a-nation-cartaz.webp', 'sisifo.webp'):
+            self.assertTrue((ROOT / 'img/cidadania' / f).is_file(), f)
+        self.assertNotIn('data-yt', json.dumps(self.D))
+        self.assertNotIn('Na aula', [c.get('rot') for c in C])
+        # nenhum excerto de lei: a sessão de mostra não cita textos legais
+        self.assertNotIn('data-fonte', json.dumps(self.D))
+        self.assertFalse(any(c.get('citacoes') or c.get('fonte') for c in C))
+        # decisão 146: «grupo» só no caso inventado ou como «grupo da turma» (o validador também o confere)
+        self.assertNotRegex(json.dumps([c for c in C if c['t'] != 'ler'], ensure_ascii=False), r'(?i)\bgrupos?\b(?! da turma)')
+
+    def test_versao_para_imprimir_e_guia(self):
+        s = (ROOT / 'cidadania/m1/sessoes/10/imprimir/index.html').read_text('utf-8')
+        self.assertEqual(len(re.findall(r'<p class="rot">Exercício \d+:', s)), 7)
+        self.assertIn('os 7 exercícios', s)
+        self.assertIn('Código', s); self.assertIn('O que conta', s)
+        for c in self.D['cartoes']:
+            if c['t'] != 'ler':
+                self.assertNotIn(html_escape(c['f'])[:60], s)
+        self.assertIn('Domínio público', s)
+        g = (ROOT / 'cidadania/piloto/m1/docente/index.html').read_text('utf-8')
+        sec = g[g.index('<section class="sessao" id="s10">'):]
+        sec = sec[:sec.index('</section>')]
+        self.assertIn('Ponto de chegada', sec)
+        # 07/11/2026 (revisão da s10): a mostra passa a 120 minutos (decisão 159: cerca de 125), sem «a confirmar» na secção
+        # 07/11/2026: decisão 179 (docente): Ponto de chegada em 10 minutos e mostra em 125
+        self.assertIn('Como conduzir a mostra (cartão 11, 125', sec)
+        self.assertIn('125\u00a0minutos dão 25\u00a0alunos a 5\u00a0minutos cada (decisão 159)', sec)
+        self.assertNotIn('a confirmar', sec)
+        self.assertIn('A sessão 10 não tem caso real confirmado', sec)
+        # 07/11/2026 (revisão da s10): a concordância da frase das sessões no molde quando só falta uma, e o «Se estás sozinho» da mostra
+        # na versão para imprimir (decisão 154)
+        self.assertNotIn('a outra segue o quadro acima até passarem', g)
+        self.assertIn('<p>Se estás sozinho: mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.</p>', s)
+        self.assertIn('Respostas dos 7 exercícios', sec)
+        self.assertIn('<td class="num">180</td>', sec)
+        self.assertIn('A sessão 10 é a sessão de mostra', g)
 
 
 if __name__ == '__main__':

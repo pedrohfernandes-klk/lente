@@ -391,7 +391,8 @@ def sessao():
         'titulo': 'Sessão 09: Muitas vozes, uma escola', 'h1': 'Cidadania, módulo 1, sessão 09: Muitas vozes, uma escola',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/09/index.html',
-        'seguinte': '../../../piloto/m1-s10/', 'seguinteRotulo': 'Sessão 10: O que conseguimos defender?',
+        # 07/11/2026 (sessão 10 no molde): a seguinte passa a ser a s10 nova, no mesmo endereço das sessões (era a do piloto).
+        'seguinte': '../10/', 'seguinteRotulo': 'Sessão 10: O que consegues defender?',
         'fontes': M.ref('Constituição da República Portuguesa, artigos 13.º, n.º 2, e 41.º, n.º 3, na versão consolidada do Diário da '
                         'República. Convenção sobre os Direitos da Criança, artigo 30.º, na tradução portuguesa anexa à Resolução da '
                         'Assembleia da República n.º 20/90, no Diário da República. Tribunal Europeu dos Direitos Humanos, _Osmanoğlu e '

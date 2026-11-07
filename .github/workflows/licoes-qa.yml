@@ -91,6 +91,13 @@ on:
       # 06/11/2026: fusão do main (com as sessões 04 a 07 finais) na sessão 08: também a fotografia do Olha da s08, como o main
       # lista as imagens das s05, s06 e s07.
       - 'img/cidadania/kilburn-cartistas-1848.webp'
+      # 07/11/2026: a sessão 10 do M1 na versão final, a sessão de mostra (decisões 166 a 168): a sua página e versão para imprimir,
+      # o manifesto fechado da sua camada, essa camada nos testes, o cartaz do Olha e a pintura do Recupera 1.
+      - 'tools/trocas/molde-s10-*'
+      - 'cidadania/m1/sessoes/10/**'
+      - 'tests/molde_s10.py'
+      - 'img/cidadania/one-third-of-a-nation-cartaz.webp'
+      - 'img/cidadania/sisifo.webp'
       - '.github/workflows/licoes-qa.yml'
       # 05/11/2026: decisão 163, o menu ≡ comum (tools/menu_casca.py) e as páginas estáticas da Cidadania que o usam.
       - 'tools/menu_casca.py'

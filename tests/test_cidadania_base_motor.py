@@ -73,6 +73,12 @@ import molde_s08  # noqa: E402
 # com as mesmas regras: o manifesto fechado tools/trocas/molde-s09-20261107.json (parte do main dc01487) nos ficheiros que a s09 muda
 # em parte; os que escreve inteiros (molde_s09.INTEIROS) comparam-se, letra a letra, com o que o gerador escreve hoje.
 import molde_s09  # noqa: E402
+# 07/11/2026: plano do molde da Cidadania, sessão 10 do M1 na versão final, a sessão de mostra (decisões 166 a 168). Mais uma camada,
+# a mais recente, com as mesmas regras: o manifesto fechado tools/trocas/molde-s10-20261107.json (parte do main dc01487) nos
+# ficheiros que a s10 muda em parte; os que escreve inteiros (molde_s10.INTEIROS) comparam-se com o que o gerador escreve hoje.
+import molde_s10  # noqa: E402
+# 07/11/2026 (fusão do main com a s09, #138, e as portas, #137): o manifesto da s10 passa a partir do main a258b6c, já com a s09:
+# é a camada mais recente da Cidadania, por cima da da s09.
 
 
 def desfazer_molde(texto, nome):
@@ -156,6 +162,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s09.INTEIROS:
                     self.assertTrue(molde_s09.inteiro_ok(nome), nome)
                     continue
+                # 07/11/2026 (sessão 10 no molde): o mesmo para os ficheiros que a s10 escreve inteiros.
+                if nome in molde_s10.INTEIROS:
+                    self.assertTrue(molde_s10.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
@@ -191,6 +201,9 @@ class CidadaniaBase(unittest.TestCase):
                 # (3c774cb), já com a s07; a s08 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
                 # exata de cada «novo»; depois a da s07, a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as
                 # versões de cache.
+                # 07/11/2026 (sessão 10 no molde): a camada da s10 parte do main com a s09 (a258b6c), por cima da da s09: desfaz-se primeiro.
+                if nome in molde_s10.TROCAS:
+                    depois = molde_s10.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 # 07/11/2026 (sessão 09 no molde): a camada da s09 parte do main dc01487, por cima da da s08: desfaz-se primeiro.
                 if nome in molde_s09.TROCAS:
                     depois = molde_s09.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
@@ -275,6 +288,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s09.INTEIROS:
                     self.assertTrue(molde_s09.inteiro_ok(nome), nome)
                     continue
+                # 07/11/2026 (sessão 10 no molde): o mesmo para os ficheiros que a s10 escreve inteiros.
+                if nome in molde_s10.INTEIROS:
+                    self.assertTrue(molde_s10.inteiro_ok(nome), nome)
+                    continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
                     self.assertEqual(esperado.count(antigo), quantidade)
@@ -347,6 +364,8 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = molde_s08.aplicar(esperado, nome)
                 # 07/11/2026: a camada da sessão 09 no molde (manifesto a partir do main dc01487), em último lugar.
                 esperado = molde_s09.aplicar(esperado, nome)
+                # 07/11/2026: a camada da sessão 10 no molde (manifesto a partir do main a258b6c, com a s09), em último lugar.
+                esperado = molde_s10.aplicar(esperado, nome)
                 # 07/11/2026: decisão 180 (docente). As portas do Laboratório no cartão da entrada sem número nem «passo»: só as
                 # trocas do manifesto fechado tests/fixtures/portas-180-20261107.json, com contagem exata, por cima de tudo (parte do
                 # main fa0ac9f). 07/11/2026 (fusão do main com a sessão 09, #138): a s09 e a 180 mexem em ficheiros diferentes;

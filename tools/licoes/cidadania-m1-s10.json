@@ -1,283 +1,234 @@
 {
  "id": "cidadania-m1-s10",
  "chave": "epi-cid-m1-s10",
- "versao": "2026-10-31-2",
+ "versao": "2026-11-07-molde",
  "marca": "CD",
- "titulo": "Sessão 10: O que conseguimos defender?",
- "h1": "Cidadania, módulo 1, sessão 10: O que conseguimos defender?",
+ "molde": "cidadania-2026-11",
+ "variante": "mostra",
+ "titulo": "Sessão 10: O que consegues defender?",
+ "h1": "Cidadania, módulo 1, sessão 10: O que consegues defender?",
  "modulo": {
   "n": 1,
   "nome": "Humanos",
   "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/piloto/m1/"
  },
- "saida": "cidadania/piloto/m1-s10/index.html",
- "piloto": true,
- "seguinte": "../m1/",
+ "saida": "cidadania/m1/sessoes/10/index.html",
+ "seguinte": "../../../piloto/m1/",
  "seguinteRotulo": "As 10 sessões",
- "fontes": "Pergunta Humana: requisitos e instrumentos (cidadania/projeto/). Constituição da República Portuguesa, artigos 13.º, 26.º, 37.º e 52.º (texto da Procuradoria-Geral Distrital de Lisboa, https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=4&tabela=leis, lido a 31/10/2026). Código Civil, artigo 79.º (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=775&tabela=leis, lido a 31/10/2026). Lei n.º 58/2019, artigo 19.º, n.º 3 (https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?nid=3118&tabela=leis, lido a 31/10/2026). Lei n.º 43/90, artigo 9.º (texto consolidado da Assembleia da República, https://www.parlamento.pt/Legislacao/Documents/Legislacao_Anotada/ExercicioDireitoPeticao_Simples.pdf, lido a 31/10/2026). Cartaz: Irving Spellens, WPA Federal Art Project, _… one-third of a nation_, entre 1936 e 1939 (Library of Congress, LCCN 95509661, https://www.loc.gov/item/95509661/, domínio público). Vídeo: TED-Ed, «What Aristotle and Joshua Bell can teach us about persuasion», lição de Conor Neill. Os casos são inventados.",
+ "fontes": "Cartaz: _Federal Theatre presents «… one-third of a nation»_, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia do WPA Federal Art Project, Library of Congress (LCCN 95509661), domínio público. Pintura: Ticiano, _Sísifo_, entre 1548 e 1549, Museo Nacional del Prado, domínio público. Albert Camus, _O Mito de Sísifo_ (1942). Os arranques de frase da defesa vêm da sessão 10 do percurso anterior. O caso da Inês, o da Joana, o da ordem das mostras, o da Rita e o da fila do bar são inventados. A sessão não tem caso real confirmado: o registo do cartaz na Library of Congress não se abriu, só a sua cópia no Wikimedia Commons.",
+ "tempos": {
+  "ponto": 10,
+  "pausa": 10,
+  "entrega": 5
+ },
+ "depois": "<article class=\"c\"><p class=\"rot\">O passo do teu projeto</p><p class=\"tit\">Depois da mostra</p><p class=\"sub\">No dossiê, escreve o que mudarias na peça depois da objeção que ouviste, porquê, e o limite que ficou por resolver. O que conta: a mudança responde à objeção; a razão aponta para uma fonte; o limite é dito com clareza.</p><p class=\"ir\"><a href=\"../../../projeto/#av-teatro\">O teatro-documento e a defesa, no enunciado da Pergunta Humana</a></p></article>",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
-   "titulo": "O que conseguimos defender?",
-   "html": "<p class=\"pergunta-c\">Depois de investigar, que resposta consegues defender diante de quem discorda?</p><p>Caso inventado. Depois da apresentação, alguém do público levanta o braço: «Isso é só a vossa opinião.» O grupo tem três minutos para responder.</p><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: o Ponto de chegada em papel, logo ao início; depois recuperar o módulo, apresentar e defender o teatro-documento.</p>"
+   "titulo": "O que consegues defender?",
+   "html": "<div class=\"m-abre\"><p class=\"carimbo\">Caso inventado.</p><p class=\"caso\" data-artefacto=\"caso\" data-rot=\"O caso\">Na mostra, a Inês apresenta o seu teatro-documento sobre a falta de lugares na cantina, feito com uma contagem dos lugares e duas entrevistas. Na defesa, um colega diz: «Isso é só a tua opinião.» A Inês sabe de onde vem cada fala da peça, mas também sabe que só entrevistou duas pessoas. Tem dois minutos para responder.</p><p class=\"pergunta-sessao\" data-artefacto=\"pergunta\" data-rot=\"A pergunta da sessão\">Uma resposta que admite um limite fica mais fraca?</p></div>",
+   "min": 2,
+   "aula": {
+    "linha": "o Ponto de chegada em papel (10 min), recuperar e ler (20 min), a mostra (135 min, com a pausa a meio) e o fecho (15 min)."
+   }
   },
   {
    "t": "ler",
    "rot": "Decide",
-   "titulo": "Isso é só a vossa opinião",
-   "html": "<p>Mudar a resposta diante de uma objeção é perder?</p><p class=\"pergunta-c\">Decide em silêncio, de braço no ar: sim, não ou depende.</p><details class=\"lado\"><summary>A razão do grupo</summary><div><p>«Investigámos e temos fontes. Se mudarmos agora, parece que não sabíamos.»</p></div></details><details class=\"lado\"><summary>A razão de quem pergunta</summary><div><p>«Não quero que mudem. Quero saber de onde vem o que disseram.»</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se a objeção estiver certa? O que se faz com uma resposta que tem limites?</p></div></details><p>Não há resposta certa neste cartão. Guarda a tua posição: vais voltar a ela.</p>"
+   "titulo": "Antes dos materiais",
+   "html": "<div class=\"m-decide\"><p class=\"pos-intro\">Decide: sim, não ou depende. Escolhe antes de veres os materiais; no fim, voltas a esta pergunta.</p><div class=\"posicao\" data-artefacto=\"posicao-inicio\" data-rot=\"A tua posição no início\"><p class=\"pos-q\">A Inês deve dizer, na defesa, que só entrevistou duas pessoas?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição no início\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div><p class=\"pos-nota\">Não há resposta certa neste cartão.</p></div><div class=\"pos-lados\" data-depois-de=\"posicao-inicio\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>Se for ela a dizê-lo, ninguém a apanha em falta. Esconder o que falta é pior do que o admitir.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>Dois minutos são pouco. Se falar do que falta, o público pode lembrar-se só da fraqueza.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se ela mostrar primeiro de onde vem a resposta, e só depois o que ainda não sabe?</p></div></details></div></div>",
+   "min": 2
   },
   {
-   "t": "ler",
-   "rot": "Recupera",
-   "titulo": "Depois do Ponto de chegada",
-   "html": "<p>Já fizeste o Ponto de chegada, em papel e sozinho? Só depois disso segues.</p><p>Os oito cartões seguintes voltam às sessões 01 a 08, um por sessão: os artigos, a imagem dos outros, quem tem lugar, o que se pode dizer, os dados, as regras, as provas e a petição.</p><p class=\"pergunta-c\">Antes de cada um, lembra-te do caso dessa sessão. Depois responde.</p>"
+   "t": "escolha",
+   "rot": "A pedra outra vez",
+   "p": "Camus fecha o ensaio _O Mito de Sísifo_ (1942): é preciso imaginar Sísifo feliz, a recomeçar com a mesma pedra. Depois da mostra, o que fazes com a tua resposta?",
+   "p2": "Para Camus, é preciso imaginar Sísifo feliz, a recomeçar com a mesma pedra. Depois de defenderes a tua resposta, o que fazes com ela?",
+   "f": "Sísifo recomeça com a mesma pedra. Na tua resposta, recomeçar é revê-la com as objeções que ouviste, sem deitar fora o que já provaste.",
+   "min": 2,
+   "tipo": "aplicar",
+   "conceito": "rever depois da objeção",
+   "ver": "<figure class=\"fig inteiro\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/sisifo.webp\" alt=\"Pintura escura: um homem musculado, de pano branco e faixa à cintura, curvado sob um rochedo enorme que segura sobre a cabeça e os ombros, a subir uma encosta; à direita, chamas.\" width=\"881\" height=\"1000\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da pintura\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Ticiano, <i>Sísifo</i>, entre 1548 e 1549, óleo sobre tela, 237 × 216 cm. Museo Nacional del Prado, Madrid (P00426). <a href=\"https://commons.wikimedia.org/wiki/File:Punishment_sisyph.jpg\">Registo no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Ticiano, <i>Sísifo</i>, entre 1548 e 1549.</figcaption></figure>",
+   "pista": "Pensa no que uma objeção pede à resposta que já tens.",
+   "g": "recupera",
+   "o": [
+    "Guardá-la tal como a apresentaste.",
+    "Trocar de pergunta e começar do zero.",
+    "Revê-la com as objeções que ouviste."
+   ],
+   "c": 2,
+   "fe": [
+    "A pedra não fica lá em cima, e Sísifo recomeça com ela. Guardar a resposta como estava é fazer de conta que a objeção não aconteceu. Volta à pedra: o que faz Sísifo com ela?",
+    "Sísifo recomeça com a mesma pedra, não com outra. Uma objeção pede uma segunda versão da tua resposta, não uma pergunta nova. Volta à pedra: é a mesma ou outra?",
+    ""
+   ]
   },
   {
    "t": "emparelhar",
-   "g": "artigos",
-   "p": "Liga cada situação ao direito da Constituição que está em causa.",
-   "p2": "Que direito da Constituição pesa em cada uma destas situações?",
+   "rot": "O sim da Joana",
+   "p": "Sessão 02: a Joana deixou gravar a voz dela para o podcast da turma. Liga cada situação ao que vale o sim dela.",
+   "p2": "A Joana disse que sim à gravação da voz para o podcast da turma. Em cada situação, o que vale esse sim?",
+   "f": "Na sessão 02, viste que o «consentimento» vale para o uso que se explicou: aqui, o podcast. Para a tua peça, pede-se outra vez; e, se a Joana o retirar, respeita-se.",
+   "min": 2,
+   "tipo": "aplicar",
+   "conceito": "consentimento para um uso",
    "pares": [
     [
-     "Uma fotografia publicada sem perguntar",
-     "Imagem e vida privada (artigo 26.º)"
+     "Pôr a gravação no podcast da turma",
+     "Cabe no sim que deu"
     ],
     [
-     "Um colega posto de parte pela língua que fala",
-     "Igualdade (artigo 13.º)"
+     "Usar um excerto no teu teatro-documento",
+     "Pede um sim novo"
     ],
     [
-     "Uma crítica à cantina no jornal da escola",
-     "Liberdade de expressão (artigo 37.º)"
-    ],
-    [
-     "Um pedido à câmara para manter a passadeira",
-     "Direito de petição (artigo 52.º)"
+     "A Joana pede que a voz saia do podcast",
+     "Respeita-se: o sim pode ser retirado"
     ]
    ],
-   "f": "O artigo 26.º protege a imagem e a reserva da vida privada; o 13.º proíbe prejudicar alguém em razão da língua; o 37.º garante a liberdade de exprimir o pensamento; o 52.º dá a todos o direito de petição.",
-   "fe": "Pergunta primeiro o que a pessoa perdeu ou quer fazer. O artigo vem depois."
-  },
-  {
-   "t": "escolha",
-   "g": "s02",
-   "p": "Caso da sessão 02: a Marta aceitou ser filmada para o grupo rever o ensaio. Para pôr o vídeo na conta da escola, o que falta?",
-   "p2": "A Marta deixou filmar o ensaio para o grupo o rever. Que falta para o publicar na conta da escola?",
-   "o": [
-    "Pedir-lhe consentimento para esse uso.",
-    "Nada: ela já aceitou ser filmada.",
-    "Cortar as partes em que ela cai."
-   ],
-   "c": 0,
-   "f": "O retrato de uma pessoa não pode ser exposto sem o consentimento dela (Código Civil, artigo 79.º, n.º 1). A Marta aceitou um uso, rever o ensaio, e não outro.",
-   "fe": [
-    "",
-    "Aceitar ser filmada para o grupo ver não é aceitar a publicação. O consentimento vale para um uso.",
-    "Cortar a queda ajuda, mas não substitui o consentimento da Marta para publicar."
-   ]
-  },
-  {
-   "t": "vf",
-   "g": "s03",
-   "p": "Caso da sessão 03: uma mostra aberta a todos, num primeiro andar sem elevador, trata todos por igual.",
-   "p2": "Se a mostra é aberta a todos mas fica num primeiro andar sem elevador, a regra trata todos da mesma maneira.",
-   "v": false,
-   "f": "A regra é igual no papel, mas quem usa cadeira de rodas fica de fora. Para julgar uma regra, olha-se também para o efeito que tem em cada pessoa.",
-   "fe": "Igual no papel não quer dizer igual no efeito. Quem não consegue subir as escadas não tem o mesmo acesso."
-  },
-  {
-   "t": "escolha",
-   "g": "s04",
-   "p": "Sessão 04: que frase é uma acusação de facto, que tem de ser provada por quem a faz?",
-   "p2": "Destas frases, que acusação precisa de prova antes de ser dita em público?",
-   "o": [
-    "O Diogo tirou dinheiro do bar.",
-    "A comida da cantina sabe-me mal.",
-    "O cartaz da festa é muito feio."
-   ],
-   "c": 0,
-   "f": "Dizer que alguém tirou dinheiro atribui-lhe um ato concreto. Se não for verdade, atinge o bom nome e a reputação dessa pessoa, que a Constituição protege (artigo 26.º).",
-   "fe": [
-    "",
-    "É uma opinião sobre o gosto da comida, de quem a diz. Não acusa ninguém de nada.",
-    "É uma opinião sobre um cartaz. Pode magoar quem o fez, mas não lhe atribui um ato."
-   ]
-  },
-  {
-   "t": "vf",
-   "g": "s05",
-   "p": "Sessão 05: numa escola, as câmaras de videovigilância podem filmar as salas de aula.",
-   "p2": "A lei deixa uma escola pôr câmaras de videovigilância dentro das salas de aula.",
-   "v": false,
-   "f": "Nos estabelecimentos de ensino, as câmaras só podem incidir sobre os perímetros externos e os locais de acesso, e sobre espaços com bens que precisam de especial proteção, como laboratórios ou salas de informática (Lei n.º 58/2019, artigo 19.º, n.º 3).",
-   "fe": "A lei diz onde as câmaras podem estar numa escola, e as salas de aula não estão na lista."
-  },
-  {
-   "t": "escolha",
-   "g": "s06",
-   "p": "Sessão 06: o júri do concurso de curtas inclui o irmão de um dos concorrentes. Que problema há aqui?",
-   "p2": "Um dos membros do júri é irmão de um concorrente. Que nome tem este problema?",
-   "o": [
-    "Um conflito de interesses no júri.",
-    "Um júri com gente a mais na sala.",
-    "Uma regra que favorece os mais novos."
-   ],
-   "c": 0,
-   "f": "Quem decide não deve ter um interesse pessoal no resultado. A saída habitual é o irmão não votar nesse concurso e dizê-lo às claras.",
-   "fe": [
-    "",
-    "O número de pessoas não é o problema. O problema é o laço entre quem julga e quem é julgado.",
-    "Nada no caso fala de idades. O que pesa é o laço de família com um concorrente."
-   ]
-  },
-  {
-   "t": "sublinhar",
-   "g": "s07",
-   "p": "Sessão 07: toca nas duas palavras onde a frase deixa de descrever e passa a concluir.",
-   "p2": "Onde é que esta frase salta do que se vê para uma conclusão? Toca nas duas palavras.",
-   "frase": "A captura mostra o nome do Tomás ao lado do vídeo, por isso foi ele que o publicou.",
-   "certas": [
-    11,
-    12
-   ],
-   "f": "Até à vírgula, a frase descreve o que a captura mostra. A expressão **por isso** abre a conclusão: que foi o Tomás que publicou. Isso já não está na captura: é uma inferência."
+   "fe": "A confusão mais provável é achar que o sim para o podcast serve para tudo. Vale para o uso que se explicou, e pode ser retirado. Relê o que a Joana autorizou.",
+   "pista": "Pergunta, em cada linha, se é o mesmo uso que a Joana autorizou.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/02/"
   },
   {
    "t": "ordenar",
-   "g": "s08",
-   "p": "Sessão 08: põe por ordem os passos de uma petição.",
-   "p2": "Por que ordem se faz uma petição à entidade certa?",
+   "rot": "A ordem das mostras",
+   "p": "Sessão 06: é preciso decidir a ordem das mostras. Põe por ordem os passos para escolher a regra sem saber o teu lugar.",
+   "p2": "Para decidir quem mostra primeiro, por que ordem se escolhe a regra sem saber o lugar de cada um?",
+   "f": "Primeiro as regras em cima da mesa; depois a escolha, ainda «sem saber o lugar», como na sessão 06; só então os números; no fim, a voz de quem perde.",
+   "min": 2,
+   "tipo": "aplicar",
+   "conceito": "escolher sem saber o lugar",
    "passos": [
-    "Descobrir quem decide.",
-    "Escrever o pedido.",
-    "Juntar o fundamento.",
-    "Recolher as assinaturas."
+    "Juntar as regras propostas para a ordem das mostras.",
+    "Escolher uma regra para a ordem.",
+    "Tirar à sorte o número de cada um na lista.",
+    "Ouvir a objeção de quem ficou para o fim."
    ],
-   "f": "Primeiro o destinatário, depois o pedido, o fundamento e as assinaturas. Uma petição é escrita e assinada (Lei n.º 43/90, artigo 9.º)."
+   "fe": "A confusão mais provável é tirar os números antes de escolher a regra: quem já sabe o seu número escolhe a pensar em si. Relê os passos pela ordem do tempo.",
+   "pista": "Pergunta-te o que muda se cada um já souber o seu número quando escolhe.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/06/"
+  },
+  {
+   "t": "sublinhar",
+   "rot": "Onde está o estereótipo",
+   "p": "Sessão 09: nesta frase, toca na palavra que faz dela um estereótipo.",
+   "p2": "Toca na palavra que, nesta frase, transforma uma ideia sobre um curso num estereótipo.",
+   "f": "A palavra «todos» diz o mesmo de toda a gente de um curso, sem prova: é o que faz um «estereótipo», como viste na sessão 09. A Rita pode perceber de computadores ou não; a frase não o prova.",
+   "min": 2,
+   "tipo": "reconhecer",
+   "conceito": "estereótipo",
+   "frase": "Os alunos de informática percebem todos de computadores, por isso a Rita vai arranjar o projetor.",
+   "certas": [
+    5
+   ],
+   "fe": "A confusão mais provável é tocar em «alunos» ou em «informática»: dizem de quem se fala, não que se diz o mesmo de cada um deles. Procura a palavra que estende a ideia a toda a gente do curso.",
+   "pista": "Procura a palavra que fala de muitas pessoas como se fossem uma só.",
+   "g": "recupera",
+   "origem": "cidadania/m1/sessoes/09/"
   },
   {
    "t": "ler",
-   "rot": "Ver",
-   "titulo": "Um jornal vivo",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../img/cidadania/one-third-of-a-nation-cartaz.webp\" alt=\"Cartaz de fundo escuro. Ao centro, um desenho de prédios e casas apertados, em filas; por cima, em letras grandes e inclinadas, o título «… one-third of a nation». Em baixo, «A living newspaper about housing» e «Adelphi Theatre».\" loading=\"lazy\"></span><figcaption>Irving Spellens para o WPA Federal Art Project, cartaz de <i>… one-third of a nation</i>, peça de Arthur Arent, Federal Theatre Project, Nova Iorque, entre 1936 e 1939, serigrafia. Library of Congress (LCCN 95509661), domínio público.</figcaption></figure><p>O cartaz anuncia «a living newspaper about housing»: um «jornal vivo» sobre a habitação, posto em cena num teatro de Nova Iorque.</p><p class=\"pergunta-c\">Que pergunta fazia esta peça? E a tua?</p><p>Responde no caderno, numa linha para cada peça.</p>"
-  },
-  {
-   "t": "ler",
-   "rot": "Ver",
-   "titulo": "Como se convence",
-   "html": "<p>Um vídeo curto do TED-Ed, numa lição de Conor Neill: o violinista Joshua Bell tocou numa estação de metro, sem sala de concertos nem nome no cartaz. É em inglês: liga as legendas no leitor.</p><p class=\"pergunta-c\">O vídeo usa Aristóteles para explicar porque é que o contexto mudou a forma como Joshua Bell foi ouvido. Que razões dá? Qual delas falta à tua defesa?</p><div class=\"yt\" data-yt=\"O2dEuMFR8kw\" data-titulo=\"What Aristotle and Joshua Bell can teach us about persuasion, TED-Ed\"><button type=\"button\" class=\"yt-abrir\" data-yt-abrir>Ver: «What Aristotle and Joshua Bell can teach us about persuasion» (4 min 40 s)</button><p class=\"yt-cred\">TED-Ed, lição de Conor Neill. O vídeo só se liga ao YouTube quando tocas no botão.</p></div><p>Duas linhas no caderno, antes de apresentares.</p>"
-  },
-  {
-   "t": "ler",
-   "rot": "Na aula",
-   "titulo": "Apresentar e defender",
-   "html": "<p><b>O que se faz.</b> A apresentação pública dos teatros-documento, 5 a 8 minutos cada, seguida de três minutos de defesa: uma pergunta do público e uma objeção preparada por um colega. O Ponto de chegada já foi feito ao início, em papel e sozinho.</p><p><b>Quanto tempo.</b> 60 a 75 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu Ponto de chegada, a autoavaliação «Vi, Situei, Fiz» em três linhas e o mapa de direitos da sessão 01 revisto: o que mudou?</p>"
+   "rot": "Olha",
+   "titulo": "Um cartaz do Federal Theatre",
+   "html": "<div class=\"m-olha\"><p class=\"ex-antes\"><b>Antes de olhar</b> Olha primeiro para o desenho; só depois lê as palavras.</p><figure class=\"fig inteiro\" data-artefacto=\"imagem\" data-rot=\"A imagem que viste\" data-texto=\"Um cartaz do Federal Theatre, Nova Iorque\"><div class=\"moldura com-i\"><img src=\"../../../../img/cidadania/one-third-of-a-nation-cartaz.webp\" alt=\"Cartaz de fundo escuro. Ao centro, um desenho de prédios apertados, vistos de cima, com roupa estendida; por cima, em letras grandes e inclinadas, «… one-third of a nation». Em cima, «Federal Theatre presents»; em baixo, «A living newspaper about housing» e «Adelphi Theatre».\" width=\"640\" height=\"996\" loading=\"lazy\"><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos do cartaz\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\"><i>Federal Theatre presents «… one-third of a nation»</i>, cartaz do Federal Theatre Project para o Adelphi Theatre, Nova Iorque, entre 1936 e 1939, serigrafia feita pelo WPA Federal Art Project. Library of Congress, Work Projects Administration Poster Collection (LCCN 95509661). <a href=\"https://lccn.loc.gov/95509661\">Registo na Library of Congress</a>. <a href=\"https://commons.wikimedia.org/wiki/File:Federal_Theatre_presents_%22..._one-third_of_a_nation%22_LCCN95509661.jpg\">Registo no Wikimedia Commons</a>. Domínio público.</p></details></div><figcaption>Cartaz de uma peça do Federal Theatre, em Nova Iorque, entre 1936 e 1939.</figcaption></figure></div>",
+   "min": 2
   },
   {
    "t": "escolha",
-   "g": "opiniao",
-   "p": "Alguém do público diz: «Isso é só a vossa opinião.» Qual das respostas defende melhor o trabalho do grupo?",
-   "p2": "«Isso é só a vossa opinião.» Que resposta mostra que o grupo investigou?",
-   "o": [
-    "Dizer de onde vem e o que ainda não sabemos.",
-    "Repetir a ideia com mais força e convicção.",
-    "Dizer que cada um tem direito à sua opinião."
+   "rot": "Um jornal em palco",
+   "p": "O cartaz chama à peça «a living newspaper about housing», um jornal vivo sobre a habitação. Em que se parece com o teu teatro-documento?",
+   "p2": "Um «jornal vivo» sobre a habitação, num teatro de Nova Iorque: em que se parece essa peça com o teu teatro-documento?",
+   "f": "O cartaz chama à peça um jornal vivo sobre a habitação: um assunto real, posto em cena. O teu teatro-documento também leva para o palco um assunto real, com as fontes que investigaste.",
+   "min": 2,
+   "tipo": "transferir",
+   "conceito": "teatro-documento",
+   "ver": "<img src=\"../../../../img/cidadania/one-third-of-a-nation-cartaz.webp\" alt=\"O mesmo cartaz: prédios apertados vistos de cima, o título «… one-third of a nation» e, em baixo, «A living newspaper about housing».\">",
+   "liga": [
+    {
+     "t": "Ver o registo do cartaz na Library of Congress",
+     "href": "https://lccn.loc.gov/95509661"
+    }
    ],
-   "c": 0,
-   "f": "Mostrar a fonte separa a resposta de uma opinião solta. Dizer o limite mostra que o grupo sabe até onde a prova chega.",
+   "pista": "Relê as palavras do cartaz sobre a peça e pensa no que a tua peça foi buscar às fontes.",
+   "o": [
+    "Conta a vida de uma pessoa inventada.",
+    "Diz só a opinião de quem a escreveu.",
+    "Leva para o palco um assunto real."
+   ],
+   "c": 2,
    "fe": [
-    "",
-    "Falar mais alto não acrescenta prova. Quem perguntou continua sem saber de onde vem a ideia.",
-    "Assim o grupo aceita que é só opinião e deita fora a investigação que fez."
+    "O cartaz não fala de uma personagem: diz que a peça é um jornal sobre a habitação, um assunto que existe fora do palco. Volta às palavras do cartaz.",
+    "O cartaz não fala de opiniões: diz que a peça é um jornal sobre a habitação. Um jornal trata de assuntos reais. Volta às palavras do cartaz.",
+    ""
    ]
+  },
+  {
+   "t": "ler",
+   "rot": "Lê",
+   "titulo": "Para responder a uma objeção",
+   "html": "<div class=\"m-le\"><p class=\"ex-antes\"><b>Antes de ler</b> Cinco maneiras de começar uma frase na defesa. Cada uma mostra uma parte do teu trabalho.</p><table class=\"tabela\"><thead><tr><th scope=\"col\">Arranque</th><th scope=\"col\">O que mostra</th></tr></thead><tbody><tr><td data-th=\"Arranque\">«Parti desta pergunta…»</td><td data-th=\"O que mostra\">a pergunta que investigaste</td></tr><tr><td data-th=\"Arranque\">«Esta fonte ajudou-me a compreender…»</td><td data-th=\"O que mostra\">de onde vem o que dizes</td></tr><tr><td data-th=\"Arranque\">«Na cena central, a personagem escolhe…»</td><td data-th=\"O que mostra\">o que a peça põe em cena</td></tr><tr><td data-th=\"Arranque\">«Depois da leitura dos colegas, mudei…»</td><td data-th=\"O que mostra\">o que a revisão mudou</td></tr><tr><td data-th=\"Arranque\">«Ainda reconheço este limite…»</td><td data-th=\"O que mostra\">o que a tua resposta ainda não sabe</td></tr></tbody></table></div>",
+   "min": 2
+  },
+  {
+   "t": "escolha",
+   "rot": "Mais do que opinião",
+   "p": "A Inês ouve: «Isso é só a tua opinião.» Encontra a resposta que mostra que não é.",
+   "p2": "Depois da peça, alguém diz à Inês que aquilo é só opinião. Encontra a resposta que desfaz a objeção.",
+   "f": "Uma contagem com dias e números mostra de onde vem a resposta, e quem objetou pode confirmá-la. É o que faz o arranque «Esta fonte ajudou-me a compreender…».",
+   "min": 2,
+   "tipo": "aplicar",
+   "conceito": "opinião e prova",
+   "pista": "Relê, no Lê, a linha sobre de onde vem o que dizes.",
+   "o": [
+    "Tenho direito à minha opinião, como toda a gente.",
+    "Contei os lugares numa semana: faltaram em quatro dias.",
+    "Acredito mesmo nisto e defendi-o com convicção."
+   ],
+   "c": 1,
+   "fe": [
+    "Assim, a Inês aceita que é só opinião e põe de lado a contagem e as entrevistas. A objeção pede de onde vem a resposta. Volta ao caso: o que tem a Inês, além da opinião?",
+    "",
+    "A convicção mostra o que a Inês sente, não de onde vem o que diz. Quem objetou continua sem saber em que se apoia a resposta. Volta ao caso: em que se apoia a Inês?"
+   ]
+  },
+  {
+   "t": "ler",
+   "rot": "Em turma",
+   "titulo": "A mostra",
+   "html": "<div class=\"m-turma\"><p class=\"pos-antes\" data-modelo=\"No início, escolheste «{posicao-inicio}».\" hidden></p><div class=\"posicao\" data-artefacto=\"posicao-depois\" data-rot=\"A tua posição depois\"><p class=\"pos-q\">A Inês deve dizer, na defesa, que só entrevistou duas pessoas?</p><div class=\"pos-ops\" role=\"group\" aria-label=\"A tua posição depois\"><button type=\"button\" class=\"pos-op\" data-valor=\"Sim\" data-frase=\"sim\">Sim</button><button type=\"button\" class=\"pos-op\" data-valor=\"Não\" data-frase=\"não\">Não</button><button type=\"button\" class=\"pos-op\" data-valor=\"Depende\" data-frase=\"depende\">Depende</button></div></div><div class=\"pos-lados\" data-depois-de=\"posicao-depois\" hidden><details class=\"lado\"><summary>Quem acha que sim</summary><div><p>Um dos arranques é «Ainda reconheço este limite…»: dizer o que falta também é responder.</p></div></details><details class=\"lado\"><summary>Quem acha que não</summary><div><p>Em dois minutos de defesa, o limite pode ficar como a única coisa que o público ouve.</p></div></details><details class=\"lado\"><summary>Uma objeção</summary><div><p>E se a Inês começar por «Esta fonte ajudou-me a compreender…» e deixar o limite para o fim?</p></div></details></div><dl class=\"campos\"><dt>O que se faz</dt><dd>Mostras a peça, respondes a uma objeção e decides outra vez.</dd><dt>Quanto tempo</dt><dd>Três minutos de mostra e dois de defesa.</dd><dt>O que fica escrito</dt><dd>Nada no ecrã; a escolha fica nos artefactos.</dd><dt>Se estás sozinho</dt><dd>Mostra a peça em voz alta, três minutos no relógio, e responde em dois à objeção do início.</dd></dl></div>",
+   "min": 125
   },
   {
    "t": "vf",
-   "g": "limite",
-   "p": "Reconhecer um limite da resposta enfraquece sempre a defesa.",
-   "p2": "Quando um grupo admite o que ainda não sabe, a defesa fica sempre mais fraca.",
+   "rot": "O limite e a contagem",
+   "p": "A Inês diz na defesa: «Ainda reconheço este limite: só entrevistei duas pessoas.» Com isso, a contagem dos lugares deixa de valer como prova.",
+   "p2": "Depois de a Inês admitir que só entrevistou duas pessoas, a contagem dos lugares perde o valor de prova.",
+   "f": "É falso: o limite fala das entrevistas, não da contagem, que continua a provar o que provava. Dizer o limite mostra até onde chega uma das provas e deixa a outra como estava.",
+   "min": 2,
+   "tipo": "aplicar",
+   "conceito": "limite e prova",
    "v": false,
-   "f": "Dizer o que não se sabe mostra rigor: quem ouve percebe até onde a prova chega e confia mais no resto.",
-   "fe": "Uma resposta sem limites promete mais do que as fontes dão. Dizer o limite protege a parte que está provada."
+   "fe": "Admitir que entrevistou poucas pessoas não apaga a contagem: são duas provas diferentes. O limite diz até onde chega uma delas. Volta à frase da Inês e vê se fala da contagem ou das entrevistas.",
+   "pista": "Separa as duas provas da Inês e vê de qual fala o limite."
   },
   {
-   "t": "completar",
-   "g": "provisoria",
-   "p": "Completa a frase que o grupo pode dizer na defesa.",
-   "p2": "Como se descreve uma resposta investigada?",
-   "frase": "A nossa resposta é [1]: assenta em [2] e muda se aparecer [3] em contrário.",
-   "lacunas": [
-    {
-     "o": [
-      "provisória",
-      "definitiva",
-      "secreta"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "fontes",
-      "gostos",
-      "rumores"
-     ],
-     "c": 0
-    },
-    {
-     "o": [
-      "prova",
-      "pressão",
-      "barulho"
-     ],
-     "c": 0
-    }
-   ],
-   "f": "Uma resposta investigada é provisória: assenta em fontes e muda perante prova em contrário. É assim no teatro-documento e em qualquer investigação.",
-   "fe": "Pensa no que faz uma resposta mudar: uma prova nova, não a pressão de quem discorda."
-  },
-  {
-   "t": "escolha",
-   "g": "cartaz",
-   "p": "O cartaz chama à peça «a living newspaper about housing». Que tem isto em comum com o teu teatro-documento?",
-   "p2": "Um «jornal vivo» sobre a habitação: que liga essa peça ao teu teatro-documento?",
-   "o": [
-    "Trata um tema real, como faz um jornal.",
-    "Conta a vida de um herói inventado.",
-    "Mostra só a opinião de quem a escreveu."
-   ],
-   "c": 0,
-   "f": "O subtítulo diz «a living newspaper about housing», um jornal vivo sobre a habitação: um tema real, posto em cena. O teu teatro-documento também parte do que se investigou.",
-   "fe": [
-    "",
-    "«Newspaper» quer dizer jornal: fala de assuntos reais, não de heróis inventados.",
-    "Um jornal junta factos e vozes diferentes, não só a opinião de quem escreve."
-   ]
-  },
-  {
-   "t": "escolha",
-   "g": "caminho",
-   "p": "Qual das respostas a uma objeção mostra o caminho da investigação?",
-   "p2": "Diante de uma objeção, que resposta conta como o grupo chegou à conclusão?",
-   "o": [
-    "Pensávamos outra coisa até à entrevista.",
-    "Sempre soubemos isto, desde o primeiro dia.",
-    "Toda a gente concorda connosco, perguntem."
-   ],
-   "c": 0,
-   "f": "Contar o que se pensava antes e o que fez mudar mostra o caminho: houve uma fonte, e a resposta seguiu a prova.",
-   "fe": [
-    "",
-    "Se nunca mudou nada, a investigação não serviu para nada. O que é que as fontes acrescentaram?",
-    "Concordar não é provar. Uma maioria pode estar enganada."
-   ]
+   "t": "ler",
+   "rot": "Agora, em papel",
+   "titulo": "Agora, em papel",
+   "html": "<div class=\"m-papel\"><p class=\"papel-intro\">Num papel pequeno, sozinho e sem telemóvel.</p><p class=\"papel-q\">Uma resposta que admite um limite fica mais fraca?</p><div class=\"papel-a6\"><p class=\"papel-cab\"><span>Código</span><span>Data</span></p><ol><li>O que defendes, depois da objeção que ouviste.</li><li>A tua prova mais forte: um facto e a fonte, com uma expressão exata entre aspas.</li><li>O limite: o que a tua resposta ainda não sabe.</li></ol></div><div class=\"tr-relogio\" data-relogio=\"360\" role=\"group\" aria-label=\"Relógio do papel\"><p class=\"tr-tempo\">6:00</p><button type=\"button\" data-rl=\"ir\">Começar</button><button type=\"button\" data-rl=\"parar\" hidden>Pausa</button><button type=\"button\" data-rl=\"mais\">+1 min</button><p class=\"tr-aviso\" aria-live=\"polite\"></p></div><details class=\"mais\"><summary>O que conta</summary><div><ol><li>A resposta diz o que defendes, sem ir além das provas.</li><li>A prova junta um facto à sua fonte, com uma expressão exata entre aspas.</li><li>O limite é verdadeiro: se tivesse resposta, podia mudar o que defendes.</li></ol></div></details><details class=\"mais\"><summary>Um exemplo, sobre outro caso</summary><div><p>Outro caso, inventado: uma peça sobre a fila do bar.</p><ol><li>Defendo: o bar devia abrir mais cedo.</li><li>Prova: contei 31 alunos na fila às 10h15; a funcionária disse «não dá tempo».</li><li>Limite: só contei numa semana.</li></ol></div></details></div>",
+   "min": 6
   },
   {
    "t": "ler",
    "rot": "Para levar",
-   "escuro": true,
-   "html": "<p class=\"levar\">Uma boa resposta diz o que sabe, de onde o sabe e o que ainda não sabe.</p><p>Nesta sessão defendeste uma resposta com fontes e respondeste a uma objeção. Volta ao mapa de direitos da sessão 01 e ao teu Ponto de partida: o que mudou na tua maneira de ver a escola?</p><p><b>As frases da sessão</b></p><ul><li>Mudar de posição por uma boa razão faz parte de investigar.</li><li>Cada fala do teatro-documento tem uma fonte que se pode reencontrar.</li><li>Um direito protege também quem não conheço.</li><li>A pergunta continua: o que ficou por saber?</li></ul>"
+   "titulo": "",
+   "html": "<div class=\"m-levar\"><p class=\"levar\" data-artefacto=\"frase\" data-rot=\"A frase da sessão\" data-texto=\"Uma boa resposta diz o que sabe, de onde o sabe e o que ainda não sabe.\"><span class=\"ch\" style=\"--i:0\">U</span><span class=\"ch\" style=\"--i:1\">m</span><span class=\"ch\" style=\"--i:2\">a</span><span class=\"ch\" style=\"--i:3\"> </span><span class=\"ch\" style=\"--i:4\">b</span><span class=\"ch\" style=\"--i:5\">o</span><span class=\"ch\" style=\"--i:6\">a</span><span class=\"ch\" style=\"--i:7\"> </span><span class=\"ch\" style=\"--i:8\">r</span><span class=\"ch\" style=\"--i:9\">e</span><span class=\"ch\" style=\"--i:10\">s</span><span class=\"ch\" style=\"--i:11\">p</span><span class=\"ch\" style=\"--i:12\">o</span><span class=\"ch\" style=\"--i:13\">s</span><span class=\"ch\" style=\"--i:14\">t</span><span class=\"ch\" style=\"--i:15\">a</span><span class=\"ch\" style=\"--i:16\"> </span><span class=\"ch\" style=\"--i:17\">d</span><span class=\"ch\" style=\"--i:18\">i</span><span class=\"ch\" style=\"--i:19\">z</span><span class=\"ch\" style=\"--i:20\"> </span><span class=\"ch\" style=\"--i:21\">o</span><span class=\"ch\" style=\"--i:22\"> </span><span class=\"ch\" style=\"--i:23\">q</span><span class=\"ch\" style=\"--i:24\">u</span><span class=\"ch\" style=\"--i:25\">e</span><span class=\"ch\" style=\"--i:26\"> </span><span class=\"ch\" style=\"--i:27\">s</span><span class=\"ch\" style=\"--i:28\">a</span><span class=\"ch\" style=\"--i:29\">b</span><span class=\"ch\" style=\"--i:30\">e</span><span class=\"ch\" style=\"--i:31\">,</span><span class=\"ch\" style=\"--i:32\"> </span><span class=\"ch\" style=\"--i:33\">d</span><span class=\"ch\" style=\"--i:34\">e</span><span class=\"ch\" style=\"--i:35\"> </span><span class=\"ch\" style=\"--i:36\">o</span><span class=\"ch\" style=\"--i:37\">n</span><span class=\"ch\" style=\"--i:38\">d</span><span class=\"ch\" style=\"--i:39\">e</span><span class=\"ch\" style=\"--i:40\"> </span><span class=\"ch\" style=\"--i:41\">o</span><span class=\"ch\" style=\"--i:42\"> </span><span class=\"ch\" style=\"--i:43\">s</span><span class=\"ch\" style=\"--i:44\">a</span><span class=\"ch\" style=\"--i:45\">b</span><span class=\"ch\" style=\"--i:46\">e</span><span class=\"ch\" style=\"--i:47\"> </span><span class=\"ch\" style=\"--i:48\">e</span><span class=\"ch\" style=\"--i:49\"> </span><span class=\"ch\" style=\"--i:50\">o</span><span class=\"ch\" style=\"--i:51\"> </span><span class=\"ch\" style=\"--i:52\">q</span><span class=\"ch\" style=\"--i:53\">u</span><span class=\"ch\" style=\"--i:54\">e</span><span class=\"ch\" style=\"--i:55\"> </span><span class=\"ch\" style=\"--i:56\">a</span><span class=\"ch\" style=\"--i:57\">i</span><span class=\"ch\" style=\"--i:58\">n</span><span class=\"ch\" style=\"--i:59\">d</span><span class=\"ch\" style=\"--i:60\">a</span><span class=\"ch\" style=\"--i:61\"> </span><span class=\"ch\" style=\"--i:62\">n</span><span class=\"ch\" style=\"--i:63\">ã</span><span class=\"ch\" style=\"--i:64\">o</span><span class=\"ch\" style=\"--i:65\"> </span><span class=\"ch\" style=\"--i:66\">s</span><span class=\"ch\" style=\"--i:67\">a</span><span class=\"ch\" style=\"--i:68\">b</span><span class=\"ch\" style=\"--i:69\">e</span><span class=\"ch\" style=\"--i:70\">.</span></p><p class=\"levar-volta\" data-modelo=\"No início, decidiste «{posicao-inicio}»; depois, «{posicao-depois}».\" hidden></p><p class=\"frases-t\">As frases da sessão</p><ul class=\"frases\"><li>Dizer o limite protege a parte que está provada.</li><li>Mudar a resposta por uma boa razão faz parte de investigar.</li></ul><div data-recolha-lista></div></div>",
+   "min": 2,
+   "escuro": true
   }
  ]
 }

@@ -15,6 +15,8 @@ import cidadania_sessoes_molde as molde
 NO_MOLDE={'01','02','03','04','05','06','07','08'}
 # 07/11/2026: e a sessão 09 (tools/licoes/cidadania-m1-s09.json, decisões 166 a 168 e 174).
 NO_MOLDE|={'09'}
+# 07/11/2026: e a sessão 10 (tools/licoes/cidadania-m1-s10.json, decisões 166 a 168), a sessão de mostra.
+NO_MOLDE|={'10'}
 def render(api,sessions,capsules,short_caps,image_prompts):
  R,write,old,link,rel=api['R'],api['write'],api['old'],api['anchor'],api['rel']
  # 28/10/2026: vídeos escolhidos pelo docente (tools/videos-cidadania-m1.json), no componente «Para ver».
@@ -118,6 +120,7 @@ def render(api,sessions,capsules,short_caps,image_prompts):
   # 06/11/2026: e a sessão 07 (NO_MOLDE); ficam como estavam as 08 a 10.
   # 06/11/2026: e a sessão 08 (NO_MOLDE); ficam como estavam as 09 e 10.
   # 07/11/2026: e a sessão 09 (NO_MOLDE); fica como estava a 10.
+  # 07/11/2026: e a sessão 10 (NO_MOLDE, acima); já não há sessão do M1 no formato antigo.
   if ident in NO_MOLDE:continue
   write(path,document(path,s['title'],body,ident))
  path='cidadania/m1/index.html';hero=dict(image='hals.webp',caption='Frans Hals · As regentes do asilo de velhos, 1664')
