@@ -8,8 +8,8 @@
  ],
  "cidadania/piloto/m1/docente/index.html": [
   [
-   "r></tbody></table></div><p class=\"pg\">As sessões 01, 02, 03, 04, 05, 06 e 07 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras três seguem o quadro acima até passarem ao molde.</p><p class=\"pg\">O <a h",
-   "r></tbody></table></div><p class=\"pg\">As sessões 01, 02, 03, 04, 05, 06, 07 e 08 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras duas seguem o quadro acima até passarem ao molde.</p><p class=\"pg\">O <a h",
+   "r></tbody></table></div><p class=\"pg\">As sessões 01, 02, 03, 04, 05, 06 e 07 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras três seguem o quadro acima até passarem ao molde.</p><p class=\"pg\">O <a href=\"../ponto/\">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p><p class=\"pg\">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p><h2>Avaliação</h2><p",
+   "r></tbody></table></div><p class=\"pg\">As sessões 01, 02, 03, 04, 05, 06, 07 e 08 já estão no molde final das vinte sessões: 23 cartões com o tempo de cada um, um momento «Em turma» e três linhas em papel A6. As secções dessas sessões, mais abaixo, têm a tabela dos 180 minutos, cartão a cartão; as outras duas seguem o quadro acima até passarem ao molde.</p><p class=\"pg\">O <a href=\"../ponto/\">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p><h2>Avaliação</h2><p",
    1
   ],
   [
@@ -39,6 +39,11 @@
   [
    "b(GUIA['07']), nb=True)\n\n# Ponto de partida e de",
    "b(GUIA['07']), nb=True)\n# 06/11/2026 (sessão 08 no molde): o mesmo espaço inseparável na entrada da s08.\nGUIA['08'] = dict(_nb(GUIA['08']), nb=True)\n\n# Ponto de partida e de",
+   1
+  ],
+  [
+   "áginas dos alunos.</p>'\n             '<p class=\"pg\">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'\n             '<h2>Avalia",
+   "áginas dos alunos.</p>'\n             # 06/11/2026 (sessão 08 no molde): sai a frase das saídas das sessões 05 e 08. As duas passaram ao molde final sem saída\n             # à volta da escola, e nenhuma outra sessão tem saída; a frase ficava a descrever uma atividade que já não existe.\n             '<h2>Avalia",
    1
   ]
  ]

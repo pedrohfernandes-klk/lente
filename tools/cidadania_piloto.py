@@ -1224,7 +1224,8 @@ def pagina_guia(S):
              # 06/11/2026 (sessão 04 no molde): a frase das sessões no molde sai da lista das sessões (eram 01, 02 e 03, escritas à mão).
              f'<p class="pg">{_frase_molde(S)}</p>'
              '<p class="pg">O <a href="../ponto/">Ponto de partida e de chegada</a> tem as mesmas 10 perguntas, para imprimir. Faz-se no início da sessão 01 e no início da sessão 10; a chave e a cotação estão no fim deste guia, e não nas páginas dos alunos.</p>'
-             '<p class="pg">As saídas das sessões 05 e 08 são só à volta da escola, em aula, com o docente e sem autorização especial. Não se fotografam pessoas nem matrículas.</p>'
+             # 06/11/2026 (sessão 08 no molde): sai a frase das saídas das sessões 05 e 08. As duas passaram ao molde final sem saída
+             # à volta da escola, e nenhuma outra sessão tem saída; a frase ficava a descrever uma atividade que já não existe.
              '<h2>Avaliação</h2>'
              '<p class="indicativa">Avaliação indicativa: orienta o trabalho e não é para usar a sério (decisão 17; Portaria n.º 235-A/2018, artigo 27.º, n.º 8).</p>'
              '<p class="pg">Cada sessão tem uma grelha /20 do produto da sessão. Em cada critério há três níveis: 0 pontos (não aparece), metade dos pontos (aparece, mas incompleto ou sem razão) e todos os pontos (como está descrito). A correspondência com os quatro instrumentos da <a href="../../../projeto/">Pergunta Humana</a> também é indicativa:</p>'
