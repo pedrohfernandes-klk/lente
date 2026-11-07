@@ -17,7 +17,8 @@ try{for(const pagePath of ['','narrativas/'])for(const width of [320,390,1366])f
  assert.equal(dimensions.overflow,0,pagePath+' '+width+' '+mode);
  if(width===390&&mode!=='projection')assert.ok(dimensions.height<3000,pagePath+' altura '+dimensions.height);
  const region=p.locator(pagePath?'.ideias-publico':'#inicio-narrativas');
- if(!pagePath){const fold=region.locator('details');if(!await fold.evaluate(e=>e.open))await fold.locator('summary').click()}
+ // 07/11/2026: decisões 153, 176 e 177, a porta passa a ter também o «i» do crédito da imagem (details.info-i); a dobra é a details.cz-fold.
+ if(!pagePath){const fold=region.locator('details.cz-fold');if(!await fold.evaluate(e=>e.open))await fold.locator('summary').click()}
  const a=pagePath?region.locator('a').filter({hasText:/^Abrir Ideias/}):region.locator('a[href*="narrativas/ideias/"]');assert.equal(await a.count(),1);assert.ok(await a.isVisible());assert.equal(await a.evaluate(e=>new URL(e.href).pathname),'/lente/narrativas/ideias/');
  // 02/11/2026: Ideias não recebe o estado da porta Observar; a retoma original mantém a associação.
  if(!pagePath&&mode!=='projection'){

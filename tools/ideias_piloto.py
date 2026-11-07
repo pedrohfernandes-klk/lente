@@ -619,9 +619,12 @@ def pagina_entrada(L):
              '<p class="lead">Observa o que te rodeia e dá forma a uma ideia tua.</p>'
              f'<div data-proximo><a class="botao inverso" data-p-botao href="sessao-{primeira["n"]:02d}/">Começar a sessão {primeira["n"]} →</a>'
              f'<p class="state" data-p-t>{e(primeira["titulo"])}</p><p class="state" data-p-feito></p></div></div>'
-             '<figure class="drawing"><div aria-hidden="true">' + desenho + '</div>'
+             '<figure class="drawing"><div class="com-i"><div aria-hidden="true">' + desenho + '</div>'
              # 05/11/2026: colagem (tools/gerar_ideias_colagem.py); o crédito diz a obra, o museu, a licença e o traço.
-             '<figcaption>' + COLAGEM.CREDITO + '</figcaption></figure></header>'
+             # 07/11/2026: decisões 153, 176 e 177. O crédito passa, inteiro, para o «i» da peça comum (assets/info-i.css e
+             # assets/info-i.js), no canto da colagem e fora do desenho decorativo; na impressão, a colagem e o crédito não saem.
+             '<details class="info-i" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span></summary>'
+             '<p class="info-i-texto">' + COLAGEM.CREDITO + '</p></details></div></figure></header>'
              '<details class="metodo" id="metodo"><summary id="metodo-t">O método em cinco passos</summary><div class="method-body">'
              '<p>Seguimos, passo a passo, o método de James Webb Young, publicitário norte-americano, em <i>A Technique for Producing Ideas</i> (1940). Há outros métodos; escolhemos este por ser simples, claro e útil.</p>'
              + M.passos(set()) + f'<p>Nas {POR_EXTENSO[len(prontas)]} sessões publicadas, começas por juntar material e observar melhor.</p>'
@@ -630,7 +633,9 @@ def pagina_entrada(L):
              '<footer class="saidas-sec"><a href="guiao/">Guião para imprimir →</a><a href="docente/">Para o docente →</a>'
              '<p class="nota">O que fazes fica só neste aparelho.</p></footer>')
     cab = cabeca(base, 'Ideias | Laboratório | Lente', 'Ideias: observa o que te rodeia e dá forma a uma ideia tua, pelo método de James Webb Young.')
-    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1">{LN.css("narrativas/ideias")}</head>')
+    # 07/11/2026: decisões 153, 176 e 177. A peça comum do «i» (créditos da colagem).
+    cab = cab.replace('</head>', f'<link rel="stylesheet" href="{base}assets/laboratorio/ideias/entrada.css?v=20261105-1">{LN.css("narrativas/ideias")}'
+                      f'<link rel="stylesheet" href="{base}assets/info-i.css?v=20261106-3"></head>')
     # 05/11/2026 (revisão): a classe da projeção no <head>, antes das folhas de estilo (sem salto de layout ao abrir com ?projetar=1)
     cab = cab.replace('<meta name="viewport" content="width=device-width,initial-scale=1">', '<meta name="viewport" content="width=device-width,initial-scale=1">' + LN.PROJ, 1)
     return (cab + f'<body class="ideias entrada-a"><a class="c-sr salta" href="#conteudo">Saltar para o conteúdo</a>{LN.barra("narrativas/ideias")}'
@@ -639,6 +644,7 @@ def pagina_entrada(L):
             # EPILabProgresso ficam iguais.
             f'<script src="{base}assets/licoes/{LL.PROGRESSO}"></script>'
             f'<script src="{base}assets/laboratorio/ideias/entrada.js?v=20261102-2"></script>'
+            f'<script defer src="{base}assets/info-i.js?v=20261106-3"></script>'
             f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script></body></html>\n')
 
 

@@ -79,6 +79,12 @@ import molde_s09  # noqa: E402
 import molde_s10  # noqa: E402
 # 07/11/2026 (fusão do main com a s09, #138, e as portas, #137): o manifesto da s10 passa a partir do main a258b6c, já com a s09:
 # é a camada mais recente da Cidadania, por cima da da s09.
+# 07/11/2026: decisões 153, 176 e 177 (pedido lente-1). Mais uma camada, a mais recente, com as mesmas regras: o manifesto fechado
+# tools/trocas/creditos-i-lente1-20261107.json (trocas literais, contagem exata) põe os créditos da entrada, do índice do M2 e do
+# percurso anterior do M1 atrás do «i»; nada mais se aceita.
+# 07/11/2026 (fusão do main 57a6ff8, com a s09, a s10 e as portas, no pedido lente-1): a camada do «i» fica por cima de todas,
+# a mais recente; as suas trocas aplicam-se ao main de hoje com as mesmas contagens.
+import creditos_i_lente1  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -201,6 +207,11 @@ class CidadaniaBase(unittest.TestCase):
                 # (3c774cb), já com a s07; a s08 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
                 # exata de cada «novo»; depois a da s07, a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as
                 # versões de cache.
+                # 07/11/2026: decisões 153, 176 e 177. A camada dos créditos atrás do «i» (pedido lente-1) é agora a mais recente e
+                # desfaz-se primeiro no ficheiro atual, com contagem exata de cada «novo»; depois as do molde, como antes.
+                # 07/11/2026 (fusão do main 57a6ff8): por cima da s10 e da s09; estas desfazem-se a seguir, pela mesma ordem do main.
+                if nome in creditos_i_lente1.TROCAS:
+                    depois = creditos_i_lente1.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 # 07/11/2026 (sessão 10 no molde): a camada da s10 parte do main com a s09 (a258b6c), por cima da da s09: desfaz-se primeiro.
                 if nome in molde_s10.TROCAS:
                     depois = molde_s10.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
@@ -371,6 +382,11 @@ class CidadaniaBase(unittest.TestCase):
                 # main fa0ac9f). 07/11/2026 (fusão do main com a sessão 09, #138): a s09 e a 180 mexem em ficheiros diferentes;
                 # a 180 fica em último lugar.
                 esperado = portas180.aplicar(esperado, nome)
+                # 07/11/2026: decisões 153, 176 e 177. A camada dos créditos atrás do «i» (pedido lente-1), com contagem exata, por
+                # cima de tudo: parte do main (dc01487), já com a s08, por isso aplica-se em último lugar.
+                # 07/11/2026 (fusão do main 57a6ff8): fica depois da s09, da s10 e das portas (180); as trocas do «i» não tocam nas da
+                # 180 e aplicam-se ao main de hoje com as mesmas contagens.
+                esperado = creditos_i_lente1.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

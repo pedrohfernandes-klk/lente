@@ -13,7 +13,8 @@ const TODOS=['small','medium','large'],CASOS=[[320,900,TODOS],[390,900,TODOS],[6
 function partidas(){
  const sel='h2,h3,p,small,.lab-set-copy,.sp-copy,.sp-kicker,.sp-image-label,.ld-rot,.cz-button,.cz-footer-links a',out=[];
  for(const el of document.querySelectorAll('[data-cartaz-entrada] :is('+sel+')')){
-  if(!el.offsetParent||getComputedStyle(el).hyphens==='auto')continue;
+  // 07/11/2026: decisões 153, 176 e 177, o texto de um «i» fechado não se vê e não se mede aqui; cada «i» mede-se aberto, em partidasNosI.
+  if(!el.offsetParent||getComputedStyle(el).hyphens==='auto'||!el.checkVisibility({contentVisibilityAuto:true}))continue;
   const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;
   while(n=w.nextNode()){const re=/[^\s ]{4,}/g;let m;while(m=re.exec(n.textContent)){const r=document.createRange();r.setStart(n,m.index);r.setEnd(n,m.index+m[0].length);const tops=new Set([...r.getClientRects()].filter(x=>x.width>0).map(x=>Math.round(x.top)));if(tops.size>1)out.push(m[0])}}
  }
@@ -22,6 +23,16 @@ function partidas(){
  const foraDaEscala=[...document.querySelectorAll('[data-cartaz-entrada] .ld-n')].filter(h=>h.offsetParent).map(h=>parseFloat(getComputedStyle(h).fontSize)).filter(fs=>!degraus.some(d=>Math.abs(d-fs)<.2));
  const img=document.querySelector('[data-cartaz-entrada] .sp-image'),retratoAlto=img&&img.offsetParent?Math.round(img.getBoundingClientRect().height-innerHeight):-1;
  return {partidas:[...new Set(out)],desliza:document.documentElement.scrollWidth-innerWidth,foraDaEscala,retratoAlto};
+}
+// 07/11/2026: decisões 153, 176 e 177. Os créditos passaram para o «i»: abre-se cada «i» à vista, um de cada vez, e o crédito aberto
+// também não pode ter palavras partidas sem hífen nem fazer deslizar a página.
+function partidasNosI(){
+ const out=[];let desliza=0;
+ for(const d of document.querySelectorAll('[data-cartaz-entrada] details.info-i')){
+  if(!d.querySelector('summary').offsetParent)continue;
+  d.open=true;const r=partidas();out.push(...r.partidas);desliza=Math.max(desliza,r.desliza);d.open=false;
+ }
+ return {partidas:[...new Set(out)],desliza};
 }
 function etqNoVidro(){
  const aro=document.querySelector('.lf-borda'),etq=document.querySelector('.lente-cab>.lente-etq');if(!aro||!etq)return -1;
@@ -35,7 +46,7 @@ try{for(const [w,h,tamanhos] of CASOS)for(const t of tamanhos){
   await p.goto(base+'/lente/projetar/?pagina=/lente/');await p.frameLocator('#lesson-frame').locator('html.epi-projection').waitFor();
   await p.locator('[data-projection-size="'+t+'"]').click();await p.waitForFunction(t=>document.querySelector('[data-projection-size="'+t+'"]').getAttribute('aria-pressed')==='true',t);await p.waitForTimeout(400);
   const frame=await(await p.locator('#lesson-frame').elementHandle()).contentFrame();await frame.evaluate(()=>document.fonts.ready);
-  const m=await frame.evaluate(partidas);if(await frame.evaluate(()=>innerWidth>=640)){m.etq=await frame.evaluate(etqNoVidro);if(m.etq!==0)falhas.push({w,h,t,etqNoVidro:m.etq})}m.raiz=await frame.evaluate(()=>getComputedStyle(document.documentElement).fontSize);if(m.partidas.length||m.desliza>0||m.foraDaEscala.length||m.retratoAlto>0)falhas.push({w,h,t,...m});console.log(w+'x'+h,t,m.raiz,m.partidas.length,'partidas; desliza',m.desliza);await ctx.close();
+  const m=await frame.evaluate(partidas);if(await frame.evaluate(()=>innerWidth>=640)){m.etq=await frame.evaluate(etqNoVidro);if(m.etq!==0)falhas.push({w,h,t,etqNoVidro:m.etq})}m.raiz=await frame.evaluate(()=>getComputedStyle(document.documentElement).fontSize);const mi=await frame.evaluate(`(()=>{${partidas.toString()};${partidasNosI.toString()};return partidasNosI();})()`);if(mi.partidas.length||mi.desliza>0)falhas.push({w,h,t,i:mi});if(m.partidas.length||m.desliza>0||m.foraDaEscala.length||m.retratoAlto>0)falhas.push({w,h,t,...m});console.log(w+'x'+h,t,m.raiz,m.partidas.length,'partidas; desliza',m.desliza);await ctx.close();
  }
  for(const w of [768,1024,1366]){const ctx=await b.newContext({viewport:{width:w,height:900},reducedMotion:'reduce'});await ctx.route('**/*',r=>{const u=new URL(r.request().url());return u.origin===base?r.continue():r.abort()});const p=await ctx.newPage();await p.goto(base+'/lente/?projetar=1');await p.evaluate(()=>document.fonts.ready);const n=await p.evaluate(etqNoVidro);console.log('?projetar=1',w,'sobretítulo no vidro',n);if(n!==0)falhas.push({w,modo:'?projetar=1',etqNoVidro:n});await ctx.close()}
  assert.deepEqual(falhas,[],JSON.stringify(falhas));console.log('PASS projeção: nenhuma palavra partida sem hífen, nenhum deslize lateral e, a partir de 640 px, o sobretítulo fora do vidro da lupa');

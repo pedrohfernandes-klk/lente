@@ -139,13 +139,18 @@ def entrada():
            '<p data-registos-aviso role="status">O ficheiro guarda só os estados, sem respostas nem textos.</p></div>'
            '<div class="lab-mais"><nav class="lab-indice" aria-labelledby="indice-t"><h2 id="indice-t">Os '+str(len(D['routes']))+' percursos</h2>'+indice+'</nav>'
            '<p class="lab-tudo"><a class="sec" href="tudo/">Tudo o que há no Laboratório →</a></p>'
-           '<p class="lab-creditos">Créditos das imagens das portas Observar, Treinar e Criar: '+creditos+'</p></div></footer>')
+           # 07/11/2026: decisões 153, 176 e 177. Os créditos das imagens das portas passam, inteiros, para o «i» da peça comum
+           # (variante linha, sem imagem nesta página: cada imagem tem o seu «i» na porta); na impressão saem por extenso.
+           '<div class="lab-creditos"><details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos das imagens das portas Observar, Treinar e Criar">'
+           '<span aria-hidden="true">i</span></summary><p class="info-i-texto">Créditos das imagens das portas Observar, Treinar e Criar: '+creditos+'</p></details></div></div></footer>')
     # 31/10/2026: uma âncora antiga que já não existe aqui leva ao catálogo, onde aponta para o percurso certo.
     body+='<script>(function(){function f(){var h=decodeURIComponent(location.hash.slice(1));if(h&&!document.getElementById(h))location.replace("tudo/"+location.search+location.hash)}addEventListener("hashchange",f);f()})()</script>'
     # 06/11/2026: fusão do main (com a sessão 1 da Cidadania, #126). O progresso comum passou de progresso-laboratorio.js a
     # progresso-licoes.js (o mesmo código, que responde também pelo nome antigo EPILabProgresso); a entrada carrega o novo.
     abre=('<script src="'+link(base,'assets/licoes/progresso-licoes.js')+'?v=20261105-1"></script>'
-          '<script defer src="'+link(base,'assets/laboratorio/ideias/entrada.js')+'?v='+LN.V+'"></script>')
+          '<script defer src="'+link(base,'assets/laboratorio/ideias/entrada.js')+'?v='+LN.V+'"></script>'
+          # 07/11/2026: decisões 153, 176 e 177. A peça comum do «i» (créditos das imagens das portas, no pé).
+          '<link rel="stylesheet" href="'+link(base,'assets/info-i.css')+'?v=20261106-3"><script defer src="'+link(base,'assets/info-i.js')+'?v=20261106-3"></script>')
     page(base,'Laboratório',body,'Observa uma escolha, experimenta uma regra e cria uma peça tua: '+str(len(D['routes']))+' percursos em três portas (Observar, Treinar e Criar), depois do Ideias.',foot=False,abre=abre)
 entrada()
 
