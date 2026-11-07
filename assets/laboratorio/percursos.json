@@ -6,35 +6,21 @@
       "title": "Observar",
       "subtitle": "como os outros fizeram",
       "question": "Porque é que resulta?",
-      "anchor": "ler-como-quem-escreve",
-      "passos": [
-        1
-      ],
-      "passoTexto": "Passo 1: juntar material."
+      "anchor": "ler-como-quem-escreve"
     },
     {
       "id": "treinar",
       "title": "Treinar",
       "subtitle": "uma regra de cada vez",
       "question": "Que escolha queres treinar?",
-      "anchor": "treinar",
-      "passos": [
-        2,
-        3
-      ],
-      "passoTexto": "Passos 2 e 3: trabalhar o material e largar."
+      "anchor": "treinar"
     },
     {
       "id": "criar",
       "title": "Criar",
       "subtitle": "uma peça, com palavras e imagens",
       "question": "Como levas uma ideia mais longe?",
-      "anchor": "criar",
-      "passos": [
-        4,
-        5
-      ],
-      "passoTexto": "Passos 4 e 5: a ideia aparece, dar forma e pôr à prova."
+      "anchor": "criar"
     }
   ],
   "routes": [

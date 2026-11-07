@@ -5,6 +5,7 @@ import json
 import subprocess
 import unittest
 import menus163
+import portas180
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'fbfb8509d6e104f00811321d95ed4d999f8df2cd'
@@ -346,6 +347,11 @@ class CidadaniaBase(unittest.TestCase):
                 esperado = molde_s08.aplicar(esperado, nome)
                 # 07/11/2026: a camada da sessão 09 no molde (manifesto a partir do main dc01487), em último lugar.
                 esperado = molde_s09.aplicar(esperado, nome)
+                # 07/11/2026: decisão 180 (docente). As portas do Laboratório no cartão da entrada sem número nem «passo»: só as
+                # trocas do manifesto fechado tests/fixtures/portas-180-20261107.json, com contagem exata, por cima de tudo (parte do
+                # main fa0ac9f). 07/11/2026 (fusão do main com a sessão 09, #138): a s09 e a 180 mexem em ficheiros diferentes;
+                # a 180 fica em último lugar.
+                esperado = portas180.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

@@ -194,7 +194,8 @@ class Paginas(unittest.TestCase):
         for rel in ['narrativas/index.html','narrativas/ver/index.html','narrativas/treinar/index.html','narrativas/criar/index.html']:
             s=(ROOT/rel).read_text('utf-8')
             nav=re.search(r'<section class="lab-ideias[^"]*".*?</section>' if rel=='narrativas/index.html' else r'<nav class="lab-fio".*?</nav>',s).group()
-            self.assertRegex(nav,r'<a [^>]*?href="(?:\.\./)?ideias/"[^>]*>(?:<span class="n">.*?</span><b>)?(?:Abrir )?Ideias(?:</b>|\u00a0→)?</a>',rel)
+            # 07/11/2026: decisão 180 (docente). O fio diz só os nomes, sem o <span class="n"> dos passos; a ligação exigida é a mesma.
+            self.assertRegex(nav,r'<a [^>]*?href="(?:\.\./)?ideias/"[^>]*>(?:<span class="n">.*?</span>)?(?:<b>)?(?:Abrir )?Ideias(?:</b>|\u00a0→)?</a>',rel)
 
     def test_ligacoes_internas_e_ancoras_resolvem(self):
         falhas = []
@@ -445,7 +446,11 @@ class TerceiraRevisao(unittest.TestCase):
         for pid in ['treinar','criar']:
             for prefix in ['porta','pt','pc']:self.assertIn(f'id="{prefix}-{pid}"',s)
             self.assertNotIn(f'id="porta-{pid}" aria-labelledby',s)
-        self.assertIn('<h3 id="pt-ver">Observar</h3>',s)
+        # 07/11/2026: nota do docente à decisão 180. As sessões numa lista única, sem a porta Observar como título por cima
+        # delas; os ids antigos das três portas ficam escondidos, para as ligações antigas não se perderem.
+        self.assertNotIn('<h3 id="pt-ver">', s)
+        for prefix in ['porta','pt','pc']:self.assertIn(f'<span id="{prefix}-ver" hidden></span>',s)
+        self.assertIn('<ol class="sessoes lista-unica">', s)
         # 02/11/2026: abertura progressiva nativa, sem portas fictícias nem o atol na entrada.
         self.assertIn('<details class="metodo"', s)
         self.assertNotRegex(s, r'<section[^>]*data-dobra')
@@ -652,8 +657,11 @@ class Metodo(unittest.TestCase):
         for n, a in enumerate(apoios, 1):
             self.assertRegex(a, r'^(Passos? \d( e \d)? de 5: |Os cinco passos juntos\.)', f'sessão {n}')
         self.assertEqual([x.split(':')[0] for x in apoios[:2]], ['Passo 1 de 5', 'Passo 1 de 5'])
-        portas = [(pid, re.sub(r'<[^>]+>', '', t)) for pid, t in re.findall(r'<div id="pc-(\w+)"><p class="apoio-porta">(.*?)</p><ol class="sessoes">', entrada)]
-        self.assertEqual(portas, [('ver', 'Passo 1: juntar material, com os olhos e até ao fundo.')])
+        # 07/11/2026: decisão 180 (docente) e a sua nota. As portas deixam de arrumar as sessões: cada sessão diz a peça e a
+        # porta a que leva (antes, a porta Observar por cima das duas sessões, com o seu «passo»).
+        self.assertNotIn('class="apoio-porta"', entrada)
+        self.assertEqual(re.findall(r'<span class="peca">(.*?)</span>', entrada),
+                         ['Leva a <i>Galileu</i>, na porta Observar.', 'Leva a <i>Leonardo</i>, na porta Observar.'])
         self.assertEqual(len(re.findall(r'Nas duas sessões publicadas', entrada)), 1)
         for d in self.licoes():
             pag = (ROOT / d['saida']).read_text('utf-8')
@@ -701,7 +709,10 @@ class Metodo(unittest.TestCase):
         self.assertIn('Passo 1 de 5: juntar material, até ao fundo.', L.visivel(self.licoes()[1]['cartoes'][0]['html']))
         guia = (PILOTO / 'docente/index.html').read_text('utf-8')
         # 01/11/2026: (correção 3 do método, verificador) a sequência do guia diz os passos de cada porta como a entrada
-        self.assertIn('O passo 1 do método leva a Observar; os passos 1 a 3, a Treinar; os passos 4 e 5, a Criar.', L.visivel(guia))
+        # 07/11/2026: decisão 180 (docente). As portas não são passos do método: o guia diz que se abrem por qualquer ordem e
+        # já não dá a nenhuma porta um passo.
+        self.assertIn('Cada sessão leva a uma peça concreta de uma das três portas do Laboratório. As portas não são passos do método: abrem-se por qualquer ordem.', L.visivel(guia))
+        self.assertNotIn('O passo 1 do método leva a Observar', guia)
         self.assertNotIn('Os passos 1 e 2 do método levam a Ver', guia)
         self.assertEqual(len(re.findall(r'data-r="Passo">(?:Passos? \d( e \d)? de 5|Os cinco passos juntos)', guia)), 7)
         self.assertEqual(guia.count('<b>O passo.</b> Passo 1 de 5:'), 2)

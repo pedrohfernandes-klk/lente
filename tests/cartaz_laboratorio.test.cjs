@@ -22,7 +22,9 @@ for(const rel of ['narrativas/index.html','narrativas/ver/index.html','narrativa
  for(const [,href,cur='',nome] of links){
   if(['Lente','Laboratório'].includes(nome)){assert.ok(barra.includes('<a href="'+href+'"'+cur+'>'+nome+'</a>'),nome);continue;}
   if(rel==='narrativas/index.html'){assert.ok(new RegExp('<a [^>]*?href="'+href.replace(/[.]/g,'\\.')+'"[^>]*>(?:(?!</a>).)*'+nome).test(now),nome);continue;}
-  assert.ok(fio.includes('<a href="'+href+'"'+cur+'><span class="n">'),nome);assert.ok(new RegExp('<a href="'+href.replace(/[.]/g,'\\.')+'"'+cur+'><span class="n">(?:(?!</a>).)*<b>'+nome+'</b></a>').test(fio),nome);
+  // 07/11/2026: decisão 180 (docente). O fio diz só os nomes, sem o <span class="n"> dos passos: a mesma ligação, o mesmo nome
+  // e o mesmo «aria-current».
+  assert.ok(fio.includes('<a href="'+href+'"'+cur+'><b>'+nome+'</b></a>'),nome);assert.ok(!fio.includes('class="n"'),nome);
  }
  const dados=s=>JSON.parse(s.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1]);
  assert.deepEqual(dados(now),dados(old).filter(x=>!RET.has(x.url)));
