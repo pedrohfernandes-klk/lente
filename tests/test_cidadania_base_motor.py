@@ -56,6 +56,12 @@ import molde_s05  # noqa: E402
 # .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s06 tem de cumprir o contrato do molde. 06/11/2026
 # (fusão do main com as sessões 2 a 5 finais na sessão 6): o manifesto parte do main (d04c20f), já com a s05.
 import molde_s06  # noqa: E402
+# 06/11/2026: sessão 07 do M1 na versão final (decisões 166 a 168). Mais uma camada, agora a mais recente, por cima da da s06, com
+# as mesmas regras: o manifesto fechado tools/trocas/molde-s07-20261106.json (trocas literais, contagem exata) nos ficheiros que a
+# s07 muda em parte; os que escreve inteiros (molde_s07.INTEIROS: a página e a versão para imprimir da s07, a sua fonte e o seu
+# .json) comparam-se, letra a letra, com o que o gerador escreve hoje, e a s07 tem de cumprir o contrato do molde. 06/11/2026
+# (fusão do main com as sessões 2 a 6 finais na sessão 7): o manifesto parte do main (8731fb9), já com a s06.
+import molde_s07  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -127,6 +133,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s06.INTEIROS:
                     self.assertTrue(molde_s06.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
+                    continue
                 antes = subprocess.check_output(['git', 'show', f'{BASE}:{nome}'], cwd=ROOT)
                 # 03/11/2026: #107 autoriza só os títulos deste manifesto fechado.
                 for antigo, novo, quantidade in RENOMEACOES.get(nome, []):
@@ -154,6 +164,12 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026 (sessão 06 no molde, na fusão do main com as sessões 2 a 5 finais): o manifesto da s06 parte do main
                 # (d04c20f), já com a s05; a s06 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
                 # exata de cada «novo»; depois a da s05, a da s04 e a da s03, como antes, e só então se tiram as versões de cache.
+                # 06/11/2026 (sessão 07 no molde, na fusão do main com as sessões 2 a 6 finais): o manifesto da s07 parte do main
+                # (8731fb9), já com a s06; a s07 é agora a camada mais recente e desfaz-se primeiro no ficheiro atual, com contagem
+                # exata de cada «novo»; depois a da s06, a da s05, a da s04 e a da s03, como antes, e só então se tiram as versões de
+                # cache.
+                if nome in molde_s07.TROCAS:
+                    depois = molde_s07.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s06.TROCAS:
                     depois = molde_s06.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in molde_s05.TROCAS:
@@ -219,6 +235,10 @@ class CidadaniaBase(unittest.TestCase):
                 if nome in molde_s06.INTEIROS:
                     self.assertTrue(molde_s06.inteiro_ok(nome), nome)
                     continue
+                # 06/11/2026 (sessão 07 no molde): o mesmo para os ficheiros que a s07 escreve inteiros.
+                if nome in molde_s07.INTEIROS:
+                    self.assertTrue(molde_s07.inteiro_ok(nome), nome)
+                    continue
                 esperado = subprocess.check_output(['git', 'show', f'{base}:{nome}'], cwd=ROOT).decode()
                 for antigo, novo, quantidade in trocas:
                     self.assertEqual(esperado.count(antigo), quantidade)
@@ -283,6 +303,9 @@ class CidadaniaBase(unittest.TestCase):
                 # 06/11/2026: a camada da sessão 06 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
                 # sessões 2 a 5 finais): o manifesto da s06 parte do main (d04c20f), por isso aplica-se depois da s05, em último lugar.
                 esperado = molde_s06.aplicar(esperado, nome)
+                # 06/11/2026: a camada da sessão 07 no molde, com contagem exata, por cima de tudo. 06/11/2026 (fusão do main com as
+                # sessões 2 a 6 finais): o manifesto da s07 parte do main (8731fb9), por isso aplica-se depois da s06, em último lugar.
+                esperado = molde_s07.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

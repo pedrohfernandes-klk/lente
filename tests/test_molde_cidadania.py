@@ -27,6 +27,8 @@ CIDADANIA = [p for p in FONTES if p.name.startswith('cidadania-')]
 # 06/11/2026 (decisões 166 a 168): a s06 do M1 entra na lista, pelo mesmo molde, uma sessão de cada vez.
 NO_MOLDE = {'cidadania-m1-s01.json', 'cidadania-m1-s02.json', 'cidadania-m1-s03.json', 'cidadania-m1-s04.json', 'cidadania-m1-s05.json',
             'cidadania-m1-s06.json'}
+# 06/11/2026 (decisões 166 a 168): e a s07 do M1, pelo mesmo molde, uma de cada vez.
+NO_MOLDE = NO_MOLDE | {'cidadania-m1-s07.json'}
 PILOTO = [p for p in CIDADANIA if p.name not in NO_MOLDE]
 
 
@@ -1022,7 +1024,8 @@ class SessaoS06(unittest.TestCase):
         self.assertIn('Uma regra é justa se quem a faz ganha com ela?', C[0]['html'])
         self.assertIn('Uma regra justa é a que consegues explicar a quem perde com ela.', C[-1]['html'])
         # a s06 leva à s07 do piloto
-        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s07/')
+        # 06/11/2026 (fusão do main com as sessões 2 a 6 finais na sessão 7): a s07 também passou ao molde final; a s06 leva à s07 nova
+        self.assertEqual(self.D['seguinte'], '../07/')
 
     def test_cada_excerto_esta_no_registo_e_confirmado(self):
         vistos = 0
@@ -1122,6 +1125,165 @@ class SessaoS06(unittest.TestCase):
         # «isenção administrativa» não seja uma leitura fiel dada como errada; no papel, as duas ocorrências são «sublinha a palavra».
         self.assertEqual(s.count('sublinha a palavra'), 2)
         self.assertIn('artigo 9.º', s)  # decisão 152: as referências não partem, também no papel
+
+
+class SessaoS07(unittest.TestCase):
+    """06/11/2026 (decisões 166 a 168): a sessão 07 do M1, «Nove contra dois», na versão final, pelo mesmo molde e com as mesmas
+    exigências da s01 a s03: o contrato e o cfg, cada excerto (Constituição, artigo 32.º, n.os 2 e 10; Declaração, artigos 10.º, 11.º
+    e 12.º; Convenção, artigo 12.º; o acórdão da Relação de Évora de 2023) no registo, confirmado e letra a letra, o R2 com palavras
+    da sessão de origem, o conceito espaçado, o caso real com fonte oficial (decisão 161: o acórdão no dgsi.pt), a litografia inteira
+    com o crédito atrás do «i» (decisão 153), nenhum vídeo (decisão 155) e a versão para imprimir sem respostas."""
+    D = carregar(ROOT / 'tools/licoes/cidadania-m1-s07.json')
+    REG = SessaoS01.REG
+    norm = staticmethod(SessaoS01.norm)
+    confere = SessaoS01.confere
+
+    def test_contrato_e_cfg(self):
+        self.assertEqual(self.D['molde'], L.MOLDE)
+        self.assertEqual(L.validar(self.D), [])
+        self.assertEqual(self.D['saida'], 'cidadania/m1/sessoes/07/index.html')
+        self.assertEqual(self.D['chave'], 'epi-cid-m1-s07')
+        self.assertNotEqual(self.D['versao'], '2026-10-31-2')  # a versão do piloto sobe (preservarAnterior guarda o «feita»)
+        cfg = cfg_da_pagina((ROOT / self.D['saida']).read_text('utf-8'))
+        for k in ('aula', 'semPontos', 'preservarAnterior'):
+            self.assertIs(cfg[k], True, k)
+        self.assertEqual(cfg['retomar'], 192)
+        self.assertNotIn('pistas', cfg)
+        C = self.D['cartoes']
+        self.assertTrue(all(c.get('pista') for c in C if c['t'] != 'ler'))
+        self.assertEqual(len(C), 23)
+        self.assertEqual([c['rot'] for c in C if c['t'] == 'ler'],
+                         ['Abre', 'Decide', 'Olha', 'Lê', 'Conceito', 'Volta ao caso', 'Em turma', 'Agora, em papel', 'Para levar'])
+        # os mesmos minutos da s01, cartão a cartão (a secção 2 do plano)
+        self.assertEqual([c['min'] for c in C], [c['min'] for c in SessaoS01.D['cartoes']])
+        self.assertEqual(self.D['tempos'], SessaoS01.D['tempos'])
+        self.assertIn('Uma captura de ecrã chega para culpar alguém?', C[0]['html'])
+        self.assertEqual(self.D['seguinte'], '../../../piloto/m1-s08/')
+        # cada retorno até 45 palavras e cada enunciado até 30 (molde, secção 2)
+        for i, c in enumerate(C, 1):
+            if c['t'] == 'ler':
+                continue
+            self.assertLessEqual(len(L.visivel(c['p']).split()), 30, f'cartão {i}')
+            for x in [c['f']] + (c['fe'] if isinstance(c['fe'], list) else [c['fe']]):
+                self.assertLessEqual(len(L.visivel(x).split()), 45, f'cartão {i}')
+        # regras da casa: nenhum «Qual» nem «Que + nome» a abrir uma pergunta
+        perguntas = ' '.join(L.visivel(c.get('p', '') + ' ' + c.get('p2', '') + ' ' + c.get('pista', '')) for c in C)
+        self.assertNotRegex(perguntas, r'\bQua(?:l|is)\b')
+        self.assertNotRegex(perguntas, r'(?:^|[.?!:]\s)Que (?!uma|ele|foi)\w+[^.?!]*\?')
+
+    def test_cada_excerto_esta_no_registo_e_confirmado(self):
+        vistos = 0
+        for i, c in enumerate(self.D['cartoes'], 1):
+            h = c.get('html') or ''
+            for bq in re.findall(r'<blockquote class="lei">(.*?)</blockquote>', h, re.S):
+                self.assertEqual(len(re.findall(r'<p\b', bq)), len(re.findall(r'<p\b[^>]*data-fonte=', bq)), f'cartão {i}')
+            for tag, ident, corpo in re.findall(r'<(p|span)\b[^>]*data-fonte="([^"]+)"[^>]*>(.*?)</\1>', h, re.S):
+                corpo = re.sub(r'<span class="art">.*?</span>', '', corpo)
+                self.confere(ident, corpo, f'cartão {i}')
+                vistos += 1
+            if c.get('fonte'):
+                self.confere(c['fonte'], c.get('cita') or c.get('frase'), f'cartão {i}')
+                vistos += 1
+            texto = self.norm(' '.join([c.get('f', '')] + (c['fe'] if isinstance(c.get('fe'), list) else [c.get('fe') or ''])
+                                       + [x for par in c.get('pares', []) for x in par]))
+            for ident, frase in c.get('citacoes', []):
+                self.confere(ident, frase, f'cartão {i}')
+                self.assertIn(self.norm(frase), texto, f'cartão {i}: a citação registada está no cartão')
+                aspas = [q for q in re.findall(r'«([^«»]*)»', texto) if self.norm(frase) in q]
+                self.assertTrue(aspas, f'cartão {i}: «{frase}» está entre aspas')
+                for q in aspas:
+                    for pedaco in re.split(r'\s*\[…\]\s*', q):
+                        if pedaco.strip():
+                            self.assertIn(pedaco.strip(), self.norm(self.REG[ident]['texto']), f'cartão {i}: «{q}» não é texto exato de {ident}')
+                vistos += 1
+        self.assertGreaterEqual(vistos, 18)
+        tudo = json.dumps(self.D, ensure_ascii=False)
+        for ident in ('crp-32-2', 'crp-32-10', 'dudh-10', 'dudh-11-1', 'dudh-12', 'cdc-12-2', 'tre-2023-instagram', 'tre-2023-admitimos',
+                      'tre-2023-nao-identificado'):
+            self.assertIn(ident, tudo)
+            self.assertIs(self.REG[ident]['confirmado'], True, ident)
+        for ident in ('crp-32-2', 'crp-32-10', 'cdc-12-2'):
+            self.assertTrue(self.REG[ident]['ligacao'].startswith('https://diariodarepublica.pt/'), ident)
+        for ident in ('dudh-10', 'dudh-11-1'):
+            self.assertEqual(self.REG[ident]['ligacao'], 'https://unric.org/pt/declaracao-universal-dos-direitos-humanos/', ident)
+        for ident in ('tre-2023-instagram', 'tre-2023-admitimos', 'tre-2023-nao-identificado'):
+            self.assertTrue(self.REG[ident]['ligacao'].startswith('https://www.dgsi.pt/jtre.nsf/'), ident)
+        # a grafia é a da fonte (o texto consolidado da Constituição, a transcrição do UNRIC e a tradução de 1990)
+        self.assertIn('contra-ordenação', self.REG['crp-32-10']['texto'])
+        self.assertIn('acto delituoso', self.REG['dudh-11-1']['texto'])
+        le = next(c for c in self.D['cartoes'] if c['rot'] == 'Lê')
+        vista = self.norm(L.sem_details(le['html']))
+        self.assertIn('Todo o arguido se presume inocente', vista)
+        self.assertIn('fique legalmente provada', vista)
+        self.assertIn('os direitos de audiência e defesa.', vista)
+        # o primeiro sublinhar é o artigo 11.º (primeiro parágrafo) inteiro, e as palavras certas dizem como a culpa tem de ficar
+        sub = [c for c in self.D['cartoes'] if c['t'] == 'sublinhar']
+        self.assertEqual(sub[0]['frase'], self.REG['dudh-11-1']['texto'])
+        self.assertEqual([sub[0]['frase'].split()[j] for j in sub[0]['certas']], ['legalmente', 'provada'])
+        # o segundo sublinhar é o «por isso» (plano: a sessão 08 recupera-o)
+        self.assertEqual([sub[1]['frase'].split()[j] for j in sub[1]['certas']], ['por', 'isso'])
+
+    def test_recupera_e_conceito_espacado(self):
+        C = self.D['cartoes']
+        self.assertIn('Doze Homens em Fúria', C[2]['p'])
+        # o plano corrige o #84: o jurado vota «não culpado», não «inocente»; a certa diz que a culpa não está provada
+        self.assertIn('não culpado', C[2]['p'])
+        self.assertIn('não está provada', C[2]['o'][C[2]['c']])
+        r2 = C[3]
+        self.assertEqual(r2['g'], 'recupera')
+        self.assertEqual(r2['origem'], 'cidadania/m1/sessoes/04/')
+        self.assertTrue((ROOT / r2['origem'] / 'index.html').is_file())
+        # o R2 usa palavras da sessão de origem. Confere-se na fonte da sessão 04 (tools/licoes/cidadania-m1-s04.json), que tem o
+        # tema da 04 do molde («Posso dizer tudo?») no piloto e na versão final; a página publicada nesse endereço ainda é a antiga.
+        origem = json.dumps(carregar(ROOT / 'tools/licoes/cidadania-m1-s04.json'), ensure_ascii=False)
+        citadas = re.findall(r'«([^»]{8,})»', r2['fe'] + ' ' + r2['f'])
+        self.assertTrue(any(self.norm(q) in self.norm(origem) for q in citadas), 'o R2 usa palavras da sessão de origem')
+        espacado = [c for c in C if c.get('origem') and c.get('g') != 'recupera']
+        self.assertTrue(espacado)
+        for c in espacado:
+            self.assertTrue((ROOT / c['origem'] / 'index.html').is_file(), c['origem'])
+        # duas charneiras: a 1 no cartão 12 (o que a captura prova), a 2 no cartão 21 (a conclusão que não vai além das provas)
+        self.assertEqual(C[11]['t'], 'escolha')
+        self.assertEqual(C[20]['t'], 'escolha')
+        # o cartão 20 (o passo em falta) não escreve a resposta da charneira 2, nem o cartão de cima a do de baixo, na certa
+        for k in range(1, len(C)):
+            c = C[k]
+            if c['t'] == 'escolha':
+                certa = self.norm(L.visivel(c['o'][c['c']])).lower()
+                cima = self.norm(L.visivel(json.dumps(C[k - 1], ensure_ascii=False))).lower()
+                self.assertNotIn(certa.rstrip('.'), cima, f'cartão {k + 1}')
+
+    def test_caso_real_imagem_e_sem_video(self):
+        C = self.D['cartoes']
+        real = [c for c in C if 'Caso real' in c.get('p', '')]
+        self.assertEqual(len(real), 1)
+        self.assertEqual(real[0]['liga'][0]['href'],
+                         'https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/aa218f7fd0f67b8180258a4b0053c754?OpenDocument')
+        self.assertEqual(real[0]['tipo'], 'transferir')
+        self.assertIn('o da Relação de Évora é real', self.D['fontes'])
+        olha = next(c for c in C if c['rot'] == 'Olha')
+        # a prancha inteira (com o título, o número e a legenda), e não o recorte do piloto
+        self.assertIn('daumier-gens-de-justice-21-inteira.webp', olha['html'])
+        self.assertIn('https://www.metmuseum.org/art/collection/search/625296', olha['html'])
+        self.assertIn('Domínio público', olha['html'])
+        self.assertIn('aria-label="Créditos da litografia"', olha['html'])
+        self.assertTrue((ROOT / 'img/cidadania/daumier-gens-de-justice-21-inteira.webp').is_file())
+        self.assertNotIn('data-yt', json.dumps(self.D))
+        self.assertNotIn('Na aula', [c.get('rot') for c in C])
+        # decisão 146: «grupo» só no caso inventado ou como «grupo da turma» (o validador também o confere)
+        self.assertNotRegex(json.dumps([c for c in C if c['t'] != 'ler'], ensure_ascii=False), r'(?i)\bgrupos?\b(?! da turma)')
+
+    def test_versao_para_imprimir(self):
+        s = (ROOT / 'cidadania/m1/sessoes/07/imprimir/index.html').read_text('utf-8')
+        self.assertEqual(len(re.findall(r'<p class="rot">Exercício \d+:', s)), 14)
+        self.assertIn('Código', s); self.assertIn('O que conta', s)
+        for c in self.D['cartoes']:
+            if c['t'] != 'ler':
+                self.assertNotIn(html_escape(c['f'])[:60], s)
+        self.assertIn('Domínio público', s)
+        self.assertIn('https://www.metmuseum.org/art/collection/search/625296', s)
+        # decisão 152: nenhuma referência partida no papel
+        self.assertNotRegex(s, r'(?:[Aa]rtigos?|n\.º|n\.os) \d')
 
 
 if __name__ == '__main__':

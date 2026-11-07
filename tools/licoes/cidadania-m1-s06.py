@@ -384,7 +384,8 @@ def sessao():
         'titulo': 'Sessão 06: Uma regra para quem perde', 'h1': 'Cidadania, módulo 1, sessão 06: Uma regra para quem perde',
         'modulo': {'n': 1, 'nome': 'Humanos', 'url': L.LENTE + 'cidadania/piloto/m1/'},
         'saida': 'cidadania/m1/sessoes/06/index.html',
-        'seguinte': '../../../piloto/m1-s07/', 'seguinteRotulo': 'Sessão 07: Nove contra dois',
+        # 06/11/2026: a sessão 07 também passou ao molde final (decisões 166 a 168); a s06 leva à s07 nova.
+        'seguinte': '../07/', 'seguinteRotulo': 'Sessão 07: Nove contra dois',
         'fontes': M.ref('Código do Procedimento Administrativo (anexo ao Decreto-Lei n.º 4/2015, de 7 de janeiro), artigos 9.º e 69.º, '
                         'n.º 1, na versão consolidada do Diário da República. Código Civil, artigo 1581.º, n.º 2, na versão consolidada do '
                         'Diário da República. Declaração Universal dos Direitos Humanos, artigo 1.º, na transcrição portuguesa do UNRIC. '

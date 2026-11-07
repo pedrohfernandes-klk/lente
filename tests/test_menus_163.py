@@ -42,6 +42,9 @@ import molde_s05  # noqa: E402
 # 06/11/2026: fusão do main (com as sessões 2 a 5 finais) na sessão 06 do M1. O manifesto fechado da s06 (tests/molde_s06.py)
 # parte do main d04c20f, já com a s05: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s05 (abaixo).
 import molde_s06  # noqa: E402
+# 06/11/2026: fusão do main (com as sessões 2 a 6 finais) na sessão 07 do M1. O manifesto fechado da s07 (tests/molde_s07.py)
+# parte do main 8731fb9, já com a s06: é agora a camada mais recente e desfaz-se no ficheiro atual antes da da s06 (abaixo).
+import molde_s07  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -317,6 +320,12 @@ class Preservacao(unittest.TestCase):
                 with self.subTest(rel=rel):
                     self.assertTrue(molde_s06.inteiro_ok(rel), rel)
                 continue
+            # 06/11/2026: fusão do main na sessão 07 do M1. O mesmo para os ficheiros que a s07 escreve inteiros (a sua página e a
+            # versão para imprimir): letra a letra o que o gerador escreve, e a sessão cumpre o contrato do molde.
+            if rel in molde_s07.INTEIROS:
+                with self.subTest(rel=rel):
+                    self.assertTrue(molde_s07.inteiro_ok(rel), rel)
+                continue
             if rel in MOLDE_P1 or rel in molde_pedido2.TROCAS or rel in molde_s02.TROCAS:  # 06/11/2026: também a camada da s02
                 antes = com_molde(antes, rel)
             agora = ler(rel)
@@ -328,6 +337,10 @@ class Preservacao(unittest.TestCase):
             # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s04 e a da s03, como acima.
             # 06/11/2026: fusão do main na sessão 06 do M1. Nos ficheiros que a s06 muda em parte, desfaz-se primeiro a sua camada,
             # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s05, a da s04 e a da s03, como acima.
+            # 06/11/2026: fusão do main na sessão 07 do M1. Nos ficheiros que a s07 muda em parte, desfaz-se primeiro a sua camada,
+            # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s06, a da s05, a da s04 e a da s03.
+            if rel in molde_s07.TROCAS:
+                agora = molde_s07.desfazer(agora, rel)
             if rel in molde_s06.TROCAS:
                 agora = molde_s06.desfazer(agora, rel)
             if rel in molde_s05.TROCAS:
