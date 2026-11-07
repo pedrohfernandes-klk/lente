@@ -27,7 +27,9 @@ class Percurso(unittest.TestCase):
    # 28/10/2026 (revisão de design do M2): no índice do M2, o cartão do passo 00 só se destaca como «Sugerida» depois
    # do primeiro passo feito (o ponto de partida é a sessão 01); é a única mudança no script dos passos.
    def engines(s):
-    scripts=[script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/(?:appearance|cidadania-sessoes-molde)\.js',script)]
+    # 07/11/2026: decisões 153, 176 e 177. O índice do M2 carrega também a peça comum do «i» (assets/info-i.js, o crédito da
+    # fotografia nas letras), que só abre e fecha os «i»; os motores existentes continuam iguais byte a byte.
+    scripts=[script for script in re.findall(r'<script\b.*?</script>',s,re.S) if not re.search(r'src="[^\"]*assets/(?:appearance|cidadania-sessoes-molde|info-i)\.js',script)]
     scripts=[script.replace('p=!!prox&&prox.id===id&&feitas.length>0;','p=!!prox&&prox.id===id;') for script in scripts]
     # 05/11/2026: decisão 147 (Laboratório sem o Português): o cartaz rotativo deixa de anunciar o Corta! e as peças do Laboratório; sai só da ordem.
     scripts=[script.replace('"ordem":["atlas","cidade","gigantes","corta","narrativas"]','"ordem":["atlas","cidade","gigantes"]') for script in scripts]

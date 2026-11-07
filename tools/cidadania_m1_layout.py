@@ -42,8 +42,11 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  # 05/11/2026: decisão 154 (os exercícios fazem-se sozinho). Por cima da 146, as trocas do manifesto fechado da 154, com a
  # mesma contagem exata (no enunciado da Pergunta Humana, o modelo das referências deixa de ser «o indicado pelo docente»).
  g154=json.loads((R/'tools/trocas/autonomia-154-20261105.json').read_text('utf-8'))
+ # 07/11/2026: decisões 153, 176 e 177 (pedido lente-1). Por cima da 154, as trocas do manifesto fechado dos créditos atrás do
+ # «i», com a mesma contagem exata (no percurso anterior, a fotografia nas letras do cabeçalho passa para o «i»).
+ gi=json.loads((R/'tools/trocas/creditos-i-lente1-20261107.json').read_text('utf-8'))
  def com146(nome,texto):
-  for camada in (g146,g154):
+  for camada in (g146,g154,gi):
    for antigo,novo,n in camada.get(nome,[]):
     assert texto.count(antigo)==n,(nome,antigo[:60]);texto=texto.replace(antigo,novo)
   return texto

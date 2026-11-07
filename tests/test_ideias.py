@@ -301,9 +301,12 @@ class Imagens(unittest.TestCase):
         self.assertEqual(re.findall(r'<image [^>]*href="([^"]+)"', svg), ['../../assets/laboratorio/ideias/cozens-mancha-entrada.webp'])
         self.assertNotRegex(svg, r'<script|<a\b|foreignObject|\son\w+=')
         entrada = (PILOTO / 'index.html').read_text('utf-8')
-        self.assertIn('<figcaption>Alexander Cozens, <i>Uma mancha</i> (título nosso), 1750 a 1786, The Metropolitan Museum of Art, '
+        # 07/11/2026: decisões 153, 176 e 177, o crédito passa para o «i» da colagem; continua a exigir-se o texto completo, agora
+        # dentro de details.info-i (peça comum), fora do desenho decorativo.
+        self.assertIn('<details class="info-i" name="info-i"><summary aria-label="Créditos da colagem"><span aria-hidden="true">i</span>'
+                      '</summary><p class="info-i-texto">Alexander Cozens, <i>Uma mancha</i> (título nosso), 1750 a 1786, The Metropolitan Museum of Art, '
                       'Nova Iorque (domínio público). Por cima, a traço, cartões e fios. Grafismo gerado com recurso a IA, EPI, 2026.'
-                      '</figcaption>', entrada)
+                      '</p></details>', entrada)
 
     def test_imagens_vistas_com_tabela_e_licenca(self):
         pasta = ROOT / 'assets/laboratorio/ideias'
@@ -450,7 +453,9 @@ class TerceiraRevisao(unittest.TestCase):
         self.assertIn('<details class="metodo"', s)
         self.assertNotRegex(s, r'<section[^>]*data-dobra')
         # 05/11/2026: colagem da entrada: o crédito do traço continua na legenda do desenho, depois do da fotografia.
-        self.assertRegex(s, re.compile(r'<figure class="drawing">.*?<figcaption>(?:[^<]|<i>[^<]*</i>)*Grafismo gerado com recurso a IA, EPI, 2026\.</figcaption>', re.S))
+        # 07/11/2026: decisões 153, 176 e 177, o crédito do traço continua inteiro, agora no «i» da colagem, dentro da figura e
+        # fora do desenho decorativo (aria-hidden).
+        self.assertRegex(s, re.compile(r'<figure class="drawing"><div class="com-i"><div aria-hidden="true">.*?</div><details class="info-i" name="info-i">.*?<p class="info-i-texto">(?:[^<]|<i>[^<]*</i>)*Grafismo gerado com recurso a IA, EPI, 2026\.</p></details></div></figure>', re.S))
         g = (PILOTO / 'guiao/index.html').read_text('utf-8')
         herman = re.search(r'O vídeo de Herman, em duas colunas</h3><table class="grelha-escrever">(.*?)</table>', g).group(1)
         self.assertEqual(herman.count('<tr><td></td><td></td></tr>'), 8)

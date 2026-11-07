@@ -181,9 +181,11 @@ class Ginasio(unittest.TestCase):
         self.assertTrue((R / porta['file']).is_file())
         # 01/11/2026: D1, classe comum dos créditos; mesma imagem e posição da legenda.
         # 02/11/2026: decisão 34, tabela colada à imagem também com a dobra
-        self.assertRegex(s[i:j], r'</a><p class="m1-home-credit ld-credito cz-credit">Vincent van Gogh, esboço de <i>O Quarto</i>')
+        # 07/11/2026: decisões 153, 176 e 177, a tabela de museu passa, inteira, para o «i» no canto da imagem, fora da ligação.
+        self.assertRegex(s[i:j], r'</a><details class="info-i" name="info-i"><summary aria-label="Créditos da imagem: Vincent van Gogh"><span aria-hidden="true">i</span></summary><p class="info-i-texto">Vincent van Gogh, esboço de <i>O Quarto</i>')
         # 02/11/2026: a dobra continua a seguir-se à tabela, com o nome da porta no summary e a fonte no mesmo cartão.
-        self.assertRegex(s[i:j], r'Domínio público\.</p><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo">')
+        # 07/11/2026: decisões 153, 176 e 177, a dobra segue-se à moldura da imagem, que fecha depois do «i».
+        self.assertRegex(s[i:j], r'Domínio público\.</p></details></div><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo">')
         for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
             self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)

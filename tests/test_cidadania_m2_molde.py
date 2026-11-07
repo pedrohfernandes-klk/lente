@@ -10,6 +10,8 @@ from renomeacoes_cidadania import TROCAS as TROCAS_107  # 06/11/2026: rótulos d
 import grupos146  # 05/11/2026: decisão 146
 import lab147
 import menus163
+# 07/11/2026: decisões 153, 176 e 177 (pedido lente-1): manifesto fechado dos créditos atrás do «i».
+import creditos_i_lente1  # noqa: E402
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
 import molde_s03  # 06/11/2026: plano do molde da Cidadania, sessão 03 do M1 na versão final (decisões 166 a 168)
@@ -400,6 +402,11 @@ class Molde(unittest.TestCase):
             # 06/11/2026: a base comum muda com o tempo; depois da fusão do #125 já traz as trocas da 163 (cada «novo» com a
             # contagem exata) e fica como está; antes recebe-as. Um estado misto continua a falhar (menus163.alinhar).
             esperado = menus163.alinhar(esperado, f)
+            # 07/11/2026: decisões 153, 176 e 177 (pedido lente-1): a fotografia nas letras do percurso anterior passa para o «i»,
+            # pelo manifesto fechado tools/trocas/creditos-i-lente1-20261107.json, com contagem exata (a base que já o traga fica
+            # como está); tudo o resto, byte a byte.
+            if f in creditos_i_lente1.TROCAS:
+                esperado = creditos_i_lente1.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):

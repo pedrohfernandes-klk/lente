@@ -1,9 +1,9 @@
 name: Cartaz pieces
 on:
   push:
-    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', 'tests/browser_creditos_i.cjs', 'assets/info-i.*', 'tools/ideias_piloto.py', 'tools/trocas/creditos-i-lente1-20261107.json', '.github/workflows/cartaz-qa.yml']
   pull_request:
-    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', '.github/workflows/cartaz-qa.yml']
+    paths: ['tests/browser_menus_lab.cjs', 'tests/test_menus_163.py', 'tools/menu_casca.py', 'tools/lab_nav.py', 'assets/licoes/menu.*', 'cidadania/m1/**', 'cidadania/m2/**', 'cidadania/25-de-abril/**', 'tests/browser_cabecalhos_compactos.cjs', 'tests/browser_lupa_compacta.cjs', 'assets/cabecalho-compacto.css', 'index.html', 'narrativas/**', 'tools/laboratorio.py', 'assets/laboratorio/cartaz.*', 'assets/cartaz-*', 'assets/appearance.css', 'demonstracoes/cartaz-animacoes/**', 'tests/browser_lente_projecao_entrada.cjs', 'tests/browser_projecao_palavras.cjs', 'projetar/**', 'assets/projection*', 'assets/fundo-lente.css', 'assets/cartaz-entrada.css', 'tests/*cartaz*', 'tests/browser_creditos_i.cjs', 'assets/info-i.*', 'tools/ideias_piloto.py', 'tools/trocas/creditos-i-lente1-20261107.json', '.github/workflows/cartaz-qa.yml']
 jobs:
   pieces:
     runs-on: ubuntu-latest
@@ -40,6 +40,8 @@ jobs:
           retention-days: 30
       - run: node tests/browser_cartaz.cjs
       - run: node tests/browser_cartaz_familia.cjs
+      # 07/11/2026: decisões 153, 176 e 177, cada «i» novo das entradas abre por teclado e por toque, sem tapar texto, e imprime o crédito.
+      - run: node tests/browser_creditos_i.cjs
       - run: node tests/browser_lente_projecao_entrada.cjs
       # 05/11/2026: revisão de 5/11 (lente-cabecalho-2), nenhuma palavra partida a meio na moldura de projeção.
       - run: node tests/browser_projecao_palavras.cjs
