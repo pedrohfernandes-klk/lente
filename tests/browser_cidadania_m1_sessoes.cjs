@@ -153,8 +153,9 @@ try{
     («oficina-guiao/», o que assets/cidadania-m1-sessoes.js mostra quando não falta nenhuma). */
  await p.evaluate(k=>{let d=null;try{d=JSON.parse(localStorage.getItem(k)||'null')}catch(e){}if(!d||d.version!==2||!d.sessions)d={version:2,sessions:{}};d.sessions['03']={done:true};d.sessions['04']={done:true};d.sessions['05']={done:true};d.sessions['06']={done:true};d.sessions['07']={done:true};d.sessions['08']={done:true};d.sessions['09']={done:true};d.sessions['10']={done:true};localStorage.setItem(k,JSON.stringify(d))},KEY);
  /* 07/11/2026 (sessão 10 no molde): a 10 também fica semeada como feita; a condução por passos, o registo e a retoma provam-se numa
-    sessão do M2 com o mesmo motor (cidadania/m2/sessoes/02/), com as mesmas exigências. */
- await p.goto(origin+'/lente/cidadania/m2/sessoes/02/');assert.equal(await p.locator('[data-stage]:visible').count(),0);
+    sessão do M2 com o mesmo motor (cidadania/m2/sessoes/03/; a 02 fica por fazer para a impressão e a projeção, abaixo), com as
+    mesmas exigências. */
+ await p.goto(origin+'/lente/cidadania/m2/sessoes/03/');assert.equal(await p.locator('[data-stage]:visible').count(),0);
  await p.locator('[data-start]').click();assert.equal(await p.locator('[data-stage]:visible').count(),1);
  await p.locator('[data-stage]:visible').focus();await p.keyboard.press('ArrowRight');assert.equal(await p.locator('[data-stage]:visible').getAttribute('id'),'momento-2');
  await p.locator('[data-stage-link]').nth(2).click();await p.locator('[data-feedback]>summary').focus();await p.keyboard.press('Enter');assert(await p.locator('[data-feedback]').evaluate(e=>e.open));
