@@ -36,7 +36,7 @@ UNRIC = 'https://unric.org/pt/declaracao-universal-dos-direitos-humanos/'
 DRE = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775'
 DGSI = 'https://www.dgsi.pt/jtre.nsf/134973db04f39bf2802579bf005f080b/7c52769f1dfab8be80257e830052d374?OpenDocument'
 CREDITO = ('Eleanor Roosevelt com a Declaração Universal dos Direitos Humanos, 1949. '
-           'Fotógrafo não identificado. Franklin D. Roosevelt Presidential Library &amp; Museum, 64-165. '
+           'Fotógrafo não identificado. Franklin D.\u00a0Roosevelt Presidential Library &amp; Museum, 64-165. '
            '<a href="https://www.flickr.com/photos/fdrlibrary/27758131387/">Registo de origem</a>. '
            '<a rel="license" href="https://creativecommons.org/licenses/by/2.0/deed.pt">CC BY 2.0</a>.')
 PERGUNTA = 'Que direitos estão em causa quando uma fotografia chega ao grupo da turma?'
@@ -356,7 +356,7 @@ def sessao():
                         'n.º 1, e 34.º, n.º 1, no Diário da República. Acórdão do Tribunal da Relação de Évora de 25 de junho de 2015, '
                         'processo 789/13.7TMSTB-B.E1, em dgsi.pt. Convenção sobre os Direitos da Criança (Nova Iorque, 1989), ratificada '
                         'por Portugal em 1990, na Coleção de Tratados das Nações Unidas. Fotografia: Eleanor Roosevelt com a Declaração '
-                        'Universal, Lake Success, novembro de 1949, Franklin D. Roosevelt Presidential Library & Museum, 64-165, '
+                        'Universal, Lake Success, novembro de 1949, Franklin D.\u00a0Roosevelt Presidential Library & Museum, 64-165, '
                         'CC BY 2.0. Marina Abramović, _Rhythm 0_, Studio Morra, Nápoles, 1974, segundo a Moderna galerija de Ljubljana '
                         '(MG+MSUM). O cargo de Eleanor Roosevelt: Nações Unidas, «Drafters of the Declaration». O caso da Sara, o das mensagens '
                         'e o da voz gravada são inventados; o da Relação de Évora é real.'),

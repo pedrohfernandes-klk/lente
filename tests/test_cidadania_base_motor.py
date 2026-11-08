@@ -91,6 +91,12 @@ import creditos_i_lente1  # noqa: E402
 # estes testes comparam, a frase do cartaz rotativo (índice do M2, Margens e percurso anterior do M1), o rótulo do registo de
 # progresso, a entrada (cartão novo e versão do site-portals.css) e o gerador do percurso anterior; nada mais se aceita.
 import cidade_cartaz_lente  # noqa: E402
+# 08/11/2026: decisão 152 («cuidado em todas as lições»), pedido cuidado-lente. Mais uma camada, a mais recente, por cima da do
+# cartaz «Ler a cidade», com as mesmas regras: o manifesto fechado tools/trocas/cuidado-lente-20261108.json (trocas literais,
+# contagem exata, a partir do main a99d2d4) põe, nos ficheiros que estes testes comparam, as tabelas e as listas dos achados
+# confirmados, o espaço sem quebra e a junção nas referências e nos números, as grelhas sem palavras partidas e a folha
+# assets/apoio-tabela.css nas páginas com tabelas novas; nada mais se aceita.
+import cuidado_lente  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -218,6 +224,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 07/11/2026 (fusão do main 57a6ff8): por cima da s10 e da s09; estas desfazem-se a seguir, pela mesma ordem do main.
                 # 08/11/2026: a camada do pedido cidade-cartaz-lente («Ler a cidade») é agora a mais recente e desfaz-se primeiro no
                 # ficheiro atual, com contagem exata de cada «novo»; depois a do «i» e as do molde, como antes.
+                # 08/11/2026: a camada do pedido cuidado-lente (decisão 152) é agora a mais recente e desfaz-se primeiro no ficheiro
+                # atual, com contagem exata de cada «novo»; depois a do cartaz «Ler a cidade», a do «i» e as do molde, como antes.
+                if nome in cuidado_lente.TROCAS:
+                    depois = cuidado_lente.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in cidade_cartaz_lente.TROCAS:
                     depois = cidade_cartaz_lente.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in creditos_i_lente1.TROCAS:
@@ -400,6 +410,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 08/11/2026: a camada do pedido cidade-cartaz-lente («Ler a cidade» e o cartaz na entrada), com contagem exata, por
                 # cima de tudo: parte do main cca60c2, já com a do «i», por isso aplica-se em último lugar.
                 esperado = cidade_cartaz_lente.aplicar(esperado, nome)
+                # 08/11/2026: a camada do pedido cuidado-lente (decisão 152), com contagem exata, por cima de tudo: parte do main
+                # a99d2d4, já com a do cartaz «Ler a cidade», por isso aplica-se em último lugar. Na entrada da Justiça, a data do
+                # crédito da fotografia sai de tools/gerar_carris.py (instalar, acima), não desta camada.
+                esperado = cuidado_lente.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 

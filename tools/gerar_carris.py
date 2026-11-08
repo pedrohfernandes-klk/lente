@@ -107,7 +107,7 @@ PAGINA=ROOT/'olhar-e-decidir/justica/index.html'
 # 07/11/2026: decisão 175. Saem «os sinais de alerta» (a frase volta à forma de antes da decisão 170) e «Duas vias possíveis,
 # sem desfecho.», que passa a ALT, o texto alternativo do desenho. O resto fica letra a letra, com as mesmas ligações; a da
 # licença leva rel="license", a regra da peça do «i» (não parte a meio da linha e, na impressão, sai com o endereço).
-CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
+CREDITO=('Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29\u00a0de\u00a0maio\u00a0de\u00a02025, de Philip Mallis '
          '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
          '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, sem a publicidade e sem os passageiros, com a mesma licença. '
          'A via, a agulha, as duas vias possíveis e a alavanca ao lado da via são desenho. Grafismo gerado com recurso a IA, EPI, 2026.')

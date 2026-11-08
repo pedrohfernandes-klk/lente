@@ -53,7 +53,7 @@ IA = 'https://archive.org/details/BRes092083'
 DRE_LEI = 'https://diariodarepublica.pt/dr/detalhe/lei/58-2019-123815982'
 DRE_CRP = 'https://diariodarepublica.pt/dr/legislacao-consolidada/decreto-aprovacao-constituicao/1976-34520775'
 DGSI = 'https://www.dgsi.pt/jstj.nsf/954f0ce6ad9dd8b980256b5f003fa814/65e859e4729cc7688025712d00421026?OpenDocument'
-CREDITO = ('<i>A General Idea of a Penitentiary Panopticon […]</i>, 1791, estampa de <i>The Works of Jeremy Bentham</i>, vol. IV, '
+CREDITO = ('<i>A General Idea of a Penitentiary Panopticon […]</i>, 1791, estampa de <i>The Works of Jeremy Bentham</i>, vol.\u00a0IV, '
            'Edimburgo, William Tait, 1843. Biblioteca da Universidade de '
            f'Sevilha, digitalização no Internet Archive. <a href="{IA}">Registo de origem</a>. Domínio público (Public Domain Mark 1.0).')
 PERGUNTA = 'Uma câmara na sala protege quem?'
@@ -382,7 +382,7 @@ def sessao():
                         'da República Portuguesa, artigos 18.º, n.º 2, 26.º, n.º 1, e 35.º, n.º 1, no Diário da República. Acórdão do '
                         'Supremo Tribunal de Justiça de 8 de fevereiro de 2006, processo 05S3139, em dgsi.pt. Gravura: _A General Idea of '
                         'a Penitentiary Panopticon […]_ (1791), estampa de _The Works of '
-                        'Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), Biblioteca da Universidade de Sevilha, via Internet '
+                        'Jeremy Bentham_, vol.\u00a0IV (Edimburgo, William Tait, 1843), Biblioteca da Universidade de Sevilha, via Internet '
                         'Archive, domínio público. O caso da sala 12, o do contacto dado para a visita, o do formulário, o da oficina, o do '
                         'programa de presenças, o da entrevista gravada e o do torneio de xadrez são inventados; o do Supremo Tribunal '
                         'de Justiça é real.'),

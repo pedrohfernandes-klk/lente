@@ -18,13 +18,13 @@
  "piloto": false,
  "seguinte": "../sessao-02/",
  "seguinteRotulo": "Sessão 2: O cocheiro",
- "fontes": "Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
+ "fontes": "Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy E. Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
  "cartoes": [
   {
    "t": "ler",
    "rot": "Abre",
    "titulo": "Dezassete degraus",
-   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><div class=\"metodo-linha\"><p><b>Passo 1 de 5: juntar material.</b> Estas sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div><ol class=\"passos-m\" aria-label=\"Os cinco passos do método\"><li class=\"hoje\" aria-current=\"step\"><b>1</b> Juntar material <span class=\"hoje-t\">hoje</span></li><li><b>2</b> Trabalhar o material</li><li><b>3</b> Largar</li><li><b>4</b> A ideia aparece</li><li><b>5</b> Dar forma e pôr à prova</li></ol><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>"
+   "html": "<p class=\"pergunta-c\">Quantos degraus tem a escada que sobes todos os dias?</p><p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. <span class=\"nq\">Guarda-o</span>: antes do fim da aula, vais saber se acertaste.</p><div class=\"metodo-linha\"><p><b>Passo 1 de 5: juntar material.</b> Estas sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div><ol class=\"passos-m\" aria-label=\"Os cinco passos do método\"><li class=\"hoje\" aria-current=\"step\"><b>1</b> Juntar material <span class=\"hoje-t\">hoje</span></li><li><b>2</b> Trabalhar o material</li><li><b>3</b> Largar</li><li><b>4</b> A ideia aparece</li><li><b>5</b> Dar forma e pôr à prova</li></ol><p class=\"aula-linha\"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>"
   },
   {
    "t": "ler",
@@ -60,7 +60,7 @@
    "t": "ler",
    "rot": "Ler",
    "titulo": "Vê, mas não observa",
-   "html": "<p>Em 1891, numa revista de Londres, Arthur Conan Doyle publicou um conto em que o médico Watson visita o amigo Sherlock Holmes e lhe diz que tem olhos tão bons como os dele. Holmes responde:</p><blockquote><p>«Vê, mas não observa. A diferença é clara. Por exemplo, já viu muitas vezes os degraus que sobem da entrada até esta sala.»</p><p>«Muitas vezes.»</p><p>«Quantas?»</p><p>«Bem, umas centenas.»</p><p>«Então, quantos são?»</p><p>«Quantos? Não sei.»</p><p>«Exatamente! Não observou. E, no entanto, viu. É isso que eu quero dizer. Ora, eu sei que são dezassete degraus, porque vi e observei.»</p></blockquote><p class=\"fonte\">Arthur Conan Doyle, «A Scandal in Bohemia», <i>The Strand Magazine</i>, julho de 1891. Tradução nossa.</p>"
+   "html": "<p>Em 1891, numa revista de Londres, Arthur Conan Doyle publicou um conto em que o médico Watson visita o amigo Sherlock Holmes e lhe diz que tem olhos tão bons como os dele. Holmes responde:</p><blockquote><p>«Vê, mas não observa. A diferença é clara. Por exemplo, já viu muitas vezes os degraus que sobem da entrada até esta sala.»</p><p>«Muitas vezes.»</p><p>«Quantas?»</p><p>«Bem, umas centenas.»</p><p>«Então, quantos são?»</p><p>«Quantos? Não sei.»</p><p>«Exatamente! Não observou. E, no entanto, viu. É isso que eu quero dizer. Ora, eu sei que são dezassete degraus, porque vi e observei.»</p></blockquote><p class=\"fonte\">Arthur Conan Doyle, «A Scandal in Bohemia», <i>The Strand Magazine</i>, julho de 1891. Tradução nossa.</p>"
   },
   {
    "t": "escolha",
@@ -158,7 +158,7 @@
    "t": "ler",
    "rot": "Ver",
    "titulo": "O rapaz e a leitora da sina",
-   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Agora é a tua vez: dois minutos em silêncio. Vê primeiro o quadro inteiro; depois <span class=\"nq\">amplia-o</span> e procura as mãos. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
+   "html": "<figure class=\"fig inteiro\"><span class=\"moldura\"><img src=\"../../../assets/laboratorio/ideias/latour-leitora-da-sina.webp\" alt=\"Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres.\" loading=\"lazy\"></span><figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. <a href=\"https://www.metmuseum.org/art/collection/search/436838\">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure><p>Agora é a tua vez: dois minutos em silêncio. Vê primeiro o quadro inteiro; depois <span class=\"nq\">amplia-o</span> e procura as mãos. Ainda não concluas nada.</p><p class=\"pergunta-c\">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>"
   },
   {
    "t": "mapa",
@@ -264,7 +264,7 @@
    "t": "ler",
    "rot": "Na aula",
    "titulo": "O auto de observação",
-   "html": "<p><b>O que se faz.</b> Vai a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega, ou os teus noutro dia, e <span class=\"nq\">marca-os</span> como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>Os dez factos são verificáveis, sem opinião, um por nota.</li><li>As três inferências <span class=\"nq\">apoiam-se</span> em dois factos cada. A pergunta a que o lugar não responde fica registada.</li><li>Outra pessoa, ou tu noutro dia, confere os factos e os degraus.</li></ul></div>"
+   "html": "<p><b>O que se faz.</b> Vai a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega, ou os teus noutro dia, e <span class=\"nq\">marca-os</span> como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p><p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p><p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p><div class=\"esta-bom\"><p><b>Está bom quando…</b></p><ul><li>Os dez factos são verificáveis, sem opinião, um por nota.</li><li>As três inferências <span class=\"nq\">apoiam-se</span> em dois factos cada. A pergunta a que o lugar não responde fica registada.</li><li>Outra pessoa, ou tu noutro dia, confere os factos e os degraus.</li></ul></div>"
   },
   {
    "t": "escolha",
@@ -303,7 +303,7 @@
   {
    "t": "escolha",
    "g": "cartoes",
-   "p": "O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve?",
+   "p": "O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve?",
    "p2": "Porque é que o método manda passar a escrito, cartão a cartão, o que se recolhe?",
    "o": [
     "Obriga a escrever e mostra o que falta.",

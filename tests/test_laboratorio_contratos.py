@@ -5,6 +5,7 @@ import lab147
 import grupos146  # 05/11/2026: decisões 146 e 154
 import menus163
 import portas180
+import cuidado_lente  # 08/11/2026: decisão 152 («cuidado em todas as lições»), manifesto fechado tools/trocas/cuidado-lente-20261108.json
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def mod(nome):
@@ -72,7 +73,11 @@ class Contratos(unittest.TestCase):
     # (o manifesto da 163 acerta, com as mesmas contagens, no texto que já traz a 146 e a 154).
     # 07/11/2026: decisão 180 (docente). Por cima da 163, só as trocas do manifesto fechado tests/fixtures/portas-180-20261107.json
     # («Passo seguinte» passa a «Porta seguinte»), com contagem exata; a comparação continua integral.
-    self.assertEqual(portas180.aplicar(menus163.aplicar(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),rel),rel),atual)
+    # 08/11/2026: decisão 152 («cuidado em todas as lições», pedido cuidado-lente). Por cima da 180, só as trocas do manifesto
+    # fechado tools/trocas/cuidado-lente-20261108.json (tabelas nos cartões «O conceito» de sete oficinas, a memória descritiva em
+    # cinco linhas, a fala de Segismundo com as barras, a folha da tabela de apoio, o espaço sem quebra e a junção nas referências,
+    # nos números e na linha de tempo de oficinas e treinos), com contagem exata; a comparação continua integral.
+    self.assertEqual(cuidado_lente.aplicar(portas180.aplicar(menus163.aplicar(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),rel),rel),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
     self.assertIn('if(cfg.fim&&!soErrados&&!PROJ)',atual)

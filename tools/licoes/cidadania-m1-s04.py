@@ -406,7 +406,7 @@ def sessao():
                         'de 2017, processo 373/14.8T9STR.E1, em dgsi.pt. Imagem: _Les Poires_, _Le Charivari_, 17 de janeiro de 1834, '
                         'desenho talvez de Honoré Daumier a partir de Charles Philipon, Gallica (Biblioteca Nacional de França), domínio '
                         'público, segundo o registo do Wikimedia Commons. Gravura: Jan Saenredam, segundo Cornelis van Haarlem, _Antrum '
-                        'Platonicum_, 1604, British Museum, domínio público. Platão, _República_, livro VII (a alegoria da caverna). O caso '
+                        'Platonicum_, 1604, British Museum, domínio público. Platão, _República_, livro\u00a0VII (a alegoria da caverna). O caso '
                         'da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o das '
                         'notas de um colega são inventados; o da Relação de Évora é real.'),
         'tempos': {'folga': 10, 'pausa': 10, 'projeto': 45, 'entrega': 5},

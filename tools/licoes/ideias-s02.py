@@ -43,7 +43,7 @@ ABRE = (
  '<p>Hoje olhas para um lugar perto da escola. Parece igual a tantos outros. Até ao fim da sessão, vais conhecer uma coisa desse lugar como ninguém a conhece.</p>'
  '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material, até ao fundo.</b> Na sessão 1, recolheste factos a olhar; hoje vais mais fundo, numa só coisa. Sem este material específico, os passos seguintes não têm em que trabalhar.</p></div>'
  + passos({1}) +
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180\u00a0minutos com uma pausa: o conselho de um romancista, uma testemunha posta à prova, uma fotografia de Paris e uma saída à rua (ou, em vez dela, o mesmo exercício feito da janela ou numa fotografia de rua).</p>')
 DECIDE = (
  '<p>Uma árvore da tua rua é só uma árvore?</p>'
  '<p class="pergunta-c">Decide em silêncio, de braço no ar: sim, não ou depende.</p>'
@@ -66,7 +66,7 @@ MAUPASSANT = (
 ATGET = (
  f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}atget-quiosque-fiacres.webp" '
  'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy"></span>'
- '<figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17 cm. '
+ '<figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17\u00a0cm. '
  '<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure>'
  '<p>Entre dez e catorze anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro a fotografia inteira, depois ampliada
@@ -77,7 +77,7 @@ ATGET = (
 # 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Vais com o docente … aos pares por segurança» (a segurança da saída em aula
 # fica no guia do docente), e a prova da linha faz-se com qualquer pessoa, ou com a turma na aula.
 NA_AULA = ('<p><b>O que se faz.</b> Vai ao lugar que escolheste na sessão 1, ou fica à janela. Trabalhas individualmente. Escolhe o teu «cocheiro» (pessoas só de longe, sem fotografar caras). Regista quinze notas: cinco do que vês; cinco do que ouves, cheiras ou tocas; cinco do que o distingue. No guião, escreve uma linha que só sirva para esse «cocheiro». Lê-a a alguém sem dizer o que é (na aula, à turma). Se falhar, reescreve-a.</p>'
-           '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
+           '<p><b>Quanto tempo.</b> 70\u00a0minutos, com a pausa.</p>'
            '<p><b>O que fica escrito.</b> As quinze notas; no guião, a linha e o resultado.</p>' + M.esta_bom(2))
 LEVAR = (
  '<p class="levar">Olhar até a coisa deixar de ser igual às outras.</p>'
@@ -120,7 +120,7 @@ cartoes = [
   "fe":"Procura o verbo que diz o que fazemos ao processo e as duas palavras que dizem quando."},
  {"t":"vf","g":"banal","p":"Para Flaubert, só as coisas raras têm alguma coisa por descobrir.","p2":"Segundo a lição de Flaubert, as coisas banais não escondem nada.","v":False,
   "f":"Maupassant escreve o contrário: «A mais pequena coisa contém um pouco de desconhecido» (tradução nossa). O merceeiro, o porteiro e o cavalo de fiacre são banais de propósito.",
-  "fe":"Volta aos exemplos de Flaubert: um merceeiro, um porteiro, um cavalo de fiacre. Nada mais banal na Paris do século XIX."},
+  "fe":"Volta aos exemplos de Flaubert: um merceeiro, um porteiro, um cavalo de fiacre. Nada mais banal na Paris do século\u00a0XIX."},
  {"t":"ler","rot":"Ver","titulo":"Um quiosque e uns fiacres","html":ATGET},
  {"t":"escolha","g":"deduzo","p":"Na fotografia de Atget, junto ao quiosque, está um homem de capa comprida e chapéu. Qual destas notas já é uma inferência?","p2":"Três notas sobre o homem de capa da fotografia. Que nota passa do que se vê para o que se supõe?",
   "o":["É um cocheiro à espera de clientes.","Tem uma capa comprida e um chapéu.","Está de pé, ao lado de um candeeiro."],"c":0,
@@ -165,7 +165,7 @@ dados = {
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sessões do Ideias"},
  "saida":"narrativas/ideias/sessao-02/index.html","piloto":False,
  "seguinte":"../","seguinteRotulo":"As sessões do Ideias",
- "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º 11131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
+ "fontes":"James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Guy de Maupassant, «Le Roman», prefácio de _Pierre et Jean_, 1888 (Project Gutenberg, n.º\u00a011131), tradução nossa. Eugène Atget, _Kiosque et fiacres, Paris_, Musée Carnavalet, Histoire de Paris (Paris Musées, CC0). Consultadas a 31/10/2026. O caso das chaves é inventado.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')
