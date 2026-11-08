@@ -37,7 +37,8 @@ class Visivel(HTMLParser):
         a = dict(attrs)
         # 05/11/2026: revisão de 5/11. O crédito dos desenhos (<span class="cred">) é crédito, não leitura: não conta para as 95
         # palavras, como o próprio desenho.
-        oculto = tag in ('svg', 'script', 'style') or a.get('class') in ('lado-c', 'mais-c', 'cred')
+        # 08/11/2026: decisões 153 e 176 (pedido lente-2). O crédito passa para trás do «i» (details.info-i): continua a não contar.
+        oculto = tag in ('svg', 'script', 'style') or a.get('class') in ('lado-c', 'mais-c', 'cred') or 'info-i' in (a.get('class') or '').split()
         self.pilha.append((tag, oculto))
 
     def handle_endtag(self, tag):

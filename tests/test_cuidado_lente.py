@@ -17,6 +17,9 @@ import unittest
 from pathlib import Path
 
 import cuidado_lente
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-2): a camada dos créditos atrás do «i» (tools/trocas/creditos-i-lente2-20261108.json)
+# fica por cima desta; desfaz-se primeiro, com contagem exata, para se conferir esta camada como antes.
+import creditos_i_lente2
 
 R = Path(__file__).resolve().parents[1]
 BASE = 'a99d2d469bb3df2a85e1205bf15e820a9cab649e'
@@ -253,7 +256,9 @@ class CuidadoLente(unittest.TestCase):
         self.assertTrue(MANIFESTO)
         for f, trocas in MANIFESTO.items():
             with self.subTest(ficheiro=f):
-                agora = ler(f)
+                # 08/11/2026: pedido lente-2. A camada dos créditos atrás do «i» parte do main cc75fc6, já com esta: desfaz-se
+                # primeiro (contagem exata de cada «novo»); o que fica tem de ser, como antes, este manifesto sobre o main a99d2d4.
+                agora = creditos_i_lente2.desfazer(ler(f), f)
                 for antigo, novo, n in trocas:
                     self.assertGreater(n, 0)
                     self.assertNotIn(antigo, novo, 'o «antigo» dentro do «novo» impede alinhar depois da fusão')

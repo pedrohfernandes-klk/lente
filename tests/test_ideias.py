@@ -101,7 +101,10 @@ class Licoes(unittest.TestCase):
             d = json.loads(p.read_text('utf-8'))
             html = ''.join(c.get('html') or '' for c in d['cartoes'])
             self.assertIn('<img', html, p.name)
-            self.assertIn('<figcaption>', html, p.name)
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). A legenda da imagem era só o crédito e passa, inteira, para o
+            # «i» da peça comum: exige-se o «i» com o crédito (details.info-i com p.info-i-texto) onde se exigia o figcaption.
+            self.assertIn('<details class="info-i" name="info-i">', html, p.name)
+            self.assertIn('<p class="info-i-texto">', html, p.name)
         d1 = json.loads(FONTES[0].read_text('utf-8'))
         self.assertIn('data-yt="ubEadhXWwV4"', ''.join(c.get('html') or '' for c in d1['cartoes']))
         self.assertIn('video-youtube.js', (ROOT / d1['saida']).read_text('utf-8'))
@@ -151,7 +154,9 @@ class Licoes(unittest.TestCase):
             d = json.loads(p.read_text('utf-8'))
             self.assertEqual(len(d['cartoes']), n, p.name)
             self.assertEqual(sum(c['t'] in L.TIPOS_FAZER for c in d['cartoes']), fazer, p.name)
-            self.assertLessEqual(sum(len(L.visivel(c['html']).split()) for c in d['cartoes'] if c['t'] == 'ler'), 900)
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito passa da legenda para o «i» e continua a contar; só a
+            # letra «i» do botão (aria-hidden) sai da contagem (L.sem_letra_i), que fica igual à de antes; o teto, 900, não muda.
+            self.assertLessEqual(sum(len(L.visivel(L.sem_letra_i(c['html'])).split()) for c in d['cartoes'] if c['t'] == 'ler'), 900)
 
 
 class Paginas(unittest.TestCase):

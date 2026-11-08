@@ -48,7 +48,8 @@ MEDIR="""(sel)=>{
 # Todos os blocos justificados da página, para as regras gerais
 JUSTIFICADOS="""()=>[...document.querySelectorAll('body *')].filter(e=>{const cs=getComputedStyle(e);return cs.textAlign==='justify'&&!['inline','contents','none'].includes(cs.display)&&(e.innerText||'').trim()})
  .map(e=>e.tagName.toLowerCase()+(typeof e.className==='string'&&e.className?'.'+e.className.trim().split(/\\s+/).join('.'):'')).slice(0,400)"""
-NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6,dt,input,select,textarea,option,pre,code,cite,.versos,.poema p,.verso-q,.rot,.etq-m,p.q,.dica,p.fonte:not(.ae),.fonte-x,p.ap-fonte,p.fontes-p,p.quem'  # 30/10/2026: + p.fontes-p (listas de fontes)
+NUNCA='button,li,td,th,label,figcaption,summary,legend,caption,h1,h2,h3,h4,h5,h6,dt,input,select,textarea,option,pre,code,cite,.versos,.poema p,.verso-q,.rot,.etq-m,p.q,.dica,p.fonte:not(.ae),.fonte-x,p.ap-fonte,p.fontes-p,p.quem,.info-i-texto'  # 30/10/2026: + p.fontes-p (listas de fontes)
+# 08/11/2026: decisões 153 e 176 (pedido lente-2): + .info-i-texto, o crédito dentro do «i» (nunca justificado nem hifenizado, decisão 140).
 
 # (família, página, passos). Passos: ('ate',seletor) avança nos cartões; ('J',seletor) justificado;
 # ('E',seletor,mínimo) à esquerda; ('lang',seletor,lang) língua efetiva própria; ('centro',seletor);

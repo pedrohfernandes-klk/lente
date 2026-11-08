@@ -74,6 +74,16 @@ MOLDE = 'cidadania-2026-11'
 # 06/11/2026 (s04 no molde): sobe para 20261106-3 (o cabeçalho das tabelas dos cartões de ler, em cidadania.css).
 VERSAO_MOLDE = '20261106-3'
 COMO_LENTE = LENTE + 'como/'
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). As lições fora do molde («Ideias», e o piloto congelado do M1, pela camada
+# tools/trocas/creditos-i-lente2-20261108.json) passam o crédito da imagem e o do vídeo para trás do «i» da peça comum: o da
+# imagem no canto da imagem (div.moldura.com-i); o do vídeo à direita do aviso, que fica à vista, e aberto por baixo dele.
+INFO_I_V = '20261106-3'
+INFO_I_LICOES = ('/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito da imagem e o do vídeo atrás do «i» (assets/info-i.css): '
+                 'o da imagem no canto da imagem; o do vídeo à direita do aviso, que fica à vista, e aberto por baixo dele. */'
+                 '.yt .yt-pe{position:relative;min-height:44px;box-sizing:border-box;padding-inline-end:52px;margin:6px 0 0}'
+                 '.yt .yt-pe>.yt-cred{margin:0;padding-block-start:12px}'
+                 '.yt .yt-pe>.info-i--linha{position:static;inline-size:auto;margin:0}'
+                 '.yt .yt-pe>.info-i--linha>summary{position:absolute;inset-block-start:0;inset-inline-end:0}')
 # 06/11/2026 (correções da revisão da s01): nas sessões no molde, o fim diz onde fica marcada a sessão (revisor de pt-PT) e a
 # retoma dura oito dias (192 horas), para a segunda aula de 90 minutos, noutro dia, continuar no cartão 16 (plano, secção 2,
 # «Duas aulas de 90»). As sessões do piloto ficam como estavam (FIM_CIDADANIA e as 12 horas do cfg da família).
@@ -191,7 +201,9 @@ def validar(d):
             elif any(not isinstance(f,dict) or not all(isinstance(f.get(k),str) and f[k].strip() for k in ('src','alt','credito')) or re.match(r'^(?:javascript:|data:)',f.get('src',''),re.I) for f in imgs):
                 erros.append(f'{onde}: cada imagem exige src, alt e credito válidos')
         if t == 'ler':
-            n = len(visivel(c.get('html', '')).split())
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito passa da legenda para o «i» e continua a contar, como
+            # contava na legenda; a letra «i» do botão (summary, aria-hidden) não é uma palavra de leitura e não conta.
+            n = len(visivel(sem_letra_i(c.get('html', ''))).split())
             leitura += n
             if n > 140:
                 erros.append(f'{onde}: {n} palavras num cartão de ler (máximo 140)')
@@ -259,6 +271,31 @@ def validar(d):
             erros.append(f'pistas ou «depois»: «{m.group(0)}» não pode aparecer')
     if molde:
         erros += validar_molde(d, C)
+    else:
+        erros += validar_creditos_i(C)
+    return erros
+
+
+def validar_creditos_i(C):
+    """08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Fora do molde (que tem as suas regras), o crédito de cada imagem dos
+    cartões vive só dentro do «i» (details.info-i da peça comum), com a licença; a legenda, se houver, não leva crédito. O crédito
+    de um vídeo também vive no «i»; à vista fica o aviso do YouTube."""
+    erros = []
+    for i, c in enumerate(C, 1):
+        onde = f'cartão {i} ({c.get("t")} {c.get("rot") or ""})'
+        for bloco in [c.get('html') or '', c.get('ver') or '']:
+            for fig in re.findall(r'<figure\b.*?</figure>', bloco, flags=re.S):
+                if '<img' not in fig:
+                    continue
+                m = re.search(r'<details class="info-i(?: info-i--linha)?" name="info-i"><summary aria-label="Créditos[^"]*"><span aria-hidden="true">i</span></summary><p class="info-i-texto">(.*?)</p></details>', fig, flags=re.S)
+                if not m or not LICENCA.search(m.group(1)):
+                    erros.append(f'{onde}: o crédito de cada imagem vai, com a licença, para o «i» (details.info-i, decisão 153)')
+                cap = re.search(r'<figcaption>(.*?)</figcaption>', fig, flags=re.S)
+                if cap and CREDITO_A_VISTA.search(visivel(cap.group(1))):
+                    erros.append(f'{onde}: o crédito vai para o «i»; a legenda só diz o que se vê')
+            for yt in re.split(r'(?=<div class="yt")', bloco)[1:]:
+                if 'class="info-i info-i--linha"' not in yt or re.search(r'<p class="yt-cred">[^<]*(?:TED|lição de|conferência)', yt):
+                    erros.append(f'{onde}: o crédito do vídeo vai para o «i»; à vista fica o aviso')
     return erros
 
 
@@ -345,6 +382,12 @@ LICENCA = re.compile(r'Domínio público|CC0|CC BY(?:-SA)?(?: \d\.\d)?', re.I)
 LICENCA_NAO = re.compile(r'CC BY-N[CD]|BY-NC|BY-ND|NoDerivs|NonCommercial', re.I)
 CREDITO_A_VISTA = re.compile(r'Domínio público|CC0|CC BY|Wikimedia|Library of Congress|Metropolitan|Fotografia de|licença', re.I)
 TIPOS_ROT_GENERICOS = {'Escolhe', 'Verdadeiro ou falso', 'Completa', 'Toca nas palavras', 'Ordena', 'Liga os pares', 'Põe por ordem', 'Faz'}
+
+
+def sem_letra_i(s):
+    """08/11/2026 (pedido lente-2): o HTML sem a letra «i» do botão de cada «i» dos créditos (o summary de details.info-i, só
+    com <span aria-hidden="true">i</span>); o crédito, dentro do «i», fica."""
+    return re.sub(r'(<details class="info-i[^"]*"[^>]*><summary\b[^>]*>)<span aria-hidden="true">i</span>(</summary>)', r'\1\2', str(s or ''))
 
 
 def sem_details(s):
@@ -639,6 +682,15 @@ def _seguinte(d, grupo):
     return (d['seguinte'], 'Seguinte', rot)
 
 
+def _tem_info_i(v):
+    """08/11/2026 (pedido lente-2): há um «i» (details.info-i) em algum texto dos cartões."""
+    if isinstance(v, str):
+        return 'class="info-i' in v
+    if isinstance(v, dict):
+        return any(_tem_info_i(x) for x in v.values())
+    return isinstance(v, list) and any(_tem_info_i(x) for x in v)
+
+
 def pagina(d):
     saida = d['saida']
     prof = saida.count('/')
@@ -677,6 +729,9 @@ def pagina(d):
         cfg.update(nav)
     # 30/10/2026: o leitor de vídeo (cópia do do Português) só entra quando há um cartão com vídeo.
     tem_video = any('data-yt=' in (c.get('html') or '') for c in d['cartoes'])
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Fora do molde (o molde já as traz), uma lição com um «i» nos cartões
+    # carrega a peça comum (assets/info-i.css e assets/info-i.js) e o acerto do «i» do vídeo (INFO_I_LICOES).
+    tem_i = not molde and _tem_info_i(LC.cartoes(d))
     # 31/10/2026: <title>, classe do <body>, CSS e marca da casca pela família (a Cidadania como estava; o Laboratório com o
     # padrão das peças do Laboratório: «título | secção | Laboratório | Lente»).
     titulo = (f'{esc(d["titulo"])} | {esc(mod["nome"])} | Laboratório | Lente' if lab else f'{esc(d["titulo"])} · Cidadania · Lente')
@@ -713,7 +768,9 @@ def pagina(d):
             'licoes/aula-clara.css', 'licoes/casca-pc.css', 'licoes/ampliar-documentos.css', 'licoes/recolha.css', 'info-i.css')) if molde else '')
         + f'<link rel="stylesheet" href="{base}assets/licoes/{F["css"]}?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}">'
         f'<link rel="stylesheet" href="{base}assets/appearance.css"><script src="{base}assets/appearance.js"></script>'
-        f'<link rel="stylesheet" href="{base}assets/licoes/menu.css?v={MC.V}"></head><body class="licao-lente {F["classe"]}{" molde-cidadania" if molde else ""}" data-licao="{esc(d["id"])}">'
+        f'<link rel="stylesheet" href="{base}assets/licoes/menu.css?v={MC.V}">'
+        + (f'<link rel="stylesheet" href="{base}assets/info-i.css?v={INFO_I_V}"><style id="creditos-i">{INFO_I_LICOES}</style>' if tem_i else '')
+        + f'</head><body class="licao-lente {F["classe"]}{" molde-cidadania" if molde else ""}" data-licao="{esc(d["id"])}">'
         '<div class="casca" data-casca>'
         f'<header class="casca-topo">{marca}<svg class="c-casa" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>{marca_t}</a>'
         '<span class="c-num" data-c-num></span><button type="button" class="c-barra" data-c-barra aria-label="Ver os cartões já feitos" disabled><svg viewBox="0 0 1 10" preserveAspectRatio="none" aria-hidden="true"></svg></button>'
@@ -732,6 +789,7 @@ def pagina(d):
         +f'<script src="{base}assets/licoes/casca.js?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}"></script><script src="{base}assets/licoes/jogo.js?v={VERSAO_MOLDE if molde else VERSAO_FICHEIROS}"></script>'
         + f'<script defer src="{base}assets/licoes/menu.js?v={MC.V}"></script>'
         + (f'<script defer src="{base}assets/licoes/video-youtube.js?v={VERSAO_FICHEIROS}"></script>' if tem_video else '')
+        + (f'<script defer src="{base}assets/info-i.js?v={INFO_I_V}"></script>' if tem_i else '')
         + f'<script defer src="{base}assets/projection-launcher.js" data-site="lente"></script>'
         '<script>(function(){"use strict";var CARTOES=' + dados + ',CFG=' + json.dumps(cfg, ensure_ascii=False) + ';'
         'var el=document.getElementById("baralho");CFG.el=el;CFG.itens=CARTOES;CFG.casca=window.EPICasca?EPICasca.pagina():null;'

@@ -64,10 +64,14 @@ MAUPASSANT = (
  '<blockquote><p>«Quando passa diante de um merceeiro sentado à porta, diante de um porteiro que fuma cachimbo, diante de uma praça de fiacres, […] faça-me ver, com uma só palavra, em que é que um cavalo de fiacre não se parece com os outros cinquenta que o seguem e o precedem.»</p></blockquote>'
  '<p class="fonte">Guy de Maupassant, «Le Roman», prefácio de <i>Pierre et Jean</i>, 1888. Tradução nossa.</p>')
 ATGET = (
- f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}atget-quiosque-fiacres.webp" '
- 'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy"></span>'
- '<figcaption>Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17\u00a0cm. '
- '<a href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</figcaption></figure>'
+ # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). A legenda era só o crédito: passa inteira para o «i», no canto da
+ # fotografia (a moldura passa a div.moldura.com-i), e sai o figcaption; o alt diz o que se vê. A ligação para o museu leva
+ # data-external e aria-label, como no pedido lente-1.
+ f'<figure class="fig inteiro"><div class="moldura com-i"><img src="{IMG}atget-quiosque-fiacres.webp" '
+ 'alt="Uma rua de Paris com árvores de ramos nus. À esquerda, um quiosque envidraçado, com cúpula; junto dele, de pé, ao lado de um candeeiro, um homem de capa comprida e chapéu, de cabeça baixa; logo atrás dele, mais acima, um homem de chapéu alto; atrás, fiacres com cavalos e, na ponta esquerda, um homem sentado no alto de um deles." loading="lazy">'
+ '<details class="info-i" name="info-i"><summary aria-label="Créditos da fotografia"><span aria-hidden="true">i</span></summary>'
+ '<p class="info-i-texto">Eugène Atget, <i>Kiosque et fiacres, Paris</i>, entre 1898 e 1902. Tiragem em papel albuminado, 22,1 × 17\u00a0cm. '
+ '<a data-external aria-label="Musée Carnavalet, Histoire de Paris, sítio externo" href="https://www.parismuseescollections.paris.fr/fr/musee-carnavalet/oeuvres/kiosque-et-fiacres-paris">Musée Carnavalet, Histoire de Paris</a>, PH1179 (Paris Musées). CC0.</p></details></div></figure>'
  '<p>Entre dez e catorze anos depois do prefácio de Maupassant, o fotógrafo francês Eugène Atget registou este quiosque e estes fiacres de Paris.</p>'
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro a fotografia inteira, depois ampliada
  '<p>Vê primeiro a fotografia inteira; depois amplia-a e percorre-a de uma ponta à outra.</p>'
