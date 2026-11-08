@@ -50,28 +50,36 @@ CORRECOES = [
     ('cidadania/m2/passo-06/index.html', FEED_PT, FEED, 2),
     ('cidadania/m2/cid-m2-preco-minuto/index.html', FEED_PT, FEED, 2),
     # 3. Créditos: Hogarth (domínio público, ficheiro CC0), nos dois sítios onde aparece.
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). O crédito do passo passa para trás do «i» da imagem: o texto é o mesmo
+    # e a ligação para o registo de origem leva data-external e aria-label, como no pedido lente-1 (camada
+    # tools/trocas/creditos-i-lente3-20261108.json). O mesmo na Declaração de 1789, abaixo.
     ('cidadania/m2/passo-03/index.html', 'William Hogarth. Domínio público no registo de origem (<a href=\\"https://commons.wikimedia.org/wiki/File:William_Hogarth,_The_Laughing_Audience,_1733,_NGA_30455.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-15.',
-     'William Hogarth. Domínio público; ficheiro dedicado ao domínio público (CC0) pela National Gallery of Art, no registo de origem (<a href=\\"https://commons.wikimedia.org/wiki/File:William_Hogarth,_The_Laughing_Audience,_1733,_NGA_30455.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-28.', 3),
+     'William Hogarth. Domínio público; ficheiro dedicado ao domínio público (CC0) pela National Gallery of Art, no registo de origem (<a data-external aria-label=\\"Wikimedia Commons, sítio externo\\" href=\\"https://commons.wikimedia.org/wiki/File:William_Hogarth,_The_Laughing_Audience,_1733,_NGA_30455.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-28.', 3),
     ('cidadania/m2/imagens/index.html', 'Autoria no registo: William Hogarth. Direitos no registo: CC0. Consulta: 2026-10-15.',
      'Autoria no registo: William Hogarth. Direitos no registo: domínio público; ficheiro dedicado ao domínio público (CC0) pela National Gallery of Art. Consulta: 2026-10-28.', 3),
     # 3. Créditos: a Declaração de 1789 é de Le Barbier, no registo e no texto.
     ('cidadania/m2/passo-02/index.html', 'autor desconhecido. Domínio público no registo de origem (<a href=\\"https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-15.',
-     'Jean-Jacques-François Le Barbier, cerca de 1789, Musée Carnavalet. Domínio público; fotografia dedicada ao domínio público (CC0) pelo Paris Musées, no registo de origem (<a href=\\"https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-28.', 3),
+     'Jean-Jacques-François Le Barbier, cerca de 1789, Musée Carnavalet. Domínio público; fotografia dedicada ao domínio público (CC0) pelo Paris Musées, no registo de origem (<a data-external aria-label=\\"Wikimedia Commons, sítio externo\\" href=\\"https://commons.wikimedia.org/wiki/File:Declaration_of_the_Rights_of_Man_and_of_the_Citizen_in_1789.jpg\\">Wikimedia Commons</a>), consulta de 2026-10-28.', 3),
     ('cidadania/m2/imagens/index.html', 'Autoria no registo: autor desconhecido. Direitos no registo: Public domain. Consulta: 2026-10-15.',
      'Autoria no registo: Jean-Jacques-François Le Barbier, cerca de 1789, Musée Carnavalet. Direitos no registo: domínio público; fotografia dedicada ao domínio público (CC0) pelo Paris Musées. Consulta: 2026-10-28.', 3),
     # 3. Créditos: a chaleira também é CC BY-SA 3.0 (o rodapé do índice só falava do Jacquard).
     ('cidadania/m2/index.html', 'exceto a fotografia da máquina de Jacquard (David Monniaux, CC BY-SA 3.0)',
      'exceto as fotografias da chaleira da AEG (Christos Vittoratos, CC BY-SA 3.0) e da máquina de Jacquard (David Monniaux, CC BY-SA 3.0)', 3),
     # 3. Créditos: a máquina de Jacquard no exercício longo 1 ficava sem autor.
-    ('cidadania/m2/cid-m2-preco-minuto/index.html', '<span class=\\"fr-cred\\">CC BY-SA 3.0. <a href=\\"https://commons.wikimedia.org/wiki/File:Jacquard_loom_p1040320.jpg\\"',
-     '<span class=\\"fr-cred\\">David Monniaux, 2006. CC BY-SA 3.0. <a href=\\"https://commons.wikimedia.org/wiki/File:Jacquard_loom_p1040320.jpg\\"', 3),
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). O crédito passa do span.fr-cred para trás do «i» da imagem, com o mesmo
+    # texto; a licença ganha a sua ligação e a do registo de origem leva data-external e aria-label (camada
+    # tools/trocas/creditos-i-lente3-20261108.json). A troca passa a dizer só o crédito, sem a etiqueta que o embrulha.
+    ('cidadania/m2/cid-m2-preco-minuto/index.html', 'CC BY-SA 3.0. <a href=\\"https://commons.wikimedia.org/wiki/File:Jacquard_loom_p1040320.jpg\\"',
+     'David Monniaux, 2006. <a rel=\\"license\\" href=\\"https://creativecommons.org/licenses/by-sa/3.0/deed.pt\\">CC BY-SA 3.0</a>. <a data-external aria-label=\\"commons.wikimedia.org, sítio externo\\" href=\\"https://commons.wikimedia.org/wiki/File:Jacquard_loom_p1040320.jpg\\"', 3),
     # 3. Créditos: Lisboa 1907. O passo 04 ganha o crédito; o registo certo da Library of Congress.
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). No passo 08 de «Como se investiga» e na Ética, o crédito passa para trás
+    # do «i» da imagem, com o mesmo texto; a ligação leva data-external e aria-label (camada tools/trocas/creditos-i-lente3-20261108.json).
     ('cidadania/m2/passo-04/index.html', 'quem publicou isto, e porquê."',
      'quem publicou isto, e porquê. A fotografia original: estátua do Duque da Terceira, Lisboa, 1907, estereoscopia n.º 11420 da H. C. White Co., Library of Congress, domínio público. A versão B foi alterada por nós."', 3),
     ('investigar/passo-08/index.html', 'H. C. White Co. (estereoscopia). Domínio público. <a href=\\"' + LOC_ANTIGO + '\\"',
-     'H. C. White Co., estereoscopia n.º 11420, 1907. Library of Congress, domínio público. <a href=\\"' + LOC + '\\"', 3),
+     'H. C. White Co., estereoscopia n.º 11420, 1907. Library of Congress, domínio público. <a data-external aria-label=\\"loc.gov, sítio externo\\" href=\\"' + LOC + '\\"', 3),
     ('etica/index.html', 'H. C. White Co. (estereoscopia). Domínio público. <a href=\\"' + LOC_ANTIGO + '\\"',
-     'H. C. White Co., estereoscopia n.º 11420, 1907. Library of Congress, domínio público. <a href=\\"' + LOC + '\\"', 3),
+     'H. C. White Co., estereoscopia n.º 11420, 1907. Library of Congress, domínio público. <a data-external aria-label=\\"loc.gov, sítio externo\\" href=\\"' + LOC + '\\"', 3),
     # 4. Texto alternativo em inglês.
     ('investigar/passo-08/index.html', 'alt=\\"Statue of the Duke of Terceira, Lisbon, Portugal, 1907 (Library of Congress)\\"', 'alt=\\"' + ALT_LISBOA + '\\"', 4),
     ('etica/index.html', 'alt=\\"Statue of the Duke of Terceira, Lisbon, Portugal, 1907 (Library of Congress)\\"', 'alt=\\"' + ALT_LISBOA + '\\"', 4),

@@ -6,6 +6,7 @@ import grupos146  # 05/11/2026: decisões 146 e 154
 import menus163
 import portas180
 import cuidado_lente  # 08/11/2026: decisão 152 («cuidado em todas as lições»), manifesto fechado tools/trocas/cuidado-lente-20261108.json
+import creditos_i_lente3  # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3), manifesto fechado tools/trocas/creditos-i-lente3-20261108.json
 from pathlib import Path
 R=Path(__file__).resolve().parents[1]
 def mod(nome):
@@ -77,7 +78,10 @@ class Contratos(unittest.TestCase):
     # fechado tools/trocas/cuidado-lente-20261108.json (tabelas nos cartões «O conceito» de sete oficinas, a memória descritiva em
     # cinco linhas, a fala de Segismundo com as barras, a folha da tabela de apoio, o espaço sem quebra e a junção nas referências,
     # nos números e na linha de tempo de oficinas e treinos), com contagem exata; a comparação continua integral.
-    self.assertEqual(cuidado_lente.aplicar(portas180.aplicar(menus163.aplicar(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),rel),rel),rel),atual)
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Por cima da camada do pedido cuidado-lente, só as trocas do manifesto
+    # fechado tools/trocas/creditos-i-lente3-20261108.json (o crédito de cada imagem com span.fr-cred passa, inteiro, para o «i» da
+    # peça comum, e a página carrega assets/info-i.css e assets/info-i.js), com contagem exata; a comparação continua integral.
+    self.assertEqual(creditos_i_lente3.aplicar(cuidado_lente.aplicar(portas180.aplicar(menus163.aplicar(grupos146.aplicar(lab147.aplicar(renomear(SP.aplicar(antes),rel),rel),rel),rel),rel),rel),rel),atual)
     self.assertEqual(SP.aplicar(atual),atual)
     self.assertIn('EPIJogo.montar({semPontos:true,',atual)
     self.assertIn('if(cfg.fim&&!soErrados&&!PROJ)',atual)

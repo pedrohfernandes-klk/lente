@@ -33,6 +33,11 @@ def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (git merge-base HEAD origin/main): se a base já traz esta camada (cada «novo» com a
     contagem exata e nenhum «antigo»), fica como está; senão, recebe-a com contagem exata. Um estado misto falha."""
     trocas = TROCAS.get(ficheiro, [])
-    if trocas and all(texto.count(novo) == n and antigo not in texto for antigo, novo, n in trocas):
+    # 08/11/2026: pedido lente-3. Em 36 trocas desta camada (a folha e o script da peça juntam-se a seguir a um script que já lá
+    # estava), o «antigo» vem dentro do «novo»; depois da fusão no main (fec58ae), a base já traz a camada e o «antigo» continua lá,
+    # dentro do «novo», e o teste do M1 (test_cidadania_m2_molde) falhava no main. Conta-se agora o «antigo» que fica fora de um
+    # «novo»: tem de ser zero, como antes; cada «novo» continua com a contagem exata e um estado misto continua a falhar.
+    if trocas and all(texto.count(novo) == n and texto.count(antigo) == sum(m * novo2.count(antigo) for _, novo2, m in trocas)
+                      for antigo, novo, n in trocas):
         return texto
     return aplicar(texto, ficheiro)

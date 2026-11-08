@@ -103,6 +103,13 @@ import cuidado_lente  # noqa: E402
 # Justiça, na Ética e na Estética, no piloto congelado do M1 (imagem e vídeo), no «Ideias», nas sessões do M2 e nas páginas do
 # M1 que levavam a ligação «Créditos», e nos geradores que as escrevem; nada mais se aceita.
 import creditos_i_lente2  # noqa: E402
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-3, créditos atrás do «i»). Mais uma camada, a mais recente, por cima da do
+# pedido lente-2, com as mesmas regras: o manifesto fechado tools/trocas/creditos-i-lente3-20261108.json (trocas literais, contagem
+# exata, a partir do main fec58ae; o HTML dos cartões escrito em HTML corrido e escapado por tools/creditos_i.py) põe, nos ficheiros
+# que estes testes comparam, o crédito atrás do «i» nos passos e casos da Cidadania, nos retratos de Butler e Singer, no 25 de Abril
+# (nos dois lados), nos cartões com span.fr-cred e no portal da Cidadania (que deixa a linha agregada dos créditos); nada mais se
+# aceita.
+import creditos_i_lente3  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -234,6 +241,10 @@ class CidadaniaBase(unittest.TestCase):
                 # atual, com contagem exata de cada «novo»; depois a do cartaz «Ler a cidade», a do «i» e as do molde, como antes.
                 # 08/11/2026: a camada do pedido lente-2 (créditos atrás do «i») é agora a mais recente e desfaz-se primeiro no ficheiro
                 # atual, com contagem exata de cada «novo»; depois a do pedido cuidado-lente e as outras, como antes.
+                # 08/11/2026: a camada do pedido lente-3 (créditos atrás do «i») é agora a mais recente e desfaz-se primeiro no ficheiro
+                # atual, com contagem exata de cada «novo»; depois a do pedido lente-2 e as outras, como antes.
+                if nome in creditos_i_lente3.TROCAS:
+                    depois = creditos_i_lente3.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in creditos_i_lente2.TROCAS:
                     depois = creditos_i_lente2.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in cuidado_lente.TROCAS:
@@ -427,6 +438,9 @@ class CidadaniaBase(unittest.TestCase):
                 # 08/11/2026: a camada do pedido lente-2 (créditos atrás do «i»), com contagem exata, por cima de tudo: parte do main
                 # cc75fc6, já com a do pedido cuidado-lente, por isso aplica-se em último lugar.
                 esperado = creditos_i_lente2.aplicar(esperado, nome)
+                # 08/11/2026: a camada do pedido lente-3 (créditos atrás do «i»), com contagem exata, por cima de tudo: parte do main
+                # fec58ae, já com a do pedido lente-2, por isso aplica-se em último lugar.
+                esperado = creditos_i_lente3.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 
