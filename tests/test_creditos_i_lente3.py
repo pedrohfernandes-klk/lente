@@ -345,11 +345,16 @@ class CreditosLente3(unittest.TestCase):
         self.assertNotIn('cid-image-credits', s)
         portas = re.findall(r'<div class="cid-porta com-i">(<a class="p-cartao" .*?</a>)(<details .*?</details>)</div>', s)
         self.assertEqual(len(portas), 3)
-        for (porta, i), (href, autor) in zip(portas, re.findall(r'<a href="([^"]+)">([^<]+)</a>', linha)):
-            self.assertIn(porta, velho)  # a ligação da porta fica igual, com o rótulo curto à vista
+        # 08/11/2026: revisão do pedido lente-3. O título da obra fica em itálico nas três portas, no rótulo curto à vista e no
+        # «i» (O Turco estava sem itálico); fora isso, a ligação da porta fica igual, byte a byte.
+        titulos = ['As regentes', 'O Turco', 'Les gens de justice']
+        for (porta, i), (href, autor), titulo in zip(portas, re.findall(r'<a href="([^"]+)">([^<]+)</a>', linha), titulos):
+            self.assertEqual(porta.count(f'<i>{titulo}</i>'), 1)
+            self.assertIn(f'<small>{autor} · <i>{titulo}</i>', porta)
+            self.assertIn(porta.replace(f'<i>{titulo}</i>', titulo), velho)  # a ligação da porta, com o rótulo curto à vista
             m = I_RE.fullmatch(i)
             self.assertEqual(m.group(2), 'Créditos da imagem: ' + autor)
-            self.assertIn(f'<small>{autor} · ', porta)
+            self.assertTrue(m.group(3).startswith(f'{autor}, <i>{titulo}</i>'))
             self.assertTrue(texto(m.group(3)).startswith(autor + ', '))
             self.assertIn('domínio público', texto(m.group(3)))
             self.assertEqual(ligacoes(m.group(3)), [href])

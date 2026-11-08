@@ -43,8 +43,8 @@
    "json/"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada fotografia passa para trás do «i» (assets/info-i.css), no canto da imagem. */.jogo .ler .vz-fig>.com-i{display:block}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada fotografia passa para trás do «i» (assets/info-i.css), no canto da imagem. */.jogo .ler .vz-fig>.com-i{display:block}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -61,17 +61,17 @@
   ],
   [
    "<a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\" data-porta=\"juizo\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/daumier.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Honoré Daumier · Les gens de justice</small></span><span class=\"pt-n\">Dilemas · Justiça, ética e estética</span><span class=\"pt-s\">Julgar com razões: Michael Sandel em Harvard, um caso, uma forma.</span><span class=\"pt-p\">Duas lições obrigatórias nos módulos</span></a></nav>",
-   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\" data-porta=\"juizo\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/daumier.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Honoré Daumier · Les gens de justice</small></span><span class=\"pt-n\">Dilemas · Justiça, ética e estética</span><span class=\"pt-s\">Julgar com razões: Michael Sandel em Harvard, um caso, uma forma.</span><span class=\"pt-p\">Duas lições obrigatórias nos módulos</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Honoré Daumier\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Honoré Daumier, <i>Les gens de justice</i>. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg\">Wikimedia Commons</a>.</p></details></div></nav>",
+   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\" data-porta=\"juizo\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/daumier.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Honoré Daumier · <i>Les gens de justice</i></small></span><span class=\"pt-n\">Dilemas · Justiça, ética e estética</span><span class=\"pt-s\">Julgar com razões: Michael Sandel em Harvard, um caso, uma forma.</span><span class=\"pt-p\">Duas lições obrigatórias nos módulos</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Honoré Daumier\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Honoré Daumier, <i>Les gens de justice</i>. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg\">Wikimedia Commons</a>.</p></details></div></nav>",
    1
   ],
   [
    "<a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" data-porta=\"m2\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/turco.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Joseph Racknitz · O Turco</small></span><span class=\"pt-n\">Módulo 2 · Algoritmos</span><span class=\"pt-s\">Dez sessões: ver as regras, pô-las à prova e criar um Contra-feed.</span><span class=\"pt-p\" data-prog=\"m2\">10 sessões</span></a><div c",
-   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" data-porta=\"m2\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/turco.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Joseph Racknitz · O Turco</small></span><span class=\"pt-n\">Módulo 2 · Algoritmos</span><span class=\"pt-s\">Dez sessões: ver as regras, pô-las à prova e criar um Contra-feed.</span><span class=\"pt-p\" data-prog=\"m2\">10 sessões</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Joseph Racknitz\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Joseph Racknitz, O Turco. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Racknitz_-_The_Turk_3.jpg\">Wikimedia Commons</a>.</p></details></div><div c",
+   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/\" data-porta=\"m2\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/turco.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Joseph Racknitz · <i>O Turco</i></small></span><span class=\"pt-n\">Módulo 2 · Algoritmos</span><span class=\"pt-s\">Dez sessões: ver as regras, pô-las à prova e criar um Contra-feed.</span><span class=\"pt-p\" data-prog=\"m2\">10 sessões</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Joseph Racknitz\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Joseph Racknitz, <i>O Turco</i>. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Racknitz_-_The_Turk_3.jpg\">Wikimedia Commons</a>.</p></details></div><div c",
    1
   ],
   [
    "<a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" data-porta=\"m1\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/hals.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Frans Hals · As regentes, 1664</small></span><span class=\"pt-n\">Módulo 1 · Humanos</span><span class=\"pt-s\">Dez sessões: investigar, discutir e escrever, a partir da Pergunta Humana.</span><span class=\"pt-p\" data-prog=\"m1\">10 sessões</span></a><div c",
-   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" data-porta=\"m1\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/hals.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Frans Hals · As regentes, 1664</small></span><span class=\"pt-n\">Módulo 1 · Humanos</span><span class=\"pt-s\">Dez sessões: investigar, discutir e escrever, a partir da Pergunta Humana.</span><span class=\"pt-p\" data-prog=\"m1\">10 sessões</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Frans Hals\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Frans Hals, <i>As regentes</i>, 1664. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Frans_Hals_-_De_regentessen_van_het_oudemannenhuis.jpg\">Wikimedia Commons</a>.</p></details></div><div c",
+   "<div class=\"cid-porta com-i\"><a class=\"p-cartao\" href=\"https://pedrohfernandes-klk.github.io/lente/cidadania/m1/\" data-porta=\"m1\"><span class=\"cid-module-image\"><img src=\"../img/cidadania/hals.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\"><small>Frans Hals · <i>As regentes</i>, 1664</small></span><span class=\"pt-n\">Módulo 1 · Humanos</span><span class=\"pt-s\">Dez sessões: investigar, discutir e escrever, a partir da Pergunta Humana.</span><span class=\"pt-p\" data-prog=\"m1\">10 sessões</span></a><details class=\"info-i\" name=\"info-i\"><summary aria-label=\"Créditos da imagem: Frans Hals\"><span aria-hidden=\"true\">i</span></summary><p class=\"info-i-texto\">Frans Hals, <i>As regentes</i>, 1664. Imagem em domínio público. <a data-external aria-label=\"Wikimedia Commons, sítio externo\" href=\"https://commons.wikimedia.org/wiki/File:Frans_Hals_-_De_regentessen_van_het_oudemannenhuis.jpg\">Wikimedia Commons</a>.</p></details></div><div c",
    1
   ],
   [
@@ -99,8 +99,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). O crédito de cada retrato passa para trás do «i» (assets/info-i.css), por baixo do retrato e antes da legenda. */.pessoa-foto>.info-i--linha{margin-block-start:4px}.pessoa-foto>.info-i--linha[open]>summary{margin-inline-start:auto}.pessoa-foto>.info-i--linha+figcaption{margin-top:0}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). O crédito de cada retrato passa para trás do «i» (assets/info-i.css), por baixo do retrato e antes da legenda. */.pessoa-foto>.info-i--linha{margin-block-start:4px}.pessoa-foto>.info-i--linha[open]>summary{margin-inline-start:auto}.pessoa-foto>.info-i--linha+figcaption{margin-top:0}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -118,8 +118,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -131,8 +131,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -144,8 +144,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -175,8 +175,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -194,8 +194,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -213,8 +213,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -232,8 +232,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -251,8 +251,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -270,8 +270,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -289,8 +289,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -308,8 +308,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -327,8 +327,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -346,8 +346,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -365,8 +365,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -378,8 +378,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -391,8 +391,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -416,8 +416,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/para-ver.css?v=20261028-2\">",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/para-ver.css?v=20261028-2\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -435,8 +435,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -454,8 +454,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -473,8 +473,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -492,8 +492,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -511,8 +511,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -530,8 +530,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -549,8 +549,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -568,8 +568,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a moldura toma a largura da imagem. */.jogo .ler .fig-cid>.com-i{display:block;width:fit-content;max-width:100%}.jogo .ler .fig-cid>.com-i>img{width:auto;max-width:100%}.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1582,8 +1582,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1595,8 +1595,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1614,8 +1614,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1627,8 +1627,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1640,8 +1640,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1653,8 +1653,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1666,8 +1666,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1679,8 +1679,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1692,8 +1692,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1705,8 +1705,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
@@ -1731,8 +1731,8 @@
    "json"
   ],
   [
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"></head>",
-   "<link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\"><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script></head>",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
+   "<script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script><link rel=\"stylesheet\" href=\"../../assets/info-i.css?v=20261106-3\"><style id=\"creditos-i\">/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nos cartões, o crédito de cada imagem passa para trás do «i» (assets/info-i.css), no canto da imagem; a legenda que diz o que se vê fica. */.jogo .ler .info-i-texto{margin:0}</style><script defer src=\"../../assets/info-i.js?v=20261106-3\"></script><link rel=\"stylesheet\" href=\"../../assets/licoes/menu.css?v=20261105-163\">",
    1
   ]
  ],
