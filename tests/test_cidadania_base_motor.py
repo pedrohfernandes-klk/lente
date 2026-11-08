@@ -85,6 +85,12 @@ import molde_s10  # noqa: E402
 # 07/11/2026 (fusão do main 57a6ff8, com a s09, a s10 e as portas, no pedido lente-1): a camada do «i» fica por cima de todas,
 # a mais recente; as suas trocas aplicam-se ao main de hoje com as mesmas contagens.
 import creditos_i_lente1  # noqa: E402
+# 08/11/2026: pedido cidade-cartaz-lente (a secção chama-se «Ler a cidade» nos dois sítios e tem um cartaz na entrada do Lente).
+# Mais uma camada, a mais recente, por cima da do «i», com as mesmas regras: o manifesto fechado
+# tools/trocas/cidade-cartaz-lente-20261108.json (trocas literais, contagem exata, a partir do main cca60c2) muda, nos ficheiros que
+# estes testes comparam, a frase do cartaz rotativo (índice do M2, Margens e percurso anterior do M1), o rótulo do registo de
+# progresso, a entrada (cartão novo e versão do site-portals.css) e o gerador do percurso anterior; nada mais se aceita.
+import cidade_cartaz_lente  # noqa: E402
 
 
 def desfazer_molde(texto, nome):
@@ -210,6 +216,10 @@ class CidadaniaBase(unittest.TestCase):
                 # 07/11/2026: decisões 153, 176 e 177. A camada dos créditos atrás do «i» (pedido lente-1) é agora a mais recente e
                 # desfaz-se primeiro no ficheiro atual, com contagem exata de cada «novo»; depois as do molde, como antes.
                 # 07/11/2026 (fusão do main 57a6ff8): por cima da s10 e da s09; estas desfazem-se a seguir, pela mesma ordem do main.
+                # 08/11/2026: a camada do pedido cidade-cartaz-lente («Ler a cidade») é agora a mais recente e desfaz-se primeiro no
+                # ficheiro atual, com contagem exata de cada «novo»; depois a do «i» e as do molde, como antes.
+                if nome in cidade_cartaz_lente.TROCAS:
+                    depois = cidade_cartaz_lente.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 if nome in creditos_i_lente1.TROCAS:
                     depois = creditos_i_lente1.desfazer(depois.decode('utf-8'), nome).encode('utf-8')
                 # 07/11/2026 (sessão 10 no molde): a camada da s10 parte do main com a s09 (a258b6c), por cima da da s09: desfaz-se primeiro.
@@ -387,6 +397,9 @@ class CidadaniaBase(unittest.TestCase):
                 # 07/11/2026 (fusão do main 57a6ff8): fica depois da s09, da s10 e das portas (180); as trocas do «i» não tocam nas da
                 # 180 e aplicam-se ao main de hoje com as mesmas contagens.
                 esperado = creditos_i_lente1.aplicar(esperado, nome)
+                # 08/11/2026: a camada do pedido cidade-cartaz-lente («Ler a cidade» e o cartaz na entrada), com contagem exata, por
+                # cima de tudo: parte do main cca60c2, já com a do «i», por isso aplica-se em último lugar.
+                esperado = cidade_cartaz_lente.aplicar(esperado, nome)
                 self.assertEqual(esperado, (ROOT / nome).read_text(encoding='utf-8'))
 
 
