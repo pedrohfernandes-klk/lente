@@ -20,6 +20,9 @@ import cuidado_lente
 # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2): a camada dos créditos atrás do «i» (tools/trocas/creditos-i-lente2-20261108.json)
 # fica por cima desta; desfaz-se primeiro, com contagem exata, para se conferir esta camada como antes.
 import creditos_i_lente2
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-3): a camada dos créditos atrás do «i» das famílias L14 a L19
+# (tools/trocas/creditos-i-lente3-20261108.json) fica por cima da do pedido lente-2; desfaz-se primeiro, com contagem exata.
+import creditos_i_lente3
 
 R = Path(__file__).resolve().parents[1]
 BASE = 'a99d2d469bb3df2a85e1205bf15e820a9cab649e'
@@ -258,7 +261,9 @@ class CuidadoLente(unittest.TestCase):
             with self.subTest(ficheiro=f):
                 # 08/11/2026: pedido lente-2. A camada dos créditos atrás do «i» parte do main cc75fc6, já com esta: desfaz-se
                 # primeiro (contagem exata de cada «novo»); o que fica tem de ser, como antes, este manifesto sobre o main a99d2d4.
-                agora = creditos_i_lente2.desfazer(ler(f), f)
+                # 08/11/2026: pedido lente-3. A camada dos créditos das famílias L14 a L19 parte do main fec58ae, já com a do pedido
+                # lente-2: desfaz-se antes dela (contagem exata de cada «novo»); o resto confere-se como antes.
+                agora = creditos_i_lente2.desfazer(creditos_i_lente3.desfazer(ler(f), f), f)
                 for antigo, novo, n in trocas:
                     self.assertGreater(n, 0)
                     self.assertNotIn(antigo, novo, 'o «antigo» dentro do «novo» impede alinhar depois da fusão')

@@ -16,6 +16,8 @@ import creditos_i_lente1  # noqa: E402
 import cidade_cartaz_lente  # noqa: E402
 # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2): manifesto fechado dos créditos atrás do «i» (tools/trocas/creditos-i-lente2-20261108.json).
 import creditos_i_lente2  # noqa: E402
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-3): manifesto fechado dos créditos atrás do «i» (tools/trocas/creditos-i-lente3-20261108.json).
+import creditos_i_lente3  # noqa: E402
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
 import molde_s03  # 06/11/2026: plano do molde da Cidadania, sessão 03 do M1 na versão final (decisões 166 a 168)
@@ -434,6 +436,12 @@ class Molde(unittest.TestCase):
             # cima do cartaz «Ler a cidade» (a base que já o traga fica como está); tudo o resto, byte a byte.
             if f in creditos_i_lente2.TROCAS:
                 esperado = creditos_i_lente2.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3): nos passos, nos casos e nos retratos de Butler e Singer do M1
+            # (páginas congeladas), o crédito de cada imagem sai da legenda e passa, inteiro, para o «i», pelo manifesto fechado
+            # tools/trocas/creditos-i-lente3-20261108.json, com contagem exata, por cima do pedido lente-2 (a base que já o traga
+            # fica como está); tudo o resto, byte a byte.
+            if f in creditos_i_lente3.TROCAS:
+                esperado = creditos_i_lente3.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
             self.assertEqual((R / f).read_bytes(), esperado, f)
 
     def test_etapas_indice_portal_e_docente(self):

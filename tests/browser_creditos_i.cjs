@@ -9,6 +9,11 @@ const antigo=p=>execFileSync('git',['show',BASE+':'+p],{cwd:root,encoding:'utf8'
 const um=(s,re)=>{const m=s.match(re);assert.ok(m,String(re));return m[1];};
 const LETRAS=['apresentar/','biblioteca/','cidadania/m1/percurso-anterior.html','cidadania/m2/','cidade/','direitos/','gigantes/','investigar/','ler/','projetos/','sidequests/'];
 const ficheiro=p=>p.endsWith('/')?p+'index.html':p;
+// 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Nas entradas de «Como se investiga», dos projetos e das sidequests, a imagem
+// do topo também passou a ter o seu «i» (o crédito que estava no span.fr-cred; confere-se em tests/browser_creditos_i_lente3.cjs e
+// tests/test_creditos_i_lente3.py). Esse «i» vem depois do das letras: conta-se no número de «i» da página e, na impressão, o seu
+// crédito tem de acompanhar a imagem do topo, como os outros; o «i» das letras confere-se aqui como antes.
+const LENTE3={'investigar/':['figure.fig-rev img'],'projetos/':['figure.fig-rev img'],'sidequests/':['figure.fig-rev img']};
 // Para cada página: os «i» novos, pela ordem da página, com o crédito antigo (HTML) e a imagem a que pertence.
 const PAGINAS=[
  {p:'',is:(()=>{const s=antigo('index.html'),portas=[...s.matchAll(/<p class="m1-home-credit ld-credito cz-credit">(.*?)<\/p>/g)].map(m=>m[1]);assert.equal(portas.length,2);
@@ -18,7 +23,7 @@ const PAGINAS=[
   return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},{html:portas[0],visual:'#inicio-cidadania .ld-img'},{html:portas[1],visual:'#inicio-narrativas .ld-img'},{html:'Metade de um estereograma de 1907, com direitos de J. J. Killelea &amp; Co. e publicado por H. C. White Co. Domínio público. <a data-external aria-label="Fonte da fotografia, sítio externo" href="https://www.loc.gov/item/2021640928/">Fonte da fotografia</a>',visual:'.portal-cidade .sp-image img'},{html:um(s,/<p class="sp-credit">(.*?)<\/p>/),visual:'.portal-portugues .sp-image img'}];})()},
  {p:'narrativas/ideias/',is:[{html:um(antigo('narrativas/ideias/index.html'),/<figure class="drawing">[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>/),visual:'.drawing svg'}]},
  {p:'narrativas/',is:[{html:um(antigo('narrativas/index.html'),/<p class="lab-creditos">([\s\S]*?)<\/p>/),visual:null}]},
- ...LETRAS.map(p=>({p,is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
+ ...LETRAS.map(p=>({p,depois:LENTE3[p]||[],is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
 ];
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)&&f!==root){res.writeHead(403);return res.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'application/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.jpg':'image/jpeg'})[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));}catch{res.writeHead(404);res.end();}});
 // Medidas dentro da página: o «i» n, aberto ou fechado.
@@ -53,7 +58,7 @@ function medir([n,htmlAntigo]){
    const page=await ctx.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
    await page.goto(origin+'/lente/'+pg.p,{waitUntil:'networkidle'});
    const sel='details.info-i[name="info-i"]',todos=page.locator(sel);
-   assert.equal(await todos.count(),pg.is.length,pg.p+': número de «i»');
+   assert.equal(await todos.count(),pg.is.length+(pg.depois||[]).length,pg.p+': número de «i»');
    for(const [k,info] of pg.is.entries()){
     const rot=`${width} px, /${pg.p} «i» ${k+1}`,d=todos.nth(k),s=d.locator('summary');
     // abaixo de 640 px a porta dobrada não mostra a imagem: abre-se a porta, como faria o aluno
@@ -86,7 +91,7 @@ function medir([n,htmlAntigo]){
    // impressão: o «i» não sai; o crédito sai por extenso sempre que sai a imagem a que pertence
    await page.emulateMedia({media:'print'});
    const imp=await page.evaluate(vis=>{const ds=[...document.querySelectorAll('details.info-i[name="info-i"]')];const v=e=>!!e&&e.getClientRects().length>0&&e.checkVisibility({visibilityProperty:true,contentVisibilityAuto:true});
-    return ds.map((d,i)=>({texto:v(d.querySelector('.info-i-texto')),i:v(d.querySelector('summary')),imagem:vis[i]?v(document.querySelector(vis[i])):true}));},pg.is.map(x=>x.visual));
+    return ds.map((d,i)=>({texto:v(d.querySelector('.info-i-texto')),i:v(d.querySelector('summary')),imagem:vis[i]?v(document.querySelector(vis[i])):true}));},pg.is.map(x=>x.visual).concat(pg.depois||[]));
    imp.forEach((x,i)=>{const rot=`${width} px, /${pg.p} «i» ${i+1}, impressão`;assert.equal(x.i,false,rot+': sem o botão «i»');assert.equal(x.texto,x.imagem,rot+': o crédito acompanha a imagem');});
    await page.emulateMedia({media:'screen'});assert.deepEqual(errors,[]);await page.close();
   }

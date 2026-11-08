@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 import videos_escolhidos as ve  # noqa: E402
 import grupos146  # noqa: E402  05/11/2026: decisão 146
+import creditos_i_lente3  # noqa: E402  08/11/2026: decisões 153, 162 e 176 (pedido lente-3)
 
 DADOS = json.loads((ROOT / 'tools' / 'videos-escolhidos.json').read_text('utf-8'))
 
@@ -84,6 +85,13 @@ class VideosEscolhidos(unittest.TestCase):
             # procurar-se no texto alinhado.
             if p['pagina'] in grupos146.TROCAS:
                 base = grupos146.alinhar(base, p['pagina'])
+                a, b = ve.lista(base)
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). Na Ética, no passo 00 do M2 e no passo 08 de «Como se investiga», o
+            # crédito de cada imagem passa, inteiro, para o «i» da peça comum, pelo manifesto fechado
+            # tools/trocas/creditos-i-lente3-20261108.json, com contagem exata (a base que já o traga fica como está); qualquer outra
+            # diferença nos cartões continua a falhar.
+            if p['pagina'] in creditos_i_lente3.TROCAS:
+                base = creditos_i_lente3.alinhar(base, p['pagina'])
                 a, b = ve.lista(base)
             # 28/10/2026: depois da fusão, origin/main também tem os cartões «Para ver»; compara-se o resto dos dois lados.
             self.assertEqual(antigos, [x for x in json.loads(base[a:b]) if 'pv' not in x], p['pagina'])

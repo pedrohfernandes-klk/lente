@@ -5,6 +5,8 @@ import unittest,re,json,subprocess,sys
 
 R=Path(__file__).resolve().parents[1]
 import grupos146  # 05/11/2026: decisão 146
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-3): manifesto fechado dos créditos atrás do «i» (tools/trocas/creditos-i-lente3-20261108.json).
+import creditos_i_lente3
 BASE='66dc1b818e6f99ed1b0bddf7b5d4f7b5cca59f0d'
 class Page(HTMLParser):
  def __init__(self,s):super().__init__();self.ids=[];self.refs=[];self.feed(s)
@@ -40,6 +42,10 @@ class FichasM1(unittest.TestCase):
   blocks=None
   for n in range(11):
    path=f'cidadania/m1/passo-{n:02}/index.html';old=original(path);new=(R/path).read_text('utf-8')
+   # 08/11/2026: decisões 153, 162 e 176 (pedido lente-3). A camada dos créditos atrás do «i», a mais recente, desfaz-se primeiro, com
+   # contagem exata de cada «novo»: o crédito de cada imagem volta à legenda e saem a peça comum (a folha, o estilo e o script, que
+   # não se contam entre os scripts antigos); o resto confere-se como antes.
+   new=creditos_i_lente3.desfazer(new,path)
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata.
    if path in grupos146.TROCAS:new=grupos146.desfazer(new,path)
    self.assertEqual(bank(old),bank(new))
