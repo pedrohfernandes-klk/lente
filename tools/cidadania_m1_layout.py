@@ -49,8 +49,12 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  # 07/11/2026: decisões 153, 176 e 177 (pedido lente-1). Por cima da 154, as trocas do manifesto fechado dos créditos atrás do
  # «i», com a mesma contagem exata (no percurso anterior, a fotografia nas letras do cabeçalho passa para o «i»).
  gi=json.loads((R/'tools/trocas/creditos-i-lente1-20261107.json').read_text('utf-8'))
+ # 08/11/2026: a secção da cidade chama-se «Ler a cidade» nos dois sítios (pedido cidade-cartaz-lente). Por cima do «i», as
+ # trocas do manifesto fechado tools/trocas/cidade-cartaz-lente-20261108.json, com a mesma contagem exata (no percurso anterior,
+ # a frase do cartaz rotativo com as missões feitas passa a «Ler a cidade»).
+ gc=json.loads((R/'tools/trocas/cidade-cartaz-lente-20261108.json').read_text('utf-8'))
  def com146(nome,texto):
-  for camada in (g146,g154,gi):
+  for camada in (g146,g154,gi,gc):
    for antigo,novo,n in camada.get(nome,[]):
     assert texto.count(antigo)==n,(nome,antigo[:60]);texto=texto.replace(antigo,novo)
   return texto

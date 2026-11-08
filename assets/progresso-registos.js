@@ -58,7 +58,7 @@
     ["^(licao-|percurso-|desafio-|chefe-|rota-|balanco-|epi-ultima$)", "Português: lições e percursos dos módulos"],
     ["^epi-pt-", "Português: exercícios, questionários e trabalhos longos"],
     ["^(epi-atlas|atlas-)", "Atlas Lusófono"],
-    ["^(epi-bairro|bairro-)", "A cidade antes da aula"],
+    ["^(epi-bairro|bairro-)", "Ler a cidade"],
     ["^(epi-cidadania|epi-cid-|epi-cd-|cd\\d?-|lente-cidadania-)", "Cidadania e Desenvolvimento"],
     ["^(epi-justica|lente-(justica|etica|estetica)-)", "Dilemas: Justiça, Ética e Estética"],
     ["^epi-(narrativas|treinos|ficcao|guiao)", "Laboratório: Narrativas e Ginásio"],

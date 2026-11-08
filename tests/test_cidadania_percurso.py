@@ -33,6 +33,9 @@ class Percurso(unittest.TestCase):
     scripts=[script.replace('p=!!prox&&prox.id===id&&feitas.length>0;','p=!!prox&&prox.id===id;') for script in scripts]
     # 05/11/2026: decisão 147 (Laboratório sem o Português): o cartaz rotativo deixa de anunciar o Corta! e as peças do Laboratório; sai só da ordem.
     scripts=[script.replace('"ordem":["atlas","cidade","gigantes","corta","narrativas"]','"ordem":["atlas","cidade","gigantes"]') for script in scripts]
+    # 2026-11-08: pedido cidade-cartaz-lente, a secção da cidade chama-se «Ler a cidade»: no cartaz rotativo muda só a frase das missões
+    # feitas (tools/trocas/cidade-cartaz-lente-20261108.json); os motores continuam iguais byte a byte.
+    scripts=[script.replace('"frase":"A cidade antes da aula: {nmissoes} missões feitas','"frase":"Ler a cidade: {nmissoes} missões feitas') for script in scripts]
     return [re.sub(r'("ordem":\[[^\]]*),"sidequests"(\])',r'\1\2',script) for script in scripts]
    self.assertEqual(engines(old),engines(new))
   s=(R/'cidadania/contra-feed/index.html').read_text('utf-8');self.assertIn('Não há uma conclusão filosófica única premiada',s)

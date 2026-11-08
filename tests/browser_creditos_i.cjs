@@ -12,7 +12,10 @@ const ficheiro=p=>p.endsWith('/')?p+'index.html':p;
 // Para cada página: os «i» novos, pela ordem da página, com o crédito antigo (HTML) e a imagem a que pertence.
 const PAGINAS=[
  {p:'',is:(()=>{const s=antigo('index.html'),portas=[...s.matchAll(/<p class="m1-home-credit ld-credito cz-credit">(.*?)<\/p>/g)].map(m=>m[1]);assert.equal(portas.length,2);
-  return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},{html:portas[0],visual:'#inicio-cidadania .ld-img'},{html:portas[1],visual:'#inicio-narrativas .ld-img'},{html:um(s,/<p class="sp-credit">(.*?)<\/p>/),visual:'.sp-image img'}];})()},
+  // 2026-11-08: pedido cidade-cartaz-lente. O cartão «Ler a cidade.» entra logo antes do do Português, com o seu «i» (crédito novo,
+  // escrito aqui por extenso, tools/trocas/cidade-cartaz-lente-20261108.json): a entrada passa a ter cinco «i» e a imagem de cada
+  // cartão diz-se pelo cartão; o «i» do Português continua com o crédito antigo.
+  return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},{html:portas[0],visual:'#inicio-cidadania .ld-img'},{html:portas[1],visual:'#inicio-narrativas .ld-img'},{html:'Fotografia de autor não identificado, publicada por H. C. White Co. em 1907. Domínio público. <a data-external aria-label="Fonte da fotografia, sítio externo" href="https://www.loc.gov/item/2021640928/">Fonte da fotografia</a>',visual:'.portal-cidade .sp-image img'},{html:um(s,/<p class="sp-credit">(.*?)<\/p>/),visual:'.portal-portugues .sp-image img'}];})()},
  {p:'narrativas/ideias/',is:[{html:um(antigo('narrativas/ideias/index.html'),/<figure class="drawing">[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>/),visual:'.drawing svg'}]},
  {p:'narrativas/',is:[{html:um(antigo('narrativas/index.html'),/<p class="lab-creditos">([\s\S]*?)<\/p>/),visual:null}]},
  ...LETRAS.map(p=>({p,is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
