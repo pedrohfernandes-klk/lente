@@ -46,7 +46,10 @@ const PAGINAS=[
  {p:'cidadania/25-de-abril/',motor:'antigo',paradas:[{cartao:1,is:['vz']}]},
  {p:'direitos/passo-01/',motor:'antigo',paradas:[{cartao:12,is:['vz']}]},
  {p:'cidade/m04/',motor:'antigo',paradas:[{cartao:0,is:['fa','fa']}]},
- {p:'cidade/',hash:'#lugar-epi',motor:'nenhum',sel:'#gaveta details.info-i',paradas:[{is:['fa','fa','fa','fa','fa','fa','fa'],testar:[0,5]}]},
+ // 08/11/2026: decisões 153 e 176 (pedido lente-4). A gaveta passou a copiar também o «i» dos cartões das missões (m01, m02 e m16, no
+ // lugar da EPI), que vêm antes das fotografias e se conferem em tests/browser_creditos_i_lente4.cjs; aqui contam-se e conferem-se,
+ // como antes, os sete «i» das fotografias do lugar (os que vivem numa figure).
+ {p:'cidade/',hash:'#lugar-epi',motor:'nenhum',sel:'#gaveta figure details.info-i',paradas:[{is:['fa','fa','fa','fa','fa','fa','fa'],testar:[0,5]}]},
 ];
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)&&f!==root){res.writeHead(403);return res.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'application/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png'})[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));}catch{res.writeHead(404);res.end();}});
 // As fotografias de «Ler a cidade» vivem no sítio do Português (/pt/img/arquivo/): sem rede, uma fotografia do Lente faz de conta.
