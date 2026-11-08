@@ -33,9 +33,21 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  def document(path,title,body,num=''):
   assets=rel(path,'assets/').rstrip('/')+'/'
   extra='<link rel="stylesheet" href="'+assets+'para-ver.css?v='+VIDEOS['versao']+'"><script defer src="'+assets+'para-ver.js?v='+VIDEOS['versao']+'"></script>' if 'data-pv=' in body else ''
+  # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Uma página com «i» carrega a peça comum (molde.cabeca_info_i).
+  if 'class="info-i' in body:extra+=molde.cabeca_info_i(assets)
   return molde.documento(assets,title+' · M1 · Cidadania',body,top(path),['cidadania-m1-sessoes.css?v=20261027-molde-2'],['cidadania-m1-sessoes.js?v=20261027-molde-2'],num,extra)
+ # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O figcaption curto (autor, obra e a ligação «Créditos», separados por pontos médios) sai: o
+ # crédito passa para o «i», no canto da imagem, em frases e sem pontos médios, com a licença e a ligação para o registo e para
+ # a página dos créditos do módulo, como estão em cidadania/m1/imagens/ (a página de destino dos créditos, que fica por extenso);
+ # o alt diz o que se vê, com as palavras dessa página.
+ CREDITOS={
+  'hals.webp':('Cinco mulheres vestidas de escuro, sentadas e de pé à volta de uma mesa, olham para quem as vê.',
+   'Frans Hals, <i>As regentes do asilo de velhos</i>, 1664. Domínio público. ','https://commons.wikimedia.org/wiki/File:Frans_Hals_-_De_regentessen_van_het_oudemannenhuis.jpg'),
+  'leitura.webp':('Uma jovem lê uma carta junto de uma janela aberta; o observador não consegue ler o conteúdo da carta.',
+   'Johannes Vermeer, <i>Rapariga a ler uma carta à janela</i>, c.\u00a01657–\u20601659. Domínio público. ','https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Girl_Reading_a_Letter_by_an_Open_Window_-_Google_Art_Project.jpg')}
  def image(path,s,cls=''):
-  return molde.figura(rel(path,'img/cidadania/'+s['image']),s['caption'],e(s['caption'])+' · '+link(path,'cidadania/m1/imagens/','Créditos'),cls)
+  alt,texto,fonte=CREDITOS[s['image']]
+  return molde.figura(rel(path,'img/cidadania/'+s['image']),alt,'',cls,credito_i=texto+molde.fora(fonte,'Wikimedia Commons','Wikimedia Commons')+'. '+link(path,'cidadania/m1/imagens/','As imagens e a sua origem')+'.')
  def resource_list(path,s):return '<ul>'+''.join('<li>'+link(path,p,api['source_label'](p.split('#')[0]))+'</li>' for p in s['resources'])+'</ul>'
  def capsule(path,key):
   title,text,task=short_caps[key];sources=capsules[key]['sources']
@@ -73,6 +85,9 @@ def render(api,sessions,capsules,short_caps,image_prompts):
  def obra(path,o):return molde.obra(o,lambda u,t:link(path,u,t))
  for n,s in enumerate(sessions,1):
   ident=f'{n:02}';path=f'cidadania/m1/sessoes/{ident}/index.html';labels=s['labels'];m=MOLDE[n];tarefa=m.get('tarefa')
+  # 08/11/2026 (pedido lente-2): as dez sessões já vivem no molde (NO_MOLDE, abaixo); o corpo antigo deixa de se montar, porque
+  # image() passa a conhecer só as imagens das páginas do módulo que este gerador ainda escreve.
+  if ident in NO_MOLDE:continue
   entry=lambda v:s['entry'] if v=='entry' else v
   body=molde.abertura(ident,s['theme'],s['title'],s['question'],image(path,s,'c10-cover-img'))
   body+=molde.barra_passos(ident,labels)

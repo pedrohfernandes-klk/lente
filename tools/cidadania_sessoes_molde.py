@@ -41,13 +41,50 @@ def obra(o, ligar):
     return out
 
 
-def figura(src, alt, legenda_html, cls='', srcset='', sizes='', capa=False):
+def figura(src, alt, legenda_html, cls='', srcset='', sizes='', capa=False, credito_i='', nome_i='Créditos da imagem'):
     """Uma imagem inteira, com a legenda e o crédito por baixo.
     28/10/2026 (M2): «srcset»/«sizes» opcionais; «capa» carrega já a imagem que está acima da dobra (eager, prioridade
-    alta). Sem estes parâmetros, o HTML é o de sempre (o do M1 não muda)."""
+    alta). Sem estes parâmetros, o HTML é o de sempre (o do M1 não muda).
+    08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Com «credito_i», o crédito vai inteiro para o «i» da peça comum, no
+    canto da imagem (a imagem e o «i» num div.com-i); a legenda só fica se disser o que se vê (sem ela, sai o figcaption e o
+    alt diz o que se vê). Sem «credito_i», o HTML é o de sempre."""
     extra = (' srcset="' + e(srcset, quote=True) + '" sizes="' + e(sizes, quote=True) + '"' if srcset else '')
     carga = ' loading="eager" fetchpriority="high"' if capa else ' loading="lazy"'
-    return '<figure' + (' class="' + cls + '"' if cls else '') + '><img src="' + src + '"' + extra + ' alt="' + e(alt, quote=True) + '"' + carga + ' decoding="async"><figcaption>' + legenda_html + '</figcaption></figure>'
+    img = '<img src="' + src + '"' + extra + ' alt="' + e(alt, quote=True) + '"' + carga + ' decoding="async">'
+    if credito_i:
+        return ('<figure' + (' class="' + cls + '"' if cls else '') + '><div class="com-i">' + img + info_i(credito_i, nome_i) + '</div>'
+                + ('<figcaption>' + legenda_html + '</figcaption>' if legenda_html else '') + '</figure>')
+    return '<figure' + (' class="' + cls + '"' if cls else '') + '>' + img + '<figcaption>' + legenda_html + '</figcaption></figure>'
+
+
+# 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). A peça comum do «i» (assets/info-i.css e assets/info-i.js, iguais no
+# Português e no Lente) nas sessões e nas páginas do módulo: uma <details> nativa, fechada ao carregar, que abre com toque,
+# clique, Enter e Espaço; Escape fecha. Na impressão, o crédito sai por extenso, com a imagem.
+INFO_I_V = '20261106-3'
+INFO_I_CSS = ('/* 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito de cada imagem atrás do «i» (assets/info-i.css), '
+              'no canto da imagem, com as cores da sessão; a moldura toma a largura da imagem. */'
+              '.c10 .info-i{--ii-papel:var(--paper);--ii-tinta:var(--ink)}'
+              '.c10 figure>.com-i{display:block;width:fit-content;max-width:100%}'
+              '.c10 .c10-par>.info-i--linha{margin-block-start:4px}'
+              '.c10 .c10-par>.info-i--linha[open]>summary{margin-inline-start:auto}'
+              '.c10 .c10-par>.info-i--linha+figcaption{margin-block-start:0}')
+
+
+def info_i(texto_html, nome='Créditos da imagem', linha=False):
+    """08/11/2026 (pedido lente-2): o «i» com o crédito inteiro. «linha»: o «i» por baixo, à direita, e o crédito no fluxo."""
+    return ('<details class="info-i' + (' info-i--linha' if linha else '') + '" name="info-i"><summary aria-label="' + e(nome, quote=True)
+            + '"><span aria-hidden="true">i</span></summary><p class="info-i-texto">' + texto_html + '</p></details>')
+
+
+def fora(href, texto_html, rotulo):
+    """08/11/2026 (pedido lente-2): a ligação para a fonte, fora do sítio, como no pedido lente-1 (data-external e aria-label)."""
+    return '<a data-external aria-label="' + e(rotulo + ', sítio externo', quote=True) + '" href="' + e(href, quote=True) + '">' + texto_html + '</a>'
+
+
+def cabeca_info_i(assets):
+    """08/11/2026 (pedido lente-2): o que uma página com «i» junta à cabeça (a peça comum e o acerto das sessões)."""
+    return ('<link rel="stylesheet" href="' + assets + 'info-i.css?v=' + INFO_I_V + '"><style id="creditos-i">' + INFO_I_CSS
+            + '</style><script defer src="' + assets + 'info-i.js?v=' + INFO_I_V + '"></script>')
 
 
 def topo(itens_html, projecao_href):

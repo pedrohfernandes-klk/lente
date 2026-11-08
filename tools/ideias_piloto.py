@@ -710,8 +710,13 @@ def video_de(d):
         if m:
             # 31/10/2026: na lição, o rótulo do botão vem num só <span> (revisão do diretor de arte); no guia, sem esse invólucro
             botao = re.sub(r'^<span>(.*)</span>$', r'\1', re.search(r'data-yt-abrir>(.*?)</button>', h).group(1))
+            # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Na lição, o crédito do vídeo passa para o «i» e o resto do aviso
+            # fica à vista (sem o aviso do YouTube): o guia junta os dois, com as mesmas palavras de antes.
+            yt = h[h.index('class="yt"'):]
+            aviso = re.search(r'<p class="yt-cred">(.*?)</p>', yt).group(1).replace('O vídeo só se liga ao YouTube quando tocas no botão.', '').strip()
+            cred = re.search(r'<p class="info-i-texto">(.*?)</p>', yt).group(1)
             return {'id': m.group(1), 'botao': botao.replace('Ver: ', '', 1),
-                    'cred': re.search(r'<p class="yt-cred">(.*?)</p>', h).group(1).replace(' O vídeo só se liga ao YouTube quando tocas no botão.', ''),
+                    'cred': (cred + ' ' + aviso).strip(),
                     'tarefa': re.search(r'<p class="pergunta-c">(.*?)</p>', h).group(1)}
     return None
 
@@ -777,7 +782,8 @@ def pagina_guia(L):
         d, g = L[s['n']], GUIA[s['n']]
         aula = next(c for c in d['cartoes'] if c.get('rot') == 'Na aula')
         img = next(c for c in d['cartoes'] if '<img' in (c.get('html') or ''))
-        fig = re.search(r'<figcaption>(.*?)</figcaption>', img['html']).group(1)
+        # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito da imagem passa para o «i» da lição: o guia lê-o lá.
+        fig = re.search(r'<p class="info-i-texto">(.*?)</p>', img['html']).group(1)
         v = video_de(d)
         n_liga = next((i for i, c in enumerate(d['cartoes'], 1) if c.get('liga')), 0)
         tempos = ''.join(f'<tr><td class="num">{e(m)}</td><td>{e(t)}</td></tr>' for m, t in g['tempos'])

@@ -8,6 +8,8 @@ import unittest
 from renomeacoes_cidadania import renomear, dilemas_149
 # 08/11/2026: decisão 152 («cuidado em todas as lições»): manifesto fechado tools/trocas/cuidado-lente-20261108.json.
 import cuidado_lente
+# 08/11/2026: decisões 153 e 176 (pedido lente-2): manifesto fechado tools/trocas/creditos-i-lente2-20261108.json.
+import creditos_i_lente2
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -59,7 +61,11 @@ class BasesJustica(unittest.TestCase):
             # «novo»: as tabelas da lição 1 (três razões) e da lição 2 (a conta da Ford), a lista das três objeções da lição 3, o
             # espaço sem quebra nas durações, nos valores e nos séculos, e a folha da tabela de apoio no molde das lições 1 e 2
             # (tools/trocas/cuidado-lente-20261108.json); o hash histórico é o mesmo.
-            original = renomear(dilemas_149(cuidado_lente.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html'),
+            # 08/11/2026: decisões 153 e 176 (pedido lente-2). A camada dos créditos atrás do «i» é agora a mais recente e desfaz-se
+            # antes da do pedido cuidado-lente, com contagem exata de cada «novo»: o crédito de cada desenho volta ao span.cred da
+            # legenda e saem a peça comum e o seu estilo no molde das lições 1 e 2; o hash histórico é o mesmo.
+            gerada0 = creditos_i_lente2.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html')
+            original = renomear(dilemas_149(cuidado_lente.desfazer(gerada0, f'olhar-e-decidir/justica/licao-{n}/index.html'),
                                             f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
                                 f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
             for troca in json.loads((T/'migracao.json').read_text('utf-8')):
@@ -84,7 +90,9 @@ class BasesJustica(unittest.TestCase):
                     # durações do botão e do data-dur), desfeita no banco com contagem exata pelo manifesto fechado
                     # tools/trocas/cuidado-lente-20261108.json; as palavras visíveis contam-se no cartão de hoje, como antes.
                     f = f'tools/justica/bancos/licao-{n}.json'
-                    x0 = dict(json.loads(cuidado_lente.desfazer((T/f'bancos/licao-{n}.json').read_text('utf-8'), f))[k-1])
+                    # 08/11/2026: decisões 153 e 176 (pedido lente-2). Antes, desfaz-se no banco a camada dos créditos atrás do «i»,
+                    # a mais recente, com contagem exata (o crédito dos dois desenhos do cartão volta à legenda); o resto como antes.
+                    x0 = dict(json.loads(cuidado_lente.desfazer(creditos_i_lente2.desfazer((T/f'bancos/licao-{n}.json').read_text('utf-8'), f), f))[k-1])
                     for t in json.loads((T/'migracao.json').read_text('utf-8')):
                         if t['licao'] == n and t['origem'].startswith('revisão de 5/11'):
                             antigo, novo = json.loads('"' + t['antigo'] + '"'), json.loads('"' + t['novo'] + '"')
@@ -95,12 +103,18 @@ class BasesJustica(unittest.TestCase):
     def test_desenhos_das_licoes_com_credito(self):
         # 05/11/2026: revisão de 5/11 (lente-cidadania-creditos-1): cada desenho das lições tem o crédito «Grafismo gerado com
         # recurso a IA.» na legenda, como no guião; um desenho novo sem crédito falha.
+        # 08/11/2026: decisões 153 e 176 (pedido lente-2). O crédito passa para trás do «i» de cada desenho: continua a exigir o
+        # texto completo, «Grafismo gerado com recurso a IA.», agora dentro de details.info-i (variante «linha», logo depois do
+        # desenho e antes da legenda, com o nome «Créditos do desenho: …» e o que a legenda diz antes dos dois pontos); a legenda
+        # que diz o que se vê fica, sem o crédito. Os mesmos 9 desenhos.
         total = 0
         for m in MANIFESTO:
             for x in banco(m['numero']):
                 for fig in re.findall(r'<figure class="desenho">.*?</figure>', x.get('html') or '', re.S):
                     total += 1
-                    self.assertRegex(fig, r'<figcaption>[^<]+ <span class="cred">Grafismo gerado com recurso a IA\.</span></figcaption>', fig[-200:])
+                    self.assertRegex(fig, r'</svg><details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos do desenho: ([^"<:]+)"><span aria-hidden="true">i</span></summary>'
+                                          r'<p class="info-i-texto">Grafismo gerado com recurso a IA\.</p></details><figcaption>\1: [^<]+</figcaption></figure>$', fig[-300:])
+                    self.assertNotIn('class="cred"', fig)
         self.assertEqual(total, 9)
 
     def test_validador_recusa_regressoes(self):

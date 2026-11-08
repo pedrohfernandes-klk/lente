@@ -37,7 +37,9 @@ def topo(path):
 def documento(path, titulo, corpo, num='', atributos=ATRIBUTOS):
     assets = rel(path, 'assets/')
     # 28/10/2026: a fonte do Google deixa de bloquear a página (se o pedido ficar pendurado, a página aparece na mesma).
-    return molde.documento(assets, titulo, corpo, topo(path), FOLHAS, SCRIPTS, num, '', atributos, fonte_bloqueante=False)
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Uma página com «i» carrega a peça comum (molde.cabeca_info_i).
+    extra = molde.cabeca_info_i(assets) if 'class="info-i' in corpo else ''
+    return molde.documento(assets, titulo, corpo, topo(path), FOLHAS, SCRIPTS, num, extra, atributos, fonte_bloqueante=False)
 
 
 def licenca(texto_html):
@@ -47,8 +49,10 @@ def licenca(texto_html):
 
 
 def credito(img):
-    """O crédito completo de uma imagem: legenda, autoria e licença, e a ligação ao registo."""
-    return e(img['legenda']) + ' ' + licenca(e(img['credito'])) + ', <a href="' + e(img['url'], quote=True) + '">Wikimedia Commons</a>.'
+    """O crédito completo de uma imagem: legenda, autoria e licença, e a ligação ao registo.
+    08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O mesmo crédito, palavra a palavra, passa para trás do «i»; a ligação
+    ao registo leva data-external e aria-label, como no pedido lente-1."""
+    return e(img['legenda']) + ' ' + licenca(e(img['credito'])) + ', ' + molde.fora(img['url'], 'Wikimedia Commons', 'Wikimedia Commons') + '.'
 
 
 def variante(src):
@@ -57,11 +61,13 @@ def variante(src):
     return v if src.endswith('.webp') and (R / v).exists() else None
 
 
-def figura(path, chave, cls='', capa=False):
+def figura(path, chave, cls='', capa=False, nome_i='Créditos da imagem'):
     img = IMAGENS[chave]
     v = variante(img['src'])
     srcset = rel(path, v) + ' 700w, ' + rel(path, img['src']) + ' 1100w' if v else ''
-    return molde.figura(rel(path, img['src']), img['alt'], credito(img), cls, srcset, TAMANHOS if v else '', capa)
+    # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). A legenda era só o crédito (identificação, autoria, licença e
+    # registo): passa inteira para o «i», no canto da imagem, e sai o figcaption; o alt diz o que se vê.
+    return molde.figura(rel(path, img['src']), img['alt'], '', cls, srcset, TAMANHOS if v else '', capa, credito_i=credito(img), nome_i=nome_i)
 
 
 def fonte(path, f):
@@ -101,14 +107,19 @@ def material(path, n, s, j, m, total):
         out += para('c10-instruction', m['instrucao'])
     if tipo == 'imagem':
         # 28/10/2026: o material que se observa fica à vista, no próprio material (nunca atrás de uma ligação).
-        out += figura(path, m.get('imagem', s['imagem']), 'c10-material')
+        # 08/11/2026 (pedido lente-2): o «i» do material diz de que material é (há mais de um «i» na página).
+        out += figura(path, m.get('imagem', s['imagem']), 'c10-material', nome_i='Créditos da imagem: ' + m['titulo'] if m.get('titulo') else 'Créditos da imagem')
         if m.get('citacao'):
             out += '<blockquote class="c10-document c10-quote"><p>«' + e(m['citacao']) + '»</p></blockquote>'
     elif tipo == 'par':
         # As duas fotografias de Lisboa, lado a lado (A e B). O crédito não diz qual foi alterada.
         out += '<figure class="c10-par"><div class="c10-par-imgs">' + ''.join(
             '<div class="c10-par-img"><p class="c10-par-r" aria-hidden="true">' + k.upper() + '</p><img src="' + rel(path, LISBOA_1907[k]['src']) + '" alt="' + e(LISBOA_1907[k]['alt'], quote=True) + '" loading="lazy" decoding="async"></div>'
-            for k in ('a', 'b')) + '</div><figcaption>' + e(LISBOA_1907['credito']) + ', <a href="' + e(LISBOA_1907['url'], quote=True) + '">loc.gov</a>. Uma das versões foi alterada por nós.</figcaption></figure>'
+            for k in ('a', 'b')) + '</div>'
+        # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). O crédito das duas fotografias passa, inteiro, para um «i» por
+        # baixo delas, à direita (variante «linha»: é o mesmo para as duas); o aviso do exercício fica à vista.
+        out += molde.info_i(e(LISBOA_1907['credito']) + ', ' + molde.fora(LISBOA_1907['url'], 'loc.gov', 'loc.gov') + '.', 'Créditos das fotografias: ' + m['titulo'], linha=True)
+        out += '<figcaption>Uma das versões foi alterada por nós.</figcaption></figure>'
     elif tipo == 'texto':
         out += '<div class="c10-document">' + e(m['texto']) + '</div>'
     elif tipo == 'citacao':
@@ -225,7 +236,7 @@ PASSO = [recupera, ve, decide, faz, leva]
 def sessao(n, s):
     ident = f'{n:02}'
     path = f'cidadania/m2/sessoes/{ident}/index.html'
-    body = molde.abertura(ident, s['tema'], s['titulo'], s['pergunta'], ('' if n in CASOS_RECICLADOS else figura(path, s['imagem'], 'c10-cover-img', capa=True)), separador=' / ')
+    body = molde.abertura(ident, s['tema'], s['titulo'], s['pergunta'], ('' if n in CASOS_RECICLADOS else figura(path, s['imagem'], 'c10-cover-img', capa=True, nome_i='Créditos da imagem de abertura')), separador=' / ')
     body += molde.barra_passos(ident, PASSOS)
     for i, lab in enumerate(PASSOS):
         body += molde.cabecalho_passo(i, lab, s.get('linhas', {}).get(lab, LINHA[lab]), s.get('marcas', {}).get(lab, MARCA.get(lab)))

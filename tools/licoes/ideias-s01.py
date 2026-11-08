@@ -84,12 +84,20 @@ HERMAN = (
  '<p class="pergunta-c">Enquanto vês, faz duas colunas no caderno: o que está em cada quadro que o vídeo mostra e o que lá não está, mas conta.</p>'
  '<div class="yt" data-yt="ubEadhXWwV4" data-titulo="How art can help you analyze, TED-Ed">'
  '<button type="button" class="yt-abrir" data-yt-abrir><span>Ver: «<span lang="en">How art can help you analyze</span>» (4\u00a0min\u00a050\u00a0s)</span></button>'
- '<p class="yt-cred">TED-Ed, lição de Amy\u00a0E.\u00a0Herman. É em inglês: ativa as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p></div>')
+ # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). Vai para o «i» só o crédito do vídeo (canal e oradora); o pedido das
+ # legendas e o aviso do YouTube ficam à vista, à esquerda do «i».
+ '<div class="yt-pe"><p class="yt-cred">É em inglês: ativa as legendas no leitor. O vídeo só se liga ao YouTube quando tocas no botão.</p>'
+ '<details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos do vídeo"><span aria-hidden="true">i</span></summary>'
+ '<p class="info-i-texto">TED-Ed, lição de Amy\u00a0E.\u00a0Herman.</p></details></div></div>')
 LATOUR = (
- f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}latour-leitora-da-sina.webp" '
- 'alt="Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres." loading="lazy"></span>'
- '<figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5\u00a0cm. '
- '<a href="https://www.metmuseum.org/art/collection/search/436838">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure>'
+ # 08/11/2026: decisões 153, 162 e 176 (pedido lente-2). A legenda era só o crédito: passa inteira para o «i», no canto do quadro
+ # (a moldura passa a div.moldura.com-i), e sai o figcaption; o alt diz o que se vê. A ligação para o museu leva data-external e
+ # aria-label, como no pedido lente-1.
+ f'<figure class="fig inteiro"><div class="moldura com-i"><img src="{IMG}latour-leitora-da-sina.webp" '
+ 'alt="Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres." loading="lazy">'
+ '<details class="info-i" name="info-i"><summary aria-label="Créditos da imagem"><span aria-hidden="true">i</span></summary>'
+ '<p class="info-i-texto">Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5\u00a0cm. '
+ '<a data-external aria-label="The Metropolitan Museum of Art, sítio externo" href="https://www.metmuseum.org/art/collection/search/436838">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</p></details></div></figure>'
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro o quadro inteiro, depois ampliado
  '<p>Agora é a tua vez: dois minutos em silêncio. Vê primeiro o quadro inteiro; depois amplia-o e procura as mãos. Ainda não concluas nada.</p>'
  '<p class="pergunta-c">Escreve no caderno cinco coisas que se veem. Só o que se vê: nada de «parece» nem de «está a pensar».</p>')

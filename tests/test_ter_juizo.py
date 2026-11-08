@@ -58,6 +58,13 @@ class TerJuizo(unittest.TestCase):
                     self.assertTrue((R / src[len(LENTE):]).exists(), src)
                     self.assertRegex(fig, r'domínio público|CC BY', src)
                     self.assertRegex(fig, r'alt="[^"]{20,}"', src)
+                    # 08/11/2026: decisões 153 e 176 (pedido lente-2). O crédito passa para trás do «i»: a licença e a ligação para a
+                    # fonte (data-external e aria-label) estão dentro do «i» da figura e nunca fora dele.
+                    i = re.search(r'<details class="info-i" name="info-i"><summary aria-label="Créditos d[^"]+"><span aria-hidden="true">i</span></summary><p class="info-i-texto">(.*?)</p></details>', fig, re.S)
+                    self.assertIsNotNone(i, src)
+                    self.assertRegex(i.group(1), r'domínio público|CC BY', src)
+                    self.assertRegex(i.group(1), r'<a data-external aria-label="[^"]+, sítio externo" href="https://', src)
+                    self.assertNotRegex(fig.replace(i.group(0), ''), r'domínio público|CC BY|Wikimedia', src)
 
     def test_cadeia_e_entrada(self):
         hub = (O / 'index.html').read_text('utf-8')
