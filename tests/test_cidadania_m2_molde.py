@@ -12,7 +12,7 @@ import lab147
 import menus163
 # 07/11/2026: decisões 153, 176 e 177 (pedido lente-1): manifesto fechado dos créditos atrás do «i».
 import creditos_i_lente1  # noqa: E402
-# 2026-11-08: pedido cidade-cartaz-lente («Ler a cidade» nos dois sítios): manifesto fechado da camada mais recente.
+# 08/11/2026: pedido cidade-cartaz-lente («Ler a cidade» nos dois sítios): manifesto fechado da camada mais recente.
 import cidade_cartaz_lente  # noqa: E402
 import molde_pedido2  # 05/11/2026: plano do molde da Cidadania, pedido 2 (s01 do M1 na versão final)
 import molde_s02  # 06/11/2026: plano do molde da Cidadania, sessão 02 do M1 na versão final (decisão 166)
@@ -421,7 +421,7 @@ class Molde(unittest.TestCase):
             # como está); tudo o resto, byte a byte.
             if f in creditos_i_lente1.TROCAS:
                 esperado = creditos_i_lente1.alinhar(esperado.decode('utf-8'), f).encode('utf-8')
-            # 2026-11-08: pedido cidade-cartaz-lente: no percurso anterior, a frase do cartaz rotativo com as missões feitas passa a
+            # 08/11/2026: pedido cidade-cartaz-lente: no percurso anterior, a frase do cartaz rotativo com as missões feitas passa a
             # «Ler a cidade», pelo manifesto fechado tools/trocas/cidade-cartaz-lente-20261108.json, com contagem exata, por cima do
             # «i» (a base que já o traga fica como está); tudo o resto, byte a byte.
             if f in cidade_cartaz_lente.TROCAS:

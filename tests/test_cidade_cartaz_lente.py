@@ -1,5 +1,5 @@
-"""2026-11-08: pedido cidade-cartaz-lente. A secção da cidade chama-se «Ler a cidade» nos dois sítios (nenhuma página nem script servido
-diz «A cidade antes da aula») e a entrada do Lente tem um cartão «Ler a cidade.» no mesmo componente do cartão «Português.»
+"""08/11/2026: pedido cidade-cartaz-lente. A secção da cidade chama-se «Ler a cidade» nos dois sítios (nenhuma página nem script servido
+diz «A cidade antes da aula», nem o nome do antigo anexo de fontes) e a entrada do Lente tem um cartão «Ler a cidade.» no mesmo componente do cartão «Português.»
 (a.site-portal com fotografia, etiqueta e o «i» dos créditos), logo antes dele; a linha pequena repetida no cartão do Português sai.
 As trocas estão no manifesto fechado tools/trocas/cidade-cartaz-lente-20261108.json (tests/cidade_cartaz_lente.py)."""
 from html.parser import HTMLParser
@@ -12,7 +12,9 @@ import cidade_cartaz_lente
 ROOT = Path(__file__).resolve().parents[1]
 URL_CIDADE = 'https://pedrohfernandes-klk.github.io/lente/cidade/'
 FOTO = 'https://pedrohfernandes-klk.github.io/pt/img/arquivo/tejo-1907-vela-e-cidade.jpg'
-CREDITO = ('Fotografia de autor não identificado, publicada por H. C. White Co. em 1907. Domínio público. '
+# 08/11/2026 (revisão do #142): a imagem servida é uma das metades, recortada, do estereograma da Biblioteca do Congresso (1s35881v.jpg),
+# cujo cartão diz «COPYRIGHT 1907 BY J. J. KILLELEA & CO.» e «H. C. WHITE CO.».
+CREDITO = ('Metade de um estereograma de 1907, com direitos de J. J. Killelea &amp; Co. e publicado por H. C. White Co. Domínio público. '
            '<a data-external aria-label="Fonte da fotografia, sítio externo" href="https://www.loc.gov/item/2021640928/">Fonte da fotografia</a>')
 
 
@@ -96,7 +98,10 @@ class CartazLerACidade(unittest.TestCase):
         img = um(imagem, 'img')
         self.assertEqual(img['attrs']['src'], FOTO)
         self.assertEqual((img['attrs']['width'], img['attrs']['height']), ('1160', '773'))
-        self.assertGreater(len(img['attrs']['alt']), 40)
+        # 08/11/2026 (revisão do #142): o alt está dentro da ligação e conta para o nome acessível do cartão; fica curto. A fotografia
+        # fica abaixo da dobra em todas as larguras: carrega-se quando se aproxima.
+        self.assertEqual(img['attrs']['alt'], 'Barco à vela no Tejo; atrás, o cais e a cidade.')
+        self.assertEqual(img['attrs']['loading'], 'lazy')
         self.assertEqual(img['attrs']['decoding'], 'async')
         # a mesma fotografia, do mesmo endereço e com as mesmas medidas, que a página da cidade já usa
         self.assertIn(f'<img src="{FOTO}" alt="" width="1160" height="773"', abertura)
@@ -141,21 +146,27 @@ class CartazLerACidade(unittest.TestCase):
         self.assertEqual(re.findall(r'assets/site-portals\.css\?v=([\w.-]+)', self.pagina), ['20261108-1'])
 
     def test_nome_unico_em_paginas_e_scripts(self):
+        # 08/11/2026 (revisão do #142): também o nome escrito de outras formas (maiúsculas, hífenes, sublinhados, como no nome do
+        # antigo ANEXO-A-CIDADE-ANTES-DA-AULA.txt citado nas missões 02 e 16).
+        antigo = re.compile(r'cidade[\W_]+antes[\W_]+da[\W_]+aula', re.I)
         achados = []
         for p in list(ROOT.rglob('*.html')) + list((ROOT / 'assets').rglob('*.js')):
             rel = p.relative_to(ROOT).as_posix()
             if rel.startswith(('docs/', 'node_modules/', '.git/')):
                 continue
-            if 'cidade antes da aula' in p.read_text(encoding='utf-8', errors='replace').lower():
+            if antigo.search(p.read_text(encoding='utf-8', errors='replace')):
                 achados.append(rel)
         self.assertEqual(achados, [])
+        for missao, nova in (('m02', 'e a nota editorial do anexo de fontes de Ler a cidade sobre os mapas ilustrados.'),
+                             ('m16', 'e o anexo de fontes de Ler a cidade (a EPI na Rua D. Luís I).')):
+            self.assertIn(nova, (ROOT / 'cidade' / missao / 'index.html').read_text(encoding='utf-8'), missao)
         registos = (ROOT / 'assets/progresso-registos.js').read_text(encoding='utf-8')
         self.assertIn('["^(epi-bairro|bairro-)", "Ler a cidade"],', registos)
 
     def test_manifesto_fechado_em_vigor(self):
         # cada «novo» está no ficheiro o número de vezes registado e nenhum «antigo» voltou (como tests/cidade_cartaz_lente.alinhar
         # o reconhece); o gerador do percurso anterior aplica a camada.
-        self.assertGreaterEqual(len(cidade_cartaz_lente.TROCAS), 26)
+        self.assertGreaterEqual(len(cidade_cartaz_lente.TROCAS), 29)
         for ficheiro, trocas in cidade_cartaz_lente.TROCAS.items():
             texto = (ROOT / ficheiro).read_text(encoding='utf-8')
             for antigo, novo, n in trocas:

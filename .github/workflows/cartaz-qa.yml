@@ -42,7 +42,7 @@ jobs:
       - run: node tests/browser_cartaz_familia.cjs
       # 07/11/2026: decisões 153, 176 e 177, cada «i» novo das entradas abre por teclado e por toque, sem tapar texto, e imprime o crédito.
       - run: node tests/browser_creditos_i.cjs
-      # 2026-11-08: pedido cidade-cartaz-lente, o cartão «Ler a cidade.» da entrada de 320 a 1280 px e no modo escuro: sem deslize, sem
+      # 08/11/2026: pedido cidade-cartaz-lente, o cartão «Ler a cidade.» da entrada de 320 a 1280 px e no modo escuro: sem deslize, sem
       # transbordo, fotografia carregada, «i» a abrir e a fechar e alvos de 44 px.
       - run: node tests/browser_cidade_cartaz.cjs
       - run: node tests/browser_lente_projecao_entrada.cjs

@@ -1,7 +1,7 @@
-"""2026-11-08: pedido cidade-cartaz-lente (a secção da cidade chama-se «Ler a cidade» nos dois sítios e tem um cartaz na entrada do
+"""08/11/2026: pedido cidade-cartaz-lente (a secção da cidade chama-se «Ler a cidade» nos dois sítios e tem um cartaz na entrada do
 Lente). Manifesto fechado das trocas literais [antigo, novo, contagem] que levam o main de cca60c2 à versão com o nome único e o
 cartaz (tools/trocas/cidade-cartaz-lente-20261108.json): a frase do cartaz rotativo, as ligações e os títulos que diziam «A cidade
-antes da aula», o rótulo do registo de progresso, o cartão «Ler a cidade.» na entrada (sem a linha pequena repetida no cartão do
+antes da aula» (e o nome do antigo anexo de fontes nas missões 02 e 16), o rótulo do registo de progresso, o cartão «Ler a cidade.» na entrada (sem a linha pequena repetida no cartão do
 Português), o enquadramento da fotografia e o gerador do percurso anterior do M1. Os testes que comparam com bases antigas aplicam-no
 (ou desfazem-no) como a camada mais recente, por cima da dos créditos atrás do «i», com contagem exata, sem aceitar mais nada."""
 import json

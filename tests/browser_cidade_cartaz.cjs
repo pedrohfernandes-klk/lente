@@ -1,4 +1,4 @@
-// 2026-11-08: pedido cidade-cartaz-lente. O cartão «Ler a cidade.» da entrada do Lente, no mesmo componente do cartão «Português.»:
+// 08/11/2026: pedido cidade-cartaz-lente. O cartão «Ler a cidade.» da entrada do Lente, no mesmo componente do cartão «Português.»:
 // a 320, 390, 768 e 1280 px (e a 390 e a 1280 px no modo escuro) a página não rola para o lado, o cartão não transborda, a fotografia
 // carrega, o «i» abre e fecha (rato, teclado e toque) e os alvos têm pelo menos 44 px; no modo escuro, o cartão segue as cores da
 // entrada. Com CIDADE_CARTAZ_PROVAS, guarda capturas da zona dos dois cartões (deviceScaleFactor 1).
@@ -39,6 +39,8 @@ function medir(){
   await page.goto(origin+'/lente/',{waitUntil:'networkidle'});
   const wrap=page.locator('aside.site-portal-wrap[aria-label="Explorar Ler a cidade"]');assert.equal(await wrap.count(),1,rot+': um cartão');
   await wrap.scrollIntoViewIfNeeded();
+  // 08/11/2026 (revisão do #142): a fotografia tem loading="lazy"; com o cartão à vista, tem de carregar.
+  assert.equal(await page.locator('.portal-cidade .sp-image img').getAttribute('loading'),'lazy',rot+': carregamento diferido');
   await page.locator('.portal-cidade .sp-image img').evaluate(i=>i.complete?null:new Promise(r=>{i.addEventListener('load',r,{once:true});i.addEventListener('error',r,{once:true});setTimeout(r,15000);}));
   let m=await page.evaluate(medir);
   assert.equal(m.tema,tema,rot+': tema da página');
@@ -49,6 +51,8 @@ function medir(){
   assert.deepEqual(m.transborda,[],rot+': nenhum texto transborda o cartão');
   assert.deepEqual(m.textos,['Português × Cidadania','Ler a cidade.','Uma rua pode ser lida como um texto. São 14 missões, no bairro ou a partir das fotografias.','Entrar →','Lisboa vista do Tejo, 1907'],rot+': texto do cartão');
   // fotografia: carrega (sem rede, como nos outros testes que deixam a rede de fora, conta-se à parte e a moldura tem de se manter)
+  // 08/11/2026 (revisão do #142): no CI há rede; aí, uma falha da fotografia faz falhar o teste.
+  if(fotoFalhou&&process.env.CI)assert.fail(rot+': a fotografia não carregou no CI ('+fotoFalhou+')');
   if(fotoFalhou){semRede++;console.log(rot+': fotografia sem rede ('+fotoFalhou+'); confere-se só a moldura.');}
   else assert.ok(m.imagem.completa&&m.imagem.largura===1160,rot+': a fotografia carrega ('+m.imagem.largura+')');
   assert.ok(m.imagem.caixa[0]>=80&&m.imagem.caixa[1]>=150&&m.imagem.dentro,rot+': moldura da fotografia '+JSON.stringify(m.imagem.caixa));
@@ -62,7 +66,7 @@ function medir(){
   // o «i»: rato, teclado e toque
   const s=wrap.locator('details.info-i>summary'),d=wrap.locator('details.info-i');
   await s.click();m=await page.evaluate(medir);assert.ok(m.iAberto&&m.textoI.visivel&&m.textoI.dentro,rot+': clique abre');assert.ok(m.lado<=0,rot+': aberto, sem deslize');
-  assert.equal((await wrap.locator('.info-i-texto').textContent()).trim(),'Fotografia de autor não identificado, publicada por H. C. White Co. em 1907. Domínio público. Fonte da fotografia',rot+': crédito');
+  assert.equal((await wrap.locator('.info-i-texto').textContent()).trim(),'Metade de um estereograma de 1907, com direitos de J. J. Killelea & Co. e publicado por H. C. White Co. Domínio público. Fonte da fotografia',rot+': crédito');
   await s.click();assert.equal(await d.evaluate(e=>e.open),false,rot+': clique fecha');
   await s.focus();await page.keyboard.press('Enter');assert.equal(await d.evaluate(e=>e.open),true,rot+': Enter abre');
   await page.keyboard.press('Escape');assert.equal(await d.evaluate(e=>e.open),false,rot+': Escape fecha');assert.ok(await s.evaluate(e=>document.activeElement===e),rot+': o foco volta ao «i»');
