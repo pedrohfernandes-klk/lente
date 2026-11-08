@@ -78,7 +78,7 @@ ATOL = {
  'src': '../../assets/laboratorio/ideias/manihi-atol.webp', 'w': 1200, 'h': 789,
  'alt': 'Vista do espaço: um anel estreito de recife e ilhotas fecha uma lagoa no meio do oceano, com pequenas nuvens à volta.',
  'tabela': ('Tripulação da Expedição 6 da Estação Espacial Internacional, <i>Atol de Manihi, arquipélago das Tuamotu</i> (título nosso), '
-            '9 de março de 2003. Fotografia <span class="id">ISS006-E-37110</span>. Imagem cedida pela Earth Science and Remote Sensing Unit, NASA Johnson Space Center '
+            '9\u00a0de\u00a0março\u00a0de\u00a02003. Fotografia <span class="id">ISS006-E-37110</span>. Imagem cedida pela Earth Science and Remote Sensing Unit, NASA Johnson Space Center '
             '(<a href="https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?mission=ISS006&amp;roll=E&amp;frame=37110">eol.jsc.nasa.gov</a>). '
             'Domínio público. Recorte e tratamento a duas cores: nossos.'),
 }
@@ -94,15 +94,15 @@ GUIA = {
    ('5 a 10', '«O método» (cartão 2): os cinco passos no quadro, numerados, com o passo 1 marcado (ver «Porque seguimos um método», acima).'),
    ('10 a 20', '«Decide», de braço no ar. Não se fecha: a posição volta na sessão 7.'),
    # 01/11/2026 (correção 5, revisor de pt-PT): «no cartão 7», o único com o vídeo («a partir do» lia-se «daí em diante»)
-   ('20 a 55', 'Cartões 4 a 14. O vídeo de Herman (4 min 50 s) projeta-se com legendas no cartão 8; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
-   ('55 a 125', '«Na aula» (70 minutos): 5 para as regras do trabalho individual; 20 no lugar (um facto por nota; contam-se os degraus); 10 de pausa; 15 na verificação individual, em que cada aluno confere os factos de um colega e marca cada um como confirmado ou desmentido; 15 na sala, a passar o seu auto para o guião; 5 para conferir o número de degraus com outra pessoa.'),
+   ('20 a 55', 'Cartões 4 a 14. O vídeo de Herman (4\u00a0min\u00a050\u00a0s) projeta-se com legendas no cartão 8; diante do quadro de La Tour, dois minutos de silêncio antes de alguém falar.'),
+   ('55 a 125', '«Na aula» (70\u00a0minutos): 5 para as regras do trabalho individual; 20 no lugar (um facto por nota; contam-se os degraus); 10 de pausa; 15 na verificação individual, em que cada aluno confere os factos de um colega e marca cada um como confirmado ou desmentido; 15 na sala, a passar o seu auto para o guião; 5 para conferir o número de degraus com outra pessoa.'),
    ('125 a 150', 'Cartões 16 a 20.'),
    ('150 a 170', '«Para levar»: palpites contra contagem (quantos acertaram, quantos erraram por mais de três). Cada um guarda os factos com o resto do seu material.'),
    ('170 a 180', 'Folga: as duas colunas do vídeo e as cinco coisas do quadro passam a limpo no guião; cada um escreve o lugar para a sessão 2.'),
   ],
   # 01/11/2026 (correção 2, revisor de pt-PT): no guia, o crédito do vídeo sem a instrução ao aluno («ativa as legendas»)
   'video_cred': 'TED-Ed, lição de Amy\u00a0E.\u00a0Herman, em inglês, com legendas no leitor.',
-  'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5 centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
+  'materiais': ['A forma escolhida por cada aluno para guardar o material; para quem quiser, cartões brancos de 12,5 por 7,5\u00a0centímetros.', 'O guião da sessão 1, impresso.', 'Projetor com som e um relógio visível.'],
   'escrito': 'O palpite e a contagem; as duas colunas do vídeo; as cinco coisas do quadro; o auto individual, com as marcas de quem o verificou; os factos, na forma escolhida por cada um; o lugar para a sessão 2.',
   'produto': 'o auto de observação, individual',
   # 01/11/2026 (correção 6, revisor de pt-PT): «A pergunta a que o lugar não responde», como o campo do guião que avalia
@@ -123,7 +123,7 @@ GUIA = {
    ('0 a 5', '«Abre»: diz-se à turma o lugar da saída ou, se não houver saída, a alternativa (a janela ou uma fotografia de rua).'),
    ('5 a 15', '«Decide», de braço no ar.'),
    ('15 a 50', 'Cartões 3 a 12: as duas versões do conselho (a do livro, de 1940, e a de Maupassant, de 1888) lidas em voz alta, com a comparação no guião; a fotografia de Atget com dez minutos de «vejo, concluo, não sei».'),
-   ('50 a 120', '«Na aula» (70 minutos): 5 para as regras (deslocação aos pares por segurança; trabalho individual; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
+   ('50 a 120', '«Na aula» (70\u00a0minutos): 5 para as regras (deslocação aos pares por segurança; trabalho individual; ninguém fotografa caras; pessoas só de longe; quinze notas); 5 de caminho; 25 no lugar (cada um escolhe o seu «cocheiro», escreve-o no guião, regista as quinze notas e escreve a linha que só serve para ele); 5 de regresso; 10 de pausa; 15 para a fila de reconhecimento (cada um lê a sua linha sem dizer o que é; a turma diz qual é; o docente regista «reconhecido» ou «não»); 5 para cada um rever a linha.'),
    ('120 a 145', 'Cartões 14 a 18.'),
    ('145 a 165', 'Guião: cada um completa a tabela das duas versões do conselho; «Para levar».'),
    ('165 a 180', 'Folga: as três colunas da fotografia passam a limpo no guião; o docente explica as dez notas de material geral para o passo 2.'),
@@ -757,9 +757,9 @@ def pagina_guia(L):
              '<p class="pg"><b>Onde o nome volta.</b> Os cartões apresentam Young uma vez, na sessão 1, e voltam a nomeá-lo só na passagem de um passo para o outro (no fim da sessão 2, para o passo 2) e na fonte das citações. No resto, pedem o passo sem dizer quem o manda: juntar material, olhar até ao fundo, largar o problema. Na aula, o docente pode fazer o mesmo.</p></section>'
              '<section class="sessao" id="antes"><h2>Antes de começar</h2>'
              '<p class="pg"><b>O fio.</b> Cada aluno dá os cinco passos do método (juntar material, trabalhá-lo, largá-lo, deixar a ideia aparecer, dar-lhe forma e pô-la à prova) com uma ideia sua: uma peça curta que faça alguém olhar de outra maneira para um lugar a cinco minutos da escola. A forma escolhe-se na sessão 5.</p>'
-             '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (o livro aconselha cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
+             '<p class="pg"><b>O material.</b> Cada aluno decide como guarda e combina o que junta, desde que funcione: cartões (o livro aconselha cartões brancos de 12,5 por 7,5\u00a0centímetros, um assunto por cartão, que acabam por encher uma caixa), um caderno, o telemóvel, um envelope ou um mural. O guia propõe formas, não impõe uma. Nos textos do aluno diz-se «notas» e «onde guardas o material», para não se confundir com os cartões da lição.</p>'
              '<p class="pg"><b>Ler como um detetive.</b> Interpretar é investigar. Em todas as sessões voltam quatro categorias: <b>facto</b> (vê-se), <b>inferência</b> (junta factos), <b>hipótese</b> (espera provas) e <b>pergunta</b> (fica por investigar). Sherlock Holmes é a testemunha que volta, e quem o traz é o autor do método: cita-o duas vezes no livro.</p>'
-             '<p class="pg"><b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
+             '<p class="pg"><b>Cada sessão</b> tem 180\u00a0minutos, com uma pausa: cartões durante cerca de 50\u00a0minutos, um «Na aula» de 70\u00a0minutos com a pausa, cartões durante cerca de 25\u00a0minutos e o «Para levar». A lição abre-se no ecrã de cada aluno ou projeta-se (a projeção começa no primeiro cartão e não grava nada neste aparelho).</p>'
              '<p class="pg"><b>As saídas</b> são só à volta da escola, em aula, com o docente e sem autorização especial. Ninguém fotografa caras; pessoas, só de longe. São opcionais: há sempre outra forma de fazer o mesmo (da janela, numa fotografia de rua, no caminho de casa para a escola).</p>'
              '<p class="indicativa">O Laboratório não tem avaliação nem pontos. Os três critérios ajudam a rever o trabalho.</p></section>'
              # 01/11/2026 (correção 3 do método, verificador e revisor): a sequência diz os passos de cada porta como a entrada (PORTAS)
@@ -798,7 +798,7 @@ def pagina_guia(L):
                   f'<p class="pg"><b>Antes da aula.</b> {e(g["antes"])}</p>'
                   '<h3>O que o aluno lê no cartão «Na aula»</h3>'
                   f'<div class="caixa">{aula["html"]}</div>'
-                  '<h3>Tempos (180 minutos)</h3>'
+                  '<h3>Tempos (180\u00a0minutos)</h3>'
                   f'<div class="tabela"><table><thead><tr><th scope="col" class="num">Minutos</th><th scope="col">O que se faz</th></tr></thead><tbody>{tempos}</tbody></table></div>'
                   '<h3>Materiais</h3><ul>' + ''.join(f'<li>{e(m)}</li>' for m in g['materiais']) + '</ul>'
                   f'<h3>O que fica escrito</h3><p class="pg">{e(g["escrito"])}</p>'
@@ -889,7 +889,7 @@ def pagina_biblioteca():
             f'<body data-texto="{BIB_ID}"><nav class="migalhas" aria-label="Onde estás"><ol><li><a href="{LENTE}"><svg viewBox="0 0 16 16" aria-hidden="true" class="mg-casa"><path d="M2 8.2 8 2.6l6 5.6M4 7v7h3v-4h2v4h3V7"/></svg>Lente</a></li>'
             f'<li><a href="{LENTE}biblioteca/">Biblioteca</a></li><li><span aria-current="page">{titulo}</span></li></ol><span data-appearance-control></span></nav><main class="bib">\n'
             f'<header class="p-cab"><p class="p-etiqueta"><a href="{LENTE}">Lente</a> · <a href="{LENTE}biblioteca/">Biblioteca</a></p><h1>{titulo}</h1>'
-            '<p class="p-sub">James Webb Young, 1940, português (tradução nossa), 1 min de leitura</p>'
+            '<p class="p-sub">James Webb Young, 1940, português (tradução nossa), 1\u00a0min de leitura</p>'
             '<p class="p-lead">Um livro curto de um publicitário norte-americano, que descreve em cinco passos como se chega a uma ideia. Aqui ficam os dois princípios em que assenta; o primeiro retoma uma ideia do sociólogo italiano Vilfredo Pareto, que o livro cita antes.</p></header>\n'
             '<p class="bib-fonte"><b>Fonte:</b> James Webb Young, <i lang="en">A Technique for Producing Ideas</i>, Advertising Publications, 1940; edição de 1960. '
             'Capítulo «Combinação de Elementos Antigos». Excerto, com um corte assinalado. Tradução nossa.</p>\n'

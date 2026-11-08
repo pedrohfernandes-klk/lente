@@ -127,7 +127,8 @@ class Ginasio(unittest.TestCase):
             self.assertIn('semPontos:true', s, d.name)
             self.assertIn('var soLer=!nFazer()||cfg.semPontos;', s, d.name)
             self.assertIn('pontos:ganho&&!cfg.semPontos?', s, d.name)
-            self.assertIn(' min de escrita</p>', itens[0]['html'], d.name)
+            # 08/11/2026: decisão 152 (achado 61 da varredura de 6/11): o tempo de escrita leva espaço sem quebra («12 min»).
+            self.assertIn('\u00a0min de escrita</p>', itens[0]['html'], d.name)
 
     def test_ligacoes_locais_existem(self):
         paginas = [d / 'index.html' for d in treinos()] + [G / 'index.html', G / 'caderno/index.html', G / 'docente/index.html', R / 'narrativas/index.html', R / 'vozes/index.html', R / 'index.html', R / 'mapa/index.html', R / 'narrativas/proposta-subtexto/index.html']

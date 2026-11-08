@@ -42,7 +42,7 @@ INSTRUMENTOS = [
 DECISOES = [
     ('As etapas', 'As páginas das dez etapas (Módulo 2, «As dez etapas») ficam publicadas, cada uma com uma linha para a sessão com o mesmo número.'),
     ('A análise crítica', 'A análise crítica de um caso é individual, com revisão de um colega. O docente aprova a lista de casos reais; cada caso é real, datado, tem duas fontes independentes e não envolve menores nem pessoas privadas. As páginas não trazem casos reais de exemplo: a lista é do docente.'),
-    ('A sessão 10', 'Tempos de 5, 10, 20, 125 e 20 minutos. Público de outra turma ou das famílias. Um espaço fora da sala, a decidir pelo docente.'),
+    ('A sessão 10', 'Tempos de 5, 10, 20, 125 e 20\u00a0minutos. Público de outra turma ou das famílias. Um espaço fora da sala, a decidir pelo docente.'),
     ('O manifesto', 'A assinatura do manifesto é livre e pode levar uma reserva escrita.'),
     ('Vídeos e Naufrágio', 'Os dois vídeos «em revisão» de Ver para fazer (o registo de CHIROPTERA, v120, e o anúncio Hilltop, v108) e o romance Naufrágio, de João Tordo, não entram nas sessões.'),
 ]
@@ -67,11 +67,11 @@ IMAGENS = {
     'jacquard': dict(src='img/cidadania/jacquard.webp', alt='Fotografia de uma máquina de Jacquard num museu: um mecanismo negro sobre pés torneados, com uma tira larga de papel perfurado a descer pela frente.',
                      legenda='Máquina de Jacquard para cartões de papel contínuos (sistema Verdol), Musée des Arts et Métiers, Paris.', credito='Fotografia de David Monniaux, 2006, CC BY-SA 3.0', url='https://commons.wikimedia.org/wiki/File:Jacquard_loom_p1040320.jpg', ancora='jacquard'),
     'goya': dict(src='img/cidadania/goya.webp', alt='Gravura de um homem adormecido, debruçado sobre uma mesa onde está escrito o título; à sua volta, corujas e morcegos, e um felino deitado no chão.',
-                 legenda='Francisco de Goya, Caprichos, n.º 43, «El sueño de la razón produce monstruos», 1799.', credito='Domínio público', url='https://commons.wikimedia.org/wiki/File:Goya-Capricho-43.jpg', ancora='goya'),
+                 legenda='Francisco de Goya, Caprichos, n.º\u00a043, «El sueño de la razón produce monstruos», 1799.', credito='Domínio público', url='https://commons.wikimedia.org/wiki/File:Goya-Capricho-43.jpg', ancora='goya'),
     'daumier': dict(src='img/cidadania/daumier.webp', alt='Gravura a preto e branco: uma rapariga de pé, à esquerda, diante de uma bancada alta com três homens de toga; dois têm barrete, e um deles debruça-se a olhar para ela.',
                     legenda='Honoré Daumier, Huis clos, gravura do conjunto Les gens de justice.', credito='Domínio público', url='https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg', ancora='daumier'),
     'cabaret': dict(src='img/cidadania/cabaret.webp', alt='Cartaz a preto e branco com três rostos desenhados em facetas angulosas e, em baixo, o texto Künstlerkneipe Voltaire com o programa da abertura.',
-                    legenda='Marcel Słodki, cartaz da abertura do Cabaret Voltaire, Zurique, 5 de fevereiro de 1916.', credito='Domínio público', url='https://commons.wikimedia.org/wiki/File:Marcel_S%C5%82odki_Cabaret-Voltaire-poster_1916.jpg', ancora='cabaret'),
+                    legenda='Marcel Słodki, cartaz da abertura do Cabaret Voltaire, Zurique, 5\u00a0de\u00a0fevereiro\u00a0de\u00a01916.', credito='Domínio público', url='https://commons.wikimedia.org/wiki/File:Marcel_S%C5%82odki_Cabaret-Voltaire-poster_1916.jpg', ancora='cabaret'),
 }
 
 # A fotografia de Lisboa de 1907 (passo 04, A e B). Registo aberto a 28/10/2026: a estereoscopia n.º 11420 da
@@ -82,7 +82,7 @@ IMAGENS = {
 # J. J. Killelea & Co.» (imagem 1s35830v.jpg da Library of Congress, vista a 28/10/2026).
 LISBOA_1907 = dict(a=dict(src='img/cidadania/lisboa-1907-a.webp', alt='Versão A: fotografia antiga de uma praça de Lisboa; ao centro, uma estátua de pé sobre um pedestal alto com uma inscrição; à volta, homens de chapéu.'),
                    b=dict(src='img/cidadania/lisboa-1907-b.webp', alt='Versão B: a mesma praça e os mesmos homens de chapéu; o pedestal, com a inscrição, não tem estátua.'),
-                   credito='Lisboa, 1907: recorte de uma das metades da estereoscopia n.º 11420, edição H. C. White Co. (copyright de J. J. Killelea & Co.). Library of Congress, sem restrições conhecidas de publicação (domínio público)',
+                   credito='Lisboa, 1907: recorte de uma das metades da estereoscopia n.º\u00a011420, edição H. C. White Co. (copyright de J. J. Killelea & Co.). Library of Congress, sem restrições conhecidas de publicação (domínio público)',
                    url='https://www.loc.gov/item/2021640877/')
 
 SESSOES = [
@@ -130,18 +130,23 @@ dict(
  ve=[dict(tipo='imagem', titulo='O público de Hogarth', instrucao='Repara nos dois homens que não olham para o palco. Se alguém contasse só quem ri, quem ficava fora da conta?',
           leitura='Hogarth gravou este público em 1733. Quem mede a atenção de quem está no palco não vê os que se distraem.', fonte=('Passo 03', 'cidadania/m2/passo-03/')),
      dict(tipo='video', titulo='Justice, episódio 2, o Ford Pinto',
-          sobre='Excerto 3, de 6:29 a 9:27 (2 min 58 s), no canal da Harvard University, em inglês. A tradução está na Justiça, lição 2.',
+          sobre='Excerto 3, de 6:29 a 9:27 (2\u00a0min\u00a058\u00a0s), no canal da Harvard University, em inglês. A tradução está na Justiça, lição 2.',
           antes='Ouve os números. Quanto custava a peça, e quanto valia cada morte na conta?',
           depois='A Ford pôs um preço na vida. Isso torna a conta aceitável?',
-          sem_video='A proteção do depósito custava 11 dólares por peça, em 12,5 milhões de carros e camiões: 137 milhões de dólares. Os benefícios somavam 49,5 milhões, com cada morte a 200 mil dólares. A Ford não instalou a proteção.',
+          sem_video='A proteção do depósito custava 11\u00a0dólares por peça, em 12,5\u00a0milhões de carros e camiões: 137\u00a0milhões de dólares. Os benefícios somavam 49,5\u00a0milhões, com cada morte a 200\u00a0mil dólares. A Ford não instalou a proteção.',
           url='https://www.youtube.com/watch?v=0O2Rq4HJBxw&t=389s', licao=('Justiça, lição 2: o excerto com tradução', 'olhar-e-decidir/justica/licao-2/')),
      dict(tipo='texto', titulo='O peso do digital', instrucao='Que custo não aparece no ecrã?',
-          texto='Os centros de dados gastaram cerca de 415 TWh de eletricidade em 2024, perto de 1,5% do consumo mundial (Agência Internacional de Energia, Energy and AI, 2025). Em 2022, houve 62 milhões de toneladas de lixo eletrónico, e só 22,3% foram recolhidos e reciclados com registo (Global E-waste Monitor 2024).',
+          texto='Os centros de dados gastaram cerca de 415\u00a0TWh de eletricidade em 2024, perto de 1,5% do consumo mundial (Agência Internacional de Energia, Energy and AI, 2025). Em 2022, houve 62\u00a0milhões de toneladas de lixo eletrónico, e só 22,3% foram recolhidos e reciclados com registo (Global E-waste Monitor 2024).',
           fonte=('Passo 03', 'cidadania/m2/passo-03/'))],
  leitura='Um sistema de recomendação ordena o que existe pelo que prevê que te vai prender. Tem dados, regras e uma meta: o tempo que ficas. Não tem uma opinião sobre o que é bom para ti.',
  decide=dict(silencio='Quanto pedirias para ficar um mês sem a aplicação que mais usas? Escreve o número e o que ele deixa de fora.',
              grupo=['Utilizador, plataforma, anunciante, legislador: o que paga e o que recebe cada um?',
-                    'No caso «A regra do feed», o conteúdo A tem 90 segundos de atenção média e 20 avaliações positivas; o B, 45 segundos e 50; o C, 120 segundos e 10. Ordenem pelo tempo, depois pelas avaliações. Que critério deve decidir o que aparece primeiro?',
+                    # 08/11/2026: decisão 152 (cuidado em todas as lições). Os seis números da regra do feed numa tabela, junto da tarefa.
+                    ('No caso «A regra do feed», ordenem os três conteúdos pelo tempo, depois pelas avaliações. Que critério deve decidir o que aparece primeiro?',
+                     '<table class="apoio-tabela c10-tabela"><caption>A regra do feed</caption><thead><tr><th scope="col">Conteúdo</th><th scope="col">Atenção média</th><th scope="col">Avaliações positivas</th></tr></thead>'
+                     '<tbody><tr><th scope="row">A</th><td data-rotulo="Atenção média">90\u00a0segundos</td><td data-rotulo="Avaliações positivas">20</td></tr>'
+                     '<tr><th scope="row">B</th><td data-rotulo="Atenção média">45\u00a0segundos</td><td data-rotulo="Avaliações positivas">50</td></tr>'
+                     '<tr><th scope="row">C</th><td data-rotulo="Atenção média">120\u00a0segundos</td><td data-rotulo="Avaliações positivas">10</td></tr></tbody></table>'),
                     'Comparem os valores que cada pessoa escreveu no início. A Ford pôs um preço numa vida; a plataforma põe um preço no vosso minuto. O que fica de fora de cada conta?'],
              comparar='Um número ajuda a comparar, mas não decide sozinho o que vale. Sandel duvida de que o que valorizamos caiba numa medida única. Ordenar por um sinal não demonstra uma hierarquia de qualidade.'),
  faz=dict(tarefas=['Individualmente, analisa o teu diário: agrupa os temas, conta as repetições, separa três observações de duas explicações possíveis e escreve um limite, o que sete dias não provam.',
@@ -152,7 +157,7 @@ dict(
  leva=dict(pergunta='Numa frase: o que mede um feed quando mede o teu tempo, e o que não consegue saber?',
            confirma=['Separas o sinal do motivo.', 'Usas um exemplo do teu diário.', 'Não identificas ninguém.']),
  depois=[('Passo 03: a economia da atenção', 'cidadania/m2/passo-03/'),
-         ('Exercício longo: o preço de um minuto (cerca de 25 minutos)', 'cidadania/m2/cid-m2-preco-minuto/'),
+         ('Exercício longo: o preço de um minuto (cerca de 25\u00a0minutos)', 'cidadania/m2/cid-m2-preco-minuto/'),
          ('Justiça, lição 2: pôr um preço à vida. Obrigatória, até à sessão 03', 'olhar-e-decidir/justica/licao-2/'),
          ('Caso: a regra do feed', 'cidadania/m2/cid-m2-a-regra-do-feed/')],
  inclusao=['O vídeo é em inglês, com tradução na lição e alternativa escrita.', 'Ninguém mostra o seu telemóvel.', 'O diário regista só temas.'],
@@ -167,9 +172,9 @@ dict(
            ('De que duvida Sandel quando se põe tudo numa só conta?', 'De que tudo o que valorizamos caiba numa medida única. Um número ajuda a comparar, mas não decide sozinho o que vale.'),
            ('Que tema mais se repetiu no teu diário?', None)],
  ve=[dict(tipo='imagem', titulo='A Declaração de 1789', instrucao='Procura o olho no triângulo, no topo. Quem vigia quem?',
-          leitura='A pintura mostra a Declaração de 1789 como tábuas da lei. O artigo 11.º chama à livre comunicação dos pensamentos «um dos direitos mais preciosos» e, na mesma frase, fala da responsabilidade pelos abusos.',
+          leitura='A pintura mostra a Declaração de 1789 como tábuas da lei. O artigo\u00a011.º chama à livre comunicação dos pensamentos «um dos direitos mais preciosos» e, na mesma frase, fala da responsabilidade pelos abusos.',
           fonte=('Passo 02', 'cidadania/m2/passo-02/')),
-     dict(tipo='citacao', titulo='Declaração Universal dos Direitos Humanos, artigo 19.º', instrucao='Lê duas vezes. Na segunda, marca as três ações que o artigo protege sobre as informações e as ideias.',
+     dict(tipo='citacao', titulo='Declaração Universal dos Direitos Humanos, artigo\u00a019.º', instrucao='Lê duas vezes. Na segunda, marca as três ações que o artigo protege sobre as informações e as ideias.',
           texto='Todo o indivíduo tem direito à liberdade de opinião e de expressão, o que implica o direito de não ser inquietado pelas suas opiniões e o de procurar, receber e difundir, sem consideração de fronteiras, informações e ideias por qualquer meio de expressão.',
           fonte=('ONU / UNRIC, Declaração Universal dos Direitos Humanos', 'https://unric.org/pt/declaracao-universal-dos-direitos-humanos/')),
      dict(tipo='texto', titulo='O contexto em falta', instrucao='Lê o caso. Ainda não decidas se sai do ar.',
@@ -181,7 +186,13 @@ dict(
              grupo=['Liguem cada situação a um direito ou a um limite da lei: publicar uma crítica dura ao horário da escola; fazer uma curta-metragem que ninguém pediu e mostrá-la; publicar um vídeo a pedir que se expulsem «os de fora» da escola.',
                     'No excerto de oito segundos, o que está demonstrado, e o que falta verificar?',
                     'Uma publicação da turma a criticar o horário é retirada por «conteúdo impróprio», sem explicação. Qual é a primeira ação?'],
-             comparar='A crítica ao horário é liberdade de expressão (Declaração Universal, artigo 19.º; Constituição, artigo 37.º): criticar uma instituição está no centro desse direito. A curta-metragem é liberdade de criação cultural (Constituição, artigo 42.º). O vídeo contra «os de fora» passa o limite: apelar à violência ou ao ódio contra pessoas por uma característica do grupo não é opinião, é crime (Código Penal, artigo 240.º). Entre a crítica e o crime, a moderação tem de explicar e permitir recurso. O Regulamento dos Serviços Digitais dá três direitos: denunciar, receber uma explicação e recorrer.'),
+             # 08/11/2026: decisão 152. A resposta à tarefa 1 (situação, direito ou limite, onde está) numa tabela; a coluna
+             # «Situação» usa o texto da própria tarefa.
+             comparar_tabela=('<table class="apoio-tabela c10-tabela"><thead><tr><th scope="col">Situação</th><th scope="col">Direito ou limite</th><th scope="col">Onde está</th></tr></thead><tbody>'
+                              '<tr><th scope="row">Publicar uma crítica dura ao horário da escola</th><td data-rotulo="Direito ou limite">Liberdade de expressão: criticar uma instituição está no centro desse direito.</td><td data-rotulo="Onde está">Declaração Universal, artigo\u00a019.º; Constituição, artigo\u00a037.º</td></tr>'
+                              '<tr><th scope="row">Fazer uma curta-metragem que ninguém pediu e mostrá-la</th><td data-rotulo="Direito ou limite">Liberdade de criação cultural.</td><td data-rotulo="Onde está">Constituição, artigo\u00a042.º</td></tr>'
+                              '<tr><th scope="row">Publicar um vídeo a pedir que se expulsem «os de fora» da escola</th><td data-rotulo="Direito ou limite">Passa o limite: apelar à violência ou ao ódio contra pessoas por uma característica do grupo não é opinião, é crime.</td><td data-rotulo="Onde está">Código Penal, artigo\u00a0240.º</td></tr></tbody></table>'),
+             comparar='Entre a crítica e o crime, a moderação tem de explicar e permitir recurso. O Regulamento dos Serviços Digitais dá três direitos: denunciar, receber uma explicação e recorrer.'),
  faz=dict(tarefas=['Escreve a carta de recurso para a publicação retirada: o que foi decidido, que regra devia ter sido dita, porque é opinião e o que pedes.',
                    'Escreve a cena das quatro cadeiras, uma fala em cada: quem publicou, quem denunciou, quem modera e, depois, a do recurso (na aula, em turma).',
                    'Escreve as regras da casa do teu Contra-feed, cinco no máximo: o que a peça nunca mostra (pessoas expostas, nomes, capturas com pessoas) e como o público pode responder ou contestar.'],
@@ -198,7 +209,7 @@ dict(
 dict(
  titulo='Ver de outro lugar', tema='Perspetiva e os limites do que sabemos',
  pergunta='Imaginar a experiência de outro é o mesmo que a conhecer?', imagem='haeckel', etapa='Ver de outro lugar',
- recupera=[('Que três ações sobre as informações protege o artigo 19.º?', 'Procurar, receber e difundir.'),
+ recupera=[('Que três ações sobre as informações protege o artigo\u00a019.º?', 'Procurar, receber e difundir.'),
            ('Que três direitos dá o Regulamento dos Serviços Digitais quando há moderação?', 'Denunciar, receber uma explicação e recorrer.'),
            ('Que regra da casa foi mais difícil de escrever?', None)],
  ve=[dict(tipo='imagem', titulo='Os morcegos de Haeckel', instrucao='Observa. O que sabes do morcego só por o ver? O que é que nenhum desenho consegue mostrar?',
@@ -253,7 +264,7 @@ dict(
  leva=dict(pergunta='Numa frase: o que precisas de saber sobre uma imagem antes de a partilhares?',
            confirma=['Referes a fonte ou a data.', 'Perguntas quem publicou e porquê.', 'Não confundes a ferramenta com a responsabilidade.']),
  depois=[('Passo 04: quem está dentro da caixa?', 'cidadania/m2/passo-04/'),
-         ('Exercício longo: quem está dentro da caixa? (cerca de 25 minutos)', 'cidadania/m2/cid-m2-dentro-da-caixa/'),
+         ('Exercício longo: quem está dentro da caixa? (cerca de 25\u00a0minutos)', 'cidadania/m2/cid-m2-dentro-da-caixa/'),
          ('Para a sessão 06: lê os critérios da análise crítica no Contra-feed', 'cidadania/contra-feed/')],
  inclusao=['Nenhuma imagem de pessoa real é alterada na sala.', 'A pesquisa inversa faz-se no projetor, para quem não tem dados móveis.'],
  docente='Apresentar a lista de casos reais aprovada para a sessão 06 (decisão provisória 2): a análise crítica prepara-se aqui. Nas fotografias de Lisboa, a página não diz qual foi alterada: a resposta (B) fica em «Comparar razões», no fim do Decide.',
@@ -272,12 +283,12 @@ dict(
           leitura='No tear de Jacquard, as regras estavam em cartão, à vista. Num caso, as regras que decidem o que se vê estão muitas vezes escondidas. Analisar um caso é pedir o cartão: que regra decidiu, quem a escreveu, onde está escrita.',
           fonte=('Passo 07', 'cidadania/m2/passo-07/')),
      dict(tipo='texto', titulo='A carta de «Gil Goes», 1917', instrucao='Lê como um leitor de 1917. O que te faria acreditar?',
-          texto='A 11 de junho de 1917, a edição da noite de O Século publicou na primeira página uma carta assinada «Gil Goes». Quem assinava contava um «facto misterioso»: três homens embuçados a sair de um velho prédio desabitado da Rua Saraiva de Carvalho, em Lisboa. Carregavam com esforço um volume com forma humana.',
+          texto='A 11\u00a0de\u00a0junho\u00a0de\u00a01917, a edição da noite de O Século publicou na primeira página uma carta assinada «Gil Goes». Quem assinava contava um «facto misterioso»: três homens embuçados a sair de um velho prédio desabitado da Rua Saraiva de Carvalho, em Lisboa. Carregavam com esforço um volume com forma humana.',
           revela='Não era a carta de um leitor. Gil Goes era um pseudónimo de Reinaldo Ferreira, então com 19 anos, e a carta era o primeiro episódio de uma ficção publicada como se fosse verdadeira.',
           aviso='Aviso de método das Margens: o jornal de 1917 não foi visto em linha. O relato vem de fontes secundárias que concordam entre si.',
           fonte=('Margens, passo 01', 'narrativas/margens/passo-01/')),
      dict(tipo='texto', titulo='«este nome ou outro que os leitores quiserem»', instrucao='Em que difere este aviso da carta de 1917?',
-          texto='Em 1930, o mesmo autor já assinava Repórter X e dirigia um semanário com esse nome. No n.º 8, de 27 de setembro, dá um nome a uma personagem e acrescenta logo, entre parênteses: «este nome ou outro que os leitores quiserem».',
+          texto='Em 1930, o mesmo autor já assinava Repórter X e dirigia um semanário com esse nome. No n.º\u00a08, de 27\u00a0de\u00a0setembro, dá um nome a uma personagem e acrescenta logo, entre parênteses: «este nome ou outro que os leitores quiserem».',
           fonte=('Margens, passo 01', 'narrativas/margens/passo-01/')),
      dict(tipo='fontes', titulo='As três fontes do caso do músico', instrucao='Lê uma fonte de cada vez. Diz para que serve cada uma, e para que não serve.',
           texto='Caso inventado para treino: a conta de um músico da cidade foi suspensa por um sistema automático na véspera de um concerto.',
@@ -286,14 +297,16 @@ dict(
                   ('Um vídeo de reação', 'Um criador de conteúdos, sem fontes. Indigna-se, acusa a plataforma de censura e pede partilhas.')],
           fonte=('Caso inventado do passo 07', 'cidadania/m2/passo-07/'))],
  decide=dict(silencio='Quatro frases sobre o músico. Quais são factos, quais são suposições e qual é uma opinião?',
-             silencio_lista=['«A conta foi suspensa a 3 de março; a plataforma confirmou por escrito.»', '«Deve ter sido por causa de uma denúncia de um concorrente.»',
-                             '«O concerto era a 4 de março; o cartaz está arquivado.»', '«A plataforma odeia músicos independentes.»'],
+             silencio_lista=['«A conta foi suspensa a 3\u00a0de\u00a0março; a plataforma confirmou por escrito.»', '«Deve ter sido por causa de uma denúncia de um concorrente.»',
+                             '«O concerto era a 4\u00a0de\u00a0março; o cartaz está arquivado.»', '«A plataforma odeia músicos independentes.»'],
              grupo=['Por que fonte começam, com qual a confrontam, e que segunda fonte independente vão procurar?',
                     'Um blogue repete a nota de uma empresa. São duas confirmações, ou uma?',
                     'Escolhe o caso que vais analisar e confere os critérios: real, datado, com duas fontes independentes, sem menores nem pessoas privadas (na aula, escolhe-o da lista apresentada na sessão 05).'],
              comparar='Um facto tem data e fonte; «deve ter sido» é suposição: ainda não está confirmada. Duas fontes que não dependem uma da outra reduzem o erro. Um assistente de inteligência artificial não é uma fonte.'),
- faz=dict(intro='A análise crítica de um caso vale 20% do módulo. É individual.',
-          tarefas=['Responde às quatro perguntas, por ordem: o que aconteceu (factos, com data e fonte); quem decidiu (pessoa, empresa, máquina); com que regras (lei, regras da casa, algoritmo); o que podia ter sido diferente, e que direito o permitia.',
+ faz=dict(intro='A análise crítica de um caso vale 20\u00a0% do módulo. É individual.',
+          # 08/11/2026: decisão 152. As quatro perguntas do método, pela ordem, numa sublista (o Recupera da 07 volta a elas).
+          tarefas=[('Responde às quatro perguntas, por ordem:', ['O que aconteceu? Factos, com data e fonte.', 'Quem decidiu? Pessoa, empresa, máquina.',
+                                                               'Com que regras? Lei, regras da casa, algoritmo.', 'O que podia ter sido diferente, e que direito o permitia?']),
                    'Usa duas fontes independentes para cada facto importante.',
                    'Liga o caso que escolheste à regra do teu Contra-feed, numa frase que possa entrar no guião (na sessão 07 vais usá-la no momento em que o público percebe a regra).'],
           nota='Se faltar tempo, a análise fica a meio e acaba nos primeiros minutos da sessão 07, antes da entrega.',
@@ -330,7 +343,9 @@ dict(
                     'Com ou sem ecrã: cada pessoa confirma ou revê a casa 5.',
                     'Cada pessoa escreve a proposta de valor em três linhas: o que a peça oferece; a quem; o que custa a quem a faz e a quem a vê. Junta uma regra para o que a peça gasta e para o que deixa.'],
              comparar='Um conceito diz o que o público faz ou sofre em cena; um resumo diz o que vai ser explicado. A peça pode ser bela e estranha, mas tem de deixar o público mais acordado do que entrou.'),
- faz=dict(tarefas=['Escreve o guião, versão 1, em quatro partes. Entrada: o que o público faz ao chegar. Regras: o que a peça lhe faz, sem explicar. Viragem: o momento em que o público percebe a regra. Saída: o que fica a saber. A viragem pode usar a frase do caso, da casa 6.',
+ # 08/11/2026: decisão 152. As quatro partes do guião, pela ordem, numa sublista.
+ faz=dict(tarefas=[('Escreve o guião, versão 1, em quatro partes:', ['Entrada: o que o público faz ao chegar.', 'Regras: o que a peça lhe faz, sem explicar.',
+                                                                    'Viragem: o momento em que o público percebe a regra. Pode usar a frase do caso, da casa\u00a06.', 'Saída: o que fica a saber.']),
                    'Experimenta uma sequência curta com os materiais da sala e revê uma escolha.',
                    'Quem não quer estar em cena faz uma vídeo-performance, como o projeto permite.'],
           revisao='Assinala onde o público perceberia a regra.'),
@@ -426,7 +441,7 @@ dict(
       ('Fiz', 'Produzi alguma coisa (um ensaio, uma peça, uma decisão defendida em voz alta) que outra pessoa pôde pôr em causa?')],
  depois=[],
  inclusao=['Ninguém é filmado sem acordo.'],
- docente='Tempos de 5, 10, 20, 125 e 20 minutos (decisão provisória 3). Os 125 minutos são para as mostras curtas individuais, cada uma seguida de defesa; o tempo de cada aluno fica a decidir pelo docente. Público de outra turma ou das famílias, num espaço fora da sala, a decidir pelo docente.',
+ docente='Tempos de 5, 10, 20, 125 e 20\u00a0minutos (decisão provisória 3). Os 125\u00a0minutos são para as mostras curtas individuais, cada uma seguida de defesa; o tempo de cada aluno fica a decidir pelo docente. Público de outra turma ou das famílias, num espaço fora da sala, a decidir pelo docente.',
 ),
 ]
 
@@ -434,7 +449,7 @@ dict(
 OBRAS = {
 1: dict(titulo='Artista e designer', autor='Bruno Munari', data='1971', protegida=True,
  razao='Munari começa pelo «para quem» e pelo «para quê», antes da expressão.',
- contexto='Bruno Munari (1907-1998) foi um artista e designer italiano. Desenhou livros, brinquedos, objetos e experiências para aprender a observar. Em Artista e designer (1971), separa o artista, que exprime o que sente e faz o objeto único, do designer, que resolve um problema para muitos e trabalha em série. Não é uma hierarquia: são duas perguntas diferentes. Em Da cosa nasce cosa (1981), descreve o projeto como uma receita: definir o problema, recolher, analisar, ter ideias, fazer modelos, verificar com quem vai usar.',
+ contexto='Bruno Munari (1907–\u20601998) foi um artista e designer italiano. Desenhou livros, brinquedos, objetos e experiências para aprender a observar. Em Artista e designer (1971), separa o artista, que exprime o que sente e faz o objeto único, do designer, que resolve um problema para muitos e trabalha em série. Não é uma hierarquia: são duas perguntas diferentes. Em Da cosa nasce cosa (1981), descreve o projeto como uma receita: definir o problema, recolher, analisar, ter ideias, fazer modelos, verificar com quem vai usar.',
  acesso=[('Percurso de Munari, Museo dell’Ara Pacis, PDF em italiano', 'https://www.arapacis.it/sites/default/files/storage/original/application/a38b5b3c41bfc3f458d9dc2242fe9b19.pdf')],
  pergunta='Um feed foi desenhado para quem, e que problema resolve?',
  ligacoes=[('Passo 00: o artista e o designer', 'cidadania/m2/passo-00/'), ('O preço de um minuto', 'cidadania/m2/cid-m2-preco-minuto/')],
@@ -448,12 +463,12 @@ OBRAS = {
  discordante='Mill, que Sandel lê no mesmo episódio, mantém o cálculo, mas distingue prazeres superiores e inferiores: o teste é a preferência de quem experimentou os dois. Quem conhece as duas ordens do feed, «para ti» e por data, saberia dizer qual vale mais?'),
 3: dict(titulo='Declaração dos Direitos da Mulher e da Cidadã', autor='Olympe de Gouges', data='1791',
  razao='Olympe de Gouges reescreveu, artigo a artigo, a Declaração que aparece na pintura de Le Barbier, e mostrou quem a liberdade de 1789 deixava fora da tribuna.',
- contexto='Olympe de Gouges, pseudónimo de Marie Gouze, era dramaturga e ativista política. Em 1791, dois anos depois da Declaração dos Direitos do Homem e do Cidadão, reescreveu-a artigo a artigo, pondo a mulher onde o texto dizia o homem. Juntou um prefácio dirigido à rainha e um posfácio que começa por «Mulher, acorda». No artigo X tira uma consequência: se a mulher tem o direito de subir ao cadafalso, deve ter igualmente o de subir à tribuna. Foi guilhotinada em Paris em 1793, por causa dos seus escritos.',
+ contexto='Olympe de Gouges, pseudónimo de Marie Gouze, era dramaturga e ativista política. Em 1791, dois anos depois da Declaração dos Direitos do Homem e do Cidadão, reescreveu-a artigo a artigo, pondo a mulher onde o texto dizia o homem. Juntou um prefácio dirigido à rainha e um posfácio que começa por «Mulher, acorda». No artigo\u00a0X tira uma consequência: se a mulher tem o direito de subir ao cadafalso, deve ter igualmente o de subir à tribuna. Foi guilhotinada em Paris em 1793, por causa dos seus escritos.',
  acesso=[('O exemplar de 1791 no Internet Archive, em francês', 'https://archive.org/details/lesdroitsdelafem00goug')],
  pergunta='Quem fica de fora quando uma regra diz «todos»?',
  ligacoes=[('Caso em português: quem partilha o risco pode tomar a palavra?', 'cidadania/m2/sessoes/03/#caso-reciclado'), ('Passo 02: o que podemos dizer?', 'cidadania/m2/passo-02/')],
- discordante='No mesmo artigo X, Gouges aceita um limite: as manifestações não podem perturbar a ordem pública estabelecida pela lei. Quem decide o que perturba a ordem? Um limite à palavra protege quem ouve, ou quem manda?'),
-4: dict(titulo='What Is It Like to Be a Bat?', autor='Thomas Nagel', data='The Philosophical Review, 83(4), 1974, pp. 435-450', protegida=True,
+ discordante='No mesmo artigo\u00a0X, Gouges aceita um limite: as manifestações não podem perturbar a ordem pública estabelecida pela lei. Quem decide o que perturba a ordem? Um limite à palavra protege quem ouve, ou quem manda?'),
+4: dict(titulo='What Is It Like to Be a Bat?', autor='Thomas Nagel', data='The Philosophical Review, 83(4), 1974, pp.\u00a0435–\u2060450', protegida=True,
  razao='Nagel separa saber como uma coisa funciona de saber como é vivê-la. O Contra-feed precisa desse limite para não falar pelo público.',
  contexto='Thomas Nagel nasceu em Belgrado em 1937 e é cidadão americano desde 1944. Fez o doutoramento em Harvard, orientado por John Rawls, e ensinou filosofia e direito na Universidade de Nova Iorque a partir de 1980. No ensaio de 1974, escolhe o morcego, um mamífero que percebe o mundo pelo eco dos próprios gritos, um sentido que não temos. Imaginar membranas nos braços diz como seria para nós agir como um morcego, não como é para ele. O problema, escreve, existe também entre pessoas.',
  acesso=[('Registo no JSTOR', 'https://www.jstor.org/stable/2183914'), ('Prefácio de 2024, Oxford University Press', 'https://academic.oup.com/book/56130/chapter-abstract/442795822')],
@@ -462,21 +477,21 @@ OBRAS = {
  discordante='«Um dia a ciência lá chega»: se soubermos tudo o que se passa no cérebro, saberemos o que se sente. É uma das posições em debate na Ética, lição 2. Nagel não recusa que a mente seja física; diz que ainda não fazemos ideia de como isso poderia ser verdade.'),
 5: dict(titulo='Notas à tradução do artigo de Menabrea', autor='Ada Lovelace', data='1843',
  razao='Lovelace escreveu que a máquina faz o que sabemos mandar-lhe fazer. Se é assim, a responsabilidade fica com quem manda.',
- contexto='Em 1843, Ada Lovelace (1815-1852) traduziu do francês um artigo de Luigi Menabrea sobre a máquina que Charles Babbage desenhava, e juntou-lhe notas três vezes mais longas do que o artigo. Na Nota A, compara a máquina ao tear de Jacquard, que lia cartões perfurados: a máquina tece padrões algébricos como o tear tece os desenhos dos tecidos. Escreve também que a máquina não tem a pretensão de originar nada. A Nota G traz um método para obter os números de Bernoulli, considerado o primeiro programa publicado.',
+ contexto='Em 1843, Ada Lovelace (1815–\u20601852) traduziu do francês um artigo de Luigi Menabrea sobre a máquina que Charles Babbage desenhava, e juntou-lhe notas três vezes mais longas do que o artigo. Na Nota A, compara a máquina ao tear de Jacquard, que lia cartões perfurados: a máquina tece padrões algébricos como o tear tece os desenhos dos tecidos. Escreve também que a máquina não tem a pretensão de originar nada. A Nota G traz um método para obter os números de Bernoulli, considerado o primeiro programa publicado.',
  acesso=[('Transcrição Fourmilab de Sketch of the Analytical Engine, com as notas da tradutora, em inglês', 'https://www.fourmilab.ch/babbage/sketch.html'),
          ('Wikisource, Scientific Memoirs, «Notes by the Translator»', 'https://en.wikisource.org/wiki/Scientific_Memoirs/3/Sketch_of_the_Analytical_Engine_invented_by_Charles_Babbage,_Esq./Notes_by_the_Translator')],
  pergunta='Quando uma máquina gera uma imagem que ninguém desenhou, quem responde por ela?',
  ligacoes=[('Investigar: Lovelace e as ferramentas', 'investigar/passo-04/'), ('Passo 04: quem está dentro da caixa?', 'cidadania/m2/passo-04/')],
  discordante='Se a máquina não origina nada, de onde vem o que gera? O passo 04 responde que um sistema de inteligência artificial gera texto, imagem e som a partir de milhões de obras de pessoas, muitas sem autorização. A pergunta já não é só quem manda na máquina: é também de quem é o que ela aprendeu.'),
-6: dict(titulo='Conselhos a um futuro jornalista', autor='Reinaldo Ferreira (Repórter X)', data='Reporter X, n.º 9, 4 de outubro de 1930, p. 3',
+6: dict(titulo='Conselhos a um futuro jornalista', autor='Reinaldo Ferreira (Repórter X)', data='Reporter X, n.º\u00a09, 4\u00a0de\u00a0outubro\u00a0de\u00a01930, p.\u00a03',
  citacao='Faça da sua pena de jornalista uma agulheta para desencardir as maquilhagens da hipocrisia', citacao_nota='na transcrição da Biblioteca do Lente, com a ortografia do original',
  razao='É um texto português, inteiro e de acesso legal, de quem fingiu a verdade em 1917 e treze anos depois ensinava o ofício.',
- contexto='Reinaldo Ferreira (Lisboa, 1897-1935) ficou conhecido como Repórter X. Em 1917, com 19 anos, publicou em O Século, como se fossem cartas de um leitor, os episódios de uma ficção assinada «Gil Goes». Em 1930, dirigia em Lisboa o semanário Reporter X, onde saiu esta crónica assinada «R. X.»: a resposta a um jovem que lhe pede conselho para entrar no jornalismo. Algumas das suas entrevistas são hoje tidas por fictícias.',
+ contexto='Reinaldo Ferreira (Lisboa, 1897–\u20601935) ficou conhecido como Repórter X. Em 1917, com 19 anos, publicou em O Século, como se fossem cartas de um leitor, os episódios de uma ficção assinada «Gil Goes». Em 1930, dirigia em Lisboa o semanário Reporter X, onde saiu esta crónica assinada «R. X.»: a resposta a um jovem que lhe pede conselho para entrar no jornalismo. Algumas das suas entrevistas são hoje tidas por fictícias.',
  acesso=[('O número digitalizado pela Hemeroteca Municipal de Lisboa (PDF)', 'https://hemerotecadigital.cm-lisboa.pt/periodicos/reporterx/N009/N009_master/ReporterX_Ano1_N009.pdf')],
  pergunta='Quem soube fingir a verdade pode ensinar a verificá-la?',
  ligacoes=[('O texto integral, na Biblioteca', 'biblioteca/reporterx-conselhos-1930/'), ('Margens, passo 01: Repórter X', 'narrativas/margens/passo-01/')],
  discordante='Lida ao lado da carta de 1917, a crónica pode ser um manual de verificação ou só mais uma máscara. Em 1930, o próprio Repórter X avisou que um nome era «este nome ou outro que os leitores quiserem», mas não disse o que, no resto, tinha visto e o que tinha inventado. Um aviso pela metade é honestidade, ou é a máscara seguinte?'),
-7: dict(titulo='El sueño de la razón produce monstruos', autor='Francisco de Goya', data='Caprichos, n.º 43, 1799',
+7: dict(titulo='El sueño de la razón produce monstruos', autor='Francisco de Goya', data='Caprichos, n.º\u00a043, 1799',
  razao='A legenda do manuscrito do Prado diz o que o Contra-feed procura: a imaginação com a razão acordada.',
  contexto='Francisco de Goya pôs à venda em 1799 uma série de gravuras, os Caprichos, e retirou-a quase logo, por medo da Inquisição. Na gravura 43, um homem dorme debruçado sobre uma mesa, rodeado de corujas e morcegos. Não vê os monstros: tem os olhos fechados. A legenda do manuscrito do Prado diz que a imaginação sem a razão produz monstros e que, unida a ela, é a mãe das artes.',
  acesso=[('Wikimedia Commons', 'https://commons.wikimedia.org/wiki/File:Goya-Capricho-43.jpg')],
@@ -486,7 +501,7 @@ OBRAS = {
 8: dict(titulo='Of the Standard of Taste', autor='David Hume', data='em Four Dissertations, 1757',
  citacao='Só o bom senso, unido a um sentimento delicado, melhorado pela prática, aperfeiçoado pela comparação e limpo de todo o preconceito, dá aos críticos esse valioso estatuto.', citacao_nota='tradução nossa, publicada na Estética, lição 1',
  razao='Hume ajuda a ouvir o público de teste sem o tratar como juiz infalível nem como ruído.',
- contexto='David Hume (1711-1776), filósofo e historiador escocês, publicou em 1757 quatro dissertações. A última pergunta se, apesar de os gostos variarem, há maneira de dizer que um juízo é melhor do que outro. Hume vai buscar a Dom Quixote a história de dois parentes de Sancho Pança que provam um barril de vinho: um sente couro, o outro ferro. Quando o barril se esvazia, aparece no fundo uma chave velha presa a uma correia de couro.',
+ contexto='David Hume (1711–\u20601776), filósofo e historiador escocês, publicou em 1757 quatro dissertações. A última pergunta se, apesar de os gostos variarem, há maneira de dizer que um juízo é melhor do que outro. Hume vai buscar a Dom Quixote a história de dois parentes de Sancho Pança que provam um barril de vinho: um sente couro, o outro ferro. Quando o barril se esvazia, aparece no fundo uma chave velha presa a uma correia de couro.',
  acesso=[('Wikisource, em inglês', 'https://en.wikisource.org/wiki/Four_Dissertations/Of_the_Standard_of_Taste'),
          ('Em português: Do Padrão do Gosto e Outros Ensaios sobre as Artes e a Beleza, tradução de Pedro Galvão, Edições 70, 2023', None)],
  pergunta='Quem julga melhor a vossa peça: quem a fez, quem a vê pela primeira vez, ou quem já viu muitas?',
@@ -494,7 +509,7 @@ OBRAS = {
  discordante='Com Kant, na mesma lição: quando digo «é belo», peço o acordo dos outros, mas não há prova que os obrigue; só posso mostrar e dar razões. Nesse caso, a defesa não prova que a peça é boa: convida a ver.'),
 9: dict(titulo='A Quinta dos Animais', autor='George Orwell', data='Animal Farm: A Fairy Story, 1945',
  razao='Uma fábula sobre quem escreve, lê e reescreve as regras afixadas na parede, que é o que vai acontecer ao manifesto da turma.',
- contexto='George Orwell escreveu A Quinta dos Animais entre 1943 e 1944; o livro saiu em agosto de 1945, com o subtítulo «A Fairy Story». Os animais expulsam o dono da quinta. Os porcos, que aprenderam sozinhos a ler e a escrever, reduzem os princípios a sete mandamentos e pintam-nos na parede do celeiro. O último, o mais curto, diz que todos os animais são iguais. Ao longo do livro, mandamento a mandamento, a igualdade vai mudando de sentido.',
+ contexto='George Orwell escreveu A Quinta dos Animais entre 1943 e 1944; o livro saiu em agosto\u00a0de\u00a01945, com o subtítulo «A Fairy Story». Os animais expulsam o dono da quinta. Os porcos, que aprenderam sozinhos a ler e a escrever, reduzem os princípios a sete mandamentos e pintam-nos na parede do celeiro. O último, o mais curto, diz que todos os animais são iguais. Ao longo do livro, mandamento a mandamento, a igualdade vai mudando de sentido.',
  acesso=[('Project Gutenberg Austrália, em inglês; domínio público na União Europeia, porque o autor morreu em 1950', 'https://gutenberg.net.au/ebooks01/0100011.txt')],
  pergunta='Quem pode mudar uma regra afixada, e como se dá por isso?',
  ligacoes=[('Caso em português: quem pode mudar uma regra comum?', 'cidadania/m2/sessoes/09/#caso-reciclado'), ('Oficina: o manifesto na fachada', 'narrativas/oficina-manifesto/')],
@@ -540,22 +555,22 @@ CASOS_RECICLADOS = {3: {'titulo': 'Quem partilha o risco pode tomar a palavra?',
      'relato': '<p class="etq-m">O texto, contado em português</p><p>A passagem são os dez primeiros artigos, '
                'curtos e numerados como numa lei. O primeiro dá o tom: a mulher nasce livre, e permanece igual ao '
                'homem em direitos; as distinções sociais só podem assentar na utilidade comum (contexto nosso: a '
-               'Declaração de 1789 dizia o mesmo dos homens, quase com as mesmas palavras).</p><p>Nos artigos II '
-               'e III a troca continua, sempre com a mulher nomeada primeiro: os direitos naturais a conservar '
+               'Declaração de 1789 dizia o mesmo dos homens, quase com as mesmas palavras).</p><p>Nos artigos\u00a0II '
+               'e\u00a0III a troca continua, sempre com a mulher nomeada primeiro: os direitos naturais a conservar '
                'são os da mulher e do homem, a liberdade, a propriedade, a segurança e, acima de tudo, a '
                'resistência à opressão; e a nação, onde reside, no essencial, o princípio de toda a soberania, '
-               'não é mais do que a reunião da mulher e do homem.</p><p>O artigo IV já não se contenta com trocar '
+               'não é mais do que a reunião da mulher e do homem.</p><p>O artigo\u00a0IV já não se contenta com trocar '
                'palavras. A liberdade e a justiça consistem em devolver a cada um o que lhe pertence; os direitos '
                'da mulher só têm um limite, a a tirania perpétua que o homem lhe opõe, e esse limite deve ser '
-               'reformado pelas leis da natureza e da razão. O artigo V explica o que essas leis fazem: proíbem o '
-               'que prejudica a sociedade, e o que não proíbem ninguém pode impedir. O artigo VI chama todas as '
+               'reformado pelas leis da natureza e da razão. O artigo\u00a0V explica o que essas leis fazem: proíbem o '
+               'que prejudica a sociedade, e o que não proíbem ninguém pode impedir. O artigo\u00a0VI chama todas as '
                'cidadãs e todos os cidadãos a fazer a lei, em pessoa ou por representantes, e abre-lhes todos os '
                'cargos públicos, segundo as capacidades, sem outra distinção senão a das virtudes e dos '
-               'talentos.</p><p>Nos artigos VII a IX o tom muda: quase já não se reclama, constata-se. Nenhuma '
+               'talentos.</p><p>Nos artigos\u00a0VII a\u00a0IX o tom muda: quase já não se reclama, constata-se. Nenhuma '
                'mulher é exceção; é acusada, presa e detida nos casos que a lei determina, e obedece como os '
                'homens a essa lei rigorosa. A lei só deve fixar as penas estritamente necessárias, e a mulher só '
                'pode ser punida por uma lei anterior ao delito; declarada culpada, sofre todo o rigor da lei. Nas '
-               'penas, as mulheres já são iguais aos homens.</p><p>O artigo X tira a consequência. Ninguém deve '
+               'penas, as mulheres já são iguais aos homens.</p><p>O artigo\u00a0X tira a consequência. Ninguém deve '
                'ser incomodado pelas suas opiniões, mesmo as fundamentais; a mulher tem o direito de subir ao '
                'cadafalso e deve ter igualmente o de subir à tribuna, desde que as suas manifestações não '
                'perturbem a ordem pública estabelecida pela lei. O mesmo verbo serve aos dois lugares (contexto '
@@ -563,10 +578,10 @@ CASOS_RECICLADOS = {3: {'titulo': 'Quem partilha o risco pode tomar a palavra?',
      'caso': 'Num grupo de três, duas pessoas costumam apresentar porque falam com mais à-vontade. A pessoa que '
              'fez o som e a montagem ainda não foi consultada. As três partilham a responsabilidade pelo '
              'resultado. Como organizarias a próxima apresentação?',
-     'fonte': 'Olympe de Gouges, Les droits de la femme. À la reine (1791), artigos I a X. Relato nosso em '
+     'fonte': 'Olympe de Gouges, Les droits de la femme. À la reine (1791), artigos\u00a0I a\u00a0X. Relato nosso em '
               'português, a partir do original francês; não é uma tradução editorial.',
      'url': 'https://archive.org/details/lesdroitsdelafem00goug',
-     'perguntas': [{'p': 'No artigo X, que relação torna a exclusão da tribuna difícil de justificar?',
+     'perguntas': [{'p': 'No artigo\u00a0X, que relação torna a exclusão da tribuna difícil de justificar?',
                     'o': ['As mulheres já respondem perante a lei, mas falta-lhes igual voz pública.',
                           'As mulheres podem falar em público, mas estão dispensadas das penas.',
                           'As mulheres devem responder perante a lei, mas só depois de discursar.'],
@@ -588,7 +603,7 @@ CASOS_RECICLADOS = {3: {'titulo': 'Quem partilha o risco pode tomar a palavra?',
                            'O sorteio distribui tempo, mas a obrigação não permite recusar.']}],
      'transferencia': 'Antes de fechar as regras da casa, confere quem foi ouvido, quem pode recusar falar e como '
                       'pode contestar uma decisão. Não deduzas consentimento do silêncio.',
-     'outra': 'O artigo X também admite o limite da ordem pública estabelecida pela lei. Quem define esse limite '
+     'outra': 'O artigo\u00a0X também admite o limite da ordem pública estabelecida pela lei. Quem define esse limite '
               'e como se contesta uma aplicação injusta?'},
  9: {'titulo': 'Quem pode mudar uma regra comum?',
      'relato': '<p class="etq-m">O texto, contado em português</p><p>Orwell abre a cena sem alarde: os porcos '
@@ -614,7 +629,7 @@ CASOS_RECICLADOS = {3: {'titulo': 'Quem partilha o risco pode tomar a palavra?',
      'caso': 'A turma escreveu cinco regras de trabalho e afixou-as. Um mês depois, alguém propõe alterar “Cada '
              'um fala uma vez antes de alguém falar duas”, porque as reuniões demoram. Como permitir uma revisão '
              'sem apagar o que foi combinado?',
-     'fonte': 'George Orwell, Animal Farm: A Fairy Story (1945), capítulo II. Relato nosso em português; não é '
+     'fonte': 'George Orwell, Animal Farm: A Fairy Story (1945), capítulo\u00a0II. Relato nosso em português; não é '
               'uma tradução editorial. O original está em domínio público na União Europeia, porque o autor '
               'morreu em 1950. A cópia ligada é do Project Gutenberg Austrália; este estatuto não se estende '
               'automaticamente a todos os países nem às traduções.',

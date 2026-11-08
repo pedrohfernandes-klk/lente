@@ -446,7 +446,8 @@ class Molde(unittest.TestCase):
         g = ler(GUIA)
         self.assertEqual(g.count('Decisão provisória '), 5)
         # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): a revisão passa a ser de um colega; o trabalho continua individual.
-        for t in ('individual, com revisão de um colega', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20 minutos',
+        # 08/11/2026: decisão 152 (achado 55 da varredura de 6/11): «20 minutos» leva espaço sem quebra, para não se partir.
+        for t in ('individual, com revisão de um colega', 'real, datado, tem duas fontes independentes', '5, 10, 20, 125 e 20\u00a0minutos',
                   'reserva escrita', 'Naufrágio', 'v120', 'v108'):
             self.assertIn(t, g)
         s06 = sessao(6)

@@ -6,6 +6,8 @@ import re
 import sys
 import unittest
 from renomeacoes_cidadania import renomear, dilemas_149
+# 08/11/2026: decisão 152 («cuidado em todas as lições»): manifesto fechado tools/trocas/cuidado-lente-20261108.json.
+import cuidado_lente
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -53,7 +55,12 @@ class BasesJustica(unittest.TestCase):
             # 03/11/2026 (#107; data posta a 05/11/2026): conserva o hash histórico; desfaz só os títulos autorizados do #107.
             # 06/11/2026: decisão 149 (volta «Dilemas»): antes do #107, desfaz-se só a troca do manifesto fechado
             # tests/fixtures/dilemas-149-20261106.json, com contagem exata; o hash histórico é o mesmo.
-            original = renomear(dilemas_149(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
+            # 08/11/2026: decisão 152 (pedido cuidado-lente). A camada mais recente desfaz-se primeiro, com contagem exata de cada
+            # «novo»: as tabelas da lição 1 (três razões) e da lição 2 (a conta da Ford), a lista das três objeções da lição 3, o
+            # espaço sem quebra nas durações, nos valores e nos séculos, e a folha da tabela de apoio no molde das lições 1 e 2
+            # (tools/trocas/cuidado-lente-20261108.json); o hash histórico é o mesmo.
+            original = renomear(dilemas_149(cuidado_lente.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html'),
+                                            f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
                                 f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
             for troca in json.loads((T/'migracao.json').read_text('utf-8')):
                 if troca['licao'] == n:
@@ -73,7 +80,11 @@ class BasesJustica(unittest.TestCase):
                     self.assertFalse(m['molde_novo'])
                     # 05/11/2026: revisão de 5/11 (crédito dos desenhos). O hash histórico confere-se depois de desfazer só as trocas
                     # dessa revisão registadas em migracao.json; qualquer outra mudança no cartão continua a falhar.
-                    x0 = dict(x)
+                    # 08/11/2026: decisão 152 (pedido cuidado-lente). O cartão confere-se sem a camada do espaço sem quebra (as
+                    # durações do botão e do data-dur), desfeita no banco com contagem exata pelo manifesto fechado
+                    # tools/trocas/cuidado-lente-20261108.json; as palavras visíveis contam-se no cartão de hoje, como antes.
+                    f = f'tools/justica/bancos/licao-{n}.json'
+                    x0 = dict(json.loads(cuidado_lente.desfazer((T/f'bancos/licao-{n}.json').read_text('utf-8'), f))[k-1])
                     for t in json.loads((T/'migracao.json').read_text('utf-8')):
                         if t['licao'] == n and t['origem'].startswith('revisão de 5/11'):
                             antigo, novo = json.loads('"' + t['antigo'] + '"'), json.loads('"' + t['novo'] + '"')

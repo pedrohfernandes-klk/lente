@@ -1,0 +1,2539 @@
+{
+ "tools/justica/bancos/licao-1.json": [
+  [
+   "<ul class=\\\"debate\\\"><li><b>Um aluno (6:17):<\\/b> empurrar é uma escolha ativa e mete no caso alguém que estava fora dele. <b>Sandel (6:50):<\\/b> o trabalhador do desvio também não escolheu sacrificar a vida.<\\/li><li><b>Outro aluno (7:30):<\\/b> empurrar o homem é um assassínio teu; o elétrico desgovernado não o controlas. <b>Da sala (8:09):<\\/b> nos dois casos escolhes quem morre, porque virar também é um ato consciente.<\\/li><li><b>Andrew (8:29):<\\/b> na ponte estás a matá-lo tu, com as tuas próprias mãos. <b>Sandel (8:59):<\\/b> e se o homem estivesse em cima de um alçapão que se abre a rodar um volante?<\\/li><\\/ul>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Quem<\\/th><th scope=\\\"col\\\">A razão<\\/th><th scope=\\\"col\\\">A resposta<\\/th><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Um aluno (6:17)<\\/b><\\/td><td data-th=\\\"A razão\\\">empurrar é uma escolha ativa e mete no caso alguém que estava fora dele.<\\/td><td data-th=\\\"A resposta\\\"><b>Sandel (6:50):<\\/b> o trabalhador do desvio também não escolheu sacrificar a vida.<\\/td><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Outro aluno (7:30)<\\/b><\\/td><td data-th=\\\"A razão\\\">empurrar o homem é um assassínio teu; o elétrico desgovernado não o controlas.<\\/td><td data-th=\\\"A resposta\\\"><b>Da sala (8:09):<\\/b> nos dois casos escolhes quem morre, porque virar também é um ato consciente.<\\/td><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Andrew (8:29)<\\/b><\\/td><td data-th=\\\"A razão\\\">na ponte estás a matá-lo tu, com as tuas próprias mãos.<\\/td><td data-th=\\\"A resposta\\\"><b>Sandel (8:59):<\\/b> e se o homem estivesse em cima de um alçapão que se abre a rodar um volante?<\\/td><\\/tr><\\/table>",
+   1
+  ],
+  [
+   "1 min 07 s",
+   "1 min 07 s",
+   2
+  ],
+  [
+   "2 min 34 s",
+   "2 min 34 s",
+   2
+  ],
+  [
+   "2 min 04 s",
+   "2 min 04 s",
+   2
+  ],
+  [
+   "3 min 40 s",
+   "3 min 40 s",
+   2
+  ],
+  [
+   "3 min 10 s",
+   "3 min 10 s",
+   2
+  ],
+  [
+   "3 min 04 s",
+   "3 min 04 s",
+   2
+  ],
+  [
+   "2 min 24 s",
+   "2 min 24 s",
+   2
+  ],
+  [
+   "4 min 46 s",
+   "4 min 46 s",
+   2
+  ],
+  [
+   "2 min 39 s",
+   "2 min 39 s",
+   2
+  ],
+  [
+   "2 min 41 s",
+   "2 min 41 s",
+   2
+  ],
+  [
+   "século XVIII",
+   "século XVIII",
+   4
+  ],
+  [
+   "século XIX",
+   "século XIX",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/licao-1/index.html": [
+  [
+   "<ul class=\\\"debate\\\"><li><b>Um aluno (6:17):<\\/b> empurrar é uma escolha ativa e mete no caso alguém que estava fora dele. <b>Sandel (6:50):<\\/b> o trabalhador do desvio também não escolheu sacrificar a vida.<\\/li><li><b>Outro aluno (7:30):<\\/b> empurrar o homem é um assassínio teu; o elétrico desgovernado não o controlas. <b>Da sala (8:09):<\\/b> nos dois casos escolhes quem morre, porque virar também é um ato consciente.<\\/li><li><b>Andrew (8:29):<\\/b> na ponte estás a matá-lo tu, com as tuas próprias mãos. <b>Sandel (8:59):<\\/b> e se o homem estivesse em cima de um alçapão que se abre a rodar um volante?<\\/li><\\/ul>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Quem<\\/th><th scope=\\\"col\\\">A razão<\\/th><th scope=\\\"col\\\">A resposta<\\/th><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Um aluno (6:17)<\\/b><\\/td><td data-th=\\\"A razão\\\">empurrar é uma escolha ativa e mete no caso alguém que estava fora dele.<\\/td><td data-th=\\\"A resposta\\\"><b>Sandel (6:50):<\\/b> o trabalhador do desvio também não escolheu sacrificar a vida.<\\/td><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Outro aluno (7:30)<\\/b><\\/td><td data-th=\\\"A razão\\\">empurrar o homem é um assassínio teu; o elétrico desgovernado não o controlas.<\\/td><td data-th=\\\"A resposta\\\"><b>Da sala (8:09):<\\/b> nos dois casos escolhes quem morre, porque virar também é um ato consciente.<\\/td><\\/tr><tr><td data-th=\\\"Quem\\\"><b>Andrew (8:29)<\\/b><\\/td><td data-th=\\\"A razão\\\">na ponte estás a matá-lo tu, com as tuas próprias mãos.<\\/td><td data-th=\\\"A resposta\\\"><b>Sandel (8:59):<\\/b> e se o homem estivesse em cima de um alçapão que se abre a rodar um volante?<\\/td><\\/tr><\\/table>",
+   1
+  ],
+  [
+   "1 min 07 s",
+   "1 min 07 s",
+   2
+  ],
+  [
+   "2 min 34 s",
+   "2 min 34 s",
+   2
+  ],
+  [
+   "2 min 04 s",
+   "2 min 04 s",
+   2
+  ],
+  [
+   "3 min 40 s",
+   "3 min 40 s",
+   2
+  ],
+  [
+   "3 min 10 s",
+   "3 min 10 s",
+   2
+  ],
+  [
+   "3 min 04 s",
+   "3 min 04 s",
+   2
+  ],
+  [
+   "2 min 24 s",
+   "2 min 24 s",
+   2
+  ],
+  [
+   "4 min 46 s",
+   "4 min 46 s",
+   2
+  ],
+  [
+   "2 min 39 s",
+   "2 min 39 s",
+   2
+  ],
+  [
+   "2 min 41 s",
+   "2 min 41 s",
+   2
+  ],
+  [
+   "século XVIII",
+   "século XVIII",
+   4
+  ],
+  [
+   "século XIX",
+   "século XIX",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ]
+ ],
+ "tools/justica/bancos/licao-2.json": [
+  [
+   "2 min 58 s",
+   "2 min 58 s",
+   4
+  ],
+  [
+   "2 min 33 s",
+   "2 min 33 s",
+   2
+  ],
+  [
+   "3 min 10 s",
+   "3 min 10 s",
+   2
+  ],
+  [
+   "4 min 05 s",
+   "4 min 05 s",
+   2
+  ],
+  [
+   "4 min 09 s",
+   "4 min 09 s",
+   2
+  ],
+  [
+   "2 min 23 s",
+   "2 min 23 s",
+   2
+  ],
+  [
+   "2 min 56 s",
+   "2 min 56 s",
+   2
+  ],
+  [
+   "3 min 41 s",
+   "3 min 41 s",
+   2
+  ],
+  [
+   "2 min 06 s",
+   "2 min 06 s",
+   2
+  ],
+  [
+   "147 milhões",
+   "147 milhões",
+   3
+  ],
+  [
+   "1200 dólares",
+   "1200 dólares",
+   2
+  ],
+  [
+   "11 dólares",
+   "11 dólares",
+   2
+  ],
+  [
+   "12,5 milhões",
+   "12,5 milhões",
+   1
+  ],
+  [
+   "137 milhões",
+   "137 milhões",
+   3
+  ],
+  [
+   "200 mil",
+   "200 mil",
+   3
+  ],
+  [
+   "67 mil",
+   "67 mil",
+   1
+  ],
+  [
+   "700 dólares",
+   "700 dólares",
+   1
+  ],
+  [
+   "49,5 milhões",
+   "49,5 milhões",
+   3
+  ],
+  [
+   "300 mil",
+   "300 mil",
+   2
+  ],
+  [
+   "100 mil",
+   "100 mil",
+   1
+  ],
+  [
+   "4500 dólares",
+   "4500 dólares",
+   1
+  ],
+  [
+   "<p>180 mortes a 200 mil dólares cada, 180 feridos a 67 mil, e 2000 veículos destruídos a 700 dólares: só 49,5 milhões. A Ford não instalou a proteção.<\\/p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Na conta da Ford<\\/th><th scope=\\\"col\\\">Quantos<\\/th><th scope=\\\"col\\\">A quanto cada<\\/th><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Mortes<\\/td><td data-th=\\\"Quantos\\\">180<\\/td><td data-th=\\\"A quanto cada\\\">200 mil dólares<\\/td><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Feridos<\\/td><td data-th=\\\"Quantos\\\">180<\\/td><td data-th=\\\"A quanto cada\\\">67 mil<\\/td><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Veículos destruídos<\\/td><td data-th=\\\"Quantos\\\">2000<\\/td><td data-th=\\\"A quanto cada\\\">700 dólares<\\/td><\\/tr><\\/table><p>Só 49,5 milhões. A Ford não instalou a proteção.<\\/p>",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/licao-2/index.html": [
+  [
+   "2 min 58 s",
+   "2 min 58 s",
+   4
+  ],
+  [
+   "2 min 33 s",
+   "2 min 33 s",
+   2
+  ],
+  [
+   "3 min 10 s",
+   "3 min 10 s",
+   2
+  ],
+  [
+   "4 min 05 s",
+   "4 min 05 s",
+   2
+  ],
+  [
+   "4 min 09 s",
+   "4 min 09 s",
+   2
+  ],
+  [
+   "2 min 23 s",
+   "2 min 23 s",
+   2
+  ],
+  [
+   "2 min 56 s",
+   "2 min 56 s",
+   2
+  ],
+  [
+   "3 min 41 s",
+   "3 min 41 s",
+   2
+  ],
+  [
+   "2 min 06 s",
+   "2 min 06 s",
+   2
+  ],
+  [
+   "147 milhões",
+   "147 milhões",
+   3
+  ],
+  [
+   "1200 dólares",
+   "1200 dólares",
+   2
+  ],
+  [
+   "11 dólares",
+   "11 dólares",
+   2
+  ],
+  [
+   "12,5 milhões",
+   "12,5 milhões",
+   1
+  ],
+  [
+   "137 milhões",
+   "137 milhões",
+   3
+  ],
+  [
+   "200 mil",
+   "200 mil",
+   3
+  ],
+  [
+   "67 mil",
+   "67 mil",
+   1
+  ],
+  [
+   "700 dólares",
+   "700 dólares",
+   1
+  ],
+  [
+   "49,5 milhões",
+   "49,5 milhões",
+   3
+  ],
+  [
+   "300 mil",
+   "300 mil",
+   2
+  ],
+  [
+   "100 mil",
+   "100 mil",
+   1
+  ],
+  [
+   "4500 dólares",
+   "4500 dólares",
+   1
+  ],
+  [
+   "<p>180 mortes a 200 mil dólares cada, 180 feridos a 67 mil, e 2000 veículos destruídos a 700 dólares: só 49,5 milhões. A Ford não instalou a proteção.<\\/p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Na conta da Ford<\\/th><th scope=\\\"col\\\">Quantos<\\/th><th scope=\\\"col\\\">A quanto cada<\\/th><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Mortes<\\/td><td data-th=\\\"Quantos\\\">180<\\/td><td data-th=\\\"A quanto cada\\\">200 mil dólares<\\/td><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Feridos<\\/td><td data-th=\\\"Quantos\\\">180<\\/td><td data-th=\\\"A quanto cada\\\">67 mil<\\/td><\\/tr><tr><td data-th=\\\"Na conta da Ford\\\">Veículos destruídos<\\/td><td data-th=\\\"Quantos\\\">2000<\\/td><td data-th=\\\"A quanto cada\\\">700 dólares<\\/td><\\/tr><\\/table><p>Só 49,5 milhões. A Ford não instalou a proteção.<\\/p>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ]
+ ],
+ "tools/justica/bancos/licao-3.json": [
+  [
+   "<p>Um: os pobres precisam mais do dinheiro. Dois: não é escravatura, porque numa democracia os impostos são votados. Três: os ricos devem à sociedade parte do seu sucesso.<\\/p>",
+   "<ol><li>Os pobres precisam mais do dinheiro.<\\/li><li>Não é escravatura, porque numa democracia os impostos são votados.<\\/li><li>Os ricos devem à sociedade parte do seu sucesso.<\\/li><\\/ol>",
+   1
+  ],
+  [
+   "2 min 06 s",
+   "2 min 06 s",
+   2
+  ],
+  [
+   "3 min 11 s",
+   "3 min 11 s",
+   2
+  ],
+  [
+   "2 min 12 s",
+   "2 min 12 s",
+   2
+  ],
+  [
+   "4 min 32 s",
+   "4 min 32 s",
+   2
+  ],
+  [
+   "3 min 45 s",
+   "3 min 45 s",
+   4
+  ],
+  [
+   "3 min 28 s",
+   "3 min 28 s",
+   2
+  ],
+  [
+   "4 min 33 s",
+   "4 min 33 s",
+   2
+  ],
+  [
+   "3 min 07 s",
+   "3 min 07 s",
+   2
+  ],
+  [
+   "4 min 29 s",
+   "4 min 29 s",
+   2
+  ],
+  [
+   "150 dólares",
+   "150 dólares",
+   2
+  ],
+  [
+   "14 horas",
+   "14 horas",
+   1
+  ],
+  [
+   "100 dólares",
+   "100 dólares",
+   1
+  ],
+  [
+   "31 milhões",
+   "31 milhões",
+   1
+  ],
+  [
+   "47 milhões",
+   "47 milhões",
+   1
+  ],
+  [
+   "78 milhões",
+   "78 milhões",
+   2
+  ]
+ ],
+ "olhar-e-decidir/justica/licao-3/index.html": [
+  [
+   "<p>Um: os pobres precisam mais do dinheiro. Dois: não é escravatura, porque numa democracia os impostos são votados. Três: os ricos devem à sociedade parte do seu sucesso.<\\/p>",
+   "<ol><li>Os pobres precisam mais do dinheiro.<\\/li><li>Não é escravatura, porque numa democracia os impostos são votados.<\\/li><li>Os ricos devem à sociedade parte do seu sucesso.<\\/li><\\/ol>",
+   1
+  ],
+  [
+   "2 min 06 s",
+   "2 min 06 s",
+   2
+  ],
+  [
+   "3 min 11 s",
+   "3 min 11 s",
+   2
+  ],
+  [
+   "2 min 12 s",
+   "2 min 12 s",
+   2
+  ],
+  [
+   "4 min 32 s",
+   "4 min 32 s",
+   2
+  ],
+  [
+   "3 min 45 s",
+   "3 min 45 s",
+   4
+  ],
+  [
+   "3 min 28 s",
+   "3 min 28 s",
+   2
+  ],
+  [
+   "4 min 33 s",
+   "4 min 33 s",
+   2
+  ],
+  [
+   "3 min 07 s",
+   "3 min 07 s",
+   2
+  ],
+  [
+   "4 min 29 s",
+   "4 min 29 s",
+   2
+  ],
+  [
+   "150 dólares",
+   "150 dólares",
+   2
+  ],
+  [
+   "14 horas",
+   "14 horas",
+   1
+  ],
+  [
+   "100 dólares",
+   "100 dólares",
+   1
+  ],
+  [
+   "31 milhões",
+   "31 milhões",
+   1
+  ],
+  [
+   "47 milhões",
+   "47 milhões",
+   1
+  ],
+  [
+   "78 milhões",
+   "78 milhões",
+   2
+  ]
+ ],
+ "tools/justica/moldes/licao-1.html": [
+  [
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ]
+ ],
+ "tools/justica/moldes/licao-2.html": [
+  [
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/aplicar/index.html": [
+  [
+   "<ul><li><strong>A, Estreia:</strong> não tem outra câmara; precisa de aprender.</li><li><strong>B, Portefólio:</strong> já domina a técnica; tem uma câmara própria disponível.</li><li><strong>C, Memória:</strong> tem alguma experiência; só pode usar outra câmara num dia.</li></ul>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Projeto</th><th scope=\\\"col\\\">Técnica</th><th scope=\\\"col\\\">Outra câmara</th></tr><tr><td data-th=\\\"Projeto\\\"><strong>A, Estreia</strong></td><td data-th=\\\"Técnica\\\">Precisa de aprender.</td><td data-th=\\\"Outra câmara\\\">Não tem outra câmara.</td></tr><tr><td data-th=\\\"Projeto\\\"><strong>B, Portefólio</strong></td><td data-th=\\\"Técnica\\\">Já domina a técnica.</td><td data-th=\\\"Outra câmara\\\">Tem uma câmara própria disponível.</td></tr><tr><td data-th=\\\"Projeto\\\"><strong>C, Memória</strong></td><td data-th=\\\"Técnica\\\">Tem alguma experiência.</td><td data-th=\\\"Outra câmara\\\">Só pode usar outra câmara num dia.</td></tr></table>",
+   1
+  ],
+  [
+   "explorações 14–16, sobre Rawls, e 18–20",
+   "explorações 14–⁠16, sobre Rawls, e 18–⁠20",
+   1
+  ],
+  [
+   "6 a 8 minutos.",
+   "6 a 8 minutos.",
+   1
+  ],
+  [
+   "excerto de 25 s",
+   "excerto de 25 s",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/guiao/index.html": [
+  [
+   "@media (max-width:639px){table.gr thead th{font-size:.66rem;letter-spacing:0;text-transform:none}}",
+   "@media (max-width:639px){table.gr thead th{font-size:.66rem;letter-spacing:0;text-transform:none}table.gr col.c1{width:34%}table.gr th,table.gr td{overflow-wrap:normal;word-break:normal;padding:4px}table.gr tbody th b{font-size:.74rem}}",
+   1
+  ],
+  [
+   "600 euros",
+   "600 euros",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/docente/index.html": [
+  [
+   "table.ob col.c1{width:34%}table.ob td{height:2.1rem}\n@media print{",
+   "table.ob col.c1{width:34%}table.ob td{height:2.1rem}@media (max-width:560px){table.ob col.c1{width:36%}table.ob th,table.ob td{padding:3px;overflow-wrap:normal;word-break:normal}table.ob thead th{font-size:.6rem}}\n@media print{",
+   1
+  ],
+  [
+   "(1 min 07 s)",
+   "(1 min 07 s)",
+   1
+  ],
+  [
+   "(2 min 34 s)",
+   "(2 min 34 s)",
+   1
+  ],
+  [
+   "(2 min 04 s)",
+   "(2 min 04 s)",
+   1
+  ],
+  [
+   "(3 min 40 s)",
+   "(3 min 40 s)",
+   1
+  ],
+  [
+   "(3 min 10 s)",
+   "(3 min 10 s)",
+   2
+  ],
+  [
+   "(3 min 04 s)",
+   "(3 min 04 s)",
+   1
+  ],
+  [
+   "(2 min 24 s)",
+   "(2 min 24 s)",
+   1
+  ],
+  [
+   "(4 min 46 s)",
+   "(4 min 46 s)",
+   1
+  ],
+  [
+   "(2 min 39 s)",
+   "(2 min 39 s)",
+   1
+  ],
+  [
+   "(2 min 41 s)",
+   "(2 min 41 s)",
+   1
+  ],
+  [
+   "(2 min 58 s)",
+   "(2 min 58 s)",
+   2
+  ],
+  [
+   "(2 min 33 s)",
+   "(2 min 33 s)",
+   1
+  ],
+  [
+   "(4 min 05 s)",
+   "(4 min 05 s)",
+   1
+  ],
+  [
+   "(4 min 09 s)",
+   "(4 min 09 s)",
+   1
+  ],
+  [
+   "(2 min 23 s)",
+   "(2 min 23 s)",
+   1
+  ],
+  [
+   "(2 min 56 s)",
+   "(2 min 56 s)",
+   1
+  ],
+  [
+   "(3 min 41 s)",
+   "(3 min 41 s)",
+   1
+  ],
+  [
+   "(2 min 06 s)",
+   "(2 min 06 s)",
+   2
+  ],
+  [
+   "(3 min 11 s)",
+   "(3 min 11 s)",
+   1
+  ],
+  [
+   "(2 min 12 s)",
+   "(2 min 12 s)",
+   1
+  ],
+  [
+   "(4 min 32 s)",
+   "(4 min 32 s)",
+   1
+  ],
+  [
+   "(3 min 45 s)",
+   "(3 min 45 s)",
+   2
+  ],
+  [
+   "(3 min 28 s)",
+   "(3 min 28 s)",
+   1
+  ],
+  [
+   "(4 min 33 s)",
+   "(4 min 33 s)",
+   1
+  ],
+  [
+   "(3 min 07 s)",
+   "(3 min 07 s)",
+   1
+  ],
+  [
+   "(4 min 29 s)",
+   "(4 min 29 s)",
+   1
+  ],
+  [
+   "11 de Setembro",
+   "11 de Setembro",
+   2
+  ],
+  [
+   "século XIX",
+   "século XIX",
+   1
+  ],
+  [
+   "ISBN 978-972-23-6911-4",
+   "ISBN 978-⁠972-⁠23-⁠6911-⁠4",
+   1
+  ]
+ ],
+ "olhar-e-decidir/justica/index.html": [
+  [
+   "mais de 14 000 até 2009",
+   "mais de 14 000 até 2009",
+   1
+  ],
+  [
+   "ISBN 978-972-23-6911-4",
+   "ISBN 978-⁠972-⁠23-⁠6911-⁠4",
+   1
+  ]
+ ],
+ "tools/gerar_carris.py": [
+  [
+   "Lisboa, 29 de maio de 2025, de Philip Mallis '",
+   "Lisboa, 29\\u00a0de\\u00a0maio\\u00a0de\\u00a02025, de Philip Mallis '",
+   1
+  ]
+ ],
+ "tools/cidadania_m2_sessoes.py": [
+  [
+   "        out += '<ol class=\"c10-evidence c10-colunas\">' + ''.join('<li><b>' + e(a) + '</b><span>' + e(b) + '</span></li>' for a, b in m['colunas']) + '</ol>'",
+   "        # 08/11/2026: decisão 152 (cuidado em todas as lições). O exemplo sai como a tabela de três colunas que o aluno vai\n        # fazer no «Faz» (intenção, observação, interpretação), com .c10-tabela, que empilha com o rótulo a 560 px.\n        out += '<table class=\"apoio-tabela c10-tabela c10-colunas\"><thead><tr>' + ''.join('<th scope=\"col\">' + e(a) + '</th>' for a, b in m['colunas']) + '</tr></thead><tbody><tr>' + ''.join('<td data-rotulo=\"' + e(a, quote=True) + '\">' + e(b) + '</td>' for a, b in m['colunas']) + '</tr></tbody></table>'",
+   1
+  ],
+  [
+   "    out += '<div class=\"c10-group\">' + label(d.get('grupo_rotulo', 'Depois, em turma')) + '<ol class=\"c10-tasks\">' + ''.join('<li>' + e(t) + '</li>' for t in d['grupo']) + '</ol>'",
+   "    # 08/11/2026: decisão 152. Uma tarefa pode ser um par (texto, tabela): a tabela vem do molde e escreve-se sem escape,\n    # dentro do item, para ficar junto da tarefa.\n    out += '<div class=\"c10-group\">' + label(d.get('grupo_rotulo', 'Depois, em turma')) + '<ol class=\"c10-tasks\">' + ''.join('<li>' + (e(t) if isinstance(t, str) else e(t[0]) + t[1]) + '</li>' for t in d['grupo']) + '</ol>'",
+   1
+  ],
+  [
+   "    return out + '<details data-feedback><summary>Comparar razões</summary><div><p>' + e(d['comparar']) + '</p></div></details>'",
+   "    # 08/11/2026: decisão 152. «Comparar razões» pode abrir com uma tabela (comparar_tabela, HTML do molde, sem escape).\n    return out + '<details data-feedback><summary>Comparar razões</summary><div>' + d.get('comparar_tabela', '') + '<p>' + e(d['comparar']) + '</p></div></details>'",
+   1
+  ],
+  [
+   "    out += '<ol class=\"c10-tasks c10-faz\">' + ''.join('<li>' + e(t) + '</li>' for t in f['tarefas']) + '</ol>'",
+   "    # 08/11/2026: decisão 152. Uma tarefa pode ser um par (texto, itens): os itens vão numa sublista ordenada.\n    out += '<ol class=\"c10-tasks c10-faz\">' + ''.join('<li>' + (e(t) if isinstance(t, str) else e(t[0]) + '<ol>' + ''.join('<li>' + e(x) + '</li>' for x in t[1]) + '</ol>') + '</li>' for t in f['tarefas']) + '</ol>'",
+   1
+  ],
+  [
+   "O limite de faltas do módulo continua a ser de 6 horas.",
+   "O limite de faltas do módulo continua a ser de 6\\u00a0horas.",
+   1
+  ],
+  [
+   "<p>O Faz inclui a pausa de 10 minutos e cerca de 20 minutos de revisão. Na sessão 10, os 125 minutos são",
+   "<p>O Faz inclui a pausa de 10\\u00a0minutos e cerca de 20\\u00a0minutos de revisão. Na sessão 10, os 125\\u00a0minutos são",
+   1
+  ]
+ ],
+ "tools/cidadania_m2_molde.py": [
+  [
+   "                    'No caso «A regra do feed», o conteúdo A tem 90 segundos de atenção média e 20 avaliações positivas; o B, 45 segundos e 50; o C, 120 segundos e 10. Ordenem pelo tempo, depois pelas avaliações. Que critério deve decidir o que aparece primeiro?',",
+   "                    # 08/11/2026: decisão 152 (cuidado em todas as lições). Os seis números da regra do feed numa tabela, junto da tarefa.\n                    ('No caso «A regra do feed», ordenem os três conteúdos pelo tempo, depois pelas avaliações. Que critério deve decidir o que aparece primeiro?',\n                     '<table class=\"apoio-tabela c10-tabela\"><caption>A regra do feed</caption><thead><tr><th scope=\"col\">Conteúdo</th><th scope=\"col\">Atenção média</th><th scope=\"col\">Avaliações positivas</th></tr></thead>'\n                     '<tbody><tr><th scope=\"row\">A</th><td data-rotulo=\"Atenção média\">90\\u00a0segundos</td><td data-rotulo=\"Avaliações positivas\">20</td></tr>'\n                     '<tr><th scope=\"row\">B</th><td data-rotulo=\"Atenção média\">45\\u00a0segundos</td><td data-rotulo=\"Avaliações positivas\">50</td></tr>'\n                     '<tr><th scope=\"row\">C</th><td data-rotulo=\"Atenção média\">120\\u00a0segundos</td><td data-rotulo=\"Avaliações positivas\">10</td></tr></tbody></table>'),",
+   1
+  ],
+  [
+   "             comparar='A crítica ao horário é liberdade de expressão (Declaração Universal, artigo 19.º; Constituição, artigo 37.º): criticar uma instituição está no centro desse direito. A curta-metragem é liberdade de criação cultural (Constituição, artigo 42.º). O vídeo contra «os de fora» passa o limite: apelar à violência ou ao ódio contra pessoas por uma característica do grupo não é opinião, é crime (Código Penal, artigo 240.º). Entre a crítica e o crime, a moderação tem de explicar e permitir recurso. O Regulamento dos Serviços Digitais dá três direitos: denunciar, receber uma explicação e recorrer.'),",
+   "             # 08/11/2026: decisão 152. A resposta à tarefa 1 (situação, direito ou limite, onde está) numa tabela; a coluna\n             # «Situação» usa o texto da própria tarefa.\n             comparar_tabela=('<table class=\"apoio-tabela c10-tabela\"><thead><tr><th scope=\"col\">Situação</th><th scope=\"col\">Direito ou limite</th><th scope=\"col\">Onde está</th></tr></thead><tbody>'\n                              '<tr><th scope=\"row\">Publicar uma crítica dura ao horário da escola</th><td data-rotulo=\"Direito ou limite\">Liberdade de expressão: criticar uma instituição está no centro desse direito.</td><td data-rotulo=\"Onde está\">Declaração Universal, artigo\\u00a019.º; Constituição, artigo\\u00a037.º</td></tr>'\n                              '<tr><th scope=\"row\">Fazer uma curta-metragem que ninguém pediu e mostrá-la</th><td data-rotulo=\"Direito ou limite\">Liberdade de criação cultural.</td><td data-rotulo=\"Onde está\">Constituição, artigo\\u00a042.º</td></tr>'\n                              '<tr><th scope=\"row\">Publicar um vídeo a pedir que se expulsem «os de fora» da escola</th><td data-rotulo=\"Direito ou limite\">Passa o limite: apelar à violência ou ao ódio contra pessoas por uma característica do grupo não é opinião, é crime.</td><td data-rotulo=\"Onde está\">Código Penal, artigo\\u00a0240.º</td></tr></tbody></table>'),\n             comparar='Entre a crítica e o crime, a moderação tem de explicar e permitir recurso. O Regulamento dos Serviços Digitais dá três direitos: denunciar, receber uma explicação e recorrer.'),",
+   1
+  ],
+  [
+   "faz=dict(intro='A análise crítica de um caso vale 20% do módulo. É individual.',",
+   "faz=dict(intro='A análise crítica de um caso vale 20\\u00a0% do módulo. É individual.',",
+   1
+  ],
+  [
+   "          tarefas=['Responde às quatro perguntas, por ordem: o que aconteceu (factos, com data e fonte); quem decidiu (pessoa, empresa, máquina); com que regras (lei, regras da casa, algoritmo); o que podia ter sido diferente, e que direito o permitia.',",
+   "          # 08/11/2026: decisão 152. As quatro perguntas do método, pela ordem, numa sublista (o Recupera da 07 volta a elas).\n          tarefas=[('Responde às quatro perguntas, por ordem:', ['O que aconteceu? Factos, com data e fonte.', 'Quem decidiu? Pessoa, empresa, máquina.',\n                                                               'Com que regras? Lei, regras da casa, algoritmo.', 'O que podia ter sido diferente, e que direito o permitia?']),",
+   1
+  ],
+  [
+   " faz=dict(tarefas=['Escreve o guião, versão 1, em quatro partes. Entrada: o que o público faz ao chegar. Regras: o que a peça lhe faz, sem explicar. Viragem: o momento em que o público percebe a regra. Saída: o que fica a saber. A viragem pode usar a frase do caso, da casa 6.',",
+   " # 08/11/2026: decisão 152. As quatro partes do guião, pela ordem, numa sublista.\n faz=dict(tarefas=[('Escreve o guião, versão 1, em quatro partes:', ['Entrada: o que o público faz ao chegar.', 'Regras: o que a peça lhe faz, sem explicar.',\n                                                                    'Viragem: o momento em que o público percebe a regra. Pode usar a frase do caso, da casa\\u00a06.', 'Saída: o que fica a saber.']),",
+   1
+  ],
+  [
+   "data='Reporter X, n.º 9, 4 de outubro de 1930, p. 3'",
+   "data='Reporter X, n.º\\u00a09, 4\\u00a0de\\u00a0outubro\\u00a0de\\u00a01930, p.\\u00a03'",
+   1
+  ],
+  [
+   "83(4), 1974, pp. 435-450",
+   "83(4), 1974, pp.\\u00a0435–\\u2060450",
+   1
+  ],
+  [
+   "Bruno Munari (1907-1998)",
+   "Bruno Munari (1907–\\u20601998)",
+   1
+  ],
+  [
+   "Ada Lovelace (1815-1852)",
+   "Ada Lovelace (1815–\\u20601852)",
+   1
+  ],
+  [
+   "Reinaldo Ferreira (Lisboa, 1897-1935)",
+   "Reinaldo Ferreira (Lisboa, 1897–\\u20601935)",
+   1
+  ],
+  [
+   "David Hume (1711-1776)",
+   "David Hume (1711–\\u20601776)",
+   1
+  ],
+  [
+   "A 11 de junho de 1917,",
+   "A 11\\u00a0de\\u00a0junho\\u00a0de\\u00a01917,",
+   1
+  ],
+  [
+   "Zurique, 5 de fevereiro de 1916.",
+   "Zurique, 5\\u00a0de\\u00a0fevereiro\\u00a0de\\u00a01916.",
+   1
+  ],
+  [
+   "o livro saiu em agosto de 1945,",
+   "o livro saiu em agosto\\u00a0de\\u00a01945,",
+   1
+  ],
+  [
+   "«A conta foi suspensa a 3 de março;",
+   "«A conta foi suspensa a 3\\u00a0de\\u00a0março;",
+   1
+  ],
+  [
+   "«O concerto era a 4 de março;",
+   "«O concerto era a 4\\u00a0de\\u00a0março;",
+   1
+  ],
+  [
+   "No n.º 8, de 27 de setembro,",
+   "No n.º\\u00a08, de 27\\u00a0de\\u00a0setembro,",
+   1
+  ],
+  [
+   "Caprichos, n.º 43, «El sueño",
+   "Caprichos, n.º\\u00a043, «El sueño",
+   1
+  ],
+  [
+   "data='Caprichos, n.º 43, 1799'",
+   "data='Caprichos, n.º\\u00a043, 1799'",
+   1
+  ],
+  [
+   "estereoscopia n.º 11420, edição",
+   "estereoscopia n.º\\u00a011420, edição",
+   1
+  ],
+  [
+   "O artigo 11.º chama",
+   "O artigo\\u00a011.º chama",
+   1
+  ],
+  [
+   "Declaração Universal dos Direitos Humanos, artigo 19.º'",
+   "Declaração Universal dos Direitos Humanos, artigo\\u00a019.º'",
+   1
+  ],
+  [
+   "protege o artigo 19.º?'",
+   "protege o artigo\\u00a019.º?'",
+   1
+  ],
+  [
+   "No artigo X tira",
+   "No artigo\\u00a0X tira",
+   1
+  ],
+  [
+   "No mesmo artigo X,",
+   "No mesmo artigo\\u00a0X,",
+   1
+  ],
+  [
+   "<p>O artigo X tira",
+   "<p>O artigo\\u00a0X tira",
+   1
+  ],
+  [
+   "'No artigo X, que relação",
+   "'No artigo\\u00a0X, que relação",
+   1
+  ],
+  [
+   "'O artigo X também",
+   "'O artigo\\u00a0X também",
+   1
+  ],
+  [
+   "<p>Nos artigos II '\n               'e III a troca",
+   "<p>Nos artigos\\u00a0II '\n               'e\\u00a0III a troca",
+   1
+  ],
+  [
+   "<p>O artigo IV já",
+   "<p>O artigo\\u00a0IV já",
+   1
+  ],
+  [
+   "O artigo V explica",
+   "O artigo\\u00a0V explica",
+   1
+  ],
+  [
+   "O artigo VI chama",
+   "O artigo\\u00a0VI chama",
+   1
+  ],
+  [
+   "<p>Nos artigos VII a IX o tom",
+   "<p>Nos artigos\\u00a0VII a\\u00a0IX o tom",
+   1
+  ],
+  [
+   "(1791), artigos I a X.",
+   "(1791), artigos\\u00a0I a\\u00a0X.",
+   1
+  ],
+  [
+   "(1945), capítulo II.",
+   "(1945), capítulo\\u00a0II.",
+   1
+  ],
+  [
+   "de 6:29 a 9:27 (2 min 58 s),",
+   "de 6:29 a 9:27 (2\\u00a0min\\u00a058\\u00a0s),",
+   1
+  ],
+  [
+   "cerca de 415 TWh de eletricidade",
+   "cerca de 415\\u00a0TWh de eletricidade",
+   1
+  ],
+  [
+   "houve 62 milhões de toneladas",
+   "houve 62\\u00a0milhões de toneladas",
+   1
+  ],
+  [
+   "custava 11 dólares por peça, em 12,5 milhões de carros e camiões: 137 milhões de dólares. Os benefícios somavam 49,5 milhões, com cada morte a 200 mil dólares.",
+   "custava 11\\u00a0dólares por peça, em 12,5\\u00a0milhões de carros e camiões: 137\\u00a0milhões de dólares. Os benefícios somavam 49,5\\u00a0milhões, com cada morte a 200\\u00a0mil dólares.",
+   1
+  ],
+  [
+   "(cerca de 25 minutos)",
+   "(cerca de 25\\u00a0minutos)",
+   2
+  ],
+  [
+   "Tempos de 5, 10, 20, 125 e 20 minutos",
+   "Tempos de 5, 10, 20, 125 e 20\\u00a0minutos",
+   2
+  ],
+  [
+   "Os 125 minutos são",
+   "Os 125\\u00a0minutos são",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s01.py": [
+  [
+   "'Fotógrafo não identificado. Franklin D. Roosevelt Presidential Library &amp; Museum, 64-165. '",
+   "'Fotógrafo não identificado. Franklin D.\\u00a0Roosevelt Presidential Library &amp; Museum, 64-165. '",
+   1
+  ],
+  [
+   "'Universal, Lake Success, novembro de 1949, Franklin D. Roosevelt Presidential Library & Museum, 64-165, '",
+   "'Universal, Lake Success, novembro de 1949, Franklin D.\\u00a0Roosevelt Presidential Library & Museum, 64-165, '",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s04.py": [
+  [
+   "Platão, _República_, livro VII (a alegoria da caverna).",
+   "Platão, _República_, livro\\u00a0VII (a alegoria da caverna).",
+   1
+  ]
+ ],
+ "tools/licoes/cidadania-m1-s05.py": [
+  [
+   "estampa de <i>The Works of Jeremy Bentham</i>, vol. IV, '",
+   "estampa de <i>The Works of Jeremy Bentham</i>, vol.\\u00a0IV, '",
+   1
+  ],
+  [
+   "'Jeremy Bentham_, vol. IV (Edimburgo,",
+   "'Jeremy Bentham_, vol.\\u00a0IV (Edimburgo,",
+   1
+  ]
+ ],
+ "tools/cidadania_piloto.py": [
+  [
+   "a página do projeto ainda diz 5 a 8 minutos e muda no pedido 3.",
+   "a página do projeto ainda diz 5 a 8\\u00a0minutos e muda no pedido 3.",
+   1
+  ],
+  [
+   "(TED-Ed, lição de Noah Tavlin, 3 min 42 s)",
+   "(TED-Ed, lição de Noah Tavlin, 3\\u00a0min\\u00a042\\u00a0s)",
+   1
+  ],
+  [
+   "'Recupera 1, a caverna de Platão (_República_, livro VII):",
+   "'Recupera 1, a caverna de Platão (_República_, livro\\u00a0VII):",
+   1
+  ],
+  [
+   "de _The Works of Jeremy Bentham_, vol. IV (Edimburgo,",
+   "de _The Works of Jeremy Bentham_, vol.\\u00a0IV (Edimburgo,",
+   1
+  ],
+  [
+   "a gravura mostra castigos e tortura do século XVI '",
+   "a gravura mostra castigos e tortura do século\\u00a0XVI '",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s01.py": [
+  [
+   "<i>The Strand Magazine</i>, julho de 1891. Tradução nossa.",
+   "<i>The Strand Magazine</i>, julho\\u00a0de\\u00a01891. Tradução nossa.",
+   1
+  ],
+  [
+   "_The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661)",
+   "_The Strand Magazine_, julho\\u00a0de\\u00a01891 (Project Gutenberg, n.º\\u00a01661)",
+   1
+  ],
+  [
+   "<b>Hoje</b>, 180 minutos com uma pausa:",
+   "<b>Hoje</b>, 180\\u00a0minutos com uma pausa:",
+   1
+  ],
+  [
+   "<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>",
+   "<p><b>Quanto tempo.</b> 70\\u00a0minutos, com a pausa.</p>",
+   1
+  ],
+  [
+   "cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão.",
+   "cartões brancos de 12,5 por 7,5\\u00a0centímetros, um assunto por cartão.",
+   1
+  ],
+  [
+   "Óleo sobre tela, 101,9 × 123,5 cm.",
+   "Óleo sobre tela, 101,9 × 123,5\\u00a0cm.",
+   1
+  ]
+ ],
+ "tools/licoes/ideias-s02.py": [
+  [
+   "<b>Hoje</b>, 180 minutos com uma pausa:",
+   "<b>Hoje</b>, 180\\u00a0minutos com uma pausa:",
+   1
+  ],
+  [
+   "<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>",
+   "<p><b>Quanto tempo.</b> 70\\u00a0minutos, com a pausa.</p>",
+   1
+  ],
+  [
+   "Tiragem em papel albuminado, 22,1 × 17 cm.",
+   "Tiragem em papel albuminado, 22,1 × 17\\u00a0cm.",
+   1
+  ],
+  [
+   "Nada mais banal na Paris do século XIX.",
+   "Nada mais banal na Paris do século\\u00a0XIX.",
+   1
+  ],
+  [
+   "(Project Gutenberg, n.º 11131)",
+   "(Project Gutenberg, n.º\\u00a011131)",
+   1
+  ]
+ ],
+ "tools/ideias_piloto.py": [
+  [
+   "O vídeo de Herman (4 min 50 s)",
+   "O vídeo de Herman (4\\u00a0min\\u00a050\\u00a0s)",
+   1
+  ],
+  [
+   "'«Na aula» (70 minutos):",
+   "'«Na aula» (70\\u00a0minutos):",
+   2
+  ],
+  [
+   "<b>Cada sessão</b> tem 180 minutos, com uma pausa: cartões durante cerca de 50 minutos, um «Na aula» de 70 minutos com a pausa, cartões durante cerca de 25 minutos e o «Para levar».",
+   "<b>Cada sessão</b> tem 180\\u00a0minutos, com uma pausa: cartões durante cerca de 50\\u00a0minutos, um «Na aula» de 70\\u00a0minutos com a pausa, cartões durante cerca de 25\\u00a0minutos e o «Para levar».",
+   1
+  ],
+  [
+   "'<h3>Tempos (180 minutos)</h3>'",
+   "'<h3>Tempos (180\\u00a0minutos)</h3>'",
+   1
+  ],
+  [
+   "cartões brancos de 12,5 por 7,5 centímetros.'",
+   "cartões brancos de 12,5 por 7,5\\u00a0centímetros.'",
+   1
+  ],
+  [
+   "cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão",
+   "cartões brancos de 12,5 por 7,5\\u00a0centímetros, um assunto por cartão",
+   1
+  ],
+  [
+   "'9 de março de 2003. Fotografia",
+   "'9\\u00a0de\\u00a0março\\u00a0de\\u00a02003. Fotografia",
+   1
+  ],
+  [
+   "(tradução nossa), 1 min de leitura</p>",
+   "(tradução nossa), 1\\u00a0min de leitura</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-argumento/index.html": [
+  [
+   "<p><b>Logline</b>: a premissa e o protagonista numa ou duas frases. <b>Sinopse</b>: o enredo resumido, sem as cenas. <b>Escaleta</b> (<i>step outline</i>): a lista ordenada de todas as cenas. <b>Argumento</b> (em inglês, <i>treatment</i>): a história em prosa corrida, no presente, com princípio, meio e fim, os pontos de viragem e a atmosfera; os diálogos diluídos na prosa, sem travessões. <b>Guião</b> (<i>screenplay</i>): cabeçalhos de cena, ação e diálogo, no formato da rodagem.</p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Documento</th><th scope=\\\"col\\\">O que é</th></tr><tr><td data-th=\\\"Documento\\\"><b>Logline</b></td><td data-th=\\\"O que é\\\">a premissa e o protagonista numa ou duas frases</td></tr><tr><td data-th=\\\"Documento\\\"><b>Sinopse</b></td><td data-th=\\\"O que é\\\">o enredo resumido, sem as cenas</td></tr><tr><td data-th=\\\"Documento\\\"><b>Escaleta</b> (<i>step outline</i>)</td><td data-th=\\\"O que é\\\">a lista ordenada de todas as cenas</td></tr><tr><td data-th=\\\"Documento\\\"><b>Argumento</b> (em inglês, <i>treatment</i>)</td><td data-th=\\\"O que é\\\">a história em prosa corrida, no presente, com princípio, meio e fim, os pontos de viragem e a atmosfera; os diálogos diluídos na prosa, sem travessões</td></tr><tr><td data-th=\\\"Documento\\\"><b>Guião</b> (<i>screenplay</i>)</td><td data-th=\\\"O que é\\\">cabeçalhos de cena, ação e diálogo, no formato da rodagem</td></tr></table>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 90 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-manifesto/index.html": [
+  [
+   "<p>Um manifesto tem cinco peças. <b>O imperativo</b>: não descreve, manda («arregaça as mangas»). <b>A lista</b>: pontos numerados ou um rosário de imperativos, sem parágrafos que expliquem. <b>O inimigo</b>: o que se recusa (o passado, para Marinetti; Dantas, para Almada; os efeitos e a música de fora, para o Dogma). <b>O excesso</b>: diz-se de mais, de propósito; um manifesto moderado não é um manifesto. <b>A quebra de tom</b>: a piada ou a frase terna no meio dos pedidos (o corte de cabelo na fachada), que impede o sermão.</p>",
+   "<p>Um manifesto tem cinco peças.</p><table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Peça</th><th scope=\\\"col\\\">O que faz</th></tr><tr><td data-th=\\\"Peça\\\"><b>O imperativo</b></td><td data-th=\\\"O que faz\\\">não descreve, manda («arregaça as mangas»)</td></tr><tr><td data-th=\\\"Peça\\\"><b>A lista</b></td><td data-th=\\\"O que faz\\\">pontos numerados ou um rosário de imperativos, sem parágrafos que expliquem</td></tr><tr><td data-th=\\\"Peça\\\"><b>O inimigo</b></td><td data-th=\\\"O que faz\\\">o que se recusa (o passado, para Marinetti; Dantas, para Almada; os efeitos e a música de fora, para o Dogma)</td></tr><tr><td data-th=\\\"Peça\\\"><b>O excesso</b></td><td data-th=\\\"O que faz\\\">diz-se de mais, de propósito; um manifesto moderado não é um manifesto</td></tr><tr><td data-th=\\\"Peça\\\"><b>A quebra de tom</b></td><td data-th=\\\"O que faz\\\">a piada ou a frase terna no meio dos pedidos (o corte de cabelo na fachada), que impede o sermão</td></tr></table>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "Rua D. Luís I",
+   "Rua D. Luís I",
+   2
+  ],
+  [
+   "16 de outubro de 2026",
+   "16 de outubro de 2026",
+   1
+  ]
+ ],
+ "narrativas/oficina-pedacos/index.html": [
+  [
+   "<p><b>Supressão das etiquetas</b>: tira os nomes das personagens; o texto vira uma massa de vozes e o leitor tem de ouvir quem fala. <b>Corte e recolagem</b> (<i>cut-up</i>, Burroughs e Gysin, 1959-1960): corta o texto em frases e reordena por acaso ou por ritmo; vê o que os encontros novos dizem. <b>Repetição e acumulação</b>: repete uma palavra ou uma estrutura fora do contexto até perder o sentido literal e ficar só som e textura.</p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Técnica</th><th scope=\\\"col\\\">Como funciona</th></tr><tr><td data-th=\\\"Técnica\\\"><b>Supressão das etiquetas</b></td><td data-th=\\\"Como funciona\\\">tira os nomes das personagens; o texto vira uma massa de vozes e o leitor tem de ouvir quem fala</td></tr><tr><td data-th=\\\"Técnica\\\"><b>Corte e recolagem</b> (<i>cut-up</i>, Burroughs e Gysin, 1959–⁠1960)</td><td data-th=\\\"Como funciona\\\">corta o texto em frases e reordena por acaso ou por ritmo; vê o que os encontros novos dizem</td></tr><tr><td data-th=\\\"Técnica\\\"><b>Repetição e acumulação</b></td><td data-th=\\\"Como funciona\\\">repete uma palavra ou uma estrutura fora do contexto até perder o sentido literal e ficar só som e textura</td></tr></table>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "cut-up (1959-1960)",
+   "cut-up (1959–⁠1960)",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano/index.html": [
+  [
+   "<p><b>Da violência verbal ao grande plano</b>: no palco, o insulto precisa de projeção; no cinema, o que importa é o rosto de quem o recebe. Corta para quem ouve. <b>Do espaço fixo à montagem</b>: o espectador de teatro vê tudo de uma vez; a câmara escolhe. Plano e contraplano assimétricos, picado e contrapicado, cortes rítmicos dizem quem tem o poder. <b>Do diálogo explicativo à encenação</b>: risca as falas que contam o passado ou descrevem estados; passa a informação para um objeto em primeiro plano, para a profundidade de campo, para o que fica fora de campo.</p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Conversão</th><th scope=\\\"col\\\">O que muda</th></tr><tr><td data-th=\\\"Conversão\\\"><b>Da violência verbal ao grande plano</b></td><td data-th=\\\"O que muda\\\">no palco, o insulto precisa de projeção; no cinema, o que importa é o rosto de quem o recebe. Corta para quem ouve.</td></tr><tr><td data-th=\\\"Conversão\\\"><b>Do espaço fixo à montagem</b></td><td data-th=\\\"O que muda\\\">o espectador de teatro vê tudo de uma vez; a câmara escolhe. Plano e contraplano assimétricos, picado e contrapicado, cortes rítmicos dizem quem tem o poder.</td></tr><tr><td data-th=\\\"Conversão\\\"><b>Do diálogo explicativo à encenação</b></td><td data-th=\\\"O que muda\\\">risca as falas que contam o passado ou descrevem estados; passa a informação para um objeto em primeiro plano, para a profundidade de campo, para o que fica fora de campo.</td></tr></table>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 90 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao/index.html": [
+  [
+   "<p><b>Ação</b>: uma só linha de conflito, sem tramas laterais. <b>Lugar</b>: um só espaço, contínuo. <b>Tempo</b>: o que se passa em cena demora o que demora a representar. A regra vem da leitura que o século XVI fez da <i>Poética</i> de Aristóteles e foi lei no teatro clássico francês.</p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Unidade</th><th scope=\\\"col\\\">O que pede</th></tr><tr><td data-th=\\\"Unidade\\\"><b>Ação</b></td><td data-th=\\\"O que pede\\\">uma só linha de conflito, sem tramas laterais</td></tr><tr><td data-th=\\\"Unidade\\\"><b>Lugar</b></td><td data-th=\\\"O que pede\\\">um só espaço, contínuo</td></tr><tr><td data-th=\\\"Unidade\\\"><b>Tempo</b></td><td data-th=\\\"O que pede\\\">o que se passa em cena demora o que demora a representar</td></tr></table><p>A regra vem da leitura que o século XVI fez da <i>Poética</i> de Aristóteles e foi lei no teatro clássico francês.</p>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-texto-imagem/index.html": [
+  [
+   "<p>A tipologia que Santaella e Nöth divulgam em <i>Imagem</i> (1998): <b>redundância</b>, a imagem só ilustra o que o texto já diz; <b>informatividade</b>, a imagem traz o essencial e o texto fica marginal; <b>complementaridade</b>, texto e imagem têm o mesmo peso e só juntos fazem a mensagem. No cinema, na publicidade e nos media digitais mandam as duas últimas.</p><p>Das funções da linguagem de Jakobson (1960), três são decisivas numa peça visual: <b>conativa</b>, virada para quem recebe («toca aqui», «vem ver»); <b>poética</b>, o jogo com a própria forma, o duplo sentido entre a palavra e a imagem; <b>fática</b>, o contacto, aquilo que prende a atenção (a cor, o contraste, o movimento). E o <b>não-dito</b>: o que não está escrito mas o leitor lê, porque a imagem o convoca. Um pote fechado diz «guardado» sem a palavra.</p>",
+   "<p>A tipologia que Santaella e Nöth divulgam em <i>Imagem</i> (1998):</p><table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Relação</th><th scope=\\\"col\\\">O que acontece</th></tr><tr><td data-th=\\\"Relação\\\"><b>redundância</b></td><td data-th=\\\"O que acontece\\\">a imagem só ilustra o que o texto já diz</td></tr><tr><td data-th=\\\"Relação\\\"><b>informatividade</b></td><td data-th=\\\"O que acontece\\\">a imagem traz o essencial e o texto fica marginal</td></tr><tr><td data-th=\\\"Relação\\\"><b>complementaridade</b></td><td data-th=\\\"O que acontece\\\">texto e imagem têm o mesmo peso e só juntos fazem a mensagem</td></tr></table><p>No cinema, na publicidade e nos media digitais mandam as duas últimas.</p><p>Das funções da linguagem de Jakobson (1960), três são decisivas numa peça visual:</p><table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Função</th><th scope=\\\"col\\\">O que faz</th><th scope=\\\"col\\\">Por exemplo</th></tr><tr><td data-th=\\\"Função\\\"><b>conativa</b></td><td data-th=\\\"O que faz\\\">virada para quem recebe</td><td data-th=\\\"Por exemplo\\\">«toca aqui», «vem ver»</td></tr><tr><td data-th=\\\"Função\\\"><b>poética</b></td><td data-th=\\\"O que faz\\\">a brincadeira com a própria forma</td><td data-th=\\\"Por exemplo\\\">o duplo sentido entre a palavra e a imagem</td></tr><tr><td data-th=\\\"Função\\\"><b>fática</b></td><td data-th=\\\"O que faz\\\">o contacto, aquilo que prende a atenção</td><td data-th=\\\"Por exemplo\\\">a cor, o contraste, o movimento</td></tr></table><p>E o <b>não-dito</b>: o que não está escrito mas o leitor lê, porque a imagem o convoca. Um pote fechado diz «guardado» sem a palavra.</p>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-visivel/index.html": [
+  [
+   "<p><b>Luz</b>: o que se vê e o que se esconde; a cor, o ângulo (zenital, rasante), o tamanho do círculo iluminado. <b>Cenário</b>: o espaço que fecha ou abre, o que entra e o que sai, a escala do corpo no palco. <b>Figurino</b>: o que a personagem veste e, sobretudo, o que tira, o que se amarrota, o que troca.</p>",
+   "<table class=\\\"apoio-tabela empilha\\\"><tr><th scope=\\\"col\\\">Sistema</th><th scope=\\\"col\\\">O que pode contar</th></tr><tr><td data-th=\\\"Sistema\\\"><b>Luz</b></td><td data-th=\\\"O que pode contar\\\">o que se vê e o que se esconde; a cor, o ângulo (zenital, rasante), o tamanho do círculo iluminado</td></tr><tr><td data-th=\\\"Sistema\\\"><b>Cenário</b></td><td data-th=\\\"O que pode contar\\\">o espaço que fecha ou abre, o que entra e o que sai, a escala do corpo no palco</td></tr><tr><td data-th=\\\"Sistema\\\"><b>Figurino</b></td><td data-th=\\\"O que pode contar\\\">o que a personagem veste e, sobretudo, o que tira, o que se amarrota, o que troca</td></tr></table>",
+   1
+  ],
+  [
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   "<link rel=\"stylesheet\" href=\"../../assets/appearance.css?v=20261025-universal-1\"><link rel=\"stylesheet\" href=\"../../assets/apoio-tabela.css?v=20261108-1\"><script src=\"../../assets/appearance.js?v=20261025-universal-1\"></script>",
+   1
+  ],
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "«¿Qué es la vida? Un frenesí. / ¿Qué es la vida? Una ilusión, / una sombra, una ficción, / y el mayor bien es pequeño: / que toda la vida es sueño, / y los sueños, sueños son.»",
+   "«¿Qué es la vida? Un frenesí. / ¿Qué es la vida? Una ilusión, / una sombra, una ficción, / y el mayor bien es pequeño: / que toda la vida es sueño, / y los sueños, sueños son.»",
+   1
+  ],
+  [
+   "tradução nossa: «Que é a vida? Um frenesi. Que é a vida? Uma ilusão, uma sombra, uma ficção; e o maior bem é pequeno, porque toda a vida é sonho, e os sonhos, sonhos são.»",
+   "tradução nossa: «Que é a vida? Um frenesi. / Que é a vida? Uma ilusão, / uma sombra, uma ficção; / e o maior bem é pequeno, / porque toda a vida é sonho, / e os sonhos, sonhos são.»",
+   1
+  ],
+  [
+   "Oficina · 45 a 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 45 a 60 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-argumento-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-atelie/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 90 min, com saída · 10 min de preparação</p>",
+   "Oficina · 90 min, com saída · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "5 de agosto de 1473",
+   "5 de agosto de 1473",
+   2
+  ],
+  [
+   "século XV",
+   "século XV",
+   2
+  ]
+ ],
+ "narrativas/oficina-atelie-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ],
+  [
+   "5 de agosto de 1473",
+   "5 de agosto de 1473",
+   1
+  ],
+  [
+   "século XV",
+   "século XV",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "(1863-1938)",
+   "(1863–⁠1938)",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-dilema/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "ato III, cena 1",
+   "ato III, cena 1",
+   4
+  ]
+ ],
+ "narrativas/oficina-dilema-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ],
+  [
+   "ato III, cena 1",
+   "ato III, cena 1",
+   2
+  ]
+ ],
+ "narrativas/oficina-epico/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 min de exploração · 10 min de preparação</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-epico-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-manifesto-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ],
+  [
+   "Rua D. Luís I",
+   "Rua D. Luís I",
+   1
+  ]
+ ],
+ "narrativas/oficina-pedacos-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ],
+  [
+   "cut-up (1959-1960)",
+   "cut-up (1959–⁠1960)",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno: o que fiz; para quem; que obra ou ideia me guiou; o que tirei; o que mudava. É o que o júri lê primeiro.",
+   "<b>Memória descritiva, cinco linhas</b>No fim, no caderno, uma linha para cada:<ol><li>o que fiz;</li><li>para quem;</li><li>que obra ou ideia me guiou;</li><li>o que tirei;</li><li>o que mudava.</li></ol>É o que o júri lê primeiro.",
+   1
+  ],
+  [
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   "Oficina · 60 a 90 min de exploração · 10 min de preparação</p>",
+   1
+  ],
+  [
+   "Alfred Stieglitz (1864-1946)",
+   "Alfred Stieglitz (1864–⁠1946)",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-texto-imagem-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/oficina-visivel-imprimir/index.html": [
+  [
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i></i><i></i><i></i><i></i><i></i></span>",
+   "<b>Memória descritiva, cinco linhas: o que fiz, para quem, que obra ou ideia me guiou, o que tirei, o que mudava</b><span class=\"linhas\"><i>1. O que fiz</i><i>2. Para quem</i><i>3. Que obra ou ideia me guiou</i><i>4. O que tirei</i><i>5. O que mudava</i></span>",
+   1
+  ],
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "estetica-grelha/index.html": [
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "etica-grelha/index.html": [
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/proposta-subtexto/index.html": [
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/treinar/caderno/index.html": [
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ]
+ ],
+ "narrativas/treinar/docente/index.html": [
+  [
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}table.grelha td{",
+   "table.grelha th{font:700 .72rem/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase}@media (max-width:560px){table.grelha th{letter-spacing:0;text-transform:none;padding:6px 4px}table.grelha.trev th{font-size:.62rem;padding:4px 3px}table.grelha.trev td{padding:4px 3px}}table.grelha td{",
+   1
+  ],
+  [
+   "<td>5 min</td>",
+   "<td>5 min</td>",
+   1
+  ],
+  [
+   "<td>1 a 2 min</td>",
+   "<td>1 a 2 min</td>",
+   1
+  ],
+  [
+   "<td>5 a 12 min</td>",
+   "<td>5 a 12 min</td>",
+   1
+  ],
+  [
+   "<td>2 min</td>",
+   "<td>2 min</td>",
+   1
+  ],
+  [
+   "<td>3 min</td>",
+   "<td>3 min</td>",
+   2
+  ],
+  [
+   "em outubro de 2026.",
+   "em outubro de 2026.",
+   1
+  ]
+ ],
+ "narrativas/oficina-espaco/index.html": [
+  [
+   "Oficina · 90 min · experiência inicial no ecrã</p>",
+   "Oficina · 90 min · experiência inicial no ecrã</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-ficcao-comecar/index.html": [
+  [
+   "Oficina · 5 a 8 min · sem escrever</p>",
+   "Oficina · 5 a 8 min · sem escrever</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-ficcao-personagem/index.html": [
+  [
+   "Oficina · 5 a 8 min · sem escrever</p>",
+   "Oficina · 5 a 8 min · sem escrever</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-matriz/index.html": [
+  [
+   "Oficina · 60 min + 10 min de preparação · Exploração no ecrã e projeto</p>",
+   "Oficina · 60 min + 10 min de preparação · Exploração no ecrã e projeto</p>",
+   1
+  ]
+ ],
+ "narrativas/oficina-ficcao-comecar-imprimir/index.html": [
+  [
+   "5–8 minutos",
+   "5–⁠8 minutos",
+   1
+  ],
+  [
+   "0:49–1:08",
+   "0:49–⁠1:08",
+   1
+  ]
+ ],
+ "narrativas/oficina-ficcao-personagem-imprimir/index.html": [
+  [
+   "5–8 minutos",
+   "5–⁠8 minutos",
+   1
+  ],
+  [
+   "1:54–2:22",
+   "1:54–⁠2:22",
+   1
+  ]
+ ],
+ "narrativas/oficina-matriz-imprimir/index.html": [
+  [
+   "2:27–2:59",
+   "2:27–⁠2:59",
+   2
+  ],
+  [
+   "32 segundos",
+   "32 segundos",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-entrevista/index.html": [
+  [
+   "12 min de escrita",
+   "12 min de escrita",
+   1
+  ],
+  [
+   "Project Gutenberg n.º 54829",
+   "Project Gutenberg n.º 54829",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-gaveta/index.html": [
+  [
+   "8 min de escrita",
+   "8 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/comeca-mais-tarde/index.html": [
+  [
+   "8 min de escrita",
+   "8 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/cortar-um-quinto/index.html": [
+  [
+   "10 min de escrita",
+   "10 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/dicionario/index.html": [
+  [
+   "10 min de escrita",
+   "10 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/frase-querida/index.html": [
+  [
+   "6 min de escrita",
+   "6 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/interromper/index.html": [
+  [
+   "10 min de escrita",
+   "10 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/lista-substantivos/index.html": [
+  [
+   "12 min de escrita",
+   "12 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/o-contrario/index.html": [
+  [
+   "12 min de escrita",
+   "12 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/rascunho-mau/index.html": [
+  [
+   "8 min de escrita",
+   "8 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/sem-mente/index.html": [
+  [
+   "8 min de escrita",
+   "8 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/so-gestos/index.html": [
+  [
+   "10 min de escrita",
+   "10 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/teste-do-colega/index.html": [
+  [
+   "6 min de escrita",
+   "6 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/tres-em-cinco/index.html": [
+  [
+   "5 min de escrita",
+   "5 min de escrita",
+   1
+  ]
+ ],
+ "narrativas/treinar/voz-alta/index.html": [
+  [
+   "8 min de escrita",
+   "8 min de escrita",
+   1
+  ]
+ ],
+ "assets/laboratorio/percursos.json": [
+  [
+   "\"time\": \"10 min de escrita\"",
+   "\"time\": \"10 min de escrita\"",
+   4
+  ],
+  [
+   "\"time\": \"12 min de escrita\"",
+   "\"time\": \"12 min de escrita\"",
+   3
+  ],
+  [
+   "\"time\": \"5 min de escrita\"",
+   "\"time\": \"5 min de escrita\"",
+   1
+  ],
+  [
+   "\"time\": \"6 min de escrita\"",
+   "\"time\": \"6 min de escrita\"",
+   2
+  ],
+  [
+   "\"time\": \"8 min de escrita\"",
+   "\"time\": \"8 min de escrita\"",
+   5
+  ]
+ ],
+ "olhar-e-decidir/etica/licao-1/index.html": [
+  [
+   "19 000",
+   "19 000",
+   5
+  ],
+  [
+   "80 000",
+   "80 000",
+   1
+  ],
+  [
+   "40 000 dólares",
+   "40 000 dólares",
+   2
+  ],
+  [
+   "são 17 minutos",
+   "são 17 minutos",
+   1
+  ],
+  [
+   "17 min\\\"",
+   "17 min\\\"",
+   2
+  ],
+  [
+   ">17 min<",
+   ">17 min<",
+   1
+  ],
+  [
+   "(17 min)",
+   "(17 min)",
+   1
+  ],
+  [
+   "Os primeiros 40 segundos",
+   "Os primeiros 40 segundos",
+   1
+  ],
+  [
+   "aos 41 segundos",
+   "aos 41 segundos",
+   1
+  ],
+  [
+   "6,9 milhões",
+   "6,9 milhões",
+   3
+  ],
+  [
+   "12 milhões",
+   "12 milhões",
+   2
+  ],
+  [
+   "entre 20 e 50 dólares",
+   "entre 20 e 50 dólares",
+   1
+  ],
+  [
+   "100 euros",
+   "100 euros",
+   1
+  ],
+  [
+   "1972, p. 231",
+   "1972, p. 231",
+   1
+  ],
+  [
+   "novembro de 1971",
+   "novembro de 1971",
+   1
+  ],
+  [
+   "<i>Sísifo</i>, 1548-1549.",
+   "<i>Sísifo</i>, 1548–⁠1549.",
+   1
+  ],
+  [
+   "Gradiva, 3.ª ed., 2012",
+   "Gradiva, 3.ª ed., 2012",
+   1
+  ],
+  [
+   "ISBN 978-989-616-431-7",
+   "ISBN 978-⁠989-⁠616-⁠431-⁠7",
+   1
+  ],
+  [
+   "ISBN 978-972-44-1880-3",
+   "ISBN 978-⁠972-⁠44-⁠1880-⁠3",
+   1
+  ],
+  [
+   "ISBN 978-972-662-723-4",
+   "ISBN 978-⁠972-⁠662-⁠723-⁠4",
+   1
+  ],
+  [
+   "ISBN 978-972-44-2839-0",
+   "ISBN 978-⁠972-⁠44-⁠2839-⁠0",
+   1
+  ]
+ ],
+ "olhar-e-decidir/etica/licao-2/index.html": [
+  [
+   "vol. 83, n.º 4, 1974, pp. 435-450",
+   "vol. 83, n.º 4, 1974, pp. 435–⁠450",
+   1
+  ],
+  [
+   "3.ª ed.",
+   "3.ª ed.",
+   1
+  ],
+  [
+   "ISBN 978-972-662-421-9",
+   "ISBN 978-⁠972-⁠662-⁠421-⁠9",
+   1
+  ],
+  [
+   "ISBN 978-972-8531-69-0",
+   "ISBN 978-⁠972-⁠8531-⁠69-⁠0",
+   1
+  ],
+  [
+   "ISBN 972-662-655-2",
+   "ISBN 972-⁠662-⁠655-⁠2",
+   1
+  ]
+ ],
+ "olhar-e-decidir/estetica/licao-1/index.html": [
+  [
+   "(1711-1776)",
+   "(1711–⁠1776)",
+   1
+  ],
+  [
+   "(1724-1804)",
+   "(1724–⁠1804)",
+   1
+  ],
+  [
+   "século XVIII",
+   "século XVIII",
+   1
+  ],
+  [
+   "século XVII;",
+   "século XVII;",
+   1
+  ],
+  [
+   "vol. 5",
+   "vol. 5",
+   1
+  ],
+  [
+   "3.ª ed.",
+   "3.ª ed.",
+   1
+  ],
+  [
+   "ISBN 978-972-44-2633-4",
+   "ISBN 978-⁠972-⁠44-⁠2633-⁠4",
+   1
+  ],
+  [
+   "ISBN 978-972-27-2454-8",
+   "ISBN 978-⁠972-⁠27-⁠2454-⁠8",
+   1
+  ],
+  [
+   "J. H. Bernard",
+   "J. H. Bernard",
+   5
+  ]
+ ],
+ "biblioteca/1984-capitulo-1/index.html": [
+  [
+   "capítulo 1",
+   "capítulo 1",
+   1
+  ],
+  [
+   "parte I",
+   "parte I",
+   1
+  ]
+ ],
+ "biblioteca/alberti-janela/index.html": [
+  [
+   "livro I",
+   "livro I",
+   1
+  ]
+ ],
+ "biblioteca/alice-capitulo-6/index.html": [
+  [
+   "capítulo VI",
+   "capítulo VI",
+   1
+  ],
+  [
+   "n.º 11",
+   "n.º 11",
+   1
+  ]
+ ],
+ "biblioteca/animal-farm-capitulo-2/index.html": [
+  [
+   "capítulo II",
+   "capítulo II",
+   1
+  ]
+ ],
+ "biblioteca/austen-capitulo-1/index.html": [
+  [
+   "capítulo I",
+   "capítulo I",
+   1
+  ],
+  [
+   "n.º 1342",
+   "n.º 1342",
+   1
+  ]
+ ],
+ "biblioteca/brascubas-ao-leitor/index.html": [
+  [
+   "agosto de 1869",
+   "agosto de 1869",
+   1
+  ],
+  [
+   "n.º 54829",
+   "n.º 54829",
+   1
+  ],
+  [
+   "7 min",
+   "7 min",
+   1
+  ]
+ ],
+ "biblioteca/caeiro-guardador-xx/index.html": [
+  [
+   "pp. 53–54",
+   "pp. 53–⁠54",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/campos-tabacaria/index.html": [
+  [
+   "15 de janeiro de 1928",
+   "15 de janeiro de 1928",
+   1
+  ],
+  [
+   "8 min",
+   "8 min",
+   1
+  ]
+ ],
+ "biblioteca/cesario-sentimento-ocidental/index.html": [
+  [
+   "S. Petersburgo",
+   "S. Petersburgo",
+   1
+  ],
+  [
+   "n.º 8698",
+   "n.º 8698",
+   1
+  ],
+  [
+   "7 min",
+   "7 min",
+   1
+  ]
+ ],
+ "biblioteca/codax-ondas-vigo/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/darwin-capitulo-14/index.html": [
+  [
+   "capítulo XIV",
+   "capítulo XIV",
+   1
+  ],
+  [
+   "n.º 1228",
+   "n.º 1228",
+   1
+  ]
+ ],
+ "biblioteca/dinis-ai-flores/index.html": [
+  [
+   "D. Dinis",
+   "D. Dinis",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/dinis-quereu-proencal/index.html": [
+  [
+   "D. Dinis",
+   "D. Dinis",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/einstein-introducao/index.html": [
+  [
+   "junho de 1905",
+   "junho de 1905",
+   1
+  ],
+  [
+   "vol. 17",
+   "vol. 17",
+   1
+  ]
+ ],
+ "biblioteca/frankenstein-capitulo-5/index.html": [
+  [
+   "capítulo 5",
+   "capítulo 5",
+   1
+  ],
+  [
+   "n.º 84",
+   "n.º 84",
+   1
+  ]
+ ],
+ "biblioteca/garrett-frei-luis-sousa/index.html": [
+  [
+   "D. Magdalena",
+   "D. Magdalena",
+   8
+  ],
+  [
+   "D. Sebastião",
+   "D. Sebastião",
+   8
+  ],
+  [
+   "D. Filippe",
+   "D. Filippe",
+   2
+  ],
+  [
+   "n.º 17591",
+   "n.º 17591",
+   1
+  ],
+  [
+   "D. Miguel",
+   "D. Miguel",
+   1
+  ],
+  [
+   "D. Joanna",
+   "D. Joanna",
+   1
+  ],
+  [
+   "D. Maria",
+   "D. Maria",
+   6
+  ],
+  [
+   "S. João",
+   "S. João",
+   1
+  ],
+  [
+   "D. João",
+   "D. João",
+   21
+  ],
+  [
+   "97 min",
+   "97 min",
+   1
+  ]
+ ],
+ "biblioteca/guilhade-ai-dona-fea/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/guilhade-lourenco-tencao/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/lovelace-nota-a/index.html": [
+  [
+   "vol. III",
+   "vol. III",
+   1
+  ]
+ ],
+ "biblioteca/mendinho-sedia-meu/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/metalogicon-anoes/index.html": [
+  [
+   "século XII",
+   "século XII",
+   1
+  ],
+  [
+   "capítulo 4",
+   "capítulo 4",
+   1
+  ],
+  [
+   "livro III",
+   "livro III",
+   1
+  ]
+ ],
+ "biblioteca/metamorfose-parte-1/index.html": [
+  [
+   "n.º 22367",
+   "n.º 22367",
+   1
+  ]
+ ],
+ "biblioteca/nightingale-observacao/index.html": [
+  [
+   "n.º 17366",
+   "n.º 17366",
+   1
+  ]
+ ],
+ "biblioteca/orta-benjui/index.html": [
+  [
+   "p. 105-106",
+   "p. 105–⁠106",
+   1
+  ],
+  [
+   "vol. I",
+   "vol. I",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/quixote-capitulo-8/index.html": [
+  [
+   "capítulo VIII",
+   "capítulo VIII",
+   1
+  ],
+  [
+   "n.º 2000",
+   "n.º 2000",
+   1
+  ]
+ ],
+ "biblioteca/reporterx-conselhos-1930/index.html": [
+  [
+   "4 de outubro de 1930",
+   "4 de outubro de 1930",
+   1
+  ],
+  [
+   "5 min",
+   "5 min",
+   1
+  ],
+  [
+   "n.º 9",
+   "n.º 9",
+   1
+  ],
+  [
+   "p. 3",
+   "p. 3",
+   1
+  ]
+ ],
+ "biblioteca/reporterx-reporterxizar-1930/index.html": [
+  [
+   "27 de setembro de 1930",
+   "27 de setembro de 1930",
+   1
+  ],
+  [
+   "(1885-1953)",
+   "(1885–⁠1953)",
+   1
+  ],
+  [
+   "3 min",
+   "3 min",
+   1
+  ],
+  [
+   "n.º 8",
+   "n.º 8",
+   1
+  ],
+  [
+   "p. 3",
+   "p. 3",
+   1
+  ]
+ ],
+ "biblioteca/talbot-introducao/index.html": [
+  [
+   "n.º 33447",
+   "n.º 33447",
+   1
+  ]
+ ],
+ "biblioteca/torneol-levad-amigo/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   1
+  ],
+  [
+   "1 min",
+   "1 min",
+   1
+  ]
+ ],
+ "biblioteca/vitruvio-liber-1-caput-3/index.html": [
+  [
+   "capítulo 3",
+   "capítulo 3",
+   1
+  ],
+  [
+   "livro I",
+   "livro I",
+   1
+  ],
+  [
+   "séc. I",
+   "séc. I",
+   1
+  ]
+ ],
+ "biblioteca/index.html": [
+  [
+   "século XIII",
+   "século XIII",
+   5
+  ],
+  [
+   "século XII,",
+   "século XII,",
+   1
+  ],
+  [
+   "D. Dinis",
+   "D. Dinis",
+   2
+  ],
+  [
+   "séc. I",
+   "séc. I",
+   1
+  ]
+ ],
+ "cidadania/piloto/m1/docente/index.html": [
+  [
+   "ainda diz 5 a 8 minutos",
+   "ainda diz 5 a 8 minutos",
+   1
+  ],
+  [
+   "Franklin D. Roosevelt",
+   "Franklin D. Roosevelt",
+   2
+  ],
+  [
+   "Noah Tavlin, 3 min 42 s)",
+   "Noah Tavlin, 3 min 42 s)",
+   1
+  ],
+  [
+   "livro VII",
+   "livro VII",
+   2
+  ],
+  [
+   "vol. IV",
+   "vol. IV",
+   3
+  ],
+  [
+   "tortura do século XVI",
+   "tortura do século XVI",
+   1
+  ]
+ ]
+}

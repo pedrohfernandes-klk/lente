@@ -54,6 +54,10 @@ import molde_s09  # noqa: E402
 # 07/11/2026: a sessão 10 do M1 (tests/molde_s10.py), a sessão de mostra. Na fusão do main com a s09 (#138) e as portas (#137), o
 # manifesto passa a partir do main a258b6c, com a s09: é a camada mais recente e desfaz-se antes da da s09 (abaixo).
 import molde_s10  # noqa: E402
+# 08/11/2026: decisão 152 («cuidado em todas as lições», pedido cuidado-lente). O manifesto fechado
+# tools/trocas/cuidado-lente-20261108.json parte do main a99d2d4: é a camada mais recente e desfaz-se no ficheiro atual antes da
+# da s10 (abaixo).
+import cuidado_lente  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -389,6 +393,10 @@ class Preservacao(unittest.TestCase):
             # 06/11/2026: fusão do main na sessão 08 do M1. Nos ficheiros que a s08 muda em parte, desfaz-se primeiro a sua camada,
             # agora a mais recente (manifesto fechado, contagem exata de cada «novo»); depois a da s07, a da s06, a da s05, a da s04 e a
             # da s03.
+            # 08/11/2026: a camada do pedido cuidado-lente (decisão 152), agora a mais recente, desfaz-se primeiro, com contagem
+            # exata de cada «novo»; depois a da s10 e as outras, como abaixo.
+            if rel in cuidado_lente.TROCAS:
+                agora = cuidado_lente.desfazer(agora, rel)
             # 07/11/2026: a camada da s10 (a mais recente) desfaz-se antes da da s09.
             if rel in molde_s10.TROCAS:
                 agora = molde_s10.desfazer(agora, rel)

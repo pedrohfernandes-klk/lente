@@ -3,6 +3,7 @@ from pathlib import Path
 import importlib.util,unittest,json,math,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 import grupos146  # 05/11/2026: decisão 146
+import cuidado_lente  # 08/11/2026: decisão 152 («cuidado em todas as lições»)
 spec=importlib.util.spec_from_file_location('medir_opcoes',ROOT/'tools/medir_opcoes.py')
 medir=importlib.util.module_from_spec(spec);spec.loader.exec_module(medir)
 class OpcoesEquilibradas(unittest.TestCase):
@@ -58,6 +59,8 @@ class OpcoesEquilibradas(unittest.TestCase):
    self.assertEqual({k:v for k,v in antes.items() if k not in MUDAVEIS},{k:v for k,v in depois.items() if k not in MUDAVEIS})
    actual=(ROOT/t['ficheiro']).read_text('utf-8')
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado, com contagem exata, antes de procurar o «novo».
+   # 08/11/2026: decisão 152 («cuidado em todas as lições», pedido cuidado-lente): a camada mais recente desfaz-se primeiro, com contagem exata (manifesto fechado tools/trocas/cuidado-lente-20261108.json: o espaço sem quebra nos valores, por exemplo «200 mil dólares»), antes da 146.
+   if t['ficheiro'] in cuidado_lente.TROCAS:actual=cuidado_lente.desfazer(actual,t['ficheiro'])
    if t['ficheiro'] in grupos146.TROCAS:actual=grupos146.desfazer(actual,t['ficheiro'])
    self.assertEqual(actual.count(t['novo']),t['ocorrencias'],t['ficheiro'])
    for k in MUDAVEIS:

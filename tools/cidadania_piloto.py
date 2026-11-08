@@ -123,7 +123,7 @@ GUIA = {
               'investigação (entrevistas, documentos e dados). Mostrar «Uma boa pergunta» na página do projeto. Trinta minutos: cada aluno escreve, '
               'em papel, três perguntas candidatas e testa cada uma com os três critérios; o docente faz cerca de dez conversas de 3 minutos. '
               'Cinco minutos: cada aluno sublinha a pergunta de que mais gosta. A mostra da sessão 10 é de 3 minutos e 2 de defesa por aluno '
-              '(decisão 159); a página do projeto ainda diz 5 a 8 minutos e muda no pedido 3.'),
+              '(decisão 159); a página do projeto ainda diz 5 a 8\u00a0minutos e muda no pedido 3.'),
   'produto': 'Três perguntas candidatas',
   'grelha': [('Três perguntas sobre o que é ser humano, cada uma numa frase', 4), ('Nenhuma se responde com «sim» ou «não»', 4),
              ('Nenhuma se resolve com cinco minutos de pesquisa', 4), ('Cada uma pode investigar-se na escola, no bairro ou na família', 4),
@@ -426,10 +426,10 @@ GUIA = {
                 'anonimizado; não se procuram nomes.'),
   'notas': ['O caso da conta de memes, o da caricatura da Inês, o do vídeo da cantina, as quatro publicações de outra escola e o das '
             'notas de um colega são inventados e assim se diz. Ninguém escreve sobre um colega identificável.',
-            'Sem vídeo (decisão 155). O candidato do plano, «How false news can spread» (TED-Ed, lição de Noah Tavlin, 3 min 42 s), está '
+            'Sem vídeo (decisão 155). O candidato do plano, «How false news can spread» (TED-Ed, lição de Noah Tavlin, 3\u00a0min\u00a042\u00a0s), está '
             'no sítio oficial (ed.ted.com/lessons/how-false-news-can-spread-noah-tavlin, aberto a 6/11/2026), mas a equipa não o viu por '
             'inteiro. Se o docente o vir e o quiser, entra em «Para ir mais longe», com a alternativa escrita.',
-            'Recupera 1, a caverna de Platão (_República_, livro VII): a turma já conhece a alegoria do percurso anterior; o cartão usa só a '
+            'Recupera 1, a caverna de Platão (_República_, livro\u00a0VII): a turma já conhece a alegoria do percurso anterior; o cartão usa só a '
             'premissa (os prisioneiros só conhecem as sombras e tomam-nas pela realidade). A gravura é de Jan Saenredam, segundo Cornelis '
             'van Haarlem (1604), segundo o registo do Wikimedia Commons (British Museum, 1852,1211.120, domínio público); a página do '
             'museu não abriu nesta passagem.',
@@ -536,7 +536,7 @@ GUIA = {
             'Sem vídeo (decisão 155): o plano tira o TED-Ed do piloto.',
             'Recupera 1 (sessão 04): a frase «Com câmaras, ninguém rouba.» vem dos lados do Decide; o cartão recupera a distinção entre o '
             'que se prova e o que se discute e junta-lhe a previsão.',
-            'Olha: a estampa desdobrável _A General Idea of a Penitentiary Panopticon […]_ (1791), de _The Works of Jeremy Bentham_, vol. IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da Universidade de '
+            'Olha: a estampa desdobrável _A General Idea of a Penitentiary Panopticon […]_ (1791), de _The Works of Jeremy Bentham_, vol.\u00a0IV (Edimburgo, William Tait, 1843), no exemplar da Biblioteca da Universidade de '
             'Sevilha digitalizado no Internet Archive (archive.org/details/BRes092083, imagem n36 da digitalização, com a marca de domínio público lida nos '
             'metadados, a 6/11/2026). A estampa não nomeia o desenhador; a atribuição habitual ao arquiteto Willey Reveley fica a confirmar. '
             'A legenda traduz as letras da explicação em inglês (A, celas; F, galerias de inspeção; H, alojamento do inspetor).',
@@ -627,7 +627,7 @@ GUIA = {
                 'a intervenção num procedimento com familiares interessados: é preciso provar a intenção de obter uma vantagem patrimonial '
                 'indevida, e essa prova não foi feita. A sentença de Leiria já reconhecera que ela não estava em situação de isenção e '
                 'imparcialidade. Cita-se só o sumário e essa passagem. O acórdão é anonimizado; não se procuram nomes nem o município.'),
-  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): à volta da Justiça, a gravura mostra castigos e tortura do século XVI '
+  'notas': ['Enquadramento da imagem, antes de a projetar (decisão 30): à volta da Justiça, a gravura mostra castigos e tortura do século\u00a0XVI '
             '(um homem preso a um banco, forcas, rodas, uma fogueira). Não se pede a ninguém que descreva o sofrimento; os cartões só '
             'perguntam o que se vê e o que nenhuma fonte prova.',
             'Olha: o registo do Metropolitan Museum of Art (objeto 410925, na API de dados abertos do museu, aberta a 6/11/2026) dá «Justice '

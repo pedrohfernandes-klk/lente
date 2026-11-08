@@ -371,7 +371,7 @@
       "url": "narrativas/treinar/a-gaveta/",
       "title": "A gaveta",
       "type": "treino",
-      "time": "8 min de escrita",
+      "time": "8 min de escrita",
       "description": "Faz o inventário de uma gaveta.",
       "progress": {
         "kind": "feitas",
@@ -391,7 +391,7 @@
       "url": "narrativas/treinar/so-gestos/",
       "title": "Só gestos e uma palavra",
       "type": "treino",
-      "time": "10 min de escrita",
+      "time": "10 min de escrita",
       "description": "Escreve uma cena tensa entre duas personagens sem falas: só gestos e movimentos.",
       "progress": {
         "kind": "feitas",
@@ -411,7 +411,7 @@
       "url": "narrativas/treinar/interromper/",
       "title": "Interromper",
       "type": "treino",
-      "time": "10 min de escrita",
+      "time": "10 min de escrita",
       "description": "Escreve um diálogo em que ninguém acaba uma frase importante: as falas são cortadas ou abandonadas.",
       "progress": {
         "kind": "feitas",
@@ -431,7 +431,7 @@
       "url": "narrativas/treinar/o-contrario/",
       "title": "Uma fala, duas intenções",
       "type": "treino",
-      "time": "12 min de escrita",
+      "time": "12 min de escrita",
       "description": "Escreve falas que dizem uma coisa e querem outra.",
       "progress": {
         "kind": "feitas",
@@ -452,7 +452,7 @@
       "url": "narrativas/treinar/tres-em-cinco/",
       "title": "Três em cinco minutos",
       "type": "treino",
-      "time": "5 min de escrita",
+      "time": "5 min de escrita",
       "description": "Inventa três personagens: nome, idade, ofício, um medo, um desejo e uma contradição para cada uma.",
       "progress": {
         "kind": "feitas",
@@ -472,7 +472,7 @@
       "url": "narrativas/treinar/a-entrevista/",
       "title": "A entrevista",
       "type": "treino",
-      "time": "12 min de escrita",
+      "time": "12 min de escrita",
       "description": "Faz dez perguntas a uma personagem tua.",
       "progress": {
         "kind": "feitas",
@@ -492,7 +492,7 @@
       "url": "narrativas/treinar/dicionario/",
       "title": "Dicionário, não sinónimos",
       "type": "treino",
-      "time": "10 min de escrita",
+      "time": "10 min de escrita",
       "description": "Escolhe a palavra exata entre três quase-sinónimos, com o dicionário aberto.",
       "progress": {
         "kind": "feitas",
@@ -512,7 +512,7 @@
       "url": "narrativas/treinar/sem-mente/",
       "title": "Sem «-mente»",
       "type": "treino",
-      "time": "8 min de escrita",
+      "time": "8 min de escrita",
       "description": "Retira os advérbios em «-mente»: troca cada um por um verbo mais preciso ou por um pormenor, ou corta-o.",
       "progress": {
         "kind": "feitas",
@@ -532,7 +532,7 @@
       "url": "narrativas/treinar/lista-substantivos/",
       "title": "Lista de substantivos",
       "type": "treino",
-      "time": "12 min de escrita",
+      "time": "12 min de escrita",
       "description": "Escreve dez substantivos concretos, com artigo («o sótão», «a paragem»): da tua memória ou inventados.",
       "progress": {
         "kind": "feitas",
@@ -552,7 +552,7 @@
       "url": "narrativas/treinar/comeca-mais-tarde/",
       "title": "Começa mais tarde",
       "type": "treino",
-      "time": "8 min de escrita",
+      "time": "8 min de escrita",
       "description": "Experimenta cortar o primeiro parágrafo de um texto teu.",
       "progress": {
         "kind": "feitas",
@@ -572,7 +572,7 @@
       "url": "narrativas/treinar/rascunho-mau/",
       "title": "Rascunho mau, de propósito",
       "type": "treino",
-      "time": "8 min de escrita",
+      "time": "8 min de escrita",
       "description": "Escreve durante oito minutos sem parar, sem apagar, sem reler.",
       "progress": {
         "kind": "feitas",
@@ -592,7 +592,7 @@
       "url": "narrativas/treinar/voz-alta/",
       "title": "Ler em voz alta",
       "type": "treino",
-      "time": "8 min de escrita",
+      "time": "8 min de escrita",
       "description": "Lê o teu texto em voz alta, devagar.",
       "progress": {
         "kind": "feitas",
@@ -612,7 +612,7 @@
       "url": "narrativas/treinar/frase-querida/",
       "title": "Matar a frase querida",
       "type": "treino",
-      "time": "6 min de escrita",
+      "time": "6 min de escrita",
       "description": "Num texto teu, encontra a frase de que mais gostas e pergunta se serve a cena; se não serve, corta-a.",
       "progress": {
         "kind": "feitas",
@@ -632,7 +632,7 @@
       "url": "narrativas/treinar/cortar-um-quinto/",
       "title": "Cortar um quinto",
       "type": "treino",
-      "time": "10 min de escrita",
+      "time": "10 min de escrita",
       "description": "Conta as palavras de um texto teu e corta pelo menos um quinto: em 100 palavras, ficam 80, sem mudar a história.",
       "progress": {
         "kind": "feitas",
@@ -652,7 +652,7 @@
       "url": "narrativas/treinar/teste-do-colega/",
       "title": "O teste do colega",
       "type": "treino",
-      "time": "6 min de escrita",
+      "time": "6 min de escrita",
       "description": "Dá o teu texto a ler sem explicar nada.",
       "progress": {
         "kind": "feitas",

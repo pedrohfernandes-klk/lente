@@ -116,7 +116,9 @@ def material(path, n, s, j, m, total):
     elif tipo == 'lista':
         out += '<ol class="c10-document c10-frases">' + ''.join('<li>' + e(t) + '</li>' for t in m['itens']) + '</ol>'
     elif tipo == 'colunas':
-        out += '<ol class="c10-evidence c10-colunas">' + ''.join('<li><b>' + e(a) + '</b><span>' + e(b) + '</span></li>' for a, b in m['colunas']) + '</ol>'
+        # 08/11/2026: decisão 152 (cuidado em todas as lições). O exemplo sai como a tabela de três colunas que o aluno vai
+        # fazer no «Faz» (intenção, observação, interpretação), com .c10-tabela, que empilha com o rótulo a 560 px.
+        out += '<table class="apoio-tabela c10-tabela c10-colunas"><thead><tr>' + ''.join('<th scope="col">' + e(a) + '</th>' for a, b in m['colunas']) + '</tr></thead><tbody><tr>' + ''.join('<td data-rotulo="' + e(a, quote=True) + '">' + e(b) + '</td>' for a, b in m['colunas']) + '</tr></tbody></table>'
     elif tipo == 'fontes':
         out += '<div class="c10-document">' + e(m['texto']) + '</div>'
         out += ''.join('<details class="c10-fonte"><summary>Fonte ' + str(k) + ': ' + e(a) + '</summary><div><p>' + e(b) + '</p></div></details>' for k, (a, b) in enumerate(m['fontes'], 1))
@@ -184,15 +186,19 @@ def decide(path, n, s):
     # 28/10/2026: «a tua resposta» serve todas as tarefas (um número, uma regra, uma classificação), não só escolhas.
     out += para('c10-small', d.get('protocolo', 'Três minutos. Escreve a tua resposta e uma razão no cartão de decisão. Depois, uma volta: cada pessoa lê o seu cartão, sem comentários.'))
     out += para('c10-small', d.get('silencio_mais', '')) + '</div>'
-    out += '<div class="c10-group">' + label(d.get('grupo_rotulo', 'Depois, em turma')) + '<ol class="c10-tasks">' + ''.join('<li>' + e(t) + '</li>' for t in d['grupo']) + '</ol>'
+    # 08/11/2026: decisão 152. Uma tarefa pode ser um par (texto, tabela): a tabela vem do molde e escreve-se sem escape,
+    # dentro do item, para ficar junto da tarefa.
+    out += '<div class="c10-group">' + label(d.get('grupo_rotulo', 'Depois, em turma')) + '<ol class="c10-tasks">' + ''.join('<li>' + (e(t) if isinstance(t, str) else e(t[0]) + t[1]) + '</li>' for t in d['grupo']) + '</ol>'
     out += '<p class="c10-small">No fim, registem a decisão e uma razão que ficou vencida.</p></div></div>'
-    return out + '<details data-feedback><summary>Comparar razões</summary><div><p>' + e(d['comparar']) + '</p></div></details>'
+    # 08/11/2026: decisão 152. «Comparar razões» pode abrir com uma tabela (comparar_tabela, HTML do molde, sem escape).
+    return out + '<details data-feedback><summary>Comparar razões</summary><div>' + d.get('comparar_tabela', '') + '<p>' + e(d['comparar']) + '</p></div></details>'
 
 
 def faz(path, n, s):
     f = s['faz']
     out = para('c10-instruction', f.get('intro', ''))
-    out += '<ol class="c10-tasks c10-faz">' + ''.join('<li>' + e(t) + '</li>' for t in f['tarefas']) + '</ol>'
+    # 08/11/2026: decisão 152. Uma tarefa pode ser um par (texto, itens): os itens vão numa sublista ordenada.
+    out += '<ol class="c10-tasks c10-faz">' + ''.join('<li>' + (e(t) if isinstance(t, str) else e(t[0]) + '<ol>' + ''.join('<li>' + e(x) + '</li>' for x in t[1]) + '</ol>') + '</li>' for t in f['tarefas']) + '</ol>'
     if f.get('apoio'):
         out += '<ul class="c10-apoio">' + ''.join('<li>' + liga(path, a, t) + '</li>' for t, a in f['apoio']) + '</ul>'
     out += para('c10-small', f.get('nota', ''))
@@ -253,10 +259,10 @@ def guia():
     body += '<p><b>Recuperação espaçada.</b> O Recupera traz a sessão anterior. O Decide volta a casas antigas: a casa 1 regressa na sessão 07; a casa 4, na 07, na 08 e na 10; a casa 5, na 07. Na 10, o Vê usa as notas de autoria da casa 5. Os passos ficam para dois ou três dias depois.</p></section>'
     body += '<section class="c10-reference" id="avaliacao"><h2>Onde nasce cada evidência</h2><p>Os pesos são os do Contra-feed; nenhum é novo.</p>'
     body += tabela(['Instrumento', 'Peso', 'Sessões', 'Evidência'], INSTRUMENTOS, 'Os quatro instrumentos de avaliação')
-    body += '<p>Os cartões do Leva e as respostas Vi, Situei e Fiz são evidência formativa, sem peso. Nenhuma posição moral é pontuada. O limite de faltas do módulo continua a ser de 6 horas.</p>' + liga(path, 'cidadania/contra-feed/', 'Projeto, requisitos e avaliação do Contra-feed') + '</section>'
+    body += '<p>Os cartões do Leva e as respostas Vi, Situei e Fiz são evidência formativa, sem peso. Nenhuma posição moral é pontuada. O limite de faltas do módulo continua a ser de 6\u00a0horas.</p>' + liga(path, 'cidadania/contra-feed/', 'Projeto, requisitos e avaliação do Contra-feed') + '</section>'
     body += '<section class="c10-reference" id="tempos"><h2>Tempos</h2>'
     body += tabela(['Sessões'] + PASSOS, [('01 a 09',) + tuple(str(t) for t in TEMPOS), ('10',) + tuple(str(t) for t in TEMPOS_MOSTRA)], 'Minutos por passo')
-    body += '<p>O Faz inclui a pausa de 10 minutos e cerca de 20 minutos de revisão. Na sessão 10, os 125 minutos são para as mostras curtas individuais, cada uma seguida de defesa.</p></section>'
+    body += '<p>O Faz inclui a pausa de 10\u00a0minutos e cerca de 20\u00a0minutos de revisão. Na sessão 10, os 125\u00a0minutos são para as mostras curtas individuais, cada uma seguida de defesa.</p></section>'
     body += '<section class="c10-reference" id="regras"><h2>Regras comuns</h2><ul class="c10-regras">'
     body += '<li><b>Recupera.</b> Duas perguntas conceptuais sobre a sessão anterior, com resposta em «Confirmar», e uma pergunta pessoal sobre o próprio trabalho, sem resposta.</li>'
     body += '<li><b>Vê.</b> Um material de cada vez, com a instrução junto dele. Primeiro observa, depois lê.</li>'

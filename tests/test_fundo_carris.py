@@ -476,8 +476,9 @@ class Movimento175(unittest.TestCase):
     def test_credito_atras_do_i_e_parar_sempre_a_vista(self):
         # O crédito, letra a letra: a fotografia, o autor, a data, o Commons e a licença (com as mesmas ligações), o que foi
         # mudado na fotografia, o que é desenho e «Grafismo gerado com recurso a IA, EPI, 2026.». Sem os sinais de alerta.
+        # 08/11/2026: decisão 152 (achado 51 da varredura de 6/11): a data leva espaços sem quebra, para não se partir entre linhas.
         self.assertEqual(GERADOR.CREDITO,
-            'Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29 de maio de 2025, de Philip Mallis '
+            'Fotografia: elétrico 541 no Largo do Corpo Santo, Lisboa, 29\u00a0de\u00a0maio\u00a0de\u00a02025, de Philip Mallis '
             '(<a href="https://commons.wikimedia.org/wiki/File:Remodelados_class_tram_no._541_turning_street_corner_in_Largo_do_Corpo_Santo_in_Lisbon,_Portugal_(55127582736).jpg">Wikimedia Commons</a>, '
             '<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt">CC BY-SA 4.0</a>); o elétrico recortado, a preto e branco, '
             'sem a publicidade e sem os passageiros, com a mesma licença. A via, a agulha, as duas vias possíveis e a alavanca ao '

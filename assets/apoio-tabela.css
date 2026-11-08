@@ -1,0 +1,21 @@
+/* 08/11/2026: decisão 152 («cuidado em todas as lições»). A tabela de apoio do Lente, para itens paralelos que se comparam:
+   colunas no computador, linhas completas no telemóvel, com o nome da coluna antes de cada célula (data-th). Serve as lições em
+   cartões (Justiça e oficinas do Laboratório), onde a tabela vem como <table class="apoio-tabela empilha"> com a primeira linha
+   de <th scope="col">; a regra .empilha de cada página continua a valer e esta folha dá-lhe a forma que faltava no computador.
+   As cores são as do tema (assets/appearance.css), por isso o modo escuro segue sozinho. As sessões do M2 usam .c10-tabela. */
+.jogo .ler table.apoio-tabela{width:100%;border-collapse:collapse;margin:10px 0 14px;font:inherit;color:inherit}
+.jogo .ler table.apoio-tabela th,.jogo .ler table.apoio-tabela td{text-align:left;vertical-align:top;padding:7px 12px 7px 0;border:0;border-bottom:1px solid var(--c-cinza,#d6d4ce);overflow-wrap:break-word;word-break:normal;hyphens:manual}
+.jogo .ler table.apoio-tabela th[scope=col]{font:700 .72rem/1.3 Arial,Helvetica,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--suave,#444);border-bottom:2px solid var(--tinta,#000);padding-bottom:6px}
+.jogo .ler table.apoio-tabela th:last-child,.jogo .ler table.apoio-tabela td:last-child{padding-right:0}
+@media (max-width:560px){
+ .jogo .ler table.apoio-tabela,.jogo .ler table.apoio-tabela tbody,.jogo .ler table.apoio-tabela tr,.jogo .ler table.apoio-tabela td{display:block;width:auto}
+ .jogo .ler table.apoio-tabela tr:first-child:has(>th[scope=col]){display:none}
+ .jogo .ler table.apoio-tabela tr{border-top:2px solid var(--tinta,#000);padding:8px 0}
+ .jogo .ler table.apoio-tabela td{border:0;padding:2px 0}
+ .jogo .ler table.apoio-tabela td[data-th]:not(:first-child)::before{content:attr(data-th) ": ";font:700 .72rem Arial,Helvetica,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--suave,#444)}
+}
+@media print{
+ .jogo .ler table.apoio-tabela{display:table}
+ .jogo .ler table.apoio-tabela tr{display:table-row;break-inside:avoid}
+ .jogo .ler table.apoio-tabela th,.jogo .ler table.apoio-tabela td{display:table-cell;border-bottom:1px solid currentColor}
+}

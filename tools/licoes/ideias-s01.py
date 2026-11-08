@@ -52,7 +52,7 @@ ABRE = (
  '<p>Escreve o número no caderno, já, sem ir ver e sem perguntar a ninguém. Guarda-o: antes do fim da aula, vais saber se acertaste.</p>'
  '<div class="metodo-linha"><p><b>Passo 1 de 5: juntar material.</b> Estas sessões seguem um método de cinco passos para chegar a uma ideia tua. O primeiro pede que olhes e registes antes de concluir. Vem antes dos outros porque, sem material, não há nada em que trabalhar.</p></div>'
  + passos({1}) +
- '<p class="aula-linha"><b>Hoje</b>, 180 minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>')
+ '<p class="aula-linha"><b>Hoje</b>, 180\u00a0minutos com uma pausa: uma conversa de 1891, um quadro com um pormenor escondido e a primeira investigação na escola.</p>')
 # 01/11/2026 (método): a apresentação de Young, num cartão próprio e curto. Tudo vem do texto de trabalho (biblioteca-young/
 # texto.txt): «executivo numa agência de publicidade em Chicago» (capítulo «Como Começou»); as considerações «primeiro
 # apresentadas a alunos de estudos pós-graduados em publicidade na School of Business da Universidade de Chicago» e preparadas
@@ -78,7 +78,7 @@ HOLMES = (
  '<blockquote><p>«Vê, mas não observa. A diferença é clara. Por exemplo, já viu muitas vezes os degraus que sobem da entrada até esta sala.»</p>'
  '<p>«Muitas vezes.»</p><p>«Quantas?»</p><p>«Bem, umas centenas.»</p><p>«Então, quantos são?»</p><p>«Quantos? Não sei.»</p>'
  '<p>«Exatamente! Não observou. E, no entanto, viu. É isso que eu quero dizer. Ora, eu sei que são dezassete degraus, porque vi e observei.»</p></blockquote>'
- '<p class="fonte">Arthur Conan Doyle, «A Scandal in Bohemia», <i>The Strand Magazine</i>, julho de 1891. Tradução nossa.</p>')
+ '<p class="fonte">Arthur Conan Doyle, «A Scandal in Bohemia», <i>The Strand Magazine</i>, julho\u00a0de\u00a01891. Tradução nossa.</p>')
 HERMAN = (
  '<p>Amy\u00a0E.\u00a0Herman é historiadora de arte. Nesta lição do TED-Ed, explica porque é que analisar quadros pode preparar médicos, enfermeiros e polícias para investigar no mundo real. No resumo oficial, o exemplo é <i lang="en">Time Transfixed</i>, do pintor belga René Magritte.</p>'
  '<p class="pergunta-c">Enquanto vês, faz duas colunas no caderno: o que está em cada quadro que o vídeo mostra e o que lá não está, mas conta.</p>'
@@ -88,7 +88,7 @@ HERMAN = (
 LATOUR = (
  f'<figure class="fig inteiro"><span class="moldura"><img src="{IMG}latour-leitora-da-sina.webp" '
  'alt="Um rapaz de colete de couro e faixa à cintura, entre quatro mulheres. À direita, uma velha mostra-lhe uma moeda e ele estende a mão aberta; junto à cintura dele e junto à corrente que lhe cai do peito há mãos das outras mulheres." loading="lazy"></span>'
- '<figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5 cm. '
+ '<figcaption>Georges de La Tour, <i>The Fortune-Teller</i> (<i>A leitora da sina</i>, título nosso), provavelmente da década de 1630. Óleo sobre tela, 101,9 × 123,5\u00a0cm. '
  '<a href="https://www.metmuseum.org/art/collection/search/436838">The Metropolitan Museum of Art</a>, Nova Iorque, 60.30. Domínio público (Open Access).</figcaption></figure>'
  # 01/11/2026 (método; padrão 13 dos cartões, «Observar a sério», decisão 92): primeiro o quadro inteiro, depois ampliado
  '<p>Agora é a tua vez: dois minutos em silêncio. Vê primeiro o quadro inteiro; depois amplia-o e procura as mãos. Ainda não concluas nada.</p>'
@@ -118,7 +118,7 @@ MEDALHA = [('O par de mãos ao centro', (600, 615)), ('A mão mais baixa da velh
 # do colega, «Pelo caminho» e o que fica escrito), que o #106 tinha encurtado sem pedido; ficam os critérios «Está bom quando…».
 # 05/11/2026 (decisão 154): o exercício faz-se sozinho; sai «Com o docente», e fora da aula cada um verifica os seus factos noutro dia.
 NA_AULA = ('<p><b>O que se faz.</b> Vai a um lugar da escola por onde todos passam (a escada, o portão, o bar). Regista dez factos, um por nota, que outra pessoa possa confirmar. Junta três inferências e uma pergunta. Verifica individualmente os factos de um colega, ou os teus noutro dia, e marca-os como confirmados ou desmentidos. Pelo caminho, conta os degraus da escada.</p>'
-           '<p><b>Quanto tempo.</b> 70 minutos, com a pausa.</p>'
+           '<p><b>Quanto tempo.</b> 70\u00a0minutos, com a pausa.</p>'
            '<p><b>O que fica escrito.</b> O teu auto de observação, no guião; os teus factos, onde guardas o material.</p>' + M.esta_bom(1))
 LEVAR = (
  '<p class="levar">Ver não custa nada. Observar é contar os degraus.</p>'
@@ -182,7 +182,7 @@ cartoes = [
   "frase":"Se as diferenças não forem claramente visíveis à superfície, assumimos que não as há.","certas":[9,10,11,12,13],
   "f":"O erro é que **assumimos que não as há**: como não vemos logo a diferença, decidimos que ela não existe. Watson fez o mesmo com os degraus: viu-os centenas de vezes e nunca achou que houvesse ali alguma coisa para saber.",
   "fe":"O começo da frase descreve a situação: as diferenças não se veem logo. Procura onde a frase diz o que fazemos de errado."},
- {"t":"escolha","g":"cartoes","p":"O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5 centímetros, um assunto por cartão. Para que serve?","p2":"Porque é que o método manda passar a escrito, cartão a cartão, o que se recolhe?",
+ {"t":"escolha","g":"cartoes","p":"O método aconselha a registar o que se recolhe em cartões brancos de 12,5 por 7,5\u00a0centímetros, um assunto por cartão. Para que serve?","p2":"Porque é que o método manda passar a escrito, cartão a cartão, o que se recolhe?",
   "o":["Obriga a escrever e mostra o que falta.","Prova ao docente que trabalhaste muito.","Ajuda a decorar os factos para um teste."],"c":0,
   "f":"O livro diz que o registo ajuda a «dar ordem ao trabalho» e a «evidenciar as falhas no conhecimento», e que obriga o cérebro «a passar pelo processo de expressar os conteúdos pesquisados em forma escrita». Cartões, caderno ou telemóvel: escolhe a forma, mas regista uma coisa de cada vez.",
   "fe":["","O conselho dos cartões não fala de mostrar trabalho a ninguém. Fala do que a escrita faz a quem escreve.","O método não pede que decores. Escrever serve para pensar e para ver o que ainda não se sabe."]},
@@ -211,7 +211,7 @@ dados = {
  "seccao":{"nome":"Ideias","subtitulo":"Como nasce uma ideia","url":LENTE + "narrativas/ideias/","sessoes":7,"rotulo":"As sessões do Ideias"},
  "saida":"narrativas/ideias/sessao-01/index.html","piloto":False,
  "seguinte":"../sessao-02/","seguinteRotulo":"Sessão 2: O cocheiro",
- "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho de 1891 (Project Gutenberg, n.º 1661), tradução nossa. Amy\u00a0E.\u00a0Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
+ "fontes":"Arthur Conan Doyle, «A Scandal in Bohemia», _The Strand Magazine_, julho\u00a0de\u00a01891 (Project Gutenberg, n.º\u00a01661), tradução nossa. Amy\u00a0E.\u00a0Herman, «How art can help you analyze», lição do TED-Ed (ed.ted.com e canal oficial do TED-Ed no YouTube). Georges de La Tour, _The Fortune-Teller_, The Metropolitan Museum of Art, Nova Iorque (Open Access, domínio público). James Webb Young, _A Technique for Producing Ideas_ (Advertising Publications, 1940; edição de 1960), tradução nossa. Universidade Aalto, _Diving into Radical Creativity_, «Ideation» (parte pública), citação curta. Consultadas a 31/10/2026. Os registos do auto de observação são inventados.",
  "cartoes":cartoes,
 }
 p = pathlib.Path(__file__).with_suffix('.json')
