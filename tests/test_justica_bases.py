@@ -83,7 +83,7 @@ class BasesJustica(unittest.TestCase):
         encontradas = {}
         for m in MANIFESTO:
             n = m['numero']
-            self.assertEqual(V.validar_banco(banco(n), n, m['molde_novo']), [])
+            self.assertEqual(V.validar_banco(banco(n), n, m['molde_novo'], m.get('formato_curto', False)), [])
             for k, x in enumerate(banco(n), 1):
                 if x['t'] == 'ler' and V.palavras_visiveis(x) > 95:
                     encontradas[n,k] = V.palavras_visiveis(x)
@@ -149,7 +149,19 @@ class BasesJustica(unittest.TestCase):
         for m in MANIFESTO:
             if not m['molde_novo']:
                 continue
-            self.assertEqual(V.validar_molde_novo(banco(m['numero'])), [])
+            validar = V.validar_molde_curto if m.get('formato_curto') else V.validar_molde_novo
+            self.assertEqual(validar(banco(m['numero'])), [])
+
+    def test_molde_curto_recusa_cortes_longos_e_atividades_em_falta(self):
+        from copy import deepcopy
+        itens = deepcopy(banco(4))
+        self.assertEqual(V.validar_molde_curto(itens), [])
+        itens[1]['html'] = itens[1]['html'].replace('data-fim="277"', 'data-fim="340"')
+        self.assertIn('duracao_excerto', V.validar_molde_curto(itens))
+        itens = deepcopy(banco(4)); itens[2]['t'] = 'ler'
+        self.assertIn('sequencia_curta', V.validar_molde_curto(itens))
+        itens = deepcopy(banco(4)); itens[2]['producao_livre'] = True
+        self.assertIn('producao_livre', V.validar_molde_curto(itens))
 
     def molde_de_prova(self):
         # 02/11/2026: prova independente dos bancos antigos, todos molde_novo=false.

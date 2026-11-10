@@ -23,7 +23,7 @@
     "credito": "Niobid Painter. Niobid Painter - Red-Figure Amphora with Musical Scene - Walters 482712 - Side A.jpg. Public domain.",
     "url": "https://commons.wikimedia.org/wiki/File:Niobid_Painter_-_Red-Figure_Amphora_with_Musical_Scene_-_Walters_482712_-_Side_A.jpg"
   },
-  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "estado": "Versão breve autorizada em 10/11/2026; quatro excertos de 1–3 minutos com tempos aproximados.",
   "videos": [
     {
       "aula": 17,
@@ -37,5 +37,6 @@
       "video": "https://www.youtube.com/embed/AUhReMT5uqA?start=1577&end=3223",
       "confirmado": "2026-11-10"
     }
-  ]
+  ],
+  "selecao": "../excertos-curtos.json"
 }

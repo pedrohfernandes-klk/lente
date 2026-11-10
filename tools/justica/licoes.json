@@ -48,7 +48,8 @@
     ],
     "anterior": "../licao-3/",
     "seguinte": "../licao-5/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 5,
@@ -60,7 +61,8 @@
     ],
     "anterior": "../licao-4/",
     "seguinte": "../licao-6/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 6,
@@ -72,7 +74,8 @@
     ],
     "anterior": "../licao-5/",
     "seguinte": "../licao-7/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 7,
@@ -83,7 +86,8 @@
     ],
     "anterior": "../licao-6/",
     "seguinte": "../licao-8/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 8,
@@ -94,7 +98,8 @@
     ],
     "anterior": "../licao-7/",
     "seguinte": "../licao-9/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 9,
@@ -106,7 +111,8 @@
     ],
     "anterior": "../licao-8/",
     "seguinte": "../licao-10/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 10,
@@ -118,7 +124,8 @@
     ],
     "anterior": "../licao-9/",
     "seguinte": "../licao-11/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 11,
@@ -130,7 +137,8 @@
     ],
     "anterior": "../licao-10/",
     "seguinte": "../licao-12/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 12,
@@ -142,7 +150,8 @@
     ],
     "anterior": "../licao-11/",
     "seguinte": "../licao-13/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   },
   {
     "numero": 13,
@@ -154,6 +163,7 @@
     ],
     "anterior": "../licao-12/",
     "seguinte": "../aplicar/",
-    "molde_novo": true
+    "molde_novo": true,
+    "formato_curto": true
   }
 ]
