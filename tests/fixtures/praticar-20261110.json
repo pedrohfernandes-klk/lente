@@ -1,0 +1,80 @@
+{
+ "cidadania/m2/index.html": [
+  [
+   "</h2><p class=\"c10-small\" data-count>",
+   "</h2><div class=\"c10-small\"><h3>Como se organiza o módulo</h3><p><strong>Segue as dez sessões</strong>, pela ordem indicada: são o percurso de aula. O passo zero, os oito passos e os exercícios longos abaixo são recursos usados nessas sessões; não são outra sequência obrigatória.</p><p>As quatro fases explicam o desenvolvimento de <strong>um único projeto, o Contra-feed</strong>. A lição de Justiça indicada como obrigatória faz parte do percurso. O contador de 11 atividades refere-se aos recursos, não ao número de sessões.</p></div><p class=\"c10-small\" data-count>",
+   1
+  ]
+ ],
+ "como/index.html": [
+  [
+   "<b>Escolhe</b> uma das duas divisões, ou um dos percursos transversais.",
+   "Começa por <a href=\"../praticar/\">escolher o que precisas de praticar</a>, ou abre Cidadania, o Laboratório ou um percurso transversal.",
+   1
+  ],
+  [
+   "Cada página é um baralho de cartões</b>: lês, respondes com um toque, decides em voz alta. Se saíres a meio, nada se perde.</li><li><b>Nada se escreve no ecrã</b>: o caderno é de papel. O que fazes fica só no teu telemóvel, sem contas nem nomes; podes guardá-lo num ficheiro",
+   "Há percursos em cartões e páginas de consulta</b>: lês, experimentas e aplicas. O progresso guardado depende do recurso e fica neste navegador.</li><li><b>Onde trabalhas</b>: cada exercício indica se respondes no ecrã, oralmente ou no papel. O ficheiro de progresso não substitui os teus textos, fotografias ou apontamentos; consulta o que fica guardado",
+   1
+  ]
+ ],
+ "index.html": [
+  [
+   "</script></head>",
+   "</script><link rel=\"stylesheet\" href=\"assets/praticar.css\"></head>",
+   1
+  ],
+  [
+   "</nav>\n\n",
+   "</nav><section class=\"pr-start\" aria-labelledby=\"pr-inicio\"><h2 id=\"pr-inicio\">O que precisas de praticar?</h2><p>Escolhe uma necessidade. Encontras exercícios com uma indicação do que fazer, do tempo de prática e de como verificar o resultado.</p><nav class=\"pr-start-links\" aria-label=\"Escolher um exercício\"><a href=\"praticar/#compreender\">Quero compreender</a><a href=\"praticar/#escrever\">Quero escrever</a><a href=\"praticar/#investigar\">Quero investigar</a><a href=\"praticar/#criar\">Quero criar</a><a href=\"praticar/#apresentar\">Quero apresentar</a></nav><p><a href=\"praticar/#aplicar\">Aplicar: reparar uma resposta, resolver um caso e comparar versões →</a></p></section>\n\n",
+   1
+  ]
+ ],
+ "investigar/passo-09/index.html": [
+  [
+   "alta e corta uma frase.",
+   "alta. Identifica uma dificuldade e decide se precisas de cortar, acrescentar ou reformular. Compara as versões e explica o que melhorou.",
+   1
+  ]
+ ],
+ "ler/index.html": [
+  [
+   "era?&nbsp;·&nbsp;6&nbsp;min</span>",
+   "era?&nbsp;·&nbsp;6&nbsp;min de leitura + 10&nbsp;min de prática</span>",
+   1
+  ]
+ ],
+ "ler/passo-03/index.html": [
+  [
+   "valor; não se prova, partilha-se.",
+   "valor. Um gosto pessoal pode ser partilhado; um juízo sobre uma obra ou uma decisão deve explicitar critérios e razões. As razões podem ser discutidas e os factos usados para o sustentar podem ser verificados.",
+   1
+  ]
+ ],
+ "ler/passo-05/index.html": [
+  [
+   "6 min",
+   "cerca de 6 min de leitura orientadora + 10 min de prática",
+   1
+  ]
+ ],
+ "mapa/index.html": [
+  [
+   "</h1><p>",
+   "</h1><p><a href=\"../praticar/\">Escolher um exercício pelo que precisas de praticar →</a></p><p>",
+   1
+  ],
+  [
+   "sete",
+   "oito",
+   1
+  ]
+ ],
+ "tools/cidadania_m2_sessoes.py": [
+  [
+   "</h2><p class=\"c10-small\" data-count>",
+   "</h2><div class=\"c10-small\"><h3>Como se organiza o módulo</h3><p><strong>Segue as dez sessões</strong>, pela ordem indicada: são o percurso de aula. O passo zero, os oito passos e os exercícios longos abaixo são recursos usados nessas sessões; não são outra sequência obrigatória.</p><p>As quatro fases explicam o desenvolvimento de <strong>um único projeto, o Contra-feed</strong>. A lição de Justiça indicada como obrigatória faz parte do percurso. O contador de 11 atividades refere-se aos recursos, não ao número de sessões.</p></div><p class=\"c10-small\" data-count>",
+   1
+  ]
+ ]
+}
