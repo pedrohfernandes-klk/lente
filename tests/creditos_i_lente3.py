@@ -17,21 +17,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 import creditos_i  # noqa: E402
+import praticar_20261110
 
 MANIFESTO = creditos_i.ler_manifesto()
 TROCAS = creditos_i.literais(MANIFESTO)
 
 
 def aplicar(texto, ficheiro):
-    return creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+    return praticar_20261110.aplicar(creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro)
 
 
 def desfazer(texto, ficheiro):
-    return creditos_i.desfazer(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+    return creditos_i.desfazer(praticar_20261110.desfazer(texto, ficheiro), TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
 
 
 def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (git merge-base HEAD origin/main): se a base já traz esta camada (cada «novo» com a
     contagem exata e nenhum «antigo» fora de um «novo»), fica como está; senão, recebe-a com contagem exata. Um estado misto
     falha."""
-    return creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+    return praticar_20261110.alinhar(creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro)
