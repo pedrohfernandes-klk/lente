@@ -3,7 +3,8 @@
 const {chromium}=require('playwright'), fs=require('fs'), path=require('path'), assert=require('node:assert/strict');
 const ROOT=path.resolve(__dirname,'..'), OUT=process.env.JUSTICA_QA||path.join(ROOT,'../justica-qa');
 fs.mkdirSync(OUT,{recursive:true});
-const manifest=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/justica/licoes.json'),'utf8'));
+// As novas lições e os seus tipos adicionais são percorridos por browser_justica_novas.py.
+const manifest=JSON.parse(fs.readFileSync(path.join(ROOT,'tools/justica/licoes.json'),'utf8')).filter(m=>m.numero<=3);
 const BASE='https://pedrohfernandes-klk.github.io/lente/';
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp'};
 const clean=s=>s.replace(/\*\*|_/g,'');

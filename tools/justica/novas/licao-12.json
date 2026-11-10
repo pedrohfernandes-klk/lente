@@ -1,0 +1,41 @@
+{
+  "numero": 12,
+  "titulo": "Devemos mais aos nossos?",
+  "pergunta": "Há deveres que não escolhemos?",
+  "episodio": 11,
+  "aulas": [
+    21,
+    22
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-21-the-claims-of-community/",
+      "lida": "2026-11-02"
+    },
+    {
+      "url": "https://justiceharvard.org/lecture-22-where-our-loyalty-lies/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-12.webp",
+    "alt": "The US Border fence at Onate Crossing looking into Juarez, Mexico from El Paso, TX (6ac93f71-7119-4978-9d13-cf3ac4389a82).JPG",
+    "credito": "National Trails Office ( US National Park Service ). The US Border fence at Onate Crossing looking into Juarez, Mexico from El Paso, TX (6ac93f71-7119-4978-9d13-cf3ac4389a82).JPG. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:The_US_Border_fence_at_Onate_Crossing_looking_into_Juarez,_Mexico_from_El_Paso,_TX_(6ac93f71-7119-4978-9d13-cf3ac4389a82).JPG"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 21,
+      "url": "https://justiceharvard.org/lecture-21-the-claims-of-community/",
+      "video": "https://www.youtube.com/embed/iOotE9_OGGs?start=17&end=1438",
+      "confirmado": "2026-11-10"
+    },
+    {
+      "aula": 22,
+      "url": "https://justiceharvard.org/lecture-22-where-our-loyalty-lies/",
+      "video": "https://www.youtube.com/embed/iOotE9_OGGs?start=1465&end=3235",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

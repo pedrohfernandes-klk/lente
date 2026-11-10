@@ -1,0 +1,41 @@
+{
+  "numero": 4,
+  "titulo": "Isto é meu?",
+  "pergunta": "O trabalho torna uma coisa nossa?",
+  "episodio": 4,
+  "aulas": [
+    7,
+    8
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-7-this-land-is-your-land/",
+      "lida": "2026-11-02"
+    },
+    {
+      "url": "https://justiceharvard.org/lecture-8-consenting-adults/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-4.webp",
+    "alt": "Johannes Vermeer - The Little Street - WGA24617.jpg",
+    "credito": "Johannes Vermeer. Johannes Vermeer - The Little Street - WGA24617.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_The_Little_Street_-_WGA24617.jpg"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 7,
+      "url": "https://justiceharvard.org/lecture-7-this-land-is-your-land/",
+      "video": "https://www.youtube.com/embed/MGyygiXMzRk?start=17&end=1510",
+      "confirmado": "2026-11-10"
+    },
+    {
+      "aula": 8,
+      "url": "https://justiceharvard.org/lecture-8-consenting-adults/",
+      "video": "https://www.youtube.com/embed/MGyygiXMzRk?start=1548&end=3223",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

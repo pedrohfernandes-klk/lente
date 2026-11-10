@@ -53,6 +53,9 @@ class BasesJustica(unittest.TestCase):
             self.assertEqual(molde.count('@@ITENS@@'), 1)
             gerada = molde.replace('@@ITENS@@', (T/f'bancos/licao-{n}.json').read_text('utf-8').rstrip('\n'))
             self.assertEqual(gerada, (R/f'olhar-e-decidir/justica/licao-{n}/index.html').read_text('utf-8'))
+            if n > 3:
+                self.assertTrue(m["molde_novo"])
+                continue  # Páginas novas: regeneração e regras verificadas acima e abaixo.
             # 02/11/2026: prova contra o main de partida, só com as duas trocas autorizadas.
             # 03/11/2026 (#107; data posta a 05/11/2026): conserva o hash histórico; desfaz só os títulos autorizados do #107.
             # 06/11/2026: decisão 149 (volta «Dilemas»): antes do #107, desfaz-se só a troca do manifesto fechado

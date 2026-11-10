@@ -1,0 +1,30 @@
+{
+  "numero": 8,
+  "titulo": "Um acordo chega?",
+  "pergunta": "Aceitar um acordo torna-o justo?",
+  "episodio": 7,
+  "aulas": [
+    14
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-14-a-deal-is-a-deal/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-8.webp",
+    "alt": "Berner Iustitia.jpg",
+    "credito": "Wikimedia Commons user TheBernFiles .. Berner Iustitia.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:Berner_Iustitia.jpg"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 14,
+      "url": "https://justiceharvard.org/lecture-14-a-deal-is-a-deal/",
+      "video": "https://www.youtube.com/embed/KqzW0eHzDSQ?start=1387&end=3229",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

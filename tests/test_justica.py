@@ -12,6 +12,10 @@ PROIBIDAS = re.compile(r'(?<![\wÀ-ÿ])(?:jog(?:o|os|ar|a|as|amos|am|ou|ue|uei|a
 
 def itens(p):
     s = p.read_text('utf-8')
+    if 'CFG.itens=' in s:
+        cfg = json.JSONDecoder().raw_decode(s.split('var CFG=', 1)[1])[0]
+        cards = json.JSONDecoder().raw_decode(s.split('CFG.itens=', 1)[1])[0]
+        return cards, cfg['chave']
     m = re.search(r'EPIJogo\.montar\(\{.*?itens:(\[.*?\]),chave:"([^"]+)"', s, re.S)
     return json.loads(m.group(1)), m.group(2)
 
@@ -27,7 +31,17 @@ class Justica(unittest.TestCase):
             self.assertTrue(20 <= len(I) <= 26, len(I))
             html = ''.join(x.get('html', '') for x in I)
             vids = re.findall(r'data-yt="([\w-]{11})" data-ini="(\d+)" data-fim="(\d+)"', html)
-            self.assertGreaterEqual(len(vids), 6)
+            if meta['molde_novo']:
+                from urllib.parse import urlparse, parse_qs
+                fontes = json.loads((R / 'tools/justica/novas/videos.json').read_text('utf-8'))
+                expected = []
+                for fonte in fontes:
+                    if fonte['aula'] in meta['aulas']:
+                        u = urlparse(fonte['video']); q = parse_qs(u.query)
+                        expected.append((u.path.split('/')[-1], q['start'][0], q['end'][0]))
+                self.assertEqual(vids, expected)
+            else:
+                self.assertGreaterEqual(len(vids), 6)
             for yt, a, b in vids:
                 self.assertEqual(yt, meta['video'])
                 self.assertLess(int(a), int(b))
@@ -95,7 +109,11 @@ class Justica(unittest.TestCase):
         for meta in MANIFESTO:
             n = meta['numero']
             s = (J / f'licao-{n}/index.html').read_text('utf-8')
-            self.assertIn('seguinte:' + json.dumps(meta['seguinte']), s)
+            if meta['molde_novo']:
+                cfg = json.JSONDecoder().raw_decode(s.split('var CFG=', 1)[1])[0]
+                self.assertEqual(cfg['seguinte'], meta['seguinte'])
+            else:
+                self.assertIn('seguinte:' + json.dumps(meta['seguinte']), s)
             self.assertIn('id="casca-pc"', s)
             self.assertIn('<a href="../">', s)
             self.assertIn('href="' + meta['anterior'] + '"', s)
