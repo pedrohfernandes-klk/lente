@@ -19,7 +19,7 @@
     "credito": "Oliver Ditson & Co.. Wanted a substitute LCCN2008661656.jpg. Public domain.",
     "url": "https://commons.wikimedia.org/wiki/File:Wanted_a_substitute_LCCN2008661656.jpg"
   },
-  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "estado": "Versão breve autorizada em 10/11/2026; quatro excertos de 1–3 minutos com tempos aproximados.",
   "videos": [
     {
       "aula": 9,
@@ -33,5 +33,6 @@
       "video": "https://www.youtube.com/embed/8yT4RZy1t3s?start=1646&end=3235",
       "confirmado": "2026-11-10"
     }
-  ]
+  ],
+  "selecao": "../excertos-curtos.json"
 }

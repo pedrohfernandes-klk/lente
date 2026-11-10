@@ -89,9 +89,32 @@ def validar_molde_novo(itens):
     return erros
 
 
-def validar_banco(itens, numero, novo=False):
+def validar_molde_curto(itens):
+    """10/11: formato pedido pelo docente: quatro excertos e quatro exercícios."""
     erros = []
-    if not 20 <= len(itens) <= 26:
+    if len(itens) != 10:
+        return ['contagem_curta']
+    if itens[0].get('rot') != 'Abre' or 'No fim, consegues' not in itens[0].get('html', ''):
+        erros.append('abre')
+    for j in range(4):
+        leitura, atividade = itens[1+2*j:3+2*j]
+        if leitura['t'] != 'ler' or atividade['t'] not in ('vf', 'ordenar', 'emparelhar'):
+            erros.append('sequencia_curta')
+        videos = re.findall(r'data-ini="(\d+)" data-fim="(\d+)"', leitura.get('html', ''))
+        if len(videos) != 1 or not 60 <= int(videos[0][1])-int(videos[0][0]) <= 180:
+            erros.append('duracao_excerto')
+        if 'Tempos aproximados' not in leitura.get('html', ''):
+            erros.append('proveniencia_tempos')
+    if sum(x.get('producao_livre') is True or x['t'] == 'escrita' for x in itens) != 1:
+        erros.append('producao_livre')
+    if itens[-1]['t'] != 'ler' or itens[-1].get('producao_livre') is not True or '60 e 100 palavras' not in itens[-1].get('html', ''):
+        erros.append('sintese_curta')
+    return erros
+
+
+def validar_banco(itens, numero, novo=False, curto=False):
+    erros = []
+    if not curto and not 20 <= len(itens) <= 26:
         erros.append(f'L{numero}: número de cartões fora de 20 a 26')
     curtas, esperado = 0, 0
     for k, item in enumerate(itens, 1):
@@ -125,7 +148,9 @@ def validar_banco(itens, numero, novo=False):
             erros.append(f'{onde}: mais de 95 palavras visíveis')
     if curtas > math.ceil(esperado):
         erros.append(f'L{numero}: certa mais curta demasiadas vezes')
-    if novo:
+    if curto:
+        erros.extend(f'L{numero}: molde curto: {erro}' for erro in validar_molde_curto(itens))
+    elif novo:
         erros.extend(f'L{numero}: molde novo: {erro}' for erro in validar_molde_novo(itens))
     return erros
 

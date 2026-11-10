@@ -23,7 +23,7 @@
     "credito": "Miscellaneous Items in High Demand, PPOC, Library of Congress. Excerpt of Lincoln's speech, final debate with Stephen A. Douglas from Abraham Lincoln's scrapbook of the Illinois political campaign of 1858 LCCN2004665685.jpg. Public domain.",
     "url": "https://commons.wikimedia.org/wiki/File:Excerpt_of_Lincoln%27s_speech,_final_debate_with_Stephen_A._Douglas_from_Abraham_Lincoln%27s_scrapbook_of_the_Illinois_political_campaign_of_1858_LCCN2004665685.jpg"
   },
-  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "estado": "Versão breve autorizada em 10/11/2026; quatro excertos de 1–3 minutos com tempos aproximados.",
   "videos": [
     {
       "aula": 23,
@@ -37,5 +37,6 @@
       "video": "https://www.youtube.com/embed/EzD9P-9sj4M?start=1478&end=3235",
       "confirmado": "2026-11-10"
     }
-  ]
+  ],
+  "selecao": "../excertos-curtos.json"
 }

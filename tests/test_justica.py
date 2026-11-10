@@ -28,10 +28,20 @@ class Justica(unittest.TestCase):
             n, chave = meta['numero'], meta['chave']
             I, k = itens(J / f'licao-{n}/index.html')
             self.assertEqual(k, chave)
-            self.assertTrue(20 <= len(I) <= 26, len(I))
+            if meta.get('formato_curto'):
+                self.assertEqual(len(I), 10)
+            else:
+                self.assertTrue(20 <= len(I) <= 26, len(I))
             html = ''.join(x.get('html', '') for x in I)
             vids = re.findall(r'data-yt="([\w-]{11})" data-ini="(\d+)" data-fim="(\d+)"', html)
-            if meta['molde_novo']:
+            if meta.get('formato_curto'):
+                fontes = json.loads((R / 'tools/justica/excertos-curtos.json').read_text('utf-8'))
+                selecao = next(f for f in fontes if f['licao'] == n)
+                self.assertEqual(vids, [(selecao['video'], str(c['inicio']), str(c['fim'])) for c in selecao['excertos']])
+                self.assertEqual(len(vids), 4)
+                for _, a, b in vids:
+                    self.assertTrue(60 <= int(b)-int(a) <= 180)
+            elif meta['molde_novo']:
                 from urllib.parse import urlparse, parse_qs
                 fontes = json.loads((R / 'tools/justica/novas/videos.json').read_text('utf-8'))
                 expected = []
