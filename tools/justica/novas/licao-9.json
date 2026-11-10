@@ -1,0 +1,41 @@
+{
+  "numero": 9,
+  "titulo": "Mereces o que ganhas?",
+  "pergunta": "O esforço explica tudo o que ganhamos?",
+  "episodio": 8,
+  "aulas": [
+    15,
+    16
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-15-whats-a-fair-start/",
+      "lida": "2026-11-02"
+    },
+    {
+      "url": "https://justiceharvard.org/lecture-16-what-do-we-deserve/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-9.webp",
+    "alt": "Start of Junior Cross Country Race, 11-14-08, J.E. Sullivan LCCN2014682948.jpg",
+    "credito": "Bain News Service, publisher. Start of Junior Cross Country Race, 11-14-08, J.E. Sullivan LCCN2014682948.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:Start_of_Junior_Cross_Country_Race,_11-14-08,_J.E._Sullivan_LCCN2014682948.jpg"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 15,
+      "url": "https://justiceharvard.org/lecture-15-whats-a-fair-start/",
+      "video": "https://www.youtube.com/embed/VcL66zx_6No?start=17&end=1471",
+      "confirmado": "2026-11-10"
+    },
+    {
+      "aula": 16,
+      "url": "https://justiceharvard.org/lecture-16-what-do-we-deserve/",
+      "video": "https://www.youtube.com/embed/VcL66zx_6No?start=1510&end=3231",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

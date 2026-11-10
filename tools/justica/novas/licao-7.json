@@ -1,0 +1,30 @@
+{
+  "numero": 7,
+  "titulo": "Mentir a quem bate à porta?",
+  "pergunta": "Uma boa intenção justifica uma mentira?",
+  "episodio": 7,
+  "aulas": [
+    13
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-13-a-lesson-in-lying/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-7.webp",
+    "alt": "Pieter de Hooch - The Courtyard of a House in Delft.jpg",
+    "credito": "Pieter de Hooch. Pieter de Hooch - The Courtyard of a House in Delft.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:Pieter_de_Hooch_-_The_Courtyard_of_a_House_in_Delft.jpg"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 13,
+      "url": "https://justiceharvard.org/lecture-13-a-lesson-in-lying/",
+      "video": "https://www.youtube.com/embed/KqzW0eHzDSQ?start=17&end=1348",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

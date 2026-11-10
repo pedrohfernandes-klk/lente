@@ -1,0 +1,41 @@
+{
+  "numero": 11,
+  "titulo": "Quem decide o fim?",
+  "pergunta": "Quem decide o que é essencial numa atividade?",
+  "episodio": 10,
+  "aulas": [
+    19,
+    20
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-19-the-good-citizen/",
+      "lida": "2026-11-02"
+    },
+    {
+      "url": "https://justiceharvard.org/lecture-20-freedom-vs-fit/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-11.webp",
+    "alt": "\"The School of Athens\" by Raffaello Sanzio da Urbino.jpg",
+    "credito": "Raphael. \"The School of Athens\" by Raffaello Sanzio da Urbino.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg"
+  },
+  "estado": "Conteúdo montado; blocos oficiais confirmados em 10/11/2026.",
+  "videos": [
+    {
+      "aula": 19,
+      "url": "https://justiceharvard.org/lecture-19-the-good-citizen/",
+      "video": "https://www.youtube.com/embed/MuiazbyOSqQ?start=17&end=1619",
+      "confirmado": "2026-11-10"
+    },
+    {
+      "aula": 20,
+      "url": "https://justiceharvard.org/lecture-20-freedom-vs-fit/",
+      "video": "https://www.youtube.com/embed/MuiazbyOSqQ?start=1658&end=3233",
+      "confirmado": "2026-11-10"
+    }
+  ]
+}

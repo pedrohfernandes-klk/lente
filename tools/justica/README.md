@@ -43,3 +43,9 @@ O molde novo exige pelo menos 14 atividades, cinco tipos sem escrita, no máximo
 `validar_molde_novo` verifica a sequência apresentada ao aluno, incluindo as leituras. Três escolhas separadas por leituras não são consecutivas; três leituras seguidas são. Quando houver variantes, o chamador entrega a sequência já selecionada. A contagem de atividades continua a excluir `ler`.
 
 Os testes sintéticos exercem estas regras mesmo enquanto todos os bancos publicados têm `molde_novo=false`: ordenações com uma escrita; duas escritas; produção livre dentro de leituras; marcação inválida; escolhas intercaladas; três escolhas ou três leituras consecutivas. A validação geral do banco chama também estas regras quando recebe `novo=true`.
+
+## Continuação publicada em novembro de 2026
+
+As lições 4 a 13 cobrem os episódios 4 a 12; as aulas 13 e 14 do episódio 7 são duas lições. `novas/` guarda a proveniência das imagens e dos blocos oficiais, não uma segunda cópia dos cartões. Os bancos continuam a ser a fonte única do conteúdo. Não há citações novas atribuídas à fala de Sandel nem cortes curtos com tempos inferidos. Usam-se os limites das aulas incorporadas no sítio oficial, consultado em 10/11/2026. O leitor preserva esses limites.
+
+As novas páginas usam o motor partilhado, mantendo os cartões das três lições antigas. A navegação da lição 3 continua agora para a lição 4, sem retirar o acesso a «Aplicar». Cada banco cumpre o molde novo: 20 a 26 cartões, pelo menos 14 atividades, cinco tipos, imagem e observação inicial, um momento de comparação oral e uma única produção livre de 60 a 100 palavras. Os textos de apoio podem ser usados quando o vídeo não estiver disponível.

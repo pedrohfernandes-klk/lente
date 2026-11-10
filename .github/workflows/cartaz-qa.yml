@@ -94,6 +94,7 @@ jobs:
           - python tests/browser_cidadania_butler_singer.py
           - python tests/browser_cidadania_anomalias.py
           - python tests/browser_lab_treinos.py
+          - python tests/browser_justica_novas.py
     steps:
       - uses: actions/checkout@v4
         with:

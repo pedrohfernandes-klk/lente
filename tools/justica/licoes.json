@@ -34,8 +34,126 @@
       6
     ],
     "anterior": "../licao-2/",
-    "seguinte": "../aplicar/",
+    "seguinte": "../licao-4/",
     "molde_novo": false,
     "sha256_publicado": "fe069a8318d0982fd705a3f29d52446f369c782150c9919e3924f426aa2ff4c0"
+  },
+  {
+    "numero": 4,
+    "chave": "lente-justica-licao-4",
+    "video": "MGyygiXMzRk",
+    "aulas": [
+      7,
+      8
+    ],
+    "anterior": "../licao-3/",
+    "seguinte": "../licao-5/",
+    "molde_novo": true
+  },
+  {
+    "numero": 5,
+    "chave": "lente-justica-licao-5",
+    "video": "8yT4RZy1t3s",
+    "aulas": [
+      9,
+      10
+    ],
+    "anterior": "../licao-4/",
+    "seguinte": "../licao-6/",
+    "molde_novo": true
+  },
+  {
+    "numero": 6,
+    "chave": "lente-justica-licao-6",
+    "video": "8rv-4aUbZxQ",
+    "aulas": [
+      11,
+      12
+    ],
+    "anterior": "../licao-5/",
+    "seguinte": "../licao-7/",
+    "molde_novo": true
+  },
+  {
+    "numero": 7,
+    "chave": "lente-justica-licao-7",
+    "video": "KqzW0eHzDSQ",
+    "aulas": [
+      13
+    ],
+    "anterior": "../licao-6/",
+    "seguinte": "../licao-8/",
+    "molde_novo": true
+  },
+  {
+    "numero": 8,
+    "chave": "lente-justica-licao-8",
+    "video": "KqzW0eHzDSQ",
+    "aulas": [
+      14
+    ],
+    "anterior": "../licao-7/",
+    "seguinte": "../licao-9/",
+    "molde_novo": true
+  },
+  {
+    "numero": 9,
+    "chave": "lente-justica-licao-9",
+    "video": "VcL66zx_6No",
+    "aulas": [
+      15,
+      16
+    ],
+    "anterior": "../licao-8/",
+    "seguinte": "../licao-10/",
+    "molde_novo": true
+  },
+  {
+    "numero": 10,
+    "chave": "lente-justica-licao-10",
+    "video": "AUhReMT5uqA",
+    "aulas": [
+      17,
+      18
+    ],
+    "anterior": "../licao-9/",
+    "seguinte": "../licao-11/",
+    "molde_novo": true
+  },
+  {
+    "numero": 11,
+    "chave": "lente-justica-licao-11",
+    "video": "MuiazbyOSqQ",
+    "aulas": [
+      19,
+      20
+    ],
+    "anterior": "../licao-10/",
+    "seguinte": "../licao-12/",
+    "molde_novo": true
+  },
+  {
+    "numero": 12,
+    "chave": "lente-justica-licao-12",
+    "video": "iOotE9_OGGs",
+    "aulas": [
+      21,
+      22
+    ],
+    "anterior": "../licao-11/",
+    "seguinte": "../licao-13/",
+    "molde_novo": true
+  },
+  {
+    "numero": 13,
+    "chave": "lente-justica-licao-13",
+    "video": "EzD9P-9sj4M",
+    "aulas": [
+      23,
+      24
+    ],
+    "anterior": "../licao-12/",
+    "seguinte": "../aplicar/",
+    "molde_novo": true
   }
 ]
