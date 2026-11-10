@@ -125,7 +125,7 @@ class Justica(unittest.TestCase):
         s2 = (J / 'licao-2/index.html').read_text('utf-8')
         self.assertIn('seguinte:"../licao-3/",seguinteRotulo:"Lição 3"', s2)
         s3 = (J / 'licao-3/index.html').read_text('utf-8')
-        self.assertIn('seguinte:"../aplicar/",seguinteRotulo:"Aplicar"', s3)
+        self.assertIn('seguinte:"../licao-4/",seguinteRotulo:"Lição 4"', s3)
         YT = {1: 'kBdfcR-8hEY', 2: '0O2Rq4HJBxw', 3: 'Qw4l1w0rkjs'}
         self.assertEqual({m['numero']: m['video'] for m in MANIFESTO if m['numero'] in YT}, YT)
         for n in (1, 2, 3):

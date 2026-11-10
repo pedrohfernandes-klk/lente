@@ -10,6 +10,7 @@ from renomeacoes_cidadania import renomear, dilemas_149
 import cuidado_lente
 # 08/11/2026: decisões 153 e 176 (pedido lente-2): manifesto fechado tools/trocas/creditos-i-lente2-20261108.json.
 import creditos_i_lente2
+import justica_20261110
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -67,7 +68,7 @@ class BasesJustica(unittest.TestCase):
             # 08/11/2026: decisões 153 e 176 (pedido lente-2). A camada dos créditos atrás do «i» é agora a mais recente e desfaz-se
             # antes da do pedido cuidado-lente, com contagem exata de cada «novo»: o crédito de cada desenho volta ao span.cred da
             # legenda e saem a peça comum e o seu estilo no molde das lições 1 e 2; o hash histórico é o mesmo.
-            gerada0 = creditos_i_lente2.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html')
+            gerada0 = creditos_i_lente2.desfazer(justica_20261110.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html'), f'olhar-e-decidir/justica/licao-{n}/index.html')
             original = renomear(dilemas_149(cuidado_lente.desfazer(gerada0, f'olhar-e-decidir/justica/licao-{n}/index.html'),
                                             f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
                                 f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
