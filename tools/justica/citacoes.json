@@ -622,5 +622,41 @@
     "video": "Qw4l1w0rkjs",
     "tempo": "48:45",
     "frase": "cannot just discount the people around you"
+  },
+  {
+    "licao": 4,
+    "cartao": 3,
+    "episodio": 4,
+    "video": "MGyygiXMzRk",
+    "tempo": "3:00",
+    "frase": "there's a difference between a state of liberty and a state of license",
+    "traducao": "há uma diferença entre um estado de liberdade e um estado de licença"
+  },
+  {
+    "licao": 4,
+    "cartao": 5,
+    "episodio": 4,
+    "video": "MGyygiXMzRk",
+    "tempo": "9:39",
+    "frase": "whatever we mix our labor with that is unowned becomes our property",
+    "traducao": "aquilo a que juntamos o nosso trabalho, e que não tinha dono, passa a ser nosso"
+  },
+  {
+    "licao": 4,
+    "cartao": 8,
+    "episodio": 4,
+    "video": "MGyygiXMzRk",
+    "tempo": "21:20",
+    "frase": "there be as much and as good left for others",
+    "traducao": "que fique para os outros tanto e tão bom"
+  },
+  {
+    "licao": 4,
+    "cartao": 10,
+    "episodio": 4,
+    "video": "MGyygiXMzRk",
+    "tempo": "42:21",
+    "frase": "you didn't sign the social contract",
+    "traducao": "não assinaste o contrato social"
   }
 ]

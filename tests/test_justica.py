@@ -30,11 +30,15 @@ class Justica(unittest.TestCase):
             self.assertEqual(k, chave)
             if meta.get('formato_curto'):
                 self.assertEqual(len(I), 10)
+            elif meta.get('formato_guiado'):
+                # 11/11/2026: revisão das lições 4 a 13. O formato guiado mantém os quatro excertos e junta o apoio das lições 1 a 3.
+                self.assertTrue(11 <= len(I) <= 15, len(I))
             else:
                 self.assertTrue(20 <= len(I) <= 26, len(I))
             html = ''.join(x.get('html', '') for x in I)
             vids = re.findall(r'data-yt="([\w-]{11})" data-ini="(\d+)" data-fim="(\d+)"', html)
-            if meta.get('formato_curto'):
+            # 11/11/2026: o formato guiado usa a mesma seleção registada, com os mesmos limites de 60 a 180 segundos.
+            if meta.get('formato_curto') or meta.get('formato_guiado'):
                 fontes = json.loads((R / 'tools/justica/excertos-curtos.json').read_text('utf-8'))
                 selecao = next(f for f in fontes if f['licao'] == n)
                 self.assertEqual(vids, [(selecao['video'], str(c['inicio']), str(c['fim'])) for c in selecao['excertos']])

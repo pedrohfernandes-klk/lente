@@ -2,28 +2,40 @@
   {
     "licao": 4,
     "video": "MGyygiXMzRk",
-    "fonte_tempos": "https://videohighlight.com/v/MGyygiXMzRk",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 4, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/MGyygiXMzRk",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Ser livre é poder fazer tudo?",
-        "inicio": 159,
-        "fim": 277
+        "titulo": "Liberdade não é licença",
+        "inicio": 151,
+        "fim": 268,
+        "aula": 7,
+        "entra": "He says the state of nature is a state of liberty.",
+        "sai": "…arbitrary, absolute power over me."
       },
       {
-        "titulo": "O trabalho torna uma coisa nossa?",
+        "titulo": "Das mãos à terra",
         "inicio": 516,
-        "fim": 680
+        "fim": 667,
+        "aula": 7,
+        "entra": "But how does that work in the case of property?",
+        "sai": "…he by his labor encloses it from the commons."
       },
       {
-        "titulo": "E quem chega depois?",
-        "inicio": 1251,
-        "fim": 1405
+        "titulo": "A objeção de Rochelle",
+        "inicio": 1151,
+        "fim": 1298,
+        "aula": 7,
+        "entra": "And what about, Rochelle says, this argument in section 27…",
+        "sai": "…that could be developed on behalf of the Native Americans."
       },
       {
-        "titulo": "Usar é o mesmo que aceitar?",
-        "inicio": 2506,
-        "fim": 2651
+        "titulo": "Eu não assinei nada",
+        "inicio": 2517,
+        "fim": 2683,
+        "aula": 8,
+        "entra": "What would it mean today, you're asking?",
+        "sai": "…but she can't drive on Mass Ave. Exactly."
       }
     ]
   },
