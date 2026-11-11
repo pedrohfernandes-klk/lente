@@ -42,252 +42,360 @@
   {
     "licao": 5,
     "video": "8yT4RZy1t3s",
-    "fonte_tempos": "https://videohighlight.com/v/8yT4RZy1t3s",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 5, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/8yT4RZy1t3s",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Pagar para outra pessoa ir?",
-        "inicio": 485,
-        "fim": 624
+        "titulo": "Pagar para outro ir",
+        "inicio": 448,
+        "fim": 531,
+        "aula": 9,
+        "entra": "During the civil war the union used a combination of conscription and the market system",
+        "sai": "a little less than the amount he spent in a year on fancy cigars"
       },
       {
-        "titulo": "Decisão livre ou necessidade?",
-        "inicio": 649,
-        "fim": 758
+        "titulo": "Liz, Jason e Sam",
+        "inicio": 556,
+        "fim": 711,
+        "aula": 9,
+        "entra": "how many think it was unjust",
+        "sai": "whereas Carnegie can go off, pay the money, and not serve."
       },
       {
-        "titulo": "O caso Baby M",
-        "inicio": 1999,
-        "fim": 2157
+        "titulo": "O contrato de Baby M",
+        "inicio": 1981,
+        "fim": 2091,
+        "aula": 10,
+        "entra": "As you ponder that, I want you to consider another case",
+        "sai": "The case wound up in court in New Jersey."
       },
       {
-        "titulo": "Duas razões para questionar a troca",
-        "inicio": 2689,
-        "fim": 2829
+        "titulo": "O que os tribunais disseram",
+        "inicio": 2751,
+        "fim": 2883,
+        "aula": 10,
+        "entra": "Now when this case was decided by the courts What did they say about these arguments?",
+        "sai": "that money can't buy that's what the court said avoiding this contract"
       }
     ]
   },
   {
     "licao": 6,
     "video": "8rv-4aUbZxQ",
-    "fonte_tempos": "https://videohighlight.com/v/8rv-4aUbZxQ",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 6, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/8rv-4aUbZxQ",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "O que é agir livremente?",
-        "inicio": 469,
-        "fim": 575
-      },
-      {
-        "titulo": "O motivo conta",
-        "inicio": 787,
-        "fim": 937
+        "titulo": "Obedece à tua sede",
+        "inicio": 383,
+        "fim": 535,
+        "aula": 11,
+        "entra": "There was an advertising slogan for the soft drink Sprite a few years ago.",
+        "sai": "So freedom as autonomy is the specially stringent idea that Kant insists on."
       },
       {
         "titulo": "O comerciante honesto",
-        "inicio": 937,
-        "fim": 1016
+        "inicio": 879,
+        "fim": 1020,
+        "aula": 11,
+        "entra": "And so for any action to be morally good it's not enough that it should conform to the moral law",
+        "sai": "because the shopkeeper only did the right thing for the wrong reason, out of self-interest."
       },
       {
-        "titulo": "E se todos fizessem o mesmo?",
+        "titulo": "A promessa falsa",
         "inicio": 2450,
-        "fim": 2582
+        "fim": 2562,
+        "aula": 12,
+        "entra": "The first version, the first formula he calls the formula of the universal law.",
+        "sai": "That's how we can know that the false promise is wrong."
+      },
+      {
+        "titulo": "A objeção de Tim",
+        "inicio": 2591,
+        "fim": 2765,
+        "aula": 12,
+        "entra": "If you're going to act with a categorical imperative so that the maxim doesn't undermine itself",
+        "sai": "That I think is the moral intuition lying behind the universalization test."
       }
     ]
   },
   {
     "licao": 7,
     "video": "KqzW0eHzDSQ",
-    "fonte_tempos": "https://videohighlight.com/v/KqzW0eHzDSQ",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 7, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/KqzW0eHzDSQ",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Uma regra para todos",
-        "inicio": 68,
-        "fim": 186
+        "titulo": "O assassino à porta",
+        "inicio": 558,
+        "fim": 680,
+        "aula": 13,
+        "entra": "now i want to test Kant's moral theory with the hardest possible case",
+        "sai": "think there's something odd and implausible about this answer"
       },
       {
-        "titulo": "Mentir para proteger?",
-        "inicio": 592,
-        "fim": 745
+        "titulo": "Há uma saída?",
+        "inicio": 681,
+        "fim": 824,
+        "aula": 13,
+        "entra": "I would like to try to defend Kant on this point",
+        "sai": "between an outright lie and a misleading truth"
       },
       {
-        "titulo": "Mentira ou verdade parcial?",
-        "inicio": 808,
-        "fim": 949
+        "titulo": "A gravata horrível",
+        "inicio": 824,
+        "fim": 927,
+        "aula": 13,
+        "entra": "From Kant's point of view there actually is a world of difference",
+        "sai": "Thank you. You shouldn't have. That's good."
       },
       {
-        "titulo": "O motivo e o dever",
-        "inicio": 1147,
-        "fim": 1304
+        "titulo": "Diana contra Wesley",
+        "inicio": 1084,
+        "fim": 1229,
+        "aula": 13,
+        "entra": "I'd like to hear from defenders of Kant, people who think there is a distinction",
+        "sai": "honoring the moral law and staying within the bounds of the categorical imperative"
       }
     ]
   },
   {
     "licao": 8,
     "video": "KqzW0eHzDSQ",
-    "fonte_tempos": "https://videohighlight.com/v/KqzW0eHzDSQ",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 7, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/KqzW0eHzDSQ",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Escolher sem saber o teu lugar",
-        "inicio": 1568,
-        "fim": 1711
+        "titulo": "Atrás do véu",
+        "inicio": 1637,
+        "fim": 1765,
+        "aula": 14,
+        "entra": "And Rawls works this out in fascinating detail with the device of what he calls the veil of ignorance.",
+        "sai": "that's how the hypothetical contract works"
       },
       {
-        "titulo": "Aceitar e beneficiar",
-        "inicio": 1815,
-        "fim": 1975
+        "titulo": "Cem lagostas",
+        "inicio": 1895,
+        "fim": 2066,
+        "aula": 14,
+        "entra": "we make an agreement a commercial agreement",
+        "sai": "I admit that I agreed but you didn't go to any work I didn't enjoy any benefit"
       },
       {
-        "titulo": "Uma troca pode ser desigual",
-        "inicio": 2255,
-        "fim": 2420
+        "titulo": "Os cromos e a sanita de Rose",
+        "inicio": 2307,
+        "fim": 2460,
+        "aula": 14,
+        "entra": "When my two sons were young they collected baseball cards and traded them.",
+        "sai": "is not a sufficient condition of the agreement being fair"
       },
       {
-        "titulo": "Imaginar condições justas",
-        "inicio": 3079,
-        "fim": 3205
+        "titulo": "A carrinha de Sam",
+        "inicio": 2669,
+        "fim": 2847,
+        "aula": 14,
+        "entra": "I was driving across the country with some friends",
+        "sai": "for which i would have owed him in the name of reciprocity and fairness."
       }
     ]
   },
   {
     "licao": 9,
     "video": "VcL66zx_6No",
-    "fonte_tempos": "https://videohighlight.com/v/VcL66zx_6No",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 8, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/VcL66zx_6No",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Liberdades para todos",
-        "inicio": 96,
-        "fim": 253
+        "titulo": "Dois princípios",
+        "inicio": 212,
+        "fim": 358,
+        "aula": 15,
+        "entra": "utilitarianism makes the mistake Rawls writes of forgetting",
+        "sai": "that work to the benefit of the least well off are just"
       },
       {
-        "titulo": "Quando aceitar uma desigualdade?",
-        "inicio": 287,
-        "fim": 400
+        "titulo": "Mike prefere o mérito",
+        "inicio": 419,
+        "fim": 588,
+        "aula": 15,
+        "entra": "let me hear what you think about",
+        "sai": "would have had the same opportunity to come to a school like this"
       },
       {
-        "titulo": "A mesma partida para todos?",
-        "inicio": 786,
-        "fim": 916
+        "titulo": "A resposta de Tim",
+        "inicio": 1933,
+        "fim": 2067,
+        "aula": 16,
+        "entra": "there are at least three objections to Rawls' difference principle",
+        "sai": "Good, thank you. I think that is what Rawls would say."
       },
       {
-        "titulo": "O esforço depende só de nós?",
-        "inicio": 1271,
-        "fim": 1433
+        "titulo": "Ter direito não é merecer",
+        "inicio": 2685,
+        "fim": 2804,
+        "aula": 16,
+        "entra": "now here Rawls introduces an important and a tricky distinction",
+        "sai": "though it is a matter of entitlements to legitimate expectations"
       }
     ]
   },
   {
     "licao": 10,
     "video": "AUhReMT5uqA",
-    "fonte_tempos": "https://videohighlight.com/v/AUhReMT5uqA",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 9, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/AUhReMT5uqA",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Porque variar os critérios de admissão?",
-        "inicio": 954,
-        "fim": 1115
+        "titulo": "O caso de Cheryl Hopwood",
+        "inicio": 96,
+        "fim": 245,
+        "aula": 17,
+        "entra": "you read about the case of Cheryl Hopwood",
+        "sai": "It went to federal court."
       },
       {
-        "titulo": "Uma nota garante um lugar?",
-        "inicio": 1383,
-        "fim": 1504
+        "titulo": "Bree e Anisha",
+        "inicio": 296,
+        "fim": 421,
+        "aula": 17,
+        "entra": "You're basing something in that's an arbitrary factor.",
+        "sai": "unequal preparation, educational disadvantage."
       },
       {
-        "titulo": "Dar a cada um o que lhe é devido",
-        "inicio": 2538,
-        "fim": 2613
+        "titulo": "Quem fica com as melhores flautas?",
+        "inicio": 2575,
+        "fim": 2746,
+        "aula": 18,
+        "entra": "Justice means giving each person his or her due",
+        "sai": "we're looking for the best musician"
       },
       {
-        "titulo": "Para que servem as flautas?",
-        "inicio": 2863,
-        "fim": 3015
+        "titulo": "Para que serve uma flauta?",
+        "inicio": 2746,
+        "fim": 2888,
+        "aula": 18,
+        "entra": "now why this is important to see why",
+        "sai": "Reasoning from the goal, from the end."
       }
     ]
   },
   {
     "licao": 11,
     "video": "MuiazbyOSqQ",
-    "fonte_tempos": "https://videohighlight.com/v/MuiazbyOSqQ",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 10, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/MuiazbyOSqQ",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "O fim de uma atividade",
-        "inicio": 29,
-        "fim": 199
-      },
-      {
         "titulo": "O pedido de Casey Martin",
-        "inicio": 1084,
-        "fim": 1247
+        "inicio": 1112,
+        "fim": 1253,
+        "aula": 19,
+        "entra": "who was Casey Martin? well Casey Martin is a very good golfer",
+        "sai": "which is necessary to performing it at a professional level."
       },
       {
-        "titulo": "Mudar a regra muda a atividade?",
-        "inicio": 1268,
-        "fim": 1440
+        "titulo": "A resposta de Reva",
+        "inicio": 1336,
+        "fim": 1426,
+        "aula": 19,
+        "entra": "Let's hear from people who say that he should have",
+        "sai": "It's not as if he's playing golf in a wheelchair."
       },
       {
-        "titulo": "Talento e liberdade",
-        "inicio": 2833,
-        "fim": 2988
+        "titulo": "O tribunal e Aristóteles",
+        "inicio": 1455,
+        "fim": 1618,
+        "aula": 19,
+        "entra": "The Supreme Court ruled that the PGA did have to accommodate Casey Martin",
+        "sai": "we'll continue on this case next time"
+      },
+      {
+        "titulo": "Três objeções a Aristóteles",
+        "inicio": 2852,
+        "fim": 2987,
+        "aula": 20,
+        "entra": "Questions of clarification about Aristotle",
+        "sai": "doesn't really allow us to come to any sort of agreement"
       }
     ]
   },
   {
     "licao": 12,
     "video": "iOotE9_OGGs",
-    "fonte_tempos": "https://videohighlight.com/v/iOotE9_OGGs",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 11, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/iOotE9_OGGs",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "A história de que fazemos parte",
-        "inicio": 356,
-        "fim": 506
+        "titulo": "Três tipos de dever",
+        "inicio": 664,
+        "fim": 813,
+        "aula": 21,
+        "entra": "On the liberal conception, moral and political obligations arise in one of two ways.",
+        "sai": "very obtuse if you didn't rush to save your child."
       },
       {
-        "titulo": "Deveres que não escolhemos",
-        "inicio": 614,
-        "fim": 758
+        "titulo": "E se as pertenças chocam?",
+        "inicio": 1055,
+        "fim": 1195,
+        "aula": 21,
+        "entra": "All right, let's hear from the critics of the communitarian idea first.",
+        "sai": "and then the human race. Good. Thank you."
       },
       {
-        "titulo": "Lealdade a quem copia?",
-        "inicio": 2287,
-        "fim": 2438
+        "titulo": "O dilema de Dan",
+        "inicio": 2324,
+        "fim": 2471,
+        "aula": 22,
+        "entra": "Yeah, if I were working on an ec problem set, for example,",
+        "sai": "Not if you've been advantaged into getting that kind of information."
       },
       {
-        "titulo": "Como escolher entre lealdades?",
-        "inicio": 2704,
-        "fim": 2807
+        "titulo": "A carta de Robert E. Lee",
+        "inicio": 2612,
+        "fim": 2731,
+        "aula": 22,
+        "entra": "Here's an even more fateful example from a figure in American history.",
+        "sai": "is a moral not just sentimental emotional tug"
       }
     ]
   },
   {
     "licao": 13,
     "video": "EzD9P-9sj4M",
-    "fonte_tempos": "https://videohighlight.com/v/EzD9P-9sj4M",
-    "estado": "aproximado; índice automático, sem conferência audiovisual dos limites",
+    "fonte_tempos": "áudio do episódio 12, reconhecimento automático da fala; índice de partida: https://videohighlight.com/v/EzD9P-9sj4M",
+    "estado": "conferido com o áudio do episódio por reconhecimento automático da fala (11/11/2026); falta a conferência por uma pessoa no leitor do YouTube",
     "excertos": [
       {
-        "titulo": "Pode o Estado ficar neutro?",
-        "inicio": 1582,
-        "fim": 1737
+        "titulo": "Para que serve o casamento?",
+        "inicio": 818,
+        "fim": 964,
+        "aula": 23,
+        "entra": "I have sort of a teleological understanding of the purpose of sex and the purpose of marriage.",
+        "sai": "it has purposes beyond procreation."
       },
       {
-        "titulo": "Uma escolha privada e um reconhecimento público",
-        "inicio": 2316,
-        "fim": 2474
+        "titulo": "A resposta de Victoria",
+        "inicio": 1241,
+        "fim": 1338,
+        "aula": 23,
+        "entra": "So, we're talking about the theological reasoning here for marriage,",
+        "sai": "that's only something that religious communities can decide."
       },
       {
-        "titulo": "Pensar entre casos e princípios",
-        "inicio": 2474,
-        "fim": 2593
+        "titulo": "Três partes num casamento",
+        "inicio": 2312,
+        "fim": 2428,
+        "aula": 24,
+        "entra": "As Justice Marshall wrote, in a real sense there are three partners to every civil marriage,",
+        "sai": "while remaining neutral on the underlying moral and religious questions."
       },
       {
-        "titulo": "Respeitar quem discorda",
-        "inicio": 2925,
-        "fim": 3100
+        "titulo": "Ignorar ou discutir?",
+        "inicio": 2907,
+        "fim": 3069,
+        "aula": 24,
+        "entra": "Now, there remains a further worry and it's a liberal worry",
+        "sai": "to appreciate the distinctive goods our different lives express."
       }
     ]
   }

@@ -155,16 +155,16 @@ class BasesJustica(unittest.TestCase):
 
     def test_molde_curto_recusa_cortes_longos_e_atividades_em_falta(self):
         from copy import deepcopy
-        # 11/11/2026: a lição 4 passou ao formato guiado; a prova do formato curto usa a primeira lição que ainda o declara.
-        n = next(m['numero'] for m in MANIFESTO if m.get('formato_curto'))
-        itens = deepcopy(banco(n))
+        # 11/11/2026: as lições 4 a 13 passaram ao formato guiado. A prova do formato curto fica, sobre o banco curto da lição 4
+        # tal como foi publicado a 10/11 (tests/fixtures/justica-formato-curto-exemplo.json), para o validador antigo não ficar sem teste.
+        curto = json.loads((R/'tests/fixtures/justica-formato-curto-exemplo.json').read_text('utf-8'))
+        itens = deepcopy(curto)
         self.assertEqual(V.validar_molde_curto(itens), [])
-        fim = re.search(r'data-fim="(\d+)"', itens[1]['html'])[1]
-        itens[1]['html'] = itens[1]['html'].replace(f'data-fim="{fim}"', f'data-fim="{int(fim)+200}"')
+        itens[1]['html'] = itens[1]['html'].replace('data-fim="277"', 'data-fim="340"')
         self.assertIn('duracao_excerto', V.validar_molde_curto(itens))
-        itens = deepcopy(banco(n)); itens[2]['t'] = 'ler'
+        itens = deepcopy(curto); itens[2]['t'] = 'ler'
         self.assertIn('sequencia_curta', V.validar_molde_curto(itens))
-        itens = deepcopy(banco(n)); itens[2]['producao_livre'] = True
+        itens = deepcopy(curto); itens[2]['producao_livre'] = True
         self.assertIn('producao_livre', V.validar_molde_curto(itens))
 
     def test_molde_guiado_recusa_o_que_o_formato_proibe(self):

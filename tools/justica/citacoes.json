@@ -658,5 +658,385 @@
     "tempo": "42:21",
     "frase": "you didn't sign the social contract",
     "traducao": "não assinaste o contrato social"
+  },
+  {
+    "licao": 5,
+    "cartao": 3,
+    "episodio": 5,
+    "video": "8yT4RZy1t3s",
+    "tempo": "7:58",
+    "frase": "you could hire a substitute to take your place",
+    "traducao": "podias pagar a um substituto para ir no teu lugar"
+  },
+  {
+    "licao": 5,
+    "cartao": 6,
+    "episodio": 5,
+    "video": "8yT4RZy1t3s",
+    "tempo": "11:37",
+    "frase": "he is in effect being coerced by that money given his economic circumstances",
+    "traducao": "na prática, é forçado por esse dinheiro, dada a sua situação económica"
+  },
+  {
+    "licao": 5,
+    "cartao": 9,
+    "episodio": 5,
+    "video": "8yT4RZy1t3s",
+    "tempo": "34:39",
+    "frase": "Mary Beth gave birth and changed her mind",
+    "traducao": "Mary Beth deu à luz e mudou de ideias"
+  },
+  {
+    "licao": 5,
+    "cartao": 11,
+    "episodio": 5,
+    "video": "8yT4RZy1t3s",
+    "tempo": "47:54",
+    "frase": "there are some things in a civilized society that money can't buy",
+    "traducao": "há coisas, numa sociedade civilizada, que o dinheiro não pode comprar"
+  },
+  {
+    "licao": 6,
+    "cartao": 3,
+    "episodio": 6,
+    "video": "8rv-4aUbZxQ",
+    "tempo": "7:43",
+    "frase": "to act autonomously is to act according to a law that I give myself",
+    "traducao": "agir com autonomia é agir segundo uma lei que dou a mim mesmo"
+  },
+  {
+    "licao": 6,
+    "cartao": 6,
+    "episodio": 6,
+    "video": "8rv-4aUbZxQ",
+    "tempo": "16:52",
+    "frase": "the shopkeeper only did the right thing for the wrong reason",
+    "traducao": "o comerciante só fez o que estava certo pela razão errada"
+  },
+  {
+    "licao": 6,
+    "cartao": 9,
+    "episodio": 6,
+    "video": "8rv-4aUbZxQ",
+    "tempo": "42:17",
+    "frase": "nobody would believe those promises",
+    "traducao": "ninguém acreditaria nessas promessas"
+  },
+  {
+    "licao": 6,
+    "cartao": 11,
+    "episodio": 6,
+    "video": "8rv-4aUbZxQ",
+    "tempo": "43:36",
+    "frase": "It sounds like justifying a means by an end.",
+    "traducao": "Parece que se justifica um meio por um fim."
+  },
+  {
+    "licao": 7,
+    "cartao": 3,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "10:42",
+    "frase": "lying even to the murderer at the door is wrong",
+    "traducao": "mentir, mesmo ao assassino que está à porta, é errado"
+  },
+  {
+    "licao": 7,
+    "cartao": 6,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "13:01",
+    "frase": "so it would be strictly speaking true",
+    "traducao": "portanto, em rigor, seria verdade"
+  },
+  {
+    "licao": 7,
+    "cartao": 8,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "15:17",
+    "frase": "I've never seen a tie like that before.",
+    "traducao": "Nunca tinha visto uma gravata assim."
+  },
+  {
+    "licao": 7,
+    "cartao": 11,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "18:52",
+    "frase": "For Kant, motivation is key.",
+    "traducao": "Para Kant, a motivação é o essencial."
+  },
+  {
+    "licao": 7,
+    "cartao": 13,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "20:10",
+    "frase": "you're hoping that they will be misled"
+  },
+  {
+    "licao": 8,
+    "cartao": 3,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "27:54",
+    "frase": "without knowing certain important particular facts about ourselves",
+    "traducao": "sem conhecermos certos factos importantes e particulares sobre nós"
+  },
+  {
+    "licao": 8,
+    "cartao": 5,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "28:06",
+    "frase": "gathered together just as we are here"
+  },
+  {
+    "licao": 8,
+    "cartao": 6,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "33:24",
+    "frase": "do I still owe you merely in virtue of the fact that we had an agreement",
+    "traducao": "ainda te devo, só pelo facto de termos tido um acordo"
+  },
+  {
+    "licao": 8,
+    "cartao": 9,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "39:29",
+    "frase": "the fact of an agreement is not sufficient to establish the fairness of the terms",
+    "traducao": "haver acordo não chega para os termos serem justos"
+  },
+  {
+    "licao": 8,
+    "cartao": 12,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "47:16",
+    "frase": "if he had fixed my car he would have conferred on me a benefit",
+    "traducao": "se ele me tivesse arranjado o carro, ter-me-ia dado um benefício"
+  },
+  {
+    "licao": 8,
+    "cartao": 13,
+    "episodio": 7,
+    "video": "KqzW0eHzDSQ",
+    "tempo": "45:49",
+    "frase": "I haven't hired you"
+  },
+  {
+    "licao": 9,
+    "cartao": 3,
+    "episodio": 8,
+    "video": "VcL66zx_6No",
+    "tempo": "5:50",
+    "frase": "only those inequalities that work to the benefit of the least well off are just",
+    "traducao": "só são justas as desigualdades que beneficiam os menos favorecidos"
+  },
+  {
+    "licao": 9,
+    "cartao": 5,
+    "episodio": 8,
+    "video": "VcL66zx_6No",
+    "tempo": "3:55",
+    "frase": "That's the first principle"
+  },
+  {
+    "licao": 9,
+    "cartao": 6,
+    "episodio": 8,
+    "video": "VcL66zx_6No",
+    "tempo": "8:17",
+    "frase": "I'd rather have a system that rewards me based on my efforts",
+    "traducao": "prefiro um sistema que me recompense pelo meu esforço"
+  },
+  {
+    "licao": 9,
+    "cartao": 9,
+    "episodio": 8,
+    "video": "VcL66zx_6No",
+    "tempo": "33:33",
+    "frase": "you need to find the correct balance",
+    "traducao": "é preciso encontrar o equilíbrio certo"
+  },
+  {
+    "licao": 9,
+    "cartao": 12,
+    "episodio": 8,
+    "video": "VcL66zx_6No",
+    "tempo": "45:22",
+    "frase": "I'm entitled to my winnings",
+    "traducao": "tenho direito ao meu prémio"
+  },
+  {
+    "licao": 10,
+    "cartao": 3,
+    "episodio": 9,
+    "video": "AUhReMT5uqA",
+    "tempo": "3:28",
+    "frase": "I'm just being turned down because I'm white",
+    "traducao": "estou a ser recusada só por ser branca"
+  },
+  {
+    "licao": 10,
+    "cartao": 6,
+    "episodio": 9,
+    "video": "AUhReMT5uqA",
+    "tempo": "6:08",
+    "frase": "the test scores they got may actually not represent their true potential",
+    "traducao": "os resultados que tiveram nos exames podem não mostrar o seu verdadeiro potencial"
+  },
+  {
+    "licao": 10,
+    "cartao": 9,
+    "episodio": 9,
+    "video": "AUhReMT5uqA",
+    "tempo": "44:13",
+    "frase": "all justice involves discrimination",
+    "traducao": "toda a justiça envolve discriminação"
+  },
+  {
+    "licao": 10,
+    "cartao": 11,
+    "episodio": 9,
+    "video": "AUhReMT5uqA",
+    "tempo": "47:33",
+    "frase": "you have to consider the point, the end, the goal, the telos of the thing",
+    "traducao": "tens de considerar o propósito, o fim, o objetivo, o  telos  da coisa"
+  },
+  {
+    "licao": 11,
+    "cartao": 3,
+    "episodio": 10,
+    "video": "MuiazbyOSqQ",
+    "tempo": "20:37",
+    "frase": "it's now intrinsically part of golf, walking the course",
+    "traducao": "agora faz parte do próprio golfe, percorrer o campo a pé"
+  },
+  {
+    "licao": 11,
+    "cartao": 6,
+    "episodio": 10,
+    "video": "MuiazbyOSqQ",
+    "tempo": "22:48",
+    "frase": "it's not as if you're removing the disadvantage",
+    "traducao": "não é como se lhe estivessem a tirar a desvantagem"
+  },
+  {
+    "licao": 11,
+    "cartao": 8,
+    "episodio": 10,
+    "video": "MuiazbyOSqQ",
+    "tempo": "26:10",
+    "frase": "It involves skill, but not athletic skill.",
+    "traducao": "Exige perícia, mas não perícia atlética."
+  },
+  {
+    "licao": 11,
+    "cartao": 11,
+    "episodio": 10,
+    "video": "MuiazbyOSqQ",
+    "tempo": "48:40",
+    "frase": "I might be the perfect janitor in the whole world",
+    "traducao": "posso ser a melhor funcionária de limpeza do mundo"
+  },
+  {
+    "licao": 12,
+    "cartao": 3,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "12:00",
+    "frase": "obligations of solidarity or loyalty or membership",
+    "traducao": "obrigações de solidariedade, de lealdade ou de pertença"
+  },
+  {
+    "licao": 12,
+    "cartao": 4,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "11:07",
+    "frase": "one of two ways"
+  },
+  {
+    "licao": 12,
+    "cartao": 6,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "19:28",
+    "frase": "It seems rather arbitrary that we should choose the universal obligation over the more specific obligation",
+    "traducao": "Parece bastante arbitrário escolhermos a obrigação universal em vez da mais específica"
+  },
+  {
+    "licao": 12,
+    "cartao": 7,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "19:21",
+    "frase": "are you satisfied?"
+  },
+  {
+    "licao": 12,
+    "cartao": 8,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "38:53",
+    "frase": "I wouldn't turn him in",
+    "traducao": "eu não o denunciava"
+  },
+  {
+    "licao": 12,
+    "cartao": 9,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "24:15",
+    "frase": "because of my obligation to him"
+  },
+  {
+    "licao": 12,
+    "cartao": 11,
+    "episodio": 11,
+    "video": "iOotE9_OGGs",
+    "tempo": "44:13",
+    "frase": "to raise my hand against my relatives, my children, my home",
+    "traducao": "levantar a mão contra os meus parentes, os meus filhos, a minha casa"
+  },
+  {
+    "licao": 13,
+    "cartao": 3,
+    "episodio": 12,
+    "video": "EzD9P-9sj4M",
+    "tempo": "14:44",
+    "frase": "the ideal of marriage involves procreation",
+    "traducao": "o ideal do casamento inclui a procriação"
+  },
+  {
+    "licao": 13,
+    "cartao": 6,
+    "episodio": 12,
+    "video": "EzD9P-9sj4M",
+    "tempo": "21:10",
+    "frase": "your beliefs are your beliefs",
+    "traducao": "as tuas crenças são as tuas crenças"
+  },
+  {
+    "licao": 13,
+    "cartao": 8,
+    "episodio": 12,
+    "video": "EzD9P-9sj4M",
+    "tempo": "38:33",
+    "frase": "there are three partners to every civil marriage",
+    "traducao": "há três partes em todo o casamento civil"
+  },
+  {
+    "licao": 13,
+    "cartao": 11,
+    "episodio": 12,
+    "video": "EzD9P-9sj4M",
+    "tempo": "49:53",
+    "frase": "not by ignoring but by engaging them",
+    "traducao": "não ignorando-as, mas discutindo-as a sério"
   }
 ]
