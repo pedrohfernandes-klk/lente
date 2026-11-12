@@ -41,6 +41,9 @@ const lin=x=>{x/=255;return x<=.03928?x/12.92:Math.pow((x+.055)/1.055,2.4)};
 const lum=c=>.2126*lin(c[0])+.7152*lin(c[1])+.0722*lin(c[2]);
 const contraste=(a,b)=>{const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p);return (x+.05)/(y+.05)};
 const cor=s=>{const m=String(s).match(/[\d.]+/g);if(!m)return null;const v=m.map(Number);return {c:v.slice(0,3),a:v.length>3?v[3]:1};};
+// 12/11/2026: junção do main (8d03b1d). A entrada passou a carregar assets/praticar.css, que põe html{scroll-behavior:smooth}; o
+// «i» ainda vinha a caminho quando se tirava a captura e o recorte caía fora do ecrã. Cada scrollIntoView deste teste pede agora
+// behavior:'instant', para o «i» estar no sítio antes de se medir. As medidas e os limites (3:1, 4,5:1, 44 px) ficam iguais.
 // O círculo de um «i»: as camadas (halo, anel e fundo do círculo, pelos estilos calculados) e, nos píxeis, o que fica à volta dele
 // (com o círculo escondido). Vê-se se uma das fronteiras, de fora para dentro, tem 3:1 ou mais: o pior píxel à volta contra a
 // primeira camada, ou duas camadas vizinhas (inteiras, à volta de todo o círculo).
@@ -60,8 +63,8 @@ async function circulo(page,d){
 // O foco: capturas com e sem foco no mesmo sítio; em cada raio, entre o círculo e o fim do contorno, os píxeis que o foco muda.
 // Vê-se se, em todos os raios, um desses píxeis muda 3:1 ou mais, ou tem 3:1 ou mais contra um píxel colado (até 2,5 px, com foco).
 async function foco(page,d){
- const s=d.locator('summary');await s.evaluate(e=>e.scrollIntoView({block:'center'}));
- await s.focus();await page.keyboard.press('Shift+Tab');await page.keyboard.press('Tab');await s.evaluate(e=>e.scrollIntoView({block:'center'}));await page.waitForTimeout(150);
+ const s=d.locator('summary');await s.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));
+ await s.focus();await page.keyboard.press('Shift+Tab');await page.keyboard.press('Tab');await s.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await page.waitForTimeout(150);
  const info=await s.evaluate(e=>{const c=getComputedStyle(e);return {focado:document.activeElement===e,fv:e.matches(':focus-visible'),ow:c.outlineStyle==='none'?0:parseFloat(c.outlineWidth),oo:parseFloat(c.outlineOffset)||0};});
  const bb=await s.boundingBox(),sp=await s.locator('span').boundingBox(),R=bb.width/2,cx=bb.x+R,cy=bb.y+R;
  const clip={x:Math.floor(cx-R-14),y:Math.floor(cy-R-14),width:Math.ceil(2*R+28),height:Math.ceil(2*R+28)};
@@ -94,7 +97,7 @@ function medir(sel){
  return out;}
 // Um «i» das missões: as verificações todas (sel encontra a <details>; gaveta diz se vive na gaveta de um lugar).
 async function umI(page,sel,mid,rot,gaveta){
- const d=page.locator(sel),s=d.locator('summary');await s.evaluate(e=>e.scrollIntoView({block:'center'}));
+ const d=page.locator(sel),s=d.locator('summary');await s.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));
  let m=await page.evaluate(medir,sel);
  assert.equal(m.open,false,rot+': fechado ao carregar');assert.ok(m.summary,rot+': «i» à vista');assert.ok(m.alvo[0]>=44&&m.alvo[1]>=44,rot+': alvo de 44 px');
  assert.equal(m.nome,`Créditos da ${CR[mid].startsWith('Gravura')?'gravura':'fotografia'}: Missão ${mid.slice(1)}`,rot+': nome');
@@ -108,7 +111,7 @@ async function umI(page,sel,mid,rot,gaveta){
  // clique abre (sem seguir a ligação do cartão) e fecha
  const url=page.url();await s.click();m=await page.evaluate(medir,sel);
  assert.ok(m.open&&m.textoVisivel,rot+': clique abre');assert.equal(page.url(),url,rot+': o «i» não segue a ligação');
- await d.locator('.info-i-texto').evaluate(e=>{const r=e.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)e.scrollIntoView({block:'center'});});m=await page.evaluate(medir,sel);
+ await d.locator('.info-i-texto').evaluate(e=>{const r=e.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)e.scrollIntoView({block:'center',behavior:'instant'});});m=await page.evaluate(medir,sel);
  assert.ok(m.dentroEcra,rot+': o crédito aberto não sai do ecrã');assert.ok(m.noCartaoAberto,rot+': o crédito aberto fica sobre o seu cartão');assert.ok(m.livre,rot+': nada tapa o crédito');
  assert.ok(m.rola==='nao'||m.rola==='auto',rot+': crédito inteiro ou a rolar por dentro');assert.ok(m.cTexto>=4.5,rot+': o crédito lê-se ('+m.cTexto.toFixed(2)+')');assert.ok(m.lado<=0,rot+': aberto, sem deslize');
  await s.click();assert.equal(await d.evaluate(e=>e.open),false,rot+': clique fecha');
@@ -186,7 +189,7 @@ async function umI(page,sel,mid,rot,gaveta){
    for(let k=0;k<total;k++){
     const d=ds.nth(k);if(!(await d.locator('summary').evaluate(e=>e.getClientRects().length>0&&e.checkVisibility())))continue;
     const rot=`${tema}, ${modo.nome}, «i» ${k+1}`;const linha=await d.evaluate(e=>e.classList.contains('info-i--linha'));missoes+=await d.evaluate(e=>!!e.closest('.missao-i'));
-    await d.locator('summary').evaluate(e=>e.scrollIntoView({block:'center'}));await page.waitForTimeout(100);
+    await d.locator('summary').evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await page.waitForTimeout(100);
     const fechado=await circulo(page,d);assert.ok(fechado.valor>=3,`${rot} (${linha?'linha':'canto'}): o círculo fechado vê-se (${fechado.valor.toFixed(2)}:1)`);
     assert.equal(fechado.est.anelL,1,rot+': borda de 1 px na projeção');
     const f=await foco(page,d);assert.ok(f.focado&&f.fv,rot+': foco no «i»');assert.ok(f.valor>=3,`${rot}: o foco vê-se (${f.valor.toFixed(2)}:1)`);

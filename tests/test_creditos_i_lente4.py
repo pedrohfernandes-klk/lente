@@ -119,6 +119,23 @@ class CreditosLente4(unittest.TestCase):
                         self.assertNotIn(antigo4, novo3)
                         self.assertNotIn(novo3, antigo4)
 
+    def test_camadas_que_o_main_trouxe_nao_tocam_nesta(self):
+        # 12/11/2026: junção do main (8d03b1d, pedidos #146 a #149). O main trouxe as camadas exatas da revisão dos exercícios
+        # (tests/praticar_20261110.py) e da Justiça (tests/justica_20261110.py, três manifestos), que tests/creditos_i_lente3.py passou
+        # a encadear por cima da do pedido lente-3. Nenhuma toca nos dois ficheiros desta camada, por isso a base (e0c55de) continua a
+        # ser a partida exata de assets/info-i.css e de cidade/index.html (ver test_camada_fechada_e_reversivel) e a ordem entre esta
+        # camada e as do main não muda nada: a cadeia do lente-3 deixa os dois ficheiros como estão, a aplicar e a desfazer.
+        import justica_20261110
+        import praticar_20261110
+        for nome, trocas in (('praticar', praticar_20261110.TROCAS), ('Justiça', justica_20261110.TROCAS),
+                             ('Justiça curta', justica_20261110.CURTAS), ('Justiça guiada', justica_20261110.GUIADAS)):
+            self.assertEqual(sorted(set(trocas) & set(creditos_i_lente4.TROCAS)), [], nome)
+        for f in creditos_i_lente4.TROCAS:
+            with self.subTest(ficheiro=f):
+                sem4 = creditos_i_lente4.desfazer(ler(f), f)
+                self.assertEqual(creditos_i_lente3.alinhar(sem4, f), sem4)
+                self.assertEqual(creditos_i_lente3.aplicar(creditos_i_lente3.desfazer(sem4, f), f), sem4)
+
     def test_peca_so_muda_na_projecao(self):
         # A peça comum muda numa só troca: a regra da projeção. Tudo o que entra está debaixo do seletor da projeção (fora dela, a
         # folha é a mesma, letra a letra: ver test_camada_fechada_e_reversivel).
