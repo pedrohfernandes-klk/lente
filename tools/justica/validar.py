@@ -89,9 +89,75 @@ def validar_molde_novo(itens):
     return erros
 
 
-def validar_banco(itens, numero, novo=False):
+def validar_molde_curto(itens):
+    """10/11: formato pedido pelo docente: quatro excertos e quatro exercícios."""
     erros = []
-    if not 20 <= len(itens) <= 26:
+    if len(itens) != 10:
+        return ['contagem_curta']
+    if itens[0].get('rot') != 'Abre' or 'No fim, consegues' not in itens[0].get('html', ''):
+        erros.append('abre')
+    for j in range(4):
+        leitura, atividade = itens[1+2*j:3+2*j]
+        if leitura['t'] != 'ler' or atividade['t'] not in ('vf', 'ordenar', 'emparelhar'):
+            erros.append('sequencia_curta')
+        videos = re.findall(r'data-ini="(\d+)" data-fim="(\d+)"', leitura.get('html', ''))
+        if len(videos) != 1 or not 60 <= int(videos[0][1])-int(videos[0][0]) <= 180:
+            erros.append('duracao_excerto')
+        if 'Tempos aproximados' not in leitura.get('html', ''):
+            erros.append('proveniencia_tempos')
+    if sum(x.get('producao_livre') is True or x['t'] == 'escrita' for x in itens) != 1:
+        erros.append('producao_livre')
+    if itens[-1]['t'] != 'ler' or itens[-1].get('producao_livre') is not True or '60 e 100 palavras' not in itens[-1].get('html', ''):
+        erros.append('sintese_curta')
+    return erros
+
+
+def validar_molde_guiado(itens):
+    """11/11/2026: revisão das lições 4 a 13. Quatro excertos de 1 a 3 minutos, como no formato curto,
+    com o apoio das lições 1 a 3: vocabulário antes de ouvir, pergunta de escuta antes e depois de cada
+    excerto, e atividades presas ao que se ouve. O estado dos tempos é dito em cada excerto."""
+    erros = []
+    if not 11 <= len(itens) <= 15:
+        return ['contagem_guiada']
+    if itens[0].get('rot') != 'Abre' or 'No fim, consegues' not in itens[0].get('html', ''):
+        erros.append('abre')
+    if itens[1]['t'] != 'emparelhar' or itens[1].get('rot') != 'Antes de ouvir':
+        erros.append('vocabulario')
+    excertos = [k for k, x in enumerate(itens) if x['t'] == 'ler' and 'ju-video' in x.get('html', '')]
+    if len(excertos) != 4:
+        erros.append('quatro_excertos')
+    for k in excertos:
+        html = itens[k]['html']
+        videos = re.findall(r'data-ini="(\d+)" data-fim="(\d+)"', html)
+        if len(videos) != 1 or not 60 <= int(videos[0][1])-int(videos[0][0]) <= 180:
+            erros.append('duracao_excerto')
+        if 'Tempos aproximados' not in html and 'Tempos conferidos com o áudio' not in html:
+            erros.append('proveniencia_tempos')
+        if 'class="ex-antes"' not in html or 'class="ex-depois"' not in html:
+            erros.append('escuta_orientada')
+        if k+1 >= len(itens) or itens[k+1]['t'] not in ('escolha', 'vf', 'ordenar', 'emparelhar'):
+            erros.append('sequencia_guiada')
+    fazer = [x for x in itens[2:] if x['t'] != 'ler']
+    if len({x['t'] for x in fazer}) < 3 or not any(x['t'] == 'escolha' for x in fazer):
+        erros.append('variedade')
+    for x in itens:
+        # O retorno ao erro tem de dizer outra coisa: uma pista, não a resposta repetida.
+        if x['t'] in ('vf', 'ordenar', 'emparelhar') and (x.get('fe') == x.get('f') or x.get('f', '') in x.get('fe', '')):
+            erros.append('retorno_repetido')
+        if x['t'] == 'ordenar' and len(x.get('passos', [])) < 4:
+            erros.append('ordenar_curto')
+    if any(a['t'] == b['t'] == c['t'] for a, b, c in zip(itens, itens[1:], itens[2:])):
+        erros.append('sucessao')
+    if sum(x.get('producao_livre') is True or x['t'] == 'escrita' for x in itens) != 1:
+        erros.append('producao_livre')
+    if itens[-1]['t'] != 'ler' or itens[-1].get('producao_livre') is not True or '60 e 100 palavras' not in itens[-1].get('html', ''):
+        erros.append('sintese_curta')
+    return erros
+
+
+def validar_banco(itens, numero, novo=False, curto=False, guiado=False):
+    erros = []
+    if not curto and not guiado and not 20 <= len(itens) <= 26:
         erros.append(f'L{numero}: número de cartões fora de 20 a 26')
     curtas, esperado = 0, 0
     for k, item in enumerate(itens, 1):
@@ -125,7 +191,11 @@ def validar_banco(itens, numero, novo=False):
             erros.append(f'{onde}: mais de 95 palavras visíveis')
     if curtas > math.ceil(esperado):
         erros.append(f'L{numero}: certa mais curta demasiadas vezes')
-    if novo:
+    if guiado:
+        erros.extend(f'L{numero}: molde guiado: {erro}' for erro in validar_molde_guiado(itens))
+    elif curto:
+        erros.extend(f'L{numero}: molde curto: {erro}' for erro in validar_molde_curto(itens))
+    elif novo:
         erros.extend(f'L{numero}: molde novo: {erro}' for erro in validar_molde_novo(itens))
     return erros
 

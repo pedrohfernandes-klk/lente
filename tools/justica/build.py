@@ -29,7 +29,7 @@ def main():
     for meta in manifesto:
         numero = meta['numero']
         itens = json.loads((AQUI / f'bancos/licao-{numero}.json').read_text('utf-8'))
-        erros.extend(validar_banco(itens, numero, meta['molde_novo']))
+        erros.extend(validar_banco(itens, numero, meta['molde_novo'], meta.get('formato_curto', False), meta.get('formato_guiado', False)))
         pagina = RAIZ / f'olhar-e-decidir/justica/licao-{numero}/index.html'
         gerada = gerar(meta)
         if args.verificar:

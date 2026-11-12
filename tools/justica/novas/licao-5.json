@@ -1,0 +1,38 @@
+{
+  "numero": 5,
+  "titulo": "O que não está à venda?",
+  "pergunta": "Se as duas partes aceitam, a troca é justa?",
+  "episodio": 5,
+  "aulas": [
+    9,
+    10
+  ],
+  "fontes": [
+    {
+      "url": "https://justiceharvard.org/lecture-9-hired-guns/",
+      "lida": "2026-11-02"
+    }
+  ],
+  "imagem": {
+    "src": "../../../assets/justica/documento-5.webp",
+    "alt": "Wanted a substitute LCCN2008661656.jpg",
+    "credito": "Oliver Ditson & Co.. Wanted a substitute LCCN2008661656.jpg. Public domain.",
+    "url": "https://commons.wikimedia.org/wiki/File:Wanted_a_substitute_LCCN2008661656.jpg"
+  },
+  "estado": "Versão breve autorizada em 10/11/2026; quatro excertos de 1–3 minutos com tempos aproximados.",
+  "videos": [
+    {
+      "aula": 9,
+      "url": "https://justiceharvard.org/lecture-9-hired-guns/",
+      "video": "https://www.youtube.com/embed/8yT4RZy1t3s?start=17&end=1621",
+      "confirmado": "2026-11-10"
+    },
+    {
+      "aula": 10,
+      "url": "https://justiceharvard.org/lecture-10-for-sale-motherhood/",
+      "video": "https://www.youtube.com/embed/8yT4RZy1t3s?start=1646&end=3235",
+      "confirmado": "2026-11-10"
+    }
+  ],
+  "selecao": "../excertos-curtos.json"
+}

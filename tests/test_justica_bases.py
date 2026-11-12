@@ -10,6 +10,7 @@ from renomeacoes_cidadania import renomear, dilemas_149
 import cuidado_lente
 # 08/11/2026: decisões 153 e 176 (pedido lente-2): manifesto fechado tools/trocas/creditos-i-lente2-20261108.json.
 import creditos_i_lente2
+import justica_20261110
 from pathlib import Path
 
 R = Path(__file__).resolve().parents[1]
@@ -53,6 +54,9 @@ class BasesJustica(unittest.TestCase):
             self.assertEqual(molde.count('@@ITENS@@'), 1)
             gerada = molde.replace('@@ITENS@@', (T/f'bancos/licao-{n}.json').read_text('utf-8').rstrip('\n'))
             self.assertEqual(gerada, (R/f'olhar-e-decidir/justica/licao-{n}/index.html').read_text('utf-8'))
+            if n > 3:
+                self.assertTrue(m["molde_novo"])
+                continue  # Páginas novas: regeneração e regras verificadas acima e abaixo.
             # 02/11/2026: prova contra o main de partida, só com as duas trocas autorizadas.
             # 03/11/2026 (#107; data posta a 05/11/2026): conserva o hash histórico; desfaz só os títulos autorizados do #107.
             # 06/11/2026: decisão 149 (volta «Dilemas»): antes do #107, desfaz-se só a troca do manifesto fechado
@@ -64,7 +68,7 @@ class BasesJustica(unittest.TestCase):
             # 08/11/2026: decisões 153 e 176 (pedido lente-2). A camada dos créditos atrás do «i» é agora a mais recente e desfaz-se
             # antes da do pedido cuidado-lente, com contagem exata de cada «novo»: o crédito de cada desenho volta ao span.cred da
             # legenda e saem a peça comum e o seu estilo no molde das lições 1 e 2; o hash histórico é o mesmo.
-            gerada0 = creditos_i_lente2.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html')
+            gerada0 = creditos_i_lente2.desfazer(justica_20261110.desfazer(gerada, f'olhar-e-decidir/justica/licao-{n}/index.html'), f'olhar-e-decidir/justica/licao-{n}/index.html')
             original = renomear(dilemas_149(cuidado_lente.desfazer(gerada0, f'olhar-e-decidir/justica/licao-{n}/index.html'),
                                             f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True),
                                 f'olhar-e-decidir/justica/licao-{n}/index.html', inverter=True)
@@ -79,7 +83,7 @@ class BasesJustica(unittest.TestCase):
         encontradas = {}
         for m in MANIFESTO:
             n = m['numero']
-            self.assertEqual(V.validar_banco(banco(n), n, m['molde_novo']), [])
+            self.assertEqual(V.validar_banco(banco(n), n, m['molde_novo'], m.get('formato_curto', False), m.get('formato_guiado', False)), [])
             for k, x in enumerate(banco(n), 1):
                 if x['t'] == 'ler' and V.palavras_visiveis(x) > 95:
                     encontradas[n,k] = V.palavras_visiveis(x)
@@ -145,7 +149,44 @@ class BasesJustica(unittest.TestCase):
         for m in MANIFESTO:
             if not m['molde_novo']:
                 continue
-            self.assertEqual(V.validar_molde_novo(banco(m['numero'])), [])
+            # 11/11/2026: cada lição nova é validada pelo formato que declara (guiado, curto ou molde novo).
+            validar = V.validar_molde_guiado if m.get('formato_guiado') else V.validar_molde_curto if m.get('formato_curto') else V.validar_molde_novo
+            self.assertEqual(validar(banco(m['numero'])), [])
+
+    def test_molde_curto_recusa_cortes_longos_e_atividades_em_falta(self):
+        from copy import deepcopy
+        # 11/11/2026: as lições 4 a 13 passaram ao formato guiado. A prova do formato curto fica, sobre o banco curto da lição 4
+        # tal como foi publicado a 10/11 (tests/fixtures/justica-formato-curto-exemplo.json), para o validador antigo não ficar sem teste.
+        curto = json.loads((R/'tests/fixtures/justica-formato-curto-exemplo.json').read_text('utf-8'))
+        itens = deepcopy(curto)
+        self.assertEqual(V.validar_molde_curto(itens), [])
+        itens[1]['html'] = itens[1]['html'].replace('data-fim="277"', 'data-fim="340"')
+        self.assertIn('duracao_excerto', V.validar_molde_curto(itens))
+        itens = deepcopy(curto); itens[2]['t'] = 'ler'
+        self.assertIn('sequencia_curta', V.validar_molde_curto(itens))
+        itens = deepcopy(curto); itens[2]['producao_livre'] = True
+        self.assertIn('producao_livre', V.validar_molde_curto(itens))
+
+    def test_molde_guiado_recusa_o_que_o_formato_proibe(self):
+        # 11/11/2026: o formato guiado recusa cortes longos, excertos sem pergunta de escuta, retornos repetidos e falta de variedade.
+        from copy import deepcopy
+        n = next(m['numero'] for m in MANIFESTO if m.get('formato_guiado'))
+        base = banco(n)
+        self.assertEqual(V.validar_molde_guiado(base), [])
+        k = next(i for i, x in enumerate(base) if 'ju-video' in x.get('html', ''))
+        itens = deepcopy(base); fim = re.search(r'data-fim="(\d+)"', itens[k]['html'])[1]
+        itens[k]['html'] = itens[k]['html'].replace(f'data-fim="{fim}"', f'data-fim="{int(fim)+200}"')
+        self.assertIn('duracao_excerto', V.validar_molde_guiado(itens))
+        itens = deepcopy(base); itens[k]['html'] = itens[k]['html'].replace('class="ex-antes"', 'class="x"')
+        self.assertIn('escuta_orientada', V.validar_molde_guiado(itens))
+        itens = deepcopy(base); itens[k]['html'] = itens[k]['html'].replace('Tempos conferidos com o áudio', 'Tempos')
+        self.assertIn('proveniencia_tempos', V.validar_molde_guiado(itens))
+        itens = deepcopy(base); v = next(x for x in itens if x['t'] == 'vf'); v['fe'] = v['f']
+        self.assertIn('retorno_repetido', V.validar_molde_guiado(itens))
+        itens = deepcopy(base); itens[1]['rot'] = 'Outra'
+        self.assertIn('vocabulario', V.validar_molde_guiado(itens))
+        itens = deepcopy(base); itens[-1]['producao_livre'] = False
+        self.assertIn('sintese_curta', V.validar_molde_guiado(itens))
 
     def molde_de_prova(self):
         # 02/11/2026: prova independente dos bancos antigos, todos molde_novo=false.

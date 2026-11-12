@@ -309,7 +309,7 @@ def bloco_indice():
     path = 'cidadania/m2/index.html'
     out = '<section class="c10 c10-indice" id="dez-sessoes" data-c10' + ATRIBUTOS + ' aria-labelledby="dez-sessoes-t">'
     # 28/10/2026: o título usa o h2 das outras secções da página (class="secao"), para a página ter um só sistema.
-    out += '<h2 class="secao" id="dez-sessoes-t">Dez sessões</h2><p class="c10-small" data-count></p>'
+    out += '<h2 class="secao" id="dez-sessoes-t">Dez sessões</h2><div class="c10-small"><h3>Como se organiza o módulo</h3><p><strong>Segue as dez sessões</strong>, pela ordem indicada: são o percurso de aula. O passo zero, os oito passos e os exercícios longos abaixo são recursos usados nessas sessões; não são outra sequência obrigatória.</p><p>As quatro fases explicam o desenvolvimento de <strong>um único projeto, o Contra-feed</strong>. A lição de Justiça indicada como obrigatória faz parte do percurso. O contador de 11 atividades refere-se aos recursos, não ao número de sessões.</p></div><p class="c10-small" data-count></p>'
     out += '<p><a class="c10-action" href="sessoes/01/" data-continue data-continue-base="sessoes/" data-fim-href="../contra-feed/" data-fim-texto="Rever o Contra-feed">Começar na sessão 01</a></p>'
     out += '<ol class="c10-session-list">' + ''.join(molde.cartao_sessao(f'{n:02}', f'sessoes/{n:02}/', s['tema'], s['titulo'], s['pergunta']) for n, s in enumerate(SESSOES, 1)) + '</ol>'
     out += '<p class="c10-indice-mais"><a href="https://pedrohfernandes-klk.github.io/lente/cidadania/m2/aulas/">As dez etapas, em texto</a>' + liga(path, 'cidadania/m2/sessoes/', 'Guia do docente') + '</p></section>'
