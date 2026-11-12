@@ -26,7 +26,14 @@
 .info-i--linha>summary{position:relative;inset:auto;margin-inline-start:auto}
 .info-i--linha .info-i-texto{position:static;max-block-size:none;padding:4px 0 0;border:0;background:none}
 .fundo-acoes{display:flex;align-items:center;justify-content:space-between;gap:16px}
-:is(.em-projecao,.epi-projection,[data-cz-projection]) .info-i>summary>span{background:transparent;border-width:1px;box-shadow:none;inline-size:32px;block-size:32px;font-size:1.25rem}
+/* 08/11/2026: decisões 153 e 176 (pedido lente-4). Na projeção, o círculo via-se mal ou nada: esta regra tirava o fundo e o halo a
+   todos os «i», também ao aberto (o anel e a letra ficavam na cor do papel, sobre o papel) e ao do canto, pousado na fotografia.
+   Fica o tamanho e a borda de 1 px da projeção; só o «i» «linha» fechado, sobre o papel da página, perde o fundo e o halo. O foco
+   leva, por dentro do alvo, um anel na cor da tinta e outro na cor do papel, colados ao contorno, para se ver sobre qualquer
+   fotografia, também quando a moldura de projeção troca o contorno. */
+:is(.em-projecao,.epi-projection,[data-cz-projection]) .info-i>summary>span{border-width:1px;inline-size:32px;block-size:32px;font-size:1.25rem}
+:is(.em-projecao,.epi-projection,[data-cz-projection]) .info-i--linha:not([open])>summary>span{background:transparent;box-shadow:none}
+:is(.em-projecao,.epi-projection,[data-cz-projection]) .info-i>summary:focus-visible{outline-offset:0;box-shadow:inset 0 0 0 2px var(--ii-papel),inset 0 0 0 4px var(--ii-tinta)}
 @media (prefers-reduced-motion:no-preference){.info-i[open] .info-i-texto{animation:ii-abre .16s ease-out}@keyframes ii-abre{from{opacity:0;transform:translateY(4px)}}}
 @media (forced-colors:active){.info-i>summary>span{forced-color-adjust:none;background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}.info-i[open]>summary>span{background:Highlight;color:HighlightText}.info-i-texto{border-color:CanvasText}}
 @media print{.info-i{position:static;inset:auto;pointer-events:auto}.info-i>summary{display:none}.info-i::details-content{content-visibility:visible;display:block}.info-i-texto{position:static;max-block-size:none;overflow:visible;margin:4pt 0 0;padding:0;border:0;background:none;color:#000;font:8pt/1.3 Arial,sans-serif;animation:none}.info-i-texto a[rel~=license]::after{content:" (" attr(href) ")"}.fundo-acoes{display:none}}

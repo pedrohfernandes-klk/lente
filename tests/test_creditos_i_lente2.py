@@ -20,6 +20,10 @@ from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 
+# 08/11/2026: decisões 153 e 176 (pedido lente-4). A regra da projeção da peça comum muda no pedido lente-4, pela camada fechada
+# tools/trocas/creditos-i-lente4-20261108.json; para conferir a peça, desfaz-se essa camada, com contagem exata.
+import creditos_i_lente4
+
 R = Path(__file__).resolve().parents[1]
 BASE = 'cc75fc62e18a731c671ad9f06f8fb708af6f7ddb'
 PROIBIDAS = re.compile(r'(?<![\wÀ-ÿ])(?:professor(?:a|es|as)?|jog(?:ar|a[sm]?|o|os|ou|uei|ámos)|fichas?|folhas?)(?![\wÀ-ÿ])|—|·', re.I)
@@ -94,8 +98,10 @@ class Ancestrais(HTMLParser):
 class CreditosLente2(unittest.TestCase):
     def test_peca_comum_igual_e_carregada(self):
         # A peça comum não muda neste pedido (é igual à do Português); cada página com «i» novo carrega-a uma vez.
+        # 08/11/2026: pedido lente-4. Desfeita a camada do lente-4 (só a regra da projeção), a peça continua igual, byte a byte, à do
+        # main de partida deste pedido.
         for f in ('assets/info-i.css', 'assets/info-i.js'):
-            self.assertEqual(hashlib.sha256((R / f).read_bytes()).hexdigest(),
+            self.assertEqual(hashlib.sha256(creditos_i_lente4.desfazer(ler(f), f).encode('utf-8')).hexdigest(),
                              hashlib.sha256(subprocess.check_output(['git', 'show', f'{BASE}:{f}'], cwd=R)).hexdigest(), f)
         for f in TODAS:
             s = ler(f)

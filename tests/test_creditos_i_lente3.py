@@ -28,6 +28,10 @@ R = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(R / 'tools'))
 import creditos_i  # noqa: E402
 import creditos_i_lente3  # noqa: E402
+# 08/11/2026: decisões 153 e 176 (pedido lente-4). A camada do pedido lente-4 (tools/trocas/creditos-i-lente4-20261108.json: a regra
+# da projeção em assets/info-i.css e os créditos das missões em cidade/index.html) fica por cima desta e não toca em nenhum dos seus
+# «novo»; ler() desfaz-a primeiro, com contagem exata, e o resto confere-se como antes, no estado deste pedido.
+import creditos_i_lente4  # noqa: E402
 
 BASE = 'fec58ae298fd44a9144799ebb8f007b92054720a'
 V = '20261106-3'
@@ -44,7 +48,9 @@ L15C = ('gigantes/', 'vozes/', 'sidequests/')
 
 
 def ler(f):
-    return (R / f).read_text('utf-8')
+    # 08/11/2026: pedido lente-4. O ficheiro como este pedido o deixou: a camada do lente-4 desfaz-se, com contagem exata de cada
+    # «novo» (nos ficheiros que ela não toca, não muda nada).
+    return creditos_i_lente4.desfazer((R / f).read_text('utf-8'), f)
 
 
 def antigo(f):
@@ -139,8 +145,10 @@ class CreditosLente3(unittest.TestCase):
     def test_peca_comum_igual_e_carregada(self):
         # A peça comum não muda neste pedido (é igual à do Português); cada página com «i» novo carrega-a uma vez, com o caminho
         # relativo certo, também nas pastas fundas.
+        # 08/11/2026: pedido lente-4. A regra da projeção da peça muda no pedido lente-4, pela sua camada fechada; desfeita essa
+        # camada (ler), a peça continua igual, byte a byte, à do main de partida deste pedido.
         for f in ('assets/info-i.css', 'assets/info-i.js'):
-            self.assertEqual(hashlib.sha256((R / f).read_bytes()).hexdigest(),
+            self.assertEqual(hashlib.sha256(ler(f).encode('utf-8')).hexdigest(),
                              hashlib.sha256(subprocess.check_output(['git', 'show', f'{BASE}:{f}'], cwd=R)).hexdigest(), f)
         self.assertEqual(len(PAGINAS), 112)
         for f in PAGINAS:

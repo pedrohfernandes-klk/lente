@@ -14,6 +14,11 @@ const ficheiro=p=>p.endsWith('/')?p+'index.html':p;
 // tests/test_creditos_i_lente3.py). Esse «i» vem depois do das letras: conta-se no número de «i» da página e, na impressão, o seu
 // crédito tem de acompanhar a imagem do topo, como os outros; o «i» das letras confere-se aqui como antes.
 const LENTE3={'investigar/':['figure.fig-rev img'],'projetos/':['figure.fig-rev img'],'sidequests/':['figure.fig-rev img']};
+// 08/11/2026: decisões 153 e 176 (pedido lente-4). Em «Ler a cidade», os dez cartões das missões com crédito passaram a ter o seu «i»
+// (fora da ligação, num div.missao-i; confere-se em tests/browser_creditos_i_lente4.cjs e tests/test_creditos_i_lente4.py). Esses «i»
+// vêm depois do das letras: contam-se no número de «i» da página e, na impressão, o crédito de cada um tem de acompanhar a imagem do
+// seu cartão; o «i» das letras confere-se aqui como antes.
+const LENTE4={'cidade/':['m01','m02','m04','m06','m08','m10','m11','m12','m15','m16'].map(m=>`.missao[data-id="${m}"] .mf img`)};
 // Para cada página: os «i» novos, pela ordem da página, com o crédito antigo (HTML) e a imagem a que pertence.
 const PAGINAS=[
  {p:'',is:(()=>{const s=antigo('index.html'),portas=[...s.matchAll(/<p class="m1-home-credit ld-credito cz-credit">(.*?)<\/p>/g)].map(m=>m[1]);assert.equal(portas.length,2);
@@ -23,7 +28,7 @@ const PAGINAS=[
   return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},{html:portas[0],visual:'#inicio-cidadania .ld-img'},{html:portas[1],visual:'#inicio-narrativas .ld-img'},{html:'Metade de um estereograma de 1907, com direitos de J. J. Killelea &amp; Co. e publicado por H. C. White Co. Domínio público. <a data-external aria-label="Fonte da fotografia, sítio externo" href="https://www.loc.gov/item/2021640928/">Fonte da fotografia</a>',visual:'.portal-cidade .sp-image img'},{html:um(s,/<p class="sp-credit">(.*?)<\/p>/),visual:'.portal-portugues .sp-image img'}];})()},
  {p:'narrativas/ideias/',is:[{html:um(antigo('narrativas/ideias/index.html'),/<figure class="drawing">[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>/),visual:'.drawing svg'}]},
  {p:'narrativas/',is:[{html:um(antigo('narrativas/index.html'),/<p class="lab-creditos">([\s\S]*?)<\/p>/),visual:null}]},
- ...LETRAS.map(p=>({p,depois:LENTE3[p]||[],is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
+ ...LETRAS.map(p=>({p,depois:(LENTE3[p]||[]).concat(LENTE4[p]||[]),is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
 ];
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)&&f!==root){res.writeHead(403);return res.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'application/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.jpg':'image/jpeg'})[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));}catch{res.writeHead(404);res.end();}});
 // Medidas dentro da página: o «i» n, aberto ou fechado.
