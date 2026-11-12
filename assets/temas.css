@@ -10,11 +10,19 @@
 [data-cartaz-entrada] .tm-g{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
 [data-cartaz-entrada] .tm-g>li{display:flex;min-width:0}
 [data-cartaz-entrada] .tm{position:relative;display:flex;flex:1;flex-direction:column;min-width:0;background:var(--cz-paper);color:var(--cz-ink);border:1px solid var(--cz-ink);scroll-margin-top:16px}
-[data-cartaz-entrada] .tm-img{height:150px;overflow:hidden;border-bottom:1px solid var(--cz-ink)}
+[data-cartaz-entrada] .tm-img{--tm-img-h:150px;height:var(--tm-img-h);overflow:hidden;border-bottom:1px solid var(--cz-ink)}
 [data-cartaz-entrada] .tm-img img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
 /* o crédito aberto fica por cima da ligação esticada do cartão, para a ligação da fonte se poder abrir */
 [data-cartaz-entrada] .tm-img .info-i-texto{z-index:2}
 [data-cartaz-entrada] .tm-img .info-i>summary{z-index:3}
+/* 12/11/2026 (revisão): o crédito aberto lê-se sempre inteiro. Quando é mais alto do que a moldura (o do tema 03, abaixo de 400 px e
+   na projeção), a moldura cresce com ele enquanto o «i» está aberto, em vez de o cortar e de o pôr a deslizar por dentro; quando
+   cabe, fica como estava, pousado no fundo da imagem. Sem :has(), fica o comportamento da peça «i»: o crédito desliza por dentro. */
+@media screen{
+[data-cartaz-entrada] .tm-img:has(>.info-i[open]){display:flex;flex-direction:column;justify-content:flex-end;height:auto;min-height:var(--tm-img-h)}
+[data-cartaz-entrada] .tm-img:has(>.info-i[open])>.info-i{position:relative;inset:auto}
+[data-cartaz-entrada] .tm-img:has(>.info-i[open])>.info-i>.info-i-texto{position:relative;inset:auto;margin:8px;max-block-size:none;overflow:visible}
+}
 [data-cartaz-entrada] .tm-corpo{display:flex;flex:1;flex-direction:column;min-width:0;padding:12px 48px 14px 16px}
 [data-cartaz-entrada] .tm-n{display:flex;align-items:baseline;gap:8px;margin:0;font:700 var(--cz-t13)/1.4 var(--cz-font-ui);letter-spacing:.12em;text-transform:uppercase}
 [data-cartaz-entrada] .tm-n b{flex:none;padding:3px 6px;background:var(--mostarda,#d9a520);color:#191816;letter-spacing:0;line-height:1}
@@ -33,7 +41,7 @@
 [data-cartaz-entrada] .tm-extra a:hover{text-decoration-thickness:3px}
 @media(min-width:760px){
 [data-cartaz-entrada] .tm-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-[data-cartaz-entrada] .tm-img{height:210px}
+[data-cartaz-entrada] .tm-img{--tm-img-h:210px}
 [data-cartaz-entrada] .tm-corpo{padding:20px 56px 20px 24px}
 [data-cartaz-entrada] .tm-q{font-size:var(--cz-t31)}
 }
@@ -53,7 +61,9 @@
 [data-cartaz-entrada] .lente-pt-linha{margin:24px 0 0;padding:8px 16px}
 [data-cartaz-entrada] .lente-pt-linha .pt-f{font-size:var(--cz-t16);opacity:1}
 [data-cartaz-entrada] .lente-pt-linha .pt-a{min-height:44px;padding:0 16px;font-size:var(--cz-t16);gap:8px}
-[data-cartaz-entrada] .lente-pt-linha .pt-a:focus-visible{outline-color:var(--mostarda,#d9a520)}
+/* 12/11/2026 (revisão): o bloco é invertido (fundo na cor da tinta) nos dois modos; o anel de foco leva a cor do texto do bloco, que
+   contrasta com ele no claro e no escuro (a mostarda quase não se via sobre o bloco claro do modo escuro) */
+[data-cartaz-entrada] .lente-pt-linha .pt-a:focus-visible{outline-color:var(--fundo,#f3f2ee)}
 [data-cartaz-entrada] .cz-footer{margin-top:24px}
 @media(max-width:639px){[data-cartaz-entrada] .cz-footer-links{margin-bottom:16px}[data-cartaz-entrada] .cz-footer-links a{min-height:48px;padding:8px 16px}[data-cartaz-entrada] .cz-footer .lente-nota{margin-top:16px}}
 @media(min-width:560px){
@@ -80,7 +90,7 @@ html.em-projecao [data-cartaz-entrada] .tm-q{font-size:var(--cz-t20)}
 html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .tm-so{grid-template-columns:minmax(0,1fr)}
 html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .tm-so>a{grid-column:1;grid-row:auto}
 html.em-projecao [data-cartaz-entrada] .tm-img .info-i-texto{font-size:var(--cz-t20)}
-html.em-projecao [data-cartaz-entrada] .tm-img{height:240px}
+html.em-projecao [data-cartaz-entrada] .tm-img{--tm-img-h:240px}
 html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] :is(.tm-n,.tm-q,.tm-f,.tm-linha-t,.tm-linha-d,.tm-extra a,.pt-f,.pt-a){min-width:0;overflow-wrap:anywhere}
 html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .tm-n{flex-wrap:wrap}
 html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .lente-pt-linha .pt-a{width:auto;white-space:normal}
@@ -152,7 +162,11 @@ html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .lente-pt-linha .pt-
 .tm-aplicar ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .tm-aplicar a{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:1.5px solid currentColor;font:700 1rem/1.2 var(--tm-ui);text-decoration:none}
 .tm-aplicar a:hover{background:var(--tm-fundo);color:var(--tm-tinta)}
-.tm-pag .tm-aplicar a:focus-visible{outline-color:var(--tm-mostarda)}
+/* 12/11/2026 (revisão): o anel de foco leva a cor do texto do bloco, que contrasta com o bloco nos dois modos; no modo escuro o
+   bloco fica claro e o ponto do título deixa a mostarda (1,66:1 sobre o claro) e toma a cor do texto */
+.tm-pag .tm-aplicar a:focus-visible{outline-color:var(--tm-fundo)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .tm-pag .tm-aplicar h2 span{color:inherit}}
+:root[data-theme="dark"] .tm-pag .tm-aplicar h2 span{color:inherit}
 @media(min-width:760px){.tm-aplicar{padding:28px}}
 
 .tm-aula{margin:24px 0 0;font:1rem/1.45 var(--tm-ui)}
@@ -182,6 +196,9 @@ html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .lente-pt-linha .pt-
 html.epi-projection .tm-pag :is(h1,h2,h3,p,a,li,figcaption){min-width:0;overflow-wrap:anywhere}
 html.epi-projection .tm-pag :is(.tm-meta,.tm-sec,.tm-ante,.tm-fig figcaption,.tm-tudo-n,.tm-tudo h3,.tm-migas,.tm-rodape,.tm-comeca-rot){font-size:1rem}
 @media(min-width:760px){html.epi-projection .tm-pag :is(.tm-abre,.tm-alt,.tm-tudo-g){grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}}
+/* 12/11/2026 (revisão): a 320 px, com a letra grande da moldura, a palavra mais comprida das perguntas («confirmações?») não cabia
+   na linha e partia-se: abaixo de 760 px a pergunta desce com a largura, sem ficar abaixo da letra da raiz */
+@media(max-width:759px){html.epi-projection .tm-pag .tm-alt h2{font-size:clamp(1rem,7.5vw,1.25rem)}}
 @media print{
 .tm-pag{background:#fff;color:#000}
 .tm-migas,.tm-comeca-rot,.tm-seta,.tm-rodape{display:none}

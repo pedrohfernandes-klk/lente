@@ -7,6 +7,10 @@
 // abrir o Ideias. Página do tema: o mesmo, mais a pergunta como título, a atividade que abre o tema, a dobra «Ver tudo neste tema»
 // fechada ao carregar e a abrir e fechar por clique, Enter e Espaço, com as 23 ligações à vista e a responder, a impressão com a dobra
 // por extenso e o regresso aos quatro temas. Com ENTRADA_TEMAS_PROVAS, guarda capturas de página inteira.
+// 12/11/2026: revisão. Mede-se também a 320 px; o anel de foco de cada ligação tem de contrastar 3:1 com o fundo onde assenta, em claro
+// e em escuro (os blocos invertidos «Português e Exames» e «Para aplicar» incluídos, conferidos pelo nome); o crédito aberto de cada «i»
+// lê-se inteiro, sem deslizar por dentro da moldura, a todas as larguras; e os textos do bloco «Para aplicar», com o ponto do título,
+// têm 4,5:1 sobre o bloco nos dois modos.
 const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),PROVAS=process.env.ENTRADA_TEMAS_PROVAS,SITIO='https://pedrohfernandes-klk.github.io/lente/';
@@ -30,7 +34,14 @@ function foco(){
  const c=getComputedStyle(e),cartao=e.closest('.tm,.tm-alt li'),cc=cartao?getComputedStyle(cartao):null;
  const anel=x=>x&&x.outlineStyle!=='none'&&parseFloat(x.outlineWidth)>=2;
  const r=(e.matches('.tm-n a,.tm-alt h2 a')?cartao:e).getBoundingClientRect();
- return {nome:(e.getAttribute('href')||e.getAttribute('aria-label')||e.textContent.trim()).slice(0,90),tag:e.tagName,anel:anel(c)||(e.matches('.tm-n a,.tm-alt h2 a')&&anel(cc))||c.boxShadow!=='none',noEcra:r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth,dentro:!!e.closest('main')};
+ // 12/11/2026: revisão. O contraste do anel com o fundo onde assenta (o do antepassado mais próximo com fundo; o anel fica por fora do
+ // elemento). O «i» tem o anel por dentro do alvo, sobre a imagem, e confere-se em tests/browser_creditos_i_lente4.cjs.
+ const lum=x=>{const v=x.match(/[\d.]+/g).slice(0,3).map(Number).map(y=>{y/=255;return y<=.03928?y/12.92:Math.pow((y+.055)/1.055,2.4);});return .2126*v[0]+.7152*v[1]+.0722*v[2];};
+ const opaco=x=>{const v=x.match(/[\d.]+/g).map(Number);return v.length<4||v[3]===1;};
+ const dono=e.matches('.tm-n a,.tm-alt h2 a')&&anel(cc)?cartao:e,cd=getComputedStyle(dono);let contraste=null;
+ if(anel(cd)&&!e.closest('.info-i')){let p=dono.parentElement,f=null;while(p&&!f){const b=getComputedStyle(p).backgroundColor;if(opaco(b))f=b;p=p.parentElement;}
+  if(f&&opaco(cd.outlineColor)){const a=lum(cd.outlineColor),z=lum(f);contraste=Math.round((Math.max(a,z)+.05)/(Math.min(a,z)+.05)*100)/100;}}
+ return {contraste,nome:(e.getAttribute('href')||e.getAttribute('aria-label')||e.textContent.trim()).slice(0,90),tag:e.tagName,anel:anel(c)||(e.matches('.tm-n a,.tm-alt h2 a')&&anel(cc))||c.boxShadow!=='none',noEcra:r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth,dentro:!!e.closest('main')};
 }
 async function tabular(page,max){const paragens=[];for(let k=0;k<max;k++){await page.keyboard.press('Tab');const f=await page.evaluate(foco);if(!f)break;paragens.push(f);if(!f.dentro&&paragens.some(x=>x.dentro))break;}return paragens;}
 async function conferirI(page,d,rot,comLigacao){
@@ -40,7 +51,10 @@ async function conferirI(page,d,rot,comLigacao){
  const t=d.locator('.info-i-texto');assert.ok(await t.isVisible(),rot+': crédito à vista');
  assert.ok(await t.evaluate(e=>{const r=e.getBoundingClientRect();return r.left>=-1&&r.right<=innerWidth+1&&e.textContent.trim().length>30;}),rot+': crédito dentro do ecrã');
  assert.equal(await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0,rot+': aberto, sem deslize');
- if(comLigacao){const a=t.locator('a[href^="https://commons.wikimedia.org/wiki/File:"]');assert.equal(await a.count(),1,rot+': ligação à fonte');await t.evaluate(e=>{e.scrollTop=e.scrollHeight;e.scrollIntoView({block:'center'});});assert.ok(await a.evaluate(e=>[...e.getClientRects()].every(r=>document.elementFromPoint(r.left+r.width/2,r.top+r.height/2)===e)),rot+': a ligação da fonte fica livre');}
+ // 12/11/2026: revisão. O crédito aberto lê-se inteiro: não desliza por dentro da moldura e a ligação da fonte está livre sem o deslizar.
+ await page.waitForTimeout(250);assert.ok(await t.evaluate(e=>e.scrollHeight<=e.clientHeight+1),rot+': crédito inteiro, sem deslizar por dentro');
+ assert.equal(await t.evaluate(e=>{e.scrollIntoView({block:'center'});const q=[];const w=document.createTreeWalker(e,NodeFilter.SHOW_TEXT);let no;while(no=w.nextNode()){if(!no.data.trim())continue;const r=document.createRange();r.selectNodeContents(no);for(const c of r.getClientRects())if(c.width>2)q.push(c);}return q.filter(c=>{const x=document.elementFromPoint(c.left+Math.min(c.width/2,8),c.top+c.height/2);return !x||!(x===e||e.contains(x));}).length;}),0,rot+': nenhuma linha do crédito tapada');
+ if(comLigacao){const a=t.locator('a[href^="https://commons.wikimedia.org/wiki/File:"]');assert.equal(await a.count(),1,rot+': ligação à fonte');assert.ok(await a.evaluate(e=>[...e.getClientRects()].every(r=>document.elementFromPoint(r.left+r.width/2,r.top+r.height/2)===e)),rot+': a ligação da fonte fica livre sem deslizar o crédito');await t.evaluate(e=>{e.scrollTop=e.scrollHeight;e.scrollIntoView({block:'center'});});assert.ok(await a.evaluate(e=>[...e.getClientRects()].every(r=>document.elementFromPoint(r.left+r.width/2,r.top+r.height/2)===e)),rot+': a ligação da fonte fica livre');}
  await page.keyboard.press('Escape');assert.equal(await d.evaluate(e=>e.open),false,rot+': Escape fecha');assert.ok(await s.evaluate(e=>document.activeElement===e),rot+': o foco volta ao «i»');
  await page.keyboard.press('Enter');assert.equal(await d.evaluate(e=>e.open),true,rot+': Enter abre');
  await s.click();assert.equal(await d.evaluate(e=>e.open),false,rot+': clique fecha');
@@ -57,7 +71,7 @@ async function conferirI(page,d,rot,comLigacao){
  const prova=async(page,nome)=>{if(PROVAS){await page.evaluate(()=>{document.activeElement&&document.activeElement.blur();scrollTo(0,0);});await page.mouse.move(0,0);await page.screenshot({path:path.join(PROVAS,nome+'.png'),fullPage:true});}};
  const limpo=(m,rot)=>{assert.equal(m.lado,0,rot+': sem deslize');assert.deepEqual(m.fora,[],rot+': nada fora do ecrã');assert.deepEqual(m.transborda,[],rot+': nada transborda');assert.deepEqual(m.alvos,[],rot+': alvos de 44 px');assert.ok(m.imagens.length>0&&m.imagens.every(Boolean),rot+': imagens carregadas');};
  try{
- for(const width of [390,1280])for(const tema of ['light','dark']){
+ for(const width of [320,390,1280])for(const tema of ['light','dark']){
   const esc=tema==='dark'?'escuro':'claro';
   // ---------- a entrada, normal e com ?projetar=1 ----------
   for(const projecao of [false,true]){
@@ -82,7 +96,8 @@ async function conferirI(page,d,rot,comLigacao){
    // foco de teclado: todas as ligações e todos os «i» da entrada recebem foco, pela ordem da página, com o foco à vista e no ecrã
    await page.evaluate(()=>scrollTo(0,0));await page.locator('body').click({position:{x:2,y:2}});
    const paragens=(await tabular(page,60)).filter(p=>p.dentro),nomes=paragens.map(p=>p.nome);
-   for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);}
+   for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);if(p.contraste!==null)assert.ok(p.contraste>=3,rot+': anel de foco com '+p.contraste+':1 em '+p.nome);}
+   {const pt=paragens.filter(p=>p.nome==='https://pedrohfernandes-klk.github.io/pt/');assert.equal(pt.length,1,rot);assert.ok(pt[0].contraste>=3,rot+': anel de «Português e Exames» com '+pt[0].contraste+':1');assert.ok(paragens.filter(p=>p.contraste!==null).length>=17,rot+': anéis medidos');}
    const esperados=['Créditos da imagem: Honoré Daumier',SITIO+'olhar-e-decidir/','Créditos da imagem: Joseph Racknitz','informacao/','Créditos da imagem: Vincent van Gogh',SITIO+'narrativas/','narrativas/ideias/','Créditos da fotografia: Rua da Boavista',SITIO+'cidade/',
     SITIO+'ler/',SITIO+'investigar/',SITIO+'praticar/#escrever',SITIO+'apresentar/',SITIO+'direitos/','cidadania/m1/','cidadania/m2/',SITIO+'biblioteca/','docente/','https://pedrohfernandes-klk.github.io/pt/','caderno/','como/','mapa/'];
    assert.deepEqual(nomes.filter(x=>esperados.includes(x)),esperados,rot+': ordem do foco');
@@ -131,7 +146,10 @@ async function conferirI(page,d,rot,comLigacao){
    if(width===390&&tema==='light'){const hrefs=await page.locator('main a[href]').evaluateAll(es=>[...new Set(es.map(e=>e.href))]);assert.ok(hrefs.length>=27,rot+': '+hrefs.length);for(const h of hrefs){if(/commons\.wikimedia\.org|\/projetar\//.test(h))continue;const u=new URL(h),r=await ctx.request.get(origin+u.pathname);assert.equal(r.status(),200,rot+': '+h);}}
    // foco de teclado, com a dobra aberta: todas as ligações recebem foco, à vista e no ecrã
    await page.evaluate(()=>scrollTo(0,0));await page.locator('body').click({position:{x:2,y:2}});
-   const paragens=(await tabular(page,60)).filter(p=>p.dentro);for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);}
+   const paragens=(await tabular(page,60)).filter(p=>p.dentro);for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);if(p.contraste!==null)assert.ok(p.contraste>=3,rot+': anel de foco com '+p.contraste+':1 em '+p.nome);}
+   {const ap=paragens.filter(p=>/\/(projetos|cidadania)\/contra-feed\/$/.test(p.nome)&&p.contraste!==null);assert.ok(ap.length>=2,rot+': anéis de «Para aplicar» medidos');assert.ok(paragens.filter(p=>p.contraste!==null).length>=36,rot+': anéis medidos');}
+   // 12/11/2026: revisão. O bloco «Para aplicar» é invertido nos dois modos: título, ponto do título, frase e ligações com 4,5:1 sobre o bloco.
+   {const fracos=await page.locator('.tm-aplicar').evaluate(b=>{const lum=x=>{const v=x.match(/[\d.]+/g).slice(0,3).map(Number).map(y=>{y/=255;return y<=.03928?y/12.92:Math.pow((y+.055)/1.055,2.4);});return .2126*v[0]+.7152*v[1]+.0722*v[2];},z=lum(getComputedStyle(b).backgroundColor),es=[...b.querySelectorAll('h2,h2 span,p,a')];if(es.length!==5)return ['peças: '+es.length];return es.map(e=>{const a=lum(getComputedStyle(e).color);return [e.tagName,Math.round((Math.max(a,z)+.05)/(Math.min(a,z)+.05)*100)/100];}).filter(x=>x[1]<4.5).map(String);});assert.deepEqual(fracos,[],rot+': contraste no bloco «Para aplicar»');}
    const comFoco=paragens.map(p=>p.nome),doTema=await page.locator('main :is(a[href],summary)').evaluateAll(es=>es.filter(e=>!e.closest('.info-i-texto')).map(e=>(e.getAttribute('href')||e.getAttribute('aria-label')||e.textContent.trim()).slice(0,90)));
    assert.deepEqual(comFoco.filter(x=>!/^https:\/\/commons/.test(x)),doTema,rot+': ordem do foco');assert.ok(doTema.length>=36,rot+': '+doTema.length);
    // impressão: a dobra sai por extenso, mesmo fechada
@@ -165,5 +183,5 @@ async function conferirI(page,d,rot,comLigacao){
  {const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),p=await ctx.newPage();
   await p.goto(origin+'/lente/');assert.equal(await p.locator('.tm-g>li>article.tm').count(),4);assert.ok(await p.locator('#ferramentas a').first().isVisible());assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);
   await p.goto(origin+'/lente/informacao/');assert.ok(await p.locator('h1').isVisible());await p.locator('details.tm-tudo summary').click();assert.ok(await p.locator('details.tm-tudo li a').first().isVisible(),'sem JavaScript, a dobra abre');assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);await ctx.close();n++;}
- console.log('Entrada em quatro temas e tema 02: '+n+' contextos (390 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos e sem JavaScript): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
+ console.log('Entrada em quatro temas e tema 02: '+n+' contextos (320, 390 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos e sem JavaScript): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
  }finally{await browser.close();server.closeAllConnections();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.closeAllConnections();server.close();});

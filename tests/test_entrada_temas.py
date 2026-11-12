@@ -34,7 +34,7 @@ TEMAS = [
 ]
 COMMONS = ('<a data-external aria-label="Wikimedia Commons, sítio externo" href="{}">Wikimedia Commons</a>. Domínio público.')
 CREDITOS = [
-    ('Créditos da imagem: Honoré Daumier', 'Honoré Daumier, gravura do conjunto <i>Les gens de justice</i>. '
+    ('Créditos da imagem: Honoré Daumier', 'Honoré Daumier, <i>Les gens de justice</i>. Gravura. '
      + COMMONS.format('https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg')),
     ('Créditos da imagem: Joseph Racknitz', 'O Turco, o autómato de xadrez de Wolfgang von Kempelen, numa gravura de Joseph Racknitz, 1789. '
      + COMMONS.format('https://commons.wikimedia.org/wiki/File:Racknitz_-_The_Turk_3.jpg')),
@@ -218,7 +218,10 @@ class EntradaEmTemas(unittest.TestCase):
         mapa = ler('mapa/index.html')
         self.assertEqual(mapa.count('<p><a href="../informacao/">Informação e mundo digital, um dos quatro temas da entrada →</a></p>'), 1)
         self.assertLess(mapa.index('href="../informacao/"'), mapa.index('<section class="map-section">'))
-        self.assertIn('<li>Começa por escolher um dos quatro temas na <a href="../">entrada do Lente</a>, ou por <a href="../praticar/">escolher o que precisas de praticar</a>.', ler('como/index.html'))
+        # 12/11/2026: revisão. A alínea acaba aí: a entrada, a página do tema e praticar/ não marcam progresso, por isso a frase
+        # «Cada índice marca o que já fizeste.» saiu (a alínea seguinte já diz que o progresso guardado depende do recurso).
+        self.assertIn('<li>Começa por escolher um dos quatro temas na <a href="../">entrada do Lente</a>, ou por <a href="../praticar/">escolher o que precisas de praticar</a>.</li>', ler('como/index.html'))
+        self.assertNotIn('Cada índice marca', ler('como/index.html'))
         self.assertNotIn('duas divisões', self.entrada + ler('como/index.html'))
 
     def test_sem_nota_de_previa_nem_noindex(self):
@@ -321,6 +324,13 @@ class EntradaEmTemas(unittest.TestCase):
                 self.assertTrue((ROOT / imagem).is_file())
                 # licença dita por extenso: domínio público, ou fotografia do arquivo da escola
                 self.assertRegex(credito, r'(Domínio público\.|Fotografia: Arquivo da EPI, 2026\.)$')
+        # 12/11/2026: revisão. O crédito do tema 01 fica pelo que o registo do Wikimedia Commons dá (título e técnica), sem «do conjunto»;
+        # o texto alternativo descreve a gravura como ela é (só um dos três homens se debruça); e a nota do rodapé conta também a
+        # fotografia do arquivo da escola, que não é domínio público nem Creative Commons.
+        self.assertNotIn('do conjunto', self.entrada)
+        self.assertIn('alt="Gravura: uma rapariga de pé diante de uma bancada alta com três homens de toga; um deles debruça-se a olhar para ela."', self.cartoes[0])
+        self.assertEqual(self.entrada.count('Imagens em domínio público, Creative Commons ou do arquivo da EPI, com crédito; dos textos protegidos, só excertos curtos, com crédito e ligação.'), 1)
+        self.assertNotIn('Imagens em domínio público ou Creative Commons', self.entrada)
         # página do tema: uma imagem, com o crédito no «i» da moldura e a legenda sem marcas de crédito
         self.assertEqual(self.tema.count('<details class="info-i'), 1)
         self.assertEqual(self.tema.count('<img '), 1)

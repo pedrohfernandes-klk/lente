@@ -31,7 +31,7 @@ const PAGINAS=[
   // Derby, da fotografia do Tejo e do retrato de Pessoa saíram com as suas imagens.
   const C=u=>'<a data-external aria-label="Wikimedia Commons, sítio externo" href="'+u+'">Wikimedia Commons</a>. Domínio público.';
   return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},
-   {html:'Honoré Daumier, gravura do conjunto <i>Les gens de justice</i>. '+C('https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg'),visual:'.tm-g>li:nth-child(1) .tm-img img'},
+   {html:'Honoré Daumier, <i>Les gens de justice</i>. Gravura. '+C('https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg'),visual:'.tm-g>li:nth-child(1) .tm-img img'},
    {html:'O Turco, o autómato de xadrez de Wolfgang von Kempelen, numa gravura de Joseph Racknitz, 1789. '+C('https://commons.wikimedia.org/wiki/File:Racknitz_-_The_Turk_3.jpg'),visual:'.tm-g>li:nth-child(2) .tm-img img'},
    {html:portas[1],visual:'#inicio-narrativas .tm-img img'},
    {html:'Rua da Boavista, Lisboa. Fotografia: Arquivo da EPI, 2026.',visual:'.tm-g>li:nth-child(4) .tm-img img'}];})()},
