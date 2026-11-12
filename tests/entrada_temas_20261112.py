@@ -12,8 +12,12 @@ antiga. Nada é apagado nem movido: os ids ferramentas, inicio-cidadania, inicio
 Os testes que comparam com bases antigas aplicam-no (ou desfazem-no) como a camada mais recente, por cima da da Justiça, com contagem
 exata, sem aceitar mais nada (tests/creditos_i_lente3.py)."""
 import json
+import sys
 from pathlib import Path
-import creditos_i
+# 12/11/2026: tools/ no caminho, como em tests/justica_20261110.py, para o módulo abrir também quando um teste corre sozinho
+# (licoes-qa.yml corre test_menus_163.py isolado).
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
+import creditos_i  # noqa: E402
 TROCAS = json.loads((Path(__file__).parent / 'fixtures/entrada-temas-20261112.json').read_text('utf-8'))
 def aplicar(texto, ficheiro):
     return creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'entrada em temas ' + ficheiro)
