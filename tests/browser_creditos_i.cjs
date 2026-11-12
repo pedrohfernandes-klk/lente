@@ -25,7 +25,16 @@ const PAGINAS=[
   // 08/11/2026: pedido cidade-cartaz-lente. O cartão «Ler a cidade.» entra logo antes do do Português, com o seu «i» (crédito novo,
   // escrito aqui por extenso, tools/trocas/cidade-cartaz-lente-20261108.json): a entrada passa a ter cinco «i» e a imagem de cada
   // cartão diz-se pelo cartão; o «i» do Português continua com o crédito antigo.
-  return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},{html:portas[0],visual:'#inicio-cidadania .ld-img'},{html:portas[1],visual:'#inicio-narrativas .ld-img'},{html:'Metade de um estereograma de 1907, com direitos de J. J. Killelea &amp; Co. e publicado por H. C. White Co. Domínio público. <a data-external aria-label="Fonte da fotografia, sítio externo" href="https://www.loc.gov/item/2021640928/">Fonte da fotografia</a>',visual:'.portal-cidade .sp-image img'},{html:um(s,/<p class="sp-credit">(.*?)<\/p>/),visual:'.portal-portugues .sp-image img'}];})()},
+  // 12/11/2026: pedido entrada-temas. A entrada abre por quatro temas: continua a ter cinco «i» (o do fundo e um por tema, na imagem
+  // do cartão). O do fundo e o do esboço de Van Gogh (agora no tema 03) conservam o crédito antigo, palavra a palavra; os dos temas 01,
+  // 02 e 04 são créditos novos, escritos aqui por extenso (tests/fixtures/entrada-temas-20261112.json). Os «i» do quadro de Wright of
+  // Derby, da fotografia do Tejo e do retrato de Pessoa saíram com as suas imagens.
+  const C=u=>'<a data-external aria-label="Wikimedia Commons, sítio externo" href="'+u+'">Wikimedia Commons</a>. Domínio público.';
+  return [{html:um(s,/<p class="cz-credit lf-credito">(.*?) <button /),visual:'.lf-mesa'},
+   {html:'Honoré Daumier, <i>Les gens de justice</i>. Gravura. '+C('https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Daumier_-_Les_gens_de_justice.jpg'),visual:'.tm-g>li:nth-child(1) .tm-img img'},
+   {html:'O Turco, o autómato de xadrez de Wolfgang von Kempelen, numa gravura de Joseph Racknitz, 1789. '+C('https://commons.wikimedia.org/wiki/File:Racknitz_-_The_Turk_3.jpg'),visual:'.tm-g>li:nth-child(2) .tm-img img'},
+   {html:portas[1],visual:'#inicio-narrativas .tm-img img'},
+   {html:'Rua da Boavista, Lisboa. Fotografia: Arquivo da EPI, 2026.',visual:'.tm-g>li:nth-child(4) .tm-img img'}];})()},
  {p:'narrativas/ideias/',is:[{html:um(antigo('narrativas/ideias/index.html'),/<figure class="drawing">[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>/),visual:'.drawing svg'}]},
  {p:'narrativas/',is:[{html:um(antigo('narrativas/index.html'),/<p class="lab-creditos">([\s\S]*?)<\/p>/),visual:null}]},
  ...LETRAS.map(p=>({p,depois:(LENTE3[p]||[]).concat(LENTE4[p]||[]),is:[{html:'Fotografia nas letras: '+um(antigo(ficheiro(p)),/<small class="mr-cred">\/ nas letras: (.*?) · Arquivo da EPI<\/small>/)+'. Arquivo da EPI.',visual:'.marca-sec'}]})),
