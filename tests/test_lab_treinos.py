@@ -164,29 +164,51 @@ class Ginasio(unittest.TestCase):
 
     def test_entrada_do_lente(self):
         s = (R / 'index.html').read_text('utf-8')
-        i = s.index('id="inicio-cidadania"'); j = s.index('</article>', i)
-        self.assertEqual(s[i:j].count('<li><a '), 3)
+        # 12/11/2026: pedido entrada-temas. A entrada abre por quatro temas. A antiga porta da Cidadania (três linhas: módulo 1,
+        # módulo 2 e Dilemas) reparte-se: os dois módulos ficam na linha «A minha aula», que conserva o id inicio-cidadania, e os
+        # Dilemas são o destino do tema 01. A mesma exigência, com os destinos exatos: nenhuma das três ligações se perde.
+        i = s.index('id="inicio-cidadania"'); j = s.index('</nav>', i)
+        self.assertEqual(re.findall(r'<li><a href="([^"]+)">([^<]+)</a></li>', s[i:j]),
+                         [('cidadania/m1/', 'Cidadania, módulo 1'), ('cidadania/m2/', 'Cidadania, módulo 2')])
+        self.assertEqual(s[i:j].count('<li><a '), 2)
+        self.assertEqual(s.count('<h3 class="tm-n"><b aria-hidden="true">01</b><a href="https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/">'), 1)
         i = s.index('id="inicio-narrativas"'); j = s.index('</article>', i)
         # 30/10/2026: cartão do Laboratório refeito (pedido do docente); as três portas são as da entrada nova do
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
-        self.assertEqual(re.findall(r'href="narrativas/tudo/#([a-z-]+)"', s[i:j]), ['ler-como-quem-escreve', 'treinar', 'criar'])
+        # 12/11/2026: pedido entrada-temas. O cartão do Laboratório passa a ser o do tema 03 («Histórias e criação»), com o mesmo id:
+        # abre o Laboratório e conserva a ligação ao Ideias (decisão 141). As três portas do catálogo saem do cartão e ficam no mapa,
+        # com os mesmos destinos, a mesma ordem e os mesmos rótulos (decisão 54), numa linha fora da secção que tools/laboratorio.py
+        # reescreve; as secções continuam a existir no catálogo.
+        mapa = (R / 'mapa/index.html').read_text('utf-8')
+        self.assertEqual(re.findall(r'href="\.\./narrativas/tudo/#([a-z-]+)">([^<]+)</a>', mapa),
+                         [('ler-como-quem-escreve', 'Observar'), ('treinar', 'Treinar'), ('criar', 'Criar')])
+        tudo = (R / 'narrativas/tudo/index.html').read_text('utf-8')
+        for ancora in ('ler-como-quem-escreve', 'treinar', 'criar'):
+            self.assertEqual(tudo.count('id="' + ancora + '"'), 1, ancora)
+        self.assertEqual(re.findall(r'<h3 class="tm-n"><b aria-hidden="true">(\d\d)</b><a href="([^"]+)">([^<]+)</a></h3>', s[i:j]),
+                         [('03', 'https://pedrohfernandes-klk.github.io/lente/narrativas/', 'Histórias e criação')])
         # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
         # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
         # 05/11/2026: decisão 163 (e decisão 97). A ordem passa a Ideias, Observar, Treinar e Criar, como no fio do Laboratório.
-        self.assertEqual(re.findall(r'<strong>([^<]+)</strong>', s[i:j]), ['Ideias', 'Observar', 'Treinar', 'Criar'])
+        self.assertEqual(re.findall(r'<p class="tm-extra"><a href="([^"]+)">([^<]+)</a></p>', s[i:j]), [('narrativas/ideias/', 'Ideias: o método em cinco passos')])
         self.assertIn('href="narrativas/ideias/"',s[i:j])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).
         porta = next(x for x in json.loads((R / 'assets/laboratorio/imagens.json').read_text('utf-8')) if x['id'] == 'porta')
-        self.assertIn('<img src="' + porta['file'] + '"', s[i:j])
+        self.assertIn('<img src="' + porta['file'] + '" alt="' + porta['alt'] + '" width="' + str(porta['width']) + '" height="' + str(porta['height']) + '"', s[i:j])
         self.assertTrue((R / porta['file']).is_file())
         # 01/11/2026: D1, classe comum dos créditos; mesma imagem e posição da legenda.
         # 02/11/2026: decisão 34, tabela colada à imagem também com a dobra
         # 07/11/2026: decisões 153, 176 e 177, a tabela de museu passa, inteira, para o «i» no canto da imagem, fora da ligação.
-        self.assertRegex(s[i:j], r'</a><details class="info-i" name="info-i"><summary aria-label="Créditos da imagem: Vincent van Gogh"><span aria-hidden="true">i</span></summary><p class="info-i-texto">Vincent van Gogh, esboço de <i>O Quarto</i>')
+        # 12/11/2026: pedido entrada-temas. A imagem deixa de estar dentro de uma ligação; o «i» segue-se à imagem, na mesma moldura,
+        # e fica antes (e fora) da ligação do título do cartão.
+        self.assertRegex(s[i:j], r'style="object-position:50% 40%"><details class="info-i" name="info-i"><summary aria-label="Créditos da imagem: Vincent van Gogh"><span aria-hidden="true">i</span></summary><p class="info-i-texto">Vincent van Gogh, esboço de <i>O Quarto</i>')
         # 02/11/2026: a dobra continua a seguir-se à tabela, com o nome da porta no summary e a fonte no mesmo cartão.
         # 07/11/2026: decisões 153, 176 e 177, a dobra segue-se à moldura da imagem, que fecha depois do «i».
-        self.assertRegex(s[i:j], r'Domínio público\.</p></details></div><details class="cz-fold" open><summary data-cz-next><h2 class="ld-n">Laboratório\.</h2></summary><div class="ld-corpo">')
+        # 12/11/2026: pedido entrada-temas. Já não há dobra: à moldura da imagem, que fecha depois do «i», segue-se o corpo do cartão,
+        # com o nome do tema no título e a fonte no mesmo cartão.
+        self.assertRegex(s[i:j], r'Domínio público\.</p></details></div><div class="tm-corpo"><h3 class="tm-n"><b aria-hidden="true">03</b><a href="[^"]+">Histórias e criação</a></h3>')
+        self.assertNotIn('<a', s[i:j][s[i:j].index('<details class="info-i"'):s[i:j].index('<summary')])
         for campo in ('Pena e tinta sobre papel.', porta['institution'] + '.', 'href="' + porta['source'] + '">Wikimedia Commons</a>. Domínio público.'):
             self.assertIn(campo, s[i:j])
         self.assertIn('id="inicio-vozes"', s)

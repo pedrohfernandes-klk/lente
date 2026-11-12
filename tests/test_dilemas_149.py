@@ -12,6 +12,10 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT / 'tests'))
+sys.path.insert(0, str(ROOT / 'tools'))
+import entrada_temas_20261112  # noqa: E402
 MANIFESTO = json.loads((ROOT / 'tests/fixtures/dilemas-149-20261106.json').read_text(encoding='utf-8'))
 
 # 06/11/2026: as formas que o nome da família toma nas páginas; nenhuma pode voltar a dizer «Decisões».
@@ -48,6 +52,11 @@ class Dilemas149(unittest.TestCase):
         self.assertEqual(len(MANIFESTO), 21)
         for nome, trocas in MANIFESTO.items():
             texto = (ROOT / nome).read_text(encoding='utf-8')
+            # 12/11/2026: pedido entrada-temas. A entrada em quatro temas é a camada mais recente (manifesto fechado
+            # tests/fixtures/entrada-temas-20261112.json): desfaz-se primeiro, com contagem exata de cada «novo», e o que fica, a
+            # entrada do main b8abe97, confere-se como antes. Na entrada nova, a família é o destino do tema 01 (ver o teste abaixo).
+            if nome in entrada_temas_20261112.TROCAS:
+                texto = entrada_temas_20261112.desfazer(texto, nome)
             for antigo, novo, quantidade in trocas:
                 with self.subTest(ficheiro=nome, troca=novo[:60]):
                     self.assertEqual(texto.count(antigo), 0)
@@ -64,13 +73,26 @@ class Dilemas149(unittest.TestCase):
         # Toda a ligação de texto para a raiz da família diz «Dilemas» (ou «Voltar a Dilemas», «Abrir Dilemas»).
         rotulo = re.compile(r'olhar-e-decidir/\\?">([^<]+)<')
         aceites = {'Dilemas', 'Voltar a Dilemas', 'Abrir Dilemas ', 'Abrir Ética e estética '}
-        vistos = 0
+        # 12/11/2026: pedido entrada-temas. Na entrada, o tema 01 («Justiça e vida em comum») abre, por agora, a família Dilemas:
+        # o rótulo é o nome do tema, não um nome novo da família. Aceita-se só aí, uma única vez, dentro do título do cartão do
+        # tema 01; todas as outras ligações continuam a ter de dizer «Dilemas», e o mínimo de ligações vistas não desce.
+        TEMA_01 = 'Justiça e vida em comum'
+        vistos, temas = 0, []
         for nome in publicados():
             for texto in rotulo.findall((ROOT / nome).read_text(encoding='utf-8', errors='replace')):
                 vistos += 1
                 with self.subTest(ficheiro=nome, rotulo=texto):
-                    self.assertIn(texto, aceites)
+                    if texto == TEMA_01:
+                        temas.append(nome)
+                    else:
+                        self.assertIn(texto, aceites)
         self.assertGreaterEqual(vistos, 25)
+        self.assertEqual(temas, ['index.html'])
+        self.assertEqual((ROOT / 'index.html').read_text(encoding='utf-8').count(
+            '<h3 class="tm-n"><b aria-hidden="true">01</b><a href="https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/">'
+            + TEMA_01 + '</a></h3>'), 1)
+        # a página da família continua a chamar-se «Dilemas»
+        self.assertIn('<title>Dilemas · Lente</title>', (ROOT / 'olhar-e-decidir/index.html').read_text(encoding='utf-8'))
 
     def test_o_resto_fica(self):
         # Endereços, chaves do progresso e os outros sentidos de «decisões» não mudam.

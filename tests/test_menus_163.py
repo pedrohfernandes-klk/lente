@@ -58,6 +58,7 @@ import molde_s10  # noqa: E402
 # tools/trocas/cuidado-lente-20261108.json parte do main a99d2d4: é a camada mais recente e desfaz-se no ficheiro atual antes da
 # da s10 (abaixo).
 import cuidado_lente  # noqa: E402
+import entrada_temas_20261112  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -395,6 +396,12 @@ class Preservacao(unittest.TestCase):
             # da s03.
             # 08/11/2026: a camada do pedido cuidado-lente (decisão 152), agora a mais recente, desfaz-se primeiro, com contagem
             # exata de cada «novo»; depois a da s10 e as outras, como abaixo.
+            # 12/11/2026: pedido entrada-temas. A camada da entrada em quatro temas (manifesto fechado
+            # tests/fixtures/entrada-temas-20261112.json: index.html, mapa/index.html e como/index.html), agora a mais recente,
+            # desfaz-se primeiro, com contagem exata de cada «novo»; o que fica é o ficheiro do main b8abe97, que se confere como
+            # antes. Que a entrada nova não perde nenhum destino da antiga confere-se em tests/test_entrada_temas.py.
+            if rel in entrada_temas_20261112.TROCAS:
+                agora = entrada_temas_20261112.desfazer(agora, rel)
             if rel in cuidado_lente.TROCAS:
                 agora = cuidado_lente.desfazer(agora, rel)
             # 07/11/2026: a camada da s10 (a mais recente) desfaz-se antes da da s09.

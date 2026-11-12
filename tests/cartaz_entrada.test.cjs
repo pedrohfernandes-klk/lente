@@ -2,12 +2,31 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process');
 const root=path.join(__dirname,'..'),now=fs.readFileSync(path.join(root,'index.html'),'utf8'),before=cp.execFileSync('git',['show','03ef772:index.html'],{cwd:root,encoding:'utf8'});
 const values=(s,re)=>[...s.matchAll(re)].map(m=>m[1]);
+// 12/11/2026: pedido entrada-temas. A entrada abre por quatro temas. O contrato de preservação fica com a mesma força, dito de outro
+// modo: (1) cada destino da entrada de 03ef772 continua a ter ligação na entrada ou no mapa (antes: na entrada), e a lista do que passou
+// para o mapa é exata; só saem os dois créditos das imagens que saíram da entrada e os dois saltos internos da navegação móvel, cujos
+// ids ficam; (2) todos os ids ficam, menos quatro sem uso (três rótulos de dobras e uma âncora vazia), que nenhuma página liga; (3) todos
+// os scripts ficam; (4) a lista das ferramentas é exata, na ordem nova, e a Biblioteca e o caderno continuam na entrada; (5) em vez de
+// duas portas, quatro temas, pela ordem aprovada.
 test('mantém ligações, âncoras, ferramentas e todos os scripts anteriores',()=>{
- for(const href of values(before,/<a\b[^>]*href="([^"]+)"/g))assert.ok(values(now,/<a\b[^>]*href="([^"]+)"/g).includes(href),href);
- for(const id of values(before,/\bid="([^"]+)"/g))assert.ok(values(now,/\bid="([^"]+)"/g).includes(id),id);
+ const B='https://pedrohfernandes-klk.github.io/lente/',mapa=fs.readFileSync(path.join(root,'mapa/index.html'),'utf8');
+ const abs=(s,b)=>values(s,/<a\b[^>]*href="([^"]+)"/g).map(h=>new URL(h,b).href);
+ const naEntrada=new Set(abs(now,B)),noMapa=new Set(abs(mapa,B+'mapa/'));
+ const sairam=['https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg','https://commons.wikimedia.org/wiki/File:PessoaChapeu.jpg',B+'#inicio-cidadania',B+'#inicio-narrativas'];
+ for(const href of abs(before,B)){if(sairam.includes(href))continue;assert.ok(naEntrada.has(href)||noMapa.has(href),href);}
+ assert.deepEqual([...new Set(abs(before,B))].filter(h=>!naEntrada.has(h)&&!sairam.includes(h)).sort(),[B+'#ferramentas',B+'cidadania/',B+'narrativas/tudo/#criar',B+'narrativas/tudo/#ler-como-quem-escreve',B+'narrativas/tudo/#treinar',B+'ver-para-fazer/']);
+ // os dois créditos saíram com as suas imagens; os dois saltos internos saíram, mas os destinos (os ids) ficam na entrada
+ assert.doesNotMatch(now,/wright-experiencia|pessoa-1914/);assert.equal((now.match(/id="inicio-cidadania"/g)||[]).length,1);assert.equal((now.match(/id="inicio-narrativas"/g)||[]).length,1);assert.equal((now.match(/id="ferramentas"/g)||[]).length,1);
+ const semUso=['ferr-ler','ferr-criar','ferr-fontes','trans-t'],ids=values(now,/\bid="([^"]+)"/g);
+ for(const id of values(before,/\bid="([^"]+)"/g)){if(semUso.includes(id)){assert.ok(!mapa.includes('#'+id+'"')&&!now.includes('#'+id+'"'),id);continue;}assert.ok(ids.includes(id),id);}
+ assert.equal(new Set(ids).size,ids.length,'ids repetidos');
  for(const script of values(before,/<script\b[^>]*>([\s\S]*?)<\/script>/g))assert.ok(now.includes(script),'script preservado');
- assert.deepEqual(values(before,/<li><a href="(https:\/\/pedrohfernandes-klk.github.io\/lente\/[^"]+)"/g),values(now,/<li><a href="(https:\/\/pedrohfernandes-klk.github.io\/lente\/[^"]+)"/g));
- assert.equal((now.match(/class="ld mobile-dest cz-door"/g)||[]).length,2);
+ assert.deepEqual(values(now,/<li><a href="(https:\/\/pedrohfernandes-klk.github.io\/lente\/[^"]+)"/g),['ler/','investigar/','praticar/#escrever','apresentar/','direitos/'].map(x=>B+x));
+ for(const antes of values(before,/<li><a href="(https:\/\/pedrohfernandes-klk.github.io\/lente\/[^"]+)"/g))assert.ok(naEntrada.has(antes)||noMapa.has(antes),antes);
+ assert.ok(naEntrada.has(B+'biblioteca/')&&naEntrada.has(B+'caderno/')&&naEntrada.has(B+'mapa/')&&naEntrada.has(B+'docente/'));
+ assert.equal((now.match(/<article class="tm"/g)||[]).length,4);assert.equal((now.match(/class="ld mobile-dest cz-door"/g)||[]).length,0);
+ assert.deepEqual([...now.matchAll(/<h3 class="tm-n"><b aria-hidden="true">(\d\d)<\/b><a href="([^"]+)">([^<]+)<\/a><\/h3>/g)].map(m=>m.slice(1)),[['01',B+'olhar-e-decidir/','Justiça e vida em comum'],['02','informacao/','Informação e mundo digital'],['03',B+'narrativas/','Histórias e criação'],['04',B+'cidade/','Imagem, som e cidade']]);
+ assert.ok(fs.existsSync(path.join(root,'informacao/index.html')));
 });
 test('retoma lê as chaves anteriores e não grava visitas',()=>{
  const js=fs.readFileSync(path.join(root,'assets/cartaz-entrada.js'),'utf8');assert.ok(js.includes('epi-ultima'));assert.doesNotMatch(js,/localStorage\.(?:setItem|removeItem|clear)/);
@@ -23,7 +42,8 @@ test('retoma lê as chaves anteriores e não grava visitas',()=>{
 test('fundo «A lente»: decorativo e parado por omissão',()=>{
  const css=fs.readFileSync(path.join(root,'assets/fundo-lente.css'),'utf8'),js=fs.readFileSync(path.join(root,'assets/fundos.js'),'utf8');
  assert.match(now,/<header class="lente-cab" data-fundo="lf" data-fundo-ciclo="40"><p class="lente-etq">/);
- assert.match(now,/<p class="lente-frase">Olhar\. Experimentar\. Decidir\.<\/p><div class="lf-mesa" aria-hidden="true"><div class="lf-pagina"><\/div><div class="lf-lupa">/);
+ // 12/11/2026: pedido entrada-temas. A frase do cabeçalho passa a apresentar os quatro temas; o resto do cabeçalho fica igual.
+ assert.match(now,/<p class="lente-frase">Quatro perguntas\. Escolhe uma e começa por aí\.<\/p><div class="lf-mesa" aria-hidden="true"><div class="lf-pagina"><\/div><div class="lf-lupa">/);
  assert.equal((now.match(/class="lf-mesa"/g)||[]).length,1);assert.doesNotMatch(now,/lf-fundo|lf-cena|lf-colinas/);
  // 07/11/2026: decisões 153, 176 e 177, o crédito inteiro passa para o «i» do desenho e o botão sai dele, sempre à vista, com «Parar a animação».
  assert.match(now,/<div class="fundo-acoes lf-credito"><button type="button" class="fundo-botao" data-fundo-botao="lf" hidden>Parar a animação<\/button><details class="info-i info-i--linha" name="info-i"><summary aria-label="Créditos do desenho"><span aria-hidden="true">i<\/span><\/summary><p class="info-i-texto">Grafismo gerado com recurso a IA, EPI, 2026\. Na página, a epígrafe de <i>Ensaio sobre a Cegueira<\/i>, de José Saramago \(1995\): «Se podes olhar, vê\. Se podes ver, repara\.»<\/p><\/details><\/div>/);

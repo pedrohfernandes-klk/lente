@@ -127,8 +127,13 @@ class CreditosLente4(unittest.TestCase):
         # camada e as do main não muda nada: a cadeia do lente-3 deixa os dois ficheiros como estão, a aplicar e a desfazer.
         import justica_20261110
         import praticar_20261110
+        # 12/11/2026: pedido entrada-temas. O mesmo para a camada da entrada em quatro temas (tests/entrada_temas_20261112.py), que
+        # tests/creditos_i_lente3.py encadeia por fora da da Justiça: só toca em index.html, mapa/index.html e como/index.html.
+        import entrada_temas_20261112
+        self.assertEqual(sorted(entrada_temas_20261112.TROCAS), ['como/index.html', 'index.html', 'mapa/index.html'])
         for nome, trocas in (('praticar', praticar_20261110.TROCAS), ('Justiça', justica_20261110.TROCAS),
-                             ('Justiça curta', justica_20261110.CURTAS), ('Justiça guiada', justica_20261110.GUIADAS)):
+                             ('Justiça curta', justica_20261110.CURTAS), ('Justiça guiada', justica_20261110.GUIADAS),
+                             ('entrada em temas', entrada_temas_20261112.TROCAS)):
             self.assertEqual(sorted(set(trocas) & set(creditos_i_lente4.TROCAS)), [], nome)
         for f in creditos_i_lente4.TROCAS:
             with self.subTest(ficheiro=f):

@@ -11,7 +11,9 @@ const root=path.resolve(__dirname,'..');
 const server=http.createServer((q,r)=>{let rel=decodeURIComponent(new URL(q.url,'http://x').pathname.replace(/^\/lente\//,''));if(!rel||rel.endsWith('/'))rel+='index.html';const f=path.resolve(root,rel);if(!f.startsWith(root+path.sep)){r.writeHead(403);return r.end()}try{r.setHeader('content-type',({'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp','.json':'application/json','.woff2':'font/woff2'})[path.extname(f)]||'application/octet-stream');r.end(fs.readFileSync(f))}catch{r.writeHead(404);r.end()}});
 const TODOS=['small','medium','large'],CASOS=[[320,900,TODOS],[390,900,TODOS],[640,900,TODOS],[660,900,TODOS],[700,900,TODOS],[912,900,TODOS],[960,900,TODOS],[768,1024,TODOS],[1024,768,TODOS],[1280,800,TODOS],[1366,768,TODOS],[1920,1080,TODOS]];
 function partidas(){
- const sel='h2,h3,p,small,.lab-set-copy,.sp-copy,.sp-kicker,.sp-image-label,.ld-rot,.cz-button,.cz-footer-links a',out=[];
+ // 12/11/2026: pedido entrada-temas. Entram na medição as ligações das linhas dos acessos secundários, a do Ideias e a do Português
+ // (os títulos, as perguntas e as frases dos temas já são h2, h3 e p); os seletores antigos ficam, para o que ainda existir.
+ const sel='h2,h3,p,small,.lab-set-copy,.sp-copy,.sp-kicker,.sp-image-label,.ld-rot,.cz-button,.cz-footer-links a,.tm-linha a,.tm-extra a,.pt-a',out=[];
  for(const el of document.querySelectorAll('[data-cartaz-entrada] :is('+sel+')')){
   // 07/11/2026: decisões 153, 176 e 177, o texto de um «i» fechado não se vê e não se mede aqui; cada «i» mede-se aberto, em partidasNosI.
   if(!el.offsetParent||getComputedStyle(el).hyphens==='auto'||!el.checkVisibility({contentVisibilityAuto:true}))continue;
@@ -19,9 +21,14 @@ function partidas(){
   while(n=w.nextNode()){const re=/[^\s ]{4,}/g;let m;while(m=re.exec(n.textContent)){const r=document.createRange();r.setStart(n,m.index);r.setEnd(n,m.index+m[0].length);const tops=new Set([...r.getClientRects()].filter(x=>x.width>0).map(x=>Math.round(x.top)));if(tops.size>1)out.push(m[0])}}
  }
  // 05/11/2026: revisão adversarial. O nome das portas fica num degrau da escala Cartaz (t25, t31, t39) e o retrato de Pessoa cabe na moldura.
- const raiz=parseFloat(getComputedStyle(document.documentElement).fontSize),degraus=[1.5625,1.9375,2.4375].map(k=>k*raiz);
- const foraDaEscala=[...document.querySelectorAll('[data-cartaz-entrada] .ld-n')].filter(h=>h.offsetParent).map(h=>parseFloat(getComputedStyle(h).fontSize)).filter(fs=>!degraus.some(d=>Math.abs(d-fs)<.2));
- const img=document.querySelector('[data-cartaz-entrada] .sp-image'),retratoAlto=img&&img.offsetParent?Math.round(img.getBoundingClientRect().height-innerHeight):-1;
+ // 12/11/2026: pedido entrada-temas. As duas portas deram lugar a quatro temas: mede-se a pergunta de cada tema (.tm-q), que na
+ // projeção desce pelos degraus t39, t31, t25 e t20 da escala Cartaz, e exige-se que as quatro se meçam; em vez do retrato de Pessoa,
+ // que saiu, nenhuma das quatro imagens dos temas pode ser mais alta do que a moldura, e têm de estar as quatro à vista.
+ const raiz=parseFloat(getComputedStyle(document.documentElement).fontSize),degraus=[1.25,1.5625,1.9375,2.4375].map(k=>k*raiz);
+ const perguntas=[...document.querySelectorAll('[data-cartaz-entrada] .tm-q')].filter(h=>h.offsetParent);
+ const foraDaEscala=perguntas.map(h=>parseFloat(getComputedStyle(h).fontSize)).filter(fs=>!degraus.some(d=>Math.abs(d-fs)<.2));
+ if(perguntas.length!==4)foraDaEscala.push('perguntas à vista: '+perguntas.length);
+ const imgs=[...document.querySelectorAll('[data-cartaz-entrada] .tm-img')].filter(e=>e.offsetParent),retratoAlto=imgs.length===4?Math.max(...imgs.map(img=>Math.round(img.getBoundingClientRect().height-innerHeight))):1;
  return {partidas:[...new Set(out)],desliza:document.documentElement.scrollWidth-innerWidth,foraDaEscala,retratoAlto};
 }
 // 07/11/2026: decisões 153, 176 e 177. Os créditos passaram para o «i»: abre-se cada «i» à vista, um de cada vez, e o crédito aberto
