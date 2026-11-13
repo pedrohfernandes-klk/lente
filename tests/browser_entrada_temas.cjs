@@ -178,7 +178,9 @@ async function conferirI(page,d,rot,comLigacao){
     assert.equal(await dobra.locator('li a[href="'+alt[3][0]+'"]').count(),1,rot+': a sessão 1 está em «Ver tudo»');
     if(width===390&&tema==='light'){const r=await ctx.request.get(origin+new URL(alt[3][0]).pathname);assert.equal(r.status(),200,rot+': '+alt[3][0]);assert.ok((await r.text()).includes('<p>As ideias caem do céu?<\\/p>'),rot+': a pergunta no ficheiro da sessão 1');
      const s1=await ctx.newPage(),e1=[];s1.on('pageerror',e=>e1.push(e.message));await s1.goto(alt[3][0],{waitUntil:'networkidle'});assert.equal(new URL(s1.url()).pathname,'/lente/narrativas/ideias/sessao-01/',rot);
-     const perg=s1.getByText('As ideias caem do céu?',{exact:true});for(let k=0;k<2;k++){await s1.locator('button.c-prim:visible').first().click();await s1.waitForTimeout(400);}
+     const perg=s1.getByText('As ideias caem do céu?',{exact:true});
+     // 13/11/2026 (revisão): eram exatamente dois «Seguinte»; avança-se até a pergunta ficar à vista, com o limite de cinco, para não depender da ordem dos cartões. As asserções finais são as mesmas.
+     for(let k=0;k<5&&!(await perg.count()===1&&await perg.isVisible());k++){await s1.locator('button.c-prim:visible').first().click();await s1.waitForTimeout(400);}
      assert.equal(await perg.count(),1,rot+': a pergunta na sessão 1');assert.ok(await perg.isVisible(),rot+': a pergunta à vista na sessão 1');assert.deepEqual(e1,[],rot+': sessão 1 sem erros');await s1.close();}}
    // foco de teclado, com a dobra aberta: todas as ligações recebem foco, à vista e no ecrã
    await page.evaluate(()=>scrollTo(0,0));await page.locator('body').click({position:{x:2,y:2}});
