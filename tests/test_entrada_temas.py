@@ -463,10 +463,14 @@ class EntradaEmTemas(unittest.TestCase):
             # antigas (a frase, com o rótulo, e a pergunta «Ver ou observar?», contra narrativas/ideias/) dão lugar a três contra a sessão 1: a
             # pergunta letra a letra (no texto e no ficheiro tal como está), cada parte da frase do cartão e a duração.
             (T3, 'As ideias caem do céu?', LAB + 'ideias/sessao-01/index.html', ['As ideias caem do céu?', ('fonte', '<p>As ideias caem do céu?<\\/p>')]),
-            (T3, 'Decides: sim, não ou depende. Tens a razão de quem diz que sim, a de quem diz que não e uma objeção. Guardas a tua posição e voltas a ela na última sessão.',
+            # 13/11/2026 (revisão): o cartão deixa de prometer a «última sessão», que ainda não está publicada;
+            # fica «Não há resposta certa: guardas a tua posição.», com as duas partes provadas no destino.
+            (T3, 'Decides: sim, não ou depende. Tens a razão de quem diz que sim, a de quem diz que não e uma objeção. Não há resposta certa: guardas a tua posição.',
              LAB + 'ideias/sessao-01/index.html', ['As ideias caem do céu?', 'Decide em silêncio, de braço no ar: sim, não ou depende.', 'A razão de quem diz que sim', 'A razão de quem diz que não', 'Uma objeção',
-                                                   'Guarda a tua posição: voltas a ela na última sessão.']),
-            (T3, 'Sessão 1 de Ideias: Ver ou observar? 180 minutos, com uma pausa.',
+                                                   'Não há resposta certa neste cartão. Guarda a tua posição']),
+            # 13/11/2026 (revisão): a linha de apoio toma a forma das vizinhas e diz onde está a pergunta (terceiro cartão;
+            # o teste de navegador confirma-o com dois «Seguinte»).
+            (T3, 'Sessão 1, em Ideias: é o terceiro cartão. 180 minutos, com uma pausa.',
              LAB + 'ideias/sessao-01/index.html', ['Sessão 1: Ver ou observar?', 'Ideias, passo 1 de 5.', 'Hoje, 180 minutos com uma pausa', ('fonte', '<title>Sessão 1: Ver ou observar? (passo 1 de 5) | Ideias | Laboratório | Lente</title>')]),
             # 13/11/2026 (decisão do docente): a linha «É para uma aula?» e «Ver tudo» continuam a abrir narrativas/ideias/, e o rótulo de «Ver tudo»
             # continua a ter de se ler lá (era provado pela alternativa antiga; fica provado por si).
