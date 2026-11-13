@@ -26,10 +26,12 @@ const TEMAS=[['01','justica-e-vida-em-comum/','Justiça e vida em comum','Uma re
 // 13/11/2026: o que cada página de tema mostra: títulos h2 pela ordem (atividade, quatro alternativas, bloco para aplicar), destino do botão,
 // ligações de «Para aplicar», grupos e número de ligações de «Ver tudo neste tema», a primeira dessas ligações (nos temas 01, 03 e 04, o
 // destino antigo do cartão) e se o crédito da imagem tem ligação à fonte.
+// 13/11/2026 (revisão): no tema 03, o botão abre a experiência (oficina-ficcao-comecar-imprimir/), que entra também em «Ver tudo» (31 ligações);
+// duas alternativas mudam de pergunta para a que a página ligada faz.
 const PAGINAS={
  '01':{h2:['Quem fica com o quê?','O elétrico não trava: desvias ou segues em frente?','Quando é que um grupo pode decidir sobre alguém que não está na sala?','Uma proposta é aberta a todos quando nem todos conseguem participar?','Que data funda uma democracia?','Pergunta Humana.'],botao:'olhar-e-decidir/justica/aplicar/',aplicar:['cidadania/projeto/','etica-grelha/'],grupos:['Justiça, com Michael Sandel','As lições 4 a 13','Casos para decidir','Ética','Os passos do módulo Humanos','Criar e mostrar','Para consultar'],tudo:41,primeira:['olhar-e-decidir/','Dilemas'],fonte:true},
  '02':{h2:['A regra do feed','Três páginas que repetem a mesma frase são três confirmações?','Quem está por trás desta página?','Se a conta é grátis, quem paga?','Quando a máquina faz, quem responde?','Contra-feed.'],botao:'cidadania/m2/cid-m2-a-regra-do-feed/',aplicar:['projetos/contra-feed/','cidadania/contra-feed/'],grupos:['Casos para decidir','Verificar fontes','Criar e mostrar','Os passos do módulo Algoritmos','Para consultar'],tudo:23,primeira:['cidadania/m2/cid-m2-a-regra-do-feed/','A regra do feed'],fonte:true},
- '03':{h2:['Uma chave na mesa','Como reconheces uma personagem sem a descrever?','Que plano liga uma perda a uma devolução?','O que muda numa frase quando sabes mais?','As ideias caem do céu?','Do conto à prancha.'],botao:'narrativas/oficina-ficcao-comecar/',aplicar:['projetos/prancha/','narrativas/proposta-subtexto/'],grupos:['O Laboratório','Ideias','Observar','Treinar','Criar','Montar e comparar','Criar e mostrar'],tudo:30,primeira:['narrativas/','Laboratório'],fonte:true},
+ '03':{h2:['Uma chave na mesa','Que contradição dá começo a uma história?','Que plano liga uma perda a uma devolução?','O que muda numa frase quando sabes mais?','Ver ou observar?','Do conto à prancha.'],botao:'narrativas/oficina-ficcao-comecar-imprimir/',aplicar:['projetos/prancha/','narrativas/proposta-subtexto/'],grupos:['O Laboratório','Ideias','Observar','Treinar','Criar','Montar e comparar','Criar e mostrar'],tudo:31,primeira:['narrativas/','Laboratório'],fonte:true},
  '04':{h2:['Enquadrar a Boavista','O que ouves numa rua quando fechas os olhos?','Porque é que um prédio te parece mais bonito do que os outros?','Quanto da nossa interpretação vem da imagem e quanto vem da legenda?','O que é que a fachada quer de ti?','A cidade em voz e luz.'],botao:'cidade/m17/',aplicar:['projetos/cidade/','projetos/geometria/'],grupos:['Ler a cidade','As 14 missões de Ler a cidade','Olhar e julgar','A escola na cidade','Oficinas de imagem, no Laboratório','Criar e mostrar'],tudo:32,primeira:['cidade/','Ler a cidade'],fonte:false}};
 // Dentro da página: o que sai do ecrã, o que transborda a sua caixa e os alvos pequenos (só o que se vê; a lupa do cabeçalho é decorativa).
 function geometria(){
@@ -209,5 +211,21 @@ async function conferirI(page,d,rot,comLigacao){
   await p.goto(origin+'/lente/');assert.equal(await p.locator('.tm-g>li>article.tm').count(),4);assert.ok(await p.locator('#ferramentas a').first().isVisible());assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);
   // 13/11/2026: o mesmo nas quatro páginas de tema.
   for(const t of TEMAS){await p.goto(origin+'/lente/'+t[1]);assert.ok(await p.locator('h1').isVisible());assert.equal(await p.locator('h1').textContent(),t[3]);await p.locator('details.tm-tudo summary').click();assert.ok(await p.locator('details.tm-tudo li a').first().isVisible(),'sem JavaScript, a dobra abre');assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);}await ctx.close();n++;}
- console.log('Entrada em quatro temas e páginas dos quatro temas: '+n+' contextos (320, 390, 768 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos e sem JavaScript): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
+ // 13/11/2026 (revisão): a pergunta do tema (h1) mede o mesmo que no main nas páginas dos temas 01, 02 e 03, clamp(2,4375rem; 9,5vw; 3,8125rem):
+ // 39 px a 320 px e 61 px a 860 px. Só a do tema 04 encolhe, e só onde «enquadramento?» não cabia (a do tema 03 só encolhe em projeção, medida acima na moldura); em nenhuma das quatro uma palavra
+ // fica partida em duas linhas. Mede-se também a 360, 960 e 1024 px, onde a folha partilhada tinha mudado a página do tema 02 sem aviso.
+ for(const width of [320,360,390,768,860,960,1024,1280]){const ctx=await contexto(width,'light'),{page,erros}=await pagina(ctx);
+  for(const [num,pasta] of TEMAS){const rot=`pergunta do tema ${num}, ${width} px`;
+   await page.goto(origin+'/lente/'+pasta,{waitUntil:'networkidle'});await carregar(page);
+   const h=await page.locator('h1.tm-perg').evaluate(el=>{const raiz=parseFloat(getComputedStyle(document.documentElement).fontSize),partidas=[];
+    const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let no;while(no=w.nextNode()){const re=/\S+/g;let x;while(x=re.exec(no.textContent)){const r=document.createRange();r.setStart(no,x.index);r.setEnd(no,x.index+x[0].length);if(new Set([...r.getClientRects()].filter(q=>q.width>0).map(q=>Math.round(q.top))).size>1)partidas.push(x[0]);}}
+    return {raiz,letra:parseFloat(getComputedStyle(el).fontSize),partidas,cabe:el.scrollWidth<=el.clientWidth+1};});
+   const antes=Math.min(3.8125*h.raiz,Math.max(2.4375*h.raiz,.095*width));
+   assert.deepEqual(h.partidas,[],rot+': palavra partida');assert.ok(h.cabe,rot+': transborda');
+   if(num==='04'){assert.ok(h.letra<=antes+.01&&h.letra>=30,rot+': '+h.letra);if([390,768,1280].includes(width))assert.ok(Math.abs(h.letra-antes)<.01,rot+': '+h.letra+' em vez de '+antes);}
+   else assert.ok(Math.abs(h.letra-antes)<.01,rot+': '+h.letra+' em vez de '+antes);
+   if(num==='02'&&width===320)assert.ok(Math.abs(h.letra-39)<.01,rot+': '+h.letra);
+   if(num==='02'&&width===860)assert.ok(Math.abs(h.letra-61)<.01,rot+': '+h.letra);}
+  assert.deepEqual(erros,[],'pergunta do tema, '+width+' px: sem erros');n++;await ctx.close();}
+ console.log('Entrada em quatro temas e páginas dos quatro temas: '+n+' contextos (320, 390, 768 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos sem JavaScript e a letra da pergunta do tema de 320 a 1280 px): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
  }finally{await browser.close();server.closeAllConnections();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.closeAllConnections();server.close();});

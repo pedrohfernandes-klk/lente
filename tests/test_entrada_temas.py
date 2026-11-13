@@ -86,14 +86,16 @@ PECAS = {
     '03': dict(
         img='<img src="../assets/laboratorio/van-gogh-quarto-carta.webp" width="900" height="520"',
         legenda='O esboço de <i>O Quarto</i>, numa carta de 1888: o quadro antes do quadro.',
-        comeca=('Uma chave na mesa', LAB + 'oficina-ficcao-comecar/'),
-        alternativas=[(LAB + 'treinar/tres-em-cinco/', 'Como reconheces uma personagem sem a descrever?'),
+        # 13/11/2026 (revisão): o botão abre a experiência em si (oficina-ficcao-comecar-imprimir/), que entra em «Ver tudo» (Criar: 10);
+        # a 1.ª e a 4.ª alternativas levam a pergunta que a página ligada faz.
+        comeca=('Uma chave na mesa', LAB + 'oficina-ficcao-comecar-imprimir/'),
+        alternativas=[(LAB + 'treinar/tres-em-cinco/', 'Que contradição dá começo a uma história?'),
                       (LAB + 'corta/cena-que-falta/', 'Que plano liga uma perda a uma devolução?'),
                       (LAB + 'formas/certa-manha/', 'O que muda numa frase quando sabes mais?'),
-                      (LAB + 'ideias/', 'As ideias caem do céu?')],
+                      (LAB + 'ideias/', 'Ver ou observar?')],
         # o tema 03 não tem conteúdos nos módulos de Cidadania: a linha «É para uma aula?» leva às sessões do Ideias
         aplicar=('Do conto à prancha.', ['projetos/prancha/', LAB + 'proposta-subtexto/']), aula=(LAB + 'ideias/', 'Vai a Ideias: duas sessões publicadas, com guião para imprimir'),
-        grupos=[('O Laboratório', 3), ('Ideias', 4), ('Observar', 6), ('Treinar', 4), ('Criar', 9), ('Montar e comparar', 3), ('Criar e mostrar', 1)]),
+        grupos=[('O Laboratório', 3), ('Ideias', 4), ('Observar', 6), ('Treinar', 4), ('Criar', 10), ('Montar e comparar', 3), ('Criar e mostrar', 1)]),
     '04': dict(
         img='<img src="../img/arquivo/rua-da-boavista-carris-2026.jpg" srcset="../img/arquivo/rua-da-boavista-carris-2026-720.webp 720w, ../img/arquivo/rua-da-boavista-carris-2026.jpg 1600w"',
         legenda='Rua da Boavista: os carris a fugirem para o fundo.',
@@ -260,7 +262,7 @@ class EntradaEmTemas(unittest.TestCase):
         # (migas, crédito com ligação à fonte, botão, quatro alternativas, duas de «Para aplicar», aula, «Ver tudo» e duas do rodapé)
         self.assertEqual(len(Pagina(self.entrada).hrefs), 4 + 3 + 1 + 1 + 5 + 2 + 2 + 1 + 3 + 2)
         self.assertEqual(len(Pagina(self.tema).hrefs), 1 + 1 + 1 + 4 + 2 + 1 + 23 + 2)
-        for n, credito, tudo in (('01', 1, 41), ('02', 1, 23), ('03', 1, 30), ('04', 0, 32)):
+        for n, credito, tudo in (('01', 1, 41), ('02', 1, 23), ('03', 1, 31), ('04', 0, 32)):  # 13/11/2026 (revisão): tema 03 com 31 ligações
             self.assertEqual(len(Pagina(self.temas[n]).hrefs), 1 + credito + 1 + 4 + 2 + 1 + tudo + 2, n)
             self.assertEqual(sum(q for _, q in PECAS[n]['grupos']), tudo, n)
         # imagens e folhas da página do tema e da entrada existem
@@ -428,26 +430,35 @@ class EntradaEmTemas(unittest.TestCase):
              'cidadania/25-de-abril/index.html', ['Que data funda uma democracia?', 'Às 22h55 de 24 de abril de 1974, uma canção na rádio mandou os quartéis preparar a saída.',
                                                   'Ouve os documentos. Distingue o que aconteceu de quem lhe dá sentido.']),
             (T1, 'O 25 de Abril de 1974 em seis ângulos.', 'cidadania/25-de-abril/index.html', [('fonte', '<meta name="description" content="O 25 de Abril de 1974 em seis ângulos:')]),
-            (T1, 'Escolhes uma pergunta sobre o que é ser humano, investiga-la a sério e transformas o que encontraste num teatro-documento de 5 a 8 minutos, apresentado em público. É um projeto individual.',
-             'cidadania/projeto/index.html', ['Cada aluno escolhe uma pergunta sobre o que é ser humano, investiga-a a sério e transforma o que encontrou num teatro-documento de 5 a 8 minutos, apresentado em público.',
+            # 13/11/2026 (revisão): a frase diz que é o projeto do módulo 1 de Cidadania e que a página segue as fases e as datas do módulo.
+            (T1, 'É o projeto do módulo 1 de Cidadania, individual: escolhes uma pergunta sobre o que é ser humano, investiga-la a sério e transformas o que encontraste num teatro-documento de 5 a 8 minutos, apresentado em público. A página do projeto segue as fases e as datas do módulo.',
+             'cidadania/projeto/index.html', ['Fase atual', 'A 28 de outubro', 'Lente · Cidadania', 'Cada aluno escolhe uma pergunta sobre o que é ser humano, investiga-a a sério e transforma o que encontrou num teatro-documento de 5 a 8 minutos, apresentado em público.',
                                               'Projeto do Módulo 1, individual: um teatro-documento', 'Pergunta Humana']),
+            (T1, 'Abrir o projeto Pergunta Humana, do módulo 1 de Cidadania', 'cidadania/projeto/index.html', ['Projeto do Módulo 1, individual: um teatro-documento']),
             (T1, 'Imprimir um caso, três perguntas, uma decisão', 'etica-grelha/index.html', ['Ética: um caso, três perguntas, uma decisão', 'Imprimir']),
             (T1, 'Lição 1: A criança e a distância, com Peter Singer', 'olhar-e-decidir/etica/licao-1/index.html', ['Peter Singer']),
             (T1, 'Vai a A minha aula: Cidadania, módulo 1', M1 + 'index.html', ['Justiça e Direitos', 'decidir e justificar']),
-            (T3, 'Uma chave na mesa. Alguém a leva. Mudas a ação, alteras a ordem da informação, experimentas o ritmo e comparas a versão final com a inicial.',
-             LAB + 'oficina-ficcao-comecar/index.html', ['Uma chave na mesa. Alguém a leva.', 'Muda a ação.', 'Altera a ordem da informação.', 'Experimenta o ritmo e compara a versão final com a inicial.']),
-            (T3, 'Escrever ficção: o começo. 5 a 8 min, sem escrever.', LAB + 'oficina-ficcao-comecar/index.html', ['Oficina · 5 a 8 min · sem escrever', 'Escrever ficção: o começo']),
+            # 13/11/2026 (revisão): o botão de «Começa por aqui» abre a página onde a experiência se faz (as três decisões e a comparação),
+            # não o baralho de contexto; as passagens de prova passam a ser as dessa página.
+            (T3, 'Uma chave na mesa. Alguém a leva. Mudas três decisões (a ação, a ordem da informação e o ritmo) e comparas a tua versão com a inicial.',
+             LAB + 'oficina-ficcao-comecar-imprimir/index.html', ['Uma chave na mesa. Alguém a leva.', 'Vais mudar três decisões e comparar a tua versão com esta.', 'Troca apenas a ação.', 'Quando deve o leitor saber?',
+                                                                  'Compara uma saída resumida com uma saída que demora num gesto.', 'Comparar a inicial com a minha versão',
+                                                                  ('fonte', 'data-fic=\\"acao\\"'), ('fonte', 'data-fic=\\"ordem\\"'), ('fonte', 'data-fic=\\"ritmo\\"')]),
+            (T3, 'Escrever ficção: o começo. 5 a 8 min, sem escrever.', LAB + 'oficina-ficcao-comecar-imprimir/index.html', ['Escrever ficção: o começo | Criar', 'Não precisas de escrever', '5–\u20608 minutos']),
+            (T3, 'Escrever ficção: o começo, mudar a cena e comparar versões', LAB + 'oficina-ficcao-comecar/index.html', ['Experimentar: mudar a cena e comparar versões →', ('fonte', '<a href=\\"../oficina-ficcao-comecar-imprimir/\\">')]),
             (T3, 'Inventas três personagens: nome, idade, ofício, um medo, um desejo e uma contradição para cada uma. Se quiseres, com o relógio de cinco minutos.',
              LAB + 'treinar/tres-em-cinco/index.html', ['Inventa três personagens: nome, idade, ofício, um medo, um desejo e uma contradição para cada uma. Se quiseres, com o relógio de cinco minutos.']),
             (T3, 'Três em cinco minutos, em Treinar. 5 min de escrita.', LAB + 'treinar/tres-em-cinco/index.html', ['Treino · Dar uma voz à personagem · 5 min de escrita']),
-            (T3, 'Como reconheces uma personagem sem a descrever?', LAB + 'percursos/index.html', ['Dar uma voz à personagemComo reconheces uma personagem sem a descrever?']),
+            # 13/11/2026 (revisão): a pergunta da alternativa era a do percurso, não a da peça ligada; passa a ser uma que a peça sustenta.
+            (T3, 'Que contradição dá começo a uma história?', LAB + 'treinar/tres-em-cinco/index.html', ['Uma boa contradição já é o começo de uma história.']),
             (T3, 'Uma carteira perdida, uma carteira devolvida. Entre as duas falta um plano: escolhes um e vês que hipóteses aguentam.',
              LAB + 'corta/cena-que-falta/index.html', [('fonte', '<meta name="description" content="Uma carteira perdida, uma carteira devolvida. Entre as duas, falta um plano: escolhe-o e vê que hipóteses aguentam.">'), 'A cena que falta | Criar']),
             (T3, 'Uma frase de Kafka, lida três vezes: onde muda de mundo, o que te deixa dizer e o que muda quando sabes mais.',
              LAB + 'formas/certa-manha/index.html', [('fonte', '<meta name="description" content="Uma frase de Kafka, lida três vezes: onde muda de mundo, o que te deixa dizer e o que muda quando sabes mais.">'), 'Certa manhã | Observar']),
             (T3, 'Segues, passo a passo, o método de James Webb Young. Nas duas sessões publicadas, começas por juntar material e observar melhor.',
              LAB + 'ideias/index.html', ['O método em cinco passos', 'Seguimos, passo a passo, o método de James Webb Young', 'Nas duas sessões publicadas, começas por juntar material e observar melhor.']),
-            (T3, 'As ideias caem do céu?', LAB + 'ideias/sessao-01/index.html', ['As ideias caem do céu?']),
+            # 13/11/2026 (revisão): a pergunta da alternativa tem de estar na página que a ligação abre (antes, só estava na sessão 1).
+            (T3, 'Ver ou observar?', LAB + 'ideias/index.html', ['Ver ou observar?', ('fonte', '<p class="state" data-p-t>Ver ou observar?</p>'), ('fonte', '<span class="c-sr">Sessão 1: </span>Ver ou observar?')]),
             (T3, 'Vai a Ideias: duas sessões publicadas, com guião para imprimir', LAB + 'ideias/guiao/index.html', ['Para imprimir em A4: frente e verso de cada sessão pronta']),
             (T3, 'Um conto curto em domínio público, transposto por ti para oito a doze pranchas de banda desenhada ou para um animatic de um minuto. O trabalho é escolher o que se corta.',
              'projetos/prancha/index.html', ['Individualmente, um conto curto em domínio público transposto para oito a doze pranchas de banda desenhada, ou para um animatic de um minuto',
@@ -472,7 +483,8 @@ class EntradaEmTemas(unittest.TestCase):
              'estetica/index.html', ['Rua da Boavista, a dois passos da escola: três prédios de azulejo lado a lado', 'Porque é que um te parece mais bonito do que os outros?',
                                      'o que é o gosto, o que é um juízo, o que a forma faz aos olhos, e como se olha devagar antes de julgar', 'Olhar devagar, em cinco passos']),
             (T4, 'Estética. Cerca de 25 min de leitura, sem escrita.', 'estetica/index.html', ['cerca de 25 min de leitura · sem escrita']),
-            (T4, 'Uma equipa prepara uma pequena exposição com Mr e Mrs Andrews, de Thomas Gainsborough, e compara duas legendas. Escolhes, conheces informação nova e reves a decisão.',
+            (T4, 'Uma equipa prepara uma pequena exposição com Mr e Mrs Andrews, de Thomas Gainsborough, e compara duas legendas. Escolhes, conheces informação nova e revês a decisão.',  # 13/11/2026 (revisão): «revês», com acento
+            
              M1 + 'cid-m1-duas-legendas/index.html', ['Quanto da nossa interpretação vem da imagem e quanto vem da legenda?', 'Uma equipa prepara uma pequena exposição com Mr e Mrs Andrews, de Thomas Gainsborough',
                                                       'A equipa compara duas legendas', 'Um caso para observar, escolher, conhecer informação nova e rever a decisão.']),
             (T4, 'Duas legendas, o mesmo quadro. Um caso para decidir, sem escrita.', M1 + 'cid-m1-duas-legendas/index.html', ['Justifica as escolhas oralmente; o exercício digital não pede texto escrito']),
@@ -518,7 +530,7 @@ class EntradaEmTemas(unittest.TestCase):
                     self.assertTrue(rotulo.startswith(titulo.rstrip('?')) or rotulo.startswith(titulo), (rotulo, titulo))
                     self.assertNotRegex(ler(href + 'index.html'), r'noindex|http-equiv="refresh"')
                     conferidos += 1
-        self.assertEqual(conferidos, 41 + 23 + 30 + 32)
+        self.assertEqual(conferidos, 41 + 23 + 31 + 32)  # 13/11/2026 (revisão): 31 no tema 03
         # 13/11/2026: a atividade que abre o tema e as alternativas também estão em «Ver tudo neste tema» da mesma página
         for n, t in self.temas.items():
             tudo = t[t.index('<details class="tm-tudo">'):]
@@ -707,7 +719,19 @@ class EntradaEmTemas(unittest.TestCase):
         self.assertEqual(ler('informacao/index.html'), do_main('informacao/index.html').replace('assets/temas.css?v=20261112-1', 'assets/temas.css?v=20261113-1'))
         css, antes = ler('assets/temas.css'), do_main('assets/temas.css')
         corte = css.index('/* 13/11/2026 (páginas dos temas 01, 03 e 04)')
-        fim = css.index('\n', css.index('.tm-perg{font-size:min(clamp(2.4375rem,9.5vw,3.8125rem),11.5cqw)}', corte)) + 1
+        # 13/11/2026 (revisão): a redução da pergunta deixou de valer para as quatro páginas. Só a coluna do título do tema 04 leva a
+        # classe .tm-abre-l e só a do tema 03 leva .tm-abre-lp (que só conta em projeção), para a pergunta do tema 02 (já aprovada) e a
+        # do tema 01 medirem sempre o mesmo que no main, e a do tema 03 também, fora da projeção.
+        fim = css.index('\n', css.index('.tm-abre-l>.tm-perg,html.epi-projection .tm-abre-lp>.tm-perg{font-size:min(clamp(2.4375rem,9.5vw,3.8125rem),11.5cqw)}', corte)) + 1
+        self.assertEqual(css[corte:fim].count('.tm-perg'), 2)  # as duas vezes na regra dos temas 04 e 03
+        self.assertEqual(css.count('tm-abre-lp'), 3)  # comentário e regra; sempre atrás de html.epi-projection
+        self.assertEqual(css.count('html.epi-projection .tm-abre-lp'), 2)
+        self.assertEqual(sorted(p.parent.name for p in ROOT.glob('*/index.html') if 'tm-abre-lp' in p.read_text(encoding='utf-8')), ['historias-e-criacao'])
+        self.assertEqual(ler('historias-e-criacao/index.html').count('<header class="tm-abre"><div class="tm-abre-lp"><p class="tm-ante">'), 1)
+        self.assertNotIn('.tm-abre>div{container-type', css)
+        self.assertEqual(css.count('cqw'), 1)
+        self.assertEqual(sorted(p.parent.name for p in ROOT.glob('*/index.html') if 'tm-abre-l"' in p.read_text(encoding='utf-8')), ['imagem-som-e-cidade'])
+        self.assertEqual(ler('imagem-som-e-cidade/index.html').count('<header class="tm-abre"><div class="tm-abre-l"><p class="tm-ante">'), 1)
         self.assertEqual(css[:corte] + css[fim:], antes)
         self.assertTrue(css[corte:fim].count('.tm-fig .com-i:has(>.info-i[open])') == 5 and '@media screen{' in css[corte:fim])
         apagados = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', BASE_TEMAS], cwd=ROOT).decode().splitlines()
