@@ -171,7 +171,12 @@ class Ginasio(unittest.TestCase):
         self.assertEqual(re.findall(r'<li><a href="([^"]+)">([^<]+)</a></li>', s[i:j]),
                          [('cidadania/m1/', 'Cidadania, módulo 1'), ('cidadania/m2/', 'Cidadania, módulo 2')])
         self.assertEqual(s[i:j].count('<li><a '), 2)
-        self.assertEqual(s.count('<h3 class="tm-n"><b aria-hidden="true">01</b><a href="https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/">'), 1)
+        # 13/11/2026: pedido temas-01-03-04. O tema 01 abre a sua página (justica-e-vida-em-comum/), onde os Dilemas são a primeira
+        # ligação de «Ver tudo neste tema»; continuam também no mapa. Nenhuma das três ligações se perde.
+        self.assertEqual(s.count('<h3 class="tm-n"><b aria-hidden="true">01</b><a href="justica-e-vida-em-comum/">'), 1)
+        self.assertEqual(re.search(r'<details class="tm-tudo">.*?<li><a href="([^"]+)">([^<]+)</a>', (R / 'justica-e-vida-em-comum/index.html').read_text('utf-8'), re.S).groups(),
+                         ('https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/', 'Dilemas'))
+        self.assertEqual((R / 'mapa/index.html').read_text('utf-8').count('href="https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/"'), 1)
         i = s.index('id="inicio-narrativas"'); j = s.index('</article>', i)
         # 30/10/2026: cartão do Laboratório refeito (pedido do docente); as três portas são as da entrada nova do
         # Laboratório (#78) e apontam para o catálogo, onde as secções vivem desde então (narrativas/#… redireciona para lá).
@@ -186,11 +191,20 @@ class Ginasio(unittest.TestCase):
         for ancora in ('ler-como-quem-escreve', 'treinar', 'criar'):
             self.assertEqual(tudo.count('id="' + ancora + '"'), 1, ancora)
         self.assertEqual(re.findall(r'<h3 class="tm-n"><b aria-hidden="true">(\d\d)</b><a href="([^"]+)">([^<]+)</a></h3>', s[i:j]),
-                         [('03', 'https://pedrohfernandes-klk.github.io/lente/narrativas/', 'Histórias e criação')])
+                         [('03', 'historias-e-criacao/', 'Histórias e criação')])
+        # 13/11/2026: pedido temas-01-03-04. O título do cartão abre a página do tema 03 (historias-e-criacao/); o Laboratório, que
+        # era o destino, fica à vista no mesmo cartão, numa ligação própria antes da do Ideias, e é a primeira ligação de «Ver tudo
+        # neste tema» na página do tema.
+        self.assertEqual(re.search(r'<details class="tm-tudo">.*?<li><a href="([^"]+)">([^<]+)</a>', (R / 'historias-e-criacao/index.html').read_text('utf-8'), re.S).groups(),
+                         ('https://pedrohfernandes-klk.github.io/lente/narrativas/', 'Laboratório'))
         # 01/11/2026: decisão 54, rótulo Observar; destinos e ordem preservados.
         # 02/11/2026: decisão do docente (141): o «Ideias» é público e tem ligação a partir das páginas públicas
         # 05/11/2026: decisão 163 (e decisão 97). A ordem passa a Ideias, Observar, Treinar e Criar, como no fio do Laboratório.
-        self.assertEqual(re.findall(r'<p class="tm-extra"><a href="([^"]+)">([^<]+)</a></p>', s[i:j]), [('narrativas/ideias/', 'Ideias: o método em cinco passos')])
+        # 13/11/2026: a ligação ao Laboratório vem antes; a do Ideias fica igual, uma só vez, imediatamente antes da seta.
+        self.assertEqual(re.findall(r'<p class="tm-extra"><a href="([^"]+)">([^<]+)</a></p>', s[i:j]),
+                         [('https://pedrohfernandes-klk.github.io/lente/narrativas/', 'Laboratório'), ('narrativas/ideias/', 'Ideias: o método em cinco passos')])
+        self.assertEqual(s[i:j].count('narrativas/ideias/'), 1)
+        self.assertIn('<p class="tm-extra"><a href="narrativas/ideias/">Ideias: o método em cinco passos</a></p><span class="tm-seta" aria-hidden="true">→</span></div>', s[i:j])
         self.assertIn('href="narrativas/ideias/"',s[i:j])
         # 30/10/2026: decisão 34: a porta mostra o esboço de O Quarto (carta a Theo), com a tabela de museu colada à imagem,
         # e os dados vêm de imagens.json (entrada «porta»).

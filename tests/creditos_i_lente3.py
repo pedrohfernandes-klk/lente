@@ -22,21 +22,24 @@ import justica_20261110
 # 12/11/2026: pedido entrada-temas. A camada da entrada em quatro temas (tests/entrada_temas_20261112.py) parte do main b8abe97, já com
 # a da Justiça: aplica-se por fora de todas e desfaz-se primeiro, com contagem exata, nas três funções abaixo.
 import entrada_temas_20261112
+# 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (tests/temas_paginas_20261113.py) parte do main 9a5e6e1,
+# já com a da entrada em quatro temas: aplica-se por fora de todas e desfaz-se primeiro, com contagem exata, nas três funções abaixo.
+import temas_paginas_20261113
 
 MANIFESTO = creditos_i.ler_manifesto()
 TROCAS = creditos_i.literais(MANIFESTO)
 
 
 def aplicar(texto, ficheiro):
-    return entrada_temas_20261112.aplicar(justica_20261110.aplicar(praticar_20261110.aplicar(creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro)
+    return temas_paginas_20261113.aplicar(entrada_temas_20261112.aplicar(justica_20261110.aplicar(praticar_20261110.aplicar(creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)
 
 
 def desfazer(texto, ficheiro):
-    return creditos_i.desfazer(praticar_20261110.desfazer(justica_20261110.desfazer(entrada_temas_20261112.desfazer(texto, ficheiro), ficheiro), ficheiro), TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+    return creditos_i.desfazer(praticar_20261110.desfazer(justica_20261110.desfazer(entrada_temas_20261112.desfazer(temas_paginas_20261113.desfazer(texto, ficheiro), ficheiro), ficheiro), ficheiro), TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
 
 
 def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (git merge-base HEAD origin/main): se a base já traz esta camada (cada «novo» com a
     contagem exata e nenhum «antigo» fora de um «novo»), fica como está; senão, recebe-a com contagem exata. Um estado misto
     falha."""
-    return entrada_temas_20261112.alinhar(justica_20261110.alinhar(praticar_20261110.alinhar(creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro)
+    return temas_paginas_20261113.alinhar(entrada_temas_20261112.alinhar(justica_20261110.alinhar(praticar_20261110.alinhar(creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)

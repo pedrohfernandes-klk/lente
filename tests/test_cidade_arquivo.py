@@ -55,8 +55,17 @@ class ArchiveAndFieldwork(unittest.TestCase):
         self.assertNotIn('/cidade/', tools)
         self.assertEqual(len(Links(tools).hrefs), 5)
         self.assertNotIn('/sidequests/', page)
-        self.assertEqual(page.count('<h3 class="tm-n"><b aria-hidden="true">04</b><a href="https://pedrohfernandes-klk.github.io/lente/cidade/">Imagem, som e cidade</a></h3>'), 1)
-        self.assertEqual(page.count('/lente/cidade/'), 1)
+        # 13/11/2026: pedido temas-01-03-04. O cartão do tema 04 abre a página do tema (imagem-som-e-cidade/), uma só vez; a cidade
+        # deixa de ter ligação direta na entrada e é a primeira ligação de «Ver tudo neste tema» nessa página, uma só vez, à frente
+        # das 14 missões (continua também no mapa).
+        self.assertEqual(page.count('<h3 class="tm-n"><b aria-hidden="true">04</b><a href="imagem-som-e-cidade/">Imagem, som e cidade</a></h3>'), 1)
+        self.assertEqual(page.count('imagem-som-e-cidade/'), 1)
+        self.assertEqual(page.count('/lente/cidade/'), 0)
+        tema = (ROOT / 'imagem-som-e-cidade/index.html').read_text('utf-8')
+        self.assertEqual(tema.count('<h3>Ler a cidade</h3><ul><li><a href="https://pedrohfernandes-klk.github.io/lente/cidade/">Ler a cidade</a></li></ul>'), 1)
+        self.assertEqual(tema.count('href="https://pedrohfernandes-klk.github.io/lente/cidade/"'), 1)
+        self.assertNotIn('/sidequests/', tema)
+        self.assertEqual((ROOT / 'mapa/index.html').read_text('utf-8').count('href="https://pedrohfernandes-klk.github.io/lente/cidade/"'), 1)
 
     def test_archive_keeps_all_fourteen_destinations(self):
         teacher = (ROOT / 'docente/index.html').read_text('utf-8')

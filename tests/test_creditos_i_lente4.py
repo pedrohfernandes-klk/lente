@@ -131,9 +131,14 @@ class CreditosLente4(unittest.TestCase):
         # tests/creditos_i_lente3.py encadeia por fora da da Justiça: só toca em index.html, mapa/index.html e como/index.html.
         import entrada_temas_20261112
         self.assertEqual(sorted(entrada_temas_20261112.TROCAS), ['como/index.html', 'index.html', 'mapa/index.html'])
+        # 13/11/2026: pedido temas-01-03-04. E o mesmo para a camada das páginas dos temas 01, 03 e 04 (tests/temas_paginas_20261113.py),
+        # encadeada por fora da da entrada: só toca em index.html e mapa/index.html.
+        import temas_paginas_20261113
+        self.assertEqual(sorted(temas_paginas_20261113.TROCAS), ['index.html', 'mapa/index.html'])
         for nome, trocas in (('praticar', praticar_20261110.TROCAS), ('Justiça', justica_20261110.TROCAS),
                              ('Justiça curta', justica_20261110.CURTAS), ('Justiça guiada', justica_20261110.GUIADAS),
-                             ('entrada em temas', entrada_temas_20261112.TROCAS)):
+                             ('entrada em temas', entrada_temas_20261112.TROCAS),
+                             ('páginas dos temas', temas_paginas_20261113.TROCAS)):
             self.assertEqual(sorted(set(trocas) & set(creditos_i_lente4.TROCAS)), [], nome)
         for f in creditos_i_lente4.TROCAS:
             with self.subTest(ficheiro=f):

@@ -129,6 +129,26 @@ html:is(.em-projecao,.epi-projection) [data-cartaz-entrada] .lente-pt-linha .pt-
 .tm-fig .com-i{overflow:hidden}
 .tm-fig img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:50% 40%;filter:grayscale(1) contrast(1.05)}
 .tm-fig figcaption{padding:10px 12px;font:.8125rem/1.45 var(--tm-ui);color:var(--tm-suave)}
+/* 13/11/2026 (páginas dos temas 01, 03 e 04): o crédito aberto lê-se sempre inteiro, como nos cartões da entrada. Quando é mais alto do
+   que a imagem (o do esboço de Van Gogh, no telemóvel estreito e na projeção), a moldura cresce com ele enquanto o «i» está aberto, em
+   vez de o cortar e de o pôr a deslizar por dentro; quando cabe, fica pousado no fundo da imagem. Sem :has(), fica o comportamento da
+   peça «i». */
+@media screen{
+.tm-fig .com-i:has(>.info-i[open]){display:grid}
+.tm-fig .com-i:has(>.info-i[open])>*{grid-area:1/1;min-width:0}
+.tm-fig .com-i:has(>.info-i[open])>img{align-self:start}
+.tm-fig .com-i:has(>.info-i[open])>.info-i{position:relative;inset:auto;align-self:end}
+.tm-fig .com-i:has(>.info-i[open])>.info-i>.info-i-texto{position:relative;inset:auto;margin:8px;max-block-size:none;overflow:visible}
+}
+/* Na moldura de projeção estreita, o título da atividade que abre o tema desce com a largura, como os das alternativas, e a faixa
+   «Começar» (decorativa) dá o seu lugar ao texto. */
+@media(max-width:759px){html.epi-projection .tm-pag .tm-comeca{grid-template-columns:minmax(0,1fr)}html.epi-projection .tm-pag .tm-comeca-rot{display:none}html.epi-projection .tm-pag .tm-comeca h2{font-size:clamp(1rem,7.5vw,1.5625rem)}}
+/* A pergunta do tema não parte uma palavra a meio. Só onde é preciso, a letra não passa de 11,5% da largura da coluna do título: na
+   página do tema 04 (classe .tm-abre-l), para «enquadramento?» caber numa linha no telemóvel estreito e nas duas colunas estreitas; na
+   do tema 03 (classe .tm-abre-lp), só em projeção, para «transforma» caber com a letra grande na moldura estreita. Fora disso, e nas
+   páginas dos temas 01 e 02, a pergunta mede o mesmo que antes (regra de cima), que vale também sem unidades de contentor. */
+.tm-abre-l,html.epi-projection .tm-abre-lp{container-type:inline-size}
+.tm-abre-l>.tm-perg,html.epi-projection .tm-abre-lp>.tm-perg{font-size:min(clamp(2.4375rem,9.5vw,3.8125rem),11.5cqw)}
 @media(min-width:860px){.tm-abre{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:end;padding-bottom:32px}}
 
 .tm-bloco{margin:28px 0 0}

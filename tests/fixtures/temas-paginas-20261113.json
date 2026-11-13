@@ -1,0 +1,36 @@
+{
+ "index.html": [
+  [
+   "<link rel=\"stylesheet\" href=\"assets/temas.css?v=20261112-1\"></head>",
+   "<link rel=\"stylesheet\" href=\"assets/temas.css?v=20261113-1\"></head>",
+   1
+  ],
+  [
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">01</b><a href=\"https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/\">",
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">01</b><a href=\"justica-e-vida-em-comum/\">",
+   1
+  ],
+  [
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">03</b><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\">",
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">03</b><a href=\"historias-e-criacao/\">",
+   1
+  ],
+  [
+   "<p class=\"tm-extra\"><a href=\"narrativas/ideias/\">Ideias: o método em cinco passos</a></p>",
+   "<p class=\"tm-extra\"><a href=\"https://pedrohfernandes-klk.github.io/lente/narrativas/\">Laboratório</a></p><p class=\"tm-extra\"><a href=\"narrativas/ideias/\">Ideias: o método em cinco passos</a></p>",
+   1
+  ],
+  [
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">04</b><a href=\"https://pedrohfernandes-klk.github.io/lente/cidade/\">",
+   "<h3 class=\"tm-n\"><b aria-hidden=\"true\">04</b><a href=\"imagem-som-e-cidade/\">",
+   1
+  ]
+ ],
+ "mapa/index.html": [
+  [
+   "<p><a href=\"../informacao/\">Informação e mundo digital, um dos quatro temas da entrada →</a></p>",
+   "<p><a href=\"../justica-e-vida-em-comum/\">Justiça e vida em comum, um dos quatro temas da entrada →</a></p><p><a href=\"../informacao/\">Informação e mundo digital, um dos quatro temas da entrada →</a></p><p><a href=\"../historias-e-criacao/\">Histórias e criação, um dos quatro temas da entrada →</a></p><p><a href=\"../imagem-som-e-cidade/\">Imagem, som e cidade, um dos quatro temas da entrada →</a></p>",
+   1
+  ]
+ ]
+}

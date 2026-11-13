@@ -59,6 +59,7 @@ import molde_s10  # noqa: E402
 # da s10 (abaixo).
 import cuidado_lente  # noqa: E402
 import entrada_temas_20261112  # noqa: E402
+import temas_paginas_20261113  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -400,6 +401,11 @@ class Preservacao(unittest.TestCase):
             # tests/fixtures/entrada-temas-20261112.json: index.html, mapa/index.html e como/index.html), agora a mais recente,
             # desfaz-se primeiro, com contagem exata de cada «novo»; o que fica é o ficheiro do main b8abe97, que se confere como
             # antes. Que a entrada nova não perde nenhum destino da antiga confere-se em tests/test_entrada_temas.py.
+            # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (manifesto fechado
+            # tests/fixtures/temas-paginas-20261113.json: index.html e mapa/index.html) é agora a mais recente: desfaz-se antes da da entrada em
+            # quatro temas, com contagem exata de cada «novo»; o resto confere-se como antes.
+            if rel in temas_paginas_20261113.TROCAS:
+                agora = temas_paginas_20261113.desfazer(agora, rel)
             if rel in entrada_temas_20261112.TROCAS:
                 agora = entrada_temas_20261112.desfazer(agora, rel)
             if rel in cuidado_lente.TROCAS:

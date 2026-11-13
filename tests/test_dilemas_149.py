@@ -16,6 +16,7 @@ import sys
 sys.path.insert(0, str(ROOT / 'tests'))
 sys.path.insert(0, str(ROOT / 'tools'))
 import entrada_temas_20261112  # noqa: E402
+import temas_paginas_20261113  # noqa: E402
 MANIFESTO = json.loads((ROOT / 'tests/fixtures/dilemas-149-20261106.json').read_text(encoding='utf-8'))
 
 # 06/11/2026: as formas que o nome da família toma nas páginas; nenhuma pode voltar a dizer «Decisões».
@@ -55,6 +56,11 @@ class Dilemas149(unittest.TestCase):
             # 12/11/2026: pedido entrada-temas. A entrada em quatro temas é a camada mais recente (manifesto fechado
             # tests/fixtures/entrada-temas-20261112.json): desfaz-se primeiro, com contagem exata de cada «novo», e o que fica, a
             # entrada do main b8abe97, confere-se como antes. Na entrada nova, a família é o destino do tema 01 (ver o teste abaixo).
+            # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (manifesto fechado
+            # tests/fixtures/temas-paginas-20261113.json: index.html e mapa/index.html) é agora a mais recente: desfaz-se antes da da entrada em
+            # quatro temas, com contagem exata de cada «novo»; o resto confere-se como antes.
+            if nome in temas_paginas_20261113.TROCAS:
+                texto = temas_paginas_20261113.desfazer(texto, nome)
             if nome in entrada_temas_20261112.TROCAS:
                 texto = entrada_temas_20261112.desfazer(texto, nome)
             for antigo, novo, quantidade in trocas:
@@ -77,6 +83,9 @@ class Dilemas149(unittest.TestCase):
         # o rótulo é o nome do tema, não um nome novo da família. Aceita-se só aí, uma única vez, dentro do título do cartão do
         # tema 01; todas as outras ligações continuam a ter de dizer «Dilemas», e o mínimo de ligações vistas não desce.
         TEMA_01 = 'Justiça e vida em comum'
+        # 13/11/2026: pedido temas-01-03-04. O cartão do tema 01 abre a página do tema (justica-e-vida-em-comum/), que liga à família com
+        # o rótulo «Dilemas», na primeira ligação de «Ver tudo neste tema». A exceção de 12/11 deixa de ser precisa: nenhuma ligação
+        # à raiz da família pode ter outro rótulo, a página do tema tem de ser uma das que a ligam, e o mínimo sobe de 25 para 26.
         vistos, temas = 0, []
         for nome in publicados():
             for texto in rotulo.findall((ROOT / nome).read_text(encoding='utf-8', errors='replace')):
@@ -86,11 +95,15 @@ class Dilemas149(unittest.TestCase):
                         temas.append(nome)
                     else:
                         self.assertIn(texto, aceites)
-        self.assertGreaterEqual(vistos, 25)
-        self.assertEqual(temas, ['index.html'])
+        self.assertGreaterEqual(vistos, 26)
+        self.assertEqual(temas, [])
+        self.assertEqual(rotulo.findall((ROOT / 'justica-e-vida-em-comum/index.html').read_text(encoding='utf-8')), ['Dilemas'])
+        self.assertIn('justica-e-vida-em-comum/index.html', publicados())
+        # 13/11/2026: o cartão do tema 01, uma única vez, com o destino novo; a entrada já não liga diretamente à família.
         self.assertEqual((ROOT / 'index.html').read_text(encoding='utf-8').count(
-            '<h3 class="tm-n"><b aria-hidden="true">01</b><a href="https://pedrohfernandes-klk.github.io/lente/olhar-e-decidir/">'
+            '<h3 class="tm-n"><b aria-hidden="true">01</b><a href="justica-e-vida-em-comum/">'
             + TEMA_01 + '</a></h3>'), 1)
+        self.assertNotIn('olhar-e-decidir/', (ROOT / 'index.html').read_text(encoding='utf-8'))
         # a página da família continua a chamar-se «Dilemas»
         self.assertIn('<title>Dilemas · Lente</title>', (ROOT / 'olhar-e-decidir/index.html').read_text(encoding='utf-8'))
 
