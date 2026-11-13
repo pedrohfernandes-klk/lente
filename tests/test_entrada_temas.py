@@ -88,11 +88,14 @@ PECAS = {
         legenda='O esboço de <i>O Quarto</i>, numa carta de 1888: o quadro antes do quadro.',
         # 13/11/2026 (revisão): o botão abre a experiência em si (oficina-ficcao-comecar-imprimir/), que entra em «Ver tudo» (Criar: 10);
         # a 1.ª e a 4.ª alternativas levam a pergunta que a página ligada faz.
+        # 13/11/2026 (decisão do docente): a 4.ª alternativa passa de «Ver ou observar?» (narrativas/ideias/) para «As ideias caem do céu?»,
+        # a abrir a sessão 1 de Ideias (narrativas/ideias/sessao-01/), onde a pergunta se lê letra a letra. A exigência é a mesma: o destino
+        # existe, está em «Ver tudo neste tema» e a pergunta e as frases do cartão leem-se na página ligada.
         comeca=('Uma chave na mesa', LAB + 'oficina-ficcao-comecar-imprimir/'),
         alternativas=[(LAB + 'treinar/tres-em-cinco/', 'Que contradição dá começo a uma história?'),
                       (LAB + 'corta/cena-que-falta/', 'Que plano liga uma perda a uma devolução?'),
                       (LAB + 'formas/certa-manha/', 'O que muda numa frase quando sabes mais?'),
-                      (LAB + 'ideias/', 'Ver ou observar?')],
+                      (LAB + 'ideias/sessao-01/', 'As ideias caem do céu?')],
         # o tema 03 não tem conteúdos nos módulos de Cidadania: a linha «É para uma aula?» leva às sessões do Ideias
         aplicar=('Do conto à prancha.', ['projetos/prancha/', LAB + 'proposta-subtexto/']), aula=(LAB + 'ideias/', 'Vai a Ideias: duas sessões publicadas, com guião para imprimir'),
         grupos=[('O Laboratório', 3), ('Ideias', 4), ('Observar', 6), ('Treinar', 4), ('Criar', 10), ('Montar e comparar', 3), ('Criar e mostrar', 1)]),
@@ -455,10 +458,19 @@ class EntradaEmTemas(unittest.TestCase):
              LAB + 'corta/cena-que-falta/index.html', [('fonte', '<meta name="description" content="Uma carteira perdida, uma carteira devolvida. Entre as duas, falta um plano: escolhe-o e vê que hipóteses aguentam.">'), 'A cena que falta | Criar']),
             (T3, 'Uma frase de Kafka, lida três vezes: onde muda de mundo, o que te deixa dizer e o que muda quando sabes mais.',
              LAB + 'formas/certa-manha/index.html', [('fonte', '<meta name="description" content="Uma frase de Kafka, lida três vezes: onde muda de mundo, o que te deixa dizer e o que muda quando sabes mais.">'), 'Certa manhã | Observar']),
-            (T3, 'Segues, passo a passo, o método de James Webb Young. Nas duas sessões publicadas, começas por juntar material e observar melhor.',
-             LAB + 'ideias/index.html', ['O método em cinco passos', 'Seguimos, passo a passo, o método de James Webb Young', 'Nas duas sessões publicadas, começas por juntar material e observar melhor.']),
             # 13/11/2026 (revisão): a pergunta da alternativa tem de estar na página que a ligação abre (antes, só estava na sessão 1).
-            (T3, 'Ver ou observar?', LAB + 'ideias/index.html', ['Ver ou observar?', ('fonte', '<p class="state" data-p-t>Ver ou observar?</p>'), ('fonte', '<span class="c-sr">Sessão 1: </span>Ver ou observar?')]),
+            # 13/11/2026 (decisão do docente): a 4.ª alternativa é agora «As ideias caem do céu?» e abre a sessão 1 de Ideias. As três provas
+            # antigas (a frase, a pergunta «Ver ou observar?» e o rótulo, contra narrativas/ideias/) dão lugar a três contra a sessão 1: a
+            # pergunta letra a letra (no texto e no ficheiro tal como está), cada parte da frase do cartão e a duração.
+            (T3, 'As ideias caem do céu?', LAB + 'ideias/sessao-01/index.html', ['As ideias caem do céu?', ('fonte', '<p>As ideias caem do céu?<\\/p>')]),
+            (T3, 'Decides: sim, não ou depende. Tens a razão de quem diz que sim, a de quem diz que não e uma objeção. Guardas a tua posição e voltas a ela na última sessão.',
+             LAB + 'ideias/sessao-01/index.html', ['As ideias caem do céu?', 'Decide em silêncio, de braço no ar: sim, não ou depende.', 'A razão de quem diz que sim', 'A razão de quem diz que não', 'Uma objeção',
+                                                   'Guarda a tua posição: voltas a ela na última sessão.']),
+            (T3, 'Sessão 1 de Ideias: Ver ou observar? 180 minutos, com uma pausa.',
+             LAB + 'ideias/sessao-01/index.html', ['Sessão 1: Ver ou observar?', 'Ideias, passo 1 de 5.', 'Hoje, 180 minutos com uma pausa', ('fonte', '<title>Sessão 1: Ver ou observar? (passo 1 de 5) | Ideias | Laboratório | Lente</title>')]),
+            # 13/11/2026 (decisão do docente): a linha «É para uma aula?» e «Ver tudo» continuam a abrir narrativas/ideias/, e o rótulo de «Ver tudo»
+            # continua a ter de se ler lá (era provado pela alternativa antiga; fica provado por si).
+            (T3, 'Ideias: o método em cinco passos', LAB + 'ideias/index.html', ['O método em cinco passos', 'Seguimos, passo a passo, o método de James Webb Young', ('fonte', '<p class="state" data-p-t>Ver ou observar?</p>')]),
             (T3, 'Vai a Ideias: duas sessões publicadas, com guião para imprimir', LAB + 'ideias/guiao/index.html', ['Para imprimir em A4: frente e verso de cada sessão pronta']),
             (T3, 'Um conto curto em domínio público, transposto por ti para oito a doze pranchas de banda desenhada ou para um animatic de um minuto. O trabalho é escolher o que se corta.',
              'projetos/prancha/index.html', ['Individualmente, um conto curto em domínio público transposto para oito a doze pranchas de banda desenhada, ou para um animatic de um minuto',
