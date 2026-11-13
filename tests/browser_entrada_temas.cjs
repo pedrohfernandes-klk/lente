@@ -11,12 +11,26 @@
 // e em escuro (os blocos invertidos «Português e Exames» e «Para aplicar» incluídos, conferidos pelo nome); o crédito aberto de cada «i»
 // lê-se inteiro, sem deslizar por dentro da moldura, a todas as larguras; e os textos do bloco «Para aplicar», com o ponto do título,
 // têm 4,5:1 sobre o bloco nos dois modos.
+// 13/11/2026: pedido temas-01-03-04. Os temas 01, 03 e 04 têm página própria (justica-e-vida-em-comum/, historias-e-criacao/ e
+// imagem-som-e-cidade/) e os cartões da entrada abrem-nas. Tudo o que se media na página do tema 02 mede-se nas quatro, pela tabela PAGINAS
+// (títulos, atividade que abre, «i», dobra com todas as ligações à vista e a responder, foco, contraste, impressão, regresso, moldura de
+// projeção e sem JavaScript); mede-se também a 768 px; na entrada, cada um dos quatro cartões abre a sua página, e o cartão do tema 03
+// conserva, à vista, a ligação ao Laboratório (o destino antigo) e a do Ideias.
 const fs=require('fs'),path=require('path'),http=require('http'),assert=require('node:assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const root=path.resolve(__dirname,'..'),PROVAS=process.env.ENTRADA_TEMAS_PROVAS,SITIO='https://pedrohfernandes-klk.github.io/lente/';
 const TIPOS={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'application/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png'};
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://local').pathname).replace(/^\/lente/,''));if(!f.startsWith(root+path.sep)&&f!==root){res.writeHead(403);return res.end();}try{if(fs.statSync(f).isDirectory())f=path.join(f,'index.html');res.setHeader('Content-Type',TIPOS[path.extname(f)]||'application/octet-stream');res.end(fs.readFileSync(f));}catch{res.writeHead(404);res.end();}});
-const TEMAS=[['01',SITIO+'olhar-e-decidir/','Justiça e vida em comum','Uma regra igual é sempre justa?'],['02','informacao/','Informação e mundo digital','Porque estás a ver isto?'],['03',SITIO+'narrativas/','Histórias e criação','O que transforma uma ideia numa história?'],['04',SITIO+'cidade/','Imagem, som e cidade','O que muda quando mudas o enquadramento?']];
+// 13/11/2026: os quatro cartões abrem a página do seu tema (antes, só o do tema 02).
+const TEMAS=[['01','justica-e-vida-em-comum/','Justiça e vida em comum','Uma regra igual é sempre justa?'],['02','informacao/','Informação e mundo digital','Porque estás a ver isto?'],['03','historias-e-criacao/','Histórias e criação','O que transforma uma ideia numa história?'],['04','imagem-som-e-cidade/','Imagem, som e cidade','O que muda quando mudas o enquadramento?']];
+// 13/11/2026: o que cada página de tema mostra: títulos h2 pela ordem (atividade, quatro alternativas, bloco para aplicar), destino do botão,
+// ligações de «Para aplicar», grupos e número de ligações de «Ver tudo neste tema», a primeira dessas ligações (nos temas 01, 03 e 04, o
+// destino antigo do cartão) e se o crédito da imagem tem ligação à fonte.
+const PAGINAS={
+ '01':{h2:['Quem fica com o quê?','O elétrico não trava: desvias ou segues em frente?','Quando é que um grupo pode decidir sobre alguém que não está na sala?','Uma proposta é aberta a todos quando nem todos conseguem participar?','Que data funda uma democracia?','Pergunta Humana.'],botao:'olhar-e-decidir/justica/aplicar/',aplicar:['cidadania/projeto/','etica-grelha/'],grupos:['Justiça, com Michael Sandel','As lições 4 a 13','Casos para decidir','Ética','Os passos do módulo Humanos','Criar e mostrar','Para consultar'],tudo:41,primeira:['olhar-e-decidir/','Dilemas'],fonte:true},
+ '02':{h2:['A regra do feed','Três páginas que repetem a mesma frase são três confirmações?','Quem está por trás desta página?','Se a conta é grátis, quem paga?','Quando a máquina faz, quem responde?','Contra-feed.'],botao:'cidadania/m2/cid-m2-a-regra-do-feed/',aplicar:['projetos/contra-feed/','cidadania/contra-feed/'],grupos:['Casos para decidir','Verificar fontes','Criar e mostrar','Os passos do módulo Algoritmos','Para consultar'],tudo:23,primeira:['cidadania/m2/cid-m2-a-regra-do-feed/','A regra do feed'],fonte:true},
+ '03':{h2:['Uma chave na mesa','Como reconheces uma personagem sem a descrever?','Que plano liga uma perda a uma devolução?','O que muda numa frase quando sabes mais?','As ideias caem do céu?','Do conto à prancha.'],botao:'narrativas/oficina-ficcao-comecar/',aplicar:['projetos/prancha/','narrativas/proposta-subtexto/'],grupos:['O Laboratório','Ideias','Observar','Treinar','Criar','Montar e comparar','Criar e mostrar'],tudo:30,primeira:['narrativas/','Laboratório'],fonte:true},
+ '04':{h2:['Enquadrar a Boavista','O que ouves numa rua quando fechas os olhos?','Porque é que um prédio te parece mais bonito do que os outros?','Quanto da nossa interpretação vem da imagem e quanto vem da legenda?','O que é que a fachada quer de ti?','A cidade em voz e luz.'],botao:'cidade/m17/',aplicar:['projetos/cidade/','projetos/geometria/'],grupos:['Ler a cidade','As 14 missões de Ler a cidade','Olhar e julgar','A escola na cidade','Oficinas de imagem, no Laboratório','Criar e mostrar'],tudo:32,primeira:['cidade/','Ler a cidade'],fonte:false}};
 // Dentro da página: o que sai do ecrã, o que transborda a sua caixa e os alvos pequenos (só o que se vê; a lupa do cabeçalho é decorativa).
 function geometria(){
  const vis=e=>e.getClientRects().length>0&&e.checkVisibility({visibilityProperty:true,contentVisibilityAuto:true});
@@ -71,7 +85,8 @@ async function conferirI(page,d,rot,comLigacao){
  const prova=async(page,nome)=>{if(PROVAS){await page.evaluate(()=>{document.activeElement&&document.activeElement.blur();scrollTo(0,0);});await page.mouse.move(0,0);await page.screenshot({path:path.join(PROVAS,nome+'.png'),fullPage:true});}};
  const limpo=(m,rot)=>{assert.equal(m.lado,0,rot+': sem deslize');assert.deepEqual(m.fora,[],rot+': nada fora do ecrã');assert.deepEqual(m.transborda,[],rot+': nada transborda');assert.deepEqual(m.alvos,[],rot+': alvos de 44 px');assert.ok(m.imagens.length>0&&m.imagens.every(Boolean),rot+': imagens carregadas');};
  try{
- for(const width of [320,390,1280])for(const tema of ['light','dark']){
+ // 13/11/2026: mede-se também a 768 px.
+ for(const width of [320,390,768,1280])for(const tema of ['light','dark']){
   const esc=tema==='dark'?'escuro':'claro';
   // ---------- a entrada, normal e com ?projetar=1 ----------
   for(const projecao of [false,true]){
@@ -97,8 +112,9 @@ async function conferirI(page,d,rot,comLigacao){
    await page.evaluate(()=>scrollTo(0,0));await page.locator('body').click({position:{x:2,y:2}});
    const paragens=(await tabular(page,60)).filter(p=>p.dentro),nomes=paragens.map(p=>p.nome);
    for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);if(p.contraste!==null)assert.ok(p.contraste>=3,rot+': anel de foco com '+p.contraste+':1 em '+p.nome);}
-   {const pt=paragens.filter(p=>p.nome==='https://pedrohfernandes-klk.github.io/pt/');assert.equal(pt.length,1,rot);assert.ok(pt[0].contraste>=3,rot+': anel de «Português e Exames» com '+pt[0].contraste+':1');assert.ok(paragens.filter(p=>p.contraste!==null).length>=17,rot+': anéis medidos');}
-   const esperados=['Créditos da imagem: Honoré Daumier',SITIO+'olhar-e-decidir/','Créditos da imagem: Joseph Racknitz','informacao/','Créditos da imagem: Vincent van Gogh',SITIO+'narrativas/','narrativas/ideias/','Créditos da fotografia: Rua da Boavista',SITIO+'cidade/',
+   {const pt=paragens.filter(p=>p.nome==='https://pedrohfernandes-klk.github.io/pt/');assert.equal(pt.length,1,rot);assert.ok(pt[0].contraste>=3,rot+': anel de «Português e Exames» com '+pt[0].contraste+':1');assert.ok(paragens.filter(p=>p.contraste!==null).length>=18,rot+': anéis medidos');}
+   // 13/11/2026: os cartões 01, 03 e 04 abrem a página do tema; no cartão 03, o Laboratório vem antes do Ideias.
+   const esperados=['Créditos da imagem: Honoré Daumier','justica-e-vida-em-comum/','Créditos da imagem: Joseph Racknitz','informacao/','Créditos da imagem: Vincent van Gogh','historias-e-criacao/',SITIO+'narrativas/','narrativas/ideias/','Créditos da fotografia: Rua da Boavista','imagem-som-e-cidade/',
     SITIO+'ler/',SITIO+'investigar/',SITIO+'praticar/#escrever',SITIO+'apresentar/',SITIO+'direitos/','cidadania/m1/','cidadania/m2/',SITIO+'biblioteca/','docente/','https://pedrohfernandes-klk.github.io/pt/','caderno/','como/','mapa/'];
    assert.deepEqual(nomes.filter(x=>esperados.includes(x)),esperados,rot+': ordem do foco');
    // cada «i»: o do desenho do cabeçalho e os dos quatro temas
@@ -107,74 +123,83 @@ async function conferirI(page,d,rot,comLigacao){
    await is.nth(1).locator('summary').click();await is.nth(2).locator('summary').click();assert.deepEqual(await is.evaluateAll(es=>es.map(e=>e.open)),[false,false,true,false,false],rot+': um só «i» aberto');
    await page.keyboard.press('Escape');assert.equal(await page.locator('details.info-i[open]').count(),0,rot);
    // a ligação ao Ideias fica por cima da ligação do cartão e abre o Ideias
-   const ideias=page.locator('#inicio-narrativas .tm-extra a');await ideias.scrollIntoViewIfNeeded();await ideias.click();await page.waitForURL('**/lente/narrativas/ideias/');
+   // 13/11/2026: o cartão tem agora duas ligações por cima da do título: a do Ideias, escolhida pelo seu destino, e a do Laboratório, que
+   // abre o Laboratório; cada uma existe uma só vez e fica à vista.
+   assert.deepEqual(await page.locator('#inicio-narrativas .tm-extra a').evaluateAll(es=>es.map(e=>[e.getAttribute('href'),e.textContent])),[[SITIO+'narrativas/','Laboratório'],['narrativas/ideias/','Ideias: o método em cinco passos']],rot);
+   const ideias=page.locator('#inicio-narrativas .tm-extra a[href="narrativas/ideias/"]');await ideias.scrollIntoViewIfNeeded();assert.ok(await ideias.isVisible(),rot);await ideias.click();await page.waitForURL('**/lente/narrativas/ideias/');
    assert.equal(new URL(page.url()).pathname,'/lente/narrativas/ideias/',rot);await page.goBack({waitUntil:'networkidle'});
+   const lab=page.locator('#inicio-narrativas .tm-extra a[href="'+SITIO+'narrativas/"]');await lab.scrollIntoViewIfNeeded();assert.ok(await lab.isVisible(),rot);await lab.click();await page.waitForURL(u=>u.pathname==='/lente/narrativas/');await page.goBack({waitUntil:'networkidle'});
    // o cartão inteiro do tema 02 abre a página do tema (clique na pergunta, que não é a ligação)
    m=await page.evaluate(geometria);assert.equal(m.lado,0,rot);
    await prova(page,`entrada-${width}-${esc}${projecao?'-projecao':''}`);
-   const pergunta=page.locator('.tm-g>li:nth-child(2) .tm-q');await pergunta.scrollIntoViewIfNeeded();{const b=await pergunta.boundingBox();await page.mouse.click(b.x+b.width/2,b.y+b.height/2);}await page.waitForURL('**/lente/informacao/');
-   assert.equal(await page.locator('h1').textContent(),'Porque estás a ver isto?',rot+': o tema 02 abre');
+   // 13/11/2026: o mesmo para os quatro cartões: cada um abre a página do seu tema, com a pergunta do cartão como título.
+   for(let k=0;k<4;k++){const pergunta=page.locator('.tm-g>li:nth-child('+(k+1)+') .tm-q');await pergunta.scrollIntoViewIfNeeded();{const b=await pergunta.boundingBox();await page.mouse.click(b.x+b.width/2,b.y+b.height/2);}await page.waitForURL('**/lente/'+TEMAS[k][1]);
+    assert.equal(await page.locator('h1').textContent(),TEMAS[k][3],rot+': o tema '+TEMAS[k][0]+' abre');if(k<3)await page.goBack({waitUntil:'networkidle'});}
    assert.deepEqual(erros,[],rot+': sem erros');n++;await ctx.close();
   }
-  // ---------- a página do tema 02 ----------
-  {const rot=`tema 02, ${width} px, ${esc}`,ctx=await contexto(width,tema),{page,erros}=await pagina(ctx);
-   await page.goto(origin+'/lente/informacao/',{waitUntil:'networkidle'});await carregar(page);
+  // ---------- as quatro páginas de tema ----------
+  // 13/11/2026: era só a página do tema 02; o mesmo bloco corre agora para as quatro, com os valores de cada uma (PAGINAS).
+  for(const [num,pasta,nomeTema,perguntaTema] of TEMAS){const P=PAGINAS[num],rot=`tema ${num}, ${width} px, ${esc}`,ctx=await contexto(width,tema),{page,erros}=await pagina(ctx);
+   await page.goto(origin+'/lente/'+pasta,{waitUntil:'networkidle'});await carregar(page);
    let m=await page.evaluate(geometria);limpo(m,rot);assert.equal(m.tema,tema,rot+': tema');
-   assert.equal(await page.title(),'Informação e mundo digital · Lente',rot);
-   assert.deepEqual(await page.locator('h1,h2').allTextContents(),['Porque estás a ver isto?','A regra do feed','Três páginas que repetem a mesma frase são três confirmações?','Quem está por trás desta página?','Se a conta é grátis, quem paga?','Quando a máquina faz, quem responde?','Contra-feed.','Ver tudo neste tema'],rot);
+   assert.equal(await page.title(),nomeTema+' · Lente',rot);assert.equal(m.imagens.length,1,rot+': uma imagem');
+   assert.deepEqual(await page.locator('h1,h2').allTextContents(),[perguntaTema,...P.h2,'Ver tudo neste tema'],rot);
    assert.equal(await page.getByText(/[Pp]révia/).count(),0,rot+': sem nota de prévia');
    // a pergunta é o maior título da página
    const tamanhos=await page.locator('h1,h2,h3').evaluateAll(es=>es.filter(e=>e.getClientRects().length).map(e=>parseFloat(getComputedStyle(e).fontSize)));assert.ok(tamanhos.slice(1).every(t=>t<tamanhos[0]),rot+': '+tamanhos);
    // fundo da página e blocos seguem o tema
    const fundo=await page.evaluate(()=>{const v=getComputedStyle(document.body).backgroundColor.match(/[\d.]+/g).map(Number);return (v[0]+v[1]+v[2])/3>128;});assert.equal(fundo,tema==='light',rot+': fundo');
    // a atividade que abre o tema
-   const botao=page.locator('a.tm-botao');assert.equal(await botao.getAttribute('href'),SITIO+'cidadania/m2/cid-m2-a-regra-do-feed/',rot);assert.ok(await botao.isVisible(),rot);
+   const botao=page.locator('a.tm-botao');assert.equal(await botao.getAttribute('href'),SITIO+P.botao,rot);assert.ok(await botao.isVisible(),rot);
    // o «i» da gravura
-   assert.equal(await page.locator('details.info-i').count(),1,rot);await conferirI(page,page.locator('details.info-i'),rot+', «i»',true);
+   assert.equal(await page.locator('details.info-i').count(),1,rot);await conferirI(page,page.locator('details.info-i'),rot+', «i»',P.fonte);
    // a dobra «Ver tudo neste tema»: fechada ao carregar; abre e fecha por clique, Enter e Espaço
    const dobra=page.locator('details.tm-tudo'),sumario=dobra.locator('summary'),ligacoes=dobra.locator('li a');
-   assert.equal(await dobra.evaluate(e=>e.open),false,rot+': dobra fechada ao carregar');assert.equal(await ligacoes.count(),23,rot);assert.ok(!(await ligacoes.first().isVisible()),rot+': fechada, sem ligações à vista');
+   assert.equal(await dobra.evaluate(e=>e.open),false,rot+': dobra fechada ao carregar');assert.equal(await ligacoes.count(),P.tudo,rot);
+   // 13/11/2026: a primeira ligação da dobra (nos temas 01, 03 e 04, o destino que o cartão tinha na entrada)
+   assert.deepEqual(await ligacoes.first().evaluate(e=>[e.getAttribute('href'),e.textContent]),[SITIO+P.primeira[0],P.primeira[1]],rot+': primeira ligação de «Ver tudo»');assert.ok(!(await ligacoes.first().isVisible()),rot+': fechada, sem ligações à vista');
    await sumario.scrollIntoViewIfNeeded();await sumario.click();assert.equal(await dobra.evaluate(e=>e.open),true,rot+': clique abre');
-   assert.deepEqual(await ligacoes.evaluateAll(es=>es.map(e=>e.getClientRects().length>0)),Array(23).fill(true),rot+': 23 ligações à vista');
-   m=await page.evaluate(geometria);limpo(m,rot+', dobra aberta');await prova(page,`tema-informacao-${width}-${esc}-tudo-aberto`);
+   assert.deepEqual(await ligacoes.evaluateAll(es=>es.map(e=>e.getClientRects().length>0)),Array(P.tudo).fill(true),rot+': '+P.tudo+' ligações à vista');
+   m=await page.evaluate(geometria);limpo(m,rot+', dobra aberta');await prova(page,`tema-${pasta.slice(0,-1)}-${width}-${esc}-tudo-aberto`);
    await sumario.click();assert.equal(await dobra.evaluate(e=>e.open),false,rot+': clique fecha');
    await sumario.focus();await page.keyboard.press('Enter');assert.equal(await dobra.evaluate(e=>e.open),true,rot+': Enter abre');
    await page.keyboard.press(' ');assert.equal(await dobra.evaluate(e=>e.open),false,rot+': Espaço fecha');
    await page.keyboard.press(' ');assert.equal(await dobra.evaluate(e=>e.open),true,rot+': Espaço abre');
-   assert.deepEqual(await dobra.locator('h3').allTextContents(),['Casos para decidir','Verificar fontes','Criar e mostrar','Os passos do módulo Algoritmos','Para consultar'],rot);
+   assert.deepEqual(await dobra.locator('h3').allTextContents(),P.grupos,rot);
    // todas as ligações da página respondem (as do Lente, servidas pela cópia de trabalho)
-   if(width===390&&tema==='light'){const hrefs=await page.locator('main a[href]').evaluateAll(es=>[...new Set(es.map(e=>e.href))]);assert.ok(hrefs.length>=27,rot+': '+hrefs.length);for(const h of hrefs){if(/commons\.wikimedia\.org|\/projetar\//.test(h))continue;const u=new URL(h),r=await ctx.request.get(origin+u.pathname);assert.equal(r.status(),200,rot+': '+h);}}
+   if(width===390&&tema==='light'){const hrefs=await page.locator('main a[href]').evaluateAll(es=>[...new Set(es.map(e=>e.href))]);assert.ok(hrefs.length>=P.tudo+4,rot+': '+hrefs.length);for(const h of hrefs){if(/commons\.wikimedia\.org|\/projetar\//.test(h))continue;const u=new URL(h),r=await ctx.request.get(origin+u.pathname);assert.equal(r.status(),200,rot+': '+h);}}
    // foco de teclado, com a dobra aberta: todas as ligações recebem foco, à vista e no ecrã
    await page.evaluate(()=>scrollTo(0,0));await page.locator('body').click({position:{x:2,y:2}});
-   const paragens=(await tabular(page,60)).filter(p=>p.dentro);for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);if(p.contraste!==null)assert.ok(p.contraste>=3,rot+': anel de foco com '+p.contraste+':1 em '+p.nome);}
-   {const ap=paragens.filter(p=>/\/(projetos|cidadania)\/contra-feed\/$/.test(p.nome)&&p.contraste!==null);assert.ok(ap.length>=2,rot+': anéis de «Para aplicar» medidos');assert.ok(paragens.filter(p=>p.contraste!==null).length>=36,rot+': anéis medidos');}
+   const paragens=(await tabular(page,90)).filter(p=>p.dentro);for(const p of paragens){assert.ok(p.anel,rot+': foco sem contorno em '+p.nome);assert.ok(p.noEcra,rot+': foco fora do ecrã em '+p.nome);if(p.contraste!==null)assert.ok(p.contraste>=3,rot+': anel de foco com '+p.contraste+':1 em '+p.nome);}
+   {const ap=paragens.filter(p=>P.aplicar.some(x=>p.nome===SITIO+x)&&p.contraste!==null);assert.ok(ap.length>=2,rot+': anéis de «Para aplicar» medidos');assert.ok(paragens.filter(p=>p.contraste!==null).length>=P.tudo+13,rot+': anéis medidos');}
    // 12/11/2026: revisão. O bloco «Para aplicar» é invertido nos dois modos: título, ponto do título, frase e ligações com 4,5:1 sobre o bloco.
    {const fracos=await page.locator('.tm-aplicar').evaluate(b=>{const lum=x=>{const v=x.match(/[\d.]+/g).slice(0,3).map(Number).map(y=>{y/=255;return y<=.03928?y/12.92:Math.pow((y+.055)/1.055,2.4);});return .2126*v[0]+.7152*v[1]+.0722*v[2];},z=lum(getComputedStyle(b).backgroundColor),es=[...b.querySelectorAll('h2,h2 span,p,a')];if(es.length!==5)return ['peças: '+es.length];return es.map(e=>{const a=lum(getComputedStyle(e).color);return [e.tagName,Math.round((Math.max(a,z)+.05)/(Math.min(a,z)+.05)*100)/100];}).filter(x=>x[1]<4.5).map(String);});assert.deepEqual(fracos,[],rot+': contraste no bloco «Para aplicar»');}
    const comFoco=paragens.map(p=>p.nome),doTema=await page.locator('main :is(a[href],summary)').evaluateAll(es=>es.filter(e=>!e.closest('.info-i-texto')).map(e=>(e.getAttribute('href')||e.getAttribute('aria-label')||e.textContent.trim()).slice(0,90)));
-   assert.deepEqual(comFoco.filter(x=>!/^https:\/\/commons/.test(x)),doTema,rot+': ordem do foco');assert.ok(doTema.length>=36,rot+': '+doTema.length);
+   assert.deepEqual(comFoco.filter(x=>!/^https:\/\/commons/.test(x)),doTema,rot+': ordem do foco');assert.equal(doTema.length,P.tudo+14,rot+': '+doTema.length);
    // impressão: a dobra sai por extenso, mesmo fechada
    await sumario.click();assert.equal(await dobra.evaluate(e=>e.open),false,rot);await page.emulateMedia({media:'print'});
-   assert.deepEqual(await ligacoes.evaluateAll(es=>es.map(e=>e.getClientRects().length>0&&e.checkVisibility({contentVisibilityAuto:true}))),Array(23).fill(true),rot+': impressão com a dobra por extenso');await page.emulateMedia({media:'screen'});
-   await prova(page,`tema-informacao-${width}-${esc}`);
+   assert.deepEqual(await ligacoes.evaluateAll(es=>es.map(e=>e.getClientRects().length>0&&e.checkVisibility({contentVisibilityAuto:true}))),Array(P.tudo).fill(true),rot+': impressão com a dobra por extenso');await page.emulateMedia({media:'screen'});
+   await prova(page,`tema-${pasta.slice(0,-1)}-${width}-${esc}`);
    // o regresso aos quatro temas
    const volta=page.locator('.tm-rodape a[href="../"]');await volta.scrollIntoViewIfNeeded();await volta.click();await page.waitForURL(u=>u.pathname==='/lente/');assert.equal(await page.locator('.tm-g>li>article.tm').count(),4,rot+': volta à entrada');
    assert.deepEqual(erros,[],rot+': sem erros');n++;await ctx.close();}
-  // ---------- as duas páginas dentro da moldura de projeção, nos três tamanhos ----------
-  if(tema==='light')for(const [nome,alvo] of [['entrada','/lente/'],['tema 02','/lente/informacao/']]){
+  // ---------- a entrada e as quatro páginas de tema dentro da moldura de projeção, nos três tamanhos ----------
+  // 13/11/2026: eram a entrada e a página do tema 02; entram as páginas dos temas 01, 03 e 04, com as mesmas medições.
+  if(tema==='light')for(const [nome,alvo] of [['entrada','/lente/'],...TEMAS.map(t=>['tema '+t[0],'/lente/'+t[1]])]){
    const ctx=await contexto(width,tema),{page,erros}=await pagina(ctx);
    await page.goto(origin+'/lente/projetar/?pagina='+alvo);await page.frameLocator('#lesson-frame').locator('html.epi-projection').waitFor();
    const frame=await(await page.locator('#lesson-frame').elementHandle()).contentFrame();
    for(const tamanho of ['small','medium','large']){
     const rot=`${nome} na moldura de projeção, ${width} px, letra ${tamanho}`;
     await page.locator('[data-projection-size="'+tamanho+'"]').click();await page.waitForFunction(t=>document.querySelector('[data-projection-size="'+t+'"]').getAttribute('aria-pressed')==='true',tamanho);await page.waitForTimeout(300);await carregar(frame);
-    if(nome==='tema 02')await frame.evaluate(()=>{document.querySelector('details.tm-tudo').open=true;});
+    if(nome!=='entrada')await frame.evaluate(()=>{document.querySelector('details.tm-tudo').open=true;});
     const m=await frame.evaluate(geometria);assert.equal(m.lado,0,rot+': sem deslize');assert.deepEqual(m.fora,[],rot+': nada fora da moldura');assert.deepEqual(m.transborda,[],rot+': nada transborda');assert.ok(m.imagens.every(Boolean),rot);
     // nenhuma palavra partida a meio (sem hífen) nos títulos, perguntas e frases
     const partidas=await frame.evaluate(()=>{const out=[];for(const el of document.querySelectorAll('main :is(h1,h2,h3,.tm-q,.tm-f,.tm-n,.tm-ante,.tm-linha-t,.tm-linha-d,.tm-linha a,.tm-abre-t,.tm-comeca p,.tm-alt p,.tm-aplicar p,.tm-aplicar a,.tm-tudo li a,.tm-botao)')){if(!el.offsetParent||getComputedStyle(el).hyphens==='auto')continue;const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let no;while(no=w.nextNode()){const re=/[^\s -]{4,}/g;let x;while(x=re.exec(no.textContent)){const r=document.createRange();r.setStart(no,x.index);r.setEnd(no,x.index+x[0].length);if(new Set([...r.getClientRects()].filter(q=>q.width>0).map(q=>Math.round(q.top))).size>1)out.push(x[0]);}}}return [...new Set(out)];});
     assert.deepEqual(partidas,[],rot+': palavras partidas');
     // na página do tema, nenhum texto abaixo da letra da raiz da moldura
-    if(nome==='tema 02'){const pequenos=await frame.evaluate(()=>{const raiz=parseFloat(getComputedStyle(document.documentElement).fontSize);return [...document.querySelectorAll('main *')].filter(e=>e.offsetParent&&!e.closest('.info-i')&&[...e.childNodes].some(x=>x.nodeType===3&&x.textContent.trim())&&parseFloat(getComputedStyle(e).fontSize)<raiz-.05).map(e=>e.className+' '+getComputedStyle(e).fontSize);});assert.deepEqual(pequenos,[],rot+': letra abaixo da raiz');}
-    if(PROVAS&&tamanho==='medium')await page.screenshot({path:path.join(PROVAS,(nome==='entrada'?'entrada':'tema-informacao')+`-${width}-moldura.png`),fullPage:true});
+    if(nome!=='entrada'){const pequenos=await frame.evaluate(()=>{const raiz=parseFloat(getComputedStyle(document.documentElement).fontSize);return [...document.querySelectorAll('main *')].filter(e=>e.offsetParent&&!e.closest('.info-i')&&[...e.childNodes].some(x=>x.nodeType===3&&x.textContent.trim())&&parseFloat(getComputedStyle(e).fontSize)<raiz-.05).map(e=>e.className+' '+getComputedStyle(e).fontSize);});assert.deepEqual(pequenos,[],rot+': letra abaixo da raiz');}
+    if(PROVAS&&tamanho==='medium')await page.screenshot({path:path.join(PROVAS,(nome==='entrada'?'entrada':'tema-'+alvo.split('/')[2])+`-${width}-moldura.png`),fullPage:true});
    }
    assert.deepEqual(erros,[],nome+' na moldura: sem erros');n++;await ctx.close();
   }
@@ -182,6 +207,7 @@ async function conferirI(page,d,rot,comLigacao){
  // sem JavaScript: os quatro temas, os acessos e a dobra da página do tema funcionam como HTML simples
  {const ctx=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:900}}),p=await ctx.newPage();
   await p.goto(origin+'/lente/');assert.equal(await p.locator('.tm-g>li>article.tm').count(),4);assert.ok(await p.locator('#ferramentas a').first().isVisible());assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);
-  await p.goto(origin+'/lente/informacao/');assert.ok(await p.locator('h1').isVisible());await p.locator('details.tm-tudo summary').click();assert.ok(await p.locator('details.tm-tudo li a').first().isVisible(),'sem JavaScript, a dobra abre');assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);await ctx.close();n++;}
- console.log('Entrada em quatro temas e tema 02: '+n+' contextos (320, 390 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos e sem JavaScript): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
+  // 13/11/2026: o mesmo nas quatro páginas de tema.
+  for(const t of TEMAS){await p.goto(origin+'/lente/'+t[1]);assert.ok(await p.locator('h1').isVisible());assert.equal(await p.locator('h1').textContent(),t[3]);await p.locator('details.tm-tudo summary').click();assert.ok(await p.locator('details.tm-tudo li a').first().isVisible(),'sem JavaScript, a dobra abre');assert.equal(await p.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth)),0);}await ctx.close();n++;}
+ console.log('Entrada em quatro temas e páginas dos quatro temas: '+n+' contextos (320, 390, 768 e 1280 px, claro e escuro, ?projetar=1, moldura de projeção nos três tamanhos e sem JavaScript): sem deslize, foco de teclado, «i», dobras e ligações verificados.');
  }finally{await browser.close();server.closeAllConnections();server.close();}})().catch(e=>{console.error(e);process.exitCode=1;server.closeAllConnections();server.close();});

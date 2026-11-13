@@ -14,7 +14,11 @@ test('mantém ligações, âncoras, ferramentas e todos os scripts anteriores',(
  const naEntrada=new Set(abs(now,B)),noMapa=new Set(abs(mapa,B+'mapa/'));
  const sairam=['https://commons.wikimedia.org/wiki/File:An_Experiment_on_a_Bird_in_an_Air_Pump_by_Joseph_Wright_of_Derby,_1768.jpg','https://commons.wikimedia.org/wiki/File:PessoaChapeu.jpg',B+'#inicio-cidadania',B+'#inicio-narrativas'];
  for(const href of abs(before,B)){if(sairam.includes(href))continue;assert.ok(naEntrada.has(href)||noMapa.has(href),href);}
- assert.deepEqual([...new Set(abs(before,B))].filter(h=>!naEntrada.has(h)&&!sairam.includes(h)).sort(),[B+'#ferramentas',B+'cidadania/',B+'narrativas/tudo/#criar',B+'narrativas/tudo/#ler-como-quem-escreve',B+'narrativas/tudo/#treinar',B+'ver-para-fazer/']);
+ assert.deepEqual([...new Set(abs(before,B))].filter(h=>!naEntrada.has(h)&&!sairam.includes(h)).sort(),[B+'#ferramentas',B+'cidadania/',B+'cidade/',B+'narrativas/tudo/#criar',B+'narrativas/tudo/#ler-como-quem-escreve',B+'narrativas/tudo/#treinar',B+'olhar-e-decidir/',B+'ver-para-fazer/']);
+ // 13/11/2026: pedido temas-01-03-04. Os cartões 01, 03 e 04 abrem a página do seu tema. Os Dilemas e «Ler a cidade» saem da entrada para o
+ // mapa (lista acima, que cresce com os dois) e são a primeira ligação de «Ver tudo neste tema» na página do tema; o Laboratório continua na entrada.
+ assert.ok(naEntrada.has(B+'narrativas/'));
+ for(const [pasta,antigo,rotulo] of [['justica-e-vida-em-comum','olhar-e-decidir/','Dilemas'],['historias-e-criacao','narrativas/','Laboratório'],['imagem-som-e-cidade','cidade/','Ler a cidade']]){const t=fs.readFileSync(path.join(root,pasta,'index.html'),'utf8');assert.ok(t.slice(t.indexOf('<details class="tm-tudo">')).includes('<ul><li><a href="'+B+antigo+'">'+rotulo+'</a></li>'),pasta);assert.equal(t.slice(t.indexOf('<details class="tm-tudo">')).match(/<li><a href="([^"]+)">/)[1],B+antigo,pasta);assert.ok(noMapa.has(B+antigo),antigo);assert.ok(noMapa.has(B+pasta+'/'),pasta);}
  // os dois créditos saíram com as suas imagens; os dois saltos internos saíram, mas os destinos (os ids) ficam na entrada
  assert.doesNotMatch(now,/wright-experiencia|pessoa-1914/);assert.equal((now.match(/id="inicio-cidadania"/g)||[]).length,1);assert.equal((now.match(/id="inicio-narrativas"/g)||[]).length,1);assert.equal((now.match(/id="ferramentas"/g)||[]).length,1);
  const semUso=['ferr-ler','ferr-criar','ferr-fontes','trans-t'],ids=values(now,/\bid="([^"]+)"/g);
@@ -25,7 +29,7 @@ test('mantém ligações, âncoras, ferramentas e todos os scripts anteriores',(
  for(const antes of values(before,/<li><a href="(https:\/\/pedrohfernandes-klk.github.io\/lente\/[^"]+)"/g))assert.ok(naEntrada.has(antes)||noMapa.has(antes),antes);
  assert.ok(naEntrada.has(B+'biblioteca/')&&naEntrada.has(B+'caderno/')&&naEntrada.has(B+'mapa/')&&naEntrada.has(B+'docente/'));
  assert.equal((now.match(/<article class="tm"/g)||[]).length,4);assert.equal((now.match(/class="ld mobile-dest cz-door"/g)||[]).length,0);
- assert.deepEqual([...now.matchAll(/<h3 class="tm-n"><b aria-hidden="true">(\d\d)<\/b><a href="([^"]+)">([^<]+)<\/a><\/h3>/g)].map(m=>m.slice(1)),[['01',B+'olhar-e-decidir/','Justiça e vida em comum'],['02','informacao/','Informação e mundo digital'],['03',B+'narrativas/','Histórias e criação'],['04',B+'cidade/','Imagem, som e cidade']]);
+ assert.deepEqual([...now.matchAll(/<h3 class="tm-n"><b aria-hidden="true">(\d\d)<\/b><a href="([^"]+)">([^<]+)<\/a><\/h3>/g)].map(m=>m.slice(1)),[['01','justica-e-vida-em-comum/','Justiça e vida em comum'],['02','informacao/','Informação e mundo digital'],['03','historias-e-criacao/','Histórias e criação'],['04','imagem-som-e-cidade/','Imagem, som e cidade']]);
  assert.ok(fs.existsSync(path.join(root,'informacao/index.html')));
 });
 test('retoma lê as chaves anteriores e não grava visitas',()=>{

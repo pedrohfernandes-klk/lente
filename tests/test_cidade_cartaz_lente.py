@@ -13,7 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 import sys
 sys.path.insert(0, str(ROOT / 'tools'))
 import entrada_temas_20261112  # noqa: E402
+import temas_paginas_20261113  # noqa: E402
 URL_CIDADE = 'https://pedrohfernandes-klk.github.io/lente/cidade/'
+# 13/11/2026: pedido temas-01-03-04. O cartão do tema 04 abre a página do tema (imagem-som-e-cidade/), que tem «Ler a cidade» como
+# primeira ligação de «Ver tudo neste tema» e a missão 17 como atividade de abertura. O cartão confere-se com a mesma força (lugar,
+# texto exato, ligação única, fotografia, crédito); a ligação à cidade confere-se na página do tema e no mapa.
+URL_TEMA = 'imagem-som-e-cidade/'
 # 12/11/2026: pedido entrada-temas. Na entrada em quatro temas, «Ler a cidade» é o destino do tema 04 («Imagem, som e cidade»): o
 # cartão «Ler a cidade.» (a.site-portal, com a fotografia do Tejo de 1907) dá lugar ao cartão do tema, no componente dos quatro temas
 # (article.tm). Os testes da entrada passam a conferir esse cartão com a mesma força: lugar e componente, texto exato, ligação única,
@@ -88,13 +93,14 @@ class CartazLerACidade(unittest.TestCase):
     def test_texto_exato_ligacao_e_fotografia(self):
         cartao = Arvore(self.cartao).raiz
         a = um(um(cartao, 'h3', 'tm-n'), 'a')
-        self.assertEqual(a['attrs']['href'], URL_CIDADE)
-        # página do próprio Lente: ligação interna absoluta, sem rel="external" nem target
+        # 13/11/2026: o destino é a página do tema, do próprio Lente (ligação relativa, como a do tema 02), sem rel="external" nem target
+        self.assertEqual(a['attrs']['href'], URL_TEMA)
+        self.assertTrue((ROOT / URL_TEMA / 'index.html').is_file())
         self.assertNotIn('rel', a['attrs'])
         self.assertNotIn('target', a['attrs'])
         self.assertEqual(list(a['attrs']), ['href'])
         self.assertIn(
-            '<div class="tm-corpo"><h3 class="tm-n"><b aria-hidden="true">04</b><a href="' + URL_CIDADE + '">Imagem, som e cidade</a></h3>'
+            '<div class="tm-corpo"><h3 class="tm-n"><b aria-hidden="true">04</b><a href="' + URL_TEMA + '">Imagem, som e cidade</a></h3>'
             '<p class="tm-q">O que muda quando mudas o enquadramento?</p>'
             '<p class="tm-f">Lês uma rua como um texto, escolhes uma das 14 missões e explicas o que ficou fora da fotografia.</p>'
             '<span class="tm-seta" aria-hidden="true">→</span></div></article></li>', self.cartao)
@@ -148,8 +154,20 @@ class CartazLerACidade(unittest.TestCase):
         self.assertIn('<aside class="lente-pt lente-pt-linha" aria-label="Português e Exames"><p class="pt-f"><b>Português e Exames</b> ficam noutro sítio.</p>'
                       '<a class="pt-a" href="https://pedrohfernandes-klk.github.io/pt/" rel="external">Ir para Português e Exames <span aria-hidden="true">↗</span></a></aside>\n<footer class="cz-footer">', self.pagina)
         # a entrada só liga à cidade pelo cartão do tema
-        self.assertEqual(self.pagina.count('href="' + URL_CIDADE + '"'), 1)
-        self.assertEqual(self.pagina.count('/cidade/'), 1)
+        # 13/11/2026: pedido temas-01-03-04. A entrada liga uma só vez à página do tema 04 e já não liga diretamente à cidade; a página
+        # do tema liga à cidade uma só vez (a primeira ligação de «Ver tudo neste tema») e a cada uma das 14 missões, e o mapa conserva
+        # a ligação à cidade.
+        self.assertEqual(self.pagina.count('href="' + URL_TEMA + '"'), 1)
+        self.assertEqual(self.pagina.count('cidade/'), 1)
+        self.assertEqual(self.pagina.count('/cidade/'), 0)
+        tema = (ROOT / URL_TEMA / 'index.html').read_text(encoding='utf-8')
+        self.assertEqual(tema.count('href="' + URL_CIDADE + '"'), 1)
+        self.assertEqual(re.search(r'<details class="tm-tudo">.*?<li><a href="([^"]+)">([^<]+)</a>', tema, re.S).groups(), (URL_CIDADE, 'Ler a cidade'))
+        missoes = re.findall(r'<a class="missao[^>]*href="([^"]+)"', (ROOT / 'cidade/index.html').read_text(encoding='utf-8'))
+        self.assertEqual(len(missoes), 14)
+        for m in missoes:
+            self.assertEqual(tema.count('<li><a href="' + URL_CIDADE + m.strip('./') + '/">'), 1, m)
+        self.assertEqual((ROOT / 'mapa/index.html').read_text(encoding='utf-8').count('href="' + URL_CIDADE + '"'), 1)
 
     def test_regras_de_texto_no_cartao(self):
         # 12/11/2026: as mesmas regras, agora nos quatro cartões
@@ -170,7 +188,8 @@ class CartazLerACidade(unittest.TestCase):
         self.assertIn('style="object-position:50% 60%"', self.cartao)
         temas = (ROOT / 'assets/temas.css').read_text(encoding='utf-8')
         self.assertIn('[data-cartaz-entrada] .tm-img img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;', temas)
-        self.assertEqual(re.findall(r'assets/temas\.css\?v=([\w.-]+)', self.pagina), ['20261112-1'])
+        # 13/11/2026: pedido temas-01-03-04. A folha dos temas ganhou uma regra para as páginas de tema e a entrada pede a versão nova.
+        self.assertEqual(re.findall(r'assets/temas\.css\?v=([\w.-]+)', self.pagina), ['20261113-1'])
 
     def test_nome_unico_em_paginas_e_scripts(self):
         # 08/11/2026 (revisão do #142): também o nome escrito de outras formas (maiúsculas, hífenes, sublinhados, como no nome do
@@ -199,6 +218,11 @@ class CartazLerACidade(unittest.TestCase):
             # 12/11/2026: pedido entrada-temas. A camada da entrada em quatro temas é a mais recente (manifesto fechado
             # tests/fixtures/entrada-temas-20261112.json): desfaz-se primeiro, com contagem exata de cada «novo», e esta camada
             # confere-se, como antes, no ficheiro que fica (a entrada do main b8abe97).
+            # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (manifesto fechado
+            # tests/fixtures/temas-paginas-20261113.json: index.html e mapa/index.html) é agora a mais recente: desfaz-se antes da da entrada em
+            # quatro temas, com contagem exata de cada «novo»; o resto confere-se como antes.
+            if ficheiro in temas_paginas_20261113.TROCAS:
+                texto = temas_paginas_20261113.desfazer(texto, ficheiro)
             if ficheiro in entrada_temas_20261112.TROCAS:
                 texto = entrada_temas_20261112.desfazer(texto, ficheiro)
             for antigo, novo, n in trocas:

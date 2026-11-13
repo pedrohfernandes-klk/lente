@@ -46,8 +46,12 @@ function medir(){
   page.on('requestfailed',q=>{if(q.url().endsWith(FOTO))fotoFalhou=q.failure()?q.failure().errorText:'falhou';});
   await page.goto(origin+'/lente/',{waitUntil:'networkidle'});
   const wrap=page.locator('[data-cartaz-entrada] .tm-g>li:nth-child(4)>article.tm');assert.equal(await wrap.count(),1,rot+': um cartão');
-  assert.equal(await page.locator('[data-cartaz-entrada] article.tm a[href="https://pedrohfernandes-klk.github.io/lente/cidade/"]').count(),1,rot+': uma só ligação à cidade');
-  assert.equal(await wrap.locator('h3.tm-n a').getAttribute('href'),'https://pedrohfernandes-klk.github.io/lente/cidade/',rot+': destino');
+  // 13/11/2026: pedido temas-01-03-04. O cartão abre a página do tema 04 (imagem-som-e-cidade/), com uma só ligação; a cidade deixa de ter
+  // ligação direta na entrada e é a primeira ligação de «Ver tudo neste tema» na página do tema (conferida, em navegador, em
+  // tests/browser_entrada_temas.cjs, e sem navegador em tests/test_cidade_cartaz_lente.py).
+  assert.equal(await page.locator('[data-cartaz-entrada] article.tm a[href="imagem-som-e-cidade/"]').count(),1,rot+': uma só ligação à página do tema');
+  assert.equal(await page.locator('[data-cartaz-entrada] a[href="https://pedrohfernandes-klk.github.io/lente/cidade/"]').count(),0,rot+': sem ligação direta à cidade');
+  assert.equal(await wrap.locator('h3.tm-n a').getAttribute('href'),'imagem-som-e-cidade/',rot+': destino');
   await wrap.scrollIntoViewIfNeeded();
   // 08/11/2026 (revisão do #142): a fotografia tem loading="lazy"; com o cartão à vista, tem de carregar.
   assert.equal(await wrap.locator('.tm-img img').getAttribute('loading'),'lazy',rot+': carregamento diferido');
