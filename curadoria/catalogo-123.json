@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "title": "Videoteca — 129 registos acumulados",
+  "title": "Videoteca: 128 registos acumulados",
   "checked_on": "2026-10-18",
   "scope": "Catálogo de curadoria; inclui reservas e versões; não equivale a aprovação integral",
   "items": [
@@ -2007,9 +2007,9 @@
       "title": "Exquisite Corpse — Hugo Crosthwaite",
       "publisher": "The Art Assignment",
       "category": "Arte prática e espaço",
-      "objective": "Criar colaborativamente com informação parcial",
+      "objective": "Criar com informação parcial",
       "editorial_reason": "Combina regra, surpresa e negociação de autoria.",
-      "proposed_activity": "Em grupo, dobra uma folha e acrescenta um desenho sem ver o anterior. No fim, constrói uma história para o conjunto.",
+      "proposed_activity": "Dobra um papel em partes e desenha numa parte de cada vez, sem ver o desenho anterior. No fim, constrói uma história para o conjunto.",
       "activity_time_estimate": "20 min",
       "materials": "Papel e lápis",
       "proposed_lesson_links": [
@@ -2194,7 +2194,7 @@
       "publisher": "TED",
       "category": "Processo e animação",
       "objective": "Gerar ideias por associação",
-      "editorial_reason": "Propõe um jogo concreto de associação; o original é em japonês, pelo que requer apoio linguístico.",
+      "editorial_reason": "Propõe um exemplo concreto de associação; o original é em japonês, pelo que requer apoio linguístico.",
       "proposed_activity": "Cria uma cadeia de dez palavras em português e combina duas num objeto ou história. Desenha três possibilidades.",
       "activity_time_estimate": "15 min",
       "materials": "Papel e caneta",
@@ -5188,53 +5188,6 @@
         "embedding_verified_on_target_site": false,
         "evidence_urls": [
           "https://www.youtube.com/watch?v=owGykVbfgUE"
-        ]
-      },
-      "clip": {
-        "start_seconds": null,
-        "end_seconds": null,
-        "status": "delimitar_apos_revisao_audiovisual"
-      }
-    },
-    {
-      "id": "vid-108",
-      "youtube_id": "1VM2eLhvsSM",
-      "provider": "youtube",
-      "url": "https://www.youtube.com/watch?v=1VM2eLhvsSM",
-      "title": "Coca-Cola, 1971 - 'Hilltop' | «I'd like to buy the world a Coke»",
-      "publisher": "Project Re:Brief",
-      "video_duration": "0:59",
-      "duration_status": "observada_no_leitor",
-      "language": "en",
-      "resource_type": "anuncio_republicado",
-      "editorial_reason": "Projeto de revisitação publicitária associado à Google; canal não é Coca-Cola. Comunidade, desejo e marca.",
-      "publication_status": "rascunho_revisao_pedagogica_pendente",
-      "portuguese_captions_status": "nao_verificadas",
-      "proposed_connection": {
-        "title": "Contra-feed — o preço de um minuto",
-        "url": "https://pedrohfernandes-klk.github.io/lente/cidadania/m2/cid-m2-preco-minuto/",
-        "insertion_point": "Ao discutir promessa, destinatário e custo da atenção",
-        "use_existing_activity": "Usar a peça como exemplo para as decisões já propostas: o que promete, a quem e o que deixa de dizer.",
-        "status": "proposta_nao_integrada"
-      },
-      "access": {
-        "watch_page_public_without_login": true,
-        "payment_requested_on_watch_page": false,
-        "content_playback_observed": false,
-        "open_license_verified": false,
-        "download_authorized": false,
-        "school_network_and_geography_not_tested": true
-      },
-      "verification": {
-        "checked_on": "2026-10-17",
-        "youtube_watch_page_opened": true,
-        "expected_title_observed": true,
-        "publisher_observed": true,
-        "description_consulted": true,
-        "full_audiovisual_review": false,
-        "embedding_verified_on_target_site": false,
-        "evidence_urls": [
-          "https://www.youtube.com/watch?v=1VM2eLhvsSM"
         ]
       },
       "clip": {

@@ -25,21 +25,32 @@ import entrada_temas_20261112
 # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (tests/temas_paginas_20261113.py) parte do main 9a5e6e1,
 # já com a da entrada em quatro temas: aplica-se por fora de todas e desfaz-se primeiro, com contagem exata, nas três funções abaixo.
 import temas_paginas_20261113
+# 15/11/2026: revisão geral do Lente (achados confirmados e decisões de 15/11/2026). A camada da revisão geral
+# (tests/revisao_geral_lente_20261115.py) parte do main e4fd171, já com a das páginas dos temas: aplica-se por fora de todas e
+# desfaz-se primeiro, com contagem exata, nas três funções abaixo.
+import revisao_geral_lente_20261115
 
 MANIFESTO = creditos_i.ler_manifesto()
 TROCAS = creditos_i.literais(MANIFESTO)
 
 
 def aplicar(texto, ficheiro):
-    return temas_paginas_20261113.aplicar(entrada_temas_20261112.aplicar(justica_20261110.aplicar(praticar_20261110.aplicar(creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)
+    return revisao_geral_lente_20261115.aplicar(temas_paginas_20261113.aplicar(entrada_temas_20261112.aplicar(justica_20261110.aplicar(praticar_20261110.aplicar(creditos_i.aplicar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)
 
 
 def desfazer(texto, ficheiro):
-    return creditos_i.desfazer(praticar_20261110.desfazer(justica_20261110.desfazer(entrada_temas_20261112.desfazer(temas_paginas_20261113.desfazer(texto, ficheiro), ficheiro), ficheiro), ficheiro), TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+    return creditos_i.desfazer(praticar_20261110.desfazer(justica_20261110.desfazer(entrada_temas_20261112.desfazer(temas_paginas_20261113.desfazer(revisao_geral_lente_20261115.desfazer(texto, ficheiro), ficheiro), ficheiro), ficheiro), ficheiro), TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro)
+
+
+def _alinhar_abaixo(texto, ficheiro):
+    return temas_paginas_20261113.alinhar(entrada_temas_20261112.alinhar(justica_20261110.alinhar(praticar_20261110.alinhar(creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)
 
 
 def alinhar(texto, ficheiro):
     """Para bases que mudam com o tempo (git merge-base HEAD origin/main): se a base já traz esta camada (cada «novo» com a
     contagem exata e nenhum «antigo» fora de um «novo»), fica como está; senão, recebe-a com contagem exata. Um estado misto
     falha."""
-    return temas_paginas_20261113.alinhar(entrada_temas_20261112.alinhar(justica_20261110.alinhar(praticar_20261110.alinhar(creditos_i.alinhar(texto, TROCAS.get(ficheiro, []), 'créditos i, lente-3 ' + ficheiro), ficheiro), ficheiro), ficheiro), ficheiro)
+    # 15/11/2026: revisão geral do Lente. A camada da revisão geral tira um «novo» desta (o retrato da oficina do ator, com o seu
+    # «i»): quando o texto já a traz, desfaz-se primeiro, alinham-se as de baixo e volta a aplicar-se (revisao_geral_lente_20261115.
+    # alinhar_por_cima), sempre com contagem exata.
+    return revisao_geral_lente_20261115.alinhar_por_cima(texto, ficheiro, _alinhar_abaixo)

@@ -32,6 +32,10 @@ import creditos_i_lente3  # noqa: E402
 # da projeção em assets/info-i.css e os créditos das missões em cidade/index.html) fica por cima desta e não toca em nenhum dos seus
 # «novo»; ler() desfaz-a primeiro, com contagem exata, e o resto confere-se como antes, no estado deste pedido.
 import creditos_i_lente4  # noqa: E402
+# 15/11/2026: revisão geral do Lente (decisão (a) de 15/11/2026). A camada da revisão geral (tests/revisao_geral_lente_20261115.py) fica
+# por cima de todas e tira o retrato de Stanislávski da oficina do ator, com o «i» que este pedido lhe pôs; ler() desfaz-a primeiro,
+# com contagem exata, para cada «i» deste pedido se conferir como antes, no estado em que o pedido o deixou.
+import revisao_geral_lente_20261115  # noqa: E402
 
 BASE = 'fec58ae298fd44a9144799ebb8f007b92054720a'
 V = '20261106-3'
@@ -50,6 +54,13 @@ L15C = ('gigantes/', 'vozes/', 'sidequests/')
 def ler(f):
     # 08/11/2026: pedido lente-4. O ficheiro como este pedido o deixou: a camada do lente-4 desfaz-se, com contagem exata de cada
     # «novo» (nos ficheiros que ela não toca, não muda nada).
+    # 15/11/2026: revisão geral do Lente. Antes dela, desfaz-se a da revisão geral, a mais recente, com contagem exata.
+    return creditos_i_lente4.desfazer(revisao_geral_lente_20261115.desfazer((R / f).read_text('utf-8'), f), f)
+
+
+def ler_com_a_cadeia(f):
+    """15/11/2026: o ficheiro só sem a camada do lente-4, que fica fora da cadeia de tests/creditos_i_lente3.py; as camadas que a
+    cadeia encadeia por cima desta (a da revisão geral incluída) ficam, para a cadeia as desfazer e voltar a aplicar."""
     return creditos_i_lente4.desfazer((R / f).read_text('utf-8'), f)
 
 
@@ -116,7 +127,10 @@ class CreditosLente3(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         for f in creditos_i_lente3.TROCAS:
             with self.subTest(ficheiro=f):
-                agora = ler(f)
+                # 15/11/2026: revisão geral do Lente. A cadeia (tests/creditos_i_lente3.py) desfaz e volta a aplicar também a camada da
+                # revisão geral, por fora de todas; por isso aqui o ficheiro entra com ela (ler_com_a_cadeia), e o que fica, desfeita a
+                # cadeia, tem de ser, como antes, o main fec58ae letra a letra.
+                agora = ler_com_a_cadeia(f)
                 partida = creditos_i_lente3.desfazer(agora, f)
                 self.assertEqual(partida, antigo(f))
                 self.assertEqual(creditos_i_lente3.aplicar(partida, f), agora)

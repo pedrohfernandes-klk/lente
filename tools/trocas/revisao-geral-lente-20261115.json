@@ -1,0 +1,997 @@
+{
+ "narrativas/variantes/index.html": [
+  [
+   "20–25 min · papel e lápis · individual ou a pares",
+   "20–25 min · papel e lápis · individual",
+   1
+  ],
+  [
+   "25–30 min · papel e lápis · individual ou a pares",
+   "25–30 min · papel e lápis · individual",
+   1
+  ],
+  [
+   "15–20 min · papel e lápis · individual ou a pares",
+   "15–20 min · papel e lápis · individual",
+   1
+  ],
+  [
+   "(Na aula, pergunta-o a um colega.)",
+   "(Responde por escrito, em duas frases.)",
+   1
+  ],
+  [
+   "Podes descrever o percurso a um colega ou trabalhar",
+   "Podes descrever o percurso por escrito, em duas frases, ou trabalhar",
+   1
+  ],
+  [
+   "Podes escrever, ditar a um colega ou desenhar",
+   "Podes escrever ou desenhar",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco-imprimir/index.html": [
+  [
+   "ou na de um colega. Divide-a",
+   "ou numa que conheças. Divide-a",
+   1
+  ],
+  [
+   "Se puderes, troca com um colega: passa a lista no texto dele e devolve-o com duas perguntas, não com soluções.",
+   "Relê tu depois de uma pausa: passa a lista no teu texto e anota duas perguntas, não soluções.",
+   1
+  ]
+ ],
+ "narrativas/oficina-arco/index.html": [
+  [
+   "ou na de um colega. Divide-a",
+   "ou numa que conheças. Divide-a",
+   1
+  ],
+  [
+   "Se puderes, troca com um colega: passa a lista no texto dele e devolve-o com duas perguntas, não com soluções.",
+   "Relê tu depois de uma pausa: passa a lista no teu texto e anota duas perguntas, não soluções.",
+   1
+  ],
+  [
+   "Vais pôr o teu texto, ou o de um colega, à prova.",
+   "Vais pôr um texto teu à prova.",
+   1
+  ]
+ ],
+ "narrativas/oficina-epico-imprimir/index.html": [
+  [
+   "Lê a cena em voz alta (na aula, com dois colegas e um narrador).",
+   "Lê a cena em voz alta, com as falas e a voz do narrador.",
+   1
+  ]
+ ],
+ "narrativas/oficina-epico/index.html": [
+  [
+   "Lê a cena em voz alta (na aula, com dois colegas e um narrador).",
+   "Lê a cena em voz alta, com as falas e a voz do narrador.",
+   1
+  ]
+ ],
+ "narrativas/oficina-visivel-imprimir/index.html": [
+  [
+   "experimenta com o corpo de um colega: uma luz, uma cadeira, um casaco.",
+   "experimenta com objetos: uma luz, uma cadeira, um casaco.",
+   1
+  ]
+ ],
+ "narrativas/oficina-visivel/index.html": [
+  [
+   "experimenta com o corpo de um colega: uma luz, uma cadeira, um casaco.",
+   "experimenta com objetos: uma luz, uma cadeira, um casaco.",
+   1
+  ],
+  [
+   "(na aula, um colega nomeia-a sem que lha digas)",
+   "(noutro dia, vê se ainda a consegues nomear só pelo que se vê)",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator-imprimir/index.html": [
+  [
+   "(na aula, um colega executa-a e a turma diz o que percebeu)",
+   "(vê o resultado e anota o que percebeste)",
+   1
+  ]
+ ],
+ "narrativas/oficina-ator/index.html": [
+  [
+   "(na aula, um colega executa-a e a turma diz o que percebeu)",
+   "(vê o resultado e anota o que percebeste)",
+   1
+  ],
+  [
+   "<figure class=\\\"fig-rev retrato\\\"><div class=\\\"fr-moldura com-i\\\"><img src=\\\"https://pedrohfernandes-klk.github.io/lente/img/cidadania/stanislavski.webp\\\" alt=\\\"Fotografia antiga, em tons sépia: um homem de bigode farto e cabelo grisalho, de perfil, de casaco escuro, laço e lenço no bolso.\\\" loading=\\\"lazy\\\" decoding=\\\"async\\\" style=\\\"object-position:50% 20%\\\"><details class=\\\"info-i\\\" name=\\\"info-i\\\"><summary aria-label=\\\"Créditos da fotografia\\\"><span aria-hidden=\\\"true\\\">i</span></summary><p class=\\\"info-i-texto\\\">Autor desconhecido, 1901. Domínio público. <a data-external aria-label=\\\"commons.wikimedia.org, sítio externo\\\" href=\\\"https://commons.wikimedia.org/wiki/File:Konstantin_Stanislavskiy_1912.jpg\\\">commons.wikimedia.org</a></p></details></div><figcaption><span class=\\\"fr-leg\\\">Stanislávski, fotografia de 1901, publicada em 1912: o ator trabalha com o que a personagem quer.</span></figcaption></figure><p>O corpo do ator produz sentido",
+   "<p>O corpo do ator produz sentido",
+   1
+  ]
+ ],
+ "narrativas/oficina-dilema-imprimir/index.html": [
+  [
+   "(ou troca com um colega)",
+   "(ou volta a eles no dia seguinte)",
+   1
+  ],
+  [
+   "(Na aula, apresenta-o à turma em trinta segundos, sem ler as legendas.)",
+   "(Depois, explica-o em voz alta em trinta segundos, sem ler as legendas.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-dilema/index.html": [
+  [
+   "(ou troca com um colega)",
+   "(ou volta a eles no dia seguinte)",
+   1
+  ],
+  [
+   "(Na aula, apresenta-o à turma em trinta segundos, sem ler as legendas.)",
+   "(Depois, explica-o em voz alta em trinta segundos, sem ler as legendas.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano-imprimir/index.html": [
+  [
+   "(ou lê-a a um colega sem lhe mostrar a cena)",
+   "(ou lê-a em voz alta sem teres a cena à frente)",
+   1
+  ]
+ ],
+ "narrativas/oficina-plano/index.html": [
+  [
+   "(ou lê-a a um colega sem lhe mostrar a cena)",
+   "(ou lê-a em voz alta sem teres a cena à frente)",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao-imprimir/index.html": [
+  [
+   "em voz alta (ou com um colega), com",
+   "em voz alta, com",
+   1
+  ]
+ ],
+ "narrativas/oficina-restricao/index.html": [
+  [
+   "em voz alta (ou com um colega), com",
+   "em voz alta, com",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade-imprimir/index.html": [
+  [
+   "(Na aula, lê-o a um colega sem explicar: ele diz o tema.)",
+   "(Escreve o tema numa linha antes de voltares à lista.)",
+   1
+  ]
+ ],
+ "narrativas/oficina-readymade/index.html": [
+  [
+   "(Na aula, lê-o a um colega sem explicar: ele diz o tema.)",
+   "(Escreve o tema numa linha antes de voltares à lista.)",
+   1
+  ]
+ ],
+ "assets/laboratorio/percursos.json": [
+  [
+   "\"title\": \"O teste do colega\",",
+   "\"title\": \"A leitura a frio\",",
+   1
+  ],
+  [
+   "\"description\": \"Dá o teu texto a ler sem explicar nada.\",",
+   "\"description\": \"Relê o teu texto noutro dia, como quem o lê pela primeira vez.\",",
+   1
+  ],
+  [
+   "Põe à prova um texto teu, ou de um colega: exposição, nó e desenlace.",
+   "Põe à prova um texto teu, depois de uma pausa: exposição, nó e desenlace.",
+   1
+  ],
+  [
+   "Tira de uma observação de cinco minutos uma tese que um colega possa pôr à prova, com lugar para o contrário.",
+   "Tira de uma observação de cinco minutos uma tese que se possa pôr à prova, com lugar para o contrário.",
+   1
+  ],
+  [
+   "ao corte e à leitura por outra pessoa.",
+   "ao corte e à leitura a frio.",
+   1
+  ]
+ ],
+ "narrativas/treinar/teste-do-colega/index.html": [
+  [
+   "<title>O teste do colega | Treinar",
+   "<title>A leitura a frio | Treinar",
+   1
+  ],
+  [
+   "<h1 class=\"c-sr\">O teste do colega</h1>",
+   "<h1 class=\"c-sr\">A leitura a frio</h1>",
+   1
+  ],
+  [
+   "<p class=\"t\" id=\"m-t\">O teste do colega</p>",
+   "<p class=\"t\" id=\"m-t\">A leitura a frio</p>",
+   1
+  ],
+  [
+   "titulo:\"O teste do colega\",itens:[{\"t\": \"ler\", \"rot\": \"A regra\", \"titulo\": \"O teste do colega\",",
+   "titulo:\"A leitura a frio\",itens:[{\"t\": \"ler\", \"rot\": \"A regra\", \"titulo\": \"A leitura a frio\",",
+   1
+  ],
+  [
+   "Dá o teu texto a ler sem explicar nada. Quem lê (um colega, ou tu noutro dia) marca com um traço onde se perdeu e com um círculo a frase que lhe ficou.",
+   "Deixa o teu texto descansar pelo menos um dia. Depois, lê-o de seguida, como se fosse de outra pessoa, e marca com um traço onde te perdes e com um círculo a frase que te fica.",
+   2
+  ],
+  [
+   "O leitor não tem a tua cabeça: só tem a página.",
+   "Noutro dia, já não tens na cabeça o que querias dizer: só tens a página, como qualquer leitor.",
+   1
+  ],
+  [
+   "\"p\": \"O colega pôs um traço na linha",
+   "\"p\": \"Na leitura a frio, puseste um traço na linha",
+   1
+  ],
+  [
+   "\"Explico ao colega, em voz alta, quem é a Rita.\", \"Não mudo nada: o colega é que leu mal.\"",
+   "\"Escrevo à margem quem é a Rita, só para mim.\", \"Não mudo nada: fui eu que li à pressa.\"",
+   1
+  ],
+  [
+   "\"Em voz alta só resolve para este leitor. O texto tem de se explicar sozinho.\", \"Se um leitor se perdeu, outros também se perdem.",
+   "\"Uma nota à margem só te serve a ti. O texto tem de se explicar sozinho.\", \"Se te perdeste a frio, outros leitores também se perdem.",
+   1
+  ],
+  [
+   "O traço não é um erro do leitor:",
+   "O traço não é um erro da leitura:",
+   1
+  ],
+  [
+   "Relê em silêncio um texto teu de outro treino (ou troca com um colega) e marca:",
+   "Relê em silêncio um texto teu de outro treino, escrito pelo menos um dia antes, e marca:",
+   1
+  ],
+  [
+   "No meu texto, sei porque é que o leitor se perdeu.",
+   "No meu texto, sei porque é que me perdi.",
+   1
+  ],
+  [
+   "\"titulo\": \"Se puderes, com um colega\", \"html\": \"<p>Depois, conversem dois minutos: o que esperavam que acontecesse?</p>",
+   "\"titulo\": \"Noutro dia, a frio\", \"html\": \"<p>Depois, escreve duas linhas: o que esperavas que acontecesse e o que a página mostra.</p>",
+   1
+  ],
+  [
+   "<b>Outra vez:</b> Com um leitor de outra turma ou de casa.",
+   "<b>Outra vez:</b> O mesmo texto, daqui a uma semana.",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "<legend>Li sem perguntar nada.</legend>",
+   "<legend>Li de seguida, sem parar para corrigir.</legend>",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-entrevista/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega faz-lhe mais uma pergunta, em voz alta; respondes como ela.",
+   "Noutro dia, faz-lhe tu mais uma pergunta, por escrito; respondes como ela.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/a-gaveta/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega conta, numa frase, o que aconteceu à pessoa. Era o que querias?",
+   "Noutro dia, sem as tuas notas, conta numa frase o que aconteceu à pessoa. Era o que querias?",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/comeca-mais-tarde/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega lê as três primeiras frases e escolhe a que o faria continuar.",
+   "Noutro dia, lê só as três primeiras frases e escolhe a que te faria continuar.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/cortar-um-quinto/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega lê só a versão curta e conta a história. Está lá tudo?",
+   "Noutro dia, lê só a versão curta e conta a história numa linha. Está lá tudo?",
+   1
+  ],
+  [
+   "<span>Seguinte<small>O teste do colega</small>",
+   "<span>Seguinte<small>A leitura a frio</small>",
+   1
+  ],
+  [
+   "O teste do colega</a>. Ou volta a este noutro dia",
+   "A leitura a frio</a>. Ou volta a este noutro dia",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/dicionario/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega tenta trocar as palavras das tuas frases.",
+   "Noutro dia, tenta trocar as palavras das tuas frases.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/frase-querida/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega diz se dá pela falta da frase.",
+   "Noutro dia, lê o texto sem a frase e vê se dás pela falta dela.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/interromper/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega escreve, no papel dele, a frase que nunca foi acabada.",
+   "Noutro dia, escreve à margem a frase que nunca foi acabada.",
+   1
+  ],
+  [
+   "Lê em voz alta (ou com um colega).",
+   "Lê em voz alta.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/lista-substantivos/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "Troca de lista com o colega e escolhe um substantivo dele para a próxima vez.",
+   "Noutro dia, relê a lista e escolhe um substantivo para a próxima vez.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/o-contrario/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega escreve, numa linha, o que cada personagem quer e a pista em que se apoiou. Se a leitura dele não for a tua",
+   "Noutro dia, escreve numa linha o que cada personagem quer e a pista em que te apoias. Se essa leitura não for a que querias",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/sem-mente/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega escolhe a troca mais bem conseguida.",
+   "Noutro dia, escolhe a troca mais bem conseguida.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/so-gestos/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega diz o que aconteceu antes da cena.",
+   "Noutro dia, só pelos gestos, escreve o que aconteceu antes da cena.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/tres-em-cinco/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "O colega escolhe a personagem de que quer ler a história e diz a primeira cena que imagina.",
+   "Noutro dia, escolhe a personagem de que querias ler a história e escreve a primeira cena que imaginas.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/voz-alta/index.html": [
+  [
+   "\"titulo\": \"Se puderes, com um colega\"",
+   "\"titulo\": \"Noutro dia, a frio\"",
+   1
+  ],
+  [
+   "A leitura do colega não é um veredito: é informação. Se ele não leu o que querias, muda uma pista e diz porquê.",
+   "A tua leitura a frio não é um veredito: é informação. Se não leste o que querias, muda uma pista e diz porquê.",
+   1
+  ],
+  [
+   "Lê ao colega; ele levanta a mão quando se distrair.",
+   "Noutro dia, lê outra vez em voz alta e marca onde a tua atenção foge.",
+   1
+  ],
+  [
+   "Lê em voz baixa (ou a um colega) um texto teu",
+   "Lê em voz baixa um texto teu",
+   1
+  ],
+  [
+   "<b>Outra vez:</b> Lê a alguém em casa, sem lhe mostrar a página.",
+   "<b>Outra vez:</b> Um texto teu mais antigo, lido em voz alta sem o releres antes.",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/rascunho-mau/index.html": [
+  [
+   "\"titulo\": \"Com um colega\", \"html\": \"<p>Não se troca: este rascunho é só teu.</p>",
+   "\"titulo\": \"Só teu\", \"html\": \"<p>Não se mostra: este rascunho é só teu.</p>",
+   1
+  ],
+  [
+   "\"rot\": \"Troca\"",
+   "\"rot\": \"A frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/docente/index.html": [
+  [
+   "Trocar: o colega responde a uma pergunta sobre o texto. Só lê quem quer.",
+   "Reler a frio: noutro dia, quem escreveu responde por escrito a uma pergunta sobre o próprio texto.",
+   1
+  ],
+  [
+   "Sim, em parte ou ainda não, pelo próprio e pelo colega.",
+   "Sim, em parte ou ainda não, na escrita e na releitura a frio.",
+   1
+  ],
+  [
+   "<td>Leitura do colega</td><td>O colega percebeu sem explicação? Onde se perdeu?</td>",
+   "<td>Leitura a frio</td><td>Noutro dia, o texto percebe-se sem explicação? Onde se perde a leitura?</td>",
+   1
+  ],
+  [
+   "A leitura do colega é informação para rever,",
+   "A leitura a frio é informação para rever,",
+   1
+  ],
+  [
+   "<td>3 min</td><td>Oral</td>",
+   "<td>3 min</td><td>Caderno</td>",
+   1
+  ]
+ ],
+ "narrativas/criar/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "Põe à prova um texto teu, ou de um colega: exposição, nó e desenlace.",
+   "Põe à prova um texto teu, depois de uma pausa: exposição, nó e desenlace.",
+   1
+  ],
+  [
+   "uma tese que um colega possa pôr à prova,",
+   "uma tese que se possa pôr à prova,",
+   1
+  ]
+ ],
+ "narrativas/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/cena/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/espaco/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "uma tese que um colega possa pôr à prova,",
+   "uma tese que se possa pôr à prova,",
+   1
+  ]
+ ],
+ "narrativas/percursos/experimentar/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/ficcao/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "Põe à prova um texto teu, ou de um colega: exposição, nó e desenlace.",
+   "Põe à prova um texto teu, depois de uma pausa: exposição, nó e desenlace.",
+   1
+  ]
+ ],
+ "narrativas/percursos/frase/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/olhar/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/rever/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "<strong>O teste do colega</strong><span class=\"apoio\">Dá o teu texto a ler sem explicar nada.</span>",
+   "<strong>A leitura a frio</strong><span class=\"apoio\">Relê o teu texto noutro dia, como quem o lê pela primeira vez.</span>",
+   1
+  ],
+  [
+   "ao corte e à leitura por outra pessoa.</p>",
+   "ao corte e à leitura a frio.</p>",
+   1
+  ]
+ ],
+ "narrativas/percursos/transformar/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/voz/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/percursos/vozes/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "<strong>O teste do colega</strong><span class=\"apoio\">Dá o teu texto a ler sem explicar nada.</span>",
+   "<strong>A leitura a frio</strong><span class=\"apoio\">Relê o teu texto noutro dia, como quem o lê pela primeira vez.</span>",
+   1
+  ]
+ ],
+ "narrativas/tudo/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ],
+  [
+   "<a href=\"../treinar/teste-do-colega/\">O teste do colega</a>",
+   "<a href=\"../treinar/teste-do-colega/\">A leitura a frio</a>",
+   1
+  ]
+ ],
+ "narrativas/ver/index.html": [
+  [
+   "\"title\": \"O teste do colega\"",
+   "\"title\": \"A leitura a frio\"",
+   1
+  ]
+ ],
+ "narrativas/treinar/caderno/index.html": [
+  [
+   "<b>O teste do colega</b><br>Dá o teu texto a ler sem explicar nada</td>",
+   "<b>A leitura a frio</b><br>Relê o teu texto noutro dia, como quem o lê pela primeira vez</td>",
+   1
+  ]
+ ],
+ "mapa/index.html": [
+  [
+   "treinar/teste-do-colega/\">O teste do colega</a>",
+   "treinar/teste-do-colega/\">A leitura a frio</a>",
+   1
+  ]
+ ],
+ "praticar/index.html": [
+  [
+   "<a href=\"../narrativas/treinar/teste-do-colega/\">O teste do colega</a>",
+   "<a href=\"../narrativas/treinar/teste-do-colega/\">A leitura a frio</a>",
+   1
+  ],
+  [
+   "Um texto marcado por um colega ou por ti numa releitura, e uma correção explicada.",
+   "Um texto marcado por ti numa releitura a frio, e uma correção explicada.",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/index.html": [
+  [
+   "(na aula, pede-as a um colega, sem dar a resposta)",
+   "(noutro dia, relê-as sem a resposta à frente: o detalhe ainda as sustenta?)",
+   1
+  ],
+  [
+   "e explicar oralmente a um colega.",
+   "e explicar oralmente as tuas escolhas.",
+   1
+  ],
+  [
+   " (na aula, pede-as a um colega, sem explicar a intenção).",
+   ", como se não conhecesses a intenção.",
+   1
+  ],
+  [
+   "não atribuas sentimentos a colegas por adivinhação.",
+   "não atribuas sentimentos a ninguém por adivinhação.",
+   1
+  ],
+  [
+   "Um colega, ou tu depois de uma pausa, explica as três relações sem ajuda.",
+   "Depois de uma pausa, explica tu as três relações sem ajuda.",
+   1
+  ],
+  [
+   "; podes dirigir a composição ou trabalhar com um colega.",
+   "; podes dirigir a composição.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v108/index.html": [
+  [
+   "<div class=\"vpf-video\" data-yt=\"1VM2eLhvsSM\" data-titulo=\"Hilltop: «I'd like to buy the world a Coke» (Coca-Cola, 1971)\"><p>Vemos na aula: é falado em inglês e as legendas estão por confirmar. A pergunta e o trabalho estão aqui por baixo.</p><button type=\"button\">Ver mesmo assim</button></div><p class=\"vpf-nota\">Ao tocar, o vídeo carrega a partir do YouTube. Também podes <a href=\"https://www.youtube.com/watch?v=1VM2eLhvsSM\" target=\"_blank\" rel=\"noopener\">abri-lo no YouTube</a>. Liga as legendas no leitor.</p>\n<section class=\"vpf-fazer\" aria-labelledby=\"f-v108\">",
+   "<section class=\"vpf-fazer\" aria-labelledby=\"f-v108\">",
+   1
+  ]
+ ],
+ "ver-para-fazer/oficina-desejo/index.html": [
+  [
+   "<li data-id=\"v108\" data-pt=\"0\"><a href=\"https://pedrohfernandes-klk.github.io/lente/ver-para-fazer/v108/\"><span class=\"t\">Hilltop: «I'd like to buy the world a Coke» (Coca-Cola, 1971)</span><span class=\"s\">Falado em inglês, 1 min, vemos na aula</span><span class=\"st\">Por ver</span></a></li><li data-id=\"v109\" data-pt=\"0\">",
+   "<li data-id=\"v109\" data-pt=\"0\">",
+   1
+  ],
+  [
+   "<p class=\"p-sub\">7 vídeos e um trabalho final</p>",
+   "<p class=\"p-sub\">6 vídeos e um trabalho final</p>",
+   1
+  ]
+ ],
+ "ver-para-fazer/index.html": [
+  [
+   "O que promete este anúncio, a quem, e o que deixa por dizer? 7 vídeos.",
+   "O que promete este anúncio, a quem, e o que deixa por dizer? 6 vídeos.",
+   1
+  ],
+  [
+   "<p class=\"rodape\">Seleção editorial da escola, 113 vídeos.",
+   "<p class=\"rodape\">Seleção editorial da escola, 112 vídeos.",
+   1
+  ]
+ ],
+ "curadoria/catalogo-123.json": [
+  [
+   "    {\n      \"id\": \"vid-108\",\n      \"youtube_id\": \"1VM2eLhvsSM\",\n      \"provider\": \"youtube\",\n      \"url\": \"https://www.youtube.com/watch?v=1VM2eLhvsSM\",\n      \"title\": \"Coca-Cola, 1971 - 'Hilltop' | «I'd like to buy the world a Coke»\",\n      \"publisher\": \"Project Re:Brief\",\n      \"video_duration\": \"0:59\",\n      \"duration_status\": \"observada_no_leitor\",\n      \"language\": \"en\",\n      \"resource_type\": \"anuncio_republicado\",\n      \"editorial_reason\": \"Projeto de revisitação publicitária associado à Google; canal não é Coca-Cola. Comunidade, desejo e marca.\",\n      \"publication_status\": \"rascunho_revisao_pedagogica_pendente\",\n      \"portuguese_captions_status\": \"nao_verificadas\",\n      \"proposed_connection\": {\n        \"title\": \"Contra-feed — o preço de um minuto\",\n        \"url\": \"https://pedrohfernandes-klk.github.io/lente/cidadania/m2/cid-m2-preco-minuto/\",\n        \"insertion_point\": \"Ao discutir promessa, destinatário e custo da atenção\",\n        \"use_existing_activity\": \"Usar a peça como exemplo para as decisões já propostas: o que promete, a quem e o que deixa de dizer.\",\n        \"status\": \"proposta_nao_integrada\"\n      },\n      \"access\": {\n        \"watch_page_public_without_login\": true,\n        \"payment_requested_on_watch_page\": false,\n        \"content_playback_observed\": false,\n        \"open_license_verified\": false,\n        \"download_authorized\": false,\n        \"school_network_and_geography_not_tested\": true\n      },\n      \"verification\": {\n        \"checked_on\": \"2026-10-17\",\n        \"youtube_watch_page_opened\": true,\n        \"expected_title_observed\": true,\n        \"publisher_observed\": true,\n        \"description_consulted\": true,\n        \"full_audiovisual_review\": false,\n        \"embedding_verified_on_target_site\": false,\n        \"evidence_urls\": [\n          \"https://www.youtube.com/watch?v=1VM2eLhvsSM\"\n        ]\n      },\n      \"clip\": {\n        \"start_seconds\": null,\n        \"end_seconds\": null,\n        \"status\": \"delimitar_apos_revisao_audiovisual\"\n      }\n    },\n    {\n      \"id\": \"vid-109\",",
+   "    {\n      \"id\": \"vid-109\",",
+   1
+  ],
+  [
+   "\"title\": \"Videoteca — 129 registos acumulados\"",
+   "\"title\": \"Videoteca: 128 registos acumulados\"",
+   1
+  ],
+  [
+   "Propõe um jogo concreto de associação; o original é em japonês, pelo que requer apoio linguístico.",
+   "Propõe um exemplo concreto de associação; o original é em japonês, pelo que requer apoio linguístico.",
+   1
+  ],
+  [
+   "Em grupo, dobra uma folha e acrescenta um desenho sem ver o anterior. No fim, constrói uma história para o conjunto.",
+   "Dobra um papel em partes e desenha numa parte de cada vez, sem ver o desenho anterior. No fim, constrói uma história para o conjunto.",
+   1
+  ],
+  [
+   "\"objective\": \"Criar colaborativamente com informação parcial\",",
+   "\"objective\": \"Criar com informação parcial\",",
+   1
+  ]
+ ],
+ "curadoria/ligacoes-atividades-existentes.json": [
+  [
+   "        \"vid-108\",\n        \"vid-110\"\n      ]",
+   "        \"vid-110\"\n      ]",
+   1
+  ]
+ ],
+ "ver-para-fazer/catalogo.json": [
+  [
+   "Podes ditar ou trabalhar a pares.",
+   "Podes ditar a cena ou relê-la noutro dia.",
+   1
+  ],
+  [
+   "Podes responder por escrito ou ditar a um colega.",
+   "Podes responder por escrito ou ditar ao docente.",
+   1
+  ],
+  [
+   "Marca pausas e palavras a destacar, por escrito ou com um colega.",
+   "Marca pausas e palavras a destacar, por escrito ou ditando ao docente.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v48/index.html": [
+  [
+   "Um jogo concreto de associação; o original é em japonês.",
+   "Um exemplo concreto de associação; o original é em japonês.",
+   1
+  ]
+ ],
+ "ver-para-fazer/v44/index.html": [
+  [
+   "Com papel dobrado em partes, desenha à vez com alguém, sem ver o desenho anterior; no fim, uma história para o conjunto.",
+   "Com papel dobrado em partes, desenha numa parte de cada vez, sem ver o desenho anterior; no fim, uma história para o conjunto.",
+   2
+  ],
+  [
+   "Criar colaborativamente com informação parcial.",
+   "Criar com informação parcial.",
+   2
+  ]
+ ],
+ "narrativas/fora-da-pagina/escultura/lesson.js": [
+  [
+   "(na aula, pede-as a um colega, sem dar a resposta)",
+   "(noutro dia, relê-as sem a resposta à frente: o detalhe ainda as sustenta?)",
+   1
+  ],
+  [
+   "e explicar oralmente a um colega.",
+   "e explicar oralmente as tuas escolhas.",
+   1
+  ],
+  [
+   "que os colegas podem observar e discutir",
+   "que se pode observar e discutir",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/intervalo/lesson.js": [
+  [
+   " (na aula, pede-as a um colega, sem explicar a intenção).",
+   ", como se não conhecesses a intenção.",
+   1
+  ]
+ ],
+ "narrativas/fora-da-pagina/tese/lesson.js": [
+  [
+   "não atribuas sentimentos a colegas por adivinhação.",
+   "não atribuas sentimentos a ninguém por adivinhação.",
+   1
+  ],
+  [
+   "Um colega, ou tu depois de uma pausa, explica as três relações sem ajuda.",
+   "Depois de uma pausa, explica tu as três relações sem ajuda.",
+   1
+  ],
+  [
+   "Qual das propostas deixa um colega verificar a relação",
+   "Qual das propostas deixa verificar a relação",
+   1
+  ]
+ ]
+}
