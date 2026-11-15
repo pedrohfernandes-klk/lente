@@ -30,6 +30,10 @@ sys.path.insert(0, str(ROOT / 'tests'))
 sys.path.insert(0, str(ROOT / 'tools'))
 import entrada_temas_20261112  # noqa: E402
 import temas_paginas_20261113  # noqa: E402
+# 15/11/2026: revisão geral do Lente. A camada da revisão geral (tests/revisao_geral_lente_20261115.py) fica por cima de todas e muda,
+# no mapa, o título de uma peça do Laboratório («O teste do colega» passa a «A leitura a frio», decisão (e)); onde estes testes
+# conferem as camadas da entrada e das páginas dos temas letra a letra, desfaz-se primeiro, com contagem exata.
+import revisao_geral_lente_20261115  # noqa: E402
 
 SITIO = 'https://pedrohfernandes-klk.github.io/lente/'
 BASE = 'b8abe97f65adb6c995579807bb89f9359d7ce869'
@@ -719,7 +723,9 @@ class EntradaEmTemas(unittest.TestCase):
         self.assertEqual({f: len(t) for f, t in c.TROCAS.items()}, {'index.html': 5, 'mapa/index.html': 1})
         for f, trocas in c.TROCAS.items():
             with self.subTest(ficheiro=f):
-                agora = ler(f)
+                # 15/11/2026: revisão geral do Lente. A camada da revisão geral é agora a mais recente: desfaz-se primeiro, com contagem
+                # exata (no mapa, o título «A leitura a frio»), e o que fica confere-se como antes.
+                agora = revisao_geral_lente_20261115.desfazer(ler(f), f)
                 partida = subprocess.check_output(['git', 'show', BASE_TEMAS + ':' + f], cwd=ROOT).decode('utf-8')
                 for antigo, novo, n in trocas:
                     self.assertEqual(n, 1)
@@ -759,10 +765,13 @@ class EntradaEmTemas(unittest.TestCase):
         for n in ANTIGOS:
             self.assertNotIn(TEMAS[int(n) - 1][1] + 'index.html', apagados)
         # a cadeia das camadas (tests/creditos_i_lente3.py) aplica e desfaz esta por fora de todas
+        # 15/11/2026: revisão geral do Lente. Por fora desta fica agora só a da revisão geral: esta aplica-se logo por baixo dela e
+        # desfaz-se logo a seguir a ela; o alinhamento das de baixo continua a acabar nesta.
         cadeia = ler('tests/creditos_i_lente3.py')
-        self.assertIn('return temas_paginas_20261113.aplicar(entrada_temas_20261112.aplicar(', cadeia)
-        self.assertIn('entrada_temas_20261112.desfazer(temas_paginas_20261113.desfazer(texto, ficheiro), ficheiro)', cadeia)
+        self.assertIn('return revisao_geral_lente_20261115.aplicar(temas_paginas_20261113.aplicar(entrada_temas_20261112.aplicar(', cadeia)
+        self.assertIn('entrada_temas_20261112.desfazer(temas_paginas_20261113.desfazer(revisao_geral_lente_20261115.desfazer(texto, ficheiro), ficheiro), ficheiro)', cadeia)
         self.assertIn('return temas_paginas_20261113.alinhar(entrada_temas_20261112.alinhar(', cadeia)
+        self.assertIn('return revisao_geral_lente_20261115.alinhar_por_cima(texto, ficheiro, _alinhar_abaixo)', cadeia)
 
     def test_manifesto_fechado_em_vigor_e_reversivel(self):
         self.assertEqual(sorted(entrada_temas_20261112.TROCAS), ['como/index.html', 'index.html', 'mapa/index.html'])
@@ -771,7 +780,8 @@ class EntradaEmTemas(unittest.TestCase):
             with self.subTest(ficheiro=f):
                 # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas é agora a mais recente: desfaz-se primeiro, com
                 # contagem exata, e o que fica (o main 9a5e6e1) confere-se como antes com a camada da entrada em quatro temas.
-                agora = temas_paginas_20261113.desfazer(ler(f), f)
+                # 15/11/2026: revisão geral do Lente. Antes dela, desfaz-se a da revisão geral, a mais recente, com contagem exata.
+                agora = temas_paginas_20261113.desfazer(revisao_geral_lente_20261115.desfazer(ler(f), f), f)
                 partida = subprocess.check_output(['git', 'show', BASE + ':' + f], cwd=ROOT).decode('utf-8')
                 for antigo, novo, n in trocas:
                     self.assertEqual(agora.count(novo), n)

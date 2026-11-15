@@ -83,7 +83,7 @@
       "block": "treinar",
       "title": "Rever com uma intenção",
       "question": "Onde tropeça o teu texto?",
-      "reason": "Do primeiro rascunho a um começo mais tarde, à escuta, ao corte e à leitura por outra pessoa.",
+      "reason": "Do primeiro rascunho a um começo mais tarde, à escuta, ao corte e à leitura a frio.",
       "pieces": [
         "treinar/rascunho-mau",
         "treinar/comeca-mais-tarde",
@@ -650,10 +650,10 @@
     {
       "id": "treinar/teste-do-colega",
       "url": "narrativas/treinar/teste-do-colega/",
-      "title": "O teste do colega",
+      "title": "A leitura a frio",
       "type": "treino",
       "time": "6 min de escrita",
-      "description": "Dá o teu texto a ler sem explicar nada.",
+      "description": "Relê o teu texto noutro dia, como quem o lê pela primeira vez.",
       "progress": {
         "kind": "feitas",
         "key": "epi-treinos",
@@ -733,7 +733,7 @@
       "title": "Exposição, nó, desenlace",
       "type": "oficina",
       "time": "45 a 60 min",
-      "description": "Põe à prova um texto teu, ou de um colega: exposição, nó e desenlace.",
+      "description": "Põe à prova um texto teu, depois de uma pausa: exposição, nó e desenlace.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",
@@ -1170,7 +1170,7 @@
       "title": "Uma tese com lugar para o contrário",
       "type": "oficina",
       "time": "",
-      "description": "Tira de uma observação de cinco minutos uma tese que um colega possa pôr à prova, com lugar para o contrário.",
+      "description": "Tira de uma observação de cinco minutos uma tese que se possa pôr à prova, com lugar para o contrário.",
       "progress": {
         "kind": "feitas",
         "key": "epi-narrativas",

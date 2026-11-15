@@ -19,6 +19,10 @@ Uso:
   python tools/creditos_i.py --aplicar     aplica o manifesto aos ficheiros que ainda não o têm (os que já o têm ficam iguais)
   python tools/creditos_i.py --desfazer    devolve os ficheiros à versão de partida
   --manifesto CAMINHO                      outro manifesto com o mesmo formato
+
+15/11/2026: revisão geral do Lente. As camadas de POR_CIMA ficam por cima de todas as outras; --verificar desfaz primeiro, com
+contagem exata, as que estão por cima do manifesto que se confere (nunca o próprio manifesto), e confere-o no estado em que ele
+deixou cada ficheiro, como antes.
 """
 import argparse
 import json
@@ -28,6 +32,10 @@ from pathlib import Path
 R = Path(__file__).resolve().parents[1]
 MANIFESTO = R / 'tools/trocas/creditos-i-lente3-20261108.json'
 MODOS = ('json', 'json/')
+# 15/11/2026: revisão geral do Lente (achados confirmados e decisões de 15/11/2026). A camada tira o retrato de Stanislávski da oficina
+# do ator, que o pedido lente-3 tinha posto atrás do «i»; o «novo» dessa troca da lente-3 deixa de estar no ficheiro e só volta a
+# estar quando esta camada se desfaz. Desfaz-se com contagem exata (se a camada não estiver inteira, a verificação falha).
+POR_CIMA = (R / 'tools/trocas/revisao-geral-lente-20261115.json',)
 
 
 def escapar(html, modo=None):
@@ -113,8 +121,12 @@ def alinhar(texto, trocas, rotulo='créditos i'):
     return aplicar(texto, trocas, rotulo)
 
 
-def verificar(dados, raiz=R):
-    """Erros do manifesto e dos ficheiros (lista vazia quando está tudo certo)."""
+def verificar(dados, raiz=R, por_cima=()):
+    """Erros do manifesto e dos ficheiros (lista vazia quando está tudo certo).
+
+    15/11/2026: «por_cima» são as camadas (já em literais) que ficam por cima deste manifesto, da mais antiga para a mais recente;
+    desfazem-se primeiro, da mais recente para a mais antiga, com contagem exata, e o manifesto confere-se no estado em que ele
+    deixou o ficheiro. Uma camada de cima que não esteja inteira no ficheiro é um erro."""
     erros = []
     for ficheiro, trocas in literais(dados).items():
         p = raiz / ficheiro
@@ -122,6 +134,13 @@ def verificar(dados, raiz=R):
             erros.append(f'{ficheiro}: o ficheiro não existe')
             continue
         texto = p.read_text(encoding='utf-8')
+        try:
+            for camada in reversed(por_cima):
+                if ficheiro in camada:
+                    texto = desfazer(texto, camada[ficheiro], 'camada por cima ' + ficheiro)
+        except AssertionError as e:
+            erros.append(f'{ficheiro}: {e}')
+            continue
         for antigo, novo, n in trocas:
             if antigo == novo:
                 erros.append(f'{ficheiro}: troca sem efeito ({antigo[:60]!r})')
@@ -156,17 +175,35 @@ def main(argv=None):
     ap.add_argument('--manifesto', default=str(MANIFESTO))
     a = ap.parse_args(argv)
     dados = ler_manifesto(a.manifesto)
+    # 15/11/2026: as camadas de POR_CIMA que estão por cima deste manifesto (nunca o próprio).
+    acima = [literais(ler_manifesto(m)) for m in POR_CIMA if Path(m).resolve() != Path(a.manifesto).resolve()]
     if a.verificar:
-        erros = verificar(dados)
+        # 15/11/2026: desfazem-se antes de conferir.
+        erros = verificar(dados, por_cima=acima)
         for e in erros:
             print(e)
         total = sum(len(t) for t in dados.values())
         print(('com erros: ' if erros else 'certo: ') + f'{len(dados)} ficheiros, {total} trocas')
         return 1 if erros else 0
+    # 15/11/2026: o lote calcula-se inteiro antes de se escrever, para um erro a meio não deixar ficheiros meio mudados.
+    lote = []
     for ficheiro, trocas in literais(dados).items():
         p = R / ficheiro
         texto = p.read_text(encoding='utf-8')
-        novo = alinhar(texto, trocas, ficheiro) if a.aplicar else (desfazer(texto, trocas, ficheiro) if ja_tem(texto, trocas) else texto)
+        if a.aplicar:
+            # 15/11/2026: num ficheiro que já traz uma camada de cima, essa desfaz-se antes (contagem exata), este manifesto alinha-se
+            # e ela volta a aplicar-se; assim --aplicar deixa como estão os ficheiros que já estão certos, como antes.
+            cima = [c[ficheiro] for c in acima if ficheiro in c and ja_tem(texto, c[ficheiro])]
+            novo = texto
+            for c in reversed(cima):
+                novo = desfazer(novo, c, 'camada por cima ' + ficheiro)
+            novo = alinhar(novo, trocas, ficheiro)
+            for c in cima:
+                novo = aplicar(novo, c, 'camada por cima ' + ficheiro)
+        else:
+            novo = desfazer(texto, trocas, ficheiro) if ja_tem(texto, trocas) else texto
+        lote.append((p, ficheiro, texto, novo))
+    for p, ficheiro, texto, novo in lote:
         if novo != texto:
             p.write_text(novo, encoding='utf-8')
             print(('aplicado: ' if a.aplicar else 'desfeito: ') + ficheiro)

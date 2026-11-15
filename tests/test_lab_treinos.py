@@ -36,8 +36,10 @@ class Ginasio(unittest.TestCase):
             self.assertEqual(chave, 'epi-treinos-' + d.name)
             # piloto Subtexto (relatório do Lab de 23/10/2026, mudança deliberada): «Uma fala, duas intenções» (o-contrario) tem
             # mais dois cartões, as duas leituras defensáveis depois da escolha e a transferência no fim; os outros 14 não mudam (05/11/2026: decisão 147)
-            base = ['A regra', 'O modelo', 'escolha', 'Escreve', 'Verifica', 'Revê', 'Troca']
-            esperado = ['A regra', 'O modelo', 'escolha', 'Duas leituras', 'Escreve', 'Verifica', 'Revê', 'Troca', 'Transfere'] if d.name in PILOTO else base
+            # 15/11/2026: revisão geral do Lente, decisão (e). A troca com um colega passa a uma segunda leitura do próprio texto
+            # noutro dia: o último cartão deixa de se chamar «Troca» e passa a «A frio», nos 15 treinos; a ordem fica a mesma.
+            base = ['A regra', 'O modelo', 'escolha', 'Escreve', 'Verifica', 'Revê', 'A frio']
+            esperado = ['A regra', 'O modelo', 'escolha', 'Duas leituras', 'Escreve', 'Verifica', 'Revê', 'A frio', 'Transfere'] if d.name in PILOTO else base
             self.assertEqual([x.get('rot', x['t']) for x in itens], esperado, d.name)
             por = {x.get('rot', x['t']): x for x in itens}
             esc = itens[2]

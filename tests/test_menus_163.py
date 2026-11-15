@@ -60,6 +60,7 @@ import molde_s10  # noqa: E402
 import cuidado_lente  # noqa: E402
 import entrada_temas_20261112  # noqa: E402
 import temas_paginas_20261113  # noqa: E402
+import revisao_geral_lente_20261115  # noqa: E402
 
 
 def com_molde(texto, rel):
@@ -404,6 +405,13 @@ class Preservacao(unittest.TestCase):
             # 13/11/2026: pedido temas-01-03-04. A camada das páginas dos temas 01, 03 e 04 (manifesto fechado
             # tests/fixtures/temas-paginas-20261113.json: index.html e mapa/index.html) é agora a mais recente: desfaz-se antes da da entrada em
             # quatro temas, com contagem exata de cada «novo»; o resto confere-se como antes.
+            # 15/11/2026: revisão geral do Lente (achados confirmados e decisões de 15/11/2026). A camada da revisão geral (manifesto
+            # fechado tools/trocas/revisao-geral-lente-20261115.json) é agora a mais recente: desfaz-se primeiro, com contagem exata de
+            # cada «novo», e o resto confere-se como antes. É ela que tira a linha da v108 da Oficina 12 (decisão (b): a página continua
+            # a abrir, mas sai das listagens) e muda o título de «O teste do colega» nos lab-dados; os dois confere-os
+            # tests/test_revisao_geral_lente_20261115.py.
+            if rel in revisao_geral_lente_20261115.TROCAS:
+                agora = revisao_geral_lente_20261115.desfazer(agora, rel)
             if rel in temas_paginas_20261113.TROCAS:
                 agora = temas_paginas_20261113.desfazer(agora, rel)
             if rel in entrada_temas_20261112.TROCAS:

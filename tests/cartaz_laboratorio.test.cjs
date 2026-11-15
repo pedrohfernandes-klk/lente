@@ -27,5 +27,10 @@ for(const rel of ['narrativas/index.html','narrativas/ver/index.html','narrativa
   assert.ok(fio.includes('<a href="'+href+'"'+cur+'><b>'+nome+'</b></a>'),nome);assert.ok(!fio.includes('class="n"'),nome);
  }
  const dados=s=>JSON.parse(s.match(/<script type="application\/json" id="lab-dados">([\s\S]*?)<\/script>/)[1]);
- assert.deepEqual(dados(now),dados(old).filter(x=>!RET.has(x.url)));
+ // 15/11/2026: revisão geral do Lente, decisão (e). «O teste do colega» passa a «A leitura a frio», com o mesmo id, o mesmo endereço
+ // e o mesmo progresso: nos dados só muda esse título, de um nome exato para o outro; tudo o resto continua igual
+ // (tests/test_revisao_geral_lente_20261115.py confere o título novo em todas as páginas que têm lab-dados).
+ const RENOMEADAS={'treinar/teste-do-colega':['O teste do colega','A leitura a frio']};
+ const renomear=x=>RENOMEADAS[x.id]&&x.title===RENOMEADAS[x.id][0]?{...x,title:RENOMEADAS[x.id][1]}:x;
+ assert.deepEqual(dados(now),dados(old).filter(x=>!RET.has(x.url)).map(renomear));
 });

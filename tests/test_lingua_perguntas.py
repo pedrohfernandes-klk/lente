@@ -61,6 +61,13 @@ class LinguaDasPerguntas(unittest.TestCase):
    # 05/11/2026: decisão 146 (discussões em turma, trabalhos individuais): desfazem-se só as trocas do manifesto fechado,
    # com contagem exata, antes de procurar o «novo» desta passagem.
    import grupos146
+   # 15/11/2026: revisão geral do Lente (decisão (e), sem «colega» em fora-da-pagina). A camada da revisão geral, a mais recente,
+   # reescreve uma pergunta desta passagem («Qual das propostas deixa um colega verificar…» passa a «…deixa verificar…»): desfaz-se
+   # primeiro, com contagem exata, e o «antigo» desta passagem continua proibido no ficheiro de hoje.
+   import revisao_geral_lente_20261115
+   if t['ficheiro'] in revisao_geral_lente_20261115.TROCAS:
+    self.assertNotIn(t['antigo'],s,t['ficheiro'])
+    s=revisao_geral_lente_20261115.desfazer(s,t['ficheiro'])
    if t['ficheiro'] in grupos146.TROCAS:s=grupos146.desfazer(s,t['ficheiro'])
    self.assertEqual(s.count(t['novo']),t['ocorrencias'],t['ficheiro']+': '+t['novo'])
    self.assertNotIn(t['antigo'],s,t['ficheiro'])
